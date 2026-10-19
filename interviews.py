@@ -84,6 +84,6 @@ def transcribe(entry: dict, model_size: str = "large-v3") -> str | None:
         return None
     model = WhisperModel(model_size, compute_type="auto")
     segs, _ = model.transcribe(str(audio), vad_filter=True)
-    txt.write_text("\n".join(s.text.strip() for s in segs))
+    txt.write_text("\n".join(s.text.strip() for s in segs), encoding="utf-8")
     audio.unlink(missing_ok=True)
     return str(txt)

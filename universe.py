@@ -66,7 +66,7 @@ def build_india(force=False) -> dict:
     rows = []
     override = DATA / "universe_IN_override.csv"
     if override.exists():
-        with override.open() as f:
+        with override.open(encoding="utf-8-sig") as f:
             for r in csv.DictReader(f):
                 rows.append({"code": str(r["code"]).strip(), "name": r["name"].strip(),
                              "industry": r.get("industry", "").strip(), "mcap_cr": float(r["mcap_cr"] or 0)})

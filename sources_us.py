@@ -155,7 +155,7 @@ class FMP:
             cik, c = by_ticker[t]
             path = CACHE / "raw" / "US" / str(cik) / f"{doc_id}.txt"
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(text)
+            path.write_text(text, encoding="utf-8")
             entry = {"doc_id": doc_id, "market": "US", "company_id": cik, "name": c["name"], "ticker": t,
                      "doc_type": "transcript", "date": when.isoformat(),
                      "period": period_key(reported_quarter_end(when)),

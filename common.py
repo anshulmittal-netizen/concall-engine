@@ -21,17 +21,17 @@ MARKETS = ("IN", "US")
 
 
 def settings() -> dict:
-    return yaml.safe_load((CONFIG / "settings.yaml").read_text())
+    return yaml.safe_load((CONFIG / "settings.yaml").read_text(encoding="utf-8"))
 
 
 def load_yaml(name: str):
     p = CONFIG / name
-    return yaml.safe_load(p.read_text()) if p.exists() else None
+    return yaml.safe_load(p.read_text(encoding="utf-8")) if p.exists() else None
 
 
 def read_json(path: Path, default=None):
     try:
-        return json.loads(Path(path).read_text())
+        return json.loads(Path(path).read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         return default
 
@@ -40,7 +40,7 @@ def write_json(path: Path, obj) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=1, default=str))
+    tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
     tmp.replace(path)
 
 

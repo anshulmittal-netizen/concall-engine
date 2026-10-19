@@ -9,7 +9,7 @@ def to_text(path: str) -> str:
     p = Path(path)
     suf = p.suffix.lower()
     if suf == ".txt":
-        text = p.read_text(errors="ignore")
+        text = p.read_text(encoding="utf-8", errors="ignore")
     elif suf in (".htm", ".html"):
         from bs4 import BeautifulSoup
         text = BeautifulSoup(p.read_bytes(), "html.parser").get_text("\n")
