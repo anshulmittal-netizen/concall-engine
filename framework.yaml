@@ -1,0 +1,44 @@
+# The reading framework. Edit freely: the extractor and the dashboard both read from here.
+
+archetypes:
+  # Your five-archetype classifier. The fifth name is a placeholder — rename it to yours.
+  - Supply-side dominance
+  - Cyclical bottoming
+  - Value migration
+  - Secular premiumisation
+  - Special situation
+  # Engine-only labels
+  - Capital-cycle warning
+  - Red flag
+  - None
+
+mental_models:
+  Capital cycle: Returns turn when supply growth stops, before demand recovers.
+  Supply discipline: Peers deferring capacity keeps pricing intact.
+  Supply exit: Capacity leaving the market tightens it for the survivors.
+  Competitive capex: Everyone expanding at once usually ends in overcapacity.
+  Capacity bottleneck: When capacity is the constraint, price does the adjusting.
+  Consolidation: Fewer competitors improve pricing for those that remain.
+  Operating leverage: Fixed costs spread over rising volume lift margins faster than sales.
+  Pricing power: Price rises stick without losing volume.
+  Mix shift: A rising share of higher-margin products lifts blended margins.
+  Backlog conversion: Orders already won turn into revenue over the next quarters.
+  Hidden supplier: Named in other companies' calls before the market notices.
+  China+1: Customers diversifying away from China move orders to new suppliers.
+  Customer stickiness: Validated suppliers are hard to replace in regulated chains.
+  Import substitution: Domestic supply replacing imports under policy or cost advantage.
+  Regulatory moat: Licences, approvals or standards that keep new entrants out.
+  Working-capital stress: Cash stuck in receivables or inventory signals weak bargaining power.
+  Deleveraging: Debt paydown shifts value from lenders to equity holders.
+  Capital allocation shift: Buybacks, dividends or exits from low-return segments.
+  Management change: New leadership resetting strategy, targets or culture.
+
+blocks:
+  supply: "Own and industry capacity: additions, deferrals, cancellations, capex guidance, maintenance vs growth capex. +2 = strong discipline (capex cut/deferred, peers deferring); -2 = aggressive expansion alongside peers."
+  pricing: "Realisations, price hikes, spreads, pass-through. +2 = price rises sticking; -2 = price cuts / spread compression."
+  structure: "Competitor exits, consolidation, distress, imports and anti-dumping, entry barriers. +2 = competition easing; -2 = new entrants / dumping."
+  inventory: "Channel and customer inventory, destocking/restocking, receivables. +2 = destocking over, channel lean; -2 = channel stuffed / receivables stretched."
+  demand: "Order book, inflows, volume guidance, end-market commentary. +2 = strong and accelerating; -2 = falling."
+  guidance: "Numeric guidance vs the prior call. +2 = raised with numbers; -2 = cut or dropped."
+  novelty: "First-time mentions: segment, product, geography, customer type, capital-allocation change. +2 = material new driver with numbers."
+  tone: "Confidence vs hedging, evasions in Q&A. +2 = specific and confident; -2 = repeated evasion."

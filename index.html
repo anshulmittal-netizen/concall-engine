@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concall Signal Desk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Carlito:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: research desk. Summary strip (highlights + live ticker) on top, then four tabbed boards; the feed is a list + detail split. Navy ground, gold reserved for supply-side signals and the strongest reads. */
+:root {
+  --bg:#0A1325; --panel:#0F1B33; --panel2:#15233F; --line:#22335A; --fg:#E6EBF5; --muted:#8B97B3;
+  --gold:#D6A94A; --goldsoft:rgba(214,169,74,.24); --up:#4DB487; --down:#E26B5E; --warn:#E5A33A;
+  --blue:#79A6EA; --teal:#4EC3B4; --violet:#B28CE2; --rose:#E58FB6; --sand:#E2B39C;
+  --shadow:0 12px 32px rgba(0,0,0,.35);
+  --display:'Archivo','Arial Narrow',system-ui,sans-serif;
+  --body:'Carlito',Calibri,'Segoe UI',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+  --bg:#EEF2F8; --panel:#FFFFFF; --panel2:#F3F6FB; --line:#D5DDEA; --fg:#0D1A33; --muted:#56627D;
+  --gold:#9E6F12; --goldsoft:rgba(214,169,74,.34); --up:#1E8656; --down:#BE3F33; --warn:#A86A10;
+  --blue:#2F63B8; --teal:#167E72; --violet:#7449B5; --rose:#B33E72; --sand:#9A5A3D;
+  --shadow:0 8px 24px rgba(13,26,51,.08); color-scheme:light; } }
+:root[data-theme="light"] {
+  --bg:#EEF2F8; --panel:#FFFFFF; --panel2:#F3F6FB; --line:#D5DDEA; --fg:#0D1A33; --muted:#56627D;
+  --gold:#9E6F12; --goldsoft:rgba(214,169,74,.34); --up:#1E8656; --down:#BE3F33; --warn:#A86A10;
+  --blue:#2F63B8; --teal:#167E72; --violet:#7449B5; --rose:#B33E72; --sand:#9A5A3D;
+  --shadow:0 8px 24px rgba(13,26,51,.08); color-scheme:light; }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.wrap{max-width:1320px;margin:0 auto;display:grid;gap:18px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--display);font-stretch:85%;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* Header */
+.top{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:14px;align-items:center;min-width:0}
+.mark{width:40px;height:40px;flex:none;position:relative}
+.mark i{position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold);border-right-color:transparent;animation:spin 6s linear infinite}
+.mark i+i{inset:8px;border-color:var(--blue);border-left-color:transparent;animation-duration:4s;animation-direction:reverse}
+.mark b{position:absolute;inset:16px;border-radius:50%;background:var(--gold);animation:pulse 2.2s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{transform:scale(.6);opacity:.6}}
+.brand h1{font-size:26px;font-weight:800;font-stretch:88%;letter-spacing:-.01em}
+.brand p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.season{display:grid;gap:8px;min-width:min(100%,340px)}
+.season-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.chip-sample{font-size:11.5px;font-family:var(--mono);padding:2px 8px;border-radius:99px;border:1px dashed var(--warn);color:var(--warn)}
+.prog{display:grid;grid-template-columns:62px 1fr auto;gap:10px;align-items:center;font-size:13px}
+.bar{height:6px;border-radius:9px;background:var(--line);overflow:hidden}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:9px;transform-origin:left;animation:grow 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)}}
+.pipe{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.pipe b{color:var(--fg);font-family:var(--mono);font-weight:600;margin-right:4px}
+.live{display:inline-flex;align-items:center;gap:6px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--up);box-shadow:0 0 0 0 var(--up);animation:ping 1.8s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* Highlights */
+.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.hl-tile{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;display:grid;gap:6px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s;animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+.hl-tile:hover{transform:translateY(-2px);border-color:var(--gold)}
+.hl-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,var(--goldsoft) 50%,transparent 65%);transform:translateX(-100%);animation:sheen 4.5s ease-in-out infinite}
+.hl-tile:nth-child(2)::after{animation-delay:1.5s}.hl-tile:nth-child(3)::after{animation-delay:3s}
+@keyframes sheen{40%,100%{transform:translateX(100%)}}
+.hl-tile strong{font-family:var(--display);font-size:18px;font-stretch:90%;font-weight:700}
+.hl-tile span.small{color:var(--muted);font-size:13.5px}
+@keyframes rise{from{opacity:.15;transform:translateY(10px)}}
+
+/* Ticker */
+.ticker{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:8px 0;font-size:13.5px;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.ticker-track{display:inline-flex;gap:34px;animation:marquee 46s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.tk{display:inline-flex;gap:8px;align-items:center}
+.tk em{font-style:normal;color:var(--muted)}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{background:none;border:0;padding:10px 14px 12px;cursor:pointer;font-family:var(--display);font-weight:600;font-stretch:90%;font-size:15px;color:var(--muted);position:relative}
+.tab[aria-selected="true"]{color:var(--fg)}
+.tab[aria-selected="true"]::after{content:"";position:absolute;left:10px;right:10px;bottom:-1px;height:3px;border-radius:3px;background:var(--gold);animation:grow .4s both}
+.tab .count{font-family:var(--mono);font-size:11.5px;margin-left:6px;padding:1px 6px;border-radius:99px;background:var(--panel2)}
+
+/* Feed */
+.feed{display:grid;grid-template-columns:minmax(0,370px) minmax(0,1fr);gap:18px;align-items:start}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{background:none;border:0;padding:6px 11px;cursor:pointer;font-size:13.5px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--panel2);color:var(--fg)}
+#q{flex:1;min-width:120px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:7px 10px;color:var(--fg);font:inherit;font-size:14px}
+.list{display:grid;gap:8px}
+.co{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;transition:border-color .2s,transform .2s,background .2s;animation:rise .5s cubic-bezier(.2,.8,.2,1) both}
+.co:hover{transform:translateX(3px)}
+.co[aria-selected="true"]{border-color:var(--gold);background:var(--panel2)}
+.co .nm{font-family:var(--display);font-weight:700;font-stretch:90%;font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.co .mt{color:var(--muted);font-size:12.5px}
+.co .trg{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.mini{font-size:11.5px;padding:1px 7px;border-radius:99px;background:color-mix(in srgb,var(--tc) 16%,transparent);color:var(--tc);white-space:nowrap}
+.ringbox{position:relative;display:grid;place-items:center}
+.ringbox .v{position:absolute;font-family:var(--mono);font-weight:600}
+.ring-fg{animation:ring 1.2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes ring{from{stroke-dashoffset:var(--c)}}
+.delta{font-family:var(--mono);font-size:12.5px;font-weight:600;padding:2px 7px;border-radius:7px}
+.delta.up{color:var(--up);background:color-mix(in srgb,var(--up) 14%,transparent)}
+.delta.dn{color:var(--down);background:color-mix(in srgb,var(--down) 14%,transparent)}
+.veto{font-family:var(--mono);font-size:11px;color:var(--down);border:1px solid var(--down);border-radius:6px;padding:1px 6px;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.45}}
+
+.detail{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:20px;box-shadow:var(--shadow);min-width:0}
+.d-head{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.d-head h2{font-size:30px;font-weight:800;font-stretch:85%;line-height:1.05}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:12.5px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.scorebox{display:flex;gap:14px;align-items:center}
+.scorebox .cap{font-size:12.5px;color:var(--muted);max-width:110px}
+.thesis{position:relative;padding:16px 18px;border-radius:14px;background:linear-gradient(120deg,var(--goldsoft),transparent 70%);border:1px solid color-mix(in srgb,var(--gold) 45%,transparent);animation:rise .6s .1s both}
+.thesis p{margin:6px 0 0;font-family:var(--display);font-stretch:92%;font-weight:600;font-size:clamp(17px,2.1vw,21px);line-height:1.3;max-width:68ch}
+.thesis .arch{display:inline-flex;margin-top:10px;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.thesis .arch b{color:var(--gold);font-family:var(--display);font-stretch:88%}
+.d-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px}
+.sec-title{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.triggers{display:grid;gap:10px}
+.trig{display:grid;grid-template-columns:4px minmax(0,1fr);gap:12px;animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
+.trig .stripe{border-radius:4px;background:var(--tc)}
+.trig .tt{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.trig .tt strong{font-family:var(--display);font-stretch:90%;font-size:15.5px}
+.trig blockquote{margin:5px 0 0;color:var(--fg);opacity:.88;font-size:14.5px;line-height:1.5}
+.trig blockquote::before{content:"\201C"}.trig blockquote::after{content:"\201D"}
+.trig .note{margin:5px 0 0;font-size:14px;color:var(--muted)}
+.trig .note::before{content:"System read · ";font-family:var(--mono);font-size:11.5px}
+mark.hl{color:inherit;background:linear-gradient(var(--tc),var(--tc)) no-repeat 0 92%/0% 32%;background-color:transparent;padding:0 1px;animation:sweep .9s cubic-bezier(.3,.7,.2,1) forwards}
+mark.hl{background-image:linear-gradient(color-mix(in srgb,var(--tc) 45%,transparent),color-mix(in srgb,var(--tc) 45%,transparent))}
+@keyframes sweep{to{background-size:100% 40%}}
+.models{display:flex;gap:8px;flex-wrap:wrap}
+.model{position:relative;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--panel2);font-size:13px;flex:1 1 150px;animation:pop .5s cubic-bezier(.3,1.4,.5,1) both}
+.model b{display:block;font-family:var(--display);font-stretch:90%;font-size:14.5px;margin-bottom:2px}
+.model span{color:var(--muted)}
+@keyframes pop{from{transform:scale(.85);opacity:.2}}
+.schema{display:grid;gap:7px}
+.srow{display:grid;grid-template-columns:118px minmax(0,1fr) 28px;gap:10px;align-items:center;font-size:13px}
+.strack{position:relative;height:10px;background:var(--panel2);border-radius:6px}
+.strack::before{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--muted);opacity:.5}
+.sfill{position:absolute;top:0;bottom:0;border-radius:6px;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
+.sfill.pos{left:50%;transform-origin:left;background:var(--up)}
+.sfill.neg{right:50%;transform-origin:right;background:var(--down)}
+.srow.lead .sfill.pos{background:var(--gold)}
+.srow .sv{text-align:right;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.hist{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:16px;align-items:end}
+.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s cubic-bezier(.4,.1,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cred .meter{height:8px;border-radius:6px;background:var(--panel2);overflow:hidden;margin-top:6px}
+.cred .meter span{display:block;height:100%;background:var(--teal);transform-origin:left;animation:grow 1.2s .3s both}
+.cred .big{font-family:var(--mono);font-size:24px;font-weight:600}
+.flags{display:grid;gap:6px}
+.flag{display:flex;gap:10px;align-items:center;padding:9px 12px;border-radius:10px;border:1px solid color-mix(in srgb,var(--down) 50%,transparent);background:color-mix(in srgb,var(--down) 9%,transparent);font-size:14px;animation:rise .5s both}
+.flag::before{content:"!";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--down);color:var(--bg);font-weight:700;font-size:13px;flex:none}
+
+/* trigger type colours */
+.t-supply{--tc:var(--gold)}.t-util{--tc:var(--blue)}.t-pricing{--tc:var(--teal)}.t-structure{--tc:var(--violet)}
+.t-inventory{--tc:var(--sand)}.t-demand{--tc:var(--muted)}.t-guidance{--tc:var(--up)}.t-novelty{--tc:var(--rose)}.t-tone{--tc:var(--down)}
+
+/* Sectors */
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.sectors{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.sector{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:10px;animation:rise .6s cubic-bezier(.2,.8,.2,1) both;min-width:0}
+.sector.hit{border-color:var(--gold);box-shadow:0 0 0 0 var(--goldsoft);animation:rise .6s both,glow 2.6s 1s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 6px var(--goldsoft)}}
+.sector h3{font-size:18px;font-stretch:88%;font-weight:700}
+.s-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.stage{font-family:var(--display);font-stretch:85%;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:99px;white-space:nowrap;color:var(--sc);background:color-mix(in srgb,var(--sc) 15%,transparent)}
+.st-turning{--sc:var(--gold)}.st-emerging{--sc:var(--blue)}.st-confirming{--sc:var(--up)}.st-crowded{--sc:var(--warn)}.st-deteriorating{--sc:var(--down)}.st-neutral{--sc:var(--muted)}
+.pattern{font-size:13px;font-weight:700;color:var(--gold);display:flex;gap:6px;align-items:center}
+.pattern::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 1.6s infinite}
+.s-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;color:var(--muted)}
+.s-stats b{display:block;font-family:var(--mono);font-size:15px;color:var(--fg)}
+.s-note{font-size:13.5px;color:var(--muted);margin:0}
+svg text{font-family:var(--mono)}
+
+/* Themes */
+.themes{display:grid;gap:8px}
+.th-row{display:grid;grid-template-columns:minmax(0,1.6fr) 140px 70px 80px minmax(0,1fr) 110px;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;animation:rise .5s cubic-bezier(.2,.8,.2,1) both}
+.th-head{background:none;border:0;padding:0 14px;animation:none;font-size:12px;color:var(--muted)}
+.th-name{font-family:var(--display);font-stretch:90%;font-weight:700;font-size:15.5px}
+.th-name small{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:12.5px}
+.th-now{font-family:var(--mono);font-size:20px;font-weight:600}
+.colbar{transform-box:fill-box;transform-origin:bottom;animation:barup .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes barup{from{transform:scaleY(0)}}
+.split{display:grid;gap:4px;font-size:12px;color:var(--muted)}
+.split .sb{display:flex;height:8px;border-radius:5px;overflow:hidden;background:var(--panel2)}
+.split .sb i{display:block;height:100%;transform-origin:left;animation:grow 1s both}
+.split .in{background:var(--gold)}.split .us{background:var(--blue)}
+
+/* Ideation */
+.ideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.idea{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:8px;animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
+.idea.red{border-color:color-mix(in srgb,var(--down) 55%,transparent)}
+.idea .rk{font-family:var(--mono);color:var(--muted);font-size:12px}
+.idea h3{font-size:19px;font-stretch:88%}
+.idea p{margin:0;font-size:14px;color:var(--muted)}
+.idea .row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.itype{font-size:12px;font-weight:700;font-family:var(--display);font-stretch:85%;letter-spacing:.05em;text-transform:uppercase;color:var(--tc)}
+.open{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:6px 12px;cursor:pointer;font-size:13.5px}
+.open:hover{border-color:var(--gold)}
+.sub{color:var(--muted);font-size:14px;margin:0 0 14px;max-width:80ch}
+
+@media (max-width:980px){
+  .feed{grid-template-columns:1fr}
+  .d-grid{grid-template-columns:1fr}
+  .th-row{grid-template-columns:minmax(0,1fr) 120px 60px;row-gap:8px}
+  .th-row .c4,.th-row .c5,.th-row .c6{grid-column:auto}
+  .th-head{display:none}
+}
+@media (max-width:520px){
+  .th-row{grid-template-columns:minmax(0,1fr) auto}
+  .hist{grid-template-columns:1fr}
+  .srow{grid-template-columns:96px minmax(0,1fr) 24px}
+  .d-head h2{font-size:24px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  mark.hl{background-size:100% 40%}
+  .draw{stroke-dashoffset:0}
+}
+
+/* Market switch */
+.markets{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.mkt{display:grid;gap:4px;text-align:left;min-width:220px;flex:1 1 220px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 16px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .25s,background .25s}
+.mkt[aria-selected="true"]{border-color:var(--gold);background:var(--panel2)}
+.mkt[aria-selected="true"]::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--gold);animation:growY .5s both}
+@keyframes growY{from{transform:scaleY(0)}}
+.mkt .mk-name{font-family:var(--display);font-weight:800;font-stretch:85%;font-size:22px;display:flex;gap:10px;align-items:baseline}
+.mkt .mk-sub{font-size:13px;color:var(--muted)}
+.mkt .bar{margin-top:4px}
+.src{display:flex;gap:6px;flex-wrap:wrap}
+.src a{font-size:12.5px;color:var(--blue);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:2px 8px}
+.src a:hover{border-color:var(--blue)}
+.tchips{display:flex;gap:6px;flex-wrap:wrap}
+.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"><i></i><i></i><b></b></div>
+      <div>
+        <h1>Concall Signal Desk</h1>
+        <p>Concalls, interviews and presentations, read through the capital-cycle framework.</p>
+      </div>
+    </div>
+    <div class="pipe" id="status"></div>
+  </header>
+
+  <nav class="markets" role="tablist" aria-label="Market" id="markets"></nav>
+
+  <section class="highlights" id="highlights" aria-label="Highlights"></section>
+  <div class="ticker" aria-label="Recently scored calls"><div class="ticker-track" id="ticker"></div></div>
+
+  <nav class="tabs" role="tablist" aria-label="Board">
+    <button class="tab" role="tab" id="tab-feed" data-tab="feed" aria-selected="true">Signal feed<span class="count" id="cnt-feed"></span></button>
+    <button class="tab" role="tab" id="tab-sectors" data-tab="sectors" aria-selected="false">Sector turnarounds<span class="count" id="cnt-sectors"></span></button>
+    <button class="tab" role="tab" id="tab-themes" data-tab="themes" aria-selected="false">Theme momentum<span class="count" id="cnt-themes"></span></button>
+    <button class="tab" role="tab" id="tab-ideas" data-tab="ideas" aria-selected="false">Ideation<span class="count" id="cnt-ideas"></span></button>
+  </nav>
+
+  <section id="panel-feed" role="tabpanel" aria-labelledby="tab-feed">
+    <div class="feed">
+      <div>
+        <div class="controls">
+          <div class="seg" id="sort">
+            <button data-s="score" aria-pressed="true">Score</button><button data-s="delta" aria-pressed="false">Change</button><button data-s="date" aria-pressed="false">Latest</button>
+          </div>
+          <input id="q" type="search" placeholder="Search company, sector or theme" aria-label="Search company, sector or theme">
+        </div>
+        <div class="list" id="list" role="listbox" aria-label="Scored companies"></div>
+      </div>
+      <article class="detail" id="detail" aria-live="polite"></article>
+    </div>
+  </section>
+
+  <section id="panel-sectors" role="tabpanel" aria-labelledby="tab-sectors" hidden>
+    <p class="sub">Breadth = share of companies in the sub-sector whose latest call shows the signal. A turn is flagged when supply discipline has been high for one to three quarters and utilisation or pricing breadth is now rising, while demand talk is still lukewarm.</p>
+    <div class="legend">
+      <span><i style="background:var(--gold);height:4px"></i>Supply discipline</span>
+      <span><i style="background:var(--blue)"></i>Utilisation rising</span>
+      <span><i style="background:var(--teal)"></i>Pricing improving</span>
+      <span><i style="background:var(--muted)"></i>Demand positive</span>
+    </div>
+    <div class="sectors" id="sectors"></div>
+  </section>
+
+  <section id="panel-themes" role="tabpanel" aria-labelledby="tab-themes" hidden>
+    <p class="sub">Number of distinct companies in this market that discussed each theme with substance. Sorted by growth over the last two quarters. The last column shows the same theme's count in the other market, for lead-lag.</p>
+    <div class="themes" id="themes"></div>
+  </section>
+
+  <section id="panel-ideas" role="tabpanel" aria-labelledby="tab-ideas" hidden>
+    <p class="sub">Single-company outliers from this season, plus the red-flag mirror. Each goes to the linker agent for a full work-up.</p>
+    <div class="ideas" id="ideas"></div>
+  </section>
+</div>
+
+<script>
+const TYPES = {supply:'Supply',util:'Utilisation',pricing:'Pricing',structure:'Industry structure',inventory:'Inventory',demand:'Demand',guidance:'Guidance',novelty:'Novelty',tone:'Tone & evasion'};
+const BLOCKS = [['supply','Supply'],['pricing','Pricing & util.'],['structure','Structure'],['inventory','Inventory'],['demand','Demand'],['guidance','Guidance'],['novelty','Novelty'],['tone','Tone']];
+const MODELS = {
+  'Capital cycle':'Returns turn when supply growth stops, before demand recovers.',
+  'Supply discipline':'Peers deferring capacity keeps pricing intact.',
+  'Supply exit':'Capacity leaving the market tightens it for the survivors.',
+  'Competitive capex':'Everyone expanding at once usually ends in overcapacity.',
+  'Capacity bottleneck':'When capacity is the constraint, price does the adjusting.',
+  'Consolidation':'Fewer competitors improve pricing for those that remain.',
+  'Operating leverage':'Fixed costs spread over rising volume lift margins faster than sales.',
+  'Pricing power':'Price rises stick without losing volume.',
+  'Mix shift':'A rising share of higher-margin products lifts blended margins.',
+  'Backlog conversion':'Orders already won turn into revenue over the next quarters.',
+  'Hidden supplier':'Named in other companies’ calls before the market notices.',
+  'China+1':'Customers diversifying away from China move orders to new suppliers.',
+  'Customer stickiness':'Validated suppliers are hard to replace in regulated chains.',
+  'Import substitution':'Domestic supply replacing imports under policy or cost advantage.',
+  'Regulatory moat':'Licences, approvals or standards that keep new entrants out.',
+  'Working-capital stress':'Cash stuck in receivables or inventory signals weak bargaining power.',
+  'Deleveraging':'Debt paydown shifts value from lenders to equity holders.',
+  'Capital allocation shift':'Buybacks, dividends or exits from low-return segments.',
+  'Management change':'New leadership resetting strategy, targets or culture.'
+};
+
+/* ---------- Sample data (fictional companies and quotes), shown only until the engine writes data/in.json and data/us.json ---------- */
+const QIN = ['Q1 FY26','Q2 FY26','Q3 FY26','Q4 FY26','Q1 FY27','Q2 FY27'];
+const QUS = ['Q2 CY25','Q3 CY25','Q4 CY25','Q1 CY26','Q2 CY26','Q3 CY26'];
+const T = (t, label, q, hl) => ({t, label, q, hl});
+const N = (t, label, note) => ({t, label, q: '', note});
+const co = (o) => Object.assign({flags: [], themes: [], sources: [], verified: 1, veto: false}, o);
+const SAMPLE = {
+ IN: {market:'IN', sample:true, season:'Q2 FY27', periods:QIN, universe:1184, scored:412, capNote:'Below ₹50,000 Cr',
+  companies: [
+   co({id:'kaveri',name:'Kaveri Polymers',sector:'Specialty chemicals',mcap:'₹6,400 Cr',call:'Q2 FY27 transcript · 16 Oct',date:'2026-10-16',score:84,delta:19,cred:78,archetype:'Cyclical bottoming',models:['Capital cycle','Operating leverage','Supply discipline'],
+    thesis:'Three of four announced peer capacities are now deferred while utilisation climbs to 82%. Supply has done the work before the margin print shows it.',
+    triggers:[T('supply','Peer capacity deferred','Of the four large capacities announced in 2024, three have now been pushed out beyond FY29.','three have now been pushed out beyond FY29'),
+      T('util','Utilisation 71% → 82%','Utilisation for the quarter was 82%, up from 71% a year ago, with no new lines added.','82%, up from 71%'),
+      T('pricing','First price hike in 6 quarters','We took a 4% increase in September and it has held across our top 20 customers.','4% increase in September'),
+      T('inventory','Destocking over','Customer inventories are back to normal and orders are now tracking consumption.','orders are now tracking consumption')],
+    blocks:{supply:2,pricing:2,structure:1,inventory:1,demand:0,guidance:1,novelty:0,tone:1},hist:[48,46,52,58,65,84],themes:['Specialty chem destocking end']}),
+   co({id:'northgate',name:'Northgate Cables',sector:'Cables & wires',mcap:'₹11,800 Cr',call:'Q2 FY27 transcript · 15 Oct',date:'2026-10-15',score:78,delta:11,cred:84,archetype:'Secular premiumisation',models:['Mix shift','Hidden supplier','Operating leverage'],
+    thesis:'Data-centre orders jumped to 31% of inflows from 9%, and the company was named in two customers’ calls this season.',
+    triggers:[T('novelty','New end-market: data centres','Data-centre projects contributed 31% of our order inflow this quarter, against 9% last year.','31% of our order inflow'),
+      T('demand','Order book 2.4× sales','Our order book stands at 2.4 times trailing sales, the highest we have reported.','2.4 times trailing sales'),
+      T('guidance','Margin guidance raised','We are raising our EBITDA margin guidance to 12–13% from 10–11% for FY27.','raising our EBITDA margin guidance'),
+      N('structure','Named in peer calls','Named in 2 customer calls this season through the mention graph.')],
+    blocks:{supply:0,pricing:1,structure:1,inventory:0,demand:2,guidance:2,novelty:2,tone:1},hist:[55,58,61,64,67,78],themes:['Data-centre power & cooling','Grid capex & transformers']}),
+   co({id:'tarang',name:'Tarang Pharma Chem',sector:'API & CDMO',mcap:'₹4,200 Cr',call:'Q2 FY27 transcript · 13 Oct',date:'2026-10-13',score:74,delta:16,cred:66,archetype:'Value migration',models:['China+1','Customer stickiness','Operating leverage'],
+    thesis:'China+1 talk has turned from enquiries into validation batches with two innovator customers.',
+    triggers:[T('novelty','Enquiries → validation batches','Two of the enquiries we discussed last year have now moved to validation batches.','moved to validation batches'),
+      T('demand','GLP-1 intermediate','We have started supplying an intermediate for a GLP-1 programme in clinical trials.','intermediate for a GLP-1 programme'),
+      T('guidance','New block to 75% utilisation','We expect the new block to reach 75% utilisation by the fourth quarter.','75% utilisation by the fourth quarter')],
+    blocks:{supply:0,pricing:1,structure:1,inventory:0,demand:2,guidance:1,novelty:2,tone:1},hist:[50,49,53,55,58,74],themes:['China+1 enquiries → orders','GLP-1 supply chain']}),
+   co({id:'sahyadri',name:'Sahyadri Castings',sector:'Auto castings & forgings',mcap:'₹2,900 Cr',call:'Q2 FY27 transcript · 17 Oct',date:'2026-10-17',score:72,delta:14,cred:74,archetype:'Supply-side dominance',models:['Consolidation','Hidden supplier','Capital cycle'],
+    thesis:'Two smaller foundries in its cluster shut this year, and full raw-material pass-through is back.',
+    triggers:[T('structure','Competitor exits','Two smaller foundries in our cluster have closed this year, and their customers have come to us.','have closed this year'),
+      T('pricing','Pass-through restored','With fewer players, we have restored full raw-material pass-through from this quarter.','restored full raw-material pass-through'),
+      N('novelty','Sole-source win','Named as sole casting source for a new platform in a tractor maker’s own call.')],
+    blocks:{supply:1,pricing:2,structure:2,inventory:0,demand:1,guidance:1,novelty:1,tone:1},hist:[52,55,54,56,58,72]}),
+   co({id:'halden',name:'Halden Steel Tubes',sector:'Steel & pipes',mcap:'₹3,600 Cr',call:'Q2 FY27 transcript + presentation · 14 Oct',date:'2026-10-14',score:61,delta:4,cred:58,archetype:'Value migration',models:['Mix shift'],
+    thesis:'Steady quarter. Value-added pipes rose to 38% of volume, but pricing commentary stayed flat.',
+    triggers:[T('novelty','Value-added mix 38%','Value-added products were 38% of volumes, our highest so far.','38% of volumes'),
+      T('guidance','Volume guidance held','We are maintaining our volume guidance for the year.','maintaining our volume guidance')],
+    blocks:{supply:0,pricing:0,structure:0,inventory:0,demand:1,guidance:0,novelty:1,tone:0},hist:[58,60,57,59,57,61]}),
+   co({id:'vindhya',name:'Vindhya Cement',sector:'Cement',mcap:'₹9,100 Cr',call:'Q2 FY27 transcript · 12 Oct',date:'2026-10-12',score:49,delta:-7,cred:61,archetype:'Capital-cycle warning',models:['Competitive capex','Capital cycle'],
+    thesis:'Expansion raised to 8 MTPA while most sub-sector peers are also expanding. This is the late-cycle pattern.',
+    triggers:[T('supply','Capex raised with peers','We are taking our expansion plan to 8 million tonnes by FY29.','8 million tonnes by FY29'),
+      T('pricing','Prices down 3% QoQ','Prices in the south were down 3% sequentially.','down 3% sequentially')],
+    flags:['Capex raised while the sub-sector is crowded (capital-cycle warning)'],blocks:{supply:-2,pricing:-1,structure:-1,inventory:0,demand:1,guidance:0,novelty:0,tone:0},hist:[62,60,58,57,56,49]}),
+   co({id:'bluewater',name:'Bluewater Seafoods',sector:'Aquaculture',mcap:'₹1,700 Cr',call:'Q2 FY27 transcript · 10 Oct',date:'2026-10-10',score:38,delta:-21,cred:42,veto:true,archetype:'Red flag',models:['Working-capital stress'],
+    thesis:'Receivables questions were deflected three times, and FY27 volume guidance was dropped without explanation.',
+    triggers:[T('tone','Evasion on receivables','We will not get into the specifics of individual customer balances on this call.','will not get into the specifics'),
+      N('guidance','Guidance dropped','FY27 volume guidance given in the last two calls was not repeated.')],
+    flags:['Veto: guidance dropped without explanation (FY27 volumes)','3 analyst questions deflected (receivables)'],blocks:{supply:0,pricing:-1,structure:0,inventory:-1,demand:-1,guidance:-2,novelty:0,tone:-2},hist:[57,55,52,54,59,38]})],
+  sectors: [
+   {name:'Specialty chemicals',stage:'turning',label:'Turning',n:34,hit:true,note:'64% of 34 companies show supply discipline; pricing breadth 14% → 47%, demand talk still at 41%.',s:{supply:[18,22,35,52,61,64],util:[30,28,31,38,49,62],pricing:[12,10,14,21,33,47],demand:[35,33,34,36,38,41]}},
+   {name:'Auto castings & forgings',stage:'emerging',label:'Emerging',n:14,note:'Pricing breadth up 15 pts over two quarters.',s:{supply:[20,25,30,42,50,57],util:[45,46,48,50,55,59],pricing:[15,18,20,24,30,39],demand:[40,42,41,43,45,47]}},
+   {name:'API & CDMO',stage:'emerging',label:'Emerging',n:26,note:'Demand breadth up 16 pts over two quarters.',s:{supply:[25,26,28,27,30,31],util:[42,44,45,49,52,58],pricing:[20,22,21,25,28,31],demand:[30,32,38,45,52,61]}},
+   {name:'Cables & wires',stage:'confirming',label:'Confirming',n:11,note:'Pricing (70%) and demand (84%) breadth both high.',s:{supply:[40,38,36,30,28,25],util:[60,64,68,72,78,82],pricing:[45,50,55,60,64,70],demand:[55,60,66,72,78,84]}},
+   {name:'Cement',stage:'crowded',label:'Crowded / late',n:22,note:'Only 8% deferring capex; 68% raised expansion plans.',s:{supply:[30,24,18,12,9,8],util:[70,68,66,64,63,60],pricing:[40,35,30,26,22,18],demand:[60,62,63,64,62,61]}},
+   {name:'Aquaculture',stage:'deteriorating',label:'Deteriorating',n:7,note:'Pricing breadth down 8 pts and demand down 5 pts over two quarters.',s:{supply:[30,28,26,25,24,22],util:[55,52,50,48,46,41],pricing:[35,30,26,22,18,14],demand:[40,38,35,30,28,25]}}],
+  themes: [
+   {name:'Agentic AI in IT services',sub:'IT services, Software products',c:[0,1,2,6,13,22],spans:2,other:17,stage:'emerging',label:'Emerging'},
+   {name:'Specialty chem destocking end',sub:'Specialty chemicals, Plastics & polymers',c:[2,2,4,7,12,19],spans:3,other:7,stage:'emerging',label:'Emerging'},
+   {name:'Data-centre power & cooling',sub:'Cables & wires, Electrical equipment',c:[2,3,5,8,13,18],spans:4,other:26,stage:'confirming',label:'Confirming'},
+   {name:'Grid capex & transformers',sub:'Electrical equipment, Cables & wires',c:[6,9,13,19,24,28],spans:3,other:17,stage:'confirming',label:'Confirming'},
+   {name:'Defence indigenisation',sub:'Defence & aerospace, Capital goods',c:[17,20,25,30,37,44],spans:4,other:4,stage:'crowded',label:'Crowded'},
+   {name:'China+1 enquiries → orders',sub:'API & CDMO, Specialty chemicals',c:[16,18,20,23,27,30],spans:5,other:11,stage:'confirming',label:'Confirming'},
+   {name:'GLP-1 supply chain',sub:'API & CDMO',c:[1,1,2,3,5,9],spans:1,other:14,stage:'confirming',label:'Confirming'},
+   {name:'Railway capex',sub:'Railways, Capital goods',c:[30,31,29,27,24,22],spans:3,other:null,stage:'deteriorating',label:'Fading'}],
+  ideas: [
+   {id:'kaveri',type:'Divergence',t:'supply',why:'Score 84 vs sub-sector median 57 across 34 Specialty chemicals companies.'},
+   {id:'northgate',type:'Hidden supplier',t:'structure',why:'Named in 2 other companies’ calls this season.'},
+   {id:'tarang',type:'First mover',t:'novelty',why:'Among the first 5 companies to talk about GLP-1 supply chain.'},
+   {id:'sahyadri',type:'Hidden supplier',t:'structure',why:'Named as sole source by a tractor maker; competitor exits in its cluster.'},
+   {id:'bluewater',type:'Red flag',t:'tone',red:true,why:'Veto: guidance dropped without explanation (FY27 volumes)'},
+   {id:'vindhya',type:'Red flag',t:'tone',red:true,why:'Capex raised while the sub-sector is crowded (capital-cycle warning)'}]
+ },
+ US: {market:'US', sample:true, season:'Q3 CY26', periods:QUS, universe:3480, scored:1086, capNote:'Below $5.7B (₹50,000 Cr at ₹88/$)',
+  companies: [
+   co({id:'meridian',name:'Meridian Thermal Systems',sector:'HVAC & cooling',mcap:'$2.1B',call:'Q3 CY26 transcript · 14 Oct',date:'2026-10-14',score:81,delta:9,cred:71,archetype:'Supply-side dominance',models:['Capacity bottleneck','Pricing power','Backlog conversion'],
+    thesis:'Lead times on liquid-cooling units have stretched to 40 weeks, and management would rather extend them than build capacity ahead of demand.',
+    triggers:[T('supply','Capacity held back','We are choosing to stay disciplined on capacity and would rather extend lead times than build ahead of demand.','would rather extend lead times'),
+      T('pricing','Lead times ~40 weeks','Lead times on our liquid-cooling units are now around 40 weeks.','around 40 weeks'),
+      T('demand','Backlog +62% YoY','Backlog ended the quarter up 62% year over year.','up 62% year over year'),
+      N('tone','Analysts pivot to margins','7 of 11 analyst questions were on margins and pricing, against 2 of 9 last quarter.')],
+    blocks:{supply:2,pricing:2,structure:1,inventory:0,demand:2,guidance:1,novelty:1,tone:1},hist:[60,63,66,70,72,81],themes:['Data-centre power & cooling']}),
+   co({id:'ridgeline',name:'Ridgeline Grid Products',sector:'Electrical equipment',mcap:'$3.4B',call:'Q3 CY26 transcript · 16 Oct',date:'2026-10-16',score:77,delta:13,cred:80,archetype:'Supply-side dominance',models:['Capacity bottleneck','Pricing power'],
+    thesis:'Transformer lead times sit above two years and the company is adding only 10% capacity, keeping pricing firm.',
+    triggers:[T('supply','Measured capacity add','We are adding about 10% capacity, and we will not chase the full backlog with new plants.','will not chase the full backlog'),
+      T('pricing','Price increases holding','Our last two price increases have held with no pushback on new orders.','have held with no pushback'),
+      T('guidance','Revenue guide raised','We are raising full-year revenue guidance by four percentage points.','raising full-year revenue guidance')],
+    blocks:{supply:2,pricing:2,structure:1,inventory:0,demand:2,guidance:2,novelty:0,tone:1},hist:[58,60,62,61,64,77],themes:['Grid capex & transformers','Data-centre power & cooling']}),
+   co({id:'corvan',name:'Corvan Industrial',sector:'Specialty chemicals',mcap:'$1.4B',call:'Q3 CY26 transcript · 9 Oct',date:'2026-10-09',score:69,delta:12,cred:69,archetype:'Cyclical bottoming',models:['Capital cycle','Supply exit'],
+    thesis:'Two competitor plant closures remove about 18% of regional capacity, while Corvan cuts its own growth capex.',
+    triggers:[T('structure','Competitor plant closures','With the two closures announced this year, roughly 18% of regional capacity is coming out.','roughly 18% of regional capacity'),
+      T('supply','Growth capex cut by a third','We are reducing growth capex by a third and focusing on debottlenecking.','reducing growth capex by a third'),
+      T('inventory','Channel at 5-year low','Distributor inventories are the leanest we have seen in five years.','leanest we have seen in five years')],
+    blocks:{supply:2,pricing:1,structure:2,inventory:1,demand:-1,guidance:0,novelty:0,tone:0},hist:[44,42,47,51,57,69],themes:['Specialty chem destocking end']}),
+   co({id:'halvorsen',name:'Halvorsen Pharma Services',sector:'API & CDMO',mcap:'$2.8B',call:'Q3 CY26 transcript + presentation · 7 Oct',date:'2026-10-07',score:66,delta:8,cred:63,archetype:'Value migration',models:['Customer stickiness','Backlog conversion'],
+    thesis:'Peptide fill-finish capacity is sold out through 2027 on two GLP-1 programmes.',
+    triggers:[T('demand','Peptide capacity sold out','Our peptide fill-finish capacity is fully committed through 2027.','fully committed through 2027'),
+      T('novelty','Second GLP-1 programme','We signed a second GLP-1 programme this quarter.','second GLP-1 programme')],
+    blocks:{supply:0,pricing:1,structure:0,inventory:0,demand:2,guidance:1,novelty:2,tone:1},hist:[52,54,55,57,58,66],themes:['GLP-1 supply chain']}),
+   co({id:'tamarack',name:'Tamarack Building Materials',sector:'Building materials',mcap:'$1.1B',call:'Q3 CY26 transcript · 8 Oct',date:'2026-10-08',score:36,delta:-17,cred:48,veto:true,archetype:'Red flag',models:['Working-capital stress'],
+    thesis:'Dealer inventory built for a second quarter and full-year margin guidance was not repeated.',
+    triggers:[T('inventory','Dealer inventory rising','Dealer inventory was up again this quarter as sell-through slowed.','Dealer inventory was up again'),
+      N('guidance','Margin guidance dropped','Full-year margin guidance given in the last two calls was not repeated.')],
+    flags:['Veto: guidance dropped without explanation (EBITDA margin)'],blocks:{supply:-1,pricing:-1,structure:0,inventory:-2,demand:-1,guidance:-2,novelty:0,tone:-1},hist:[55,54,56,53,53,36],themes:['Housing & real-estate cycle']})],
+  sectors: [
+   {name:'Specialty chemicals',stage:'turning',label:'Turning',n:18,hit:true,note:'60% of 18 companies show supply discipline; pricing breadth 22% → 40%, demand talk still at 33%.',s:{supply:[15,20,31,44,55,60],util:[35,33,34,38,44,53],pricing:[18,15,17,22,29,40],demand:[30,28,27,29,31,33]}},
+   {name:'HVAC & cooling',stage:'confirming',label:'Confirming',n:9,note:'Pricing (76%) and demand (90%) breadth both high.',s:{supply:[50,52,55,58,61,63],util:[70,74,78,82,85,88],pricing:[40,48,56,63,70,76],demand:[65,70,76,82,86,90]}},
+   {name:'Electrical equipment',stage:'confirming',label:'Confirming',n:21,note:'Pricing (68%) and demand (81%) breadth both high.',s:{supply:[44,46,47,50,52,55],util:[62,66,70,73,77,80],pricing:[45,50,55,60,64,68],demand:[60,64,69,74,78,81]}},
+   {name:'API & CDMO',stage:'emerging',label:'Emerging',n:12,note:'Demand breadth up 18 pts over two quarters.',s:{supply:[20,22,22,25,26,28],util:[40,41,44,47,52,57],pricing:[22,22,24,25,27,30],demand:[28,30,33,38,47,56]}},
+   {name:'Building materials',stage:'deteriorating',label:'Deteriorating',n:16,note:'Pricing breadth down 14 pts and demand down 17 pts over two quarters.',s:{supply:[25,24,22,22,20,19],util:[60,58,56,55,50,44],pricing:[42,40,36,34,27,20],demand:[48,46,44,42,33,25]}}],
+  themes: [
+   {name:'Data-centre power & cooling',sub:'HVAC & cooling, Electrical equipment',c:[3,5,8,12,19,26],spans:5,other:18,stage:'confirming',label:'Confirming'},
+   {name:'Agentic AI in IT services',sub:'Software products, IT services',c:[0,0,2,5,11,17],spans:3,other:22,stage:'emerging',label:'Emerging'},
+   {name:'GLP-1 supply chain',sub:'API & CDMO, Medical devices',c:[1,2,4,5,9,14],spans:2,other:9,stage:'emerging',label:'Emerging'},
+   {name:'Grid capex & transformers',sub:'Electrical equipment',c:[4,6,8,11,14,17],spans:2,other:28,stage:'confirming',label:'Confirming'},
+   {name:'Tariffs & trade policy',sub:'Building materials, Auto components',c:[12,25,31,33,30,27],spans:9,other:null,stage:'crowded',label:'Crowded'},
+   {name:'Specialty chem destocking end',sub:'Specialty chemicals',c:[1,1,1,2,5,7],spans:2,other:19,stage:'emerging',label:'Emerging'}],
+  ideas: [
+   {id:'meridian',type:'Credibility upgrade',t:'guidance',why:'Raised guidance with a credibility score of 71.'},
+   {id:'ridgeline',type:'Divergence',t:'supply',why:'Score 77 vs sub-sector median 58 across 21 Electrical equipment companies.'},
+   {id:'corvan',type:'Divergence',t:'supply',why:'Score 69 vs sub-sector median 51 across 18 Specialty chemicals companies.'},
+   {id:'halvorsen',type:'First mover',t:'novelty',why:'Among the first 5 companies to talk about GLP-1 supply chain.'},
+   {id:'tamarack',type:'Red flag',t:'tone',red:true,why:'Veto: guidance dropped without explanation (EBITDA margin)'}]
+ }
+};
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sign = n => (n > 0 ? '▲' : n < 0 ? '▼' : '•') + Math.abs(n);
+const scoreCol = s => s >= 70 ? 'var(--gold)' : s >= 50 ? 'var(--blue)' : 'var(--down)';
+const MK = {IN: 'India', US: 'United States'};
+function countUp(el, to, dur = 900) {
+  if (reduce) { el.textContent = to.toLocaleString('en-IN'); return; }
+  const t0 = performance.now();
+  const step = t => { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(to * e).toLocaleString('en-IN'); if (p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+function ring(score, r, sw, delay = 0) {
+  const C = 2 * Math.PI * r, size = (r + sw) * 2, c = size / 2, off = C * (1 - score / 100);
+  return `<span class="ringbox"><svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true">
+    <circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="var(--line)" stroke-width="${sw}"/>
+    <circle class="ring-fg" cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${scoreCol(score)}" stroke-width="${sw}" stroke-linecap="round"
+      stroke-dasharray="${C}" style="--c:${C};stroke-dashoffset:${off};animation-delay:${delay}s" transform="rotate(-90 ${c} ${c})"/></svg>
+    <span class="v" style="font-size:${r * .62}px" data-count="${score}">${score}</span></span>`;
+}
+function mark(q, hl, delay) {
+  const s = esc(q); if (!hl) return s; const h = esc(hl); const i = s.indexOf(h);
+  return i < 0 ? s : s.slice(0, i) + `<mark class="hl" style="animation-delay:${delay}s">${h}</mark>` + s.slice(i + h.length);
+}
+
+/* ---------- state ---------- */
+const DATA = {IN: SAMPLE.IN, US: SAMPLE.US};
+const state = {mkt: 'IN', tab: 'feed', sort: 'score', q: '', sel: {IN: null, US: null}};
+const D = () => DATA[state.mkt];
+const byId = id => D().companies.find(c => c.id === id);
+
+/* ---------- market switch + status ---------- */
+function renderMarkets() {
+  $('#markets').innerHTML = ['IN', 'US'].map(m => { const d = DATA[m], pct = d.universe ? Math.min(100, d.scored / d.universe * 100) : 0;
+    return `<button class="mkt" role="tab" data-m="${m}" aria-selected="${m === state.mkt}">
+      <span class="mk-name">${MK[m]} <span class="eyebrow">${esc(d.season || 'No season yet')}</span></span>
+      <span class="mk-sub">${esc(d.capNote)} · <span class="num">${(d.scored || 0).toLocaleString('en-IN')}</span> of <span class="num">${(d.universe || 0).toLocaleString('en-IN')}</span> companies scored</span>
+      <span class="bar"><span style="width:${pct}%"></span></span>
+    </button>`; }).join('');
+  const d = D();
+  $('#status').innerHTML = d.sample
+    ? '<span class="chip-sample">Sample data · engine output not loaded yet</span>'
+    : `<span class="live">Engine output</span><span>Updated <b>${esc((d.generated || '').replace('T', ' '))}</b></span>`;
+}
+
+/* ---------- highlights + ticker ---------- */
+function renderTop() {
+  const d = D(), cos = d.companies.filter(c => !c.veto);
+  const top = [...cos].sort((a, b) => b.score - a.score)[0];
+  const th = [...d.themes].sort((a, b) => (b.c.at(-1) - b.c.at(-3)) - (a.c.at(-1) - a.c.at(-3)))[0];
+  const turn = d.sectors.find(s => s.hit) || d.sectors[0];
+  const tiles = [];
+  if (turn) tiles.push(`<button class="hl-tile" data-go="sectors"><span class="eyebrow">${turn.hit ? 'Strongest turn signal' : 'Top sub-sector'}</span><strong>${esc(turn.name)}</strong><span class="small">Supply discipline ${turn.s.supply.at(-1)}%, pricing breadth ${turn.s.pricing.at(-3)}% → ${turn.s.pricing.at(-1)}%</span></button>`);
+  if (th) tiles.push(`<button class="hl-tile" data-go="themes" style="animation-delay:.08s"><span class="eyebrow">Fastest-spreading theme</span><strong>${esc(th.name)}</strong><span class="small">${th.c.at(-3)} → ${th.c.at(-1)} companies in two quarters</span></button>`);
+  if (top) tiles.push(`<button class="hl-tile" data-go="feed" data-id="${esc(top.id)}" style="animation-delay:.16s"><span class="eyebrow">Top call this season</span><strong>${esc(top.name)} · <span class="num">${top.score}</span> <span class="delta ${top.delta >= 0 ? 'up' : 'dn'}">${sign(top.delta)}</span></strong><span class="small">${esc(top.triggers[0]?.label || top.thesis)}</span></button>`);
+  $('#highlights').innerHTML = tiles.join('') || '<div class="empty">No reads yet for this market.</div>';
+  const recent = [...d.companies].sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 24);
+  const items = recent.map(c => `<span class="tk"><span class="num" style="color:${scoreCol(c.score)}">${c.score}</span><b>${esc(c.name)}</b><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)}</span><em>${esc(c.triggers[0]?.label || '')}</em></span>`).join('');
+  $('#ticker').innerHTML = items + items;
+}
+
+/* ---------- feed ---------- */
+function visible() {
+  const q = state.q.toLowerCase();
+  return D().companies.filter(c => !q || [c.name, c.sector, c.ticker, ...(c.themes || [])].join(' ').toLowerCase().includes(q))
+    .sort((a, b) => state.sort === 'date' ? (b.date || '').localeCompare(a.date || '') : b[state.sort] - a[state.sort]);
+}
+function renderList() {
+  const v = visible().slice(0, 300);
+  if (v.length && !v.find(c => c.id === state.sel[state.mkt])) state.sel[state.mkt] = v[0].id;
+  $('#list').innerHTML = v.length ? v.map((c, i) => `
+    <button class="co" role="option" data-id="${esc(c.id)}" aria-selected="${c.id === state.sel[state.mkt]}" style="animation-delay:${Math.min(i, 14) * .04}s">
+      ${ring(c.score, 18, 4, Math.min(i, 14) * .04)}
+      <span style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span>
+        <span class="mt">${esc(c.sector)}${c.mcap ? ' · ' + esc(c.mcap) : ''}</span>
+        <span class="trg">${c.triggers.slice(0, 2).map(t => `<span class="mini t-${t.t}">${esc(t.label)}</span>`).join('')}</span></span>
+      <span style="display:grid;gap:4px;justify-items:end"><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)}</span>${c.veto ? '<span class="veto">VETO</span>' : ''}</span>
+    </button>`).join('') : '<div class="empty">No companies match. Clear the search to see all.</div>';
+  $('#cnt-feed').textContent = D().companies.length.toLocaleString('en-IN');
+}
+function spark(vals, labels, w, h) {
+  if (!vals || vals.length < 2) return `<p class="sub" style="margin:0">History builds after the second call.</p>`;
+  const X = i => 8 + i * (w - 16) / (vals.length - 1), Y = v => h - 18 - (v / 100) * (h - 30);
+  const d = vals.map((v, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join('');
+  const last = vals.length - 1;
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" style="max-width:${w}px" role="img" aria-label="Signal score by call: ${vals.join(', ')}">
+    ${[0, 50, 100].map(g => `<line x1="8" x2="${w - 8}" y1="${Y(g)}" y2="${Y(g)}" stroke="var(--line)" stroke-dasharray="${g === 50 ? '3 4' : '0'}"/>`).join('')}
+    <path d="${d}L${X(last)} ${h - 18}L${X(0)} ${h - 18}Z" fill="var(--goldsoft)" opacity=".55"/>
+    <path class="draw" pathLength="1" d="${d}" fill="none" stroke="var(--gold)" stroke-width="2.4" stroke-linejoin="round"/>
+    ${vals.map((v, i) => `<circle cx="${X(i)}" cy="${Y(v)}" r="${i === last ? 4.5 : 2.4}" fill="${i === last ? 'var(--gold)' : 'var(--panel)'}" stroke="var(--gold)" stroke-width="1.5"/>`).join('')}
+    <text x="${X(last)}" y="${Y(vals[last]) - 10}" text-anchor="end" font-size="12" fill="var(--fg)">${vals[last]}</text>
+    <text x="8" y="${h - 3}" font-size="10.5" fill="var(--muted)">${esc(labels?.[0] || '')}</text>
+    <text x="${w - 8}" y="${h - 3}" font-size="10.5" text-anchor="end" fill="var(--muted)">${esc(labels?.at(-1) || '')}</text></svg>`;
+}
+function renderDetail() {
+  const c = byId(state.sel[state.mkt]), el = $('#detail');
+  if (!c || !visible().length) { el.innerHTML = '<div class="empty">Pick a company to see its read.</div>'; return; }
+  const maxKey = BLOCKS.reduce((m, [k]) => c.blocks[k] > c.blocks[m] ? k : m, 'supply');
+  const hl = (c.histLabels || D().periods).slice(-(c.hist || []).length);
+  el.innerHTML = `
+    <div class="d-head">
+      <div style="min-width:0">
+        <span class="eyebrow">${esc(c.call)}</span>
+        <h2>${esc(c.name)}</h2>
+        <div class="tags"><span class="tag">${esc(c.sector)}</span>${c.mcap ? `<span class="tag">${esc(c.mcap)}</span>` : ''}${c.ticker && c.ticker !== c.id ? `<span class="tag">${esc(c.ticker)}</span>` : ''}${c.veto ? '<span class="veto">VETO · SCORE CAPPED AT 40</span>' : ''}</div>
+      </div>
+      <div class="scorebox">${ring(c.score, 38, 7)}<div><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)} vs last call</span><div class="cap" style="margin-top:6px">Concall Signal Score, out of 100</div></div></div>
+    </div>
+    <div class="thesis">
+      <span class="eyebrow">Thesis in one line</span>
+      <p>${esc(c.thesis)}</p>
+      <span class="arch">Archetype <b>${esc(c.archetype)}</b></span>
+    </div>
+    <div class="d-grid">
+      <div>
+        <div class="sec-title"><h3 style="font-size:17px">Triggers</h3><span class="eyebrow">${c.triggers.length} found · ${Math.round((c.verified ?? 1) * 100)}% of quotes verified</span></div>
+        <div class="triggers">${c.triggers.map((t, i) => `
+          <div class="trig t-${t.t}" style="animation-delay:${.15 + i * .12}s">
+            <span class="stripe"></span>
+            <div><div class="tt"><span class="mini t-${t.t}">${TYPES[t.t] || esc(t.t)}</span><strong>${esc(t.label)}</strong></div>
+            ${t.q ? `<blockquote>${mark(t.q, t.hl, .6 + i * .25)}</blockquote>` : `<p class="note">${esc(t.note || '')}</p>`}</div>
+          </div>`).join('') || '<p class="sub">No strong triggers this call.</p>'}</div>
+        ${c.flags.length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Red flags</h3></div><div class="flags">${c.flags.map((f, i) => `<div class="flag" style="animation-delay:${.4 + i * .1}s">${esc(f)}</div>`).join('')}</div></div>` : ''}
+        ${(c.themes || []).length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Themes</h3></div><div class="tchips">${c.themes.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></div>` : ''}
+        ${(c.sources || []).filter(s => s.url).length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Source documents</h3></div><div class="src">${c.sources.filter(s => s.url).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.type)} · ${esc(s.date)}</a>`).join('')}</div></div>` : ''}
+      </div>
+      <div style="display:grid;gap:20px;align-content:start">
+        <div>
+          <div class="sec-title"><h3 style="font-size:17px">Mental models</h3></div>
+          <div class="models">${(c.models || []).map((m, i) => `<div class="model" style="animation-delay:${.25 + i * .1}s"><b>${esc(m)}</b><span>${esc(MODELS[m] || '')}</span></div>`).join('')}</div>
+        </div>
+        <div>
+          <div class="sec-title"><h3 style="font-size:17px">Schema read</h3><span class="eyebrow">−2 to +2</span></div>
+          <div class="schema">${BLOCKS.map(([k, lab], i) => { const v = c.blocks[k] || 0, w = Math.abs(v) / 2 * 50;
+            return `<div class="srow ${k === maxKey && v > 0 ? 'lead' : ''}"><span>${lab}</span><span class="strack">${v ? `<span class="sfill ${v > 0 ? 'pos' : 'neg'}" style="width:${w}%;animation-delay:${.2 + i * .06}s"></span>` : ''}</span><span class="sv">${v > 0 ? '+' : ''}${v}</span></div>`; }).join('')}</div>
+        </div>
+        <div class="hist">
+          <div><div class="eyebrow" style="margin-bottom:4px">Score by call</div>${spark(c.hist, hl, 260, 96)}</div>
+          <div class="cred"><div class="eyebrow">Mgmt credibility</div><div class="big" data-count="${c.cred}">${c.cred}</div><div class="meter"><span style="width:${c.cred}%;background:${c.cred >= 70 ? 'var(--teal)' : c.cred >= 55 ? 'var(--warn)' : 'var(--down)'}"></span></div><div style="font-size:12px;color:var(--muted);margin-top:6px">Guidance met vs given, rolling</div></div>
+        </div>
+      </div>
+    </div>`;
+  el.querySelectorAll('[data-count]').forEach(n => countUp(n, +n.dataset.count));
+}
+
+/* ---------- sectors ---------- */
+function sectorChart(s, periods) {
+  const W = 300, H = 132, x0 = 34, x1 = 290, y0 = 10, y1 = 104, n = s.s.supply.length;
+  const X = i => x0 + i * (x1 - x0) / Math.max(1, n - 1), Y = v => y1 - (v / 100) * (y1 - y0);
+  const ser = [['demand', 'var(--muted)', 1.5, '4 3'], ['pricing', 'var(--teal)', 2, ''], ['util', 'var(--blue)', 2, ''], ['supply', 'var(--gold)', 3, '']];
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${esc(s.name)} breadth by quarter">
+    ${[0, 50, 100].map(g => `<line x1="${x0}" x2="${x1}" y1="${Y(g)}" y2="${Y(g)}" stroke="var(--line)"/><text x="${x0 - 6}" y="${Y(g) + 3.5}" text-anchor="end" font-size="10" fill="var(--muted)">${g}%</text>`).join('')}
+    ${ser.map(([k, col, sw, dash], j) => { const d = s.s[k].map((v, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join('');
+      return dash ? `<path d="${d}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-dasharray="${dash}" opacity=".9"/>`
+        : `<path class="draw" pathLength="1" d="${d}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-linejoin="round" style="animation-delay:${.15 + j * .2}s"/>`; }).join('')}
+    <circle cx="${X(n - 1)}" cy="${Y(s.s.supply.at(-1))}" r="4.5" fill="var(--gold)"/>
+    <text x="${x0}" y="${H - 6}" font-size="10" fill="var(--muted)">${esc(periods.at(-n) || '')}</text>
+    <text x="${x1}" y="${H - 6}" font-size="10" text-anchor="end" fill="var(--muted)">${esc(periods.at(-1) || '')}</text></svg>`;
+}
+function renderSectors() {
+  const d = D();
+  $('#sectors').innerHTML = d.sectors.length ? d.sectors.map((s, i) => `
+    <article class="sector ${s.hit ? 'hit' : ''}" style="animation-delay:${i * .06}s${s.hit ? `,${1 + i * .2}s` : ''}">
+      <div class="s-head"><div><h3>${esc(s.name)}</h3><span style="font-size:12.5px;color:var(--muted)">${s.n} companies this season</span></div><span class="stage st-${s.stage}">${esc(s.label)}</span></div>
+      ${s.hit ? '<span class="pattern">Supply has done the work</span>' : ''}
+      ${sectorChart(s, d.periods)}
+      <div class="s-stats">
+        <span><b style="color:var(--gold)">${s.s.supply.at(-1)}%</b>Supply</span><span><b>${s.s.util.at(-1)}%</b>Utilisation</span><span><b>${s.s.pricing.at(-1)}%</b>Pricing</span><span><b>${s.s.demand.at(-1)}%</b>Demand</span>
+      </div>
+      <p class="s-note">${esc(s.note)}</p>
+    </article>`).join('') : '<div class="empty">Sub-sectors appear once at least three companies in one have been scored.</div>';
+  $('#cnt-sectors').textContent = d.sectors.filter(s => s.hit).length + ' turning';
+}
+
+/* ---------- themes ---------- */
+function renderThemes() {
+  const d = D(), max = Math.max(1, ...d.themes.flatMap(t => t.c));
+  const rows = [...d.themes].sort((a, b) => (b.c.at(-1) - b.c.at(-3)) - (a.c.at(-1) - a.c.at(-3)));
+  const other = state.mkt === 'IN' ? 'US' : 'India';
+  $('#themes').innerHTML = rows.length ? `<div class="th-row th-head"><span>Theme</span><span>Companies by quarter</span><span>Now</span><span>2Q change</span><span>Sub-sectors · ${other}</span><span>Stage</span></div>` +
+    rows.map((t, i) => { const ch = t.c.at(-1) - t.c.at(-3), bw = 132 / t.c.length;
+      return `<div class="th-row" style="animation-delay:${i * .05}s">
+        <span class="th-name">${esc(t.name)}${t.new ? ' <span class="mini t-novelty">new</span>' : ''}<small>${esc(t.sub || '')}</small></span>
+        <svg viewBox="0 0 132 42" width="132" height="42" role="img" aria-label="${t.c.join(', ')} companies">${t.c.map((v, j) => { const h = Math.max(2, v / max * 38);
+          return `<rect class="colbar" x="${j * bw}" y="${40 - h}" width="${bw - 6}" height="${h}" rx="2.5" fill="${j === t.c.length - 1 ? 'var(--gold)' : 'var(--line)'}" style="animation-delay:${.2 + i * .05 + j * .06}s"/>`; }).join('')}</svg>
+        <span class="th-now" data-count="${t.c.at(-1)}">${t.c.at(-1)}</span>
+        <span class="delta ${ch >= 0 ? 'up' : 'dn'} c4" style="justify-self:start">${ch >= 0 ? '+' : '−'}${Math.abs(ch)}</span>
+        <span class="c5" style="font-size:13px;color:var(--muted)">${t.spans} sub-sector${t.spans === 1 ? '' : 's'} · ${other}: <b class="num" style="color:var(--fg)">${t.other ?? '–'}</b></span>
+        <span class="stage st-${t.stage} c6" style="justify-self:start">${esc(t.label)}</span>
+      </div>`; }).join('') : '<div class="empty">Themes appear once three or more companies discuss the same one.</div>';
+  $('#themes').querySelectorAll('[data-count]').forEach(n => countUp(n, +n.dataset.count));
+  $('#cnt-themes').textContent = d.themes.filter(t => t.stage === 'emerging').length + ' emerging';
+}
+
+/* ---------- ideas ---------- */
+function renderIdeas() {
+  const d = D();
+  $('#ideas').innerHTML = d.ideas.length ? d.ideas.map((x, i) => { const c = byId(x.id); if (!c) return '';
+    return `<article class="idea ${x.red ? 'red' : ''}" style="animation-delay:${Math.min(i, 12) * .06}s">
+      <div class="row"><span class="itype t-${x.t}">${esc(x.type)}</span><span class="rk">${x.red ? 'Watch' : '#' + (i + 1)}</span></div>
+      <div class="row"><h3>${esc(c.name)}</h3><span style="display:flex;gap:6px;align-items:center"><span class="num" style="font-size:18px;color:${scoreCol(c.score)}">${c.score}</span><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)}</span></span></div>
+      <p>${esc(x.why)}</p>
+      <div class="row"><span class="tag">${esc(c.sector)}</span><button class="open" data-id="${esc(c.id)}">Open read</button></div>
+    </article>`; }).join('') : '<div class="empty">Ideas appear once a season has enough scored calls.</div>';
+  $('#cnt-ideas').textContent = d.ideas.filter(x => !x.red).length;
+}
+
+/* ---------- navigation ---------- */
+const RENDER = {feed: () => { renderList(); renderDetail(); }, sectors: renderSectors, themes: renderThemes, ideas: renderIdeas};
+function go(tab) {
+  state.tab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.tab === tab));
+  Object.keys(RENDER).forEach(p => { $('#panel-' + p).hidden = p !== tab; });
+  RENDER[tab]();
+  remember();
+}
+function setMarket(m) {
+  state.mkt = m; renderMarkets(); renderTop(); go(state.tab);
+}
+function remember() {
+  try { localStorage.setItem('csd-view', JSON.stringify({mkt: state.mkt, tab: state.tab})); } catch (e) {}
+}
+function openCompany(id) { state.sel[state.mkt] = id; state.q = ''; $('#q').value = ''; go('feed'); }
+
+$('#markets').addEventListener('click', e => { const b = e.target.closest('.mkt'); if (b && b.dataset.m !== state.mkt) setMarket(b.dataset.m); });
+document.querySelector('.tabs').addEventListener('click', e => { const t = e.target.closest('.tab'); if (t) go(t.dataset.tab); });
+document.querySelector('.tabs').addEventListener('keydown', e => {
+  if (!['ArrowRight', 'ArrowLeft'].includes(e.key)) return; const tabs = [...document.querySelectorAll('.tab')];
+  const i = tabs.indexOf(document.activeElement); if (i < 0) return; const n = tabs.at((i + (e.key === 'ArrowRight' ? 1 : -1)) % tabs.length);
+  n.focus(); go(n.dataset.tab); });
+$('#highlights').addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (!b) return;
+  if (b.dataset.id) openCompany(b.dataset.id); else go(b.dataset.go); });
+$('#ideas').addEventListener('click', e => { const b = e.target.closest('.open'); if (b) openCompany(b.dataset.id); });
+$('#sort').onclick = e => { const b = e.target.closest('button'); if (!b) return; state.sort = b.dataset.s;
+  document.querySelectorAll('#sort button').forEach(x => x.setAttribute('aria-pressed', x.dataset.s === state.sort)); renderList(); };
+$('#q').oninput = e => { state.q = e.target.value; renderList(); renderDetail(); };
+$('#list').onclick = e => { const b = e.target.closest('.co'); if (!b) return; state.sel[state.mkt] = b.dataset.id;
+  document.querySelectorAll('.co').forEach(x => x.setAttribute('aria-selected', x.dataset.id === b.dataset.id)); renderDetail(); };
+$('#list').addEventListener('keydown', e => {
+  if (!['ArrowDown', 'ArrowUp'].includes(e.key)) return; e.preventDefault();
+  const items = [...document.querySelectorAll('.co')], i = items.indexOf(document.activeElement);
+  const n = items.at(Math.max(0, Math.min(items.length - 1, i + (e.key === 'ArrowDown' ? 1 : -1)))); if (n) { n.focus(); n.click(); } });
+
+/* ---------- boot: engine output if present, sample otherwise ---------- */
+(async function boot() {
+  try { const v = JSON.parse(localStorage.getItem('csd-view') || '{}'); if (v.mkt in DATA) state.mkt = v.mkt; if (v.tab in RENDER) state.tab = v.tab; } catch (e) {}
+  const h = location.hash.slice(1).split('-');
+  if (h[0] === 'in' || h[0] === 'us') state.mkt = h[0].toUpperCase();
+  if (h[1] in RENDER) state.tab = h[1];
+  setMarket(state.mkt);
+  document.querySelectorAll('.pipe [data-count]').forEach(n => countUp(n, +n.dataset.count, 1400));
+  let changed = false;
+  for (const m of ['IN', 'US']) {
+    try {
+      const r = await fetch(`data/${m.toLowerCase()}.json`, {cache: 'no-store'});
+      if (r.ok) { const j = await r.json(); if (j && Array.isArray(j.companies) && j.companies.length) { DATA[m] = j; changed = true; } }
+    } catch (e) { /* no engine output yet: keep the sample */ }
+  }
+  if (changed) setMarket(state.mkt);
+})();
+</script>
+
+</body>
+</html>

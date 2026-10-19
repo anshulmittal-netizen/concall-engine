@@ -1,0 +1,42 @@
+name: India concalls
+
+on:
+  schedule:
+    - cron: "25 14 * * *"   # 19:55 IST daily (filings land through the evening)
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "Fetch from date (YYYY-MM-DD). Blank = automatic window"
+        required: false
+      limit:
+        description: "Max documents to extract this run"
+        required: false
+
+concurrency: { group: engine-data, cancel-in-progress: false }
+
+jobs:
+  run:
+    # BSE blocks most cloud IPs, so the India job runs on your own machine as a self-hosted runner.
+    runs-on: [self-hosted]
+    timeout-minutes: 300
+    permissions: { contents: write }
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install
+        run: python -m pip install -r requirements.txt
+      - name: Fetch, extract, analyze
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.since }}" ]; then ARGS="$ARGS --since ${{ inputs.since }}"; fi
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          python run.py all --market IN $ARGS
+      - name: Commit results
+        run: |
+          git config user.name "concall-engine"
+          git config user.email "concall-engine@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "India run $(date -u +%F)"
+          git pull --rebase --autostash && git push

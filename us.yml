@@ -1,0 +1,51 @@
+name: US concalls
+
+on:
+  schedule:
+    - cron: "55 0 * * *"    # 06:25 IST daily (after US after-market calls)
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "Fetch from date (YYYY-MM-DD). Blank = automatic window"
+        required: false
+      limit:
+        description: "Max documents to extract this run"
+        required: false
+
+concurrency: { group: engine-data, cancel-in-progress: false }
+
+jobs:
+  run:
+    runs-on: ubuntu-latest   # SEC EDGAR and FMP are reachable from GitHub's runners
+    timeout-minutes: 300
+    permissions: { contents: write }
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - uses: actions/cache@v4
+        with:
+          path: cache
+          key: raw-us-${{ github.run_id }}
+          restore-keys: raw-us-
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Fetch, extract, analyze
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.since }}" ]; then ARGS="$ARGS --since ${{ inputs.since }}"; fi
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          python run.py all --market US $ARGS
+          python run.py analyze --market IN || true   # refresh India's cross-market theme column
+      - name: Commit results
+        run: |
+          git config user.name "concall-engine"
+          git config user.email "concall-engine@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "US run $(date -u +%F)"
+          git pull --rebase --autostash && git push
