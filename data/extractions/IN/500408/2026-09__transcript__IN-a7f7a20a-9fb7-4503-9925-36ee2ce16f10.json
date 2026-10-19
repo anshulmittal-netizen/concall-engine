@@ -1,0 +1,238 @@
+{
+ "doc_id": "IN-a7f7a20a-9fb7-4503-9925-36ee2ce16f10",
+ "market": "IN",
+ "company_id": "500408",
+ "name": "Tata Elxsi Ltd",
+ "doc_type": "transcript",
+ "date": "2026-10-19",
+ "period": "2026-09",
+ "title": "Tata Elxsi Ltd - 500408 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Engineering & R&D services",
+  "thesis": "Tata Elxsi Q2 FY27 revenue INR 1055.7 cr (+2.3% cc QoQ) and EBITDA margin 21.9%, but no capacity signal; utilisation ~78% vs 81-82% peak, with management giving no numeric guidance.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 78,
+   "quote": "Utilization is about 78%. So we have sort of moved up from the last quarter. There's still possibly some room to grow."
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation ~78%, up QoQ",
+    "quote": "Utilization is about 78%. So we have sort of moved up from the last quarter.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "No numeric guidance; H2 > H1 qualitative",
+    "quote": "As a policy, and in general, we don't provide guidance at all.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Europe automotive deals stalled",
+    "quote": "we are seeing a delay in decision -making. We are there in the final shortlist in many of the deals there.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "H2 FY27 revenue vs H1",
+    "value": "H2 better than H1, implying higher YoY revenue in H2",
+    "change": "new",
+    "quote": "We expect 2H to be better than 1H, it would imply that our revenues would be higher even on a Y -o-Y basis in H2."
+   },
+   {
+    "metric": "EBITDA margin trajectory",
+    "value": "slightly upward over rest of year, no number given",
+    "change": "new",
+    "quote": "we do see a slightly upward margin trajectory that should be playing out in rest of the year."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "JLR",
+    "relation": "customer"
+   },
+   {
+    "name": "Tata Motors",
+    "relation": "customer"
+   },
+   {
+    "name": "Bayer",
+    "relation": "customer"
+   },
+   {
+    "name": "Terumo",
+    "relation": "customer"
+   },
+   {
+    "name": "Sarla Aviation",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Europe automotive slowdown",
+   "GCC / ER&D talent demand",
+   "AI budgets in ER&D",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Europe auto deals delayed, leakage from supplier base",
+    "quote": "Unfortunately, because of the situation with the OEMs there, especially the big OEMs, we are seeing a delay in decision -making."
+   },
+   {
+    "label": "Margin expansion mostly FX-driven (60-70 bps)",
+    "quote": "about 60 bps to 70 bps was the cross -currency benefits that we had in the quarter."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 4,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Aerospace growth quantification",
+    "quote": "it'll be misleading if I say we grew x percentage, because the growth is over a very small base"
+   },
+   {
+    "topic": "Revenue concentration of group customers",
+    "quote": "We don't really disclose that information."
+   },
+   {
+    "topic": "Europe revenue share",
+    "quote": "we don't talk of that, as that's not a factoid that is in the public domain."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Tata Elxsi Q2 FY27 operating revenue INR 1,055.7 crore, up 2.3% in constant currency; EBITDA margin 21.9%, up 70 bps QoQ.",
+  "overview": "Q2 FY27 revenue was INR 1,055.7 crore, growing 2.3% in constant currency, with all three verticals up sequentially (transportation +2% QoQ, media and communication +3.4%, healthcare and life sciences +3.5%). EBITDA was INR 231.4 crore, up 7.1% QoQ and 19.7% YoY, with margin at 21.9%. Management attributed about 60-70 bps of the margin gain to currency and 10-20 bps to operating leverage and fading one-offs, which absorbed an annual wage revision. Europe automotive remained soft and the transportation outlook depends on it; management expects H2 to exceed H1 across businesses except the Europe-dependent part of transportation.",
+  "financial_highlights": [
+   {
+    "metric": "Operating revenue",
+    "value": "INR 1,055.7 crore",
+    "change": "+2.3% constant currency (QoQ growth per management's framing)"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR 231.4 crore",
+    "change": "+7.1% QoQ; +19.7% YoY"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "21.9%",
+    "change": "+70 bps QoQ"
+   },
+   {
+    "metric": "Utilisation",
+    "value": "~78%",
+    "change": "Up from previous quarter; peak pre-COVID ~81-82%"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Transportation",
+    "commentary": "Grew 2% QoQ in constant currency, driven by auto OEMs in US and India; Japan flattish, rest of Asia flat, Europe soft. Aerospace and defence adjacency is growing from a small base and is not yet quantified."
+   },
+   {
+    "name": "Media and Communication",
+    "commentary": "Grew 3.4% QoQ in constant currency on ramp-ups of closed deals and AI-led wins, including a GenAI virtual assistant engagement with a global technology leader."
+   },
+   {
+    "name": "Healthcare and Life Sciences",
+    "commentary": "Grew 3.5% QoQ in constant currency after bottoming last quarter; win with a global renal care leader for next-gen home dialysis systems."
+   }
+  ],
+  "guidance_outlook": [
+   "Company does not provide guidance as a policy; no guidance revision.",
+   "Management expects H2 FY27 revenue to exceed H1 (and therefore be higher YoY in H2), with growth in US, India and Asia; transportation H2 depends on Europe.",
+   "Margins expected to improve gradually via operational leverage, utilisation gains and pyramid correction over the next 2-3 quarters; no margin number given.",
+   "Wage revision is complete for the year; no material employee cost movement expected in rest of FY27 beyond selective investment.",
+   "Q3 is a short quarter with fewer working days; customer-specific furlough decisions awaited."
+  ],
+  "capex_capacity": [
+   "Utilisation about 78%, up QoQ; management sees headroom versus pre-COVID peak of about 81-82%.",
+   "Pyramid rebalancing planned over next half-year, moving engagements to junior staff and using a bench trained at lower levels.",
+   "Deal ramp-ups typically take 2-3 quarters to reach full run-rate; aerospace programmes need at least 2-3 quarters to ramp.",
+   "Onsite-offshore revenue mix steady at roughly 25:75."
+  ],
+  "demand_pricing": [
+   "Automotive: new multi-year deal from a leading automotive OEM for a cloud-based telematics and connected vehicle ecosystem, not yet ramped up.",
+   "Europe: large automotive deals in the final shortlist but unsigned; decision-making delayed by OEM situation; no ramp-downs on signed Europe deals, but some project run-offs.",
+   "Aerospace: collaboration with Sarla Aviation on Shunya eVTOL; global aerospace supplier engagement for test rig and validation; growth not disclosed due to small base.",
+   "AI demand: enterprises still earmarking AI budgets that partly compete with ER&D discretionary spend, but buying is becoming more ROI-focused.",
+   "Leakage: improved YoY, as multi-year large deals protect the base and supplier-side automotive revenue losses have largely shifted to OEMs.",
+   "Talent: strong demand for ER&D talent from GCCs; retention focus. Senior-level pay largely variable."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How sustainable is growth and what drove margin expansion despite wage hikes; how much one-off reversal is left?",
+    "answer": "Management said 60-70 bps of margin gain came from currency, 10-20 bps from operational leverage and one-offs fading; wage hikes were offset. Operational leverage expected to continue, with a slightly upward margin trajectory."
+   },
+   {
+    "question": "Did the quarter pan out as planned?",
+    "answer": "Media and communication and healthcare were in line with confidence from closed deals; automotive was the uncertain piece, but US and India deal wins helped deliver growth."
+   },
+   {
+    "question": "Are signed deals sufficient for growth or are new wins needed?",
+    "answer": "Both are needed: ramp-ups take 2-3 quarters and project run-offs require replacement wins."
+   },
+   {
+    "question": "Will the steady-state margin improve with new deals?",
+    "answer": "New deals are innovation and product engineering, with margins described as reasonably flat; margin gains would come from pyramid rebalancing and utilisation across the organisation."
+   },
+   {
+    "question": "Is there guidance revision for FY27?",
+    "answer": "No; company does not provide guidance as a policy."
+   },
+   {
+    "question": "Concentration and health of group customers (Tata Motors, JLR)?",
+    "answer": "Management said JLR is facing its own challenges and is being watched; much of automotive growth comes from outside group customers. Revenue concentration not disclosed."
+   }
+  ],
+  "risks_watch": [
+   "Europe automotive: large deals unsigned and decision delays persist; timing uncertain.",
+   "JLR business performance and layoffs; impact on group-customer spend visible across H2.",
+   "Q3 furloughs and short working days could pressure revenue.",
+   "Healthcare concentration: only just stabilised, with diversification still early.",
+   "Wage cost structure: employee cost per head rising ahead of revenue; margin recovery relies on utilisation and pyramid correction.",
+   "Aerospace and BESS/manufacturing growth not disclosed; small base makes it hard to track."
+  ],
+  "management_tone": "Confident on US, India and non-automotive verticals and on H2 being better than H1, but cautious and noncommittal on Europe automotive timing and on margin numbers, which were withheld.",
+  "key_quotes": [
+   "And I think that is the confidence that we carry beyond anything else.",
+   "So this is a work in progress, but yes, we will have to progressively move towards, over the next, I would say, 2 to 3 quarters, we will see that gradual improvement in our margins, right?",
+   "As a policy, and in general, we don't provide guidance at all."
+  ]
+ }
+}

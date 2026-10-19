@@ -1,0 +1,258 @@
+{
+ "doc_id": "IN-e0b26f15-3c2b-4c81-9c5c-f1ad93c00635",
+ "market": "IN",
+ "company_id": "500186",
+ "name": "Hindustan Oil Exploration Company Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-20",
+ "period": "2026-06",
+ "title": "Hindustan Oil Exploration Company Ltd - 500186 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Q1 FY27 revenue rebounded to INR117.5 cr on Kharsang volumes and ~$95.5/bbl crude, but B-80 output fell on rising water cut, HPCL crude stuck in tanks is being resold at a loss, and the B-80 workover depends on raising debt.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "we are producing only 50%-70% of the capability from the existing well stock because of the lack of evacuation route"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we seem to have increased our capex budget from the Q4 presentation"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "HPCL crude sold at loss, ~INR4-6 cr",
+    "quote": "we have incurred some losses, which is an range of INR4 crores to INR5 crores, maybe INR6 crores",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "util",
+    "label": "Dirok producing 50-70% of capability",
+    "quote": "we are producing only 50%-70% of the capability from the existing well stock because of the lack of evacuation route",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "B-80 output 11,000 bpd target at risk",
+    "quote": "when I say 11,000, it could be 8,900 or it could be 13,000",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex contingency raised; debt needed",
+    "quote": "for delivering B-80 program, we will have to rely on debt. 2e are in the process of raising debt",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Standalone crude realisation ~$95.5/bbl",
+    "quote": "The average realization of crude and condensate improved significantly to about $95.5 a barrel",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "B-80 workover and three new wells on production",
+    "value": "two workovers online Nov-Dec 2026; three wells by June 2027",
+    "change": "held",
+    "quote": "By November and December of this year, which is 2026, we will have two wells that we have worked over on production"
+   },
+   {
+    "metric": "Dirok gas evacuation capacity restored",
+    "value": "pipeline capacity to 2.5 MMSCMD by December",
+    "change": "held",
+    "quote": "by December, this should be completed"
+   },
+   {
+    "metric": "HPCL crude inventory cleared",
+    "value": "entire crude inventory gone by end October / early November",
+    "change": "new",
+    "quote": "we hope that by end of October, early November, the entire crude inventory will be gone from the HPCL refinery"
+   },
+   {
+    "metric": "Kharsang gas pipeline",
+    "value": "pipeline laid within 14-18 months; complete by December next year",
+    "change": "new",
+    "quote": "we believe 14 to 18 months is the time it will take to lay that"
+   },
+   {
+    "metric": "Cambay production increase",
+    "value": "20% to 30% increase going forward",
+    "change": "new",
+    "quote": "overall, 20% to 30% increase in production we will see going forward"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "B-80 workovers on track (planned Nov last year, delayed)",
+    "outcome": "missed",
+    "quote": "Otherwise, the workovers would have been done in November of last year"
+   },
+   {
+    "metric": "HPCL crude sale / invoice recovery",
+    "outcome": "missed",
+    "quote": "the stuck-up of our invoice in HPCL, which was a Black Swan event in many ways"
+   }
+  ],
+  "entities": [
+   {
+    "name": "HPCL",
+    "relation": "customer"
+   },
+   {
+    "name": "Assam Gas Company Limited",
+    "relation": "partner"
+   },
+   {
+    "name": "NRL",
+    "relation": "partner"
+   },
+   {
+    "name": "GAIL",
+    "relation": "customer"
+   },
+   {
+    "name": "IOCL",
+    "relation": "customer"
+   },
+   {
+    "name": "Oil India",
+    "relation": "peer"
+   },
+   {
+    "name": "Digboi Refinery",
+    "relation": "customer"
+   },
+   {
+    "name": "PetroVietnam",
+    "relation": "partner"
+   },
+   {
+    "name": "ONGC",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Renewables & storage",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "HPCL crude stuck, resold at loss",
+    "quote": "we have incurred some losses, which is an range of INR4 crores to INR5 crores, maybe INR6 crores"
+   },
+   {
+    "label": "Repeated delays on B-80 and Dirok",
+    "quote": "from last three years we are constantly saying that production will increase, production will increase"
+   },
+   {
+    "label": "Funding dependent on debt raise",
+    "quote": "for delivering B-80 program, we will have to rely on debt"
+   },
+   {
+    "label": "Management evasion on EBITDA adjustment",
+    "quote": "Let me come back to you on that because I don't want to give you this"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 5,
+   "margin": 2,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "EBITDA ex inventory adjustments",
+    "quote": "Let me come back to you on that because I don't want to give you this -- it's a bit of a technical issue"
+   },
+   {
+    "topic": "NRL shutdown refusal",
+    "quote": "I will not be the right person to comment"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "HOEC Q1 FY27 standalone revenue rebounded to INR117.5 crore (from negative INR194 crore) on Kharsang volumes and $95.5/bbl crude, but PBT fell to INR12.5 crore.",
+  "overview": "Standalone net revenue was INR107.6 crore against a prior quarter hit by the HPCL sale reversal, with Kharsang output rising from about 12,300 to 17,400 BOE and crude realisation near $95.5/bbl. Standalone PBT before exceptionals fell to INR12.5 crore from INR30.4 crore, and consolidated PBT to INR6.5 crore from INR9.01 crore, due to lower crude inventory offsets. B-80 output was hit by higher water cut, and HPCL-stored crude is being resold to third parties at a slower pace and at an expected loss of about 7-10%. Management is raising debt to fund the B-80 workover and three-well programme, with Dirok and PY-1 gas monetisation contingent on pipeline and gas-offtake milestones.</overview>\n<parameter name=\"financial_highlights\">[{\"metric\":\"Standalone revenue from operations\",\"value\":\"INR117.5 crore\",\"change\":\"vs negative INR194 crore in previous quarter\"},{\"metric\":\"Standalone net revenue (after profit petroleum and revenue share of INR9.83 crore)\",\"value\":\"INR107.6 crore\",\"change\":\"\"},{\"metric\":\"Consolidated revenue from operations\",\"value\":\"INR124 crore\",\"change\":\"\"},{\"metric\":\"Consolidated net revenue after profit petroleum and revenue sharing\",\"value\":\"INR114.17 crore\",\"change\":\"\"},{\"metric\":\"Standalone PBT before exceptional items\",\"value\":\"INR12.54 crore\",\"change\":\"vs INR30.4 crore in previous quarter\"},{\"metric\":\"Consolidated PBT before exceptional items\",\"value\":\"INR6.5 crore\",\"change\":\"vs INR9.01 crore in previous quarter\"},{\"metric\":\"Standalone other income\",\"value\":\"INR19.37 crore\",\"change\":\"includes ~INR8 crore escrow release, INR2 crore insurance claim, ~INR2.3 crore Adbhoot top-up\"},{\"metric\":\"Standalone total expenses\",\"value\":\"INR114 crore\",\"change\":\"depletion INR51 crore, royalty and statutory dues INR13 crore, stock adjustments INR41 crore\"},{\"metric\":\"Average crude and condensate realisation\",\"value\":\"about $95.5/bbl\",\"change\":\"vs about $70.8/bbl in previous quarter (standalone)\"},{\"metric\":\"Average gas realisation (blended)\",\"value\":\"$12/MMBtu\",\"change\":\"vs $9.8/MMBtu in previous quarter\"},{\"metric\":\"Gearing\",\"value\":\"0.04x\",\"change\":\"debt is an INR20 crore bank loan\"}]",
+  "segments": [
+   {
+    "name": "B-80 (offshore, Mumbai)",
+    "commentary": "Output reduced by higher water cut in one well; compressor trains reconfigured to series and in test mode, with production partial but expected to reach full level by month-end. Two workovers (D1, D2) to start after rig mobilisation by October, and three new wells targeted by June 2027. Gas realisation about $16.5/MMBtu."
+   },
+   {
+    "name": "Kharsang (Assam)",
+    "commentary": "Production rose from about 12,300 to 17,400 BOE QoQ after nine-well programme and workovers on 23 shut-in wells (five or six done). Second nine-well phase awaits rig award and tubulars in one to two months. Virgin gas found in two wells with no pipeline yet."
+   },
+   {
+    "name": "Dirok (Assam)",
+    "commentary": "Operator with about 27% interest; production limited to 50-70% of well capability by evacuation constraints. DNPL line capacity degraded to about 1-1.5 MMSCMD versus 2.5 MMSCMD design; restoration via hot-tap work targeted by December. Gas realisation about $12.5/MMBtu."
+   },
+   {
+    "name": "PY-1 (East Coast)",
+    "commentary": "Three wells suffered serious production loss; rig-less intervention contract awarded and funded from own books. Two new wells, earlier planned for Q4 FY28, now contingent on a take-or-pay gas agreement with GAIL or IOCL. Management cites 15-20 MMscfd potential from two new wells."
+   },
+   {
+    "name": "Cambay (Gujarat)",
+    "commentary": "Asjol, Balol and Palej assets; Palej debottlenecking gave 5-6% production increase QoQ, with 20-30% growth expected. Belt technology trial at Balol. New exploration block in final approval stage."
+   },
+   {
+    "name": "B-15 (new block)",
+    "commentary": "16 MMBOE reserves (to be reappraised); FDP under preparation with three or four concepts including tie-back to ONGC platform; drilling in FY28."
+   }
+  ],
+  "guidance_outlook": [
+   "B-80 remaining crude inventory expected to be fully cleared from HPCL Chembur tanks by end-October or early November 2026; first small-tanker sale of about 120,000-130,000 bbl planned for October.",
+   "B-80 workovers: two wells to be on production by November-December 2026; three new wells by June 2027; per-well output 500-800 bbl/d (management range 8,900-13,000 bbl/d total in investor deck referenced by analyst; 1,000-1,500 bbl per well in simulation).",
+   "Dirok gas flow to the national grid targeted for December 2026, with DNPL capacity raised toward 2.5 MMSCMD; Kharsang pipeline targeted for completion around December 2027 (14-18 month build).",
+   "Cash flows expected to fund B-15 growth by November-December 2027; debt being raised for B-80 programme and pipelines.",
+   "Management indicated a 7-10% loss on HPCL crude sale (not guidance); INR4-7 crore losses already incurred on about 15% sold."
+  ],
+  "capex_capacity": [
+   "B-80 programme (two workovers, three wells, jacket and production deck) to run as a single campaign; rig contract not yet awarded; capex contingency raised due to tight rig availability and drawdown on need basis.",
+   "Kharsang second phase of nine wells: rig identified, award imminent, tubulars ordering.",
+   "Kharsang pipeline: 24 km connection into Oil India line at Bordumsa; route survey tender closing, right of way expected in 6-8 months, build 6-8 months.",
+   "DNPL restoration: hot-tap work by Assam Gas Company Limited (16-20 week lead time) plus 100-200 m NRL-premises pipeline link; capacity to rise from about 1-1.5 MMSCMD to 2.5 MMSCMD at 90 bar.",
+   "Palej: additional new wells and sucker rod pumps ordered."
+  ],
+  "demand_pricing": [
+   "Crude realisation of about $95.5/bbl standalone in Q1, up from $70.8/bbl, aided by favourable Brent.",
+   "B-80 gas traded on exchange at about $15-16/MMBtu; Dirok and PY-1 gas pegged at roughly $10-12/MMBtu per management.",
+   "HPCL crude: reversed sale in March-April 2026; crude now sold to third parties via tankers; Brent decline driving realisation losses.",
+   "Management said NRL can act as reseller and gas can be sold on exchange within about three days once a credible grid path exists.",
+   "Common carrier status for DNPL means other operators compete for capacity; HOEC's locked-in volumes are 0.5-0.7 MMSCMD gross."
+  ],
+  "financial_highlights": [],
+  "qa_highlights": [],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

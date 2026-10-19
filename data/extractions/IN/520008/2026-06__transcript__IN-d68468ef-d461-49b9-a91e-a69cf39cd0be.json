@@ -1,0 +1,303 @@
+{
+ "doc_id": "IN-d68468ef-d461-49b9-a91e-a69cf39cd0be",
+ "market": "IN",
+ "company_id": "520008",
+ "name": "Rico Auto Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-19",
+ "period": "2026-06",
+ "title": "Rico Auto Industries Ltd - 520008 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Auto castings & forgings",
+  "thesis": "Q1 FY27 revenue up ~39% to INR755 cr but EBITDA margin fell to 4.6% and PAT turned to a INR3.4 cr loss on air freight and aluminium settlement lag; capex being curtailed after 54 projects.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital cycle",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Now all of a sudden, we had to almost increase the capacity by 25% to 30% so that we could make larger shipments to the U.S. and to Europe."
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "we are also curbing the investments. And -- but having said that, after this, I think for 1 year, we are going to invest only wherever absolutely necessary."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "EBITDA margin 4.6% vs ~10% target",
+    "quote": "EBITDA for the quarter stood at INR34.8 crores, translating into an EBITDA margin of 4.6%.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Capex curbed after 54 projects",
+    "quote": "we are also curbing the investments. And -- but having said that, after this, I think for 1 year, we are going to invest only wherever absolutely necessary.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Air freight and extra sea inventory",
+    "quote": "Now we have extra inventory of almost 4 weeks in the sea, that's almost 9 weeks of inventory in the sea",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Aluminium settlement lag ~INR10 cr",
+    "quote": "The settlement lag resulted in an estimated impact of approximately INR10 crores during the quarter.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue guide raised to INR3,200-3,250 cr",
+    "quote": "we will be achieving a revenue more than INR3,200 crores in FY 2027.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "more than INR3,200 crores (~INR3,250 cr)",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "we will be achieving a revenue more than INR3,200 crores in FY 2027."
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "exit year near targeted full-year margins; Q3 onward improvement",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "We remain confident to exit the current year near to our targeted full year margins through customer price revisions"
+   },
+   {
+    "metric": "Hosur plant commercial production",
+    "value": "September 2026",
+    "change": "held",
+    "horizon": "Q2 FY27",
+    "quote": "is expected to do the commercial production in September 2026."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 revenue ~INR3,000 crores",
+    "outcome": "met",
+    "quote": "we continue to work towards our previously stated target of around INR3,000 crores this year."
+   },
+   {
+    "metric": "EBITDA margin ~10%+",
+    "outcome": "missed",
+    "quote": "profitability was impacted by el evated of cost pressure"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Toyota",
+    "relation": "customer"
+   },
+   {
+    "name": "BMW",
+    "relation": "customer"
+   },
+   {
+    "name": "Ford",
+    "relation": "customer"
+   },
+   {
+    "name": "Maruti",
+    "relation": "customer"
+   },
+   {
+    "name": "Hero",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Railway capex",
+   "Defence indigenisation",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Air freight to hit exports in Q2",
+    "quote": "We expect air freight costs to peak in Q2 as inventory levels reach the desired position."
+   },
+   {
+    "label": "PAT loss INR3.4 cr vs prior profit",
+    "quote": "PAT stood at a loss of INR3.4 crores compared with a profit of INR16.7 crores"
+   },
+   {
+    "label": "Unhedged aluminium exposure",
+    "quote": "We don't do hedging on the aluminum price because it is decided by the customers"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 3,
+   "margin": 6,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Q2 and H2 margin path",
+    "quote": "Let's see. Hiten Boricha: Okay. Okay. So we are confident on that point."
+   },
+   {
+    "topic": "Capex quantification FY27/FY28",
+    "quote": "We will share with you."
+   },
+   {
+    "topic": "Railway and defence revenue numbers",
+    "quote": "We will share the numbers with you."
+   },
+   {
+    "topic": "Why June guidance of 10% EBITDA was held",
+    "quote": "So these are things that we could -- we did not factor."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Rico Auto Q1 FY27 revenue rose ~39% to INR755 crore, but EBITDA margin fell to 4.6% and PAT turned to a INR3.4 crore loss.",
+  "overview": "Consolidated revenue reached a record INR755 crore against INR543 crore a year earlier, with aluminium casting at 89% of revenue and exports near 15%. Profitability was hit by about INR24 crore of higher other operating expenses (including air freight and sorting costs of about INR13 crore), plus an estimated INR10 crore raw-material settlement lag. Management reiterated full-year revenue of about INR3,250 crore and said margins should recover from Q3 as air freight ceases and customer price revisions flow through. Q2 margins are expected to be better than Q1 but still in between the Q1 level and the targeted trajectory.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue",
+    "value": "INR755 crore",
+    "change": "vs INR543 crore in Q1 FY26, ~39% growth"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR34.8 crore",
+    "change": "margin 4.6%"
+   },
+   {
+    "metric": "PAT",
+    "value": "Loss of INR3.4 crore",
+    "change": "vs profit of INR16.7 crore in Q1 FY26"
+   },
+   {
+    "metric": "Other operating expenses increase",
+    "value": "~INR24 crore",
+    "change": "primarily air freight and sorting; air freight and sorting ~INR12.8-13 crore"
+   },
+   {
+    "metric": "Raw-material settlement lag impact",
+    "value": "~INR10 crore (consolidated)",
+    "change": "standalone lag impact INR3.3 crore vs INR12 crore in Q4 FY26"
+   },
+   {
+    "metric": "Export share of revenue",
+    "value": "~15%",
+    "change": ""
+   },
+   {
+    "metric": "Aluminium price (specific grade)",
+    "value": "INR349/kg vs INR222/kg in Q1 FY26",
+    "change": "~57% increase"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Aluminium casting",
+    "commentary": "Principal contributor at 89% of consolidated Q1 FY27 revenue; supports Toyota, Ford and BMW long-term programmes."
+   },
+   {
+    "name": "Ferrous casting",
+    "commentary": "Contributed the remaining 11% of consolidated revenue in Q1 FY27."
+   },
+   {
+    "name": "Railways",
+    "commentary": "Revenue contribution in Q1 stated at roughly INR5-7 crore (verbal estimate, exact figure to be shared later); RDSO approvals in progress and supplies started."
+   },
+   {
+    "name": "Defence",
+    "commentary": "Building computerised shooting/practice ranges in containers; management said 200 ranges to be supplied this year, plus baffle range consultancy."
+   },
+   {
+    "name": "Machine tools (CNC)",
+    "commentary": "Started selling in-house-built CNC machines to outside customers; target ~100 machines this year, expected revenue INR35-40 crore, not included in the INR3,250 crore guidance."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue guidance of about INR3,250 crore (management said more than INR3,200 crore); quarterly run-rate targets: Q2 above INR840 crore, Q3 above INR850 crore, Q4 about INR900 crore.",
+   "July 2026 turnover stated at about INR300 crore.",
+   "Full-year EBITDA margin target around 10%; management said it expects to exit the year near targeted full-year margins; Q2 margin to be between Q1 and Q3 levels.",
+   "Air freight expected to peak in Q2 and cease from Q3, with shipments returning to sea freight; progressive profitability improvement from Q3 onwards.",
+   "Management said the company will achieve its previously stated 12% margin target over time; Hosur commercial production expected September 2026.",
+   "Long-term target of about INR7,500 crore revenue by 2030 referenced by an analyst; management said about INR4,000 crore is achievable with current asset base."
+  ],
+  "capex_capacity": [
+   "Hosur plant expected to start commercial production in September 2026, supporting hybrid and EV programmes; production ramp from October.",
+   "54 projects in hand; management is curbing investment and expects to invest only where absolutely necessary for about one year, then stabilise assets before larger projects.",
+   "Company has about 7-8 high-tonnage die-casting machines (1,000-2,700 ton); a 2,700-ton machine costs about INR25 crore landed plus INR10-15 crore infrastructure.",
+   "Capex guidance for FY27 and FY28 (including maintenance capex) not given; management said it will share later.",
+   "Land held for sale in Haridwar (about 2 acres, about INR10 crore) expected to be paid in full by 30 December; further land bank under discussion."
+  ],
+  "demand_pricing": [
+   "Around 55 new programmes in launch phase, of which 28 launched and in ramp-up; customers include Toyota, Ford and BMW with 7-8 year programme life; company is single-source supplier on these.",
+   "Air freight incurred because ocean transit rose from 5 weeks to 9 weeks (sometimes 10 or 8) due to the West Asia conflict; customers in US and Europe; one customer agreed to pay roughly 50% of air freight cost, not yet booked.",
+   "Price increases sought from domestic and overseas customers for rupee-driven import inflation, manpower, power, fuel, gas and carbide inserts; Haryana labour cost increase of about 40% cited.",
+   "About 75% of customers (by management's statement) moved to real-time raw-material settlement; remaining 25% being onboarded.",
+   "Company does not hedge aluminium; customers announce prices. Management said aluminium prices eased slightly in the quarter."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why was FY27 guidance of ~10% EBITDA margin given in June if air freight pressures were already visible?",
+    "answer": "Management said transit times rose from 7 weeks assumed to 9-10 weeks; most air freight was incurred after the early-June call as the situation escalated in late June."
+   },
+   {
+    "question": "How much of the 39% growth came from higher metal prices?",
+    "answer": "Management said INR100-200 crore of revenue was due to higher metal prices on a consolidated basis; standalone raw-material impact about INR100 crore, with consolidated possibly INR10-15 crore higher."
+   },
+   {
+    "question": "What is the Q2 and full-year margin outlook and what is the path to 10%?",
+    "answer": "Management said Q2 margin would be between Q1 and H2 levels, with margins improving from Q3 as freight normalises and price revisions are realised; it expects to be confident of the trajectory if conditions hold."
+   },
+   {
+    "question": "What is the aluminium price assumption behind FY27 guidance?",
+    "answer": "Management cited the ruling price around INR320/kg (approximately INR32,000 per tonne); raw-material impact estimated at INR200-250 crore."
+   },
+   {
+    "question": "Can the business reach INR4,000 crore revenue without major capex?",
+    "answer": "Management said about INR4,000 crore plus is achievable with the current setup, with die investments largely recovered upfront from customers except for Maruti and Hero, which pay via piece price."
+   },
+   {
+    "question": "Will hedging be used to manage aluminium volatility?",
+    "answer": "CFO said the company does not bank on commodities; the focus is on passing through raw-material cost via real-time settlements to eliminate the lag."
+   }
+  ],
+  "risks_watch": [
+   "Air freight and sorting costs (INR12.8-13 crore in Q1) may persist into Q2; recovery from one customer (about 50% of freight) is not yet booked.",
+   "Customer settlement timing: 25% of customers not yet on real-time settlement; overseas customers may take longer to accept inflation-related price revisions.",
+   "Aluminium price volatility (about 57% higher YoY for a grade) and reliance on customer-led pricing; geopolitical risk (West Asia conflict) could extend shipping times.",
+   "Quality correlation issue with a major customer put some parts on hold; rust issues from prolonged sea transit required repacking.",
+   "Margin recovery to ~10% for FY27 requires about 12-13% in H2 per analyst's arithmetic; management has not given a quarterly margin figure.",
+   "Capex, land monetisation and railway/defence revenue numbers were not fully quantified on the call."
+  ],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

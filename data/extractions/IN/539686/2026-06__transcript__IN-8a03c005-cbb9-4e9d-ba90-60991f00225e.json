@@ -1,0 +1,157 @@
+{
+ "doc_id": "IN-8a03c005-cbb9-4e9d-ba90-60991f00225e",
+ "market": "IN",
+ "company_id": "539686",
+ "name": "K.P. Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-19",
+ "period": "2026-06",
+ "title": "K.P. Energy Ltd - 539686 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Renewables",
+  "thesis": "Q1 FY27 revenue up ~126% to Rs 521 cr but gross margin fell to ~20% from 28% in Q4; order book cut to Rs 2,250 cr and FY27 growth guided to 30-40%, with no margin guidance.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -2,
+   "novelty": -1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Gross margin 28% → ~20% QoQ",
+    "quote": "A gross margin in Q1 FY27 was approximately 20% compared with that at 28% in Q4 FY26.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 top-line growth cut to 30-40%",
+    "quote": "we would like to stay at about 30% to 40% as a guiding number",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "demand",
+    "label": "Order book Rs 3,000 cr → Rs 2,250 cr",
+    "quote": "we have executed about 500 crores of business this quarter, that leaves about 2500.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Order book ~50% related party",
+    "quote": "about 50% is related party and the balance 50% is non-related",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 top-line growth",
+    "value": "30% to 40%",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "we would like to stay at about 30% to 40% as a guiding number"
+   },
+   {
+    "metric": "IPP capacity by end FY27",
+    "value": "100 MW",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Right. We expect 100, yes. You can expect 100."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 top-line growth 40-50%",
+    "outcome": "dropped",
+    "quote": "we would like to stay at about 30% to 40% as a guiding number"
+   }
+  ],
+  "entities": [
+   {
+    "name": "KPI Green",
+    "relation": "peer"
+   },
+   {
+    "name": "KP Green Engineering",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Grid capex & transformers",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin collapse and related-party order mix",
+    "quote": "about 50% is related party and the balance 50% is non-related"
+   },
+   {
+    "label": "Possible order de-scoping",
+    "quote": "whether we should continue with the same business, or should we take a call on de-scoping our existing order in hand"
+   },
+   {
+    "label": "Evasion on margin outlook",
+    "quote": "it will not be right at this very moment to give you a number"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 4,
+   "margin": 6,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Margin outlook",
+    "quote": "it will not be right at this very moment to give you a number"
+   },
+   {
+    "topic": "Order value disclosure",
+    "quote": "your suggestion in terms of when we publish the order intake, we do not publish the value"
+   },
+   {
+    "topic": "Force majeure / price escalation",
+    "quote": "I cannot give you a generalized answer on it"
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "K.P. Energy Q1 FY27 total income rose ~126% YoY to Rs 520.97 crore, but gross margin fell to ~20% from 28% in Q4 FY26.",
+  "financial_highlights": [],
+  "segments": [],
+  "qa_highlights": [],
+  "guidance_outlook": [],
+  "capex_capacity": [],
+  "demand_pricing": [],
+  "risks_watch": [],
+  "key_quotes": [],
+  "overview": "",
+  "management_tone": ""
+ }
+}

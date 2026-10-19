@@ -1,0 +1,331 @@
+{
+ "doc_id": "IN-d23c59c6-9f88-4edf-8dfe-07a337f3f2dd",
+ "market": "IN",
+ "company_id": "544626",
+ "name": "Exato Technologies Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-26",
+ "period": "2026-06",
+ "title": "Exato Technologies Ltd - 544626 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Small CX/AI services firm reports ~50% revenue growth and 104% PAT growth, but supply-side evidence is absent and order-book, ARR and 60-70% revenue growth targets rest on unnamed deals and an undisclosed acquisition.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Backlog conversion",
+   "Management change",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth 60-70%+",
+    "quote": "revenue will grow at least 60 to 70% , or even more than that, and profitability will also be growing more than 70 to 80%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Order book 600 → 660 crore",
+    "quote": "we are now showcasing an order book of 660 crore",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "tone",
+    "label": "Top-5 clients ~60% of revenue",
+    "quote": "The top five clients would be contributing close to 60% of revenue.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "ARR target 180-200 crore by FY27",
+    "quote": "we expect to close at 180 to 200 crore",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "at least 60-70%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "revenue will grow at least 60 to 70% , or even more than that"
+   },
+   {
+    "metric": "Profitability growth FY27",
+    "value": "more than 70-80%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "profitability will also be growing more than 70 to 80%"
+   },
+   {
+    "metric": "ARR FY27",
+    "value": "180-200 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "By the end of FY27 our idea is to be between 180 and 200 crore"
+   },
+   {
+    "metric": "IP revenue start",
+    "value": "from this month or next month",
+    "change": "raised",
+    "horizon": "Q2 FY27",
+    "quote": "We are expecting some revenue to start from this month or next month itself"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "IP revenue from Q3 FY27",
+    "outcome": "met",
+    "quote": "we will start much earlier than what we had committed"
+   },
+   {
+    "metric": "Add 300-400 customers in 2-3 years",
+    "outcome": "missed",
+    "quote": "we expect to add 300 to 500 customers in the next two to three years"
+   }
+  ],
+  "entities": [
+   {
+    "name": "NiCE",
+    "relation": "partner"
+   },
+   {
+    "name": "HPE",
+    "relation": "partner"
+   },
+   {
+    "name": "Mitel",
+    "relation": "partner"
+   },
+   {
+    "name": "Acumatica",
+    "relation": "partner"
+   },
+   {
+    "name": "AWS",
+    "relation": "partner"
+   },
+   {
+    "name": "Fortinet",
+    "relation": "partner"
+   },
+   {
+    "name": "Diligenta",
+    "relation": "customer"
+   },
+   {
+    "name": "TaskUs",
+    "relation": "customer"
+   },
+   {
+    "name": "iQor",
+    "relation": "customer"
+   },
+   {
+    "name": "TTEC Digital",
+    "relation": "competitor"
+   },
+   {
+    "name": "Accenture",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "AI infrastructure",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Top-5 clients ~60% of revenue",
+    "quote": "The top five clients would be contributing close to 60% of revenue."
+   },
+   {
+    "label": "Unnamed deals and undisclosed acquisition",
+    "quote": "I cannot name them, and I keep saying on these calls that we will name them in some subsequent call"
+   },
+   {
+    "label": "Customer count guidance dropped",
+    "quote": "The way I mentioned it was that we expect to add 300 to 500 customers in the next two to three years"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 6,
+   "margin": 4,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Acquisition size and target",
+    "quote": "I am not sure whether I am allowed to discuss that"
+   },
+   {
+    "topic": "Low-margin business / divesting",
+    "quote": "getting rid of one business is not easy to comment on as of now"
+   },
+   {
+    "topic": "Customer count and IP revenue",
+    "quote": "There are plans that I would again like to share in a subsequent call"
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "Exato Q1 FY27: revenue up 50% YoY, PAT up 104% YoY, order book raised to Rs 660 crore from Rs 600 crore.",
+  "overview": "Management reported Q1 FY27 revenue growth of 50% YoY, EBITDA up about 82%, PBT up 102% and PAT up 104%, with margin gains attributed mainly to international business and order execution. Order book rose to Rs 660 crore after about Rs 60 crore of fresh bookings, mostly from international customers including iQor. Management guided FY27 revenue growth of at least 60-70% and profit growth of 70-80%, with ARR targeted at Rs 180-200 crore by FY27-end. The company is adding an AI infrastructure vertical, a US sales push, a potential acquisition, and an IP/platform product expected to start contributing earlier than the Q3 FY27 commitment. Absolute financial values (revenue, EBITDA, PAT in rupees) were not stated in the call.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue",
+    "value": "Up 50% YoY (absolute figure not stated in call)",
+    "change": "+50% YoY"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "Up about 82% YoY; margin expanded significantly",
+    "change": "+82% YoY"
+   },
+   {
+    "metric": "PBT",
+    "value": "Not stated in absolute terms",
+    "change": "+102% YoY"
+   },
+   {
+    "metric": "PAT",
+    "value": "Not stated in absolute terms",
+    "change": "+104% YoY"
+   },
+   {
+    "metric": "Order execution in Q1",
+    "value": "About Rs 30 crore executed from order book; Rs 221 crore executed up to Q4; cumulative Rs 251 crore",
+    "change": ""
+   },
+   {
+    "metric": "Order book",
+    "value": "Rs 660 crore (Rs 600 crore at Q4); about Rs 410 crore unexecuted",
+    "change": "+Rs 60 crore QoQ; +Rs 150-180 crore YoY (rough estimate)"
+   },
+   {
+    "metric": "ARR",
+    "value": "About Rs 140 crore (Rs 118 crore at last call)",
+    "change": "+Rs 20 crore QoQ"
+   },
+   {
+    "metric": "Export revenue share",
+    "value": "About 27.2% of revenue",
+    "change": ""
+   },
+   {
+    "metric": "Top five clients",
+    "value": "About 60% of revenue",
+    "change": ""
+   },
+   {
+    "metric": "Services share",
+    "value": "About 30% from maintenance, implementation and consulting",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "CX and analytics / CX as a service",
+    "commentary": "Described as the growth engine; managed services across contact centre, workforce management, interaction analytics; BPO and IT/ITES above 70% of revenue. Management expects this vertical to remain the largest contributor."
+   },
+   {
+    "name": "AI infrastructure (new vertical)",
+    "commentary": "Built over the last two months with HPE partnership (about two months old); not yet contributing revenue. Management expects 25-30% of FY27 contribution and margins of about 10-12% initially. Expected to start clicking within about a quarter."
+   },
+   {
+    "name": "Unified communications",
+    "commentary": "Steady vertical; new logos include Kotak Life Insurance and Kotak Mutual Fund. Margin also expected at 10-12% in early years."
+   },
+   {
+    "name": "Cloud ERP",
+    "commentary": "Growing at close to 20% CAGR per management; new sales team hired and a good pipeline with closures expected this quarter and later."
+   },
+   {
+    "name": "IP / product (ExatoIQ, own platform)",
+    "commentary": "Revenue expected from this month or next; margins guided at 40-50%; two deals said to be near signing with new customers."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue growth expected at least 60-70%, or more; profitability growth expected above 70-80% (organic; inorganic on top).",
+   "ARR targeted at Rs 180-200 crore by end FY27, potentially more.",
+   "AI infrastructure expected to contribute 25-30% of FY27 business at 10-12% initial margins.",
+   "IP/product revenue to start this month or next, earlier than prior Q3 FY27 commitment; margins 40-50%.",
+   "Customer target of 300-500 additions in 2-3 years (organic and inorganic); longer-term aim of 400-500 customers.",
+   "Management aims for 500 crore revenue ambition and mentions 1,000 crore in three years as a wish list, not guidance.",
+   "Revenue mix for AI infrastructure deals: about 60-70% one-time and 30-40% recurring."
+  ],
+  "capex_capacity": [
+   "AI-ready infrastructure practice built over two months; includes private AI, LLM in a Box, networking, observability and secure infrastructure; part of go-to-market for next three to four quarters.",
+   "24x7 delivery team already built; management plans to add manpower in the US as Chief Revenue Officer is based there.",
+   "Acquisition under evaluation to add geographic presence in APAC, UK, Middle East or US; a big-four firm is conducting due diligence; funding may be cash, equity or a mix.",
+   "Platform readiness had been expected by March 2027; now pulled forward given BPO agreements."
+  ],
+  "demand_pricing": [
+   "Order book Rs 660 crore; new bookings of about Rs 60 crore mainly from international customers, including iQor (Rs 60-65 crore) as a new logo; expansion at TaskUs and Diligenta.",
+   "Two UK customers, one of which (Diligenta) contributed significantly; US, Singapore and UK named as key international contributors.",
+   "Client retention cited at 97-98%; over 150 clients; 20-plus contracts of three to five years with large customers.",
+   "Management cites TAM of USD 500-600 million for Exato currently, growing 18-20% CAGR; CX as a service plus AI as a service combined growth of 35-40% cited.",
+   "Competition: TTEC Digital in US; Big Four and large SIs (Wipro, TCS, Accenture, Infosys) seen as not competing directly in BPO-focused CX.",
+   "Partnerships: NiCE remains largest revenue contributor; upgraded to Platinum with Mitel (APAC); Acumatica upgraded to Gold; HPE and AWS added; Fortinet and amplifAI partnerships."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What are FY27 growth expectations?",
+    "answer": "Management expects revenue growth of at least 60-70% and profit growth of 70-80% or more, citing international deals and AI infrastructure."
+   },
+   {
+    "question": "Customer count and inorganic plans?",
+    "answer": "Management says 300-500 customers to be added in 2-3 years, organic and inorganic; four or five large customers added in Q1; five verticals planned from four; acquisition could add one or two verticals, though later said acquisition is limited to existing verticals."
+   },
+   {
+    "question": "Contribution and margins of IP revenue?",
+    "answer": "IP revenue expected to start this month or next, with two deals close to signing; margins guided at 40-50%, from new clients."
+   },
+   {
+    "question": "Is HPE partnership recurring or one-time?",
+    "answer": "Management expects 60-70% one-time and 30-40% recurring revenue from these contracts; commercial terms say Exato owns the customer and the product comes from HPE."
+   },
+   {
+    "question": "Top-five client concentration and retention?",
+    "answer": "Top five clients about 60% of revenue; management says contracts are non-cancellable and renewable, and client retention is 97-98%."
+   },
+   {
+    "question": "Will the ARR and order book be on a cumulative basis, and what is executable balance?",
+    "answer": "About Rs 251 crore executed cumulatively, leaving about Rs 410 crore unexecuted; order book up about Rs 150-180 crore since last year."
+   },
+   {
+    "question": "Will the company tilt to services-led revenue and what headcount is planned?",
+    "answer": "Management said mix will be heavily services but licences remain; headcount to be added cautiously with AI tools to be deployed internally; acquisition could add headcount."
+   }
+  ],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

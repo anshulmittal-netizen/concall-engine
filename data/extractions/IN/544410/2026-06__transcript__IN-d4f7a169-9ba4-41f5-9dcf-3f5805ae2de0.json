@@ -1,0 +1,319 @@
+{
+ "doc_id": "IN-d4f7a169-9ba4-41f5-9dcf-3f5805ae2de0",
+ "market": "IN",
+ "company_id": "544410",
+ "name": "Prostarm Info Systems Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-18",
+ "period": "2026-06",
+ "title": "Prostarm Info Systems Ltd - 544410 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q1 FY27 revenue INR 76 cr (+38% YoY) with EBITDA margin 8.55%, but operating cash flow still negative (INR 16 cr), receivables INR 231 cr, and the Jhajjar BESS plant is delayed to H1 with FY27 utilisation capped at 20-25%.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "FY27, it would not be more than 20%-25%."
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "Management cited margin erosion and bleeding balance sheets among utility-scale BESS peers (H.G. Infra, Pace Digitek, Vikram Solar).",
+   "quote": "So there has been a margin erosion which has happened."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables INR 254 cr → INR 231 cr",
+    "quote": "as of June, the outstanding has come down to INR 231 crores",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Jhajjar BESS utilisation FY27 ≤20-25%",
+    "quote": "FY27, it would not be more than 20%-25%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Utility BESS bids below cost",
+    "quote": "They have knowingly, unknowingly, out of aggression, they have quoted below cost price",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "PAT margin FY27 cut to 8.5-9%",
+    "quote": "It would be something around 8.5% to 9%.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Jhajjar 1.2 GWh start pushed to end-H1",
+    "quote": "we are yet to start. So we would be commencing operation by end of this financial",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "minimum 25%",
+    "change": "held",
+    "quote": "minimum 25% growth is what we are targeting."
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "12-13% by year end",
+    "change": "held",
+    "quote": "What was 12% to 13% margin would be maintained over the over by the end of this financial year."
+   },
+   {
+    "metric": "PAT margin FY27",
+    "value": "8.5-9%",
+    "change": "cut",
+    "quote": "It would be something around 8.5% to 9%."
+   },
+   {
+    "metric": "Working capital days March 2027",
+    "value": "120-150 days",
+    "change": "new",
+    "quote": "So around 120 to 150 days as what I had mentioned earlier"
+   },
+   {
+    "metric": "Operating cash flow FY27",
+    "value": "positive by year end",
+    "change": "new",
+    "quote": "we are positive and very hopeful we would convert positive in this by the end of this financial year."
+   },
+   {
+    "metric": "Jhajjar BESS utilisation FY28",
+    "value": "40-50% (around INR 500 cr revenue)",
+    "change": "new",
+    "quote": "FY28, it should move to around 40% to 50%."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q4 deferred orders (Adani, SAIL, South Eastern Railway) billed in Q1",
+    "outcome": "missed",
+    "quote": "INR 36 crores has been executed and remaining majority would be billed in quarter two."
+   },
+   {
+    "metric": "Margin 12-13%",
+    "outcome": "not_discussed",
+    "quote": "Archit ji that is still maintained."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Adani",
+    "relation": "customer"
+   },
+   {
+    "name": "SAIL",
+    "relation": "customer"
+   },
+   {
+    "name": "South Eastern Railway",
+    "relation": "customer"
+   },
+   {
+    "name": "Solarium Green Energy",
+    "relation": "customer"
+   },
+   {
+    "name": "KPTCL",
+    "relation": "customer"
+   },
+   {
+    "name": "H.G. Infra",
+    "relation": "peer"
+   },
+   {
+    "name": "Pace Digitek",
+    "relation": "peer"
+   },
+   {
+    "name": "Vikram Solar",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow negative; working capital days 185 in Q4 FY26",
+    "quote": "the cash flow from operating activity which was negative at INR 49 crores, it improved to around INR 16 crores negative"
+   },
+   {
+    "label": "Receivables concentration; INR 231 cr outstanding, mostly one CCTNS project",
+    "quote": "the major amount is related to CCTNS project"
+   },
+   {
+    "label": "Equity dilution via INR 43 cr warrants; funding need for developer SPVs",
+    "quote": "Now having probably raised INR 43 crores preferential issue"
+   },
+   {
+    "label": "Q4 deferred revenue slipped; Q1 revenue sequentially down 27%",
+    "quote": "it is 27% lower sequentially Q4 revenue of INR104 crores"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 2,
+   "growth": 3,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Capacity utilisation at Jhajjar",
+    "quote": "somewhat I am not very confident on conveying the exact capacity utilization."
+   },
+   {
+    "topic": "Pending BESS developments",
+    "quote": "There are some more developments which are happening which I cannot discuss with you right now."
+   },
+   {
+    "topic": "Name of solar EPC customer",
+    "quote": "I am not naming the name of company, considering market not conducive."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Prostarm Q1 FY27 revenue rose 38% YoY to INR 76 crore, PAT up 156% to INR 5 crore, with a 25% minimum FY27 growth target reiterated.",
+  "overview": "Q1 FY27 revenue from operations was INR 76 crore, up 38% YoY but down 27% QoQ from INR 104 crore in Q4, which management attributed to seasonality and deferred execution. EBITDA was INR 7 crore at an 8.55% margin (up 126 bps YoY) and PAT was INR 5 crore at a 6.05% margin. Management said the 12-13% margin guidance still holds on a full-year basis, while also guiding FY27 PAT margin to 8.5-9%. Order book stood at about INR 1,085 crore plus INR 5 crore L1, and working capital days fell from 185 to 168.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations",
+    "value": "INR 76 crore",
+    "change": "+38% YoY; -27% QoQ vs INR 104 crore in Q4 FY26"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR 7 crore (8.55% margin)",
+    "change": "+126 bps YoY"
+   },
+   {
+    "metric": "Profit after tax",
+    "value": "INR 5 crore (6.05% PAT margin)",
+    "change": "+156% YoY"
+   },
+   {
+    "metric": "Order book (as on 30 Jun 2026)",
+    "value": "approx INR 1,085 crore plus INR 5 crore L1 (about INR 1,090 crore total)",
+    "change": ""
+   },
+   {
+    "metric": "Working capital days",
+    "value": "168 days",
+    "change": "from 185 days in Q4 FY26"
+   },
+   {
+    "metric": "Cash flow from operations",
+    "value": "INR -16 crore",
+    "change": "from INR -49 crore in Q4 FY26"
+   },
+   {
+    "metric": "Trade receivables",
+    "value": "INR 231 crore as of June 2026",
+    "change": "from about INR 254 crore as of March 2026"
+   }
+  ],
+  "segments": [
+   {
+    "name": "BESS (battery energy storage) developer projects",
+    "commentary": "Order book includes about INR 855-857 crore of developer business (Bihar and Karnataka/KPTCL). Management said no revenue recognition from these in FY27, only EPC billing on the standalone books; Karnataka dispute was resolved in KPTCL's favour and the company is targeting a sale of that project."
+   },
+   {
+    "name": "Solar EPC and EPC orders",
+    "commentary": "Solar EPC order of about INR 165 crore from Solarium Green Energy, which management expects to execute fully in FY27. Adani EPC billing was largely completed in Q1 (INR 36 crore of deferred work executed); a further solar EPC order of about INR 12 crore (8.36 MWh) was won."
+   },
+   {
+    "name": "Utility vs C&I BESS",
+    "commentary": "Company has stopped bidding for utility-scale BESS for about 10 months and is shifting to C&I BESS (200-500 kWh installations), where management says margins are better. Adani project gave about 26% gross margin in FY26."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue growth target: minimum 25%.",
+   "Margin guidance of 12-13% EBITDA is maintained on a full-year basis, with H2 expected to be stronger; Q1 margin is affected by low turnover and high fixed-cost ratio.",
+   "FY27 PAT margin expected at about 8.5-9%, not 10%, due to higher costs from new plants, import costs and hiring.",
+   "Jhajjar 1.2 GWh BESS plant and Gujarat UPS plant both expected operational in Q2 FY27; SAP and Salesforce expected operational by end of H1 FY27.",
+   "Working capital days targeted at about 120-150 by March 2027; management aims for positive operating cash flow by year-end FY27.",
+   "Jhajjar BESS utilisation: not more than 20-25% in FY27, 40-50% in FY28 (around INR 500 crore revenue targeted in FY28); steady-state EBITDA margin 14-15%."
+  ],
+  "capex_capacity": [
+   "Jhajjar, Haryana: 1.2 GWh BESS manufacturing facility in final stage of commissioning; earlier delayed, management cited cost and logistics movements and a strategy shift to C&I. Commercial operation now expected by end of H1 FY27.",
+   "Gujarat: new UPS manufacturing facility progressing as planned, expected to start commercial operations in Q2 FY27.",
+   "Existing manufacturing in Pune and Navi Mumbai.",
+   "Bihar BESS (developer/rental model): yearly cash flow of about INR 16 crore over 12 years plus capital subsidy of INR 32.40 crore; SBI facility tied up in SPV, LC-backed by Bihar DISCOM, no corporate guarantee.",
+   "Karnataka BESS (KPTCL): annual cash flow of about INR 45.72 crore over 12 years plus capital subsidy of about INR 81 crore; management prioritising a sale post-COD."
+  ],
+  "demand_pricing": [
+   "Order book approx INR 1,090 crore including L1. Excluding developer orders (about INR 855 crore), in-hand orders are about INR 236 crore, plus dealer business of about INR 10 crore per month, giving about INR 306-307 crore additional order in hand.",
+   "Bids under evaluation of about INR 2,000+ crore, including two large orders of about INR 1,800 crore.",
+   "Utility BESS margins under pressure: management said bidders quoted below cost assuming Chinese supply negotiations; cited China export restrictions and a 2% battery tax from 1 September.",
+   "Q1 FY27 order wins included an INR 11 crore BESS project from a corporate customer and a INR 165 crore solar EPC order.",
+   "Trade receivables: about INR 46 crore realised from the CCTNS (Pune) project in Q1, with a large further amount expected by end-August; management said most of the INR 231 crore is government-funded with no realisation risk."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How much of the deferred Q4 orders (Adani INR 43 crore, SAIL INR 7 crore, South Eastern Railway INR 13 crore) was executed in Q1?",
+    "answer": "INR 36 crore has been executed. Adani is almost fully billed; SAIL and South Eastern Railway are to be billed mainly in Q2, with some South Eastern Railway work spilling into Q3 pending site clearance."
+   },
+   {
+    "question": "Why did Q1 revenue fall 27% QoQ, and is the margin guidance still valid?",
+    "answer": "Management said Q1 is seasonally low and that the Adani billing was the major Q4 item. It said the 12-13% margin is a full-year target, with H2 stronger, and that Q1 fixed-cost absorption is weak at INR 76 crore turnover."
+   },
+   {
+    "question": "What are the working capital days targets and cash flow expectations?",
+    "answer": "Working capital days fell to 168 from 185; target about 120-150 by March 2027. Operating cash flow improved to about INR -16 crore from INR -49 crore, with a goal of turning positive by FY27 end."
+   },
+   {
+    "question": "What revenue and margin should be expected from the Jhajjar plant, and what utilisation?",
+    "answer": "FY27 utilisation not above 20-25%; FY28 40-50% with around INR 500 crore revenue targeted. Steady-state EBITDA margin 14-15%, with C&I focus preferred over utility BESS."
+   },
+   {
+    "question": "Will there be further equity dilution or significant borrowing over the next 1.5-2 years?",
+    "answer": "Management said no equity dilution is planned for at least the next year; the Bihar debt sits in an SPV, and the INR 43 crore warrant issue is for working capital. Any future dilution would be tied to a major expansion."
+   },
+   {
+    "question": "What is the receivables position and realisation timeline?",
+    "answer": "Receivables fell from INR 254 crore (March) to INR 231 crore (June) and dropped further by mid-August. Management expects about half to be collected by end-Q2, with most of the Solarium EPC realised in FY27."
+   },
+   {
+    "question": "What is the outlook on order inflows?",
+    "answer": "Management cited INR 1,090 crore order book and bids of INR 2,000+ crore under evaluation, and expects the non-developer order book to grow over the next year as qualifications and bid participation increase."
+   }
+  ],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

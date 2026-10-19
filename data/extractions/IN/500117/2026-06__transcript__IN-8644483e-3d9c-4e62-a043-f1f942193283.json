@@ -1,0 +1,291 @@
+{
+ "doc_id": "IN-8644483e-3d9c-4e62-a043-f1f942193283",
+ "market": "IN",
+ "company_id": "500117",
+ "name": "DCW Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-20",
+ "period": "2026-06",
+ "title": "DCW Ltd - 500117 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q1 FY27 PVC disruption drove Basic Chemicals EBITDA to -INR14 crore, while Specialty EBITDA rose ~20% YoY; management now frames steady-state EBITDA at ~INR300 crore versus prior INR400 crore target.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "this resulted in a 20% drop in PVC volumes during the quarter"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "a INR250 crores investment program over the next 2 to 3 years"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "PVC volumes down 20% in Q1",
+    "quote": "this resulted in a 20% drop in PVC volumes during the quarter",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Basic Chem EBITDA negative INR14 crore",
+    "quote": "The Basic Chemicals segment reported a negative EBITDA of INR14 crores",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "SIOP capacity 30kt to 45kt by Q4 FY28",
+    "quote": "expansion of our Synthetic Iron Oxide Pigment capacity from approximately 30,000 tons to 45,000 tons per annum",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Steady-state EBITDA cut to ~INR300 crore",
+    "quote": "we think that our numbers, you should assess us at a INR300 crores EBITDA and a steady state",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Import duty suspension hit PVC realisations",
+    "quote": "the temporary suspension of import duties, which increased the flow of lower-priced imports into India",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Basic Chemicals breakeven",
+    "value": "breakeven in Q2 if normalcy holds",
+    "change": "new",
+    "quote": "We more than believe if the situation stays as normalcy as it is today."
+   },
+   {
+    "metric": "Steady-state EBITDA",
+    "value": "~INR300 crore",
+    "change": "cut",
+    "quote": "we think our steady-state profit roughly would be somewhere around INR300 crores"
+   },
+   {
+    "metric": "FY27 performance",
+    "value": "close better than FY26",
+    "change": "held",
+    "quote": "we continue to expect FY27 to close at a better level than the previous fiscal"
+   },
+   {
+    "metric": "Legacy debt",
+    "value": "fully repaid in FY27; effectively net debt free by FY27 end",
+    "change": "held",
+    "quote": "We expect our legacy long-term debt to fully be repaid during this year."
+   },
+   {
+    "metric": "SIOP Phase 1 commissioning",
+    "value": "7,000 t by Q4 FY28",
+    "change": "new",
+    "quote": "Phase 1 will add 7,000 tons, which is targeted for completion by quarter 4 FY28."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "INR400 crore EBITDA target",
+    "outcome": "dropped",
+    "quote": "No, I think INR400 crores is an EBITDA target, which we spoke a couple of years back"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Cochin Minerals and Rutile",
+    "relation": "peer"
+   },
+   {
+    "name": "Qatar",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Specialty chem destocking end",
+   "Anti-dumping protection",
+   "Capex cycle revival (private)",
+   "Nearshoring / reshoring (US)",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Steady-state EBITDA cut from INR400cr to INR300cr",
+    "quote": "we think our numbers, you should assess us at a INR300 crores EBITDA and a steady state"
+   },
+   {
+    "label": "Repeated 'onetime' framing of PVC losses",
+    "quote": "Both these factors were largely onetime in nature and weighed disproportionately on the quarter's reported EBITDA."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 2,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Basic Chemicals PVC loss quantification",
+    "quote": "we can only give you a directional number because the fixed cost allocation for the basic chemicals are common."
+   },
+   {
+    "topic": "Buyback",
+    "quote": "we will announce it in an opportune time if we at all decide to do so."
+   },
+   {
+    "topic": "SIOP margin upside",
+    "quote": "We have really not mapped what will be the better absorption of the fixed costs."
+   }
+  ],
+  "hedge_index": 0.5
+ },
+ "summary": {
+  "headline": "DCW Q1 FY27 EBITDA fell 28% YoY to INR41.4 crore as PVC losses (West Asia VCM shortage, duty suspension) hit Basic Chemicals to a negative INR14 crore EBITDA.",
+  "overview": "Revenue rose 14% YoY to INR542 crore, led by Specialty Chemicals (INR177 crore, 33% of revenue, up 38% YoY), but fell 11% QoQ on a one-time Q4 Synthetic Rutile inventory liquidation base effect. Consolidated EBITDA including other income was INR41.4 crore, down 28% YoY and 41% QoQ, with management attributing the drop mainly to PVC disruption. Basic Chemicals EBITDA was negative INR14 crore, while Specialty EBITDA grew about 20% YoY. Management guided that PVC conditions have improved since Q1 and that FY27 should close better than FY26, while also announcing a INR250 crore capex programme and an intent to be effectively net debt free by end-FY27.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations",
+    "value": "INR542 crore",
+    "change": "+14% YoY; -11% QoQ"
+   },
+   {
+    "metric": "Specialty Chemicals revenue",
+    "value": "INR177 crore (33% of revenue)",
+    "change": "+38% YoY (as stated in opening remarks); +6% QoQ"
+   },
+   {
+    "metric": "Basic Chemicals revenue",
+    "value": "INR361 crore",
+    "change": "-18% QoQ"
+   },
+   {
+    "metric": "EBITDA incl. other income",
+    "value": "INR41.4 crore",
+    "change": "-28% YoY; -41% QoQ"
+   },
+   {
+    "metric": "Specialty Chemicals EBITDA",
+    "value": "Not stated in INR; margin 29.1% (analyst-computed from Q1 FY26 33.6%)",
+    "change": "EBITDA +19-20% YoY; profit +35% QoQ"
+   },
+   {
+    "metric": "Basic Chemicals EBITDA",
+    "value": "Negative INR14 crore (-5.2% margin per analyst)",
+    "change": "vs +2% margin in Q1 FY26"
+   },
+   {
+    "metric": "Finance cost",
+    "value": "INR14.8 crore",
+    "change": "-2% YoY; -4% QoQ"
+   },
+   {
+    "metric": "Depreciation",
+    "value": "INR26 crore",
+    "change": "broadly stable"
+   },
+   {
+    "metric": "Deferred tax liability reduction",
+    "value": "INR34 crore one-time",
+    "change": "from migration to new tax regime (25.17% vs 34.9%)"
+   },
+   {
+    "metric": "PVC volumes",
+    "value": "Down 20% in quarter",
+    "change": ""
+   },
+   {
+    "metric": "CPVC volumes",
+    "value": "Up 59%",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "Specialty Chemicals (CPVC, SIOP)",
+    "commentary": "Revenue INR177 crore, up 38% YoY with CPVC volumes up 59% and SIOP volumes up about 3%. EBITDA grew about 20% YoY and 35% QoQ; margin about 29% vs 33.6% a year ago, which management linked to PVC-CPVC spread volatility."
+   },
+   {
+    "name": "Basic Chemicals (PVC, caustic soda, soda ash, Synthetic Rutile)",
+    "commentary": "Revenue INR361 crore, down 18% QoQ on Q4 Synthetic Rutile inventory liquidation. EBITDA negative INR14 crore; management estimated a sequential PVC contribution swing of INR50-55 crore, with caustic soda and Synthetic Rutile margins improving."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 expected to close at a better level than FY26, based on current visibility (management).",
+   "Basic Chemicals expected to do better than Q1; management says breakeven in Q2 is more than believed if normalcy holds.",
+   "Steady-state EBITDA assessed at about INR300 crore, replacing the earlier INR400 crore target.",
+   "Legacy long-term debt expected to be fully repaid in FY27 (repayments about INR135 crore); effectively net debt free by end-FY27 before new borrowings.",
+   "Targeting minimum incremental ROCE of 20% on new investments.",
+   "Expects to borrow slightly more than repayments for the capex, with a 1-1.5% negative carry on cash-to-borrowing."
+  ],
+  "capex_capacity": [
+   "INR250 crore programme over 2-3 years; first part is SIOP capacity expansion from about 30,000 tpa to 45,000 tpa, with Phase 1 adding 7,000 tpa by Q4 FY28 and infrastructure sized for a further 8,000 tpa.",
+   "Captive power infrastructure at Sahupuram facility, targeted for Q4 FY28, to lower power costs across Specialty and Basic Chemicals.",
+   "SIOP expansion is brownfield; expected margin around 35-36% and product price north of INR80,000/ton (management).",
+   "Current PVC capacity about 1 lakh tpa; CPVC about 50,000 tpa; SIOP capacity 28 kt fully tied up this year after debottlenecking.",
+   "Synthetic Rutile capacity about 48,000-50,000 tpa; caustic soda realistic capacity about 90,000 tpa."
+  ],
+  "demand_pricing": [
+   "PVC: West Asia conflict cut VCM availability from traditional Asian suppliers, forcing spot purchases from China at higher prices; import duty suspension let in lower-priced imports. Duties now reinstated and a minimum import price (MIP, about USD/INR80 per ton equivalent) introduced for suspension-grade PVC.",
+   "Management said current import parity is about USD820-860/ton, well above MIP, and expects prices to stay at these levels at least this quarter.",
+   "PVC/VCM spread was estimated at north of INR25,000/ton; PVC-to-CPVC spread lags because of existing customer orders.",
+   "Synthetic Rutile: prices recovered vs last year's inventory-correction slump; customer mix improved and high-priced deliveries are back-ended.",
+   "SIOP: around 60% of output exported, mainly to the US; management says no tariff impact on exports. Volumes are seasonally higher in Q3 and Q4. Ammonia cost increases were passed through to customers.",
+   "Caustic soda margins expanded QoQ and YoY; chlorine is now fully consumed captively for CPVC, improving caustic ECU realisation."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How much of the QoQ revenue decline came from captive PVC use, lower PVC output and the Synthetic Rutile base effect?",
+    "answer": "Management said the Q4 Synthetic Rutile liquidation base effect was the main driver, plus a few days of PVC plant shutdown; it did not quantify the split, but said the Synthetic Rutile effect alone would have exceeded the top-line decline."
+   },
+   {
+    "question": "Why did Specialty margins compress and is about 29% the new normal?",
+    "answer": "Margins depend on the dynamic PVC-CPVC spread, which is volatile. SIOP margins are robust, and a steady-state margin is hard to pin down because roughly 40-50% of PVC goes into CPVC."
+   },
+   {
+    "question": "How much of Basic Chemicals' loss came from PVC?",
+    "answer": "Management gave only a directional estimate: a sequential contribution swing of INR50-55 crore in PVC. It confirmed PVC was the only loss-making Basic Chemicals product, with caustic soda, soda ash and Synthetic Rutile profitable."
+   },
+   {
+    "question": "Does the INR400 crore EBITDA target still stand?",
+    "answer": "No. It was set when CPVC margins were about 40%. Management now sees steady-state EBITDA of about INR300 crore, subject to the spread holding."
+   },
+   {
+    "question": "Would a share buyback be considered?",
+    "answer": "Management said it is still considering a buyback and will announce it at an opportune time if it decides to proceed."
+   },
+   {
+    "question": "How is VCM sourced, and can it be derisked or backward integrated?",
+    "answer": "Supply moved from a single Qatar producer to a global distributor sourcing across Asia. Management ruled out backward integration at current scale; storage expansion would add only about 10-15 days of inventory."
+   }
+  ],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

@@ -1,0 +1,322 @@
+{
+ "doc_id": "IN-4d71f721-2e60-4955-a0ba-587be52bd2d9",
+ "market": "IN",
+ "company_id": "505196",
+ "name": "TIL Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-19",
+ "period": "2026-06",
+ "title": "TIL Ltd - 505196 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Q1 FY27 consolidated revenue INR117.1 cr (+86%) with partial Tulip consolidation; standalone EBITDA margin 4.3% and management sees no margin fix for six to eight quarters, with no capex beyond bridging.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Backlog conversion",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 30,
+   "quote": "Kharagpur plant is loaded only 30%, 35%. It's not loaded beyond that."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we are not looking at any significant capex at this point of time, except for the bridging capex of INR5 crores to 10crores here and there."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Kharagpur utilisation 30-35%",
+    "quote": "Kharagpur plant is loaded only 30%, 35%.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Nine ReachStackers delivered in Q1",
+    "quote": "A key highlight of the quarter was also the delivery of nine ReachStackers to customers.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Debtor days stressed after March billing",
+    "quote": "working capital cycle at this stage in TIL looks stressed. And I'll be very honest.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Margin fix not before 6-8 quarters",
+    "quote": "I don't see that happening in next six to ei ght quarters, Sejal, to be very honest.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Tripling turnover in 5-7 years",
+    "quote": "we should comfortably look at tripling our turnover, if not more.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Turnover growth",
+    "value": "Significant jump this year; tripling in 5-7 years",
+    "change": "new",
+    "horizon": "FY27 and 5-7 years",
+    "quote": "we should comfortably look at tripling our turnover, if not more."
+   },
+   {
+    "metric": "Long-term EBITDA margin (standalone TIL)",
+    "value": "15%-16%",
+    "change": "new",
+    "horizon": "medium to long term",
+    "quote": "a 15%, 16% EBITDA margin over a longer term in TIL."
+   },
+   {
+    "metric": "Tulip EBITDA margin",
+    "value": "14%-15%",
+    "change": "new",
+    "horizon": "medium to long term",
+    "quote": "Tulip should give an EBITDA margin of 14% to 15% to my mind"
+   },
+   {
+    "metric": "Debtor days",
+    "value": "60-75 days maximum",
+    "change": "new",
+    "horizon": "long term",
+    "quote": "we should look at 60 to 70 days, 75 days maximum."
+   },
+   {
+    "metric": "Aftermarket share of revenue",
+    "value": "40%-45%",
+    "change": "new",
+    "horizon": "long term",
+    "quote": "our vision would be to have, let's say, a 45% -- 40% to 45% definitely of aftermarket support"
+   },
+   {
+    "metric": "Tulip equity stake",
+    "value": "Up to 74%; INR50 cr equity infusion approved",
+    "change": "new",
+    "horizon": "next few years",
+    "quote": "that remains sort of a commitment that we will hopefully achieve in next few years' time."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Tulip Compression Private Limited",
+    "relation": "partner"
+   },
+   {
+    "name": "CONCOR",
+    "relation": "customer"
+   },
+   {
+    "name": "Gainwell Engineering",
+    "relation": "peer"
+   },
+   {
+    "name": "Gainwell Commosales",
+    "relation": "peer"
+   },
+   {
+    "name": "Action Construction",
+    "relation": "competitor"
+   },
+   {
+    "name": "Hyster",
+    "relation": "partner"
+   },
+   {
+    "name": "Caterpillar",
+    "relation": "supplier"
+   },
+   {
+    "name": "Indian Air Force",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Consolidation / competitor exits",
+   "Import substitution",
+   "Electronics manufacturing (EMS/PLI)",
+   "Renewables & storage",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital stressed; debtors high",
+    "quote": "working capital cycle at this stage in TIL looks stressed. And I'll be very honest."
+   },
+   {
+    "label": "Margin volatility; no visibility for 6-8 quarters",
+    "quote": "I don't see that happening in next six to ei ght quarters, Sejal, to be very honest."
+   },
+   {
+    "label": "Management bandwidth split with Gainwell",
+    "quote": "at this stage, not even 50%, but I need to devote more time here."
+   },
+   {
+    "label": "Large debt vs weak profitability",
+    "quote": "we are also carrying a large debt on our balance sheet and our profitability is not as high as of now to sustain all to service this sort of debt."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 4,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Standalone margin path / quarterly EBITDA",
+    "quote": "for me to say any specific margin expectation this year would be difficult."
+   },
+   {
+    "topic": "Product-wise defense vs civilian break-up",
+    "quote": "for us to say what EBITDA margins we'll make on specific products is challenging."
+   },
+   {
+    "topic": "Gainwell merger",
+    "quote": "I'll leave it at that because we are all working through different challenges in different companies."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "TIL Q1 FY27 consolidated revenue rose 86% YoY to INR117.1 crore, with EBITDA margin at 6.2% (vs 1.5%) and PAT at negative INR5.5 crore.",
+  "overview": "Consolidated revenue of INR117.1 crore included Tulip Compression (TCPL) only from 8 May to 30 June 2026, so the quarter is a partial-period read. Standalone revenue grew 25% YoY to INR78.6 crore, with EBITDA up to INR3.4 crore (4.3% margin vs 1.5%), but standalone PAT was negative INR7.2 crore. Management flagged that blended margins will stay volatile for the next six to eight quarters because of product mix and supply-chain localisation, and gave no near-term margin guidance. The company delivered nine ReachStackers and reported a current order book of INR211 crore against a pipeline of about INR373 crore.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue from operations",
+    "value": "INR117.1 crore",
+    "change": "+86% YoY"
+   },
+   {
+    "metric": "Consolidated EBITDA",
+    "value": "INR7.3 crore (margin 6.2%)",
+    "change": "vs INR1.1 crore (1.5%) in Q1 FY26; 9.6% in Q4 FY26 per analyst"
+   },
+   {
+    "metric": "Consolidated PAT",
+    "value": "negative INR5.5 crore",
+    "change": ""
+   },
+   {
+    "metric": "Standalone revenue from operations",
+    "value": "INR78.6 crore",
+    "change": "+25% YoY"
+   },
+   {
+    "metric": "Standalone EBITDA",
+    "value": "INR3.4 crore (margin 4.3%)",
+    "change": "+223% YoY vs INR1.1 crore; margin up from 1.5%"
+   },
+   {
+    "metric": "Standalone PAT",
+    "value": "negative INR7.2 crore",
+    "change": ""
+   },
+   {
+    "metric": "FY26 aftermarket revenue",
+    "value": "about INR56 crore",
+    "change": "non-existent 3-4 years ago per management"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Standalone TIL (cranes, material handling, defence)",
+    "commentary": "Revenue INR78.6 crore (+25% YoY), EBITDA margin 4.3%. Management said FY26 turnover was about 50% defence. Nine ReachStackers delivered in the quarter."
+   },
+   {
+    "name": "Tulip Compression (TCPL)",
+    "commentary": "Consolidated from 8 May 2026 (part period). Order book INR328 crore, pipeline INR117 crore. FY26 revenue about INR278 crore per management. Management's medium-to-long-term EBITDA margin view is 14-15%."
+   },
+   {
+    "name": "Aftermarket / services",
+    "commentary": "FY26 aftermarket about INR56 crore. Management's long-term aim is 40-45% of revenue; parts margins 25-35%, service margins slightly better."
+   }
+  ],
+  "guidance_outlook": [
+   "Management expects a significant jump in FY27 turnover, but gave no numeric revenue guidance. Analyst's INR200 crore+ scenario was not confirmed.",
+   "Management expects no EBITDA margin harmonisation for the next six to eight quarters; medium-to-long-term TIL standalone EBITDA target 15-16%, timing 3-7 years.",
+   "Five-to-seven-year ambition to roughly triple turnover; no significant capex needed up to about INR700-750 crore turnover, beyond bridging capex of INR5-10 crore.",
+   "Debtor days target 60-75 days maximum; long-term aftermarket share target 40-45% of revenue.",
+   "Board approved up to INR50 crore equity infusion into Tulip; commitment to raise stake to 74% over a few years.",
+   "CarryKing 515 launch hoped for Q4 FY27, worst case Q1 FY28."
+  ],
+  "capex_capacity": [
+   "Kharagpur plant loaded only 30-35% with about 150 acres free; Kamarhati plant is old and fully loaded.",
+   "Bridging capex of INR5-10 crore per instance, mainly for the old Kamarhati plant.",
+   "Target to localise 75-80% in every product and above 90% overall, with Cummins engines for ReachStacker a key dependency.",
+   "Pick and carry crane (CarryKing 515) launch targeted Q4 FY27 with 520 configuration to follow."
+  ],
+  "demand_pricing": [
+   "ReachStacker market share 38-40% after a comeback; CONCOR order described as one-time, first such order since 2014-15.",
+   "Rough terrain crane market share about 50%+; truck crane share now below 5% from over 95% a decade ago, lost to Chinese competition.",
+   "Order delivery timelines range from 60-90 days (retail ReachStacker) to 6-9 months (defence), with the bulk of the order book typically exhausted within nine months.",
+   "Chinese competitors have pricing and credit advantages; management said TIL will not compete on extended credit terms.",
+   "Tulip's market share is about one-third in India in a three-player market; clients include city gas distributors such as IGL, MNGL and IGL-type CGD operators."
+  ],
+  "qa_highlights": [
+   {
+    "question": "ReachStacker market share, competitors and whether the Q1 order is CONCOR.",
+    "answer": "Share is 38-40%, and the CONCOR order is one-time. Management expects ReachStacker sales to scale to a sizable number this year via retail and niche buyers."
+   },
+   {
+    "question": "Can the current order book deliver more than INR200 crore this year?",
+    "answer": "Management did not confirm the figure. It said the order book is exhausted over about nine months and new orders will add to it, and expects a significant jump in turnover."
+   },
+   {
+    "question": "Why did margins fall from Q4 to Q1, and what is the margin outlook?",
+    "answer": "Management said product mix and localisation drive volatility; Q4 had Air Force cranes and ReachStackers. No harmonised margin for six to eight quarters."
+   },
+   {
+    "question": "Tulip's business, revenue, margin, and plans to raise stake.",
+    "answer": "Management cited 14-15% medium-to-long-term EBITDA margin, equity infusion up to INR50 crore, and a 74% stake target over a few years. Export to Nigeria has just begun."
+   },
+   {
+    "question": "Working capital and debtor days.",
+    "answer": "Debtors rose at end-FY26 due to a large IAF missile crane order in late March. Target is 60-75 days; TIL is now an MSME, which should speed customer payments."
+   },
+   {
+    "question": "Chinese competition and pricing.",
+    "answer": "Management said TIL competes on reliability, durability, and aftermarket uptime commitments, not on credit terms."
+   }
+  ],
+  "risks_watch": [
+   "Working capital and debt: management called the working capital cycle stressed; debtor days and debt reduction are the key items to track.",
+   "Margin volatility: EBITDA margins depend on product mix, and management gave no margin guidance for six to eight quarters.",
+   "Supply-chain dependence: localisation of European and US inputs (Cummins engines, gearboxes) depends on OEM and defence approvals and could take several quarters.",
+   "Execution: converting the INR211 crore standalone order book and the INR328 crore TCPL order book on time; the FY26 shortfall was attributed to geopolitics and logistics.",
+   "Governance and bandwidth: the Chairman plans to devote 40-50% of his time to TIL from next quarter, versus about 60% needed, and the Gainwell merger question was left open.",
+   "Tulip integration and TCPL full-quarter contribution in Q2 FY27."
+  ],
+  "management_tone": "Confident and expansive on long-term vision (tripling turnover, 15-16% margins, aftermarket targets) but cautious and explicit on near-term margins, which it said will not stabilise for six to eight quarters. It was candid on the stressed working capital cycle and declined to quantify FY27 revenue or Tulip profit projections.",
+  "key_quotes": [
+   "Hence, we are looking at a few more quarters before we are really able to fix the margins.",
+   "You're right, working capital cycle at this stage in TIL looks stressed."
+  ]
+ }
+}
