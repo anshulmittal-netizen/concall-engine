@@ -13,7 +13,10 @@ from collections import Counter, defaultdict
 from common import DATA, SITE, fmt_date, label_from_key, load_yaml, plausible_period, read_json, settings, today, write_json
 from extract import BLOCK_KEYS
 
-FLAG_RX = re.compile(r"receivable|working capital|auditor|pledge|related.party|resign|default|covenant|going concern", re.I)
+# Serious governance / solvency events cap the score (veto). Routine balance-sheet watch-points only dock points.
+VETO_RX = re.compile(r"auditor (resign|qualif)|qualified opinion|going concern|default|covenant breach|pledge invo|fraud|forensic audit|"
+                     r"sebi (order|probe|investigation)|enforcement directorate|\bed (raid|probe)|insolven|nclt", re.I)
+WATCH_RX = re.compile(r"receivable|debtor days|working capital|related.party|pledge|resign|cash burn|liquidity", re.I)
 BSE_ATTACH = "https://www.bseindia.com/xml-data/corpfiling/AttachLive/{f}"
 
 
@@ -244,38 +247,49 @@ def build(market: str, log=print) -> dict:
         hist = []
         for i, p in enumerate(keys):
             r = per[p]
+            if i == 0:
+                r["checks"] = []  # nothing to check against on a company's first call on record
             for ch in r["checks"]:
                 met += ch["outcome"] == "met"
                 miss += ch["outcome"] in ("missed", "dropped")
-            cred = round(100 * (met + 1) / (met + miss + 2))
+            tested = met + miss
+            cred = round(100 * (met + 1) / (tested + 2))
             prev = [per[q] for q in keys[max(0, i - 4):i]]
 
             def comp(k, lvl):
-                pm = st.mean(x["blocks"][k] for x in prev) if prev else lvl * 2
-                return (0.6 * (lvl) + 0.4 * clip((lvl * 2 - pm) / 2) + 1) / 2
+                # first call on record: judge the level alone; afterwards 60% level, 40% change vs the last calls
+                if not prev:
+                    return (lvl + 1) / 2
+                pm = st.mean(x["blocks"][k] for x in prev)
+                return (0.6 * lvl + 0.4 * clip((lvl * 2 - pm) / 2) + 1) / 2
 
             b = r["blocks"]
             c = {k: comp(k, b[k] / 2) for k in BLOCK_KEYS}
             pu = st.mean(x["util"] for x in prev) if prev else r["util"]
-            cu = (0.6 * r["util"] + 0.4 * clip(r["util"] - pu) + 1) / 2
+            cu = (r["util"] + 1) / 2 if not prev else (0.6 * r["util"] + 0.4 * clip(r["util"] - pu) + 1) / 2
             supply_side = (2 * c["supply"] + c["structure"] + c["inventory"]) / 4
             pricing = (c["pricing"] + cu) / 2
-            guid = 0.5 + (c["guidance"] - 0.5) * (0.4 + 0.6 * cred / 100)
+            # guidance counts fully only from managements that have delivered; untested managements get 85%
+            guid = 0.5 + (c["guidance"] - 0.5) * ((0.4 + 0.6 * cred / 100) if tested else 0.85)
             tb = max([bonus.get(tstage.get(t, "neutral"), 0.5) for t in r["themes"]] or [0.5])
             nov = 0.5 * c["novelty"] + 0.5 * tb
             tone = clip(b["tone"] / 2 * 0.7 + (0.5 - r["hedge"]) * 0.6)
             score = 100 * (0.30 * supply_side + 0.20 * pricing + 0.20 * guid + 0.15 * nov + 0.10 * c["demand"] + 0.05 * (tone + 1) / 2)
-            flags = [f["label"] for f in r["red_flags"] if FLAG_RX.search(f["label"] + " " + (f.get("quote") or ""))]
+            txt = lambda f: f["label"] + " " + (f.get("quote") or "")
+            serious = [f["label"] for f in r["red_flags"] if VETO_RX.search(txt(f))]
+            watch = [f["label"] for f in r["red_flags"] if not VETO_RX.search(txt(f)) and WATCH_RX.search(txt(f))]
+            flags = serious + watch
             dropped = [ch["metric"] for ch in r["checks"] if ch["outcome"] == "dropped"]
             heavy_evasion = len(r["evasions"]) >= 3 and b["tone"] <= -1
-            veto = bool(dropped) or (heavy_evasion and b["tone"] <= -2) or bool(flags)
+            veto = bool(dropped) or (heavy_evasion and b["tone"] <= -2) or bool(serious)
+            score -= min(8, 4 * len(watch))  # routine watch-points dock points but do not cap
             if dropped:
                 flags.insert(0, "Veto: guidance dropped without explanation (" + ", ".join(dropped[:2]) + ")")
             if heavy_evasion:
                 flags.append(f"{len(r['evasions'])} analyst questions deflected (" + ", ".join(e["topic"] for e in r["evasions"][:2]) + ")")
             if veto:
                 score = min(score, 40)
-            r.update(score=round(score), cred=cred, veto=veto, flags=flags)
+            r.update(score=round(max(0, min(100, score))), cred=cred, credTested=tested, veto=veto, flags=flags)
             r["delta"] = r["score"] - hist[-1] if hist else 0
             hist.append(r["score"])
         if current not in per and keys and keys[-1] < (shown[0] if shown else ""):
@@ -290,7 +304,7 @@ def build(market: str, log=print) -> dict:
             "macro": level(cid, "macro"), "bigSector": level(cid, "sector"), "industry": level(cid, "industry"),
             "period": label_from_key(last_p, market), "periodKey": last_p, "date": r["date"],
             "call": f"{label_from_key(last_p, market)} " + " + ".join(sorted({d['doc_type'] for d in r['docs']})) + f" · {fmt_date(dt.date.fromisoformat(r['date']))}",
-            "score": r["score"], "delta": delta, "cred": r["cred"], "veto": r["veto"],
+            "score": r["score"], "delta": delta, "cred": r["cred"], "credTested": r.get("credTested", 0), "veto": r["veto"],
             "archetype": r["archetype"], "models": r["models"], "thesis": r["thesis"],
             "triggers": [{"t": t["type"], "label": t["label"], "q": t.get("quote", ""), "hl": t.get("highlight", "")} for t in r["triggers"]],
             "flags": r["flags"], "blocks": r["blocks"], "util": r["util"], "capex": r["capex"],
@@ -319,13 +333,21 @@ def build(market: str, log=print) -> dict:
                           "gLine": (f"{g_best['metric']}: {g_best['value']}" + (f" ({g_best.get('horizon')})" if g_best.get('horizon') else "")) if g_best else "",
                           "period": label_from_key(p, market), "periodKey": p, "date": r["date"],
                           "score": r["score"], "delta": r["delta"], "veto": r["veto"], "archetype": r["archetype"],
-                          "thesis": r["thesis"], "top": t0, "cred": r["cred"], "mcap": fmt_mcap(u, market),
+                          "thesis": r["thesis"], "top": t0, "cred": r["cred"], "credTested": r.get("credTested", 0), "mcap": fmt_mcap(u, market),
                           "hasSummary": any(d.get("summary") for d in r["docs"])})
             for d in r["docs"]:
                 if d.get("summary"):
                     summaries[key] = d["summary"]
                     break
     calls.sort(key=lambda c: (c["periodKey"], c["score"]), reverse=True)
+    # percentile within the season: share of that quarter's calls this one beats
+    by_p = defaultdict(list)
+    for c in calls:
+        by_p[c["periodKey"]].append(c["score"])
+    for c in calls:
+        xs = by_p[c["periodKey"]]
+        c["pct"] = round(100 * sum(s < c["score"] for s in xs) / max(1, len(xs) - 1)) if len(xs) > 1 else 50
+    pct_of = {c["key"]: c["pct"] for c in calls}
 
     # 4) sector breadth
     sectors = []
@@ -361,6 +383,9 @@ def build(market: str, log=print) -> dict:
     for c in out_cos:
         if c["capex"] == "raised" and sec_stage.get(c["sector"]) == "crowded":
             c["flags"].append("Capex raised while the sub-sector is crowded (capital-cycle warning)")
+
+    for c in out_cos:
+        c["pct"] = pct_of.get(f"{c['id']}|{c['periodKey']}", 50)
 
     # 4b) who names whom: resolve entity names to universe companies, keep the evidence
     name_index = build_name_index(comps)
