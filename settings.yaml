@@ -1,44 +1,34 @@
-# Concall Signal Desk — engine settings
+# Concall Signal Desk — engine settings (lean mode)
 
 universe:
-  # Upper bound for both markets, in ₹ crore. The US cut-off is converted at run time.
   mcap_cap_inr_cr: 50000
-  # Optional floors to skip shells. 0 = no floor.
   mcap_floor_inr_cr: 0
   mcap_floor_usd_mn: 0
-  # Used only if the live INR/USD rate cannot be fetched. Update before relying on it.
   inr_per_usd_fallback: 88.0
-  # US exchanges kept from SEC's company_tickers_exchange.json
   us_exchanges: [Nasdaq, NYSE, "NYSE American"]
-  # Refresh the universe file if older than this many days
   refresh_days: 7
 
 inputs:
-  # Only these document types are ever processed (concalls, interviews, presentations).
-  india: [transcript, presentation]
+  india: [transcript]          # lean mode: transcripts only; add presentation later
   us: [transcript, presentation]
 
 sources:
-  india: bse                 # BSE corporate announcements (run on a machine BSE does not block)
-  us_presentations: edgar    # SEC EDGAR 8-K EX-99 exhibits
-  us_transcripts: fmp        # fmp | none  (plug-in; earningscall / quartr can be added in engine/sources_us.py)
-  interviews: watchlist      # config/interview_channels.yaml + local audio transcription
+  india: bse
+  us_presentations: edgar
+  us_transcripts: none         # US is off for now
+  interviews: watchlist
 
 models:
   first_pass: claude-haiku-5-5
-  escalate: claude-sonnet-5-5
-  # Re-run a document on the stronger model when the first pass looks important or shaky
-  escalate_if_abs_block_sum_ge: 6
-  escalate_if_verified_share_lt: 0.7
+  escalate: claude-haiku-5-5   # lean mode: no stronger-model re-reads
+  escalate_if_abs_block_sum_ge: 99
+  escalate_if_verified_share_lt: 0.0
   max_tokens: 4096
-  max_chars_per_doc: 400000
+  max_chars_per_doc: 320000    # keeps prompts under 100K tokens, where Haiku pricing steps up
 
 run:
-  # Safety valve on cost per run; the backlog carries over to the next run.
-  max_docs_per_run: 400
-  # How far back to look on the very first run (6 quarters gives the delta engine its history)
-  backfill_days: 560
-  # Overlap on later runs so late filings are not missed
+  max_docs_per_run: 300
+  backfill_days: 200           # current + previous quarter
   lookback_days: 10
 
 analysis:
