@@ -72,6 +72,7 @@ def merge(docs: list[dict]) -> dict:
     union = lambda k: [x for d in docs for x in d["read"].get(k, [])]
     return {
         "date": max(d["date"] for d in docs), "docs": docs, "thesis": base.get("thesis", ""),
+        "subsector": base.get("subsector", ""),
         "archetype": base.get("archetype", "None"), "models": base.get("mental_models", []),
         "blocks": {k: int(base.get("blocks", {}).get(k, 0)) for k in BLOCK_KEYS},
         "util": int(base.get("utilisation", {}).get("direction", 0)),
@@ -110,7 +111,13 @@ def build(market: str, log=print) -> dict:
     shown = all_periods[-cfg["periods_shown"]:]
     current = shown[-1] if shown else None
     info = lambda cid: comps.get(cid, {})
-    sub = {cid: subsector_of(info(cid).get("industry", "")) for cid in recs}
+    def pick_sub(cid):
+        ind = info(cid).get("industry", "")
+        if ind:
+            return subsector_of(ind)
+        tags = [r["subsector"] for r in recs[cid].values() if r.get("subsector")]
+        return Counter(tags).most_common(1)[0][0] if tags else "Unclassified"
+    sub = {cid: pick_sub(cid) for cid in recs}
 
     # 2) themes: distinct companies per period
     tcount = defaultdict(lambda: defaultdict(set))

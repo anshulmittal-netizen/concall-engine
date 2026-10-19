@@ -4,7 +4,7 @@ from __future__ import annotations
 import datetime as dt
 import re
 
-from common import CACHE, DATA, Http, period_key, read_json, reported_quarter_end, write_json
+from common import CACHE, DATA, Http, period_key, read_json, reported_quarter_end, settings, write_json
 from universe import BSE_HEADERS
 
 ANN = ("https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?pageno={p}&strCat=-1"
@@ -14,21 +14,23 @@ ATTACH = ["https://www.bseindia.com/xml-data/corpfiling/AttachLive/{f}",
 
 RX_TRANSCRIPT = re.compile(r"transcript", re.I)
 RX_PRESENT = re.compile(r"(investor|investors|earnings|analyst|corporate|results?)\s*(day\s*)?presentation|presentation\s+(to|for)\s+(the\s+)?(investors|analysts)", re.I)
-RX_SKIP = re.compile(r"audio|video|recording|intimation|schedule", re.I)
+RX_SKIP = re.compile(r"audio|video|recording|intimation|schedule|newspaper", re.I)
 
 
 def classify(item: dict) -> str | None:
+    sub = str(item.get("SUBCATNAME") or "")
     text = " ".join(str(item.get(k) or "") for k in ("SUBCATNAME", "NEWSSUB", "HEADLINE"))
-    if RX_TRANSCRIPT.search(text):
+    if sub == "Earnings Call Transcript" or (RX_TRANSCRIPT.search(text) and "AGM" not in sub):
         return "transcript"
-    if RX_PRESENT.search(text) and not RX_SKIP.search(text):
+    if sub == "Investor Presentation" or (RX_PRESENT.search(text) and not RX_SKIP.search(text)
+                                          and sub not in ("Press Release / Media Release", "Newspaper Publication")):
         return "presentation"
     return None
 
 
 def fetch(universe: dict, since: dt.date, until: dt.date, log=print) -> list[dict]:
     """Return new manifest entries (and download their PDFs into cache/raw/IN)."""
-    http = Http(BSE_HEADERS, 0.35)
+    http = Http(BSE_HEADERS, 0.35, browser=True)
     man_path = DATA / "manifest_IN.json"
     manifest = read_json(man_path, {})
     comps = universe["companies"]
@@ -53,6 +55,9 @@ def fetch(universe: dict, since: dt.date, until: dt.date, log=print) -> list[dic
                 att = (it.get("ATTACHMENTNAME") or "").strip()
                 if not kind or not att:
                     continue
+                allowed = settings()["inputs"]["india"]
+                if kind not in allowed:
+                    continue
                 doc_id = f"IN-{it.get('NEWSID') or att}"
                 if doc_id in manifest:
                     continue
@@ -73,7 +78,7 @@ def fetch(universe: dict, since: dt.date, until: dt.date, log=print) -> list[dic
 
 
 def download(entry: dict) -> str | None:
-    http = Http(BSE_HEADERS, 0.35)
+    http = Http(BSE_HEADERS, 0.35, browser=True)
     path = CACHE / "raw" / "IN" / entry["company_id"] / entry["attachment"]
     if path.exists():
         return str(path)

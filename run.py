@@ -33,6 +33,27 @@ def window(market, since_arg):
     return today() - dt.timedelta(days=cfg["backfill_days"]), "backfill"
 
 
+MONTHS = {m: i for i, m in enumerate(["january", "february", "march", "april", "may", "june", "july",
+                                      "august", "september", "october", "november", "december"], 1)}
+RX_QEND = None
+
+
+def period_from_text(t: str):
+    """Find 'quarter ended September 30, 2026' (or 'Q2 FY27') in the opening text."""
+    import re
+    m = re.search(r"(?:quarter|half[- ]year|year)\s+(?:and\s+\w+[- ]?\w*\s+)?ended\s+(?:on\s+)?(?:(\d{1,2})(?:st|nd|rd|th)?\s+)?"
+                  r"(march|june|september|december)\s*(?:(\d{1,2})(?:st|nd|rd|th)?)?,?\s*(20\d\d)", t, re.I)
+    if m:
+        return f"{m.group(4)}-{MONTHS[m.group(2).lower()]:02d}"
+    m = re.search(r"\bQ([1-4])\s*(?:&\s*H[12]\s*)?(?:and\s+H[12]\s*)?FY\s*'?(\d{2})\b", t, re.I)
+    if m:
+        q, fy = int(m.group(1)), 2000 + int(m.group(2))
+        month = {1: 6, 2: 9, 3: 12, 4: 3}[q]
+        year = fy - 1 if q in (1, 2, 3) else fy
+        return f"{year}-{month:02d}"
+    return None
+
+
 def cmd_universe(a):
     u = universe.build_india(force=True) if a.market == "IN" else universe.build_us(force=True)
     log(f"{a.market} universe: {u['count']} companies")
@@ -87,6 +108,9 @@ def cmd_extract(a):
             text = textify.to_text(raw)
             if len(text) < 1500:
                 e["status"] = "too_short"; fail += 1; continue  # scanned PDF or empty deck
+            fixed = period_from_text(e.get("title", "") + "\n" + text[:6000])
+            if fixed:
+                e["period"] = fixed  # e.g. a Q1 transcript filed in October belongs to June, not September
             x = extract.extract(e, text)
             e["status"] = "extracted"; e["model"] = x["model"]; done += 1
             log(f"  ✓ {e['name']} · {e['doc_type']} · {e['date']} · verified {x['verified_share']:.0%}")

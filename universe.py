@@ -15,7 +15,6 @@ import os
 from common import DATA, Http, read_json, settings, today, write_json
 
 BSE_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36",
     "Referer": "https://www.bseindia.com/",
     "Origin": "https://www.bseindia.com",
     "Accept": "application/json, text/plain, */*",
@@ -71,7 +70,7 @@ def build_india(force=False) -> dict:
                 rows.append({"code": str(r["code"]).strip(), "name": r["name"].strip(),
                              "industry": r.get("industry", "").strip(), "mcap_cr": float(r["mcap_cr"] or 0)})
     else:
-        http = Http(BSE_HEADERS, 0.3)
+        http = Http(BSE_HEADERS, 0.3, browser=True)
         url = ("https://api.bseindia.com/BseIndiaAPI/api/ListofScripData/w?"
                "Group=&Scripcode=&industry=&segment=Equity&status=Active")
         r = http.get(url)
@@ -87,11 +86,10 @@ def build_india(force=False) -> dict:
                 mc = float(str(mc).replace(",", "")) if mc not in (None, "", "-") else None
             except ValueError:
                 mc = None
-            rows.append({"code": code, "name": (s.get("Issuer_Name") or s.get("Scrip_Name") or "").strip(),
+            rows.append({"code": code, "name": (s.get("Scrip_Name") or s.get("Issuer_Name") or "").strip(),
+                         "ticker": (s.get("scrip_id") or "").strip(),
                          "industry": (s.get("INDUSTRY") or s.get("Industry") or "").strip(), "mcap_cr": mc})
-        missing = [r for r in rows if r["mcap_cr"] is None]
-        if missing:
-            _fill_india_mcap_yahoo(missing)
+        # ~5% of active scrips carry no market cap on BSE (mostly illiquid / suspended); they are skipped.
 
     keep = [r for r in rows if r["mcap_cr"] is not None and floor <= r["mcap_cr"] < cap]
     uni = {"market": "IN", "built": today().isoformat(), "cap_inr_cr": cap,

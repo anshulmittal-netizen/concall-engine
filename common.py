@@ -52,8 +52,13 @@ def slug(s: str) -> str:
 class Http:
     """requests.Session with polite rate limiting and retries."""
 
-    def __init__(self, headers: dict | None = None, min_interval: float = 0.15):
-        self.s = requests.Session()
+    def __init__(self, headers: dict | None = None, min_interval: float = 0.15, browser: bool = False):
+        if browser:
+            # BSE's CDN rejects plain Python clients; a Chrome-like TLS handshake is accepted.
+            from curl_cffi import requests as cr
+            self.s = cr.Session(impersonate="chrome")
+        else:
+            self.s = requests.Session()
         self.s.headers.update(headers or {})
         self.min_interval = min_interval
         self._last = 0.0
@@ -67,7 +72,7 @@ class Http:
             self._last = time.time()
             try:
                 r = self.s.get(url, **kw)
-            except requests.RequestException:
+            except Exception:
                 time.sleep(2 ** attempt)
                 continue
             if r.status_code in (429, 500, 502, 503, 504):

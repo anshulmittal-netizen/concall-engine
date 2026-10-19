@@ -25,16 +25,18 @@ def _quote(desc="Verbatim words copied exactly from the document, at most 40 wor
 def tool_schema() -> dict:
     fw = load_yaml("framework.yaml")
     themes = list((load_yaml("themes.yaml") or {}).keys())
+    subs = [r[0] for r in (load_yaml("subsectors.yaml") or [])] + ["Other"]
     blk = {k: {"type": "integer", "minimum": -2, "maximum": 2, "description": v} for k, v in fw["blocks"].items()}
     return {
         "name": "record_read",
         "description": "Record the structured read of one concall transcript, interview or investor presentation.",
         "input_schema": {
             "type": "object",
-            "required": ["thesis", "archetype", "mental_models", "blocks", "utilisation", "capex", "triggers",
+            "required": ["subsector", "thesis", "archetype", "mental_models", "blocks", "utilisation", "capex", "triggers",
                          "guidance", "prior_guidance_check", "entities", "themes", "red_flags",
                          "analyst_mix", "evasions", "hedge_index"],
             "properties": {
+                "subsector": {"type": "string", "enum": subs, "description": "The company's main business sub-sector."},
                 "thesis": {"type": "string", "description": "The investment-relevant read in ONE plain sentence (max 35 words), with the key number. Lead with supply-side evidence when it exists."},
                 "archetype": {"type": "string", "enum": fw["archetypes"]},
                 "mental_models": {"type": "array", "maxItems": 3, "items": {"type": "string", "enum": list(fw["mental_models"].keys())}},
