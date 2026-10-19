@@ -39,8 +39,9 @@ jobs:
           ARGS=""
           if [ -n "${{ inputs.since }}" ]; then ARGS="$ARGS --since ${{ inputs.since }}"; fi
           if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
-          python run.py all --market IN $ARGS
+          python run.py all --market IN $ARGS || { echo "Run failed; rebuilding results from saved reads"; python run.py analyze --market IN; exit 1; }
       - name: Commit results
+        if: always()   # save whatever was read, even if a later step failed
         run: |
           git config user.name "concall-engine"
           git config user.email "concall-engine@users.noreply.github.com"

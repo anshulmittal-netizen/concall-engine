@@ -31,7 +31,7 @@ def load(market: str):
         x = read_json(f)
         if not x:
             continue
-        rd = x.get("read", {})
+        rd = x["read"] = clean_read(x.get("read", {}))
         if not rd.get("triggers") and not any((rd.get("blocks") or {}).values()):
             continue  # empty read (e.g. a cover letter that slipped through): ignore
         by_co[str(x["company_id"])][x["period"]].append(x)
@@ -60,6 +60,68 @@ def theme_mapper():
                     return name, True
         return t.strip(), False
     return m
+
+
+DEFAULTS = {
+    "triggers": {"type": "novelty", "label": "", "quote": "", "highlight": "", "direction": 1, "confidence": 0.5},
+    "guidance": {"metric": "", "value": "", "horizon": "", "change": "new", "quote": ""},
+    "prior_guidance_check": {"metric": "", "outcome": "not_discussed", "quote": ""},
+    "red_flags": {"label": "", "quote": ""},
+    "evasions": {"topic": "", "quote": ""},
+    "entities": {"name": "", "relation": "peer"},
+}
+
+
+def clean_read(rd: dict) -> dict:
+    """Make every model answer safe to analyse: fill missing fields, drop junk items, coerce types."""
+    rd = dict(rd or {})
+    first = {"triggers": "label", "guidance": "metric", "prior_guidance_check": "metric", "red_flags": "label",
+             "evasions": "topic", "entities": "name"}
+    for key, dflt in DEFAULTS.items():
+        out = []
+        for x in rd.get(key) or []:
+            if isinstance(x, str):
+                x = {first[key]: x}
+            if not isinstance(x, dict):
+                continue
+            y = {**dflt, **{k: v for k, v in x.items() if v is not None}}
+            for k, v in dflt.items():
+                if isinstance(v, str) and not isinstance(y.get(k), str):
+                    y[k] = str(y.get(k) or "")
+            out.append(y)
+        rd[key] = out
+    rd["triggers"] = [t for t in rd["triggers"] if t["label"] or t["quote"]]
+    for t in rd["triggers"]:
+        t["label"] = t["label"] or t["quote"][:40]
+        if t["type"] not in ("supply", "util", "pricing", "structure", "inventory", "demand", "guidance", "novelty", "tone"):
+            t["type"] = "novelty"
+        try:
+            t["confidence"] = float(t.get("confidence", 0.5))
+        except (TypeError, ValueError):
+            t["confidence"] = 0.5
+    blocks = rd.get("blocks") if isinstance(rd.get("blocks"), dict) else {}
+    def as_int(v):
+        try:
+            return max(-2, min(2, int(round(float(v)))))
+        except (TypeError, ValueError):
+            return 0
+    rd["blocks"] = {k: as_int(blocks.get(k, 0)) for k in BLOCK_KEYS}
+    for key in ("utilisation", "capex"):
+        if not isinstance(rd.get(key), dict):
+            rd[key] = {}
+    try:
+        rd["utilisation"]["direction"] = max(-1, min(1, int(rd["utilisation"].get("direction", 0) or 0)))
+    except (TypeError, ValueError):
+        rd["utilisation"]["direction"] = 0
+    rd["themes"] = [str(x) for x in (rd.get("themes") or []) if isinstance(x, (str, int, float)) and str(x).strip()]
+    rd["mental_models"] = [str(x) for x in (rd.get("mental_models") or []) if isinstance(x, str)]
+    try:
+        rd["hedge_index"] = float(rd.get("hedge_index", 0.5))
+    except (TypeError, ValueError):
+        rd["hedge_index"] = 0.5
+    for key in ("thesis", "archetype", "subsector"):
+        rd[key] = str(rd.get(key) or "")
+    return rd
 
 
 def merge(docs: list[dict]) -> dict:
