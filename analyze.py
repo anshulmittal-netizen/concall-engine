@@ -29,8 +29,12 @@ def load(market: str):
     by_co = defaultdict(lambda: defaultdict(list))
     for f in root.glob("*/*.json") if root.exists() else []:
         x = read_json(f)
-        if x:
-            by_co[str(x["company_id"])][x["period"]].append(x)
+        if not x:
+            continue
+        rd = x.get("read", {})
+        if not rd.get("triggers") and not any((rd.get("blocks") or {}).values()):
+            continue  # empty read (e.g. a cover letter that slipped through): ignore
+        by_co[str(x["company_id"])][x["period"]].append(x)
     return uni, manifest, by_co
 
 
@@ -185,10 +189,11 @@ def build(market: str, log=print) -> dict:
             score = 100 * (0.30 * supply_side + 0.20 * pricing + 0.20 * guid + 0.15 * nov + 0.10 * c["demand"] + 0.05 * (tone + 1) / 2)
             flags = [f["label"] for f in r["red_flags"] if FLAG_RX.search(f["label"] + " " + (f.get("quote") or ""))]
             dropped = [ch["metric"] for ch in r["checks"] if ch["outcome"] == "dropped"]
-            veto = bool(dropped) or (len(r["evasions"]) >= 2 and b["tone"] <= -1) or bool(flags)
+            heavy_evasion = len(r["evasions"]) >= 3 and b["tone"] <= -1
+            veto = bool(dropped) or (heavy_evasion and b["tone"] <= -2) or bool(flags)
             if dropped:
                 flags.insert(0, "Veto: guidance dropped without explanation (" + ", ".join(dropped[:2]) + ")")
-            if len(r["evasions"]) >= 2:
+            if heavy_evasion:
                 flags.append(f"{len(r['evasions'])} analyst questions deflected (" + ", ".join(e["topic"] for e in r["evasions"][:2]) + ")")
             if veto:
                 score = min(score, 40)

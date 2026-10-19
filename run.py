@@ -54,6 +54,15 @@ def period_from_text(t: str):
     return None
 
 
+CALL_CUES = ("moderator", "ladies and gentlemen", "question-and-answer", "question and answer",
+             "q&a", "operator", "participant", "thank you for the question", "next question")
+
+
+def looks_like_call(text: str) -> bool:
+    low = text.lower()
+    return len(text) >= 8000 and sum(c in low for c in CALL_CUES) >= 2
+
+
 def cmd_universe(a):
     u = universe.build_india(force=True) if a.market == "IN" else universe.build_us(force=True)
     log(f"{a.market} universe: {u['count']} companies")
@@ -108,6 +117,8 @@ def cmd_extract(a):
             text = textify.to_text(raw)
             if len(text) < 1500:
                 e["status"] = "too_short"; fail += 1; continue  # scanned PDF or empty deck
+            if e["doc_type"] == "transcript" and not looks_like_call(text):
+                e["status"] = "not_a_transcript"; fail += 1; continue  # cover letter pointing to a website link
             fixed = period_from_text(e.get("title", "") + "\n" + text[:6000])
             if fixed:
                 e["period"] = fixed  # e.g. a Q1 transcript filed in October belongs to June, not September

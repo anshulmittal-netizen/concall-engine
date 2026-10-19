@@ -102,6 +102,17 @@ def verify(read: dict, text: str) -> float:
     """Drop quote-backed items whose quote is not in the document. Returns the share that verified."""
     nt = norm(text)
     ok = tot = 0
+    # the model occasionally returns a list item as a bare string; turn it into the expected object
+    shape = {"triggers": "label", "guidance": "metric", "prior_guidance_check": "metric", "red_flags": "label",
+             "evasions": "topic", "entities": "name"}
+    for key, field in shape.items():
+        items = read.get(key) or []
+        read[key] = [x if isinstance(x, dict) else {field: str(x)} for x in items if x]
+    for key in ("capex", "utilisation", "blocks", "analyst_mix"):
+        if not isinstance(read.get(key), dict):
+            read[key] = {}
+    for key in ("themes", "mental_models"):
+        read[key] = [str(x) for x in (read.get(key) or []) if isinstance(x, (str, int, float))]
 
     def good(q):
         nonlocal ok, tot
@@ -113,7 +124,9 @@ def verify(read: dict, text: str) -> float:
         ok += hit
         return hit
 
-    read["triggers"] = [t for t in read.get("triggers", []) if good(t.get("quote"))]
+    read["triggers"] = [t for t in read.get("triggers", []) if t.get("quote") and good(t.get("quote"))]
+    for t in read["triggers"]:
+        t.setdefault("type", "novelty"); t.setdefault("label", t["quote"][:40]); t.setdefault("confidence", 0.5)
     for t in read["triggers"]:
         if t.get("highlight") and norm(t["highlight"]) not in norm(t["quote"]):
             t["highlight"] = ""
