@@ -175,8 +175,17 @@ def build(market: str, log=print) -> dict:
     if not recs:
         log(f"{market}: no extractions yet")
     all_periods = sorted({p for r in recs.values() for p in r})
-    shown = all_periods[-cfg["periods_shown"]:]
-    current = shown[-1] if shown else None
+    # Focus season: the latest quarter with enough calls to be meaningful (a season in progress with a
+    # handful of early reporters would otherwise make every board look empty). Later quarters stay in `calls`.
+    per_count = Counter(p for r in recs.values() for p in r)
+    fullest = max(per_count.values(), default=0)
+    enough = max(cfg.get("focus_min_calls", 30), round(cfg.get("focus_min_share", 0.25) * fullest))
+    eligible = [p for p in all_periods if per_count[p] >= enough] or all_periods
+    focus = eligible[-1] if eligible else None
+    # trend series only use quarters with real coverage, so one stray old call can't fake a trend
+    shown = [p for p in eligible if focus and p <= focus][-cfg["periods_shown"]:]
+    current = focus
+    later = [p for p in all_periods if focus and p > focus]  # seasons still filling in
     info = lambda cid: comps.get(cid, {})
     cls = read_json(DATA / f"classification_{market}.json", {})
     def pick_sub(cid):
@@ -220,6 +229,8 @@ def build(market: str, log=print) -> dict:
             stage, label = "confirming", "Confirming"
         else:
             stage, label = "neutral", "Steady"
+        if len(shown) < 2:
+            stage, label = "neutral", "Baseline"
         themes.append({"name": t, "c": c, "spans": spans, "stage": stage, "label": label, "new": t in cand,
                        "sub": ", ".join(s for s, _ in Counter(sub[x] for x in per.get(current, ())).most_common(3))})
     tstage = {t["name"]: t["stage"] for t in themes}
@@ -336,6 +347,10 @@ def build(market: str, log=print) -> dict:
         if n_now < cfg["min_companies_per_sector"]:
             continue
         stage, label, hit, note = classify_sector(series, capex_up, n_now)
+        if len(shown) < 2 and stage in ("emerging", "deteriorating", "turning"):
+            stage, label, hit = "neutral", "Baseline", False
+            note = (f"First quarter on record: supply discipline {fill(series['supply'])[-1]}%, pricing "
+                    f"{fill(series['pricing'])[-1]}%, demand {fill(series['demand'])[-1]}% of {n_now} companies. Trend appears next quarter.")
         sectors.append({"name": s, "mkt": market, "n": n_now, "stage": stage, "label": label, "hit": hit, "note": note,
                         "s": {k: fill(v) for k, v in series.items()}})
     order = {"turning": 0, "emerging": 1, "confirming": 2, "crowded": 3, "deteriorating": 4, "neutral": 5}
@@ -350,7 +365,7 @@ def build(market: str, log=print) -> dict:
     # 5) ideation
     ideas = build_ideas(out_cos, recs, first_seen, tstage, cfg, current)
 
-    themes.sort(key=lambda t: -(t["c"][-1] - (t["c"][-3] if len(t["c"]) >= 3 else t["c"][0])))
+    themes.sort(key=lambda t: (-(t["c"][-1] - (t["c"][-3] if len(t["c"]) >= 3 else t["c"][0])), -t["c"][-1]))
     other = read_json(SITE / "data" / f"{'us' if market == 'IN' else 'in'}.json", {})
     other_now = {t["name"]: t["c"][-1] for t in other.get("themes", [])}
     for t in themes:
@@ -359,7 +374,7 @@ def build(market: str, log=print) -> dict:
     cur_cos = [c for c in out_cos if c["periodKey"] == current]
     tracker = build_tracker(calls, current, market, cls, comps)
     trackers = {label_from_key(p, market): build_tracker(calls, p, market, cls, comps)
-                for p in shown if any(c["periodKey"] == p for c in calls)}
+                for p in shown + later if any(c["periodKey"] == p for c in calls)}
     write_json(SITE / "data" / f"summaries_{market.lower()}.json", summaries)
     data = {
         "market": market, "generated": dt.datetime.now().isoformat(timespec="minutes"), "sample": False,
@@ -371,6 +386,7 @@ def build(market: str, log=print) -> dict:
         "sectors": sectors, "themes": themes, "ideas": ideas,
         "theme_candidates": [t for t, n in cand.most_common(30) if n >= 2],
         "calls": calls, "tracker": tracker, "trackers": trackers, "summaryCount": len(summaries),
+        "inProgress": [{"season": label_from_key(p, market), "calls": per_count[p]} for p in later],
     }
     write_json(SITE / "data" / f"{market.lower()}.json", data)
     log(f"{market}: wrote {len(out_cos)} companies, {len(sectors)} sectors, {len(themes)} themes, {len(ideas)} ideas")
