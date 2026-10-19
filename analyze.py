@@ -10,7 +10,7 @@ import re
 import statistics as st
 from collections import Counter, defaultdict
 
-from common import DATA, SITE, fmt_date, label_from_key, load_yaml, read_json, settings, today, write_json
+from common import DATA, SITE, fmt_date, label_from_key, load_yaml, plausible_period, read_json, settings, today, write_json
 from extract import BLOCK_KEYS
 
 FLAG_RX = re.compile(r"receivable|working capital|auditor|pledge|related.party|resign|default|covenant|going concern", re.I)
@@ -32,6 +32,7 @@ def load(market: str):
         if not x:
             continue
         rd = x["read"] = clean_read(x.get("read", {}))
+        x["period"] = plausible_period(x.get("period"), x.get("date", ""))
         if not rd.get("triggers") and not any((rd.get("blocks") or {}).values()):
             continue  # empty read (e.g. a cover letter that slipped through): ignore
         by_co[str(x["company_id"])][x["period"]].append(x)
@@ -357,6 +358,8 @@ def build(market: str, log=print) -> dict:
 
     cur_cos = [c for c in out_cos if c["periodKey"] == current]
     tracker = build_tracker(calls, current, market, cls, comps)
+    trackers = {label_from_key(p, market): build_tracker(calls, p, market, cls, comps)
+                for p in shown if any(c["periodKey"] == p for c in calls)}
     write_json(SITE / "data" / f"summaries_{market.lower()}.json", summaries)
     data = {
         "market": market, "generated": dt.datetime.now().isoformat(timespec="minutes"), "sample": False,
@@ -367,7 +370,7 @@ def build(market: str, log=print) -> dict:
         "companies": sorted(out_cos, key=lambda c: (c["periodKey"] != current, -c["score"])),
         "sectors": sectors, "themes": themes, "ideas": ideas,
         "theme_candidates": [t for t, n in cand.most_common(30) if n >= 2],
-        "calls": calls, "tracker": tracker, "summaryCount": len(summaries),
+        "calls": calls, "tracker": tracker, "trackers": trackers, "summaryCount": len(summaries),
     }
     write_json(SITE / "data" / f"{market.lower()}.json", data)
     log(f"{market}: wrote {len(out_cos)} companies, {len(sectors)} sectors, {len(themes)} themes, {len(ideas)} ideas")

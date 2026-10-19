@@ -97,6 +97,9 @@ def cmd_extract(a):
     man_path = DATA / f"manifest_{a.market}.json"
     manifest = read_json(man_path, {})
     allowed = set(settings()["inputs"]["india" if a.market == "IN" else "us"]) | ({"interview"} if a.interviews else set())
+    for e in manifest.values():  # give failed reads one more try
+        if e["status"] == "error" and e.get("attempts", 1) < 2:
+            e["status"] = "listed"; e["attempts"] = e.get("attempts", 1) + 1
     todo = [e for e in manifest.values() if e["status"] == "listed" and e["doc_type"] in allowed]
     # Priority: (1) companies that already have the latest quarter AND an earlier one, so deltas work;
     # (2) the latest quarter for everyone else; (3) older quarters. Newest first inside each group.
@@ -132,9 +135,9 @@ def cmd_extract(a):
                 e["status"] = "too_short"; fail += 1; continue  # scanned PDF or empty deck
             if e["doc_type"] == "transcript" and not looks_like_call(text):
                 e["status"] = "not_a_transcript"; fail += 1; continue  # cover letter pointing to a website link
-            fixed = period_from_text(e.get("title", "") + "\n" + text[:6000])
-            if fixed:
-                e["period"] = fixed  # e.g. a Q1 transcript filed in October belongs to June, not September
+            from common import plausible_period
+            # e.g. a Q1 transcript filed in October belongs to June, not September
+            e["period"] = plausible_period(period_from_text(e.get("title", "") + "\n" + text[:6000]), e["date"])
             x = extract.extract(e, text)
             e["status"] = "extracted"; e["model"] = x["model"]; done += 1
             log(f"  ✓ {e['name']} · {e['doc_type']} · {e['date']} · verified {x['verified_share']:.0%}")

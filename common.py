@@ -113,6 +113,21 @@ def label_from_key(key: str, market: str) -> str:
     return period_label(dt.date(y, m, 28), market)
 
 
+def prev_quarter_key(key: str) -> str:
+    y, m = map(int, key.split("-"))
+    m -= 3
+    if m <= 0:
+        y, m = y - 1, m + 12
+    return f"{y}-{m:02d}"
+
+
+def plausible_period(found: str | None, filed: str) -> str:
+    """Quarter a call belongs to: the quarter found in its text if it is the filing-date quarter or the one
+    before it (late filers), otherwise the filing-date quarter. Stops stray mentions like 'Q3 FY27 outlook'."""
+    base = period_key(reported_quarter_end(dt.date.fromisoformat(filed[:10])))
+    return found if found in (base, prev_quarter_key(base)) else base
+
+
 def fmt_date(d: dt.date) -> str:
     return f"{d.day} {d.strftime('%b')}"
 

@@ -111,6 +111,12 @@ def verify(read: dict, text: str) -> float:
     for key in ("capex", "utilisation", "blocks", "analyst_mix"):
         if not isinstance(read.get(key), dict):
             read[key] = {}
+    def _int(v):
+        try:
+            return max(-2, min(2, int(round(float(v)))))
+        except (TypeError, ValueError):
+            return 0
+    read["blocks"] = {k: _int(read["blocks"].get(k, 0)) for k in BLOCK_KEYS}
     for key in ("themes", "mental_models"):
         read[key] = [str(x) for x in (read.get(key) or []) if isinstance(x, (str, int, float))]
 

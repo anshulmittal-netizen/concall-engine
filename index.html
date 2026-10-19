@@ -361,12 +361,14 @@ table.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
   </section>
 
   <section id="panel-tracker" role="tabpanel" aria-labelledby="tab-tracker" hidden>
+    <div class="filters"><select id="trk-season" aria-label="Season"></select></div>
     <div class="cov" id="trk-cov"></div>
     <p class="sub" id="trk-sub">Every sector in the universe, with how many companies have held their call this season. Click a sector to see its sub-sectors, and a sub-sector to see its companies. Updated every morning.</p>
     <div class="tbl-wrap"><table class="tbl" id="trk-table"></table></div>
   </section>
 
   <section id="panel-guide" role="tabpanel" aria-labelledby="tab-guide" hidden>
+    <div class="filters"><select id="guide-season" aria-label="Season"></select></div>
     <p class="sub">Where management is guiding hardest this season. The guidance index runs from 0 (cutting) through 50 (neutral) to 100 (raising), and each company's guidance counts for more when its management has delivered past guidance. Sub-sectors need at least two calls to rank.</p>
     <div class="guide-grid" id="guide-lead"></div>
     <h3 style="font-size:17px;margin:22px 0 10px">Weakest guidance</h3>
@@ -727,8 +729,23 @@ function trkRow(r, cls, i, extra = '') {
     <td>${r.worst && r.calls > 1 ? `<button class="open" data-id="${esc(r.worst.id)}">${esc(r.worst.name)} \u00b7 ${r.worst.score}</button>` : ''}</td>
     <td class="num" style="white-space:nowrap">${esc(r.latest || '\u2013')}</td></tr>`;
 }
+const season = {pick: ''};
+function pickTracker() {
+  const all = D().trackers || {}, keys = Object.keys(all);
+  if (!keys.length) return D().tracker;
+  if (!season.pick || !all[season.pick]) {
+    // default: the latest season once it has a meaningful number of calls, else the fullest one
+    const latest = keys.at(-1), fullest = keys.reduce((a, b) => (all[b].reported > all[a].reported ? b : a));
+    season.pick = all[latest].reported >= 50 ? latest : fullest;
+  }
+  const opts = keys.slice().reverse().map(k => `<option value="${esc(k)}" ${k === season.pick ? 'selected' : ''}>${esc(k)} \u00b7 ${all[k].reported} calls</option>`).join('');
+  $('#trk-season').innerHTML = opts; $('#guide-season').innerHTML = opts;
+  return all[season.pick];
+}
+$('#trk-season').onchange = e => { season.pick = e.target.value; renderTracker(); };
+$('#guide-season').onchange = e => { season.pick = e.target.value; renderGuide(); };
 function renderTracker() {
-  const t = D().tracker, secs = t?.sectors || (t?.rows ? t.rows.map(r => ({...r, name: r.sector, universe: r.calls, coverage: 100, subs: []})) : []);
+  const t = pickTracker(), secs = t?.sectors || (t?.rows ? t.rows.map(r => ({...r, name: r.sector, universe: r.calls, coverage: 100, subs: []})) : []);
   const new1 = secs.reduce((n, r) => n + r.new1, 0);
   $('#cnt-tracker').textContent = new1 ? new1 + ' new today' : secs.length;
   if (t?.universe) $('#trk-cov').innerHTML = `<div><span class="eyebrow">${esc(t.season || '')} season so far</span><div><b>${t.reported.toLocaleString('en-IN')}</b> of ${t.universe.toLocaleString('en-IN')} companies have held their call</div></div><span class="bar"><span style="width:${Math.round(100 * t.reported / t.universe)}%"></span></span><span class="num">${Math.round(100 * t.reported / t.universe)}%</span>`;
@@ -759,7 +776,7 @@ function gCard(x, i, top) {
   </article>`;
 }
 function renderGuide() {
-  const t = D().tracker || {}, lead = t.guidanceLeaders || [], lag = t.guidanceLaggards || [];
+  const t = pickTracker() || {}, lead = t.guidanceLeaders || [], lag = t.guidanceLaggards || [];
   $('#cnt-guide').textContent = lead.length;
   $('#guide-lead').innerHTML = lead.length ? lead.map((x, i) => gCard(x, i, true)).join('') : '<div class="empty">Guidance leaders appear once sub-sectors have at least two calls this season.</div>';
   $('#guide-lag').innerHTML = lag.length ? lag.map((x, i) => gCard(x, i, false)).join('') : '';
