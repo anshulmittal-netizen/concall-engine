@@ -30,6 +30,8 @@
 body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
 .wrap{max-width:1320px;margin:0 auto;display:grid;gap:18px}
+.wrap>*{min-width:0}
+.tbl .open{white-space:nowrap;max-width:220px;overflow:hidden;text-overflow:ellipsis;text-align:left}
 h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
@@ -209,6 +211,68 @@ svg text{font-family:var(--mono)}
 .open:hover{border-color:var(--gold)}
 .sub{color:var(--muted);font-size:14px;margin:0 0 14px;max-width:80ch}
 
+/* Rankings + tracker tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+table.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
+.tbl th{position:sticky;top:0;background:var(--panel2);text-align:left;font-family:var(--display);font-stretch:88%;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl tbody tr{cursor:pointer;transition:background .15s;animation:rise .45s cubic-bezier(.2,.8,.2,1) both}
+.tbl tbody tr:hover{background:var(--panel2)}
+.tbl .rk{font-family:var(--mono);color:var(--muted);width:44px}
+.tbl .nm{font-family:var(--display);font-weight:700;font-stretch:90%;font-size:15px}
+.tbl .th-txt{color:var(--muted);font-size:13px;max-width:52ch}
+.tbl .sc{display:flex;align-items:center;gap:8px;min-width:120px}
+.scbar{flex:1;height:6px;border-radius:4px;background:var(--panel2);overflow:hidden;min-width:50px}
+.scbar i{display:block;height:100%;border-radius:4px;transform-origin:left;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.filters select{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:7px 10px;font:inherit;font-size:14px}
+.spark14{display:block}
+.trk-co{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.trk-co button{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:3px 8px;font-size:12.5px;cursor:pointer}
+.trk-co button:hover{border-color:var(--gold)}
+.pill{font-family:var(--mono);font-size:12px;padding:1px 7px;border-radius:99px;background:var(--panel2)}
+.cov{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:12px}
+.cov b{font-family:var(--mono);font-size:24px}
+.cov .bar{flex:1;min-width:180px;height:8px}
+.tbl tr.subrow td{background:color-mix(in srgb,var(--panel2) 60%,transparent);font-size:13.5px}
+.tbl tr.subrow td:first-child{padding-left:30px}
+.tbl tr.sec .nm::before{content:"\25B8";display:inline-block;margin-right:8px;color:var(--muted);transition:transform .2s}
+.tbl tr.sec.open .nm::before{transform:rotate(90deg)}
+.covbar{display:flex;align-items:center;gap:8px;min-width:130px}
+.gidx{font-family:var(--mono);font-weight:600}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.gcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:8px;animation:rise .5s both}
+.gcard.top{border-color:var(--gold)}
+.gcard .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.gcard h4{margin:0;font-family:var(--display);font-stretch:88%;font-size:17px}
+.gcard .par{font-size:12.5px;color:var(--muted)}
+.gauge{position:relative;height:10px;border-radius:6px;background:linear-gradient(90deg,var(--down),var(--panel2) 50%,var(--up))}
+.gauge i{position:absolute;top:-4px;width:4px;height:18px;border-radius:2px;background:var(--fg);transform:translateX(-2px);animation:slide 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes slide{from{left:50%!important}}
+.gcard .line{font-size:13.5px}
+.gcard .line b{font-family:var(--display);font-stretch:90%}
+.pill.new{background:var(--goldsoft);color:var(--fg)}
+
+/* Detailed summary */
+.summary{border-top:1px solid var(--line);padding-top:18px;display:grid;gap:16px}
+.summary .s-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.summary .headline{font-family:var(--display);font-stretch:92%;font-weight:600;font-size:18px;line-height:1.3;margin:0}
+.summary .overview{margin:0;max-width:75ch;line-height:1.55}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.s-card{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;animation:rise .5s both}
+.s-card h4{margin:0 0 8px;font-family:var(--display);font-stretch:88%;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.s-card ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14px}
+.fin{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.fin div{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.fin b{display:block;font-family:var(--mono);font-size:15px}
+.fin span{font-size:12px;color:var(--muted)}
+.qa{display:grid;gap:10px}
+.qa details{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.qa summary{cursor:pointer;font-weight:700}
+.qa p{margin:8px 0 0;color:var(--fg);opacity:.9}
+.quotes blockquote{margin:0 0 8px;padding-left:12px;border-left:3px solid var(--gold);font-size:14.5px}
+
 @media (max-width:980px){
   .feed{grid-template-columns:1fr}
   .d-grid{grid-template-columns:1fr}
@@ -262,6 +326,9 @@ svg text{font-family:var(--mono)}
 
   <nav class="tabs" role="tablist" aria-label="Board">
     <button class="tab" role="tab" id="tab-feed" data-tab="feed" aria-selected="true">Signal feed<span class="count" id="cnt-feed"></span></button>
+    <button class="tab" role="tab" id="tab-rank" data-tab="rank" aria-selected="false">Best to worst calls<span class="count" id="cnt-rank"></span></button>
+    <button class="tab" role="tab" id="tab-tracker" data-tab="tracker" aria-selected="false">Sector tracker<span class="count" id="cnt-tracker"></span></button>
+    <button class="tab" role="tab" id="tab-guide" data-tab="guide" aria-selected="false">Guidance leaders<span class="count" id="cnt-guide"></span></button>
     <button class="tab" role="tab" id="tab-sectors" data-tab="sectors" aria-selected="false">Sector turnarounds<span class="count" id="cnt-sectors"></span></button>
     <button class="tab" role="tab" id="tab-themes" data-tab="themes" aria-selected="false">Theme momentum<span class="count" id="cnt-themes"></span></button>
     <button class="tab" role="tab" id="tab-ideas" data-tab="ideas" aria-selected="false">Ideation<span class="count" id="cnt-ideas"></span></button>
@@ -280,6 +347,30 @@ svg text{font-family:var(--mono)}
       </div>
       <article class="detail" id="detail" aria-live="polite"></article>
     </div>
+  </section>
+
+  <section id="panel-rank" role="tabpanel" aria-labelledby="tab-rank" hidden>
+    <p class="sub">Every call read this season, ranked by Concall Signal Score. Click a row to open the company's full read and call summary.</p>
+    <div class="filters">
+      <select id="rk-period" aria-label="Quarter"></select>
+      <select id="rk-big" aria-label="Sector"></select>
+      <select id="rk-sector" aria-label="Sub-sector"></select>
+      <div class="seg" id="rk-order"><button data-o="best" aria-pressed="true">Best first</button><button data-o="worst" aria-pressed="false">Worst first</button></div>
+    </div>
+    <div class="tbl-wrap"><table class="tbl" id="rk-table"></table></div>
+  </section>
+
+  <section id="panel-tracker" role="tabpanel" aria-labelledby="tab-tracker" hidden>
+    <div class="cov" id="trk-cov"></div>
+    <p class="sub" id="trk-sub">Every sector in the universe, with how many companies have held their call this season. Click a sector to see its sub-sectors, and a sub-sector to see its companies. Updated every morning.</p>
+    <div class="tbl-wrap"><table class="tbl" id="trk-table"></table></div>
+  </section>
+
+  <section id="panel-guide" role="tabpanel" aria-labelledby="tab-guide" hidden>
+    <p class="sub">Where management is guiding hardest this season. The guidance index runs from 0 (cutting) through 50 (neutral) to 100 (raising), and each company's guidance counts for more when its management has delivered past guidance. Sub-sectors need at least two calls to rank.</p>
+    <div class="guide-grid" id="guide-lead"></div>
+    <h3 style="font-size:17px;margin:22px 0 10px">Weakest guidance</h3>
+    <div class="guide-grid" id="guide-lag"></div>
   </section>
 
   <section id="panel-sectors" role="tabpanel" aria-labelledby="tab-sectors" hidden>
@@ -441,11 +532,11 @@ function renderMarkets() {
 function renderTop() {
   const d = D(), cos = d.companies.filter(c => !c.veto);
   const top = [...cos].sort((a, b) => b.score - a.score)[0];
-  const th = [...d.themes].sort((a, b) => (b.c.at(-1) - b.c.at(-3)) - (a.c.at(-1) - a.c.at(-3)))[0];
+  const th = [...d.themes].sort((a, b) => (b.c.at(-1) - b.c.at(-Math.min(3, b.c.length))) - (a.c.at(-1) - a.c.at(-Math.min(3, a.c.length))))[0];
   const turn = d.sectors.find(s => s.hit) || d.sectors[0];
   const tiles = [];
-  if (turn) tiles.push(`<button class="hl-tile" data-go="sectors"><span class="eyebrow">${turn.hit ? 'Strongest turn signal' : 'Top sub-sector'}</span><strong>${esc(turn.name)}</strong><span class="small">Supply discipline ${turn.s.supply.at(-1)}%, pricing breadth ${turn.s.pricing.at(-3)}% → ${turn.s.pricing.at(-1)}%</span></button>`);
-  if (th) tiles.push(`<button class="hl-tile" data-go="themes" style="animation-delay:.08s"><span class="eyebrow">Fastest-spreading theme</span><strong>${esc(th.name)}</strong><span class="small">${th.c.at(-3)} → ${th.c.at(-1)} companies in two quarters</span></button>`);
+  if (turn) tiles.push(`<button class="hl-tile" data-go="sectors"><span class="eyebrow">${turn.hit ? 'Strongest turn signal' : 'Top sub-sector'}</span><strong>${esc(turn.name)}</strong><span class="small">Supply discipline ${turn.s.supply.at(-1)}%, pricing breadth ${turn.s.pricing.at(-Math.min(3, turn.s.pricing.length))}% → ${turn.s.pricing.at(-1)}%</span></button>`);
+  if (th) tiles.push(`<button class="hl-tile" data-go="themes" style="animation-delay:.08s"><span class="eyebrow">Fastest-spreading theme</span><strong>${esc(th.name)}</strong><span class="small">${th.c.at(-Math.min(3, th.c.length))} → ${th.c.at(-1)} companies over the shown quarters</span></button>`);
   if (top) tiles.push(`<button class="hl-tile" data-go="feed" data-id="${esc(top.id)}" style="animation-delay:.16s"><span class="eyebrow">Top call this season</span><strong>${esc(top.name)} · <span class="num">${top.score}</span> <span class="delta ${top.delta >= 0 ? 'up' : 'dn'}">${sign(top.delta)}</span></strong><span class="small">${esc(top.triggers[0]?.label || top.thesis)}</span></button>`);
   $('#highlights').innerHTML = tiles.join('') || '<div class="empty">No reads yet for this market.</div>';
   const recent = [...d.companies].sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 24);
@@ -496,7 +587,7 @@ function renderDetail() {
       <div style="min-width:0">
         <span class="eyebrow">${esc(c.call)}</span>
         <h2>${esc(c.name)}</h2>
-        <div class="tags"><span class="tag">${esc(c.sector)}</span>${c.mcap ? `<span class="tag">${esc(c.mcap)}</span>` : ''}${c.ticker && c.ticker !== c.id ? `<span class="tag">${esc(c.ticker)}</span>` : ''}${c.veto ? '<span class="veto">VETO · SCORE CAPPED AT 40</span>' : ''}</div>
+        <div class="tags">${c.bigSector && c.bigSector !== 'Unclassified' ? `<span class="tag">${esc(c.bigSector)} \u203a ${esc(c.sector)}${c.industry && c.industry !== c.sector ? ' \u203a ' + esc(c.industry) : ''}</span>` : `<span class="tag">${esc(c.sector)}</span>`}${c.mcap ? `<span class="tag">${esc(c.mcap)}</span>` : ''}${c.ticker && c.ticker !== c.id ? `<span class="tag">${esc(c.ticker)}</span>` : ''}${c.veto ? '<span class="veto">VETO · SCORE CAPPED AT 40</span>' : ''}</div>
       </div>
       <div class="scorebox">${ring(c.score, 38, 7)}<div><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)} vs last call</span><div class="cap" style="margin-top:6px">Concall Signal Score, out of 100</div></div></div>
     </div>
@@ -535,7 +626,145 @@ function renderDetail() {
       </div>
     </div>`;
   el.querySelectorAll('[data-count]').forEach(n => countUp(n, +n.dataset.count));
+  renderSummary(c);
 }
+
+/* ---------- detailed summaries (loaded on demand) ---------- */
+const SUMS = {IN: null, US: null}, SUM_LOADING = {};
+async function loadSummaries(m) {
+  if (SUMS[m]) return SUMS[m];
+  if (!SUM_LOADING[m]) SUM_LOADING[m] = fetch(`data/summaries_${m.toLowerCase()}.json`, {cache: 'no-store'})
+    .then(r => r.ok ? r.json() : {}).catch(() => ({})).then(j => (SUMS[m] = j || {}));
+  return SUM_LOADING[m];
+}
+function callsFor(id) { return (D().calls || []).filter(x => x.id === id).sort((a, b) => b.periodKey.localeCompare(a.periodKey)); }
+async function renderSummary(c, key) {
+  const box = document.createElement('div'); box.className = 'summary'; box.id = 'sumbox';
+  const old = document.getElementById('sumbox'); if (old) old.remove();
+  $('#detail').appendChild(box);
+  const cs = callsFor(c.id);
+  if (!cs.length) { box.innerHTML = '<p class="sub" style="margin:0">Detailed summaries appear here once the engine has summarised this call.</p>'; return; }
+  key = key || cs[0].key;
+  box.innerHTML = `<div class="s-top"><h3 style="font-size:19px">Detailed call summary</h3>
+    <div class="seg" id="sum-q">${cs.map(x => `<button data-k="${esc(x.key)}" aria-pressed="${x.key === key}">${esc(x.period)} · ${x.score}</button>`).join('')}</div></div>
+    <p class="sub" style="margin:0">Loading summary…</p>`;
+  box.querySelector('#sum-q').onclick = e => { const b = e.target.closest('button'); if (b) renderSummary(c, b.dataset.k); };
+  const all = await loadSummaries(state.mkt), s = all[key];
+  if (document.getElementById('sumbox') !== box) return;
+  const body = document.createElement('div'); body.style.display = 'grid'; body.style.gap = '16px';
+  if (!s) { box.lastElementChild.textContent = 'This call has not been summarised yet. The nightly run summarises new calls first, then works through older ones.'; return; }
+  const list = (title, items) => items && items.length ? `<div class="s-card"><h4>${title}</h4><ul>${items.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : '';
+  body.innerHTML = `
+    <p class="headline">${esc(s.headline)}</p>
+    <p class="overview">${esc(s.overview)}</p>
+    ${(s.financial_highlights || []).length ? `<div class="fin">${s.financial_highlights.map(f => `<div><span>${esc(f.metric)}</span><b>${esc(f.value)}</b><span>${esc(f.change || '')}</span></div>`).join('')}</div>` : ''}
+    <div class="s-grid">
+      ${(s.segments || []).length ? `<div class="s-card"><h4>Segments</h4><ul>${s.segments.map(g => `<li><b>${esc(g.name)}:</b> ${esc(g.commentary)}</li>`).join('')}</ul></div>` : ''}
+      ${list('Guidance & outlook', s.guidance_outlook)}
+      ${list('Capex & capacity', s.capex_capacity)}
+      ${list('Demand & pricing', s.demand_pricing)}
+      ${list('Risks to watch', s.risks_watch)}
+      ${s.management_tone ? `<div class="s-card"><h4>Management tone</h4><p style="margin:0;font-size:14px">${esc(s.management_tone)}</p></div>` : ''}
+    </div>
+    ${(s.qa_highlights || []).length ? `<div><h4 class="eyebrow" style="margin:0 0 8px">Analyst Q&A</h4><div class="qa">${s.qa_highlights.map((q, i) => `<details ${i === 0 ? 'open' : ''}><summary>${esc(q.question)}</summary><p>${esc(q.answer)}</p></details>`).join('')}</div></div>` : ''}
+    ${(s.key_quotes || []).length ? `<div class="quotes"><h4 class="eyebrow" style="margin:0 0 8px">Management in their own words</h4>${s.key_quotes.map(q => `<blockquote>“${esc(q)}”</blockquote>`).join('')}</div>` : ''}`;
+  box.lastElementChild.replaceWith(body);
+}
+
+/* ---------- best to worst calls ---------- */
+const rk = {period: '', big: '', sector: '', order: 'best'};
+function renderRank() {
+  const calls = D().calls || [];
+  const periods = [...new Set(calls.map(c => c.period))];
+  if (!rk.period || !periods.includes(rk.period)) rk.period = periods[0] || '';
+  const inP = calls.filter(c => c.period === rk.period);
+  const bigs = [...new Set(inP.map(c => c.bigSector).filter(Boolean))].sort();
+  const sectors = [...new Set(inP.filter(c => !rk.big || c.bigSector === rk.big).map(c => c.sector))].sort();
+  $('#rk-big').innerHTML = `<option value="">All sectors</option>` + bigs.map(s => `<option ${s === rk.big ? 'selected' : ''}>${esc(s)}</option>`).join('');
+  $('#rk-big').hidden = !bigs.length;
+  $('#rk-period').innerHTML = periods.map(p => `<option ${p === rk.period ? 'selected' : ''}>${esc(p)}</option>`).join('') || '<option>No calls yet</option>';
+  $('#rk-sector').innerHTML = `<option value="">All sub-sectors</option>` + sectors.map(s => `<option ${s === rk.sector ? 'selected' : ''}>${esc(s)}</option>`).join('');
+  let rows = inP.filter(c => (!rk.big || c.bigSector === rk.big) && (!rk.sector || c.sector === rk.sector)).sort((a, b) => b.score - a.score);
+  if (rk.order === 'worst') rows.reverse();
+  $('#cnt-rank').textContent = calls.length.toLocaleString('en-IN');
+  $('#rk-table').innerHTML = rows.length ? `<thead><tr><th>#</th><th>Company</th><th>Score</th><th>Change</th><th>Sector \u203a sub-sector</th><th>What stood out</th><th>Credibility</th><th>Call date</th></tr></thead><tbody>` +
+    rows.map((c, i) => `<tr data-id="${esc(c.id)}" data-k="${esc(c.key)}" style="animation-delay:${Math.min(i, 20) * .025}s">
+      <td class="rk">${rk.order === 'worst' ? rows.length - i : i + 1}</td>
+      <td><div class="nm">${esc(c.name)}</div><div style="font-size:12.5px;color:var(--muted)">${esc(c.mcap || '')}${c.hasSummary ? ' · summary' : ''}</div></td>
+      <td><div class="sc"><b class="num" style="color:${scoreCol(c.score)}">${c.score}</b><span class="scbar"><i style="width:${c.score}%;background:${scoreCol(c.score)};animation-delay:${Math.min(i, 20) * .025}s"></i></span>${c.veto ? '<span class="veto">VETO</span>' : ''}</div></td>
+      <td><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${c.delta ? sign(c.delta) : '–'}</span></td>
+      <td><div>${esc(c.sector)}</div><div style="font-size:12px;color:var(--muted)">${esc(c.bigSector || '')}</div></td>
+      <td class="th-txt">${esc(c.top || c.thesis)}</td>
+      <td class="num">${c.cred}</td>
+      <td class="num" style="white-space:nowrap">${esc((c.date || '').slice(0, 10))}</td></tr>`).join('') + '</tbody>'
+    : '<tbody><tr><td><div class="empty">No calls in this view yet.</div></td></tr></tbody>';
+}
+$('#rk-period').onchange = e => { rk.period = e.target.value; rk.sector = ''; renderRank(); };
+$('#rk-sector').onchange = e => { rk.sector = e.target.value; renderRank(); };
+$('#rk-big').onchange = e => { rk.big = e.target.value; rk.sector = ''; renderRank(); };
+$('#rk-order').onclick = e => { const b = e.target.closest('button'); if (!b) return; rk.order = b.dataset.o;
+  document.querySelectorAll('#rk-order button').forEach(x => x.setAttribute('aria-pressed', x.dataset.o === rk.order)); renderRank(); };
+$('#rk-table').onclick = e => { const tr = e.target.closest('tr[data-id]'); if (tr) openCompany(tr.dataset.id); };
+
+/* ---------- sector tracker ---------- */
+function spark14(vals) {
+  const w = 112, h = 26, max = Math.max(1, ...vals), bw = w / vals.length;
+  return `<svg class="spark14" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Calls per day, last 14 days: ${vals.join(', ')}">${vals.map((v, i) => {
+    const bh = v ? Math.max(3, v / max * (h - 2)) : 1.5;
+    return `<rect class="colbar" x="${i * bw + 1}" y="${h - bh}" width="${bw - 2}" height="${bh}" rx="1.5" fill="${i === vals.length - 1 ? 'var(--gold)' : v ? 'var(--blue)' : 'var(--line)'}" style="animation-delay:${i * .03}s"/>`; }).join('')}</svg>`;
+}
+const gCol = g => g == null ? 'var(--muted)' : g >= 60 ? 'var(--up)' : g <= 40 ? 'var(--down)' : 'var(--blue)';
+const openSec = new Set();
+function trkRow(r, cls, i, extra = '') {
+  return `<tr class="${cls}" style="animation-delay:${Math.min(i, 24) * .02}s" ${extra}>
+    <td><div class="nm">${esc(r.name)}</div>${cls === 'subrow' && r.companies.length ? `<div class="trk-co" hidden>${r.companies.map(c => `<button data-id="${esc(c.id)}">${esc(c.name)} \u00b7 ${c.score}</button>`).join('')}</div>` : ''}</td>
+    <td><div class="covbar"><span class="num">${r.calls}/${r.universe}</span><span class="scbar"><i style="width:${r.coverage}%;background:var(--blue)"></i></span></div></td>
+    <td><span class="pill ${r.new1 ? 'new' : ''}">${r.new1}</span> / <span class="pill">${r.new7}</span></td>
+    <td>${spark14(r.daily)}</td>
+    <td>${r.avg == null ? '<span style="color:var(--muted)">\u2013</span>' : `<div class="sc"><b class="num" style="color:${scoreCol(r.avg)}">${r.avg}</b><span class="scbar"><i style="width:${r.avg}%;background:${scoreCol(r.avg)}"></i></span></div>`}</td>
+    <td><span class="gidx" style="color:${gCol(r.guidance)}">${r.guidance ?? '\u2013'}</span>${r.calls ? ` <span style="font-size:12px;color:var(--muted)">\u25B2${r.raising} \u25BC${r.cutting}</span>` : ''}</td>
+    <td>${r.best ? `<button class="open" data-id="${esc(r.best.id)}">${esc(r.best.name)} \u00b7 ${r.best.score}</button>` : ''}</td>
+    <td>${r.worst && r.calls > 1 ? `<button class="open" data-id="${esc(r.worst.id)}">${esc(r.worst.name)} \u00b7 ${r.worst.score}</button>` : ''}</td>
+    <td class="num" style="white-space:nowrap">${esc(r.latest || '\u2013')}</td></tr>`;
+}
+function renderTracker() {
+  const t = D().tracker, secs = t?.sectors || (t?.rows ? t.rows.map(r => ({...r, name: r.sector, universe: r.calls, coverage: 100, subs: []})) : []);
+  const new1 = secs.reduce((n, r) => n + r.new1, 0);
+  $('#cnt-tracker').textContent = new1 ? new1 + ' new today' : secs.length;
+  if (t?.universe) $('#trk-cov').innerHTML = `<div><span class="eyebrow">${esc(t.season || '')} season so far</span><div><b>${t.reported.toLocaleString('en-IN')}</b> of ${t.universe.toLocaleString('en-IN')} companies have held their call</div></div><span class="bar"><span style="width:${Math.round(100 * t.reported / t.universe)}%"></span></span><span class="num">${Math.round(100 * t.reported / t.universe)}%</span>`;
+  else $('#trk-cov').hidden = true;
+  if (!secs.length) { $('#trk-table').innerHTML = '<tbody><tr><td><div class="empty">The tracker fills in as the engine reads this season\'s calls.</div></td></tr></tbody>'; return; }
+  let i = 0;
+  $('#trk-table').innerHTML = `<thead><tr><th>Sector / sub-sector</th><th>Reported / universe</th><th>New (1d / 7d)</th><th>Last 14 days</th><th>Avg score</th><th>Guidance</th><th>Best call</th><th>Weakest call</th><th>Last call</th></tr></thead><tbody>` +
+    secs.map((r, si) => trkRow(r, 'sec' + (openSec.has(r.name) ? ' open' : ''), i++, `data-sec="${si}"`) +
+      (openSec.has(r.name) ? (r.subs || []).map(x => trkRow(x, 'subrow', i++, 'data-sub="1"')).join('') : '')).join('') + '</tbody>';
+  $('#trk-table').dataset.secs = '';
+  $('#trk-table')._secs = secs;
+}
+$('#trk-table').onclick = e => {
+  const b = e.target.closest('button[data-id]'); if (b) { e.stopPropagation(); openCompany(b.dataset.id); return; }
+  const tr = e.target.closest('tr'); if (!tr) return;
+  if (tr.dataset.sec != null) { const name = $('#trk-table')._secs[+tr.dataset.sec].name; openSec.has(name) ? openSec.delete(name) : openSec.add(name); renderTracker(); return; }
+  if (tr.dataset.sub) { const box = tr.querySelector('.trk-co'); if (box) box.hidden = !box.hidden; }
+};
+
+/* ---------- guidance leaders ---------- */
+function gCard(x, i, top) {
+  const pos = x.guidance;
+  return `<article class="gcard ${top && i < 3 ? 'top' : ''}" style="animation-delay:${i * .05}s">
+    <div class="row"><span class="rk num" style="color:var(--muted)">#${i + 1}</span><span class="gidx" style="font-size:22px;color:${gCol(pos)}">${pos}</span></div>
+    <div><h4>${esc(x.name)}</h4><div class="par">${esc(x.parent || '')} \u00b7 ${x.calls} calls \u00b7 \u25B2${x.raising} raising \u00b7 \u25BC${x.cutting} cutting</div></div>
+    <div class="gauge"><i style="left:${pos}%"></i></div>
+    ${x.topGuide ? `<div class="line"><b>${esc(x.topGuide.name)}</b> \u2014 ${esc(x.topGuide.line)} <button class="open" data-id="${esc(x.topGuide.id)}" style="margin-left:4px">Open</button></div>` : ''}
+  </article>`;
+}
+function renderGuide() {
+  const t = D().tracker || {}, lead = t.guidanceLeaders || [], lag = t.guidanceLaggards || [];
+  $('#cnt-guide').textContent = lead.length;
+  $('#guide-lead').innerHTML = lead.length ? lead.map((x, i) => gCard(x, i, true)).join('') : '<div class="empty">Guidance leaders appear once sub-sectors have at least two calls this season.</div>';
+  $('#guide-lag').innerHTML = lag.length ? lag.map((x, i) => gCard(x, i, false)).join('') : '';
+}
+document.getElementById('panel-guide').addEventListener('click', e => { const b = e.target.closest('button[data-id]'); if (b) openCompany(b.dataset.id); });
 
 /* ---------- sectors ---------- */
 function sectorChart(s, periods) {
@@ -569,10 +798,10 @@ function renderSectors() {
 /* ---------- themes ---------- */
 function renderThemes() {
   const d = D(), max = Math.max(1, ...d.themes.flatMap(t => t.c));
-  const rows = [...d.themes].sort((a, b) => (b.c.at(-1) - b.c.at(-3)) - (a.c.at(-1) - a.c.at(-3)));
+  const rows = [...d.themes].sort((a, b) => (b.c.at(-1) - b.c.at(-Math.min(3, b.c.length))) - (a.c.at(-1) - a.c.at(-Math.min(3, a.c.length))));
   const other = state.mkt === 'IN' ? 'US' : 'India';
   $('#themes').innerHTML = rows.length ? `<div class="th-row th-head"><span>Theme</span><span>Companies by quarter</span><span>Now</span><span>2Q change</span><span>Sub-sectors · ${other}</span><span>Stage</span></div>` +
-    rows.map((t, i) => { const ch = t.c.at(-1) - t.c.at(-3), bw = 132 / t.c.length;
+    rows.map((t, i) => { const ch = t.c.at(-1) - t.c.at(-Math.min(3, t.c.length)), bw = 132 / t.c.length;
       return `<div class="th-row" style="animation-delay:${i * .05}s">
         <span class="th-name">${esc(t.name)}${t.new ? ' <span class="mini t-novelty">new</span>' : ''}<small>${esc(t.sub || '')}</small></span>
         <svg viewBox="0 0 132 42" width="132" height="42" role="img" aria-label="${t.c.join(', ')} companies">${t.c.map((v, j) => { const h = Math.max(2, v / max * 38);
@@ -599,8 +828,7 @@ function renderIdeas() {
   $('#cnt-ideas').textContent = d.ideas.filter(x => !x.red).length;
 }
 
-/* ---------- navigation ---------- */
-const RENDER = {feed: () => { renderList(); renderDetail(); }, sectors: renderSectors, themes: renderThemes, ideas: renderIdeas};
+const RENDER = {feed: () => { renderList(); renderDetail(); }, rank: renderRank, tracker: renderTracker, guide: renderGuide, sectors: renderSectors, themes: renderThemes, ideas: renderIdeas};
 function go(tab) {
   state.tab = tab;
   document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.tab === tab));

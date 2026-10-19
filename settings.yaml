@@ -24,10 +24,13 @@ models:
   escalate_if_abs_block_sum_ge: 99
   escalate_if_verified_share_lt: 0.0
   max_tokens: 4096
+  summary_max_tokens: 3000
   max_chars_per_doc: 320000    # keeps prompts under 100K tokens, where Haiku pricing steps up
 
 run:
   max_docs_per_run: 300
+  summaries: true              # detailed call summary for every transcript
+  max_summaries_per_run: 300   # summary backlog cleared newest first, this many per night
   backfill_days: 200           # current + previous quarter
   lookback_days: 10
 

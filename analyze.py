@@ -115,13 +115,17 @@ def build(market: str, log=print) -> dict:
     shown = all_periods[-cfg["periods_shown"]:]
     current = shown[-1] if shown else None
     info = lambda cid: comps.get(cid, {})
+    cls = read_json(DATA / f"classification_{market}.json", {})
     def pick_sub(cid):
+        if cls.get(cid, {}).get("subsector"):
+            return cls[cid]["subsector"]
         ind = info(cid).get("industry", "")
         if ind:
             return subsector_of(ind)
         tags = [r["subsector"] for r in recs[cid].values() if r.get("subsector")]
         return Counter(tags).most_common(1)[0][0] if tags else "Unclassified"
     sub = {cid: pick_sub(cid) for cid in recs}
+    level = lambda cid, k: (cls.get(cid, {}).get(k) or "Unclassified")
 
     # 2) themes: distinct companies per period
     tcount = defaultdict(lambda: defaultdict(set))
@@ -198,6 +202,7 @@ def build(market: str, log=print) -> dict:
             if veto:
                 score = min(score, 40)
             r.update(score=round(score), cred=cred, veto=veto, flags=flags)
+            r["delta"] = r["score"] - hist[-1] if hist else 0
             hist.append(r["score"])
         if current not in per and keys and keys[-1] < (shown[0] if shown else ""):
             continue  # nothing within the displayed window
@@ -208,6 +213,7 @@ def build(market: str, log=print) -> dict:
         out_cos.append({
             "id": cid, "name": u.get("name") or r["docs"][0]["name"], "ticker": u.get("ticker") or cid,
             "mkt": market, "sector": sub[cid], "mcap": fmt_mcap(u, market),
+            "macro": level(cid, "macro"), "bigSector": level(cid, "sector"), "industry": level(cid, "industry"),
             "period": label_from_key(last_p, market), "periodKey": last_p, "date": r["date"],
             "call": f"{label_from_key(last_p, market)} " + " + ".join(sorted({d['doc_type'] for d in r['docs']})) + f" · {fmt_date(dt.date.fromisoformat(r['date']))}",
             "score": r["score"], "delta": delta, "cred": r["cred"], "veto": r["veto"],
@@ -219,6 +225,33 @@ def build(market: str, log=print) -> dict:
             "sources": [source_link(d, manifest, market) for d in r["docs"]],
             "entities": [e["name"] for e in r["entities"]],
         })
+
+    # 3b) every call (company x quarter) for the rankings, tracker and summaries
+    calls, summaries = [], {}
+    for cid, per in recs.items():
+        u = info(cid)
+        for p, r in per.items():
+            if shown and p < shown[0]:
+                continue
+            key = f"{cid}|{p}"
+            t0 = r["triggers"][0]["label"] if r["triggers"] else ""
+            g_items = [g for g in r["guidance"] if g.get("metric")]
+            g_best = next((g for g in g_items if g.get("change") == "raised"), None) or next((g for g in g_items if g.get("change") == "new"), None)
+            calls.append({"key": key, "id": cid, "name": u.get("name") or r["docs"][0]["name"], "sector": sub[cid],
+                          "macro": level(cid, "macro"), "bigSector": level(cid, "sector"), "industry": level(cid, "industry"),
+                          "g": r["blocks"]["guidance"], "gRaised": sum(g.get("change") == "raised" for g in g_items),
+                          "gCut": sum(g.get("change") == "cut" for g in g_items) + sum(ch.get("outcome") == "dropped" for ch in r["checks"]),
+                          "gNew": sum(g.get("change") == "new" for g in g_items),
+                          "gLine": (f"{g_best['metric']}: {g_best['value']}" + (f" ({g_best.get('horizon')})" if g_best.get('horizon') else "")) if g_best else "",
+                          "period": label_from_key(p, market), "periodKey": p, "date": r["date"],
+                          "score": r["score"], "delta": r["delta"], "veto": r["veto"], "archetype": r["archetype"],
+                          "thesis": r["thesis"], "top": t0, "cred": r["cred"], "mcap": fmt_mcap(u, market),
+                          "hasSummary": any(d.get("summary") for d in r["docs"])})
+            for d in r["docs"]:
+                if d.get("summary"):
+                    summaries[key] = d["summary"]
+                    break
+    calls.sort(key=lambda c: (c["periodKey"], c["score"]), reverse=True)
 
     # 4) sector breadth
     sectors = []
@@ -261,6 +294,8 @@ def build(market: str, log=print) -> dict:
         t["other"] = other_now.get(t["name"])
 
     cur_cos = [c for c in out_cos if c["periodKey"] == current]
+    tracker = build_tracker(calls, current, market, cls, comps)
+    write_json(SITE / "data" / f"summaries_{market.lower()}.json", summaries)
     data = {
         "market": market, "generated": dt.datetime.now().isoformat(timespec="minutes"), "sample": False,
         "season": label_from_key(current, market) if current else None,
@@ -270,10 +305,72 @@ def build(market: str, log=print) -> dict:
         "companies": sorted(out_cos, key=lambda c: (c["periodKey"] != current, -c["score"])),
         "sectors": sectors, "themes": themes, "ideas": ideas,
         "theme_candidates": [t for t, n in cand.most_common(30) if n >= 2],
+        "calls": calls, "tracker": tracker, "summaryCount": len(summaries),
     }
     write_json(SITE / "data" / f"{market.lower()}.json", data)
     log(f"{market}: wrote {len(out_cos)} companies, {len(sectors)} sectors, {len(themes)} themes, {len(ideas)} ideas")
     return data
+
+
+def _guidance(cs):
+    """Credibility-weighted guidance strength for a group of calls: 0 (cutting) .. 50 (neutral) .. 100 (raising)."""
+    if not cs:
+        return None
+    vals = [(c["g"] / 2) * (0.4 + 0.6 * c["cred"] / 100) for c in cs]
+    return round(50 + 50 * st.mean(vals))
+
+
+def build_tracker(calls, current, market, cls, comps):
+    """Every sector and sub-sector in the universe: coverage this season, scores, guidance, recent filings."""
+    today_ = today()
+    days = [(today_ - dt.timedelta(days=i)).isoformat() for i in range(13, -1, -1)]
+    cur = [c for c in calls if c["periodKey"] == current]
+    # universe counts per level, so sectors with no calls yet still appear
+    uni_sec, uni_sub, sec_of_sub = Counter(), Counter(), {}
+    for cid in comps:
+        k = cls.get(cid, {})
+        s, ss = k.get("sector") or "Unclassified", k.get("subsector") or "Unclassified"
+        uni_sec[s] += 1; uni_sub[(s, ss)] += 1; sec_of_sub[ss] = s
+    by_sub = defaultdict(list)
+    for c in cur:
+        by_sub[(c["bigSector"], c["sector"])].append(c)
+
+    def row(name, cs, universe_n, parent=None):
+        cs = sorted(cs, key=lambda c: -c["score"])
+        dates = [c["date"][:10] for c in cs]
+        gl = sorted([c for c in cs if c["gLine"]], key=lambda c: -(c["g"] * (0.4 + 0.6 * c["cred"] / 100)))
+        return {
+            "name": name, "parent": parent, "universe": universe_n, "calls": len(cs),
+            "coverage": round(100 * len(cs) / universe_n) if universe_n else 0,
+            "avg": round(st.mean(c["score"] for c in cs)) if cs else None,
+            "best": {"id": cs[0]["id"], "name": cs[0]["name"], "score": cs[0]["score"]} if cs else None,
+            "worst": {"id": cs[-1]["id"], "name": cs[-1]["name"], "score": cs[-1]["score"]} if cs else None,
+            "new1": sum(d >= days[-1] for d in dates), "new7": sum(d >= days[-7] for d in dates),
+            "latest": max(dates) if dates else "", "daily": [dates.count(d) for d in days],
+            "up": sum(c["delta"] > 0 for c in cs), "down": sum(c["delta"] < 0 for c in cs), "vetoes": sum(c["veto"] for c in cs),
+            "guidance": _guidance(cs), "raising": sum(c["gRaised"] > 0 or c["g"] >= 1 for c in cs),
+            "cutting": sum(c["gCut"] > 0 or c["g"] <= -1 for c in cs),
+            "topGuide": {"id": gl[0]["id"], "name": gl[0]["name"], "line": gl[0]["gLine"]} if gl else None,
+            "companies": [{"id": c["id"], "name": c["name"], "score": c["score"], "delta": c["delta"], "date": c["date"][:10],
+                           "g": c["g"], "gLine": c["gLine"]} for c in cs],
+        }
+
+    sectors = []
+    for s, n in uni_sec.most_common():
+        subs = [row(ss, by_sub.get((s, ss), []), m, s) for (ps, ss), m in uni_sub.items() if ps == s]
+        subs.sort(key=lambda r: (-r["calls"], -r["universe"]))
+        all_cs = [c for (ps, _), cs in by_sub.items() if ps == s for c in cs]
+        r = row(s, all_cs, n)
+        r["subs"] = subs
+        sectors.append(r)
+    sectors.sort(key=lambda r: (-r["calls"], -r["universe"]))
+    flat = [x for r in sectors for x in r["subs"]]
+    leaders = sorted([x for x in flat if x["calls"] >= 2 and x["guidance"] is not None],
+                     key=lambda x: (-x["guidance"], -x["calls"]))
+    return {"days": days, "season": label_from_key(current, market) if current else None,
+            "sectors": sectors, "guidanceLeaders": leaders[:15],
+            "guidanceLaggards": sorted([x for x in flat if x["calls"] >= 2 and x["guidance"] is not None], key=lambda x: x["guidance"])[:8],
+            "universe": len(comps), "reported": len(cur)}
 
 
 def fill(v):

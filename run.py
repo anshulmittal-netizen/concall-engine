@@ -74,7 +74,9 @@ def cmd_fetch(a):
     until = today()
     log(f"{a.market}: fetching {since} → {until} ({mode})")
     if a.market == "IN":
+        import classify
         import sources_india
+        classify.build(uni, log=log)  # sector / sub-sector / industry for every company (only new ones after the first run)
         sources_india.fetch(uni, since, until, log)
     else:
         import sources_us
@@ -148,6 +150,26 @@ def cmd_extract(a):
     log(f"{a.market}: extracted {done}, failed {fail}, backlog {left}")
 
 
+def get_text(entry):
+    """Transcript text for an entry, re-downloading if the raw-file cache was evicted."""
+    import textify
+    import glob
+    from common import CACHE
+    if entry.get("raw"):
+        return textify.to_text(entry["raw"])
+    hits = glob.glob(str(CACHE / "raw" / entry["market"] / str(entry["company_id"]) / (entry.get("attachment") or "__none__")))
+    path = hits[0] if hits else None
+    if not path and entry.get("attachment"):
+        import sources_india
+        path = sources_india.download(entry)
+    return textify.to_text(path) if path else None
+
+
+def cmd_summarize(a):
+    import summarize
+    summarize.run(a.market, get_text, a.limit, log)
+
+
 def cmd_analyze(a):
     analyze.build(a.market, log)
 
@@ -161,12 +183,16 @@ def cmd_serve(a):
 
 
 def cmd_all(a):
-    cmd_fetch(a); cmd_extract(a); cmd_analyze(a)
+    cmd_fetch(a); cmd_extract(a)
+    if settings()["run"].get("summaries", True):
+        a2 = argparse.Namespace(**{**vars(a), "limit": None})
+        cmd_summarize(a2)
+    cmd_analyze(a)
 
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "extract", "analyze", "all", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "extract", "summarize", "analyze", "all", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
@@ -174,7 +200,7 @@ def main(argv=None):
     a = p.parse_args(argv)
     if a.command != "serve" and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "extract": cmd_extract, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "extract": cmd_extract, "summarize": cmd_summarize, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":
