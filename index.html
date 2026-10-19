@@ -594,7 +594,7 @@ function renderDetail() {
         <h2>${esc(c.name)}</h2>
         <div class="tags">${c.bigSector && c.bigSector !== 'Unclassified' ? `<span class="tag">${esc(c.bigSector)} \u203a ${esc(c.sector)}${c.industry && c.industry !== c.sector ? ' \u203a ' + esc(c.industry) : ''}</span>` : `<span class="tag">${esc(c.sector)}</span>`}${c.mcap ? `<span class="tag">${esc(c.mcap)}</span>` : ''}${c.ticker && c.ticker !== c.id ? `<span class="tag">${esc(c.ticker)}</span>` : ''}${c.veto ? '<span class="veto">VETO · SCORE CAPPED AT 40</span>' : ''}</div>
       </div>
-      <div class="scorebox">${ring(c.score, 38, 7)}<div><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)} vs last call</span><div class="cap" style="margin-top:6px">Concall Signal Score, out of 100</div></div></div>
+      <div class="scorebox">${ring(c.score, 38, 7)}<div><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)} vs last call</span><div class="cap" style="margin-top:6px">Concall Signal Score, out of 100${c.pct != null ? `<br><b style="color:var(--fg)">Beats ${c.pct}% of ${esc(c.period || '')} calls</b>` : ''}</div></div></div>
     </div>
     <div class="thesis">
       <span class="eyebrow">Thesis in one line</span>
@@ -627,7 +627,7 @@ function renderDetail() {
         </div>
         <div class="hist">
           <div><div class="eyebrow" style="margin-bottom:4px">Score by call</div>${spark(c.hist, hl, 260, 96)}</div>
-          <div class="cred"><div class="eyebrow">Mgmt credibility</div><div class="big" data-count="${c.cred}">${c.cred}</div><div class="meter"><span style="width:${c.cred}%;background:${c.cred >= 70 ? 'var(--teal)' : c.cred >= 55 ? 'var(--warn)' : 'var(--down)'}"></span></div><div style="font-size:12px;color:var(--muted);margin-top:6px">Guidance met vs given, rolling</div></div>
+          <div class="cred"><div class="eyebrow">Mgmt credibility</div>${c.credTested === 0 ? '<div class="big" style="font-size:16px;color:var(--muted)">Untested</div>' : `<div class="big" data-count="${c.cred}">${c.cred}</div>`}<div class="meter"><span style="width:${c.cred}%;background:${c.cred >= 70 ? 'var(--teal)' : c.cred >= 55 ? 'var(--warn)' : 'var(--down)'}"></span></div><div style="font-size:12px;color:var(--muted);margin-top:6px">${c.credTested === 0 ? 'Builds once past guidance can be checked against results' : `Guidance met vs given, ${c.credTested} checked`}</div></div>
         </div>
       </div>
     </div>`;
@@ -693,15 +693,16 @@ function renderRank() {
   let rows = inP.filter(c => (!rk.big || c.bigSector === rk.big) && (!rk.sector || c.sector === rk.sector)).sort((a, b) => b.score - a.score);
   if (rk.order === 'worst') rows.reverse();
   $('#cnt-rank').textContent = calls.length.toLocaleString('en-IN');
-  $('#rk-table').innerHTML = rows.length ? `<thead><tr><th>#</th><th>Company</th><th>Score</th><th>Change</th><th>Sector \u203a sub-sector</th><th>What stood out</th><th>Credibility</th><th>Call date</th></tr></thead><tbody>` +
+  $('#rk-table').innerHTML = rows.length ? `<thead><tr><th>#</th><th>Company</th><th>Score</th><th>Percentile</th><th>Change</th><th>Sector \u203a sub-sector</th><th>What stood out</th><th>Credibility</th><th>Call date</th></tr></thead><tbody>` +
     rows.map((c, i) => `<tr data-id="${esc(c.id)}" data-k="${esc(c.key)}" style="animation-delay:${Math.min(i, 20) * .025}s">
       <td class="rk">${rk.order === 'worst' ? rows.length - i : i + 1}</td>
       <td><div class="nm">${esc(c.name)}</div><div style="font-size:12.5px;color:var(--muted)">${esc(c.mcap || '')}${c.hasSummary ? ' · summary' : ''}</div></td>
       <td><div class="sc"><b class="num" style="color:${scoreCol(c.score)}">${c.score}</b><span class="scbar"><i style="width:${c.score}%;background:${scoreCol(c.score)};animation-delay:${Math.min(i, 20) * .025}s"></i></span>${c.veto ? '<span class="veto">VETO</span>' : ''}</div></td>
+      <td class="num">${c.pct != null ? 'Top ' + Math.max(1, 100 - c.pct) + '%' : ''}</td>
       <td><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${c.delta ? sign(c.delta) : '–'}</span></td>
       <td><div>${esc(c.sector)}</div><div style="font-size:12px;color:var(--muted)">${esc(c.bigSector || '')}</div></td>
       <td class="th-txt">${esc(c.top || c.thesis)}</td>
-      <td class="num">${c.cred}</td>
+      <td class="num">${c.credTested === 0 ? '<span style="color:var(--muted)">untested</span>' : c.cred}</td>
       <td class="num" style="white-space:nowrap">${esc((c.date || '').slice(0, 10))}</td></tr>`).join('') + '</tbody>'
     : '<tbody><tr><td><div class="empty">No calls in this view yet.</div></td></tr></tbody>';
 }
