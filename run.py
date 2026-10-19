@@ -96,7 +96,18 @@ def cmd_extract(a):
     manifest = read_json(man_path, {})
     allowed = set(settings()["inputs"]["india" if a.market == "IN" else "us"]) | ({"interview"} if a.interviews else set())
     todo = [e for e in manifest.values() if e["status"] == "listed" and e["doc_type"] in allowed]
-    todo.sort(key=lambda e: e.get("date", ""), reverse=True)  # current season first, backfill after
+    # Priority: (1) companies that already have the latest quarter AND an earlier one, so deltas work;
+    # (2) the latest quarter for everyone else; (3) older quarters. Newest first inside each group.
+    by_co = {}
+    for e in manifest.values():
+        if e["doc_type"] in allowed and e["status"] in ("listed", "extracted"):
+            by_co.setdefault(e["company_id"], set()).add(e["period"])
+    latest = max((p for ps in by_co.values() for p in ps), default="")
+    def rank(e):
+        ps = by_co.get(e["company_id"], set())
+        paired = latest in ps and len(ps) >= 2
+        return (0 if paired else 1 if e["period"] == latest else 2, "".join(chr(255 - ord(c)) for c in e.get("date", "")))
+    todo.sort(key=rank)
     limit = a.limit or settings()["run"]["max_docs_per_run"]
     done = fail = 0
     for e in todo[:limit]:

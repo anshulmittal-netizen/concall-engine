@@ -28,52 +28,54 @@ def classify(item: dict) -> str | None:
     return None
 
 
+SUBCATS = {"transcript": ["Earnings Call Transcript", "Analyst / Investor Meet"],
+           "presentation": ["Investor Presentation"]}
+ANN_SUB = ("https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?pageno={p}&strCat=Company%20Update"
+           "&strPrevDate={d0}&strScrip=&strSearch=P&strToDate={d1}&strType=C&subcategory={sub}")
+
+
 def fetch(universe: dict, since: dt.date, until: dt.date, log=print) -> list[dict]:
-    """Return new manifest entries (and download their PDFs into cache/raw/IN)."""
-    http = Http(BSE_HEADERS, 0.35, browser=True)
+    """List new transcripts / presentations for universe companies (BSE filtered by sub-category, 7-day windows)."""
+    http = Http(BSE_HEADERS, 0.3, browser=True)
     man_path = DATA / "manifest_IN.json"
     manifest = read_json(man_path, {})
     comps = universe["companies"]
+    allowed = settings()["inputs"]["india"]
+    subs = [s for kind in allowed for s in SUBCATS.get(kind, [])]
     new = []
-    day = since
-    while day <= until:
-        d = day.strftime("%Y%m%d")
-        p = 1
-        while True:
-            r = http.get(ANN.format(p=p, d0=d, d1=d))
-            if r.status_code != 200:
-                raise SystemExit(f"BSE announcements returned HTTP {r.status_code} for {day}. "
-                                 "Run the India job where BSE is reachable (your machine / self-hosted runner).")
-            table = (r.json() or {}).get("Table") or []
-            if not table:
-                break
-            for it in table:
-                code = str(it.get("SCRIP_CD", "")).strip()
-                if code not in comps:
-                    continue
-                kind = classify(it)
-                att = (it.get("ATTACHMENTNAME") or "").strip()
-                if not kind or not att:
-                    continue
-                allowed = settings()["inputs"]["india"]
-                if kind not in allowed:
-                    continue
-                doc_id = f"IN-{it.get('NEWSID') or att}"
-                if doc_id in manifest:
-                    continue
-                when = dt.date.fromisoformat(str(it.get("NEWS_DT", day.isoformat()))[:10])
-                entry = {"doc_id": doc_id, "market": "IN", "company_id": code, "name": comps[code]["name"],
-                         "doc_type": kind, "date": when.isoformat(),
-                         "period": period_key(reported_quarter_end(when)),
-                         "title": it.get("NEWSSUB") or it.get("HEADLINE"), "status": "listed", "attachment": att}
-                manifest[doc_id] = entry
-                new.append(entry)
-            p += 1
-            if p > 60:
-                break
-        day += dt.timedelta(days=1)
-    write_json(man_path, manifest)
-    log(f"IN: {len(new)} new documents listed")
+    w0 = since
+    while w0 <= until:
+        w1 = min(until, w0 + dt.timedelta(days=6))
+        for sub in subs:
+            p = 1
+            while p <= 80:
+                r = http.get(ANN_SUB.format(p=p, d0=w0.strftime("%Y%m%d"), d1=w1.strftime("%Y%m%d"),
+                                            sub=sub.replace(" ", "%20").replace("/", "%2F")))
+                if r.status_code != 200:
+                    raise SystemExit(f"BSE announcements returned HTTP {r.status_code} for {w0}..{w1}.")
+                table = (r.json() or {}).get("Table") or []
+                if not table:
+                    break
+                for it in table:
+                    code = str(it.get("SCRIP_CD", "")).strip()
+                    kind = classify(it)
+                    att = (it.get("ATTACHMENTNAME") or "").strip()
+                    if code not in comps or not kind or kind not in allowed or not att:
+                        continue
+                    doc_id = f"IN-{it.get('NEWSID') or att}"
+                    if doc_id in manifest:
+                        continue
+                    when = dt.date.fromisoformat(str(it.get("NEWS_DT") or w0.isoformat())[:10])
+                    entry = {"doc_id": doc_id, "market": "IN", "company_id": code, "name": comps[code]["name"],
+                             "doc_type": kind, "date": when.isoformat(),
+                             "period": period_key(reported_quarter_end(when)),
+                             "title": it.get("NEWSSUB") or it.get("HEADLINE"), "status": "listed", "attachment": att}
+                    manifest[doc_id] = entry
+                    new.append(entry)
+                p += 1
+        write_json(man_path, manifest)  # saved after every window, so a long backfill is never lost
+        log(f"IN: {w0} to {w1}: {len(new)} documents listed so far")
+        w0 = w1 + dt.timedelta(days=1)
     return new
 
 
