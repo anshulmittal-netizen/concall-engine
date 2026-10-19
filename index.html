@@ -612,6 +612,7 @@ function renderDetail() {
           </div>`).join('') || '<p class="sub">No strong triggers this call.</p>'}</div>
         ${c.flags.length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Red flags</h3></div><div class="flags">${c.flags.map((f, i) => `<div class="flag" style="animation-delay:${.4 + i * .1}s">${esc(f)}</div>`).join('')}</div></div>` : ''}
         ${(c.themes || []).length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Themes</h3></div><div class="tchips">${c.themes.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></div>` : ''}
+        ${(c.namedBy || []).length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Named in other companies' calls</h3><span class="eyebrow">${c.namedBy.length} ${c.namedBy.length === 1 ? 'company' : 'companies'}</span></div><div class="tchips">${c.namedBy.map(n => `<button class="open" data-nb="${esc(n.id)}" title="Called it \u201c${esc(n.as)}\u201d in their ${esc(n.period)} call">${esc(n.name)} \u00b7 ${esc(n.relation)}</button>`).join('')}</div><p class="sub" style="margin:6px 0 0;font-size:12.5px">Each link is a company whose own transcript names this one; the role is how that company described it. Click to open that call.</p></div>` : ''}
         ${(c.sources || []).filter(s => s.url).length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Source documents</h3></div><div class="src">${c.sources.filter(s => s.url).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.type)} · ${esc(s.date)}</a>`).join('')}</div></div>` : ''}
       </div>
       <div style="display:grid;gap:20px;align-content:start">
@@ -876,6 +877,7 @@ $('#ideas').addEventListener('click', e => { const b = e.target.closest('.open')
 $('#sort').onclick = e => { const b = e.target.closest('button'); if (!b) return; state.sort = b.dataset.s;
   document.querySelectorAll('#sort button').forEach(x => x.setAttribute('aria-pressed', x.dataset.s === state.sort)); renderList(); };
 $('#q').oninput = e => { state.q = e.target.value; renderList(); renderDetail(); };
+$('#detail').addEventListener('click', e => { const b = e.target.closest('button[data-nb]'); if (b) openCompany(b.dataset.nb); });
 $('#list').onclick = e => { const b = e.target.closest('.co'); if (!b) return; state.sel[state.mkt] = b.dataset.id;
   document.querySelectorAll('.co').forEach(x => x.setAttribute('aria-selected', x.dataset.id === b.dataset.id)); renderDetail(); };
 $('#list').addEventListener('keydown', e => {

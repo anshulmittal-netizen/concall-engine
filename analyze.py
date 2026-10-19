@@ -362,6 +362,21 @@ def build(market: str, log=print) -> dict:
         if c["capex"] == "raised" and sec_stage.get(c["sector"]) == "crowded":
             c["flags"].append("Capex raised while the sub-sector is crowded (capital-cycle warning)")
 
+    # 4b) who names whom: resolve entity names to universe companies, keep the evidence
+    name_index = build_name_index(comps)
+    named_by = defaultdict(dict)  # target cid -> {namer cid: record}
+    for cid, per in recs.items():
+        for p, r in per.items():
+            if shown and p < shown[0]:
+                continue
+            for e in r["entities"]:
+                tgt = name_index.get(norm_name(e.get("name", "")))
+                if tgt and tgt != cid:
+                    named_by[tgt].setdefault(cid, {"id": cid, "name": info(cid).get("name") or cid, "relation": e.get("relation") or "peer",
+                                                     "as": e.get("name"), "period": label_from_key(p, market)})
+    for c in out_cos:
+        c["namedBy"] = sorted(named_by.get(c["id"], {}).values(), key=lambda n: n["relation"])
+
     # 5) ideation
     ideas = build_ideas(out_cos, recs, first_seen, tstage, cfg, current)
 
@@ -454,6 +469,26 @@ def build_tracker(calls, current, market, cls, comps):
             "universe": len(comps), "reported": len(cur)}
 
 
+SUFFIXES = {"ltd", "limited", "pvt", "private", "the", "co", "company", "corporation", "corp", "inc", "plc", "india", "(india)", "&"}
+
+
+def norm_name(s: str) -> str:
+    s = re.sub(r"[^a-z0-9& ]+", " ", str(s or "").lower())
+    words = [w for w in s.split() if w not in SUFFIXES]
+    return " ".join(words)
+
+
+def build_name_index(comps: dict) -> dict:
+    """Normalised company name -> company id, only for names that identify one company and are not generic."""
+    seen = defaultdict(set)
+    for cid, c in comps.items():
+        n = norm_name(c.get("name", ""))
+        if len(n) >= 4:
+            seen[n].add(cid)
+    generic = {"industries", "enterprises", "finance", "capital", "holdings", "global", "international", "systems"}
+    return {n: next(iter(ids)) for n, ids in seen.items() if len(ids) == 1 and n not in generic}
+
+
 def fill(v):
     out, last = [], None
     for x in v:
@@ -506,17 +541,16 @@ def build_ideas(cos, recs, first_seen, tstage, cfg, current):
             if cid in names and not names[cid]["veto"]:
                 ideas.append({"id": cid, "type": "First mover", "t": "novelty", "rank": names[cid]["score"] - 5,
                               "why": f"Among the first {cfg['first_mover_count']} companies to talk about {t}."})
-    # hidden suppliers: named by others
-    mention = Counter()
+    # hidden suppliers: companies that OTHER companies name as their supplier or partner in their own calls.
+    # Counted as distinct naming companies, matched on the full normalised company name only.
     for c in cur:
-        for e in c["entities"]:
-            mention[e.lower()] += 1
-    for c in cur:
-        key = c["name"].lower().split(" limited")[0].split(" ltd")[0].split(" inc")[0].strip()
-        n = sum(v for k, v in mention.items() if key and (key in k or k in key) and k != c["name"].lower())
-        if n >= cfg["hidden_supplier_min_mentions"] and not c["veto"]:
+        namers = c.get("namedBy") or []
+        sup = [n for n in namers if n["relation"] in ("supplier", "partner")]
+        if len(sup) >= cfg["hidden_supplier_min_mentions"] and not c["veto"]:
+            who = ", ".join(f"{n['name']} ({n['relation']})" for n in sup[:4])
             ideas.append({"id": c["id"], "type": "Hidden supplier", "t": "structure", "rank": c["score"],
-                          "why": f"Named in {n} other companies' calls this season."})
+                          "namers": sup,
+                          "why": f"Named as a supplier or partner by {len(sup)} other companies in their own calls: {who}."})
     for c in cur:
         r = recs[c["id"]][c["periodKey"]]
         if any(g.get("change") == "raised" for g in r["guidance"]) and c["cred"] >= cfg["credibility_upgrade_min"] and not c["veto"]:

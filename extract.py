@@ -107,6 +107,14 @@ def verify(read: dict, text: str) -> float:
              "evasions": "topic", "entities": "name"}
     for key, field in shape.items():
         items = read.get(key) or []
+        if isinstance(items, str):  # the model occasionally returns a list as one block of JSON text
+            try:
+                txt = items[items.index("["):]
+                items, _ = json.JSONDecoder().raw_decode(txt)
+            except ValueError:
+                items = []
+            if not isinstance(items, list):
+                items = []
         read[key] = [x if isinstance(x, dict) else {field: str(x)} for x in items if x]
     for key in ("capex", "utilisation", "blocks", "analyst_mix"):
         if not isinstance(read.get(key), dict):
@@ -138,6 +146,9 @@ def verify(read: dict, text: str) -> float:
             t["highlight"] = ""
     for key in ("guidance", "prior_guidance_check", "red_flags", "evasions"):
         read[key] = [g for g in read.get(key, []) if good(g.get("quote"))]
+    # a named company only counts if its name actually appears in the transcript
+    read["entities"] = [x for x in read.get("entities", [])
+                        if len(norm(str(x.get("name", "")))) >= 3 and norm(str(x.get("name", ""))) in nt]
     for key in ("capex", "utilisation"):
         if read.get(key, {}).get("quote") and not good(read[key]["quote"]):
             read[key]["quote"] = ""
