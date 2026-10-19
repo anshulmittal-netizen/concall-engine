@@ -1,0 +1,274 @@
+{
+ "doc_id": "IN-ac7875f4-4bc2-463f-8b50-0741d98c9800",
+ "market": "IN",
+ "company_id": "544664",
+ "name": "KSH International Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-14",
+ "period": "2026-06",
+ "title": "KSH International Ltd - 544664 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Winding-wire maker KSH is running at 73.5% utilisation on 43,445 MT, with EBITDA/ton at ~INR93,000 vs INR74,000 in Q4; management guides only to a comfortable ~INR75,000 and Phase 2 adds ~16,000 MT by March 2027.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 73.5,
+   "quote": "consolidated company utilization improved to about 73.5% in Q1, up from 70% in Q4 of FY26"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Our Supa expansion continues to remain on track for FY27 completion with the next wave of capacity expected to be added in Q2 of FY27."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 70% → 73.5%",
+    "quote": "consolidated company utilization improved to about 73.5% in Q1, up from 70% in Q4 of FY26",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA/ton INR93k vs INR74k Q4",
+    "quote": "EBITDA per ton of approximately INR93,000 per metric ton, up from roughly INR74,000 in Q4",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Phase 2 adds ~16k MT by Mar-27",
+    "quote": "we are on track to complete the remaining phase two capacity by March 2027",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Five-year Hitachi framework agreement",
+    "quote": "we have entered into a five-year supply framework agreement with Hitachi Energy Global",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Transformer OEM orders delayed weeks",
+    "quote": "a few of the transformer OEM customers who are in active capacity expansion mode, delay picking up their orders by a few weeks",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA per ton FY27",
+    "value": "~INR75,000 per ton comfortable level",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we should be able to sustain approximately INR75,000 per ton for FY27"
+   },
+   {
+    "metric": "Installed capacity by year end",
+    "value": "~59,000 MT",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we would have an installed capacity of roughly 59,000 metric tons"
+   },
+   {
+    "metric": "Working capital days",
+    "value": "30-35 net days achievable over multiple quarters",
+    "change": "new",
+    "horizon": "multi-quarter",
+    "quote": "we feel that 30, 35 days is something that is fairly achievable"
+   },
+   {
+    "metric": "Export share of revenue",
+    "value": "back to historical peak ~40% over time",
+    "change": "new",
+    "horizon": "long-term",
+    "quote": "the target is to increase it back to its historical peak of around 40% of total revenue"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA per ton range 65-75k",
+    "outcome": "met",
+    "quote": "we should be able to sustain approximately INR75,000 per ton for FY27"
+   },
+   {
+    "metric": "Phase 2 Supa expansion on schedule",
+    "outcome": "met",
+    "quote": "Our Supa expansion continues to remain on track for FY27 completion"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Hitachi Energy Global",
+    "relation": "customer"
+   },
+   {
+    "name": "GE Vernova",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Anti-dumping protection",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Interest cost ramp on working capital",
+    "quote": "The overall interest expense is higher because the working capital finance is higher."
+   },
+   {
+    "label": "Guidance softened to 'comfortable level', not guidance",
+    "quote": "this is not a, a guidance in that this is a number we are going to deliver"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 3,
+   "margin": 6,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "EBITDA/ton breakdown (inventory gains vs mix vs operating leverage)",
+    "quote": "however, we do not give a full breakup of the 3 on the call over here."
+   },
+   {
+    "topic": "Capacity beyond 59k MT and timing",
+    "quote": "Right now, we don't have an answer to that question because the focus is on identifying the land."
+   },
+   {
+    "topic": "Copper price range and realisation",
+    "quote": "No, look, because the LME and exchange rate fluctuates, it's very difficult to put a number to."
+   }
+  ],
+  "hedge_index": 0.3
+ },
+ "summary": {
+  "headline": "KSH International Q1 FY27 revenue rose 108% YoY to INR1,164 crore; EBITDA per ton hit ~INR93,000, with management guiding to a sustainable ~INR75,000.",
+  "overview": "Revenue from operations was INR1,164 crore (+108% YoY) and EBITDA was INR74.4 crore (vs INR40.3 crore a year ago and INR56.3 crore in Q4), with a record quarterly PAT of INR42.2 crore. Management attributed the strong EBITDA per ton mainly to a record CTC contribution, higher exports and new OEM customers priced at market-linked value-addition rates, with a weaker rupee also helping. Phase 1 of the Supa expansion is complete, with 14,400 MT of the 30,000 MT phase 2 added so far and full 59,000 MT installed capacity targeted by March 2027. Management signed a five-year framework agreement with Hitachi Energy, though quantity and price are not yet defined.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations",
+    "value": "INR1,164 crore",
+    "change": "+108% YoY"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR74.4 crore",
+    "change": "vs INR40.3 crore YoY; vs INR56.3 crore QoQ"
+   },
+   {
+    "metric": "EBITDA per ton (consolidated)",
+    "value": "~INR93,000/MT",
+    "change": "vs ~INR66,000 YoY; vs ~INR74,000 QoQ"
+   },
+   {
+    "metric": "PAT",
+    "value": "INR42.2 crore (quarterly record)",
+    "change": "+86% YoY; +22% vs INR34.5 crore in Q4"
+   },
+   {
+    "metric": "Specialized wire revenue",
+    "value": "Growth 113% YoY",
+    "change": "vs 62% growth in FY26"
+   },
+   {
+    "metric": "Standard wire revenue",
+    "value": "Growth 83% YoY",
+    "change": "~80% in Q4"
+   },
+   {
+    "metric": "Export revenue",
+    "value": "Growth 76% YoY; 12% above Q4 FY26",
+    "change": ""
+   },
+   {
+    "metric": "Export share of operating revenue (ex other operating revenue)",
+    "value": "~27%",
+    "change": "vs ~29% in Q1 FY26 (as cited by analyst)"
+   },
+   {
+    "metric": "Sales volume",
+    "value": "Just under 8,000 MT",
+    "change": "+30% YoY vs 6,100 MT; +5% QoQ vs ~7,600 MT"
+   },
+   {
+    "metric": "Working capital days (average balance basis)",
+    "value": "60 days",
+    "change": "vs 65 days in Q4; vs 71 days a year ago"
+   },
+   {
+    "metric": "Capacity utilisation (consolidated)",
+    "value": "~73.5%",
+    "change": "vs 70% in Q4 FY26"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Specialized wires (CTC, T&D focus)",
+    "commentary": "Revenue +113% YoY to a record share of total revenue, driven by CTC and exports; management expects the mix to normalise over the next two to three quarters as standard-wire capacity comes in. CTC is 50-75% of the specialized segment, and 765 kV/HVDC is ~25% of CTC volume."
+   },
+   {
+    "name": "Standard wires (EV, AC compressors, motors, DG alternators)",
+    "commentary": "Revenue +83% YoY; EBITDA per ton improved marginally as utilisation of round-wire capacity rose. Management expects standard-wire contribution to rise in the second half of FY27."
+   },
+   {
+    "name": "Upcast copper scrap recycling (Chakan)",
+    "commentary": "5,000 MT facility commissioned in the last week of Q1 to recycle in-house copper scrap, investment ~INR6-7 crore. CFO expects only a few rupees of benefit to gross profit in FY27."
+   }
+  ],
+  "guidance_outlook": [
+   "Sustainable EBITDA per ton of ~INR75,000 for FY27, dependent on product mix, exports and currency; management said this is not a formal guidance figure.",
+   "Fixed costs expected to rise as Supa phase 2 capacity ramps up.",
+   "Phase 2 expansion (+~16,000 MT, to ~59,000 MT installed) targeted by March 2027, with the next capacity wave in Q2 FY27.",
+   "Volume growth of ~26% (trailing 12 months) expected to be sustained through FY27 as phase 1 capacity is available for the full year.",
+   "Working capital target of 30-35 days, described as achievable over a multi-quarter process.",
+   "Export share target to return to historical peak of ~40% of revenue over time, not in the current year."
+  ],
+  "capex_capacity": [
+   "Installed capacity 43,445 MT at June 30, 2026, unchanged in Q1; 14,400 MT of the scheduled 30,000 MT expansion completed to date; target ~59,000 MT by March 2027.",
+   "Phase 2 project cost INR150-160 crore, partly funded from IPO proceeds; management said FY27 capex will be 'much higher than' INR50 crore, with a large part already incurred and some in advances.",
+   "Board authorised evaluation of ~10 acres of land in Supa MIDC for long-term expansion; management said it has not determined how many tons the land would add.",
+   "Existing Supa site has room for another ~10,000-12,000 MT without new land.",
+   "Peak insulated wires for EV traction motors are still being installed and are part of phase 2; not yet operational.",
+   "Management said CTC insulation lines are not fungible with standard or EV lines; only drawing capacity is shared. Further capacity additions will be triggered at ~85% utilisation."
+  ],
+  "demand_pricing": [
+   "Hitachi Energy five-year framework agreement for winding wires to Indian and some global plants; quantity and price not yet defined. Products cover CTC, paper-insulated and enamel-insulated rectangular conductors; management said EBITDA per ton would be similar to the company average.",
+   "Some transformer OEMs in capacity expansion delayed picking up orders by a few weeks due to commissioning bottlenecks.",
+   "Pricing is make-to-order with copper and FX passed through; 80-85% of customers are on year-long value-addition contracts. New OEM customers were priced at higher, market-linked value-addition rates.",
+   "Management sees demand from T&D, data-centre-linked transformers and DG-set alternators, EV two- and three-wheelers, and passenger car/bus EV programmes contributing meaningfully around FY28-FY29.",
+   "BIS standards are shifting standard-wire supply toward Indian producers, per management.",
+   "LME copper has ranged roughly $10,000-14,000/MT recently (per management); value addition and realisation per ton include metal value."
+  ],
+  "qa_highlights": [],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

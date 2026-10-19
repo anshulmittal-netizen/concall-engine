@@ -1,0 +1,333 @@
+{
+ "doc_id": "IN-8e35a130-f4cb-4ccb-8a95-338478c657d5",
+ "market": "IN",
+ "company_id": "544004",
+ "name": "IRM Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-12",
+ "period": "2026-06",
+ "title": "IRM Energy Ltd - 544004 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "City gas distributor IRM posted record Q1 FY27 revenue of INR 326 crore (+24% YoY) and EBITDA of about INR 10/SCM on sourcing gains, but management guided EBITDA down to INR 7-8/SCM and said Q1 is not repeatable.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Pricing power",
+   "Hidden supplier",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "FY27, we have plan of INR 150 crore and we don't target more than that."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "EBITDA/SCM ~INR 10 in Q1",
+    "quote": "This quarter, we reported about INR 10.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Next 3Q EBITDA/SCM INR 7-8",
+    "quote": "we expect EBITDA to be in the line of INR 7-8 per SCM, operating EBITDA.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Industrial sourcing HPHT ~USD 9 vs spot USD 14-20",
+    "quote": "we could enjoy the HPHT rate, and that was around USD 9.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Fatehgarh volume hit by 80% gas cut",
+    "quote": "which resulted in an around 80% of the gas allocation",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA per SCM (next three quarters)",
+    "value": "INR 7-8",
+    "change": "new",
+    "horizon": "Q2-Q4 FY27",
+    "quote": "we expect EBITDA to be in the line of INR 7-8 per SCM, operating EBITDA."
+   },
+   {
+    "metric": "Revenue growth FY27",
+    "value": "~25% (safe floor ~20%)",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Our revenue growth will be around 25%. That's what is we expect."
+   },
+   {
+    "metric": "Volume growth FY27",
+    "value": "10-12%; ~250 MMSCM by year end",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We expect that it will be in the range of 250 MMSCM by this year end."
+   },
+   {
+    "metric": "Namakkal & Trichy volume FY27",
+    "value": "25-30 MMSCM",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "It will be in the range of 25-30 MMSCM."
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "INR 150-250 crore (conflicting)",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "FY27, we have plan of INR 150 crore and we don't target more than that."
+   },
+   {
+    "metric": "Revenue CAGR next five years",
+    "value": "20-25%",
+    "change": "held",
+    "horizon": "5 years",
+    "quote": "we continue to target a 20-25% revenue growth CAGR over the next five years."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA per SCM average INR 5.5-6 (earlier)",
+    "outcome": "missed",
+    "quote": "This quarter, we reported about INR 10."
+   }
+  ],
+  "entities": [
+   {
+    "name": "GSPC",
+    "relation": "supplier"
+   },
+   {
+    "name": "Shell",
+    "relation": "supplier"
+   },
+   {
+    "name": "Reliance",
+    "relation": "supplier"
+   },
+   {
+    "name": "GAIL",
+    "relation": "supplier"
+   },
+   {
+    "name": "Indian Oil Corporation",
+    "relation": "supplier"
+   },
+   {
+    "name": "TNSTC",
+    "relation": "customer"
+   },
+   {
+    "name": "GSPL",
+    "relation": "partner"
+   },
+   {
+    "name": "HPCL LNG",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Promoter license fee ~2% / INR 20-25 crore a year, future rate uncertain",
+    "quote": "As of now, I can't promise you whether this will continue at a reduced rate or same rate or maybe abolished altogether."
+   },
+   {
+    "label": "Margin outlook vague; 19% PAT margin not sustainable",
+    "quote": "We hope and pray, but we can't guarantee 19% always."
+   },
+   {
+    "label": "Capex guidance inconsistent (150 vs 250 crore)",
+    "quote": "INR 250 crore of CapEx."
+   },
+   {
+    "label": "Q1 margin tied to temporary sourcing advantage",
+    "quote": "Our EBITDA per SCM will continue for at least one or two more quarters."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 5,
+   "balance_sheet": 0,
+   "capex": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Price cut risk / sustainability of EBITDA",
+    "quote": "Price reduction, at least we are not at all in a position."
+   },
+   {
+    "topic": "Promoter commission ceiling",
+    "quote": "As of now, I can't promise you whether this will continue at a reduced rate or same rate or maybe abolished altogether."
+   },
+   {
+    "topic": "Namakkal FY26 volume base",
+    "quote": "For the full year FY26, I will get back with that number."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "IRM Energy Q1 FY27 revenue rose 24% YoY to INR 326 crore, with EBITDA ex-other income up 139% YoY to INR 62 crore and PAT of INR 34 crore.",
+  "overview": "Management reported record quarterly revenue, EBITDA and PAT, with volumes at an all-time high of 50.9 MMSCM (up 8% YoY). Margin expansion was attributed to sourcing (HPHT and long-term contracts priced below spot), price realisations, and cost control, with management stating there were no one-time items. Industrial PNG volumes were hit by a 9 March 2026 government notification that cut industrial gas allocation to around 80%. Management guided FY27 EBITDA of INR 7-8/SCM for the remaining three quarters and says the current margin level will likely moderate.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations",
+    "value": "INR 326 crore",
+    "change": "+24% YoY, +17% QoQ"
+   },
+   {
+    "metric": "EBITDA (excluding other income)",
+    "value": "INR 62 crore",
+    "change": "+139% YoY"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "19%",
+    "change": ""
+   },
+   {
+    "metric": "PAT",
+    "value": "INR 34 crore",
+    "change": "+140% YoY"
+   },
+   {
+    "metric": "PAT margin",
+    "value": "10.5%",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA per SCM",
+    "value": "About INR 10/SCM",
+    "change": ""
+   },
+   {
+    "metric": "Fixed cost per SCM",
+    "value": "INR 7.22/SCM (vs INR 7.15/SCM cited by management)",
+    "change": ""
+   },
+   {
+    "metric": "Total volume",
+    "value": "50.9 MMSCM",
+    "change": "+8% YoY"
+   },
+   {
+    "metric": "CNG volume",
+    "value": "67% of total volume",
+    "change": "+22% YoY (CNG commercial +75% YoY)"
+   },
+   {
+    "metric": "Cumulative capex to date",
+    "value": "About INR 1,090 crore",
+    "change": "Q1 FY27 capex about INR 67 crore"
+   },
+   {
+    "metric": "IPO net proceeds utilised",
+    "value": "INR 337 crore of INR 496 crore (about 68%)",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "Banaskantha (GA)",
+    "commentary": "Contributed about 48% of Q1 volume and about 46% of profitability; CNG is about 51% of vehicle sales here. Station additions limited to 10-15 in FY27 as the GA is nearing saturation."
+   },
+   {
+    "name": "Fatehgarh Sahib (GA)",
+    "commentary": "Contributed about 38% of profitability. CNG penetration only 6%; volumes hit by the industrial gas cut linked to the NGT order. Plans for 2 new stations in FY27."
+   },
+   {
+    "name": "Diu & Gir Somnath (GA)",
+    "commentary": "CNG is 60% of vehicle sales; contributed about 8-9% of profitability. Entire commercial segment converted to PNG, with commercial connections now on PNG. Plans for about 5 new stations in FY27."
+   },
+   {
+    "name": "Namakkal & Trichy (GA)",
+    "commentary": "Q1 volume about 6 MMSCM, up 102% YoY from 2.84 MMSCM; contributed about 5% of profitability. FY27 volume guidance 25-30 MMSCM (vs 14.2 MMSCM in FY26); about 15-17 new stations planned; more than 80 TNSTC buses running, with a target of 200+ buses."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 EBITDA expected at about INR 7-8/SCM for the next three quarters; management later indicated overall FY27 around INR 7/SCM and said the 19% EBITDA margin may not be sustained.",
+   "Revenue growth of about 25% in FY27 guided; management said a safe range is around 20% or more.",
+   "Volume growth of 10-12% in FY27, with total volume targeted at about 250 MMSCM by year-end (FY26: 224 MMSCM).",
+   "FY27 capex of about INR 250 crore in total (INR 150 crore for Namakkal and Trichy, INR 50 crore each for Banaskantha and Diu & Gir Somnath / Fatehgarh).",
+   "Long-term goal of 20-25% revenue CAGR over the next five years.",
+   "Management said same-level performance as Q1 will not be repeated every quarter; performance will be subdued going forward, though it expects QoQ and YoY improvement."
+  ],
+  "capex_capacity": [
+   "Q1 FY27 capex about INR 67 crore; cumulative capex about INR 1,090 crore.",
+   "FY27 capex plan about INR 250 crore; management said it will not exceed this, of which INR 150 crore is for Namakkal and Trichy.",
+   "CNG stations at 153 as of 30 June 2026 (up 37% YoY), with 564 dispensing points across four GAs.",
+   "Station model mix: franchisee (DODO), OMC and company-operated; the company is moving away from daughter booster and LNG-based models toward online stations.",
+   "Diu & Gir Somnath: tap-off from GSPL pipeline and hookup with IOC and GAIL in progress; currently drawing LNG from HPCL's Chhara terminal."
+  ],
+  "demand_pricing": [
+   "Pricing: Realisations up about 15% YoY and QoQ per an analyst's calculation (not disputed by management); management said price hikes are linked to sourcing cost and it will not pass on further hikes now that Brent is cooling.",
+   "Sourcing mix in Q1 FY27: APM and NWG about 32-33% (APM 21%, NWG 11%), HPHT about 35%, long-term (Reliance, GAIL and others) about 32%, CBG blending 1%, spot about 1%. Q1 FY26 was APM 27%, long-term 27%, HPHT 38%.",
+   "HPHT gas at about USD 9/MMBtu versus spot of USD 14-20; industrial volumes benefit from GSPC and Shell long-term contracts running to 2030.",
+   "Industrial PNG volumes were hit by the 9 March 2026 notification (about 80% allocation); CNG and domestic/commercial PNG not affected.",
+   "Customer base: 86,590 domestic PNG (+13% YoY), 589 commercial (+36% YoY), 228 industrial (+5% YoY).",
+   "Management said it is a price taker; competitors and alternative fuel prices are high, supporting margins."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Were there one-time items behind the sharp rise in EBITDA per SCM, and is it sustainable?",
+    "answer": "Management said there were no one-time items; gains came from pricing, gas sourcing and opex optimisation. It guided FY27 EBITDA of INR 7-8/SCM for the next three quarters."
+   },
+   {
+    "question": "What is the sourcing mix and how has it changed?",
+    "answer": "Q1 FY27: APM+NWG about 32%, HPHT about 35%, long-term about 32%. Q1 FY26 was APM 27%, long-term 27%, HPHT 38%; Q4 FY26 APM about 26%."
+   },
+   {
+    "question": "Namakkal and Trichy volumes and FY27 target?",
+    "answer": "Q1 volume about 6 MMSCM (up 102% YoY); FY27 target 25-30 MMSCM, towards the upper end, vs 14.2 MMSCM in FY26."
+   },
+   {
+    "question": "Capex plan for FY27 and station additions?",
+    "answer": "Capex about INR 250 crore; stations to be added: 10-15 in Banaskantha, 15-17 in Namakkal and Trichy, about 5 in Diu & Gir Somnath, 2 in Fatehgarh Sahib."
+   },
+   {
+    "question": "Status of the NGT order in Fatehgarh Sahib?",
+    "answer": "The NGT order (February 2026) has not been enforced by the Punjab pollution board; supply cuts began 9 March. Management expects ramp-up once enforced and says new industries must use natural gas to get consents."
+   },
+   {
+    "question": "Is the promoter license fee a concern and how might it change?",
+    "answer": "Management said it is a 2% license fee disclosed in the IPO document, not profit to promoters, worth about INR 20-25 crore for the year and already included in PAT; it cannot promise the rate will stay unchanged."
+   }
+  ],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

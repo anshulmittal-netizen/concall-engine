@@ -1,0 +1,277 @@
+{
+ "doc_id": "IN-42fe529e-9ad4-4469-a7f8-bc5d1aa5afc0",
+ "market": "IN",
+ "company_id": "532834",
+ "name": "Camlin Fine Sciences Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-17",
+ "period": "2026-06",
+ "title": "Camlin Fine Sciences Ltd - 532834 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q1 FY27 EBITDA margin collapsed to about 4% from 45% last quarter on raw-material and freight spikes; vanillin plant ran at roughly 25% utilisation, and FY27 vanillin volume guidance cut to about 3,000 tons from 3,600-4,000.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 25,
+   "quote": "this is a cutoff in a quarter where the expenditures are for the full capacity, but the utilization is hardly 25%"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 EBITDA guide cut to 10-12% margin",
+    "quote": "we feel that now the margin should be in the range of 10% to 12% this year",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "util",
+    "label": "Vanillin utilisation ~25% in Q1",
+    "quote": "the utilization is hardly 25%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Vanillin FY27 volume 3,600-4,000t → ~3,000t",
+    "quote": "so basically, we had guided for 3,600 to 4,000 and now we are saying 3,000 -- around 3,000",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Channel stocks cleared out",
+    "quote": "the channel stocks are getting cleared out",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Solvay price umbrella; China price ~$15 vs $18",
+    "quote": "if they sell at $18, the Chinese price is $15",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "Diphenol plant shut; no restart decision until Q3",
+    "quote": "By third quarter, we will take a decision to either have an alternate use for that",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "INR2,200-2,300 crore (revised from INR2,000-2,400 crore)",
+    "change": "held",
+    "quote": "we are guiding for INR2,200 crores to INR2,300 crores top line"
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "10-11% (about INR220-230 crore)",
+    "change": "cut",
+    "quote": "EBITDA margin in the range of 10% to 11%"
+   },
+   {
+    "metric": "FY28 EBITDA margin",
+    "value": "12-14%",
+    "change": "new",
+    "quote": "In fiscal '28, I think it's in the region of 12% to 14% is what we can look at."
+   },
+   {
+    "metric": "Vanillin FY27 volume",
+    "value": "around 3,000 tons",
+    "change": "cut",
+    "quote": "we are saying 3,000 -- around 3,000"
+   },
+   {
+    "metric": "Aroma EBITDA",
+    "value": "positive in Q2 FY27",
+    "change": "new",
+    "quote": "we feel that in this quarter, the second quarter itself, we will have a positive EBITDA in Aroma"
+   },
+   {
+    "metric": "Working-capital credit lines",
+    "value": "INR100-200 crore",
+    "change": "new",
+    "quote": "we may have to go and go and take credit lines from the market in the range of INR100 crores to INR200 crores plus"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 revenue INR2,000-2,400 crore and EBITDA INR250-280 crore",
+    "outcome": "missed",
+    "quote": "We had been guiding that we will be doing INR2,000 crores to INR2,400 crores of revenue this year with EBITDA of INR250 crores to INR280 crores."
+   },
+   {
+    "metric": "Vanillin volume 3,600-4,000t",
+    "outcome": "missed",
+    "quote": "we had guided for 3,600 to 4,000 and now we are saying 3,000 -- around 3,000"
+   },
+   {
+    "metric": "Blends growth at least 20%",
+    "outcome": "met",
+    "quote": "We have already done INR3,000 million. We have that run rate of 20% growth already in place"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Syensqo",
+    "relation": "competitor"
+   },
+   {
+    "name": "Solvay",
+    "relation": "competitor"
+   },
+   {
+    "name": "IFF",
+    "relation": "customer"
+   },
+   {
+    "name": "Givaudan",
+    "relation": "customer"
+   },
+   {
+    "name": "IFC",
+    "relation": "supplier"
+   },
+   {
+    "name": "EXIM",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Specialty chem destocking end",
+   "Tariffs & trade policy",
+   "China+1 enquiries → orders"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin collapse 45% to 4% (as stated by CFO)",
+    "quote": "our margins, which were plus 45% last quarter, has come down to 4%"
+   },
+   {
+    "label": "Dealer and supplier finance used to fund working capital",
+    "quote": "we have been using supplier finances, dealer finances to tide over this situation"
+   },
+   {
+    "label": "Working capital cycle elongated",
+    "quote": "Working capital remains a bit of a concern because of the elongated working capital cycles"
+   },
+   {
+    "label": "Repeated FY27 guidance miss",
+    "quote": "we feel that we may end up with the same turnover"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 2,
+   "margin": 6,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Capital raise / deleveraging plan",
+    "quote": "It's not the time now that I'm standing on the edge of the hill and I have to jump."
+   },
+   {
+    "topic": "Diphenol plant future use",
+    "quote": "we are looking at various options"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Camlin Q1 FY27 revenue rose 28% YoY to INR5,199 million, but EBITDA margin collapsed to about 4% from 45% last quarter on raw material costs and vanillin under-utilisation.",
+  "overview": "Revenue reached INR5,199 million, up about 28% YoY and about INR1,000 million QoQ, but margins fell sharply on raw material, freight and logistics costs tied to the West Asia conflict. The company reorganised reporting into Specialty Ingredients, Aroma and Performance Chemicals, with Aroma and Performance Chemicals both EBITDA-negative or near zero in the quarter. Ethyl vanillin ramp-up ran at low utilisation, and FY27 vanillin volume guidance was cut to about 3,000 tons from 3,600-4,000 tons. Management cut FY27 EBITDA margin guidance to 10-12% while keeping revenue guidance, and debt was flat at about INR640 crore gross.</overview>\n<parameter name=\"financial_highlights\">[{\"metric\":\"Revenue\",\"value\":\"INR5,199 million\",\"change\":\"+28% YoY; ~+INR1,000 million QoQ\"},{\"metric\":\"Consolidated EBITDA margin\",\"value\":\"~4%\",\"change\":\"vs ~45% in Q4 FY26 as stated by management\"},{\"metric\":\"Specialty Ingredients revenue\",\"value\":\"More than INR4,000 million (blends >INR3,000 million; straights INR927 million)\",\"change\":\"\"},{\"metric\":\"Specialty Ingredients EBITDA margin\",\"value\":\"6.35%\",\"change\":\"Down on raw material costs\"},{\"metric\":\"Specialty Ingredients EBITDA (Q4 FY26 comparison)\",\"value\":\"INR263-264 million on ~INR3,400 million revenue\",\"change\":\"Q1 FY27 EBITDA stated as INR255 million (per analyst)\"},{\"metric\":\"Performance Chemicals EBITDA margin\",\"value\":\"2.5%\",\"change\":\"Diphenol plant shut\"},{\"metric\":\"Aroma (vanillin) EBITDA\",\"value\":\"Negative INR4-4.5 crore\",\"change\":\"Low utilisation\"},{\"metric\":\"Gross debt\",\"value\":\"INR640 crore\",\"change\":\"From INR670 crore on 31 March 2026; reduction from IFC/EXIM prepayments\"},{\"metric\":\"Vanillin sales volume\",\"value\":\"~560 tons (350 t ethyl vanillin, 200 t methyl vanillin)\",\"change\":\"\"},{\"metric\":\"Insurance claim settled (Brazil fire)\",\"value\":\"~INR400 million after 20% haircut\",\"change\":\"Booked as exceptional item\"}]",
+  "segments": [
+   {
+    "name": "Specialty Ingredients (blends and straights)",
+    "commentary": "Revenue above INR4,000 million with blends above INR3,000 million; EBITDA margin 6.35%. Management says about 4-5% of gross margin was lost to raw material costs and Brazil air-freight, with Brazil's shortfall of about INR8 crore expected to correct in Q2."
+   },
+   {
+    "name": "Aroma (vanillin)",
+    "commentary": "Sold about 560 tons (350 t ethyl, 200 t methyl from channel stock) against 6,000-ton capacity; produced ~400 tons. Quarterly EBITDA negative at INR4-4.5 crore on fixed cost absorption; management expects positive EBITDA in Q2."
+   },
+   {
+    "name": "Performance Chemicals",
+    "commentary": "Gross segment revenue about INR175 crore, of which ~INR130 crore is internal transfer, leaving ~INR40 crore external sales. EBITDA margin 2.5% with diphenol plant shut; management expects positive EBITDA from Q2."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue guidance: INR2,200-2,300 crore, versus earlier INR2,000-2,400 crore; management says top line is secure.",
+   "FY27 EBITDA margin guidance cut to 10-12% (10-11% per CFO/MD), implying about INR220-230 crore EBITDA, versus earlier INR250-280 crore.",
+   "Analyst read-back: average run rate of about INR70 crore EBITDA per quarter for remaining quarters; management did not dispute this.",
+   "Q3 FY27 expected to return to double-digit consolidated EBITDA margin; H2 margin of 13-15% floated by an analyst, not disputed.",
+   "FY28 EBITDA margin in the range of 12-14%.",
+   "Vanillin FY27 volume about 3,000 tons (earlier 3,600-4,000); 4 campaigns planned, Q2 volume 500-600 tons, Q3 1,000+ tons. Capacity 6,000 tons, achievable 5,000 tons with 3 campaigns.",
+   "Blends growth of at least 20% in FY27; budget assumes 25-30%."
+  ],
+  "capex_capacity": [
+   "Vanillin capacity 6,000 tons per year; ethyl vanillin campaign of about 750 tons ran through mid-August, with about 350 tons sold and over 300 tons produced; methyl vanillin campaign to follow after roughly two weeks of changeover.",
+   "Diphenol plant shut because phenol and raw material prices are high; hydroquinone secured from China for the next two quarters; decision on alternate use or restart by Q3 FY27.",
+   "Working capital cycle about 100 days on a consolidated basis; each INR1 crore of revenue growth needs about one-third as working capital support.",
+   "CFS Europe in liquidation with no further cash burn beyond legal costs; China subsidiary liquidation expected to cost INR10-20 million in Q1."
+  ],
+  "demand_pricing": [
+   "Channel stocks in the US and China described as cleared; management sees demand picking up and is negotiating quarterly, half-yearly and annual contracts with F&F customers.",
+   "US and Europe ethyl vanillin realisations stated at about $13-14/kg; methyl vanillin raw material cost $7-8/kg, with conversion cost about INR7 crore/month fixed.",
+   "Management sees a supply gap of about 5,000-6,000 tons in US and Europe that must be imported; Syensqo (Solvay) is the market leader; Chinese imports priced around $15 against Solvay's $18.",
+   "Pass-through of raw material increases to blends customers is lagging by one quarter; management expects to recover about half of the cost increase in Q2.",
+   "Trade financing (dealer finance) on purchase and sales sides costs an estimated 1-1.5% and is hitting gross margin."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Is the FY27 EBITDA guidance achievable given Q1 EBITDA of about INR9 crore?",
+    "answer": "Management restated guidance as INR2,200-2,300 crore revenue with 10-11% margin, which it said is within reach on the current cost structure; it expects about 10% margin over the next nine months."
+   },
+   {
+    "question": "Why is Aroma EBITDA negative and what is its normalised economics?",
+    "answer": "Management said low utilisation (about 400 tons produced vs 1,500-ton quarterly capacity) left fixed cost unabsorbed. Management said 70-80% utilisation would make the business profitable and gave about 7% EBITDA at $13/kg on 3,000 tons."
+   },
+   {
+    "question": "How much debt reduction and what external funding is planned?",
+    "answer": "Gross debt is INR640 crore, down from INR670 crore on 31 March. The CFO said INR100-200 crore of working capital lines are expected within 1-1.5 months, and equity or other capital is being considered without a decision yet."
+   },
+   {
+    "question": "Why was FY27 vanillin volume cut from 3,600-4,000 tons to about 3,000?",
+    "answer": "The ethyl vanillin ramp-up was slower to secure quality, with 95% customer approval. Each campaign switch costs about a month, and four campaigns are planned this year."
+   },
+   {
+    "question": "What would Q1 EBITDA have been under normal conditions?",
+    "answer": "Management said about 4-5% of gross margin was lost, which would have lifted EBITDA to roughly INR37-40 crore, an analyst's figure that management confirmed."
+   },
+   {
+    "question": "Will raw material cost pressure persist into Q2?",
+    "answer": "Management expects elevated raw material prices to persist through Q2 and guidance assumes about three months of elevated costs, not six or nine months."
+   }
+  ],
+  "financial_highlights": [],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

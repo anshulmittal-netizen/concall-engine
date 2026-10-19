@@ -1,0 +1,310 @@
+{
+ "doc_id": "IN-27a89801-21e0-4d9f-b76a-030014e32b9d",
+ "market": "IN",
+ "company_id": "543325",
+ "name": "Rolex Rings Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-12",
+ "period": "2026-06",
+ "title": "Rolex Rings Ltd - 543325 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q1 FY27 revenue up 4.3% to INR304 cr on labour-constrained output (utilisation 63-65%), with export auto components up ~30% and FY27 guided to mid-teens growth, EBITDA margin 22.6%.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Customer stickiness",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 64,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "In the range of INR30 crores to INR40 crores."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 63-65% → 70-72% target",
+    "quote": "We target to touch somewhere about 70%-72%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Export auto components up ~30% YoY",
+    "quote": "export auto components, which is a 30% growth",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Revenue growth 4.3% YoY, below guidance",
+    "quote": "Though this looks short of our guided growth, our order book through the quarter was healthy",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA margin 22.6%, +100 bps YoY",
+    "quote": "EBITDA margin at a percentage of 22.6%, which is up by 100 basis points",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Capex guided INR30-40 cr; no capacity adds",
+    "quote": "In the range of INR30 crores to INR40 crores.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "mid-teen %",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we remain confident in the mid-teen revenue growth guidance that we have given for fiscal '27"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "21% to 22% (conservative)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect that to be in the range of 21% to 22% in this fiscal FY27 conservatively"
+   },
+   {
+    "metric": "Auto component exports FY27",
+    "value": "INR425-450 cr",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I'm a bit confident to cross between INR425 crores to INR450 crores"
+   },
+   {
+    "metric": "Revenue FY28",
+    "value": "more than mid-teen, close to 20%",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "maybe more than mid-teen or coming close to the 20% number for fiscal '28"
+   },
+   {
+    "metric": "Capex per year",
+    "value": "INR30-40 cr",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "In the range of INR30 crores to INR40 crores."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue growth FY27 mid-teen",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Dana",
+    "relation": "customer"
+   },
+   {
+    "name": "Timken",
+    "relation": "customer"
+   },
+   {
+    "name": "Stellantis",
+    "relation": "customer"
+   },
+   {
+    "name": "Getrag",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Nearshoring / reshoring (US)",
+   "Tariffs & trade policy",
+   "Defence indigenisation",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Labour shortage constrained output; Q1 revenue below guidance",
+    "quote": "A shortage of labor on the shop floor meant we could not convert that order book into output at the pace we wanted to."
+   },
+   {
+    "label": "Ocean freight 2-3x, shipping capacity constraints",
+    "quote": "ocean freight is shooting up, and it is more than 2x or 2.5x what it generally is"
+   },
+   {
+    "label": "Management misstated EBITDA margin on call (21.5% vs 22.6%)",
+    "quote": "The correct EBITDA Margin for the quarter is 22.6%."
+   },
+   {
+    "label": "Industrial bearing ring demand softness; Timken volume decline",
+    "quote": "The bearing rings softness was concentrated in the industrial business"
+   },
+   {
+    "label": "₹175 cr order slide project on hold",
+    "quote": "Except for a couple of orders from the US because of tariffs and all these things, that entire project is on hold"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 4,
+   "capex": 1,
+   "balance_sheet": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Revenue FY27 vs Q1 run-rate and Timken recovery",
+    "quote": "But I don't want to be dependent on one particular customer or a group of customers like that."
+   },
+   {
+    "topic": "Steady-state mix target",
+    "quote": "we don't have a specific target that whenever the new order where my facility suits the product"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Rolex Rings Q1 FY27 revenue rose 4.3% to INR304 crore on labour-constrained output, while EBITDA margin expanded to 22.6% and PAT grew 22% to INR60 crore.",
+  "overview": "Revenue from operations was INR304 crore, up 4.3% YoY, which management said was short of its guided growth because a shop-floor labour shortage in April to mid-June limited output, not demand. Auto components grew 13.5% to INR163 crore while bearing rings fell 6% to INR118 crore, with softness concentrated in domestic and European industrial bearing rings. EBITDA was INR69 crore at a 22.6% margin (up 100 bps YoY) and PAT rose 22% to INR60 crore, the third straight quarter of YoY margin expansion. Management said operations normalised from June, July 2026 was the highest-revenue month since inception, and it reiterated mid-teen FY27 revenue growth guidance while cutting its margin guidance to 21-22% citing ocean freight costs.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations",
+    "value": "INR304 crore",
+    "change": "+4.3% YoY"
+   },
+   {
+    "metric": "Auto components revenue",
+    "value": "INR163 crore",
+    "change": "+13.5% YoY"
+   },
+   {
+    "metric": "Bearing rings revenue",
+    "value": "INR118 crore",
+    "change": "-6% YoY"
+   },
+   {
+    "metric": "EBITDA (excluding other income)",
+    "value": "INR69 crore, 22.6% margin",
+    "change": "Margin +100 bps YoY"
+   },
+   {
+    "metric": "PAT",
+    "value": "INR60 crore, 19.8% PAT margin",
+    "change": "+22% YoY; margin +290 bps YoY"
+   },
+   {
+    "metric": "Domestic bearing rings",
+    "value": "INR86 crore",
+    "change": "vs INR90 crore in Q1 FY26"
+   },
+   {
+    "metric": "Domestic auto components",
+    "value": "INR45 crore",
+    "change": "vs INR53 crore in Q1 FY26"
+   },
+   {
+    "metric": "Export bearing rings",
+    "value": "INR32 crore",
+    "change": "vs INR35 crore in Q1 FY26"
+   },
+   {
+    "metric": "Export auto components",
+    "value": "INR118 crore, plus INR23.2 crore scrap and export incentive",
+    "change": "vs INR90 crore plus INR21 crore in Q1 FY26"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Auto components",
+    "commentary": "INR163 crore in Q1, up 13.5% YoY; about 72% exports. Export auto components INR118 crore, up about 30% YoY, while domestic auto components fell to INR45 crore from INR53 crore due to OEM production deferrals."
+   },
+   {
+    "name": "Bearing rings",
+    "commentary": "INR118 crore, down 6% YoY; about 27% exports. Softness concentrated in domestic and European industrial and large-size rings, with export bearing rings down to INR32 crore from INR35 crore."
+   },
+   {
+    "name": "Others (scrap)",
+    "commentary": "Management said the roughly 8% 'others' share of the revenue mix is scrap revenue; scrap was about INR20 crore in Q1 FY26 per the call."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue growth guidance kept at mid-teens; management said FY28 could be more than mid-teens or close to 20%.",
+   "FY27 EBITDA margin guided conservatively at 21-22%, below the 22.6% in Q1, citing ocean freight up 2-3x; management flagged a 50 bps uplift in FY28 as possible.",
+   "FY27 capex guided at INR30-40 crore per year.",
+   "Utilisation at 63-65% currently, targeted at 70-72% by year end.",
+   "FY27 export auto components expected at INR425-450 crore (management ruled out INR500 crore); FY26 export auto components were INR350 crore.",
+   "Q2 FY27 expected to show better order book conversion now that labour is normalised; US customer volumes recovering from a 35-40% FY26 decline."
+  ],
+  "capex_capacity": [
+   "Utilisation at 63-65%, targeted at 70-72% for FY27.",
+   "FY27 capex INR30-40 crore per year (annual basis).",
+   "One or two new plants of a key export customer expected to start supply in Q3 FY27; new orders also expected to start in Q3.",
+   "Capacity is fungible between bearing rings and auto components, per management.",
+   "Defence and aerospace: initial registrations and approvals obtained; defence revenue possibly within about 12 months."
+  ],
+  "demand_pricing": [
+   "Export customers returning with orders after FY26 wait-and-see behaviour on tariffs; management said no customer was lost.",
+   "Allison revenue annualising near the FY25 level, per management; Dana initial development dialogues started with 12-18 months to revenue impact.",
+   "Domestic automotive bearing ring demand reported as improving, with customers increasing wallet share; industrial bearing ring guidance is marginal growth for the next couple of quarters.",
+   "Contract pricing is pass-through only for raw material and forex, not for value-add, so freight and fuel inflation cannot be fully recovered.",
+   "Ocean freight is 2-3x normal; some customers have agreed to reimburse, and one has changed import delivery terms."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What was the labour shortage reason and was lost revenue deferred or lost?",
+    "answer": "Management cited hot summer, vacations, weddings and crop season leave for semi-skilled workers; it said nothing was lost, output was deferred by about a month, and the fix is 3 shifts, overtime and temporary labour for 2-2.5 months at some extra cost."
+   },
+   {
+    "question": "Will Rolex reach INR500 crore in export auto components in FY27?",
+    "answer": "Management said not INR500 crore but confident of INR425-450 crore, against FY26 exports of INR350 crore; the analyst noted Q1 annualises to about INR450 crore."
+   },
+   {
+    "question": "What EBITDA margin should be expected, and is 22% possible?",
+    "answer": "Management guided conservatively to 21-22% for FY27 because of freight costs, and said a 50 bps uplift is possible in FY28."
+   },
+   {
+    "question": "Is the US duty refund recognised in revenue or other income?",
+    "answer": "Some marginal US duty drawback refund was received in Q1 and is included in the numbers; management said refunds will be booked in revenue, not other income, and the major chunk is still pending."
+   },
+   {
+    "question": "How will the cash be deployed given the debt-free balance sheet?",
+    "answer": "Management said it may pay dividends or do another buyback after the INR180 crore buyback, and is exploring a JV with an overseas partner (global agency appointed, 6-9 months to outcome) and inorganic options."
+   },
+   {
+    "question": "Why did domestic and Timken-linked bearing ring business decline?",
+    "answer": "Management attributed the bearing ring export decline mainly to Timken's reduced business, and said it is diversifying to new customers in the US and Europe; no meaningful share recovery yet, with results expected in a couple of quarters."
+   }
+  ],
+  "risks_watch": [
+   "Ocean freight and container availability: freight is 2-3x normal and shipping lines are not returning vessels to India, which may spill into Q2.",
+   "Timken-linked bearing ring export volumes continue to decline; recovery depends on new customer wins not yet visible.",
+   "Domestic auto components down 13% YoY on OEM production deferrals; Stellantis recovery is gradual.",
+   "Labour availability: recurrence of seasonal shortage and the cost of temporary labour.",
+   "Pending US duty drawback refunds: major chunk not yet received, so timing and size are uncertain.",
+   "Some US orders under the INR1.75 billion programme are on hold due to tariffs."
+  ],
+  "management_tone": "Confident on demand and the order book but cautious on the near-term numbers: management openly attributed the revenue miss to labour and stated a conservative 21-22% margin guide due to freight. Answers on Timken, industrial bearings and the JV were more hedged and deferred to later quarters.",
+  "key_quotes": []
+ }
+}

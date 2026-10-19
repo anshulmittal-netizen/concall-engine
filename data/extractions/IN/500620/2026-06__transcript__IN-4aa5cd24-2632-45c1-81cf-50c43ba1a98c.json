@@ -1,0 +1,251 @@
+{
+ "doc_id": "IN-4aa5cd24-2632-45c1-81cf-50c43ba1a98c",
+ "market": "IN",
+ "company_id": "500620",
+ "name": "Great Eastern Shipping Company Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-11",
+ "period": "2026-06",
+ "title": "Great Eastern Shipping Company Ltd - 500620 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Record quarter on Hormuz-driven tanker spike, but management is holding cash, replacing rather than expanding fleet, and says new orderbook is rising (crude tankers 27%) so supply risk is building.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Supply discipline",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "The order book now for crude tankers is at 27%."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Crude tanker orderbook at 27%, VLGC at 35%, product tankers about 20-21%, bulkers about 14%.",
+   "quote": "Our fleet strategy is to replace, not expand."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Crude tanker orderbook 27%",
+    "quote": "The order book now for crude tankers is at 27%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Fleet replace, not expand",
+    "quote": "Our fleet strategy is to replace, not expand.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "MR spot near $50,000/day",
+    "quote": "So MR earnings in the spot market were close to $50,000 a day last quarter.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Crude TC cover $90,000/day Q2",
+    "quote": "crude tankers have produced a TC $90,000 a day, product tankers, $45,000.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Earnings guidance",
+    "value": "None given",
+    "change": "held",
+    "quote": "We don't give earnings guidance either."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "ADNOC",
+    "relation": "customer"
+   },
+   {
+    "name": "ONGC",
+    "relation": "customer"
+   },
+   {
+    "name": "Saudi Aramco",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Cash hoarding, no fleet growth; buyback undecided",
+    "quote": "We believe that we'll be best served by holding on to the majority of the money rather than investing it in ships today."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 4,
+   "growth": 2,
+   "margin": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Buyback framework",
+    "quote": "So there are no numbers that we have set in our…"
+   },
+   {
+    "topic": "ONGC rig rate",
+    "quote": "We don't disclose the rates of any of the contracts."
+   },
+   {
+    "topic": "Capex budget",
+    "quote": "No, we look at it more ship specific."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "GE Shipping posted record Q1 FY27 consolidated profit of INR 1,309 crore (standalone INR 1,157 crore), with ~INR 91-92/share EPS and a INR 14.40 interim dividend.",
+  "overview": "Management described Q1 FY27 as the company's most profitable quarter ever by a significant margin, driven by Strait of Hormuz disruption that pushed tanker freight rates and asset prices to record levels. Standalone NAV rose about INR 100/share to ~INR 1,512 and consolidated NAV is just under INR 1,900/share, with the stock trading at about a 25% discount. The company announced its 18th consecutive interim dividend of INR 14.40/share, its highest quarterly payout. Management said it remains predominantly on the spot market (about 25-26% of capacity on time charter), is net cash, and is holding most cash rather than buying ships at peak prices.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated profit",
+    "value": "INR 1,309 crore",
+    "change": "Most profitable quarter ever, per management"
+   },
+   {
+    "metric": "Standalone profit",
+    "value": "INR 1,157 crore",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated EPS",
+    "value": "~INR 91-92/share",
+    "change": ""
+   },
+   {
+    "metric": "Standalone NAV",
+    "value": "~INR 1,512/share",
+    "change": "Up ~INR 100/share in the quarter"
+   },
+   {
+    "metric": "Consolidated NAV",
+    "value": "Just under INR 1,900/share",
+    "change": "Stock at ~25% discount to NAV"
+   },
+   {
+    "metric": "Interim dividend",
+    "value": "INR 14.40/share",
+    "change": "18th consecutive interim; highest ever quarterly"
+   },
+   {
+    "metric": "Cash",
+    "value": "~USD 700 million gross, ~USD 600 million net of debt",
+    "change": "Net cash for almost 4 years"
+   },
+   {
+    "metric": "Fleet capex, last FY",
+    "value": "~INR 1,200 crore",
+    "change": "Fleet-mix changes"
+   },
+   {
+    "metric": "Fleet capex, Q1 FY27",
+    "value": "~INR 300 crore",
+    "change": "Transactions in quarter"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Crude tankers",
+    "commentary": "All crude tankers are on spot. Management said 46% of Q2 operating days are fixed; crude TC coverage is about $90,000/day. Suezmax rates are flat to slightly lower and Aframax rates significantly lower than in Q1."
+   },
+   {
+    "name": "Product tankers (MR/LR2)",
+    "commentary": "MR spot earnings were close to $50,000/day in the last quarter. Product tanker TC coverage is about $45,000/day; product rates are significantly lower than in Q1. Some LR2s switched to dirty Aframax trades because of the earnings gap."
+   },
+   {
+    "name": "LPG (VLGC)",
+    "commentary": "Fleet is on fixed-rate time charters. One vessel has profit-sharing upside. Repricing of one time charter came in 25-30% above the prior charter rate; another VLGC comes off charter in Q1 CY2027 at about $15,000-20,000/day above its current rate."
+   },
+   {
+    "name": "Dry bulk",
+    "commentary": "Bulk earnings were marginally better than a year ago. Coal demand rose as LNG disruption pushed power plants to coal, and grain trade was strong. Bulk carrier rates are marginally higher than in Q1."
+   },
+   {
+    "name": "Offshore (OSV and jack-up rigs)",
+    "commentary": "Fleet has 19 offshore vessels and 4 rigs; OSV cover for Q2 is about 90%. One rig was idle from April and is pending short-term work after monsoon. A letter of award for a 3-year contract was received on another rig, and ONGC tender was won for a rig, with management not disclosing rates."
+   }
+  ],
+  "guidance_outlook": [
+   "Management does not give earnings guidance and does not forecast the market.",
+   "Fleet strategy is to replace, not expand; capacity expansion awaits prices that offer good long-term returns.",
+   "Repricing: two rigs require repricing in 2026 after the new 3-year award; OSV rates largely covered for FY27.",
+   "Debt is being paid down over the next 2 years, with the last debt maturing in November 2028.",
+   "Buyback is treated as one capital allocation option; no policy, target multiple or price band, and not yet announced."
+  ],
+  "capex_capacity": [
+   "Fleet fleet of 40 ships, average age 14.5 years, plus 19 offshore vessels and 4 rigs; 2 chartered-in vessels.",
+   "Q1 FY27 transactions: sold 2 MR tankers and bought 1 MR; bought a Kamsarmax bulk carrier; in July sold LR2 Jag Lokesh and bought Jag Lakshya (6 years younger, eco-ship).",
+   "Last month alone, capex of about INR 250-300 crore already invested in fleet changes.",
+   "No annual capex budget; decisions are ship-specific and age-driven (tradability), with sales possibly ahead of the theoretical age limit if a good replacement is found.",
+   "Order book share: crude tankers ~27%, VLGC ~35%, product tankers ~20-21%, bulk carriers ~14%. Next-year deliveries about 7% of product tanker and 4% of bulk order book, per management."
+  ],
+  "demand_pricing": [
+   "MR spot earnings near $50,000/day last quarter (all-time high); LPG freight rates above $100,000/day; asset prices up ~5-10% in the quarter.",
+   "Trade pattern shifts after Hormuz disruption (US and Brazil supplying Asia) raised ton-mile demand; Venezuelan crude now long-haul East; Russian product exports diverted.",
+   "Management views the shift as temporary, depending on Hormuz, Russia-Ukraine and sanctions outcomes; pipelines bypassing Hormuz have security and Red Sea risks.",
+   "Panama Canal water levels falling, restricting transits; mainly affects LPG.",
+   "Asset price cycle risk: management cited a ~20% drawdown in 2025 impairments on ships bought in 2023-24."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Will product-to-crude switching by LR2s be permanent?",
+    "answer": "Rahul Sheth said LR2s switched to Aframax because of the earnings gap and lack of Gulf cargoes; the switch can reverse if LR2 earnings recover."
+   },
+   {
+    "question": "Buyback framework and whether a buyback is feasible at current valuations?",
+    "answer": "G. Shivakumar said there is no price or multiple target; buyback will be assessed by the Board like other capital allocation. The tax disadvantage on buybacks has gone, lowering the premium needed."
+   },
+   {
+    "question": "Why not deploy incremental cash into ships given strong freight?",
+    "answer": "Management prefers to hold most cash and invest only at the margin (1-2 ships), citing the risk that ships bought at peak prices write down; it said it cannot make a market call with this uncertainty."
+   },
+   {
+    "question": "What fuel and earnings savings come from newer ships?",
+    "answer": "Rahul Sheth said 2020s-built ships can save up to 20-25% fuel versus pre-2013 ships, worth about $1,000-2,500/day in earnings depending on size. Switching will continue over the next few quarters, timing depending on deals."
+   },
+   {
+    "question": "Status of the Hormuz-exposed ships and the idle rig?",
+    "answer": "All ships that had to exit the Strait have exited; one ship remains there on time charter to ADNOC, trading within the Strait. The idle rig came off in April and is in talks for short-term work after the monsoon; nothing has been finalised."
+   },
+   {
+    "question": "Revenue spillover from Q4 and the 46% crude operating-days figure?",
+    "answer": "Q4-to-Q1 spillover was about INR 50 crore last quarter and is not significant this quarter. The 46% refers to fixed days for the quarter, not utilisation, since crude tankers are fully spot."
+   }
+  ],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

@@ -1,0 +1,291 @@
+{
+ "doc_id": "IN-3fadd68c-bf46-4a08-b275-5d948f15ae60",
+ "market": "IN",
+ "company_id": "500067",
+ "name": "Blue Star Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-13",
+ "period": "2026-06",
+ "title": "Blue Star Ltd - 500067 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.94,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Blue Star's RAC segment margin fell to 2.9% in Q1 as it held share by discounting; management guides Segment II margin above 6.5% for FY27 while cutting pass-through to 5% of an intended 13%.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Pricing power",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -2,
+   "structure": -1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "our capex, when I say capex, it includes capex, it includes R&D intangibles spends"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Pass-through 5% of 13% intended",
+    "quote": "The total impact that we wanted to pass on was around 13%, what we could pass on was only 5%.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Segment II EBIT 5.8% → 2.9%",
+    "quote": "a significant drop in the EBIT margins by around 300 basis points from 5.8% in Q1FY26 to 2.9%.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "structure",
+    "label": "Excess capacity, OEM entrants at 3.5-4% margin",
+    "quote": "this is also a function of what is the total manufacturing capacity today, it is almost double of the market size.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Trade inventory not normalised",
+    "quote": "I don't think it is in alarming level, but it has not normalized.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Segment II margin >6.5% FY27 held",
+    "quote": "we have a visibility to close the year with an operating margin of over 6.5% for segment II in financial year FY27.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Segment II EBIT margin FY27",
+    "value": "over 6.5%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we have a visibility to close the year with an operating margin of over 6.5% for segment II in financial year FY27"
+   },
+   {
+    "metric": "Segment I EBIT margin",
+    "value": "6.5% to 7%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "As far as segment I is concerned, the margin outlook remains the same, 6.5% to 7%."
+   },
+   {
+    "metric": "Data-centre MEP order inflow FY27",
+    "value": "Rs.3,000 Crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We expect the order inflow for the full financial year from data center MEP projects to be around Rs.3,000 Crore"
+   },
+   {
+    "metric": "Export revenue additional",
+    "value": "USD100 million per annum from FY28",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "to generate additional export revenue of USD100 million per annum from FY28"
+   },
+   {
+    "metric": "Growth capex FY27",
+    "value": "Rs.300 to 350 Crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the growth-related spend should be in the region of around Rs.300 Crore to Rs.350 Crore"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Data-centre MEP revenue share ~20% / Rs.4,000 Cr by FY29",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Amul",
+    "relation": "customer"
+   },
+   {
+    "name": "Mother Dairy",
+    "relation": "customer"
+   },
+   {
+    "name": "Havmor",
+    "relation": "customer"
+   },
+   {
+    "name": "Croma",
+    "relation": "customer"
+   },
+   {
+    "name": "Vijay Sales",
+    "relation": "customer"
+   },
+   {
+    "name": "Reliance Jio",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Electronics manufacturing (EMS/PLI)",
+   "Tariffs & trade policy",
+   "Auto EV transition",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Segment II margin collapse, share defended by discounting",
+    "quote": "we took a hit in the operating margin in order to more or less maintain our market share"
+   },
+   {
+    "label": "Excess capacity and sub-scale OEM entrants",
+    "quote": "there is excess capacity available"
+   },
+   {
+    "label": "Management aspiration cut from 8-8.5% to 7-7.5% industry",
+    "quote": "for the last 6 months I've been saying with the capacity that has increased, and intense competition"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 4,
+   "margin": 6,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Margin recovery to 7-7.5%",
+    "quote": "Whether it will be 7% or 7.5%, we are unable to state."
+   },
+   {
+    "topic": "Q2 margin",
+    "quote": "I see only a marginal improvement happening in Q2."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Blue Star Q1 FY27 consolidated PBT before exceptionals fell 23.7% to Rs125.6 Crore on 13.3% revenue growth, as Segment II EBIT margin dropped to 2.9%.",
+  "overview": "Consolidated revenue rose 13.3% to Rs3,378 Crore, but PBT before exceptional items fell 23.7% to Rs125.6 Crore as commodity costs, rupee depreciation, a late summer and channel inventory squeezed margins. Segment II (Unitary Products) margin fell to 2.9% from 5.8%, as the company chose to defend room AC market share through consumer finance and trade schemes while only partly passing on cost increases. Management guided Segment II FY27 EBIT margin to over 6.5% and called the data-center MEP order book (Rs7,764 Crore total carry-forward order book) the key positive. Net cash rose to Rs900 Crore from Rs371 Crore a year earlier, driven by working capital release.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue from operations",
+    "value": "Rs3,378 Crore",
+    "change": "+13.3% YoY (vs Rs2,982 Crore)"
+   },
+   {
+    "metric": "PBT before exceptional items",
+    "value": "Rs125.6 Crore",
+    "change": "-23.7% YoY (vs Rs164.6 Crore)"
+   },
+   {
+    "metric": "Carry-forward order book (30 Jun 2026)",
+    "value": "Rs7,764 Crore",
+    "change": "+13.5% YoY; vs Rs6,923 Crore on 31 Mar 2026"
+   },
+   {
+    "metric": "Net cash position",
+    "value": "Rs900 Crore",
+    "change": "vs Rs371 Crore on 30 Jun 2025"
+   },
+   {
+    "metric": "Segment I revenue",
+    "value": "Rs1,625 Crore",
+    "change": "+15.1% YoY (vs Rs1,412 Crore)"
+   },
+   {
+    "metric": "Segment I segment result margin",
+    "value": "6.8% (Rs111 Crore)",
+    "change": "vs 7.9% (Rs112 Crore) in Q1 FY26"
+   },
+   {
+    "metric": "Segment II revenue",
+    "value": "Rs1,689.3 Crore",
+    "change": "+12.8% YoY (vs Rs1,499 Crore)"
+   },
+   {
+    "metric": "Segment II segment result margin",
+    "value": "2.9% (Rs50 Crore)",
+    "change": "vs 5.8% (Rs87 Crore) in Q1 FY26"
+   },
+   {
+    "metric": "Segment III revenue",
+    "value": "Rs63.6 Crore",
+    "change": "-9.7% YoY (vs Rs70.4 Crore)"
+   },
+   {
+    "metric": "Segment III segment result margin",
+    "value": "15.1% (Rs9.5 Crore)",
+    "change": "vs 10.8% (Rs7.6 Crore) in Q1 FY26"
+   },
+   {
+    "metric": "Segment I order inflow",
+    "value": "Rs2,435 Crore",
+    "change": "+24% YoY (vs Rs1,963 Crore)"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Segment I - Electro-Mechanical Projects & Commercial AC",
+    "commentary": "Revenue +15.1% to Rs1,625 Crore with margin of 6.8% (down ~112 bps YoY), hit by commodity and FX costs. Order inflow Rs2,435 Crore (+24%), driven by data centres; commercial office, factory and infrastructure orders were sluggish."
+   },
+   {
+    "name": "Segment II - Unitary Products (RAC, Commercial Refrigeration)",
+    "commentary": "Revenue +12.8% to Rs1,689.3 Crore, margin 2.9% vs 5.8%. Management says Jan-Jun 2026 margin was ~7% when discretionary timing is normalised. Commercial refrigeration degrew ~15%, mainly deep freezers from ice-cream OEMs."
+   },
+   {
+    "name": "Segment III - Professional Electronics & Industrial Systems",
+    "commentary": "Revenue -9.7% to Rs63.6 Crore, mainly from continued MedTech weakness; segment margin rose to 15.1% from 10.8%."
+   }
+  ],
+  "guidance_outlook": [
+   "Segment II FY27 EBIT margin guided at over 6.5%; management says it is 'certain' of 6.5% but its aspiration is 7-7.5%, which it does not yet have a view on.",
+   "Segment I FY27 margin outlook unchanged at 6.5% to 7%.",
+   "Management expects only marginal improvement in Q2 FY27, better Q3 and a 'defining' Q4 once product portfolio rejig is complete; revival expected from late August/September with festive season.",
+   "Data-centre MEP: FY27 order inflow guided at ~Rs3,000 Crore and revenue ~Rs1,350-1,400 Crore; FY28 order inflow ~Rs4,500 Crore and revenue ~Rs2,100 Crore; data centre MEP revenue ~Rs4,000 Crore by FY29 (~20% of revenue).",
+   "Commercial AC revenue growth of ~10% seen as achievable; 15% not predictable.",
+   "Growth-related spend (capex, R&D, digital) of Rs300-350 Crore in FY27 if plan holds; Q1 capex about Rs60-70 Crore.",
+   "Export target of additional USD100 million per annum from FY28 over FY26 base; FY26 exports about USD80-85 million.",
+   "Management said it remains cautious on FY27 overall."
+  ],
+  "capex_capacity": [
+   "Q1 FY27 capex about Rs60-70 Crore; full-year growth-related spend (capex, R&D intangibles, digital) guided at Rs300-350 Crore.",
+   "Data-centre MEP capacity constrained by manpower; company is investing in hiring and specialised professionals and modernising execution, with some infra/building resources diverted to data centres.",
+   "Product portfolio rejig under way: cutting some models, outsourcing some portfolio, alternate component sourcing, and redesigns at Sri City and Himachal plants; an alternate/product launch previously planned for six months later is being expedited.",
+   "International: product approvals in place with a few customers under CDM route (air-to-air and air-to-water heat pumps); trial orders completed two seasons; scaling awaits US tariff resolution.",
+   "Management said manufacturing capacity for RAC industry is about double the market size."
+  ],
+  "demand_pricing": [
+   "Management estimates Q1 RAC industry volume grew ~21% and Blue Star ~18% on primary sales; revenue industry ~25% vs Blue Star ~21%. These are management estimates, not audited data.",
+   "Tertiary (GFK) RAC market share: lost ~50 bps in April, gained ~10 bps in May and ~50 bps in June; Q1 net loss ~30 bps; Blue Star primary share lost ~65 bps. Year-end share ~14.25%.",
+   "Price pass-through: company sought ~13% (cost increase), realised ~5% (3-5% by model); further ~8% needed per management in May.",
+   "Trade channel inventory not normalised but 'not alarming'; normal stock estimated at ~60 days overall or ~45 days for trade alone. Energy label change led the trade to over-stock old-label products.",
+   "Commercial refrigeration demand muted (deep freezers, ice-cream OEMs, cold rooms, QSR); management says market share held."
+  ],
+  "qa_highlights": [],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}
