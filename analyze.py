@@ -10,7 +10,7 @@ import re
 import statistics as st
 from collections import Counter, defaultdict
 
-from common import DATA, SITE, fmt_date, label_from_key, load_yaml, plausible_period, read_json, settings, today, write_json
+from common import DATA, SITE, as_list, fmt_date, label_from_key, load_yaml, plausible_period, read_json, settings, today, write_json
 from extract import BLOCK_KEYS
 
 # Serious governance / solvency events cap the score (veto). Routine balance-sheet watch-points only dock points.
@@ -83,7 +83,7 @@ def clean_read(rd: dict) -> dict:
              "evasions": "topic", "entities": "name"}
     for key, dflt in DEFAULTS.items():
         out = []
-        for x in rd.get(key) or []:
+        for x in as_list(rd.get(key)):
             if isinstance(x, str):
                 x = {first[key]: x}
             if not isinstance(x, dict):
@@ -117,8 +117,8 @@ def clean_read(rd: dict) -> dict:
         rd["utilisation"]["direction"] = max(-1, min(1, int(rd["utilisation"].get("direction", 0) or 0)))
     except (TypeError, ValueError):
         rd["utilisation"]["direction"] = 0
-    rd["themes"] = [str(x) for x in (rd.get("themes") or []) if isinstance(x, (str, int, float)) and str(x).strip()]
-    rd["mental_models"] = [str(x) for x in (rd.get("mental_models") or []) if isinstance(x, str)]
+    rd["themes"] = [str(x) for x in as_list(rd.get("themes")) if isinstance(x, (str, int, float)) and str(x).strip()]
+    rd["mental_models"] = [str(x) for x in as_list(rd.get("mental_models")) if isinstance(x, str)]
     try:
         rd["hedge_index"] = float(rd.get("hedge_index", 0.5))
     except (TypeError, ValueError):
@@ -402,6 +402,26 @@ def build(market: str, log=print) -> dict:
     for c in out_cos:
         c["namedBy"] = sorted(named_by.get(c["id"], {}).values(), key=lambda n: n["relation"])
 
+    # 4c) first-time callers: transcript says so, or no earlier concall filing on BSE since 2019
+    hist = read_json(DATA / f"concall_history_{market}.json", {})
+    first_timers = []
+    for c in out_cos:
+        per = recs[c["id"]]
+        first_p = min(per)
+        r0 = per[first_p]
+        cue = next((manifest.get(d["doc_id"], {}).get("firstCue") for d in r0["docs"] if manifest.get(d["doc_id"], {}).get("firstCue")), "")
+        h = hist.get(c["id"])
+        if not cue and not (h and h.get("prior") is None):
+            continue
+        first_timers.append({
+            "id": c["id"], "name": c["name"], "sector": c["sector"], "bigSector": c.get("bigSector"), "mcap": c["mcap"],
+            "period": label_from_key(first_p, market), "date": r0["date"][:10], "score": r0["score"],
+            "status": "Confirmed" if cue else "Likely",
+            "evidence": (f"Transcript: \u201c{cue}\u201d" if cue else
+                         f"No earnings call transcript or analyst / investor meet filing on BSE from 2019 until this call"),
+            "thesis": r0["thesis"], "laterCalls": len(per) - 1})
+    first_timers.sort(key=lambda x: x["date"], reverse=True)
+
     # 5) ideation
     ideas = build_ideas(out_cos, recs, first_seen, tstage, cfg, current)
 
@@ -426,6 +446,7 @@ def build(market: str, log=print) -> dict:
         "sectors": sectors, "themes": themes, "ideas": ideas,
         "theme_candidates": [t for t, n in cand.most_common(30) if n >= 2],
         "calls": calls, "tracker": tracker, "trackers": trackers, "summaryCount": len(summaries),
+        "firstTimers": first_timers, "historyChecked": len(hist),
         "inProgress": [{"season": label_from_key(p, market), "calls": per_count[p]} for p in later],
     }
     write_json(SITE / "data" / f"{market.lower()}.json", data)

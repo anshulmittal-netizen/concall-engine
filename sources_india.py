@@ -14,12 +14,15 @@ ATTACH = ["https://www.bseindia.com/xml-data/corpfiling/AttachLive/{f}",
 
 RX_TRANSCRIPT = re.compile(r"transcript", re.I)
 RX_PRESENT = re.compile(r"(investor|investors|earnings|analyst|corporate|results?)\s*(day\s*)?presentation|presentation\s+(to|for)\s+(the\s+)?(investors|analysts)", re.I)
+RX_AGM = re.compile(r"annual general meet|\bagm\b|\begm\b|extra.?ordinary general", re.I)
 RX_SKIP = re.compile(r"audio|video|recording|intimation|schedule|newspaper", re.I)
 
 
 def classify(item: dict) -> str | None:
     sub = str(item.get("SUBCATNAME") or "")
     text = " ".join(str(item.get(k) or "") for k in ("SUBCATNAME", "NEWSSUB", "HEADLINE"))
+    if RX_AGM.search(text):
+        return None  # AGM transcripts are shareholder meetings, not earnings calls
     if sub == "Earnings Call Transcript" or (RX_TRANSCRIPT.search(text) and "AGM" not in sub):
         return "transcript"
     if sub == "Investor Presentation" or (RX_PRESENT.search(text) and not RX_SKIP.search(text)
@@ -28,7 +31,7 @@ def classify(item: dict) -> str | None:
     return None
 
 
-SUBCATS = {"transcript": ["Earnings Call Transcript", "Analyst / Investor Meet"],
+SUBCATS = {"transcript": ["Earnings Call Transcript", "Analyst / Investor Meet", "General"],  # some file under General
            "presentation": ["Investor Presentation"]}
 ANN_SUB = ("https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w?pageno={p}&strCat=Company%20Update"
            "&strPrevDate={d0}&strScrip=&strSearch=P&strToDate={d1}&strType=C&subcategory={sub}")

@@ -138,6 +138,10 @@ def cmd_extract(a):
             from common import plausible_period
             # e.g. a Q1 transcript filed in October belongs to June, not September
             e["period"] = plausible_period(period_from_text(e.get("title", "") + "\n" + text[:6000]), e["date"])
+            import history
+            cue = history.text_cue(text)
+            if cue:
+                e["firstCue"] = cue  # transcript says this is the company's first / maiden call
             x = extract.extract(e, text)
             e["status"] = "extracted"; e["model"] = x["model"]; done += 1
             log(f"  ✓ {e['name']} · {e['doc_type']} · {e['date']} · verified {x['verified_share']:.0%}")
@@ -173,6 +177,20 @@ def cmd_summarize(a):
     summarize.run(a.market, get_text, a.limit, log)
 
 
+def cmd_history(a):
+    """First-time concall check against BSE filing history (cached; only new companies are checked)."""
+    import glob
+    import history
+    from common import DATA as D_
+    earliest = {}
+    for f in glob.glob(str(D_ / "extractions" / a.market / "*" / "*.json")):
+        x = read_json(f) or {}
+        cid, d = str(x.get("company_id", "")), str(x.get("date", ""))[:10]
+        if cid and d and (cid not in earliest or d < earliest[cid]):
+            earliest[cid] = d
+    history.update(earliest, log)
+
+
 def cmd_analyze(a):
     analyze.build(a.market, log)
 
@@ -187,6 +205,11 @@ def cmd_serve(a):
 
 def cmd_all(a):
     cmd_fetch(a); cmd_extract(a)
+    if a.market == "IN":
+        try:
+            cmd_history(a)
+        except Exception as ex:  # never let the history check stop the night's run
+            log(f"history check skipped: {ex}")
     if settings()["run"].get("summaries", True):
         a2 = argparse.Namespace(**{**vars(a), "limit": None})
         cmd_summarize(a2)
@@ -195,7 +218,7 @@ def cmd_all(a):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "extract", "summarize", "analyze", "all", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "extract", "summarize", "history", "analyze", "all", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
@@ -203,7 +226,7 @@ def main(argv=None):
     a = p.parse_args(argv)
     if a.command != "serve" and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "extract": cmd_extract, "summarize": cmd_summarize, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "extract": cmd_extract, "summarize": cmd_summarize, "history": cmd_history, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from common import DATA, label_from_key, read_json, settings, write_json
+from common import DATA, as_list, label_from_key, read_json, settings, write_json
 from textify import norm
 
 SUMMARY_TOOL = {
@@ -65,10 +65,10 @@ def _call(entry: dict, text: str) -> dict:
 def _clean(s: dict, text: str) -> dict:
     nt = norm(text)
     for key in ("financial_highlights", "segments", "qa_highlights"):
-        s[key] = [x for x in (s.get(key) or []) if isinstance(x, dict)]
+        s[key] = [x for x in as_list(s.get(key)) if isinstance(x, dict)]
     for key in ("guidance_outlook", "capex_capacity", "demand_pricing", "risks_watch"):
-        s[key] = [str(x) for x in (s.get(key) or []) if x]
-    s["key_quotes"] = [q for q in (s.get("key_quotes") or []) if isinstance(q, str) and norm(q) in nt]
+        s[key] = [str(x) for x in as_list(s.get(key)) if isinstance(x, (str, int, float)) and str(x).strip()]
+    s["key_quotes"] = [q for q in as_list(s.get("key_quotes")) if isinstance(q, str) and norm(q) in nt]
     for key in ("headline", "overview", "management_tone"):
         s[key] = str(s.get(key) or "")
     return s

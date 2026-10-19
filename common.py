@@ -113,6 +113,23 @@ def label_from_key(key: str, market: str) -> str:
     return period_label(dt.date(y, m, 28), market)
 
 
+def as_list(v) -> list:
+    """A model field that should be a list: parse it if it came back as JSON text, never split a string into letters."""
+    if isinstance(v, list):
+        return v
+    if isinstance(v, str):
+        s = v.strip()
+        if "[" in s:
+            try:
+                out, _ = json.JSONDecoder().raw_decode(s[s.index("["):])
+                if isinstance(out, list):
+                    return out
+            except ValueError:
+                pass
+        return [s] if s else []
+    return []
+
+
 def prev_quarter_key(key: str) -> str:
     y, m = map(int, key.split("-"))
     m -= 3

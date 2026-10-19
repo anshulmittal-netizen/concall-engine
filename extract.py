@@ -11,7 +11,7 @@ from pathlib import Path
 
 from rapidfuzz import fuzz
 
-from common import DATA, label_from_key, load_yaml, read_json, settings, write_json
+from common import DATA, as_list, label_from_key, load_yaml, read_json, settings, write_json
 from textify import norm
 
 TRIGGER_TYPES = ["supply", "util", "pricing", "structure", "inventory", "demand", "guidance", "novelty", "tone"]
@@ -126,7 +126,7 @@ def verify(read: dict, text: str) -> float:
             return 0
     read["blocks"] = {k: _int(read["blocks"].get(k, 0)) for k in BLOCK_KEYS}
     for key in ("themes", "mental_models"):
-        read[key] = [str(x) for x in (read.get(key) or []) if isinstance(x, (str, int, float))]
+        read[key] = [str(x) for x in as_list(read.get(key)) if isinstance(x, (str, int, float))]
 
     def good(q):
         nonlocal ok, tot

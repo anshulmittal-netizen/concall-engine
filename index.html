@@ -329,6 +329,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
     <button class="tab" role="tab" id="tab-rank" data-tab="rank" aria-selected="false">Best to worst calls<span class="count" id="cnt-rank"></span></button>
     <button class="tab" role="tab" id="tab-tracker" data-tab="tracker" aria-selected="false">Sector tracker<span class="count" id="cnt-tracker"></span></button>
     <button class="tab" role="tab" id="tab-guide" data-tab="guide" aria-selected="false">Guidance leaders<span class="count" id="cnt-guide"></span></button>
+    <button class="tab" role="tab" id="tab-first" data-tab="first" aria-selected="false">First-time calls<span class="count" id="cnt-first"></span></button>
     <button class="tab" role="tab" id="tab-sectors" data-tab="sectors" aria-selected="false">Sector turnarounds<span class="count" id="cnt-sectors"></span></button>
     <button class="tab" role="tab" id="tab-themes" data-tab="themes" aria-selected="false">Theme momentum<span class="count" id="cnt-themes"></span></button>
     <button class="tab" role="tab" id="tab-ideas" data-tab="ideas" aria-selected="false">Ideation<span class="count" id="cnt-ideas"></span></button>
@@ -373,6 +374,12 @@ table.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
     <div class="guide-grid" id="guide-lead"></div>
     <h3 style="font-size:17px;margin:22px 0 10px">Weakest guidance</h3>
     <div class="guide-grid" id="guide-lag"></div>
+  </section>
+
+  <section id="panel-first" role="tabpanel" aria-labelledby="tab-first" hidden>
+    <p class="sub">Companies holding their first-ever earnings call. <b>Confirmed</b>: the transcript itself says it is the first or maiden call. <b>Likely</b>: BSE shows no earnings call transcript and no analyst / investor meet filing for the company from 2019 until this call. Newest first.</p>
+    <div class="tbl-wrap"><table class="tbl" id="first-table"></table></div>
+    <p class="sub" id="first-note" style="margin-top:10px;font-size:12.5px"></p>
   </section>
 
   <section id="panel-sectors" role="tabpanel" aria-labelledby="tab-sectors" hidden>
@@ -770,6 +777,24 @@ $('#trk-table').onclick = e => {
   if (tr.dataset.sub) { const box = tr.querySelector('.trk-co'); if (box) box.hidden = !box.hidden; }
 };
 
+/* ---------- first-time calls ---------- */
+function renderFirst() {
+  const d = D(), rows = d.firstTimers || [];
+  $('#cnt-first').textContent = rows.length;
+  $('#first-table').innerHTML = rows.length ? `<thead><tr><th>Company</th><th>Status</th><th>First call</th><th>Score</th><th>Sector \u203a sub-sector</th><th>Evidence</th><th>Read</th></tr></thead><tbody>` +
+    rows.map((r, i) => `<tr data-id="${esc(r.id)}" style="animation-delay:${Math.min(i, 20) * .03}s">
+      <td><div class="nm">${esc(r.name)}</div><div style="font-size:12.5px;color:var(--muted)">${esc(r.mcap || '')}</div></td>
+      <td><span class="stage ${r.status === 'Confirmed' ? 'st-confirming' : 'st-emerging'}">${esc(r.status)}</span></td>
+      <td class="num" style="white-space:nowrap">${esc(r.period)}<div style="font-size:12px;color:var(--muted)">${esc(r.date)}</div></td>
+      <td><b class="num" style="color:${scoreCol(r.score)}">${r.score}</b></td>
+      <td><div>${esc(r.sector)}</div><div style="font-size:12px;color:var(--muted)">${esc(r.bigSector || '')}</div></td>
+      <td class="th-txt">${esc(r.evidence)}<div style="margin-top:4px;color:var(--fg);opacity:.85">${esc(r.thesis || '')}</div></td>
+      <td><button class="open" data-id="${esc(r.id)}">Open read</button></td></tr>`).join('') + '</tbody>'
+    : '<tbody><tr><td><div class="empty">No first-time callers found yet among the calls read so far.</div></td></tr></tbody>';
+  $('#first-note').textContent = d.historyChecked ? `${d.historyChecked} companies checked against their BSE filing history so far. New companies are checked each night.` : '';
+}
+$('#first-table').onclick = e => { const t = e.target.closest('[data-id]'); if (t) openCompany(t.dataset.id); };
+
 /* ---------- guidance leaders ---------- */
 function gCard(x, i, top) {
   const pos = x.guidance;
@@ -850,7 +875,7 @@ function renderIdeas() {
   $('#cnt-ideas').textContent = d.ideas.filter(x => !x.red).length;
 }
 
-const RENDER = {feed: () => { renderList(); renderDetail(); }, rank: renderRank, tracker: renderTracker, guide: renderGuide, sectors: renderSectors, themes: renderThemes, ideas: renderIdeas};
+const RENDER = {feed: () => { renderList(); renderDetail(); }, rank: renderRank, tracker: renderTracker, guide: renderGuide, first: renderFirst, sectors: renderSectors, themes: renderThemes, ideas: renderIdeas};
 function go(tab) {
   state.tab = tab;
   document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.tab === tab));
