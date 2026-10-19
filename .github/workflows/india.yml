@@ -20,9 +20,13 @@ jobs:
     runs-on: [self-hosted]
     timeout-minutes: 300
     permissions: { contents: write }
+    defaults:
+      run:
+        shell: bash          # Git Bash on Windows (installed with Git for Windows)
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       PYTHONUNBUFFERED: "1"
+      PYTHONUTF8: "1"        # rupee signs and quotes stay UTF-8 on Windows
     steps:
       - uses: actions/checkout@v4
       - name: Install
