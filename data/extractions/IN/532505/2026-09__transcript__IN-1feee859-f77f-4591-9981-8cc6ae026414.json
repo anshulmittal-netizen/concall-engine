@@ -1,0 +1,200 @@
+{
+ "doc_id": "IN-1feee859-f77f-4591-9981-8cc6ae026414",
+ "market": "IN",
+ "company_id": "532505",
+ "name": "UCO Bank",
+ "doc_type": "transcript",
+ "date": "2026-10-16",
+ "period": "2026-09",
+ "title": "UCO Bank - 532505 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "UCO Bank Q2 FY27 shows strong loan growth (24.7% YoY) and falling GNPA (1.96%), but NIM guidance held only by repo-linked loans, and Q2 slippages rose QoQ to Rs 549 crore, partly from agri marking.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Repo-linked loans ~66% of advances",
+    "quote": "we have around 66% of our advances portfolio linked with the repo rate",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Slippages up QoQ to Rs 549 crore",
+    "quote": "the higher slippages are only due to the agriculture marking",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Advances growth 24.7% vs 12-14% guide, not raised",
+    "quote": "we will try to grow more than that, of course",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Treasury pressure from hardening yields",
+    "quote": "the treasury profitability is under pressure",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Advances growth",
+    "value": "12-14% (not changed; actual 24.70%)",
+    "change": "held",
+    "quote": "we have given guidance of 12%-14% growth in advances"
+   },
+   {
+    "metric": "Global NIM",
+    "value": "2.80%-2.90% guided; actual 3.00%",
+    "change": "held",
+    "quote": "We have given guidance of 2.80%-2.90%, and we are maintaining our global yield beyond that."
+   },
+   {
+    "metric": "Credit cost",
+    "value": "below 0.75% for FY27",
+    "change": "held",
+    "quote": "we expect to maintain it below the guidance, 0.75%, going forward also for the current financial year"
+   },
+   {
+    "metric": "Net NPA",
+    "value": "below 0.25% for the year (achieved 0.18%)",
+    "change": "held",
+    "quote": "our guidance for the net NPA ratio was to bring it down below 0.25% for the year"
+   },
+   {
+    "metric": "Cost-to-income",
+    "value": "around 50% for full year",
+    "change": "new",
+    "quote": "For the full year also, we will be maintaining around 50%."
+   },
+   {
+    "metric": "Slippage ratio",
+    "value": "below 1%; Q2 0.85%",
+    "change": "held",
+    "quote": "On our slippage ratio we had also given guidance to keep it below 1%"
+   },
+   {
+    "metric": "CASA ratio",
+    "value": "not guided as number; 36.77%, slightly lower QoQ",
+    "change": "not_discussed",
+    "quote": "our CASA ratio has been maintained at 36.77%. This is slightly lower than the June quarter."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Deposit growth 10-12%",
+    "outcome": "missed",
+    "quote": "while we had given growth guidance in deposits of 10 to 12%, our growth has been 14% plus"
+   },
+   {
+    "metric": "Advances growth 12-14%",
+    "outcome": "met",
+    "quote": "We had given guidance in advances growth of 12 to 14%; the growth has been 24.70%."
+   },
+   {
+    "metric": "GNPA below 2% by Mar-27",
+    "outcome": "met",
+    "quote": "we have already, in the half year, brought it down to below 2%, and our GNPA ratio is 1.96%"
+   },
+   {
+    "metric": "Net NPA below 0.25%",
+    "outcome": "met",
+    "quote": "in the half year itself we have brought it down to below 0.20%, that is 0.18%"
+   },
+   {
+    "metric": "Slippage below 1%",
+    "outcome": "met",
+    "quote": "for the quarter it is 0.85%"
+   },
+   {
+    "metric": "Credit cost below 0.75%",
+    "outcome": "met",
+    "quote": "Our Credit Cost is 0.65%."
+   },
+   {
+    "metric": "Global NIM 2.80-2.90%",
+    "outcome": "met",
+    "quote": "We have given guidance of 2.80%-2.90%"
+   },
+   {
+    "metric": "RAM share 62-65%",
+    "outcome": "met",
+    "quote": "we have reached 65%; we have already crossed 65% in this quarter in RAM share"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Rural demand recovery",
+   "Interest-rate relief",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q2 recoveries and treasury cushion reliant on repo pass-through",
+    "quote": "this will more or less compensate for the treasury losses, if you see any, going ahead"
+   },
+   {
+    "label": "Provisioning accelerated to hit net NPA guidance",
+    "quote": "So, we have done accelerated provisioning to achieve the guidance"
+   },
+   {
+    "label": "Opex jump Rs 160 crore QoQ",
+    "quote": "Other operating expenses in this quarter have gone up a little bit, by 160 crore."
+   },
+   {
+    "label": "Deposit growth below advances; CD ratio rising to 82.29%",
+    "quote": "our CD ratio has improved to 82.29%, as against 75.47% in the previous year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 5,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Corporate growth and guidance upgrade",
+    "quote": "I will not take any guess on the future growth rates as of now."
+   },
+   {
+    "topic": "Second-hand car loan book size",
+    "quote": "we have not analyzed it separately"
+   },
+   {
+    "topic": "Merger speculation",
+    "quote": "I can't reply to you."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}
