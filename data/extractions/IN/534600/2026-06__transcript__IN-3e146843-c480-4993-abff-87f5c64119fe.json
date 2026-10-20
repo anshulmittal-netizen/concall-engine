@@ -1,0 +1,290 @@
+{
+ "doc_id": "IN-3e146843-c480-4993-abff-87f5c64119fe",
+ "market": "IN",
+ "company_id": "534600",
+ "name": "JTL Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-10",
+ "period": "2026-06",
+ "title": "JTL Industries Ltd - 534600 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Record Q1 volume of 118,513 t (+17.8% YoY) and company utilisation of 55% rising to ~65% by year-end, but EBITDA/t of ~INR4,954 includes a ~INR200 Defence boost; capacity goes to 2 Mt by FY28-29.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 55,
+   "quote": "right now, overall level, like the company level, we are operating at 55% utilization levels. And by year-end, this level should be close to 65%."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "the capex outflow is close to INR 100 crores, and this will be completing our entire capex left over."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Company utilisation 55% → ~65% by year-end",
+    "quote": "by year-end, this level should be close to 65%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex ~INR100 cr to complete 2 Mt",
+    "quote": "the remaining INR100 crores of capex will complete our entire journey to 2 million tons",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Record secondary demand; primary-secondary spread INR8-12/kg",
+    "quote": "It's, say, record-breaking demand in the secondary product",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA/t ~INR4,750 ex-Defence vs 4,500 guide",
+    "quote": "Barring that, the EBITDA per ton was at around INR 4,750 level",
+    "direction": 1,
+    "confidence": 0.45
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA per ton (JTL Steel tube and pipe)",
+    "value": "~INR4,500 for year, ~INR4,750 run-rate, consolidated INR5,000 in coming quarters",
+    "change": "held",
+    "quote": "this year's target for us is to maintain the EBITDA around INR4,500"
+   },
+   {
+    "metric": "Volume growth FY27",
+    "value": "~30%+",
+    "change": "held",
+    "quote": "But still 30% is something that we will definitely achieve"
+   },
+   {
+    "metric": "Mangaon capacity addition",
+    "value": "~1 million tons by end H1 FY27",
+    "change": "new",
+    "quote": "we are very confident to achieve the desired capacity of addition of close to 1 million tons by end of H1"
+   },
+   {
+    "metric": "Export share of sales",
+    "value": "10% target",
+    "change": "held",
+    "quote": "the earlier mentioned target of 10% of total sales to exports is something that we'll target for the coming quarters as well"
+   },
+   {
+    "metric": "Working capital cycle FY28",
+    "value": "35-40 days",
+    "change": "new",
+    "quote": "By FY '28, we are targeting a working capital cycle of 35 to 40 days."
+   },
+   {
+    "metric": "JTL Defence Q4 FY27 sales run-rate",
+    "value": "500 t/month; ~INR150 cr top line",
+    "change": "held",
+    "quote": "we will be touching close to INR150 crores of top line in that"
+   },
+   {
+    "metric": "JTL Defence long-term EBITDA margin",
+    "value": "10-15%",
+    "change": "held",
+    "quote": "But 10% to 15% is something that you will achieve in the long-term proposition."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA per ton ~INR4,500",
+    "outcome": "met",
+    "quote": "this year's target for us is to maintain the EBITDA around INR4,500"
+   },
+   {
+    "metric": "Volume growth ~30% FY27",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Minda Corp",
+    "relation": "customer"
+   },
+   {
+    "name": "MMRDA",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Defence indigenisation",
+   "Anti-dumping protection",
+   "Import substitution",
+   "Tariffs & trade policy",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Export lag and Defence EBITDA inflated by Q4 inventory gains",
+    "quote": "Q4 was an exceptional quarter in that because of -- led by inventory gains in which we did 20% EBITDA margins"
+   },
+   {
+    "label": "Working capital cycle 75 days vs FY28 target 35-40",
+    "quote": "it's about 75 days right now at this quarter"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 3,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "JTL Defence margin guidance",
+    "quote": "it's too soon again to maintain the exact 15% margin going ahead"
+   },
+   {
+    "topic": "Order book quantification",
+    "quote": "So 1 lakh tons of order book is something that's always in -- it's a moving market"
+   }
+  ],
+  "hedge_index": 0.4,
+  "novelty": 0
+ },
+ "summary": {
+  "headline": "JTL Industries Q1 FY27 revenue hit record INR722 crore with EBITDA INR59 crore (8.1% margin) and volumes up 17.8% YoY to 118,513 MT.",
+  "overview": "JTL Industries reported its highest-ever quarterly revenue and EBITDA in Q1 FY27, with revenue of INR722 crore, EBITDA of INR59 crore and PAT of INR35 crore (4.9% margin). PAT absorbed INR2.8 crore of extra non-cash depreciation from the March 2026 revaluation at JTL Defence. Operational EBITDA per ton excluding other income was INR4,954, which management attributed to product mix and efficiency; it said JTL Defence added about INR200 per ton to consolidated figures. Management reiterated FY27 volume growth of at least 30%, with Mangaon capacity expansion of about 1 million tons targeted by end H1 and capex of about INR100 crore left to reach 2 million tons.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations",
+    "value": "INR722 crore",
+    "change": "Highest ever quarterly revenue"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR59 crore",
+    "change": "Margin 8.1%; highest ever quarterly"
+   },
+   {
+    "metric": "PAT",
+    "value": "INR35 crore",
+    "change": "Margin 4.9%; after INR2.8 crore extra depreciation from JTL Defence revaluation"
+   },
+   {
+    "metric": "Sales volume",
+    "value": "118,513 MT",
+    "change": "+17.8% YoY"
+   },
+   {
+    "metric": "Operational revenue per ton",
+    "value": "INR60,882",
+    "change": ""
+   },
+   {
+    "metric": "Operational EBITDA per ton (ex other income)",
+    "value": "INR4,954",
+    "change": "Consolidated; ~INR4,750 excluding JTL Defence (~INR200/ton contribution)"
+   },
+   {
+    "metric": "Value-added product share",
+    "value": "~35%",
+    "change": "Unchanged vs past quarters"
+   },
+   {
+    "metric": "Export share of sales",
+    "value": "5%",
+    "change": "Dipped due to container shortages"
+   },
+   {
+    "metric": "Working capital cycle",
+    "value": "~75 days",
+    "change": "Down from ~90 days earlier"
+   }
+  ],
+  "segments": [
+   {
+    "name": "JTL Industries (steel tubes and pipes)",
+    "commentary": "EBITDA per ton about INR4,750 excluding JTL Defence; DFT structural pipes now running at 20,000-25,000 tons per quarter, roughly double the prior ~10,000 tons. Mangaon facility utilisation about 42%."
+   },
+   {
+    "name": "JTL Defence (ex-RCI Industries & Technologies)",
+    "commentary": "Run rate about 100 MT/month in Q1, with about 120 MT in the first month of Q2. Q1 EBITDA margin about 12%, versus about 20% in Q4 which included inventory gains. Management targets 500 MT/month by Q4 FY27 and INR150 crore top line this year."
+   }
+  ],
+  "guidance_outlook": [
+   "Consolidated EBITDA per ton: JTL Steel tube and pipe segment ~INR4,750 seen as sustainable; management confident of reaching INR5,000 consolidated in coming quarters; FY27 target had been ~INR4,500.",
+   "FY27 volume growth of at least 30% reiterated; H2 expected stronger than H1, and management aims to exceed 30%.",
+   "Company utilisation ~55% now, targeted ~65% by year-end FY27; Mangaon utilisation to rise toward ~60%.",
+   "Capacity: ~7 lakh tons to be commissioned by end H1 FY27; remaining 3 lakh tons (API pipes) by about the same time next year. Full utilisation by FY29; utilisation 50-60% in FY29; peak ~70% possibly FY29-FY30.",
+   "Peak revenue potential on the current capex cycle: ~1.4 million tons at ~INR65,000/ton, about INR9,100 crore (management's arithmetic).",
+   "Value-added share target of 50-60% of products once the 2 million ton capacity is complete.",
+   "Export target of 10% of total sales for coming quarters; export order book of about INR75 crore.",
+   "Capex: ~INR100 crore in FY27 to complete the expansion, then maintenance capex of INR30-40 crore a year; JTL Defence capex about INR15 crore this year and similar next year.",
+   "FY28 working capital cycle target of 35-40 days.",
+   "JTL Defence EBITDA margin long-term 15%; 10-15% band expected over time, with near-term wavering likely."
+  ],
+  "capex_capacity": [
+   "Current capacity about 1 million tons; expansion to 2 million tons planned, with about 7 lakh tons commissioning by end H1 FY27.",
+   "Mangaon facility utilisation about 42%; producing about 7,000-10,000 tons of DFT a quarter there, with room to double.",
+   "Remaining INR100 crore of capex in FY27 completes the expansion; maintenance capex INR30-40 crore a year after that.",
+   "JTL Defence: capacity about 1,000 tons/month on the hot plant; INR15 crore capex in FY27 for coin and bullet shell lines, which changes product mix rather than capacity."
+  ],
+  "demand_pricing": [
+   "Secondary demand described as record-breaking; primary-secondary spread ranged INR8-12/kg in Q1 (versus a normal INR4-5/kg), and management says it remains at that level.",
+   "Company has about 45-50% capacity allocated to the secondary market; dealer network contributes 50-60% of sales, with 7-8 day dealer payment cycles.",
+   "Government share of sales fell to under 5% last year from over 25% earlier; company deliberately shifting to dealers and exports, with DFT sold direct to bodies such as MMRDA and airport authorities.",
+   "Exports affected by Hormuz-related container and logistics shortages; company received ACRS certification (mainly Australia) and has started shipments to the US, Mexico and Canada.",
+   "July 2026 described as an all-time high month; management expects another record quarter.",
+   "Gaining share in DFT, specialised high-diameter/high-thickness products, and seamless-pipe replacement for hydraulic and automotive OEMs."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Is the INR5,000 per ton EBITDA a one-off or structural, and what is the guidance?",
+    "answer": "Management said JTL Defence added about INR200/ton; ex-Defence EBITDA was about INR4,750/ton, and INR5,000 consolidated is expected in coming quarters on the back of product mix and normalised HRC."
+   },
+   {
+    "question": "Is the 30% volume growth guidance intact?",
+    "answer": "Yes; management said H2 will be stronger and it expects to exceed 30%."
+   },
+   {
+    "question": "Capacity ramp and utilisation timeline?",
+    "answer": "7 lakh tons by end H1; the remaining 3 lakh tons (API pipes) by about the same time next year. Utilisation 50-60% in FY29; peak about 70%, possibly FY29 or FY30."
+   },
+   {
+    "question": "Revenue potential at peak utilisation?",
+    "answer": "About 1.4 million tons at INR65,000-66,000/ton, roughly INR9,100 crore on the current capex cycle."
+   },
+   {
+    "question": "JTL Defence guidance and run rate?",
+    "answer": "Run rate about 100 MT/month in Q1, about 120 MT in the first month of Q2; target 500 MT/month by Q4 FY27. Long-term margin 15%, with 10-15% expected over time."
+   },
+   {
+    "question": "Working capital and cash conversion?",
+    "answer": "Cycle down to about 75 days from 90; target 35-40 days by FY28, helped by dealer financing and a shift away from government receivables."
+   }
+  ],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

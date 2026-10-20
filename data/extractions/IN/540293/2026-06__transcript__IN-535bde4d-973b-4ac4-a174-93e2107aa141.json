@@ -1,0 +1,270 @@
+{
+ "doc_id": "IN-535bde4d-973b-4ac4-a174-93e2107aa141",
+ "market": "IN",
+ "company_id": "540293",
+ "name": "Pricol Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-04",
+ "period": "2026-06",
+ "title": "Pricol Ltd - 540293 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q1 FY27 revenue up 23.5% YoY to Rs1,083.6cr but EBITDA margin 11.41% on input-cost shock; management says lost ~1.5% margin is delayed, recoverable via indexation in Q2–Q3, with polymer capacity the constraint.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Capacity bottleneck",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We have embarked on a 700-crore overall CAPEX cycle across all divisions of the company"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Rs700cr capex cycle over 18-24 months",
+    "quote": "We have embarked on a 700-crore overall CAPEX cycle across all divisions of the company",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Indexation recovers ~75% of revenue in Q2",
+    "quote": "at least about 75% of our revenue, Q2 we will get some indexation and the balance will go to Q3",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "guidance",
+    "label": "Polymer turnover to ~Rs2,000cr from Rs1,000cr",
+    "quote": "we should comfortably go to about Rs. 2000 crores of turnover from our current Rs. 1000 crores of turnover",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "EBITDA to stay under pressure for next couple of quarters",
+    "quote": "EBITDA we believe will continue to remain under pressure for the next couple of quarters",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Polymer turnover capacity",
+    "value": "Rs2,000cr from Rs1,000cr",
+    "change": "new",
+    "horizon": "post capex",
+    "quote": "we should comfortably go to about Rs. 2000 crores of turnover from our current Rs. 1000 crores"
+   },
+   {
+    "metric": "DICVS revenue",
+    "value": "Rs8,000cr by CY30/FY31",
+    "change": "held",
+    "horizon": "CY30/FY31",
+    "quote": "we hope to achieve Rs. 8000 crores by a combination of primarily organic and some amount of inorganic growth"
+   },
+   {
+    "metric": "Steady-state blended EBITDA margin",
+    "value": "12.5-13%",
+    "change": "held",
+    "horizon": "steady state",
+    "quote": "12.5-13% which is the steady state margin"
+   },
+   {
+    "metric": "ACFMS growth vs market",
+    "value": "10% over market",
+    "change": "new",
+    "horizon": "next years",
+    "quote": "We are aiming for a 10% growth rate over the market"
+   },
+   {
+    "metric": "Polymer revenue multiple",
+    "value": "2.5x FY25 base",
+    "change": "held",
+    "horizon": "three years",
+    "quote": "we will do two and a half times will be our endeavor to achieve"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Honda",
+    "relation": "customer"
+   },
+   {
+    "name": "Tata Motors",
+    "relation": "customer"
+   },
+   {
+    "name": "Mahindra",
+    "relation": "customer"
+   },
+   {
+    "name": "Denso",
+    "relation": "partner"
+   },
+   {
+    "name": "Johnson",
+    "relation": "partner"
+   },
+   {
+    "name": "Varroc",
+    "relation": "competitor"
+   },
+   {
+    "name": "National Plastics",
+    "relation": "competitor"
+   },
+   {
+    "name": "Premier Polyplast",
+    "relation": "competitor"
+   },
+   {
+    "name": "Nippon Seiki",
+    "relation": "competitor"
+   },
+   {
+    "name": "Continental",
+    "relation": "competitor"
+   },
+   {
+    "name": "Visteon",
+    "relation": "competitor"
+   },
+   {
+    "name": "BOE",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Polymer capacity expansion",
+   "Demerger of DIS business",
+   "Input cost inflation / West Asia crisis",
+   "Two-wheeler TFT adoption",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "EBITDA margin compression ~1.5pt; recovery depends on customer indexation",
+    "quote": "we have lost about 1.5% margin this quarter in terms of EBITDA"
+   },
+   {
+    "label": "Rupee at all-time low; electronic child-part imports hurt profit",
+    "quote": "the rupee, which is at an all-time low against the US dollar"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 4,
+   "capex": 2,
+   "balance_sheet": 1,
+   "other": 9
+  },
+  "evasions": [
+   {
+    "topic": "Disc brake revenue and ramp",
+    "quote": "the real revenues will only kick in from FY28"
+   },
+   {
+    "topic": "Demerger partner identity and eCockpit competitiveness",
+    "quote": "Possibly. Like I said, the amount of eCockpit"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Pricol Q1 FY27 consolidated revenue rose 23.5% YoY to Rs 1,083.6 crore, but EBITDA margin fell to 11.41% on West Asia-driven cost headwinds.",
+  "overview": "Consolidated revenue from operations was about Rs 1,083.58 crore, up 23.46% YoY, with EBITDA of Rs 123.69 crore (11.41% margin) and PAT of Rs 67.02 crore (6.19% margin). Management said EBITDA grew only about 21% YoY because of polymer, LPG, freight, rupee and minimum-wage cost increases, which it expects to recover through quarterly and half-yearly indexation over Q2 and Q3. The call also covered a proposed demerger of the DIS/DICVS business from the ACFMS and polymer businesses, a Rs 700 crore capex cycle, and a one-year pause on M&A.</overview>\n<parameter name=\"financial_highlights\">[{\"metric\":\"Consolidated revenue from operations\",\"value\":\"Rs 1,083.58 crore\",\"change\":\"+23.46% YoY\"},{\"metric\":\"EBITDA\",\"value\":\"Rs 123.69 crore\",\"change\":\"+21.42% YoY (as stated)\"},{\"metric\":\"EBITDA margin\",\"value\":\"11.41%\",\"change\":\"Gross margin down ~160 bps (per analyst question, not disputed)\"},{\"metric\":\"PAT\",\"value\":\"Rs 67.02 crore\",\"change\":\"+34.34% YoY\"},{\"metric\":\"PAT margin\",\"value\":\"6.19%\",\"change\":\"\"},{\"metric\":\"PBT\",\"value\":\"Not stated in absolute terms\",\"change\":\"+32.23% YoY\"},{\"metric\":\"EPS\",\"value\":\"Rs 5.50 per Re 1 share\",\"change\":\"\"},{\"metric\":\"Polymer division revenue\",\"value\":\"Rs 249 crore\",\"change\":\"EBITDA margin 7.8%\"}]",
+  "segments": [
+   {
+    "name": "DIS / DICVS (driver information systems, two-wheeler, CV, PV)",
+    "commentary": "Growth about 25% YoY in Q1 per CEO, equal to ACFMS. Two-wheeler revenue grew 28% vs industry 23%. Targets growth at least 5% above market; two-wheeler DIS volume share 30-35%, CV share about two-thirds, PV share 8-9% (Tata Motors dependent)."
+   },
+   {
+    "name": "ACFMS (auto components, fluid management and switches)",
+    "commentary": "Growth about 25% YoY in Q1 per CEO. Target is 10% growth above market; first switches business won from Suzuki; disc brake production started for a major Indian OEM, with meaningful revenue from FY28."
+   },
+   {
+    "name": "Polymer (plastics)",
+    "commentary": "Q1 revenue Rs 249 crore at 7.8% EBITDA margin; most affected by polymer and LPG price spikes. Capacity about Rs 1,000 crore turnover today, targeted at about Rs 2,000 crore post capex; management targets 2.5x FY25 base, and sees ROCE muted during capex cycle before 16-18% steady state."
+   }
+  ],
+  "guidance_outlook": [
+   "Q2 and Q3 FY27 expected to recover delayed earnings via indexation: about 75% of revenue indexed from Q2, balance from Q3 (half-yearly indexation).",
+   "EBITDA expected under pressure for next couple of quarters until West Asia-related costs normalise; management said Q1 costs were delayed, not lost.",
+   "Minimum wage increases in three states add about Rs 21 crore per annum; customer pass-through still under negotiation.",
+   "Steady-state blended EBITDA margin target 12.5-13%; management estimates about 1.5% EBITDA lost in Q1 and about another half of that still recoverable via price increases and indexation.",
+   "FY30 (CY30/FY31) revenue ambition of Rs 8,000 crore for DICVS retained; FY30 targets unchanged despite M&A pause.",
+   "Demerger expected to take at least 4 quarters, management hopes for 12 months; businesses to operate as separate entities from October and fully by December.",
+   "Disc brake and switches revenue to become meaningful only from FY28."
+  ],
+  "capex_capacity": [
+   "Rs 700 crore capex cycle over 18-24 months: about Rs 400 crore for polymer (including relocating out of TVS campuses under lock-in), Rs 150-180 crore for DICVS, about Rs 120 crore for ACFMS.",
+   "Five new factories being brought on stream: Hosur (state-of-the-art), Mysore, Aurangabad (greenfield), Sanand Gujarat (for Honda), and Bhiwadi/NCR under construction.",
+   "Polymer Centre of Excellence to be fully operational by May 2027; in-house tool room being built.",
+   "Partnership with BOE for backlight modules for screens in progress.",
+   "Polymer capacity expected to support about Rs 2,000 crore turnover from about Rs 1,000 crore today; plants on schedule barring a month or two of delay."
+  ],
+  "demand_pricing": [
+   "Industry growth in Q1 about 22-23% weighted average; company grew about 26% overall, outperforming by about 4 points.",
+   "Q1 sequentially flat versus Q4, which management said is seasonal; no share loss claimed.",
+   "Raw material costs rising sharply for memory-controlled devices due to AI-driven demand; polymer, LPG, crude, freight and rupee all adverse.",
+   "Two-wheeler TFT penetration about 7-8% of two-wheelers produced; management expects this to double in 2-3 years.",
+   "Polymer customer wins include Ather, River, Simple Energy, Raptee, Honda, Royal Enfield, Suzuki (switches) and Yamaha (final stage); Mahindra engagement started for PV and DICVS.",
+   "E-cockpit: proof of concept shown to customers; global competitors have volume advantage of 40-50x, so cost competitiveness limited."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why demerge the DIS/connected vehicles business from the rest of the group?",
+    "answer": "Management said the board debated it for over two years; the DIS business needs large investment and technology partners, which investors find hard to back inside a multi-business company. Demerger is intended to allow a debt and equity mix and partner onboarding."
+   },
+   {
+    "question": "What is the Q1 margin outlook and steady state?",
+    "answer": "Steady-state blended EBITDA margin of 12.5-13% is the target; Q1 lost about 1.5% of margin; Q2 and Q3 expected to recover through indexation, with about half of the lost margin still recoverable if prices hold."
+   },
+   {
+    "question": "Capex split and timing?",
+    "answer": "Rs 700 crore over 18-24 months: Rs 400 crore polymer, Rs 150-180 crore DICVS, about Rs 120 crore ACFMS."
+   },
+   {
+    "question": "Timeline for demerger?",
+    "answer": "At least 4 quarters per advisers; management hopes for 12 months. Internal operation as separate entities from October, fully by December."
+   },
+   {
+    "question": "Is M&A still on the cards?",
+    "answer": "M&A paused for about one year after due diligence found asset quality issues; FY30 targets unchanged. Will consider only attractive quality assets."
+   },
+   {
+    "question": "Disc brake revenue and ramp?",
+    "answer": "No material revenue yet; meaningful revenue expected only from FY28, consistent with prior guidance."
+   },
+   {
+    "question": "Polymer business performance in Q1?",
+    "answer": "Revenue Rs 249 crore with EBITDA margin of 7.8%; polymer and LPG cost spikes expected to correct in Q2 and Q3."
+   }
+  ],
+  "financial_highlights": [],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

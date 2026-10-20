@@ -1,0 +1,290 @@
+{
+ "doc_id": "IN-11a91240-15e6-4b8f-a4c1-3ea6c5fa8e7c",
+ "market": "IN",
+ "company_id": "544645",
+ "name": "Park Medi World Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-08",
+ "period": "2026-06",
+ "title": "Park Medi World Ltd - 544645 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Capacity is ramping to 4,740 beds by FY27 and 5,740 by FY28 while occupancy fell to 56% from 68%, so supply is outrunning demand; FY27 guidance of 24% revenue growth and ARPOB +10-12% is management's case.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Operating leverage",
+   "Capex cycle"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 56,
+   "quote": "Network occupancy for the quarter stood at 56% compared to 68% in Q1 FY ’26."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "the CAPEX per bed remains at Rs.37 lakhs per bed, which continues to be the lowest in the listed healthcare peers."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Occupancy 68% → 56% YoY",
+    "quote": "Network occupancy for the quarter stood at 56% compared to 68% in Q1 FY ’26.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Beds 3,960 → 5,740 by FY28",
+    "quote": "We will be at 5 ,740 beds capacity by FY’28",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue Rs.2,080 cr (+24%)",
+    "quote": "we are expecting a top line of Rs.2,080 crores and with EBITDA of Rs.530 crores and a PAT of Rs.360 crores.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "ARPOB +12% YoY",
+    "quote": "ARPOB for the quarter was Rs.30,444 compared to Rs.27,221 in Q1 FY’26, an increase of 12% year-on-year",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue FY27",
+    "value": "Rs.2,080 crores (+24%)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting a top line of Rs.2,080 crores and with EBITDA of Rs.530 crores and a PAT of Rs.360 crores."
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "26.7%-27%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "blended we are expecting the EBITDA of 26.7%-27% will hold for complete financial year FY’27."
+   },
+   {
+    "metric": "ARPOB growth",
+    "value": "10-12% annualised",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "we believe ARPO B guidance going forward is 10%-12% in that band on annualized basis."
+   },
+   {
+    "metric": "Bed capacity FY27 end",
+    "value": "4,740 beds",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "We expect to end financial year 2027 with 4,740 beds"
+   },
+   {
+    "metric": "Bed capacity FY28 end",
+    "value": "5,740 beds",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "We will be at 5 ,740 beds capacity by FY’28"
+   },
+   {
+    "metric": "Debtor days",
+    "value": "125-130 days medium term",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "debtor days to trend towards our medium-term target of 125-days to 130-days"
+   },
+   {
+    "metric": "Payer mix",
+    "value": "70:30 govt scheme to cash/TPA in 12-18 months",
+    "change": "new",
+    "horizon": "12-18 months",
+    "quote": "we have guided towards 70 :30 split over the next 12-18 months."
+   },
+   {
+    "metric": "Blended capex per bed",
+    "value": "Rs.36 lakhs",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "We have to see in blended; the blended CAPEX per bed will remain at Rs.36 lakhs."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Bed capacity FY27 end",
+    "outcome": "missed",
+    "quote": "We expect to end financial year 2027 with 4,740 beds"
+   }
+  ],
+  "entities": [
+   {
+    "name": "CGHS",
+    "relation": "customer"
+   },
+   {
+    "name": "The Medicity Hospital, Rudrapur",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Occupancy down 12pp YoY with 960 new beds",
+    "quote": "Network occupancy for the quarter stood at 56% compared to 68% in Q1 FY ’26."
+   },
+   {
+    "label": "Capacity guidance raised with 250 unplanned beds",
+    "quote": "250 beds is actually new, which was not a part of our earlier communication"
+   },
+   {
+    "label": "Debtor days target 125-130 vs govt claim delays",
+    "quote": "as government claim processing efficiency improves"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 5,
+   "margin": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Bed capacity change (Kanpur/250 beds)",
+    "quote": "The little difference that you have cited is on account of some new additions in our expansion plans that we have made recently."
+   },
+   {
+    "topic": "Promoter dilution timeline",
+    "quote": "So , I cannot specify exact timeline right now"
+   },
+   {
+    "topic": "Attrition at HoD level",
+    "quote": "little attrition will happen anywhere in this industry"
+   }
+  ],
+  "hedge_index": 0.3
+ },
+ "summary": {
+  "headline": "Park Medi World Q1 FY27 revenue rose 19% YoY to Rs.476 crore, PAT up 35% to Rs.89 crore; FY27 guided to Rs.2,080 crore revenue.",
+  "overview": "Revenue from operations was Rs.476 crore (+19% YoY) with EBITDA excluding other income of Rs.126 crore (26.5% margin) and PAT of Rs.89 crore (18.6% margin, +220 bps). PAT growth was attributed mainly to lower interest outgo after term debt repayment. Occupancy fell to 56% from 68% as 960 new beds (Bhatinda, Agra, Panchkula) entered the denominator. Management guided FY27 revenue of Rs.2,080 crore, EBITDA Rs.530 crore and PAT Rs.360 crore, and announced two acquisitions (Rudrapur, commissioned 2 August 2026; Zirakpur/Mehar, Rs.107 crore valuation).",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations",
+    "value": "Rs.476 crore",
+    "change": "+19% YoY"
+   },
+   {
+    "metric": "EBITDA (excl. other income)",
+    "value": "Rs.126 crore, margin 26.5%",
+    "change": "+20% YoY; vs 26.3% margin in Q1 FY26"
+   },
+   {
+    "metric": "PAT",
+    "value": "Rs.89 crore, margin 18.6%",
+    "change": "+35% YoY; margin +220 bps YoY"
+   },
+   {
+    "metric": "ARPOB",
+    "value": "Rs.30,444",
+    "change": "+12% YoY (vs Rs.27,221)"
+   },
+   {
+    "metric": "ALOS",
+    "value": "5.9 days",
+    "change": "improved 8% from 6.4 days"
+   },
+   {
+    "metric": "IPD volume",
+    "value": "26,304 patients",
+    "change": "+16% YoY"
+   },
+   {
+    "metric": "OPD volume",
+    "value": "2,23,446 patients",
+    "change": "+17% YoY"
+   },
+   {
+    "metric": "Network occupancy",
+    "value": "56%",
+    "change": "vs 68% in Q1 FY26; FY26 was 64%"
+   },
+   {
+    "metric": "Term debt excl. lease liability",
+    "value": "Rs.25.6 crore",
+    "change": "vs Rs.28.2 crore at 31 March 2026"
+   },
+   {
+    "metric": "Fixed deposits / net worth",
+    "value": "Rs.300 crore / Rs.2,100 crore",
+    "change": ""
+   },
+   {
+    "metric": "Payer mix",
+    "value": "77% government schemes, 10% TPA, 13% cash",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "High-end specialties",
+    "commentary": "Contributed about 62% of revenue, up 440 bps YoY from about 57%. Neurology about 14.5%, cardiology about 12%, urology about 11%, joint replacement about 9.5%, oncology 9-10%, gastroenterology about 7%."
+   },
+   {
+    "name": "Newer hospitals (Agra, Panchkula, Bhatinda)",
+    "commentary": "Agra (commissioned Feb 2026) and Panchkula (commissioned Apr 2026) are ramping in line with plan; management expects no EBITDA loss, with first-year margins of about 10-12%. Mohali, the mature comparable, is at about 26% margin."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 guidance: revenue Rs.2,080 crore (+24%), EBITDA Rs.530 crore (+25%), PAT Rs.360 crore (+32%).",
+   "EBITDA margin expected at 26.7-27% for FY27; PAT margin 17-18%.",
+   "ARPOB growth guided at 10-12% annualised for the next two years.",
+   "FY27 occupancy expected to moderate from FY26's 64% due to new capacity.",
+   "Bed count: 3,960 at Q1 end, 4,290 after Rudrapur (Q2), 4,740 at FY27 end (450 beds in Oct-Dec 2026), 5,740 by FY28 end.",
+   "CGHS rate revision (12-15% headline, about 7-7.5% net benefit to ARPOB, 70% of patients on CGHS) to flow fully from Q2 FY27; management says limited EBITDA benefit as it is redeployed into equipment and maintenance.",
+   "Payer mix target of 70:30 (government schemes vs cash/TPA) over 12-18 months.",
+   "Debtor days target of 125-130 days over the medium term."
+  ],
+  "capex_capacity": [
+   "Q1 FY27 beds: 3,960 (up 32% YoY), including Panchkula's 350 beds; 960 beds added in last 12 months across Bhatinda (250), Agra (360), Panchkula (350).",
+   "Rudrapur (The Medicity, 330 beds, NABH) acquired for about Rs.177 crore all-cash; commissioned 2 August 2026. Additional capex of Rs.10-12 crore planned.",
+   "Mehar Hospital, Zirakpur (150 beds) acquisition at about Rs.107 crore valuation announced 3 August 2026; commissioning targeted November 2026.",
+   "Palam Vihar 'Park Platinum' 100-bed extension in Gurgaon (Rs.25 crore capex, about Rs.25 lakh/bed), taking Gurgaon to 750 beds; Naraela 200-bed insolvency acquisition on track for commissioning.",
+   "Agra: Rs.245 crore acquisition cost plus about Rs.7.5 crore equipment/upgrade.",
+   "Capex per bed about Rs.37 lakh currently; ongoing projects of Rs.767 crore for 2,130 beds over FY27-FY28 imply about Rs.36 lakh/bed blended, including acquisitions.",
+   "Ambala adding 200 beds, largely oncology-dedicated; LINAC planned at Bhatinda and Rudrapur."
+  ],
+  "demand_pricing": [
+   "ARPOB rose 12% YoY to Rs.30,444; management says trend growth is 10-12%, versus 3-5% in the past.",
+   "Mature hospitals are growing 18-20% per management.",
+   "Management says patient footfall at the Park brand was about 9 lakh last year and about 2.5 lakh in Q1 FY27.",
+   "Patient mix at new acquisitions (Rudrapur, Zirakpur) expected at 75-80% government and 20-25% cash/TPA.",
+   "Management says doctor attrition at consultant level is among the lowest in the industry; no comparative data was given.",
+   "Management said it has not faced any CGHS-related pressure in oncology, citing vendor relationships."
+  ],
+  "qa_highlights": [],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

@@ -1,0 +1,214 @@
+{
+ "doc_id": "IN-05a4add4-a4f6-4481-a38c-56bbbf26d39b",
+ "market": "IN",
+ "company_id": "544634",
+ "name": "Aequs Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-04",
+ "period": "2026-06",
+ "title": "Aequs Ltd - 544634 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Aerospace order book crossed USD1,004m (+13% QoQ) and revenue +40% YoY, but consumer utilisation fell to ~22% and operational EBITDA of INR148m still leans on a Q4 FY27 consumer breakeven that needs utilisation to rise to 40-50%.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 22,
+   "quote": "current quarter we did around 22% and we still hold by Q4 to touch 40% to 50%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are evaluating acceleration of aerospace capex plan to ensure that required capacity is available in line with our customer timelines"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Consumer utilisation ~23% → ~22%",
+    "quote": "current quarter we did around 22% and we still hold by Q4 to touch 40% to 50%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Aerospace capex acceleration under evaluation",
+    "quote": "we are evaluating acceleration of aerospace capex plan to ensure that required capacity is available",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Aerospace order book above USD1bn",
+    "quote": "our aerospace order book crossing the USD1 billion mark, following a 13% sequential increase",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated revenue growth FY27",
+    "value": "45% to 50%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we continue to expect approximately 45% to 50% top -line revenue growth for the full year"
+   },
+   {
+    "metric": "Operational EBITDA",
+    "value": "doubling vs FY26",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "this year we are targeting to kind of, you know, doubling of our operational EBITDA as compared to FY26"
+   },
+   {
+    "metric": "Consumer EBITDA breakeven",
+    "value": "by Q4 FY27",
+    "change": "held",
+    "horizon": "Q4 FY27",
+    "quote": "move our consumer EBITDA breakeven by Q4 FY27"
+   },
+   {
+    "metric": "Total capex FY27",
+    "value": "INR660 crore",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "our total capex overall including aero and consumer would be about INR660 crores for FY27. And we stick to this number"
+   },
+   {
+    "metric": "Aerospace revenue growth FY27",
+    "value": "25% to 30%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "grow aerospace revenue profitably 25% to 30% with a segment EBITDA margins above 20%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Consumer EBITDA breakeven by Q4 FY27",
+    "outcome": "met",
+    "quote": "The path to consumer EBITDA breakeven by Q4 '27 now has its first quarterly proof point."
+   },
+   {
+    "metric": "Consolidated revenue growth 45-50%",
+    "outcome": "not_discussed",
+    "quote": ""
+   }
+  ],
+  "entities": [
+   {
+    "name": "Safran Landing Systems",
+    "relation": "partner"
+   },
+   {
+    "name": "Airbus",
+    "relation": "customer"
+   },
+   {
+    "name": "Mattel",
+    "relation": "customer"
+   },
+   {
+    "name": "Tramontina",
+    "relation": "customer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Consumer utilisation ~22% with revenue growth; breakeven depends on 40-50% ramp",
+    "quote": "current quarter we did around 22% and we still hold by Q4 to touch 40% to 50%"
+   },
+   {
+    "label": "Reported EBITDA fell on lower other income; PAT loss INR532m",
+    "quote": "PAT stood at a los s of INR 532 million for Q1 FY '27"
+   },
+   {
+    "label": "CFO departure; interim finance head",
+    "quote": "Dinesh Iyer has stepped down at the end of June"
+   },
+   {
+    "label": "Negative operating cash flow",
+    "quote": "Cash flow from operations was negative INR414 million"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 4,
+   "capex": 5,
+   "balance_sheet": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Consumer utilisation and segment split",
+    "quote": "We are not breaking up the both of them because certain assets also could be used here across both in a common way."
+   },
+   {
+    "topic": "Other expenses fixed/variable split",
+    "quote": "We do not want to disclose that at this moment, Jyoti."
+   },
+   {
+    "topic": "Wheels contract value",
+    "quote": "We are not disclosing that contract value."
+   }
+  ],
+  "hedge_index": 0.4,
+  "themes": []
+ },
+ "summary": {
+  "headline": "Aequs Q1 FY27 revenue rose 55% YoY to INR3,955 million, while operational EBITDA rose about 3.5x QoQ to INR148 million.",
+  "overview": "Revenue from operations grew 55% YoY and 8% QoQ to INR3,955 million, led by aerospace (+40% YoY) and consumer (+190% YoY). Reported EBITDA fell QoQ to INR215 million because other income dropped from INR279 million to INR67 million, but operational EBITDA (excluding other income) rose from INR42 million to INR148 million. Consumer EBITDA loss narrowed by INR112 million QoQ to INR361 million. PAT loss was INR532 million, and the aerospace order book crossed USD1 billion after Farnborough wins including an A320 wheels contract with Safran Landing Systems. Management reiterated FY27 guidance of 45-50% revenue growth and doubled operational EBITDA, with consumer EBITDA breakeven targeted by Q4 FY27.</overview>\n<parameter name=\"financial_highlights\">[{\"metric\": \"Revenue from operations\", \"value\": \"INR3,955 million\", \"change\": \"+55% YoY, +8% QoQ\"}, {\"metric\": \"Reported EBITDA (incl. other income)\", \"value\": \"INR215 million (5% margin)\", \"change\": \"vs INR399 million in Q1 FY26 and INR321 million in Q4 FY26\"}, {\"metric\": \"Operational EBITDA (excl. other income)\", \"value\": \"INR148 million (4% margin)\", \"change\": \"vs INR42 million in Q4 FY26, ~3.5x QoQ\"}, {\"metric\": \"Other income\", \"value\": \"INR67 million\", \"change\": \"down from INR279 million in Q4 FY26\"}, {\"metric\": \"Revenue incl. proportionate JV share\", \"value\": \"INR4,301 million\", \"change\": \"+53% YoY, +8% QoQ\"}, {\"metric\": \"Aerospace segment revenue\", \"value\": \"INR3,222 million\", \"change\": \"+40% YoY, +6% QoQ\"}, {\"metric\": \"Aerospace segment EBITDA\", \"value\": \"INR731 million (about 23% margin)\", \"change\": \"+35% YoY, down QoQ due to high Q4 FX gain\"}, {\"metric\": \"Consumer segment revenue\", \"value\": \"INR734 million (19% of revenue)\", \"change\": \"+190% YoY, +16% QoQ\"}, {\"metric\": \"Consumer segment EBITDA\", \"value\": \"loss of INR361 million\", \"change\": \"vs loss of INR74 million in Q1 FY26; loss narrowed from INR473 million in Q4 FY26 (about 24%)\"}, {\"metric\": \"Depreciation and amortisation\", \"value\": \"INR453 million\", \"change\": \"vs INR246 million in Q1 FY26; broadly flat vs INR455 million in Q4 FY26\"}, {\"metric\": \"Finance cost\", \"value\": \"INR189 million\", \"change\": \"down from INR358 million in Q4 FY26\"}, {\"metric\": \"PAT\", \"value\": \"loss of INR532 million\", \"change\": \"vs adjusted Q4 FY26 loss of INR631 million (reported Q4 loss INR541 million incl. INR90 million exceptional gain)\"}, {\"metric\": \"Cash and cash equivalents\", \"value\": \"INR2,340 million\", \"change\": \"plus INR537 million other bank balances\"}, {\"metric\": \"Operating cash flow\", \"value\": \"negative INR414 million\", \"change\": \"due to higher working capital\"}, {\"metric\": \"Capex in quarter\", \"value\": \"INR830 million\", \"change\": \"\"}, {\"metric\": \"Net working capital days\", \"value\": \"125 days\", \"change\": \"from 127 days at end FY26 (quarterly annualised)\"}, {\"metric\": \"Total equity\", \"value\": \"INR14,332 million\", \"change\": \"\"}]",
+  "segments": [
+   {
+    "name": "Aerospace",
+    "commentary": "Revenue INR3,222 million (+40% YoY, +6% QoQ) with segment EBITDA INR731 million (about 23% margin). Order book USD1,004 million, up 13% QoQ from USD889 million; 86 parts added, taking portfolio to 5,740 parts."
+   },
+   {
+    "name": "Consumer (electronics, toys, durables)",
+    "commentary": "Revenue INR734 million (+190% YoY, +16% QoQ) at roughly 22-23% capacity utilisation, similar to Q4. EBITDA loss INR361 million, narrowed by INR112 million QoQ; breakeven targeted by Q4 FY27 with utilisation at 40-50%."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 consolidated revenue growth of about 45-50%, implying roughly INR1,700-1,800 crore; aerospace growth 25-30% and consumer growth 125-150% over FY26.",
+   "Operational EBITDA to double vs FY26 in FY27, weighted to the second half; aerospace segment EBITDA margin above 20%.",
+   "Consumer EBITDA breakeven targeted by Q4 FY27; consumer utilisation expected to reach 40-50% by Q4.",
+   "PAT milestones: PAT breakeven by H1 FY28, consumer PAT breakeven by FY30, decent PAT in FY31 with about 20% steady-state ROCE.",
+   "Steady-state EBITDA margin guidance 18-22% (aerospace 18-22%, consumer 18-20%); ROCE target 18-20% steady state.",
+   "FY27 capex about INR660 crore (originally INR500 crore consumer, INR160 crore aerospace); aerospace capex may be accelerated. Five-year capex of USD350-400 million over FY27-FY31; about USD150 million equity raise expected, not planned this year unless capex pulled in or inorganic opportunity arises."
+  ],
+  "capex_capacity": [
+   "Hosur ecosystem: about INR1,900 crore total investment over 10 years including JVs; first machining facility to commence in H2 FY27 (Sept to March window), with revenue from FY29 and vertical integration largely complete by 2030.",
+   "Aerospace capacity being added continuously (about one machine per week); management says aerospace utilisation can comfortably reach 75%.",
+   "Management is evaluating accelerating aerospace capex to meet new Farnborough wins; additional INR2,800 crore planned across consumer and aerospace in Karnataka.",
+   "Consumer capex (around INR400-500 crore) is for capacity augmentation and new programmes; part of it would not be committed if utilisation ramp fails.",
+   "Consumer asset turns about 1.5x, stable."
+  ],
+  "demand_pricing": [
+   "Farnborough: long-term agreements with two new aerostructure Tier-1 customers and first contract for fully integrated A320 wheels with Safran Landing Systems (single source, about 15-year agreement, contract value not disclosed). New wins not yet in the Q1 order book; expected to reflect next quarter.",
+   "Management reports no specific demand change from tariffs or trade policy; customer allocations are being committed.",
+   "Consumer demand described as customer-driven; all production is being shipped.",
+   "Raw materials about 99% imported; limited qualified Indian sources for super alloys, titanium and aerospace aluminium (only two grades qualified, for forging).",
+   "Named consumer customers: Mattel (toys, strategic, scaling up) and Tramontina (consumer durables); a large consumer electronics brand is unnamed."
+  ],
+  "financial_highlights": [],
+  "qa_highlights": [],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

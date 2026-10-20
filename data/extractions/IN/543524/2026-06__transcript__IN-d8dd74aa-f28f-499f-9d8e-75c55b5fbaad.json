@@ -1,0 +1,296 @@
+{
+ "doc_id": "IN-d8dd74aa-f28f-499f-9d8e-75c55b5fbaad",
+ "market": "IN",
+ "company_id": "543524",
+ "name": "Rainbow Children's Medicare Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-04",
+ "period": "2026-06",
+ "title": "Rainbow Children's Medicare Ltd - 543524 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Q1 FY27 revenue up 33% reported but 24% like-to-like, EBITDA margin 28.6%, and a 2,500-bed, INR 2,200 crore expansion plan keeps supply rising while new Bengaluru hospitals still lose money.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Operating leverage",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 41,
+   "quote": "Occupancy improved to over 41%, inpatient discharges by 28%, outpatient consultations by 25% and deliveries by 23%."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Over next 5 years, we plan to add 2,500 beds to expand our network capacity to 5,000 beds through an estimated capex of investment around INR 2,200 crores."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2,500 beds, INR 2,200 cr capex plan",
+    "quote": "we plan to add 2,500 beds to expand our network capacity to 5,000 beds through an estimated capex of investment around INR 2,200 crores",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "ARPOB up 6% YoY",
+    "quote": "We also delivered a 6% improvement in ARPOB while maintaining an efficient average length of stay.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Like-to-like growth 24%",
+    "quote": "So on the revenue growth, Anshul, if you remove this, 24% growth on a like-to-like basis.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue growth ~20% for Q2 and medium term",
+    "quote": "we remain confident of delivering revenue growth in the 20% range during the second quarter as well. We expect growth to remain above 20%.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "New Bengaluru hospitals still loss-making",
+    "quote": "The new Bengaluru hospitals —HRBR and Electronic City —are still in the investment phase and therefore continue to incur losses.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth",
+    "value": "above 20% (Q2 and medium term)",
+    "change": "new",
+    "horizon": "Q2 FY27 and ~4 years",
+    "quote": "we remain confident of delivering revenue growth in the 20% range during the second quarter as well. We expect growth to remain above 20%."
+   },
+   {
+    "metric": "Revenue",
+    "value": "cross INR 2,000 crores by end FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect to cross INR 2,000 crores in revenue by the end of this financial year."
+   },
+   {
+    "metric": "EBITDA margin (pre-Ind AS)",
+    "value": "24%-25% by year end",
+    "change": "held",
+    "horizon": "FY27 end",
+    "quote": "We continue to expect EBITDA margins to return to the 24% –25% range on a pre -Ind AS basis by the end of the year."
+   },
+   {
+    "metric": "New Bengaluru hospitals breakeven",
+    "value": "12-15 months, all within ~18 months",
+    "change": "held",
+    "horizon": "Medium term",
+    "quote": "We expect new Bengaluru hospitals to achieve breakeven within 12 to 15 months"
+   },
+   {
+    "metric": "Indore hospital start",
+    "value": "Q3 FY27",
+    "change": "held",
+    "horizon": "Q3 FY27",
+    "quote": "Commence operations in Indore hospital in Q3 FY27."
+   },
+   {
+    "metric": "Malad hospital start",
+    "value": "Q1 FY28",
+    "change": "new",
+    "horizon": "Q1 FY28",
+    "quote": "We expect the hospital to commence operations in Q1 FY28 ."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA margin (pre-Ind AS) 24%-25%",
+    "outcome": "missed",
+    "quote": "We maintained a healthy EBITDA margin of 28.6%."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Cloudnine",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin ambiguity: 28.6% reported vs 24-25% pre-Ind AS target",
+    "quote": "We maintained a healthy EBITDA margin of 28.6%."
+   },
+   {
+    "label": "Bengaluru greenfield losses and ramp slower than original",
+    "quote": "The new Bengaluru hospitals —HRBR and Electronic City —are still in the investment phase and therefore continue to incur losses."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 5,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Mumbai margin expectation",
+    "quote": "I am not in a position to provide a pr ecise margin expectation today."
+   },
+   {
+    "topic": "Seasonality and Q2 start",
+    "quote": "It is still too early to comment."
+   },
+   {
+    "topic": "Organic ARPOB and acquisition losses",
+    "quote": "I think it's a combination of -- combination pricing as well as the case mix."
+   }
+  ],
+  "hedge_index": 0.35
+ },
+ "summary": {
+  "headline": "Rainbow Q1 FY27 revenue rose 33% YoY to INR 470 crore and EBITDA 30% to INR 134.6 crore at a 28.6% margin; like-for-like growth was 24%.",
+  "overview": "Operating revenue grew 33% YoY to INR 470 crore, with acquisitions (Guwahati, Warangal) contributing about INR 38 crore. EBITDA rose 30% to INR 134.6 crore at a 28.6% margin, despite losses at newly commissioned hospitals, and PAT rose 16% to INR 62.5 crore. Operating metrics grew: inpatient discharges 28%, outpatient consultations 25%, deliveries 23%, with ARPOB up 6%. Management guided to above 20% revenue growth in Q2 and a return to 24-25% EBITDA margin (pre-Ind AS) by year-end, and set out a plan to add 2,500 beds over five years.",
+  "financial_highlights": [
+   {
+    "metric": "Operating revenue",
+    "value": "INR 470 crore",
+    "change": "+33% YoY"
+   },
+   {
+    "metric": "Like-for-like revenue growth (ex-acquisitions)",
+    "value": "24%",
+    "change": ""
+   },
+   {
+    "metric": "Acquisition revenue contribution",
+    "value": "INR 38 crore",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR 134.6 crore",
+    "change": "+30% YoY"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "28.6%",
+    "change": ""
+   },
+   {
+    "metric": "Profit after tax",
+    "value": "INR 62.5 crore",
+    "change": "+16% YoY"
+   },
+   {
+    "metric": "Cash and investments (June 30, 2026)",
+    "value": "INR 613 crore",
+    "change": ""
+   },
+   {
+    "metric": "Capex in quarter",
+    "value": "approx. INR 56 crore",
+    "change": ""
+   },
+   {
+    "metric": "ARPOB (overall)",
+    "value": "6% improvement cited; mature hospitals approx. INR 70,000 vs under-5-year hospitals approx. INR 59,000",
+    "change": "+6% YoY (overall)"
+   },
+   {
+    "metric": "Occupancy",
+    "value": "over 41%",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "Mature hospitals",
+    "commentary": "ARPOB approx. INR 70,000 in Q1, about 18% above hospitals less than five years old; management attributed the roughly 10% mature-cluster ARPOB rise to a mix of pricing and case mix."
+   },
+   {
+    "name": "Newer / greenfield hospitals",
+    "commentary": "Rajahmundry is at roughly breakeven; Electronic City (Bengaluru) expected to break even in 2-3 months. Management guides new Bengaluru hospitals to break even within 12-15 months, all within about 18 months."
+   },
+   {
+    "name": "Acquisitions (Guwahati, Warangal)",
+    "commentary": "Both are EBITDA-positive. Guwahati is at near company-average margins and grew about 20%; Warangal is ramping toward company-level margins over the next year."
+   }
+  ],
+  "guidance_outlook": [
+   "Revenue growth expected above 20% in Q2 FY27; management expects 20%-plus growth to be sustained, and about 20% annually would double revenue in roughly four years.",
+   "Expects to cross INR 2,000 crore revenue by end of FY27.",
+   "EBITDA margin expected to return to 24%-25% on a pre-Ind AS basis by year-end.",
+   "Plans to add 2,500 beds over five years to reach 5,000 beds, with capex of about INR 2,200 crore; 1,200 beds already in various stages of development.",
+   "Mumbai (Malad, 100-bed brownfield) expected to start in Q1 FY28; Management said Mumbai EBITDA margins should eventually exceed 20%, with no precise near-term figure.",
+   "Indore to commence Q3 FY27; Coimbatore hub and Gurgaon Sector 56 spoke in Q3 FY28; Gurgaon Sector 44 hub in Q1 FY29; Pune (150 beds) and Bengaluru Seegehalli spoke in FY29.",
+   "Nellore (70-bed acquisition, expanding to 100+ beds) and 30-bed maternal block expected in about six months; Guntur 50-bed leased hospital to start in a couple of months."
+  ],
+  "capex_capacity": [
+   "Total bed capacity grew 26% YoY to 2,435 beds; operational beds up 22% to 1,862 beds; management said bed capacity reached 500 with recent additions (as stated).",
+   "Over next five years: add 2,500 beds to reach 5,000 beds, capex about INR 2,200 crore; approximately 30% of future additions in existing southern markets and 70% in new markets (Delhi NCR, North, Central India, Mumbai).",
+   "Capex in Q1 was about INR 56 crore, mainly on existing hospitals and upcoming projects; funded through internal accruals.",
+   "Mumbai Malad 100-bed brownfield hospital (definitive agreement signed); Nellore 70-bed Prime Children's Hospital acquired; Guntur 50-bed leased hospital.",
+   "Management said it is 'not far' from breakeven at Rajahmundry and Electronic City; Hennur and HRBR are still in investment phase."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Will Q2 revenue growth remain in the mid-20s after the higher base?",
+    "answer": "Management expects Q2 revenue growth in the 20% range and above 20%, citing digital initiatives and lead conversion."
+   },
+   {
+    "question": "Organic growth ex-acquisitions?",
+    "answer": "Acquisitions contributed about INR 38 crore; like-for-like revenue growth was 24%."
+   },
+   {
+    "question": "Mature-cluster ARPOB up about 10%: why?",
+    "answer": "Management attributed it to a combination of pricing and case mix."
+   },
+   {
+    "question": "Mumbai margin expectations and doctor model?",
+    "answer": "Management declined to give a precise margin, but said EBITDA margins should eventually exceed 20%. Core doctors will stay full-time, with some hybrid models for certain specialists."
+   },
+   {
+    "question": "Bengaluru hospital breakeven timing and losses?",
+    "answer": "New Bengaluru hospitals still incur losses; guidance unchanged at 12-15 months to breakeven, with all within about 18 months."
+   },
+   {
+    "question": "Is 20% growth the medium-term revenue target?",
+    "answer": "Management said sustaining about 20% annual growth would double revenue in about four years; that is the directional view, not a formal target."
+   }
+  ],
+  "risks_watch": [
+   "Margin pressure from ramp-up of new hospitals (Rajahmundry, Electronic City, Hennur, HRBR); margin recovery to 24%-25% by year-end depends on operating leverage.",
+   "Monsoon delay could weaken Q2/Q3 seasonal demand; management has not yet quantified July trends.",
+   "Entry into high-cost markets (Mumbai, NCR) with higher employee and doctor costs; Mumbai margins are not yet defined.",
+   "Integration of acquired hospitals (Nellore, Guntur, Malad) and the Malad JV structure with three doctor-promoters; ownership and lock-in terms were not disclosed.",
+   "Execution across multiple new geographies with management bandwidth and doctor-recruitment constraints, particularly in the Northeast."
+  ],
+  "demand_pricing": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

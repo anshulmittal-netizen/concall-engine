@@ -1,0 +1,257 @@
+{
+ "doc_id": "IN-e1f9e86e-87fb-46cc-92b1-6909faf2179d",
+ "market": "IN",
+ "company_id": "543654",
+ "name": "Global Health Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-05",
+ "period": "2026-06",
+ "title": "Global Health Ltd - 543654 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Medanta Q1 FY27 shows volume-led growth (IP +28%, ARPOB +5%) and Noida EBITDA loss cut to INR49m from INR236m, but no capex cut, no numeric guidance and a 3,350-bed pipeline keeps supply expanding.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Operating leverage",
+   "Capacity bottleneck",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 63,
+   "quote": "network occupancy remaining healthy at 63% on expanded bed capacity"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "the project has now been expanded to a 650-bed super specialty hospital with an estimated project cost of approximately INR9,700 million"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Network occupancy 63%, Gurgaon-type volume growth",
+    "quote": "network occupancy remaining healthy at 63% on expanded bed capacity",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "Guwahati scaled up to 650 beds",
+    "quote": "the project has now been expanded to a 650-bed super specialty hospital",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "ARPOB +5% with no tariff hike",
+    "quote": "we haven't really taken a tariff increase. So a lot of the growth you're seeing in these units is all linked to volume",
+    "direction": 0,
+    "confidence": 0.3
+   },
+   {
+    "type": "demand",
+    "label": "Noida EBITDA loss INR236m → INR49m",
+    "quote": "the EBITDA loss declined sharply from INR236 million in Q4 FY26 to only INR49 million in Q1 FY27",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Noida EBITDA breakeven",
+    "value": "earlier than previous expectations",
+    "change": "new",
+    "quote": "we expect Noida to achieve EBITDA breakeven earlier than our previous expectations"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "CGHS",
+    "relation": "customer"
+   },
+   {
+    "name": "Eyesight Fintrade",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Noida occupancy only 30-40%; management calls the number 'misleading'",
+    "quote": "the current occupancy at Noida is probably hovering somewhere in the 30% to 40% range"
+   },
+   {
+    "label": "Cluster 2 occupancy down YoY; ARPOB growth tied to mix not price",
+    "quote": "Occupancy for Cluster 2 stood at 62% compared to 64% in the same quarter last year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Noida occupancy",
+    "quote": "at this stage to give a stable state occupancy or a current occupancy in Noida is actually a little bit misleading"
+   },
+   {
+    "topic": "Margin guidance",
+    "quote": "So we don't give margin guidance as such"
+   },
+   {
+    "topic": "Cluster 1 vs Cluster 2 growth gap",
+    "quote": "So I'm not sure I can see where you're referencing the slowdown"
+   }
+  ],
+  "hedge_index": 0.3
+ },
+ "summary": {
+  "headline": "Global Health (Medanta) Q1 FY27 consolidated income rose 26% YoY to INR13,262 mn; reported EBITDA margin 23.8% with Noida still loss-making.",
+  "overview": "Consolidated income grew 26% YoY to INR13,262 mn and reported EBITDA (including Noida) rose 23% to INR3,153 mn at a 23.8% margin. Excluding Noida, EBITDA grew 24% to INR3,201 mn at a 25.8% margin. PAT was INR1,573 mn versus INR1,590 mn last year, which included a one-off INR196 mn EPCG interest reversal in Q1 FY26. Noida's EBITDA loss narrowed sharply to INR49 mn from INR236 mn in Q4 FY26, and management now expects Noida to reach EBITDA breakeven earlier than planned.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated income",
+    "value": "INR13,262 mn",
+    "change": "+26% YoY"
+   },
+   {
+    "metric": "Reported EBITDA (incl. Noida)",
+    "value": "INR3,153 mn, margin 23.8%",
+    "change": "+23% YoY"
+   },
+   {
+    "metric": "EBITDA excl. Noida",
+    "value": "INR3,201 mn, margin 25.8%",
+    "change": "+24% YoY"
+   },
+   {
+    "metric": "Profit after tax",
+    "value": "INR1,573 mn",
+    "change": "vs INR1,590 mn in Q1 FY26 (which had INR196 mn one-off exceptional income)"
+   },
+   {
+    "metric": "Inpatient volumes",
+    "value": "+28% YoY",
+    "change": ""
+   },
+   {
+    "metric": "Outpatient volumes",
+    "value": "+34% YoY",
+    "change": ""
+   },
+   {
+    "metric": "Occupied bed days",
+    "value": "+21% YoY; occupancy 63% (66% excl. Noida)",
+    "change": ""
+   },
+   {
+    "metric": "ARPOB",
+    "value": "INR70,244",
+    "change": "+5% YoY"
+   },
+   {
+    "metric": "ARPP (new metric)",
+    "value": "INR201,891",
+    "change": "broadly flat YoY"
+   },
+   {
+    "metric": "International patient revenue",
+    "value": "INR782 mn",
+    "change": "+23% YoY"
+   },
+   {
+    "metric": "OPD pharmacy revenue",
+    "value": "INR609 mn",
+    "change": "+51% YoY"
+   },
+   {
+    "metric": "Noida EBITDA loss",
+    "value": "INR49 mn on total income of INR855 mn",
+    "change": "from loss of INR236 mn in Q4 FY26 (income INR525 mn)"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Cluster 1 (Gurugram, Indore, Ranchi; formerly mature hospitals)",
+    "commentary": "Revenue INR7,715 mn (+10% YoY); EBITDA INR1,858 mn (+13%) at 24.1% margin vs 23.4%. Inpatient volumes +14%, ARPOB +7%, ALOS 2.8 days, occupancy 63%, ARPP INR219,623."
+   },
+   {
+    "name": "Cluster 2 (Lucknow, Patna, Noida; formerly developing hospitals)",
+    "commentary": "Including Noida: total income INR4,983 mn (+55%), EBITDA INR1,272 mn (+35%). Excluding Noida: revenue +28%, EBITDA +40%, margin 32%. Inpatient volumes +50%, ARPOB +9% to INR61,742, occupancy 62% vs 64%, ARPP INR182,407 (+5%)."
+   },
+   {
+    "name": "Retail pharmacy / OPD pharmacy",
+    "commentary": "OPD pharmacy revenue INR609 mn (+51% YoY); about 13 retail pharmacies outside the hospital network, with expansion planned in UP and Bihar."
+   }
+  ],
+  "guidance_outlook": [
+   "Noida now expected to reach EBITDA breakeven earlier than previous expectations; management said it is slightly ahead of internal expectations on financial returns.",
+   "No formal margin guidance; management expects operating leverage from Noida maturation and sees no significant structural cost pressure.",
+   "Expansion pipeline of about 3,350 additional beds; future capex of about INR4,850 crore still to be spent (INR1,610 mn capex incurred in Q1).",
+   "Guwahati expanded to a 650-bed super-specialty hospital at estimated cost of about INR9,700 mn; floor plate and operating rooms (about 28-30 vs earlier 13-14) roughly doubled.",
+   "Gurugram to add 2 operating rooms and 2-3 cath labs in Q2; 80-bed Indore acquisition expected online around end-Q2 or early Q3 FY27.",
+   "Pharmacy network to add roughly 10 per quarter rising to 15-20; no rapid multiplier growth expected over next 4-6 quarters."
+  ],
+  "capex_capacity": [
+   "Operational bed capacity 3,737 after adding 72 beds in Q1 (51 at Noida, 21 at Lucknow); Noida now 433 beds from 320.",
+   "Noida is a single-tower hospital with 14 OTs fully commissioned on day one; no OT additions planned near term and no capex planned for the next couple of quarters.",
+   "Guwahati: built-up area rising from about 6.5 lakh sq ft to about 9.8 lakh sq ft under revised National Building Code; additional FSI obtained at no cost.",
+   "Construction underway at South Delhi; design and approvals progressing at other locations."
+  ],
+  "demand_pricing": [
+   "Volume-led growth: management said there has been no tariff increase; Lucknow and Patna volumes growing about 20%+ (about 27% for Cluster 2 ex-Noida IPD).",
+   "Gurugram (about 1,500 beds, 15 years old) volume growth 7-10%.",
+   "CGHS rate hike (October announcement, first since 2017) is fully in Q1 numbers but CGHS is only about 10-12% of business; not material to margins.",
+   "Senior clinician attrition described as negligible; nursing and junior-doctor attrition high.",
+   "Noida occupancy currently around 30-40%, which management said is not meaningful given bed additions of 30-50 every few months.",
+   "Oncology share of revenue reported at 14.4% vs 13.7% last year per investor presentation; analyst-cited 13.5% vs 14.2% was disputed by management as a specialty-mix definition issue.",
+   "Q1 ARPOB growth was helped by favorable specialty mix; management cited flight-to-quality demand in central and northern India."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Expected consolidated EBITDA margin trajectory as Noida matures?",
+    "answer": "Management gives no margin guidance; current reported margin about 24% (including about INR5 crore Noida loss), about 26% excluding Noida, with operating leverage expected as Noida matures."
+   },
+   {
+    "question": "How much of the 2,950-bed expansion capex is already incurred?",
+    "answer": "CFO Yogesh Gupta said INR4,850 crore is future capex still to be spent; INR1,610 mn was spent in Q1 and earlier spend is already on the balance sheet."
+   },
+   {
+    "question": "Why is the Guwahati capex per bed higher after the revision (about INR500 crore added for 250 more beds)?",
+    "answer": "Management said capex reflects larger floor plates and procedure areas (operating rooms roughly doubled to 28-30, cath labs and LINACs doubled), not bed count alone; land is unchanged with extra FSI and height allowance."
+   },
+   {
+    "question": "Why is Cluster 1 growing slower than Cluster 2, and is there brownfield expansion?",
+    "answer": "Cluster 1 revenue grew about 10%; management attributed the gap to scale and maturity differences. Brownfield additions include 100 beds in Ranchi (already functional), 80 beds in Indore by end-Q2/early Q3, and added operating rooms and cath labs at Gurugram."
+   },
+   {
+    "question": "Can Cluster 2 margins stay near 30%?",
+    "answer": "No margin guidance; Cluster 1 carries full group overheads, while Cluster 2 benefits from newer equipment under warranty and lower legacy cost, so the gap is partly accounting allocation."
+   }
+  ],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}

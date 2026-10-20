@@ -1,0 +1,185 @@
+{
+ "doc_id": "IN-c022c85d-bb84-4e28-8062-60db215e374a",
+ "market": "IN",
+ "company_id": "531241",
+ "name": "Linc Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-10",
+ "period": "2026-06",
+ "title": "Linc Ltd-$ - 531241 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q1 FY27 margins squeezed by polymer costs (EBITDA margin 8.7%, down 89 bps YoY) with management withholding all guidance and pricing only ~50% passed through; no capacity or capex signals.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "No formal guidance given",
+    "quote": "it will be prudent to await another quarter to gain better visibility before providing formal guidance on our outlook",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Only ~50% of price hike passed on",
+    "quote": "we could pass on around 50% of the price hike to the trade",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Corporate sales down 14%",
+    "quote": "Corporate sales declined by 14% against a high base in the previous year",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Polymer prices easing",
+    "quote": "we are seeing polymer prices ease, and we expect them to normalize over the coming quarters",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Mitsubishi Pencil Company",
+    "relation": "partner"
+   },
+   {
+    "name": "Morris of Korea",
+    "relation": "partner"
+   },
+   {
+    "name": "LINC On",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Management withholds guidance",
+    "quote": "we would like to wait for a few months. Maybe in the second quarter call"
+   },
+   {
+    "label": "Margin contraction 89 bps YoY",
+    "quote": "representing a Y-o-Y contraction of 89 bps"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 1,
+   "margin": 2,
+   "other": 0
+  },
+  "evasions": [
+   {
+    "topic": "Long-term revenue growth guidance and steady-state margin",
+    "quote": "since the situation is quite volatile, we would like to wait for a few months"
+   },
+   {
+    "topic": "Price hike plans",
+    "quote": "We have to take a call after observing the market -- raw material price scenario for another quarter"
+   }
+  ],
+  "hedge_index": 0.8
+ },
+ "summary": {
+  "headline": "Linc Q1 FY27 operating income rose 1.4% to INR13,895 lakhs, but EBITDA margin fell 89 bps to 8.7% on polymer costs; no guidance given.",
+  "overview": "Linc delivered a stable Q1 FY27 with operating income of INR13,895 lakhs (+1.4% YoY) despite geopolitical uncertainty and elevated input costs. Corporate sales fell 14% against a high base, exports fell 3%, general trade grew 8% and e-commerce grew 32%. Operating EBITDA was INR1,209 lakhs (8.7% margin, down 89 bps YoY) and PAT was INR581 lakhs (4.2% margin, down 93 bps YoY), both hit by polymer price increases from supply constraints and higher crude. Management said polymer prices are easing, but deferred formal guidance to the Q2 call.</overview>\n<parameter name=\"financial_highlights\">[{\"metric\":\"Operating income\",\"value\":\"INR13,895 lakhs\",\"change\":\"+1.4% YoY\"},{\"metric\":\"Operating EBITDA\",\"value\":\"INR1,209 lakhs\",\"change\":\"\"},{\"metric\":\"Operating EBITDA margin\",\"value\":\"8.7%\",\"change\":\"-89 bps YoY\"},{\"metric\":\"PAT\",\"value\":\"INR581 lakhs\",\"change\":\"\"},{\"metric\":\"PAT margin\",\"value\":\"4.2%\",\"change\":\"-93 bps YoY\"},{\"metric\":\"Net cash position (as on 30 June 2026)\",\"value\":\"INR1,194 lakhs\",\"change\":\"\"},{\"metric\":\"Fixed asset turnover\",\"value\":\"3.72x\",\"change\":\"\"},{\"metric\":\"Cash conversion cycle\",\"value\":\"65 days\",\"change\":\"\"}]",
+  "segments": [
+   {
+    "name": "Corporate sales",
+    "commentary": "Declined 14% YoY against a high base; management described it as requirement-based and timing-driven, not structural."
+   },
+   {
+    "name": "Export",
+    "commentary": "Declined 3% YoY due to geopolitical impact on global trade flows."
+   },
+   {
+    "name": "General trade",
+    "commentary": "Grew 8% YoY."
+   },
+   {
+    "name": "E-commerce (incl. LINC On)",
+    "commentary": "Grew 32% YoY, with growing contribution from LINC On, the e-commerce subsidiary."
+   },
+   {
+    "name": "UNI-LINC (JV with Mitsubishi Pencil, Japan)",
+    "commentary": "Operationally stable; exports were more than 50% of its revenue in the quarter."
+   }
+  ],
+  "guidance_outlook": [
+   "No formal guidance on margins or overall outlook; management will wait another quarter, possibly until the Q2 FY27 call.",
+   "Management expects polymer prices to ease and normalise over the coming quarters; says the worst is likely behind but remains uncertain.",
+   "Subsidiary with Morris of Korea depends on the West Bengal manufacturing facility, expected to be operational by Q3 FY27.",
+   "Kenya subsidiary sales momentum has begun to improve; expected to strengthen over coming quarters.",
+   "Ramp-up of international and LINC On initiatives has taken longer than initially envisaged."
+  ],
+  "capex_capacity": [
+   "West Bengal manufacturing facility (linked to Morris of Korea subsidiary) expected to be operational by Q3 FY27.",
+   "No capacity, utilisation or capex figures were disclosed in the call."
+  ],
+  "demand_pricing": [
+   "Market share unchanged QoQ as the whole industry faced raw material availability issues and higher input costs.",
+   "Price hikes passed on: about 50% of the polymer-driven price increase passed to the trade; the rest not yet passed on and no immediate plan to pass it on.",
+   "Further price hike decision deferred about one quarter pending raw material trends.",
+   "Polymer (principal raw material) prices rose on supply constraints and higher crude oil prices, and are now reported to be falling."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How have market shares trended this quarter, and what is the long-term revenue growth guidance?",
+    "answer": "Market share was unchanged in the quarter as the whole industry faced raw material and input cost pressure. No long-term revenue guidance was given."
+   },
+   {
+    "question": "Have price hikes been taken, how much has been passed on, and how much is yet to pass through?",
+    "answer": "About 50% of the price increase has been passed to the trade, with the remainder not yet passed on. Management will decide on another hike after observing raw material prices for another quarter."
+   },
+   {
+    "question": "What is the steady-state margin guidance?",
+    "answer": "Management declined to give margin guidance because the situation is volatile; it may share something on the Q2 call."
+   }
+  ],
+  "risks_watch": [
+   "EBITDA margin of 8.7% and PAT margin of 4.2% both contracted YoY; recovery depends on polymer prices normalising as guided.",
+   "Only about 50% of the polymer-driven price increase has been passed on; the remaining gap is a margin risk if costs do not ease.",
+   "Export decline (-3%) linked to geopolitical trade disruption.",
+   "Corporate sales volatility (-14%) and delays in the Morris of Korea subsidiary tied to West Bengal facility commissioning (Q3 FY27).",
+   "Watch for formal guidance and margin commentary at the Q2 FY27 call."
+  ],
+  "management_tone": "Cautious and non-committal on outlook: management repeatedly called the situation volatile and deferred guidance and pricing decisions to the next quarter, while describing the quarter as stable and expressing confidence that the worst of input cost pressure is over.",
+  "key_quotes": [
+   "Corporate sales are inherently requirement based and influenced by the timing of order execution.",
+   "As far as the margin guidance and overall guidance is concerned, since the situation is quite volatile, we would like to wait for a few months."
+  ],
+  "financial_highlights": []
+ }
+}

@@ -1,0 +1,252 @@
+{
+ "doc_id": "IN-7f6e6222-ea4d-4b54-aac5-90a32d0dc365",
+ "market": "IN",
+ "company_id": "544545",
+ "name": "Trualt Bioenergy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-04",
+ "period": "2026-06",
+ "title": "Trualt Bioenergy Ltd - 544545 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q1 FY27 ethanol volumes ~8.3-8.5 crore litres on ~60% utilisation with a 44 crore litre FY27 order book, but margins rest on cheap grain inventory that management says will fade at INR25.50/kg maize.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 60,
+   "quote": "we were able to only operate at about 60% of capacity utilization"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "Management said no further ethanol capacity additions are planned; at most 3-4 plants nearing commissioning adding 8-10 crore litres.",
+   "quote": "we don't see any further investments in the ethanol space as we speak, sir"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation ~60%, target 90-95%",
+    "quote": "our capacity utilization could go as high as 90% to 95% for the balance of the 2 quarters",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Maize at INR25.50 squeezes margin to INR6-7/litre",
+    "quote": "at INR25.50, the margins come down drastically. It comes down to almost INR6 to INR7 a litre",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 ~44 crore litres order book",
+    "quote": "we have 44 crores litres of orders on hand",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "No new ethanol capex; capacity additions capped",
+    "quote": "Most of the capacities that were supposed to come have all come up",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 ethanol sales volume",
+    "value": "~44 crore litres (order book)",
+    "change": "new",
+    "quote": "we have 44 crores litres of orders on hand"
+   },
+   {
+    "metric": "Q2 FY27 ethanol sales",
+    "value": "~11-12 crore litres",
+    "change": "new",
+    "quote": "we have close to about 11 to 12 crore litres of sales planned"
+   },
+   {
+    "metric": "Utilisation for balance of FY27",
+    "value": "90-95%, dependent on 15 crore litre court case",
+    "change": "new",
+    "quote": "our capacity utilization could go as high as 90% to 95% for the balance of the 2 quarters"
+   },
+   {
+    "metric": "CBG revenue run rate",
+    "value": "INR10-12 crore per quarter",
+    "change": "new",
+    "quote": "It should be in a similar range itself."
+   },
+   {
+    "metric": "SAF plant revenue start",
+    "value": "FY29; capex ~INR2,000 crore",
+    "change": "new",
+    "quote": "Hopefully by end of 2028, that's in FY29, we'll see revenues from the SAF business also."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Sumitomo",
+    "relation": "partner"
+   },
+   {
+    "name": "GAIL",
+    "relation": "partner"
+   },
+   {
+    "name": "OMCs",
+    "relation": "customer"
+   },
+   {
+    "name": "Rashtriya Chemicals",
+    "relation": "customer"
+   },
+   {
+    "name": "IFFCO",
+    "relation": "customer"
+   },
+   {
+    "name": "Coromandel",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Pledged-share loan and high finance cost (~INR180 crore/yr)",
+    "quote": "as we can see like on an annual basis approx. INR180 crores is going as a finance cost"
+   },
+   {
+    "label": "Unlifted OMC inventory: 5 crore litres still to sell",
+    "quote": "out of the total 8 crore litres that we have had, we've sold almost about 3 crore litre and another 5-crore litre is to be sold"
+   },
+   {
+    "label": "Court-case volume (15 crore litres) unresolved",
+    "quote": "That matter still stands open and we are trying to get that implemented"
+   },
+   {
+    "label": "Fuel retail expansion (76 outlets) paused",
+    "quote": "we have not begun construction or we have not begun the franchise works in the additional 75 fuel retail outlets"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 3,
+   "growth": 5,
+   "margin": 5,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "FY27 ethanol revenue and realisation",
+    "quote": "That number you have to work out. We can only tell the volume and orders we have in hand"
+   },
+   {
+    "topic": "De-leveraging plan",
+    "quote": "hopefully in the next call or maybe in the next few days we'll be able to give a plan for it"
+   },
+   {
+    "topic": "Court-case 15 crore litre capacity",
+    "quote": "we've not been able to get their attention, but we're confident to get that implemented"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "TruAlt Q1 FY27 ethanol revenue INR626.9 crore and PAT INR59.3 crore (vs INR4.7 crore in Q4), on ~60% capacity utilisation.",
+  "overview": "Management described Q1 FY27 as a strong quarter driven by three of five plants running on dual (grain plus sugar) feed, with ethanol sales of about 8.3 crore litres. Ethanol revenue was INR626.9 crore, EBITDA INR147.3 crore (23.5% margin) and PAT INR59.3 crore (9.5% margin). Management guided to 11-12 crore litres of sales in Q2 and about 44 crore litres of orders on hand for FY27, but flagged that maize prices at around INR25.5/kg have compressed margins, so earnings depend on inventory bought at lower prices. Several analyst answers were qualified by poor line quality and some questions went unanswered.</overview>\n<parameter name=\"financial_highlights\">[{\"metric\":\"Ethanol revenue\",\"value\":\"INR626.9 crore\",\"change\":\"+106.3% QoQ (as stated)\"},{\"metric\":\"Total turnover (per Q&A)\",\"value\":\"~INR630 crore\",\"change\":\"\"},{\"metric\":\"EBITDA\",\"value\":\"INR147.3 crore (23.5% margin)\",\"change\":\"+129% QoQ (as stated)\"},{\"metric\":\"PBT\",\"value\":\"INR78.4 crore (12.5% margin)\",\"change\":\"+1,253% YoY (as stated)\"},{\"metric\":\"PAT\",\"value\":\"INR59.3 crore (9.5% margin)\",\"change\":\"vs INR4.7 crore in previous quarter\"},{\"metric\":\"CBG revenue\",\"value\":\"INR11.2 crore\",\"change\":\"PAT ~INR4-4.5 crore (40-45% margin)\"},{\"metric\":\"Ethanol segment PBT\",\"value\":\"INR73.3 crore\",\"change\":\"\"},{\"metric\":\"CBG segment PBT\",\"value\":\"INR5.1 crore\",\"change\":\"\"},{\"metric\":\"Return on capital employed\",\"value\":\"20.35%\",\"change\":\"\"},{\"metric\":\"Debt-equity ratio\",\"value\":\"0.59\",\"change\":\"\"},{\"metric\":\"Finance cost to revenue\",\"value\":\"7%\",\"change\":\"vs 12.4% in previous quarter (as stated)\"}]",
+  "segments": [
+   {
+    "name": "Ethanol",
+    "commentary": "Revenue INR615.7 crore for the segment; sugar-based feed about 4.37 crore litres (INR277 crore), grain-based about 3.92 crore litres (INR314 crore), roughly a 50:50 split. DDGS revenue INR47.34 crore; ENA INR37.02 crore."
+   },
+   {
+    "name": "Compressed biogas (CBG)",
+    "commentary": "Revenue INR11.2 crore and PAT about INR4-4.5 crore; plants at about 78% utilisation. Revenue split is about 58-60% gas sales and about 40% FOM/LFOM fertiliser."
+   }
+  ],
+  "guidance_outlook": [
+   "Q2 FY27 ethanol sales expected at about 11-12 crore litres, with no planned maintenance shutdown.",
+   "FY27 ethanol volume of about 44 crore litres from orders on hand (OMC plus private, ENA included); management said it could be higher; realisation about INR67-68/litre.",
+   "Capacity utilisation targeted at 80-90%, or 90-95% for the balance of the year if the 15 crore litre court-ordered capacity is implemented; currently about 60%.",
+   "CBG: three of four Sumitomo JV plants (20 TPD each) near commissioning, targeted for Q3 with revenue from Q4; GAIL JV six plants (10 TPD each) construction from August; about 72 TPD of additional capacity from Q4.",
+   "CBG FY27 run-rate expected at INR10-12 crore per quarter.",
+   "SAF: about INR2,000 crore capex; EPC tender pending, construction in 2-3 months; revenue targeted by end-2028 (FY29). About INR150 crore viability gap funding received under PM JI-VAN.",
+   "Management said a plan to de-lever the balance sheet would be shared in the next call or within days."
+  ],
+  "capex_capacity": [
+   "Ethanol capacity of about 55 crore litres a year; management said no further ethanol capex is planned.",
+   "CBG: gross capex about INR760 crore for about 132 TPD across two JVs (51% TruAlt, 49% partner), funded 70:30 debt-to-equity. Sumitomo JV: four plants at INR330 crore; GAIL JV: six plants at INR425 crore.",
+   "Pledged shares tied to SBI and IREDA term loans: release requested, expected this quarter.",
+   "Plants located within 50-60 km of gas injection points; cascades used for transport to injection points."
+  ],
+  "demand_pricing": [
+   "Maize prices rose to about INR25.5/kg from about INR21-22 earlier; management said margin falls to about INR6-7/litre at these prices versus INR15-16 on earlier purchases.",
+   "Management said it holds grain inventory bought at INR18,000-21,000/tonne against current prices of about INR25,000/tonne.",
+   "Private OMC realisation about INR60.50/litre; about 8 crore litres of unlifted private OMC inventory, of which about 3 crore litres sold and 5 crore litres targeted for Q3.",
+   "SAF expected offtake price INR180-190/litre with a 24-25% margin; CBG gas price INR84/kg; FOM prices range from INR2,500/tonne (open market) to about INR8,000/tonne (one large fertiliser company order)."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How is the dual-feed shift affecting costs and margins?",
+    "answer": "Management said grain-based feed has about 6% better margin than sugar-based feed and a yield of about 450 versus about 317 for sugar-based, plus DDGS income."
+   },
+   {
+    "question": "Why did CBG EBITDA margin dip despite higher revenue?",
+    "answer": "Employee costs rose with CBG expansion hiring, and a one-off repairs and maintenance cost was booked; management called the impact minor."
+   },
+   {
+    "question": "Is INR15 crore spillover included in FY27 guidance?",
+    "answer": "No, the 44 crore litre guidance excludes the INR15 crore spillover, which management is still pursuing with OMCs with no timeline."
+   },
+   {
+    "question": "What is the outlook for ethanol volumes and the next ethanol supply year?",
+    "answer": "Management said it expects at least 44 crore litres in the next supply year on a conservative base, and more if it can achieve it."
+   },
+   {
+    "question": "Is there a risk from sugar companies adding ethanol capacity?",
+    "answer": "Management said only three or four plants are near commissioning, adding 8-10 crore litres a year; demand and supply are roughly balanced at 20% blending."
+   },
+   {
+    "question": "Realisation for SAF?",
+    "answer": "Management said expected offtake price is INR180-190/litre with a 24-25% margin; international ATF is about INR210-220/litre."
+   }
+  ],
+  "risks_watch": [
+   "Maize prices (about INR25.5/kg) could compress ethanol margins once current inventory is consumed.",
+   "Court-ordered additional 15 crore litre capacity remains unimplemented; management has no timeline.",
+   "Finance cost is about INR180 crore a year; de-leveraging plan not yet disclosed.",
+   "Q2 volume of 11-12 crore litres depends on OMC lifting and the unlifted 5 crore litre private OMC inventory.",
+   "CBG offtake and government policy (SATAT vs Sampoorna, DPI pipeline scheme changes, FOM/MDA subsidy) remain uncertain.",
+   "Middle East crisis has delayed 76 additional fuel retail outlets."
+  ],
+  "management_tone": "Confident on volumes, CBG margins and SAF pricing, but evasive on the 15 crore litre court-ordered capacity, the spillover payment, ethanol price revisions and de-leveraging timelines. Several answers were given with little detail.",
+  "key_quotes": [
+   "With the current capacity, we were able to only operate at about 60% of capacity utilization.",
+   "So, net-net 1,200 crore litres goes for blending, 300 crore litres for chemical industry and 200 crore litres for AlcoBev."
+  ],
+  "financial_highlights": []
+ }
+}

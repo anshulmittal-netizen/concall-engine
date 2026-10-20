@@ -1,0 +1,196 @@
+{
+ "doc_id": "IN-da500f14-b25d-4c0f-b62d-e6db975a33c8",
+ "market": "IN",
+ "company_id": "541167",
+ "name": "Yasho Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-10",
+ "period": "2026-06",
+ "title": "Yasho Industries Ltd - 541167 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q1 FY27 margin jumped to 24.2% on 42% volume growth and utilisation near 65%, but management is capex-raising (Rs 125cr to Rs 250cr), working capital stress surfaced in Q&A, and guidance is loosely quantified.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 65,
+   "quote": "Capacity utilization at our facilities improved to over 65%, supported by the successful ramp-up of capacities commissioned at our Pakhajan plant."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we have decided to enhance our planned capital expenditure for FY27 from Rs. 125 crores to Rs. 250 crores."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "FY27 capex Rs125cr → Rs250cr",
+    "quote": "we have decided to enhance our planned capital expenditure for FY27 from Rs. 125 crores to Rs. 250 crores.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Utilisation over 65%",
+    "quote": "Capacity utilization at our facilities improved to over 65%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital cycle 190 → 143 days",
+    "quote": "Our working capital cycle improved from 190 days to 143 days",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Raw material supply issue",
+    "quote": "We are facing a genuine supply issue on our raw material side.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY28 revenue target above Rs 1,600cr",
+    "quote": "our company has revised our FY28 revenue target to more than Rs. 1,600 crores.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin",
+    "value": "maintain current ~24%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we should be able to maintain this margin for FY27. We will try our best to maintain this margin."
+   },
+   {
+    "metric": "FY28 revenue",
+    "value": ">Rs 1,600 crore",
+    "change": "raised",
+    "horizon": "FY28",
+    "quote": "our company has revised our FY28 revenue target to more than Rs. 1,600 crores."
+   },
+   {
+    "metric": "Revenue growth",
+    "value": "30-40% annual over next few years",
+    "change": "new",
+    "horizon": "multi-year",
+    "quote": "we are targeting 30% to 40% annual revenue growth over the next few years."
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "Rs 250 crore",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "we have decided to enhance our planned capital expenditure for FY27 from Rs. 125 crores to Rs. 250 crores."
+   },
+   {
+    "metric": "Long-term agreement commercialisation",
+    "value": "Q1 FY28",
+    "change": "held",
+    "horizon": "Q1 FY28",
+    "quote": "commercialization expected in Q1 FY28, in line with the planned execution schedule."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA margin 17-18% to 20% range",
+    "outcome": "dropped",
+    "quote": "we have always been said that this is the kind of range we were operating at"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Crisil",
+    "relation": "peer"
+   },
+   {
+    "name": "ICRA",
+    "relation": "peer"
+   },
+   {
+    "name": "Infinium",
+    "relation": "competitor"
+   },
+   {
+    "name": "Lubrizol",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "China+1 enquiries → orders",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Raw material supply shortfall and container booking constraints",
+    "quote": "We are facing a genuine supply issue on our raw material side."
+   },
+   {
+    "label": "Evasive on Pakhajan utilisation and customer names",
+    "quote": "I will not use the word Pakhajan."
+   },
+   {
+    "label": "Capex more than doubled while FY28 target rests on uncontracted demand",
+    "quote": "Up to 60%-65% we have customers. To balance, we need to search."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 4,
+   "growth": 6,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Pakhajan plant utilisation",
+    "quote": "I will say about Yasho at company-level utilization. I will not use the word Pakhajan."
+   },
+   {
+    "topic": "Margin sustainability and price pass-through",
+    "quote": "I don't know how did you get that number? Let's not make presumptions."
+   },
+   {
+    "topic": "Chinese capacity additions and dumping risk",
+    "quote": "Well, again, again, I don't know. I am repeating again and again this answer."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Yasho Q1 FY27 revenue hit record Rs 308 crore (volume +42% YoY) with EBITDA margin up to 24.2%; management guides to sustain margins.",
+  "overview": "Consolidated revenue reached a record Rs 308 crore, driven by 42% YoY volume growth from customer approvals and additional offtake in industrial chemicals. EBITDA rose to Rs 74.42 crore (24.2% margin, vs 17% previously cited), with PAT of Rs 36 crore (11.7% margin). Net debt/EBITDA fell to 1.86x from 3.75x at Q4 FY26, bank loan ratings were upgraded to A- by CRISIL and ICRA, and working capital cycle shortened from 190 to 143 days. Management raised FY27 capex from Rs 125 crore to Rs 250 crore for two new buildings at Pakhajan and set a FY28 revenue target above Rs 1,600 crore.</overview>\n<financial_highlights>\n<item><metric>Consolidated revenue</metric><value>Rs 308 crore</value><change>Highest quarterly revenue; 60% YoY growth per analyst question (not disputed)</change></item>\n<item><metric>EBITDA</metric><value>Rs 74.42 crore</value><change></change></item>\n<item><metric>EBITDA margin</metric><value>24.2%</value><change>Up from 17% (as stated by management)</change></item>\n<item><metric>PAT</metric><value>Rs 36 crore (PAT margin 11.7%)</value><change></change></item>\n<item><metric>Net debt to EBITDA</metric><value>1.86x as of 30 June 2026</value><change>From 3.75x at end of Q4 FY26</change></item>\n<item><metric>Working capital cycle</metric><value>143 days</value><change>From 190 days</change></item>\n<item><metric>Capex in Q1</metric><value>Rs 18.73 crore</value><change></change></item>\n<item><metric>Export share of revenue</metric><value>~69%</value><change></change></item>\n<item><metric>Domestic revenue growth</metric><value>~10% YoY</value><change></change></item>\n</financial_highlights>\n<segments>\n<item><name>Industrial chemicals</name><commentary>Contributed nearly 89% of Q1 revenue; management expects this to rise to about 90% going forward. Management said new-product revenue is about 30% of sales over the last two years, with revenue rising from Rs 600 crore to Rs 850 crore.</commentary></item>\n<item><name>Exports / geographies</name><commentary>Export is about 69% of revenue; US sales recovered after tariff issues eased, and Europe and Middle East are growing. Asia and Africa are early-stage, with margins described as at par or slightly lower than US/Europe.</commentary></item>\n</segments>\n<guidance_outlook>\n<item>Management expects to sustain the current EBITDA margin (about 24%) in FY27, though it said it cannot promise this beyond the next two to three years.</item>\n<item>FY28 revenue target revised to more than Rs 1,600 crore; management said real growth from the new capacity comes from FY29.</item>\n<item>Targets 30% to 40% annual revenue growth over the next few years.</item>\n<item>FY27 capex raised to Rs 250 crore from Rs 125 crore; company expects about Rs 100 crore of borrowings in FY27.</item>\n<item>Long-term agreement commercialisation expected in Q1 FY28, on track.</item>\n</guidance_outlook>\n<capex_capacity>\n<item>Two new production buildings at Pakhajan facility for industrial chemicals, including new molecules and capacity for existing products. Phase 1 is about Rs 100 crore (operational Q1 FY28); Phase 2 is about Rs 150 crore (operational Q4 FY28). Management said the build takes at least 15 months.</item>\n<item>Management expects about 2.5x asset turn on the Rs 250 crore capex.</item>\n<item>Utilisation at the company level improved to over 65% (60-65% per another answer); management targets 70-75% and expects to add capacity once utilisation crosses 60-65%.</item>\n<item>Management said about 60-65% of the new capacity is already covered by customer commitments.</item>\n<item>Vapi plant shut; efforts moved to Pakhajan, which also has a pilot facility for R&D.</item>\n</capex_capacity>\n<demand_pricing>\n<item>Pricing is formula-based on raw material costs, reset quarterly or half-yearly, and management said long-term/contract business rose to more than 50% of revenue from 30-40% earlier.</item>\n<item>Top customer is about 7% of revenue.</item>\n<item>Management said the 42% volume growth reflects offtake, not pre-emptive buying; it expects volumes to grow sequentially.</item>\n<item>Company is seeing more export traction than domestic; domestic sales are growing slowly.</item>\n<item>Management cites a Rs 12-15 billion addressable market and an aspiration of $200-300 million revenue.</item>\n</demand_pricing>\n<qa_highlights>\n<item><question>Can margins be sustained, given the Q1 benefit from the April price revision and operating leverage?</question><answer>Management attributed the gains to product mix and higher utilisation rather than stock gains, citing commitments from marquee customers to maintain margins.</answer></item>\n<item><question>What changed to move EBITDA margin from the historical 17-20% range to about 24%?</question><answer>Management cited higher utilisation (about 50% to 65%), higher customer offtake, product mix, and R&D-led process optimisation.</answer></item>\n<item><question>Phasing and revenue potential of the Pakhajan capex?</question><answer>Phase 1 about Rs 100 crore and Phase 2 about Rs 150 crore, at about 2.5x asset turn. Management said the Rs 1,600 crore FY28 guidance excludes these buildings.</answer></item>\n<item><question>Supply chain or raw material risks given the current macro environment?</question><answer>Management said there is a genuine raw material supply issue, and export container bookings can take three to four weeks. Inventory fell, which drove working capital down.</answer></item>\n<item><question>Margin differential between new and old products?</question><answer>Management said new products earn about 10-12% higher margin than older products. Newly launched products in the last 12 months carry better margins.</answer></item>\n<item><question>Lube-additive and ICE exposure?</question><answer>Management said it does not see EV adoption as a threat within a 10-year horizon, and that Rs 250 crore capex is not for lube alone.</answer></item>\n</qa_highlights>\n<risks_watch>\n<item>Raw material supply tightness and export container availability could affect output; management referenced a \"war situation\" in the macro backdrop.</item>\n<item>Margin sustainability: management stated it wants to maintain margins for two to three years but cannot promise them.</item>\n<item>Capex execution: Phase 1 and Phase 2 timelines depend on construction and commissioning within about 15 months.</item>\n<item>Chinese capacity additions could pressure realisations; management did not give a direct answer.</item>\n<item>Delivery times reportedly unchanged at 8-10 weeks higher than before (per analyst question).</item>\n</risks_watch>\n<management_tone>Confident on near-term margins and growth, but evasive on specifics: declined to split Pakhajan-level utilisation, customer names, and Chinese competition, and repeatedly referred back to company-level metrics.</management_tone>\n<key_quotes>\n<item>The company achieved its highest quarterly revenue of Rs. 308 crores driven by a 42% increase in volume on a year-on-year basis.</item>\n<item>Based on the current outlook, the company will endeavor to maintain current margins going forward.</item>\n<item>We are not aiming immediately to go to $0.5 billion - $1 billion revenue. We are just talking about $200-$300 million revenue.</item>\n</key_quotes>\n",
+  "financial_highlights": [],
+  "segments": [],
+  "qa_highlights": [],
+  "guidance_outlook": [],
+  "capex_capacity": [],
+  "demand_pricing": [],
+  "risks_watch": [],
+  "key_quotes": [],
+  "management_tone": ""
+ }
+}
