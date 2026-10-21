@@ -6,7 +6,11 @@ under "summary", and analyze.py collects them into data/summaries.json for the d
 """
 from __future__ import annotations
 
+import json
+import re
 from pathlib import Path
+
+from rapidfuzz import fuzz
 
 from common import DATA, as_list, label_from_key, read_json, settings, write_json
 from textify import norm
@@ -42,6 +46,8 @@ SUMMARY_TOOL = {
 SYSTEM = """You are a buy-side analyst writing an internal brief of a listed Indian company's earnings call.
 Be specific and factual: numbers, units, timelines, names of segments and products. No filler, no adjectives without facts.
 Paraphrase everything except key_quotes; key_quotes must be copied word for word from the transcript.
+Fill every field, in order, through to key_quotes and management_tone. Each section goes in its own field:
+never put markup, tags or another field's content inside a text field.
 If a section has nothing in the call, return an empty list for it."""
 
 
@@ -62,27 +68,72 @@ def _call(entry: dict, text: str) -> dict:
     raise RuntimeError("model returned no summary")
 
 
+LEAK_RX = re.compile(r'(?:</\w+>\s*)?<parameter name="(\w+)">')
+
+
+def _unleak(s: dict) -> dict:
+    """Haiku sometimes writes the rest of the tool call as raw markup inside a string field
+    ('...text</overview>\n<parameter name="financial_highlights">[...]'). Cut the markup out of the
+    field and recover the fields it carried, when they are empty."""
+    for key in list(s):
+        v = s[key]
+        if not isinstance(v, str):
+            continue
+        m = LEAK_RX.search(v)
+        if not m:
+            continue
+        s[key] = re.sub(r"</\w+>\s*$", "", v[:m.start()]).strip()
+        parts = LEAK_RX.split(v[m.start():])[1:]
+        for name, body in zip(parts[0::2], parts[1::2]):
+            body = re.sub(r"(</\w+>\s*)+$", "", body.strip()).strip()
+            try:
+                val = json.loads(body)
+            except Exception:
+                val = body if not body.startswith(("[", "{")) else None
+            if val not in (None, "", []) and not s.get(name):
+                s[name] = val
+    return s
+
+
 def _clean(s: dict, text: str) -> dict:
+    s = _unleak(s)
     nt = norm(text)
     for key in ("financial_highlights", "segments", "qa_highlights"):
         s[key] = [x for x in as_list(s.get(key)) if isinstance(x, dict)]
     for key in ("guidance_outlook", "capex_capacity", "demand_pricing", "risks_watch"):
         s[key] = [str(x) for x in as_list(s.get(key)) if isinstance(x, (str, int, float)) and str(x).strip()]
-    s["key_quotes"] = [q for q in as_list(s.get("key_quotes")) if isinstance(q, str) and norm(q) in nt]
+    def found(q):
+        nq = norm(q)
+        return nq in nt or (len(nq) > 25 and fuzz.partial_ratio(nq, nt) >= 92)
+    s["key_quotes"] = [q for q in as_list(s.get("key_quotes")) if isinstance(q, str) and found(q)]
     for key in ("headline", "overview", "management_tone"):
         s[key] = str(s.get(key) or "")
     return s
 
 
+LATE_FIELDS = ("qa_highlights", "risks_watch", "management_tone")
+
+
+def incomplete(s: dict) -> bool:
+    """A summary missing two or more of its closing sections, or still carrying leaked markup."""
+    return sum(1 for k in LATE_FIELDS if not s.get(k)) >= 2 or "<parameter" in str(s.get("overview", ""))
+
+
 def pending(market: str) -> list[Path]:
+    """New calls first (newest first), then incomplete summaries that have not been redone yet."""
     root = DATA / "extractions" / market
     files = [f for f in root.glob("*/*.json")] if root.exists() else []
-    out = []
+    new, redo = [], []
     for f in files:
         x = read_json(f)
-        if x and x.get("doc_type") == "transcript" and not x.get("summary") and x.get("read", {}).get("triggers") is not None:
-            out.append((x.get("date", ""), f))
-    return [f for _, f in sorted(out, reverse=True)]
+        if not x or x.get("doc_type") != "transcript" or x.get("read", {}).get("triggers") is None:
+            continue
+        s = x.get("summary")
+        if not s:
+            new.append((x.get("date", ""), f))
+        elif incomplete(s) and not s.get("_redone"):
+            redo.append((x.get("date", ""), f))
+    return [f for _, f in sorted(new, reverse=True)] + [f for _, f in sorted(redo, reverse=True)]
 
 
 def run(market: str, get_text, limit: int | None = None, log=print) -> int:
@@ -99,7 +150,15 @@ def run(market: str, get_text, limit: int | None = None, log=print) -> int:
             text = get_text(entry)
             if not text:
                 continue
-            x["summary"] = _clean(_call(entry, text), text)
+            redo = bool(x.get("summary"))
+            s = _clean(_call(entry, text), text)
+            if redo:
+                old = x["summary"]
+                for k, v in old.items():          # keep any section the first pass had and the redo missed
+                    if v and not s.get(k):
+                        s[k] = v
+                s["_redone"] = 1
+            x["summary"] = s
             write_json(f, x)
             done += 1
             log(f"  ✎ {x['name']} · {label_from_key(x['period'], market)} summary")
