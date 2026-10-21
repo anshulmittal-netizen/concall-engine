@@ -335,6 +335,31 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 30%,transparent);bo
 .srow .sv{text-align:right;font-family:var(--mono);font-size:12px;color:var(--muted)}
 .scale{display:grid;grid-template-columns:120px minmax(0,1fr) 30px;gap:10px;font-size:11px;color:var(--faint);font-family:var(--mono)}
 .scale span:nth-child(2){display:flex;justify-content:space-between}
+.sb-eq{display:grid;gap:10px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--panel2)}
+.sb-eq .eqn{font-family:var(--mono);font-size:13.5px;line-height:1.7}
+.sb-eq .eqn b{font-size:15px}
+.sb-stack{display:flex;height:16px;border-radius:8px;overflow:hidden;background:var(--line)}
+.sb-stack i{display:block;height:100%;border-right:2px solid var(--panel2)}
+.sb-leg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted)}
+.sb-leg span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;background:var(--tc)}
+.sb-part{display:grid;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:12px}
+.sb-part .hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.sb-part .hd h4{font-family:var(--display);font-stretch:90%;font-size:16px;margin:0}
+.sb-part .hd .num{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.sb-part .hd .num b{font-size:17px;color:var(--fg)}
+.sb-bar{height:8px;border-radius:5px;background:var(--panel2);overflow:hidden}
+.sb-bar i{display:block;height:100%;border-radius:5px;background:var(--tc)}
+.sb-in{display:grid;gap:4px;font-size:13.5px}
+.sb-in .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+.sb-in .row .num{font-family:var(--mono);font-size:12.5px;color:var(--muted);white-space:nowrap}
+.sb-how{font-size:12.5px;color:var(--muted);line-height:1.5}
+.sb-ev{display:grid;gap:4px;font-size:13px;border-left:3px solid var(--tc);padding-left:10px}
+.sb-ev .q{color:var(--muted)}
+.sb-adj{display:grid;gap:6px}
+.sb-method{font-size:13.5px;line-height:1.55}
+.sb-method table{border-collapse:collapse;width:100%;font-size:13px;margin:6px 0}
+.sb-method td,.sb-method th{border-bottom:1px solid var(--line);padding:5px 6px;text-align:left}
+.sb-method th{font-weight:600;color:var(--muted)}
 .flag{display:flex;gap:10px;align-items:center;padding:9px 12px;border-radius:10px;border:1px solid color-mix(in srgb,var(--down) 50%,transparent);background:color-mix(in srgb,var(--down) 9%,transparent);font-size:14px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .copied{font-size:12.5px;color:var(--up)}
@@ -457,7 +482,7 @@ const GL = {
   verdict:['Verdict','A plain label for the score. Strong 70+, Good 60–69, Average 50–59, Weak 40–49, Poor below 40. Red flag means a veto capped the score at 40.'],
   change:['vs last call','Points gained or lost against the company’s previous call. A dash means this is the first call we have read for the company, so there is nothing to compare yet.'],
   pct:['Rank in quarter','Where the call ranks among all calls read for the same quarter. “Top 10%” means only a tenth of the quarter’s calls scored higher.'],
-  cred:['Management credibility','0 to 100: how often past guidance was delivered in later calls. “Untested” means there is no earlier guidance to check yet. Untested scores are trimmed by 15% so new names do not jump the queue.'],
+  cred:['Management credibility','0 to 100: how often past guidance was delivered in later calls. “Untested” means there is no earlier guidance to check yet. With an untested management, guidance counts only 85% of its distance from neutral, so new names do not jump the queue on promises alone.'],
   veto:['Veto','A serious negative (guidance withdrawn without reason, auditor or governance issue, regulatory action) caps the score at 40, however good the rest of the call was.'],
   guidance:['Guidance','What management said about the future in this call. Raised: targets lifted or new positive targets given. Cut: targets lowered or withdrawn. Steady: reiterated or no change.'],
   gidx:['Guidance index','0 to 100 for a group of companies. 50 is neutral. Above 60: more companies raised than cut. Below 40: cuts dominate. Companies whose management has delivered before count for more.'],
@@ -971,7 +996,7 @@ function vHelp() {
       <p>The Concall Signal Score runs from 0 to 100. The model reads the call into eight readings, each from −2 to +2, and they are combined with these weights:</p>
       <div class="weights">${W.map(([n, w]) => `<div class="w"><span>${n}</span><span class="sbar"><i style="width:${w / 30 * 100}%"></i></span><span class="num">${w}</span></div>`).join('')}</div>
       <ul><li>For a company’s first call in our data, the score reflects where the business stands now. From the second call on, 60% is the level and 40% is the change since last call.</li>
-      <li>Guidance counts for more when management has delivered past guidance. With no track record yet (“untested”), the score is trimmed by 15%.</li>
+      <li>Guidance counts for more when management has delivered past guidance. With no track record yet (“untested”), guidance counts only 85% of its distance from neutral. Every company’s exact working is on the <b>Score breakdown</b> tab of its panel.</li>
       <li>A veto ${tip('veto')} caps the score at 40. Smaller warning signs take off 4 points each, up to 8.</li>
       <li>Supply carries the most weight on purpose. The framework looks for cycles turning on the supply side before demand shows up.</li></ul>
       <p>Verdict labels:</p><div class="bands">${[[75, 'Strong 70+'], [65, 'Good 60–69'], [55, 'Average 50–59'], [45, 'Weak 40–49'], [30, 'Poor below 40']].map(([s, l]) => `<span class="pill ${verdict(s).c}">${l}</span>`).join('')}<span class="pill v-flag">Red flag: veto applied</span></div>
@@ -1059,8 +1084,8 @@ function drawDrawer(fresh) {
       </section>
       ${x.veto ? `<div class="flag">Veto applied: the score is capped at 40. See Red flags on the Signals tab. ${tip('veto')}</div>` : ''}
       <section class="oneline"><span class="eyebrow">The call in one line</span><p>${esc(x.thesis || c.thesis)}</p>${x.gLine ? `<p class="small" style="font-family:var(--body);font-weight:400;font-size:14px;margin-top:8px"><b>Key guidance:</b> ${esc(x.gLine)}</p>` : ''}</section>
-      <div class="dtabs" role="tablist"><button role="tab" data-dt="summary" aria-selected="${tab === 'summary'}">Call summary</button><button role="tab" data-dt="signals" aria-selected="${tab === 'signals'}">Signals behind the score</button></div>
-      <div id="dr-tab">${tab === 'signals' ? sigNote + signalsHtml(c) : '<p class="muted">Loading the summary…</p>'}</div>
+      <div class="dtabs" role="tablist"><button role="tab" data-dt="summary" aria-selected="${tab === 'summary'}">Call summary</button><button role="tab" data-dt="signals" aria-selected="${tab === 'signals'}">Signals behind the score</button><button role="tab" data-dt="score" aria-selected="${tab === 'score'}">Score breakdown</button></div>
+      <div id="dr-tab">${tab === 'signals' ? sigNote + signalsHtml(c) : tab === 'score' ? sigNote + scoreHtml(c) : '<p class="muted">Loading the summary…</p>'}</div>
     </div>
   </aside>`;
   const root = $('#drawer-root'), keepScroll = !fresh && $('#dr-body') ? $('#dr-body').scrollTop : 0;
@@ -1104,6 +1129,67 @@ function signalsHtml(c) {
     ${(c.themes || []).length ? `<section class="sec"><h3>Themes discussed</h3><div class="chips">${c.themes.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></section>` : ''}
     ${(c.namedBy || []).length ? `<section class="sec"><h3>Named in other companies’ calls ${tip('namedBy')}</h3><div class="chips">${c.namedBy.map(n => `<button class="btn" data-open="${esc(n.id)}" title="Called it “${esc(n.as)}” in their ${esc(n.period)} call">${esc(n.name)} · ${esc(n.relation)}</button>`).join('')}</div></section>` : ''}
     ${(c.sources || []).filter(s => s.url).length ? `<section class="sec"><h3>Source documents</h3><div class="chips">${c.sources.filter(s => s.url).map(s => `<a class="tag" style="color:var(--blue)" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.type)} · ${esc(fdate(s.date))} ↗</a>`).join('')}</div></section>` : ''}
+  </div>`;
+}
+/* Score breakdown: the exact working of the latest call's score, as computed by analyze.py */
+const SB_PART = {supply: ['t-supply', 30, ['supply', 'structure', 'inventory']], pricing: ['t-pricing', 20, ['pricing', 'util']], guidance: ['t-guidance', 20, ['guidance']],
+  novelty: ['t-novelty', 15, ['novelty']], demand: ['t-demand', 10, ['demand']], tone: ['t-tone', 5, ['tone']]};
+const SB_READ = {supply: 'Supply discipline', structure: 'Industry structure', inventory: 'Inventory', pricing: 'Pricing', util: 'Utilisation direction',
+  guidance: 'Guidance', novelty: 'New developments', demand: 'Demand', tone: 'Tone'};
+const THEME_BONUS = {emerging: ['Emerging', 1], confirming: ['Confirming', .7], neutral: ['Steady / no theme', .5], crowded: ['Crowded', .25], deteriorating: ['Fading', .2]};
+const sgn = v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v);
+const f2 = v => (+v).toFixed(2);
+function sbInput(x, mode) {
+  if (x.k === 'cred') return `<div class="row"><span>Management credibility: ${x.tested ? `${x.cred} of 100 (${x.tested} past guidance item${x.tested === 1 ? '' : 's'} checked)` : 'untested (no past guidance to check yet)'}</span><span class="num">× ${f2(x.factor)}</span></div>`;
+  if (x.k === 'theme') { const [lab, v] = THEME_BONUS[x.stage || 'neutral'] || THEME_BONUS.neutral;
+    return `<div class="row"><span>Strongest theme: ${x.theme ? `${esc(x.theme)} (${lab})` : 'none tracked'}</span><span class="num">${f2(x.sub)}</span></div>`; }
+  if (x.k === 'tone') return `<div class="row"><span>Tone reading ${sgn(x.read)} · hedging ${f2(x.hedge)} (0 = specific, 1 = heavily hedged)</span><span class="num">${f2(x.sub)}</span></div>`;
+  const prev = mode === 'blend' && x.prev != null ? ` · avg of earlier calls ${sgn(+(+x.prev).toFixed(1))}` : '';
+  return `<div class="row"><span>${SB_READ[x.k] || x.k} ${sgn(x.read)}${x.scale ? ' (−1 to +1)' : ' (−2 to +2)'}${prev}${x.wt > 1 ? ` · counts ×${x.wt}` : ''}</span><span class="num">${f2(x.sub)}</span></div>`;
+}
+function sbHow(p, mode) {
+  const lvl = mode === 'blend' ? 'Each reading becomes 0 to 1 as 60% its level plus 40% its change against the average of the company’s earlier calls (0.5 = neutral).' : 'First call on record, so each reading counts at its level: −2 → 0, −1 → 0.25, 0 → 0.5, +1 → 0.75, +2 → 1.';
+  return {supply: `${lvl} Supply discipline counts twice, structure and inventory once each: (2 × supply + structure + inventory) ÷ 4.`,
+    pricing: `${lvl} Pricing and utilisation are averaged.`,
+    guidance: `${lvl} The guidance value is then pulled toward neutral (0.5) unless management has delivered before: value = 0.5 + (reading − 0.5) × credibility factor. Factor = 0.4 + 0.6 × credibility/100 once tested, 0.85 while untested.`,
+    novelty: `${lvl} Averaged with a theme bonus for the strongest theme the company discussed: Emerging 1.0, Confirming 0.7, Steady or none 0.5, Crowded 0.25, Fading 0.2.`,
+    demand: lvl,
+    tone: 'Tone: 70% the tone reading plus a candour adjustment of (0.5 − hedging) × 0.6, rescaled to 0 to 1. Clearer, more specific answers score higher.'}[p.key];
+}
+function scoreHtml(c) {
+  const b = c.breakdown;
+  if (!b) return '<div class="empty">The breakdown appears after the next nightly run.</div>';
+  const trig = types => (c.triggers || []).filter(t => types.includes(t.t));
+  const sum = b.parts.reduce((n, p) => n + p.pts, 0);
+  return `<div style="display:grid;gap:18px">
+    <section class="sb-eq"><span class="eyebrow">How ${c.score} was reached · ${esc(c.period)} call</span>
+      <div class="eqn">${b.parts.map(p => `${p.label} <b>${p.pts.toFixed(1)}</b>`).join(' + ')} = <b>${sum.toFixed(1)}</b>${b.watchPts ? ` · watch-points <b>−${Math.abs(b.watchPts)}</b>` : ''}${b.veto ? ` · veto cap <b>40</b>` : ''} → <b style="color:${vcol(c.score, c.veto)}">${b.final}</b></div>
+      <div class="sb-stack" role="img" aria-label="Points by component">${b.parts.map(p => `<i class="${SB_PART[p.key][0]}" style="width:${p.pts}%;background:var(--tc)" title="${esc(p.label)}: ${p.pts.toFixed(1)} of ${SB_PART[p.key][1]}"></i>`).join('')}</div>
+      <div class="sb-leg">${b.parts.map(p => `<span class="${SB_PART[p.key][0]}">${esc(p.label)} ${p.pts.toFixed(1)}/${SB_PART[p.key][1]}</span>`).join('')}</div>
+      <span class="small muted">${b.mode === 'blend' ? `Compared with the company’s ${b.prevCalls} earlier call${b.prevCalls === 1 ? '' : 's'} on record: 60% level, 40% change.` : 'First call on record for this company, so the score reflects where the business stands now; change starts counting from the next call.'}</span>
+    </section>
+    ${b.parts.map(p => { const [cls, max, types] = SB_PART[p.key], ev = trig(p.key === 'novelty' ? ['novelty'] : types);
+      return `<section class="sb-part ${cls}">
+        <div class="hd"><h4>${esc(p.label)} · weight ${Math.round(p.w * 100)}%</h4><span class="num"><b>${p.pts.toFixed(1)}</b> of ${max} pts</span></div>
+        <div class="sb-bar"><i style="width:${p.v * 100}%"></i></div>
+        <div class="sb-in">${p.in.map(x => sbInput(x, b.mode)).join('')}<div class="row"><span><b>Component value</b> × ${max} = points</span><span class="num"><b>${(+p.v).toFixed(3)}</b> × ${max} = ${p.pts.toFixed(1)}</span></div></div>
+        <p class="sb-how">${sbHow(p, b.mode)}</p>
+        ${ev.length || (p.key === 'guidance' && c.thesis) ? `<div class="sb-ev">${ev.slice(0, 3).map(t => `<div><b>${esc(t.label)}</b>${t.q ? `<div class="q">“${esc(t.q.length > 220 ? t.q.slice(0, 217) + '…' : t.q)}”</div>` : ''}</div>`).join('') || '<div class="q">No specific trigger quoted for this part; the reading comes from the call as a whole.</div>'}</div>` : ''}
+      </section>`; }).join('')}
+    <section class="sec"><h3>Adjustments</h3><div class="sb-adj">
+      ${b.watch.length ? b.watch.map(w => `<div class="flag" style="border-color:color-mix(in srgb,var(--warn) 50%,transparent);background:color-mix(in srgb,var(--warn) 9%,transparent)">−4 · ${esc(w)}</div>`).join('') + `<p class="small muted">Routine watch-points take 4 points each, up to 8 in all.</p>` : '<p class="muted">No watch-points: nothing deducted.</p>'}
+      ${b.veto ? `<div class="flag">Veto: score capped at 40. ${esc(b.vetoWhy.join('; '))}</div>` : '<p class="muted">No veto.</p>'}
+    </div></section>
+    <details class="how"><summary>The full method</summary><div class="body sb-method">
+      <table><tr><th>Component</th><th>Weight</th><th>Built from</th></tr>
+        <tr><td>Supply side</td><td>30%</td><td>Supply discipline ×2, industry structure, inventory</td></tr>
+        <tr><td>Pricing & utilisation</td><td>20%</td><td>Pricing reading and utilisation direction, averaged</td></tr>
+        <tr><td>Guidance × credibility</td><td>20%</td><td>Guidance reading, pulled toward neutral by management’s delivery record</td></tr>
+        <tr><td>New developments & themes</td><td>15%</td><td>Novelty reading and the stage of the strongest theme discussed</td></tr>
+        <tr><td>Demand</td><td>10%</td><td>Demand reading</td></tr>
+        <tr><td>Tone & candour</td><td>5%</td><td>Tone reading and how hedged the answers were</td></tr></table>
+      <p>The readings (−2 to +2) are made by an AI model reading the transcript through the capital-cycle framework; everything after that is fixed arithmetic, recomputed each night. Supply carries the most weight on purpose: the framework looks for cycles turning on the supply side before demand shows up. Watch-points (receivables, working capital, related-party items, pledges, resignations, cash burn, liquidity) take 4 points each, up to 8. A veto (auditor issues, default, fraud, regulatory action, insolvency, guidance dropped without explanation, or heavy evasion with very negative tone) caps the score at 40.</p>
+    </div></details>
   </div>`;
 }
 async function copyLink() {

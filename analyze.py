@@ -30,7 +30,7 @@ def load(market: str):
     manifest = read_json(DATA / f"manifest_{market}.json", {})
     root = DATA / "extractions" / market
     by_co = defaultdict(lambda: defaultdict(list))
-    for f in root.glob("*/*.json") if root.exists() else []:
+    for f in sorted(root.glob("*/*.json")) if root.exists() else []:  # sorted: same result on every machine
         x = read_json(f)
         if not x:
             continue
@@ -131,7 +131,8 @@ def clean_read(rd: dict) -> dict:
 def merge(docs: list[dict]) -> dict:
     """Combine a period's transcript, presentation and interview reads into one record."""
     order = {"transcript": 0, "interview": 1, "presentation": 2}
-    docs = sorted(docs, key=lambda d: (order.get(d["doc_type"], 3), d["date"]))
+    # doc_id breaks ties (e.g. a transcript filed twice on the same day) so the base read never depends on file order
+    docs = sorted(docs, key=lambda d: (order.get(d["doc_type"], 3), d["date"], str(d.get("doc_id", ""))))
     base = docs[0]["read"]
     trig, seen = [], set()
     for d in docs:
@@ -297,8 +298,42 @@ def build(market: str, log=print) -> dict:
                 flags.insert(0, "Veto: guidance dropped without explanation (" + ", ".join(dropped[:2]) + ")")
             if heavy_evasion:
                 flags.append(f"{len(r['evasions'])} analyst questions deflected (" + ", ".join(e["topic"] for e in r["evasions"][:2]) + ")")
+            raw = score + min(8, 4 * len(watch))
             if veto:
                 score = min(score, 40)
+            # exact working of the score, shipped to the dashboard so every point can be traced
+            pmean = (lambda k: round(st.mean(x["blocks"][k] for x in prev), 2)) if prev else (lambda k: None)
+            top_theme = max(r["themes"], key=lambda t: bonus.get(tstage.get(t, "neutral"), 0.5), default=None)
+            def part(key, label, w, val, inputs):
+                return {"key": key, "label": label, "w": w, "v": round(val, 3), "pts": round(100 * w * val, 1), "in": inputs}
+            r["breakdown"] = {
+                "mode": "level" if not prev else "blend", "prevCalls": len(prev),
+                "parts": [
+                    part("supply", "Supply side", 0.30, supply_side, [
+                        {"k": "supply", "read": b["supply"], "prev": pmean("supply"), "sub": round(c["supply"], 3), "wt": 2},
+                        {"k": "structure", "read": b["structure"], "prev": pmean("structure"), "sub": round(c["structure"], 3), "wt": 1},
+                        {"k": "inventory", "read": b["inventory"], "prev": pmean("inventory"), "sub": round(c["inventory"], 3), "wt": 1}]),
+                    part("pricing", "Pricing & utilisation", 0.20, pricing, [
+                        {"k": "pricing", "read": b["pricing"], "prev": pmean("pricing"), "sub": round(c["pricing"], 3), "wt": 1},
+                        {"k": "util", "read": r["util"], "prev": round(pu, 2) if prev else None, "sub": round(cu, 3), "wt": 1, "scale": "−1 to +1"}]),
+                    part("guidance", "Guidance × credibility", 0.20, guid, [
+                        {"k": "guidance", "read": b["guidance"], "prev": pmean("guidance"), "sub": round(c["guidance"], 3), "wt": 1},
+                        {"k": "cred", "cred": cred, "tested": tested,
+                         "factor": round((0.4 + 0.6 * cred / 100) if tested else 0.85, 3)}]),
+                    part("novelty", "New developments & themes", 0.15, nov, [
+                        {"k": "novelty", "read": b["novelty"], "prev": pmean("novelty"), "sub": round(c["novelty"], 3), "wt": 1},
+                        {"k": "theme", "theme": top_theme, "stage": tstage.get(top_theme, "neutral") if top_theme else None, "sub": tb, "wt": 1}]),
+                    part("demand", "Demand", 0.10, c["demand"], [
+                        {"k": "demand", "read": b["demand"], "prev": pmean("demand"), "sub": round(c["demand"], 3), "wt": 1}]),
+                    part("tone", "Tone & candour", 0.05, (tone + 1) / 2, [
+                        {"k": "tone", "read": b["tone"], "hedge": round(r["hedge"], 2), "sub": round((tone + 1) / 2, 3), "wt": 1}]),
+                ],
+                "raw": round(raw, 1),
+                "watch": watch[:4], "watchPts": -min(8, 4 * len(watch)),
+                "veto": veto, "vetoWhy": ([f"Guidance dropped: {', '.join(dropped[:2])}"] if dropped else []) + serious[:3]
+                           + (["Heavy evasion with very negative tone"] if heavy_evasion and b["tone"] <= -2 else []),
+                "final": round(max(0, min(100, score))),
+            }
             r.update(score=round(max(0, min(100, score))), cred=cred, credTested=tested, veto=veto, flags=flags)
             r["delta"] = r["score"] - hist[-1] if hist else 0
             hist.append(r["score"])
@@ -319,7 +354,7 @@ def build(market: str, log=print) -> dict:
             "triggers": [{"t": t["type"], "label": t["label"], "q": t.get("quote", ""), "hl": t.get("highlight", "")} for t in r["triggers"]],
             "flags": r["flags"], "blocks": r["blocks"], "util": r["util"], "capex": r["capex"],
             "hist": hist[-cfg["periods_shown"]:], "histLabels": [label_from_key(k, market) for k in keys][-cfg["periods_shown"]:],
-            "themes": r["themes"], "verified": r["verified"],
+            "themes": r["themes"], "verified": r["verified"], "breakdown": r.get("breakdown"),
             "sources": [source_link(d, manifest, market) for d in r["docs"]],
             "entities": [e["name"] for e in r["entities"]],
         })
