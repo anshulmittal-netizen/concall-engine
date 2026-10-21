@@ -296,41 +296,48 @@
   ]
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Locomotive propulsion capacity built for 55 units/month (stable target 40/month); Unit 2 already set up",
+    "what": "Unit 2 propulsion assembly line (capacity built for 55 locomotive propulsion systems/month; running at 40/month target)",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "major"
    },
    {
-    "what": "Test setups for propulsion production (three more ordered, installation in 45-60 days)",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 0,
-    "status": "under_construction"
-   },
-   {
-    "what": "New R&D centre to expand R&D team",
+    "what": "Two additional shifts in existing factory, enabling about 4,500 systems",
     "size_pct": null,
     "capex_cr": null,
     "q": 1,
-    "status": "planned"
+    "status": "planned",
+    "mat": "moderate"
    },
    {
-    "what": "Two additional shifts in existing factory, cited as enabling about 4,500 systems",
+    "what": "Test setups (three more ordered, installation in 45-60 days)",
     "size_pct": null,
     "capex_cr": null,
-    "q": 0,
-    "status": "planned"
+    "q": 1,
+    "status": "under_construction",
+    "mat": "minor"
    }
   ],
   "util": null,
   "expansion": true,
   "growth": null,
-  "outlook": 2,
-  "why": "Management targets INR400 crore FY27 revenue, ramping propulsion output from 10 units in September to about 40/month by January against a 564-unit order book worth about INR989 crore, with capacity already built for 55/month; however, deliveries have been minimal so far and no current revenue base is stated, so the percentage growth is not computable."
+  "gs": 1,
+  "turnaround": true,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management targets INR400 crore FY27 revenue and 10%+ PAT once the run-rate reaches ~40 propulsion units/month by January, backed by a 564-unit order book (~INR989 crore) and capacity built for 55/month, though deliveries have been minimal and no quarterly figures were reported.",
+  "mgmt": null
  }
 }

@@ -301,34 +301,48 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Nakoda CP plant (acquired under CIRP): 140,000 tpa PET chips capacity, expected to roughly double total CP capacity",
+    "what": "Nakoda CP plant (acquired under CIRP): 140,000 tpa PET chips capacity; expected to roughly double total CP capacity",
     "size_pct": null,
     "capex_cr": 23.47,
-    "q": 5,
-    "status": "under_construction"
+    "q": 6,
+    "status": "under_construction",
+    "mat": "major"
    },
    {
-    "what": "30 tpd (~20,000 tpa per analyst) capacity addition, partly commissioned in July, remainder in August 2026",
+    "what": "Recent 30 tpd (~20,000 tpa per analyst) CP capacity addition, partly commissioned July, remainder August 2026",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "minor"
    },
    {
-    "what": "6.5 MW captive solar plant; remaining solar capacity expected in Q4 FY27",
+    "what": "6.5 MW captive solar plant (power, not productive output capacity)",
     "size_pct": null,
     "capex_cr": 22.0,
-    "q": 3,
-    "status": "under_construction"
+    "q": 2,
+    "status": "under_construction",
+    "mat": "minor"
    }
   ],
   "util": null,
   "expansion": true,
   "growth": 30.0,
-  "outlook": 1,
-  "why": "Management reiterated FY27 revenue growth of more than 30% and ~6% EBITDA margin, backed by the 30 tpd addition commissioned in July-August 2026, but production fell 17% QoQ and the Nakoda 140,000 tpa plant slipped to Q2 FY28, so the growth call rests more on guidance than on capacity coming live."
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "cost_actions",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 9.0,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "Management reiterated FY27 revenue growth of more than 30% and ~6% EBITDA margin, but Q1 revenue rose only ~9% with production down 17% QoQ and EBITDA margin at 3.24%; the Nakoda 140,000 tpa plant has slipped to Q2 FY28 and the recent 30 tpd addition is only partly backed by specifics, so guidance is only partially supported.",
+  "mgmt": null
  }
 }

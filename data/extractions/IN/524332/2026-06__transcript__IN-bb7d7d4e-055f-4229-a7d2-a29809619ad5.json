@@ -313,55 +313,65 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "150 KLPD Bathinda unit (commissioned early July 2026)",
+    "what": "150 KLPD Bathinda ethanol unit (commissioned early July 2026, substantially offsets lost volume)",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "moderate"
    },
    {
-    "what": "Svaksha Distillery 350 KLPD (Kharagpur) now wholly owned after acquiring remaining 25%; not new capacity",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": null,
-    "status": "commissioned"
-   },
-   {
-    "what": "200 KLPD Bathinda ethanol plant shut after 19 June 2026 fire; restart expected in about 15 days from call",
+    "what": "200 KLPD Bathinda ethanol plant restart after 19 June 2026 fire (restart in ~15 days from call)",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "under_construction"
+    "status": "trial_runs",
+    "mat": "moderate"
    },
    {
-    "what": "Fatehabad 250 KLPD grain-based plant (deferred; orders and advances on hold)",
+    "what": "Fatehabad 250 KLPD grain-based plant (on hold, orders and advances held)",
     "size_pct": null,
     "capex_cr": null,
     "q": null,
-    "status": "deferred"
+    "status": "deferred",
+    "mat": "major"
    },
    {
-    "what": "Svaksha 75 KLPD biodiesel project (on hold)",
+    "what": "Svaksha 75 KLPD biodiesel project (on hold, biodiesel prices not remunerative)",
     "size_pct": null,
     "capex_cr": null,
     "q": null,
-    "status": "deferred"
+    "status": "deferred",
+    "mat": "minor"
    },
    {
     "what": "Goyal Distillery 250 KLPD project (on hold pending industry clarity)",
     "size_pct": null,
     "capex_cr": null,
     "q": null,
-    "status": "deferred"
+    "status": "deferred",
+    "mat": "major"
    }
   ],
   "util": null,
   "expansion": false,
   "growth": null,
-  "outlook": -1,
-  "why": "Consolidated revenue fell to INR 623 crore from INR 820 crore (about -24%) on the edible oil exit, while EBITDA rose 17% to INR 66 crore; the 200 KLPD Bathinda plant is down after a fire but due back in about 15 days, the new 150 KLPD unit is commissioned, and the Fatehabad, biodiesel and Goyal expansions are all deferred."
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": -24.0,
+  "qEbitda": 17.0,
+  "outlook": 0,
+  "why": "Management guides margins of about 10-12% and country liquor target of 30 lakh cases this year, backed by the restarted and newly commissioned 150 KLPD Bathinda unit and a full order book for about three months, but no revenue growth figure is guided, the Fatehabad and Goyal expansions are on hold, and reported revenue fell about 24% YoY on the oil exit.",
+  "mgmt": null
  }
 }

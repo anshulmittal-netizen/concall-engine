@@ -329,34 +329,48 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
     "what": "Saudi Arabia plant (wire/cable ducts and terminal connectors)",
     "size_pct": null,
     "capex_cr": null,
     "q": 2,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "minor"
    },
    {
     "what": "Minor Hosur plant expansion",
     "size_pct": null,
     "capex_cr": null,
     "q": null,
-    "status": "planned"
+    "status": "planned",
+    "mat": "minor"
    },
    {
     "what": "Switchgear capacity expansion (balancing capacity, FY28)",
     "size_pct": null,
     "capex_cr": null,
     "q": 4,
-    "status": "planned"
+    "status": "planned",
+    "mat": "major"
    }
   ],
   "util": 82.5,
   "expansion": true,
   "growth": 24.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 13.0,
+  "qEbitda": -26.0,
   "outlook": 1,
-  "why": "Management guides FY27 switchgear volume growth of 23-25% on existing capacity at 80-85% utilisation, with Saudi plant adding only about INR25 crore revenue in FY28 and switchgear expansion pushed to FY28, while Q1 EBITDA margin fell to 6% and FY27 margin guidance was cut to 8-8.5%."
+  "why": "FY27 switchgear volume growth of 23-25% is guided on existing capacity at 80-85% utilisation, with 7-8% volume growth in Q1 and the rest from price; EBITDA margin guidance was cut to 8-8.5% for FY27 while Q3-Q4 margins are guided at 9-9.5%, with the Saudi plant contributing only from FY28 (about INR25 crore).",
+  "mgmt": null
  }
 }

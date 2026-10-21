@@ -321,34 +321,49 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "4X wind turbine model: prototype installation targeted Aug 2026, commercial launch about a month later",
+    "what": "4X wind turbine model commercial launch (prototype install Aug 2026, commercial ~1 month later)",
     "size_pct": null,
     "capex_cr": null,
     "q": 1,
-    "status": "trial_runs"
+    "status": "under_construction",
+    "mat": "minor"
    },
    {
-    "what": "IRSL transformer capacity expansion: 4.9 MVA next, then 8-20 MVA and 100 MVA+ units",
+    "what": "IRSL transformer expansion: 4.9 MVA next, then 8-20 MVA and 100 MVA+ units",
     "size_pct": null,
     "capex_cr": null,
     "q": 2,
-    "status": "planned"
+    "status": "planned",
+    "mat": "minor"
    },
    {
-    "what": "Own crane fleet of 4 in operation, more planned in FY27",
+    "what": "IRSL crane fleet (4 cranes operating, more in FY27)",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "minor"
    }
   ],
   "util": null,
   "expansion": true,
   "growth": 75.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 0.0,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "Management reiterated FY27 consolidated revenue growth of ~75% and a 20-22% EBITDA margin, backed by a ~4.4 GW order book and transformer/turbine capacity additions, but Q1 revenue was flat YoY, guidance is H2-weighted (70-75% in H2), and management refused to quantify quarters, so the outlook is positive but not strongly proven."
+  "why": "Management maintained FY27 consolidated revenue growth of ~75% and 20-22% EBITDA margin, with 70-75% of the year in H2; backing is a ~4.4 GW order book (59% equipment supply) and INR600 crore INOX Green EBITDA guidance from Q3, but quarterly numbers were not quantified and Q1 revenue was only flat YoY, so backing is partial rather than clear.",
+  "mgmt": null
  }
 }

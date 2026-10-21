@@ -309,76 +309,65 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "35 MW solar plant (in commissioning stage)",
+    "what": "35 MW solar plant (captive power, commissioning stage)",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "trial_runs"
+    "status": "trial_runs",
+    "mat": "minor"
    },
    {
-    "what": "12 windmills of 2.1 MW each",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 0,
-    "status": "commissioned"
-   },
-   {
-    "what": "Solapur no-bake foundry, 15,000 t per annum",
+    "what": "12 windmills of 2.1 MW each (captive power)",
     "size_pct": null,
     "capex_cr": null,
     "q": 1,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "minor"
    },
    {
-    "what": "Rajpura foundry expansion phase 1 to 40,000-50,000 t per annum",
+    "what": "Solapur no-bake foundry, 15,000 t per annum (~1,250 t per month)",
     "size_pct": null,
     "capex_cr": null,
     "q": 2,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "moderate"
    },
    {
-    "what": "Rajpura foundry expansion phase 2 to 70,000 t per annum",
+    "what": "Rajpura foundry expansion, first phase to 40,000-50,000 t per annum",
     "size_pct": null,
     "capex_cr": null,
-    "q": null,
-    "status": "planned"
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
    },
    {
-    "what": "Koppal oxygen plant and pulverised coal injection in blast furnaces 1 and 2",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 3,
-    "status": "under_construction"
-   },
-   {
-    "what": "Hiriyur pig iron upgrade to 360,000 t",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 3,
-    "status": "under_construction"
-   },
-   {
-    "what": "Jejuri rolling capacity from 15,000 t to 25,000 t per month (about 3 lakh t per annum)",
+    "what": "Jejuri rolling capacity 15,000 to 25,000 t per month (~3 lakh t per annum)",
     "size_pct": null,
     "capex_cr": null,
     "q": 6,
-    "status": "under_construction"
-   },
-   {
-    "what": "Blast furnace conversion to steelmaking",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 8,
-    "status": "approved"
+    "status": "planned",
+    "mat": "major"
    }
   ],
   "util": null,
   "expansion": true,
-  "growth": 15.0,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "none",
+  "qRev": null,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "Management guides to over 15% volume growth across products for the remaining three quarters of FY27, with castings up 17-20% (162,000 t then 188,000 t), tubes up at least 10%, and steel external sales of 100,000-110,000 t, backed by Rajpura, Solapur and Jejuri capacity additions; Q1 castings sales rose 18% YoY but tube sales fell 14%, and Q1 margins were 12-13%."
+  "why": "Management guides overall volume growth of at least 15% for the remaining three quarters of FY27, with castings up 17-20%, tubes up at least 10%, and external steel sales of 100,000-110,000 t; backing is partial, with Solapur and Rajpura foundry additions, Rajpura sold out at ~2,200 t per month, and pricing pass-through from Q2.",
+  "mgmt": null
  }
 }

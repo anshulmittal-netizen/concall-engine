@@ -325,55 +325,65 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Dahej 1.2 Mt cement expansion (trial runs)",
+    "what": "Dahej 1.2 Mt expansion (trial runs)",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "trial_runs"
+    "status": "trial_runs",
+    "mat": "minor"
    },
    {
     "what": "Salai Banwa (UP) 2.4 Mt plant started",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Warisaliganj (Bihar) 2.4 Mt plant",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "moderate"
    },
    {
     "what": "Kalamboli (Mumbai) 1 Mt plant",
     "size_pct": null,
     "capex_cr": null,
     "q": 1,
-    "status": "under_construction"
-   },
-   {
-    "what": "Warisaliganj (Bihar) 2.4 Mt plant, most likely September",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 1,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "minor"
    },
    {
     "what": "Maratha clinker line 4 Mt",
     "size_pct": null,
     "capex_cr": null,
     "q": 4,
-    "status": "planned"
-   },
-   {
-    "what": "Mundra plant, around 2029",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 4,
-    "status": "planned"
+    "status": "planned",
+    "mat": "major"
    }
   ],
   "util": 65.0,
   "expansion": true,
   "growth": 8.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "cost_actions",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "Management guides 8% FY27 volume growth (July trade volumes up 8% YoY) and installed capacity rising to 119 Mtpa (about 10.2 Mt added) by end-FY27, but Q1 total volume fell about 7% YoY and utilisation is only 65%, so growth is guided but not yet visible in the quarter."
+  "why": "Management guides 8% FY27 volume growth (held), backed by July trade volumes up 8% YoY and capacity rising to 119 Mtpa by end-FY27 (about 10.2 Mt added), though Q1 total volume fell 7% YoY and utilisation is only 65%.",
+  "mgmt": null
  }
 }

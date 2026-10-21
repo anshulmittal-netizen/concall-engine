@@ -288,41 +288,48 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Hungary PCR capacity ramp from ~17,000 to ~21,000 car tyres/day (+4,000/day)",
+    "what": "Hungary PCR capacity expansion from ~17,000 to ~21,000 car tyres per day (+4,000/day)",
+    "size_pct": 23.5,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Enschede (Netherlands) ~750,000 tyres/yr production shifting largely to Hungary (transfer, not net new capacity)",
     "size_pct": null,
     "capex_cr": null,
     "q": 2,
-    "status": "approved"
+    "status": "under_construction",
+    "mat": "minor"
    },
    {
-    "what": "Enschede (NL) closure; ~750,000 tyres/yr shifting largely to Hungary, completion Sept-Oct 2026",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 2,
-    "status": "under_construction"
-   },
-   {
-    "what": "India new capacity (AP plant expanding double Hungary's 4,000/day addition), starting towards end of FY27 and ramping through FY28",
+    "what": "India new capacity for lower-end 14-15 inch tyres and Spacemaster spare tyres (Baroda) ramping through FY28",
     "size_pct": null,
     "capex_cr": null,
     "q": 3,
-    "status": "under_construction"
-   },
-   {
-    "what": "Lower-end 14-15 inch tyre production moving from Hungary to India",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 3,
-    "status": "planned"
+    "status": "under_construction",
+    "mat": "moderate"
    }
   ],
   "util": 90.0,
   "expansion": true,
-  "growth": 12.8,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 12.8,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "Q1 FY27 consolidated revenue +12.8% YoY with India +15.6% and utilisation in the 90s, plus Hungary and India capacity coming online from H2 FY27 to FY28; offset by Europe flat at +0.5%, margin pressure from ~17% raw material inflation, and price increases lagging costs."
+  "why": "No explicit revenue growth guidance; management guides India Q2 YoY growth to be good and Europe full-year high-teens EBITDA margin post Enschede transition, backed by Hungary PCR expansion to 21,000/day from H2 FY27 and India utilisation in the 90s, though price catch-up is only partly implemented (India ~11% in place vs 15-16% needed; Europe 3-4% vs ~10%).",
+  "mgmt": null
  }
 }

@@ -321,41 +321,56 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "ISRF ship repair facility JV (6,000-ton ship lift, ~1,400 m berthing, up to 82 ships/yr; adds 10 workstations) via INR 1,800 cr slump sale",
+    "what": "ISRF ship repair facility via 50:50 JV with Drydocks World (slump sale INR 1,800 cr); adds 10 workstations",
     "size_pct": null,
     "capex_cr": 1800.0,
-    "q": 3,
-    "status": "approved"
+    "q": 4,
+    "status": "planned",
+    "mat": "moderate"
    },
    {
-    "what": "Block fabrication solo facility ~60,000 tpa (vs current ~12,000 tpa, ~72,000 total)",
+    "what": "Block fabrication solo facility ~60,000 tpa (on top of ~12,000 tpa current capacity)",
     "size_pct": 500.0,
     "capex_cr": null,
-    "q": null,
-    "status": "planned"
+    "q": 4,
+    "status": "planned",
+    "mat": "moderate"
    },
    {
-    "what": "Vadinar ship repair: two floating drydocks for ~250 m vessels (CCEA approved May 2026, awaiting EC)",
+    "what": "Vadinar two floating drydocks for ~250 m vessels (CCEA approved May 2026, EC pending)",
     "size_pct": null,
     "capex_cr": null,
-    "q": null,
-    "status": "approved"
+    "q": 4,
+    "status": "approved",
+    "mat": "minor"
    },
    {
-    "what": "Tuticorin hybrid yard, 30-year lease (INR 305.76 cr one-time payment), in DPR stage",
+    "what": "Tuticorin hybrid yard (30-year lease, INR 305.76 cr upfront; DPR stage)",
     "size_pct": null,
     "capex_cr": 305.76,
-    "q": null,
-    "status": "planned"
+    "q": 6,
+    "status": "planned",
+    "mat": "minor"
    }
   ],
   "util": null,
   "expansion": true,
   "growth": 12.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 2.4,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "Management guides ~12% annual turnover growth (possibly 12-15%) and ~10 vessel deliveries in FY27 against a ~INR 22,000 cr order book (~27,000 cr after NGSV L1), but Q1 FY27 PAT fell ~19% YoY and blended EBITDA margin is guided down to ~14%, and new capacity (ISRF, block fabrication, Vadinar, Tuticorin) mostly contributes beyond FY27."
+  "why": "Management guides ~12% annual turnover growth (possibly 12-15%), backed by ~INR 22,000 cr unexecuted order book (~27,000 cr post NGSV L1) and ~10 FY27 deliveries, but EBITDA margin guided down to ~14% and the new capacity (ISRF, 60k tpa block fabrication, Vadinar, Tuticorin) is 4+ quarters away or still in DPR/approval stage.",
+  "mgmt": null
  }
 }

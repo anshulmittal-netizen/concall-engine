@@ -311,41 +311,57 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
     "what": "Kesda greenfield Phase 1, 360,000 tpa stainless CR coil",
     "size_pct": null,
     "capex_cr": 930.0,
     "q": 3,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "major"
    },
    {
     "what": "Kuthrel Unit 2 stainless CR coil debottlenecking, capacity doubled from 58,000 to 116,000 tpa",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "minor"
    },
    {
-    "what": "DFT pipe mill (150,000 t) with captive power plant, lifting MS capacity to about 500,000 t by Q2 2028",
+    "what": "DFT pipe mill (150,000 t) lifting MS capacity to about 500,000 t",
     "size_pct": null,
-    "capex_cr": 200.0,
-    "q": 7,
-    "status": "planned"
+    "capex_cr": 100.0,
+    "q": 4,
+    "status": "planned",
+    "mat": "major"
    },
    {
-    "what": "8 MW rooftop solar at Kuthrel",
+    "what": "8 MW rooftop solar at Kuthrel (captive power, not production capacity)",
     "size_pct": null,
     "capex_cr": 25.0,
     "q": null,
-    "status": "planned"
+    "status": "approved",
+    "mat": "minor"
    }
   ],
   "util": 65.0,
   "expansion": true,
   "growth": 12.5,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 31.0,
+  "qEbitda": 31.0,
   "outlook": 1,
-  "why": "Management guides FY27 revenue and EBITDA growth of 10-15% (midpoint 12.5%) and volume 10-15% above FY26, backed by Kesda 360,000 tpa stainless CR coil commissioning in Q4 FY27 and the Kuthrel doubling, but offset by MS pipe price cuts of 3-5% and stainless import competition, and MS pipe utilisation only about 65%."
+  "why": "FY27 revenue and EBITDA guided up 10-15% over FY26 (midpoint 12.5%), backed by Kuthrel stainless doubling (commissioned), Kesda 360,000 tpa stainless plant due Q4 FY27 (INR930 crore), and a volume guide of 10-15% with MS pipe prices expected to fall 3-5%; backing is partial since the Kesda timing is firm but the price decline offsets volume growth.",
+  "mgmt": null
  }
 }

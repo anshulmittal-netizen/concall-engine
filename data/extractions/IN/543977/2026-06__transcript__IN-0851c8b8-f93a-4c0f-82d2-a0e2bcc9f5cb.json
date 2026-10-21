@@ -324,48 +324,57 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "New Nashik manufacturing facility, partially commissioned; full completion in about 1-2 months, >2.5x production targeted over 4-5 years",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 1,
-    "status": "under_construction"
-   },
-   {
-    "what": "Current transformer capacity raised from 5,000-6,000 to 8,000-10,000 low-voltage units per day (near-doubling)",
+    "what": "Nashik manufacturing facility (partially commissioned; both buildings complete, full completion in ~1-2 months)",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "trial_runs"
+    "status": "trial_runs",
+    "mat": "moderate"
    },
    {
-    "what": "Solar inverter 3-phase iNEO up to 50 kW due by end FY27 (dedicated automated floor in new facility)",
-    "size_pct": null,
+    "what": "Current transformer capacity raised from 5,000-6,000 to 8,000-10,000 low-voltage units/day (near-doubling), machinery already ordered",
+    "size_pct": 50.0,
     "capex_cr": null,
-    "q": 3,
-    "status": "under_construction"
+    "q": 1,
+    "status": "under_construction",
+    "mat": "minor"
    },
    {
-    "what": "Mumbai and Delhi TMI Experience Centres",
+    "what": "Solar inverter dedicated automated floor in new Nashik facility; iNEO 3-phase up to 50 kW due by end FY27",
     "size_pct": null,
     "capex_cr": null,
-    "q": 3,
-    "status": "planned"
+    "q": 2,
+    "status": "under_construction",
+    "mat": "minor"
    },
    {
-    "what": "Fourth SMT line in PCB/EMS, added once the three existing lines run on three shifts",
+    "what": "Fourth SMT line in PCB/EMS, to be added once three lines run on three shifts",
     "size_pct": null,
     "capex_cr": null,
-    "q": null,
-    "status": "planned"
+    "q": 4,
+    "status": "planned",
+    "mat": "minor"
    }
   ],
   "util": null,
   "expansion": true,
   "growth": 20.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "new_products_or_markets",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 4.2,
+  "qEbitda": 17.3,
   "outlook": 1,
-  "why": "Management held EEI guidance at about 20% top-line growth and 20-22% EBITDA margin for FY27, with Q1 consolidated revenue up 4.2% (Lumel Alucast's planned -41.2% decline offsets EEI's 34% growth), domestic bookings about 20% higher, and a near-doubling of CT capacity plus new Nashik facility coming online."
+  "why": "Guidance is ~20% EEI top-line growth held (not raised), backed by a near-doubling of CT capacity, a new Nashik facility nearing full completion, a domestic order book up ~20% YoY, and data-centre and US/solar growth plans; consolidated Q1 revenue grew only 4.2%, and Lumel Alucast is a planned decline.",
+  "mgmt": null
  }
 }

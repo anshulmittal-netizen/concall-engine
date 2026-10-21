@@ -261,27 +261,48 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "10,000 t/yr capacity addition (35,000 to 45,000 tons)",
+    "what": "10,000 t/yr copper capacity addition (35,000 to 45,000 t)",
     "size_pct": 28.6,
     "capex_cr": 40.0,
     "q": 4,
-    "status": "planned"
+    "status": "planned",
+    "mat": "moderate"
    },
    {
-    "what": "CTC wire capacity move to 150 tons/month via new 48-conductor machine (from ~80 t/month)",
+    "what": "35,000 t capacity already added and online",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "CTC wire capacity increase from ~80 t/month to 150 t/month via new 48-conductor machine",
     "size_pct": null,
     "capex_cr": null,
     "q": null,
-    "status": "planned"
+    "status": "planned",
+    "mat": "minor"
    }
   ],
   "util": null,
   "expansion": true,
-  "growth": null,
-  "outlook": 1,
-  "why": "FY27 volume growth was cut to 12-15% (from 15-20%) after April-May supply disruption, with FY27 realisation guided ~30% higher YoY, supporting moderate growth; the 10,000 t expansion is timed around June 2027 (about 4 quarters out), so it adds little to FY27."
+  "growth": 13.5,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "FY27 volume growth guidance cut to 12-15% (from 15-20%) after April-May supply disruption, with June run-rate of 2,200 t cited; realisation guided ~30% higher YoY, backed by shortage-driven pricing, while the 10,000 t capacity addition is only expected around June 2027 and Q1 volume fell 6.5% YoY.",
+  "mgmt": null
  }
 }

@@ -329,48 +329,56 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "AC capacity 1.0 mn to 1.8 mn units (two phases over 12-15 months)",
+    "what": "AC capacity 1.0 mn to 1.8 mn units (two phases: 1.0 to 1.3, then 1.3 to 1.8)",
     "size_pct": 80.0,
     "capex_cr": null,
     "q": 2,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "major"
    },
    {
     "what": "Compressor capacity 2.8 mn to 6 mn units (INR 500 crore total project)",
     "size_pct": 114.0,
     "capex_cr": 500.0,
     "q": 2,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "major"
    },
    {
-    "what": "EMS capacity 4 lakh to 12 lakh cph; first 8 lakh cph phase mid/end Sept 2026, commercial production by end Q3",
-    "size_pct": null,
+    "what": "EMS line capacity 4 lakh to 12 lakh cph; first 8 lakh cph phase mid/end Sept 2026",
+    "size_pct": 200.0,
     "capex_cr": null,
     "q": 1,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "major"
    },
    {
-    "what": "Deep freezers capacity 1.5 lakh to 2.5 lakh units by mid/end Q3 FY27; 4 lakh units in FY28",
+    "what": "Deep freezers 1.5 lakh to 2.5 lakh units by mid/end Q3 FY27",
     "size_pct": 67.0,
     "capex_cr": null,
-    "q": 2,
-    "status": "under_construction"
-   },
-   {
-    "what": "Commercial refrigeration capex INR 20-25 crore this year (400,000 unit capacity, existing)",
-    "size_pct": null,
-    "capex_cr": 22.5,
-    "q": null,
-    "status": "planned"
+    "q": 1,
+    "status": "under_construction",
+    "mat": "moderate"
    }
   ],
   "util": 50.0,
   "expansion": true,
   "growth": 37.5,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 85.0,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "FY27 revenue growth guidance of 35-40% is held and multiple capacity expansions (AC, compressor, EMS, deep freezers) are under way, but management says upward revision depends on Q3, commercial refrigeration Q2-Q3 projections were pushed out, and EMS revenue contribution is minimal in FY27."
+  "why": "FY27 revenue growth guidance of 35-40% (midpoint 37.5%) was held, backed by named capacity additions (AC 1.0→1.8 mn, compressors 2.8→6 mn, EMS 4→12 lakh cph, deep freezers 1.5→2.5 lakh) that are mostly due live in 1-2 quarters, but Q1 commercial refrigeration slowed and no order-book figures were given.",
+  "mgmt": null
  }
 }

@@ -291,62 +291,65 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
-   {
-    "what": "JNPA first phase of about 100,000 cbm liquid storage (part of 318,100 cbm JNPA expansion, INR1,675 crore total outlay)",
-    "size_pct": null,
-    "capex_cr": 1675.0,
-    "q": 2,
-    "status": "under_construction"
-   },
    {
     "what": "JNPA 52,000 MT refrigerated LPG tank (board approved)",
     "size_pct": null,
     "capex_cr": null,
-    "q": null,
-    "status": "approved"
+    "q": 4,
+    "status": "approved",
+    "mat": "moderate"
    },
    {
-    "what": "Kochi 49,577 cbm liquid storage (board sanctioned; total to reach 132,122 cbm from 82,545 cbm)",
+    "what": "Kochi 49,577 cbm liquid storage (board sanctioned), total liquid to 132,122 cbm from 82,545 cbm",
     "size_pct": 60.0,
     "capex_cr": null,
-    "q": 4,
-    "status": "approved"
+    "q": 3,
+    "status": "approved",
+    "mat": "moderate"
    },
    {
-    "what": "Pipavav 36,000 MT ammonia storage (static)",
+    "what": "JNPA expansion: 318,100 cbm liquid, 77,236 MT LPG, 35,000 MT bottling; first ~100,000 cbm phase in Q3 FY27",
+    "size_pct": null,
+    "capex_cr": 1675.0,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "Pipavav 36,000 MT ammonia storage commissioned",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "minor"
    },
    {
-    "what": "Pipavav 0.5 million MT/yr petroleum product take-or-pay via additional liquid rail gantry",
-    "size_pct": null,
+    "what": "Liquid capacity from ~1.7 to ~2.2 million cbm in FY27, close to 3 million cbm by FY28 end",
+    "size_pct": 29.0,
     "capex_cr": null,
-    "q": 1,
-    "status": "under_construction"
-   },
-   {
-    "what": "Mangalore evaluating 60,000 cbm more storage",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": null,
-    "status": "planned"
-   },
-   {
-    "what": "CRL4 Kandla about 94,148 cbm",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 5,
-    "status": "planned"
+    "q": 2,
+    "status": "under_construction",
+    "mat": "major"
    }
   ],
   "util": null,
   "expansion": true,
   "growth": 25.0,
+  "gs": 2,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "clear",
+  "qRev": 12.4,
+  "qEbitda": 15.6,
   "outlook": 2,
-  "why": "Q1 FY27 revenue rose 12.4% YoY with liquid up 31%, and management guides to at least 25% volume growth yearly, liquid capacity rising from about 1.7 to 2.2 million cbm in FY27 and near 3 million by FY28 end, backed by about INR10,000 crore of expansion due by March/June 2027."
+  "why": "Management guides at least 25% annual volume growth, backed by specific capacity: liquid capacity from ~1.7M to ~2.2M cbm in FY27 and near 3M cbm by FY28 end, with JNPA first phase (~100,000 cbm) due Q3 FY27 and Kochi 49,577 cbm by early next fiscal year, against Q1 revenue growth of 12.4%.",
+  "mgmt": null
  }
 }

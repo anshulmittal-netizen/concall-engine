@@ -261,34 +261,47 @@
   ]
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Dahej nameplate capacity raised from 17.5 to 22.5 MMTPA (effective 31 March 2026, already live)",
+    "what": "Dahej nameplate capacity raised from 17.5 to 22.5 MMTPA (done 31 Mar 2026)",
     "size_pct": 28.6,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "major"
    },
    {
-    "what": "Petchem project (ethane handling, about 40% physically complete; cumulative petchem capex INR 679 crore)",
+    "what": "Kochi pipeline connectivity (mechanically complete expected end of Q1 FY27)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "trial_runs",
+    "mat": "minor"
+   },
+   {
+    "what": "Petchem project (600 KTPA ethane handling), about 40% complete",
     "size_pct": null,
     "capex_cr": 679.0,
     "q": null,
-    "status": "under_construction"
-   },
-   {
-    "what": "FY27 budgeted capex INR 9,064 crore (similar expected for FY28); composition not split between capacity and maintenance",
-    "size_pct": null,
-    "capex_cr": 9064.0,
-    "q": null,
-    "status": "planned"
+    "status": "under_construction",
+    "mat": "moderate"
    }
   ],
   "util": 58.0,
   "expansion": true,
   "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": 33.0,
   "outlook": -1,
-  "why": "Company utilisation fell to 58% from 76% as Qatar force majeure cut term volumes, and no revenue growth guidance was given; Dahej's capacity increase to 22.5 MMTPA and the petchem project (about 40% complete) are real expansions, but near-term volume recovery depends on the Strait of Hormuz reopening."
+  "why": "No explicit revenue growth guidance; volumes fell (company utilisation 58% vs 76%, Qatar force majeure) with recovery tied to Strait of Hormuz reopening, partly offset by third-party tolling/regas volumes replacing two-thirds of the missing Middle East volume, and a Petchem build-out about 40% complete with FY27 capex budget of INR 9,064 crore.",
+  "mgmt": null
  }
 }

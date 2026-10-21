@@ -308,41 +308,48 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
     "what": "250-bed Gurugram hospital (under construction, ~INR 1 crore per bed)",
     "size_pct": null,
     "capex_cr": 250.0,
     "q": 3,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "major"
    },
    {
     "what": "~450 brownfield beds in Greater Noida and Noida Extension cluster",
     "size_pct": null,
     "capex_cr": null,
     "q": 5,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "moderate"
    },
    {
-    "what": "Additional LINACs at Faridabad Sector 20 and New Delhi (oncology)",
+    "what": "Agra: 140 installed beds not yet census-operational (250 installed, 110 census)",
     "size_pct": null,
     "capex_cr": null,
-    "q": null,
-    "status": "planned"
-   },
-   {
-    "what": "Agra: increase census beds from 110 to installed 250 beds",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": null,
-    "status": "planned"
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
    }
   ],
   "util": 75.0,
   "expansion": true,
   "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 51.0,
+  "qEbitda": 39.0,
   "outlook": 1,
-  "why": "Revenue grew 51% YoY and management says it is on track for FY27 guidance, with ARPOB growth of 8-10% and a 5,000-bed target in ~2.5 years; but the Gurugram and brownfield beds only come live in Q1 FY28 or later, so near-term capacity adds are limited, and no explicit FY27 revenue growth % was given."
+  "why": "Management reiterated FY27 EBITDA margin of upwards of 24% and ARPOB growth of 8-10%, with no revenue growth guidance stated; backing rests on existing-hospital occupancy (~75%, IPD +15%), new hospital ramp-ups and specific bed additions (Gurugram 250 beds in Q1 FY28, ~450 brownfield beds in 15-18 months), but the bed-addition timelines are partly delayed and no order-book style numbers were given",
+  "mgmt": null
  }
 }

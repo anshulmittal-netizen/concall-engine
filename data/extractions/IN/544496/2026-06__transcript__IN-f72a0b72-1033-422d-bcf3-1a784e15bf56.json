@@ -327,27 +327,40 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "NOPL 969 MW AC solar project in Maharashtra (about 45 MW commissioned, 15 MW ready to commission, advanced stages for about 240 MW)",
+    "what": "NOPL 969 MW AC solar project in Maharashtra: ~45 MW commissioned across nine sites, 15 MW ready to commission, advanced stages for ~240 MW",
     "size_pct": null,
     "capex_cr": 4000.0,
     "q": 0,
-    "status": "under_construction"
+    "status": "commissioned",
+    "mat": "major"
    },
    {
-    "what": "132 kV Miao-Namsai transmission line in Arunachal Pradesh (40.6 km)",
+    "what": "132 kV Miao-Namsai transmission line in Arunachal Pradesh (40.6 km, 138 towers) commissioned",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "minor"
    }
   ],
   "util": null,
   "expansion": true,
-  "growth": null,
-  "outlook": 2,
-  "why": "FY27 standalone revenue guided at INR2,300-2,500 crore against a INR6,496 crore order book and Q1 standalone revenue of INR204 crore (+28.2% YoY), with about INR1,500 crore of FY27 revenue planned from the 969 MW NOPL solar project, though the 969 MW is only partly built and financing is not yet sanctioned."
+  "growth": 12.5,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 28.2,
+  "qEbitda": 23.7,
+  "outlook": 1,
+  "why": "FY27 revenue guided at INR2,300-2,500 crore (midpoint ~INR2,400 crore, ~12.5% over FY26 implied by ~INR159 cr Q1 base run-rate is not stated; midpoint used as guided), backed by INR6,496 crore order book and NOPL ~INR1,500 crore plan, but the NOPL schedule is described as conservative with slippage risk and debt sanction is still pending, so backing is partial.",
+  "mgmt": null
  }
 }

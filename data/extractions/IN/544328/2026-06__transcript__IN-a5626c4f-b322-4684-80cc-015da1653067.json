@@ -295,27 +295,40 @@
   ]
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "New Bhud crane plant, 3,600-unit capacity",
+    "what": "New Bhud crane plant, 3,600 units/yr capacity",
     "size_pct": null,
     "capex_cr": null,
     "q": 2,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "major"
    },
    {
-    "what": "Tower crane first lot of 10 machines (new line, subject to imported components)",
+    "what": "Tower crane line (first lot of 10 machines, some built at old factory)",
     "size_pct": null,
     "capex_cr": null,
-    "q": 1,
-    "status": "under_construction"
+    "q": 0,
+    "status": "trial_runs",
+    "mat": "minor"
    }
   ],
   "util": 37.5,
   "expansion": true,
   "growth": 22.5,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 14.98,
+  "qEbitda": 10.84,
   "outlook": 1,
-  "why": "Management held FY27 overall revenue growth guidance at 20–25% (midpoint 22.5%), but tractor utilisation is only 35–40% with no added capacity, crane revenue was flat YoY in Q1 at the full existing plant, and the new 3,600-unit Bhud plant is not due until end-November 2026, so growth beyond the existing base depends on that late start."
+  "why": "FY27 overall revenue growth of 20–25% held (midpoint 22.5%), with tractors guided 25–30% and cranes 15–20% from the existing plant; the new 3,600-unit Bhud crane plant is targeted for end-November 2026 (about 2 quarters out), but crane revenue was flat in Q1 and dealers are stagnant at ~25, so backing is partial.",
+  "mgmt": null
  }
 }

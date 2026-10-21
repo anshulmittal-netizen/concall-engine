@@ -300,41 +300,57 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "GEML 2-wheeler production capacity of about 480,000 units (existing, not new addition; utilisation not stated)",
+    "what": "GEML 2-wheeler production capacity of about 480,000 units (existing, stated level, not a new addition)",
     "size_pct": null,
     "capex_cr": null,
-    "q": 0,
-    "status": "commissioned"
+    "q": null,
+    "status": "commissioned",
+    "mat": "minor"
    },
    {
     "what": "Pilot Battery Energy Storage System (BESS) facility; commercial launch targeted in subsequent quarters",
     "size_pct": null,
     "capex_cr": null,
-    "q": 0,
-    "status": "commissioned"
+    "q": 1,
+    "status": "trial_runs",
+    "mat": "minor"
    },
    {
-    "what": "Excel debottlenecking added 10-15% output; robotic gantry cell commissioned at CSN facility",
+    "what": "Excel debottlenecking adding 10-15% output; robotic gantry cell commissioned at CSN facility",
     "size_pct": 12.5,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "minor"
    },
    {
-    "what": "Excel pushpull cable line at 70-75% utilisation; rubber line just starting",
+    "what": "Excel rubber line just starting (pushpull cable utilisation 70-75%)",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "trial_runs"
+    "status": "trial_runs",
+    "mat": "minor"
    }
   ],
   "util": null,
   "expansion": true,
   "growth": 16.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "pricing_or_mix",
+   "demand_or_share_gains",
+   "new_products_or_markets",
+   "capacity_coming"
+  ],
+  "clarity": "partial",
+  "qRev": 31.0,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "Q1 FY27 consolidated revenue rose 31% YoY to INR975 crore and core businesses grew 16% to INR710 crore, with GEML volume up 101% and management reiterating 16-20% CAGR; however, margins fell 2-2.5 pts and no overall utilisation figure was given, so the outlook is positive but not strongly backed by new capacity."
+  "why": "Management reiterated 16-20% revenue CAGR and says it is on track for 16% growth this period; Q1 consolidated revenue rose 31% (core +16%, 19% like-for-like), backed by GEML volume up 101%, price increases from Q2 and new products, though no quantified order book or new plant capex was given beyond small debottlenecking and a pilot BESS facility.",
+  "mgmt": null
  }
 }

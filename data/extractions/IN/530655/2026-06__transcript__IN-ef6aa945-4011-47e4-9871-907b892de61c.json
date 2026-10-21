@@ -320,41 +320,57 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Defence shell expansion to 250,000 shells capacity (plant capacity 400,000) - delayed 6-9 months due to financial closure",
-    "size_pct": null,
+    "what": "Defence shell expansion to 250,000 shells capacity (plant capacity 400,000) delayed 6-9 months due to financial closure",
+    "size_pct": 166.0,
     "capex_cr": 400.0,
     "q": 3,
-    "status": "deferred"
+    "status": "deferred",
+    "mat": "major"
    },
    {
-    "what": "Standalone capex INR100-150 crore (FY27-28), capacity details not specified",
+    "what": "Standalone capex INR100-150 cr; GI tube and front fork tube capacity expected in about 6 months",
     "size_pct": null,
     "capex_cr": 125.0,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "40,000-45,000 MT large-diameter pipe and precision tube capacity additions for FY27, ramp delayed by West Asia crisis",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Transmission tower capacity about 50,000 tons/yr (existing, not an addition)",
+    "size_pct": null,
+    "capex_cr": null,
     "q": null,
-    "status": "planned"
-   },
-   {
-    "what": "40,000-45,000 MT capacity addition (large-diameter pipe and precision tubes) ramping slower due to West Asia crisis",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 2,
-    "status": "under_construction"
-   },
-   {
-    "what": "GI tube and front fork tube capacity",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 2,
-    "status": "under_construction"
+    "status": "commissioned",
+    "mat": "minor"
    }
   ],
   "util": 98.0,
   "expansion": true,
   "growth": 17.5,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 22.6,
+  "qEbitda": 15.4,
   "outlook": 1,
-  "why": "Management maintained FY27 consolidated revenue growth guidance of 15-20% (midpoint 17.5%) and standalone utilisation is 98%, but the flagship Defence expansion slipped 6-9 months and Defence FY27 turnover was cut to INR300-350 crore, which tempers the growth signal."
+  "why": "Management maintained FY27 consolidated revenue growth guidance at 15-20% (midpoint 17.5%), backed by Defence orders of INR307 cr (INR255 cr + INR52 cr) and standalone utilisation at 98%, but the Defence shell expansion is delayed 6-9 months and Defence FY27 turnover guidance was cut to INR300-350 cr from a higher earlier view.",
+  "mgmt": null
  }
 }

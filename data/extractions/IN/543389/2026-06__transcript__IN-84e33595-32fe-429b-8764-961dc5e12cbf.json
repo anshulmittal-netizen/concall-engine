@@ -306,41 +306,49 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Dahej-2 12,000 TPA MCC expansion (INR106 crore per Q4 call)",
+    "what": "12,000 TPA Dahej-2 MCC expansion (INR106 crore per Q4 call)",
     "size_pct": null,
     "capex_cr": 106.0,
-    "q": 3,
-    "status": "deferred"
+    "q": 4,
+    "status": "under_construction",
+    "mat": "major"
    },
    {
-    "what": "CCS 1,800 TPA facility at Dahej SEZ (INR93 crore)",
+    "what": "1,800 TPA CCS facility at Dahej SEZ",
     "size_pct": null,
     "capex_cr": 93.0,
-    "q": 6,
-    "status": "under_construction"
+    "q": 4,
+    "status": "under_construction",
+    "mat": "minor"
    },
    {
-    "what": "Debottlenecking (extra shifter/blender) adding ~1,600 TPA",
+    "what": "Debottlenecking adding ~1,600 TPA (extra shifter/blender)",
     "size_pct": null,
     "capex_cr": null,
-    "q": null,
-    "status": "planned"
-   },
-   {
-    "what": "Unspecified further capacity expansion of ~INR50 crore",
-    "size_pct": null,
-    "capex_cr": 50.0,
-    "q": null,
-    "status": "planned"
+    "q": 1,
+    "status": "planned",
+    "mat": "minor"
    }
   ],
   "util": 76.8,
   "expansion": true,
-  "growth": 17.0,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains",
+   "new_products_or_markets"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
   "outlook": 0,
-  "why": "FY27 revenue guidance of INR650-675 crore (midpoint ~662 crore, ~17% growth over ~INR567 crore implied by... ) is held, but Q1 run-rate of INR121 crore needs ~INR160-170 crore per quarter in H2, and Dahej-2 MCC expansion slipped to Q2 FY28 while CCS is FY28, so near-term capacity adds are limited and growth outlook is unclear."
+  "why": "FY27 revenue guidance of INR650-675 crore is held, but Q1 was INR121 crore against roughly INR160-170 crore per quarter needed, and the call did not reconcile the H2 ramp; Dahej-2 12,000 TPA MCC expansion slipped to Q2 FY28 and CCS to FY28, with 76.8% utilisation and a 6,000 TPA Hyderabad capacity loss.",
+  "mgmt": null
  }
 }

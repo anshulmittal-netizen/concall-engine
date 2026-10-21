@@ -353,41 +353,58 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Ophthalmic range 25,000 sq ft building at current facility (commercial molds 5-6 months away)",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 2,
-    "status": "under_construction"
-   },
-   {
-    "what": "Medical devices (dosing pens) plant, planned minimum 1 million pens/month; INR10 cr building + INR10-15 cr machinery",
-    "size_pct": null,
-    "capex_cr": 20.0,
-    "q": null,
-    "status": "planned"
-   },
-   {
-    "what": "Panipat thin-wall capacity expansion (4 machines, trial runs, sales doubling from August)",
+    "what": "Panipat thin-wall trials on 4 machines, doubling from August (INR70 lakh-1 crore/month)",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "trial_runs"
+    "status": "trial_runs",
+    "mat": "minor"
    },
    {
-    "what": "Recurring capacity addition of at least 10-12% every year",
-    "size_pct": 11.0,
+    "what": "Ophthalmic range 25,000 sq ft building under construction at current facility",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Medical devices (dosing pens) plant, planned minimum 1 million pens/month; needs 50,000-60,000 sq ft, INR10 cr building and INR10-15 cr machinery",
+    "size_pct": null,
+    "capex_cr": 22.5,
+    "q": null,
+    "status": "planned",
+    "mat": "minor"
+   },
+   {
+    "what": "Capacity additions of 10-12% a year (new capacity 8-10%)",
+    "size_pct": 10.0,
     "capex_cr": null,
     "q": null,
-    "status": "planned"
+    "status": "planned",
+    "mat": "moderate"
    }
   ],
   "util": 75.0,
   "expansion": true,
-  "growth": null,
+  "growth": 10.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains",
+   "new_products_or_markets",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "Management guides volume growth of 10-12% for FY27 and EBITDA/kg of INR44-45 with 10-12% annual capacity additions, but utilisation is only ~75% and lube volumes fell 17%, and no explicit revenue growth guidance was given."
+  "why": "Management targets 10-12% FY27 volume growth (says ~10% achievable) and 18-20% EBITDA growth, backed by Panipat thin-wall trials, ophthalmic building due in ~6 months and 10-12% annual capacity additions, though no quantified order book and utilisation sits at ~75%; lube volumes fell 17% and Qpack slowed to ~2%.",
+  "mgmt": null
  }
 }

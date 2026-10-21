@@ -286,34 +286,40 @@
   ]
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Machine tool production capacity up ~30% YoY after foundry and machine tool shop capex (already commissioned)",
+    "what": "Machine tool production capacity up ~30% YoY after foundry and machine tool shop capex (already in place)",
     "size_pct": 30.0,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "moderate"
    },
    {
-    "what": "One or two more machines for machine tool production (under consideration)",
+    "what": "One or two more machines planned for machine tool production",
     "size_pct": null,
     "capex_cr": null,
     "q": null,
-    "status": "planned"
-   },
-   {
-    "what": "Factory solar augmentation to add 30-40% spare capacity, by end of this fiscal",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 3,
-    "status": "planned"
+    "status": "planned",
+    "mat": "minor"
    }
   ],
   "util": null,
   "expansion": true,
   "growth": 10.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "new_products_or_markets"
+  ],
+  "clarity": "partial",
+  "qRev": 80.0,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "Management guides around 10% top-line growth for FY27 and machine tool capacity is already up ~30% YoY, but Q1 revenue rose 80% and the guide looks conservative against a INR618 crore backlog and INR283 crore order inflow; no firm new capacity sized as % of revenue beyond the commissioned 30% uplift."
+  "why": "Management guides ~10% FY27 top-line growth backed by INR618 crore backlog (INR283 crore Q1 inflow) and ~30% YoY machine-tool capacity increase, though the brief gives no explicit capacity-to-revenue bridge and the 80% Q1 jump is not a run-rate guide.",
+  "mgmt": null
  }
 }

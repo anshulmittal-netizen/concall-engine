@@ -336,41 +336,48 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Third 5 GWh BESS line (takes BESS capacity from 5 to 10 GWh)",
+    "what": "Third 5 GWh BESS line (5 GWh expansion to 10 GWh total)",
     "size_pct": null,
     "capex_cr": 300.0,
     "q": 1,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "major"
    },
    {
-    "what": "In-house container fabrication unit (trials started this month, batch production next month)",
+    "what": "In-house container manufacturing unit (batch production from next month; ~70 containers/month currently, 210 units planned in Q2)",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "trial_runs"
+    "status": "trial_runs",
+    "mat": "minor"
    },
    {
-    "what": "Four BOO projects expected to add about Rs.750 crore annual revenue once all commissioned",
+    "what": "Four BOO projects expected to add ~Rs.750 crore annual revenue once all commissioned",
     "size_pct": null,
     "capex_cr": null,
-    "q": null,
-    "status": "under_construction"
-   },
-   {
-    "what": "Cell manufacturing (4 GWh applied under PLI); Pune R&D centre inaugurated, planning under way",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": null,
-    "status": "planned"
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
    }
   ],
   "util": null,
   "expansion": true,
-  "growth": null,
+  "growth": 21.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 51.3,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "FY27 revenue guidance of Rs.3,200-3,400 crore is held and backed by a Rs.10,803 crore executable order book, and the BESS line expansion from 5 to 10 GWh is due around Dec 2026. Q1 revenue fell sharply QoQ to Rs.555 crore against roughly Rs.2,700 crore needed for the full-year guidance, so the outlook is positive but not fully proven."
+  "why": "FY27 revenue guidance of Rs.3,200-3,400 crore (midpoint ~21% over FY26 implied by ~Rs.2,700 crore base) reiterated, backed by Rs.10,803 crore executable order book and a third 5 GWh BESS line due ~October-December 2026, though Q1 revenue of Rs.555 crore is well below the run-rate needed and no quarterly capacity utilisation was stated.",
+  "mgmt": null
  }
 }

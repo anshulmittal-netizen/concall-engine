@@ -244,48 +244,74 @@
   ]
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Second cartridge line (DDC), batch sizes ~200 L to ~500 L",
+    "what": "Second cartridge line (DDC) commissioning, batch sizes ~200 L to ~500 L",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "moderate"
    },
    {
-    "what": "Third cartridge line (DDC), ready within FY27",
+    "what": "Third DDC cartridge line, ready within FY27",
     "size_pct": null,
     "capex_cr": null,
     "q": 2,
-    "status": "approved"
+    "status": "under_construction",
+    "mat": "moderate"
    },
    {
-    "what": "Fourth cartridge line (DDC), later in FY28",
+    "what": "Fourth DDC cartridge line later in FY28",
     "size_pct": null,
     "capex_cr": null,
     "q": 4,
-    "status": "planned"
+    "status": "planned",
+    "mat": "moderate"
    },
    {
-    "what": "Soft gelatin capacity expansion from 800 million to 2.4 billion units (site at limit; greenfield site being initiated)",
-    "size_pct": null,
+    "what": "Soft gelatin capacity expansion from 800 million to 2.4 billion units (already added)",
+    "size_pct": 200.0,
     "capex_cr": null,
-    "q": null,
-    "status": "planned"
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
    },
    {
-    "what": "Injectables pre-filled syringe and lyophilisation additions (sterile injectable site shutdown Q2-Q3 FY27)",
+    "what": "Greenfield soft gelatin site, update expected in about one quarter",
     "size_pct": null,
     "capex_cr": null,
-    "q": 1,
-    "status": "under_construction"
+    "q": 4,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Injectables sterile site shutdown to add pre-filled syringe and lyophilisation capacity, Q2-Q3 FY27",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 3,
+    "status": "under_construction",
+    "mat": "minor"
    }
   ],
-  "util": null,
+  "util": 100.0,
   "expansion": true,
   "growth": null,
+  "gs": 2,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix",
+   "new_products_or_markets",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 37.0,
+  "qEbitda": 39.0,
   "outlook": 2,
-  "why": "Management says all current capacity is full, second cartridge line is commissioning this quarter, third and fourth lines follow in FY27/FY28, and FY28 guidance of $400M organic revenue and 40% EBITDA margin was reiterated; Q1 revenue grew 37% YoY."
+  "why": "FY28 guidance of US$400M organic revenue and 40% EBITDA margin was reiterated, backed by a second cartridge line commissioning this quarter, a third line within FY27, a fourth later in FY28 (675 sterile days by FY28), and a US$100M capex programme ~80% committed; capacity is fully utilised and Q1 revenue grew 37% YoY, though the brief gives no line-by-line revenue bridge to FY28.",
+  "mgmt": null
  }
 }

@@ -305,48 +305,57 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Phase 1 capex INR250-300 cr for existing products, about 60,000 tpa added capacity",
+    "what": "Phase 1 expansion for existing products, about 60,000 tpa added capacity (INR250-300 cr capex incl. INR50-60 cr land/infrastructure)",
     "size_pct": 61.0,
     "capex_cr": 275.0,
     "q": 2,
-    "status": "approved"
+    "status": "approved",
+    "mat": "major"
    },
    {
-    "what": "Lubricant additive debottlenecking, capacity lift 50-70%",
+    "what": "Lubricant additive debottlenecking lifting capacity 50-70%",
     "size_pct": null,
     "capex_cr": null,
     "q": 1,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "minor"
    },
    {
     "what": "Antibacterial product line (mechanical completion ~January, commercial ramp in coming year, >100 t/month once samples approved)",
     "size_pct": null,
     "capex_cr": null,
     "q": 2,
-    "status": "under_construction"
-   },
-   {
-    "what": "Phase 2 capex INR250-300 cr for new R&D products (site, product, regulatory work in progress)",
-    "size_pct": null,
-    "capex_cr": 275.0,
-    "q": 4,
-    "status": "planned"
+    "status": "under_construction",
+    "mat": "minor"
    },
    {
     "what": "INR25 cr floating-roof acetone storage tank",
     "size_pct": null,
     "capex_cr": 25.0,
-    "q": null,
-    "status": "planned"
+    "q": 2,
+    "status": "planned",
+    "mat": "minor"
    }
   ],
   "util": 70.0,
   "expansion": true,
-  "growth": 31.5,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains",
+   "new_products_or_markets"
+  ],
+  "clarity": "partial",
+  "qRev": 35.7,
+  "qEbitda": 122.4,
   "outlook": 1,
-  "why": "FY27 revenue guidance of INR1,550-1,650 cr implies about 31.5% growth at midpoint, but Q1 included ~INR25 cr one-off price gains and management guides margins down to 15-16% by year-end; a Phase 1 expansion adding ~60,000 tpa (about 61% of 98,000 tpa) is planned, with utilisation (~70%) and Khopoli near optimum supporting the outlook."
+  "why": "FY27 revenue guided at INR1,550-1,650 cr (about 3.6x Q1 run-rate annualised is inflated by one-offs), with adjusted EBITDA INR240-250 cr excluding ~INR25 cr one-off price gain; backing is a Phase 1 capex of INR250-300 cr adding ~60,000 tpa over ~2 years plus near-term debottlenecking, but no firm order book and the Q1 price spike is partly non-structural, so backing is partial.",
+  "mgmt": null
  }
 }

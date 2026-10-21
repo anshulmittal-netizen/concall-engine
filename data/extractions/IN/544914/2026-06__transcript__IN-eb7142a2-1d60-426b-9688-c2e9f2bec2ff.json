@@ -360,48 +360,57 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Four under-construction projects (Jhagadia, Vapi, Nandesari, AMC Pirana) raising steam capacity toward ~705 TPH from 345 TPH",
-    "size_pct": null,
+    "what": "Four under-construction steam projects (Jhagadia, Vapi, Nandesari, AMC Pirana) taking installed capacity from 345 TPH toward ~705 TPH",
+    "size_pct": 104.0,
     "capex_cr": 60.0,
-    "q": 3,
-    "status": "under_construction"
+    "q": 2,
+    "status": "under_construction",
+    "mat": "major"
    },
    {
-    "what": "Tarapur 60 TPH steam capacity",
-    "size_pct": null,
+    "what": "60 TPH Tarapur steam capacity",
+    "size_pct": 17.0,
     "capex_cr": null,
     "q": 6,
-    "status": "planned"
+    "status": "planned",
+    "mat": "moderate"
    },
    {
-    "what": "IPO-funded Dahej, Ankleshwar and Panoli steam capacity",
+    "what": "IPO-funded Dahej, Ankleshwar and Panoli steam capacity (part of 705 TPH target)",
     "size_pct": null,
     "capex_cr": 170.0,
     "q": 7,
-    "status": "planned"
+    "status": "planned",
+    "mat": "major"
    },
    {
-    "what": "Ankleshwar 350 Nm3/hr nitrogen PSA plant",
+    "what": "350 Nm3/hr PSA nitrogen plant at Ankleshwar",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
-   },
-   {
-    "what": "Una (Himachal Pradesh) 300 TPH community boiler EPC project, funded by HP Bulk Drug Park; agreement not yet signed",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": null,
-    "status": "approved"
+    "status": "commissioned",
+    "mat": "minor"
    }
   ],
   "util": 41.4,
   "expansion": true,
   "growth": 20.0,
-  "outlook": 2,
-  "why": "Q1 FY27 volumes rose 16.7% YoY and revenue 13.35%, with management guiding 5-10% volume growth at existing sites and 20-25% company-level volume growth backed by four projects (~INR60 crore capex) targeted for FY27 and utilisation rising toward 60-65%."
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": 13.35,
+  "qEbitda": 60.08,
+  "outlook": 1,
+  "why": "Management guides 5-10% steam volume growth at existing locations and 20-25% company-level volume growth backed by four under-construction projects (345 to ~705 TPH, ~INR60 crore remaining capex) targeted for FY27, plus utilisation rising from 41.4% toward 60-65%; the Una 300 TPH EPC is unsigned and excluded from backing.",
+  "mgmt": null
  }
 }

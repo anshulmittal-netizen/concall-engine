@@ -179,34 +179,48 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "PC unit ~25,000 pieces/month (at 80%+ utilisation, internal consumption only)",
+    "what": "PC unit ~25,000 pieces/month, running at 80%+ utilisation on internal consumption only",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "minor"
    },
    {
-    "what": "PP plant ramp to ~40,000 pieces/month combined capacity target (~50,000 pieces/month combined installed; ~20,000 running now)",
+    "what": "PP plant (one machine) ramping; combined PC+PP ~50,000 pieces/month capacity, ~20,000 running now, ~40,000 targeted by Oct-Nov 2026",
     "size_pct": null,
     "capex_cr": null,
     "q": 1,
-    "status": "trial_runs"
+    "status": "trial_runs",
+    "mat": "minor"
    },
    {
-    "what": "~INR10 crore machinery to add ~50,000 pieces/month capacity in existing building (no major capex planned for next two years unless large order pipeline emerges)",
+    "what": "~INR10 crore machinery to add ~50,000 pieces/month in existing building (no major capex planned for 2 years unless large order pipeline)",
     "size_pct": null,
     "capex_cr": 10.0,
     "q": null,
-    "status": "approved"
+    "status": "planned",
+    "mat": "minor"
    }
   ],
   "util": 80.0,
   "expansion": true,
-  "growth": 11.0,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "new_products_or_markets"
+  ],
+  "clarity": "partial",
+  "qRev": 11.0,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "Q1 FY27 revenue grew ~11% YoY and management expects company-level growth to resume from October 2026, with PP ramping from ~20,000 to ~40,000 pieces/month, but primary billing was dented by e-commerce SKU realignment, store closures continue, and the PBT loss widened."
+  "why": "Management says company-level growth resumes from October 2026 (about 2 quarters out) and Q1 revenue grew ~11%, with PP capacity moving from ~20,000 to ~40,000 pieces/month by Oct-Nov and Juicy targeting INR20-22 crore in FY27 (vs INR12 crore), but no absolute revenue guidance was given and the PBT loss widened.",
+  "mgmt": null
  }
 }

@@ -327,48 +327,57 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Additional 25 million pen injector capacity (installed total to ~75M pens/yr)",
-    "size_pct": null,
+    "what": "25 million pen capacity (installed pen injector capacity to ~75 million pens/yr)",
+    "size_pct": 100.0,
     "capex_cr": null,
     "q": 1,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "major"
    },
    {
-    "what": "New pen line speed raise (~9% so far; further equipment expected to add ~30% throughput)",
+    "what": "New pen line speed-up ~9% so far; additional equipment expected to add ~30% throughput",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "trial_runs"
+    "status": "trial_runs",
+    "mat": "minor"
    },
    {
-    "what": "Semiconductor trays: ~INR5 crore in existing facility for initial requirements",
-    "size_pct": null,
-    "capex_cr": 5.0,
-    "q": 3,
-    "status": "planned"
-   },
-   {
-    "what": "Consumer Electronics new plant in south India (land secured, not yet announced)",
-    "size_pct": null,
-    "capex_cr": 90.0,
-    "q": null,
-    "status": "approved"
-   },
-   {
-    "what": "Abu Dhabi plant, commercial sales from end-FY28",
+    "what": "Abu Dhabi plant (sales by end-FY28; production must start by end-FY28)",
     "size_pct": null,
     "capex_cr": null,
     "q": 8,
-    "status": "planned"
+    "status": "planned",
+    "mat": "major"
+   },
+   {
+    "what": "Consumer Electronics new plant in south India (INR80-100 crore investment, land secured)",
+    "size_pct": null,
+    "capex_cr": 90.0,
+    "q": null,
+    "status": "planned",
+    "mat": "moderate"
    }
   ],
   "util": 50.2,
   "expansion": true,
   "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "new_products_or_markets",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 14.0,
+  "qEbitda": 18.0,
   "outlook": 1,
-  "why": "Healthcare (+85% YoY to INR142 crore) and a 25M-pen capacity addition taking installed capacity to ~75M pens/yr back a growth outlook, offset by Consumer guided flat at FY26 levels after a 24% YoY decline and no explicit company-wide revenue growth guidance."
+  "why": "FY27 pen volume guided at 36 million with management saying it should go beyond that, backed by an additional 25 million pen capacity (to ~75 million) expected by end-September 2026 and new orders in Canada and Brazil; Consumer guided flat at FY26 levels and Abu Dhabi commercial sales only from end-FY28.",
+  "mgmt": null
  }
 }

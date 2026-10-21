@@ -308,34 +308,41 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Phase 1 brownfield fermentation expansion of about 600 kL (about 4x current 400 kL capacity)",
+    "what": "Phase 1 brownfield expansion of ~600 kL fermentation (about 4x current 400 kL)",
     "size_pct": 400.0,
     "capex_cr": null,
     "q": 5,
-    "status": "planned"
+    "status": "planned",
+    "mat": "major"
    },
    {
-    "what": "Second DCV injectable line (may be needed soon due to capacity constraints)",
+    "what": "Second DCV injectable line (may be needed soon; not yet committed)",
     "size_pct": null,
     "capex_cr": null,
     "q": null,
-    "status": "planned"
-   },
-   {
-    "what": "Insulin/biologics revenue start early FY28 (pending stability studies and DCGI approval)",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 4,
-    "status": "planned"
+    "status": "planned",
+    "mat": "minor"
    }
   ],
   "util": 75.0,
   "expansion": true,
   "growth": 20.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "new_products_or_markets",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 7.0,
+  "qEbitda": null,
   "outlook": 1,
-  "why": "Management guides FY27 revenue growth of about 20% (±5%) and EBITDA growth of about 25%, with utilisation at roughly 70-80% and a 600 kL fermentation expansion starting Q3 FY27, but Q1 showed only 7% revenue growth, no CDMO or injectable revenue, and new-business revenue pinned to H2 milestones, so the guidance is not yet backed by visible orders in the quarter."
+  "why": "Management targets FY27 revenue growth of about 20% (±5%) and EBITDA growth of about 25%, backed partly by signed take-or-pay contracts for the 400 kL fermentation base (largely booked), a term sheet and ANDA filings for injectables, and a 600 kL expansion starting Q3 FY27 — but Q1 revenue was only +7% with no CDMO/injectable revenue, and H2 milestones are unquantified.",
+  "mgmt": null
  }
 }

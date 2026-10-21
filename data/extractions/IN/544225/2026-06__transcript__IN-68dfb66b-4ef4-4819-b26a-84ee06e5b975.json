@@ -308,34 +308,41 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "Cell capacity expansion from 2.5 GWh to 6 GWh (4680 gigafactory)",
-    "size_pct": 140.0,
+    "what": "Cell gigafactory expansion from 2.5 GWh to 6 GWh (4680 cells)",
+    "size_pct": null,
     "capex_cr": null,
-    "q": 0,
-    "status": "trial_runs"
+    "q": 1,
+    "status": "trial_runs",
+    "mat": "moderate"
    },
    {
-    "what": "Cell expansion from 6 GWh to 20 GWh (prismatic), targeted in FY27, equity-funded at Cell company",
+    "what": "Cell gigafactory expansion from 6 GWh to 20 GWh (prismatic), targeted in FY27, equity-funded at Cell company",
     "size_pct": null,
     "capex_cr": null,
     "q": 3,
-    "status": "planned"
-   },
-   {
-    "what": "Mahashakti / energy storage capacity (no capex figure given)",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": null,
-    "status": "planned"
+    "status": "planned",
+    "mat": "major"
    }
   ],
   "util": null,
   "expansion": true,
   "growth": null,
-  "outlook": 1,
-  "why": "Deliveries nearly doubled QoQ to ~39,200 and orders ~44,000 with Ola registrations +97% vs market +17%, but no formal volume or revenue guidance was given, Cell production is paused until a late-August restart, and the Auto factory is already scaled to ~1 million units/yr with no material Auto capex."
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": 72.0,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "No formal volume or revenue guidance; management gave margin (30-32%), ASP (~₹1.25 lakh ±5%) and opex (₹300-325 crore) targets and a 6 GWh Cell ramp by September, with Q1 Auto revenue up 72% QoQ on ~39,200 deliveries and share gains from 5.1% to 8.4%, but Auto ASP and volume trajectory are not quantified forward.",
+  "mgmt": null
  }
 }

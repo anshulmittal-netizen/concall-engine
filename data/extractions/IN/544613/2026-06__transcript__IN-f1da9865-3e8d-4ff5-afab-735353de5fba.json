@@ -286,48 +286,64 @@
   "_completed": 1
  },
  "growth": {
-  "v": 1,
+  "v": 3,
   "adds": [
    {
-    "what": "2 GW solar panel capacity at Ratlam (capitalized 14 May 2026), total 3.5 GW",
+    "what": "2 GW solar panel capacity at Ratlam (capitalized 14 May 2026), taking total to 3.5 GW",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "major"
    },
    {
-    "what": "2 GW power electronics facility at Ratlam, total 4 GW",
+    "what": "2 GW power electronics facility at Ratlam, taking total to 4 GW",
     "size_pct": null,
     "capex_cr": null,
     "q": 0,
-    "status": "commissioned"
+    "status": "commissioned",
+    "mat": "major"
    },
    {
     "what": "2 GW lithium-ion battery plant at Ratlam",
     "size_pct": null,
     "capex_cr": null,
     "q": 1,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "major"
    },
    {
     "what": "TOPCon solar cell line; building complete, machine orders placed",
     "size_pct": null,
     "capex_cr": null,
     "q": 2,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "moderate"
    },
    {
-    "what": "Zayo Energy plant (stake raised to 50%); land acquisition under way, production targeted within about one year",
+    "what": "Zayo Energy plant; production targeted within about one year, capex Rs 180-200 cr total",
     "size_pct": null,
     "capex_cr": 190.0,
     "q": 4,
-    "status": "under_construction"
+    "status": "under_construction",
+    "mat": "moderate"
    }
   ],
   "util": 80.0,
   "expansion": true,
   "growth": 70.0,
+  "gs": 2,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 125.3,
+  "qEbitda": 140.6,
   "outlook": 2,
-  "why": "Management raised FY27 revenue growth guidance to about 70% from 50%, backed by Q1 revenue up 125.3% YoY, a 1 GW/month PM Surya Ghar run rate, and 2 GW each of panel and power electronics capacity added at Ratlam, though Ratlam power electronics is only guided at 40-50% initial utilisation."
+  "why": "FY27 revenue growth guidance raised to about 70% from 50%, backed by 2 GW panel and 2 GW power electronics capacity now live at Ratlam (total 4 GW), Ratlam 2 GW battery plant due Q2 FY27, ~1 GW/month PM Surya Ghar run-rate and 1,150+ distributors; Ratlam power electronics initially at only 40-50% utilisation and no segment split, so backing is partial.",
+  "mgmt": null
  }
 }
