@@ -161,12 +161,10 @@ def _site_summary(s: dict) -> dict:
     """Last guard before the dashboard: never ship a summary with leaked tool markup. Sections recovered
     from the markup are kept, except quotes, which could not be checked against the transcript here."""
     import summarize
-    if not summarize.has_leak(s):
-        return s
     quotes = s.get("key_quotes") or []
-    s = summarize._unleak(dict(s))
-    s["key_quotes"] = quotes
-    return s
+    out = summarize._normalize(s)
+    out["key_quotes"] = [q for q in out["key_quotes"] if q in quotes]   # only quotes stored (and verified) as quotes
+    return {k: v for k, v in out.items() if not k.startswith("_")}
 
 
 def build(market: str, log=print) -> dict:

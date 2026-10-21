@@ -11,6 +11,10 @@ on:
       limit:
         description: "Max documents to extract this run"
         required: false
+      only_summaries:
+        description: "Only write / complete call summaries and rebuild the site (no fetch or extract)"
+        type: boolean
+        default: false
 
 concurrency: { group: engine-data, cancel-in-progress: false }
 
@@ -39,6 +43,10 @@ jobs:
           ARGS=""
           if [ -n "${{ inputs.since }}" ]; then ARGS="$ARGS --since ${{ inputs.since }}"; fi
           if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          if [ "${{ inputs.only_summaries }}" = "true" ]; then
+            python run.py summarize --market IN && python run.py analyze --market IN || { python run.py analyze --market IN; exit 1; }
+            exit 0
+          fi
           python run.py all --market IN $ARGS || { echo "Run failed; rebuilding results from saved reads"; python run.py analyze --market IN; exit 1; }
       - name: Commit results
         if: always()   # save whatever was read, even if a later step failed
@@ -46,5 +54,5 @@ jobs:
           git config user.name "concall-engine"
           git config user.email "concall-engine@users.noreply.github.com"
           git add data
-          git diff --cached --quiet || git commit -m "India run $(date -u +%F)"
+          git diff --cached --quiet || git commit -m "India run $(date -u +%F)${{ inputs.only_summaries && ' (summaries)' || '' }}"
           git pull --rebase --autostash && git push
