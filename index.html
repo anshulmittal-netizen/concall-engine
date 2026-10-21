@@ -31,6 +31,11 @@ body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
 .wrap{max-width:1320px;margin:0 auto;display:grid;gap:18px}
 .wrap>*{min-width:0}
+.qbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:-6px}
+.qbar .seg button{padding:7px 14px;font-family:var(--display);font-stretch:90%;font-weight:600;font-size:14px}
+.qbar .seg button[aria-pressed="true"]{background:var(--gold);color:#1a1405}
+.qnote{font-size:13px;color:var(--muted)}
+.co .trg .mini{white-space:normal;max-width:100%}
 .tbl .open{white-space:nowrap;max-width:220px;overflow:hidden;text-overflow:ellipsis;text-align:left}
 h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
 button{font:inherit;color:inherit}
@@ -324,6 +329,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
   <section class="highlights" id="highlights" aria-label="Highlights"></section>
   <div class="ticker" aria-label="Recently scored calls"><div class="ticker-track" id="ticker"></div></div>
 
+  <div class="qbar" id="qbar"><span class="eyebrow">Quarter</span><div class="seg" id="qsel" role="group" aria-label="Quarter"></div><span class="qnote" id="qnote"></span></div>
   <nav class="tabs" role="tablist" aria-label="Board">
     <button class="tab" role="tab" id="tab-feed" data-tab="feed" aria-selected="true">Signal feed<span class="count" id="cnt-feed"></span></button>
     <button class="tab" role="tab" id="tab-rank" data-tab="rank" aria-selected="false">Best to worst calls<span class="count" id="cnt-rank"></span></button>
@@ -557,20 +563,50 @@ function renderTop() {
 }
 
 /* ---------- feed ---------- */
+/* ---------- global quarter switch ---------- */
+const qsel = {IN: '', US: ''};  // '' = follow the dashboard's focus season, 'all' = every quarter
+function quarters() {
+  const ps = {};
+  (D().calls || []).forEach(c => { ps[c.period] = ps[c.period] || {key: c.periodKey, n: 0}; ps[c.period].n++; });
+  return Object.entries(ps).sort((a, b) => b[1].key.localeCompare(a[1].key)).map(([label, v]) => ({label, n: v.n}));
+}
+function curQ() { const q = qsel[state.mkt]; return q || D().season || 'all'; }
+function renderQbar() {
+  const qs = quarters(), cur = curQ();
+  $('#qbar').hidden = !qs.length;
+  $('#qsel').innerHTML = qs.map(q => `<button data-q="${esc(q.label)}" aria-pressed="${q.label === cur}">${esc(q.label)} <span class="num" style="opacity:.7;font-size:12px">${q.n}</span></button>`).join('') +
+    `<button data-q="all" aria-pressed="${cur === 'all'}">All</button>`;
+  const ip = (D().inProgress || []).find(x => x.season === cur);
+  const parts = [];
+  if (ip) parts.push(`${cur} season in progress: more calls arrive each night`);
+  if (cur === 'all') parts.push('Every call read, latest quarter per company');
+  if (cur !== D().season && D().season) parts.push(`Sector turnarounds, themes and ideation use ${D().season} until ${cur === 'all' ? 'the next quarter' : cur} has enough calls`);
+  $('#qnote').textContent = parts.join(' \u00b7 ');
+}
+$('#qsel').onclick = e => { const b = e.target.closest('button'); if (!b) return; qsel[state.mkt] = b.dataset.q;
+  rk.period = b.dataset.q === 'all' ? '' : b.dataset.q; if (b.dataset.q !== 'all') season.pick = b.dataset.q;
+  renderQbar(); go(state.tab); };
+function callOf(id, q) { return (D().calls || []).find(c => c.id === id && c.period === q); }
 function visible() {
-  const q = state.q.toLowerCase();
-  return D().companies.filter(c => !q || [c.name, c.sector, c.ticker, ...(c.themes || [])].join(' ').toLowerCase().includes(q))
+  const q = state.q.toLowerCase(), cur = curQ();
+  let cos = D().companies;
+  if (cur !== 'all' && (D().calls || []).length) {
+    const byId = {}; cos.forEach(c => { byId[c.id] = c; });
+    cos = (D().calls || []).filter(x => x.period === cur && byId[x.id]).map(x => ({...byId[x.id], score: x.score, delta: x.delta, date: x.date,
+      period: x.period, veto: x.veto, _key: x.key, _top: x.top}));
+  }
+  return cos.filter(c => !q || [c.name, c.sector, c.ticker, ...(c.themes || [])].join(' ').toLowerCase().includes(q))
     .sort((a, b) => state.sort === 'date' ? (b.date || '').localeCompare(a.date || '') : b[state.sort] - a[state.sort]);
 }
 function renderList() {
-  const v = visible().slice(0, 300);
+  const v = visible().slice(0, 1500);
   if (v.length && !v.find(c => c.id === state.sel[state.mkt])) state.sel[state.mkt] = v[0].id;
   $('#list').innerHTML = v.length ? v.map((c, i) => `
     <button class="co" role="option" data-id="${esc(c.id)}" aria-selected="${c.id === state.sel[state.mkt]}" style="animation-delay:${Math.min(i, 14) * .04}s">
       ${ring(c.score, 18, 4, Math.min(i, 14) * .04)}
       <span style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span>
         <span class="mt">${esc(c.sector)}${c.mcap ? ' · ' + esc(c.mcap) : ''}</span>
-        <span class="trg">${c.triggers.slice(0, 2).map(t => `<span class="mini t-${t.t}">${esc(t.label)}</span>`).join('')}</span></span>
+        <span class="trg">${c._key && c.period !== D().companies.find(x => x.id === c.id)?.period ? `<span class="mini t-novelty">${esc(c.period)}</span><span class="mini t-demand">${esc(c._top || '')}</span>` : c.triggers.slice(0, 2).map(t => `<span class="mini t-${t.t}">${esc(t.label)}</span>`).join('')}</span></span>
       <span style="display:grid;gap:4px;justify-items:end"><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)}</span>${c.veto ? '<span class="veto">VETO</span>' : ''}</span>
     </button>`).join('') : '<div class="empty">No companies match. Clear the search to see all.</div>';
   $('#cnt-feed').textContent = D().companies.length.toLocaleString('en-IN');
@@ -657,7 +693,7 @@ async function renderSummary(c, key) {
   $('#detail').appendChild(box);
   const cs = callsFor(c.id);
   if (!cs.length) { box.innerHTML = '<p class="sub" style="margin:0">Detailed summaries appear here once the engine has summarised this call.</p>'; return; }
-  key = key || cs[0].key;
+  key = key || (curQ() !== 'all' && cs.find(x => x.period === curQ()) || cs[0]).key;
   box.innerHTML = `<div class="s-top"><h3 style="font-size:19px">Detailed call summary</h3>
     <div class="seg" id="sum-q">${cs.map(x => `<button data-k="${esc(x.key)}" aria-pressed="${x.key === key}">${esc(x.period)} · ${x.score}</button>`).join('')}</div></div>
     <p class="sub" style="margin:0">Loading summary…</p>`;
@@ -689,6 +725,7 @@ const rk = {period: '', big: '', sector: '', order: 'best'};
 function renderRank() {
   const calls = D().calls || [];
   const periods = [...new Set(calls.slice().sort((a, b) => b.periodKey.localeCompare(a.periodKey)).map(c => c.period))];
+  if (curQ() !== 'all' && periods.includes(curQ())) rk.period = curQ();
   if (!rk.period || !periods.includes(rk.period)) rk.period = periods.includes(D().season) ? D().season : (periods[0] || '');
   const inP = calls.filter(c => c.period === rk.period);
   const bigs = [...new Set(inP.map(c => c.bigSector).filter(Boolean))].sort();
@@ -713,7 +750,7 @@ function renderRank() {
       <td class="num" style="white-space:nowrap">${esc((c.date || '').slice(0, 10))}</td></tr>`).join('') + '</tbody>'
     : '<tbody><tr><td><div class="empty">No calls in this view yet.</div></td></tr></tbody>';
 }
-$('#rk-period').onchange = e => { rk.period = e.target.value; rk.sector = ''; renderRank(); };
+$('#rk-period').onchange = e => { rk.period = e.target.value; rk.sector = ''; qsel[state.mkt] = rk.period; renderQbar(); renderRank(); };
 $('#rk-sector').onchange = e => { rk.sector = e.target.value; renderRank(); };
 $('#rk-big').onchange = e => { rk.big = e.target.value; rk.sector = ''; renderRank(); };
 $('#rk-order').onclick = e => { const b = e.target.closest('button'); if (!b) return; rk.order = b.dataset.o;
@@ -745,6 +782,7 @@ const season = {pick: ''};
 function pickTracker() {
   const all = D().trackers || {}, keys = Object.keys(all);
   if (!keys.length) return D().tracker;
+  if (curQ() !== 'all' && all[curQ()]) season.pick = curQ();
   if (!season.pick || !all[season.pick]) {
     // default: the latest season once it has a meaningful number of calls, else the fullest one
     const fullest = keys.reduce((a, b) => (all[b].reported > all[a].reported ? b : a));
@@ -754,8 +792,8 @@ function pickTracker() {
   $('#trk-season').innerHTML = opts; $('#guide-season').innerHTML = opts;
   return all[season.pick];
 }
-$('#trk-season').onchange = e => { season.pick = e.target.value; renderTracker(); };
-$('#guide-season').onchange = e => { season.pick = e.target.value; renderGuide(); };
+$('#trk-season').onchange = e => { season.pick = e.target.value; qsel[state.mkt] = season.pick; renderQbar(); renderTracker(); };
+$('#guide-season').onchange = e => { season.pick = e.target.value; qsel[state.mkt] = season.pick; renderQbar(); renderGuide(); };
 function renderTracker() {
   const t = pickTracker(), secs = t?.sectors || (t?.rows ? t.rows.map(r => ({...r, name: r.sector, universe: r.calls, coverage: 100, subs: []})) : []);
   const new1 = secs.reduce((n, r) => n + r.new1, 0);
@@ -779,7 +817,7 @@ $('#trk-table').onclick = e => {
 
 /* ---------- first-time calls ---------- */
 function renderFirst() {
-  const d = D(), rows = d.firstTimers || [];
+  const d = D(), cur = curQ(), rows = (d.firstTimers || []).filter(r => cur === 'all' || r.period === cur);
   $('#cnt-first').textContent = rows.length;
   $('#first-table').innerHTML = rows.length ? `<thead><tr><th>Company</th><th>Status</th><th>First call</th><th>Score</th><th>Sector \u203a sub-sector</th><th>Evidence</th><th>Read</th></tr></thead><tbody>` +
     rows.map((r, i) => `<tr data-id="${esc(r.id)}" style="animation-delay:${Math.min(i, 20) * .03}s">
@@ -884,7 +922,7 @@ function go(tab) {
   remember();
 }
 function setMarket(m) {
-  state.mkt = m; renderMarkets(); renderTop(); go(state.tab);
+  state.mkt = m; renderMarkets(); renderTop(); renderQbar(); go(state.tab);
 }
 function remember() {
   try { localStorage.setItem('csd-view', JSON.stringify({mkt: state.mkt, tab: state.tab})); } catch (e) {}
