@@ -502,7 +502,7 @@ const GL = {
   schema:['Signal read','Eight readings of the call, each scored −2 (clearly negative) to +2 (clearly positive). They feed the score.'],
   models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
-  nearterm:['Near-term strength','Companies whose latest call shows at least two strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a high Growth & capacity part in the Concall Signal Score. There is no separate score.'],
+  nearterm:['Near-term strength','Companies scoring 60+ whose latest call shows at least three strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a Guidance-backed growth & capacity part of 0.75+. There is no separate score.'],
   quarter:['Quarter switch','Pick the results season you want to look at. Calls, Best & worst, First-time callers, Sector tracker and Guidance all follow it. Sector turns, Themes and Ideas compare quarters, so they stay on the latest quarter with enough calls. “All” shows each company’s latest call.']
 };
 
@@ -940,7 +940,7 @@ function ntRow(c) {
   const lines = ntLines({...c, ntKey: call.key}), next = lines.some(l => l.next);
   if (next) why.unshift(['Next quarter called out', 1]);
   const hot = why.filter(w => w[1] === 1).length, gv = gp ? gp.v : 0.5;
-  if (!(hot >= 2 || gv >= 0.7) || c.score < 50) return null;
+  if (!(gv >= 0.75 || hot >= 3) || c.score < 60) return null;
   const ev = lines.length ? lines.slice(0, 2).map(x => x.l) : [(c.triggers || []).find(t => t.t === 'guidance' && t.q) ? '“' + c.triggers.find(t => t.t === 'guidance' && t.q).q + '”' : call.gLine].filter(Boolean);
   const nearTxt = near.slice(0, 2).map(a => `${a.what}${a.q === 0 ? ' (live now / in trials)' : ` (live in ~${a.q} quarter${a.q === 1 ? '' : 's'})`}`);
   return {c, call, key: call.key || '', gp, hot, why, next, ev, near, nearTxt, gwhy: gr?.why || '',
@@ -957,7 +957,7 @@ function vNear() {
   const rows = all.filter(x => (!f.big || x.c.bigSector === f.big) && [...f.chips].every(k => CH[k][1](x)));
   if (!SUMS.data) loadSums().then(() => { if (S.view === 'nearterm') render(); });
   return head('Near-term strength', 'Companies whose latest call points to strong results over the next quarter or the next few quarters, with the reasons from the call. A shortlist to check, not a buy list.', `
-      <ul><li>A company is listed when its latest call shows <b>at least two strong near-term signals</b> (major or moderate capacity going live within 3 quarters, growth guided at 15% or more, a turnaround guided, a clear plan to deliver, a strong quarter, guidance strongly positive or raised, strong demand, the next quarter called out, or a management that delivers on guidance), or when the <b>Guidance-backed growth & capacity</b> part of its Concall Signal Score is high. Calls with a veto, a guidance cut, or negative guidance or demand are left out.</li>
+      <ul><li>A company is listed when its Concall Signal Score is 60 or more and its latest call shows <b>at least three strong near-term signals</b> (major or moderate capacity going live within 3 quarters, growth guided at 15% or more, a turnaround guided, a clear plan to deliver, a strong quarter, guidance strongly positive or raised, strong demand, the next quarter called out, or a management that delivers on guidance), or the <b>Guidance-backed growth & capacity</b> part of its score is 0.75 or higher (34 of 45 points). Calls with a veto, a guidance cut, or negative guidance or demand are left out.</li>
       <li>The only score shown is the <b>Concall Signal Score</b>, the same number as everywhere else. The list is ordered by its Guidance-backed growth & capacity points, then by the score. Stocks guiding strongly with no clear plan or capacity behind it are marked in red.</li>
       <li><b>${esc(nextQ || 'Next quarter')} results still to come</b> shows companies whose latest call is from the previous quarter, so the quarter they guided for has not been reported yet. These are the most timely names.</li>
       <li>The bullet lines are taken from the call summary and quotes. Open the call and check the transcript before acting.</li></ul>`,
