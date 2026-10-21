@@ -15,7 +15,7 @@ concurrency: { group: mgmt-watch, cancel-in-progress: false }   # own group: nev
 jobs:
   watch:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 240
     permissions: { contents: write, issues: write }
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -32,9 +32,4 @@ jobs:
         run: python run.py mgmt --market IN --days ${{ inputs.days || '2' }}
       - name: Commit
         if: always()
-        run: |
-          git config user.name "concall-engine"
-          git config user.email "concall-engine@users.noreply.github.com"
-          git add data/mgmt_IN.json
-          git diff --cached --quiet || git commit -m "Management changes $(date -u +%F\ %H:%M)"
-          for i in 1 2 3; do git pull --rebase --autostash && git push && break; sleep 5; done
+        run: ./mgmt_commit.sh

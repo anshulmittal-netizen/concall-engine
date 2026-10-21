@@ -26,6 +26,7 @@ ART_URL = "https://claude.ai/artifact/Y3XcRY258aCXgadeZKZbh3"
 SKIP_RX = re.compile(r"independent director|completion of (the )?tenure|company secretary|compliance officer|"
                      r"information security|\bciso\b|nominee director|(statutory|secretarial|internal|cost) auditor|"
                      r"registrar|scrutini[sz]er|re-?appointment of .*independent", re.I)
+REAPPOINT_RX = re.compile(r"\bre-?\s?appoint|retire[sd]? by rotation|continuation of", re.I)
 TOP_RX = re.compile(r"\b(ceo|cfo|coo|cto|md)\b|managing director|chief executive|chief financial|chief operating|"
                     r"chairman|chairperson|whole[- ]?time director|executive director|president|business head|"
                     r"head of business|group ceo|joint managing", re.I)
@@ -40,7 +41,7 @@ TOOL = {
             "properties": {
                 "person": {"type": "string"},
                 "role": {"type": "string", "description": "e.g. 'Managing Director & CEO', 'Chief Financial Officer'"},
-                "type": {"type": "string", "enum": ["appointed", "resigned", "retired", "removed", "redesignated", "passed_away", "other"]},
+                "type": {"type": "string", "enum": ["appointed", "reappointed", "resigned", "retired", "removed", "redesignated", "passed_away", "other"], "description": "reappointed = the same person continuing in the same role (re-appointment, retire-by-rotation)"},
                 "seniority": {"type": "string", "enum": ["top", "senior", "other"],
                               "description": "top = CEO, MD, CFO, COO, chairman, executive / whole-time director, president, business or segment head; senior = other senior management personnel; other = independent / non-executive directors, company secretary, auditors"},
                 "effective": {"type": "string", "description": "Effective date as written, empty if not given"},
@@ -49,6 +50,22 @@ TOOL = {
                 "promoter": {"type": "boolean", "description": "True if the person is from the promoter family / group"}}}}},
     },
 }
+
+
+def clean_change(c: dict) -> dict:
+    c = dict(c)
+    if not c.get("person") or re.search(r"unknown|not (stated|given|named)|n/?a", str(c.get("person")), re.I):
+        c["person"] = "name not given"
+    if c.get("type") == "appointed" and REAPPOINT_RX.search(f"{c.get('role', '')} {c.get('reason', '')}"):
+        c["type"] = "reappointed"
+    return c
+
+
+def is_top(item: dict) -> bool:
+    """A real change at the top: not a re-appointment of the same person."""
+    if REAPPOINT_RX.search(item.get("headline", "")) and not re.search(r"\bnew\b|resign|cessation", item.get("headline", ""), re.I):
+        return False
+    return any(c.get("seniority") == "top" and c.get("type") != "reappointed" for c in item.get("changes", []))
 
 
 def _ai(headline: str, text: str) -> list[dict]:
@@ -62,7 +79,7 @@ def _ai(headline: str, text: str) -> list[dict]:
     for b in msg.content:
         if b.type == "tool_use":
             out = b.input.get("changes") or []
-            return [c for c in out if isinstance(c, dict) and c.get("role")]
+            return [clean_change(c) for c in out if isinstance(c, dict) and c.get("role")]
     return []
 
 
@@ -85,6 +102,31 @@ def _pdf_text(http: Http, att: str) -> str:
         os.unlink(name)
 
 
+def _alerted(log=print) -> dict:
+    """BSE filing id -> issue URL for alerts already opened (so a lost commit never alerts twice)."""
+    token, repo = os.environ.get("GITHUB_TOKEN"), os.environ.get("GITHUB_REPOSITORY")
+    if not token or not repo:
+        return {}
+    import requests
+    out = {}
+    try:
+        for page in range(1, 6):
+            r = requests.get(f"https://api.github.com/repos/{repo}/issues", timeout=20,
+                             params={"labels": "management-change", "state": "all", "per_page": 100, "page": page},
+                             headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"})
+            rows = r.json() if r.status_code == 200 else []
+            for i in rows:
+                body = i.get("body") or ""
+                m = re.search(r"BSE filing id: (\d+)", body) or re.search(r"AttachLive/([^\s)]+)", body)
+                if m:
+                    out[m.group(1)] = i.get("html_url")
+            if len(rows) < 100:
+                break
+    except Exception as ex:
+        log(f"  ! could not list earlier alerts: {ex}")
+    return out
+
+
 def _notify(item: dict, log=print) -> None:
     """Open a GitHub issue for a top-level change; GitHub notifies the repository owner."""
     token, repo = os.environ.get("GITHUB_TOKEN"), os.environ.get("GITHUB_REPOSITORY")
@@ -103,7 +145,7 @@ def _notify(item: dict, log=print) -> None:
                      + (f" · reason: {c['reason']}" if c.get("reason") else "")
                      + (f" · {c['background']}" if c.get("background") else "")
                      + (" · promoter family" if c.get("promoter") else ""))
-    lines += ["", f"BSE filing: {item['url']}", f"Dashboard: {ART_URL}#co-{item['code']}", "",
+    lines += ["", f"BSE filing: {item['url']}", f"BSE filing id: {item['id']}", f"Dashboard: {ART_URL}#co-{item['code']}", "",
               "_Opened automatically by the concall engine's management-change watch._"]
     try:
         r = requests.post(f"https://api.github.com/repos/{repo}/issues", timeout=20,
@@ -125,6 +167,7 @@ def run(market: str = "IN", days: int = 2, notify_days: int = 3, log=print) -> i
     store = read_json(PATH, {"items": {}})
     items = store["items"]
     http = Http(BSE_HEADERS, 0.3, browser=True)
+    alerted = _alerted(log)
     end = today()
     start = end - dt.timedelta(days=days)
     new = 0
@@ -155,9 +198,12 @@ def run(market: str = "IN", days: int = 2, notify_days: int = 3, log=print) -> i
                         except Exception as ex:
                             log(f"  ! could not read filing for {item['name']}: {str(ex)[:120]}")
                             continue  # retried next run
-                        item["top"] = any(c.get("seniority") == "top" for c in item["changes"])
+                        item["top"] = is_top(item)
                         if item["top"] and item["date"] >= (end - dt.timedelta(days=notify_days)).isoformat():
-                            _notify(item, log)
+                            if nid in alerted or (att and att in alerted):
+                                item["issue"] = alerted.get(nid) or alerted.get(att)
+                            else:
+                                _notify(item, log)
                     items[nid] = item
                     new += 1
                     if not item.get("skipped"):

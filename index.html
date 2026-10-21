@@ -981,7 +981,7 @@ function vNear() {
 }
 
 /* Management changes */
-const MG_VERB = {appointed: 'Appointed', resigned: 'Resigned', retired: 'Retired', removed: 'Removed', redesignated: 'Redesignated', passed_away: 'Passed away', other: 'Change'};
+const MG_VERB = {appointed: 'Appointed', reappointed: 'Re-appointed', resigned: 'Resigned', retired: 'Retired', removed: 'Removed', redesignated: 'Redesignated', passed_away: 'Passed away', other: 'Change'};
 const mgChange = x => `<div class="mg-ch"><span class="pill ${x.type === 'appointed' ? 'st-confirming' : x.type === 'redesignated' ? 'st-emerging' : 'v-flag'}">${MG_VERB[x.type] || esc(x.type)}</span> <b>${esc(x.role)}</b> · ${esc(x.person)}${x.promoter ? ' <span class="tag">promoter family</span>' : ''}${x.effective ? ` <span class="muted">· from ${esc(x.effective)}</span>` : ''}${x.reason ? `<div class="small muted">Reason: ${esc(x.reason)}</div>` : ''}${x.background ? `<div class="small muted">${esc(x.background)}</div>` : ''}</div>`;
 function mgmtSection(c) {
   const ev = c.mgmtEvents || [], call = c.mgmtCall;

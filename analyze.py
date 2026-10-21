@@ -13,6 +13,7 @@ from collections import Counter, defaultdict
 from common import DATA, SITE, as_list, fmt_date, label_from_key, load_yaml, plausible_period, read_json, settings, today, write_json
 from extract import BLOCK_KEYS
 import history
+import mgmt
 
 # Serious governance / solvency events cap the score (veto). Routine balance-sheet watch-points only dock points.
 VETO_RX = re.compile(r"auditor (resign|qualif)|qualified opinion|going concern|default|covenant breach|pledge invo|fraud|forensic audit|"
@@ -559,7 +560,9 @@ def build(market: str, log=print) -> dict:
     for it in sorted(mstore.values(), key=lambda x: (x.get("date", ""), x.get("time", "")), reverse=True):
         if it.get("skipped") or not it.get("changes") or it.get("date", "") < horizon:
             continue
-        ch = [x for x in it["changes"] if x.get("seniority") in ("top", "senior")]
+        it = {**it, "changes": [mgmt.clean_change(x) for x in it["changes"]]}
+        it["top"] = mgmt.is_top(it)
+        ch = [x for x in it["changes"] if x.get("seniority") in ("top", "senior") and x.get("type") != "reappointed"]
         if not ch:
             continue
         co = by_code.get(it["code"])
