@@ -498,7 +498,7 @@ const GL = {
   schema:['Signal read','Eight readings of the call, each scored −2 (clearly negative) to +2 (clearly positive). They feed the score.'],
   models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
-  nearterm:['Near-term score','A separate 0 to 100 score from the Concall Signal Score. How strongly the latest call points to good results over the next quarter or next few quarters. Adds up positive or raised guidance (weighted by management credibility), demand, rising utilisation, pricing, order-book conversion, operating leverage capacity coming live within three quarters, growth guided at 15% or more, and forward-looking growth lines in the call. Running near full with no expansion takes points off. Very strong 70+, Strong 55–69, Building 45–54.'],
+  nearterm:['Near-term strength','Companies whose latest call shows at least two strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a high Growth & capacity part in the Concall Signal Score. There is no separate score.'],
   quarter:['Quarter switch','Pick the results season you want to look at. Calls, Best & worst, First-time callers, Sector tracker and Guidance all follow it. Sector turns, Themes and Ideas compare quarters, so they stay on the latest quarter with enough calls. “All” shows each company’s latest call.']
 };
 
@@ -564,7 +564,7 @@ function navCounts() {
   return {calls: cq.length, first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: (D.sectors || []).filter(s => s.hit).length || '',
-    themes: (D.themes || []).length, nearterm: (D.companies || []).map(ntScore).filter(x => x && x.nt >= 70 && x.c.score >= 50).length || '', ideas: (D.ideas || []).filter(x => !x.red).length};
+    themes: (D.themes || []).length, nearterm: (D.companies || []).map(ntRow).filter(Boolean).length || '', ideas: (D.ideas || []).filter(x => !x.red).length};
 }
 function renderNav() {
   const ct = D ? navCounts() : {};
@@ -900,7 +900,6 @@ function laterQ(line, period) {
 const NT_POS = /grow|growth|improv|strong|healthy|higher|increase|ramp|pick ?up|accelerat|record|doubl|expand|better|recover|uptick|robust|tailwind|commission|start(s|ed)? (commercial|production|contributing)|full utili[sz]|order (book|inflow)|execution|margin expansion|outperform|surge|boost/i;
 const NT_NEG = /declin|lower|weak|pressure|loss|slow|cut\b|delay|headwind|soft|muted|subdued|challeng|drag|down|risk|uncertain|no firm|lost|not (yet|expected)|deferr|stress|impact/i;
 const NT_MODELS = {'Backlog conversion': [8, 'Order book converting'], 'Operating leverage': [6, 'Operating leverage'], 'Mix shift': [3, 'Better mix'], 'Pricing power': [3, 'Pricing power']};
-const NT_TIER = s => s >= 70 ? ['Very strong', 't1'] : s >= 55 ? ['Strong', 't2'] : ['Building', 't3'];
 function ntLines(c) {
   const s = SUMS.data?.[c.ntKey], out = [];
   const ok = (l, needFwd) => { const lq = laterQ(l, c.period);
@@ -910,59 +909,62 @@ function ntLines(c) {
   (c.triggers || []).filter(t => ['guidance', 'demand', 'util', 'pricing'].includes(t.t) && t.q).forEach(t => ok('“' + t.q + '”', true));
   const seen = new Set(); return out.filter(x => !seen.has(x.l) && seen.add(x.l)).sort((a, b) => b.next - a.next);
 }
-function ntScore(c) {
+/* Near-term strength: no separate score. A company is listed when its latest call shows at least two strong
+   near-term signals, or the Growth & capacity part of its Concall Signal Score is high. */
+const growthPart = c => (c.breakdown?.parts || []).find(p => p.key === 'growth');
+function ntRow(c) {
   const call = (D.calls || []).find(x => x.id === c.id && x.period === c.period) || {};
-  const b = c.blocks || {};
+  const b = c.blocks || {}, gp = growthPart(c);
   if (c.veto || (b.guidance || 0) < 0 || (b.demand || 0) < 0 || call.gCut > 0) return null;
-  const why = [], credF = c.credTested > 0 ? Math.max(.6, Math.min(1.2, (c.cred || 0) / 70)) : .85;
-  let p = 0;
-  if (b.guidance >= 2) { p += 25 * credF; why.push(['Guidance strongly positive', 1]); } else if (b.guidance === 1) { p += 15 * credF; why.push(['Guidance positive', 0]); }
-  if (call.gRaised > 0) { p += 10 * credF; why.push(['Guidance raised', 1]); }
-  if (b.demand >= 2) { p += 20; why.push(['Demand strong', 1]); } else if (b.demand === 1) { p += 12; why.push(['Demand positive', 0]); }
-  if ((c.util || 0) > 0) { p += 8; why.push(['Utilisation rising', 0]); }
-  if (b.pricing >= 2) { p += 10; why.push(['Pricing strong', 1]); } else if (b.pricing === 1) { p += 6; why.push(['Pricing improving', 0]); }
-  (c.models || []).forEach(m => { const x = NT_MODELS[m]; if (x) { p += x[0]; why.push([x[1], 0]); } });
-  if (c.delta > 0) p += Math.min(6, c.delta / 2);
+  const why = [];
   const gr = c.growth, near = (gr?.adds || []).filter(a => a.status !== 'deferred' && a.q != null && a.q <= 3);
-  if (near.length) { const sz = near.reduce((n, a) => n + (a.size_pct || 0), 0); p += sz >= 10 ? 12 : 8; why.unshift([`Capacity live in ≤3 qtrs${sz ? ` (~${Math.round(sz)}%)` : ''}`, 1]); }
-  if (gr?.growth != null && gr.growth >= 15) { p += gr.growth >= 25 ? 10 : 6; why.push([`Growth guided ~${Math.round(gr.growth)}%`, 1]); }
-  if (gr && !near.length && !gr.expansion && gr.util >= 85) { p -= 8; why.push([`Running ${Math.round(gr.util)}% full, no expansion`, 0]); }
-  const lines = ntLines({...c, ntKey: call.key});
-  p += Math.min(2, lines.length) * 8;
-  if (c.credTested > 0 && c.cred >= 60) why.push([`Delivers guidance (${c.cred})`, 1]);
-  const next = lines.some(l => l.next);
+  if (near.length) { const sz = near.reduce((n, a) => n + (a.size_pct || 0), 0); why.push([`Capacity live within 3 quarters${sz ? ` (~${Math.round(sz)}% of capacity)` : ''}`, 1]); }
+  if (gr?.growth != null && gr.growth >= 15) why.push([`Growth guided ~${Math.round(gr.growth)}%`, 1]);
+  if (b.guidance >= 2) why.push(['Guidance strongly positive', 1]); else if (b.guidance === 1) why.push(['Guidance positive', 0]);
+  if (call.gRaised > 0) why.push(['Guidance raised', 1]);
+  if (b.demand >= 2) why.push(['Demand strong', 1]); else if (b.demand === 1) why.push(['Demand positive', 0]);
+  if ((c.util || 0) > 0) why.push(['Utilisation rising', 0]);
+  if (b.pricing >= 2) why.push(['Pricing strong', 1]); else if (b.pricing === 1) why.push(['Pricing improving', 0]);
+  (c.models || []).forEach(m => { const x = NT_MODELS[m]; if (x) why.push([x[1], 0]); });
+  if (c.credTested > 0 && c.cred >= 60) why.push([`Delivers on guidance (credibility ${c.cred})`, 1]);
+  if (gr && !near.length && !gr.expansion && gr.util >= 85) why.push([`Running ${Math.round(gr.util)}% full, no expansion`, -1]);
+  const lines = ntLines({...c, ntKey: call.key}), next = lines.some(l => l.next);
   if (next) why.unshift(['Next quarter called out', 1]);
+  const hot = why.filter(w => w[1] === 1).length, gv = gp ? gp.v : 0.5;
+  if (!(hot >= 2 || gv >= 0.7) || c.score < 50) return null;
   const ev = lines.length ? lines.slice(0, 2).map(x => x.l) : [(c.triggers || []).find(t => t.t === 'guidance' && t.q) ? '“' + c.triggers.find(t => t.t === 'guidance' && t.q).q + '”' : call.gLine].filter(Boolean);
-  return {c, call, key: call.key || '', nt: Math.min(100, Math.round(p * 100 / 90)), why, lines, next, ev,
+  const nearTxt = near.slice(0, 2).map(a => `${a.what}${a.q === 0 ? ' (live now / in trials)' : ` (live in ~${a.q} quarter${a.q === 1 ? '' : 's'})`}`);
+  return {c, call, key: call.key || '', gp, hot, why, next, ev, near, nearTxt, gwhy: gr?.why || '',
     pending: c.period !== (quarters()[0]?.label) && quarters()[0] && inProg(quarters()[0].label)};
 }
 function ntRows() {
-  return (D.companies || []).map(ntScore).filter(x => x && x.nt >= 45 && x.c.score >= 50).sort((a, b) => b.nt - a.nt || b.c.score - a.c.score);
+  return (D.companies || []).map(ntRow).filter(Boolean).sort((a, b) => (b.gp?.pts || 0) - (a.gp?.pts || 0) || b.hot - a.hot || b.c.score - a.c.score);
 }
 function vNear() {
   const f = S.near, all = ntRows(), nextQ = quarters()[0]?.label;
   const bigs = [...new Set(all.map(x => x.c.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
-  const CH = {next: ['Next quarter called out', x => x.next], raised: ['Guidance raised', x => x.call.gRaised > 0], proven: ['Proven management', x => x.c.credTested > 0 && x.c.cred >= 60], pending: [`${nextQ || 'Next'} results still to come`, x => x.pending]};
-  const rows = all.filter(x => (!f.big || x.c.bigSector === f.big) && (!f.tier || NT_TIER(x.nt)[1] === f.tier) && [...f.chips].every(k => CH[k][1](x)));
-  const t1 = all.filter(x => x.nt >= 70).length;
+  const CH = {cap: ['Capacity live within 3 quarters', x => x.near.length > 0], next: ['Next quarter called out', x => x.next], raised: ['Guidance raised', x => x.call.gRaised > 0],
+    proven: ['Proven management', x => x.c.credTested > 0 && x.c.cred >= 60], pending: [`${nextQ || 'Next'} results still to come`, x => x.pending]};
+  const rows = all.filter(x => (!f.big || x.c.bigSector === f.big) && [...f.chips].every(k => CH[k][1](x)));
   if (!SUMS.data) loadSums().then(() => { if (S.view === 'nearterm') render(); });
-  return head('Near-term strength', 'Companies whose latest call points to strong results over the next quarter or the next few quarters. A shortlist of near-term names to check, not a buy list.', `
-      <ul><li>The big number on each card is the <b>near-term score</b>, which is different from the Concall Signal Score shown under the name (the one in the company panel). The <b>near-term score</b> ${tip('nearterm')} (0–100) adds up what the latest call says about the coming quarters: positive or raised guidance (weighted by how well management has delivered before), demand, rising utilisation, pricing, an order book converting to revenue, operating leverage, and forward-looking lines in the call that point to growth.</li>
-      <li><b>Very strong</b> is 70+, <b>Strong</b> 55–69, <b>Building</b> 45–54. Calls with a veto, guidance cut, or negative guidance or demand are left out.</li>
+  return head('Near-term strength', 'Companies whose latest call points to strong results over the next quarter or the next few quarters, with the reasons from the call. A shortlist to check, not a buy list.', `
+      <ul><li>A company is listed when its latest call shows <b>at least two strong near-term signals</b> (capacity going live within 3 quarters, growth guided at 15% or more, guidance strongly positive or raised, strong demand, the next quarter called out, or a management that delivers on guidance), or when the <b>Growth & capacity</b> part of its Concall Signal Score is high. Calls with a veto, a guidance cut, or negative guidance or demand are left out.</li>
+      <li>The only score shown is the <b>Concall Signal Score</b>, the same number as everywhere else. The list is ordered by its Growth & capacity points, then by the score.</li>
       <li><b>${esc(nextQ || 'Next quarter')} results still to come</b> shows companies whose latest call is from the previous quarter, so the quarter they guided for has not been reported yet. These are the most timely names.</li>
       <li>The bullet lines are taken from the call summary and quotes. Open the call and check the transcript before acting.</li></ul>`,
       `<span class="badge">Latest call per company</span>`) + `
     <div class="toolbar">
       <select id="nt-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
-      <div class="seg">${[['', 'All'], ['t1', 'Very strong'], ['t2', 'Strong'], ['t3', 'Building']].map(([k, n]) => `<button data-ntt="${k}" aria-pressed="${f.tier === k}">${n} <span class="num">${k ? all.filter(x => NT_TIER(x.nt)[1] === k).length : all.length}</span></button>`).join('')}</div>
       ${Object.entries(CH).map(([k, [n, fn]]) => `<button class="chip" data-ntc="${k}" aria-pressed="${f.chips.has(k)}">${esc(n)} <span class="num">${all.filter(fn).length}</span></button>`).join('')}
     </div>
     ${!SUMS.data ? '<p class="small muted">Loading call summaries to find forward-looking lines…</p>' : ''}
-    <div class="nt-grid">${rows.slice(0, f.limit).map((x, i) => { const c = x.c, [tw, tc] = NT_TIER(x.nt);
-      return `<article class="card nt ${i < 3 && !f.tier && !f.big && !f.chips.size ? 'top3' : ''}">
-        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}Concall Signal Score <b style="color:${vcol(c.score, c.veto)}">${c.score}</b></span></div>
-          <div class="ntsc"><span class="eyebrow" style="font-size:10px">Near-term score</span><b style="color:${tc === 't1' ? 'var(--gold)' : tc === 't2' ? 'var(--up)' : 'var(--blue)'}">${x.nt}</b><span class="pill nt-tier ${tc}">${tw}</span></div></div>
-        <div class="why-chips">${x.why.slice(0, 7).map(([w, hot]) => `<span class="${hot ? 'hot' : ''}">${esc(w)}</span>`).join('')}</div>
+    <p class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'}</p>
+    <div class="nt-grid">${rows.slice(0, f.limit).map((x, i) => { const c = x.c;
+      return `<article class="card nt ${i < 3 && !f.big && !f.chips.size ? 'top3' : ''}">
+        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc(c.mcap || '')}${x.gp ? `${c.mcap ? ' · ' : ''}Growth & capacity ${x.gp.pts.toFixed(1)} of ${Math.round(x.gp.w * 100)}` : ''}</span></div>
+          <div class="ntsc"><span class="eyebrow" style="font-size:10px">Concall Signal Score</span><b style="color:${vcol(c.score, c.veto)}">${c.score}</b>${vpill(c.score, c.veto)}</div></div>
+        <div class="why-chips">${x.why.slice(0, 8).map(([w, hot]) => `<span class="${hot === 1 ? 'hot' : ''}" ${hot === -1 ? 'style="color:var(--down)"' : ''}>${esc(w)}</span>`).join('')}</div>
+        ${x.nearTxt.length || x.gwhy ? `<p class="small" style="margin:0"><b>Capacity & growth:</b> ${esc([x.gwhy, ...x.nearTxt.map(t => 'Adding ' + t)].filter(Boolean).join(' · '))}</p>` : ''}
         ${x.ev.length ? `<ul>${x.ev.map(l => `<li>${esc(l.length > 260 ? l.slice(0, 257) + '…' : l)}</li>`).join('')}</ul>` : ''}
         <div class="foot"><span>${esc(c.period)} call · ${esc(fdate(c.date))}${x.pending ? ` · <b style="color:var(--fg)">${esc(nextQ)} results due</b>` : ''}</span><button class="btn" data-open="${esc(c.id)}" data-k="${esc(x.key)}">Open the call</button></div>
       </article>`; }).join('') || '<div class="empty">No companies match these filters.</div>'}</div>
@@ -991,7 +993,7 @@ function vHelp() {
       <div><b>Guidance leaders</b><span>Sub-sectors ranked by how strongly management is guiding up, and the weakest ones.</span></div>
       <div><b>Sector turns</b><span>Sub-sectors where supply discipline is building and pricing or utilisation is improving. This is the early sign of a turn.</span></div>
       <div><b>Themes</b><span>How many companies are discussing each investment theme, and how fast it is spreading.</span></div>
-      <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the lines from the call that say so. Filter to names whose next results are still to come.</span></div>
+      <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the reasons and the lines from the call that say so. Uses the same Concall Signal Score as every other page. Filter to names whose next results are still to come.</span></div>
       <div><b>Ideas & red flags</b><span>Standout single companies (divergence, first movers, hidden suppliers, credibility upgrades) and calls that need a check.</span></div>
       <div><b>Company panel</b><span>Opens from anywhere. The <b>Call summary</b> tab has financial highlights, segments, guidance, capex, demand, Q&A, risks and verbatim quotes. The <b>Signals</b> tab has the triggers, mental models, the eight readings behind the score, credibility, and other companies that name it.</span></div>
     </div></section>
@@ -1084,7 +1086,6 @@ function drawDrawer(fresh) {
           <div><span>Credibility ${tip('cred')}</span><b>${x.credTested === 0 || c.credTested === 0 ? 'Untested' : (x.cred ?? c.cred)}</b></div>
           <div><span>Guidance ${tip('guidance')}</span><b>${gcell(x.g)}</b></div>
           <div><span>Archetype ${tip('archetype')}</span><b>${esc(x.archetype || c.archetype)}</b></div>
-          ${(() => { const n = !x.period || x.period === c.period ? ntScore(c) : null; return n ? `<div><span>Near-term score ${tip('nearterm')}</span><b>${n.nt} · ${NT_TIER(n.nt)[0]}</b></div>` : ''; })()}
         </div>
       </section>
       ${x.veto ? `<div class="flag">Veto applied: the score is capped at 40. See Red flags on the Signals tab. ${tip('veto')}</div>` : ''}
@@ -1259,7 +1260,6 @@ document.addEventListener('click', e => {
   const fs = t.closest('[data-fs]'); if (fs) { S.first.status = fs.dataset.fs; render(); return; }
   const st = t.closest('[data-st]'); if (st) { S.turns.stage = st.dataset.st; render(); return; }
   const tl = t.closest('[data-tl]'); if (tl) { S.turns.level = tl.dataset.tl; render(); return; }
-  const ntt = t.closest('[data-ntt]'); if (ntt) { S.near.tier = ntt.dataset.ntt; S.near.limit = 30; render(); return; }
   const ntc = t.closest('[data-ntc]'); if (ntc) { const k = ntc.dataset.ntc; S.near.chips.has(k) ? S.near.chips.delete(k) : S.near.chips.add(k); S.near.limit = 30; render(); return; }
   if (t.closest('#nt-more')) { S.near.limit += 30; render(); return; }
   const it = t.closest('[data-it]'); if (it) { S.ideas.tab = it.dataset.it; render(); return; }
