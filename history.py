@@ -27,15 +27,32 @@ CALL_RX = re.compile(r"transcript|conference call|earnings call|con-?call|invest
 FIRST_RX = re.compile(r"(first|maiden|inaugural|first[- ]ever)\s+(earnings|conference|investor|analyst)?\s*(conference\s+)?call", re.I)
 
 
+# "first call" that is about a person (a new CEO's first call), a period (first call of FY27), or an earlier
+# call ("as we said in the first call"), not the company's first-ever call
+NOT_COMPANY_RX = re.compile(
+    r"\b(my|his|her|their|your)\s+(very\s+)?(first|maiden|inaugural)|"
+    r"(first|maiden|inaugural)[^.]{0,40}\bcall\s+(as|with|since|after he|after she)\b|"
+    r"(first|maiden)[^.]{0,40}\bcall\s+(of|for)\s+(the\s+)?(financial\s+year|fiscal|year|quarter|fy|q[1-4]|20\d\d|this\s+year|the\s+new)|"
+    r"\bq[1-4]\s*fy\s*'?\d{2}\s+first|"
+    r"(in|on|during)\s+(the|our)\s+first\s+(earnings\s+|conference\s+)?call|"
+    r"\b(welcome|join)\w*\s+(him|her)\b", re.I)
+
+
+def valid_cue(sentence: str) -> bool:
+    """True when the sentence says the company itself is holding its first-ever call."""
+    return bool(sentence) and bool(FIRST_RX.search(sentence)) and not NOT_COMPANY_RX.search(sentence)
+
+
 def text_cue(text: str) -> str:
-    """The sentence where the transcript says this is the first call, or ''."""
+    """The sentence where the transcript says this is the company's first call, or ''."""
     head = text[:15000]
-    m = FIRST_RX.search(head)
-    if not m:
-        return ""
-    a = head.rfind(".", 0, m.start()) + 1
-    b = head.find(".", m.end())
-    return re.sub(r"\s+", " ", head[a:b if b > 0 else m.end() + 120]).strip()[:240]
+    for m in FIRST_RX.finditer(head):
+        a = head.rfind(".", 0, m.start()) + 1
+        b = head.find(".", m.end())
+        sent = re.sub(r"\s+", " ", head[a:b if b > 0 else m.end() + 120]).strip()[:240]
+        if valid_cue(sent):
+            return sent
+    return ""
 
 
 def prior_call(http: Http, code: str, before: dt.date) -> str | None:

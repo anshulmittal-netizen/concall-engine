@@ -12,6 +12,7 @@ from collections import Counter, defaultdict
 
 from common import DATA, SITE, as_list, fmt_date, label_from_key, load_yaml, plausible_period, read_json, settings, today, write_json
 from extract import BLOCK_KEYS
+import history
 
 # Serious governance / solvency events cap the score (veto). Routine balance-sheet watch-points only dock points.
 VETO_RX = re.compile(r"auditor (resign|qualif)|qualified opinion|going concern|default|covenant breach|pledge invo|fraud|forensic audit|"
@@ -501,6 +502,10 @@ def build(market: str, log=print) -> dict:
         r0 = per[first_p]
         cue = next((manifest.get(d["doc_id"], {}).get("firstCue") for d in r0["docs"] if manifest.get(d["doc_id"], {}).get("firstCue")), "")
         h = hist.get(c["id"])
+        if cue and not history.valid_cue(cue):
+            cue = ""  # the sentence is about a person's or a period's first call, not the company's
+        if h and h.get("prior"):
+            continue  # BSE shows an earlier concall filing: not a first-time caller, whatever the transcript says
         if not cue and not (h and h.get("prior") is None):
             continue
         first_timers.append({
