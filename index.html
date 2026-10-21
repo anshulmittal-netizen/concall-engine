@@ -237,6 +237,10 @@ svg text{font-family:var(--mono)}
 .idea .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .tag{font-size:12.5px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
 .first .r{grid-template-columns:minmax(0,1.3fr) 100px 110px 70px minmax(0,1fr) minmax(0,2fr)}
+.mg .r{grid-template-columns:minmax(0,240px) minmax(0,1fr) 190px;align-items:start}
+.mg .r>:last-child{justify-content:flex-end}
+.mg-ch{font-size:14px}
+@media (max-width:760px){.mg .r{grid-template-columns:minmax(0,1fr)}}
 .nt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:12px}
 .nt{display:grid;gap:9px;align-content:start}
 .nt.top3{border-color:var(--gold)}
@@ -534,7 +538,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, openSec: new Set(), drawer: null};
+  first: {status: ''}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, mg: {days: 30, top: true, inCalls: false}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -556,7 +560,7 @@ const VIEWS = [
   {group: 'Start', items: [['home', 'Today'], ['help', 'How to use']]},
   {group: 'Calls', items: [['calls', 'All calls'], ['first', 'First-time callers']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
-  {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['ideas', 'Ideas & red flags']]}
+  {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['mgmt', 'Management changes'], ['ideas', 'Ideas & red flags']]}
 ];
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
 function navCounts() {
@@ -564,7 +568,8 @@ function navCounts() {
   return {calls: cq.length, first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: (D.sectors || []).filter(s => s.hit).length || '',
-    themes: (D.themes || []).length, nearterm: (D.companies || []).map(ntRow).filter(Boolean).length || '', ideas: (D.ideas || []).filter(x => !x.red).length};
+    themes: (D.themes || []).length, nearterm: (D.companies || []).map(ntRow).filter(Boolean).length || '', ideas: (D.ideas || []).filter(x => !x.red).length,
+    mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
 function renderNav() {
   const ct = D ? navCounts() : {};
@@ -975,6 +980,40 @@ function vNear() {
     ${rows.length > f.limit ? `<div style="text-align:center;margin-top:14px"><button class="btn" id="nt-more">Show more (${rows.length - f.limit} left)</button></div>` : ''}`;
 }
 
+/* Management changes */
+const MG_VERB = {appointed: 'Appointed', resigned: 'Resigned', retired: 'Retired', removed: 'Removed', redesignated: 'Redesignated', passed_away: 'Passed away', other: 'Change'};
+const mgChange = x => `<div class="mg-ch"><span class="pill ${x.type === 'appointed' ? 'st-confirming' : x.type === 'redesignated' ? 'st-emerging' : 'v-flag'}">${MG_VERB[x.type] || esc(x.type)}</span> <b>${esc(x.role)}</b> · ${esc(x.person)}${x.promoter ? ' <span class="tag">promoter family</span>' : ''}${x.effective ? ` <span class="muted">· from ${esc(x.effective)}</span>` : ''}${x.reason ? `<div class="small muted">Reason: ${esc(x.reason)}</div>` : ''}${x.background ? `<div class="small muted">${esc(x.background)}</div>` : ''}</div>`;
+function mgmtSection(c) {
+  const ev = c.mgmtEvents || [], call = c.mgmtCall;
+  if (!ev.length && !call) return '';
+  return `<section class="sec"><h3>Management</h3>
+    ${call ? `<div class="card" style="padding:12px 14px;display:grid;gap:6px;${call.push >= 1 ? 'border-color:var(--up)' : ''}"><span class="eyebrow">On the call${call.push >= 1 ? ' · new management pushing growth' : call.push < 0 ? ' · disruption' : ''}</span>${call.roles?.length ? `<b>${call.roles.map(esc).join(' · ')}</b>` : ''}${call.note ? `<span>${esc(call.note)}</span>` : ''}${call.initiatives?.length ? `<ul style="margin:0;padding-left:18px">${call.initiatives.map(i => `<li>${esc(i)}</li>`).join('')}</ul>` : ''}</div>` : ''}
+    ${ev.map(e => `<div style="display:grid;gap:4px"><span class="small muted">BSE filing · ${esc(fdate(e.date))}${e.url ? ` · <a href="${esc(e.url)}" target="_blank" rel="noopener" style="color:var(--blue)">filing ↗</a>` : ''}</span>${e.changes.map(mgChange).join('')}</div>`).join('')}</section>`;
+}
+function vMgmt() {
+  const f = S.mg, since = daysBack(f.days), all = D.mgmt || [];
+  const rows = all.filter(m => m.date >= since && (!f.top || m.top) && (!f.inCalls || m.inCalls));
+  const pushing = (D.companies || []).filter(c => c.mgmtCall && c.mgmtCall.push >= 1).sort((a, b) => b.mgmtCall.push - a.mgmtCall.push || b.score - a.score);
+  return head('Management changes', 'Every change in top management filed on BSE by the companies we track, and what new management said on its calls. Top-level changes are flagged within the hour.', `
+      <ul><li>BSE is checked <b>every 30 minutes</b> from 8:30 am to 11 pm IST. Each filing is read for who changed, in what role, and why.</li>
+      <li><b>Top-level</b> means CEO, MD, CFO, COO, chairman, executive or whole-time directors, presidents and business heads. Independent directors, company secretaries and auditors are left out.</li>
+      <li>Each new top-level change <b>opens a GitHub issue</b> in the engine’s repository, so GitHub emails you (and pushes to the GitHub mobile app) straight away.</li>
+      <li><b>New management pushing growth</b> lists companies whose latest call shows new top management with a growth plan. A specific, ambitious plan adds 4 points to the Concall Signal Score, a clear but less specific one adds 2.</li></ul>`,
+      `<span class="badge">${D.mgmtChecked ? 'BSE checked ' + esc(D.mgmtChecked.replace('T', ' ')) + ' UTC' : 'Not checked yet'}</span>`) + `
+    ${pushing.length ? `<section><div class="list-head"><h3>New management pushing growth</h3><span class="small muted">${pushing.length} from the latest calls</span></div>
+      <div class="nt-grid">${pushing.slice(0, 12).map(c => `<article class="card nt"><div class="top"><div style="min-width:0"><span class="num small muted">${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc((c.mgmtCall.roles || []).join(' · '))}</span></div>
+        <div class="ntsc"><span class="eyebrow" style="font-size:10px">Concall Signal Score</span><b style="color:${vcol(c.score, c.veto)}">${c.score}</b>${vpill(c.score, c.veto)}</div></div>
+        ${c.mgmtCall.note ? `<p class="small" style="margin:0">${esc(c.mgmtCall.note)}</p>` : ''}
+        ${(c.mgmtCall.initiatives || []).length ? `<ul>${c.mgmtCall.initiatives.map(i => `<li>${esc(i)}</li>`).join('')}</ul>` : ''}
+        <div class="foot"><span>${esc(c.period)} call · ${c.mgmtCall.push >= 2 ? '+4 to score' : '+2 to score'}</span><button class="btn" data-open="${esc(c.id)}">Open the call</button></div></article>`).join('')}</div></section>` : ''}
+    <section><div class="list-head"><h3>Filed on BSE</h3></div>
+    <div class="toolbar"><select id="mg-days" aria-label="Period">${[[7, 'Last 7 days'], [30, 'Last 30 days'], [90, 'Last 90 days'], [365, 'Last 12 months']].map(([d, n]) => `<option value="${d}" ${f.days === d ? 'selected' : ''}>${n}</option>`).join('')}</select>
+      <button class="chip" data-mg="top" aria-pressed="${f.top}">Top-level only</button><button class="chip" data-mg="inCalls" aria-pressed="${f.inCalls}">Companies with calls read</button><span class="small muted">${rows.length} filing${rows.length === 1 ? '' : 's'}</span></div>
+    <div class="rows mg">${rows.slice(0, 200).map(m => `<div class="r"><span style="min-width:0"><span class="nm" style="display:block">${esc(m.name)}</span><span class="sub">${esc(fdate(m.date))}${m.time ? ' · ' + esc(m.time) : ''}${m.top ? ' · <b style="color:var(--gold)">top-level</b>' : ''}</span></span>
+      <span style="min-width:0;display:grid;gap:6px">${m.changes.map(mgChange).join('')}</span>
+      <span style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">${m.url ? `<a class="btn" href="${esc(m.url)}" target="_blank" rel="noopener">Filing ↗</a>` : ''}${m.inCalls ? `<button class="btn" data-open="${esc(m.id)}">Open read</button>` : ''}</span></div>`).join('') || '<div class="empty">No management changes in this period.</div>'}</div></section>`;
+}
+
 /* Help */
 function vHelp() {
   const W = [['Guidance-backed growth & capacity', 45], ['Industry supply discipline', 20], ['Results delivered', 15], ['Pricing & utilisation', 10], ['Demand', 5], ['New developments & themes', 3], ['Tone & candour', 2]];
@@ -998,6 +1037,7 @@ function vHelp() {
       <div><b>Sector turns</b><span>Sub-sectors where supply discipline is building and pricing or utilisation is improving. This is the early sign of a turn.</span></div>
       <div><b>Themes</b><span>How many companies are discussing each investment theme, and how fast it is spreading.</span></div>
       <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the reasons and the lines from the call that say so. Uses the same Concall Signal Score as every other page. Filter to names whose next results are still to come.</span></div>
+      <div><b>Management changes</b><span>Every top-management change filed on BSE (checked every 30 minutes, with a GitHub alert for each top-level change), and companies whose new management is pushing growth.</span></div>
       <div><b>Ideas & red flags</b><span>Standout single companies (divergence, first movers, hidden suppliers, credibility upgrades) and calls that need a check.</span></div>
       <div><b>Company panel</b><span>Opens from anywhere. The <b>Call summary</b> tab has financial highlights, segments, guidance, capex, demand, Q&A, risks and verbatim quotes. The <b>Signals</b> tab has the triggers, mental models, the eight readings behind the score, credibility, and other companies that name it.</span></div>
     </div></section>
@@ -1023,7 +1063,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, calls: vCalls, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, help: vHelp};
+const RENDER = {home: vHome, calls: vCalls, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -1136,6 +1176,7 @@ function signalsHtml(c) {
       <section class="sec"><h3>Score by call</h3>${spark(c.hist, hl)}</section>
       <section class="sec"><h3>Management credibility ${tip('cred')}</h3>${c.credTested === 0 ? '<p><b>Untested.</b> <span class="muted">This builds once guidance from an earlier call can be checked against what was delivered.</span></p>' : `<p><b class="num" style="font-size:22px">${c.cred}</b> <span class="muted">of 100, from ${c.credTested} pieces of past guidance checked.</span></p>`}</section>
     </div>
+    ${mgmtSection(c)}
     ${(c.themes || []).length ? `<section class="sec"><h3>Themes discussed</h3><div class="chips">${c.themes.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></section>` : ''}
     ${(c.namedBy || []).length ? `<section class="sec"><h3>Named in other companies’ calls ${tip('namedBy')}</h3><div class="chips">${c.namedBy.map(n => `<button class="btn" data-open="${esc(n.id)}" title="Called it “${esc(n.as)}” in their ${esc(n.period)} call">${esc(n.name)} · ${esc(n.relation)}</button>`).join('')}</div></section>` : ''}
     ${(c.sources || []).filter(s => s.url).length ? `<section class="sec"><h3>Source documents</h3><div class="chips">${c.sources.filter(s => s.url).map(s => `<a class="tag" style="color:var(--blue)" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.type)} · ${esc(fdate(s.date))} ↗</a>`).join('')}</div></section>` : ''}
@@ -1195,7 +1236,7 @@ function scoreHtml(c) {
   const sum = b.parts.reduce((n, p) => n + p.pts, 0);
   return `<div style="display:grid;gap:18px">
     <section class="sb-eq"><span class="eyebrow">How ${c.score} was reached · ${esc(c.period)} call</span>
-      <div class="eqn">${b.parts.map(p => `${p.label} <b>${p.pts.toFixed(1)}</b>`).join(' + ')} = <b>${sum.toFixed(1)}</b>${b.watchPts ? ` · watch-points <b>−${Math.abs(b.watchPts)}</b>` : ''}${b.veto ? ` · veto cap <b>40</b>` : ''} → <b style="color:${vcol(c.score, c.veto)}">${b.final}</b></div>
+      <div class="eqn">${b.parts.map(p => `${p.label} <b>${p.pts.toFixed(1)}</b>`).join(' + ')} = <b>${sum.toFixed(1)}</b>${b.watchPts ? ` · watch-points <b>−${Math.abs(b.watchPts)}</b>` : ''}${b.mgmtPts ? ` · new management <b>+${b.mgmtPts}</b>` : ''}${b.veto ? ` · veto cap <b>40</b>` : ''} → <b style="color:${vcol(c.score, c.veto)}">${b.final}</b></div>
       <div class="sb-stack" role="img" aria-label="Points by component">${b.parts.map(p => `<i class="${SB_PART[p.key][0]}" style="width:${p.pts}%;background:var(--tc)" title="${esc(p.label)}: ${p.pts.toFixed(1)} of ${Math.round(p.w * 100)}"></i>`).join('')}</div>
       <div class="sb-leg">${b.parts.map(p => `<span class="${SB_PART[p.key][0]}">${esc(p.label)} ${p.pts.toFixed(1)}/${Math.round(p.w * 100)}</span>`).join('')}</div>
       <span class="small muted">${b.mode === 'blend' ? `Compared with the company’s ${b.prevCalls} earlier call${b.prevCalls === 1 ? '' : 's'} on record: 60% level, 40% change.` : 'First call on record for this company, so the score reflects where the business stands now; change starts counting from the next call.'}</span>
@@ -1210,6 +1251,7 @@ function scoreHtml(c) {
       </section>`; }).join('')}
     <section class="sec"><h3>Adjustments</h3><div class="sb-adj">
       ${b.watch.length ? b.watch.map(w => `<div class="flag" style="border-color:color-mix(in srgb,var(--warn) 50%,transparent);background:color-mix(in srgb,var(--warn) 9%,transparent)">−4 · ${esc(w)}</div>`).join('') + `<p class="small muted">Routine watch-points take 4 points each, up to 8 in all.</p>` : '<p class="muted">No watch-points: nothing deducted.</p>'}
+      ${b.mgmtPts ? `<div class="flag" style="border-color:color-mix(in srgb,var(--up) 50%,transparent);background:color-mix(in srgb,var(--up) 9%,transparent)">+${b.mgmtPts} · New management pushing growth${b.mgmt?.note ? ': ' + esc(b.mgmt.note) : ''}</div><p class="small muted">New top management with a specific, ambitious growth plan adds 4 points; a clear but less specific push adds 2.</p>` : ''}
       ${b.veto ? `<div class="flag">Veto: score capped at 40. ${esc(b.vetoWhy.join('; '))}</div>` : '<p class="muted">No veto.</p>'}
     </div></section>
     <details class="how"><summary>The full method</summary><div class="body sb-method">
@@ -1276,6 +1318,7 @@ document.addEventListener('click', e => {
   const fs = t.closest('[data-fs]'); if (fs) { S.first.status = fs.dataset.fs; render(); return; }
   const st = t.closest('[data-st]'); if (st) { S.turns.stage = st.dataset.st; render(); return; }
   const tl = t.closest('[data-tl]'); if (tl) { S.turns.level = tl.dataset.tl; render(); return; }
+  const mgt = t.closest('[data-mg]'); if (mgt) { const k = mgt.dataset.mg; S.mg[k] = !S.mg[k]; render(); return; }
   const ntc = t.closest('[data-ntc]'); if (ntc) { const k = ntc.dataset.ntc; S.near.chips.has(k) ? S.near.chips.delete(k) : S.near.chips.add(k); S.near.limit = 30; render(); return; }
   if (t.closest('#nt-more')) { S.near.limit += 30; render(); return; }
   const it = t.closest('[data-it]'); if (it) { S.ideas.tab = it.dataset.it; render(); return; }
@@ -1296,6 +1339,7 @@ document.addEventListener('change', e => {
   const id = e.target.id;
   if (id === 'c-big') { S.calls.big = e.target.value; S.calls.sub = ''; S.calls.limit = 50; render(); }
   if (id === 'c-sub') { S.calls.sub = e.target.value; S.calls.limit = 50; render(); }
+  if (id === 'mg-days') { S.mg.days = +e.target.value; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
   if (id === 'c-sort') { S.calls.sort = e.target.value; S.calls.limit = 50; fillCalls(); }
 });

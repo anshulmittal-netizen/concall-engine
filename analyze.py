@@ -370,11 +370,15 @@ def build(market: str, log=print) -> dict:
             heavy_evasion = len(r["evasions"]) >= 3 and b["tone"] <= -1
             veto = bool(dropped) or (heavy_evasion and b["tone"] <= -2) or bool(serious)
             score -= min(8, 4 * len(watch))  # routine watch-points dock points but do not cap
+            # new top management pushing growth: up to +4
+            gm = (r.get("growth") or {}).get("mgmt") or {}
+            mgmt_pts = 4 if gm.get("push", 0) >= 2 else 2 if gm.get("push", 0) == 1 else 0
+            score += mgmt_pts
             if dropped:
                 flags.insert(0, "Veto: guidance dropped without explanation (" + ", ".join(dropped[:2]) + ")")
             if heavy_evasion:
                 flags.append(f"{len(r['evasions'])} analyst questions deflected (" + ", ".join(e["topic"] for e in r["evasions"][:2]) + ")")
-            raw = score + min(8, 4 * len(watch))
+            raw = score + min(8, 4 * len(watch)) - mgmt_pts
             if veto:
                 score = min(score, 40)
             # exact working of the score, shipped to the dashboard so every point can be traced
@@ -404,6 +408,7 @@ def build(market: str, log=print) -> dict:
                 ],
                 "raw": round(raw, 1),
                 "watch": watch[:4], "watchPts": -min(8, 4 * len(watch)),
+                "mgmtPts": mgmt_pts, "mgmt": gm or None,
                 "veto": veto, "vetoWhy": ([f"Guidance dropped: {', '.join(dropped[:2])}"] if dropped else []) + serious[:3]
                            + (["Heavy evasion with very negative tone"] if heavy_evasion and b["tone"] <= -2 else []),
                 "final": round(max(0, min(100, score))),
@@ -546,6 +551,29 @@ def build(market: str, log=print) -> dict:
             "thesis": r0["thesis"], "laterCalls": len(per) - 1})
     first_timers.sort(key=lambda x: x["date"], reverse=True)
 
+    # 4d) management changes filed on BSE (mgmt.py) + what the calls said about new management
+    mstore = read_json(DATA / f"mgmt_{market}.json", {}).get("items", {})
+    by_code = {c["id"]: c for c in out_cos}
+    horizon = (today() - dt.timedelta(days=365)).isoformat()
+    mgmt_list = []
+    for it in sorted(mstore.values(), key=lambda x: (x.get("date", ""), x.get("time", "")), reverse=True):
+        if it.get("skipped") or not it.get("changes") or it.get("date", "") < horizon:
+            continue
+        ch = [x for x in it["changes"] if x.get("seniority") in ("top", "senior")]
+        if not ch:
+            continue
+        co = by_code.get(it["code"])
+        row = {"id": it["code"], "name": it["name"], "date": it["date"], "time": it.get("time", ""), "top": it.get("top", False),
+               "changes": ch, "url": it.get("url", ""), "issue": it.get("issue"), "inCalls": bool(co)}
+        mgmt_list.append(row)
+        if co is not None:
+            co.setdefault("mgmtEvents", []).append({k: row[k] for k in ("date", "top", "changes", "url")})
+    for c in out_cos:
+        g = (recs[c["id"]][c["periodKey"]].get("growth") or {}).get("mgmt")
+        if g:
+            c["mgmtCall"] = g
+        c["mgmtEvents"] = c.get("mgmtEvents", [])[:5]
+
     # 5) ideation
     ideas = build_ideas(out_cos, recs, first_seen, tstage, cfg, current)
 
@@ -571,6 +599,7 @@ def build(market: str, log=print) -> dict:
         "theme_candidates": [t for t, n in cand.most_common(30) if n >= 2],
         "calls": calls, "tracker": tracker, "trackers": trackers, "summaryCount": len(summaries),
         "firstTimers": first_timers, "historyChecked": len(hist),
+        "mgmt": mgmt_list[:400], "mgmtChecked": read_json(DATA / f"mgmt_{market}.json", {}).get("checked"),
         "inProgress": [{"season": label_from_key(p, market), "calls": per_count[p]} for p in later],
     }
     write_json(SITE / "data" / f"{market.lower()}.json", data)

@@ -11,7 +11,7 @@ from pathlib import Path
 
 from common import DATA, as_list, label_from_key, read_json, settings, write_json
 
-VERSION = 2
+VERSION = 3
 
 GROWTH_TOOL = {
     "name": "record_growth",
@@ -20,7 +20,7 @@ GROWTH_TOOL = {
         "type": "object",
         "required": ["capacity_additions", "utilisation_pct", "expansion_planned", "revenue_growth_pct", "guidance_strength",
                      "turnaround", "backing", "backing_clarity", "quarter_revenue_growth_pct", "quarter_ebitda_growth_pct",
-                     "growth_outlook", "rationale"],
+                     "growth_outlook", "mgmt_change", "rationale"],
         "properties": {
             "capacity_additions": {"type": "array", "maxItems": 5, "description": "Productive capacity the company itself is adding: plants, lines, stores, branches, rigs, beds, fleet, data-centre MW. Not EPC/construction orders (those are order book), not maintenance capex. Empty if none.",
                 "items": {"type": "object", "required": ["what", "quarters_until_live", "status", "materiality"], "properties": {
@@ -41,6 +41,13 @@ GROWTH_TOOL = {
             "quarter_revenue_growth_pct": {"type": ["number", "null"], "description": "This quarter's reported revenue growth YoY %, if stated"},
             "quarter_ebitda_growth_pct": {"type": ["number", "null"], "description": "This quarter's reported EBITDA (or operating profit; PAT for banks/NBFCs) growth YoY %, if stated"},
             "growth_outlook": {"type": "integer", "enum": [-2, -1, 0, 1, 2], "description": "How strongly the call points to growth over the next 4 quarters: -2 shrinking, 0 flat or unclear, +2 strong growth clearly backed by orders, capacity or guidance"},
+            "mgmt_change": {"type": "object", "required": ["discussed", "growth_push"], "description": "Change in top management (CEO, MD, CFO, COO, chairman, business heads, promoter succession) discussed on this call or in the last year",
+                "properties": {
+                    "discussed": {"type": "boolean"},
+                    "roles": {"type": "array", "items": {"type": "string"}, "description": "e.g. ['New MD & CEO (joined May 2026)']"},
+                    "note": {"type": "string", "description": "One sentence: who changed, when, and what they said they will do"},
+                    "growth_push": {"type": "integer", "enum": [-2, -1, 0, 1, 2], "description": "How strongly the new management is pushing growth: +2 a specific, ambitious growth plan (targets, capacity, new markets) they own; 0 no change or no clear stance; -2 exits, disruption or a retreat"},
+                    "initiatives": {"type": "array", "maxItems": 4, "items": {"type": "string"}, "description": "Concrete growth initiatives the new management announced"}}},
             "rationale": {"type": "string", "description": "One sentence, with numbers, on the guidance and how it will be delivered"},
         },
     },
@@ -49,6 +56,7 @@ GROWTH_TOOL = {
 SYSTEM = """You read a buy-side brief of an Indian listed company's earnings call and record its growth and capacity facts.
 Use only what the brief and quotes say; never invent numbers. Count only the company's own capacity, not competitors'.
 Maintenance capex is not capacity. EPC, construction and service contracts are order book, not capacity.
+For mgmt_change, count only top management (CEO, MD, CFO, COO, chairman, business heads, promoter succession), not independent directors or company secretaries.
 Judge backing strictly: big growth guidance with no specific capacity, orders or contracts behind it is 'vague'. A timeline like 'by Q3 FY27' in a Q1 FY27 call is 2 quarters away; 'H2 FY27' is 2;
 'end of FY27' is 3; 'FY28' is 4 or more."""
 
@@ -106,7 +114,19 @@ def _clean(g: dict) -> dict:
             "backing": [str(b) for b in as_list(g.get("backing")) if isinstance(b, str)][:6],
             "clarity": clar if clar in ("clear", "partial", "vague", "none") else "none",
             "qRev": num(g.get("quarter_revenue_growth_pct")), "qEbitda": num(g.get("quarter_ebitda_growth_pct")),
-            "outlook": clamp2(g.get("growth_outlook")), "why": str(g.get("rationale") or "")[:400]}
+            "outlook": clamp2(g.get("growth_outlook")), "why": str(g.get("rationale") or "")[:400],
+            "mgmt": _mgmt(g.get("mgmt_change"))}
+
+
+def _mgmt(m) -> dict | None:
+    if not isinstance(m, dict) or not m.get("discussed"):
+        return None
+    try:
+        push = max(-2, min(2, int(m.get("growth_push", 0))))
+    except (TypeError, ValueError):
+        push = 0
+    return {"roles": [str(x)[:120] for x in as_list(m.get("roles")) if isinstance(x, str)][:4], "note": str(m.get("note") or "")[:300],
+            "push": push, "initiatives": [str(x)[:200] for x in as_list(m.get("initiatives")) if isinstance(x, str)][:4]}
 
 
 def pending(market: str) -> list[Path]:

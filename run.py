@@ -182,6 +182,11 @@ def cmd_growth(a):
     growth.run(a.market, a.limit, log)
 
 
+def cmd_mgmt(a):
+    import mgmt
+    mgmt.run(a.market, days=a.days or 2, log=log)
+
+
 def cmd_history(a):
     """First-time concall check against BSE filing history (cached; only new companies are checked)."""
     import glob
@@ -227,15 +232,16 @@ def cmd_all(a):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "extract", "summarize", "growth", "history", "analyze", "all", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "extract", "summarize", "growth", "mgmt", "history", "analyze", "all", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
+    p.add_argument("--days", type=int, help="mgmt: how many days of filings to read")
     p.add_argument("--interviews", action="store_true", help="include interview channels (local machine only)")
     a = p.parse_args(argv)
     if a.command != "serve" and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "history": cmd_history, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "mgmt": cmd_mgmt, "history": cmd_history, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":
