@@ -2,417 +2,398 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Carlito:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Carlito:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: research desk. Summary strip (highlights + live ticker) on top, then four tabbed boards; the feed is a list + detail split. Navy ground, gold reserved for supply-side signals and the strongest reads. */
-:root {
-  --bg:#0A1325; --panel:#0F1B33; --panel2:#15233F; --line:#22335A; --fg:#E6EBF5; --muted:#8B97B3;
-  --gold:#D6A94A; --goldsoft:rgba(214,169,74,.24); --up:#4DB487; --down:#E26B5E; --warn:#E5A33A;
-  --blue:#79A6EA; --teal:#4EC3B4; --violet:#B28CE2; --rose:#E58FB6; --sand:#E2B39C;
-  --shadow:0 12px 32px rgba(0,0,0,.35);
+/* Layout: research desk. Left rail groups the views by job (Start, Calls, Sectors, Ideas, Help); a sticky bar carries the quarter switch and company search; any company opens in a side panel over the current view. Navy ground, gold kept for the strongest reads. */
+:root{
+  --bg:#0A1325; --rail:#0C172C; --panel:#101D37; --panel2:#162542; --line:#23365C; --fg:#E7ECF6; --muted:#8E9AB6; --faint:#5F6C8A;
+  --gold:#D9AC4C; --goldsoft:rgba(217,172,76,.18); --up:#4DB487; --down:#E5705F; --warn:#E5A33A; --blue:#7FA9EC; --teal:#4EC3B4; --violet:#B28CE2; --rose:#E58FB6; --sand:#E2B39C;
+  --onGold:#1A1405; --shadow:0 18px 48px rgba(0,0,0,.45); --scrim:rgba(4,9,20,.6);
   --display:'Archivo','Arial Narrow',system-ui,sans-serif;
   --body:'Carlito',Calibri,'Segoe UI',system-ui,sans-serif;
-  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1);
   color-scheme:dark;
 }
-@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
-  --bg:#EEF2F8; --panel:#FFFFFF; --panel2:#F3F6FB; --line:#D5DDEA; --fg:#0D1A33; --muted:#56627D;
-  --gold:#9E6F12; --goldsoft:rgba(214,169,74,.34); --up:#1E8656; --down:#BE3F33; --warn:#A86A10;
-  --blue:#2F63B8; --teal:#167E72; --violet:#7449B5; --rose:#B33E72; --sand:#9A5A3D;
-  --shadow:0 8px 24px rgba(13,26,51,.08); color-scheme:light; } }
-:root[data-theme="light"] {
-  --bg:#EEF2F8; --panel:#FFFFFF; --panel2:#F3F6FB; --line:#D5DDEA; --fg:#0D1A33; --muted:#56627D;
-  --gold:#9E6F12; --goldsoft:rgba(214,169,74,.34); --up:#1E8656; --down:#BE3F33; --warn:#A86A10;
-  --blue:#2F63B8; --teal:#167E72; --violet:#7449B5; --rose:#B33E72; --sand:#9A5A3D;
-  --shadow:0 8px 24px rgba(13,26,51,.08); color-scheme:light; }
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){
+  --bg:#EEF2F8; --rail:#E5EBF4; --panel:#FFFFFF; --panel2:#F3F6FB; --line:#D4DCEA; --fg:#0D1A33; --muted:#55617C; --faint:#8893AA;
+  --gold:#9A6B0F; --goldsoft:rgba(214,169,74,.2); --up:#1E8656; --down:#BE3F33; --warn:#A86A10; --blue:#2F63B8; --teal:#167E72; --violet:#7449B5; --rose:#B33E72; --sand:#9A5A3D;
+  --onGold:#FFFFFF; --shadow:0 18px 48px rgba(13,26,51,.16); --scrim:rgba(13,26,51,.35); color-scheme:light; } }
+:root[data-theme="light"]{
+  --bg:#EEF2F8; --rail:#E5EBF4; --panel:#FFFFFF; --panel2:#F3F6FB; --line:#D4DCEA; --fg:#0D1A33; --muted:#55617C; --faint:#8893AA;
+  --gold:#9A6B0F; --goldsoft:rgba(214,169,74,.2); --up:#1E8656; --down:#BE3F33; --warn:#A86A10; --blue:#2F63B8; --teal:#167E72; --violet:#7449B5; --rose:#B33E72; --sand:#9A5A3D;
+  --onGold:#FFFFFF; --shadow:0 18px 48px rgba(13,26,51,.16); --scrim:rgba(13,26,51,.35); color-scheme:light; }
 
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
-.wrap{max-width:1320px;margin:0 auto;display:grid;gap:18px}
-.wrap>*{min-width:0}
-.qbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:-6px}
-.qbar .seg button{padding:7px 14px;font-family:var(--display);font-stretch:90%;font-weight:600;font-size:14px}
-.qbar .seg button[aria-pressed="true"]{background:var(--gold);color:#1a1405}
-.qnote{font-size:13px;color:var(--muted)}
-.co .trg .mini{white-space:normal;max-width:100%}
-.tbl .open{white-space:nowrap;max-width:220px;overflow:hidden;text-overflow:ellipsis;text-align:left}
-h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
-button{font:inherit;color:inherit}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15.5px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+h1,h2,h3,h4{font-family:var(--display);margin:0;text-wrap:balance;font-stretch:88%}
+p{margin:0}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--blue)}
 :focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .eyebrow{font-family:var(--display);font-stretch:85%;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.muted{color:var(--muted)}
+.small{font-size:13px}
 
-/* Header */
-.top{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
-.brand{display:flex;gap:14px;align-items:center;min-width:0}
-.mark{width:40px;height:40px;flex:none;position:relative}
-.mark i{position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold);border-right-color:transparent;animation:spin 6s linear infinite}
-.mark i+i{inset:8px;border-color:var(--blue);border-left-color:transparent;animation-duration:4s;animation-direction:reverse}
-.mark b{position:absolute;inset:16px;border-radius:50%;background:var(--gold);animation:pulse 2.2s ease-in-out infinite}
+/* ---------- shell ---------- */
+.app{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:228px minmax(0,1fr);gap:28px;align-items:start}
+.rail{position:sticky;top:env(safe-area-inset-top,0px);height:100vh;padding-block:22px;display:flex;flex-direction:column;gap:22px;overflow-y:auto}
+.brand{display:flex;gap:12px;align-items:center}
+.mark{width:34px;height:34px;flex:none;position:relative}
+.mark i{position:absolute;inset:0;border-radius:50%;border:2px solid var(--gold);border-right-color:transparent;animation:spin 9s linear infinite}
+.mark b{position:absolute;inset:11px;border-radius:50%;background:var(--gold)}
 @keyframes spin{to{transform:rotate(360deg)}}
-@keyframes pulse{50%{transform:scale(.6);opacity:.6}}
-.brand h1{font-size:26px;font-weight:800;font-stretch:88%;letter-spacing:-.01em}
-.brand p{margin:2px 0 0;color:var(--muted);font-size:14px}
-.season{display:grid;gap:8px;min-width:min(100%,340px)}
-.season-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.chip-sample{font-size:11.5px;font-family:var(--mono);padding:2px 8px;border-radius:99px;border:1px dashed var(--warn);color:var(--warn)}
-.prog{display:grid;grid-template-columns:62px 1fr auto;gap:10px;align-items:center;font-size:13px}
-.bar{height:6px;border-radius:9px;background:var(--line);overflow:hidden}
-.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:9px;transform-origin:left;animation:grow 1.4s cubic-bezier(.2,.8,.2,1) both}
+.brand h1{font-size:19px;font-weight:800;line-height:1.1}
+.brand p{font-size:12.5px;color:var(--muted)}
+.nav{display:grid;gap:18px}
+.nav-group{display:grid;gap:2px}
+.nav-group>.eyebrow{padding:0 10px 4px;font-size:10.5px;color:var(--faint)}
+.nav button{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;text-align:left;background:none;border:0;border-radius:9px;padding:8px 10px;color:var(--muted);font-family:var(--display);font-stretch:92%;font-weight:600;font-size:14.5px;transition:background .18s,color .18s}
+.nav button:hover{background:var(--panel);color:var(--fg)}
+.nav button[aria-current="page"]{background:var(--panel2);color:var(--fg);box-shadow:inset 3px 0 0 var(--gold)}
+.nav .ct{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--muted);background:var(--panel);border-radius:99px;padding:1px 7px}
+.nav button[aria-current="page"] .ct{background:var(--goldsoft);color:var(--fg)}
+.rail-foot{margin-top:auto;font-size:12.5px;color:var(--muted);display:grid;gap:6px;border-top:1px solid var(--line);padding-top:14px}
+.live{display:inline-flex;align-items:center;gap:7px}
+.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--up);box-shadow:0 0 0 0 var(--up);animation:ping 2.4s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 6px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+.main{min-width:0;display:grid;gap:22px}
+.bar-top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:flex;gap:12px 18px;align-items:center;flex-wrap:wrap;padding-block:14px;border-bottom:1px solid var(--line)}
+.qwrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-width:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel);max-width:100%;flex-wrap:wrap}
+.seg button{background:none;border:0;padding:7px 12px;font-size:13.5px;color:var(--muted);display:inline-flex;gap:6px;align-items:center;transition:background .18s,color .18s}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--gold);color:var(--onGold);font-weight:700}
+.seg button[aria-pressed="true"] .num{opacity:.85}
+.seg .num{font-size:11.5px;opacity:.75}
+.prog-dot{width:6px;height:6px;border-radius:50%;background:var(--warn);display:inline-block}
+.find{position:relative;flex:1 1 240px;max-width:420px;margin-left:auto}
+.find input{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 12px 8px 34px;font-size:14.5px}
+.find svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.find-res{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;display:grid;gap:2px;z-index:25;max-height:60vh;overflow:auto}
+.find-res button{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;text-align:left;background:none;border:0;border-radius:8px;padding:8px 10px}
+.find-res button:hover,.find-res button.on{background:var(--panel2)}
+.find-res b{font-family:var(--display);font-stretch:90%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.find-res span{font-size:12.5px;color:var(--muted)}
+
+/* ---------- view frame ---------- */
+.view{display:grid;gap:18px;min-width:0;animation:enter .32s var(--ease) both}
+@keyframes enter{from{opacity:.001;transform:translateY(8px)}}
+.vhead{display:grid;gap:8px}
+.vhead .row{display:flex;gap:10px 16px;align-items:baseline;flex-wrap:wrap}
+.vhead h2{font-size:clamp(24px,3vw,30px);font-weight:800;line-height:1.1}
+.vhead .purpose{color:var(--muted);max-width:72ch;font-size:15.5px}
+.badge{font-size:12px;font-family:var(--mono);padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.badge.warn{border-color:color-mix(in srgb,var(--warn) 60%,transparent);color:var(--warn)}
+details.how{background:var(--panel);border:1px solid var(--line);border-radius:12px;max-width:900px}
+details.how summary{list-style:none;cursor:pointer;padding:10px 14px;display:flex;gap:8px;align-items:center;font-family:var(--display);font-stretch:90%;font-weight:600;font-size:14px;color:var(--fg)}
+details.how summary::-webkit-details-marker{display:none}
+details.how summary::before{content:"";width:7px;height:7px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg);transition:transform .2s;margin-right:4px}
+details.how[open] summary::before{transform:rotate(45deg)}
+details.how .body{padding:0 16px 14px 32px;display:grid;gap:8px;font-size:14.5px}
+details.how ol,details.how ul{margin:0;padding-left:18px;display:grid;gap:5px}
+details.how b{font-weight:700}
+
+/* info tips */
+.i{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;border:1px solid var(--faint);background:none;color:var(--muted);font:600 10.5px/1 var(--mono);padding:0;vertical-align:1px;margin-left:5px;flex:none;transition:border-color .15s,color .15s}
+.i:hover,.i[aria-expanded="true"]{border-color:var(--gold);color:var(--gold)}
+#pop{position:fixed;z-index:60;max-width:min(340px,calc(100vw - 32px));background:var(--panel2);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:12px 14px;font-size:14px;display:grid;gap:6px;animation:enter .18s var(--ease) both}
+#pop h4{font-size:15px}
+#pop p{color:var(--fg);opacity:.92}
+
+/* ---------- shared bits ---------- */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.grid-auto{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:12px}
+.btn{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:6px 12px;font-size:13.5px;transition:border-color .15s,background .15s;white-space:nowrap}
+.btn:hover{border-color:var(--gold)}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:var(--onGold);font-weight:700}
+.link{background:none;border:0;padding:0;color:var(--blue);font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.toolbar select,.toolbar input[type=search]{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:14px;max-width:100%}
+.toolbar input[type=search]{flex:1 1 200px;min-width:0}
+.chip{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:13px;color:var(--muted);transition:all .15s}
+.chip[aria-pressed="true"]{border-color:var(--gold);color:var(--fg);background:var(--goldsoft)}
+.count-line{font-size:13px;color:var(--muted)}
+.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
+.pill{display:inline-flex;align-items:center;gap:5px;font-family:var(--display);font-stretch:88%;font-weight:700;font-size:12px;letter-spacing:.04em;padding:2px 9px;border-radius:99px;white-space:nowrap;color:var(--pc);background:color-mix(in srgb,var(--pc) 15%,transparent)}
+.v-strong{--pc:var(--gold)}.v-good{--pc:var(--up)}.v-avg{--pc:var(--muted)}.v-weak{--pc:var(--warn)}.v-poor{--pc:var(--down)}.v-flag{--pc:var(--down)}
+.st-turning{--pc:var(--gold)}.st-emerging{--pc:var(--blue)}.st-confirming{--pc:var(--up)}.st-crowded{--pc:var(--warn)}.st-deteriorating{--pc:var(--down)}.st-neutral{--pc:var(--muted)}
+.delta{font-family:var(--mono);font-size:12.5px;font-weight:600;white-space:nowrap}
+.delta.up{color:var(--up)}.delta.dn{color:var(--down)}.delta.zero{color:var(--faint);font-weight:400}
+.g-up{color:var(--up)}.g-dn{color:var(--down)}.g-flat{color:var(--muted)}
+.sbar{height:6px;border-radius:4px;background:var(--panel2);overflow:hidden;flex:1;min-width:40px}
+.sbar i{display:block;height:100%;border-radius:4px;transform-origin:left;animation:grow .8s var(--ease) both}
 @keyframes grow{from{transform:scaleX(0)}}
-.pipe{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
-.pipe b{color:var(--fg);font-family:var(--mono);font-weight:600;margin-right:4px}
-.live{display:inline-flex;align-items:center;gap:6px}
-.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--up);box-shadow:0 0 0 0 var(--up);animation:ping 1.8s infinite}
-@keyframes ping{70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.scorecell{display:flex;align-items:center;gap:8px}
+.scorecell b{font-family:var(--mono);font-size:15px;min-width:22px}
 
-/* Highlights */
-.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
-.hl-tile{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;display:grid;gap:6px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s;animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
-.hl-tile:hover{transform:translateY(-2px);border-color:var(--gold)}
-.hl-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,var(--goldsoft) 50%,transparent 65%);transform:translateX(-100%);animation:sheen 4.5s ease-in-out infinite}
-.hl-tile:nth-child(2)::after{animation-delay:1.5s}.hl-tile:nth-child(3)::after{animation-delay:3s}
-@keyframes sheen{40%,100%{transform:translateX(100%)}}
-.hl-tile strong{font-family:var(--display);font-size:18px;font-stretch:90%;font-weight:700}
-.hl-tile span.small{color:var(--muted);font-size:13.5px}
-@keyframes rise{from{opacity:.15;transform:translateY(10px)}}
+/* list rows (tables that fold into cards on phones) */
+.rows{display:grid;border:1px solid var(--line);border-radius:14px;background:var(--panel);overflow:hidden}
+.r{display:grid;gap:4px 14px;align-items:center;padding:11px 14px;border-top:1px solid var(--line);text-align:left;background:none;border-left:0;border-right:0;border-bottom:0;width:100%;transition:background .15s}
+.r:first-child{border-top:0}
+button.r:hover{background:var(--panel2)}
+.r.hd{background:var(--panel2);font-family:var(--display);font-stretch:88%;font-weight:600;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-block:9px}
+.r .nm{font-family:var(--display);font-weight:700;font-stretch:90%;font-size:15.5px;line-height:1.2}
+.r .sub{font-size:12.5px;color:var(--muted)}
+.r .why{font-size:13.5px;color:var(--muted);line-height:1.4}
+.calls .r{grid-template-columns:34px minmax(0,1.3fr) 150px 84px minmax(0,1fr) minmax(0,1.8fr) 104px 72px}
+.r .rk{font-family:var(--mono);font-size:12.5px;color:var(--faint)}
+.more{display:flex;justify-content:center;gap:12px;align-items:center;padding:6px}
 
-/* Ticker */
-.ticker{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:8px 0;font-size:13.5px;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.ticker-track{display:inline-flex;gap:34px;animation:marquee 46s linear infinite}
-.ticker:hover .ticker-track{animation-play-state:paused}
-@keyframes marquee{to{transform:translateX(-50%)}}
-.tk{display:inline-flex;gap:8px;align-items:center}
-.tk em{font-style:normal;color:var(--muted)}
+/* ---------- home ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px}
+.today{background:linear-gradient(130deg,var(--goldsoft),transparent 60%),var(--panel);border:1px solid color-mix(in srgb,var(--gold) 40%,var(--line));border-radius:16px;padding:20px 22px;display:grid;gap:14px}
+.today h3{font-size:clamp(19px,2.2vw,23px);font-weight:700;line-height:1.25;max-width:40ch}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.stat{display:grid;gap:2px}
+.stat b{font-family:var(--mono);font-size:24px;font-weight:600}
+.stat span{font-size:12.5px;color:var(--muted)}
+.prog{height:8px;border-radius:9px;background:var(--panel2);overflow:hidden}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--gold));border-radius:9px;transform-origin:left;animation:grow 1.2s var(--ease) both}
+.steps{display:grid;gap:10px;counter-reset:s}
+.steps li{list-style:none;display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);font:600 12px var(--mono);color:var(--gold)}
+.steps{margin:0;padding:0}
+.steps b{font-family:var(--display);font-stretch:90%}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
+.pick{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:6px;align-content:start;transition:transform .2s var(--ease),border-color .2s}
+.pick:hover{transform:translateY(-2px);border-color:var(--gold)}
+.pick strong{font-family:var(--display);font-stretch:90%;font-size:17px;line-height:1.2}
+.pick .small{color:var(--muted)}
+.pick .go{font-size:12.5px;color:var(--blue)}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.mini-list .r{grid-template-columns:minmax(0,1fr) auto;padding-block:9px}
+.list-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px}
+.list-head h3{font-size:17px}
+.welcome{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--panel2);border:1px dashed var(--line);border-radius:14px;padding:12px 16px;font-size:14.5px}
 
-/* Tabs */
-.tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
-.tab{background:none;border:0;padding:10px 14px 12px;cursor:pointer;font-family:var(--display);font-weight:600;font-stretch:90%;font-size:15px;color:var(--muted);position:relative}
-.tab[aria-selected="true"]{color:var(--fg)}
-.tab[aria-selected="true"]::after{content:"";position:absolute;left:10px;right:10px;bottom:-1px;height:3px;border-radius:3px;background:var(--gold);animation:grow .4s both}
-.tab .count{font-family:var(--mono);font-size:11.5px;margin-left:6px;padding:1px 6px;border-radius:99px;background:var(--panel2)}
-
-/* Feed */
-.feed{display:grid;grid-template-columns:minmax(0,370px) minmax(0,1fr);gap:18px;align-items:start}
-.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.seg button{background:none;border:0;padding:6px 11px;cursor:pointer;font-size:13.5px;color:var(--muted)}
-.seg button[aria-pressed="true"]{background:var(--panel2);color:var(--fg)}
-#q{flex:1;min-width:120px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:7px 10px;color:var(--fg);font:inherit;font-size:14px}
-.list{display:grid;gap:8px}
-.co{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;transition:border-color .2s,transform .2s,background .2s;animation:rise .5s cubic-bezier(.2,.8,.2,1) both}
-.co:hover{transform:translateX(3px)}
-.co[aria-selected="true"]{border-color:var(--gold);background:var(--panel2)}
-.co .nm{font-family:var(--display);font-weight:700;font-stretch:90%;font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.co .mt{color:var(--muted);font-size:12.5px}
-.co .trg{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
-.mini{font-size:11.5px;padding:1px 7px;border-radius:99px;background:color-mix(in srgb,var(--tc) 16%,transparent);color:var(--tc);white-space:nowrap}
-.ringbox{position:relative;display:grid;place-items:center}
-.ringbox .v{position:absolute;font-family:var(--mono);font-weight:600}
-.ring-fg{animation:ring 1.2s cubic-bezier(.2,.8,.2,1) both}
-@keyframes ring{from{stroke-dashoffset:var(--c)}}
-.delta{font-family:var(--mono);font-size:12.5px;font-weight:600;padding:2px 7px;border-radius:7px}
-.delta.up{color:var(--up);background:color-mix(in srgb,var(--up) 14%,transparent)}
-.delta.dn{color:var(--down);background:color-mix(in srgb,var(--down) 14%,transparent)}
-.veto{font-family:var(--mono);font-size:11px;color:var(--down);border:1px solid var(--down);border-radius:6px;padding:1px 6px;animation:blink 1.6s ease-in-out infinite}
-@keyframes blink{50%{opacity:.45}}
-
-.detail{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:20px;box-shadow:var(--shadow);min-width:0}
-.d-head{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
-.d-head h2{font-size:30px;font-weight:800;font-stretch:85%;line-height:1.05}
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.tag{font-size:12.5px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
-.scorebox{display:flex;gap:14px;align-items:center}
-.scorebox .cap{font-size:12.5px;color:var(--muted);max-width:110px}
-.thesis{position:relative;padding:16px 18px;border-radius:14px;background:linear-gradient(120deg,var(--goldsoft),transparent 70%);border:1px solid color-mix(in srgb,var(--gold) 45%,transparent);animation:rise .6s .1s both}
-.thesis p{margin:6px 0 0;font-family:var(--display);font-stretch:92%;font-weight:600;font-size:clamp(17px,2.1vw,21px);line-height:1.3;max-width:68ch}
-.thesis .arch{display:inline-flex;margin-top:10px;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
-.thesis .arch b{color:var(--gold);font-family:var(--display);font-stretch:88%}
-.d-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px}
-.sec-title{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
-.triggers{display:grid;gap:10px}
-.trig{display:grid;grid-template-columns:4px minmax(0,1fr);gap:12px;animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
-.trig .stripe{border-radius:4px;background:var(--tc)}
-.trig .tt{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.trig .tt strong{font-family:var(--display);font-stretch:90%;font-size:15.5px}
-.trig blockquote{margin:5px 0 0;color:var(--fg);opacity:.88;font-size:14.5px;line-height:1.5}
-.trig blockquote::before{content:"\201C"}.trig blockquote::after{content:"\201D"}
-.trig .note{margin:5px 0 0;font-size:14px;color:var(--muted)}
-.trig .note::before{content:"System read · ";font-family:var(--mono);font-size:11.5px}
-mark.hl{color:inherit;background:linear-gradient(var(--tc),var(--tc)) no-repeat 0 92%/0% 32%;background-color:transparent;padding:0 1px;animation:sweep .9s cubic-bezier(.3,.7,.2,1) forwards}
-mark.hl{background-image:linear-gradient(color-mix(in srgb,var(--tc) 45%,transparent),color-mix(in srgb,var(--tc) 45%,transparent))}
-@keyframes sweep{to{background-size:100% 40%}}
-.models{display:flex;gap:8px;flex-wrap:wrap}
-.model{position:relative;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--panel2);font-size:13px;flex:1 1 150px;animation:pop .5s cubic-bezier(.3,1.4,.5,1) both}
-.model b{display:block;font-family:var(--display);font-stretch:90%;font-size:14.5px;margin-bottom:2px}
-.model span{color:var(--muted)}
-@keyframes pop{from{transform:scale(.85);opacity:.2}}
-.schema{display:grid;gap:7px}
-.srow{display:grid;grid-template-columns:118px minmax(0,1fr) 28px;gap:10px;align-items:center;font-size:13px}
-.strack{position:relative;height:10px;background:var(--panel2);border-radius:6px}
-.strack::before{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--muted);opacity:.5}
-.sfill{position:absolute;top:0;bottom:0;border-radius:6px;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
-.sfill.pos{left:50%;transform-origin:left;background:var(--up)}
-.sfill.neg{right:50%;transform-origin:right;background:var(--down)}
-.srow.lead .sfill.pos{background:var(--gold)}
-.srow .sv{text-align:right;font-family:var(--mono);font-size:12px;color:var(--muted)}
-.hist{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:16px;align-items:end}
-.draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s cubic-bezier(.4,.1,.2,1) forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-.cred .meter{height:8px;border-radius:6px;background:var(--panel2);overflow:hidden;margin-top:6px}
-.cred .meter span{display:block;height:100%;background:var(--teal);transform-origin:left;animation:grow 1.2s .3s both}
-.cred .big{font-family:var(--mono);font-size:24px;font-weight:600}
-.flags{display:grid;gap:6px}
-.flag{display:flex;gap:10px;align-items:center;padding:9px 12px;border-radius:10px;border:1px solid color-mix(in srgb,var(--down) 50%,transparent);background:color-mix(in srgb,var(--down) 9%,transparent);font-size:14px;animation:rise .5s both}
-.flag::before{content:"!";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--down);color:var(--bg);font-weight:700;font-size:13px;flex:none}
-
-/* trigger type colours */
-.t-supply{--tc:var(--gold)}.t-util{--tc:var(--blue)}.t-pricing{--tc:var(--teal)}.t-structure{--tc:var(--violet)}
-.t-inventory{--tc:var(--sand)}.t-demand{--tc:var(--muted)}.t-guidance{--tc:var(--up)}.t-novelty{--tc:var(--rose)}.t-tone{--tc:var(--down)}
-
-/* Sectors */
-.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px}
-.legend i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
-.sectors{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-.sector{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:10px;animation:rise .6s cubic-bezier(.2,.8,.2,1) both;min-width:0}
-.sector.hit{border-color:var(--gold);box-shadow:0 0 0 0 var(--goldsoft);animation:rise .6s both,glow 2.6s 1s ease-in-out infinite}
-@keyframes glow{50%{box-shadow:0 0 0 6px var(--goldsoft)}}
-.sector h3{font-size:18px;font-stretch:88%;font-weight:700}
-.s-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
-.stage{font-family:var(--display);font-stretch:85%;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:99px;white-space:nowrap;color:var(--sc);background:color-mix(in srgb,var(--sc) 15%,transparent)}
-.st-turning{--sc:var(--gold)}.st-emerging{--sc:var(--blue)}.st-confirming{--sc:var(--up)}.st-crowded{--sc:var(--warn)}.st-deteriorating{--sc:var(--down)}.st-neutral{--sc:var(--muted)}
-.pattern{font-size:13px;font-weight:700;color:var(--gold);display:flex;gap:6px;align-items:center}
-.pattern::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pulse 1.6s infinite}
-.s-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:12px;color:var(--muted)}
-.s-stats b{display:block;font-family:var(--mono);font-size:15px;color:var(--fg)}
-.s-note{font-size:13.5px;color:var(--muted);margin:0}
+/* ---------- tracker ---------- */
+.cov{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:18px;align-items:center}
+.cov .big{font-family:var(--mono);font-size:28px;font-weight:600}
+.trk .r{grid-template-columns:minmax(0,1.4fr) 150px 92px 86px 106px minmax(0,1fr) 120px}
+.trk .r.sec{cursor:pointer}
+.trk .r.subr{background:color-mix(in srgb,var(--panel2) 55%,transparent)}
+.trk .r.subr .nm{font-size:14.5px;padding-left:18px}
+.caret{display:inline-block;width:0;height:0;border-left:5px solid var(--muted);border-top:4px solid transparent;border-bottom:4px solid transparent;margin-right:8px;transition:transform .2s;vertical-align:2px}
+.open>div>.nm .caret,.r.open .caret{transform:rotate(90deg)}
+.c-m{display:none}
+.covcell{display:flex;align-items:center;gap:8px}
+.covcell .num{font-size:12.5px;white-space:nowrap}
+.gidx{font-family:var(--mono);font-weight:600}
+.cos{display:flex;flex-wrap:wrap;gap:6px;padding:4px 0 2px 18px;grid-column:1/-1}
+.cos button{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:12.5px}
+.cos button:hover{border-color:var(--gold)}
 svg text{font-family:var(--mono)}
 
-/* Themes */
-.themes{display:grid;gap:8px}
-.th-row{display:grid;grid-template-columns:minmax(0,1.6fr) 140px 70px 80px minmax(0,1fr) 110px;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;animation:rise .5s cubic-bezier(.2,.8,.2,1) both}
-.th-head{background:none;border:0;padding:0 14px;animation:none;font-size:12px;color:var(--muted)}
-.th-name{font-family:var(--display);font-stretch:90%;font-weight:700;font-size:15.5px}
-.th-name small{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:12.5px}
-.th-now{font-family:var(--mono);font-size:20px;font-weight:600}
-.colbar{transform-box:fill-box;transform-origin:bottom;animation:barup .8s cubic-bezier(.2,.8,.2,1) both}
-@keyframes barup{from{transform:scaleY(0)}}
-.split{display:grid;gap:4px;font-size:12px;color:var(--muted)}
-.split .sb{display:flex;height:8px;border-radius:5px;overflow:hidden;background:var(--panel2)}
-.split .sb i{display:block;height:100%;transform-origin:left;animation:grow 1s both}
-.split .in{background:var(--gold)}.split .us{background:var(--blue)}
+/* ---------- guidance ---------- */
+.gcard{display:grid;gap:10px;align-content:start}
+.gcard .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.gcard h4{font-size:17px}
+.gauge{position:relative;height:8px;border-radius:6px;background:linear-gradient(90deg,var(--down),var(--panel2) 50%,var(--up))}
+.gauge i{position:absolute;top:-5px;width:4px;height:18px;border-radius:2px;background:var(--fg);transform:translateX(-2px);transition:left .8s var(--ease)}
+.gauge-l{display:flex;justify-content:space-between;font-size:11px;color:var(--faint);font-family:var(--mono)}
+.quote-line{font-size:14px;border-left:3px solid var(--gold);padding-left:10px}
 
-/* Ideation */
-.ideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
-.idea{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:8px;animation:rise .55s cubic-bezier(.2,.8,.2,1) both}
-.idea.red{border-color:color-mix(in srgb,var(--down) 55%,transparent)}
-.idea .rk{font-family:var(--mono);color:var(--muted);font-size:12px}
-.idea h3{font-size:19px;font-stretch:88%}
-.idea p{margin:0;font-size:14px;color:var(--muted)}
-.idea .row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.itype{font-size:12px;font-weight:700;font-family:var(--display);font-stretch:85%;letter-spacing:.05em;text-transform:uppercase;color:var(--tc)}
-.open{background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:6px 12px;cursor:pointer;font-size:13.5px}
-.open:hover{border-color:var(--gold)}
-.sub{color:var(--muted);font-size:14px;margin:0 0 14px;max-width:80ch}
+/* ---------- turns + themes ---------- */
+.turn{display:grid;gap:10px;align-content:start}
+.turn.hit{border-color:var(--gold)}
+.turn .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.turn h4{font-size:17px}
+.brow{display:grid;grid-template-columns:118px minmax(0,1fr) 40px;gap:10px;align-items:center;font-size:13px}
+.brow .sbar{height:8px}
+.brow .num{text-align:right;font-size:12.5px}
+.th .r{grid-template-columns:minmax(0,1.5fr) minmax(0,1.2fr) 64px 110px}
+.thbar{display:flex;align-items:center;gap:8px}
 
-/* Rankings + tracker tables */
-.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
-table.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
-.tbl th{position:sticky;top:0;background:var(--panel2);text-align:left;font-family:var(--display);font-stretch:88%;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
-.tbl td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-.tbl tr:last-child td{border-bottom:0}
-.tbl tbody tr{cursor:pointer;transition:background .15s;animation:rise .45s cubic-bezier(.2,.8,.2,1) both}
-.tbl tbody tr:hover{background:var(--panel2)}
-.tbl .rk{font-family:var(--mono);color:var(--muted);width:44px}
-.tbl .nm{font-family:var(--display);font-weight:700;font-stretch:90%;font-size:15px}
-.tbl .th-txt{color:var(--muted);font-size:13px;max-width:52ch}
-.tbl .sc{display:flex;align-items:center;gap:8px;min-width:120px}
-.scbar{flex:1;height:6px;border-radius:4px;background:var(--panel2);overflow:hidden;min-width:50px}
-.scbar i{display:block;height:100%;border-radius:4px;transform-origin:left;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
-.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
-.filters select{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:7px 10px;font:inherit;font-size:14px}
-.spark14{display:block}
-.trk-co{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.trk-co button{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:3px 8px;font-size:12.5px;cursor:pointer}
-.trk-co button:hover{border-color:var(--gold)}
-.pill{font-family:var(--mono);font-size:12px;padding:1px 7px;border-radius:99px;background:var(--panel2)}
-.cov{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:12px}
-.cov b{font-family:var(--mono);font-size:24px}
-.cov .bar{flex:1;min-width:180px;height:8px}
-.tbl tr.subrow td{background:color-mix(in srgb,var(--panel2) 60%,transparent);font-size:13.5px}
-.tbl tr.subrow td:first-child{padding-left:30px}
-.tbl tr.sec .nm::before{content:"\25B8";display:inline-block;margin-right:8px;color:var(--muted);transition:transform .2s}
-.tbl tr.sec.open .nm::before{transform:rotate(90deg)}
-.covbar{display:flex;align-items:center;gap:8px;min-width:130px}
-.gidx{font-family:var(--mono);font-weight:600}
-.guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-.gcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:8px;animation:rise .5s both}
-.gcard.top{border-color:var(--gold)}
-.gcard .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.gcard h4{margin:0;font-family:var(--display);font-stretch:88%;font-size:17px}
-.gcard .par{font-size:12.5px;color:var(--muted)}
-.gauge{position:relative;height:10px;border-radius:6px;background:linear-gradient(90deg,var(--down),var(--panel2) 50%,var(--up))}
-.gauge i{position:absolute;top:-4px;width:4px;height:18px;border-radius:2px;background:var(--fg);transform:translateX(-2px);animation:slide 1s cubic-bezier(.2,.8,.2,1) both}
-@keyframes slide{from{left:50%!important}}
-.gcard .line{font-size:13.5px}
-.gcard .line b{font-family:var(--display);font-stretch:90%}
-.pill.new{background:var(--goldsoft);color:var(--fg)}
+/* ---------- ideas + first ---------- */
+.idea{display:grid;gap:8px;align-content:start}
+.idea.red{border-color:color-mix(in srgb,var(--down) 55%,var(--line))}
+.idea .top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.idea h4{font-size:18px}
+.idea p{font-size:14px;color:var(--muted)}
+.idea .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.tag{font-size:12.5px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.first .r{grid-template-columns:minmax(0,1.3fr) 100px 110px 70px minmax(0,1fr) minmax(0,2fr)}
 
-/* Detailed summary */
-.summary{border-top:1px solid var(--line);padding-top:18px;display:grid;gap:16px}
-.summary .s-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.summary .headline{font-family:var(--display);font-stretch:92%;font-weight:600;font-size:18px;line-height:1.3;margin:0}
-.summary .overview{margin:0;max-width:75ch;line-height:1.55}
-.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-.s-card{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;animation:rise .5s both}
-.s-card h4{margin:0 0 8px;font-family:var(--display);font-stretch:88%;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.s-card ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14px}
-.fin{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.fin div{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
-.fin b{display:block;font-family:var(--mono);font-size:15px}
+/* ---------- help ---------- */
+.help{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:24px;align-items:start}
+.help article{display:grid;gap:26px;max-width:78ch}
+.help section{display:grid;gap:10px}
+.help h3{font-size:21px}
+.help p,.help li{font-size:15.5px}
+.help ul,.help ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.toc{position:sticky;top:90px;display:grid;gap:4px;font-size:14px}
+.toc a{color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:7px}
+.toc a:hover{background:var(--panel);color:var(--fg)}
+.vguide{display:grid;gap:8px}
+.vguide div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.vguide div b{font-family:var(--display);font-stretch:90%}
+.weights{display:grid;gap:8px}
+.weights .w{display:grid;grid-template-columns:170px minmax(0,1fr) 40px;gap:10px;align-items:center;font-size:14px}
+.weights .sbar{height:10px}
+.weights .sbar i{background:var(--gold)}
+dl.gl{margin:0;display:grid;gap:0}
+dl.gl div{display:grid;grid-template-columns:170px minmax(0,1fr);gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+dl.gl dt{font-family:var(--display);font-stretch:90%;font-weight:700}
+dl.gl dd{margin:0;color:var(--fg);opacity:.92}
+.bands{display:flex;flex-wrap:wrap;gap:8px}
+
+/* ---------- company panel ---------- */
+.scrim{position:fixed;inset:0;background:var(--scrim);z-index:40;animation:fade .25s both}
+@keyframes fade{from{opacity:0}}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:50;width:min(760px,100%);background:var(--bg);border-left:1px solid var(--line);box-shadow:var(--shadow);
+  display:flex;flex-direction:column;animation:slide .32s var(--ease) both;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px)}
+@keyframes slide{from{transform:translateX(40px);opacity:.001}}
+.dr-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 20px;border-bottom:1px solid var(--line)}
+.dr-body{overflow-y:auto;padding:20px 22px 40px;display:grid;gap:20px;align-content:start;overscroll-behavior:contain}
+.dr-head h2{font-size:clamp(24px,3.2vw,30px);font-weight:800;line-height:1.08;margin-top:4px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.verdict{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.bigscore{font-family:var(--mono);font-size:44px;font-weight:600;line-height:1}
+.vfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px 16px}
+.vfacts div{display:grid;gap:1px}
+.vfacts span{font-size:12px;color:var(--muted)}
+.vfacts b{font-size:15px}
+.oneline{padding:14px 16px;border-radius:12px;background:linear-gradient(120deg,var(--goldsoft),transparent 75%);border:1px solid color-mix(in srgb,var(--gold) 40%,transparent)}
+.oneline p{font-family:var(--display);font-stretch:92%;font-weight:600;font-size:17.5px;line-height:1.35;margin-top:4px}
+.dtabs{display:flex;gap:4px;border-bottom:1px solid var(--line)}
+.dtabs button{background:none;border:0;padding:9px 12px 11px;font-family:var(--display);font-stretch:90%;font-weight:600;font-size:15px;color:var(--muted);position:relative}
+.dtabs button[aria-selected="true"]{color:var(--fg)}
+.dtabs button[aria-selected="true"]::after{content:"";position:absolute;left:8px;right:8px;bottom:-1px;height:3px;border-radius:3px;background:var(--gold)}
+.sec{display:grid;gap:10px}
+.sec>h3{font-size:16px;display:flex;align-items:center}
+.fin{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.fin div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:grid;gap:1px}
+.fin b{font-family:var(--mono);font-size:14.5px}
 .fin span{font-size:12px;color:var(--muted)}
-.qa{display:grid;gap:10px}
-.qa details{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.scards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:10px}
+.scard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.scard h4{font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.scard ul{margin:0;padding-left:18px;display:grid;gap:5px;font-size:14.5px}
+.qa{display:grid;gap:8px}
+.qa details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
 .qa summary{cursor:pointer;font-weight:700}
-.qa p{margin:8px 0 0;color:var(--fg);opacity:.9}
-.quotes blockquote{margin:0 0 8px;padding-left:12px;border-left:3px solid var(--gold);font-size:14.5px}
+.qa p{margin-top:8px;opacity:.92}
+.quotes blockquote{margin:0 0 8px;padding-left:12px;border-left:3px solid var(--gold);font-size:15px}
+.trig{display:grid;grid-template-columns:4px minmax(0,1fr);gap:12px}
+.trig .stripe{border-radius:4px;background:var(--tc)}
+.trig strong{font-family:var(--display);font-stretch:90%;font-size:15.5px}
+.trig blockquote{margin:5px 0 0;font-size:14.5px;opacity:.9}
+.trig blockquote::before{content:"\201C"}.trig blockquote::after{content:"\201D"}
+.mini{font-size:11.5px;padding:1px 8px;border-radius:99px;background:color-mix(in srgb,var(--tc) 16%,transparent);color:var(--tc);white-space:nowrap;margin-right:6px}
+mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 30%,transparent);border-radius:3px;padding:0 2px}
+.t-supply{--tc:var(--gold)}.t-util{--tc:var(--blue)}.t-pricing{--tc:var(--teal)}.t-structure{--tc:var(--violet)}.t-inventory{--tc:var(--sand)}.t-demand{--tc:var(--muted)}.t-guidance{--tc:var(--up)}.t-novelty{--tc:var(--rose)}.t-tone{--tc:var(--down)}
+.models{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px}
+.model{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--panel);font-size:13.5px}
+.model b{display:block;font-family:var(--display);font-stretch:90%;font-size:14.5px}
+.model span{color:var(--muted)}
+.schema{display:grid;gap:7px}
+.srow{display:grid;grid-template-columns:120px minmax(0,1fr) 30px;gap:10px;align-items:center;font-size:13.5px}
+.strack{position:relative;height:10px;background:var(--panel2);border-radius:6px}
+.strack::before{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--faint)}
+.sfill{position:absolute;top:0;bottom:0;border-radius:6px;animation:grow .7s var(--ease) both}
+.sfill.pos{left:50%;transform-origin:left;background:var(--up)}
+.sfill.neg{right:50%;transform-origin:right;background:var(--down)}
+.srow .sv{text-align:right;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.scale{display:grid;grid-template-columns:120px minmax(0,1fr) 30px;gap:10px;font-size:11px;color:var(--faint);font-family:var(--mono)}
+.scale span:nth-child(2){display:flex;justify-content:space-between}
+.flag{display:flex;gap:10px;align-items:center;padding:9px 12px;border-radius:10px;border:1px solid color-mix(in srgb,var(--down) 50%,transparent);background:color-mix(in srgb,var(--down) 9%,transparent);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.copied{font-size:12.5px;color:var(--up)}
+.linkbox{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-family:var(--mono);font-size:12px}
 
-@media (max-width:980px){
-  .feed{grid-template-columns:1fr}
-  .d-grid{grid-template-columns:1fr}
-  .th-row{grid-template-columns:minmax(0,1fr) 120px 60px;row-gap:8px}
-  .th-row .c4,.th-row .c5,.th-row .c6{grid-column:auto}
-  .th-head{display:none}
+/* ---------- responsive ---------- */
+@media (max-width:1180px){
+  .calls .r{grid-template-columns:30px minmax(0,1.4fr) 140px 84px minmax(0,2fr) 104px}
+  .calls .r .c-sec,.calls .r .c-date{display:none}
+  .trk .r{grid-template-columns:minmax(0,1.4fr) 140px 86px 80px 100px minmax(0,1fr)}
+  .trk .r .c-days{display:none}
 }
-@media (max-width:520px){
-  .th-row{grid-template-columns:minmax(0,1fr) auto}
-  .hist{grid-template-columns:1fr}
-  .srow{grid-template-columns:96px minmax(0,1fr) 24px}
-  .d-head h2{font-size:24px}
+@media (max-width:1000px){
+  .app{grid-template-columns:1fr;gap:0}
+  .rail{position:static;height:auto;padding-block:16px 6px;gap:12px}
+  .rail-foot{display:none}
+  .nav{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;mask-image:linear-gradient(90deg,#000 92%,transparent);scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav-group{display:contents}
+  .nav-group>.eyebrow{display:none}
+  .nav button{width:auto;white-space:nowrap;border:1px solid var(--line);background:var(--panel)}
+  .nav button[aria-current="page"]{box-shadow:none;border-color:var(--gold)}
+  .hero,.two,.cov{grid-template-columns:1fr}
+  .help{grid-template-columns:1fr}
+  .toc{display:none}
+  .main{gap:18px}
 }
+@media (max-width:760px){
+  .r.hd{display:none}
+  .calls .r{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"co sc" "why why" "meta meta"}
+  .calls .r .c-rk{display:none}
+  .calls .r .c-co{grid-area:co}.calls .r .c-sc{grid-area:sc;min-width:120px}
+  .calls .r .c-why{grid-area:why}
+  .calls .r .c-meta{grid-area:meta;display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px}
+  .calls .r .c-ch,.calls .r .c-g{display:none}
+  .trk .r{grid-template-columns:minmax(0,1fr) auto}
+  .trk .r>:nth-child(n+3){display:none}
+  .trk .r .c-m{display:block;grid-column:1/-1;font-size:12.5px;color:var(--muted)}
+  .trk .r .cos{display:flex}
+  .th .r{grid-template-columns:minmax(0,1fr) auto}
+  .th .r>:nth-child(2){grid-column:1/-1;order:3}
+  .first .r{grid-template-columns:minmax(0,1fr) auto}
+  .first .r>:nth-child(n+3){grid-column:1/-1}
+  .first .r>:nth-child(3),.first .r>:nth-child(4){display:none}
+  .vguide div,dl.gl div{grid-template-columns:1fr;gap:2px}
+  .weights .w{grid-template-columns:120px minmax(0,1fr) 34px}
+  .verdict{grid-template-columns:1fr}
+  .dr-body{padding:16px max(16px,env(safe-area-inset-left,0px)) 40px}
+  .find{max-width:none;margin-left:0}
+  .srow,.scale{grid-template-columns:96px minmax(0,1fr) 26px}
+}
+@media (min-width:761px){ .c-meta{display:contents} .c-meta .m-only{display:none} }
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
-  mark.hl{background-size:100% 40%}
-  .draw{stroke-dashoffset:0}
+  html{scroll-behavior:auto}
 }
-
-/* Market switch */
-.markets{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
-.mkt{display:grid;gap:4px;text-align:left;min-width:220px;flex:1 1 220px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 16px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .25s,background .25s}
-.mkt[aria-selected="true"]{border-color:var(--gold);background:var(--panel2)}
-.mkt[aria-selected="true"]::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--gold);animation:growY .5s both}
-@keyframes growY{from{transform:scaleY(0)}}
-.mkt .mk-name{font-family:var(--display);font-weight:800;font-stretch:85%;font-size:22px;display:flex;gap:10px;align-items:baseline}
-.mkt .mk-sub{font-size:13px;color:var(--muted)}
-.mkt .bar{margin-top:4px}
-.src{display:flex;gap:6px;flex-wrap:wrap}
-.src a{font-size:12.5px;color:var(--blue);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:2px 8px}
-.src a:hover{border-color:var(--blue)}
-.tchips{display:flex;gap:6px;flex-wrap:wrap}
-.empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}
 </style>
-<div class="wrap">
-  <header class="top">
+
+<div class="app">
+  <aside class="rail">
     <div class="brand">
-      <div class="mark" aria-hidden="true"><i></i><i></i><b></b></div>
-      <div>
-        <h1>Concall Signal Desk</h1>
-        <p>Concalls, interviews and presentations, read through the capital-cycle framework.</p>
+      <div class="mark" aria-hidden="true"><i></i><b></b></div>
+      <div><h1>Concall Signal Desk</h1><p>India · below ₹50,000 Cr</p></div>
+    </div>
+    <nav class="nav" id="nav" aria-label="Views"></nav>
+    <div class="rail-foot" id="railfoot"></div>
+  </aside>
+
+  <div class="main">
+    <div class="bar-top">
+      <div class="qwrap"><span class="eyebrow">Quarter</span><div class="seg" id="qsel" role="group" aria-label="Quarter"></div><button class="i" data-tip="quarter" aria-label="About the quarter switch">?</button></div>
+      <div class="find">
+        <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.6 3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+        <input id="find" type="search" placeholder="Find a company by name or ticker" aria-label="Find a company" autocomplete="off">
+        <div class="find-res" id="findres" hidden></div>
       </div>
     </div>
-    <div class="pipe" id="status"></div>
-  </header>
-
-  <nav class="markets" role="tablist" aria-label="Market" id="markets"></nav>
-
-  <section class="highlights" id="highlights" aria-label="Highlights"></section>
-  <div class="ticker" aria-label="Recently scored calls"><div class="ticker-track" id="ticker"></div></div>
-
-  <div class="qbar" id="qbar"><span class="eyebrow">Quarter</span><div class="seg" id="qsel" role="group" aria-label="Quarter"></div><span class="qnote" id="qnote"></span></div>
-  <nav class="tabs" role="tablist" aria-label="Board">
-    <button class="tab" role="tab" id="tab-feed" data-tab="feed" aria-selected="true">Signal feed<span class="count" id="cnt-feed"></span></button>
-    <button class="tab" role="tab" id="tab-rank" data-tab="rank" aria-selected="false">Best to worst calls<span class="count" id="cnt-rank"></span></button>
-    <button class="tab" role="tab" id="tab-tracker" data-tab="tracker" aria-selected="false">Sector tracker<span class="count" id="cnt-tracker"></span></button>
-    <button class="tab" role="tab" id="tab-guide" data-tab="guide" aria-selected="false">Guidance leaders<span class="count" id="cnt-guide"></span></button>
-    <button class="tab" role="tab" id="tab-first" data-tab="first" aria-selected="false">First-time calls<span class="count" id="cnt-first"></span></button>
-    <button class="tab" role="tab" id="tab-sectors" data-tab="sectors" aria-selected="false">Sector turnarounds<span class="count" id="cnt-sectors"></span></button>
-    <button class="tab" role="tab" id="tab-themes" data-tab="themes" aria-selected="false">Theme momentum<span class="count" id="cnt-themes"></span></button>
-    <button class="tab" role="tab" id="tab-ideas" data-tab="ideas" aria-selected="false">Ideation<span class="count" id="cnt-ideas"></span></button>
-  </nav>
-
-  <section id="panel-feed" role="tabpanel" aria-labelledby="tab-feed">
-    <div class="feed">
-      <div>
-        <div class="controls">
-          <div class="seg" id="sort">
-            <button data-s="score" aria-pressed="true">Score</button><button data-s="delta" aria-pressed="false">Change</button><button data-s="date" aria-pressed="false">Latest</button>
-          </div>
-          <input id="q" type="search" placeholder="Search company, sector or theme" aria-label="Search company, sector or theme">
-        </div>
-        <div class="list" id="list" role="listbox" aria-label="Scored companies"></div>
-      </div>
-      <article class="detail" id="detail" aria-live="polite"></article>
-    </div>
-  </section>
-
-  <section id="panel-rank" role="tabpanel" aria-labelledby="tab-rank" hidden>
-    <p class="sub">Every call read this season, ranked by Concall Signal Score. Click a row to open the company's full read and call summary.</p>
-    <div class="filters">
-      <select id="rk-period" aria-label="Quarter"></select>
-      <select id="rk-big" aria-label="Sector"></select>
-      <select id="rk-sector" aria-label="Sub-sector"></select>
-      <div class="seg" id="rk-order"><button data-o="best" aria-pressed="true">Best first</button><button data-o="worst" aria-pressed="false">Worst first</button></div>
-    </div>
-    <div class="tbl-wrap"><table class="tbl" id="rk-table"></table></div>
-  </section>
-
-  <section id="panel-tracker" role="tabpanel" aria-labelledby="tab-tracker" hidden>
-    <div class="filters"><select id="trk-season" aria-label="Season"></select></div>
-    <div class="cov" id="trk-cov"></div>
-    <p class="sub" id="trk-sub">Every sector in the universe, with how many companies have held their call this season. Click a sector to see its sub-sectors, and a sub-sector to see its companies. Updated every morning.</p>
-    <div class="tbl-wrap"><table class="tbl" id="trk-table"></table></div>
-  </section>
-
-  <section id="panel-guide" role="tabpanel" aria-labelledby="tab-guide" hidden>
-    <div class="filters"><select id="guide-season" aria-label="Season"></select></div>
-    <p class="sub">Where management is guiding hardest this season. The guidance index runs from 0 (cutting) through 50 (neutral) to 100 (raising), and each company's guidance counts for more when its management has delivered past guidance. Sub-sectors need at least two calls to rank.</p>
-    <div class="guide-grid" id="guide-lead"></div>
-    <h3 style="font-size:17px;margin:22px 0 10px">Weakest guidance</h3>
-    <div class="guide-grid" id="guide-lag"></div>
-  </section>
-
-  <section id="panel-first" role="tabpanel" aria-labelledby="tab-first" hidden>
-    <p class="sub">Companies holding their first-ever earnings call. <b>Confirmed</b>: the transcript itself says it is the first or maiden call. <b>Likely</b>: BSE shows no earnings call transcript and no analyst / investor meet filing for the company from 2019 until this call. Newest first.</p>
-    <div class="tbl-wrap"><table class="tbl" id="first-table"></table></div>
-    <p class="sub" id="first-note" style="margin-top:10px;font-size:12.5px"></p>
-  </section>
-
-  <section id="panel-sectors" role="tabpanel" aria-labelledby="tab-sectors" hidden>
-    <p class="sub">Breadth = share of companies in the sub-sector whose latest call shows the signal. A turn is flagged when supply discipline has been high for one to three quarters and utilisation or pricing breadth is now rising, while demand talk is still lukewarm.</p>
-    <div class="legend">
-      <span><i style="background:var(--gold);height:4px"></i>Supply discipline</span>
-      <span><i style="background:var(--blue)"></i>Utilisation rising</span>
-      <span><i style="background:var(--teal)"></i>Pricing improving</span>
-      <span><i style="background:var(--muted)"></i>Demand positive</span>
-    </div>
-    <div class="sectors" id="sectors"></div>
-  </section>
-
-  <section id="panel-themes" role="tabpanel" aria-labelledby="tab-themes" hidden>
-    <p class="sub">Number of distinct companies in this market that discussed each theme with substance. Sorted by growth over the last two quarters. The last column shows the same theme's count in the other market, for lead-lag.</p>
-    <div class="themes" id="themes"></div>
-  </section>
-
-  <section id="panel-ideas" role="tabpanel" aria-labelledby="tab-ideas" hidden>
-    <p class="sub">Single-company outliers from this season, plus the red-flag mirror. Each goes to the linker agent for a full work-up.</p>
-    <div class="ideas" id="ideas"></div>
-  </section>
+    <main id="view" class="view" aria-live="polite"><div class="empty">Loading the latest calls…</div></main>
+  </div>
 </div>
+<div id="pop" role="dialog" hidden></div>
+<div id="drawer-root"></div>
 
 <script>
-const TYPES = {supply:'Supply',util:'Utilisation',pricing:'Pricing',structure:'Industry structure',inventory:'Inventory',demand:'Demand',guidance:'Guidance',novelty:'Novelty',tone:'Tone & evasion'};
-const BLOCKS = [['supply','Supply'],['pricing','Pricing & util.'],['structure','Structure'],['inventory','Inventory'],['demand','Demand'],['guidance','Guidance'],['novelty','Novelty'],['tone','Tone']];
+const ART_URL = 'https://claude.ai/artifact/Y3XcRY258aCXgadeZKZbh3';
+
+/* ---------- vocabulary ---------- */
+const TYPES = {supply:'Supply',util:'Utilisation',pricing:'Pricing',structure:'Industry structure',inventory:'Inventory',demand:'Demand',guidance:'Guidance',novelty:'Something new',tone:'Tone'};
+const BLOCKS = [['supply','Supply discipline'],['pricing','Pricing & utilisation'],['structure','Industry structure'],['inventory','Inventory'],['demand','Demand'],['guidance','Guidance'],['novelty','Something new'],['tone','Tone & candour']];
 const MODELS = {
   'Capital cycle':'Returns turn when supply growth stops, before demand recovers.',
   'Supply discipline':'Peers deferring capacity keeps pricing intact.',
@@ -434,537 +415,629 @@ const MODELS = {
   'Capital allocation shift':'Buybacks, dividends or exits from low-return segments.',
   'Management change':'New leadership resetting strategy, targets or culture.'
 };
-
-/* ---------- Sample data (fictional companies and quotes), shown only until the engine writes data/in.json and data/us.json ---------- */
-const QIN = ['Q1 FY26','Q2 FY26','Q3 FY26','Q4 FY26','Q1 FY27','Q2 FY27'];
-const QUS = ['Q2 CY25','Q3 CY25','Q4 CY25','Q1 CY26','Q2 CY26','Q3 CY26'];
-const T = (t, label, q, hl) => ({t, label, q, hl});
-const N = (t, label, note) => ({t, label, q: '', note});
-const co = (o) => Object.assign({flags: [], themes: [], sources: [], verified: 1, veto: false}, o);
-const SAMPLE = {
- IN: {market:'IN', loading:true, season:'', periods:[], universe:0, scored:0, capNote:'Below \u20B950,000 Cr',
-   companies:[], sectors:[], themes:[], ideas:[], calls:[], trackers:{}},
- US: {market:'US', sample:true, off:true, season:'Q3 CY26', periods:QUS, universe:3480, scored:1086, capNote:'Below $5.7B (₹50,000 Cr at ₹88/$)',
-  companies: [
-   co({id:'meridian',name:'Meridian Thermal Systems',sector:'HVAC & cooling',mcap:'$2.1B',call:'Q3 CY26 transcript · 14 Oct',date:'2026-10-14',score:81,delta:9,cred:71,archetype:'Supply-side dominance',models:['Capacity bottleneck','Pricing power','Backlog conversion'],
-    thesis:'Lead times on liquid-cooling units have stretched to 40 weeks, and management would rather extend them than build capacity ahead of demand.',
-    triggers:[T('supply','Capacity held back','We are choosing to stay disciplined on capacity and would rather extend lead times than build ahead of demand.','would rather extend lead times'),
-      T('pricing','Lead times ~40 weeks','Lead times on our liquid-cooling units are now around 40 weeks.','around 40 weeks'),
-      T('demand','Backlog +62% YoY','Backlog ended the quarter up 62% year over year.','up 62% year over year'),
-      N('tone','Analysts pivot to margins','7 of 11 analyst questions were on margins and pricing, against 2 of 9 last quarter.')],
-    blocks:{supply:2,pricing:2,structure:1,inventory:0,demand:2,guidance:1,novelty:1,tone:1},hist:[60,63,66,70,72,81],themes:['Data-centre power & cooling']}),
-   co({id:'ridgeline',name:'Ridgeline Grid Products',sector:'Electrical equipment',mcap:'$3.4B',call:'Q3 CY26 transcript · 16 Oct',date:'2026-10-16',score:77,delta:13,cred:80,archetype:'Supply-side dominance',models:['Capacity bottleneck','Pricing power'],
-    thesis:'Transformer lead times sit above two years and the company is adding only 10% capacity, keeping pricing firm.',
-    triggers:[T('supply','Measured capacity add','We are adding about 10% capacity, and we will not chase the full backlog with new plants.','will not chase the full backlog'),
-      T('pricing','Price increases holding','Our last two price increases have held with no pushback on new orders.','have held with no pushback'),
-      T('guidance','Revenue guide raised','We are raising full-year revenue guidance by four percentage points.','raising full-year revenue guidance')],
-    blocks:{supply:2,pricing:2,structure:1,inventory:0,demand:2,guidance:2,novelty:0,tone:1},hist:[58,60,62,61,64,77],themes:['Grid capex & transformers','Data-centre power & cooling']}),
-   co({id:'corvan',name:'Corvan Industrial',sector:'Specialty chemicals',mcap:'$1.4B',call:'Q3 CY26 transcript · 9 Oct',date:'2026-10-09',score:69,delta:12,cred:69,archetype:'Cyclical bottoming',models:['Capital cycle','Supply exit'],
-    thesis:'Two competitor plant closures remove about 18% of regional capacity, while Corvan cuts its own growth capex.',
-    triggers:[T('structure','Competitor plant closures','With the two closures announced this year, roughly 18% of regional capacity is coming out.','roughly 18% of regional capacity'),
-      T('supply','Growth capex cut by a third','We are reducing growth capex by a third and focusing on debottlenecking.','reducing growth capex by a third'),
-      T('inventory','Channel at 5-year low','Distributor inventories are the leanest we have seen in five years.','leanest we have seen in five years')],
-    blocks:{supply:2,pricing:1,structure:2,inventory:1,demand:-1,guidance:0,novelty:0,tone:0},hist:[44,42,47,51,57,69],themes:['Specialty chem destocking end']}),
-   co({id:'halvorsen',name:'Halvorsen Pharma Services',sector:'API & CDMO',mcap:'$2.8B',call:'Q3 CY26 transcript + presentation · 7 Oct',date:'2026-10-07',score:66,delta:8,cred:63,archetype:'Value migration',models:['Customer stickiness','Backlog conversion'],
-    thesis:'Peptide fill-finish capacity is sold out through 2027 on two GLP-1 programmes.',
-    triggers:[T('demand','Peptide capacity sold out','Our peptide fill-finish capacity is fully committed through 2027.','fully committed through 2027'),
-      T('novelty','Second GLP-1 programme','We signed a second GLP-1 programme this quarter.','second GLP-1 programme')],
-    blocks:{supply:0,pricing:1,structure:0,inventory:0,demand:2,guidance:1,novelty:2,tone:1},hist:[52,54,55,57,58,66],themes:['GLP-1 supply chain']}),
-   co({id:'tamarack',name:'Tamarack Building Materials',sector:'Building materials',mcap:'$1.1B',call:'Q3 CY26 transcript · 8 Oct',date:'2026-10-08',score:36,delta:-17,cred:48,veto:true,archetype:'Red flag',models:['Working-capital stress'],
-    thesis:'Dealer inventory built for a second quarter and full-year margin guidance was not repeated.',
-    triggers:[T('inventory','Dealer inventory rising','Dealer inventory was up again this quarter as sell-through slowed.','Dealer inventory was up again'),
-      N('guidance','Margin guidance dropped','Full-year margin guidance given in the last two calls was not repeated.')],
-    flags:['Veto: guidance dropped without explanation (EBITDA margin)'],blocks:{supply:-1,pricing:-1,structure:0,inventory:-2,demand:-1,guidance:-2,novelty:0,tone:-1},hist:[55,54,56,53,53,36],themes:['Housing & real-estate cycle']})],
-  sectors: [
-   {name:'Specialty chemicals',stage:'turning',label:'Turning',n:18,hit:true,note:'60% of 18 companies show supply discipline; pricing breadth 22% → 40%, demand talk still at 33%.',s:{supply:[15,20,31,44,55,60],util:[35,33,34,38,44,53],pricing:[18,15,17,22,29,40],demand:[30,28,27,29,31,33]}},
-   {name:'HVAC & cooling',stage:'confirming',label:'Confirming',n:9,note:'Pricing (76%) and demand (90%) breadth both high.',s:{supply:[50,52,55,58,61,63],util:[70,74,78,82,85,88],pricing:[40,48,56,63,70,76],demand:[65,70,76,82,86,90]}},
-   {name:'Electrical equipment',stage:'confirming',label:'Confirming',n:21,note:'Pricing (68%) and demand (81%) breadth both high.',s:{supply:[44,46,47,50,52,55],util:[62,66,70,73,77,80],pricing:[45,50,55,60,64,68],demand:[60,64,69,74,78,81]}},
-   {name:'API & CDMO',stage:'emerging',label:'Emerging',n:12,note:'Demand breadth up 18 pts over two quarters.',s:{supply:[20,22,22,25,26,28],util:[40,41,44,47,52,57],pricing:[22,22,24,25,27,30],demand:[28,30,33,38,47,56]}},
-   {name:'Building materials',stage:'deteriorating',label:'Deteriorating',n:16,note:'Pricing breadth down 14 pts and demand down 17 pts over two quarters.',s:{supply:[25,24,22,22,20,19],util:[60,58,56,55,50,44],pricing:[42,40,36,34,27,20],demand:[48,46,44,42,33,25]}}],
-  themes: [
-   {name:'Data-centre power & cooling',sub:'HVAC & cooling, Electrical equipment',c:[3,5,8,12,19,26],spans:5,other:18,stage:'confirming',label:'Confirming'},
-   {name:'Agentic AI in IT services',sub:'Software products, IT services',c:[0,0,2,5,11,17],spans:3,other:22,stage:'emerging',label:'Emerging'},
-   {name:'GLP-1 supply chain',sub:'API & CDMO, Medical devices',c:[1,2,4,5,9,14],spans:2,other:9,stage:'emerging',label:'Emerging'},
-   {name:'Grid capex & transformers',sub:'Electrical equipment',c:[4,6,8,11,14,17],spans:2,other:28,stage:'confirming',label:'Confirming'},
-   {name:'Tariffs & trade policy',sub:'Building materials, Auto components',c:[12,25,31,33,30,27],spans:9,other:null,stage:'crowded',label:'Crowded'},
-   {name:'Specialty chem destocking end',sub:'Specialty chemicals',c:[1,1,1,2,5,7],spans:2,other:19,stage:'emerging',label:'Emerging'}],
-  ideas: [
-   {id:'meridian',type:'Credibility upgrade',t:'guidance',why:'Raised guidance with a credibility score of 71.'},
-   {id:'ridgeline',type:'Divergence',t:'supply',why:'Score 77 vs sub-sector median 58 across 21 Electrical equipment companies.'},
-   {id:'corvan',type:'Divergence',t:'supply',why:'Score 69 vs sub-sector median 51 across 18 Specialty chemicals companies.'},
-   {id:'halvorsen',type:'First mover',t:'novelty',why:'Among the first 5 companies to talk about GLP-1 supply chain.'},
-   {id:'tamarack',type:'Red flag',t:'tone',red:true,why:'Veto: guidance dropped without explanation (EBITDA margin)'}]
- }
+const IDEA_TYPES = {
+  'Divergence':'Scores well above the median call in its own sub-sector. The company is doing something its peers are not.',
+  'First mover':'Among the first companies to talk about a theme that is now spreading.',
+  'Hidden supplier':'Named as a supplier or partner in at least two other companies’ calls.',
+  'Credibility upgrade':'Raised guidance, and management has a record of delivering what it guides.',
+  'Red flag':'Something in the call that needs checking before anyone owns or buys the stock.'
+};
+const GL = {
+  score:['Concall Signal Score','0 to 100. How strongly the call points to an improving business, read through the capital-cycle lens. Built from eight readings of the call, weighted: supply 30, pricing & utilisation 20, guidance × credibility 20, new developments & themes 15, demand 10, tone 5. Most calls land between 45 and 65.'],
+  verdict:['Verdict','A plain label for the score. Strong 70+, Good 60–69, Average 50–59, Weak 40–49, Poor below 40. Red flag means a veto capped the score at 40.'],
+  change:['vs last call','Points gained or lost against the company’s previous call. A dash means this is the first call we have read for the company, so there is nothing to compare yet.'],
+  pct:['Rank in quarter','Where the call ranks among all calls read for the same quarter. “Top 10%” means only a tenth of the quarter’s calls scored higher.'],
+  cred:['Management credibility','0 to 100: how often past guidance was delivered in later calls. “Untested” means there is no earlier guidance to check yet. Untested scores are trimmed by 15% so new names do not jump the queue.'],
+  veto:['Veto','A serious negative (guidance withdrawn without reason, auditor or governance issue, regulatory action) caps the score at 40, however good the rest of the call was.'],
+  guidance:['Guidance','What management said about the future in this call. Raised: targets lifted or new positive targets given. Cut: targets lowered or withdrawn. Steady: reiterated or no change.'],
+  gidx:['Guidance index','0 to 100 for a group of companies. 50 is neutral. Above 60: more companies raised than cut. Below 40: cuts dominate. Companies whose management has delivered before count for more.'],
+  coverage:['Reported','Companies that have held and filed their call this quarter, out of all listed companies below ₹50,000 Cr in that sector.'],
+  new:['New','Calls filed in the last day / the last 7 days. The engine reads new filings every night.'],
+  avg:['Average score','Mean Concall Signal Score of the calls read in the group this quarter.'],
+  breadth:['Breadth','Share of companies in the sub-sector whose call shows the signal. 60% supply discipline means 6 in 10 companies talked about holding back capacity.'],
+  stage:['Stage','Turning: supply discipline high and pricing or utilisation now rising while demand talk is still lukewarm. Emerging: a signal rising fast from a low base. Confirming: pricing and demand both strong. Crowded: everyone talks about it. Deteriorating: pricing and demand falling. Baseline: only one quarter read so far, so no trend yet.'],
+  themeCount:['Companies discussing','Distinct companies that discussed the theme with substance in their call, not just a passing mention.'],
+  first:['First-time callers','Confirmed: the transcript says it is the first or maiden call. Likely: BSE shows no earnings call transcript or analyst / investor meet filing for the company from 2019 until this call.'],
+  namedBy:['Named in other calls','Companies whose own transcript names this company, with how they described it: customer, supplier, peer or partner. Only exact full-name matches count.'],
+  triggers:['Triggers','Specific statements from the call that could move the thesis. Each comes with the quote it was drawn from, checked word for word against the transcript.'],
+  schema:['Signal read','Eight readings of the call, each scored −2 (clearly negative) to +2 (clearly positive). They feed the score.'],
+  models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
+  archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
+  quarter:['Quarter switch','Pick the results season you want to look at. Calls, Best & worst, First-time callers, Sector tracker and Guidance all follow it. Sector turns, Themes and Ideas compare quarters, so they stay on the latest quarter with enough calls. “All” shows each company’s latest call.']
 };
 
 /* ---------- helpers ---------- */
-const $ = s => document.querySelector(s);
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = n => (n ?? 0).toLocaleString('en-IN');
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fdate = s => { if (!s) return ''; const [y, m, d] = s.slice(0, 10).split('-'); return `${+d} ${MON[+m - 1]} ${y}`; };
+const sdate = s => { if (!s) return ''; const [, m, d] = s.slice(0, 10).split('-'); return `${+d} ${MON[+m - 1]}`; };
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const sign = n => (n > 0 ? '▲' : n < 0 ? '▼' : '•') + Math.abs(n);
-const scoreCol = s => s >= 70 ? 'var(--gold)' : s >= 50 ? 'var(--blue)' : 'var(--down)';
-const MK = {IN: 'India', US: 'United States'};
-function countUp(el, to, dur = 900) {
-  if (reduce) { el.textContent = to.toLocaleString('en-IN'); return; }
-  const t0 = performance.now();
-  const step = t => { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.round(to * e).toLocaleString('en-IN'); if (p < 1) requestAnimationFrame(step); };
-  requestAnimationFrame(step);
+const tip = k => `<button class="i" data-tip="${k}" aria-label="What is ${esc(GL[k]?.[0] || k)}?">?</button>`;
+const store = {get(k, d) { try { const v = localStorage.getItem('csd2-' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('csd2-' + k, JSON.stringify(v)); } catch (e) {} }};
+function verdict(score, veto) {
+  if (veto) return {w: 'Red flag', c: 'v-flag'};
+  return score >= 70 ? {w: 'Strong', c: 'v-strong'} : score >= 60 ? {w: 'Good', c: 'v-good'} : score >= 50 ? {w: 'Average', c: 'v-avg'} : score >= 40 ? {w: 'Weak', c: 'v-weak'} : {w: 'Poor', c: 'v-poor'};
 }
-function ring(score, r, sw, delay = 0) {
-  const C = 2 * Math.PI * r, size = (r + sw) * 2, c = size / 2, off = C * (1 - score / 100);
-  return `<span class="ringbox"><svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true">
-    <circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="var(--line)" stroke-width="${sw}"/>
-    <circle class="ring-fg" cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${scoreCol(score)}" stroke-width="${sw}" stroke-linecap="round"
-      stroke-dasharray="${C}" style="--c:${C};stroke-dashoffset:${off};animation-delay:${delay}s" transform="rotate(-90 ${c} ${c})"/></svg>
-    <span class="v" style="font-size:${r * .62}px" data-count="${score}">${score}</span></span>`;
-}
-function mark(q, hl, delay) {
-  const s = esc(q); if (!hl) return s; const h = esc(hl); const i = s.indexOf(h);
-  return i < 0 ? s : s.slice(0, i) + `<mark class="hl" style="animation-delay:${delay}s">${h}</mark>` + s.slice(i + h.length);
+const vcol = (s, veto) => veto ? 'var(--down)' : s >= 70 ? 'var(--gold)' : s >= 60 ? 'var(--up)' : s >= 50 ? 'var(--blue)' : s >= 40 ? 'var(--warn)' : 'var(--down)';
+const vpill = (s, veto) => { const v = verdict(s, veto); return `<span class="pill ${v.c}">${v.w}</span>`; };
+const scoreCell = (s, veto, i = 0) => `<span class="scorecell"><b style="color:${vcol(s, veto)}">${s}</b><span class="sbar"><i style="width:${s}%;background:${vcol(s, veto)};animation-delay:${Math.min(i, 20) * .02}s"></i></span>${vpill(s, veto)}</span>`;
+const dcell = d => d ? `<span class="delta ${d > 0 ? 'up' : 'dn'}">${d > 0 ? '▲' : '▼'}${Math.abs(d)}</span>` : '<span class="delta zero">–</span>';
+const gcell = g => g > 0 ? '<span class="g-up">▲ Raised</span>' : g < 0 ? '<span class="g-dn">▼ Cut</span>' : '<span class="g-flat">Steady</span>';
+const gword = g => g == null ? '' : g >= 60 ? 'Raising' : g <= 40 ? 'Cutting' : 'Mixed';
+const gcol = g => g == null ? 'var(--muted)' : g >= 60 ? 'var(--up)' : g <= 40 ? 'var(--down)' : 'var(--blue)';
+function countUp(root) {
+  root.querySelectorAll('[data-count]').forEach(el => { const to = +el.dataset.count;
+    if (reduce) { el.textContent = fmt(to); return; }
+    const t0 = performance.now(), step = t => { const p = Math.min(1, (t - t0) / 800); el.textContent = fmt(Math.round(to * (1 - Math.pow(1 - p, 3)))); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step); });
 }
 
-/* ---------- state ---------- */
-const DATA = {IN: SAMPLE.IN, US: SAMPLE.US};
-const state = {mkt: 'IN', tab: 'feed', sort: 'score', q: '', sel: {IN: null, US: null}};
-const D = () => DATA[state.mkt];
-const byId = id => D().companies.find(c => c.id === id);
-
-/* ---------- market switch + status ---------- */
-function renderMarkets() {
-  $('#markets').innerHTML = ['IN', 'US'].map(m => { const d = DATA[m], pct = d.universe ? Math.min(100, d.scored / d.universe * 100) : 0;
-    return `<button class="mkt" role="tab" data-m="${m}" aria-selected="${m === state.mkt}">
-      <span class="mk-name">${MK[m]} <span class="eyebrow">${esc(d.season || 'No season yet')}</span></span>
-      <span class="mk-sub">${esc(d.capNote)} · <span class="num">${(d.scored || 0).toLocaleString('en-IN')}</span> of <span class="num">${(d.universe || 0).toLocaleString('en-IN')}</span> companies scored</span>
-      <span class="bar"><span style="width:${pct}%"></span></span>
-    </button>`; }).join('');
-  const d = D();
-  if (d.loading) { $('#status').innerHTML = `<span class="chip-sample">${d.failed ? 'Could not load the latest results. Reload the page to try again.' : 'Loading latest results\u2026'}</span>`; return; }
-  const ip = (d.inProgress || []).map(x => `${esc(x.season)} in progress: ${x.calls} calls so far`).join(' \u00b7 ');
-  $('#status').innerHTML = (ip ? `<span class="chip-sample" style="border-style:solid">${ip}</span>` : '') + (d.sample
-    ? `<span class="chip-sample">${d.off ? 'US is paused · sample data shown' : 'Sample data · engine output not loaded yet'}</span>`
-    : `<span class="live">Live BSE data</span><span>Updated <b>${esc((d.generated || '').replace('T', ' '))}</b></span>`);
+/* ---------- data + state ---------- */
+let D = null;
+const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
+  first: {status: ''}, turns: {stage: ''}, ideas: {tab: 'ideas'}, openSec: new Set(), drawer: null};
+const byId = {};
+const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
+  return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
+const curQ = () => S.q || D.season || 'all';
+const inProg = q => (D.inProgress || []).some(x => x.season === q);
+function callsQ() {
+  const all = D.calls || [];
+  if (curQ() !== 'all') return all.filter(c => c.period === curQ());
+  const latest = {}; all.forEach(c => { if (!latest[c.id] || c.periodKey > latest[c.id].periodKey) latest[c.id] = c; });
+  return Object.values(latest);
 }
+const trackerQ = () => { const t = D.trackers || {}; return t[curQ()] || t[D.season] || D.tracker || null; };
+const callsFor = id => (D.calls || []).filter(x => x.id === id).sort((a, b) => b.periodKey.localeCompare(a.periodKey));
+const lastDate = () => (D.calls || []).reduce((m, c) => c.date > m ? c.date : m, '');
+function daysBack(n) { const d = new Date(lastDate() || Date.now()); d.setDate(d.getDate() - n); return d.toISOString().slice(0, 10); }
 
-/* ---------- highlights + ticker ---------- */
-function renderTop() {
-  const d = D(), cos = d.companies.filter(c => !c.veto);
-  const top = [...cos].sort((a, b) => b.score - a.score)[0];
-  const th = [...d.themes].sort((a, b) => (b.c.at(-1) - b.c.at(-Math.min(3, b.c.length))) - (a.c.at(-1) - a.c.at(-Math.min(3, a.c.length))))[0];
-  const turn = d.sectors.find(s => s.hit) || d.sectors[0];
-  const tiles = [];
-  if (turn) tiles.push(`<button class="hl-tile" data-go="sectors"><span class="eyebrow">${turn.hit ? 'Strongest turn signal' : 'Top sub-sector'}</span><strong>${esc(turn.name)}</strong><span class="small">Supply discipline ${turn.s.supply.at(-1)}%, pricing breadth ${turn.s.pricing.at(-Math.min(3, turn.s.pricing.length))}% → ${turn.s.pricing.at(-1)}%</span></button>`);
-  if (th) tiles.push(`<button class="hl-tile" data-go="themes" style="animation-delay:.08s"><span class="eyebrow">${th.c.length < 2 ? 'Most-discussed theme' : 'Fastest-spreading theme'}</span><strong>${esc(th.name)}</strong><span class="small">${th.c.length < 2 ? `${th.c.at(-1)} companies discussed it this quarter` : `${th.c.at(-Math.min(3, th.c.length))} \u2192 ${th.c.at(-1)} companies over the shown quarters`}</span></button>`);
-  if (top) tiles.push(`<button class="hl-tile" data-go="feed" data-id="${esc(top.id)}" style="animation-delay:.16s"><span class="eyebrow">Top call this season</span><strong>${esc(top.name)} · <span class="num">${top.score}</span> <span class="delta ${top.delta >= 0 ? 'up' : 'dn'}">${sign(top.delta)}</span></strong><span class="small">${esc(top.triggers[0]?.label || top.thesis)}</span></button>`);
-  $('#highlights').innerHTML = tiles.join('') || '<div class="empty">No reads yet for this market.</div>';
-  const recent = [...d.companies].sort((a, b) => (b.date || '').localeCompare(a.date || '')).slice(0, 24);
-  const items = recent.map(c => `<span class="tk"><span class="num" style="color:${scoreCol(c.score)}">${c.score}</span><b>${esc(c.name)}</b><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)}</span><em>${esc(c.triggers[0]?.label || '')}</em></span>`).join('');
-  $('#ticker').innerHTML = items + items;
+/* ---------- views ---------- */
+const VIEWS = [
+  {group: 'Start', items: [['home', 'Today'], ['help', 'How to use']]},
+  {group: 'Calls', items: [['calls', 'All calls'], ['first', 'First-time callers']]},
+  {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
+  {group: 'Ideas', items: [['ideas', 'Ideas & red flags']]}
+];
+const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
+function navCounts() {
+  const t = trackerQ(), cq = callsQ();
+  return {calls: cq.length, first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
+    tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
+    guidance: t ? (t.guidanceLeaders || []).length : '', turns: (D.sectors || []).filter(s => s.hit).length || '',
+    themes: (D.themes || []).length, ideas: (D.ideas || []).filter(x => !x.red).length};
 }
-
-/* ---------- feed ---------- */
-/* ---------- global quarter switch ---------- */
-const qsel = {IN: '', US: ''};  // '' = follow the dashboard's focus season, 'all' = every quarter
-function quarters() {
-  const ps = {};
-  (D().calls || []).forEach(c => { ps[c.period] = ps[c.period] || {key: c.periodKey, n: 0}; ps[c.period].n++; });
-  return Object.entries(ps).sort((a, b) => b[1].key.localeCompare(a[1].key)).map(([label, v]) => ({label, n: v.n}));
+function renderNav() {
+  const ct = D ? navCounts() : {};
+  $('#nav').innerHTML = VIEWS.map(g => `<div class="nav-group"><span class="eyebrow">${g.group}</span>${g.items.map(([k, n]) =>
+    `<button data-v="${k}" ${S.view === k ? 'aria-current="page"' : ''}><span>${n}</span>${ct[k] !== undefined && ct[k] !== '' ? `<span class="ct">${esc(ct[k])}</span>` : ''}</button>`).join('')}</div>`).join('');
+  if (D) $('#railfoot').innerHTML = `<span class="live">Live BSE filings</span><span>Data updated ${esc(fdate(D.generated))}, ${esc((D.generated || '').slice(11, 16))} IST</span><span>${fmt(D.universe)} companies tracked</span>`;
 }
-function curQ() { const q = qsel[state.mkt]; return q || D().season || 'all'; }
 function renderQbar() {
   const qs = quarters(), cur = curQ();
-  $('#qbar').hidden = !qs.length;
-  $('#qsel').innerHTML = qs.map(q => `<button data-q="${esc(q.label)}" aria-pressed="${q.label === cur}">${esc(q.label)} <span class="num" style="opacity:.7;font-size:12px">${q.n}</span></button>`).join('') +
-    `<button data-q="all" aria-pressed="${cur === 'all'}">All</button>`;
-  const ip = (D().inProgress || []).find(x => x.season === cur);
-  const parts = [];
-  if (ip) parts.push(`${cur} season in progress: more calls arrive each night`);
-  if (cur === 'all') parts.push('Every call read, latest quarter per company');
-  if (cur !== D().season && D().season) parts.push(`Sector turnarounds, themes and ideation use ${D().season} until ${cur === 'all' ? 'the next quarter' : cur} has enough calls`);
-  $('#qnote').textContent = parts.join(' \u00b7 ');
+  $('#qsel').innerHTML = qs.map(q => `<button data-q="${esc(q.label)}" aria-pressed="${q.label === cur}" title="${q.n} calls read${inProg(q.label) ? ', season in progress' : ''}">${inProg(q.label) ? '<span class="prog-dot" aria-hidden="true"></span>' : ''}${esc(q.label)} <span class="num">${q.n}</span></button>`).join('') +
+    `<button data-q="all" aria-pressed="${cur === 'all'}" title="Each company's latest call">All</button>`;
 }
-$('#qsel').onclick = e => { const b = e.target.closest('button'); if (!b) return; qsel[state.mkt] = b.dataset.q;
-  rk.period = b.dataset.q === 'all' ? '' : b.dataset.q; if (b.dataset.q !== 'all') season.pick = b.dataset.q;
-  renderQbar(); go(state.tab); };
-function callOf(id, q) { return (D().calls || []).find(c => c.id === id && c.period === q); }
-function visible() {
-  const q = state.q.toLowerCase(), cur = curQ();
-  let cos = D().companies;
-  if (cur !== 'all' && (D().calls || []).length) {
-    const byId = {}; cos.forEach(c => { byId[c.id] = c; });
-    cos = (D().calls || []).filter(x => x.period === cur && byId[x.id]).map(x => ({...byId[x.id], score: x.score, delta: x.delta, date: x.date,
-      period: x.period, veto: x.veto, _key: x.key, _top: x.top}));
-  }
-  return cos.filter(c => !q || [c.name, c.sector, c.ticker, ...(c.themes || [])].join(' ').toLowerCase().includes(q))
-    .sort((a, b) => state.sort === 'date' ? (b.date || '').localeCompare(a.date || '') : b[state.sort] - a[state.sort]);
+function head(title, purpose, how, badge = '') {
+  const open = store.get('how-' + S.view, innerWidth > 760);
+  return `<header class="vhead"><div class="row"><h2>${title}</h2>${badge}</div><p class="purpose">${purpose}</p>
+    ${how ? `<details class="how" data-how="${S.view}" ${open ? 'open' : ''}><summary>How to use this view</summary><div class="body">${how}</div></details>` : ''}</header>`;
 }
-function renderList() {
-  const v = visible().slice(0, 1500);
-  if (v.length && !v.find(c => c.id === state.sel[state.mkt])) state.sel[state.mkt] = v[0].id;
-  $('#list').innerHTML = v.length ? v.map((c, i) => `
-    <button class="co" role="option" data-id="${esc(c.id)}" aria-selected="${c.id === state.sel[state.mkt]}" style="animation-delay:${Math.min(i, 14) * .04}s">
-      ${ring(c.score, 18, 4, Math.min(i, 14) * .04)}
-      <span style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span>
-        <span class="mt">${esc(c.sector)}${c.mcap ? ' · ' + esc(c.mcap) : ''}</span>
-        <span class="trg">${c._key && c.period !== D().companies.find(x => x.id === c.id)?.period ? `<span class="mini t-novelty">${esc(c.period)}</span><span class="mini t-demand">${esc(c._top || '')}</span>` : c.triggers.slice(0, 2).map(t => `<span class="mini t-${t.t}">${esc(t.label)}</span>`).join('')}</span></span>
-      <span style="display:grid;gap:4px;justify-items:end"><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)}</span>${c.veto ? '<span class="veto">VETO</span>' : ''}</span>
-    </button>`).join('') : '<div class="empty">No companies match. Clear the search to see all.</div>';
-  $('#cnt-feed').textContent = D().companies.length.toLocaleString('en-IN');
+const focusBadge = () => `<span class="badge${curQ() !== D.season ? ' warn' : ''}">Based on ${esc(D.season)}${curQ() !== D.season ? ', the latest quarter with enough calls' : ''}</span>`;
+const qBadge = () => `<span class="badge${inProg(curQ()) ? ' warn' : ''}">${curQ() === 'all' ? 'All quarters · latest call per company' : esc(curQ()) + (inProg(curQ()) ? ' · season in progress' : '')}</span>`;
+
+function companyRow(c, i, opts = {}) {
+  return `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key || '')}">
+    <span class="rk c-rk">${opts.rank ?? i + 1}</span>
+    <span class="c-co" style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span><span class="sub">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}${esc(c.period || '')}</span></span>
+    <span class="c-sc">${scoreCell(c.score, c.veto, i)}</span>
+    <span class="c-ch">${dcell(c.delta)}</span>
+    <span class="c-sec sub" style="min-width:0">${esc(c.sector)}${c.bigSector && c.bigSector !== c.sector ? '<br>' + esc(c.bigSector) : ''}</span>
+    <span class="c-why why" style="min-width:0">${esc(c.top || c.thesis || '')}</span>
+    <span class="c-meta"><span class="c-g small">${gcell(c.g)}</span><span class="c-date sub num">${esc(sdate(c.date))}</span><span class="m-only sub">${dcell(c.delta)} vs last call · ${esc(c.sector)}</span></span>
+  </button>`;
 }
-function spark(vals, labels, w, h) {
-  if (!vals || vals.length < 2) return `<p class="sub" style="margin:0">History builds after the second call.</p>`;
-  const X = i => 8 + i * (w - 16) / (vals.length - 1), Y = v => h - 18 - (v / 100) * (h - 30);
-  const d = vals.map((v, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join('');
-  const last = vals.length - 1;
-  return `<svg viewBox="0 0 ${w} ${h}" width="100%" style="max-width:${w}px" role="img" aria-label="Signal score by call: ${vals.join(', ')}">
-    ${[0, 50, 100].map(g => `<line x1="8" x2="${w - 8}" y1="${Y(g)}" y2="${Y(g)}" stroke="var(--line)" stroke-dasharray="${g === 50 ? '3 4' : '0'}"/>`).join('')}
-    <path d="${d}L${X(last)} ${h - 18}L${X(0)} ${h - 18}Z" fill="var(--goldsoft)" opacity=".55"/>
-    <path class="draw" pathLength="1" d="${d}" fill="none" stroke="var(--gold)" stroke-width="2.4" stroke-linejoin="round"/>
-    ${vals.map((v, i) => `<circle cx="${X(i)}" cy="${Y(v)}" r="${i === last ? 4.5 : 2.4}" fill="${i === last ? 'var(--gold)' : 'var(--panel)'}" stroke="var(--gold)" stroke-width="1.5"/>`).join('')}
-    <text x="${X(last)}" y="${Y(vals[last]) - 10}" text-anchor="end" font-size="12" fill="var(--fg)">${vals[last]}</text>
-    <text x="8" y="${h - 3}" font-size="10.5" fill="var(--muted)">${esc(labels?.[0] || '')}</text>
-    <text x="${w - 8}" y="${h - 3}" font-size="10.5" text-anchor="end" fill="var(--muted)">${esc(labels?.at(-1) || '')}</text></svg>`;
-}
-function renderDetail() {
-  const c = byId(state.sel[state.mkt]), el = $('#detail');
-  if (!c || !visible().length) { el.innerHTML = '<div class="empty">Pick a company to see its read.</div>'; return; }
-  const maxKey = BLOCKS.reduce((m, [k]) => c.blocks[k] > c.blocks[m] ? k : m, 'supply');
-  const hl = (c.histLabels || D().periods).slice(-(c.hist || []).length);
-  el.innerHTML = `
-    <div class="d-head">
-      <div style="min-width:0">
-        <span class="eyebrow">${esc(c.call)}</span>
-        <h2>${esc(c.name)}</h2>
-        <div class="tags">${c.bigSector && c.bigSector !== 'Unclassified' ? `<span class="tag">${esc(c.bigSector)} \u203a ${esc(c.sector)}${c.industry && c.industry !== c.sector ? ' \u203a ' + esc(c.industry) : ''}</span>` : `<span class="tag">${esc(c.sector)}</span>`}${c.mcap ? `<span class="tag">${esc(c.mcap)}</span>` : ''}${c.ticker && c.ticker !== c.id ? `<span class="tag">${esc(c.ticker)}</span>` : ''}${c.veto ? '<span class="veto">VETO · SCORE CAPPED AT 40</span>' : ''}</div>
-      </div>
-      <div class="scorebox">${ring(c.score, 38, 7)}<div><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)} vs last call</span><div class="cap" style="margin-top:6px">Concall Signal Score, out of 100${c.pct != null ? `<br><b style="color:var(--fg)">Beats ${c.pct}% of ${esc(c.period || '')} calls</b>` : ''}</div></div></div>
+
+/* Home */
+function vHome() {
+  const cq = callsQ().slice(), q = curQ(), t = trackerQ();
+  const ranked = cq.filter(c => !c.veto).sort((a, b) => b.score - a.score);
+  const newest = (D.calls || []).slice().sort((a, b) => b.date.localeCompare(a.date) || b.score - a.score);
+  const d1 = (D.calls || []).filter(c => c.date === lastDate()).length, d7 = (D.calls || []).filter(c => c.date >= daysBack(7)).length;
+  const lead = t?.guidanceLeaders?.[0], th = (D.themes || []).slice().sort((a, b) => b.c.at(-1) - a.c.at(-1))[0];
+  const idea = (D.ideas || []).find(x => !x.red), ideaCo = idea && byId[idea.id];
+  const firsts = (D.firstTimers || []).filter(r => q === 'all' || r.period === q);
+  const rep = t?.reported || cq.length, uni = t?.universe || D.universe;
+  const welcome = store.get('welcome', true);
+  const best = ranked[0];
+  return head('Today on the desk', `What changed in the latest concalls, and where to look first. Data from BSE filings, refreshed every morning.`, '') + `
+    ${welcome ? `<div class="welcome"><span>New to the desk? The two-minute guide explains every view, the score and the daily routine.</span><span style="display:flex;gap:8px"><button class="btn primary" data-v="help">Read the guide</button><button class="btn" data-dismiss="welcome">Hide</button></span></div>` : ''}
+    <div class="hero">
+      <section class="today">
+        <span class="eyebrow">${esc(q === 'all' ? 'All quarters' : q)} results season</span>
+        <h3>${best ? `${esc(best.name)} has the strongest call so far, scoring ${best.score}.` : 'No calls read yet for this quarter.'} ${d1 ? `${d1} new call${d1 === 1 ? ' was' : 's were'} filed on ${esc(sdate(lastDate()))}, the latest filing day.` : ''}</h3>
+        <div class="stats">
+          <div class="stat"><b data-count="${cq.length}">${fmt(cq.length)}</b><span>calls read${q !== 'all' ? ' this quarter' : ''}</span></div>
+          <div class="stat"><b data-count="${d7}">${fmt(d7)}</b><span>filed in the last 7 days</span></div>
+          <div class="stat"><b data-count="${firsts.length}">${fmt(firsts.length)}</b><span>first-time callers</span></div>
+          <div class="stat"><b>${Math.round(100 * rep / Math.max(1, uni))}%</b><span>of ${fmt(uni)} companies have reported</span></div>
+        </div>
+        <div class="prog" aria-label="Share of companies that have reported"><i style="width:${Math.min(100, 100 * rep / Math.max(1, uni))}%"></i></div>
+        ${inProg(q) ? `<p class="small muted">${esc(q)} is still in progress. Most companies report over the next few weeks, and transcripts reach BSE up to five working days after each call.</p>` : ''}
+      </section>
+      <section class="card">
+        <div class="list-head"><h3>Your daily routine</h3></div>
+        <ol class="steps">
+          <li><span><b>Scan today’s picks below</b> for the best call, the strongest sector guidance and the top idea.</span></li>
+          <li><span><b>Open All calls</b>, sort by Newest, and filter to your sectors.</span></li>
+          <li><span><b>Click any company</b> to read the full call summary, then the signals behind its score.</span></li>
+          <li><span><b>Check the Sector tracker</b> to see who in the sector has reported and how guidance is moving.</span></li>
+          <li><span><b>Share a company</b> with the team using Copy link in its panel.</span></li>
+        </ol>
+      </section>
     </div>
-    <div class="thesis">
-      <span class="eyebrow">Thesis in one line</span>
-      <p>${esc(c.thesis)}</p>
-      <span class="arch">Archetype <b>${esc(c.archetype)}</b></span>
-    </div>
-    <div class="d-grid">
-      <div>
-        <div class="sec-title"><h3 style="font-size:17px">Triggers</h3><span class="eyebrow">${c.triggers.length} found · ${Math.round((c.verified ?? 1) * 100)}% of quotes verified</span></div>
-        <div class="triggers">${c.triggers.map((t, i) => `
-          <div class="trig t-${t.t}" style="animation-delay:${.15 + i * .12}s">
-            <span class="stripe"></span>
-            <div><div class="tt"><span class="mini t-${t.t}">${TYPES[t.t] || esc(t.t)}</span><strong>${esc(t.label)}</strong></div>
-            ${t.q ? `<blockquote>${mark(t.q, t.hl, .6 + i * .25)}</blockquote>` : `<p class="note">${esc(t.note || '')}</p>`}</div>
-          </div>`).join('') || '<p class="sub">No strong triggers this call.</p>'}</div>
-        ${c.flags.length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Red flags</h3></div><div class="flags">${c.flags.map((f, i) => `<div class="flag" style="animation-delay:${.4 + i * .1}s">${esc(f)}</div>`).join('')}</div></div>` : ''}
-        ${(c.themes || []).length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Themes</h3></div><div class="tchips">${c.themes.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></div>` : ''}
-        ${(c.namedBy || []).length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Named in other companies' calls</h3><span class="eyebrow">${c.namedBy.length} ${c.namedBy.length === 1 ? 'company' : 'companies'}</span></div><div class="tchips">${c.namedBy.map(n => `<button class="open" data-nb="${esc(n.id)}" title="Called it \u201c${esc(n.as)}\u201d in their ${esc(n.period)} call">${esc(n.name)} \u00b7 ${esc(n.relation)}</button>`).join('')}</div><p class="sub" style="margin:6px 0 0;font-size:12.5px">Each link is a company whose own transcript names this one; the role is how that company described it. Click to open that call.</p></div>` : ''}
-        ${(c.sources || []).filter(s => s.url).length ? `<div style="margin-top:16px"><div class="sec-title"><h3 style="font-size:17px">Source documents</h3></div><div class="src">${c.sources.filter(s => s.url).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.type)} · ${esc(s.date)}</a>`).join('')}</div></div>` : ''}
-      </div>
-      <div style="display:grid;gap:20px;align-content:start">
-        <div>
-          <div class="sec-title"><h3 style="font-size:17px">Mental models</h3></div>
-          <div class="models">${(c.models || []).map((m, i) => `<div class="model" style="animation-delay:${.25 + i * .1}s"><b>${esc(m)}</b><span>${esc(MODELS[m] || '')}</span></div>`).join('')}</div>
-        </div>
-        <div>
-          <div class="sec-title"><h3 style="font-size:17px">Schema read</h3><span class="eyebrow">−2 to +2</span></div>
-          <div class="schema">${BLOCKS.map(([k, lab], i) => { const v = c.blocks[k] || 0, w = Math.abs(v) / 2 * 50;
-            return `<div class="srow ${k === maxKey && v > 0 ? 'lead' : ''}"><span>${lab}</span><span class="strack">${v ? `<span class="sfill ${v > 0 ? 'pos' : 'neg'}" style="width:${w}%;animation-delay:${.2 + i * .06}s"></span>` : ''}</span><span class="sv">${v > 0 ? '+' : ''}${v}</span></div>`; }).join('')}</div>
-        </div>
-        <div class="hist">
-          <div><div class="eyebrow" style="margin-bottom:4px">Score by call</div>${spark(c.hist, hl, 260, 96)}</div>
-          <div class="cred"><div class="eyebrow">Mgmt credibility</div>${c.credTested === 0 ? '<div class="big" style="font-size:16px;color:var(--muted)">Untested</div>' : `<div class="big" data-count="${c.cred}">${c.cred}</div>`}<div class="meter"><span style="width:${c.cred}%;background:${c.cred >= 70 ? 'var(--teal)' : c.cred >= 55 ? 'var(--warn)' : 'var(--down)'}"></span></div><div style="font-size:12px;color:var(--muted);margin-top:6px">${c.credTested === 0 ? 'Builds once past guidance can be checked against results' : `Guidance met vs given, ${c.credTested} checked`}</div></div>
-        </div>
-      </div>
+    <section><div class="list-head"><h3>Where to look first</h3></div><div class="picks">
+      ${best ? `<button class="pick" data-open="${esc(best.id)}" data-k="${esc(best.key)}"><span class="eyebrow">Best call · ${esc(best.period)}</span><strong>${esc(best.name)}</strong><span>${scoreCell(best.score, false)}</span><span class="small">${esc(best.top || best.thesis)}</span><span class="go">Open the call →</span></button>` : ''}
+      ${lead ? `<button class="pick" data-v="guidance"><span class="eyebrow">Strongest guidance</span><strong>${esc(lead.name)}</strong><span class="small">Guidance index <b class="num" style="color:${gcol(lead.guidance)}">${lead.guidance}</b>. ${lead.raising} of ${lead.calls} companies raised guidance, ${lead.cutting} cut.</span><span class="go">See all sub-sectors →</span></button>` : ''}
+      ${ideaCo ? `<button class="pick" data-open="${esc(ideaCo.id)}"><span class="eyebrow">Top idea · ${esc(idea.type)}</span><strong>${esc(ideaCo.name)}</strong><span class="small">${esc(idea.why)}</span><span class="go">Open the call →</span></button>` : ''}
+      ${th ? `<button class="pick" data-v="themes"><span class="eyebrow">Most-discussed theme</span><strong>${esc(th.name)}</strong><span class="small">${fmt(th.c.at(-1))} companies discussed it in ${esc(D.season)} calls, across ${th.spans} sub-sectors.</span><span class="go">See all themes →</span></button>` : ''}
+    </div></section>
+    <div class="two">
+      <section><div class="list-head"><h3>Newest calls</h3><button class="link" data-v="calls" data-sort="new">See all</button></div>
+        <div class="rows mini-list">${newest.slice(0, 8).map(c => `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key)}"><span style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span><span class="sub">${esc(sdate(c.date))} · ${esc(c.period)} · ${esc(c.sector)}</span></span>${scoreCell(c.score, c.veto)}</button>`).join('')}</div></section>
+      <section><div class="list-head"><h3>Top calls · ${esc(q === 'all' ? 'all quarters' : q)}</h3><button class="link" data-v="calls" data-sort="best">See all</button></div>
+        <div class="rows mini-list">${ranked.slice(0, 8).map(c => `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key)}"><span style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span><span class="sub">${esc(c.top || '')}</span></span>${scoreCell(c.score, c.veto)}</button>`).join('') || '<div class="empty">No calls yet.</div>'}</div></section>
     </div>`;
-  el.querySelectorAll('[data-count]').forEach(n => countUp(n, +n.dataset.count));
-  renderSummary(c);
 }
 
-/* ---------- detailed summaries (loaded on demand) ---------- */
-const SUMS = {IN: null, US: null}, SUM_LOADING = {};
-async function loadSummaries(m) {
-  if (SUMS[m]) return SUMS[m];
-  if (!SUM_LOADING[m]) SUM_LOADING[m] = fetch(`data/summaries_${m.toLowerCase()}.json`, {cache: 'no-store'})
-    .then(r => r.ok ? r.json() : {}).catch(() => ({})).then(j => (SUMS[m] = j || {}));
-  return SUM_LOADING[m];
+/* All calls */
+const SORTS = {best: ['Highest score', (a, b) => b.score - a.score], worst: ['Lowest score', (a, b) => a.score - b.score],
+  up: ['Biggest improvement', (a, b) => b.delta - a.delta || b.score - a.score], down: ['Biggest drop', (a, b) => a.delta - b.delta || a.score - b.score],
+  new: ['Newest first', (a, b) => b.date.localeCompare(a.date) || b.score - a.score]};
+const CHIPS = {raised: ['Guidance raised', c => c.g > 0], cut: ['Guidance cut', c => c.g < 0], flag: ['Red flags', c => c.veto], strong: ['Strong or Good (60+)', c => c.score >= 60 && !c.veto]};
+function filteredCalls() {
+  const f = S.calls, q = f.search.toLowerCase();
+  return callsQ().filter(c => (!f.big || c.bigSector === f.big) && (!f.sub || c.sector === f.sub) &&
+    [...f.chips].every(k => CHIPS[k][1](c)) &&
+    (!q || [c.name, byId[c.id]?.ticker, c.sector, c.bigSector, c.industry, c.top].join(' ').toLowerCase().includes(q))).sort(SORTS[f.sort][1]);
 }
-function callsFor(id) { return (D().calls || []).filter(x => x.id === id).sort((a, b) => b.periodKey.localeCompare(a.periodKey)); }
-async function renderSummary(c, key) {
-  const box = document.createElement('div'); box.className = 'summary'; box.id = 'sumbox';
-  const old = document.getElementById('sumbox'); if (old) old.remove();
-  $('#detail').appendChild(box);
-  const cs = callsFor(c.id);
-  if (!cs.length) { box.innerHTML = '<p class="sub" style="margin:0">Detailed summaries appear here once the engine has summarised this call.</p>'; return; }
-  key = key || (curQ() !== 'all' && cs.find(x => x.period === curQ()) || cs[0]).key;
-  box.innerHTML = `<div class="s-top"><h3 style="font-size:19px">Detailed call summary</h3>
-    <div class="seg" id="sum-q">${cs.map(x => `<button data-k="${esc(x.key)}" aria-pressed="${x.key === key}">${esc(x.period)} · ${x.score}</button>`).join('')}</div></div>
-    <p class="sub" style="margin:0">Loading summary…</p>`;
-  box.querySelector('#sum-q').onclick = e => { const b = e.target.closest('button'); if (b) renderSummary(c, b.dataset.k); };
-  const all = await loadSummaries(state.mkt), s = all[key];
-  if (document.getElementById('sumbox') !== box) return;
-  const body = document.createElement('div'); body.style.display = 'grid'; body.style.gap = '16px';
-  if (!s) { box.lastElementChild.textContent = 'This call has not been summarised yet. The nightly run summarises new calls first, then works through older ones.'; return; }
-  const list = (title, items) => items && items.length ? `<div class="s-card"><h4>${title}</h4><ul>${items.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : '';
-  body.innerHTML = `
-    <p class="headline">${esc(s.headline)}</p>
-    <p class="overview">${esc(s.overview)}</p>
-    ${(s.financial_highlights || []).length ? `<div class="fin">${s.financial_highlights.map(f => `<div><span>${esc(f.metric)}</span><b>${esc(f.value)}</b><span>${esc(f.change || '')}</span></div>`).join('')}</div>` : ''}
-    <div class="s-grid">
-      ${(s.segments || []).length ? `<div class="s-card"><h4>Segments</h4><ul>${s.segments.map(g => `<li><b>${esc(g.name)}:</b> ${esc(g.commentary)}</li>`).join('')}</ul></div>` : ''}
-      ${list('Guidance & outlook', s.guidance_outlook)}
-      ${list('Capex & capacity', s.capex_capacity)}
-      ${list('Demand & pricing', s.demand_pricing)}
-      ${list('Risks to watch', s.risks_watch)}
-      ${s.management_tone ? `<div class="s-card"><h4>Management tone</h4><p style="margin:0;font-size:14px">${esc(s.management_tone)}</p></div>` : ''}
+function vCalls() {
+  const f = S.calls, all = callsQ();
+  const bigs = [...new Set(all.map(c => c.bigSector).filter(Boolean))].sort();
+  const subs = [...new Set(all.filter(c => !f.big || c.bigSector === f.big).map(c => c.sector))].sort();
+  return head('All calls', 'Every concall read for the quarter, ranked. Use it to find the best and worst calls, or to go through your sectors.', `
+      <ol><li><b>Choose the quarter</b> at the top. The list shows every call filed and read for it.</li>
+      <li><b>Narrow it down</b> with Sector, Sub-sector, the search box or the quick filters (Guidance raised, Red flags…).</li>
+      <li><b>Sort</b> by highest score for the best calls, lowest for the worst, Newest for what just came in, or Biggest improvement for companies whose story is getting better.</li>
+      <li><b>Click a row</b> to open the company panel with the full call summary.</li></ol>
+      <p class="muted">Score columns: the number is the Concall Signal Score ${tip('score')}, the label is its verdict ${tip('verdict')}, and the arrow shows the change since the company’s last call ${tip('change')}.</p>`, qBadge()) + `
+    <div class="toolbar">
+      <input type="search" id="c-search" placeholder="Search name, sector or keyword" value="${esc(f.search)}" aria-label="Search calls">
+      <select id="c-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(s => `<option ${s === f.big ? 'selected' : ''}>${esc(s)}</option>`).join('')}</select>
+      <select id="c-sub" aria-label="Sub-sector"><option value="">All sub-sectors</option>${subs.map(s => `<option ${s === f.sub ? 'selected' : ''}>${esc(s)}</option>`).join('')}</select>
+      <select id="c-sort" aria-label="Sort">${Object.entries(SORTS).map(([k, [n]]) => `<option value="${k}" ${k === f.sort ? 'selected' : ''}>${n}</option>`).join('')}</select>
     </div>
-    ${(s.qa_highlights || []).length ? `<div><h4 class="eyebrow" style="margin:0 0 8px">Analyst Q&A</h4><div class="qa">${s.qa_highlights.map((q, i) => `<details ${i === 0 ? 'open' : ''}><summary>${esc(q.question)}</summary><p>${esc(q.answer)}</p></details>`).join('')}</div></div>` : ''}
-    ${(s.key_quotes || []).length ? `<div class="quotes"><h4 class="eyebrow" style="margin:0 0 8px">Management in their own words</h4>${s.key_quotes.map(q => `<blockquote>“${esc(q)}”</blockquote>`).join('')}</div>` : ''}`;
-  box.lastElementChild.replaceWith(body);
+    <div class="toolbar">${Object.entries(CHIPS).map(([k, [n]]) => `<button class="chip" data-chip="${k}" aria-pressed="${f.chips.has(k)}">${n}</button>`).join('')}
+      ${f.big || f.sub || f.search || f.chips.size ? '<button class="link" id="c-clear">Clear filters</button>' : ''}</div>
+    <div id="c-list"></div>`;
+}
+function fillCalls() {
+  const rows = filteredCalls(), f = S.calls, shown = rows.slice(0, f.limit), box = $('#c-list'); if (!box) return;
+  box.innerHTML = `<p class="count-line" style="margin-bottom:8px">Showing ${fmt(shown.length)} of ${fmt(rows.length)} calls · ${esc(SORTS[f.sort][0].toLowerCase())}</p>` + (rows.length ? `<div class="rows calls">
+    <div class="r hd"><span>#</span><span>Company</span><span>Score ${tip('score')}</span><span>Change ${tip('change')}</span><span class="c-sec">Sub-sector</span><span>What stood out</span><span>Guidance ${tip('guidance')}</span><span class="c-date">Filed</span></div>
+    ${shown.map((c, i) => companyRow(c, i)).join('')}</div>
+    ${rows.length > shown.length ? `<div class="more"><button class="btn" id="c-more">Show 50 more</button><span class="count-line">${fmt(rows.length - shown.length)} more</span></div>` : ''}`
+    : '<div class="empty">No calls match these filters. Clear a filter or pick another quarter.</div>');
 }
 
-/* ---------- best to worst calls ---------- */
-const rk = {period: '', big: '', sector: '', order: 'best'};
-function renderRank() {
-  const calls = D().calls || [];
-  const periods = [...new Set(calls.slice().sort((a, b) => b.periodKey.localeCompare(a.periodKey)).map(c => c.period))];
-  if (curQ() !== 'all' && periods.includes(curQ())) rk.period = curQ();
-  if (!rk.period || !periods.includes(rk.period)) rk.period = periods.includes(D().season) ? D().season : (periods[0] || '');
-  const inP = calls.filter(c => c.period === rk.period);
-  const bigs = [...new Set(inP.map(c => c.bigSector).filter(Boolean))].sort();
-  const sectors = [...new Set(inP.filter(c => !rk.big || c.bigSector === rk.big).map(c => c.sector))].sort();
-  $('#rk-big').innerHTML = `<option value="">All sectors</option>` + bigs.map(s => `<option ${s === rk.big ? 'selected' : ''}>${esc(s)}</option>`).join('');
-  $('#rk-big').hidden = !bigs.length;
-  $('#rk-period').innerHTML = periods.map(p => `<option ${p === rk.period ? 'selected' : ''}>${esc(p)}</option>`).join('') || '<option>No calls yet</option>';
-  $('#rk-sector').innerHTML = `<option value="">All sub-sectors</option>` + sectors.map(s => `<option ${s === rk.sector ? 'selected' : ''}>${esc(s)}</option>`).join('');
-  let rows = inP.filter(c => (!rk.big || c.bigSector === rk.big) && (!rk.sector || c.sector === rk.sector)).sort((a, b) => b.score - a.score);
-  if (rk.order === 'worst') rows.reverse();
-  $('#cnt-rank').textContent = calls.length.toLocaleString('en-IN');
-  $('#rk-table').innerHTML = rows.length ? `<thead><tr><th>#</th><th>Company</th><th>Score</th><th>Percentile</th><th>Change</th><th>Sector \u203a sub-sector</th><th>What stood out</th><th>Credibility</th><th>Call date</th></tr></thead><tbody>` +
-    rows.map((c, i) => `<tr data-id="${esc(c.id)}" data-k="${esc(c.key)}" style="animation-delay:${Math.min(i, 20) * .025}s">
-      <td class="rk">${rk.order === 'worst' ? rows.length - i : i + 1}</td>
-      <td><div class="nm">${esc(c.name)}</div><div style="font-size:12.5px;color:var(--muted)">${esc(c.mcap || '')}${c.hasSummary ? ' · summary' : ''}</div></td>
-      <td><div class="sc"><b class="num" style="color:${scoreCol(c.score)}">${c.score}</b><span class="scbar"><i style="width:${c.score}%;background:${scoreCol(c.score)};animation-delay:${Math.min(i, 20) * .025}s"></i></span>${c.veto ? '<span class="veto">VETO</span>' : ''}</div></td>
-      <td class="num">${c.pct != null ? 'Top ' + Math.max(1, 100 - c.pct) + '%' : ''}</td>
-      <td><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${c.delta ? sign(c.delta) : '–'}</span></td>
-      <td><div>${esc(c.sector)}</div><div style="font-size:12px;color:var(--muted)">${esc(c.bigSector || '')}</div></td>
-      <td class="th-txt">${esc(c.top || c.thesis)}</td>
-      <td class="num">${c.credTested === 0 ? '<span style="color:var(--muted)">untested</span>' : c.cred}</td>
-      <td class="num" style="white-space:nowrap">${esc((c.date || '').slice(0, 10))}</td></tr>`).join('') + '</tbody>'
-    : '<tbody><tr><td><div class="empty">No calls in this view yet.</div></td></tr></tbody>';
+/* First-time callers */
+function vFirst() {
+  const rows = (D.firstTimers || []).filter(r => (curQ() === 'all' || r.period === curQ()) && (!S.first.status || r.status === S.first.status));
+  return head('First-time callers', 'Companies holding their first-ever earnings call. New coverage often comes before the market notices a company.', `
+      <ul><li><b>Confirmed</b> ${tip('first')} means the transcript says it is the first or maiden call.</li>
+      <li><b>Likely</b> means BSE has no concall transcript or analyst meet filing for the company from 2019 until this call.</li>
+      <li>Newest first. Click a company to read what management said on its debut.</li></ul>`, qBadge()) + `
+    <div class="toolbar">${['', 'Confirmed', 'Likely'].map(s => `<button class="chip" data-fs="${s}" aria-pressed="${S.first.status === s}">${s || 'All'}</button>`).join('')}</div>
+    ${rows.length ? `<div class="rows first"><div class="r hd"><span>Company</span><span>Status</span><span>First call</span><span>Score</span><span>Sub-sector</span><span>What they said</span></div>
+      ${rows.map(r => `<button class="r" data-open="${esc(r.id)}">
+        <span style="min-width:0"><span class="nm" style="display:block">${esc(r.name)}</span><span class="sub">${esc(r.mcap || '')}</span></span>
+        <span><span class="pill ${r.status === 'Confirmed' ? 'st-confirming' : 'st-emerging'}">${esc(r.status)}</span></span>
+        <span class="sub num">${esc(r.period)}<br>${esc(fdate(r.date))}</span>
+        <span><b class="num" style="color:${vcol(r.score)}">${r.score}</b></span>
+        <span class="sub">${esc(r.sector)}<br>${esc(r.bigSector || '')}</span>
+        <span class="why" style="min-width:0">${esc(r.thesis || '')}<br><span style="color:var(--faint)">${esc(r.evidence)}</span></span></button>`).join('')}</div>`
+      : '<div class="empty">No first-time callers in this view yet.</div>'}
+    <p class="count-line">${fmt(D.historyChecked || 0)} companies checked against their BSE filing history so far. New companies are checked every night.</p>`;
 }
-$('#rk-period').onchange = e => { rk.period = e.target.value; rk.sector = ''; qsel[state.mkt] = rk.period; renderQbar(); renderRank(); };
-$('#rk-sector').onchange = e => { rk.sector = e.target.value; renderRank(); };
-$('#rk-big').onchange = e => { rk.big = e.target.value; rk.sector = ''; renderRank(); };
-$('#rk-order').onclick = e => { const b = e.target.closest('button'); if (!b) return; rk.order = b.dataset.o;
-  document.querySelectorAll('#rk-order button').forEach(x => x.setAttribute('aria-pressed', x.dataset.o === rk.order)); renderRank(); };
-$('#rk-table').onclick = e => { const tr = e.target.closest('tr[data-id]'); if (tr) openCompany(tr.dataset.id); };
 
-/* ---------- sector tracker ---------- */
-function spark14(vals) {
-  const w = 112, h = 26, max = Math.max(1, ...vals), bw = w / vals.length;
-  return `<svg class="spark14" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Calls per day, last 14 days: ${vals.join(', ')}">${vals.map((v, i) => {
-    const bh = v ? Math.max(3, v / max * (h - 2)) : 1.5;
-    return `<rect class="colbar" x="${i * bw + 1}" y="${h - bh}" width="${bw - 2}" height="${bh}" rx="1.5" fill="${i === vals.length - 1 ? 'var(--gold)' : v ? 'var(--blue)' : 'var(--line)'}" style="animation-delay:${i * .03}s"/>`; }).join('')}</svg>`;
+/* Sector tracker */
+function bars14(vals, days) {
+  const w = 104, h = 26, max = Math.max(1, ...vals), bw = w / vals.length;
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Calls per day, last 14 days: ${vals.join(', ')}">${vals.map((v, i) => { const bh = v ? Math.max(3, v / max * (h - 2)) : 1.5;
+    return `<rect x="${(i * bw + 1).toFixed(1)}" y="${(h - bh).toFixed(1)}" width="${(bw - 2).toFixed(1)}" height="${bh.toFixed(1)}" rx="1.5" fill="${i === vals.length - 1 ? 'var(--gold)' : v ? 'var(--blue)' : 'var(--line)'}"><title>${esc(days?.[i] || '')}: ${v}</title></rect>`; }).join('')}</svg>`;
 }
-const gCol = g => g == null ? 'var(--muted)' : g >= 60 ? 'var(--up)' : g <= 40 ? 'var(--down)' : 'var(--blue)';
-const openSec = new Set();
-function trkRow(r, cls, i, extra = '') {
-  return `<tr class="${cls}" style="animation-delay:${Math.min(i, 24) * .02}s" ${extra}>
-    <td><div class="nm">${esc(r.name)}</div>${cls === 'subrow' && r.companies.length ? `<div class="trk-co" hidden>${r.companies.map(c => `<button data-id="${esc(c.id)}">${esc(c.name)} \u00b7 ${c.score}</button>`).join('')}</div>` : ''}</td>
-    <td><div class="covbar"><span class="num">${r.calls}/${r.universe}</span><span class="scbar"><i style="width:${r.coverage}%;background:var(--blue)"></i></span></div></td>
-    <td><span class="pill ${r.new1 ? 'new' : ''}">${r.new1}</span> / <span class="pill">${r.new7}</span></td>
-    <td>${spark14(r.daily)}</td>
-    <td>${r.avg == null ? '<span style="color:var(--muted)">\u2013</span>' : `<div class="sc"><b class="num" style="color:${scoreCol(r.avg)}">${r.avg}</b><span class="scbar"><i style="width:${r.avg}%;background:${scoreCol(r.avg)}"></i></span></div>`}</td>
-    <td><span class="gidx" style="color:${gCol(r.guidance)}">${r.guidance ?? '\u2013'}</span>${r.calls ? ` <span style="font-size:12px;color:var(--muted)">\u25B2${r.raising} \u25BC${r.cutting}</span>` : ''}</td>
-    <td>${r.best ? `<button class="open" data-id="${esc(r.best.id)}">${esc(r.best.name)} \u00b7 ${r.best.score}</button>` : ''}</td>
-    <td>${r.worst && r.calls > 1 ? `<button class="open" data-id="${esc(r.worst.id)}">${esc(r.worst.name)} \u00b7 ${r.worst.score}</button>` : ''}</td>
-    <td class="num" style="white-space:nowrap">${esc(r.latest || '\u2013')}</td></tr>`;
+function dailyChart(t) {
+  const days = t.days || [], secs = t.sectors || [], vals = days.map((_, i) => secs.reduce((n, s) => n + (s.daily?.[i] || 0), 0));
+  if (!vals.length) return '';
+  const W = 560, H = 150, x0 = 28, x1 = W - 6, y0 = 14, y1 = H - 24, max = Math.max(1, ...vals), step = Math.max(1, Math.ceil(max / 4));
+  const top = step * Math.ceil(max / step), bw = (x1 - x0) / vals.length, Y = v => y1 - v / top * (y1 - y0);
+  const ticks = []; for (let v = 0; v <= top; v += step) ticks.push(v);
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Calls filed per day over the last 14 days">
+    ${ticks.map(v => `<line x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="${x0 - 6}" y="${Y(v) + 3.5}" text-anchor="end" font-size="10" fill="var(--muted)">${v}</text>`).join('')}
+    ${vals.map((v, i) => `<rect x="${(x0 + i * bw + 3).toFixed(1)}" y="${Y(v).toFixed(1)}" width="${(bw - 6).toFixed(1)}" height="${(y1 - Y(v)).toFixed(1)}" rx="3" fill="${i === vals.length - 1 ? 'var(--gold)' : 'var(--blue)'}" opacity="${v ? 1 : .3}"><title>${esc(fdate(days[i]))}: ${v} calls</title></rect>${v ? `<text x="${(x0 + i * bw + bw / 2).toFixed(1)}" y="${(Y(v) - 4).toFixed(1)}" text-anchor="middle" font-size="10" fill="var(--fg)">${v}</text>` : ''}`).join('')}
+    <text x="${x0}" y="${H - 6}" font-size="10" fill="var(--muted)">${esc(sdate(days[0]))}</text>
+    <text x="${x1}" y="${H - 6}" font-size="10" text-anchor="end" fill="var(--muted)">${esc(sdate(days.at(-1)))}</text></svg>`;
 }
-const season = {pick: ''};
-function pickTracker() {
-  const all = D().trackers || {}, keys = Object.keys(all);
-  if (!keys.length) return D().tracker;
-  if (curQ() !== 'all' && all[curQ()]) season.pick = curQ();
-  if (!season.pick || !all[season.pick]) {
-    // default: the latest season once it has a meaningful number of calls, else the fullest one
-    const fullest = keys.reduce((a, b) => (all[b].reported > all[a].reported ? b : a));
-    season.pick = all[D().season] ? D().season : fullest;
-  }
-  const opts = keys.slice().reverse().map(k => `<option value="${esc(k)}" ${k === season.pick ? 'selected' : ''}>${esc(k)} \u00b7 ${all[k].reported} calls</option>`).join('');
-  $('#trk-season').innerHTML = opts; $('#guide-season').innerHTML = opts;
-  return all[season.pick];
+function trkRow(r, kind, idx, days) {
+  const cls = kind === 'sec' ? 'r sec' + (S.openSec.has(r.name) ? ' open' : '') : 'r subr';
+  return `<div class="${cls}" ${kind === 'sec' ? `data-sec="${idx}" role="button" tabindex="0" aria-expanded="${S.openSec.has(r.name)}"` : `data-subrow="${idx}"`}>
+    <div style="min-width:0"><span class="nm">${kind === 'sec' ? '<span class="caret"></span>' : ''}${esc(r.name)}</span></div>
+    <span class="covcell"><span class="num">${r.calls} / ${r.universe}</span><span class="sbar"><i style="width:${r.coverage}%;background:var(--blue)"></i></span></span>
+    <span class="num small">${r.new1 ? `<b style="color:var(--gold)">+${r.new1}</b>` : '0'} / ${r.new7}</span>
+    <span>${r.avg == null ? '<span class="muted">–</span>' : `<b class="num" style="color:${vcol(r.avg)}">${r.avg}</b>`}</span>
+    <span>${r.guidance == null ? '<span class="muted">–</span>' : `<span class="gidx" style="color:${gcol(r.guidance)}">${r.guidance}</span> <span class="small" style="color:${gcol(r.guidance)}">${gword(r.guidance)}</span>`}</span>
+    <span style="min-width:0">${r.best ? `<button class="btn" data-open="${esc(r.best.id)}" style="max-width:100%;overflow:hidden;text-overflow:ellipsis">${esc(r.best.name)} · ${r.best.score}</button>` : ''}</span>
+    <span class="c-days">${bars14(r.daily || [], days)}</span>
+    <span class="c-m">${r.calls} of ${r.universe} reported · ${r.new1 ? `+${r.new1} today · ` : ''}avg score ${r.avg ?? '–'} · guidance ${r.guidance ?? '–'} ${gword(r.guidance)}</span>
+    ${kind === 'sub' && S.openSub === r.name && r.companies?.length ? `<div class="cos">${r.companies.map(c => `<button data-open="${esc(c.id)}">${esc(c.name)} · ${c.score}</button>`).join('')}</div>` : ''}
+  </div>`;
 }
-$('#trk-season').onchange = e => { season.pick = e.target.value; qsel[state.mkt] = season.pick; renderQbar(); renderTracker(); };
-$('#guide-season').onchange = e => { season.pick = e.target.value; qsel[state.mkt] = season.pick; renderQbar(); renderGuide(); };
-function renderTracker() {
-  const t = pickTracker(), secs = t?.sectors || (t?.rows ? t.rows.map(r => ({...r, name: r.sector, universe: r.calls, coverage: 100, subs: []})) : []);
-  const new1 = secs.reduce((n, r) => n + r.new1, 0);
-  $('#cnt-tracker').textContent = new1 ? new1 + ' new today' : secs.length;
-  if (t?.universe) $('#trk-cov').innerHTML = `<div><span class="eyebrow">${esc(t.season || '')} season so far</span><div><b>${t.reported.toLocaleString('en-IN')}</b> of ${t.universe.toLocaleString('en-IN')} companies have held their call</div></div><span class="bar"><span style="width:${Math.round(100 * t.reported / t.universe)}%"></span></span><span class="num">${Math.round(100 * t.reported / t.universe)}%</span>`;
-  else $('#trk-cov').hidden = true;
-  if (!secs.length) { $('#trk-table').innerHTML = '<tbody><tr><td><div class="empty">The tracker fills in as the engine reads this season\'s calls.</div></td></tr></tbody>'; return; }
-  let i = 0;
-  $('#trk-table').innerHTML = `<thead><tr><th>Sector / sub-sector</th><th>Reported / universe</th><th>New (1d / 7d)</th><th>Last 14 days</th><th>Avg score</th><th>Guidance</th><th>Best call</th><th>Weakest call</th><th>Last call</th></tr></thead><tbody>` +
-    secs.map((r, si) => trkRow(r, 'sec' + (openSec.has(r.name) ? ' open' : ''), i++, `data-sec="${si}"`) +
-      (openSec.has(r.name) ? (r.subs || []).map(x => trkRow(x, 'subrow', i++, 'data-sub="1"')).join('') : '')).join('') + '</tbody>';
-  $('#trk-table').dataset.secs = '';
-  $('#trk-table')._secs = secs;
+function vTracker() {
+  const t = trackerQ();
+  if (!t) return head('Sector tracker', 'Who has reported in each sector.', '') + '<div class="empty">The tracker fills in as calls are read.</div>';
+  const secs = (t.sectors || []).slice().sort((a, b) => b.calls - a.calls);
+  S._secs = secs;
+  const pct = Math.round(100 * t.reported / Math.max(1, t.universe));
+  return head('Sector tracker', 'Every sector in the universe: how many companies have held their call, what is new today, and how their calls scored. Updated every morning.', `
+      <ol><li><b>Read the top panel</b> for how far the season has got and how many calls came in each day.</li>
+      <li><b>Click a sector</b> to open its sub-sectors. Click a sub-sector to list its companies.</li>
+      <li>Columns: <b>Reported</b> ${tip('coverage')}, <b>New</b> today / this week ${tip('new')}, <b>Avg score</b> ${tip('avg')}, <b>Guidance</b> index ${tip('gidx')} and the sector’s <b>best call</b>.</li></ol>`, qBadge()) + `
+    <section class="card cov">
+      <div style="display:grid;gap:8px"><span class="eyebrow">${esc(t.season || '')} season so far</span>
+        <div><span class="big" data-count="${t.reported}">${fmt(t.reported)}</span> <span class="muted">of ${fmt(t.universe)} companies have held their call</span></div>
+        <div class="prog"><i style="width:${pct}%"></i></div><span class="small muted">${pct}% reported${inProg(t.season) ? '. More calls arrive every night.' : '.'}</span></div>
+      <div style="min-width:0"><span class="eyebrow">Calls filed per day, last 14 days</span>${dailyChart(t)}</div>
+    </section>
+    <div class="rows trk">
+      <div class="r hd"><span>Sector</span><span>Reported ${tip('coverage')}</span><span>New 1d / 7d</span><span>Avg score</span><span>Guidance ${tip('gidx')}</span><span>Best call</span><span class="c-days">Last 14 days</span></div>
+      ${secs.map((r, i) => trkRow(r, 'sec', i, t.days) + (S.openSec.has(r.name) ? (r.subs || []).map((x, j) => trkRow(x, 'sub', i + '-' + j, t.days)).join('') : '')).join('')}
+    </div>`;
 }
-$('#trk-table').onclick = e => {
-  const b = e.target.closest('button[data-id]'); if (b) { e.stopPropagation(); openCompany(b.dataset.id); return; }
-  const tr = e.target.closest('tr'); if (!tr) return;
-  if (tr.dataset.sec != null) { const name = $('#trk-table')._secs[+tr.dataset.sec].name; openSec.has(name) ? openSec.delete(name) : openSec.add(name); renderTracker(); return; }
-  if (tr.dataset.sub) { const box = tr.querySelector('.trk-co'); if (box) box.hidden = !box.hidden; }
-};
 
-/* ---------- first-time calls ---------- */
-function renderFirst() {
-  const d = D(), cur = curQ(), rows = (d.firstTimers || []).filter(r => cur === 'all' || r.period === cur);
-  $('#cnt-first').textContent = rows.length;
-  $('#first-table').innerHTML = rows.length ? `<thead><tr><th>Company</th><th>Status</th><th>First call</th><th>Score</th><th>Sector \u203a sub-sector</th><th>Evidence</th><th>Read</th></tr></thead><tbody>` +
-    rows.map((r, i) => `<tr data-id="${esc(r.id)}" style="animation-delay:${Math.min(i, 20) * .03}s">
-      <td><div class="nm">${esc(r.name)}</div><div style="font-size:12.5px;color:var(--muted)">${esc(r.mcap || '')}</div></td>
-      <td><span class="stage ${r.status === 'Confirmed' ? 'st-confirming' : 'st-emerging'}">${esc(r.status)}</span></td>
-      <td class="num" style="white-space:nowrap">${esc(r.period)}<div style="font-size:12px;color:var(--muted)">${esc(r.date)}</div></td>
-      <td><b class="num" style="color:${scoreCol(r.score)}">${r.score}</b></td>
-      <td><div>${esc(r.sector)}</div><div style="font-size:12px;color:var(--muted)">${esc(r.bigSector || '')}</div></td>
-      <td class="th-txt">${esc(r.evidence)}<div style="margin-top:4px;color:var(--fg);opacity:.85">${esc(r.thesis || '')}</div></td>
-      <td><button class="open" data-id="${esc(r.id)}">Open read</button></td></tr>`).join('') + '</tbody>'
-    : '<tbody><tr><td><div class="empty">No first-time callers found yet among the calls read so far.</div></td></tr></tbody>';
-  $('#first-note').textContent = d.historyChecked ? `${d.historyChecked} companies checked against their BSE filing history so far. New companies are checked each night.` : '';
-}
-$('#first-table').onclick = e => { const t = e.target.closest('[data-id]'); if (t) openCompany(t.dataset.id); };
-
-/* ---------- guidance leaders ---------- */
-function gCard(x, i, top) {
-  const pos = x.guidance;
-  return `<article class="gcard ${top && i < 3 ? 'top' : ''}" style="animation-delay:${i * .05}s">
-    <div class="row"><span class="rk num" style="color:var(--muted)">#${i + 1}</span><span class="gidx" style="font-size:22px;color:${gCol(pos)}">${pos}</span></div>
-    <div><h4>${esc(x.name)}</h4><div class="par">${esc(x.parent || '')} \u00b7 ${x.calls} calls \u00b7 \u25B2${x.raising} raising \u00b7 \u25BC${x.cutting} cutting</div></div>
-    <div class="gauge"><i style="left:${pos}%"></i></div>
-    ${x.topGuide ? `<div class="line"><b>${esc(x.topGuide.name)}</b> \u2014 ${esc(x.topGuide.line)} <button class="open" data-id="${esc(x.topGuide.id)}" style="margin-left:4px">Open</button></div>` : ''}
+/* Guidance leaders */
+function gCard(x, i, lead) {
+  return `<article class="card gcard" style="${lead && i < 3 ? 'border-color:var(--gold)' : ''}">
+    <div class="top"><div><span class="eyebrow">#${i + 1} · ${esc(x.parent || '')}</span><h4>${esc(x.name)}</h4></div><span style="text-align:right"><span class="gidx" style="font-size:24px;color:${gcol(x.guidance)}">${x.guidance}</span><br><span class="small" style="color:${gcol(x.guidance)}">${gword(x.guidance)}</span></span></div>
+    <div><div class="gauge"><i style="left:${x.guidance}%"></i></div><div class="gauge-l" style="margin-top:6px"><span>0 cutting</span><span>50</span><span>100 raising</span></div></div>
+    <p class="small">${x.raising} of ${x.calls} companies raised guidance, ${x.cutting} cut. Average call score ${x.avg ?? '–'}.</p>
+    ${x.topGuide ? `<p class="quote-line"><b>${esc(x.topGuide.name)}:</b> ${esc(x.topGuide.line)}</p><div><button class="btn" data-open="${esc(x.topGuide.id)}">Open ${esc(x.topGuide.name)}</button></div>` : ''}
   </article>`;
 }
-function renderGuide() {
-  const t = pickTracker() || {}, lead = t.guidanceLeaders || [], lag = t.guidanceLaggards || [];
-  $('#cnt-guide').textContent = lead.length;
-  $('#guide-lead').innerHTML = lead.length ? lead.map((x, i) => gCard(x, i, true)).join('') : '<div class="empty">Guidance leaders appear once sub-sectors have at least two calls this season.</div>';
-  $('#guide-lag').innerHTML = lag.length ? lag.map((x, i) => gCard(x, i, false)).join('') : '';
-}
-document.getElementById('panel-guide').addEventListener('click', e => { const b = e.target.closest('button[data-id]'); if (b) openCompany(b.dataset.id); });
-
-/* ---------- sectors ---------- */
-function sectorChart(s, periods) {
-  const W = 300, H = 132, x0 = 34, x1 = 290, y0 = 10, y1 = 104, n = s.s.supply.length;
-  const X = i => x0 + i * (x1 - x0) / Math.max(1, n - 1), Y = v => y1 - (v / 100) * (y1 - y0);
-  const ser = [['demand', 'var(--muted)', 1.5, '4 3'], ['pricing', 'var(--teal)', 2, ''], ['util', 'var(--blue)', 2, ''], ['supply', 'var(--gold)', 3, '']];
-  return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="${esc(s.name)} breadth by quarter">
-    ${[0, 50, 100].map(g => `<line x1="${x0}" x2="${x1}" y1="${Y(g)}" y2="${Y(g)}" stroke="var(--line)"/><text x="${x0 - 6}" y="${Y(g) + 3.5}" text-anchor="end" font-size="10" fill="var(--muted)">${g}%</text>`).join('')}
-    ${ser.map(([k, col, sw, dash], j) => { const d = s.s[k].map((v, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join('');
-      return dash ? `<path d="${d}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-dasharray="${dash}" opacity=".9"/>`
-        : `<path class="draw" pathLength="1" d="${d}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-linejoin="round" style="animation-delay:${.15 + j * .2}s"/>`; }).join('')}
-    <circle cx="${X(n - 1)}" cy="${Y(s.s.supply.at(-1))}" r="4.5" fill="var(--gold)"/>
-    <text x="${x0}" y="${H - 6}" font-size="10" fill="var(--muted)">${esc(periods.at(-n) || '')}</text>
-    <text x="${x1}" y="${H - 6}" font-size="10" text-anchor="end" fill="var(--muted)">${esc(periods.at(-1) || '')}</text></svg>`;
-}
-function renderSectors() {
-  const d = D();
-  $('#sectors').innerHTML = d.sectors.length ? d.sectors.map((s, i) => `
-    <article class="sector ${s.hit ? 'hit' : ''}" style="animation-delay:${i * .06}s${s.hit ? `,${1 + i * .2}s` : ''}">
-      <div class="s-head"><div><h3>${esc(s.name)}</h3><span style="font-size:12.5px;color:var(--muted)">${s.n} companies this season</span></div><span class="stage st-${s.stage}">${esc(s.label)}</span></div>
-      ${s.hit ? '<span class="pattern">Supply has done the work</span>' : ''}
-      ${sectorChart(s, d.periods)}
-      <div class="s-stats">
-        <span><b style="color:var(--gold)">${s.s.supply.at(-1)}%</b>Supply</span><span><b>${s.s.util.at(-1)}%</b>Utilisation</span><span><b>${s.s.pricing.at(-1)}%</b>Pricing</span><span><b>${s.s.demand.at(-1)}%</b>Demand</span>
-      </div>
-      <p class="s-note">${esc(s.note)}</p>
-    </article>`).join('') : '<div class="empty">Sub-sectors appear once at least three companies in one have been scored.</div>';
-  $('#cnt-sectors').textContent = d.sectors.filter(s => s.hit).length + ' turning';
+function vGuidance() {
+  const t = trackerQ() || {}, lead = t.guidanceLeaders || [], lag = t.guidanceLaggards || [];
+  return head('Guidance leaders', 'Which sub-sectors’ managements are guiding up hardest this quarter, and which are cutting. A quick map of where business momentum is building.', `
+      <ul><li>Each card is a sub-sector. The <b>guidance index</b> ${tip('gidx')} runs from 0 (all cutting) through 50 (neutral) to 100 (all raising).</li>
+      <li>Guidance from managements with a record of delivering counts for more.</li>
+      <li>The quote is the strongest piece of guidance in that sub-sector. Open it to see the full call.</li>
+      <li>A sub-sector needs at least two calls this quarter to be ranked.</li></ul>`, qBadge()) + `
+    <section class="sec"><h3>Guiding up</h3><div class="grid-auto">${lead.map((x, i) => gCard(x, i, true)).join('') || '<div class="empty">Leaders appear once sub-sectors have at least two calls this quarter.</div>'}</div></section>
+    ${lag.length ? `<section class="sec"><h3>Weakest guidance</h3><div class="grid-auto">${lag.map((x, i) => gCard(x, i, false)).join('')}</div></section>` : ''}`;
 }
 
-/* ---------- themes ---------- */
-function renderThemes() {
-  const d = D(), max = Math.max(1, ...d.themes.flatMap(t => t.c));
-  const rows = [...d.themes].sort((a, b) => (b.c.at(-1) - b.c.at(-Math.min(3, b.c.length))) - (a.c.at(-1) - a.c.at(-Math.min(3, a.c.length))));
-  const other = state.mkt === 'IN' ? 'US' : 'India';
-  $('#themes').innerHTML = rows.length ? `<div class="th-row th-head"><span>Theme</span><span>Companies by quarter</span><span>Now</span><span>2Q change</span><span>Sub-sectors · ${other}</span><span>Stage</span></div>` +
-    rows.map((t, i) => { const ch = t.c.at(-1) - t.c.at(-Math.min(3, t.c.length)), bw = 132 / t.c.length;
-      return `<div class="th-row" style="animation-delay:${i * .05}s">
-        <span class="th-name">${esc(t.name)}${t.new ? ' <span class="mini t-novelty">new</span>' : ''}<small>${esc(t.sub || '')}</small></span>
-        <svg viewBox="0 0 132 42" width="132" height="42" role="img" aria-label="${t.c.join(', ')} companies">${t.c.map((v, j) => { const h = Math.max(2, v / max * 38);
-          return `<rect class="colbar" x="${j * bw}" y="${40 - h}" width="${bw - 6}" height="${h}" rx="2.5" fill="${j === t.c.length - 1 ? 'var(--gold)' : 'var(--line)'}" style="animation-delay:${.2 + i * .05 + j * .06}s"/>`; }).join('')}</svg>
-        <span class="th-now" data-count="${t.c.at(-1)}">${t.c.at(-1)}</span>
-        <span class="delta ${ch >= 0 ? 'up' : 'dn'} c4" style="justify-self:start">${ch >= 0 ? '+' : '−'}${Math.abs(ch)}</span>
-        <span class="c5" style="font-size:13px;color:var(--muted)">${t.spans} sub-sector${t.spans === 1 ? '' : 's'} · ${other}: <b class="num" style="color:var(--fg)">${t.other ?? '–'}</b></span>
-        <span class="stage st-${t.stage} c6" style="justify-self:start">${esc(t.label)}</span>
-      </div>`; }).join('') : '<div class="empty">Themes appear once three or more companies discuss the same one.</div>';
-  $('#themes').querySelectorAll('[data-count]').forEach(n => countUp(n, +n.dataset.count));
-  $('#cnt-themes').textContent = d.themes.filter(t => t.stage === 'emerging').length + ' emerging';
+/* Sector turns */
+const STAGE_ORDER = {turning: 0, emerging: 1, confirming: 2, crowded: 3, deteriorating: 4, neutral: 5};
+function vTurns() {
+  const all = (D.sectors || []), base = all.every(s => (s.s.supply || []).length < 2);
+  const stages = [...new Set(all.map(s => s.stage))].sort((a, b) => STAGE_ORDER[a] - STAGE_ORDER[b]);
+  const rows = all.filter(s => !S.turns.stage || s.stage === S.turns.stage).sort((a, b) => (b.hit - a.hit) || STAGE_ORDER[a.stage] - STAGE_ORDER[b.stage] || b.n - a.n);
+  const B = [['supply', 'Supply discipline', 'var(--gold)'], ['util', 'Utilisation rising', 'var(--blue)'], ['pricing', 'Pricing improving', 'var(--teal)'], ['demand', 'Demand positive', 'var(--muted)']];
+  return head('Sector turns', 'Sub-sectors where the capital cycle may be turning: competitors hold back capacity, then pricing and utilisation start to improve before demand talk catches up.', `
+      <ul><li>Each card shows <b>breadth</b> ${tip('breadth')}: the share of the sub-sector’s companies whose calls show each signal.</li>
+      <li>The pattern to look for: supply discipline high, pricing or utilisation rising, demand still lukewarm. Those cards are marked <b>Turning</b> ${tip('stage')} and sorted to the top.</li>
+      <li>Only sub-sectors with at least three calls appear.</li></ul>`, focusBadge()) + `
+    ${base ? `<div class="welcome"><span>Only ${esc(D.season)} has enough calls so far, so these cards show where each sub-sector stands today. Turn flags need two quarters and will start once ${esc((D.inProgress || [])[0]?.season || 'the next quarter')} fills in.</span></div>` : ''}
+    <div class="toolbar">${['', ...stages].map(s => `<button class="chip" data-st="${s}" aria-pressed="${S.turns.stage === s}">${s ? (all.find(x => x.stage === s)?.label || s) : 'All stages'} <span class="num">${s ? all.filter(x => x.stage === s).length : all.length}</span></button>`).join('')}</div>
+    <div class="grid-auto">${rows.map(s => `<article class="card turn ${s.hit ? 'hit' : ''}">
+      <div class="top"><div><h4>${esc(s.name)}</h4><span class="small muted">${s.n} companies</span></div><span class="pill st-${s.stage}">${esc(s.label)}</span></div>
+      ${B.map(([k, n, col]) => { const v = s.s[k] || [], now = v.at(-1) ?? 0, prev = v.length > 1 ? v.at(-2) : null;
+        return `<div class="brow"><span>${n}</span><span class="sbar"><i style="width:${now}%;background:${col}"></i></span><span class="num">${now}%${prev != null ? `<br><span class="delta ${now >= prev ? 'up' : 'dn'}" style="font-size:10.5px">${now >= prev ? '+' : '−'}${Math.abs(now - prev)}</span>` : ''}</span></div>`; }).join('')}
+      <p class="small muted">${esc(s.note)}</p></article>`).join('') || '<div class="empty">No sub-sectors in this stage.</div>'}</div>`;
 }
 
-/* ---------- ideas ---------- */
-function renderIdeas() {
-  const d = D();
-  $('#ideas').innerHTML = d.ideas.length ? d.ideas.map((x, i) => { const c = byId(x.id); if (!c) return '';
-    return `<article class="idea ${x.red ? 'red' : ''}" style="animation-delay:${Math.min(i, 12) * .06}s">
-      <div class="row"><span class="itype t-${x.t}">${esc(x.type)}</span><span class="rk">${x.red ? 'Watch' : '#' + (i + 1)}</span></div>
-      <div class="row"><h3>${esc(c.name)}</h3><span style="display:flex;gap:6px;align-items:center"><span class="num" style="font-size:18px;color:${scoreCol(c.score)}">${c.score}</span><span class="delta ${c.delta >= 0 ? 'up' : 'dn'}">${sign(c.delta)}</span></span></div>
-      <p>${esc(x.why)}</p>
-      <div class="row"><span class="tag">${esc(c.sector)}</span><button class="open" data-id="${esc(c.id)}">Open read</button></div>
-    </article>`; }).join('') : '<div class="empty">Ideas appear once a season has enough scored calls.</div>';
-  $('#cnt-ideas').textContent = d.ideas.filter(x => !x.red).length;
+/* Themes */
+function vThemes() {
+  const th = (D.themes || []).slice().sort((a, b) => b.c.at(-1) - a.c.at(-1)), max = Math.max(1, ...th.map(t => t.c.at(-1)));
+  return head('Themes', 'Investment themes that managements are talking about, counted by how many companies discussed each one. Rising counts show a theme spreading.', `
+      <ul><li><b>Companies discussing</b> ${tip('themeCount')}: distinct companies that talked about the theme with substance.</li>
+      <li>The sub-sectors column shows where the theme is concentrated.</li>
+      <li>Once two quarters are read, the change column shows which themes are spreading fastest, and the stage ${tip('stage')} moves off Baseline.</li></ul>`, focusBadge()) + `
+    <div class="rows th"><div class="r hd"><span>Theme</span><span>Companies discussing</span><span>Change</span><span>Stage</span></div>
+    ${th.map((t, i) => { const now = t.c.at(-1), ch = t.c.length > 1 ? now - t.c.at(-2) : null;
+      return `<div class="r"><span style="min-width:0"><span class="nm" style="display:block">${esc(t.name)}${t.new ? ' <span class="pill st-emerging">New</span>' : ''}</span><span class="sub">${t.spans} sub-sectors · ${esc(t.sub || '')}</span></span>
+        <span class="thbar"><b class="num" style="min-width:34px">${fmt(now)}</b><span class="sbar"><i style="width:${100 * now / max}%;background:var(--gold);animation-delay:${Math.min(i, 20) * .02}s"></i></span></span>
+        <span>${ch == null ? '<span class="delta zero">–</span>' : dcell(ch)}</span><span><span class="pill st-${t.stage}">${esc(t.label)}</span></span></div>`; }).join('')}</div>
+    ${(D.theme_candidates || []).length ? `<section class="sec"><h3>Ideas showing up often but not yet tracked as themes</h3><div class="chips">${D.theme_candidates.map(x => `<span class="tag">${esc(typeof x === 'string' ? x : x.name)}</span>`).join('')}</div></section>` : ''}`;
 }
 
-const RENDER = {feed: () => { renderList(); renderDetail(); }, rank: renderRank, tracker: renderTracker, guide: renderGuide, first: renderFirst, sectors: renderSectors, themes: renderThemes, ideas: renderIdeas};
-function go(tab) {
-  state.tab = tab;
-  document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.tab === tab));
-  Object.keys(RENDER).forEach(p => { $('#panel-' + p).hidden = p !== tab; });
-  RENDER[tab]();
-  remember();
+/* Ideas */
+function vIdeas() {
+  const red = S.ideas.tab === 'red', list = (D.ideas || []).filter(x => !!x.red === red && byId[x.id]);
+  const types = [...new Set((D.ideas || []).map(x => x.type))];
+  return head('Ideas & red flags', 'Single companies that stand out this season, plus the calls that need a closer look before anyone acts. A shortlist to work up, not a buy list.', `
+      <ul>${types.map(t => `<li><b>${esc(t)}:</b> ${esc(IDEA_TYPES[t] || '')}</li>`).join('')}</ul>
+      <p>Open any card to read the full call and check the quotes before taking an idea further.</p>`, focusBadge()) + `
+    <div class="toolbar"><div class="seg"><button data-it="ideas" aria-pressed="${!red}">Ideas <span class="num">${(D.ideas || []).filter(x => !x.red).length}</span></button><button data-it="red" aria-pressed="${red}">Red flags <span class="num">${(D.ideas || []).filter(x => x.red).length}</span></button></div></div>
+    <div class="grid-auto">${list.map((x, i) => { const c = byId[x.id];
+      return `<article class="card idea ${x.red ? 'red' : ''}">
+        <div class="top"><span class="pill ${x.red ? 'v-flag' : 'st-confirming'}">${esc(x.type)}</span><span class="num small muted">${x.red ? '' : '#' + (i + 1)}</span></div>
+        <h4>${esc(c.name)}</h4>
+        <div>${scoreCell(c.score, c.veto)}</div>
+        <p>${esc(x.why)}</p>
+        <div class="foot"><span class="tag">${esc(c.sector)}</span><button class="btn" data-open="${esc(c.id)}">Open the call</button></div></article>`; }).join('') || '<div class="empty">Nothing here yet.</div>'}</div>`;
 }
-function setMarket(m) {
-  state.mkt = m; renderMarkets(); renderTop(); renderQbar(); go(state.tab);
-}
-function remember() {
-  try { localStorage.setItem('csd-view', JSON.stringify({mkt: state.mkt, tab: state.tab})); } catch (e) {}
-}
-function openCompany(id) { state.sel[state.mkt] = id; state.q = ''; $('#q').value = ''; go('feed'); }
 
-$('#markets').addEventListener('click', e => { const b = e.target.closest('.mkt'); if (b && b.dataset.m !== state.mkt) setMarket(b.dataset.m); });
-document.querySelector('.tabs').addEventListener('click', e => { const t = e.target.closest('.tab'); if (t) go(t.dataset.tab); });
-document.querySelector('.tabs').addEventListener('keydown', e => {
-  if (!['ArrowRight', 'ArrowLeft'].includes(e.key)) return; const tabs = [...document.querySelectorAll('.tab')];
-  const i = tabs.indexOf(document.activeElement); if (i < 0) return; const n = tabs.at((i + (e.key === 'ArrowRight' ? 1 : -1)) % tabs.length);
-  n.focus(); go(n.dataset.tab); });
-$('#highlights').addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (!b) return;
-  if (b.dataset.id) openCompany(b.dataset.id); else go(b.dataset.go); });
-$('#ideas').addEventListener('click', e => { const b = e.target.closest('.open'); if (b) openCompany(b.dataset.id); });
-$('#sort').onclick = e => { const b = e.target.closest('button'); if (!b) return; state.sort = b.dataset.s;
-  document.querySelectorAll('#sort button').forEach(x => x.setAttribute('aria-pressed', x.dataset.s === state.sort)); renderList(); };
-$('#q').oninput = e => { state.q = e.target.value; renderList(); renderDetail(); };
-$('#detail').addEventListener('click', e => { const b = e.target.closest('button[data-nb]'); if (b) openCompany(b.dataset.nb); });
-$('#list').onclick = e => { const b = e.target.closest('.co'); if (!b) return; state.sel[state.mkt] = b.dataset.id;
-  document.querySelectorAll('.co').forEach(x => x.setAttribute('aria-selected', x.dataset.id === b.dataset.id)); renderDetail(); };
-$('#list').addEventListener('keydown', e => {
-  if (!['ArrowDown', 'ArrowUp'].includes(e.key)) return; e.preventDefault();
-  const items = [...document.querySelectorAll('.co')], i = items.indexOf(document.activeElement);
-  const n = items.at(Math.max(0, Math.min(items.length - 1, i + (e.key === 'ArrowDown' ? 1 : -1)))); if (n) { n.focus(); n.click(); } });
+/* Help */
+function vHelp() {
+  const W = [['Supply discipline', 30], ['Pricing & utilisation', 20], ['Guidance × credibility', 20], ['New developments & themes', 15], ['Demand', 10], ['Tone & candour', 5]];
+  return head('How to use the desk', 'A short guide for the team: what each view is for, how the score works, and where the data comes from.', '') + `
+  <div class="help"><article>
+    <section id="h-what"><h3>What the desk does</h3>
+      <p>Every night the desk reads new concall transcripts filed on BSE by the ${fmt(D.universe)} listed Indian companies below ₹50,000 Cr. It reads each call through our capital-cycle framework, scores it, writes a detailed summary, and rolls the calls up by sector and theme. It uses concalls, analyst meets and investor presentations only. Prices, results filings and news are left out on purpose.</p></section>
+    <section id="h-routine"><h3>A 10-minute daily routine</h3><ol>
+      <li><b>Today:</b> read the headline and the four picks under “Where to look first”.</li>
+      <li><b>All calls:</b> sort by Newest first and skim what came in overnight. Filter to the sectors you cover.</li>
+      <li><b>Open a company</b> that looks interesting. Read the call summary first, then the Signals tab to see why it scored the way it did.</li>
+      <li><b>Sector tracker:</b> check who in that sector has reported and whether guidance is improving.</li>
+      <li><b>Ideas & red flags:</b> once a week, go through the shortlist and pick names to work up properly.</li>
+      <li><b>Share:</b> Copy link in a company panel gives a link that opens straight to that company.</li></ol></section>
+    <section id="h-views"><h3>What each view is for</h3><div class="vguide">
+      <div><b>Today</b><span>The day’s headline, season progress, the best call, the strongest guidance, the top idea and the newest calls.</span></div>
+      <div><b>All calls</b><span>Every call for the quarter in one ranked list. Sort best to worst or by newest, and filter by sector, sub-sector, guidance or red flags.</span></div>
+      <div><b>First-time callers</b><span>Companies holding their first-ever earnings call. Useful for finding names before they get coverage.</span></div>
+      <div><b>Sector tracker</b><span>All sectors and sub-sectors: how many companies have reported, what came in today, average score, guidance and best call. Updated daily.</span></div>
+      <div><b>Guidance leaders</b><span>Sub-sectors ranked by how strongly management is guiding up, and the weakest ones.</span></div>
+      <div><b>Sector turns</b><span>Sub-sectors where supply discipline is building and pricing or utilisation is improving. This is the early sign of a turn.</span></div>
+      <div><b>Themes</b><span>How many companies are discussing each investment theme, and how fast it is spreading.</span></div>
+      <div><b>Ideas & red flags</b><span>Standout single companies (divergence, first movers, hidden suppliers, credibility upgrades) and calls that need a check.</span></div>
+      <div><b>Company panel</b><span>Opens from anywhere. The <b>Call summary</b> tab has financial highlights, segments, guidance, capex, demand, Q&A, risks and verbatim quotes. The <b>Signals</b> tab has the triggers, mental models, the eight readings behind the score, credibility, and other companies that name it.</span></div>
+    </div></section>
+    <section id="h-quarter"><h3>The quarter switch</h3><p>${esc(GL.quarter[1])} A small orange dot marks a season still in progress.</p></section>
+    <section id="h-score"><h3>How the score works</h3>
+      <p>The Concall Signal Score runs from 0 to 100. The model reads the call into eight readings, each from −2 to +2, and they are combined with these weights:</p>
+      <div class="weights">${W.map(([n, w]) => `<div class="w"><span>${n}</span><span class="sbar"><i style="width:${w / 30 * 100}%"></i></span><span class="num">${w}</span></div>`).join('')}</div>
+      <ul><li>For a company’s first call in our data, the score reflects where the business stands now. From the second call on, 60% is the level and 40% is the change since last call.</li>
+      <li>Guidance counts for more when management has delivered past guidance. With no track record yet (“untested”), the score is trimmed by 15%.</li>
+      <li>A veto ${tip('veto')} caps the score at 40. Smaller warning signs take off 4 points each, up to 8.</li>
+      <li>Supply carries the most weight on purpose. The framework looks for cycles turning on the supply side before demand shows up.</li></ul>
+      <p>Verdict labels:</p><div class="bands">${[[75, 'Strong 70+'], [65, 'Good 60–69'], [55, 'Average 50–59'], [45, 'Weak 40–49'], [30, 'Poor below 40']].map(([s, l]) => `<span class="pill ${verdict(s).c}">${l}</span>`).join('')}<span class="pill v-flag">Red flag: veto applied</span></div>
+      <p class="muted">Scores are relative. Most calls land between 45 and 65, so a 70 is a top-5% call. The percentile in each company panel shows where a call ranks within its quarter.</p></section>
+    <section id="h-data"><h3>Data and timing</h3><ul>
+      <li><b>Source:</b> BSE corporate filings. Each call has a link to its original transcript PDF in the company panel.</li>
+      <li><b>When it updates:</b> the engine reads new filings at about 8 pm IST, and this page refreshes at about 7 am IST.</li>
+      <li><b>Why a recent call may be missing:</b> SEBI gives companies five working days to file a transcript. Until it is filed, the call cannot be read. Some companies post only the audio.</li>
+      <li><b>Quotes are checked:</b> every quote shown is matched word for word against the transcript. Unverified quotes are dropped.</li>
+      <li><b>Classification:</b> sectors and sub-sectors follow BSE’s official four-level classification.</li>
+      <li><b>Use:</b> internal research only. The reads are produced by an AI model, so check the transcript before acting on anything.</li></ul></section>
+    <section id="h-gloss"><h3>Glossary</h3><dl class="gl">${Object.values(GL).map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}</dl></section>
+  </article>
+  <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
+}
 
-/* ---------- boot: engine output if present, sample otherwise ---------- */
+const RENDER = {home: vHome, calls: vCalls, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, help: vHelp};
+function render(scrollTop = false) {
+  if (!D) return;
+  renderNav(); renderQbar();
+  const el = $('#view');
+  el.innerHTML = RENDER[S.view]();
+  el.style.animation = 'none'; void el.offsetWidth; el.style.animation = '';
+  if (S.view === 'calls') fillCalls();
+  countUp(el);
+  if (scrollTop) window.scrollTo({top: 0, behavior: 'auto'});
+}
+function go(v, opts = {}) {
+  if (!RENDER[v]) v = 'home';
+  S.view = v; store.set('view', v);
+  setHash(S.drawer ? 'co-' + S.drawer.id : v);
+  render(true);
+}
+function setHash(h) { try { history.replaceState(null, '', '#' + h); } catch (e) {} }
+
+/* ---------- company panel ---------- */
+const SUMS = {data: null, p: null};
+const loadSums = () => SUMS.data ? Promise.resolve(SUMS.data) : (SUMS.p = SUMS.p || fetch('data/summaries_in.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(j => (SUMS.data = j || {})));
+function hlq(q, hl) { const s = esc(q); if (!hl) return s; const h = esc(hl), i = s.indexOf(h); return i < 0 ? s : s.slice(0, i) + `<mark class="hl">${h}</mark>` + s.slice(i + h.length); }
+function spark(vals, labels) {
+  if (!vals || vals.length < 2) return '<p class="small muted">The score history line appears from the company’s second call.</p>';
+  const w = 300, h = 90, X = i => 10 + i * (w - 20) / (vals.length - 1), Y = v => h - 18 - v / 100 * (h - 30);
+  const d = vals.map((v, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join('');
+  return `<svg viewBox="0 0 ${w} ${h}" width="100%" style="max-width:${w}px" role="img" aria-label="Score by call: ${vals.join(', ')}">
+    <line x1="10" x2="${w - 10}" y1="${Y(50)}" y2="${Y(50)}" stroke="var(--line)" stroke-dasharray="3 4"/>
+    <path d="${d}L${X(vals.length - 1)} ${h - 18}L${X(0)} ${h - 18}Z" fill="var(--goldsoft)"/>
+    <path d="${d}" fill="none" stroke="var(--gold)" stroke-width="2.2" stroke-linejoin="round"/>
+    ${vals.map((v, i) => `<circle cx="${X(i)}" cy="${Y(v)}" r="${i === vals.length - 1 ? 4 : 2.5}" fill="var(--gold)"/><text x="${X(i)}" y="${Y(v) - 8}" text-anchor="middle" font-size="10" fill="var(--fg)">${v}</text>`).join('')}
+    ${labels ? labels.map((l, i) => `<text x="${X(i)}" y="${h - 4}" text-anchor="${i === 0 ? 'start' : i === labels.length - 1 ? 'end' : 'middle'}" font-size="9.5" fill="var(--muted)">${esc(l)}</text>`).join('') : ''}</svg>`;
+}
+function openCo(id, key) {
+  const c = byId[id]; if (!c) return;
+  const cs = callsFor(id);
+  if (!key) key = (curQ() !== 'all' && cs.find(x => x.period === curQ()) || cs[0] || {}).key;
+  S.drawer = {id, key, tab: S.drawer?.id === id ? S.drawer.tab : 'summary', lastFocus: S.drawer?.lastFocus || document.activeElement};
+  setHash('co-' + id);
+  drawDrawer(true);
+}
+function closeCo() {
+  const f = S.drawer?.lastFocus; S.drawer = null; $('#drawer-root').innerHTML = ''; document.body.style.overflow = '';
+  setHash(S.view); if (f && f.focus) try { f.focus(); } catch (e) {}
+}
+function drawDrawer(fresh) {
+  const {id, key, tab} = S.drawer, c = byId[id], cs = callsFor(id), x = cs.find(k => k.key === key) || cs[0] || c;
+  const path = [c.macro, c.bigSector, c.sector, c.industry].filter((v, i, a) => v && v !== 'Unclassified' && a.indexOf(v) === i);
+  const pdf = (c.sources || []).find(s => s.url);
+  const sigNote = x.period && c.period && x.period !== c.period ? `<p class="small muted">The signal read below is from the latest call (${esc(c.period)}). Switch to it above to match.</p>` : '';
+  const html = `<div class="scrim" data-close></div>
+  <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="dr-name">
+    <div class="dr-top"><span class="eyebrow">Company</span><span style="display:flex;gap:8px;align-items:center"><span id="copied" class="copied" aria-live="polite"></span><button class="btn" id="copylink">Copy link</button><button class="btn" data-close aria-label="Close panel">Close ✕</button></span></div>
+    <div class="dr-body" id="dr-body">
+      <header class="dr-head"><span class="eyebrow">${esc(x.period || c.period)} call · filed ${esc(fdate(x.date || c.date))}</span><h2 id="dr-name">${esc(c.name)}</h2>
+        <div class="crumbs">${path.length ? `<span class="tag">${path.map(esc).join(' › ')}</span>` : ''}${c.mcap ? `<span class="tag">${esc(c.mcap)}</span>` : ''}${c.ticker && c.ticker !== c.id ? `<span class="tag">${esc(c.ticker)}</span>` : ''}${pdf ? `<a class="tag" href="${esc(pdf.url)}" target="_blank" rel="noopener" style="color:var(--blue)">Transcript PDF ↗</a>` : ''}</div></header>
+      ${cs.length > 1 ? `<div class="toolbar"><span class="eyebrow">Calls read</span><div class="seg" id="dr-q">${cs.map(k => `<button data-k="${esc(k.key)}" aria-pressed="${k.key === x.key}">${esc(k.period)} · ${k.score}</button>`).join('')}</div></div>` : ''}
+      <section class="verdict">
+        <div style="display:grid;gap:6px;justify-items:start"><span class="bigscore" style="color:${vcol(x.score, x.veto)}">${x.score}</span>${vpill(x.score, x.veto)}</div>
+        <div class="vfacts">
+          <div><span>Concall Signal Score ${tip('score')}</span><b>${x.score} of 100</b></div>
+          <div><span>vs last call ${tip('change')}</span><b>${x.delta ? dcell(x.delta) : 'First call read'}</b></div>
+          <div><span>Rank in quarter ${tip('pct')}</span><b>${x.pct == null ? '–' : x.pct >= 50 ? `Top ${Math.max(1, 100 - x.pct)}%` : `Bottom ${Math.max(1, x.pct)}%`}</b></div>
+          <div><span>Credibility ${tip('cred')}</span><b>${x.credTested === 0 || c.credTested === 0 ? 'Untested' : (x.cred ?? c.cred)}</b></div>
+          <div><span>Guidance ${tip('guidance')}</span><b>${gcell(x.g)}</b></div>
+          <div><span>Archetype ${tip('archetype')}</span><b>${esc(x.archetype || c.archetype)}</b></div>
+        </div>
+      </section>
+      ${x.veto ? `<div class="flag">Veto applied: the score is capped at 40. See Red flags on the Signals tab. ${tip('veto')}</div>` : ''}
+      <section class="oneline"><span class="eyebrow">The call in one line</span><p>${esc(x.thesis || c.thesis)}</p>${x.gLine ? `<p class="small" style="font-family:var(--body);font-weight:400;font-size:14px;margin-top:8px"><b>Key guidance:</b> ${esc(x.gLine)}</p>` : ''}</section>
+      <div class="dtabs" role="tablist"><button role="tab" data-dt="summary" aria-selected="${tab === 'summary'}">Call summary</button><button role="tab" data-dt="signals" aria-selected="${tab === 'signals'}">Signals behind the score</button></div>
+      <div id="dr-tab">${tab === 'signals' ? sigNote + signalsHtml(c) : '<p class="muted">Loading the summary…</p>'}</div>
+    </div>
+  </aside>`;
+  const root = $('#drawer-root'), keepScroll = !fresh && $('#dr-body') ? $('#dr-body').scrollTop : 0;
+  root.innerHTML = html;
+  if (!fresh) { root.querySelector('.scrim').style.animation = 'none'; root.querySelector('.drawer').style.animation = 'none'; $('#dr-body').scrollTop = keepScroll; }
+  document.body.style.overflow = 'hidden';
+  if (fresh) root.querySelector('.drawer [data-close]').focus({preventScroll: true});
+  if (tab === 'summary') fillSummary(x.key);
+}
+async function fillSummary(key) {
+  const all = await loadSums(); if (!S.drawer || S.drawer.key !== key || S.drawer.tab !== 'summary') return;
+  const s = all[key], box = $('#dr-tab'); if (!box) return;
+  if (!s) { box.innerHTML = '<div class="empty">This call has not been summarised yet. New calls are summarised the night they are read.</div>'; return; }
+  const list = (t, items) => items && items.length ? `<div class="scard"><h4>${t}</h4><ul>${items.map(v => `<li>${esc(v)}</li>`).join('')}</ul></div>` : '';
+  box.innerHTML = `<div style="display:grid;gap:18px">
+    <section class="sec"><h3 style="font-size:18px">${esc(s.headline)}</h3><p style="max-width:70ch">${esc(s.overview)}</p></section>
+    ${(s.financial_highlights || []).length ? `<section class="sec"><h3>Financial highlights</h3><div class="fin">${s.financial_highlights.map(f => `<div><span>${esc(f.metric)}</span><b>${esc(f.value)}</b><span>${esc(f.change || '')}</span></div>`).join('')}</div></section>` : ''}
+    <div class="scards">
+      ${(s.segments || []).length ? `<div class="scard"><h4>Segments</h4><ul>${s.segments.map(g => `<li><b>${esc(g.name)}:</b> ${esc(g.commentary)}</li>`).join('')}</ul></div>` : ''}
+      ${list('Guidance & outlook', s.guidance_outlook)}${list('Capex & capacity', s.capex_capacity)}${list('Demand & pricing', s.demand_pricing)}${list('Risks to watch', s.risks_watch)}
+      ${s.management_tone ? `<div class="scard"><h4>Management tone</h4><p style="font-size:14.5px">${esc(s.management_tone)}</p></div>` : ''}
+    </div>
+    ${(s.qa_highlights || []).length ? `<section class="sec"><h3>Analyst Q&A</h3><div class="qa">${s.qa_highlights.map((q, i) => `<details ${i < 2 ? 'open' : ''}><summary>${esc(q.question)}</summary><p>${esc(q.answer)}</p></details>`).join('')}</div></section>` : ''}
+    ${(s.key_quotes || []).length ? `<section class="sec quotes"><h3>Management in their own words</h3>${s.key_quotes.map(q => `<blockquote>“${esc(q)}”</blockquote>`).join('')}</section>` : ''}
+  </div>`;
+}
+function signalsHtml(c) {
+  const hl = (c.histLabels || []).slice(-(c.hist || []).length);
+  return `<div style="display:grid;gap:22px">
+    <section class="sec"><h3>Triggers ${tip('triggers')}</h3><span class="small muted">${(c.triggers || []).length} found · ${Math.round((c.verified ?? 1) * 100)}% of quotes verified against the transcript</span>
+      ${(c.triggers || []).map(t => `<div class="trig t-${t.t}"><span class="stripe"></span><div><div><span class="mini t-${t.t}">${TYPES[t.t] || esc(t.t)}</span><strong>${esc(t.label)}</strong></div>${t.q ? `<blockquote>${hlq(t.q, t.hl)}</blockquote>` : `<p class="small muted" style="margin-top:4px">${esc(t.note || '')}</p>`}</div></div>`).join('') || '<p class="muted">No strong triggers in this call.</p>'}</section>
+    ${(c.flags || []).length ? `<section class="sec"><h3>Red flags</h3>${c.flags.map(f => `<div class="flag">${esc(f)}</div>`).join('')}</section>` : ''}
+    <section class="sec"><h3>Mental models ${tip('models')}</h3><div class="models">${(c.models || []).map(m => `<div class="model"><b>${esc(m)}</b><span>${esc(MODELS[m] || '')}</span></div>`).join('')}</div></section>
+    <section class="sec"><h3>The eight readings ${tip('schema')}</h3><div class="schema">
+      <div class="scale"><span></span><span><span>−2 negative</span><span>0</span><span>+2 positive</span></span><span></span></div>
+      ${BLOCKS.map(([k, lab], i) => { const v = (c.blocks || {})[k] || 0; return `<div class="srow"><span>${lab}</span><span class="strack">${v ? `<span class="sfill ${v > 0 ? 'pos' : 'neg'}" style="width:${Math.abs(v) * 25}%;animation-delay:${i * .05}s"></span>` : ''}</span><span class="sv">${v > 0 ? '+' : ''}${v}</span></div>`; }).join('')}</div></section>
+    <div class="two" style="gap:20px">
+      <section class="sec"><h3>Score by call</h3>${spark(c.hist, hl)}</section>
+      <section class="sec"><h3>Management credibility ${tip('cred')}</h3>${c.credTested === 0 ? '<p><b>Untested.</b> <span class="muted">This builds once guidance from an earlier call can be checked against what was delivered.</span></p>' : `<p><b class="num" style="font-size:22px">${c.cred}</b> <span class="muted">of 100, from ${c.credTested} pieces of past guidance checked.</span></p>`}</section>
+    </div>
+    ${(c.themes || []).length ? `<section class="sec"><h3>Themes discussed</h3><div class="chips">${c.themes.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></section>` : ''}
+    ${(c.namedBy || []).length ? `<section class="sec"><h3>Named in other companies’ calls ${tip('namedBy')}</h3><div class="chips">${c.namedBy.map(n => `<button class="btn" data-open="${esc(n.id)}" title="Called it “${esc(n.as)}” in their ${esc(n.period)} call">${esc(n.name)} · ${esc(n.relation)}</button>`).join('')}</div></section>` : ''}
+    ${(c.sources || []).filter(s => s.url).length ? `<section class="sec"><h3>Source documents</h3><div class="chips">${c.sources.filter(s => s.url).map(s => `<a class="tag" style="color:var(--blue)" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.type)} · ${esc(fdate(s.date))} ↗</a>`).join('')}</div></section>` : ''}
+  </div>`;
+}
+async function copyLink() {
+  const url = ART_URL + '#co-' + S.drawer.id, out = $('#copied');
+  try { await navigator.clipboard.writeText(url); out.textContent = 'Link copied'; setTimeout(() => { if (out) out.textContent = ''; }, 2200); }
+  catch (e) { out.innerHTML = `<input class="linkbox" readonly value="${esc(url)}" aria-label="Link to this company">`; const i = out.querySelector('input'); i.focus(); i.select(); }
+}
+
+/* ---------- tips popover ---------- */
+function showTip(btn) {
+  const pop = $('#pop'), k = btn.dataset.tip, g = GL[k]; if (!g) return;
+  if (!pop.hidden && pop._for === btn) { hideTip(); return; }
+  hideTip(); pop._for = btn; btn.setAttribute('aria-expanded', 'true');
+  pop.innerHTML = `<h4>${esc(g[0])}</h4><p>${esc(g[1])}</p>`; pop.hidden = false;
+  const r = btn.getBoundingClientRect(), pw = pop.offsetWidth, ph = pop.offsetHeight;
+  let left = Math.min(Math.max(16, r.left - 20), innerWidth - pw - 16), top = r.bottom + 8;
+  if (top + ph > innerHeight - 12) top = Math.max(12, r.top - ph - 8);
+  pop.style.left = left + 'px'; pop.style.top = top + 'px';
+}
+function hideTip() { const pop = $('#pop'); if (pop._for) pop._for.setAttribute('aria-expanded', 'false'); pop.hidden = true; pop._for = null; }
+
+/* ---------- search ---------- */
+let findSel = 0;
+function renderFind() {
+  const q = $('#find').value.trim().toLowerCase(), box = $('#findres');
+  if (!q || !D) { box.hidden = true; return; }
+  const hits = D.companies.filter(c => (c.name + ' ' + (c.ticker || '') + ' ' + c.id).toLowerCase().includes(q))
+    .sort((a, b) => (a.name.toLowerCase().startsWith(q) ? 0 : 1) - (b.name.toLowerCase().startsWith(q) ? 0 : 1) || b.score - a.score).slice(0, 8);
+  findSel = Math.min(findSel, Math.max(0, hits.length - 1));
+  box.innerHTML = hits.length ? hits.map((c, i) => `<button data-open="${esc(c.id)}" class="${i === findSel ? 'on' : ''}"><b>${esc(c.name)}</b><span class="num" style="color:${vcol(c.score, c.veto)}">${c.score}</span><span>${esc(c.sector)} · ${esc(c.period)}</span><span>${esc(c.ticker || '')}</span></button>`).join('')
+    : '<span class="small muted" style="padding:8px 10px">No company with a call read matches. Its transcript may not be filed yet.</span>';
+  box.hidden = false;
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click', e => {
+  const t = e.target;
+  const tipB = t.closest('[data-tip]'); if (tipB) { e.preventDefault(); e.stopPropagation(); showTip(tipB); return; }
+  if (!t.closest('#pop')) hideTip();
+  if (!t.closest('.find')) $('#findres').hidden = true;
+  const op = t.closest('[data-open]');
+  if (op) { const k = op.dataset.k; if (op.closest('.find-res')) { $('#find').value = ''; $('#findres').hidden = true; } openCo(op.dataset.open, k || undefined); return; }
+  if (t.closest('[data-close]')) { closeCo(); return; }
+  const v = t.closest('[data-v]');
+  if (v) { if (v.dataset.sort) { S.calls.sort = v.dataset.sort; S.calls.limit = 50; } if (S.drawer) closeCo(); go(v.dataset.v); return; }
+  const dis = t.closest('[data-dismiss]'); if (dis) { store.set(dis.dataset.dismiss, false); render(); return; }
+  const qb = t.closest('#qsel button'); if (qb) { S.q = qb.dataset.q; S.calls.limit = 50; S.calls.big = S.calls.sub = ''; render(); return; }
+  const chip = t.closest('[data-chip]'); if (chip) { const k = chip.dataset.chip; S.calls.chips.has(k) ? S.calls.chips.delete(k) : S.calls.chips.add(k); S.calls.limit = 50; chip.setAttribute('aria-pressed', S.calls.chips.has(k)); render(); return; }
+  if (t.closest('#c-clear')) { Object.assign(S.calls, {search: '', big: '', sub: '', limit: 50}); S.calls.chips.clear(); render(); return; }
+  if (t.closest('#c-more')) { S.calls.limit += 50; fillCalls(); return; }
+  const fs = t.closest('[data-fs]'); if (fs) { S.first.status = fs.dataset.fs; render(); return; }
+  const st = t.closest('[data-st]'); if (st) { S.turns.stage = st.dataset.st; render(); return; }
+  const it = t.closest('[data-it]'); if (it) { S.ideas.tab = it.dataset.it; render(); return; }
+  const sec = t.closest('.trk .r.sec'); if (sec) { const n = S._secs[+sec.dataset.sec].name; S.openSec.has(n) ? S.openSec.delete(n) : S.openSec.add(n); render(); return; }
+  const sub = t.closest('.trk .r.subr'); if (sub) { const [i, j] = sub.dataset.subrow.split('-').map(Number), n = S._secs[i].subs[j].name; S.openSub = S.openSub === n ? null : n; render(); return; }
+  const dq = t.closest('#dr-q button'); if (dq) { S.drawer.key = dq.dataset.k; drawDrawer(false); return; }
+  const dt = t.closest('[data-dt]'); if (dt) { S.drawer.tab = dt.dataset.dt; drawDrawer(false); return; }
+  if (t.closest('#copylink')) { copyLink(); return; }
+  const j = t.closest('[data-jump]'); if (j) { e.preventDefault(); document.getElementById(j.dataset.jump)?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'}); return; }
+});
+$('#nav').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (b) { e.stopPropagation(); if (S.drawer) closeCo(); go(b.dataset.v); } });
+document.addEventListener('toggle', e => { const d = e.target; if (d.matches && d.matches('details[data-how]')) store.set('how-' + d.dataset.how, d.open); }, true);
+document.addEventListener('input', e => {
+  if (e.target.id === 'c-search') { S.calls.search = e.target.value; S.calls.limit = 50; fillCalls(); }
+  if (e.target.id === 'find') { findSel = 0; renderFind(); }
+});
+document.addEventListener('change', e => {
+  const id = e.target.id;
+  if (id === 'c-big') { S.calls.big = e.target.value; S.calls.sub = ''; S.calls.limit = 50; render(); }
+  if (id === 'c-sub') { S.calls.sub = e.target.value; S.calls.limit = 50; render(); }
+  if (id === 'c-sort') { S.calls.sort = e.target.value; S.calls.limit = 50; fillCalls(); }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { if (!$('#pop').hidden) { hideTip(); return; } if (!$('#findres').hidden) { $('#findres').hidden = true; return; } if (S.drawer) { closeCo(); return; } }
+  if (e.target.id === 'find' && ['ArrowDown', 'ArrowUp', 'Enter'].includes(e.key)) {
+    const items = [...$('#findres').querySelectorAll('button')]; if (!items.length) return;
+    if (e.key === 'Enter') { e.preventDefault(); items[findSel]?.click(); return; }
+    e.preventDefault(); findSel = (findSel + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length; renderFind(); return; }
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('.trk .r.sec')) { e.preventDefault(); e.target.click(); }
+  if (e.key === '/' && !e.target.closest('input,select,textarea')) { e.preventDefault(); $('#find').focus(); }
+  if (e.key === 'Tab' && S.drawer) { const f = [...$('.drawer').querySelectorAll('button,a,input,select,[tabindex="0"]')].filter(x => x.offsetParent);
+    if (!f.length) return; if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f.at(-1).focus(); } else if (!e.shiftKey && document.activeElement === f.at(-1)) { e.preventDefault(); f[0].focus(); } }
+});
+$('#find').addEventListener('focus', renderFind);
+
+/* ---------- boot ---------- */
 (async function boot() {
-  try { const v = JSON.parse(localStorage.getItem('csd-view') || '{}'); if (v.mkt in DATA) state.mkt = v.mkt; if (v.tab in RENDER) state.tab = v.tab; } catch (e) {}
-  const h = location.hash.slice(1).split('-');
-  if (h[0] === 'in' || h[0] === 'us') state.mkt = h[0].toUpperCase();
-  if (h[1] in RENDER) state.tab = h[1];
-  setMarket(state.mkt);
-  document.querySelectorAll('.pipe [data-count]').forEach(n => countUp(n, +n.dataset.count, 1400));
-  let changed = false;
-  for (const m of ['IN', 'US']) {
-    try {
-      const r = await fetch(`data/${m.toLowerCase()}.json`, {cache: 'no-store'});
-      if (r.ok) { const j = await r.json(); if (j && Array.isArray(j.companies) && j.companies.length) { DATA[m] = j; changed = true; } }
-    } catch (e) { /* no engine output yet */ }
-    if (DATA[m].loading) DATA[m].failed = true;
-  }
-  setMarket(state.mkt);
+  renderNav();
+  let ok = false;
+  try { const r = await fetch('data/in.json', {cache: 'no-store'}); if (r.ok) { const j = await r.json(); if (j && Array.isArray(j.companies)) { D = j; ok = true; } } } catch (e) {}
+  if (!ok) { $('#view').innerHTML = '<div class="empty">The latest results could not be loaded. Reload the page to try again.</div>'; return; }
+  D.companies.forEach(c => { byId[c.id] = c; });
+  const h = location.hash.slice(1);
+  S.view = RENDER[h] ? h : (RENDER[store.get('view', 'home')] ? store.get('view', 'home') : 'home');
+  render();
+  if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
+  loadSums();
 })();
 </script>
