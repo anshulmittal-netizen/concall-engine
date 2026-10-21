@@ -12,7 +12,7 @@ on:
         description: "Max documents to extract this run"
         required: false
       only_summaries:
-        description: "Only write / complete call summaries and rebuild the site (no fetch or extract)"
+        description: "Only summaries + growth reads, then rebuild the site (no fetch or extract)"
         type: boolean
         default: false
 
@@ -44,7 +44,7 @@ jobs:
           if [ -n "${{ inputs.since }}" ]; then ARGS="$ARGS --since ${{ inputs.since }}"; fi
           if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
           if [ "${{ inputs.only_summaries }}" = "true" ]; then
-            python run.py summarize --market IN && python run.py analyze --market IN || { python run.py analyze --market IN; exit 1; }
+            python run.py summarize --market IN && python run.py growth --market IN && python run.py analyze --market IN || { python run.py analyze --market IN; exit 1; }
             exit 0
           fi
           python run.py all --market IN $ARGS || { echo "Run failed; rebuilding results from saved reads"; python run.py analyze --market IN; exit 1; }

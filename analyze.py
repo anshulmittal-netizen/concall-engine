@@ -154,10 +154,50 @@ def merge(docs: list[dict]) -> dict:
         "entities": union("entities"), "red_flags": union("red_flags"),
         "evasions": base.get("evasions", []), "hedge": float(base.get("hedge_index", 0.5)),
         "verified": min(d.get("verified_share", 1) for d in docs),
+        "growth": next((d["growth"] for d in docs if d.get("growth")), None),
     }
 
 
 # ------------------------------------------------------------------ main
+# Score weights (sum to 1). Growth & capacity: the market pays for growth, so capacity coming live in the
+# next 2-3 quarters and strong growth guidance lift the score; a plant running full with no expansion holds it back.
+WEIGHTS = {"growth": 0.25, "supply": 0.20, "pricing": 0.15, "guidance": 0.20, "novelty": 0.10, "demand": 0.05, "tone": 0.05}
+
+
+def growth_value(g: dict | None):
+    """0-1 Growth & capacity value from a call's growth read, with the working for the breakdown."""
+    if not g:
+        return 0.5, {"read": False}
+    adds = [a for a in g.get("adds", []) if a.get("status") != "deferred"]
+    near = [a for a in adds if a.get("q") is not None and a["q"] <= 3]
+    later = [a for a in adds if a not in near]
+    size = sum(a["size_pct"] for a in near if a.get("size_pct"))
+    util = g.get("util")
+    if near:
+        cap = 1.0 if size >= 25 else 0.85 if size >= 10 else 0.7
+        cap_why = (f"{len(near)} addition{'s' if len(near) > 1 else ''} live within 3 quarters"
+                   + (f", about {size:.0f}% of current capacity" if size else ", size not stated"))
+        if util is not None and util >= 80:
+            cap, cap_why = min(1.0, cap + 0.1), cap_why + f"; existing plant already {util:.0f}% utilised"
+    elif later or g.get("expansion"):
+        cap, cap_why = 0.6, "Expansion planned, but not live within 3 quarters"
+    elif util is not None and util >= 85:
+        cap, cap_why = 0.2, f"Running at {util:.0f}% utilisation with no expansion planned: growth capped"
+    else:
+        cap, cap_why = 0.5, "No capacity addition discussed" + (f"; utilisation {util:.0f}% leaves room" if util is not None else "")
+    gp = g.get("growth")
+    if gp is not None:
+        gv = 1.0 if gp >= 25 else 0.85 if gp >= 15 else 0.7 if gp >= 10 else 0.55 if gp >= 5 else 0.45 if gp >= 0 else 0.15
+        g_why = f"Revenue growth guided at about {gp:.0f}%"
+    else:
+        gv, g_why = (g.get("outlook", 0) + 2) / 4, "No growth number given; outlook reading used"
+    ov = (g.get("outlook", 0) + 2) / 4
+    val = 0.4 * cap + 0.35 * gv + 0.25 * ov
+    return val, {"read": True, "cap": round(cap, 3), "capWhy": cap_why, "gv": round(gv, 3), "gWhy": g_why, "ov": round(ov, 3),
+                 "outlook": g.get("outlook", 0), "growth": gp, "util": util, "near": near[:4], "later": later[:3],
+                 "why": g.get("why", "")}
+
+
 def _site_summary(s: dict) -> dict:
     """Last guard before the dashboard: never ship a summary with leaked tool markup. Sections recovered
     from the markup are kept, except quotes, which could not be checked against the transcript here."""
@@ -285,7 +325,10 @@ def build(market: str, log=print) -> dict:
             tb = max([bonus.get(tstage.get(t, "neutral"), 0.5) for t in r["themes"]] or [0.5])
             nov = 0.5 * c["novelty"] + 0.5 * tb
             tone = clip(b["tone"] / 2 * 0.7 + (0.5 - r["hedge"]) * 0.6)
-            score = 100 * (0.30 * supply_side + 0.20 * pricing + 0.20 * guid + 0.15 * nov + 0.10 * c["demand"] + 0.05 * (tone + 1) / 2)
+            gval, gdet = growth_value(r.get("growth"))
+            W = WEIGHTS
+            score = 100 * (W["growth"] * gval + W["supply"] * supply_side + W["pricing"] * pricing + W["guidance"] * guid
+                           + W["novelty"] * nov + W["demand"] * c["demand"] + W["tone"] * (tone + 1) / 2)
             txt = lambda f: f["label"] + " " + (f.get("quote") or "")
             serious = [f["label"] for f in r["red_flags"] if VETO_RX.search(txt(f))]
             watch = [f["label"] for f in r["red_flags"] if not VETO_RX.search(txt(f)) and WATCH_RX.search(txt(f))]
@@ -309,23 +352,24 @@ def build(market: str, log=print) -> dict:
             r["breakdown"] = {
                 "mode": "level" if not prev else "blend", "prevCalls": len(prev),
                 "parts": [
-                    part("supply", "Supply side", 0.30, supply_side, [
+                    part("growth", "Growth & capacity", W["growth"], gval, [{"k": "growth", **gdet}]),
+                    part("supply", "Supply side", W["supply"], supply_side, [
                         {"k": "supply", "read": b["supply"], "prev": pmean("supply"), "sub": round(c["supply"], 3), "wt": 2},
                         {"k": "structure", "read": b["structure"], "prev": pmean("structure"), "sub": round(c["structure"], 3), "wt": 1},
                         {"k": "inventory", "read": b["inventory"], "prev": pmean("inventory"), "sub": round(c["inventory"], 3), "wt": 1}]),
-                    part("pricing", "Pricing & utilisation", 0.20, pricing, [
+                    part("pricing", "Pricing & utilisation", W["pricing"], pricing, [
                         {"k": "pricing", "read": b["pricing"], "prev": pmean("pricing"), "sub": round(c["pricing"], 3), "wt": 1},
                         {"k": "util", "read": r["util"], "prev": round(pu, 2) if prev else None, "sub": round(cu, 3), "wt": 1, "scale": "−1 to +1"}]),
-                    part("guidance", "Guidance × credibility", 0.20, guid, [
+                    part("guidance", "Guidance × credibility", W["guidance"], guid, [
                         {"k": "guidance", "read": b["guidance"], "prev": pmean("guidance"), "sub": round(c["guidance"], 3), "wt": 1},
                         {"k": "cred", "cred": cred, "tested": tested,
                          "factor": round((0.4 + 0.6 * cred / 100) if tested else 0.85, 3)}]),
-                    part("novelty", "New developments & themes", 0.15, nov, [
+                    part("novelty", "New developments & themes", W["novelty"], nov, [
                         {"k": "novelty", "read": b["novelty"], "prev": pmean("novelty"), "sub": round(c["novelty"], 3), "wt": 1},
                         {"k": "theme", "theme": top_theme, "stage": tstage.get(top_theme, "neutral") if top_theme else None, "sub": tb, "wt": 1}]),
-                    part("demand", "Demand", 0.10, c["demand"], [
+                    part("demand", "Demand", W["demand"], c["demand"], [
                         {"k": "demand", "read": b["demand"], "prev": pmean("demand"), "sub": round(c["demand"], 3), "wt": 1}]),
-                    part("tone", "Tone & candour", 0.05, (tone + 1) / 2, [
+                    part("tone", "Tone & candour", W["tone"], (tone + 1) / 2, [
                         {"k": "tone", "read": b["tone"], "hedge": round(r["hedge"], 2), "sub": round((tone + 1) / 2, 3), "wt": 1}]),
                 ],
                 "raw": round(raw, 1),
@@ -355,6 +399,7 @@ def build(market: str, log=print) -> dict:
             "flags": r["flags"], "blocks": r["blocks"], "util": r["util"], "capex": r["capex"],
             "hist": hist[-cfg["periods_shown"]:], "histLabels": [label_from_key(k, market) for k in keys][-cfg["periods_shown"]:],
             "themes": r["themes"], "verified": r["verified"], "breakdown": r.get("breakdown"),
+            "growth": r.get("growth"),
             "sources": [source_link(d, manifest, market) for d in r["docs"]],
             "entities": [e["name"] for e in r["entities"]],
         })

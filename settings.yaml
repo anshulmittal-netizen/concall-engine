@@ -31,6 +31,7 @@ run:
   max_docs_per_run: 300
   summaries: true              # detailed call summary for every transcript
   max_summaries_per_run: 300   # summary backlog cleared newest first, this many per night
+  max_growth_reads_per_run: 1000 # growth & capacity reads (small: summary + quotes in, not the transcript)
   max_completions_per_run: 700 # summaries missing sections get one targeted follow-up call, this many per night
   backfill_days: 200           # current + previous quarter
   lookback_days: 10

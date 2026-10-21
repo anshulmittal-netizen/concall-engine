@@ -177,6 +177,11 @@ def cmd_summarize(a):
     summarize.run(a.market, get_text, a.limit, log)
 
 
+def cmd_growth(a):
+    import growth
+    growth.run(a.market, a.limit, log)
+
+
 def cmd_history(a):
     """First-time concall check against BSE filing history (cached; only new companies are checked)."""
     import glob
@@ -213,12 +218,16 @@ def cmd_all(a):
     if settings()["run"].get("summaries", True):
         a2 = argparse.Namespace(**{**vars(a), "limit": None})
         cmd_summarize(a2)
+        try:
+            cmd_growth(a2)
+        except Exception as ex:  # never let the growth reads stop the night's run
+            log(f"growth reads skipped: {ex}")
     cmd_analyze(a)
 
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "extract", "summarize", "history", "analyze", "all", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "extract", "summarize", "growth", "history", "analyze", "all", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
@@ -226,7 +235,7 @@ def main(argv=None):
     a = p.parse_args(argv)
     if a.command != "serve" and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "extract": cmd_extract, "summarize": cmd_summarize, "history": cmd_history, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "history": cmd_history, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":

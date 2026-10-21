@@ -320,7 +320,7 @@ dl.gl dd{margin:0;color:var(--fg);opacity:.92}
 .trig blockquote::before{content:"\201C"}.trig blockquote::after{content:"\201D"}
 .mini{font-size:11.5px;padding:1px 8px;border-radius:99px;background:color-mix(in srgb,var(--tc) 16%,transparent);color:var(--tc);white-space:nowrap;margin-right:6px}
 mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 30%,transparent);border-radius:3px;padding:0 2px}
-.t-supply{--tc:var(--gold)}.t-util{--tc:var(--blue)}.t-pricing{--tc:var(--teal)}.t-structure{--tc:var(--violet)}.t-inventory{--tc:var(--sand)}.t-demand{--tc:var(--muted)}.t-guidance{--tc:var(--up)}.t-novelty{--tc:var(--rose)}.t-tone{--tc:var(--down)}
+.t-supply{--tc:var(--gold)}.t-util{--tc:var(--blue)}.t-pricing{--tc:var(--teal)}.t-structure{--tc:var(--violet)}.t-inventory{--tc:var(--sand)}.t-demand{--tc:var(--muted)}.t-guidance{--tc:var(--up)}.t-novelty{--tc:var(--rose)}.t-tone{--tc:var(--down)}.t-growth{--tc:var(--violet)}
 .models{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px}
 .model{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--panel);font-size:13.5px}
 .model b{display:block;font-family:var(--display);font-stretch:90%;font-size:14.5px}
@@ -478,7 +478,7 @@ const IDEA_TYPES = {
   'Red flag':'Something in the call that needs checking before anyone owns or buys the stock.'
 };
 const GL = {
-  score:['Concall Signal Score','0 to 100. How strongly the call points to an improving business, read through the capital-cycle lens. Built from eight readings of the call, weighted: supply 30, pricing & utilisation 20, guidance × credibility 20, new developments & themes 15, demand 10, tone 5. Most calls land between 45 and 65.'],
+  score:['Concall Signal Score','0 to 100. How strongly the call points to an improving business, read through the capital-cycle lens. Weighted: growth & capacity 25 (capacity coming live in 2–3 quarters, growth guided, outlook), supply 20, guidance × credibility 20, pricing & utilisation 15, new developments & themes 10, demand 5, tone 5. The Score breakdown tab in each company panel shows the exact working. Most calls land between 45 and 65.'],
   verdict:['Verdict','A plain label for the score. Strong 70+, Good 60–69, Average 50–59, Weak 40–49, Poor below 40. Red flag means a veto capped the score at 40.'],
   change:['vs last call','Points gained or lost against the company’s previous call. A dash means this is the first call we have read for the company, so there is nothing to compare yet.'],
   pct:['Rank in quarter','Where the call ranks among all calls read for the same quarter. “Top 10%” means only a tenth of the quarter’s calls scored higher.'],
@@ -498,7 +498,7 @@ const GL = {
   schema:['Signal read','Eight readings of the call, each scored −2 (clearly negative) to +2 (clearly positive). They feed the score.'],
   models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
-  nearterm:['Near-term score','0 to 100. How strongly the latest call points to good results over the next quarter or next few quarters. Adds up positive or raised guidance (weighted by management credibility), demand, rising utilisation, pricing, order-book conversion, operating leverage and forward-looking growth lines in the call. Very strong 70+, Strong 55–69, Building 45–54.'],
+  nearterm:['Near-term score','A separate 0 to 100 score from the Concall Signal Score. How strongly the latest call points to good results over the next quarter or next few quarters. Adds up positive or raised guidance (weighted by management credibility), demand, rising utilisation, pricing, order-book conversion, operating leverage capacity coming live within three quarters, growth guided at 15% or more, and forward-looking growth lines in the call. Running near full with no expansion takes points off. Very strong 70+, Strong 55–69, Building 45–54.'],
   quarter:['Quarter switch','Pick the results season you want to look at. Calls, Best & worst, First-time callers, Sector tracker and Guidance all follow it. Sector turns, Themes and Ideas compare quarters, so they stay on the latest quarter with enough calls. “All” shows each company’s latest call.']
 };
 
@@ -923,6 +923,10 @@ function ntScore(c) {
   if (b.pricing >= 2) { p += 10; why.push(['Pricing strong', 1]); } else if (b.pricing === 1) { p += 6; why.push(['Pricing improving', 0]); }
   (c.models || []).forEach(m => { const x = NT_MODELS[m]; if (x) { p += x[0]; why.push([x[1], 0]); } });
   if (c.delta > 0) p += Math.min(6, c.delta / 2);
+  const gr = c.growth, near = (gr?.adds || []).filter(a => a.status !== 'deferred' && a.q != null && a.q <= 3);
+  if (near.length) { const sz = near.reduce((n, a) => n + (a.size_pct || 0), 0); p += sz >= 10 ? 12 : 8; why.unshift([`Capacity live in ≤3 qtrs${sz ? ` (~${Math.round(sz)}%)` : ''}`, 1]); }
+  if (gr?.growth != null && gr.growth >= 15) { p += gr.growth >= 25 ? 10 : 6; why.push([`Growth guided ~${Math.round(gr.growth)}%`, 1]); }
+  if (gr && !near.length && !gr.expansion && gr.util >= 85) { p -= 8; why.push([`Running ${Math.round(gr.util)}% full, no expansion`, 0]); }
   const lines = ntLines({...c, ntKey: call.key});
   p += Math.min(2, lines.length) * 8;
   if (c.credTested > 0 && c.cred >= 60) why.push([`Delivers guidance (${c.cred})`, 1]);
@@ -943,7 +947,7 @@ function vNear() {
   const t1 = all.filter(x => x.nt >= 70).length;
   if (!SUMS.data) loadSums().then(() => { if (S.view === 'nearterm') render(); });
   return head('Near-term strength', 'Companies whose latest call points to strong results over the next quarter or the next few quarters. A shortlist of near-term names to check, not a buy list.', `
-      <ul><li>The <b>near-term score</b> ${tip('nearterm')} (0–100) adds up what the latest call says about the coming quarters: positive or raised guidance (weighted by how well management has delivered before), demand, rising utilisation, pricing, an order book converting to revenue, operating leverage, and forward-looking lines in the call that point to growth.</li>
+      <ul><li>The big number on each card is the <b>near-term score</b>, which is different from the Concall Signal Score shown under the name (the one in the company panel). The <b>near-term score</b> ${tip('nearterm')} (0–100) adds up what the latest call says about the coming quarters: positive or raised guidance (weighted by how well management has delivered before), demand, rising utilisation, pricing, an order book converting to revenue, operating leverage, and forward-looking lines in the call that point to growth.</li>
       <li><b>Very strong</b> is 70+, <b>Strong</b> 55–69, <b>Building</b> 45–54. Calls with a veto, guidance cut, or negative guidance or demand are left out.</li>
       <li><b>${esc(nextQ || 'Next quarter')} results still to come</b> shows companies whose latest call is from the previous quarter, so the quarter they guided for has not been reported yet. These are the most timely names.</li>
       <li>The bullet lines are taken from the call summary and quotes. Open the call and check the transcript before acting.</li></ul>`,
@@ -956,8 +960,8 @@ function vNear() {
     ${!SUMS.data ? '<p class="small muted">Loading call summaries to find forward-looking lines…</p>' : ''}
     <div class="nt-grid">${rows.slice(0, f.limit).map((x, i) => { const c = x.c, [tw, tc] = NT_TIER(x.nt);
       return `<article class="card nt ${i < 3 && !f.tier && !f.big && !f.chips.size ? 'top3' : ''}">
-        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}Signal Score ${c.score}</span></div>
-          <div class="ntsc"><b style="color:${tc === 't1' ? 'var(--gold)' : tc === 't2' ? 'var(--up)' : 'var(--blue)'}">${x.nt}</b><span class="pill nt-tier ${tc}">${tw}</span></div></div>
+        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}Concall Signal Score <b style="color:${vcol(c.score, c.veto)}">${c.score}</b></span></div>
+          <div class="ntsc"><span class="eyebrow" style="font-size:10px">Near-term score</span><b style="color:${tc === 't1' ? 'var(--gold)' : tc === 't2' ? 'var(--up)' : 'var(--blue)'}">${x.nt}</b><span class="pill nt-tier ${tc}">${tw}</span></div></div>
         <div class="why-chips">${x.why.slice(0, 7).map(([w, hot]) => `<span class="${hot ? 'hot' : ''}">${esc(w)}</span>`).join('')}</div>
         ${x.ev.length ? `<ul>${x.ev.map(l => `<li>${esc(l.length > 260 ? l.slice(0, 257) + '…' : l)}</li>`).join('')}</ul>` : ''}
         <div class="foot"><span>${esc(c.period)} call · ${esc(fdate(c.date))}${x.pending ? ` · <b style="color:var(--fg)">${esc(nextQ)} results due</b>` : ''}</span><button class="btn" data-open="${esc(c.id)}" data-k="${esc(x.key)}">Open the call</button></div>
@@ -967,7 +971,7 @@ function vNear() {
 
 /* Help */
 function vHelp() {
-  const W = [['Supply discipline', 30], ['Pricing & utilisation', 20], ['Guidance × credibility', 20], ['New developments & themes', 15], ['Demand', 10], ['Tone & candour', 5]];
+  const W = [['Growth & capacity', 25], ['Supply discipline', 20], ['Guidance × credibility', 20], ['Pricing & utilisation', 15], ['New developments & themes', 10], ['Demand', 5], ['Tone & candour', 5]];
   return head('How to use the desk', 'A short guide for the team: what each view is for, how the score works, and where the data comes from.', '') + `
   <div class="help"><article>
     <section id="h-what"><h3>What the desk does</h3>
@@ -993,12 +997,12 @@ function vHelp() {
     </div></section>
     <section id="h-quarter"><h3>The quarter switch</h3><p>${esc(GL.quarter[1])} A small orange dot marks a season still in progress.</p></section>
     <section id="h-score"><h3>How the score works</h3>
-      <p>The Concall Signal Score runs from 0 to 100. The model reads the call into eight readings, each from −2 to +2, and they are combined with these weights:</p>
+      <p>The Concall Signal Score runs from 0 to 100. The model reads the call into eight readings, each from −2 to +2, plus a growth & capacity reading (capacity coming live, growth guided, utilisation), and they are combined with these weights:</p>
       <div class="weights">${W.map(([n, w]) => `<div class="w"><span>${n}</span><span class="sbar"><i style="width:${w / 30 * 100}%"></i></span><span class="num">${w}</span></div>`).join('')}</div>
       <ul><li>For a company’s first call in our data, the score reflects where the business stands now. From the second call on, 60% is the level and 40% is the change since last call.</li>
       <li>Guidance counts for more when management has delivered past guidance. With no track record yet (“untested”), guidance counts only 85% of its distance from neutral. Every company’s exact working is on the <b>Score breakdown</b> tab of its panel.</li>
       <li>A veto ${tip('veto')} caps the score at 40. Smaller warning signs take off 4 points each, up to 8.</li>
-      <li>Supply carries the most weight on purpose. The framework looks for cycles turning on the supply side before demand shows up.</li></ul>
+      <li>Growth & capacity carries the most weight because the market pays for growth: sizeable capacity coming live in the next 2–3 quarters and strong growth guidance lift the score, while a plant already running near full with no expansion planned holds it back. Supply discipline across the industry still counts for 20.</li></ul>
       <p>Verdict labels:</p><div class="bands">${[[75, 'Strong 70+'], [65, 'Good 60–69'], [55, 'Average 50–59'], [45, 'Weak 40–49'], [30, 'Poor below 40']].map(([s, l]) => `<span class="pill ${verdict(s).c}">${l}</span>`).join('')}<span class="pill v-flag">Red flag: veto applied</span></div>
       <p class="muted">Scores are relative. Most calls land between 45 and 65, so a 70 is a top-5% call. The percentile in each company panel shows where a call ranks within its quarter.</p></section>
     <section id="h-data"><h3>Data and timing</h3><ul>
@@ -1080,6 +1084,7 @@ function drawDrawer(fresh) {
           <div><span>Credibility ${tip('cred')}</span><b>${x.credTested === 0 || c.credTested === 0 ? 'Untested' : (x.cred ?? c.cred)}</b></div>
           <div><span>Guidance ${tip('guidance')}</span><b>${gcell(x.g)}</b></div>
           <div><span>Archetype ${tip('archetype')}</span><b>${esc(x.archetype || c.archetype)}</b></div>
+          ${(() => { const n = !x.period || x.period === c.period ? ntScore(c) : null; return n ? `<div><span>Near-term score ${tip('nearterm')}</span><b>${n.nt} · ${NT_TIER(n.nt)[0]}</b></div>` : ''; })()}
         </div>
       </section>
       ${x.veto ? `<div class="flag">Veto applied: the score is capped at 40. See Red flags on the Signals tab. ${tip('veto')}</div>` : ''}
@@ -1132,7 +1137,7 @@ function signalsHtml(c) {
   </div>`;
 }
 /* Score breakdown: the exact working of the latest call's score, as computed by analyze.py */
-const SB_PART = {supply: ['t-supply', 30, ['supply', 'structure', 'inventory']], pricing: ['t-pricing', 20, ['pricing', 'util']], guidance: ['t-guidance', 20, ['guidance']],
+const SB_PART = {growth: ['t-growth', 25, []], supply: ['t-supply', 30, ['supply', 'structure', 'inventory']], pricing: ['t-pricing', 20, ['pricing', 'util']], guidance: ['t-guidance', 20, ['guidance']],
   novelty: ['t-novelty', 15, ['novelty']], demand: ['t-demand', 10, ['demand']], tone: ['t-tone', 5, ['tone']]};
 const SB_READ = {supply: 'Supply discipline', structure: 'Industry structure', inventory: 'Inventory', pricing: 'Pricing', util: 'Utilisation direction',
   guidance: 'Guidance', novelty: 'New developments', demand: 'Demand', tone: 'Tone'};
@@ -1140,6 +1145,15 @@ const THEME_BONUS = {emerging: ['Emerging', 1], confirming: ['Confirming', .7], 
 const sgn = v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v);
 const f2 = v => (+v).toFixed(2);
 function sbInput(x, mode) {
+  if (x.k === 'growth') {
+    if (!x.read) return '<div class="row"><span>Growth & capacity not read yet for this call, so it counts as neutral.</span><span class="num">0.50</span></div>';
+    const adds = (x.near || []).map(a => `<li>${esc(a.what)}${a.q === 0 ? ' · live now / in trials' : a.q != null ? ` · live in ~${a.q} quarter${a.q === 1 ? '' : 's'}` : ''}${a.size_pct ? ` · ~${Math.round(a.size_pct)}% of capacity` : ''}${a.capex_cr ? ` · ₹${fmt(Math.round(a.capex_cr))} Cr` : ''}</li>`).join('')
+      + (x.later || []).map(a => `<li class="muted">${esc(a.what)}${a.q != null ? ` · ~${a.q} quarters out` : ' · no timeline'}</li>`).join('');
+    return `<div class="row"><span>Capacity: ${esc(x.capWhy)}</span><span class="num">${f2(x.cap)} × 40%</span></div>${adds ? `<ul style="margin:0 0 4px;padding-left:18px;font-size:13px">${adds}</ul>` : ''}
+      <div class="row"><span>Growth: ${esc(x.gWhy)}</span><span class="num">${f2(x.gv)} × 35%</span></div>
+      <div class="row"><span>Outlook for the next 4 quarters ${sgn(x.outlook)} (−2 to +2)</span><span class="num">${f2(x.ov)} × 25%</span></div>
+      ${x.why ? `<div class="sb-ev"><div class="q">${esc(x.why)}</div></div>` : ''}`;
+  }
   if (x.k === 'cred') return `<div class="row"><span>Management credibility: ${x.tested ? `${x.cred} of 100 (${x.tested} past guidance item${x.tested === 1 ? '' : 's'} checked)` : 'untested (no past guidance to check yet)'}</span><span class="num">× ${f2(x.factor)}</span></div>`;
   if (x.k === 'theme') { const [lab, v] = THEME_BONUS[x.stage || 'neutral'] || THEME_BONUS.neutral;
     return `<div class="row"><span>Strongest theme: ${x.theme ? `${esc(x.theme)} (${lab})` : 'none tracked'}</span><span class="num">${f2(x.sub)}</span></div>`; }
@@ -1149,7 +1163,8 @@ function sbInput(x, mode) {
 }
 function sbHow(p, mode) {
   const lvl = mode === 'blend' ? 'Each reading becomes 0 to 1 as 60% its level plus 40% its change against the average of the company’s earlier calls (0.5 = neutral).' : 'First call on record, so each reading counts at its level: −2 → 0, −1 → 0.25, 0 → 0.5, +1 → 0.75, +2 → 1.';
-  return {supply: `${lvl} Supply discipline counts twice, structure and inventory once each: (2 × supply + structure + inventory) ÷ 4.`,
+  return {growth: 'Capacity 40% + growth 35% + outlook 25%. Capacity: sizeable additions live within 3 quarters score highest (≥25% of capacity 1.0, ≥10% 0.85, smaller or unstated 0.7, +0.1 if the existing plant is already ≥80% utilised); expansion further out 0.6; nothing planned 0.5; running ≥85% full with no expansion 0.2. Growth guided: ≥25% 1.0, ≥15% 0.85, ≥10% 0.7, ≥5% 0.55, 0–5% 0.45, negative 0.15; with no number, the outlook reading is used.',
+    supply: `${lvl} Supply discipline counts twice, structure and inventory once each: (2 × supply + structure + inventory) ÷ 4.`,
     pricing: `${lvl} Pricing and utilisation are averaged.`,
     guidance: `${lvl} The guidance value is then pulled toward neutral (0.5) unless management has delivered before: value = 0.5 + (reading − 0.5) × credibility factor. Factor = 0.4 + 0.6 × credibility/100 once tested, 0.85 while untested.`,
     novelty: `${lvl} Averaged with a theme bonus for the strongest theme the company discussed: Emerging 1.0, Confirming 0.7, Steady or none 0.5, Crowded 0.25, Fading 0.2.`,
@@ -1164,11 +1179,11 @@ function scoreHtml(c) {
   return `<div style="display:grid;gap:18px">
     <section class="sb-eq"><span class="eyebrow">How ${c.score} was reached · ${esc(c.period)} call</span>
       <div class="eqn">${b.parts.map(p => `${p.label} <b>${p.pts.toFixed(1)}</b>`).join(' + ')} = <b>${sum.toFixed(1)}</b>${b.watchPts ? ` · watch-points <b>−${Math.abs(b.watchPts)}</b>` : ''}${b.veto ? ` · veto cap <b>40</b>` : ''} → <b style="color:${vcol(c.score, c.veto)}">${b.final}</b></div>
-      <div class="sb-stack" role="img" aria-label="Points by component">${b.parts.map(p => `<i class="${SB_PART[p.key][0]}" style="width:${p.pts}%;background:var(--tc)" title="${esc(p.label)}: ${p.pts.toFixed(1)} of ${SB_PART[p.key][1]}"></i>`).join('')}</div>
-      <div class="sb-leg">${b.parts.map(p => `<span class="${SB_PART[p.key][0]}">${esc(p.label)} ${p.pts.toFixed(1)}/${SB_PART[p.key][1]}</span>`).join('')}</div>
+      <div class="sb-stack" role="img" aria-label="Points by component">${b.parts.map(p => `<i class="${SB_PART[p.key][0]}" style="width:${p.pts}%;background:var(--tc)" title="${esc(p.label)}: ${p.pts.toFixed(1)} of ${Math.round(p.w * 100)}"></i>`).join('')}</div>
+      <div class="sb-leg">${b.parts.map(p => `<span class="${SB_PART[p.key][0]}">${esc(p.label)} ${p.pts.toFixed(1)}/${Math.round(p.w * 100)}</span>`).join('')}</div>
       <span class="small muted">${b.mode === 'blend' ? `Compared with the company’s ${b.prevCalls} earlier call${b.prevCalls === 1 ? '' : 's'} on record: 60% level, 40% change.` : 'First call on record for this company, so the score reflects where the business stands now; change starts counting from the next call.'}</span>
     </section>
-    ${b.parts.map(p => { const [cls, max, types] = SB_PART[p.key], ev = trig(p.key === 'novelty' ? ['novelty'] : types);
+    ${b.parts.map(p => { const [cls, , types] = SB_PART[p.key] || ['', 0, []], max = Math.round(p.w * 100), ev = trig(types);
       return `<section class="sb-part ${cls}">
         <div class="hd"><h4>${esc(p.label)} · weight ${Math.round(p.w * 100)}%</h4><span class="num"><b>${p.pts.toFixed(1)}</b> of ${max} pts</span></div>
         <div class="sb-bar"><i style="width:${p.v * 100}%"></i></div>
@@ -1182,13 +1197,14 @@ function scoreHtml(c) {
     </div></section>
     <details class="how"><summary>The full method</summary><div class="body sb-method">
       <table><tr><th>Component</th><th>Weight</th><th>Built from</th></tr>
-        <tr><td>Supply side</td><td>30%</td><td>Supply discipline ×2, industry structure, inventory</td></tr>
-        <tr><td>Pricing & utilisation</td><td>20%</td><td>Pricing reading and utilisation direction, averaged</td></tr>
+        <tr><td>Growth & capacity</td><td>25%</td><td>Capacity coming live in the next 2–3 quarters, growth guided, and the growth outlook; a plant running full with no expansion is held back</td></tr>
+        <tr><td>Supply side</td><td>20%</td><td>Supply discipline ×2, industry structure, inventory</td></tr>
         <tr><td>Guidance × credibility</td><td>20%</td><td>Guidance reading, pulled toward neutral by management’s delivery record</td></tr>
-        <tr><td>New developments & themes</td><td>15%</td><td>Novelty reading and the stage of the strongest theme discussed</td></tr>
-        <tr><td>Demand</td><td>10%</td><td>Demand reading</td></tr>
+        <tr><td>Pricing & utilisation</td><td>15%</td><td>Pricing reading and utilisation direction, averaged</td></tr>
+        <tr><td>New developments & themes</td><td>10%</td><td>Novelty reading and the stage of the strongest theme discussed</td></tr>
+        <tr><td>Demand</td><td>5%</td><td>Demand reading</td></tr>
         <tr><td>Tone & candour</td><td>5%</td><td>Tone reading and how hedged the answers were</td></tr></table>
-      <p>The readings (−2 to +2) are made by an AI model reading the transcript through the capital-cycle framework; everything after that is fixed arithmetic, recomputed each night. Supply carries the most weight on purpose: the framework looks for cycles turning on the supply side before demand shows up. Watch-points (receivables, working capital, related-party items, pledges, resignations, cash burn, liquidity) take 4 points each, up to 8. A veto (auditor issues, default, fraud, regulatory action, insolvency, guidance dropped without explanation, or heavy evasion with very negative tone) caps the score at 40.</p>
+      <p>The readings (−2 to +2) are made by an AI model reading the transcript through the capital-cycle framework; everything after that is fixed arithmetic, recomputed each night. Growth and capacity carry the most weight because the market pays for growth; supply discipline stays a big part because the framework still looks for industries where competitors hold back capacity. Watch-points (receivables, working capital, related-party items, pledges, resignations, cash burn, liquidity) take 4 points each, up to 8. A veto (auditor issues, default, fraud, regulatory action, insolvency, guidance dropped without explanation, or heavy evasion with very negative tone) caps the score at 40.</p>
     </div></details>
   </div>`;
 }
