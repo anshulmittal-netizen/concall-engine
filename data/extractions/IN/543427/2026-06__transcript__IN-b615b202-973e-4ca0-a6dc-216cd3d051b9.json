@@ -1,0 +1,309 @@
+{
+ "doc_id": "IN-b615b202-973e-4ca0-a6dc-216cd3d051b9",
+ "market": "IN",
+ "company_id": "543427",
+ "name": "Medplus Health Services Ltd",
+ "doc_type": "transcript",
+ "date": "2026-07-24",
+ "period": "2026-06",
+ "title": "Medplus Health Services Ltd - 543427 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.86,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Q1 FY27 revenue up ~22% but EBITDA margin fell to 3.5% on private-label mix, provisions and labour cost; capex put on hold while store additions held at 800 net.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "the capex proposals as approved by the Board has been put o n hold by the company"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Board capex proposals put on hold",
+    "quote": "the capex proposals as approved by the Board has been put o n hold by the company",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin down ~200 bps QoQ",
+    "quote": "Out of 200 you mentioned, 100 bps is due to the lower sales mix of private label products",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Labour cost: Karnataka +60%, Telangana +25%",
+    "quote": "We have seen 60% increase in Karnataka and 25% plus in Telangan a.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory loss ~INR12 cr per quarter",
+    "quote": "around INR12 crores is the inventory loss per quarter",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net new stores FY27",
+    "value": "800 net (incl. franchisee)",
+    "change": "held",
+    "quote": "we continue to stick to the guidance of 800 store net store openings for the current fiscal"
+   },
+   {
+    "metric": "Annual operating plan consolidated operating EBITDA",
+    "value": "not changed; Q1 EBITDA gap to be covered",
+    "change": "held",
+    "quote": "numbers do not change because as Madhukar explained, we are working on getting back the private label back on track"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Net new stores FY27 (800)",
+    "outcome": "met"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Consumer durables"
+  ],
+  "red_flags": [
+   {
+    "label": "Franchisee closures and expectation mismatch",
+    "quote": "there is an expectation mismatch both from the franchisees who are first-time entrepreneurs"
+   },
+   {
+    "label": "Capex approved then put on hold after market reaction",
+    "quote": "the market reacted so strongly and the fact that a bunch of our investors have also said the same thing"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 3,
+   "growth": 2,
+   "margin": 9,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Full-year margin and EBITDA trajectory",
+    "quote": "allow us one quarter. So that we also look at the outcomes of the actions"
+   },
+   {
+    "topic": "SSSG",
+    "quote": "we really do not track SSSG, Anil"
+   },
+   {
+    "topic": "Promoter debt repayment timing",
+    "quote": "that's the family office decision, nothing to do with the listco"
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "MedPlus Q1 FY27 consolidated revenue INR18,796 million (pharmacy +21.8% YoY) but operating EBITDA margin fell to 3.5%, and the board-approved capex was put on hold.",
+  "overview": "Consolidated revenue was INR18,796 million and consolidated operating EBITDA INR651 million (3.5%), with pharmacy EBITDA at INR588 million (3.2%). Margin pressure came from lower private label mix (about 100 bps), a smaller inventory provision release versus Q4 (about 70 bps), and absent year-end supplier discounts (about 40 bps), plus higher employee costs after minimum wage hikes in Karnataka and Telangana. Management put the board-approved capex (food park/oil extraction unit and a wellness services facility, about INR40 crore for the food park) on hold after investor pushback, and said the annual operating plan was not changed for now. Net store additions were 146 (131 franchisee), against the 800 net-addition FY27 target.",
+  "segments": [
+   {
+    "name": "Pharmacy (retail)",
+    "commentary": "Revenue INR18,796 million group level dominated by pharmacy; pharmacy EBITDA 3.2%. Network 5,476 stores with 2.9 million+ sq ft (average store ~539 sq ft), up from 4,813 stores a year earlier."
+   },
+   {
+    "name": "Diagnostics",
+    "commentary": "Revenue INR370.8 million (+22% YoY) with operating EBITDA INR65.9 million (17.8% margin) vs INR41.3 million a year ago. Subscription plans around 2 lakh active clients, below the 250,000-300,000 management had expected."
+   },
+   {
+    "name": "Franchisee (within Others)",
+    "commentary": "Franchisee sales about INR830 million, reported under Others. 600+ franchisees; 24 company-operated stores in conversion to franchise model."
+   }
+  ],
+  "guidance_outlook": [
+   "Net addition of 800 stores (including franchisee stores) in FY27 maintained, at net level; internal split roughly 50:50 company-operated vs franchisee.",
+   "Annual operating plan kept as a guide for now; top line on plan but operating EBITDA has a gap to close, which management expects to recover in coming quarters.",
+   "Private label share expected to stabilise in Q1 and then grow about 0.25%-0.5% per quarter; management aims to recover the ~100 bps gross margin impact over a couple of quarters.",
+   "Full-year gross margin and EBITDA guidance deferred; management asked for one more quarter (Q2) before guiding for the full year.",
+   "Discount change effective 7 July: discount on purchases above INR1,000 reduced from 20% to 19% (non-UPI) for many customers.",
+   "Membership fee raised from INR99 to INR149; management estimates INR10-11 crore annual top-line impact.",
+   "Management targets inventory provisioning around 0.8%-1% of sales (up to 5% of private label sales considered normal); roughly INR12 crore per quarter in Q1 vs INR4.5-5 crore in Q4.",
+   "Capital allocation (dividend/buyback) under evaluation; to be presented to the board, with an update next quarter if an outcome is reached."
+  ],
+  "capex_capacity": [
+   "Board-approved capex proposals (food park and oil extraction unit, about INR40 crore; wellness/concierge services facility) put on hold; management said core business capex continues and no new timeline given for the plans.",
+   "Store network 5,476 stores at quarter end; 222 gross openings, 52 closures (9 relocations, 27 franchisee closures); 24 stores moving from company-operated to franchise.",
+   "Large-format store test: around 47-48 stores launched in larger format.",
+   "Expansion strategy: contiguous states first (Maharashtra, Chhattisgarh, Madhya Pradesh, Kerala), northwards and westwards once profitable.",
+   "Diagnostics: radiology expansion not planned beyond maintenance and replacement of 1-2 machines; subscription plan base ~2.2 lakh vs 2.5-3 lakh target."
+  ],
+  "demand_pricing": [
+   "Private label subscription plan: about 44-45 lakh active members as of June, up from about 39-40 lakh in June 2025; ~10 lakh plans added last quarter including renewals.",
+   "Sales of diagnostic plans: 552 in April, 557 in May, 644 in June.",
+   "Private label mix pressure: management attributed the decline to over-aggressive employee selling and plans to add influencer-led marketing to rebuild share.",
+   "Non-pharma (diapers) supply disruptions in Q1, expected to normalise by end of Q1 per management.",
+   "Management does not track SSSG; reported SSSG of 15% in investor deck (per analyst question); management guides to about 10% overall growth target.",
+   "Competition: management said quick commerce is cash-burning and subsidised; MedPlus would compete if customers pay delivery costs. Management views pharmacy as different from grocery."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why was the approved capex put on hold, and is more large capex expected?",
+    "answer": "Management said feedback from the market and investors led to a pause on all capex (food park and wellness); core business capex continues and will not stop, and the market reaction was the reason for the hold."
+   },
+   {
+    "question": "Why did private label share fall and how will it recover?",
+    "answer": "Management said employees over-pushed private label, causing some customer friction; the company will add influencer-led marketing and better selling, targeting about 0.3%-0.5% quarterly share growth from Q3."
+   },
+   {
+    "question": "Will the 800-store guidance and franchisee mix stay?",
+    "answer": "Yes, 800 net stores at net level are maintained; 131 of 146 net additions in Q1 were franchisee stores, and the internal split was broadly 50:50."
+   },
+   {
+    "question": "Why did employee costs rise and what is being done?",
+    "answer": "Minimum wage increases from 1 June (about 60% in Karnataka and 25%+ in Telangana vs typical ~4%) only had one month in Q1; the retention bonus plan was stopped for new joiners from 1 March, and incentives are being restructured."
+   },
+   {
+    "question": "Why did EBITDA fall YoY despite flat private label sales?",
+    "answer": "Management said mix and higher costs, predominantly employee cost, drove the EBITDA decline; gross margin fell on mix."
+   },
+   {
+    "question": "What explains the ~200 bps sequential gross margin decline?",
+    "answer": "About 100 bps from lower private label mix, about 70 bps from a smaller inventory provision release versus Q4, and about 40 bps from year-end supplier discounts not repeated in Q1."
+   },
+   {
+    "question": "What is the promoter pledged debt outstanding?",
+    "answer": "Management said close to INR1,150 crore including interest; repayment decisions rest with the family office, not the listed company."
+   }
+  ],
+  "risks_watch": [
+   "Operating EBITDA margin at 3.5% vs ~9% previously reported; recovery depends on private label mix and cost actions, with no full-year guidance until Q2.",
+   "Labour cost step-up in Karnataka and Telangana (permanent per analyst), with only one month in Q1; full quarter impact from Q2.",
+   "Franchisee model: some closures of franchisees with average store age ~0.7 years; expectation mismatch cited; franchisee margins lower than company-operated stores.",
+   "Inventory provisioning on private label (~INR12 crore in Q1 vs INR4.5-5 crore in Q4); management said recurring at this level.",
+   "Promoter pledged debt about INR1,150 crore; monitor for family office decisions.",
+   "Pricing pressure from discounting (20% to 19% discount change) and quick commerce competition."
+  ],
+  "management_tone": "Management was defensive on the capex pause and on margins, repeatedly asking investors to wait one quarter before guiding for full year. It was confident on private label recovery and store growth, and it deflected on SSSG and promoter debt.",
+  "key_quotes": [
+   "So for us, private label when we started off, we pushed very hard, and we made sure that everyone was aware of it and the employees are also heavily incentivized to sell it and all.",
+   "Whatever margin we are getting is additional margin, yes, it will definitely be slightly lower than our regular store, but the thing is the return on investment on that is going to be higher.",
+   "So core business will continue irrespective of what the market thinks or says, whether it's private label or regular stores and all that.",
+   "It's too early, but what I would request is allow us one quarter."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue",
+    "value": "INR18,796 million",
+    "change": "Management said top line achieved 99.9% of the annual operating plan"
+   },
+   {
+    "metric": "Consolidated operating EBITDA",
+    "value": "INR651 million (3.5% margin)",
+    "change": "Below the ~9% margin cited in an analyst question about the earlier reported level; Q4 FY26 gross margin about 200 bps higher"
+   },
+   {
+    "metric": "Pharmacy revenue growth",
+    "value": "21.8% YoY (reported)",
+    "change": ""
+   },
+   {
+    "metric": "Pharmacy operating EBITDA",
+    "value": "INR588 million (3.2% margin)",
+    "change": ""
+   },
+   {
+    "metric": "Diagnostics revenue",
+    "value": "INR370.8 million",
+    "change": "vs INR302.9 million in Q1 FY26"
+   },
+   {
+    "metric": "Diagnostics operating EBITDA",
+    "value": "INR65.9 million",
+    "change": "vs INR41.3 million in Q1 FY26"
+   },
+   {
+    "metric": "Store-level EBITDA margin (stores >12 months)",
+    "value": "10.4%",
+    "change": "Revenue INR16,436 million, 94% of pharmacy revenue; after allocating non-store costs, operating EBITDA INR707 million (4.3%)"
+   },
+   {
+    "metric": "Net working capital",
+    "value": "54 days",
+    "change": "Warehouse inventory 33 days; first-year stores inventory 100 days"
+   },
+   {
+    "metric": "Private label share of revenue",
+    "value": "20% (pharma 10.7%, non-pharma 9.3%)",
+    "change": "Private label share declined slightly YoY per management"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "800 net store additions in FY27 (incl. franchisee), 146 net added in Q1; ~50:50 company-operated vs franchisee split",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "major"
+   },
+   {
+    "what": "Food park and oil extraction unit (board-approved, on hold)",
+    "size_pct": null,
+    "capex_cr": 40.0,
+    "q": null,
+    "status": "deferred",
+    "mat": "minor"
+   },
+   {
+    "what": "Large-format store test, around 47-48 stores launched",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 10.0,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "none",
+  "qRev": 21.8,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management maintained 800 net store additions for FY27 (146 added in Q1, 131 franchisee) and cited ~10% overall growth target, with top line at 99.9% of plan, but full-year guidance was deferred to Q2 and the board-approved food park/wellness capex (~INR40 crore for food park) was put on hold with no new timeline.",
+  "mgmt": null
+ }
+}

@@ -1,0 +1,371 @@
+{
+ "doc_id": "IN-994dbea5-3ca5-46a7-8246-180061e7b518",
+ "market": "IN",
+ "company_id": "531279",
+ "name": "Trishakti Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-07-28",
+ "period": "2026-06",
+ "title": "Trishakti Industries Ltd - 531279 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Crane rental firm claims 100% utilisation and ~65% EBITDA margin, but ~200-day debtors, a 200%+ revenue jump, and an unquantified ₹400cr capex plan with aggressive UAE/KSA and wind expansion warrant heavy scepticism.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 100,
+   "quote": "We continue to maintain 100% fleet utilization, reflecting the strong demand environment"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said 'there is a very big constraint in the supply part be it Sanghvi, be it Barker' and that OEMs can make only two to four 900-ton machines a month.",
+   "quote": "we had announced an INR 400 crore plan, so out of which approximately INR 270 crores are already done"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Debtor days ~200 (analyst figure)",
+    "quote": "right now, I think, we are at 200 days",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "₹400cr capex plan, ₹130-140cr left",
+    "quote": "The remaining INR 130-140 crores is left.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Fleet utilisation 100% claimed",
+    "quote": "We continue to maintain 100% fleet utilization",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Order book ₹70-72cr for FY27",
+    "quote": "our order book, which is executable in this year, is approximately INR 70-72 crores",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "novelty",
+    "label": "Wind and UAE/KSA entry",
+    "quote": "we announced our intention to expand our operations into the United Arab Emirates and Kingdom of Saudi Arabia",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Gross capex FY27",
+    "value": "INR 400 crore programme; INR 130-140 crore remaining",
+    "change": "raised",
+    "quote": "we had announced an INR 400 crore plan, so out of which approximately INR 270 crores are already done"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "~65% now, eventually 58-62%",
+    "change": "held",
+    "quote": "Eventually, it will drop down t0 58-62%."
+   },
+   {
+    "metric": "Debtor days",
+    "value": "60-70 days in FY27",
+    "change": "new",
+    "quote": "Can we expect it to come under 60-70 days? Yes. Absolutely. 100%."
+   },
+   {
+    "metric": "Fleet utilisation",
+    "value": "98-100%, above 95%",
+    "change": "held",
+    "quote": "Until the client is rehiring us, we should not be going below 98%, 99% for sure."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "L&T",
+    "relation": "customer"
+   },
+   {
+    "name": "Afcon",
+    "relation": "customer"
+   },
+   {
+    "name": "KEC",
+    "relation": "customer"
+   },
+   {
+    "name": "Reliance",
+    "relation": "customer"
+   },
+   {
+    "name": "Sanghvi",
+    "relation": "competitor"
+   },
+   {
+    "name": "Barker",
+    "relation": "competitor"
+   },
+   {
+    "name": "Suzlon",
+    "relation": "customer"
+   },
+   {
+    "name": "ReNew",
+    "relation": "customer"
+   },
+   {
+    "name": "HDFC",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Railway capex",
+   "Nearshoring / reshoring (US)",
+   "Capex cycle revival (private)",
+   "Travel & hospitality upcycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Debtor days ~200 vs claimed sub-60 core",
+    "quote": "right now, I think, we are at 200 days"
+   },
+   {
+    "label": "Revenue/PBT jump from debt-funded fleet; 100% funding via bank, LTV claims",
+    "quote": "for them to fund us a 100% of the machine is also easily possible now"
+   },
+   {
+    "label": "Management promising FY27 but refusing FY28 visibility",
+    "quote": "I cannot give you exact FY28 estimates also right now"
+   },
+   {
+    "label": "Evasive on capex accounting and ARR math; order book (₹70-72cr) vs ₹210cr capex and ARR claims",
+    "quote": "We ended up doing INR 210."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "capex": 5,
+   "balance_sheet": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "FY28 capex and revenue visibility",
+    "quote": "I cannot give you exact FY28 estimates also right now"
+   },
+   {
+    "topic": "Wind energy yield and payback",
+    "quote": "When it comes to the yield and all, the yield is quite similar to the current machineries."
+   },
+   {
+    "topic": "UAE/KSA market size",
+    "quote": "To tell you the exact market size is very difficult"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Trishakti Q1 FY27 total income up ~310% YoY to INR 1,680 lakh, EBITDA ~INR 1,087 lakh at ~65% margin, PAT INR 430 lakh.",
+  "overview": "Management reported Q1 FY27 total income of INR 1,680 lakh (up nearly 310% YoY), EBITDA of INR 1,087 lakh (about four times YoY, ~65% margin), PBT of INR 538 lakh and PAT of INR 430 lakh, described as the strongest quarter in company history. Fleet utilisation was stated at 100% with fleet of roughly 155-158 machines. Management announced entry into wind energy equipment rental (900-ton cranes) and intent to expand into UAE and KSA, both subject to approvals. Executable order book for FY27 was put at INR 70-72 crore, with management saying signed contracts cover the full financial year.",
+  "segments": [
+   {
+    "name": "Crane / equipment rental (India core)",
+    "commentary": "Fleet of roughly 155-158 machines at 100% utilisation; FY27 executable order book INR 70-72 crore, with management guiding ~60% EBITDA and 25-30% PAT margin on that book. Management said payments from core business are received within 60 days."
+   },
+   {
+    "name": "Wind energy equipment rental (new)",
+    "commentary": "Entry announced with 900-ton machines; first units expected in India in October; management expects revenue contribution in Q3-Q4 FY27 and yields similar to current fleet. No order book disclosed yet; 2-3 month advance LOIs referenced as possible."
+   },
+   {
+    "name": "Tower cranes for data centres (new)",
+    "commentary": "Management disclosed two new machine types including 80-ton tower cranes for data-centre jobs; about INR 100 crore of CapEx placed for these and other machines, expected live in four to five months."
+   },
+   {
+    "name": "UAE and KSA (planned)",
+    "commentary": "Planned entry via incorporation of new entities; management cited ~50-52% EBITDA margin expectation in KSA and yields of ~4% per month versus ~2.5% in India. Deployment targeted within two to three quarters; no roadmap or CapEx quantum given yet."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 executable order book INR 70-72 crore, expected to deliver ~60% EBITDA and 25-30% PAT margin; revenue to rise as new machines start earning (~1.5 month lead time).",
+   "FY27 CapEx plan of INR 400 crore: ~INR 270 crore done, balance INR 130-140 crore to be spent in India in FY27; ~70% of balance already ordered per management.",
+   "Margins expected to normalise to 58-62% EBITDA once OEM warranty (about three years) ends and maintenance OpEx of 4-5% of top line starts.",
+   "Management expects utilisation to stay above 95-98%; fleet utilisation expected in the 90s after geographic diversification.",
+   "Borrowing cost expected to fall over the next few quarters as legacy 9.75% loans are repaid.",
+   "Management declined to give FY28 estimates; said a fuller roadmap would come in the December quarter call."
+  ],
+  "capex_capacity": [
+   "Cumulative gross block: ~INR 270 crore per management; ~INR 235-240 crore excluding GST, per balance sheet comments.",
+   "FY26 CapEx was INR 210 crore against a guidance of INR 100 crore.",
+   "Wind energy 900-ton machines: 4-5 units could absorb the remaining INR 130 crore; OEM lead time about four months plus transport, ~5 months net; OEM output of ~2-5 machines per month cited as constraint.",
+   "Electric (EV) machines: ordered for two clients, ~2-month lead time, ~5% costlier than diesel units, expected in Q2 FY27.",
+   "UAE/KSA CapEx: no quantum given; management said a roadmap would follow once client demand data is collected by next month-end."
+  ],
+  "demand_pricing": [
+   "Management says demand in India is strong, with post-monsoon mega-projects (including Reliance Kutch expansion) expected from October.",
+   "Client yields in India cited at ~2.5% per month; KSA yields cited at ~4% per month; KSA EBITDA margin expectation 50-52%.",
+   "Customers named: L&T, KEC, Afcon, Reliance; wind EPC players referred to as potential partners (names not given).",
+   "Management said the client bears diesel cost; Trishakti bears operator, helper and labour accommodation costs.",
+   "Competition: management said peers such as Sanghvi and Barker face supply constraints; no pricing data given. Wind market entry barriers cited as CapEx scale and OEM capacity."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Current fleet size and wind energy segment economics, payback and order book?",
+    "answer": "Fleet 155-158 machines. Wind yields said to be similar to the current fleet; no existing wind client base; talks with large wind EPC companies; no payback figure given."
+   },
+   {
+    "question": "Funding model for new cranes and debt position?",
+    "answer": "Banks now fund ~100% of machine cost (previously 20% down payment), with LTV ~50-60%; borrowings ~INR 80-85 crore; average cost ~8.5-8.75%; interest paid from month one with moratorium."
+   },
+   {
+    "question": "Debtor days, reported around 200 days?",
+    "answer": "Management said core-business receipts are under 60 days and expects debtor days to fall to 60-70 in FY27."
+   },
+   {
+    "question": "Why is utilisation and EBITDA better than peers?",
+    "answer": "Fleet is 2024-2027 vintage versus peers' 12-15 years; OEM covers maintenance for first three years; margin expected to fall to 58-62% later."
+   },
+   {
+    "question": "Why expand into UAE and KSA, and what is the right to win?",
+    "answer": "Clients (L&T, KEC, Afcon, Reliance) asked for support abroad; KSA yields higher; management said it will target specific clients rather than compete on fleet size with peers such as Sanghvi."
+   },
+   {
+    "question": "Seasonality and Q2 outlook?",
+    "answer": "Q2 is softer for new CapEx due to monsoon; 100% utilisation with signed contracts for the full financial year."
+   }
+  ],
+  "risks_watch": [
+   "Wind segment depends on 900-ton OEM supply (about 2-5 machines per month globally) and four-plus month lead times; no order book or revenue numbers disclosed yet.",
+   "UAE/KSA expansion relies on approvals, incorporation and client RFQs; management noted six-month demand halt in KSA and the paperwork delays; no CapEx quantum given.",
+   "Receivable days (~200 per analyst) versus management's 60-70 day target; watch next quarter's reported receivables.",
+   "Margin normalisation to 58-62% expected once OEM warranty ends, with 4-5% maintenance OpEx.",
+   "Quarterly revenue is 1.5-2 months of lag for newly commissioned machines; FY27 order book of INR 70-72 crore is small relative to the Q1 run-rate, so the disclosed figures need clarification.",
+   "Management declined FY28 estimates until December quarter."
+  ],
+  "management_tone": "Confident and promotional on demand, margins and expansion, with repeated claims of 100% utilisation. Evasive on FY28 numbers, wind segment economics, UAE/KSA CapEx size, and receivable reconciliation; several answers were loosely framed.",
+  "key_quotes": [
+   "Total income increased by nearly 310% YoY to INR 1,680 lakhs, while EBITDA grew by approximately four times YoY to INR 1,087 lakhs.",
+   "We continue to maintain 100% fleet utilization, reflecting the strong demand environment and the efficient deployment of our equipment across multiple infrastructure projects.",
+   "The demand is not the issue. The supply is the issue.",
+   "Currently, we are at 65% margins. Eventually, it will drop down to 58-62%."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Total income",
+    "value": "INR 1,680 lakh",
+    "change": "up nearly 310% YoY"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR 1,087 lakh",
+    "change": "about 4x YoY"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "~65%",
+    "change": ""
+   },
+   {
+    "metric": "Profit before tax",
+    "value": "INR 538 lakh",
+    "change": ""
+   },
+   {
+    "metric": "Profit after tax",
+    "value": "INR 430 lakh",
+    "change": ""
+   },
+   {
+    "metric": "Borrowings",
+    "value": "~INR 80-85 crore",
+    "change": "per management, at call; Q&A also cited INR 80-90 crore"
+   },
+   {
+    "metric": "Average borrowing cost",
+    "value": "~8.5-8.75%",
+    "change": "earlier loans at 9.75%"
+   },
+   {
+    "metric": "Debtor days",
+    "value": "~200 days (per analyst); management says core-business receipts under 60 days",
+    "change": "target 60-70 days"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Wind energy 900-ton crane rental units (4-5 units, India)",
+    "size_pct": null,
+    "capex_cr": 130.0,
+    "q": 2,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "80-ton tower cranes for data-centre jobs (two new machine types incl. these)",
+    "size_pct": null,
+    "capex_cr": 100.0,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Electric (EV) machines for two clients",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "UAE and KSA entities with deployment targeted within two to three quarters; no CapEx quantum given",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 3,
+    "status": "planned",
+    "mat": "minor"
+   }
+  ],
+  "util": 100.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 310.0,
+  "qEbitda": 300.0,
+  "outlook": 1,
+  "why": "Management guides FY27 growth backed by an executable order book of INR 70-72 crore covering the full year, 100% fleet utilisation, and ~INR 270 crore of INR 400 crore capex already done with INR 130-140 crore remaining (about 70% ordered), though no explicit FY27 revenue growth percentage was given and the wind and UAE/KSA plans lack signed orders or quantified capex.",
+  "mgmt": null
+ }
+}
