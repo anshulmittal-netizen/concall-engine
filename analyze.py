@@ -157,6 +157,18 @@ def merge(docs: list[dict]) -> dict:
 
 
 # ------------------------------------------------------------------ main
+def _site_summary(s: dict) -> dict:
+    """Last guard before the dashboard: never ship a summary with leaked tool markup. Sections recovered
+    from the markup are kept, except quotes, which could not be checked against the transcript here."""
+    import summarize
+    if not summarize.has_leak(s):
+        return s
+    quotes = s.get("key_quotes") or []
+    s = summarize._unleak(dict(s))
+    s["key_quotes"] = quotes
+    return s
+
+
 def build(market: str, log=print) -> dict:
     cfg = settings()["analysis"]
     uni, manifest, by_co = load(market)
@@ -337,7 +349,7 @@ def build(market: str, log=print) -> dict:
                           "hasSummary": any(d.get("summary") for d in r["docs"])})
             for d in r["docs"]:
                 if d.get("summary"):
-                    summaries[key] = d["summary"]
+                    summaries[key] = _site_summary(d["summary"])
                     break
     calls.sort(key=lambda c: (c["periodKey"], c["score"]), reverse=True)
     # percentile within the season: share of that quarter's calls this one beats

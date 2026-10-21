@@ -1205,6 +1205,6 @@ $('#find').addEventListener('focus', renderFind);
   S.view = RENDER[h] ? h : (RENDER[store.get('view', 'home')] ? store.get('view', 'home') : 'home');
   render();
   if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
-  loadSums();
+  loadSums().then(() => renderNav());  /* near-term count uses lines from the summaries */
 })();
 </script>

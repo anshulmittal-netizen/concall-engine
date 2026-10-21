@@ -69,30 +69,59 @@ def _call(entry: dict, text: str) -> dict:
 
 
 LEAK_RX = re.compile(r'(?:</\w+>\s*)?<parameter name="(\w+)">')
+FIELDS = list(SUMMARY_TOOL["input_schema"]["properties"])
+XML_LEAK_RX = re.compile(r'(?:</\w+>\s*)*<(' + "|".join(FIELDS) + r')>')
+ANY_LEAK_RX = re.compile(r'<parameter name=|</?(?:' + "|".join(FIELDS) + r'|item)>')
+
+
+def _xml_value(body: str):
+    """'<item><metric>A</metric><value>B</value></item>…' -> [{'metric': 'A', 'value': 'B'}, …];
+    '<item>text</item>…' -> ['text', …]; plain text -> the text."""
+    items = re.findall(r"<item>(.*?)</item>", body, re.S)
+    if not items:
+        return re.sub(r"<[^>]+>", "", body).strip()
+    out = []
+    for it in items:
+        sub = re.findall(r"<(\w+)>(.*?)</\1>", it, re.S)
+        out.append({k: v.strip() for k, v in sub} if sub else it.strip())
+    return out
 
 
 def _unleak(s: dict) -> dict:
-    """Haiku sometimes writes the rest of the tool call as raw markup inside a string field
-    ('...text</overview>\n<parameter name="financial_highlights">[...]'). Cut the markup out of the
-    field and recover the fields it carried, when they are empty."""
+    """Haiku sometimes writes the rest of the tool call as raw markup inside a string field, either as
+    '...text</overview>\n<parameter name="financial_highlights">[...]' or as plain XML
+    ('...text</overview>\n<financial_highlights><item><metric>…</metric>…</item></financial_highlights>').
+    Cut the markup out of the field and recover the fields it carried, when they are empty."""
     for key in list(s):
         v = s[key]
         if not isinstance(v, str):
             continue
         m = LEAK_RX.search(v)
-        if not m:
+        if m:
+            s[key] = re.sub(r"</\w+>\s*$", "", v[:m.start()]).strip()
+            parts = LEAK_RX.split(v[m.start():])[1:]
+            for name, body in zip(parts[0::2], parts[1::2]):
+                body = re.sub(r"(</\w+>\s*)+$", "", body.strip()).strip()
+                try:
+                    val = json.loads(body)
+                except Exception:
+                    val = body if not body.startswith(("[", "{")) else None
+                if val not in (None, "", []) and not s.get(name):
+                    s[name] = val
             continue
-        s[key] = re.sub(r"</\w+>\s*$", "", v[:m.start()]).strip()
-        parts = LEAK_RX.split(v[m.start():])[1:]
-        for name, body in zip(parts[0::2], parts[1::2]):
-            body = re.sub(r"(</\w+>\s*)+$", "", body.strip()).strip()
-            try:
-                val = json.loads(body)
-            except Exception:
-                val = body if not body.startswith(("[", "{")) else None
-            if val not in (None, "", []) and not s.get(name):
-                s[name] = val
+        m = XML_LEAK_RX.search(v)
+        if m:
+            tail = v[m.start():]
+            s[key] = re.sub(r"(</\w+>\s*)+$", "", v[:m.start()]).strip()
+            for sec in re.finditer(r"<(" + "|".join(FIELDS) + r")>(.*?)(?=</\1>|<(?:" + "|".join(FIELDS) + r")>|$)", tail, re.S):
+                name, val = sec.group(1), _xml_value(sec.group(2))
+                if val not in (None, "", []) and not s.get(name):
+                    s[name] = val
     return s
+
+
+def has_leak(s: dict) -> bool:
+    return any(isinstance(v, str) and ANY_LEAK_RX.search(v) for v in s.values())
 
 
 def _clean(s: dict, text: str) -> dict:
@@ -116,7 +145,7 @@ LATE_FIELDS = ("qa_highlights", "risks_watch", "management_tone")
 
 def incomplete(s: dict) -> bool:
     """A summary missing two or more of its closing sections, or still carrying leaked markup."""
-    return sum(1 for k in LATE_FIELDS if not s.get(k)) >= 2 or "<parameter" in str(s.get("overview", ""))
+    return sum(1 for k in LATE_FIELDS if not s.get(k)) >= 2 or has_leak(s)
 
 
 def pending(market: str) -> list[Path]:
