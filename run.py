@@ -184,7 +184,8 @@ def cmd_growth(a):
 
 def cmd_mgmt(a):
     import mgmt
-    mgmt.run(a.market, days=a.days or 2, log=log)
+    days = a.days or 2
+    mgmt.run(a.market, days=days, notify_days=1 if days > 7 else 3, log=log)  # a backfill alerts only for today's filings
 
 
 def cmd_history(a):
