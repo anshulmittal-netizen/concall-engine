@@ -209,6 +209,22 @@ svg text{font-family:var(--mono)}
 .brow{display:grid;grid-template-columns:118px minmax(0,1fr) 40px;gap:10px;align-items:center;font-size:13px}
 .brow .sbar{height:8px}
 .brow .num{text-align:right;font-size:12.5px}
+.turn>*,.sig ol,.sig li{min-width:0}
+.sig{border-radius:8px;min-width:0}
+.sig>summary{list-style:none;cursor:pointer;padding:3px 4px;margin:0 -4px;border-radius:8px;grid-template-columns:136px minmax(0,1fr) 40px}
+.sig>summary::-webkit-details-marker{display:none}
+.sig>summary:hover{background:var(--panel2)}
+.sig>summary .lab::before{content:"\25B8";display:inline-block;width:12px;color:var(--faint);transition:transform .2s}
+.sig[open]>summary .lab::before{transform:rotate(90deg)}
+.sig ol{list-style:none;margin:6px 0 4px;padding:0;display:grid;gap:4px}
+.sig-co{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;width:100%;text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 9px}
+.sig-co:hover{border-color:var(--gold)}
+.sig-co .r1{display:flex;gap:8px;align-items:baseline;justify-content:space-between;font-size:13.5px}
+.sig-co .r1 b{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sig-co .ev{font-size:12.5px;color:var(--muted);line-height:1.4}
+.sig-co .ev em{font-style:normal;color:var(--fg);opacity:.85}
+.sig .more{font-size:12px;color:var(--faint);margin:2px 0 0}
+.sig.top5{border-top:1px solid var(--line);padding-top:6px}
 .th .r{grid-template-columns:minmax(0,1.5fr) minmax(0,1.2fr) 64px 110px}
 .thbar{display:flex;align-items:center;gap:8px}
 
@@ -729,21 +745,69 @@ function vGuidance() {
 
 /* Sector turns */
 const STAGE_ORDER = {turning: 0, emerging: 1, confirming: 2, crowded: 3, deteriorating: 4, neutral: 5};
+/* Companies behind each breadth signal: the same tests analyze.py uses for the breadth bars, applied to each company's latest call. */
+const SIG_TEST = {
+  supply: c => (c.blocks?.supply || 0) >= 1 || ['cut', 'deferred', 'cancelled'].includes(c.capex),
+  util: c => (c.util || 0) > 0,
+  pricing: c => (c.blocks?.pricing || 0) >= 1,
+  demand: c => (c.blocks?.demand || 0) >= 1};
+const SIG_TRIG = {supply: ['supply', 'structure'], util: ['util'], pricing: ['pricing'], demand: ['demand']};
+const coKey = c => (D.calls || []).find(x => x.id === c.id && x.period === c.period)?.key || '';
+function sigEvidence(c, k) {
+  const t = k === 'top' ? (c.triggers || [])[0] : (c.triggers || []).find(x => SIG_TRIG[k].includes(x.t));
+  if (t) { const q = t.q || t.note || ''; return `<span class="ev">${esc(t.label)}${q ? ` · <em>“${esc(q.length > 170 ? q.slice(0, 167) + '…' : q)}”</em>` : ''}</span>`; }
+  if (k === 'supply' && c.capex && c.capex !== 'none') return `<span class="ev">Capex ${esc(c.capex)} on the call</span>`;
+  return k === 'top' ? `<span class="ev">${esc(c.thesis || '')}</span>` : '';
+}
+function sigList(hits, k) {
+  const top = hits.slice().sort((a, b) => b.score - a.score).slice(0, 5);
+  if (!top.length) return '<p class="more">No company here shows this on its latest call.</p>';
+  return `<ol>${top.map(c => `<li><button class="sig-co" data-open="${esc(c.id)}" data-k="${esc(coKey(c))}">
+      <span class="r1"><b>${esc(c.name)}</b><span class="num" style="color:${vcol(c.score, c.veto)}">${c.score}${c.period !== D.season ? ` · ${esc(c.period)}` : ''}</span></span>
+      ${sigEvidence(c, k)}</button></li>`).join('')}</ol>${hits.length > 5 ? `<p class="more">Top 5 of ${hits.length} by score. Click a company to open the call.</p>` : ''}`;
+}
+function turnCard(g, B, pool) {
+  return `${B.map(([k, n, col]) => { const v = g.s[k] || [], now = v.at(-1) ?? 0, prev = v.length > 1 ? v.at(-2) : null, hits = pool.filter(SIG_TEST[k]);
+      return `<details class="sig"><summary class="brow"><span class="lab">${n}</span><span class="sbar"><i style="width:${now}%;background:${col}"></i></span><span class="num">${now}%${prev != null ? `<br><span class="delta ${now >= prev ? 'up' : 'dn'}" style="font-size:10.5px">${now >= prev ? '+' : '−'}${Math.abs(now - prev)}</span>` : ''}</span></summary>${sigList(hits, k)}</details>`; }).join('')}
+    <details class="sig top5"><summary class="brow"><span class="lab">Top 5 calls</span><span></span><span class="num">${pool.length}</span></summary>${sigList(pool, 'top')}</details>`;
+}
+function bigSectorCards() {
+  const by = {};
+  (D.companies || []).forEach(c => { const b = c.bigSector && c.bigSector !== 'Unclassified' ? c.bigSector : null; if (b) (by[b] = by[b] || []).push(c); });
+  const subNames = new Set((D.sectors || []).map(s => s.name));
+  return Object.entries(by).map(([name, cos]) => {
+    const now = cos.filter(c => c.period === D.season), n = now.length || 1;
+    const s = Object.fromEntries(Object.keys(SIG_TEST).map(k => [k, [Math.round(100 * now.filter(SIG_TEST[k]).length / n)]]));
+    return {name, n: now.length, s, cos, subs: [...new Set(cos.map(c => c.sector))].filter(x => subNames.has(x))};
+  }).filter(g => g.n >= 3).sort((a, b) => b.n - a.n);
+}
 function vTurns() {
   const all = (D.sectors || []), base = all.every(s => (s.s.supply || []).length < 2);
   const stages = [...new Set(all.map(s => s.stage))].sort((a, b) => STAGE_ORDER[a] - STAGE_ORDER[b]);
   const rows = all.filter(s => !S.turns.stage || s.stage === S.turns.stage).sort((a, b) => (b.hit - a.hit) || STAGE_ORDER[a.stage] - STAGE_ORDER[b.stage] || b.n - a.n);
   const B = [['supply', 'Supply discipline', 'var(--gold)'], ['util', 'Utilisation rising', 'var(--blue)'], ['pricing', 'Pricing improving', 'var(--teal)'], ['demand', 'Demand positive', 'var(--muted)']];
+  const lvl = S.turns.level || 'sub', subPool = name => (D.companies || []).filter(c => c.sector === name);
+  const levelBar = `<div class="toolbar"><button class="chip" data-tl="sub" aria-pressed="${lvl === 'sub'}">By sub-sector</button><button class="chip" data-tl="big" aria-pressed="${lvl === 'big'}">By sector</button></div>`;
+  if (lvl === 'big') {
+    const bs = bigSectorCards();
+    return head('Sector turns', 'The same breadth signals rolled up to the broad sector. Open any signal to see the top companies behind it and the line from their call.', `
+      <ul><li>Breadth here is computed from each company’s ${esc(D.season)} call, across every sub-sector in the sector.</li>
+      <li>Stages and turn flags are only set at sub-sector level; switch back to see them.</li></ul>`, focusBadge()) + levelBar + `
+      <div class="grid-auto">${bs.map(g => `<article class="card turn">
+        <div class="top"><div><h4>${esc(g.name)}</h4><span class="small muted">${g.n} companies · ${g.subs.length} sub-sector${g.subs.length === 1 ? '' : 's'}</span></div></div>
+        ${turnCard(g, B, g.cos.filter(c => c.period === D.season))}
+        ${g.subs.length ? `<p class="small muted">${g.subs.map(esc).join(' · ')}</p>` : ''}</article>`).join('') || '<div class="empty">No sectors with three or more calls yet.</div>'}</div>`;
+  }
   return head('Sector turns', 'Sub-sectors where the capital cycle may be turning: competitors hold back capacity, then pricing and utilisation start to improve before demand talk catches up.', `
       <ul><li>Each card shows <b>breadth</b> ${tip('breadth')}: the share of the sub-sector’s companies whose calls show each signal.</li>
       <li>The pattern to look for: supply discipline high, pricing or utilisation rising, demand still lukewarm. Those cards are marked <b>Turning</b> ${tip('stage')} and sorted to the top.</li>
       <li>Only sub-sectors with at least three calls appear.</li></ul>`, focusBadge()) + `
     ${base ? `<div class="welcome"><span>Only ${esc(D.season)} has enough calls so far, so these cards show where each sub-sector stands today. Turn flags need two quarters and will start once ${esc((D.inProgress || [])[0]?.season || 'the next quarter')} fills in.</span></div>` : ''}
+    ${levelBar}
     <div class="toolbar">${['', ...stages].map(s => `<button class="chip" data-st="${s}" aria-pressed="${S.turns.stage === s}">${s ? (all.find(x => x.stage === s)?.label || s) : 'All stages'} <span class="num">${s ? all.filter(x => x.stage === s).length : all.length}</span></button>`).join('')}</div>
     <div class="grid-auto">${rows.map(s => `<article class="card turn ${s.hit ? 'hit' : ''}">
       <div class="top"><div><h4>${esc(s.name)}</h4><span class="small muted">${s.n} companies</span></div><span class="pill st-${s.stage}">${esc(s.label)}</span></div>
-      ${B.map(([k, n, col]) => { const v = s.s[k] || [], now = v.at(-1) ?? 0, prev = v.length > 1 ? v.at(-2) : null;
-        return `<div class="brow"><span>${n}</span><span class="sbar"><i style="width:${now}%;background:${col}"></i></span><span class="num">${now}%${prev != null ? `<br><span class="delta ${now >= prev ? 'up' : 'dn'}" style="font-size:10.5px">${now >= prev ? '+' : '−'}${Math.abs(now - prev)}</span>` : ''}</span></div>`; }).join('')}
+      ${turnCard(s, B, subPool(s.name))}
       <p class="small muted">${esc(s.note)}</p></article>`).join('') || '<div class="empty">No sub-sectors in this stage.</div>'}</div>`;
 }
 
@@ -994,6 +1058,7 @@ document.addEventListener('click', e => {
   if (t.closest('#c-more')) { S.calls.limit += 50; fillCalls(); return; }
   const fs = t.closest('[data-fs]'); if (fs) { S.first.status = fs.dataset.fs; render(); return; }
   const st = t.closest('[data-st]'); if (st) { S.turns.stage = st.dataset.st; render(); return; }
+  const tl = t.closest('[data-tl]'); if (tl) { S.turns.level = tl.dataset.tl; render(); return; }
   const it = t.closest('[data-it]'); if (it) { S.ideas.tab = it.dataset.it; render(); return; }
   const sec = t.closest('.trk .r.sec'); if (sec) { const n = S._secs[+sec.dataset.sec].name; S.openSec.has(n) ? S.openSec.delete(n) : S.openSec.add(n); render(); return; }
   const sub = t.closest('.trk .r.subr'); if (sub) { const [i, j] = sub.dataset.subrow.split('-').map(Number), n = S._secs[i].subs[j].name; S.openSub = S.openSub === n ? null : n; render(); return; }
