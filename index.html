@@ -478,7 +478,7 @@ const IDEA_TYPES = {
   'Red flag':'Something in the call that needs checking before anyone owns or buys the stock.'
 };
 const GL = {
-  score:['Concall Signal Score','0 to 100. How strongly the call points to an improving business, read through the capital-cycle lens. Weighted: growth & capacity 25 (capacity coming live in 2–3 quarters, growth guided, outlook), supply 20, guidance × credibility 20, pricing & utilisation 15, new developments & themes 10, demand 5, tone 5. The Score breakdown tab in each company panel shows the exact working. Most calls land between 45 and 65.'],
+  score:['Concall Signal Score','0 to 100. How strongly the call points to a growing, improving business. Weighted: guidance-backed growth & capacity 45 (growth or turnaround guided, counted in full only when backed by capacity, orders or a clear plan and a management that delivers; plus capacity going live in 2–3 quarters), industry supply discipline 20, results delivered this quarter 15, pricing & utilisation 10, demand 5, new developments & themes 3, tone 2. The Score breakdown tab in each company panel shows the exact working.'],
   verdict:['Verdict','A plain label for the score. Strong 70+, Good 60–69, Average 50–59, Weak 40–49, Poor below 40. Red flag means a veto capped the score at 40.'],
   change:['vs last call','Points gained or lost against the company’s previous call. A dash means this is the first call we have read for the company, so there is nothing to compare yet.'],
   pct:['Rank in quarter','Where the call ranks among all calls read for the same quarter. “Top 10%” means only a tenth of the quarter’s calls scored higher.'],
@@ -911,15 +911,18 @@ function ntLines(c) {
 }
 /* Near-term strength: no separate score. A company is listed when its latest call shows at least two strong
    near-term signals, or the Growth & capacity part of its Concall Signal Score is high. */
-const growthPart = c => (c.breakdown?.parts || []).find(p => p.key === 'growth');
+const growthPart = c => (c.breakdown?.parts || []).find(p => p.key === 'backed');
 function ntRow(c) {
   const call = (D.calls || []).find(x => x.id === c.id && x.period === c.period) || {};
   const b = c.blocks || {}, gp = growthPart(c);
   if (c.veto || (b.guidance || 0) < 0 || (b.demand || 0) < 0 || call.gCut > 0) return null;
   const why = [];
-  const gr = c.growth, near = (gr?.adds || []).filter(a => a.status !== 'deferred' && a.q != null && a.q <= 3);
+  const gr = c.growth, near = (gr?.adds || []).filter(a => a.status !== 'deferred' && a.q != null && a.q <= 3 && a.mat !== 'minor');
   if (near.length) { const sz = near.reduce((n, a) => n + (a.size_pct || 0), 0); why.push([`Capacity live within 3 quarters${sz ? ` (~${Math.round(sz)}% of capacity)` : ''}`, 1]); }
   if (gr?.growth != null && gr.growth >= 15) why.push([`Growth guided ~${Math.round(gr.growth)}%`, 1]);
+  if (gr?.turnaround && gr.gs >= 1) why.push(['Turnaround guided', 1]);
+  if (gr?.clarity === 'clear') why.push(['Clear plan to deliver', 1]);
+  if (gr && (gr.qRev >= 20 || gr.qEbitda >= 25)) why.push([`Strong quarter (rev ${pctTxt(gr.qRev)}, EBITDA ${pctTxt(gr.qEbitda)})`, 1]);
   if (b.guidance >= 2) why.push(['Guidance strongly positive', 1]); else if (b.guidance === 1) why.push(['Guidance positive', 0]);
   if (call.gRaised > 0) why.push(['Guidance raised', 1]);
   if (b.demand >= 2) why.push(['Demand strong', 1]); else if (b.demand === 1) why.push(['Demand positive', 0]);
@@ -928,6 +931,7 @@ function ntRow(c) {
   (c.models || []).forEach(m => { const x = NT_MODELS[m]; if (x) why.push([x[1], 0]); });
   if (c.credTested > 0 && c.cred >= 60) why.push([`Delivers on guidance (credibility ${c.cred})`, 1]);
   if (gr && !near.length && !gr.expansion && gr.util >= 85) why.push([`Running ${Math.round(gr.util)}% full, no expansion`, -1]);
+  if (c.planFlag) why.push(['Strong guidance, plan not clear', -1]);
   const lines = ntLines({...c, ntKey: call.key}), next = lines.some(l => l.next);
   if (next) why.unshift(['Next quarter called out', 1]);
   const hot = why.filter(w => w[1] === 1).length, gv = gp ? gp.v : 0.5;
@@ -943,13 +947,13 @@ function ntRows() {
 function vNear() {
   const f = S.near, all = ntRows(), nextQ = quarters()[0]?.label;
   const bigs = [...new Set(all.map(x => x.c.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
-  const CH = {cap: ['Capacity live within 3 quarters', x => x.near.length > 0], next: ['Next quarter called out', x => x.next], raised: ['Guidance raised', x => x.call.gRaised > 0],
+  const CH = {cap: ['Capacity live within 3 quarters', x => x.near.length > 0], turn: ['Turnaround guided', x => !!(x.c.growth?.turnaround && x.c.growth.gs >= 1)], clear: ['Clear plan to deliver', x => x.c.growth?.clarity === 'clear'], next: ['Next quarter called out', x => x.next], raised: ['Guidance raised', x => x.call.gRaised > 0],
     proven: ['Proven management', x => x.c.credTested > 0 && x.c.cred >= 60], pending: [`${nextQ || 'Next'} results still to come`, x => x.pending]};
   const rows = all.filter(x => (!f.big || x.c.bigSector === f.big) && [...f.chips].every(k => CH[k][1](x)));
   if (!SUMS.data) loadSums().then(() => { if (S.view === 'nearterm') render(); });
   return head('Near-term strength', 'Companies whose latest call points to strong results over the next quarter or the next few quarters, with the reasons from the call. A shortlist to check, not a buy list.', `
-      <ul><li>A company is listed when its latest call shows <b>at least two strong near-term signals</b> (capacity going live within 3 quarters, growth guided at 15% or more, guidance strongly positive or raised, strong demand, the next quarter called out, or a management that delivers on guidance), or when the <b>Growth & capacity</b> part of its Concall Signal Score is high. Calls with a veto, a guidance cut, or negative guidance or demand are left out.</li>
-      <li>The only score shown is the <b>Concall Signal Score</b>, the same number as everywhere else. The list is ordered by its Growth & capacity points, then by the score.</li>
+      <ul><li>A company is listed when its latest call shows <b>at least two strong near-term signals</b> (major or moderate capacity going live within 3 quarters, growth guided at 15% or more, a turnaround guided, a clear plan to deliver, a strong quarter, guidance strongly positive or raised, strong demand, the next quarter called out, or a management that delivers on guidance), or when the <b>Guidance-backed growth & capacity</b> part of its Concall Signal Score is high. Calls with a veto, a guidance cut, or negative guidance or demand are left out.</li>
+      <li>The only score shown is the <b>Concall Signal Score</b>, the same number as everywhere else. The list is ordered by its Guidance-backed growth & capacity points, then by the score. Stocks guiding strongly with no clear plan or capacity behind it are marked in red.</li>
       <li><b>${esc(nextQ || 'Next quarter')} results still to come</b> shows companies whose latest call is from the previous quarter, so the quarter they guided for has not been reported yet. These are the most timely names.</li>
       <li>The bullet lines are taken from the call summary and quotes. Open the call and check the transcript before acting.</li></ul>`,
       `<span class="badge">Latest call per company</span>`) + `
@@ -961,9 +965,9 @@ function vNear() {
     <p class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'}</p>
     <div class="nt-grid">${rows.slice(0, f.limit).map((x, i) => { const c = x.c;
       return `<article class="card nt ${i < 3 && !f.big && !f.chips.size ? 'top3' : ''}">
-        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc(c.mcap || '')}${x.gp ? `${c.mcap ? ' · ' : ''}Growth & capacity ${x.gp.pts.toFixed(1)} of ${Math.round(x.gp.w * 100)}` : ''}</span></div>
+        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc(c.mcap || '')}${x.gp ? `${c.mcap ? ' · ' : ''}Guidance-backed growth ${x.gp.pts.toFixed(1)} of ${Math.round(x.gp.w * 100)}` : ''}</span></div>
           <div class="ntsc"><span class="eyebrow" style="font-size:10px">Concall Signal Score</span><b style="color:${vcol(c.score, c.veto)}">${c.score}</b>${vpill(c.score, c.veto)}</div></div>
-        <div class="why-chips">${x.why.slice(0, 8).map(([w, hot]) => `<span class="${hot === 1 ? 'hot' : ''}" ${hot === -1 ? 'style="color:var(--down)"' : ''}>${esc(w)}</span>`).join('')}</div>
+        <div class="why-chips">${[...x.why.filter(w => w[1] !== -1).slice(0, 7), ...x.why.filter(w => w[1] === -1)].map(([w, hot]) => `<span class="${hot === 1 ? 'hot' : ''}" ${hot === -1 ? 'style="color:var(--down)"' : ''}>${esc(w)}</span>`).join('')}</div>
         ${x.nearTxt.length || x.gwhy ? `<p class="small" style="margin:0"><b>Capacity & growth:</b> ${esc([x.gwhy, ...x.nearTxt.map(t => 'Adding ' + t)].filter(Boolean).join(' · '))}</p>` : ''}
         ${x.ev.length ? `<ul>${x.ev.map(l => `<li>${esc(l.length > 260 ? l.slice(0, 257) + '…' : l)}</li>`).join('')}</ul>` : ''}
         <div class="foot"><span>${esc(c.period)} call · ${esc(fdate(c.date))}${x.pending ? ` · <b style="color:var(--fg)">${esc(nextQ)} results due</b>` : ''}</span><button class="btn" data-open="${esc(c.id)}" data-k="${esc(x.key)}">Open the call</button></div>
@@ -973,7 +977,7 @@ function vNear() {
 
 /* Help */
 function vHelp() {
-  const W = [['Growth & capacity', 25], ['Supply discipline', 20], ['Guidance × credibility', 20], ['Pricing & utilisation', 15], ['New developments & themes', 10], ['Demand', 5], ['Tone & candour', 5]];
+  const W = [['Guidance-backed growth & capacity', 45], ['Industry supply discipline', 20], ['Results delivered', 15], ['Pricing & utilisation', 10], ['Demand', 5], ['New developments & themes', 3], ['Tone & candour', 2]];
   return head('How to use the desk', 'A short guide for the team: what each view is for, how the score works, and where the data comes from.', '') + `
   <div class="help"><article>
     <section id="h-what"><h3>What the desk does</h3>
@@ -999,12 +1003,12 @@ function vHelp() {
     </div></section>
     <section id="h-quarter"><h3>The quarter switch</h3><p>${esc(GL.quarter[1])} A small orange dot marks a season still in progress.</p></section>
     <section id="h-score"><h3>How the score works</h3>
-      <p>The Concall Signal Score runs from 0 to 100. The model reads the call into eight readings, each from −2 to +2, plus a growth & capacity reading (capacity coming live, growth guided, utilisation), and they are combined with these weights:</p>
+      <p>The Concall Signal Score runs from 0 to 100. The model reads the call into eight readings, each from −2 to +2, plus a growth reading (growth or turnaround guided, how management plans to deliver it, capacity coming live, utilisation, this quarter’s growth), and they are combined with these weights:</p>
       <div class="weights">${W.map(([n, w]) => `<div class="w"><span>${n}</span><span class="sbar"><i style="width:${w / 30 * 100}%"></i></span><span class="num">${w}</span></div>`).join('')}</div>
       <ul><li>For a company’s first call in our data, the score reflects where the business stands now. From the second call on, 60% is the level and 40% is the change since last call.</li>
       <li>Guidance counts for more when management has delivered past guidance. With no track record yet (“untested”), guidance counts only 85% of its distance from neutral. Every company’s exact working is on the <b>Score breakdown</b> tab of its panel.</li>
       <li>A veto ${tip('veto')} caps the score at 40. Smaller warning signs take off 4 points each, up to 8.</li>
-      <li>Growth & capacity carries the most weight because the market pays for growth: sizeable capacity coming live in the next 2–3 quarters and strong growth guidance lift the score, while a plant already running near full with no expansion planned holds it back. Supply discipline across the industry still counts for 20.</li></ul>
+      <li><b>Guidance-backed growth & capacity</b> carries the most weight (45) because the market pays for growth. Strong growth or turnaround guidance counts in full only when management shows how it will get there (capacity coming live, an order book, spare capacity) and has delivered before; strong guidance with no clear plan or capacity is discounted. Major capacity going live in the next 2–3 quarters lifts the score; a plant running near full with no expansion holds it back.</li><li><b>Industry supply discipline</b> comes next (20), then <b>results delivered</b> this quarter (15).</li></ul>
       <p>Verdict labels:</p><div class="bands">${[[75, 'Strong 70+'], [65, 'Good 60–69'], [55, 'Average 50–59'], [45, 'Weak 40–49'], [30, 'Poor below 40']].map(([s, l]) => `<span class="pill ${verdict(s).c}">${l}</span>`).join('')}<span class="pill v-flag">Red flag: veto applied</span></div>
       <p class="muted">Scores are relative. Most calls land between 45 and 65, so a 70 is a top-5% call. The percentile in each company panel shows where a call ranks within its quarter.</p></section>
     <section id="h-data"><h3>Data and timing</h3><ul>
@@ -1138,22 +1142,33 @@ function signalsHtml(c) {
   </div>`;
 }
 /* Score breakdown: the exact working of the latest call's score, as computed by analyze.py */
-const SB_PART = {growth: ['t-growth', 25, []], supply: ['t-supply', 30, ['supply', 'structure', 'inventory']], pricing: ['t-pricing', 20, ['pricing', 'util']], guidance: ['t-guidance', 20, ['guidance']],
-  novelty: ['t-novelty', 15, ['novelty']], demand: ['t-demand', 10, ['demand']], tone: ['t-tone', 5, ['tone']]};
+const SB_PART = {backed: ['t-growth', 45, ['guidance']], supply: ['t-supply', 20, ['supply', 'structure', 'inventory']], results: ['t-guidance', 15, []],
+  pricing: ['t-pricing', 10, ['pricing', 'util']], demand: ['t-demand', 5, ['demand']], novelty: ['t-novelty', 3, ['novelty']], tone: ['t-tone', 2, ['tone']]};
+const CLAR = {clear: 'clear (specific capacity, orders or contracts with timing)', partial: 'partly explained', vague: 'vague (aspiration, no specifics)', none: 'not explained'};
+const BACK = {capacity_coming: 'capacity coming', order_book: 'order book', spare_capacity: 'spare capacity', new_products_or_markets: 'new products / markets', pricing_or_mix: 'pricing / mix', demand_or_share_gains: 'demand / share gains', cost_actions: 'cost actions'};
+const pctTxt = v => v == null ? 'not stated' : `${v > 0 ? '+' : ''}${Math.round(v)}%`;
 const SB_READ = {supply: 'Supply discipline', structure: 'Industry structure', inventory: 'Inventory', pricing: 'Pricing', util: 'Utilisation direction',
   guidance: 'Guidance', novelty: 'New developments', demand: 'Demand', tone: 'Tone'};
 const THEME_BONUS = {emerging: ['Emerging', 1], confirming: ['Confirming', .7], neutral: ['Steady / no theme', .5], crowded: ['Crowded', .25], deteriorating: ['Fading', .2]};
 const sgn = v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v);
 const f2 = v => (+v).toFixed(2);
 function sbInput(x, mode) {
-  if (x.k === 'growth') {
-    if (!x.read) return '<div class="row"><span>Growth & capacity not read yet for this call, so it counts as neutral.</span><span class="num">0.50</span></div>';
-    const adds = (x.near || []).map(a => `<li>${esc(a.what)}${a.q === 0 ? ' · live now / in trials' : a.q != null ? ` · live in ~${a.q} quarter${a.q === 1 ? '' : 's'}` : ''}${a.size_pct ? ` · ~${Math.round(a.size_pct)}% of capacity` : ''}${a.capex_cr ? ` · ₹${fmt(Math.round(a.capex_cr))} Cr` : ''}</li>`).join('')
+  if (x.k === 'backed') {
+    if (!x.read) return `<div class="row"><span>Growth read not available yet: guidance reading ${sgn(x.guidRead)} used, capacity counted as neutral.</span><span class="num">G ${f2(x.G)} · K 0.50</span></div>`;
+    const adds = (x.near || []).map(a => `<li>${esc(a.what)}${a.q === 0 ? ' · live now / in trials' : a.q != null ? ` · live in ~${a.q} quarter${a.q === 1 ? '' : 's'}` : ''}${a.mat ? ` · ${a.mat}` : ''}${a.size_pct ? ` · ~${Math.round(a.size_pct)}% of capacity` : ''}${a.capex_cr ? ` · ₹${fmt(Math.round(a.capex_cr))} Cr` : ''}</li>`).join('')
       + (x.later || []).map(a => `<li class="muted">${esc(a.what)}${a.q != null ? ` · ~${a.q} quarters out` : ' · no timeline'}</li>`).join('');
-    return `<div class="row"><span>Capacity: ${esc(x.capWhy)}</span><span class="num">${f2(x.cap)} × 40%</span></div>${adds ? `<ul style="margin:0 0 4px;padding-left:18px;font-size:13px">${adds}</ul>` : ''}
-      <div class="row"><span>Growth: ${esc(x.gWhy)}</span><span class="num">${f2(x.gv)} × 35%</span></div>
-      <div class="row"><span>Outlook for the next 4 quarters ${sgn(x.outlook)} (−2 to +2)</span><span class="num">${f2(x.ov)} × 25%</span></div>
+    return `<div class="row"><span><b>Guided growth</b>: ${x.growth != null ? `revenue growth guided ~${Math.round(x.growth)}%, ` : ''}guidance strength ${sgn(x.gsRead)}${x.turnaround ? ', <b>turnaround guided</b>' : ''}</span><span class="num">${f2(x.gs)}</span></div>
+      <div class="row"><span>Plan to deliver it: ${esc(CLAR[x.clarity] || x.clarity)}${(x.backing || []).length ? ` · ${x.backing.map(k => BACK[k] || k).join(', ')}` : ''}</span><span class="num">× ${f2(x.bf)}</span></div>
+      <div class="row"><span>Management credibility: ${x.tested ? `${x.cred} of 100` : 'untested'}</span><span class="num">× ${f2(x.cf)}</span></div>
+      <div class="row"><span>Guided growth, backed = 0.5 + (strength − 0.5) × plan × credibility</span><span class="num">${f2(x.G)} × 60%</span></div>
+      <div class="row"><span><b>Capacity & capability</b>: ${esc(x.kWhy)}</span><span class="num">${f2(x.K)} × 40%</span></div>
+      ${adds ? `<ul style="margin:0 0 4px;padding-left:18px;font-size:13px">${adds}</ul>` : ''}
+      ${x.flag ? `<div class="flag" style="border-color:color-mix(in srgb,var(--warn) 50%,transparent);background:color-mix(in srgb,var(--warn) 9%,transparent)">${esc(x.flag)}</div>` : ''}
       ${x.why ? `<div class="sb-ev"><div class="q">${esc(x.why)}</div></div>` : ''}`;
+  }
+  if (x.k === 'results') {
+    if (!x.read) return '<div class="row"><span>Quarter results not read yet for this call, so they count as neutral.</span><span class="num">0.50</span></div>';
+    return `<div class="row"><span>This quarter, YoY: revenue ${pctTxt(x.qRev)} · EBITDA ${pctTxt(x.qEbitda)}</span><span class="num"></span></div>`;
   }
   if (x.k === 'cred') return `<div class="row"><span>Management credibility: ${x.tested ? `${x.cred} of 100 (${x.tested} past guidance item${x.tested === 1 ? '' : 's'} checked)` : 'untested (no past guidance to check yet)'}</span><span class="num">× ${f2(x.factor)}</span></div>`;
   if (x.k === 'theme') { const [lab, v] = THEME_BONUS[x.stage || 'neutral'] || THEME_BONUS.neutral;
@@ -1164,7 +1179,8 @@ function sbInput(x, mode) {
 }
 function sbHow(p, mode) {
   const lvl = mode === 'blend' ? 'Each reading becomes 0 to 1 as 60% its level plus 40% its change against the average of the company’s earlier calls (0.5 = neutral).' : 'First call on record, so each reading counts at its level: −2 → 0, −1 → 0.25, 0 → 0.5, +1 → 0.75, +2 → 1.';
-  return {growth: 'Capacity 40% + growth 35% + outlook 25%. Capacity: sizeable additions live within 3 quarters score highest (≥25% of capacity 1.0, ≥10% 0.85, smaller or unstated 0.7, +0.1 if the existing plant is already ≥80% utilised); expansion further out 0.6; nothing planned 0.5; running ≥85% full with no expansion 0.2. Growth guided: ≥25% 1.0, ≥15% 0.85, ≥10% 0.7, ≥5% 0.55, 0–5% 0.45, negative 0.15; with no number, the outlook reading is used.',
+  return {backed: 'Guided growth 60% + capacity 40%. Guided growth: growth guided (≥25% 1.0, ≥15% 0.85, ≥10% 0.7, ≥5% 0.55, 0–5% 0.45, negative 0.15) averaged with the guidance strength reading; a clearly guided turnaround counts as at least 0.85. Its distance above neutral is then multiplied by how clearly management showed how it will deliver (clear 1.0, partial 0.7, vague 0.4, none 0.25) and by credibility (0.4 + 0.6 × credibility/100 once tested, 0.85 untested), so big guidance with no plan behind it counts for much less. Capacity: major capacity live within 3 quarters 1.0, moderate 0.8, minor 0.6, meaningful capacity further out 0.6, spare capacity to grow into 0.6, nothing discussed 0.5, running ≥85% full with no expansion 0.2; +0.1 if the existing plant is already ≥80% utilised.',
+    results: 'This quarter’s revenue and EBITDA growth YoY, each scored ≥30% 1.0, ≥20% 0.85, ≥10% 0.7, 0–10% 0.5, 0 to −10% 0.3, below −10% 0.1, and averaged. Not stated counts as neutral 0.5.',
     supply: `${lvl} Supply discipline counts twice, structure and inventory once each: (2 × supply + structure + inventory) ÷ 4.`,
     pricing: `${lvl} Pricing and utilisation are averaged.`,
     guidance: `${lvl} The guidance value is then pulled toward neutral (0.5) unless management has delivered before: value = 0.5 + (reading − 0.5) × credibility factor. Factor = 0.4 + 0.6 × credibility/100 once tested, 0.85 while untested.`,
@@ -1198,14 +1214,14 @@ function scoreHtml(c) {
     </div></section>
     <details class="how"><summary>The full method</summary><div class="body sb-method">
       <table><tr><th>Component</th><th>Weight</th><th>Built from</th></tr>
-        <tr><td>Growth & capacity</td><td>25%</td><td>Capacity coming live in the next 2–3 quarters, growth guided, and the growth outlook; a plant running full with no expansion is held back</td></tr>
-        <tr><td>Supply side</td><td>20%</td><td>Supply discipline ×2, industry structure, inventory</td></tr>
-        <tr><td>Guidance × credibility</td><td>20%</td><td>Guidance reading, pulled toward neutral by management’s delivery record</td></tr>
-        <tr><td>Pricing & utilisation</td><td>15%</td><td>Pricing reading and utilisation direction, averaged</td></tr>
-        <tr><td>New developments & themes</td><td>10%</td><td>Novelty reading and the stage of the strongest theme discussed</td></tr>
+        <tr><td>Guidance-backed growth & capacity</td><td>45%</td><td>Growth or turnaround guided, counted in full only when management shows how it will deliver (capacity, orders, spare capacity) and has delivered before; plus capacity going live in the next 2–3 quarters</td></tr>
+        <tr><td>Industry supply discipline</td><td>20%</td><td>Supply discipline ×2, industry structure, inventory</td></tr>
+        <tr><td>Results delivered</td><td>15%</td><td>This quarter’s revenue and EBITDA growth YoY</td></tr>
+        <tr><td>Pricing & utilisation</td><td>10%</td><td>Pricing reading and utilisation direction, averaged</td></tr>
         <tr><td>Demand</td><td>5%</td><td>Demand reading</td></tr>
-        <tr><td>Tone & candour</td><td>5%</td><td>Tone reading and how hedged the answers were</td></tr></table>
-      <p>The readings (−2 to +2) are made by an AI model reading the transcript through the capital-cycle framework; everything after that is fixed arithmetic, recomputed each night. Growth and capacity carry the most weight because the market pays for growth; supply discipline stays a big part because the framework still looks for industries where competitors hold back capacity. Watch-points (receivables, working capital, related-party items, pledges, resignations, cash burn, liquidity) take 4 points each, up to 8. A veto (auditor issues, default, fraud, regulatory action, insolvency, guidance dropped without explanation, or heavy evasion with very negative tone) caps the score at 40.</p>
+        <tr><td>New developments & themes</td><td>3%</td><td>Novelty reading and the stage of the strongest theme discussed</td></tr>
+        <tr><td>Tone & candour</td><td>2%</td><td>Tone reading and how hedged the answers were</td></tr></table>
+      <p>The readings (−2 to +2) are made by an AI model reading the transcript through the capital-cycle framework; everything after that is fixed arithmetic, recomputed each night. Guidance-backed growth and capacity carry the most weight because the market pays for growth, but only growth management can show how it will deliver; big guidance with no capacity, orders or plan behind it is discounted. Industry supply discipline comes next. Watch-points (receivables, working capital, related-party items, pledges, resignations, cash burn, liquidity) take 4 points each, up to 8. A veto (auditor issues, default, fraud, regulatory action, insolvency, guidance dropped without explanation, or heavy evasion with very negative tone) caps the score at 40.</p>
     </div></details>
   </div>`;
 }

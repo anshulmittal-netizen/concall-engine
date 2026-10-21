@@ -160,43 +160,76 @@ def merge(docs: list[dict]) -> dict:
 
 
 # ------------------------------------------------------------------ main
-# Score weights (sum to 1). Growth & capacity: the market pays for growth, so capacity coming live in the
-# next 2-3 quarters and strong growth guidance lift the score; a plant running full with no expansion holds it back.
-WEIGHTS = {"growth": 0.25, "supply": 0.20, "pricing": 0.15, "guidance": 0.20, "novelty": 0.10, "demand": 0.05, "tone": 0.05}
+# Score weights (sum to 1). Guidance-backed growth & capacity leads: the market pays for growth, but guidance
+# counts in full only when management shows how it will deliver (capacity coming live, orders, spare capacity)
+# and has delivered before. Industry supply discipline comes next, then the results actually delivered.
+WEIGHTS = {"backed": 0.45, "supply": 0.20, "results": 0.15, "pricing": 0.10, "demand": 0.05, "novelty": 0.03, "tone": 0.02}
+CLARITY = {"clear": 1.0, "partial": 0.7, "vague": 0.4, "none": 0.25}
 
 
-def growth_value(g: dict | None):
-    """0-1 Growth & capacity value from a call's growth read, with the working for the breakdown."""
-    if not g:
-        return 0.5, {"read": False}
+def _pct_band(p, bands):
+    for lo, v in bands:
+        if p >= lo:
+            return v
+    return bands[-1][1]
+
+
+def backed_value(g: dict | None, guid_read: int, cred: int, tested: int):
+    """0-1 'Guidance-backed growth & capacity': 60% guided growth (discounted when the plan to deliver it is unclear
+    or management is unproven) + 40% capacity & capability. Returns (value, working)."""
+    cf = (0.4 + 0.6 * cred / 100) if tested else 0.85
+    if not g or g.get("v", 1) < 2:
+        gs = (guid_read / 2 + 1) / 2
+        G = 0.5 + (gs - 0.5) * cf if gs > 0.5 else gs
+        return 0.6 * G + 0.4 * 0.5, {"read": False, "gs": round(gs, 3), "cf": round(cf, 3), "G": round(G, 3), "K": 0.5}
+    gp = g.get("growth")
+    gs_read = (g.get("gs", 0) + 2) / 4
+    gs_pct = _pct_band(gp, [(25, 1.0), (15, 0.85), (10, 0.7), (5, 0.55), (0, 0.45), (-1e9, 0.15)]) if gp is not None else None
+    gs = gs_read if gs_pct is None else 0.5 * gs_pct + 0.5 * gs_read
+    if g.get("turnaround") and g.get("gs", 0) >= 1:
+        gs = max(gs, 0.85)
+    bf = CLARITY.get(g.get("clarity"), 0.25)
+    G = 0.5 + (gs - 0.5) * bf * cf if gs > 0.5 else gs   # weak guidance is not softened
     adds = [a for a in g.get("adds", []) if a.get("status") != "deferred"]
     near = [a for a in adds if a.get("q") is not None and a["q"] <= 3]
-    later = [a for a in adds if a not in near]
-    size = sum(a["size_pct"] for a in near if a.get("size_pct"))
+    big = lambda a: a.get("mat") == "major" or (a.get("size_pct") or 0) >= 15
+    mid = lambda a: a.get("mat") == "moderate" or 5 <= (a.get("size_pct") or 0) < 15
     util = g.get("util")
-    if near:
-        cap = 1.0 if size >= 25 else 0.85 if size >= 10 else 0.7
-        cap_why = (f"{len(near)} addition{'s' if len(near) > 1 else ''} live within 3 quarters"
-                   + (f", about {size:.0f}% of current capacity" if size else ", size not stated"))
-        if util is not None and util >= 80:
-            cap, cap_why = min(1.0, cap + 0.1), cap_why + f"; existing plant already {util:.0f}% utilised"
-    elif later or g.get("expansion"):
-        cap, cap_why = 0.6, "Expansion planned, but not live within 3 quarters"
-    elif util is not None and util >= 85:
-        cap, cap_why = 0.2, f"Running at {util:.0f}% utilisation with no expansion planned: growth capped"
+    if any(big(a) for a in near):
+        K, kwhy = 1.0, "Major capacity going live within 3 quarters"
+    elif any(mid(a) for a in near):
+        K, kwhy = 0.8, "Moderate capacity going live within 3 quarters"
+    elif near:
+        K, kwhy = 0.6, "Only minor capacity going live within 3 quarters"
+    elif any(big(a) or mid(a) for a in adds):
+        K, kwhy = 0.6, "Meaningful capacity planned, but beyond 3 quarters"
+    elif util is not None and util >= 85 and not g.get("expansion"):
+        K, kwhy = 0.2, f"Running at {util:.0f}% with no expansion planned: growth is capped"
+    elif "spare_capacity" in g.get("backing", []) or (util is not None and util < 75):
+        K, kwhy = 0.6, "Spare capacity to grow into" + (f" (utilisation {util:.0f}%)" if util is not None else "")
     else:
-        cap, cap_why = 0.5, "No capacity addition discussed" + (f"; utilisation {util:.0f}% leaves room" if util is not None else "")
-    gp = g.get("growth")
-    if gp is not None:
-        gv = 1.0 if gp >= 25 else 0.85 if gp >= 15 else 0.7 if gp >= 10 else 0.55 if gp >= 5 else 0.45 if gp >= 0 else 0.15
-        g_why = f"Revenue growth guided at about {gp:.0f}%"
-    else:
-        gv, g_why = (g.get("outlook", 0) + 2) / 4, "No growth number given; outlook reading used"
-    ov = (g.get("outlook", 0) + 2) / 4
-    val = 0.4 * cap + 0.35 * gv + 0.25 * ov
-    return val, {"read": True, "cap": round(cap, 3), "capWhy": cap_why, "gv": round(gv, 3), "gWhy": g_why, "ov": round(ov, 3),
-                 "outlook": g.get("outlook", 0), "growth": gp, "util": util, "near": near[:4], "later": later[:3],
-                 "why": g.get("why", "")}
+        K, kwhy = 0.5, "No capacity addition discussed"
+    if near and util is not None and util >= 80 and K >= 0.6:
+        K, kwhy = min(1.0, K + 0.1), kwhy + f"; existing plant already {util:.0f}% utilised"
+    flag = ""
+    if gs >= 0.7 and bf <= 0.4:
+        flag = "Strong guidance, but no clear plan or capacity shown to deliver it: counted at a discount"
+    return 0.6 * G + 0.4 * K, {"read": True, "growth": gp, "gsRead": g.get("gs", 0), "gs": round(gs, 3), "turnaround": g.get("turnaround", False),
+                               "clarity": g.get("clarity"), "backing": g.get("backing", []), "bf": bf, "cf": round(cf, 3), "tested": tested, "cred": cred,
+                               "G": round(G, 3), "K": round(K, 3), "kWhy": kwhy, "util": util, "flag": flag,
+                               "near": near[:4], "later": [a for a in adds if a not in near][:3], "why": g.get("why", "")}
+
+
+def results_value(g: dict | None):
+    """0-1 'Results delivered' from this quarter's revenue and EBITDA growth YoY."""
+    if not g or g.get("v", 1) < 2:
+        return 0.5, {"read": False}
+    band = [(30, 1.0), (20, 0.85), (10, 0.7), (0, 0.5), (-10, 0.3), (-1e9, 0.1)]
+    vals = [(k, g.get(k)) for k in ("qRev", "qEbitda") if g.get(k) is not None]
+    if not vals:
+        return 0.5, {"read": True, "qRev": None, "qEbitda": None}
+    v = sum(_pct_band(x, band) for _, x in vals) / len(vals)
+    return v, {"read": True, "qRev": g.get("qRev"), "qEbitda": g.get("qEbitda")}
 
 
 def _site_summary(s: dict) -> dict:
@@ -321,15 +354,14 @@ def build(market: str, log=print) -> dict:
             cu = (r["util"] + 1) / 2 if not prev else (0.6 * r["util"] + 0.4 * clip(r["util"] - pu) + 1) / 2
             supply_side = (2 * c["supply"] + c["structure"] + c["inventory"]) / 4
             pricing = (c["pricing"] + cu) / 2
-            # guidance counts fully only from managements that have delivered; untested managements get 85%
-            guid = 0.5 + (c["guidance"] - 0.5) * ((0.4 + 0.6 * cred / 100) if tested else 0.85)
             tb = max([bonus.get(tstage.get(t, "neutral"), 0.5) for t in r["themes"]] or [0.5])
             nov = 0.5 * c["novelty"] + 0.5 * tb
             tone = clip(b["tone"] / 2 * 0.7 + (0.5 - r["hedge"]) * 0.6)
-            gval, gdet = growth_value(r.get("growth"))
+            bval, bdet = backed_value(r.get("growth"), b["guidance"], cred, tested)
+            rval, rdet = results_value(r.get("growth"))
             W = WEIGHTS
-            score = 100 * (W["growth"] * gval + W["supply"] * supply_side + W["pricing"] * pricing + W["guidance"] * guid
-                           + W["novelty"] * nov + W["demand"] * c["demand"] + W["tone"] * (tone + 1) / 2)
+            score = 100 * (W["backed"] * bval + W["supply"] * supply_side + W["results"] * rval + W["pricing"] * pricing
+                           + W["demand"] * c["demand"] + W["novelty"] * nov + W["tone"] * (tone + 1) / 2)
             txt = lambda f: f["label"] + " " + (f.get("quote") or "")
             serious = [f["label"] for f in r["red_flags"] if VETO_RX.search(txt(f))]
             watch = [f["label"] for f in r["red_flags"] if not VETO_RX.search(txt(f)) and WATCH_RX.search(txt(f))]
@@ -353,23 +385,20 @@ def build(market: str, log=print) -> dict:
             r["breakdown"] = {
                 "mode": "level" if not prev else "blend", "prevCalls": len(prev),
                 "parts": [
-                    part("growth", "Growth & capacity", W["growth"], gval, [{"k": "growth", **gdet}]),
-                    part("supply", "Supply side", W["supply"], supply_side, [
+                    part("backed", "Guidance-backed growth & capacity", W["backed"], bval, [{"k": "backed", "guidRead": b["guidance"], **bdet}]),
+                    part("supply", "Industry supply discipline", W["supply"], supply_side, [
                         {"k": "supply", "read": b["supply"], "prev": pmean("supply"), "sub": round(c["supply"], 3), "wt": 2},
                         {"k": "structure", "read": b["structure"], "prev": pmean("structure"), "sub": round(c["structure"], 3), "wt": 1},
                         {"k": "inventory", "read": b["inventory"], "prev": pmean("inventory"), "sub": round(c["inventory"], 3), "wt": 1}]),
+                    part("results", "Results delivered", W["results"], rval, [{"k": "results", **rdet}]),
                     part("pricing", "Pricing & utilisation", W["pricing"], pricing, [
                         {"k": "pricing", "read": b["pricing"], "prev": pmean("pricing"), "sub": round(c["pricing"], 3), "wt": 1},
                         {"k": "util", "read": r["util"], "prev": round(pu, 2) if prev else None, "sub": round(cu, 3), "wt": 1, "scale": "−1 to +1"}]),
-                    part("guidance", "Guidance × credibility", W["guidance"], guid, [
-                        {"k": "guidance", "read": b["guidance"], "prev": pmean("guidance"), "sub": round(c["guidance"], 3), "wt": 1},
-                        {"k": "cred", "cred": cred, "tested": tested,
-                         "factor": round((0.4 + 0.6 * cred / 100) if tested else 0.85, 3)}]),
+                    part("demand", "Demand", W["demand"], c["demand"], [
+                        {"k": "demand", "read": b["demand"], "prev": pmean("demand"), "sub": round(c["demand"], 3), "wt": 1}]),
                     part("novelty", "New developments & themes", W["novelty"], nov, [
                         {"k": "novelty", "read": b["novelty"], "prev": pmean("novelty"), "sub": round(c["novelty"], 3), "wt": 1},
                         {"k": "theme", "theme": top_theme, "stage": tstage.get(top_theme, "neutral") if top_theme else None, "sub": tb, "wt": 1}]),
-                    part("demand", "Demand", W["demand"], c["demand"], [
-                        {"k": "demand", "read": b["demand"], "prev": pmean("demand"), "sub": round(c["demand"], 3), "wt": 1}]),
                     part("tone", "Tone & candour", W["tone"], (tone + 1) / 2, [
                         {"k": "tone", "read": b["tone"], "hedge": round(r["hedge"], 2), "sub": round((tone + 1) / 2, 3), "wt": 1}]),
                 ],
@@ -400,7 +429,7 @@ def build(market: str, log=print) -> dict:
             "flags": r["flags"], "blocks": r["blocks"], "util": r["util"], "capex": r["capex"],
             "hist": hist[-cfg["periods_shown"]:], "histLabels": [label_from_key(k, market) for k in keys][-cfg["periods_shown"]:],
             "themes": r["themes"], "verified": r["verified"], "breakdown": r.get("breakdown"),
-            "growth": r.get("growth"),
+            "growth": r.get("growth"), "planFlag": (r.get("breakdown") or {}).get("parts", [{}])[0].get("in", [{}])[0].get("flag", ""),
             "sources": [source_link(d, manifest, market) for d in r["docs"]],
             "entities": [e["name"] for e in r["entities"]],
         })
