@@ -1,0 +1,381 @@
+{
+ "doc_id": "IN-f65aeb73-32bb-47ef-a885-6d5436b4faa1",
+ "market": "IN",
+ "company_id": "544253",
+ "name": "Kross Ltd",
+ "doc_type": "transcript",
+ "date": "2026-10-22",
+ "period": "2026-09",
+ "title": "Kross Ltd - 544253 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q2 revenue INR235 cr (+80% YoY) on CV/trailer axle volume (+50-55% YoY) and seamless tube capex ~INR120 cr of INR170 cr done, but margins slipped sequentially on steel and conversion-cost lag.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 80,
+   "quote": "the capacity utilization of this is approximately 80% of our current output"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "the total budgeted cost is approximately INR170 crores, okay? Out of this is funded by INR110 crores via term loan."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Seamless capex ~INR120 cr of INR170 cr spent",
+    "quote": "So if you have to see how much we have spent, our own contribution is about INR60 crores",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Conversion cost settlements pending, Q3-Q4 benefit",
+    "quote": "We have very recently settled with most of our OEMs and Tier 1 companies on a conversion front as well.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Steel cost pass-through only partial",
+    "quote": "There has been only a part of the compensation on steel as a commodity, which we have received in quarter 1.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q3/Q4 volumes stronger than Q2",
+    "quote": "we expect Q3 and Q4 volumes to be stronger than Q2",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Seamless plant trials pushed to Feb-Mar 2027",
+    "quote": "we plan to undertake production trials in February or March of 2027",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Export growth FY27",
+    "value": "45% higher than previous year",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "Year-on-year, we expect this year to be 45% higher than our previous year."
+   },
+   {
+    "metric": "Working capital cycle",
+    "value": "lesser than 90, 95 days; receivable days ~80",
+    "horizon": "FY27",
+    "change": "new",
+    "quote": "we see that our receivable days will be at around 80 and our working capital cycle should be lesser than 90, 95 days."
+   },
+   {
+    "metric": "Axle margin uplift from own seamless tubes",
+    "value": "3% to 4%",
+    "horizon": "by end H1 FY28",
+    "change": "new",
+    "quote": "we should be having a margin of approximately 3% to 4% once we use our own seamless tubes for it."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Export growth FY27",
+    "outcome": "not_discussed",
+    "quote": "Year-on-year, we expect this year to be 45% higher than our previous year."
+   },
+   {
+    "metric": "Export share of revenue",
+    "outcome": "not_discussed",
+    "quote": "Exports now contribute approximately 8% of our component business."
+   },
+   {
+    "metric": "Seamless tube plant commissioning",
+    "outcome": "missed",
+    "quote": "we plan to undertake production trials in February or March of 2027"
+   },
+   {
+    "metric": "Axle shaft facility commissioning",
+    "outcome": "not_discussed",
+    "quote": "The company further envisages expansion through strategic increase in axle shaft production"
+   }
+  ],
+  "entities": [
+   {
+    "name": "York",
+    "relation": "competitor"
+   },
+   {
+    "name": "Tata Motors",
+    "relation": "competitor"
+   },
+   {
+    "name": "BPW",
+    "relation": "competitor"
+   },
+   {
+    "name": "Hendrickson",
+    "relation": "competitor"
+   },
+   {
+    "name": "TAFE",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Auto EV transition",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivable days ~90 in H1, >110 a year ago",
+    "quote": "if you look into our receivable days, which was in H1 of last year, they were in excess of 110 days."
+   },
+   {
+    "label": "Q2 PAT reported inconsistently (INR -197 mn vs INR 19.69 cr)",
+    "quote": "profit after tax stood at INR (197) million"
+   },
+   {
+    "label": "Gross margin down QoQ despite pricing actions",
+    "quote": "sequentially, Q2 gross margins are lower than Q1"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 3,
+   "growth": 5,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "EBITDA margin recovery timing",
+    "quote": "Yes, it is difficult currently. The companies are facing a lot of pressures in terms of escalation"
+   },
+   {
+    "topic": "CWIP / land reconciliation",
+    "quote": "I'll have to check that once. We'll have to check that once."
+   },
+   {
+    "topic": "Axle and suspension volume detail",
+    "quote": "I'll have a look at the exact volumes, and we'll have it sent over to you for quarter 2."
+   }
+  ],
+  "hedge_index": 0.5
+ },
+ "summary": {
+  "headline": "Kross Q2 FY27 revenue rose 80% YoY to INR235 crore with EBITDA margin of 13%, but reported PAT was a loss of INR19.7 million.",
+  "overview": "Revenue from operations for Q2 FY27 was INR235 crore, up 80% YoY, with EBITDA of INR30.6 crore (13% margin). H1 FY27 revenue was INR419 crore versus INR270 crore a year earlier, with H1 EBITDA of INR53 crore. Management attributed growth to trailer and CV demand after monsoons, share gains with larger customers, and exports; margins were pressured by steel and consumable cost inflation, with price compensation expected in Q3 and Q4. The seamless tube backward-integration project (budget ~INR170 crore) is progressing, with production trials targeted for Feb-March 2027 (or end Q4 per another answer).",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (Q2 FY27)",
+    "value": "INR235 crore",
+    "change": "+80% YoY"
+   },
+   {
+    "metric": "EBITDA (Q2 FY27)",
+    "value": "INR30.6 crore",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA margin (Q2 FY27)",
+    "value": "13%",
+    "change": ""
+   },
+   {
+    "metric": "Profit after tax (Q2 FY27)",
+    "value": "INR(197) million per Sudhir Rai; INR19.69 crore per Kunal Rai (sign inconsistent in transcript)",
+    "change": "143% YoY per Sudhir Rai; PBT INR(26.95) crore, change >100%"
+   },
+   {
+    "metric": "Revenue from operations (H1 FY27)",
+    "value": "INR419.4 crore",
+    "change": "vs INR270 crore H1 FY26"
+   },
+   {
+    "metric": "EBITDA (H1 FY27)",
+    "value": "INR53.32 crore",
+    "change": ""
+   },
+   {
+    "metric": "PAT (H1 FY27)",
+    "value": "INR33.16 crore",
+    "change": ""
+   },
+   {
+    "metric": "Segment mix Q2 FY27",
+    "value": "Trailer ~49%, components ~51% of revenue",
+    "change": ""
+   },
+   {
+    "metric": "Trailer segment revenue Q2 FY27",
+    "value": "~INR115-116 crore",
+    "change": "vs ~INR58-60 crore Q2 FY26; Q1 FY27 ~INR75 crore"
+   },
+   {
+    "metric": "Trailer axle + suspension volume Q2 FY27",
+    "value": "In excess of 10,500 trailer axles; H1 ~20,000+",
+    "change": "Volume growth ~50-55% YoY (H1 and Q2)"
+   },
+   {
+    "metric": "Receivable days",
+    "value": "Q2 ~81 days; H1 ~90 days",
+    "change": "H1 FY26 above 110 days"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Trailer axles and suspensions",
+    "commentary": "Q2 revenue ~INR115-116 crore (~49% of total), roughly double YoY; volumes above 10,500 axles in Q2 and ~20,000 in H1, up ~50-55% YoY. Current axle output ~4,400-4,500 per month, with ~80% now via extruded beam process."
+   },
+   {
+    "name": "Components (incl. tipping jacks, exports)",
+    "commentary": "Contributed ~51% of Q2 revenue. Exports ~7.5-8% of component business, with management targeting ~45% export growth YoY this year. Tipping jacks: capacity ~800 units, 50-60% utilisation targeted by Q4; realisation ~INR1.4 lakh per set."
+   },
+   {
+    "name": "Tractor / Agri",
+    "commentary": "Tractor exposure ~10-11% of Q2 revenue, all to OEMs. Management expects Q3 volumes similar to Q2; demand tied to inventory levels and post-Diwali seasonal dip."
+   }
+  ],
+  "guidance_outlook": [
+   "Management expects Q3 and Q4 volumes to be stronger than Q2; historically H2 is about 20% above H1.",
+   "Price revisions with OEMs and Tier 1s on conversion costs expected to support Q3 and Q4; steel compensation partial, with further steel increases expected in Q3.",
+   "Receivable days expected to fall to around 80, with working capital cycle below 90-95 days.",
+   "Seamless tube plant: equipment arrival end-Nov/Dec; production trials Feb-March 2027 (Sumeet Rai) vs end of Q4 (Kunal Rai in Q&A). Phase 1 ~30% of 1 lakh capacity, for captive use; targeted full backward integration by end H1 FY28.",
+   "Expected margin uplift of 3-4% on axles once in-house seamless tubes are used; tubes expected 8-10% cheaper than current buying price.",
+   "Trailer demand expected to sustain through FY27 unless unforeseen events, per management."
+  ],
+  "capex_capacity": [
+   "Seamless tube facility: total budget ~INR170 crore, funded by ~INR110 crore term loan and balance from internal accruals; ~INR120 crore spent as of Q2 (INR70 crore term loan + INR50 crore/INR60 crore internal), with ~INR50 crore balance expected in H2 FY27.",
+   "Preferential issue (warrants and preference shares) of ~INR63.6 crore to fund ~INR60 crore of near-term capex for CV and trailer capacity, to be spent over next two quarters.",
+   "Cold drawn tube forward integration: ~INR20-25 crore planned, for precision-size seamless tubes (incl. tipping jacks), in-house in Jamshedpur.",
+   "Other planned capex: axle shaft line expansion and robotic automation for forging and machining, to be financed through the preferential issue.",
+   "Debt: total term loan ~INR80 crore and CC/working capital ~INR32 crore as of 30 Sept; no further debt planned beyond seamless tube term loan.",
+   "Extruded axle beam line commenced commercial production ~August 2026, at ~80% utilisation of current output; ~7,500 axles per month expanded capacity referenced in analyst question."
+  ],
+  "demand_pricing": [
+   "CV demand strong since GST rationalisation; monsoon-related deferment ended around July, with demand picking up in August per management.",
+   "Chhattisgarh market recovered after a long gap, contributing to trailer order growth; share gains with larger customers cited.",
+   "Q2 tractor volumes linked to TAFE planned production of 13,000-14,000 tractors in October; below-average rainfall noted by analyst.",
+   "Competition in trailer axles: York (market leader), Tata Motors, BPW and Hendrickson; components face product-family-specific competitors.",
+   "Rising steel and consumable costs compressed Q2 gross margin versus Q1 despite some price escalation; management says settlements with most OEMs/Tier 1s are underway with retrospective compensation expected."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What drove growth above the industry for trailer axles and component segments?",
+    "answer": "Management cited the post-monsoon demand pickup from August, share gains with larger customers, new regional demand (e.g. Chhattisgarh), and export growth (~7.5-8% of component business)."
+   },
+   {
+    "question": "Volume and value growth for axles and suspensions in Q2 and H1?",
+    "answer": "Q2 trailer axles above 10,500 and H1 nearly 20,000, up about 50-55% YoY; trailer value ~INR115 crore in Q2 vs ~INR58-60 crore a year earlier. Suspension volume not disclosed; to be shared later."
+   },
+   {
+    "question": "Seamless tube capex spent and balance?",
+    "answer": "~INR120 crore spent of ~INR170 crore budget as of Q2 (INR70 crore term loan plus ~INR50 crore further, with own contribution ~INR60 crore); remaining ~INR50 crore expected in H2."
+   },
+   {
+    "question": "Will debt rise by end FY27?",
+    "answer": "Only debt is the seamless tube term loan (~INR110-120 crore); no further debt planned. Current term loan ~INR80 crore plus ~INR32 crore working capital."
+   },
+   {
+    "question": "Why gross margin fell sequentially in Q2 despite Q1 price escalations?",
+    "answer": "Steel prices rose every quarter and only partial compensation was received in Q1 and Q2; consumable and conversion cost settlements with OEMs/Tier 1s are coming in Q3-Q4. Management expects retrospective compensation but declined to give a timeline for returning to 14-15% EBITDA margin."
+   },
+   {
+    "question": "Phase 1 seamless tube capacity and margin benefit?",
+    "answer": "Phase 1 is ~30% of the 1 lakh capacity for captive use; axle margin expected to rise 3-4% once in-house tubes are used, with tubes 8-10% cheaper than current buying price."
+   }
+  ],
+  "risks_watch": [
+   "Steel and commodity price inflation outpacing OEM/Tier 1 compensation; settlements still underway.",
+   "Receivable days at ~90 in H1 versus target of ~80; exports carry receivables above 120 days (~4-4.5% of business).",
+   "Seamless tube timeline risk: equipment in transit, production trials slated between Feb-March 2027 and end Q4 in different statements.",
+   "Seasonal tractor demand dip after Diwali and dependence on tractor inventory levels.",
+   "Tipping jack ramp to 50-60% of 800-unit capacity by Q4 FY27 is unproven.",
+   "Reported PAT sign and figure inconsistent in call (INR(197) million vs INR19.69 crore); CWIP vs seamless spend reconciliation unclear, management to verify."
+  ],
+  "management_tone": "Confident on demand and volume outlook for Q3 and Q4, but cautious and evasive on margin recovery timing, declining to give a date for returning to 14-15% EBITDA. Several numerical answers were corrected or deferred (suspension volumes, CWIP, PAT figure), indicating weak data control on the call.",
+  "key_quotes": [
+   "The investments we have made in the capacity expansion and operational capabilities are beginning to support our growth, and we expect the utilization of these expanded capacities to improve over the coming quarters.",
+   "Overall volumes and historically also H2 is always 20% up on H1.",
+   "It is difficult currently. The companies are facing a lot of pressures in terms of escalation and then the settlements and everything.",
+   "We do believe all of it will be compensated, obviously, retrospective, whether be it the steel as an increase or even the conversion front on our consumables and other aspects like oil and gas and tooling and everything."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Seamless tube backward-integration plant, Phase 1 ~30% of 1 lakh tube capacity (captive use), budget ~INR170 crore",
+    "size_pct": null,
+    "capex_cr": 170.0,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Preferential issue ~INR63.6 crore to fund ~INR60 crore of CV and trailer capacity capex (axle shaft line expansion, robotic forging/machining), spent over next ",
+    "size_pct": null,
+    "capex_cr": 60.0,
+    "q": 2,
+    "status": "approved",
+    "mat": "moderate"
+   },
+   {
+    "what": "Cold drawn tube forward integration, ~INR20-25 crore, Jamshedpur",
+    "size_pct": null,
+    "capex_cr": 22.5,
+    "q": null,
+    "status": "planned",
+    "mat": "minor"
+   },
+   {
+    "what": "Extruded axle beam line, commercial production from ~August 2026, ~80% utilisation of current output",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   }
+  ],
+  "util": 80.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix",
+   "demand_or_share_gains",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": 80.0,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management expects Q3 and Q4 volumes stronger than Q2 (H2 ~20% above H1) and FY27 exports +45%, backed partly by the extruded beam line (~80% utilised), price revisions with OEMs and the ~INR170 crore seamless tube plant (trials Feb-Mar 2027), but no firm FY revenue number was given and the trial timing is inconsistent across speakers.",
+  "mgmt": null
+ }
+}

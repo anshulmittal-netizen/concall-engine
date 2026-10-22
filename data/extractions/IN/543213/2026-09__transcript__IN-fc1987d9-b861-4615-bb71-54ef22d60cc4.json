@@ -1,0 +1,371 @@
+{
+ "doc_id": "IN-fc1987d9-b861-4615-bb71-54ef22d60cc4",
+ "market": "IN",
+ "company_id": "543213",
+ "name": "Rossari Biotech Ltd",
+ "doc_type": "transcript",
+ "date": "2026-10-22",
+ "period": "2026-09",
+ "title": "Rossari Biotech Ltd - 543213 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q2 FY27 revenue Rs 698 crore (+19% YoY) and EBITDA margin 12.5%, but management cut its FY27 growth guide to mid-teens to high-teens and EBITDA to ~12%, and utilisation is only ~60% blended.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 60,
+   "quote": "On a blended level, the capacity utilizations are at about close to 60%."
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "our CAPEX spend in India will be significantly low. And most of it will be in KSA once the project, etcetera, is finalized."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Blended utilisation ~60%; new EO plant ~30%",
+    "quote": "The new ethoxylation facility that has come up earlier this year or late last year, I would say, is currently at about 30% utilization",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 EBITDA margin cut to ~12%",
+    "quote": "I think this year, we will be at similar kind of EBITDA of around 12% plus/minus.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth cut to mid-teens to high-teens",
+    "quote": "I think our initial assessment of 12%, 14%, I think we should do a between mid-teen to a little high-teen numbers for the year-end.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Freight costs doubled/tripled; price cuts",
+    "quote": "the freight costs have almost doubled, tripled over what they were in the first half of last year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital days 97 to 86",
+    "quote": "Working capital days saw a significant improvement and reached 86 days in Q2 FY'27 from 97 days at the end of FY'26.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex cut to Rs 50-75 crore in H2",
+    "quote": "I think we'll have another about between Rs. 50 crore to Rs. 70 crore, Rs. 75 crore of spend that will happen in the second half. And then I think nothing beyond that.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "mid-teen to a little high-teen",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "I think our initial assessment of 12%, 14%, I think we should do a between mid-teen to a little high-teen numbers for the year-end."
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "around 12% plus/minus",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "this year, we will be at similar kind of EBITDA of around 12% plus/minus."
+   },
+   {
+    "metric": "Finance cost run rate",
+    "value": "not given",
+    "change": "held",
+    "horizon": "not stated",
+    "quote": ""
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Top-line growth FY27",
+    "outcome": "dropped",
+    "quote": "I think it's very difficult for me to hazard a guess what's going to happen in the second half."
+   },
+   {
+    "metric": "EBITDA margin steady state",
+    "outcome": "missed",
+    "quote": "So probably next year, we should start seeing improvements in the EBITDA percentage. But this year, I think we would still stick to our 12%, around that EBITDA for the year-end."
+   },
+   {
+    "metric": "Pharma revenue FY27",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Finance cost run rate",
+    "outcome": "not_discussed",
+    "quote": ""
+   }
+  ],
+  "entities": [
+   {
+    "name": "Reliance",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Revenue and margin guidance cut; growth guide withdrawn in part",
+    "quote": "it's very difficult for me to hazard a guess what's going to happen in the second half."
+   },
+   {
+    "label": "Freight cost shock and EO supply constraint",
+    "quote": "Last quarter, we had a constraint on EO supply from our supplier, which is Reliance."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 3,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "H2 revenue outlook",
+    "quote": "it's very difficult for me to hazard a guess what's going to happen in the second half."
+   },
+   {
+    "topic": "EO incremental allocation from Reliance",
+    "quote": "We do not have any confirmation from Reliance on how much quantity will be allotted to us."
+   },
+   {
+    "topic": "Pharma revenue FY27 quantum",
+    "quote": "we are confident that we'll have a very good growth in the Pharma segment."
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "Rossari Q2 FY27 revenue rose 19% YoY to Rs 697.6 crore, a record, with EBITDA of Rs 87 crore (12.5% margin).",
+  "overview": "Q2 FY27 set record revenue (Rs 697.6 crore, +19% YoY) and EBITDA (Rs 87 crore, +21% YoY), with growth led by volume and value-added products. Gross margin was 31.6%, up about 200 bps QoQ on product mix, but core B2B EBITDA margin fell to 14.1% from 14.8% YoY on freight and raw material costs. Management guided FY27 EBITDA margin to about 12% and revenue growth to mid-to-high teens, while citing uncertainty from the Middle East situation. Net debt fell to Rs 221 crore and working capital days improved to 86 from 97 at FY26 end.",
+  "segments": [
+   {
+    "name": "HPPC (Home, Personal Care & Industrial)",
+    "commentary": "Q2 revenue Rs 541.9 crore, +18% YoY; H1 Rs 1,095.1 crore, +20% (H1 growth 24% per Sunil Chari). Growth led by personal care, agro surfactants, adjuvants and oil & gas; ethylene oxide constraints limited ethoxylate volumes and sequential revenue was broadly flat."
+   },
+   {
+    "name": "Textile Specialty Chemicals",
+    "commentary": "Q2 revenue Rs 120.8 crore, +26% YoY and about +14% QoQ; H1 Rs 226.9 crore, +24%. Driven by exports to Bangladesh, Southeast Asia, Turkey and Latin America, plus the Thailand facility and the new fibre chemicals division."
+   },
+   {
+    "name": "Animal Health & Nutrition (AHN)",
+    "commentary": "Q2 revenue Rs 34.8 crore, +11% YoY; H1 Rs 72.8 crore, +19%. Q2 is seasonally the weakest quarter; management expects Q3 and Q4 to peak."
+   },
+   {
+    "name": "Core B2B (ex institutional and B2C)",
+    "commentary": "Q2 revenue Rs 619.9 crore, +21% YoY; EBITDA Rs 87.2 crore, +15% YoY, margin 14.1% vs 14.8% in Q2 FY26 and 13.5% in Q1 FY27."
+   },
+   {
+    "name": "Institutional and B2C",
+    "commentary": "Q2 revenue Rs 77.7 crore, +3% YoY; EBITDA +Rs 0.2 crore vs loss of Rs 3.7 crore in Q2 FY26, after portfolio rationalisation. Management targets positive EBITDA in H2 and for full FY27."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 EBITDA margin guided at about 12% plus/minus; management expects margin improvement only from FY28.",
+   "FY27 revenue growth guided at mid-teens to high-teens, down from the 12-14% initial view, given demand and logistics uncertainty.",
+   "Peak utilisation of the new ethoxylation facility at Dahej expected about 2 years after commissioning, around end-FY28; peak sales target remains 3x capex value.",
+   "Working capital days expected to stay in the 87-90 day range by end-March 2027.",
+   "Working capital debt expected to be repaid by about mid-2027; all cash flows to go to debt reduction for now.",
+   "Exports targeted at 30%+ of revenue by end of this year (Q2 export share 31%, H1 27%)."
+  ],
+  "capex_capacity": [
+   "Blended capacity utilisation about 60%; new ethoxylation facility (Dahej) at about 30% and ramping; full healthy utilisation expected by next year as Reliance EO capacity arrives.",
+   "Reliance ethylene oxide expansion expected in Q1 FY28; no confirmed incremental EO allocation yet, with confirmation hoped for in the next couple of months.",
+   "Capital work in progress was Rs 156 crore at 30 September; about Rs 50-75 crore more capex in H2 FY27, with most projects closing by end-2026 and no major capex in India in the following year.",
+   "Remaining projects cover pharma excipients, aroma chemicals, hydrogenation and biosurfactant expansion; no volume figures disclosed yet.",
+   "Saudi Arabia: Board approved leasing land to wholly owned subsidiary Rossari International Limited Company for a greenfield plant; early site work (fencing, boundary wall) in coming months. Project details, capex and timelines to come after Board approval, likely in 8-12 months.",
+   "Thailand blending facility ramping up for Southeast Asia customers; EXCiPACT registration obtained for the Unitop plant."
+  ],
+  "demand_pricing": [
+   "Q2 growth was mostly volume-driven; some product prices were cut as raw material prices eased early in the quarter.",
+   "Freight costs roughly doubled to tripled versus last year; not all customers absorb the full freight increase. Phenol and other core raw materials are higher YoY.",
+   "Export revenue grew about 34% YoY and about 35% QoQ in Q2; export share 31% of revenue; H1 export share 27%.",
+   "Pharma exports were about Rs 50 crore last year; qualification takes 6 months to 2 years, and management expects strong growth this year.",
+   "Oil and gas focus markets are India, the Middle East, and Kazakhstan, Turkmenistan and Uzbekistan; US sales go through distributors with no segment data.",
+   "Management declined to give a specific H2 revenue outlook, citing the Middle East situation, shipping routes and container and ISO tank availability."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Where is export growth coming from and what is the export outlook?",
+    "answer": "Export revenue grew about 34% YoY and 35% QoQ, driven by HPPC and textiles in Southeast Asia, Africa and Latin America, with Thailand helping. Target is 30%+ of revenue from exports by end of FY27."
+   },
+   {
+    "question": "What is the capacity ramp-up and peak revenue at the new Dahej ethoxylation plant?",
+    "answer": "Peak utilisation is expected about 2 years after commissioning, around end-FY28. The 3x capex-to-peak-sales target is unchanged. Utilisation is about 30% today."
+   },
+   {
+    "question": "Why did core B2B margin fall YoY, and how will it recover above 15%?",
+    "answer": "Freight costs (doubled to tripled) and raw material inflation compressed margins. Some pass-through has been achieved, but freight recovery is still a challenge. No specific recovery date was given."
+   },
+   {
+    "question": "What is the Saudi Arabia project timeline?",
+    "answer": "The Board approved land leasing in KSA. Feasibility, feedstock and capex work is ongoing, and the next Board approval and detailed timelines are expected in 8-12 months."
+   },
+   {
+    "question": "Will the gross margin benefit from acquisitions such as Unitop and the move to value-added products?",
+    "answer": "Management said Unitop and Tristar had lower gross margins at acquisition, and in-house ethoxylation now requires advance raw material purchases, which lengthened working capital. Gross margin is better than at end-2021 when the three businesses are combined."
+   },
+   {
+    "question": "What is the status of the working capital debt and the net debt trajectory?",
+    "answer": "Management expects working capital debt to be repaid by mid-2027. Net debt fell to Rs 221 crore; H1 operating cash flow was about Rs 131 crore."
+   }
+  ],
+  "risks_watch": [
+   "Ethylene oxide supply from Reliance is a constraint; the expansion is expected in Q1 FY28, but incremental allocation is not yet confirmed.",
+   "Freight and logistics costs are high because of Middle East and Red Sea/Hormuz disruptions, and the core B2B margin fell 70 bps YoY to 14.1%.",
+   "The FY27 margin guide of about 12% is below H1 levels of about 12%; the company has not given a clear margin path beyond FY27.",
+   "Institutional and B2C is only at breakeven, and plans to sell this business remain undetermined in timing and value.",
+   "ROCE has fallen to low teens and is expected to recover only from next year; the Saudi capex return profile is not yet disclosed.",
+   "AHN growth has slowed; the seasonal peak in Q3 and Q4 must deliver."
+  ],
+  "management_tone": "Confident on operations and balance sheet (record quarter, debt reduction, working capital gains) but cautious on the outlook. Management repeatedly declined to give H2 revenue or margin numbers, citing geopolitical and freight uncertainty, and gave only ranges.",
+  "key_quotes": [
+   "We concluded the first half of FY27 on a very strong note.",
+   "Our new blending facility in Thailand is ramping up steadily.",
+   "But we don't want to hazard any guess, give anything, which after 6 months, the investors will say, you said it, and you couldn't do it?",
+   "So probably next year, we should start seeing improvements in the EBITDA percentage."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations",
+    "value": "Rs 697.6 crore",
+    "change": "+19% YoY vs Rs 586.1 crore in Q2 FY26; highest-ever quarter"
+   },
+   {
+    "metric": "Gross profit",
+    "value": "Rs 220.3 crore",
+    "change": "+19% YoY, +6.7% QoQ"
+   },
+   {
+    "metric": "Gross margin",
+    "value": "31.6%",
+    "change": "Flat YoY; about 200 bps above Q1 FY27 (29.6%)"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "Rs 87 crore; margin 12.5%",
+    "change": "+21% YoY; margin +20 bps YoY vs 12.3%, +91 bps QoQ vs 11.6%"
+   },
+   {
+    "metric": "Profit after tax",
+    "value": "Rs 38.9 crore",
+    "change": "+5.5% YoY, +11% QoQ"
+   },
+   {
+    "metric": "Diluted EPS",
+    "value": "Rs 7.02",
+    "change": ""
+   },
+   {
+    "metric": "H1 FY27 revenue",
+    "value": "About Rs 1,400 crore (analyst-cited)",
+    "change": "About 20% YoY"
+   },
+   {
+    "metric": "Gross borrowings",
+    "value": "Rs 361.8 crore",
+    "change": "Reduced by about Rs 46 crore in H1"
+   },
+   {
+    "metric": "Net debt",
+    "value": "Rs 221 crore; net debt-to-equity 0.16",
+    "change": "From Rs 248 crore in June 2026 and Rs 281 crore in March 2026"
+   },
+   {
+    "metric": "Working capital days",
+    "value": "86 days in Q2 FY27",
+    "change": "From 97 days at FY26 end; management cites about 87 days in September"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "New ethoxylation facility at Dahej (commissioned earlier; running at about 30% utilisation and ramping)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Thailand blending facility ramping up for Southeast Asia customers",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Remaining projects: pharma excipients, aroma chemicals, hydrogenation and biosurfactant expansion (no volume figures disclosed)",
+    "size_pct": null,
+    "capex_cr": 50.0,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Greenfield plant in Saudi Arabia via subsidiary Rossari International LLC (Board approved land lease; project details, capex and timelines pending)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "approved",
+    "mat": "minor"
+   }
+  ],
+  "util": 60.0,
+  "expansion": true,
+  "growth": 15.0,
+  "gs": -1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 19.0,
+  "qEbitda": 21.0,
+  "outlook": 1,
+  "why": "FY27 revenue growth guided cut to mid-teens to high-teens (from 12-14% view, midpoint ~15%) and EBITDA margin ~12% +/-, with Q2 revenue +19% and EBITDA +21% YoY; backing is partial, relying on Reliance EO supply expected Q1 FY28 (unconfirmed allocation), volume-led demand and ~60% blended utilisation, while management declined to give an H2 revenue outlook.",
+  "mgmt": null
+ }
+}
