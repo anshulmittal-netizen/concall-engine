@@ -591,6 +591,19 @@ def build(market: str, log=print) -> dict:
     trackers = {label_from_key(p, market): build_tracker(calls, p, market, cls, comps)
                 for p in shown + later if any(c["periodKey"] == p for c in calls)}
     write_json(SITE / "data" / f"summaries_{market.lower()}.json", summaries)
+    calendar = None
+    if market == "IN":
+        import calendar_in
+        last_tr = {}
+        for c in calls:
+            if c["date"] > last_tr.get(c["id"], ""):
+                last_tr[c["id"]] = c["date"]
+        calendar = calendar_in.for_site(last_tr)
+        for row in calendar["calls"]:
+            row["sector"] = sub.get(row["id"]) or level(row["id"], "subsector")
+            row["bigSector"] = level(row["id"], "sector")
+            row["mcap"] = fmt_mcap(comps.get(row["id"], {}), market)
+            row["read"] = row["id"] in last_tr  # we have read an earlier call, so the panel can open
     data = {
         "market": market, "generated": dt.datetime.now().isoformat(timespec="minutes"), "sample": False,
         "season": label_from_key(current, market) if current else None,
@@ -604,6 +617,7 @@ def build(market: str, log=print) -> dict:
         "firstTimers": first_timers, "historyChecked": len(hist),
         "mgmt": mgmt_list[:400], "mgmtChecked": read_json(DATA / f"mgmt_{market}.json", {}).get("checked"),
         "inProgress": [{"season": label_from_key(p, market), "calls": per_count[p]} for p in later],
+        "calendar": calendar,
     }
     write_json(SITE / "data" / f"{market.lower()}.json", data)
     log(f"{market}: wrote {len(out_cos)} companies, {len(sectors)} sectors, {len(themes)} themes, {len(ideas)} ideas")
