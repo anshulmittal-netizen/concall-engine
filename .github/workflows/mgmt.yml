@@ -33,3 +33,11 @@ jobs:
       - name: Commit
         if: always()
         run: ./mgmt_commit.sh
+      - name: Results calendar and posted results
+        continue-on-error: true   # never hold up management-change alerts
+        timeout-minutes: 25
+        run: python run.py results --market IN
+      - name: Commit results
+        if: always()
+        continue-on-error: true
+        run: ./results_commit.sh

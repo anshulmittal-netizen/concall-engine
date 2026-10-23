@@ -618,6 +618,8 @@ def build(market: str, log=print) -> dict:
         "mgmt": mgmt_list[:400], "mgmtChecked": read_json(DATA / f"mgmt_{market}.json", {}).get("checked"),
         "inProgress": [{"season": label_from_key(p, market), "calls": per_count[p]} for p in later],
         "calendar": calendar,
+        # results calendar + posted results as of this build; the page prefers data/results_in.json when newer
+        "results": read_json(DATA / "results_in.json", None) if market == "IN" else None,
     }
     write_json(SITE / "data" / f"{market.lower()}.json", data)
     log(f"{market}: wrote {len(out_cos)} companies, {len(sectors)} sectors, {len(themes)} themes, {len(ideas)} ideas")
