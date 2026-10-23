@@ -14,6 +14,7 @@ reports, press releases, broker notes and news are deliberately out of scope.
 | Concall transcripts | BSE corporate announcements (free) | Licensed provider plug-in, FMP to start (`FMP_API_KEY`, Ultimate plan) |
 | Investor presentations | BSE corporate announcements | SEC EDGAR 8-K EX-99 exhibits (free) |
 | Interviews | Channel watchlist → local transcription (`--interviews`) | Same |
+| Upcoming calls | BSE "Analyst / Investor Meet" call intimations, read nightly (`calendar_in.py`, `python run.py calendar --market IN`) | – |
 | Universe & market cap | BSE scrip list (or your own CSV) | SEC ticker list + FMP market cap (Yahoo fallback) |
 
 The US cut-off is ₹50,000 Cr converted at the live INR/USD rate.

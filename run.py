@@ -4,6 +4,7 @@
   python run.py all --market US
   python run.py fetch --market IN --since 2026-07-01
   python run.py extract --market US --limit 50
+  python run.py calendar --market IN       # upcoming earnings calls from BSE intimations
   python run.py analyze --market IN        # rebuild site/data/in.json from stored extractions only
   python run.py all --market IN --interviews   # also scan interview channels (local machine)
   python run.py serve                      # open the dashboard at http://localhost:8000
@@ -78,6 +79,11 @@ def cmd_fetch(a):
         import sources_india
         classify.build(uni, log=log)  # sector / sub-sector / industry for every company (only new ones after the first run)
         sources_india.fetch(uni, since, until, log)
+        try:  # upcoming calls; never let it stop the night's run
+            import calendar_in
+            calendar_in.fetch(uni, cal_since(since), until, log)
+        except Exception as ex:
+            log(f"IN calendar skipped: {ex}")
     else:
         import sources_us
         src = settings()["sources"]
@@ -90,6 +96,19 @@ def cmd_fetch(a):
     st = read_json(DATA / f"state_{a.market}.json", {})
     st["last_fetch"] = until.isoformat()
     write_json(DATA / f"state_{a.market}.json", st)
+
+
+def cal_since(since: dt.date) -> dt.date:
+    """Call intimations are filed one to three weeks ahead: read at least the last 21 days."""
+    return min(since, today() - dt.timedelta(days=21))
+
+
+def cmd_calendar(a):
+    import calendar_in
+    uni = universe.build_india()
+    since = dt.date.fromisoformat(a.since) if a.since else cal_since(today())
+    cal = calendar_in.fetch(uni, since, today(), log)
+    log(f"IN calendar: {len(cal.get('calls', {}))} calls on file")
 
 
 def cmd_extract(a):
@@ -233,7 +252,7 @@ def cmd_all(a):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "extract", "summarize", "growth", "mgmt", "history", "analyze", "all", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "calendar", "extract", "summarize", "growth", "mgmt", "history", "analyze", "all", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
@@ -242,7 +261,7 @@ def main(argv=None):
     a = p.parse_args(argv)
     if a.command != "serve" and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "mgmt": cmd_mgmt, "history": cmd_history, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "mgmt": cmd_mgmt, "history": cmd_history, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":

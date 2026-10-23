@@ -237,6 +237,15 @@ svg text{font-family:var(--mono)}
 .idea .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .tag{font-size:12.5px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
 .first .r{grid-template-columns:minmax(0,1.3fr) 100px 110px 70px minmax(0,1fr) minmax(0,2fr)}
+.up-day{display:grid;gap:8px}
+.up-day h3{font-size:16px;display:flex;gap:10px;align-items:baseline}
+.up-day h3 .num{font-size:12.5px;color:var(--muted);font-weight:400}
+.up .r{grid-template-columns:80px minmax(0,1.6fr) minmax(0,1fr) 100px 190px}
+.up .r .tm{white-space:nowrap}
+.up .r .tm{font-family:var(--mono);font-size:13.5px}
+.up .r .lastsc{font-family:var(--mono);font-size:13px}
+.up-actions{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}
+.nextcall{color:var(--fg);border-color:color-mix(in srgb,var(--gold) 55%,var(--line))}
 .mg .r{grid-template-columns:minmax(0,240px) minmax(0,1fr) 190px;align-items:start}
 .mg .r>:last-child{justify-content:flex-end}
 .mg-ch{font-size:14px}
@@ -406,6 +415,9 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 30%,transparent);bo
   .th .r{grid-template-columns:minmax(0,1fr) auto}
   .th .r>:nth-child(2){grid-column:1/-1;order:3}
   .first .r{grid-template-columns:minmax(0,1fr) auto}
+  .up .r{grid-template-columns:70px minmax(0,1fr) auto}
+  .up .r>:nth-child(3){display:none}
+  .up .r .up-actions{grid-column:1/-1;justify-content:flex-start}
   .first .r>:nth-child(n+3){grid-column:1/-1}
   .first .r>:nth-child(3),.first .r>:nth-child(4){display:none}
   .vguide div,dl.gl div{grid-template-columns:1fr;gap:2px}
@@ -496,6 +508,7 @@ const GL = {
   breadth:['Breadth','Share of companies in the sub-sector whose call shows the signal. 60% supply discipline means 6 in 10 companies talked about holding back capacity.'],
   stage:['Stage','Turning: supply discipline high and pricing or utilisation now rising while demand talk is still lukewarm. Emerging: a signal rising fast from a low base. Confirming: pricing and demand both strong. Crowded: everyone talks about it. Deteriorating: pricing and demand falling. Baseline: only one quarter read so far, so no trend yet.'],
   themeCount:['Companies discussing','Distinct companies that discussed the theme with substance in their call, not just a passing mention.'],
+  upcoming:['Coming up','Earnings calls companies have announced on BSE, read from the call intimation each company must file before the call. Dates and times are read from the filing automatically, so open the intimation to confirm before dialling in. Reschedules replace the original date.'],
   first:['First-time callers','Confirmed: the transcript says it is the first or maiden call. Likely: BSE shows no earnings call transcript or analyst / investor meet filing for the company from 2019 until this call.'],
   namedBy:['Named in other calls','Companies whose own transcript names this company, with how they described it: customer, supplier, peer or partner. Only exact full-name matches count.'],
   triggers:['Triggers','Specific statements from the call that could move the thesis. Each comes with the quote it was drawn from, checked word for word against the transcript.'],
@@ -538,7 +551,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, mg: {days: 30, top: true, inCalls: false}, openSec: new Set(), drawer: null};
+  first: {status: ''}, up: {big: '', search: '', earn: true, read: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, mg: {days: 30, top: true, inCalls: false}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -553,19 +566,29 @@ function callsQ() {
 const trackerQ = () => { const t = D.trackers || {}; return t[curQ()] || t[D.season] || D.tracker || null; };
 const callsFor = id => (D.calls || []).filter(x => x.id === id).sort((a, b) => b.periodKey.localeCompare(a.periodKey));
 const lastDate = () => (D.calls || []).reduce((m, c) => c.date > m ? c.date : m, '');
+/* upcoming calls (from BSE call intimations) */
+const istToday = () => { try { return new Intl.DateTimeFormat('en-CA', {timeZone: 'Asia/Kolkata'}).format(new Date()); } catch (e) { return new Date().toISOString().slice(0, 10); } };
+const addDays = (iso, n) => { const d = new Date(iso + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const wday = iso => WD[new Date(iso + 'T00:00:00Z').getUTCDay()];
+const t12 = t => { if (!t) return ''; let [h, m] = t.split(':').map(Number); const ap = h >= 12 ? 'pm' : 'am'; h = h % 12 || 12; return `${h}${m ? ':' + String(m).padStart(2, '0') : ''} ${ap}`; };
+const calRows = () => (D.calendar?.calls || []);
+const upcoming = (days = 7, earnOnly = true) => { const t0 = istToday(), t1 = addDays(t0, days); return calRows().filter(r => r.date >= t0 && r.date <= t1 && (!earnOnly || r.kind === 'earnings')); };
+const nextCall = id => { const t0 = istToday(); return calRows().filter(r => r.id === id && r.date >= t0).sort((a, b) => a.date.localeCompare(b.date))[0]; };
+const callWhen = r => `${wday(r.date)} ${sdate(r.date)}${r.time ? ', ' + t12(r.time) : ''}`;
 function daysBack(n) { const d = new Date(lastDate() || Date.now()); d.setDate(d.getDate() - n); return d.toISOString().slice(0, 10); }
 
 /* ---------- views ---------- */
 const VIEWS = [
   {group: 'Start', items: [['home', 'Today'], ['help', 'How to use']]},
-  {group: 'Calls', items: [['calls', 'All calls'], ['first', 'First-time callers']]},
+  {group: 'Calls', items: [['calls', 'All calls'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
   {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['mgmt', 'Management changes'], ['ideas', 'Ideas & red flags']]}
 ];
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
 function navCounts() {
   const t = trackerQ(), cq = callsQ();
-  return {calls: cq.length, first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
+  return {calls: cq.length, upcoming: upcoming(7).length || '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: (D.sectors || []).filter(s => s.hit).length || '',
     themes: (D.themes || []).length, nearterm: (D.companies || []).map(ntRow).filter(Boolean).length || '', ideas: (D.ideas || []).filter(x => !x.red).length,
@@ -614,6 +637,8 @@ function vHome() {
   const rep = t?.reported || cq.length, uni = t?.universe || D.universe;
   const welcome = store.get('welcome', true);
   const best = ranked[0];
+  /* next three days, companies we have read first (their last call is one click away), then by date and time */
+  const soon = upcoming(3).sort((a, b) => (!!byId[b.id] - !!byId[a.id]) || a.date.localeCompare(b.date) || (a.time || '99').localeCompare(b.time || '99') || ((byId[b.id]?.score || 0) - (byId[a.id]?.score || 0)));
   return head('Today on the desk', `What changed in the latest concalls, and where to look first. Data from BSE filings, refreshed every morning.`, '') + `
     ${welcome ? `<div class="welcome"><span>New to the desk? The two-minute guide explains every view, the score and the daily routine.</span><span style="display:flex;gap:8px"><button class="btn primary" data-v="help">Read the guide</button><button class="btn" data-dismiss="welcome">Hide</button></span></div>` : ''}
     <div class="hero">
@@ -646,6 +671,8 @@ function vHome() {
       ${ideaCo ? `<button class="pick" data-open="${esc(ideaCo.id)}"><span class="eyebrow">Top idea · ${esc(idea.type)}</span><strong>${esc(ideaCo.name)}</strong><span class="small">${esc(idea.why)}</span><span class="go">Open the call →</span></button>` : ''}
       ${th ? `<button class="pick" data-v="themes"><span class="eyebrow">Most-discussed theme</span><strong>${esc(th.name)}</strong><span class="small">${fmt(th.c.at(-1))} companies discussed it in ${esc(D.season)} calls, across ${th.spans} sub-sectors.</span><span class="go">See all themes →</span></button>` : ''}
     </div></section>
+    ${soon.length ? `<section><div class="list-head"><h3>Coming up · next 3 days</h3><button class="link" data-v="upcoming">See all</button></div>
+      <div class="rows mini-list">${soon.slice(0, 8).map(r => { const co = byId[r.id]; return `<div class="r"><span style="min-width:0"><span class="nm" style="display:block">${esc(r.name)}${r.status === 'rescheduled' ? ' <span class="pill v-weak">Rescheduled</span>' : ''}</span><span class="sub">${esc(callWhen(r))} · ${esc(r.sector || '')}</span></span><span style="display:flex;gap:8px;align-items:center">${co ? `<span class="num small" style="color:${vcol(co.score, co.veto)}" title="Score of the last call read">${co.score}</span><button class="btn" data-open="${esc(r.id)}">Last call</button>` : ''}</span></div>`; }).join('')}</div></section>` : ''}
     <div class="two">
       <section><div class="list-head"><h3>Newest calls</h3><button class="link" data-v="calls" data-sort="new">See all</button></div>
         <div class="rows mini-list">${newest.slice(0, 8).map(c => `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key)}"><span style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span><span class="sub">${esc(sdate(c.date))} · ${esc(c.period)} · ${esc(c.sector)}</span></span>${scoreCell(c.score, c.veto)}</button>`).join('')}</div></section>
@@ -692,6 +719,46 @@ function fillCalls() {
     ${shown.map((c, i) => companyRow(c, i)).join('')}</div>
     ${rows.length > shown.length ? `<div class="more"><button class="btn" id="c-more">Show 50 more</button><span class="count-line">${fmt(rows.length - shown.length)} more</span></div>` : ''}`
     : '<div class="empty">No calls match these filters. Clear a filter or pick another quarter.</div>');
+}
+
+/* Coming up: scheduled calls from BSE call intimations */
+function upRow(r, withDate = false) {
+  const co = byId[r.id], moved = r.status === 'rescheduled';
+  return `<div class="r">
+    <span class="tm">${withDate ? esc(sdate(r.date)) + '<br>' : ''}${r.time ? esc(t12(r.time)) : '<span class="muted">–</span>'}</span>
+    <span style="min-width:0"><span class="nm" style="display:block">${esc(r.name)}${r.kind !== 'earnings' ? ' <span class="tag">investor call</span>' : ''}${moved ? ' <span class="pill v-weak">Rescheduled</span>' : ''}</span><span class="sub">${esc(r.mcap || '')}${r.mcap && r.sector ? ' · ' : ''}${esc(r.sector || '')}</span></span>
+    <span class="sub" style="min-width:0">${esc(r.bigSector && r.bigSector !== 'Unclassified' ? r.bigSector : '')}</span>
+    <span class="lastsc">${co ? `<span title="Concall Signal Score of the last call we read (${esc(co.period)})" style="color:${vcol(co.score, co.veto)}">${co.score}</span> <span class="small muted">${esc(co.period)}</span>` : '<span class="small muted">not read yet</span>'}</span>
+    <span class="up-actions">${co ? `<button class="btn" data-open="${esc(r.id)}">Last call</button>` : ''}${r.url ? `<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Intimation ↗</a>` : ''}</span>
+  </div>`;
+}
+function vUpcoming() {
+  const f = S.up, t0 = istToday(), t1 = addDays(t0, f.days), q = f.search.trim().toLowerCase();
+  const pass = r => (!f.earn || r.kind === 'earnings') && (!f.read || byId[r.id]) && (!f.big || r.bigSector === f.big) &&
+    (!q || (r.name + ' ' + (r.sector || '') + ' ' + (r.bigSector || '')).toLowerCase().includes(q));
+  const rows = calRows().filter(r => r.date >= t0 && r.date <= t1 && pass(r));
+  const held = calRows().filter(r => r.date < t0 && !r.transcript && pass(r)).sort((a, b) => b.date.localeCompare(a.date) || (a.time || '').localeCompare(b.time || ''));
+  const bigs = [...new Set(calRows().map(r => r.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
+  const days = {}; rows.forEach(r => (days[r.date] = days[r.date] || []).push(r));
+  const head_ = `<div class="r hd"><span>Time</span><span>Company</span><span>Sector</span><span>Last read</span><span></span></div>`;
+  return head('Coming up', 'Earnings calls companies have announced on BSE, day by day. Plan which calls to dial into, and see which results are about to land.', `
+      <ul><li>Each listed company must file a call intimation on BSE before its call ${tip('upcoming')}. The engine reads those filings every night and pulls out the date and time.</li>
+      <li><b>Last read</b> is the score of the company’s previous call we read. Use <b>Last call</b> to recall what management promised last time before you dial in.</li>
+      <li><b>Intimation ↗</b> opens the company’s filing with the dial-in numbers and registration link.</li>
+      <li>Times are IST. Dates are read automatically, so check the filing before relying on one.</li>
+      <li><b>Held, transcript awaited</b> lists calls from the last week whose transcript has not reached BSE yet. Companies have five working days to file it.</li></ul>`,
+      `<span class="badge">${D.calendar?.checked ? 'BSE checked ' + esc(D.calendar.checked.replace('T', ' ')) + ' UTC' : 'Not checked yet'}</span>`) + `
+    <div class="toolbar">
+      <input type="search" id="up-search" placeholder="Search company or sector" value="${esc(f.search)}" aria-label="Search upcoming calls">
+      <select id="up-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
+      <select id="up-days" aria-label="Period">${[[3, 'Next 3 days'], [7, 'Next 7 days'], [14, 'Next 14 days'], [45, 'All announced']].map(([d, n]) => `<option value="${d}" ${f.days === d ? 'selected' : ''}>${n}</option>`).join('')}</select>
+    </div>
+    <div class="toolbar"><button class="chip" data-up="earn" aria-pressed="${f.earn}">Earnings calls only</button><button class="chip" data-up="read" aria-pressed="${f.read}">Companies we have read</button><span class="small muted">${fmt(rows.length)} call${rows.length === 1 ? '' : 's'}</span></div>
+    ${Object.keys(days).length ? Object.entries(days).map(([d, rs]) => `<section class="up-day"><h3>${d === t0 ? 'Today' : d === addDays(t0, 1) ? 'Tomorrow' : esc(wday(d))} · ${esc(fdate(d))} <span class="num">${rs.length} call${rs.length === 1 ? '' : 's'}</span></h3>
+      <div class="rows up">${head_}${rs.map(r => upRow(r)).join('')}</div></section>`).join('')
+      : `<div class="empty">${calRows().length ? 'No announced calls match these filters.' : 'No call intimations read yet. They appear after the next nightly run.'}</div>`}
+    ${held.length ? `<section class="up-day"><h3>Held, transcript awaited <span class="num">${held.length}</span></h3>
+      <div class="rows up">${held.slice(0, 60).map(r => upRow(r, true)).join('')}</div></section>` : ''}`;
 }
 
 /* First-time callers */
@@ -975,7 +1042,7 @@ function vNear() {
         <div class="why-chips">${[...x.why.filter(w => w[1] !== -1).slice(0, 7), ...x.why.filter(w => w[1] === -1)].map(([w, hot]) => `<span class="${hot === 1 ? 'hot' : ''}" ${hot === -1 ? 'style="color:var(--down)"' : ''}>${esc(w)}</span>`).join('')}</div>
         ${x.nearTxt.length || x.gwhy ? `<p class="small" style="margin:0"><b>Capacity & growth:</b> ${esc([x.gwhy, ...x.nearTxt.map(t => 'Adding ' + t)].filter(Boolean).join(' · '))}</p>` : ''}
         ${x.ev.length ? `<ul>${x.ev.map(l => `<li>${esc(l.length > 260 ? l.slice(0, 257) + '…' : l)}</li>`).join('')}</ul>` : ''}
-        <div class="foot"><span>${esc(c.period)} call · ${esc(fdate(c.date))}${x.pending ? ` · <b style="color:var(--fg)">${esc(nextQ)} results due</b>` : ''}</span><button class="btn" data-open="${esc(c.id)}" data-k="${esc(x.key)}">Open the call</button></div>
+        <div class="foot"><span>${esc(c.period)} call · ${esc(fdate(c.date))}${(nc => nc ? ` · <b style="color:var(--fg)">next call ${esc(callWhen(nc))}</b>` : x.pending ? ` · <b style="color:var(--fg)">${esc(nextQ)} results due</b>` : '')(nextCall(c.id))}</span><button class="btn" data-open="${esc(c.id)}" data-k="${esc(x.key)}">Open the call</button></div>
       </article>`; }).join('') || '<div class="empty">No companies match these filters.</div>'}</div>
     ${rows.length > f.limit ? `<div style="text-align:center;margin-top:14px"><button class="btn" id="nt-more">Show more (${rows.length - f.limit} left)</button></div>` : ''}`;
 }
@@ -1022,7 +1089,7 @@ function vHelp() {
     <section id="h-what"><h3>What the desk does</h3>
       <p>Every night the desk reads new concall transcripts filed on BSE by the ${fmt(D.universe)} listed Indian companies below ₹50,000 Cr. It reads each call through our capital-cycle framework, scores it, writes a detailed summary, and rolls the calls up by sector and theme. It uses concalls, analyst meets and investor presentations only. Prices, results filings and news are left out on purpose.</p></section>
     <section id="h-routine"><h3>A 10-minute daily routine</h3><ol>
-      <li><b>Today:</b> read the headline and the four picks under “Where to look first”.</li>
+      <li><b>Today:</b> read the headline and the four picks under “Where to look first”, and check which calls are coming up in the next three days.</li>
       <li><b>All calls:</b> sort by Newest first and skim what came in overnight. Filter to the sectors you cover.</li>
       <li><b>Open a company</b> that looks interesting. Read the call summary first, then the Signals tab to see why it scored the way it did.</li>
       <li><b>Sector tracker:</b> check who in that sector has reported and whether guidance is improving.</li>
@@ -1031,6 +1098,7 @@ function vHelp() {
     <section id="h-views"><h3>What each view is for</h3><div class="vguide">
       <div><b>Today</b><span>The day’s headline, season progress, the best call, the strongest guidance, the top idea and the newest calls.</span></div>
       <div><b>All calls</b><span>Every call for the quarter in one ranked list. Sort best to worst or by newest, and filter by sector, sub-sector, guidance or red flags.</span></div>
+      <div><b>Coming up</b><span>Earnings calls announced on BSE for the days ahead, with the time, the score of each company’s last call and a link to the filing with dial-in details. Also lists calls already held whose transcript has not been filed yet.</span></div>
       <div><b>First-time callers</b><span>Companies holding their first-ever earnings call. Useful for finding names before they get coverage.</span></div>
       <div><b>Sector tracker</b><span>All sectors and sub-sectors: how many companies have reported, what came in today, average score, guidance and best call. Updated daily.</span></div>
       <div><b>Guidance leaders</b><span>Sub-sectors ranked by how strongly management is guiding up, and the weakest ones.</span></div>
@@ -1063,7 +1131,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, calls: vCalls, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, calls: vCalls, upcoming: vUpcoming, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -1119,7 +1187,7 @@ function drawDrawer(fresh) {
     <div class="dr-top"><span class="eyebrow">Company</span><span style="display:flex;gap:8px;align-items:center"><span id="copied" class="copied" aria-live="polite"></span><button class="btn" id="copylink">Copy link</button><button class="btn" data-close aria-label="Close panel">Close ✕</button></span></div>
     <div class="dr-body" id="dr-body">
       <header class="dr-head"><span class="eyebrow">${esc(x.period || c.period)} call · filed ${esc(fdate(x.date || c.date))}</span><h2 id="dr-name">${esc(c.name)}</h2>
-        <div class="crumbs">${path.length ? `<span class="tag">${path.map(esc).join(' › ')}</span>` : ''}${c.mcap ? `<span class="tag">${esc(c.mcap)}</span>` : ''}${c.ticker && c.ticker !== c.id ? `<span class="tag">${esc(c.ticker)}</span>` : ''}${pdf ? `<a class="tag" href="${esc(pdf.url)}" target="_blank" rel="noopener" style="color:var(--blue)">Transcript PDF ↗</a>` : ''}</div></header>
+        <div class="crumbs">${path.length ? `<span class="tag">${path.map(esc).join(' › ')}</span>` : ''}${c.mcap ? `<span class="tag">${esc(c.mcap)}</span>` : ''}${c.ticker && c.ticker !== c.id ? `<span class="tag">${esc(c.ticker)}</span>` : ''}${pdf ? `<a class="tag" href="${esc(pdf.url)}" target="_blank" rel="noopener" style="color:var(--blue)">Transcript PDF ↗</a>` : ''}${(nc => nc ? `<a class="tag nextcall" href="${esc(nc.url || '#')}" target="_blank" rel="noopener" title="From the company's call intimation on BSE">Next call: ${esc(callWhen(nc))} ↗</a>` : '')(nextCall(id))}</div></header>
       ${cs.length > 1 ? `<div class="toolbar"><span class="eyebrow">Calls read</span><div class="seg" id="dr-q">${cs.map(k => `<button data-k="${esc(k.key)}" aria-pressed="${k.key === x.key}">${esc(k.period)} · ${k.score}</button>`).join('')}</div></div>` : ''}
       <section class="verdict">
         <div style="display:grid;gap:6px;justify-items:start"><span class="bigscore" style="color:${vcol(x.score, x.veto)}">${x.score}</span>${vpill(x.score, x.veto)}</div>
@@ -1316,6 +1384,7 @@ document.addEventListener('click', e => {
   if (t.closest('#c-clear')) { Object.assign(S.calls, {search: '', big: '', sub: '', limit: 50}); S.calls.chips.clear(); render(); return; }
   if (t.closest('#c-more')) { S.calls.limit += 50; fillCalls(); return; }
   const fs = t.closest('[data-fs]'); if (fs) { S.first.status = fs.dataset.fs; render(); return; }
+  const upc = t.closest('[data-up]'); if (upc) { const k = upc.dataset.up; S.up[k] = !S.up[k]; render(); return; }
   const st = t.closest('[data-st]'); if (st) { S.turns.stage = st.dataset.st; render(); return; }
   const tl = t.closest('[data-tl]'); if (tl) { S.turns.level = tl.dataset.tl; render(); return; }
   const mgt = t.closest('[data-mg]'); if (mgt) { const k = mgt.dataset.mg; S.mg[k] = !S.mg[k]; render(); return; }
@@ -1332,6 +1401,7 @@ document.addEventListener('click', e => {
 $('#nav').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (b) { e.stopPropagation(); if (S.drawer) closeCo(); go(b.dataset.v); } });
 document.addEventListener('toggle', e => { const d = e.target; if (d.matches && d.matches('details[data-how]')) store.set('how-' + d.dataset.how, d.open); }, true);
 document.addEventListener('input', e => {
+  if (e.target.id === 'up-search') { const v = e.target.value, pos = e.target.selectionStart; S.up.search = v; render(); const i = $('#up-search'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   if (e.target.id === 'c-search') { S.calls.search = e.target.value; S.calls.limit = 50; fillCalls(); }
   if (e.target.id === 'find') { findSel = 0; renderFind(); }
 });
@@ -1340,6 +1410,8 @@ document.addEventListener('change', e => {
   if (id === 'c-big') { S.calls.big = e.target.value; S.calls.sub = ''; S.calls.limit = 50; render(); }
   if (id === 'c-sub') { S.calls.sub = e.target.value; S.calls.limit = 50; render(); }
   if (id === 'mg-days') { S.mg.days = +e.target.value; render(); }
+  if (id === 'up-big') { S.up.big = e.target.value; render(); }
+  if (id === 'up-days') { S.up.days = +e.target.value; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
   if (id === 'c-sort') { S.calls.sort = e.target.value; S.calls.limit = 50; fillCalls(); }
 });
