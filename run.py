@@ -6,6 +6,7 @@
   python run.py extract --market US --limit 50
   python run.py calendar --market IN       # upcoming earnings calls from BSE intimations
   python run.py results --market IN        # results calendar + numbers of results as they are posted
+  python run.py kpis --market IN           # sector KPI reads (improved / worsened) for calls not read yet
   python run.py analyze --market IN        # rebuild site/data/in.json from stored extractions only
   python run.py all --market IN --interviews   # also scan interview channels (local machine)
   python run.py serve                      # open the dashboard at http://localhost:8000
@@ -208,6 +209,11 @@ def cmd_growth(a):
     growth.run(a.market, a.limit, log)
 
 
+def cmd_kpis(a):
+    import kpis
+    kpis.run(a.market, a.limit, log)
+
+
 def cmd_mgmt(a):
     import mgmt
     days = a.days or 2
@@ -254,12 +260,16 @@ def cmd_all(a):
             cmd_growth(a2)
         except Exception as ex:  # never let the growth reads stop the night's run
             log(f"growth reads skipped: {ex}")
+        try:
+            cmd_kpis(a2)
+        except Exception as ex:  # never let the sector KPI reads stop the night's run
+            log(f"sector KPI reads skipped: {ex}")
     cmd_analyze(a)
 
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "mgmt", "history", "analyze", "all", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "kpis", "mgmt", "history", "analyze", "all", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
@@ -268,7 +278,7 @@ def main(argv=None):
     a = p.parse_args(argv)
     if a.command != "serve" and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "mgmt": cmd_mgmt, "history": cmd_history, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "kpis": cmd_kpis, "mgmt": cmd_mgmt, "history": cmd_history, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":

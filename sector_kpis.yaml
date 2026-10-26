@@ -1,0 +1,713 @@
+# Sector KPI models for the Sector KPI read (kpis.py → analyze.py → dashboard "Sector KPIs").
+#
+# Source: "Sector Taxonomy" sheet of sector_scoring_methodology_v1.xlsx (60 sub-sectors and their
+# fundamental KPIs). Models marked `source: desk` are additions for BSE sub-sectors the workbook does not
+# cover, built from the workbook's Factor Library pillars. "General" is the fallback for everything else.
+#
+# Each KPI: [key, label, better]   better = up (higher is better) | down (lower is better) | mixed (judge in context)
+# When `better` is up or down, the engine sets the KPI's effect from the direction the call reports, so the
+# model cannot mark "GNPA rose" as an improvement. For `mixed` KPIs the model's own judgement of the effect is used.
+#
+# `match` maps BSE's classification (industry, then sub-sector) to a model: first rule whose keyword is a
+# case-insensitive substring wins. Edit freely; the next nightly run re-reads calls whose model changed.
+
+models:
+  "Private Banks":
+    sector: "Financials"
+    benchmark: "Nifty Private Bank"
+    kpis:
+      - [roa, "ROA", up]
+      - [roe, "ROE", up]
+      - [nim, "NIM", up]
+      - [gnpa, "GNPA", down]
+      - [nnpa, "NNPA", down]
+      - [cet1, "CET1", up]
+      - [casa, "CASA", up]
+      - [deposit_growth, "Deposit growth", up]
+  "PSU Banks":
+    sector: "Financials"
+    benchmark: "Nifty PSU Bank"
+    kpis:
+      - [roa, "ROA", up]
+      - [roe, "ROE", up]
+      - [credit_cost, "Credit cost", down]
+      - [pcr, "PCR", up]
+      - [gnpa, "GNPA", down]
+      - [cet1, "CET1", up]
+      - [nim, "NIM", up]
+  "Small Finance Banks":
+    sector: "Financials"
+    benchmark: "Nifty Bank/peer basket"
+    kpis:
+      - [roa, "ROA", up]
+      - [cost_of_deposits, "Cost of deposits", down]
+      - [gnpa, "GNPA", down]
+      - [unsecured_share, "Unsecured share", down]
+      - [cet1, "CET1", up]
+  "NBFC Consumer":
+    sector: "Financials"
+    benchmark: "Nifty NBFC"
+    kpis:
+      - [aum_growth, "AUM growth", up]
+      - [nim, "NIM", up]
+      - [credit_costs, "Credit costs", down]
+      - [roa, "ROA", up]
+      - [roe, "ROE", up]
+      - [alm, "ALM", mixed]
+  "Housing Finance":
+    sector: "Financials"
+    benchmark: "Nifty Housing Finance"
+    kpis:
+      - [spread, "Spread", up]
+      - [ltv, "LTV", down]
+      - [aum_growth, "AUM growth", up]
+      - [gnpa, "GNPA", down]
+      - [funding, "Funding", mixed]
+      - [roe, "ROE", up]
+  "Microfinance":
+    sector: "Financials"
+    benchmark: "Nifty NBFC/peer basket"
+    kpis:
+      - [collections, "Collections", up]
+      - [write_offs, "Write-offs", down]
+      - [leverage, "Leverage", down]
+      - [geographic_risk, "Geographic risk", mixed]
+      - [roa, "ROA", up]
+  "Life Insurance":
+    sector: "Financials"
+    benchmark: "Nifty Insurance"
+    kpis:
+      - [vnb, "VNB", up]
+      - [vnb_margin, "VNB margin", up]
+      - [persistency, "Persistency", up]
+      - [solvency, "Solvency", up]
+      - [ape, "APE", up]
+  "General Insurance":
+    sector: "Financials"
+    benchmark: "Nifty Insurance"
+    kpis:
+      - [combined_ratio, "Combined ratio", down]
+      - [loss_ratio, "Loss ratio", down]
+      - [reserve_development, "Reserve development", mixed]
+      - [solvency, "Solvency", up]
+  "AMCs":
+    sector: "Financials"
+    benchmark: "Nifty Financial Services Ex-Bank"
+    kpis:
+      - [aaum, "AAUM", up]
+      - [equity_mix, "Equity mix", up]
+      - [yields, "Yields", up]
+      - [flows, "Flows", up]
+      - [market_share, "Market share", up]
+      - [margins, "Margins", up]
+  "IT Services":
+    sector: "Technology"
+    benchmark: "Nifty IT"
+    kpis:
+      - [cc_organic_growth, "CC organic growth", up]
+      - [tcv_conversion, "TCV conversion", up]
+      - [ebit_margin, "EBIT margin", up]
+      - [utilization, "Utilization", up]
+      - [fcf, "FCF", up]
+  "SaaS / Product Software":
+    sector: "Technology"
+    benchmark: "Nifty MidSmall IT & Telecom/peers"
+    kpis:
+      - [arr, "ARR", up]
+      - [nrr, "NRR", up]
+      - [churn, "Churn", down]
+      - [gross_margin, "Gross margin", up]
+      - [rule_of_40, "Rule of 40", up]
+      - [fcf, "FCF", up]
+  "IT Hardware / EMS":
+    sector: "Technology"
+    benchmark: "Nifty Capital Goods/peers"
+    kpis:
+      - [volume, "Volume", up]
+      - [content, "Content", up]
+      - [customer_concentration, "Customer concentration", down]
+      - [roce, "ROCE", up]
+      - [working_capital, "Working capital", down]
+  "Steel Integrated":
+    sector: "Materials"
+    benchmark: "Nifty Metal"
+    kpis:
+      - [ebitda_t, "EBITDA/t", up]
+      - [spread, "Spread", up]
+      - [capacity, "Capacity", up]
+      - [utilization, "Utilization", up]
+      - [net_debt, "Net debt", down]
+  "Specialty Steel":
+    sector: "Materials"
+    benchmark: "Nifty Metal"
+    kpis:
+      - [value_added_mix, "Value-added mix", up]
+      - [utilization, "Utilization", up]
+      - [customer_qualifications, "Customer qualifications", up]
+      - [roce, "ROCE", up]
+  "Aluminium":
+    sector: "Materials"
+    benchmark: "Nifty Metal"
+    kpis:
+      - [lme, "LME", mixed]
+      - [power_cost, "Power cost", down]
+      - [volume, "Volume", up]
+      - [downstream_margin, "Downstream margin", up]
+      - [net_debt, "Net debt", down]
+  "Copper / Zinc":
+    sector: "Materials"
+    benchmark: "Nifty Metal"
+    kpis:
+      - [tc_rc, "TC/RC", mixed]
+      - [lme, "LME", mixed]
+      - [ore_quality, "Ore quality", up]
+      - [reserves, "Reserves", up]
+      - [cash_costs, "Cash costs", down]
+  "Cement":
+    sector: "Materials"
+    benchmark: "Nifty Cement"
+    kpis:
+      - [realization, "Realization", up]
+      - [ebitda_t, "EBITDA/t", up]
+      - [capacity, "Capacity", up]
+      - [utilization, "Utilization", up]
+      - [energy, "Energy", down]
+  "Specialty Chemicals":
+    sector: "Materials"
+    benchmark: "Nifty Chemicals"
+    kpis:
+      - [ramp_up, "Ramp-up", up]
+      - [volume, "Volume", up]
+      - [price, "Price", up]
+      - [customer_approvals, "Customer approvals", up]
+      - [roce, "ROCE", up]
+      - [export_mix, "Export mix", up]
+  "Commodity Chemicals":
+    sector: "Materials"
+    benchmark: "Nifty Chemicals"
+    kpis:
+      - [spread, "Spread", up]
+      - [supply_additions, "Supply additions", down]
+      - [energy, "Energy", down]
+      - [utilization, "Utilization", up]
+      - [leverage, "Leverage", down]
+  "Agrochemicals":
+    sector: "Materials"
+    benchmark: "Nifty Chemicals/peers"
+    kpis:
+      - [channel_stock, "Channel stock", down]
+      - [exports, "Exports", up]
+      - [molecule_pipeline, "Molecule pipeline", up]
+      - [receivables, "Receivables", down]
+  "Capital Goods Electrical":
+    sector: "Industrials"
+    benchmark: "Nifty Capital Goods"
+    kpis:
+      - [order_intake, "Order intake", up]
+      - [book_to_bill, "Book-to-bill", up]
+      - [roce, "ROCE", up]
+      - [working_capital, "Working capital", down]
+      - [margin, "Margin", up]
+  "Capital Goods Mechanical":
+    sector: "Industrials"
+    benchmark: "Nifty Capital Goods"
+    kpis:
+      - [order_book, "Order book", up]
+      - [execution, "Execution", up]
+      - [utilization, "Utilization", up]
+      - [pricing, "Pricing", up]
+      - [fcf, "FCF", up]
+  "EPC / Construction":
+    sector: "Industrials"
+    benchmark: "Nifty Construction"
+    kpis:
+      - [order_book, "Order book", up]
+      - [project_risk, "Project risk", down]
+      - [debtor_days, "Debtor days", down]
+      - [cfo_pat, "CFO/PAT", up]
+      - [debt, "Debt", down]
+  "Defence Manufacturing":
+    sector: "Industrials"
+    benchmark: "Nifty India Defence/peer basket"
+    kpis:
+      - [order_visibility, "Order visibility", up]
+      - [localization, "Localization", up]
+      - [execution, "Execution", up]
+      - [margins, "Margins", up]
+      - [capital_intensity, "Capital intensity", down]
+  "Railways Equipment":
+    sector: "Industrials"
+    benchmark: "Nifty Capital Goods/peers"
+    kpis:
+      - [order_book, "Order book", up]
+      - [tender_flow, "Tender flow", up]
+      - [delivery, "Delivery", up]
+      - [margin, "Margin", up]
+      - [working_capital, "Working capital", down]
+  "Consumer Staples":
+    sector: "Consumer"
+    benchmark: "Nifty FMCG"
+    kpis:
+      - [volume, "Volume", up]
+      - [pricing, "Pricing", up]
+      - [distribution, "Distribution", up]
+      - [roic, "ROIC", up]
+      - [brands, "Brands", mixed]
+      - [cash_generation, "Cash generation", up]
+  "Consumer Durables":
+    sector: "Consumer"
+    benchmark: "Nifty Consumer Durables"
+    kpis:
+      - [volume, "Volume", up]
+      - [mix, "Mix", up]
+      - [premiumization, "Premiumization", up]
+      - [inventory, "Inventory", down]
+      - [roce, "ROCE", up]
+  "Retail Grocery":
+    sector: "Consumer"
+    benchmark: "Nifty Retail"
+    kpis:
+      - [sssg, "SSSG", up]
+      - [store_adds, "Store adds", up]
+      - [sales_sqft, "Sales/sqft", up]
+      - [inventory, "Inventory", down]
+      - [cash, "Cash", up]
+  "Retail Fashion":
+    sector: "Consumer"
+    benchmark: "Nifty Retail"
+    kpis:
+      - [sssg, "SSSG", up]
+      - [discounting, "Discounting", down]
+      - [store_payback, "Store payback", down]
+      - [inventory_turns, "Inventory turns", up]
+  "Hotels":
+    sector: "Consumer"
+    benchmark: "Nifty Tourism/peer basket"
+    kpis:
+      - [revpar, "RevPAR", up]
+      - [adr, "ADR", up]
+      - [occupancy, "Occupancy", up]
+      - [management_fees, "Management fees", up]
+      - [debt, "Debt", down]
+  "QSR / Restaurants":
+    sector: "Consumer"
+    benchmark: "Nifty Consumer Services"
+    kpis:
+      - [sssg, "SSSG", up]
+      - [auv, "AUV", up]
+      - [store_roic, "Store ROIC", up]
+      - [food_cost, "Food cost", down]
+      - [closures, "Closures", down]
+  "Passenger Vehicles":
+    sector: "Automotive"
+    benchmark: "Nifty Auto"
+    kpis:
+      - [volumes, "Volumes", up]
+      - [asp, "ASP", up]
+      - [ev_mix, "EV mix", up]
+      - [market_share, "Market share", up]
+      - [margin, "Margin", up]
+      - [fcf, "FCF", up]
+  "Commercial Vehicles":
+    sector: "Automotive"
+    benchmark: "Nifty Auto"
+    kpis:
+      - [freight_cycle, "Freight cycle", up]
+      - [volume, "Volume", up]
+      - [fleet_age, "Fleet age", mixed]
+      - [mix, "Mix", up]
+      - [margins, "Margins", up]
+  "2-wheelers":
+    sector: "Automotive"
+    benchmark: "Nifty Auto"
+    kpis:
+      - [volume, "Volume", up]
+      - [rural_demand, "Rural demand", up]
+      - [mix, "Mix", up]
+      - [exports, "Exports", up]
+      - [margin, "Margin", up]
+      - [roce, "ROCE", up]
+  "Auto Ancillaries":
+    sector: "Automotive"
+    benchmark: "Nifty Auto"
+    kpis:
+      - [content_vehicle, "Content/vehicle", up]
+      - [clients, "Clients", up]
+      - [exports, "Exports", up]
+      - [margin, "Margin", up]
+      - [roce, "ROCE", up]
+  "Branded Pharma":
+    sector: "Healthcare"
+    benchmark: "Nifty Pharma"
+    kpis:
+      - [chronic_mix, "Chronic mix", up]
+      - [india_growth, "India growth", up]
+      - [launches, "Launches", up]
+      - [r_d, "R&D", mixed]
+      - [regulatory, "Regulatory", mixed]
+  "US Generics":
+    sector: "Healthcare"
+    benchmark: "Nifty Pharma"
+    kpis:
+      - [us_pricing, "US pricing", up]
+      - [product_pipeline, "Product pipeline", up]
+      - [fda, "FDA", mixed]
+      - [r_d, "R&D", mixed]
+      - [margins, "Margins", up]
+  "CDMO / CRAMS":
+    sector: "Healthcare"
+    benchmark: "Nifty Pharma/peers"
+    kpis:
+      - [client_pipeline, "Client pipeline", up]
+      - [approvals, "Approvals", up]
+      - [capacity, "Capacity", up]
+      - [utilization, "Utilization", up]
+      - [customer_concentration, "Customer concentration", down]
+  "Hospitals":
+    sector: "Healthcare"
+    benchmark: "Nifty Hospitals"
+    kpis:
+      - [arpob, "ARPOB", up]
+      - [occupancy, "Occupancy", up]
+      - [mature_beds, "Mature beds", up]
+      - [new_beds, "New beds", up]
+      - [fcf, "FCF", up]
+  "Diagnostics":
+    sector: "Healthcare"
+    benchmark: "Nifty Healthcare"
+    kpis:
+      - [volume, "Volume", up]
+      - [tests_patient, "Tests/patient", up]
+      - [center_additions, "Center additions", up]
+      - [ebitda, "EBITDA", up]
+      - [roce, "ROCE", up]
+  "Oil Upstream":
+    sector: "Energy"
+    benchmark: "Nifty Oil & Gas"
+    kpis:
+      - [production, "Production", up]
+      - [reserves, "Reserves", up]
+      - [oil_price, "Oil price", mixed]
+      - [lifting_cost, "Lifting cost", down]
+      - [cash, "Cash", up]
+  "Refining / OMC":
+    sector: "Energy"
+    benchmark: "Nifty Oil & Gas"
+    kpis:
+      - [grm, "GRM", up]
+      - [marketing_spread, "Marketing spread", up]
+      - [throughput, "Throughput", up]
+      - [capex, "Capex", mixed]
+      - [debt, "Debt", down]
+  "Gas Distribution":
+    sector: "Energy"
+    benchmark: "Nifty Oil & Gas"
+    kpis:
+      - [volumes, "Volumes", up]
+      - [realization, "Realization", up]
+      - [marketing_spread, "Marketing spread", up]
+      - [network, "Network", up]
+      - [roce, "ROCE", up]
+  "Power Generation Thermal":
+    sector: "Energy"
+    benchmark: "Nifty Power"
+    kpis:
+      - [plf, "PLF", up]
+      - [ppa, "PPA", mixed]
+      - [fuel, "Fuel", down]
+      - [capacity, "Capacity", up]
+      - [regulated_return, "Regulated return", up]
+  "Power Transmission / Distribution":
+    sector: "Energy"
+    benchmark: "Nifty Power"
+    kpis:
+      - [regulated_roe, "Regulated ROE", up]
+      - [at_c_losses, "AT&C losses", down]
+      - [collection, "Collection", up]
+      - [capex, "Capex", mixed]
+      - [debt, "Debt", down]
+  "Renewables Developer":
+    sector: "Energy"
+    benchmark: "Nifty Power"
+    kpis:
+      - [ppa, "PPA", mixed]
+      - [cuf, "CUF", up]
+      - [project_irr, "Project IRR", up]
+      - [capex, "Capex", mixed]
+      - [debt, "Debt", down]
+      - [commissioning, "Commissioning", up]
+  "Renewables Equipment":
+    sector: "Energy"
+    benchmark: "Nifty Capital Goods"
+    kpis:
+      - [order_backlog, "Order backlog", up]
+      - [utilization, "Utilization", up]
+      - [technology, "Technology", mixed]
+      - [warranty, "Warranty", mixed]
+      - [roce, "ROCE", up]
+  "Mobile Operators":
+    sector: "Telecom"
+    benchmark: "Nifty Telecommunications"
+    kpis:
+      - [arpu, "ARPU", up]
+      - [subscribers, "Subscribers", up]
+      - [churn, "Churn", down]
+      - [capex, "Capex", mixed]
+      - [net_debt, "Net debt", down]
+  "Towers":
+    sector: "Telecom"
+    benchmark: "Nifty Telecommunications"
+    kpis:
+      - [tenancy_ratio, "Tenancy ratio", up]
+      - [rentals, "Rentals", up]
+      - [colocation, "Colocation", up]
+      - [debt, "Debt", down]
+      - [utilization, "Utilization", up]
+  "Real Estate Developers":
+    sector: "Real Assets"
+    benchmark: "Nifty Realty"
+    kpis:
+      - [bookings, "Bookings", up]
+      - [collections, "Collections", up]
+      - [launches, "Launches", up]
+      - [inventory, "Inventory", down]
+      - [debt, "Debt", down]
+  "REITs":
+    sector: "Real Assets"
+    benchmark: "Nifty REITs & Realty"
+    kpis:
+      - [occupancy, "Occupancy", up]
+      - [re_leasing, "Re-leasing", up]
+      - [noi, "NOI", up]
+      - [distributions, "Distributions", up]
+      - [ltv, "LTV", down]
+  "Ports":
+    sector: "Services"
+    benchmark: "Nifty Commercial & Transport Services"
+    kpis:
+      - [volume, "Volume", up]
+      - [cargo_mix, "Cargo mix", mixed]
+      - [realizations, "Realizations", up]
+      - [concessions, "Concessions", mixed]
+      - [leverage, "Leverage", down]
+  "Logistics":
+    sector: "Services"
+    benchmark: "Nifty Commercial & Transport Services"
+    kpis:
+      - [volume, "Volume", up]
+      - [yield, "Yield", up]
+      - [fleet_utilization, "Fleet utilization", up]
+      - [net_working_capital, "Net working capital", down]
+  "Airlines":
+    sector: "Services"
+    benchmark: "Nifty Commercial & Transport Services"
+    kpis:
+      - [rask, "RASK", up]
+      - [cask, "CASK", down]
+      - [load_factor, "Load factor", up]
+      - [fuel, "Fuel", down]
+      - [lease_liabilities, "Lease liabilities", down]
+  "Media / Broadcasting":
+    sector: "Services"
+    benchmark: "Nifty Media"
+    kpis:
+      - [ad_demand, "Ad demand", up]
+      - [viewership, "Viewership", up]
+      - [subscriber_revenue, "Subscriber revenue", up]
+      - [cash, "Cash", up]
+  "Fertilizers":
+    sector: "Agriculture"
+    benchmark: "Nifty Chemicals/peers"
+    kpis:
+      - [subsidy_receivables, "Subsidy receivables", down]
+      - [gas_cost, "Gas cost", down]
+      - [volume, "Volume", up]
+      - [debt, "Debt", down]
+  "Sugar / Ethanol":
+    sector: "Agriculture"
+    benchmark: "Nifty FMCG/peer basket"
+    kpis:
+      - [recovery, "Recovery", up]
+      - [cane_price, "Cane price", down]
+      - [ethanol_share, "Ethanol share", up]
+      - [debt, "Debt", down]
+  "Food Processing":
+    sector: "Agriculture"
+    benchmark: "Nifty FMCG/peers"
+    kpis:
+      - [raw_material_spread, "Raw-material spread", up]
+      - [pricing, "Pricing", up]
+      - [demand, "Demand", up]
+      - [working_capital, "Working capital", down]
+  "Textile Spinning":
+    sector: "Textiles"
+    benchmark: "Peer basket"
+    kpis:
+      - [cotton_spread, "Cotton spread", up]
+      - [capacity, "Capacity", up]
+      - [utilization, "Utilization", up]
+      - [working_capital, "Working capital", down]
+      - [debt, "Debt", down]
+  "Apparel Exporters":
+    sector: "Textiles"
+    benchmark: "Peer basket"
+    kpis:
+      - [order_growth, "Order growth", up]
+      - [utilization, "Utilization", up]
+      - [wage, "Wage", down]
+      - [client_concentration, "Client concentration", down]
+  # ---- desk additions (not in the workbook) ----
+  "Pharmaceuticals":
+    sector: "Healthcare"
+    benchmark: "Nifty Pharma"
+    source: desk
+    note: "BSE does not split branded, US generics and CDMO; this combines the workbook's three pharma models."
+    kpis:
+      - [india_growth, "India growth", up]
+      - [chronic_mix, "Chronic mix", up]
+      - [us_pricing, "US pricing / erosion", up]
+      - [launches, "Launches / pipeline", up]
+      - [cdmo_pipeline, "CDMO client pipeline", up]
+      - [regulatory, "FDA / regulatory status", mixed]
+      - [utilization, "Utilization", up]
+      - [margins, "Margins", up]
+  "Industrial Products":
+    sector: "Industrials"
+    benchmark: "Nifty Capital Goods/peers"
+    source: desk
+    kpis:
+      - [volume, "Volume", up]
+      - [realization, "Realization / pricing", up]
+      - [margin, "EBITDA margin", up]
+      - [utilization, "Utilization", up]
+      - [capacity, "Capacity", up]
+      - [working_capital, "Working capital", down]
+      - [net_debt, "Net debt", down]
+  "Capital Markets":
+    sector: "Financials"
+    benchmark: "Nifty Capital Markets"
+    source: desk
+    kpis:
+      - [active_clients, "Active clients", up]
+      - [volumes, "Volumes / ADTO", up]
+      - [market_share, "Market share", up]
+      - [revenue_mix, "Non-broking revenue mix", up]
+      - [cost_income, "Cost-to-income", down]
+      - [roe, "ROE", up]
+  "Fintech":
+    sector: "Financials"
+    benchmark: "Peer basket"
+    source: desk
+    kpis:
+      - [tpv, "TPV / GMV", up]
+      - [take_rate, "Take rate", up]
+      - [customers, "Customers", up]
+      - [contribution_margin, "Contribution margin", up]
+      - [ebitda, "EBITDA", up]
+  "Jewellery Retail":
+    sector: "Consumer"
+    benchmark: "Nifty Consumer Durables"
+    source: desk
+    kpis:
+      - [sssg, "SSSG", up]
+      - [volume, "Gold volume", up]
+      - [studded_share, "Studded share", up]
+      - [store_adds, "Store adds", up]
+      - [margin, "Gross margin", up]
+      - [inventory, "Inventory days", down]
+  "Internet & E-commerce":
+    sector: "Consumer"
+    benchmark: "Peer basket"
+    source: desk
+    kpis:
+      - [gmv, "GMV / orders", up]
+      - [customers, "Customers", up]
+      - [take_rate, "Take rate", up]
+      - [contribution_margin, "Contribution margin", up]
+      - [cash_burn, "Cash burn", down]
+  "General":
+    sector: "Other"
+    benchmark: "Nifty 500"
+    source: desk
+    note: "Factor Library pillars for all non-financials: growth, returns, cash, balance sheet, moat."
+    kpis:
+      - [revenue_growth, "Revenue growth", up]
+      - [margin, "EBITDA margin", up]
+      - [returns, "ROCE / ROIC", up]
+      - [cash_conversion, "Cash conversion (CFO/PAT)", up]
+      - [net_debt, "Net debt", down]
+      - [market_share, "Market share / pricing", up]
+      - [order_book, "Order book / pipeline", up]
+
+match:
+  # banks and lenders
+  - [Private Banks, [private sector bank]]
+  - [PSU Banks, [public sector bank]]
+  - [Small Finance Banks, [other bank, small finance]]
+  - [Housing Finance, [housing finance]]
+  - [Microfinance, [microfinance]]
+  - [NBFC Consumer, [non banking financial, nbfc, financial institution, investment company, holding company, other financial services]]
+  - [Life Insurance, [life insurance]]
+  - [General Insurance, [general insurance]]
+  - [AMCs, [asset management]]
+  - [Capital Markets, [stockbroking, depositories, exchange and data, financial products distributor, capital market, insurance distributors]]
+  - [Fintech, [fintech]]
+  # technology
+  - [SaaS / Product Software, [software products]]
+  - [IT Services, [it enabled services, computers - software, it - services, business process outsourcing, data processing, consulting services]]
+  - [IT Hardware / EMS, [computers hardware, telecom -  equipment, telecom - equipment, telecom - infrastructure, electronic components, consumer electronics]]
+  # autos
+  - [Passenger Vehicles, [passenger cars, auto -dealer]]
+  - [2-wheelers, [2/3 wheelers, two wheelers]]
+  - [Commercial Vehicles, [commercial vehicles, construction vehicles, tractors]]
+  - [Auto Ancillaries, [auto components, tyres]]
+  # materials
+  - [Industrial Products, [aluminium, copper & zinc products]]
+  - [Specialty Steel, [iron & steel products]]
+  - [Steel Integrated, [iron & steel, pig iron, ferro]]
+  - [Aluminium, [aluminium]]
+  - [Copper / Zinc, [copper, zinc, diversified metals]]
+  - [Cement, [cement]]
+  - [Agrochemicals, [pesticides, agrochemical]]
+  - [Fertilizers, [fertilizer, fertiliser]]
+  - [Specialty Chemicals, [specialty chemicals, dyes and pigments, explosives]]
+  - [Commodity Chemicals, [commodity chemicals, petrochemicals, industrial gases, carbon black, chemicals]]
+  # industrials
+  - [Railways Equipment, [railway]]
+  - [Defence Manufacturing, [aerospace, defense, defence]]
+  - [Capital Goods Electrical, [heavy electrical, other electrical equipment, electrical equipment, cables]]
+  - [Capital Goods Mechanical, [compressors, pumps, abrasives, bearings, castings, forgings, ship building, industrial machinery]]
+  - [General, [construction materials]]
+  - [EPC / Construction, [civil construction, dredging, road assets, construction]]
+  - [Industrial Products, [industrial products, packaging, plastic products - industrial, rubber, electrodes, refractories, glass]]
+  # consumer
+  - [Jewellery Retail, [gems, jewellery]]
+  - [Internet & E-commerce, [internet & catalogue, e-retail, e-commerce]]
+  - [QSR / Restaurants, [restaurants]]
+  - [Hotels, [hotels]]
+  - [Retail Grocery, [diversified retail, pharmacy retail]]
+  - [Retail Fashion, [speciality retail, retailing]]
+  - [Consumer Durables, [household appliances, houseware, furniture, ceramics, sanitary, plywood, paints, granites, footwear, leather, plastic products - consumer, diversified consumer, consumer durables]]
+  - [Sugar / Ethanol, [sugar]]
+  - [Food Processing, [edible oil, other agricultural, other food products, meat, poultry, animal feed, seafood, agricultural food]]
+  - [Consumer Staples, [packaged foods, dairy, tea & coffee, diversified fmcg, personal care, household products, stationary, breweries, beverages, fmcg]]
+  # healthcare
+  - [Hospitals, [hospital]]
+  - [Diagnostics, [healthcare service provider, diagnostic]]
+  - [Pharmaceuticals, [pharmaceutical, biotechnology]]
+  # energy and utilities
+  - [Oil Upstream, [oil exploration]]
+  - [Refining / OMC, [refineries, refining, petroleum products]]
+  - [Gas Distribution, [lpg/cng, gas]]
+  - [Renewables Developer, [solar, wind, renewable]]
+  - [Power Transmission / Distribution, [power distribution, power transmission]]
+  - [Power Generation Thermal, [power generation]]
+  # telecom, real assets, services, agri, textiles
+  - [Mobile Operators, [other telecom services, telecom - services, telecom services]]
+  - [Real Estate Developers, [residential, commercial projects, realty]]
+  - [Ports, [port & port, airport]]
+  - [Airlines, [airline]]
+  - [Logistics, [logistics, shipping, road transport, transport related]]
+  - [Media / Broadcasting, [broadcasting, media, film production, digital entertainment, print media, advertising, printing & publication, entertainment]]
+  - [Apparel Exporters, [garments, apparels]]
+  - [Textile Spinning, [textile]]

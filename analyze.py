@@ -157,14 +157,16 @@ def merge(docs: list[dict]) -> dict:
         "evasions": base.get("evasions", []), "hedge": float(base.get("hedge_index", 0.5)),
         "verified": min(d.get("verified_share", 1) for d in docs),
         "growth": next((d["growth"] for d in docs if d.get("growth")), None),
+        "kpis": next((d["kpis"] for d in docs if (d.get("kpis") or {}).get("model")), None),
     }
 
 
 # ------------------------------------------------------------------ main
 # Score weights (sum to 1). Guidance-backed growth & capacity leads: the market pays for growth, but guidance
 # counts in full only when management shows how it will deliver (capacity coming live, orders, spare capacity)
-# and has delivered before. Industry supply discipline comes next, then the results actually delivered.
-WEIGHTS = {"backed": 0.45, "supply": 0.20, "results": 0.15, "pricing": 0.10, "demand": 0.05, "novelty": 0.03, "tone": 0.02}
+# and has delivered before. Industry supply discipline comes next, then the results actually delivered and the
+# sector KPIs the call says improved or worsened (KPI lists from the sector scoring methodology workbook).
+WEIGHTS = {"backed": 0.40, "supply": 0.15, "results": 0.15, "kpi": 0.10, "pricing": 0.10, "demand": 0.05, "novelty": 0.03, "tone": 0.02}
 CLARITY = {"clear": 1.0, "partial": 0.7, "vague": 0.4, "none": 0.25}
 
 
@@ -231,6 +233,71 @@ def results_value(g: dict | None):
         return 0.5, {"read": True, "qRev": None, "qEbitda": None}
     v = sum(_pct_band(x, band) for _, x in vals) / len(vals)
     return v, {"read": True, "qRev": g.get("qRev"), "qEbitda": g.get("qEbitda")}
+
+
+def kpi_value(k: dict | None):
+    """0-1 'Sector KPIs': improved minus worsened among the sector's key KPIs the call discussed.
+    Reported moves count 1, guided moves 0.5. Fewer than 3 KPIs read cannot swing the value fully,
+    and no read (or no KPI discussed) is neutral 0.5: missing is not the same as bad."""
+    if not k or not k.get("model"):
+        return 0.5, {"read": False}
+    items = k.get("items") or []
+    w = lambda it: 1.0 if it.get("basis") != "guided" else 0.5
+    up = sum(w(it) for it in items if it.get("eff", 0) > 0)
+    dn = sum(w(it) for it in items if it.get("eff", 0) < 0)
+    tot = sum(w(it) for it in items)
+    net = (up - dn) / max(tot, 3.0) if items else 0.0
+    return 0.5 + 0.5 * clip(net), {"read": True, "model": k["model"], "up": sum(it.get("eff", 0) > 0 for it in items),
+                                    "down": sum(it.get("eff", 0) < 0 for it in items), "flat": sum(it.get("eff", 0) == 0 for it in items),
+                                    "n": len(items), "net": round(net, 3)}
+
+
+def kpi_site(k: dict | None) -> dict | None:
+    """KPI read for the dashboard, with labels, plus the sector KPIs the call did not discuss."""
+    if not k or not k.get("model"):
+        return None
+    import kpis as kp
+    m = kp.config()["models"].get(k["model"])
+    if not m:
+        return None
+    lab = {x["key"]: x for x in m["kpis"]}
+    items = [{**it, "label": lab[it["k"]]["label"], "better": lab[it["k"]]["better"]} for it in k.get("items", []) if it.get("k") in lab]
+    got = {it["k"] for it in items}
+    return {"model": k["model"], "sector": m.get("sector", ""), "source": m.get("source", "workbook"), "items": items,
+            "missing": [x["label"] for x in m["kpis"] if x["key"] not in got]}
+
+
+def build_kpi_board(recs: dict, period: str, min_cos: int = 3) -> list[dict]:
+    """Per KPI model: how many companies' calls in the period say each KPI improved, held or worsened."""
+    import kpis as kp
+    models = kp.config()["models"]
+    by_model = defaultdict(list)
+    for cid, per in recs.items():
+        r = per.get(period)
+        k = (r or {}).get("kpis") or {}
+        if k.get("model") in models:
+            by_model[k["model"]].append((cid, r))
+    out = []
+    for name, rows in by_model.items():
+        if len(rows) < min_cos:
+            continue
+        m = models[name]
+        kp_rows = []
+        for x in m["kpis"]:
+            up, dn, fl = [], [], []
+            for cid, r in rows:
+                it = next((i for i in r["kpis"].get("items", []) if i.get("k") == x["key"]), None)
+                if it:
+                    (up if it["eff"] > 0 else dn if it["eff"] < 0 else fl).append({"id": cid, "now": it.get("now", ""), "g": it.get("basis") == "guided"})
+            n = len(up) + len(dn) + len(fl)
+            kp_rows.append({"k": x["key"], "label": x["label"], "better": x["better"], "up": up[:12], "down": dn[:12], "flat": fl[:12],
+                            "nUp": len(up), "nDown": len(dn), "nFlat": len(fl), "n": n,
+                            "net": round(100 * (len(up) - len(dn)) / n) if n else None})
+        disc = [r for r in kp_rows if r["n"]]
+        out.append({"model": name, "sector": m.get("sector", ""), "source": m.get("source", "workbook"), "cos": len(rows),
+                    "net": round(st.mean(r["net"] for r in disc)) if disc else None, "kpis": kp_rows})
+    out.sort(key=lambda b: -b["cos"])
+    return out
 
 
 def _site_summary(s: dict) -> dict:
@@ -360,8 +427,9 @@ def build(market: str, log=print) -> dict:
             tone = clip(b["tone"] / 2 * 0.7 + (0.5 - r["hedge"]) * 0.6)
             bval, bdet = backed_value(r.get("growth"), b["guidance"], cred, tested)
             rval, rdet = results_value(r.get("growth"))
+            kval, kdet = kpi_value(r.get("kpis"))
             W = WEIGHTS
-            score = 100 * (W["backed"] * bval + W["supply"] * supply_side + W["results"] * rval + W["pricing"] * pricing
+            score = 100 * (W["backed"] * bval + W["supply"] * supply_side + W["results"] * rval + W["kpi"] * kval + W["pricing"] * pricing
                            + W["demand"] * c["demand"] + W["novelty"] * nov + W["tone"] * (tone + 1) / 2)
             txt = lambda f: f["label"] + " " + (f.get("quote") or "")
             serious = [f["label"] for f in r["red_flags"] if VETO_RX.search(txt(f))]
@@ -396,6 +464,7 @@ def build(market: str, log=print) -> dict:
                         {"k": "structure", "read": b["structure"], "prev": pmean("structure"), "sub": round(c["structure"], 3), "wt": 1},
                         {"k": "inventory", "read": b["inventory"], "prev": pmean("inventory"), "sub": round(c["inventory"], 3), "wt": 1}]),
                     part("results", "Results delivered", W["results"], rval, [{"k": "results", **rdet}]),
+                    part("kpi", "Sector KPIs", W["kpi"], kval, [{"k": "kpi", **kdet}]),
                     part("pricing", "Pricing & utilisation", W["pricing"], pricing, [
                         {"k": "pricing", "read": b["pricing"], "prev": pmean("pricing"), "sub": round(c["pricing"], 3), "wt": 1},
                         {"k": "util", "read": r["util"], "prev": round(pu, 2) if prev else None, "sub": round(cu, 3), "wt": 1, "scale": "−1 to +1"}]),
@@ -435,7 +504,7 @@ def build(market: str, log=print) -> dict:
             "flags": r["flags"], "blocks": r["blocks"], "util": r["util"], "capex": r["capex"],
             "hist": hist[-cfg["periods_shown"]:], "histLabels": [label_from_key(k, market) for k in keys][-cfg["periods_shown"]:],
             "themes": r["themes"], "verified": r["verified"], "breakdown": r.get("breakdown"),
-            "growth": r.get("growth"), "planFlag": (r.get("breakdown") or {}).get("parts", [{}])[0].get("in", [{}])[0].get("flag", ""),
+            "growth": r.get("growth"), "kpis": kpi_site(r.get("kpis")), "planFlag": (r.get("breakdown") or {}).get("parts", [{}])[0].get("in", [{}])[0].get("flag", ""),
             "sources": [source_link(d, manifest, market) for d in r["docs"]],
             "entities": [e["name"] for e in r["entities"]],
         })
@@ -460,7 +529,9 @@ def build(market: str, log=print) -> dict:
                           "period": label_from_key(p, market), "periodKey": p, "date": r["date"],
                           "score": r["score"], "delta": r["delta"], "veto": r["veto"], "archetype": r["archetype"],
                           "thesis": r["thesis"], "top": t0, "cred": r["cred"], "credTested": r.get("credTested", 0), "mcap": fmt_mcap(u, market),
-                          "hasSummary": any(d.get("summary") for d in r["docs"])})
+                          "hasSummary": any(d.get("summary") for d in r["docs"]),
+                          "kUp": sum(i.get("eff", 0) > 0 for i in (r.get("kpis") or {}).get("items", [])),
+                          "kDown": sum(i.get("eff", 0) < 0 for i in (r.get("kpis") or {}).get("items", []))})
             for d in r["docs"]:
                 if d.get("summary"):
                     summaries[key] = _site_summary(d["summary"])
@@ -614,6 +685,8 @@ def build(market: str, log=print) -> dict:
         "sectors": sectors, "themes": themes, "ideas": ideas,
         "theme_candidates": [t for t, n in cand.most_common(30) if n >= 2],
         "calls": calls, "tracker": tracker, "trackers": trackers, "summaryCount": len(summaries),
+        "kpiBoards": {label_from_key(p, market): build_kpi_board(recs, p, cfg.get("min_companies_per_sector", 3))
+                      for p in shown + later if any(c["periodKey"] == p for c in calls)},
         "firstTimers": first_timers, "historyChecked": len(hist),
         "mgmt": mgmt_list[:400], "mgmtChecked": read_json(DATA / f"mgmt_{market}.json", {}).get("checked"),
         "inProgress": [{"season": label_from_key(p, market), "calls": per_count[p]} for p in later],

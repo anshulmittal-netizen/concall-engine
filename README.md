@@ -32,11 +32,18 @@ universe → fetch (manifest) → download → text → LLM extraction (quote-ve
   red flags, analyst-question mix, evasions and hedging. Every quote is checked against the source text,
   and unverified items are dropped. A cheaper model reads first. The stronger model re-reads documents
   that look important (large block scores) or shaky (low quote verification).
+- **Sector KPI read** (`kpis.py`) checks each call against its sub-sector's key KPIs from `sector_kpis.yaml`
+  (built from the sector scoring methodology workbook's Sector Taxonomy: e.g. NIM, GNPA, CASA for banks;
+  EBITDA/t, realisation, utilisation for cement). For each KPI the call discusses it records improved / held /
+  worsened, the number, and a line copied from the call summary (dropped if the line is not found there). For
+  KPIs where lower is better (GNPA, debt, debtor days) the effect is set from the direction, not by the model.
+  Small and cheap like the growth read: summary and verified quotes in, not the transcript.
 - **Analysis** (`analyze.py`) is deterministic, with no LLM calls. It covers:
   - deltas against each company's last 4 calls
   - management credibility (guidance met vs missed or dropped)
-  - the Concall Signal Score (supply 30 / pricing & utilisation 20 / guidance × credibility 20 /
-    novelty & theme stage 15 / demand 10 / tone 5) with a veto cap at 40
+  - the Concall Signal Score (guidance-backed growth & capacity 40 / supply discipline 15 / results delivered 15 /
+    sector KPIs 10 / pricing & utilisation 10 / demand 5 / novelty & themes 3 / tone 2) with a veto cap at 40
+  - the sector KPI board: per sub-sector, how many calls say each key KPI improved, held or worsened
   - sub-sector breadth and turn detection
   - theme momentum, including the cross-market count
   - ideation (divergence, first mover, hidden supplier, credibility upgrade) and red flags
@@ -88,6 +95,7 @@ GitHub Pages would make the research public, so it is not set up.
 - `framework.yaml` — archetypes (rename the placeholder fifth one), mental models, block rubrics
 - `themes.yaml` — theme dictionary. Promote names from `theme_candidates` in the output.
 - `subsectors.yaml` — industry → sub-sector map. Align it with Sector Radar.
+- `sector_kpis.yaml` — KPI list per sub-sector and the BSE industry → KPI model map. Calls are re-read when their model changes.
 - `settings.yaml` — models, cut-offs, run limits, analysis thresholds
 - `interview_channels.yaml` — interview sources
 
