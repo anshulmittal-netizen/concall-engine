@@ -280,6 +280,36 @@ table.res td.co .nm{font-family:var(--display);font-weight:700;font-stretch:90%;
 .nt-tier{--pc:var(--up)}.nt-tier.t1{--pc:var(--gold)}.nt-tier.t3{--pc:var(--blue)}
 .toolbar select{background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font:inherit;font-size:13.5px}
 
+/* ---------- sector KPIs ---------- */
+.kb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,520px),1fr));gap:14px}
+.kb{display:grid;gap:10px;align-content:start}
+.kb .top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.kb h4{font-size:18px;line-height:1.2}
+.kb .net{font-family:var(--mono);font-size:13px;white-space:nowrap}
+.kr{display:grid;grid-template-columns:minmax(0,1fr) 54px minmax(80px,1fr) 118px;gap:10px;align-items:center;font-size:13.5px;padding:6px 0;border-top:1px solid var(--line)}
+.kr.none{color:var(--faint)}
+.krd>summary{list-style:none;cursor:pointer}
+.krd>summary::-webkit-details-marker{display:none}
+.krd>summary:hover{background:var(--panel2)}
+.krd[open]>summary .heat{outline:1px solid var(--line)}
+.heat{font-family:var(--mono);font-size:12px;font-weight:600;text-align:center;border-radius:6px;padding:3px 0;color:var(--fg);background:var(--panel2)}
+.kstack{display:flex;height:10px;border-radius:6px;overflow:hidden;background:var(--panel2)}
+.kstack i{display:block;height:100%}
+.kstack .d{background:var(--down)}.kstack .f{background:var(--faint);opacity:.55}.kstack .u{background:var(--up)}
+.kcount{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right;white-space:nowrap}
+.kcos{display:grid;gap:6px;padding:4px 0 8px}
+.kcos .chips button{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:12.5px}
+.kcos .chips button:hover{border-color:var(--gold)}
+.kcos .lab{font-size:12px;color:var(--muted)}
+.kitem{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.kitem .ar{font-size:15px;line-height:1.3;text-align:center}
+.kitem .ar.u{color:var(--up)}.kitem .ar.d{color:var(--down)}.kitem .ar.f{color:var(--muted)}
+.kitem .l1{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
+.kitem .l1 b{font-family:var(--display);font-stretch:90%;font-size:15.5px}
+.kitem .vals{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.kitem .ev{font-size:13.5px;color:var(--muted);margin-top:3px}
+@media (max-width:760px){.kr{grid-template-columns:minmax(0,1fr) 48px 112px}.kr .kstack{display:none}}
+
 /* ---------- help ---------- */
 .help{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:24px;align-items:start}
 .help article{display:grid;gap:26px;max-width:78ch}
@@ -348,7 +378,7 @@ dl.gl dd{margin:0;color:var(--fg);opacity:.92}
 .trig blockquote::before{content:"\201C"}.trig blockquote::after{content:"\201D"}
 .mini{font-size:11.5px;padding:1px 8px;border-radius:99px;background:color-mix(in srgb,var(--tc) 16%,transparent);color:var(--tc);white-space:nowrap;margin-right:6px}
 mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 30%,transparent);border-radius:3px;padding:0 2px}
-.t-supply{--tc:var(--gold)}.t-util{--tc:var(--blue)}.t-pricing{--tc:var(--teal)}.t-structure{--tc:var(--violet)}.t-inventory{--tc:var(--sand)}.t-demand{--tc:var(--muted)}.t-guidance{--tc:var(--up)}.t-novelty{--tc:var(--rose)}.t-tone{--tc:var(--down)}.t-growth{--tc:var(--violet)}
+.t-supply{--tc:var(--gold)}.t-util{--tc:var(--blue)}.t-pricing{--tc:var(--teal)}.t-structure{--tc:var(--violet)}.t-inventory{--tc:var(--sand)}.t-demand{--tc:var(--muted)}.t-guidance{--tc:var(--up)}.t-novelty{--tc:var(--rose)}.t-tone{--tc:var(--down)}.t-growth{--tc:var(--violet)}.t-kpi{--tc:var(--blue)}
 .models{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px}
 .model{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--panel);font-size:13.5px}
 .model b{display:block;font-family:var(--display);font-stretch:90%;font-size:14.5px}
@@ -512,7 +542,7 @@ const IDEA_TYPES = {
   'Red flag':'Something in the call that needs checking before anyone owns or buys the stock.'
 };
 const GL = {
-  score:['Concall Signal Score','0 to 100. How strongly the call points to a growing, improving business. Weighted: guidance-backed growth & capacity 45 (growth or turnaround guided, counted in full only when backed by capacity, orders or a clear plan and a management that delivers; plus capacity going live in 2–3 quarters), industry supply discipline 20, results delivered this quarter 15, pricing & utilisation 10, demand 5, new developments & themes 3, tone 2. The Score breakdown tab in each company panel shows the exact working.'],
+  score:['Concall Signal Score','0 to 100. How strongly the call points to a growing, improving business. Weighted: guidance-backed growth & capacity 40 (growth or turnaround guided, counted in full only when backed by capacity, orders or a clear plan and a management that delivers; plus capacity going live in 2–3 quarters), industry supply discipline 15, results delivered this quarter 15, sector KPIs improved vs worsened 10, pricing & utilisation 10, demand 5, new developments & themes 3, tone 2. The Score breakdown tab in each company panel shows the exact working.'],
   verdict:['Verdict','A plain label for the score. Strong 70+, Good 60–69, Average 50–59, Weak 40–49, Poor below 40. Red flag means a veto capped the score at 40.'],
   change:['vs last call','Points gained or lost against the company’s previous call. A dash means this is the first call we have read for the company, so there is nothing to compare yet.'],
   pct:['Rank in quarter','Where the call ranks among all calls read for the same quarter. “Top 10%” means only a tenth of the quarter’s calls scored higher.'],
@@ -537,6 +567,8 @@ const GL = {
   models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
   nearterm:['Near-term strength','Companies scoring 60+ whose latest call shows at least three strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a Guidance-backed growth & capacity part of 0.75+. There is no separate score.'],
+  kpiread:['Sector KPI read','Each call is checked against the key KPIs for its sub-sector (from the sector scoring methodology workbook: e.g. NIM, GNPA and CASA for banks; EBITDA per tonne, realisation and utilisation for cement). A KPI counts only when the call says how it moved, with the line from the call that shows it. Lower-is-better KPIs (GNPA, debt, debtor days, channel stock) count as improved when they fall.'],
+  kpiboard:['KPI breadth','For each KPI: of the companies whose call discussed it, the share saying it improved minus the share saying it worsened. +100 means every company that discussed it reported an improvement.'],
   quarter:['Quarter switch','Pick the results season you want to look at. Calls, Best & worst, First-time callers, Sector tracker and Guidance all follow it. Sector turns, Themes and Ideas compare quarters, so they stay on the latest quarter with enough calls. “All” shows each company’s latest call.']
 };
 
@@ -572,7 +604,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100}, up: {big: '', search: '', earn: true, read: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, mg: {days: 30, top: true, inCalls: false}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100}, up: {big: '', search: '', earn: true, read: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, kp: {sector: '', model: '', sort: 'cos'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, mg: {days: 30, top: true, inCalls: false}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -604,7 +636,7 @@ const VIEWS = [
   {group: 'Start', items: [['home', 'Today'], ['help', 'How to use']]},
   {group: 'Calls', items: [['calls', 'All calls'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Results', items: [['rescal', 'Results calendar'], ['results', 'Results posted']]},
-  {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
+  {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['kpis', 'Sector KPIs'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
   {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['mgmt', 'Management changes'], ['ideas', 'Ideas & red flags']]}
 ];
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
@@ -615,7 +647,7 @@ function navCounts() {
     rescal: (rd.calendar || []).filter(c => c.date >= t0r && c.date <= addDays(t0r, 7)).length || '',
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
-    guidance: t ? (t.guidanceLeaders || []).length : '', turns: (D.sectors || []).filter(s => s.hit).length || '',
+    guidance: t ? (t.guidanceLeaders || []).length : '', kpis: kpiBoard().length || '', turns: (D.sectors || []).filter(s => s.hit).length || '',
     themes: (D.themes || []).length, nearterm: (D.companies || []).map(ntRow).filter(Boolean).length || '', ideas: (D.ideas || []).filter(x => !x.red).length,
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
@@ -937,6 +969,46 @@ function vTracker() {
     </div>`;
 }
 
+/* Sector KPIs: which of each sub-sector's key KPIs the quarter's calls say improved or worsened */
+const kpiBoard = () => { const b = D.kpiBoards || {}; return b[curQ()] || b[D.season] || []; };
+const heatBg = n => !n ? 'var(--panel2)' : `color-mix(in srgb, ${n >= 0 ? 'var(--up)' : 'var(--down)'} ${Math.round(12 + Math.abs(n) * 0.5)}%, var(--panel2))`;
+const sgnN = n => n == null ? '–' : (n > 0 ? '+' : n < 0 ? '−' : '') + Math.abs(n);
+function kpiCos(list, lab) {
+  return list.length ? `<div><span class="lab">${lab}</span><div class="chips">${list.map(x => { const c = byId[x.id]; return c ? `<button data-open="${esc(x.id)}" title="${x.g ? 'Guided' : 'Reported'}${x.now ? ': ' + esc(x.now) : ''}">${esc(c.name)}${x.now ? ' · ' + esc(x.now) : ''}${x.g ? ' (guided)' : ''}</button>` : ''; }).join('')}</div></div>` : '';
+}
+function kpiRow(k) {
+  if (!k.n) return `<div class="kr none"><span>${esc(k.label)}</span><span class="heat">–</span><span class="small">Not discussed in any call</span><span></span></div>`;
+  const w = v => (100 * v / k.n).toFixed(1);
+  return `<details class="krd"><summary class="kr"><span>${esc(k.label)}${k.better === 'down' ? ' <span class="small muted">(lower is better)</span>' : ''}</span>
+    <span class="heat" style="background:${heatBg(k.net)}">${sgnN(k.net)}</span>
+    <span class="kstack" role="img" aria-label="${k.nUp} improved, ${k.nFlat} held, ${k.nDown} worsened"><i class="d" style="width:${w(k.nDown)}%"></i><i class="f" style="width:${w(k.nFlat)}%"></i><i class="u" style="width:${w(k.nUp)}%"></i></span>
+    <span class="kcount"><span class="g-up">${k.nUp}↑</span> <span class="g-dn">${k.nDown}↓</span> ${k.nFlat}→</span></summary>
+    <div class="kcos">${kpiCos(k.up, 'Improved')}${kpiCos(k.down, 'Worsened')}${kpiCos(k.flat, 'Held')}</div></details>`;
+}
+function vKpis() {
+  const all = kpiBoard(), f = S.kp;
+  const secs = [...new Set(all.map(b => b.sector))].sort();
+  let list = all.filter(b => (!f.sector || b.sector === f.sector) && (!f.model || b.model === f.model));
+  const SORT = {cos: (a, b) => b.cos - a.cos, up: (a, b) => (b.net ?? -999) - (a.net ?? -999), down: (a, b) => (a.net ?? 999) - (b.net ?? 999)};
+  list = list.slice().sort(SORT[f.sort] || SORT.cos);
+  return head('Sector KPIs', 'For each sub-sector, the key KPIs that matter to it and what this quarter’s calls say about them: how many companies reported each one improving, holding or worsening.', `
+      <ol><li>Each card is a sub-sector KPI model from the sector scoring workbook (BSE sub-sectors it does not cover use a desk model or the general one). ${tip('kpiread')}</li>
+      <li>The coloured number is <b>KPI breadth</b> ${tip('kpiboard')}: improved minus worsened, as a share of the calls that discussed the KPI. Green is improving, red is worsening.</li>
+      <li><b>Click a KPI</b> to see which companies moved it, with the number they gave. Click a company to open its panel; its <b>Sector KPIs</b> tab has the line from the call.</li>
+      <li>The read counts for 10% of each company’s score.</li></ol>`, qBadge()) + `
+    <div class="toolbar">
+      <select id="kp-sector" aria-label="Sector"><option value="">All sectors</option>${secs.map(x => `<option ${x === f.sector ? 'selected' : ''}>${esc(x)}</option>`).join('')}</select>
+      <select id="kp-model" aria-label="Sub-sector"><option value="">All sub-sectors</option>${all.filter(b => !f.sector || b.sector === f.sector).map(b => `<option ${b.model === f.model ? 'selected' : ''}>${esc(b.model)}</option>`).join('')}</select>
+      <select id="kp-sort" aria-label="Sort">${[['cos', 'Most companies'], ['up', 'Most improving'], ['down', 'Most worsening']].map(([k, n]) => `<option value="${k}" ${f.sort === k ? 'selected' : ''}>${n}</option>`).join('')}</select>
+      <span class="count-line">${list.length} sub-sector${list.length === 1 ? '' : 's'} with at least 3 calls read</span>
+    </div>
+    ${list.length ? `<div class="kb-grid">${list.map(b => `<article class="card kb">
+      <div class="top"><div><span class="eyebrow">${esc(b.sector)}${b.source === 'desk' ? ' · desk model' : ''}</span><h4>${esc(b.model)}</h4><span class="small muted">${b.cos} calls read</span></div>
+        <span style="text-align:right"><span class="heat net" style="display:inline-block;padding:4px 10px;background:${heatBg(b.net)}">${sgnN(b.net)}</span><br><span class="small muted">avg breadth</span></span></div>
+      <div>${b.kpis.slice().sort((x, y) => (y.n > 0) - (x.n > 0)).map(kpiRow).join('')}</div>
+    </article>`).join('')}</div>` : '<div class="empty">The sector KPI board fills in as calls get their KPI read. It appears after the next nightly run.</div>'}`;
+}
+
 /* Guidance leaders */
 function gCard(x, i, lead) {
   return `<article class="card gcard" style="${lead && i < 3 ? 'border-color:var(--gold)' : ''}">
@@ -1126,7 +1198,7 @@ function vNear() {
   const rows = all.filter(x => (!f.big || x.c.bigSector === f.big) && [...f.chips].every(k => CH[k][1](x)));
   if (!SUMS.data) loadSums().then(() => { if (S.view === 'nearterm') render(); });
   return head('Near-term strength', 'Companies whose latest call points to strong results over the next quarter or the next few quarters, with the reasons from the call. A shortlist to check, not a buy list.', `
-      <ul><li>A company is listed when its Concall Signal Score is 60 or more and its latest call shows <b>at least three strong near-term signals</b> (major or moderate capacity going live within 3 quarters, growth guided at 15% or more, a turnaround guided, a clear plan to deliver, a strong quarter, guidance strongly positive or raised, strong demand, the next quarter called out, or a management that delivers on guidance), or the <b>Guidance-backed growth & capacity</b> part of its score is 0.75 or higher (34 of 45 points). Calls with a veto, a guidance cut, or negative guidance or demand are left out.</li>
+      <ul><li>A company is listed when its Concall Signal Score is 60 or more and its latest call shows <b>at least three strong near-term signals</b> (major or moderate capacity going live within 3 quarters, growth guided at 15% or more, a turnaround guided, a clear plan to deliver, a strong quarter, guidance strongly positive or raised, strong demand, the next quarter called out, or a management that delivers on guidance), or the <b>Guidance-backed growth & capacity</b> part of its score is 0.75 or higher (30 of 40 points). Calls with a veto, a guidance cut, or negative guidance or demand are left out.</li>
       <li>The only score shown is the <b>Concall Signal Score</b>, the same number as everywhere else. The list is ordered by its Guidance-backed growth & capacity points, then by the score. Stocks guiding strongly with no clear plan or capacity behind it are marked in red.</li>
       <li><b>${esc(nextQ || 'Next quarter')} results still to come</b> shows companies whose latest call is from the previous quarter, so the quarter they guided for has not been reported yet. These are the most timely names.</li>
       <li>The bullet lines are taken from the call summary and quotes. Open the call and check the transcript before acting.</li></ul>`,
@@ -1185,7 +1257,7 @@ function vMgmt() {
 
 /* Help */
 function vHelp() {
-  const W = [['Guidance-backed growth & capacity', 45], ['Industry supply discipline', 20], ['Results delivered', 15], ['Pricing & utilisation', 10], ['Demand', 5], ['New developments & themes', 3], ['Tone & candour', 2]];
+  const W = [['Guidance-backed growth & capacity', 40], ['Industry supply discipline', 15], ['Results delivered', 15], ['Sector KPIs', 10], ['Pricing & utilisation', 10], ['Demand', 5], ['New developments & themes', 3], ['Tone & candour', 2]];
   return head('How to use the desk', 'A short guide for the team: what each view is for, how the score works, and where the data comes from.', '') + `
   <div class="help"><article>
     <section id="h-what"><h3>What the desk does</h3>
@@ -1205,13 +1277,14 @@ function vHelp() {
       <div><b>Results posted</b><span>A sortable table of quarterly results as they are filed: revenue, operating profit, margin, profit and EPS, each with growth on last year and last quarter.</span></div>
       <div><b>First-time callers</b><span>Companies holding their first-ever earnings call. Useful for finding names before they get coverage.</span></div>
       <div><b>Sector tracker</b><span>All sectors and sub-sectors: how many companies have reported, what came in today, average score, guidance and best call. Updated daily.</span></div>
+      <div><b>Sector KPIs</b><span>A heatmap of each sub-sector’s key KPIs (NIM and GNPA for banks, EBITDA per tonne for cement, order intake for capital goods, and so on): how many calls say each one improved, held or worsened, and which companies.</span></div>
       <div><b>Guidance leaders</b><span>Sub-sectors ranked by how strongly management is guiding up, and the weakest ones.</span></div>
       <div><b>Sector turns</b><span>Sub-sectors where supply discipline is building and pricing or utilisation is improving. This is the early sign of a turn.</span></div>
       <div><b>Themes</b><span>How many companies are discussing each investment theme, and how fast it is spreading.</span></div>
       <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the reasons and the lines from the call that say so. Uses the same Concall Signal Score as every other page. Filter to names whose next results are still to come.</span></div>
       <div><b>Management changes</b><span>Every top-management change filed on BSE (checked every 30 minutes, with a GitHub alert for each top-level change), and companies whose new management is pushing growth.</span></div>
       <div><b>Ideas & red flags</b><span>Standout single companies (divergence, first movers, hidden suppliers, credibility upgrades) and calls that need a check.</span></div>
-      <div><b>Company panel</b><span>Opens from anywhere. The <b>Call summary</b> tab has financial highlights, segments, guidance, capex, demand, Q&A, risks and verbatim quotes. The <b>Signals</b> tab has the triggers, mental models, the eight readings behind the score, credibility, and other companies that name it.</span></div>
+      <div><b>Company panel</b><span>Opens from anywhere. The <b>Call summary</b> tab has financial highlights, segments, guidance, capex, demand, Q&A, risks and verbatim quotes. The <b>Sector KPIs</b> tab shows which of the sub-sector’s key KPIs the call says improved or worsened. The <b>Signals</b> tab has the triggers, mental models, the eight readings behind the score, credibility, and other companies that name it.</span></div>
     </div></section>
     <section id="h-quarter"><h3>The quarter switch</h3><p>${esc(GL.quarter[1])} A small orange dot marks a season still in progress.</p></section>
     <section id="h-score"><h3>How the score works</h3>
@@ -1220,7 +1293,7 @@ function vHelp() {
       <ul><li>For a company’s first call in our data, the score reflects where the business stands now. From the second call on, 60% is the level and 40% is the change since last call.</li>
       <li>Guidance counts for more when management has delivered past guidance. With no track record yet (“untested”), guidance counts only 85% of its distance from neutral. Every company’s exact working is on the <b>Score breakdown</b> tab of its panel.</li>
       <li>A veto ${tip('veto')} caps the score at 40. Smaller warning signs take off 4 points each, up to 8.</li>
-      <li><b>Guidance-backed growth & capacity</b> carries the most weight (45) because the market pays for growth. Strong growth or turnaround guidance counts in full only when management shows how it will get there (capacity coming live, an order book, spare capacity) and has delivered before; strong guidance with no clear plan or capacity is discounted. Major capacity going live in the next 2–3 quarters lifts the score; a plant running near full with no expansion holds it back.</li><li><b>Industry supply discipline</b> comes next (20), then <b>results delivered</b> this quarter (15).</li></ul>
+      <li><b>Guidance-backed growth & capacity</b> carries the most weight (40) because the market pays for growth. Strong growth or turnaround guidance counts in full only when management shows how it will get there (capacity coming live, an order book, spare capacity) and has delivered before; strong guidance with no clear plan or capacity is discounted. Major capacity going live in the next 2–3 quarters lifts the score; a plant running near full with no expansion holds it back.</li><li><b>Industry supply discipline</b> and <b>results delivered</b> this quarter come next (15 each).</li><li><b>Sector KPIs</b> (10): each call is checked against the key KPIs for its sub-sector from the sector scoring workbook, and the KPIs it says improved are netted against those it says worsened. KPIs the call does not discuss count as neutral.</li></ul>
       <p>Verdict labels:</p><div class="bands">${[[75, 'Strong 70+'], [65, 'Good 60–69'], [55, 'Average 50–59'], [45, 'Weak 40–49'], [30, 'Poor below 40']].map(([s, l]) => `<span class="pill ${verdict(s).c}">${l}</span>`).join('')}<span class="pill v-flag">Red flag: veto applied</span></div>
       <p class="muted">Scores are relative. Most calls land between 45 and 65, so a 70 is a top-5% call. The percentile in each company panel shows where a call ranks within its quarter.</p></section>
     <section id="h-data"><h3>Data and timing</h3><ul>
@@ -1235,7 +1308,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, kpis: vKpis, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -1311,8 +1384,8 @@ function drawDrawer(fresh) {
       </section>
       ${x.veto ? `<div class="flag">Veto applied: the score is capped at 40. See Red flags on the Signals tab. ${tip('veto')}</div>` : ''}
       <section class="oneline"><span class="eyebrow">The call in one line</span><p>${esc(x.thesis || c.thesis)}</p>${x.gLine ? `<p class="small" style="font-family:var(--body);font-weight:400;font-size:14px;margin-top:8px"><b>Key guidance:</b> ${esc(x.gLine)}</p>` : ''}</section>
-      <div class="dtabs" role="tablist"><button role="tab" data-dt="summary" aria-selected="${tab === 'summary'}">Call summary</button><button role="tab" data-dt="signals" aria-selected="${tab === 'signals'}">Signals behind the score</button><button role="tab" data-dt="score" aria-selected="${tab === 'score'}">Score breakdown</button></div>
-      <div id="dr-tab">${tab === 'signals' ? sigNote + signalsHtml(c) : tab === 'score' ? sigNote + scoreHtml(c) : '<p class="muted">Loading the summary…</p>'}</div>
+      <div class="dtabs" role="tablist"><button role="tab" data-dt="summary" aria-selected="${tab === 'summary'}">Call summary</button><button role="tab" data-dt="signals" aria-selected="${tab === 'signals'}">Signals behind the score</button><button role="tab" data-dt="kpis" aria-selected="${tab === 'kpis'}">Sector KPIs</button><button role="tab" data-dt="score" aria-selected="${tab === 'score'}">Score breakdown</button></div>
+      <div id="dr-tab">${tab === 'signals' ? sigNote + signalsHtml(c) : tab === 'kpis' ? sigNote + kpisHtml(c) : tab === 'score' ? sigNote + scoreHtml(c) : '<p class="muted">Loading the summary…</p>'}</div>
     </div>
   </aside>`;
   const root = $('#drawer-root'), keepScroll = !fresh && $('#dr-body') ? $('#dr-body').scrollTop : 0;
@@ -1359,8 +1432,24 @@ function signalsHtml(c) {
     ${(c.sources || []).filter(s => s.url).length ? `<section class="sec"><h3>Source documents</h3><div class="chips">${c.sources.filter(s => s.url).map(s => `<a class="tag" style="color:var(--blue)" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.type)} · ${esc(fdate(s.date))} ↗</a>`).join('')}</div></section>` : ''}
   </div>`;
 }
+/* Sector KPI read for one company */
+function kpisHtml(c) {
+  const k = c.kpis;
+  if (!k) return '<div class="empty">The sector KPI read for this call appears after the next nightly run.</div>';
+  const part = (c.breakdown?.parts || []).find(p => p.key === 'kpi');
+  const ar = it => it.eff > 0 ? '<span class="ar u" aria-label="improved">▲</span>' : it.eff < 0 ? '<span class="ar d" aria-label="worsened">▼</span>' : '<span class="ar f" aria-label="held">▬</span>';
+  const items = k.items.slice().sort((a, b) => b.eff - a.eff);
+  return `<div style="display:grid;gap:18px">
+    <section class="sec"><h3>${esc(k.model)} KPIs ${tip('kpiread')}</h3>
+      <p class="small muted">${esc(k.sector)} · ${k.source === 'desk' ? 'desk model (sub-sector not in the workbook)' : 'KPI list from the sector scoring workbook'} · ${items.filter(i => i.eff > 0).length} improved, ${items.filter(i => i.eff < 0).length} worsened, ${items.filter(i => !i.eff).length} held${part ? ` · ${part.pts.toFixed(1)} of ${Math.round(part.w * 100)} score points` : ''}</p>
+      <div>${items.map(it => `<div class="kitem">${ar(it)}<div><div class="l1"><b>${esc(it.label)}</b><span class="tag">${it.basis === 'guided' ? 'Guided' : 'Reported'}</span>${it.now || it.prior ? `<span class="vals">${esc(it.now || '')}${it.prior ? ` vs ${esc(it.prior)}` : ''}</span>` : ''}</div><div class="ev">“${esc(it.ev)}”</div></div></div>`).join('') || '<p class="muted">The call did not say how any of these KPIs moved, so the read counts as neutral.</p>'}</div>
+      <p class="small muted">Lines are taken from the call summary and guidance, checked to appear there word for word.</p></section>
+    ${k.missing.length ? `<section class="sec"><h3>Not discussed on this call</h3><div class="chips">${k.missing.map(m => `<span class="tag">${esc(m)}</span>`).join('')}</div><p class="small muted">Not discussed counts as neutral, not as bad.</p></section>` : ''}
+    <div><button class="btn" data-kpmodel="${esc(k.model)}">See ${esc(k.model)} across the quarter →</button></div>
+  </div>`;
+}
 /* Score breakdown: the exact working of the latest call's score, as computed by analyze.py */
-const SB_PART = {backed: ['t-growth', 45, ['guidance']], supply: ['t-supply', 20, ['supply', 'structure', 'inventory']], results: ['t-guidance', 15, []],
+const SB_PART = {backed: ['t-growth', 40, ['guidance']], supply: ['t-supply', 15, ['supply', 'structure', 'inventory']], results: ['t-guidance', 15, []], kpi: ['t-kpi', 10, []],
   pricing: ['t-pricing', 10, ['pricing', 'util']], demand: ['t-demand', 5, ['demand']], novelty: ['t-novelty', 3, ['novelty']], tone: ['t-tone', 2, ['tone']]};
 const CLAR = {clear: 'clear (specific capacity, orders or contracts with timing)', partial: 'partly explained', vague: 'vague (aspiration, no specifics)', none: 'not explained'};
 const BACK = {capacity_coming: 'capacity coming', order_book: 'order book', spare_capacity: 'spare capacity', new_products_or_markets: 'new products / markets', pricing_or_mix: 'pricing / mix', demand_or_share_gains: 'demand / share gains', cost_actions: 'cost actions'};
@@ -1388,6 +1477,10 @@ function sbInput(x, mode) {
     if (!x.read) return '<div class="row"><span>Quarter results not read yet for this call, so they count as neutral.</span><span class="num">0.50</span></div>';
     return `<div class="row"><span>This quarter, YoY: revenue ${pctTxt(x.qRev)} · EBITDA ${pctTxt(x.qEbitda)}</span><span class="num"></span></div>`;
   }
+  if (x.k === 'kpi') {
+    if (!x.read) return '<div class="row"><span>Sector KPI read not available yet for this call, so it counts as neutral.</span><span class="num">0.50</span></div>';
+    return `<div class="row"><span>${esc(x.model)}: ${x.up} improved · ${x.down} worsened · ${x.flat} held, of ${x.n} KPI${x.n === 1 ? '' : 's'} discussed. See the <b>Sector KPIs</b> tab.</span><span class="num">net ${f2(x.net)}</span></div>`;
+  }
   if (x.k === 'cred') return `<div class="row"><span>Management credibility: ${x.tested ? `${x.cred} of 100 (${x.tested} past guidance item${x.tested === 1 ? '' : 's'} checked)` : 'untested (no past guidance to check yet)'}</span><span class="num">× ${f2(x.factor)}</span></div>`;
   if (x.k === 'theme') { const [lab, v] = THEME_BONUS[x.stage || 'neutral'] || THEME_BONUS.neutral;
     return `<div class="row"><span>Strongest theme: ${x.theme ? `${esc(x.theme)} (${lab})` : 'none tracked'}</span><span class="num">${f2(x.sub)}</span></div>`; }
@@ -1399,6 +1492,7 @@ function sbHow(p, mode) {
   const lvl = mode === 'blend' ? 'Each reading becomes 0 to 1 as 60% its level plus 40% its change against the average of the company’s earlier calls (0.5 = neutral).' : 'First call on record, so each reading counts at its level: −2 → 0, −1 → 0.25, 0 → 0.5, +1 → 0.75, +2 → 1.';
   return {backed: 'Guided growth 60% + capacity 40%. Guided growth: growth guided (≥25% 1.0, ≥15% 0.85, ≥10% 0.7, ≥5% 0.55, 0–5% 0.45, negative 0.15) averaged with the guidance strength reading; a clearly guided turnaround counts as at least 0.85. Its distance above neutral is then multiplied by how clearly management showed how it will deliver (clear 1.0, partial 0.7, vague 0.4, none 0.25) and by credibility (0.4 + 0.6 × credibility/100 once tested, 0.85 untested), so big guidance with no plan behind it counts for much less. Capacity: major capacity live within 3 quarters 1.0, moderate 0.8, minor 0.6, meaningful capacity further out 0.6, spare capacity to grow into 0.6, nothing discussed 0.5, running ≥85% full with no expansion 0.2; +0.1 if the existing plant is already ≥80% utilised.',
     results: 'This quarter’s revenue and EBITDA growth YoY, each scored ≥30% 1.0, ≥20% 0.85, ≥10% 0.7, 0–10% 0.5, 0 to −10% 0.3, below −10% 0.1, and averaged. Not stated counts as neutral 0.5.',
+    kpi: 'Improved minus worsened among the sub-sector’s key KPIs that the call discussed (reported moves count 1, guided moves 0.5), divided by the number discussed with a floor of 3, so one or two KPIs cannot swing it fully. Value = 0.5 + 0.5 × that net. KPIs the call does not discuss count as neutral, not bad. KPI lists come from the sector scoring methodology workbook.',
     supply: `${lvl} Supply discipline counts twice, structure and inventory once each: (2 × supply + structure + inventory) ÷ 4.`,
     pricing: `${lvl} Pricing and utilisation are averaged.`,
     guidance: `${lvl} The guidance value is then pulled toward neutral (0.5) unless management has delivered before: value = 0.5 + (reading − 0.5) × credibility factor. Factor = 0.4 + 0.6 × credibility/100 once tested, 0.85 while untested.`,
@@ -1433,9 +1527,10 @@ function scoreHtml(c) {
     </div></section>
     <details class="how"><summary>The full method</summary><div class="body sb-method">
       <table><tr><th>Component</th><th>Weight</th><th>Built from</th></tr>
-        <tr><td>Guidance-backed growth & capacity</td><td>45%</td><td>Growth or turnaround guided, counted in full only when management shows how it will deliver (capacity, orders, spare capacity) and has delivered before; plus capacity going live in the next 2–3 quarters</td></tr>
-        <tr><td>Industry supply discipline</td><td>20%</td><td>Supply discipline ×2, industry structure, inventory</td></tr>
+        <tr><td>Guidance-backed growth & capacity</td><td>40%</td><td>Growth or turnaround guided, counted in full only when management shows how it will deliver (capacity, orders, spare capacity) and has delivered before; plus capacity going live in the next 2–3 quarters</td></tr>
+        <tr><td>Industry supply discipline</td><td>15%</td><td>Supply discipline ×2, industry structure, inventory</td></tr>
         <tr><td>Results delivered</td><td>15%</td><td>This quarter’s revenue and EBITDA growth YoY</td></tr>
+        <tr><td>Sector KPIs</td><td>10%</td><td>The sub-sector’s key KPIs (from the sector scoring workbook) the call says improved vs worsened</td></tr>
         <tr><td>Pricing & utilisation</td><td>10%</td><td>Pricing reading and utilisation direction, averaged</td></tr>
         <tr><td>Demand</td><td>5%</td><td>Demand reading</td></tr>
         <tr><td>New developments & themes</td><td>3%</td><td>Novelty reading and the stage of the strongest theme discussed</td></tr>
@@ -1507,6 +1602,7 @@ document.addEventListener('click', e => {
   const sec = t.closest('.trk .r.sec'); if (sec) { const n = S._secs[+sec.dataset.sec].name; S.openSec.has(n) ? S.openSec.delete(n) : S.openSec.add(n); render(); return; }
   const sub = t.closest('.trk .r.subr'); if (sub) { const [i, j] = sub.dataset.subrow.split('-').map(Number), n = S._secs[i].subs[j].name; S.openSub = S.openSub === n ? null : n; render(); return; }
   const dq = t.closest('#dr-q button'); if (dq) { S.drawer.key = dq.dataset.k; drawDrawer(false); return; }
+  const kpm = t.closest('[data-kpmodel]'); if (kpm) { S.kp.model = kpm.dataset.kpmodel; S.kp.sector = ''; if (S.drawer) closeCo(); go('kpis'); return; }
   const dt = t.closest('[data-dt]'); if (dt) { S.drawer.tab = dt.dataset.dt; drawDrawer(false); return; }
   if (t.closest('#copylink')) { copyLink(); return; }
   const j = t.closest('[data-jump]'); if (j) { e.preventDefault(); document.getElementById(j.dataset.jump)?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'}); return; }
@@ -1530,6 +1626,9 @@ document.addEventListener('change', e => {
   if (id === 'rc-days') { S.rc.days = +e.target.value; render(); }
   if (id === 'rs-big') { S.rs.big = e.target.value; S.rs.limit = 100; render(); }
   if (id === 'rs-days') { S.rs.days = +e.target.value; S.rs.limit = 100; render(); }
+  if (id === 'kp-sector') { S.kp.sector = e.target.value; S.kp.model = ''; render(); }
+  if (id === 'kp-model') { S.kp.model = e.target.value; render(); }
+  if (id === 'kp-sort') { S.kp.sort = e.target.value; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
   if (id === 'c-sort') { S.calls.sort = e.target.value; S.calls.limit = 50; fillCalls(); }
 });
