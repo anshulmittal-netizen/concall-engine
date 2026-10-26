@@ -1,0 +1,385 @@
+{
+ "doc_id": "IN-e4e5368a-3625-4621-9da9-5afdd0cef564",
+ "market": "IN",
+ "company_id": "531279",
+ "name": "Trishakti Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-10-26",
+ "period": "2026-09",
+ "title": "Trishakti Industries Ltd - 531279 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Crane rental fleet at ~100% utilisation with ~INR 370 crore deployed and INR 95 crore in CWIP, but debtor days drifting up and management pushing a 2030 INR 1,000 crore gross-block target with debt-led funding.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Working-capital stress",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 100,
+   "quote": "we have always been at 100% utilization since the past three years"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Gross block target INR 1,000 cr by FY30",
+    "quote": "build Trishakti's cumulative gross block to more than INR 1,000 crores by FY30",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Debtor days elevated, provisioning",
+    "quote": "Approximately, INR 75 lakhs' worth of provision has been created.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Fleet utilisation ~100%",
+    "quote": "we have always been at 100% utilization since the past three years",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue guidance INR 60-65 cr reiterated",
+    "quote": "INR 60-65 crores, we have already clogged half of it in this financial year",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue from operations",
+    "value": "INR 60-65 crore, expected to surpass",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "INR 60-65 crores, we have already clogged half of it in this financial year"
+   },
+   {
+    "metric": "Gross block",
+    "value": "more than INR 1,000 crore by FY30",
+    "change": "new",
+    "horizon": "FY30",
+    "quote": "build Trishakti's cumulative gross block to more than INR 1,000 crores by FY30"
+   },
+   {
+    "metric": "Debtor days",
+    "value": "around 60 days by end of FY27",
+    "change": "held",
+    "horizon": "end FY27",
+    "quote": "By the end of this year, this number will again come to its actual place, which is around 60, 65 days."
+   },
+   {
+    "metric": "Net debt peak",
+    "value": "INR 400-500 crore",
+    "change": "new",
+    "horizon": "FY30",
+    "quote": "our net debt should not cross more than INR 400-500 crores on the long-term basis"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Gross capex FY27",
+    "outcome": "met",
+    "quote": "We have now deployed approximately INR 370 crores worth of assets, inclusive of GST, achieving more than 90% of our program."
+   },
+   {
+    "metric": "EBITDA margin",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Debtor days",
+    "outcome": "missed",
+    "quote": "By the end of this year, this number will again come to its actual place, which is around 60, 65 days."
+   },
+   {
+    "metric": "Fleet utilisation",
+    "outcome": "met",
+    "quote": "we have always been at 100% utilization since the past three years"
+   }
+  ],
+  "entities": [
+   {
+    "name": "L&T",
+    "relation": "customer"
+   },
+   {
+    "name": "Reliance",
+    "relation": "customer"
+   },
+   {
+    "name": "Tata Steel",
+    "relation": "customer"
+   },
+   {
+    "name": "KEC",
+    "relation": "customer"
+   },
+   {
+    "name": "BHEL",
+    "relation": "customer"
+   },
+   {
+    "name": "ONGC",
+    "relation": "customer"
+   },
+   {
+    "name": "XCMG",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Renewables & storage",
+   "Data-centre power & cooling",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables ~4 months; debtor days rising",
+    "quote": "That's still about four months or so of receivable."
+   },
+   {
+    "label": "Debt-funded expansion, D/E target under 2",
+    "quote": "we try to make sure that our debt to equity is under 2, for the next one, one and a half years"
+   },
+   {
+    "label": "Related-party family settlement receivable",
+    "quote": "More than one year should be around INR 3 crores, which is the family settlement amount"
+   },
+   {
+    "label": "Guidance wording inconsistency",
+    "quote": "I am very, very sure that we have never guided INR 70-80 crores."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 5,
+   "capex": 3,
+   "growth": 6,
+   "margin": 2,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Equity dilution vs debt",
+    "quote": "It's a call which we have to take."
+   },
+   {
+    "topic": "Rental yield trajectory",
+    "quote": "We don't expect the yields to improve right now."
+   },
+   {
+    "topic": "Receivables breakup",
+    "quote": "If you can just mail us at info@trishakti.com, I can send you the exact thing"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Trishakti Q2 FY27 revenue from operations rose 133% YoY to INR 1,551 lakhs, with EBITDA margin of 60.89%.",
+  "overview": "Management reported Q2 FY27 revenue from operations of INR 1,551 lakhs (up 133% YoY), EBITDA of INR 944 lakhs (up about 141%) and PAT of INR 519 lakhs (up 223%). H1 FY27 revenue was INR 2,989 lakhs, EBITDA INR 1,790 lakhs and PAT INR 949 lakhs. Management said about INR 370 crore of the INR 400 crore FY25-FY27 capex programme (incl. GST) is deployed, and announced \"Mission 2030\" targeting cumulative gross block above INR 1,000 crore by FY30. Receivable days rose over the past two years; management attributed this to a family settlement and said the cycle will normalise to about 60-65 days by year end.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (Q2 FY27)",
+    "value": "INR 1,551 lakhs",
+    "change": "+133% YoY"
+   },
+   {
+    "metric": "EBITDA (Q2 FY27)",
+    "value": "INR 944 lakhs",
+    "change": "+141% YoY"
+   },
+   {
+    "metric": "EBITDA margin (Q2 FY27)",
+    "value": "60.89%",
+    "change": ""
+   },
+   {
+    "metric": "Profit after tax (Q2 FY27)",
+    "value": "INR 519 lakhs",
+    "change": "+223% YoY"
+   },
+   {
+    "metric": "Revenue from operations (H1 FY27)",
+    "value": "INR 2,989 lakhs",
+    "change": "+178% YoY"
+   },
+   {
+    "metric": "EBITDA (H1 FY27)",
+    "value": "INR 1,790 lakhs",
+    "change": "+170% YoY"
+   },
+   {
+    "metric": "Profit after tax (H1 FY27)",
+    "value": "INR 949 lakhs",
+    "change": "+277% YoY"
+   },
+   {
+    "metric": "Total H1 revenue incl. other income (per Q&A)",
+    "value": "INR 35 crore",
+    "change": ""
+   },
+   {
+    "metric": "Receivables not billed (per Q&A)",
+    "value": "INR 9 crore 40 lakhs",
+    "change": ""
+   },
+   {
+    "metric": "Gross block deployed vs FY25-27 programme (per Q&A)",
+    "value": "Approx INR 370 crore of INR 400 crore",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "Crane and equipment rental (only segment discussed)",
+    "commentary": "Fleet includes rough terrain, all terrain, crawler, truck-mounted cranes, AWPs and 70-80m man lifts; management says fleet utilisation has been about 100% for three years. Management claims current ARR is about INR 78 crore after INR 40 crore of machines added in Q2."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue guidance of INR 60-65 crore retained; management said it expects to surpass this, with an executable order book of about INR 78 crore and core revenue from operations above INR 75 crore.",
+   "Mission 2030: cumulative gross block above INR 1,000 crore by FY30, possibly by FY29 if demand holds; peak revenue of around INR 300 crore cited.",
+   "Net debt expected at INR 400-500 crore until FY30; debt-to-equity to stay under 2 for the next 1-1.5 years; deleveraging expected after FY28.",
+   "Gross block expected to exceed INR 400 crore by FY27 year end, with INR 90-95 crore (ex-GST) in CWIP to be deployed in Q3 and about INR 125 crore of wind energy capex to arrive from early November.",
+   "ARR expected to reach about INR 120 crore from December 2026 to FY28 Q3 as CWIP machines deploy.",
+   "UAE and KSA expansion deferred until balance sheet deleverages; paperwork said to be 60-70% complete."
+  ],
+  "capex_capacity": [
+   "INR 400 crore FY25-FY27 capex programme: about INR 370 crore deployed (incl. GST), more than 90% complete and ahead of schedule by about six months.",
+   "CWIP of about INR 77-78 crore ex-GST (INR 95 crore incl. GST) yet to be deployed in Q3 FY27; contracts reportedly already won for these machines.",
+   "Wind energy fleet expansion of about INR 125 crore; machines to arrive from early November; OEMs can supply only 4-5 machines per month in India; management targets replacing 250-300 machines as wind turbines shift from 3.3 to 5.2 MW.",
+   "Mission 2030 implies about INR 600-700 crore of incremental capex over three years (about 2.5% of net debt repaid monthly per management); 80-ton tower cranes for data centre work in transit, expected October-November.",
+   "Two 70-80m man lifts in fleet; management says about 20-22 such machines exist in India."
+  ],
+  "demand_pricing": [
+   "Management says it receives RFQs daily as a central vendor to L&T, Reliance, Tata Steel and others; capex is concentrated in Gujarat and Odisha.",
+   "Management says crawler cranes above 150 tonnes are in strong demand; lower-tonnage truck-mounted cranes (80-100 t) are also in demand.",
+   "Fleet utilisation about 100% versus an industry figure of about 80% cited in the presentation; management attributes this to 11-12 month contracts versus competitors' 3-4 month contracts.",
+   "Management said rental yields are stable and not expected to rise; machine pricing in India is fixed by rental yields. Double-shift operation on 15-20% of machines is said to add about 50% revenue on those machines.",
+   "Management said a data centre tower crane generates much higher yield, and specialised 70-80m man lifts earn more than two times current fleet monthly revenue per machine."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why have debtor days risen over two years, and what is the plan to fix it?",
+    "answer": "Management blamed a family settlement from three years ago that extended the cycle; about INR 75 lakh of provision was created this quarter and the cycle should return to about 60-65 days by year end. Management also said about INR 3 crore is over one year old, linked to the family settlement."
+   },
+   {
+    "question": "How will the capex be funded?",
+    "answer": "Management expects net debt of INR 400-500 crore until FY30, funded by bank debt and internal accruals; most FY24-FY25 machines to be free of bank financing by FY28. Only fixed-rate loans apart from the CC limit, which was unused since January; 25 bps rate increase expected on new funding."
+   },
+   {
+    "question": "What is the outlook on equity dilution and UAE/KSA expansion?",
+    "answer": "Management said debt is the first priority and equity dilution is a final option; it could double the fleet by next year if debt is hard to raise. UAE and KSA expansion depends on internal accruals or equity; KSA local-stake rules reportedly changed after 1 May, allowing 100% ownership."
+   },
+   {
+    "question": "Is FY27 revenue guidance INR 60-65 crore or INR 70-80 crore?",
+    "answer": "Management said guidance has always been INR 60-65 crore, and that INR 72 crore is only the current ARR; H1 revenue from operations was about INR 30 crore and it expects to beat guidance given the order book and H2 seasonality."
+   },
+   {
+    "question": "Why are yields not improving with the new fleet, and is sustainability at risk?",
+    "answer": "Management said yields are fixed and not expected to rise, but are sustainable; it cited three years of OEM free-of-cost servicing that defers opex, and buying power giving 5-10% machine discount versus competitors."
+   },
+   {
+    "question": "Why is the receivable cycle elevated, and what caused the move in other current liabilities?",
+    "answer": "Management said month-end revenue is not billed for 10-12 days because overtime is computed, so trade receivables run high; the move to monthly GST filing shifted about INR 2.5-3 crore of billing, and cash flow should improve from this quarter. Other current liabilities relate to machine funding timing."
+   }
+  ],
+  "risks_watch": [
+   "Receivable days remain elevated; management promises normalisation to about 60-65 days by Q4 FY27, with the annual report providing clarity.",
+   "Mission 2030 assumes fleet utilisation above 90% through FY30; management acknowledged this may be bold.",
+   "Debt-to-equity to remain under 2 for 1-1.5 years; net debt of INR 450-500 crore at peak, and possible equity dilution if debt funding is constrained.",
+   "Customer concentration in Gujarat and Odisha capex cycle; no soft commitments from customers for expansion, per management.",
+   "Machine import dependence above 250 tonnes and rising global machine costs; yields not expected to rise.",
+   "Gross block and revenue timing depend on delivery of wind energy and tower crane machines, now in transit."
+  ],
+  "management_tone": "Confident and expansive on demand, utilisation and Mission 2030, but cautious on near-term balance sheet: management repeatedly deferred UAE/KSA expansion and equity dilution decisions. Answers on receivables and FY27 revenue guidance were somewhat repetitive, and some answers on yields and imported machine pricing were unclear.",
+  "key_quotes": [
+   "Mission 2030 is not simply about owning more machines. It is about building a stronger Trishakti with greater capabilities, deeper customer relationships, and a larger role in India's infrastructure growth story.",
+   "We have already won contracts for all these INR 95 crores worth of machines.",
+   "Our guiding principle is simple. We want to grow with India, build for the long-term, and turn our ambition into measurable execution."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "INR 400 crore FY25-27 capex programme: ~INR 370 crore deployed (incl. GST), >90% complete",
+    "size_pct": null,
+    "capex_cr": 370.0,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "major"
+   },
+   {
+    "what": "CWIP ~INR 77-78 crore ex-GST (INR 95 crore incl. GST) machines to deploy in Q3 FY27, contracts reportedly won",
+    "size_pct": null,
+    "capex_cr": 95.0,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "Wind energy fleet expansion ~INR 125 crore; machines arrive from early November",
+    "size_pct": null,
+    "capex_cr": 125.0,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "80-ton tower cranes for data centre work, in transit, expected Oct-Nov",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Mission 2030: cumulative gross block >INR 1,000 crore by FY30 (~INR 600-700 crore incremental capex over three years)",
+    "size_pct": null,
+    "capex_cr": 650.0,
+    "q": 12,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": 100.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 133.0,
+  "qEbitda": 141.0,
+  "outlook": 1,
+  "why": "FY27 revenue guidance of INR 60-65 crore held with management expecting to surpass it; H1 revenue INR 2,989 lakh (~half of guidance) and an executable order book of ~INR 78 crore, backed by ~INR 370 crore of deployed capex and ~INR 220 crore of CWIP and wind capex arriving in Q3, though the Mission 2030 targets are not yet backed by orders.",
+  "mgmt": null
+ }
+}
