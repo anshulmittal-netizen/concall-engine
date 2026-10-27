@@ -82,7 +82,7 @@ def cmd_fetch(a):
         sources_india.fetch(uni, since, until, log)
         try:  # upcoming calls; never let it stop the night's run
             import calendar_in
-            calendar_in.fetch(uni, cal_since(since), until, log)
+            calendar_in.fetch(universe.with_watch(uni), cal_since(since), until, log)
         except Exception as ex:
             log(f"IN calendar skipped: {ex}")
     else:
@@ -108,14 +108,14 @@ def cmd_calendar(a):
     import calendar_in
     uni = universe.build_india()
     since = dt.date.fromisoformat(a.since) if a.since else cal_since(today())
-    cal = calendar_in.fetch(uni, since, today(), log)
+    cal = calendar_in.fetch(universe.with_watch(uni), since, today(), log)
     log(f"IN calendar: {len(cal.get('calls', {}))} calls on file")
 
 
 def cmd_results(a):
     import results_in
     uni = universe.build_india()
-    results_in.run(uni, log=log, max_companies=a.limit or 80)
+    results_in.run(universe.with_watch(uni), log=log, max_companies=a.limit or 80)
 
 
 def cmd_extract(a):

@@ -12,10 +12,11 @@ data/results_state_IN.json so earlier quarters are never downloaded twice.
 from __future__ import annotations
 
 import datetime as dt
+import os
 import re
 
 from common import DATA, Http, read_json, today, write_json
-from universe import BSE_HEADERS
+from universe import BSE_HEADERS, watchlist
 
 API = "https://api.bseindia.com/BseIndiaAPI/api/"
 FORTH = API + "Corpforthresults/w"
@@ -222,9 +223,108 @@ def build_row(http: Http, state: dict, code: str, name: str, lender: bool = Fals
 
 
 # ------------------------------------------------------------------ run
+ART_URL = "https://claude.ai/artifact/Y3XcRY258aCXgadeZKZbh3"
+WATCH_LABEL = "results-watch"
+
+
+def _gh(method: str, path: str, **kw):
+    token, repo = os.environ.get("GITHUB_TOKEN"), os.environ.get("GITHUB_REPOSITORY")
+    if not token or not repo:
+        return None
+    import requests
+    return requests.request(method, f"https://api.github.com/repos/{repo}/{path}", timeout=20,
+                            headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json"}, **kw)
+
+
+def _watch_alerted(log=print) -> set:
+    """company|date keys already alerted, read back from the issues (so a lost commit never alerts twice)."""
+    out = set()
+    try:
+        for page in range(1, 6):
+            r = _gh("GET", "issues", params={"labels": WATCH_LABEL, "state": "all", "per_page": 100, "page": page})
+            rows = r.json() if r is not None and r.status_code == 200 else []
+            for i in rows:
+                out.update(re.findall(r"Results watch key: (\d+\|\d{4}-\d\d-\d\d)", i.get("body") or ""))
+            if len(rows) < 100:
+                break
+    except Exception as ex:
+        log(f"  ! could not list earlier results-watch alerts: {ex}")
+    return out
+
+
+def _call_for(code: str, t0: dt.date) -> dict | None:
+    calls = (read_json(DATA / "calendar_IN.json", {}) or {}).get("calls") or {}
+    nxt = sorted((v for v in calls.values() if v.get("id") == code and v.get("date") and v["date"] >= t0.isoformat()
+                  and v.get("status") != "cancelled"), key=lambda v: (v["date"], v.get("time") or ""))
+    return nxt[0] if nxt else None
+
+
+def _last_call(code: str) -> dict | None:
+    site = read_json(DATA / "in.json", {}) or {}
+    return next((c for c in site.get("companies") or [] if c.get("id") == code), None)
+
+
+def watch_alerts(cal: dict, watch: dict, t0: dt.date, state: dict, log=print) -> int:
+    """Once a watched company's results board meeting is lead_days away or closer, alert it in one GitHub issue per run."""
+    lead, sent = watch["lead_days"], set(state.get("watch_alerted") or [])
+    due = []
+    for code, w in watch["companies"].items():
+        c = cal.get(code)
+        if not c:
+            continue
+        days = (dt.date.fromisoformat(c["date"]) - t0).days
+        if 0 <= days <= lead and f"{code}|{c['date']}" not in sent:
+            due.append((days, code, c, w))
+    if not due:
+        return 0
+    if not (os.environ.get("GITHUB_TOKEN") and os.environ.get("GITHUB_REPOSITORY")):
+        log(f"  results watch: {len(due)} due, alerts only open from GitHub Actions")
+        return 0
+    sent |= _watch_alerted(log)
+    due = [x for x in sorted(due, key=lambda x: (x[0], x[3]["name"])) if f"{x[1]}|{x[2]['date']}" not in sent]
+    if not due:
+        return 0
+    when = lambda days: "today" if days == 0 else "tomorrow" if days == 1 else f"in {days} days"
+    names = [f"{w['name'].replace(' Ltd', '')} ({dt.date.fromisoformat(c['date']).strftime('%a %d %b')})" for _, _, c, w in due]
+    title = "Results coming: " + ", ".join(names[:3]) + (f" +{len(names) - 3} more" if len(names) > 3 else "")
+    lines = [f"Board meetings for results in the next {lead} days, for companies on your watchlist:", ""]
+    for days, code, c, w in due:
+        d = dt.date.fromisoformat(c["date"])
+        lines.append(f"### {w['name']} · {d.strftime('%a %d %b')} ({when(days)})")
+        call = _call_for(code, t0)
+        if call:
+            cd = dt.date.fromisoformat(call["date"])
+            lines.append(f"- Earnings call: {cd.strftime('%a %d %b')}{', ' + call['time'] + ' IST' if call.get('time') else ''}"
+                         + (f" · [intimation]({call['url']})" if call.get("url") else ""))
+        else:
+            lines.append("- Earnings call: not announced on BSE yet")
+        last = _last_call(code)
+        if last:
+            lines += [f"- Last concall ({last.get('period')}): score {last.get('score')} · {last.get('thesis', '')}",
+                      f"- What management guided: {ART_URL}#co-{code}"]
+        lines += [f"- BSE: https://www.bseindia.com/stock-share-price/x/x/{code}/", f"- Results watch key: {code}|{c['date']}", ""]
+    lines += ["_Opened automatically by the concall engine's results watch (watchlist.yaml). "
+              "Each company and date is alerted once; a moved date is alerted again._"]
+    try:
+        r = _gh("POST", "issues", json={"title": title[:250], "body": "\n".join(lines), "labels": [WATCH_LABEL]})
+        if r is not None and r.status_code < 300:
+            sent |= {f"{code}|{c['date']}" for _, code, c, _ in due}
+            log(f"  results watch: alerted {len(due)} ({', '.join(names)})")
+        else:
+            log(f"  ! results-watch issue not opened: HTTP {getattr(r, 'status_code', '?')}")
+            return 0
+    except Exception as ex:
+        log(f"  ! results-watch issue not opened: {ex}")
+        return 0
+    keep = (t0 - dt.timedelta(days=30)).isoformat()
+    state["watch_alerted"] = sorted(k for k in sent if k.split("|")[1] >= keep)
+    return len(due)
+
+
 def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int = 30) -> dict:
     http = Http(BSE_HEADERS, 0.3, browser=True)
     comps = universe["companies"]
+    watch = watchlist()
     state = read_json(STATE_FILE, {}) or {}
     cls = read_json(DATA / "classification_IN.json", {}) or {}
     lender = lambda c: cls.get(c, {}).get("sector") == "Financial Services" and cls.get(c, {}).get("subsector") in ("Finance", "Insurance")
@@ -249,6 +349,8 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
         cal[code] = c
     keep_from = (t0 - dt.timedelta(days=21)).isoformat()
     cal = {k: v for k, v in cal.items() if v["date"] >= keep_from}  # past dates stay a while, to catch late filings
+    ist = (dt.datetime.utcnow() + dt.timedelta(hours=5, minutes=30)).date()
+    watch_alerts(cal, watch, ist, state, log)
 
     # 2) who has posted results: today's list, Result announcements since the last check, passed calendar dates
     due = dict(state.get("pending", {}))  # code -> first day we expected results
@@ -308,8 +410,14 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
         k, u = cls.get(r["id"], {}), comps.get(r["id"], {})
         r["sector"], r["bigSector"] = k.get("subsector") or "", k.get("sector") or ""
         r["mcap"] = f"₹{u['mcap_cr']:,.0f} Cr" if u.get("mcap_cr") else ""
+        if r["id"] in watch["companies"]:
+            r["watch"] = True
+        else:
+            r.pop("watch", None)
     site = {"checked": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M"),
-            "calendar": sorted(cal.values(), key=lambda c: (c["date"], c["name"])), "results": out_rows}
+            "calendar": sorted(cal.values(), key=lambda c: (c["date"], c["name"])), "results": out_rows,
+            "watch": {"leadDays": watch["lead_days"], "notOnBse": watch["not_on_bse"],
+                      "companies": [{"id": c, "name": w["name"], "as": w["as"]} for c, w in watch["companies"].items()]}}
     state["rows"] = {k: v for k, v in rows.items() if v["period"] not in periods}
     write_json(SITE_FILE, site)
     write_json(STATE_FILE, state)

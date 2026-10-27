@@ -261,6 +261,16 @@ table.res td.co .nm{font-family:var(--display);font-weight:700;font-stretch:90%;
 .gp{color:var(--up)}.gn{color:var(--down)}.g0{color:var(--faint)}
 .basis{font-family:var(--mono);font-size:10.5px;padding:0 5px;border:1px solid var(--line);border-radius:5px;color:var(--muted);margin-left:4px;vertical-align:1px}
 .nextcall{color:var(--fg);border-color:color-mix(in srgb,var(--gold) 55%,var(--line))}
+.wstar{color:var(--gold);font-size:.95em}
+.r.wrow{box-shadow:inset 3px 0 0 var(--gold);background:color-mix(in srgb,var(--gold) 6%,transparent)}
+table.res tr.wrow td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
+.wl .r{grid-template-columns:minmax(0,1.5fr) 150px 170px 110px 200px}
+.wl-when{font-family:var(--mono);font-size:13px;font-weight:600}
+.wl-when.soon{color:var(--gold)}
+.wl-names{display:flex;flex-wrap:wrap;gap:6px}
+.wl-names span,.wl-names button{font-size:13px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);background:var(--panel)}
+.wl-banner{display:flex;gap:10px 16px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--line));background:linear-gradient(120deg,var(--goldsoft),transparent 70%),var(--panel);border-radius:14px;padding:12px 16px}
+@media (max-width:760px){.wl .r{grid-template-columns:minmax(0,1fr) auto}.wl .r>:nth-child(2),.wl .r>:nth-child(3){display:none}.wl .r .up-actions{grid-column:1/-1;justify-content:flex-start}}
 .mg .r{grid-template-columns:minmax(0,240px) minmax(0,1fr) 190px;align-items:start}
 .mg .r>:last-child{justify-content:flex-end}
 .mg-ch{font-size:14px}
@@ -572,7 +582,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100}, up: {big: '', search: '', earn: true, read: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -603,7 +613,7 @@ function daysBack(n) { const d = new Date(lastDate() || Date.now()); d.setDate(d
 const VIEWS = [
   {group: 'Start', items: [['home', 'Today'], ['help', 'How to use']]},
   {group: 'Calls', items: [['calls', 'All calls'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
-  {group: 'Results', items: [['rescal', 'Results calendar'], ['results', 'Results posted']]},
+  {group: 'Results', items: [['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
   {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes'], ['ideas', 'Ideas & red flags']]}
 ];
@@ -611,7 +621,7 @@ const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
 function navCounts() {
   const t = trackerQ(), cq = callsQ();
   const rd = RES.data || {}, t0r = istToday();
-  return {calls: cq.length, upcoming: upcoming(7).length || '',
+  return {calls: cq.length, upcoming: upcoming(7).length || '', watch: (n => n ? n + ' soon' : '')(watchSoon().length),
     rescal: (rd.calendar || []).filter(c => c.date >= t0r && c.date <= addDays(t0r, 7)).length || '',
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
@@ -665,6 +675,7 @@ function vHome() {
   /* next three days, companies we have read first (their last call is one click away), then by date and time */
   const soon = upcoming(3).sort((a, b) => (!!byId[b.id] - !!byId[a.id]) || a.date.localeCompare(b.date) || (a.time || '99').localeCompare(b.time || '99') || ((byId[b.id]?.score || 0) - (byId[a.id]?.score || 0)));
   return head('Today on the desk', `What changed in the latest concalls, and where to look first. Data from BSE filings, refreshed every morning.`, '') + `
+    ${(soon => soon.length ? `<div class="wl-banner"><div style="display:grid;gap:6px;min-width:0"><span class="eyebrow">★ Your watchlist · results in the next ${RES.data.watch.leadDays || 3} days</span><div class="wl-names">${soon.slice(0, 10).map(c => `<span><b>${esc(c.name.replace(/ Ltd$/, ''))}</b> · ${esc(whenTxt(dayDiff(c.date, istToday())))}</span>`).join('')}${soon.length > 10 ? `<span>+${soon.length - 10} more</span>` : ''}</div></div><button class="btn primary" data-v="watch">Prepare</button></div>` : '')(watchSoon())}
     ${welcome ? `<div class="welcome"><span>New to the desk? The two-minute guide explains every view, the score and the daily routine.</span><span style="display:flex;gap:8px"><button class="btn primary" data-v="help">Read the guide</button><button class="btn" data-dismiss="welcome">Hide</button></span></div>` : ''}
     <div class="hero">
       <section class="today">
@@ -749,9 +760,9 @@ function fillCalls() {
 /* Coming up: scheduled calls from BSE call intimations */
 function upRow(r, withDate = false) {
   const co = byId[r.id], moved = r.status === 'rescheduled';
-  return `<div class="r">
+  return `<div class="r${isW(r.id) ? ' wrow' : ''}">
     <span class="tm">${withDate ? esc(sdate(r.date)) + '<br>' : ''}${r.time ? esc(t12(r.time)) : '<span class="muted">–</span>'}</span>
-    <span style="min-width:0"><span class="nm" style="display:block">${esc(r.name)}${r.kind !== 'earnings' ? ' <span class="tag">investor call</span>' : ''}${moved ? ' <span class="pill v-weak">Rescheduled</span>' : ''}</span><span class="sub">${esc(r.mcap || '')}${r.mcap && r.sector ? ' · ' : ''}${esc(r.sector || '')}</span></span>
+    <span style="min-width:0"><span class="nm" style="display:block">${star(r.id)}${esc(r.name)}${r.kind !== 'earnings' ? ' <span class="tag">investor call</span>' : ''}${moved ? ' <span class="pill v-weak">Rescheduled</span>' : ''}</span><span class="sub">${esc(r.mcap || '')}${r.mcap && r.sector ? ' · ' : ''}${esc(r.sector || '')}</span></span>
     <span class="sub" style="min-width:0">${esc(r.bigSector && r.bigSector !== 'Unclassified' ? r.bigSector : '')}</span>
     <span class="lastsc">${co ? `<span title="Concall Signal Score of the last call we read (${esc(co.period)})" style="color:${vcol(co.score, co.veto)}">${co.score}</span> <span class="small muted">${esc(co.period)}</span>` : '<span class="small muted">not read yet</span>'}</span>
     <span class="up-actions">${co ? `<button class="btn" data-open="${esc(r.id)}">Last call</button>` : ''}${r.url ? `<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Intimation ↗</a>` : ''}</span>
@@ -759,7 +770,7 @@ function upRow(r, withDate = false) {
 }
 function vUpcoming() {
   const f = S.up, t0 = istToday(), t1 = addDays(t0, f.days), q = f.search.trim().toLowerCase();
-  const pass = r => (!f.earn || r.kind === 'earnings') && (!f.read || byId[r.id]) && (!f.big || r.bigSector === f.big) &&
+  const pass = r => (!f.earn || r.kind === 'earnings') && (!f.read || byId[r.id]) && (!f.watch || isW(r.id)) && (!f.big || r.bigSector === f.big) &&
     (!q || (r.name + ' ' + (r.sector || '') + ' ' + (r.bigSector || '')).toLowerCase().includes(q));
   const rows = calRows().filter(r => r.date >= t0 && r.date <= t1 && pass(r));
   const held = calRows().filter(r => r.date < t0 && !r.transcript && pass(r)).sort((a, b) => b.date.localeCompare(a.date) || (a.time || '').localeCompare(b.time || ''));
@@ -778,12 +789,61 @@ function vUpcoming() {
       <select id="up-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
       <select id="up-days" aria-label="Period">${[[3, 'Next 3 days'], [7, 'Next 7 days'], [14, 'Next 14 days'], [45, 'All announced']].map(([d, n]) => `<option value="${d}" ${f.days === d ? 'selected' : ''}>${n}</option>`).join('')}</select>
     </div>
-    <div class="toolbar"><button class="chip" data-up="earn" aria-pressed="${f.earn}">Earnings calls only</button><button class="chip" data-up="read" aria-pressed="${f.read}">Companies we have read</button><span class="small muted">${fmt(rows.length)} call${rows.length === 1 ? '' : 's'}</span></div>
+    <div class="toolbar"><button class="chip" data-up="earn" aria-pressed="${f.earn}">Earnings calls only</button><button class="chip" data-up="read" aria-pressed="${f.read}">Companies we have read</button>${watchSet().size ? `<button class="chip" data-up="watch" aria-pressed="${f.watch}">★ My watchlist</button>` : ''}<span class="small muted">${fmt(rows.length)} call${rows.length === 1 ? '' : 's'}</span></div>
     ${Object.keys(days).length ? Object.entries(days).map(([d, rs]) => `<section class="up-day"><h3>${d === t0 ? 'Today' : d === addDays(t0, 1) ? 'Tomorrow' : esc(wday(d))} · ${esc(fdate(d))} <span class="num">${rs.length} call${rs.length === 1 ? '' : 's'}</span></h3>
       <div class="rows up">${head_}${rs.map(r => upRow(r)).join('')}</div></section>`).join('')
       : `<div class="empty">${calRows().length ? 'No announced calls match these filters.' : 'No call intimations read yet. They appear after the next nightly run.'}</div>`}
     ${held.length ? `<section class="up-day"><h3>Held, transcript awaited <span class="num">${held.length}</span></h3>
       <div class="rows up">${held.slice(0, 60).map(r => upRow(r, true)).join('')}</div></section>` : ''}`;
+}
+
+/* My watchlist: the user's own companies, whatever their size */
+function vWatch() {
+  const wait = resLoading('watch'), W = RES.data?.watch, t0 = istToday();
+  const hd = head('My watchlist', 'Your own list of companies: whose results are coming up, so you can prepare, and how the ones already out did.', `
+      <ul><li>The list lives in <b>watchlist.yaml</b> in the engine’s repository. Companies above ₹50,000 Cr are included for results and dates; their concalls are not read.</li>
+      <li>Results dates come from BSE’s forthcoming-results list, checked every 30 minutes from 8:30 am to 11 pm IST. Companies must announce the board meeting at least two working days ahead.</li>
+      <li>When a watchlist company is <b>${W?.leadDays || 3} days or less</b> from its results, a GitHub issue labelled <b>results-watch</b> is opened (one per check, listing each company once per date; a moved date is alerted again), so GitHub emails you and pushes to the GitHub app.</li>
+      <li><b>Last call</b> opens what management guided last quarter, the best preparation before the numbers land.</li></ul>`,
+      `<span class="badge">${RES.data?.checked ? 'BSE checked ' + esc(RES.data.checked.replace('T', ' ')) + ' UTC' : 'Not checked yet'}</span>`);
+  if (wait) return hd + wait;
+  if (!W) return hd + '<div class="empty">The watchlist appears after the next results check on BSE (every 30 minutes through the day).</div>';
+  const lead = W.leadDays || 3, cal = {}, res = {};
+  (RES.data.calendar || []).forEach(c => { if (isW(c.id) && (!cal[c.id] || c.date > cal[c.id].date)) cal[c.id] = c; });
+  (RES.data.results || []).forEach(r => { if (isW(r.id) && (!res[r.id] || r.filed > res[r.id].filed)) res[r.id] = r; });
+  const all = W.companies.map(w => { const c = cal[w.id], r = res[w.id], d = c ? dayDiff(c.date, t0) : null;
+    const posted = r && (!c || r.filed.slice(0, 10) >= addDays(c.date, -1));
+    return {...w, c, r, d, posted, co: byId[w.id], nc: nextCall(w.id)}; });
+  const soon = all.filter(x => !x.posted && x.d != null && x.d >= 0 && x.d <= lead).sort((a, b) => a.d - b.d || a.name.localeCompare(b.name));
+  const later = all.filter(x => !x.posted && x.d != null && x.d > lead).sort((a, b) => a.d - b.d || a.name.localeCompare(b.name));
+  const late = all.filter(x => !x.posted && x.d != null && x.d < 0).sort((a, b) => a.d - b.d);
+  const done = all.filter(x => x.posted).sort((a, b) => b.r.filed.localeCompare(a.r.filed));
+  const none = all.filter(x => !x.posted && x.d == null).sort((a, b) => a.name.localeCompare(b.name));
+  const last = x => x.co ? `<span style="color:${vcol(x.co.score, x.co.veto)}">${x.co.score}</span> <span class="small muted">${esc(x.co.period)}</span>` : '<span class="small muted">not read</span>';
+  const acts = x => `<span class="up-actions">${x.co ? `<button class="btn" data-open="${esc(x.id)}">Last call</button>` : ''}<a class="btn" href="https://www.bseindia.com/stock-share-price/x/x/${esc(x.id)}/" target="_blank" rel="noopener">BSE ↗</a></span>`;
+  const callTxt = x => x.nc ? esc(callWhen(x.nc)) : '<span class="muted">not announced</span>';
+  const row = x => `<div class="r wrow"><span style="min-width:0"><span class="nm" style="display:block">${esc(x.name)}</span><span class="sub">${esc(x.c?.mcap || '')}${x.c?.mcap && x.c?.sector ? ' · ' : ''}${esc(x.c?.sector || '')}</span></span>
+      <span><span class="wl-when ${x.d != null && x.d <= lead ? 'soon' : ''}">${x.d != null ? esc(whenTxt(x.d)) : '–'}</span><br><span class="small muted">${x.c ? esc(wday(x.c.date) + ' ' + fdate(x.c.date)) : ''}</span></span>
+      <span class="small">Call: ${callTxt(x)}</span><span class="lastsc">${last(x)}</span>${acts(x)}</div>`;
+  const prep = x => `<article class="card nt" style="border-color:var(--gold)">
+      <div class="top"><div style="min-width:0"><span class="num small muted">${esc(x.c?.sector || '')}</span><h4>${esc(x.name)}</h4><span class="small muted">${esc(x.c?.mcap || '')}</span></div>
+        <div class="ntsc"><span class="pill v-strong">${esc(whenTxt(x.d))}</span><span class="small muted">${esc(wday(x.c.date) + ' ' + fdate(x.c.date))}</span></div></div>
+      <p class="small" style="margin:0"><b>Earnings call:</b> ${callTxt(x)}${x.nc?.url ? ` · <a href="${esc(x.nc.url)}" target="_blank" rel="noopener">intimation ↗</a>` : ''}</p>
+      ${x.co ? `<p class="small" style="margin:0"><b>Last concall (${esc(x.co.period)}), score <span style="color:${vcol(x.co.score, x.co.veto)}">${x.co.score}</span>:</b> ${esc(x.co.thesis || '')}</p>` : '<p class="small muted" style="margin:0">No concall read for this company yet.</p>'}
+      <div class="foot"><span></span>${acts(x)}</div></article>`;
+  const resRow = x => { const r = x.r; return `<div class="r wrow"><span style="min-width:0"><span class="nm" style="display:block">${esc(x.name)}</span><span class="sub">${esc(r.label)} · filed ${esc(sdate(r.filed))} ${esc(r.filed.slice(11, 16))}</span></span>
+      <span class="small">Revenue ${gTag(r.rev_yoy)}</span><span class="small">${esc(r.opLabel)} ${gTag(r.op_yoy)}</span><span class="small">PAT ${gTag(r.pat_yoy)}</span>
+      <span class="up-actions">${x.co ? `<button class="btn" data-open="${esc(x.id)}">Last call</button>` : ''}<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Filing ↗</a></span></div>`; };
+  const sec = (t, n, body) => `<section style="display:grid;gap:10px"><div class="list-head"><h3>${t}</h3><span class="small muted">${n}</span></div>${body}</section>`;
+  return hd + `
+    <div class="stats card"><div class="stat"><b>${soon.length}</b><span>Results in the next ${lead} days</span></div><div class="stat"><b>${later.length}</b><span>Dates announced, later</span></div>
+      <div class="stat"><b>${done.length}</b><span>Results posted</span></div><div class="stat"><b>${none.length}</b><span>Date not announced yet</span></div></div>
+    ${sec(`Prepare: results in the next ${lead} days`, soon.length ? `${soon.length} compan${soon.length === 1 ? 'y' : 'ies'}` : '', soon.length ? `<div class="nt-grid">${soon.map(prep).join('')}</div>` : '<div class="empty">No watchlist results in the next few days.</div>')}
+    ${later.length ? sec('Dates announced, later', later.length, `<div class="rows wl">${later.map(row).join('')}</div>`) : ''}
+    ${late.length ? sec('Board met, results not on BSE yet', late.length, `<div class="rows wl">${late.map(row).join('')}</div>`) : ''}
+    ${done.length ? sec('Results posted this season', done.length, `<div class="rows wl">${done.map(resRow).join('')}</div>`) : ''}
+    ${none.length ? sec('Date not announced yet', none.length, `<div class="wl-names">${none.map(x => x.co ? `<button data-open="${esc(x.id)}">${esc(x.name)}</button>` : `<span>${esc(x.name)}</span>`).join('')}</div>`) : ''}
+    ${(W.notOnBse || []).length ? `<p class="small muted">Not on BSE’s active list (likely NSE only), so their dates cannot be tracked here: ${W.notOnBse.map(esc).join(', ')}.</p>` : ''}`;
 }
 
 /* Results calendar: board meeting dates announced for results */
@@ -793,14 +853,14 @@ function resLoading(name) { if (!RES.data) { loadRes().then(() => { if (S.view =
 function vResCal() {
   const wait = resLoading('rescal'); const f = S.rc, t0 = istToday(), t1 = addDays(t0, f.days), q = f.search.trim().toLowerCase();
   const all = RES.data?.calendar || [];
-  const pass = r => (!f.read || byId[r.id]) && (!f.big || r.bigSector === f.big) && (!q || (r.name + ' ' + (r.sector || '') + ' ' + (r.bigSector || '')).toLowerCase().includes(q));
+  const pass = r => (!f.read || byId[r.id]) && (!f.watch || isW(r.id)) && (!f.big || r.bigSector === f.big) && (!q || (r.name + ' ' + (r.sector || '') + ' ' + (r.bigSector || '')).toLowerCase().includes(q));
   const rows = all.filter(r => r.date >= t0 && r.date <= t1 && pass(r));
   const posted = new Set((RES.data?.results || []).map(r => r.id));
   const bigs = [...new Set(all.map(r => r.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
   const days = {}; rows.forEach(r => (days[r.date] = days[r.date] || []).push(r));
   const hd = `<div class="r hd"><span>Company</span><span>Sector</span><span>Last read</span><span>Earnings call</span><span></span></div>`;
   const row = r => { const co = byId[r.id], nc = nextCall(r.id);
-    return `<div class="r"><span style="min-width:0"><span class="nm" style="display:block">${esc(r.name)}${posted.has(r.id) && r.date <= t0 ? ' <span class="pill v-good">Posted</span>' : ''}</span><span class="sub">${esc(r.mcap || '')}${r.mcap && r.sector ? ' · ' : ''}${esc(r.sector || '')}</span></span>
+    return `<div class="r${isW(r.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(r.id)}${esc(r.name)}${posted.has(r.id) && r.date <= t0 ? ' <span class="pill v-good">Posted</span>' : ''}</span><span class="sub">${esc(r.mcap || '')}${r.mcap && r.sector ? ' · ' : ''}${esc(r.sector || '')}</span></span>
       <span class="sub" style="min-width:0">${esc(r.bigSector || '')}</span>
       <span class="lastsc">${co ? `<span style="color:${vcol(co.score, co.veto)}">${co.score}</span> <span class="small muted">${esc(co.period)}</span>` : '<span class="small muted">not read yet</span>'}</span>
       <span class="small">${nc ? esc(callWhen(nc)) : '<span class="muted">not announced</span>'}</span>
@@ -815,16 +875,16 @@ function vResCal() {
       <select id="rc-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
       <select id="rc-days" aria-label="Period">${[[1, 'Today and tomorrow'], [7, 'Next 7 days'], [14, 'Next 14 days'], [60, 'All announced']].map(([d, n]) => `<option value="${d}" ${f.days === d ? 'selected' : ''}>${n}</option>`).join('')}</select>
     </div>
-    <div class="toolbar"><button class="chip" data-rc="read" aria-pressed="${f.read}">Companies we have read</button><span class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'}</span></div>
+    <div class="toolbar"><button class="chip" data-rc="read" aria-pressed="${f.read}">Companies we have read</button>${watchSet().size ? `<button class="chip" data-rc="watch" aria-pressed="${f.watch}">★ My watchlist</button>` : ''}<span class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'}</span></div>
     ${Object.keys(days).length ? Object.entries(days).map(([d, rs]) => `<section class="up-day"><h3>${d === t0 ? 'Today' : d === addDays(t0, 1) ? 'Tomorrow' : esc(wday(d))} · ${esc(fdate(d))} <span class="num">${rs.length} compan${rs.length === 1 ? 'y' : 'ies'}</span></h3>
-      <div class="rows up rc">${hd}${rs.sort((a, b) => (!!byId[b.id] - !!byId[a.id]) || a.name.localeCompare(b.name)).map(row).join('')}</div></section>`).join('')
+      <div class="rows up rc">${hd}${rs.sort((a, b) => (isW(b.id) - isW(a.id)) || (!!byId[b.id] - !!byId[a.id]) || a.name.localeCompare(b.name)).map(row).join('')}</div></section>`).join('')
       : `<div class="empty">${all.length ? 'No results dates match these filters.' : 'No results dates read yet. They appear after the next check.'}</div>`}`);
 }
 
 /* Results posted: summary table from the XBRL filings */
 const RS_COLS = [['filed', 'Filed'], ['rev', 'Revenue'], ['rev_yoy', 'Rev YoY'], ['op', 'Op. profit'], ['op_yoy', 'Op YoY'], ['opm', 'Margin'], ['pat', 'PAT'], ['pat_yoy', 'PAT YoY'], ['pat_qoq', 'PAT QoQ'], ['eps', 'EPS']];
 const RS_CHIPS = {rev20: ['Revenue up 20%+', r => r.rev_yoy >= 20], pat20: ['PAT up 20%+', r => r.pat_yoy >= 20], patdn: ['PAT down YoY', r => r.pat_yoy < 0 || (r.pat < 0)],
-  mup: ['Margin up YoY', r => r.opm != null && r.opm_prev_yoy != null && r.opm > r.opm_prev_yoy], read: ['Companies we have read', r => !!byId[r.id]]};
+  mup: ['Margin up YoY', r => r.opm != null && r.opm_prev_yoy != null && r.opm > r.opm_prev_yoy], read: ['Companies we have read', r => !!byId[r.id]], watch: ['★ My watchlist', r => isW(r.id)]};
 function rsRows() {
   const f = S.rs, t0 = istToday(), from = f.days ? addDays(t0, -f.days) : '', q = f.search.trim().toLowerCase();
   return (RES.data?.results || []).filter(r => (!from || r.filed.slice(0, 10) >= from) && (!f.big || r.bigSector === f.big) &&
@@ -837,7 +897,7 @@ function vResults() {
   const rows = wait ? [] : rsRows(), shown = rows.slice(0, f.limit);
   const marg = r => r.opm == null ? '<span class="v">–</span>' : `<span class="v">${r.opm.toFixed(1)}%</span>${r.opm_prev_yoy == null ? '<span class="g g0">–</span>' : `<span class="g ${r.opm >= r.opm_prev_yoy ? 'gp' : 'gn'}">${r.opm >= r.opm_prev_yoy ? '+' : '−'}${Math.round(Math.abs(r.opm - r.opm_prev_yoy) * 100)} bp</span>`}`;
   const tr = r => { const co = byId[r.id];
-    return `<tr><td class="co"><span class="nm">${esc(r.name)}</span><span class="basis" title="${esc(r.basis)}">${r.basis === 'Consolidated' ? 'C' : 'S'}</span>${r.revised ? ' <span class="tag">revised</span>' : ''}<br><span class="sub small muted">${esc(r.label)} · ${esc(r.sector || '')}${r.mcap ? ' · ' + esc(r.mcap) : ''}</span>
+    return `<tr${isW(r.id) ? ' class="wrow"' : ''}><td class="co"><span class="nm">${star(r.id)}${esc(r.name)}</span><span class="basis" title="${esc(r.basis)}">${r.basis === 'Consolidated' ? 'C' : 'S'}</span>${r.revised ? ' <span class="tag">revised</span>' : ''}<br><span class="sub small muted">${esc(r.label)} · ${esc(r.sector || '')}${r.mcap ? ' · ' + esc(r.mcap) : ''}</span>
         <div class="up-actions" style="justify-content:flex-start;margin-top:5px">${co ? `<button class="btn" data-open="${esc(r.id)}">Last call · ${co.score}</button>` : ''}<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Filing ↗</a></div></td>
       <td><span class="v">${esc(sdate(r.filed))}</span><span class="g g0">${esc(r.filed.slice(11, 16))}</span></td>
       <td><span class="v">${crF(r.rev)}</span><span class="g g0">${esc(r.revLabel)}</span></td><td>${gTag(r.rev_yoy)}${gTag(r.rev_qoq, 'QoQ')}</td>
@@ -1304,6 +1364,7 @@ function vHelp() {
       <div><b>Today</b><span>The day’s headline, season progress, the best call, the strongest guidance, the top idea and the newest calls.</span></div>
       <div><b>All calls</b><span>Every call for the quarter in one ranked list. Sort best to worst or by newest, and filter by sector, sub-sector, guidance or red flags.</span></div>
       <div><b>Coming up</b><span>Earnings calls announced on BSE for the days ahead, with the time, the score of each company’s last call and a link to the filing with dial-in details. Also lists calls already held whose transcript has not been filed yet.</span></div>
+      <div><b>My watchlist</b><span>Your own list of companies, whatever their size: whose results are in the next few days (with the earnings call and what management said last time), dates announced further out, numbers already posted, and who has not announced a date yet. Watchlist companies are starred and highlighted on the results and calls pages, and a GitHub alert goes out when one is three days or less from its results.</span></div>
       <div><b>Results calendar</b><span>The days each company’s board meets to approve its quarterly results, with its announced earnings call and the score of its last concall.</span></div>
       <div><b>Results posted</b><span>A sortable table of quarterly results as they are filed: revenue, operating profit, margin, profit and EPS, each with growth on last year and last quarter.</span></div>
       <div><b>First-time callers</b><span>Companies holding their first-ever earnings call. Useful for finding names before they get coverage.</span></div>
@@ -1339,7 +1400,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -1362,6 +1423,18 @@ function setHash(h) { try { history.replaceState(null, '', '#' + h); } catch (e)
 const SUMS = {data: null, p: null};
 /* results calendar + posted results: their own file, refreshed through the day */
 const RES = {data: null, p: null};
+/* results watchlist (watchlist.yaml in the engine, carried in results_in.json) */
+let W_SRC = null, W_SET = new Set();
+const watchSet = () => { const w = RES.data?.watch; if (w !== W_SRC) { W_SRC = w; W_SET = new Set((w?.companies || []).map(c => c.id)); } return W_SET; };
+const isW = id => watchSet().has(id);
+const star = id => isW(id) ? '<span class="wstar" title="On your watchlist">★</span> ' : '';
+const dayDiff = (a, b) => Math.round((Date.parse(a + 'T00:00:00Z') - Date.parse(b + 'T00:00:00Z')) / 864e5);
+const whenTxt = d => d === 0 ? 'Today' : d === 1 ? 'Tomorrow' : d > 1 ? `In ${d} days` : `${-d} day${d === -1 ? '' : 's'} ago`;
+function watchSoon() {
+  const w = RES.data?.watch; if (!w) return [];
+  const t0 = istToday(), lead = w.leadDays || 3;
+  return (RES.data.calendar || []).filter(c => isW(c.id) && c.date >= t0 && dayDiff(c.date, t0) <= lead).sort((a, b) => a.date.localeCompare(b.date) || a.name.localeCompare(b.name));
+}
 /* the separate file is refreshed through the day; in.json carries a copy from the nightly build. Use the newer. */
 const loadRes = () => RES.data ? Promise.resolve(RES.data) : (RES.p = RES.p || fetch('data/results_in.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : {}).catch(() => ({}))
   .then(j => { const a = j || {}, b = (D && D.results) || {}; return (RES.data = (b.checked || '') > (a.checked || '') ? b : a); }));
@@ -1666,6 +1739,6 @@ $('#find').addEventListener('focus', renderFind);
   render();
   if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
   loadSums().then(() => renderNav());  /* near-term count uses lines from the summaries */
-  loadRes().then(() => { renderNav(); if (S.view === 'rescal' || S.view === 'results' || S.view === 'home') render(); });
+  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming'].includes(S.view)) render(); });
 })();
 </script>

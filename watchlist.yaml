@@ -1,0 +1,88 @@
+# Results watchlist (India): companies whose results dates are highlighted on the dashboard and alerted
+# ahead of time. Board meeting dates come from BSE's forthcoming-results list, checked every 30 minutes
+# (mgmt.yml). When a watched company's results meeting is `lead_days` days away or closer, a GitHub issue
+# labelled results-watch is opened once for that date (again if the date moves), so GitHub notifies the owner.
+# Companies above the ₹50,000 Cr universe cap are included here too; their concalls are not read.
+# To add a company: its BSE scrip code and name. `as` is the name it was given in the request.
+lead_days: 3
+companies:
+  - {code: "532374", name: "Sterlite Technologies Ltd", as: "Sterlite Technologies"}
+  - {code: "500183", name: "HFCL Ltd", as: "HFCL Ltd"}
+  - {code: "526433", name: "ASM Technologies Ltd", as: "ASM Technologies"}
+  - {code: "544397", name: "Ather Energy Ltd", as: "Ather Energy Ltd"}
+  - {code: "519156", name: "Vadilal Industries Ltd", as: "Vadilal Inds"}
+  - {code: "543320", name: "Eternal Ltd", as: "Eternal Ltd"}
+  - {code: "544310", name: "Yash Highvoltage Ltd", as: "Yash Highvoltage"}
+  - {code: "543358", name: "Sansera Engineering Ltd", as: "Sansera Engineering"}
+  - {code: "500093", name: "CG Power and Industrial Solutions Ltd", as: "CG Power India Ltd"}
+  - {code: "540222", name: "Laurus Labs Ltd", as: "Laurus Labs Ltd"}
+  - {code: "544685", name: "Shadowfax Technologies Ltd", as: "Shadowfax"}
+  - {code: "544527", name: "Atlanta Electricals Ltd", as: "Atlanta Electricals"}
+  - {code: "544720", name: "Omnitech Engineering Ltd", as: "Omnitech Engg."}
+  - {code: "534392", name: "Vardhman Special Steels Ltd", as: "VSSL Ltd"}
+  - {code: "543270", name: "MTAR Technologies Ltd", as: "Mtar Tech"}
+  - {code: "542665", name: "Neogen Chemicals Ltd", as: "Neogen Chemicals"}
+  - {code: "532259", name: "Apar Industries Ltd", as: "Apar Inds Ltd"}
+  - {code: "532486", name: "Pokarna Ltd", as: "Pokarna Ltd"}
+  - {code: "526953", name: "Venus Remedies Ltd", as: "Venus Remedies ltd"}
+  - {code: "544622", name: "Kwality Walls (India) Ltd", as: "Kwality Walls India ltd"}
+  - {code: "544311", name: "International Gemological Institute Ltd", as: "IGI Ltd"}
+  - {code: "543387", name: "S.J.S. Enterprises Ltd", as: "SJS Enterprises"}
+  - {code: "543960", name: "Concord Biotech Ltd", as: "Concord Biotech Ltd"}
+  - {code: "544122", name: "Entero Healthcare Solutions Ltd", as: "Entero Healthcare"}
+  - {code: "540205", name: "Aditya Vision Ltd", as: "Aditya Vision"}
+  - {code: "523828", name: "Menon Bearings Ltd", as: "Menon Bearings Ltd"}
+  - {code: "544294", name: "Rossell Techsys Ltd", as: "Rossell Techsys Ltd"}
+  - {code: "539730", name: "Fredun Pharmaceuticals Ltd", as: "Fredun Pharma"}
+  - {code: "544292", name: "Onesource Specialty Pharma Ltd", as: "Onesource"}
+  - {code: "543689", name: "Uniparts India Ltd", as: "Uniparts India Ltd"}
+  - {code: "500150", name: "Foseco India Ltd", as: "Foseco India Ltd"}
+  - {code: "541974", name: "Manorama Industries Ltd", as: "Manorama India Ltd"}
+  - {code: "544837", name: "INDO-MIM Ltd", as: "Indo MIM Ltd"}
+  - {code: "543288", name: "Deep Industries Ltd", as: "Deep Inds"}
+  - {code: "544319", name: "Senores Pharmaceuticals Ltd", as: "Senores Pharma"}
+  - {code: "543534", name: "Aether Industries Ltd", as: "Aether Inds Ltd"}
+  - {code: "544367", name: "Quality Power Electrical Equipments Ltd", as: "Quality Power El"}
+  - {code: "544057", name: "Happy Forgings Ltd", as: "Happy Forgings Ltd"}
+  - {code: "513097", name: "Shivalik Bimetal Controls Ltd", as: "SBCL"}
+  - {code: "544396", name: "Network People Services Technologies Ltd", as: "NPST"}
+  - {code: "500210", name: "Ingersoll-Rand (India) Ltd", as: "Ingersoll Rand Ltd"}
+  - {code: "543349", name: "Acutaas Chemicals Ltd", as: "Acutaas Chemical"}
+  - {code: "543245", name: "Gland Pharma Ltd", as: "Gland Pharma Ltd"}
+  - {code: "500184", name: "Himadri Speciality Chemical Ltd", as: "Himadri Specialty Chemical"}
+  - {code: "539997", name: "Kwality Pharmaceuticals Ltd", as: "Kwality Phara"}
+  - {code: "544455", name: "GNG Electronics Ltd", as: "GNG Electronics Ltd"}
+  - {code: "543253", name: "Mrs. Bectors Food Specialities Ltd", as: "Bector Foods Ltd"}
+  - {code: "532527", name: "Ramkrishna Forgings Ltd", as: "RK Forgings"}
+  - {code: "544386", name: "Spectrum Electrical Industries Ltd", as: "Spectrum Electr."}
+  - {code: "543300", name: "Sona BLW Precision Forgings Ltd", as: "Sona Comstar"}
+  - {code: "519126", name: "Hindustan Foods Ltd", as: "Hindustan Foods"}
+  - {code: "501423", name: "Shaily Engineering Plastics Ltd", as: "Shaily Engineering Ltd"}
+  - {code: "500403", name: "Sundram Fasteners Ltd", as: "Sundram fastners Ltd"}
+  - {code: "544950", name: "Adroit Industries (India) Ltd", as: "Adroit Inds"}
+  - {code: "523385", name: "Nilkamal Ltd", as: "Nilkamal Ltd"}
+  - {code: "500472", name: "SKF India Ltd", as: "SKF India Ltd"}
+  - {code: "543333", name: "CarTrade Tech Ltd", as: "Cartrade Tech Ltd"}
+  - {code: "520073", name: "RACL Geartech Ltd", as: "RACL geartech Ltd"}
+  - {code: "543933", name: "Cyient DLM Ltd", as: "Cyient DLM"}
+  - {code: "544198", name: "Dee Development Engineers Ltd", as: "Dee Developments"}
+  - {code: "522113", name: "Timken India Ltd", as: "Timken India Ltd"}
+  - {code: "538920", name: "Vintage Coffee And Beverages Ltd", as: "Vintage Coffee Ltd"}
+  - {code: "540879", name: "Apollo Micro Systems Ltd", as: "Apollo Micro"}
+  - {code: "513519", name: "Pitti Engineering Ltd", as: "Pitti Engineering"}
+  - {code: "544306", name: "Sai Life Sciences Ltd", as: "Sai Lifesciences Ltd"}
+  - {code: "544619", name: "Sudeep Pharma Ltd", as: "Sudeep Pharma"}
+  - {code: "544028", name: "Tata Technologies Ltd", as: "Tata Technologies"}
+  - {code: "505790", name: "Schaeffler India Ltd", as: "Schaeffler Ltd"}
+  - {code: "543977", name: "Rishabh Instruments Ltd", as: "Rishabh Instruments"}
+  - {code: "544081", name: "Jyoti CNC Automation Ltd", as: "Jyoti CNC"}
+  - {code: "543528", name: "Venus Pipes & Tubes Ltd", as: "Venus Pipes Ltd"}
+  - {code: "500411", name: "Thermax Ltd", as: "Thermax India Ltd"}
+  - {code: "532493", name: "Astra Microwave Products Ltd", as: "Astra Microwave India Ltd"}
+  - {code: "544046", name: "INOX India Ltd", as: "INOX India"}
+  - {code: "534976", name: "V-Mart Retail Ltd", as: "V-Mart Retail"}
+  - {code: "506854", name: "TANFAC Industries Ltd", as: "TANFAC Industries"}
+  - {code: "543573", name: "Syrma SGS Technology Ltd", as: "Syrma SGS"}
+  - {code: "513262", name: "Steel Strips Wheels Ltd", as: "SSWL"}
+# Not in BSE's active scrip list (likely NSE-only), so BSE dates cannot be read for them:
+not_on_bse: ["OBSC Perfection Ltd", "Macpower CNC India Ltd", "Shriram Pistons India Ltd", "Chandan Healthcare"]

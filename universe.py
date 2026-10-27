@@ -115,6 +115,23 @@ def _fill_india_mcap_yahoo(rows):
 
 
 # ------------------------------------------------------------------ US
+def watchlist() -> dict:
+    """watchlist.yaml: companies whose results dates are highlighted and alerted, in or out of the universe."""
+    from common import load_yaml
+    w = load_yaml("watchlist.yaml") or {}
+    return {"lead_days": int(w.get("lead_days") or 3), "not_on_bse": list(w.get("not_on_bse") or []),
+            "companies": {str(c["code"]): {"code": str(c["code"]), "name": c["name"], "as": c.get("as") or c["name"]}
+                          for c in (w.get("companies") or []) if c.get("code")}}
+
+
+def with_watch(uni: dict) -> dict:
+    """The universe plus watchlist companies above the cap, for the calendars and results (not for transcripts)."""
+    comps = dict(uni["companies"])
+    for code, w in watchlist()["companies"].items():
+        comps.setdefault(code, {"code": code, "name": w["name"], "ticker": "", "industry": "", "mcap_cr": None})
+    return {**uni, "companies": comps}
+
+
 def build_us(force=False) -> dict:
     cfg = settings()["universe"]
     out = DATA / "universe_US.json"
