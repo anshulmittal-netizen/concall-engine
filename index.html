@@ -572,7 +572,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100}, up: {big: '', search: '', earn: true, read: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, mg: {days: 30, top: true, inCalls: false}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100}, up: {big: '', search: '', earn: true, read: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -605,7 +605,7 @@ const VIEWS = [
   {group: 'Calls', items: [['calls', 'All calls'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Results', items: [['rescal', 'Results calendar'], ['results', 'Results posted']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
-  {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['mgmt', 'Management changes'], ['ideas', 'Ideas & red flags']]}
+  {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes'], ['ideas', 'Ideas & red flags']]}
 ];
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
 function navCounts() {
@@ -616,7 +616,7 @@ function navCounts() {
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: (D.sectors || []).filter(s => s.hit).length || '',
-    themes: (D.themes || []).length, nearterm: (D.companies || []).map(ntRow).filter(Boolean).length || '', ideas: (D.ideas || []).filter(x => !x.red).length,
+    themes: (D.themes || []).length, nearterm: (D.companies || []).map(ntRow).filter(Boolean).length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()), ideas: (D.ideas || []).filter(x => !x.red).length,
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
 function renderNav() {
@@ -1149,6 +1149,109 @@ function vNear() {
     ${rows.length > f.limit ? `<div style="text-align:center;margin-top:14px"><button class="btn" id="nt-more">Show more (${rows.length - f.limit} left)</button></div>` : ''}`;
 }
 
+/* Inflection watch */
+const IF_NEG = /\b(cut|cuts|lower(ed|ing)?|declin\w*|down|drop\w*|fall\w*|fell|slow\w*|weak\w*|pressure\w*|loss|losses|delay\w*|defer\w*|withdr\w*|headwind\w*|normali[sz]\w*|soft\w*|muted|stretch\w*|subdued|miss\w*|shut\w*|disrupt\w*|squeez\w*|compress\w*|erosion|eroded|overcapacity|glut|dumping|negative|uncertain\w*|halt\w*|suspend\w*|impair\w*|write-?offs?|pledge\w*|default\w*|downgrad\w*|lost|contract(ed|ion)|destock\w*|deflect\w*|stuck|elevated|exhaust\w*|not|no longer|ruled out|below|hit|cautio\w*|wors\w*|lag\w*|fragile|unclear)\b/i;
+const IF_POS = /\b(rais\w*|record|highest|beat|up|surg\w*|jump\w*|doubl\w*|tripl\w*|commission\w*|launch\w*|approv\w*|won|wins?|orders?|ramp\w*|expan\w*|hikes?|improv\w*|recover\w*|turnaround|breakeven|profitab\w*|tight\w*|shortages?|consolidat\w*|upgrad\w*|accelerat\w*|strong\w*|robust|grow\w*|growth|gains?|full|sold out|premium\w*|new (capacity|plant|line|product|customer)s?)\b/i;
+const IF_MIN = 30;
+const IF_W = {pricing: 6, structure: 6, guidance: 6, supply: 5, util: 5, novelty: 5, demand: 4, inventory: 3, tone: 2};
+const IF_MOD_UP = {'Supply exit': 8, 'Consolidation': 6, 'Capital cycle': 6, 'Capacity bottleneck': 4, 'Operating leverage': 4, 'Deleveraging': 4};
+const IF_TURN = new Set(['Supply exit', 'Consolidation', 'Capital cycle']);
+const IF_MOD_DN = {'Competitive capex': 6, 'Working-capital stress': 4};
+function trigDir(t, c) {
+  const s = t.label || '', n = IF_NEG.test(s), p = IF_POS.test(s);
+  if (n !== p) return n ? -1 : 1;
+  const b = t.t === 'util' ? c.util : (c.blocks || {})[t.t];
+  return b > 0 ? 1 : b < 0 ? -1 : 0;
+}
+function ifRow(c) {
+  const call = (D.calls || []).find(x => x.id === c.id && x.period === c.period) || {};
+  const b = c.blocks || {}, gr = c.growth || {}, trig = (c.triggers || []).map(t => ({...t, d: trigDir(t, c)}));
+  const pos = trig.filter(t => t.d > 0), neg = trig.filter(t => t.d < 0);
+  const tp = a => a.reduce((n, t) => n + (IF_W[t.t] || 3), 0);
+  const moves = ((c.breakdown || {}).parts || []).flatMap(p => p.in || []).filter(x => x.prev != null && typeof x.read === 'number' && x.read !== x.prev);
+  const up = [], dn = [], add = (arr, pts, w, q = 1) => arr.push([w, pts, q]);
+  // upside markers
+  if (c.delta >= 8) add(up, Math.min(c.delta, 30), `Score up ${c.delta} vs last call`);
+  if (gr.turnaround && gr.gs >= 1) add(up, 15, 'Turnaround guided');
+  if (c.archetype === 'Cyclical bottoming') add(up, 15, 'Cyclical bottoming');
+  else if (c.archetype === 'Supply-side dominance') add(up, 8, 'Supply-side squeeze');
+  else if (c.archetype === 'Special situation') add(up, 6, 'Special situation');
+  if (call.gRaised > 0) add(up, 12, 'Guidance raised');
+  const near = (gr.adds || []).filter(a => a.status !== 'deferred' && a.q != null && a.q >= 1 && a.q <= 3 && a.mat !== 'minor');
+  if (near.length) add(up, near.some(a => a.mat === 'major') ? 10 : 6, `${near.some(a => a.mat === 'major') ? 'Major' : 'New'} capacity live in ~${Math.min(...near.map(a => a.q))}Q`);
+  if (gr.growth >= 25 && (b.guidance || 0) >= 0) add(up, 6, `Growth guided ~${Math.round(gr.growth)}%`);
+  if ((c.util || 0) > 0 && (b.pricing || 0) >= 1) add(up, 8, 'Utilisation and pricing both rising');
+  (c.models || []).forEach(m => { if (IF_MOD_UP[m]) add(up, IF_MOD_UP[m], m, IF_TURN.has(m)); });
+  const mu = moves.filter(x => x.read > x.prev); if (mu.length) add(up, 4 * mu.length, `Turned up vs last call: ${mu.map(x => TYPES[x.k] || x.k).join(', ')}`);
+  // downside markers
+  const vf = (c.flags || []).find(f => /^veto/i.test(f));
+  if (c.veto) add(dn, 30, vf ? vf.replace(/^veto:\s*/i, 'Veto: ') : 'Veto: score capped at 40');
+  if (c.delta <= -8) add(dn, Math.min(-c.delta, 30), `Score down ${-c.delta} vs last call`);
+  if (call.gCut > 0) add(dn, 15, 'Guidance cut'); else if ((b.guidance || 0) < 0) add(dn, 8, 'Guidance negative');
+  if (c.archetype === 'Red flag') add(dn, 15, 'Red-flag call');
+  else if (c.archetype === 'Capital-cycle warning') add(dn, 10, 'Capital-cycle warning');
+  const red = (D.ideas || []).find(x => x.red && x.id === c.id);
+  if (red && !c.veto) add(dn, 12, red.why);
+  if ((b.demand || 0) < 0) add(dn, 6, 'Demand weakening');
+  if ((b.pricing || 0) < 0) add(dn, 6, 'Pricing under pressure');
+  if ((c.util || 0) < 0) add(dn, 6, 'Utilisation falling');
+  if ((b.tone || 0) < 0) add(dn, 4, 'Guarded tone', 0);
+  (c.flags || []).filter(f => !/^veto/i.test(f)).slice(0, 3).forEach(f => add(dn, 4, f.replace(/\s*\(.*$/, ''), 0));
+  if (c.planFlag) add(dn, 6, 'Big guidance, plan not clear');
+  (c.models || []).forEach(m => { if (IF_MOD_DN[m]) add(dn, IF_MOD_DN[m], m, 0); });
+  const md = moves.filter(x => x.read < x.prev); if (md.length) add(dn, 4 * md.length, `Turned down vs last call: ${md.map(x => TYPES[x.k] || x.k).join(', ')}`);
+  const sum = a => a.reduce((n, x) => n + x[1], 0);
+  const upPts = Math.round(tp(pos) + sum(up) - tp(neg) / 2), dnPts = Math.round(tp(neg) + sum(dn) - tp(pos) / 2);
+  const pending = c.period !== (quarters()[0]?.label) && !!quarters()[0] && inProg(quarters()[0].label);
+  const base = {c, call, key: call.key || '', pending};
+  if (!c.veto && upPts >= dnPts && upPts >= IF_MIN && pos.length >= 2 && up.some(m => m[2])) return {...base, side: 'up', pts: upPts, marks: up.sort((a, b) => b[1] - a[1]), trig: pos, counter: neg};
+  if ((c.veto || dnPts > upPts) && dnPts >= IF_MIN && (neg.length >= 2 || c.veto) && dn.some(m => m[2])) return {...base, side: 'dn', pts: dnPts, marks: dn.sort((a, b) => b[1] - a[1]), trig: neg, counter: pos};
+  return null;
+}
+let IF_CACHE = null;
+function ifRows() {
+  if (IF_CACHE && IF_CACHE.d === D) return IF_CACHE.r;
+  const all = (D.companies || []).map(ifRow).filter(Boolean), r = {};
+  ['up', 'dn'].forEach(s => {
+    const a = all.filter(x => x.side === s).sort((x, y) => y.pts - x.pts || (s === 'up' ? y.c.score - x.c.score : x.c.score - y.c.score));
+    const cut = a[Math.max(0, Math.floor(a.length * 0.2) - 1)]?.pts ?? Infinity;
+    a.forEach(x => { x.sharp = x.pts >= cut && x.pts >= 50; });
+    r[s] = a;
+  });
+  IF_CACHE = {d: D, r};
+  return r;
+}
+function vInflect() {
+  const f = S.inf, R = ifRows(), all = R[f.side] || [], nextQ = quarters()[0]?.label, isUp = f.side === 'up';
+  const bigs = [...new Set(all.map(x => x.c.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
+  const rows = all.filter(x => (!f.big || x.c.bigSector === f.big) && (!f.sharp || x.sharp) && (!f.pending || x.pending));
+  const col = isUp ? 'var(--up)' : 'var(--down)';
+  return head('Inflection watch', 'Companies whose latest call points to a sharp turn, up or down, read from the triggers management gave on the call. A list to dig into, not a trade list.', `
+      <ul><li>Every trigger in a call is read as <b>pointing up or down</b>: from its wording first (raised, record, commissioned, ramping against cut, delayed, pressure, deflected), and from the call’s own signal reading for that type when the wording is neutral.</li>
+      <li>A company is listed on the <b>Upside</b> side when at least two triggers point up and the call shows a real turn: score up sharply on the last call, a turnaround guided, a cyclical bottoming, guidance raised, major capacity going live within 3 quarters, utilisation and pricing rising together, supply exiting or consolidating, or signals turning up against the last call.</li>
+      <li>It is listed on the <b>Downside</b> side when at least two triggers point down (or a veto) and the call shows a break: a veto, score down sharply, guidance cut or negative, a red-flag or capital-cycle warning, demand, pricing or utilisation turning down, or big guidance with no clear plan. Deflected questions, a guarded tone and working-capital stress add weight.</li>
+      <li>Each company sits on the side where its evidence is stronger, and triggers pointing the other way are shown as <b>counter-signals</b>. <b>Sharp</b> marks the strongest fifth on each side. The list is ordered by the weight of evidence; the only score shown is the Concall Signal Score.</li>
+      <li>Direction is read automatically from short trigger labels, so open the call and read the quotes before acting.</li></ul>`,
+      `<span class="badge">Latest call per company</span>`) + `
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="Direction"><button data-ifs="up" aria-pressed="${isUp}">▲ Upside <span class="num">${R.up.length}</span></button><button data-ifs="dn" aria-pressed="${!isUp}">▼ Downside <span class="num">${R.dn.length}</span></button></div>
+      <select id="if-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
+      <button class="chip" data-ifc="sharp" aria-pressed="${f.sharp}">Sharp only <span class="num">${all.filter(x => x.sharp).length}</span></button>
+      <button class="chip" data-ifc="pending" aria-pressed="${f.pending}">${esc(nextQ || 'Next')} results still to come <span class="num">${all.filter(x => x.pending).length}</span></button>
+    </div>
+    <p class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'} ${isUp ? 'turning up' : 'turning down'}</p>
+    <div class="nt-grid">${rows.slice(0, f.limit).map((x, i) => { const c = x.c;
+      return `<article class="card nt" style="${x.sharp ? `border-color:${col}` : ''}">
+        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}${esc(c.archetype && c.archetype !== 'None' ? c.archetype : c.industry || '')}</span></div>
+          <div class="ntsc"><span class="pill" style="--pc:${col}">${isUp ? '▲' : '▼'} ${x.sharp ? 'Sharp' : 'Building'}</span><span class="eyebrow" style="font-size:10px">Concall Signal Score</span><b style="color:${vcol(c.score, c.veto)}">${c.score}</b>${dcell(c.delta)}</div></div>
+        <div class="why-chips">${x.marks.slice(0, 6).map(([w, , q]) => `<span class="${q ? 'hot' : ''}" ${q ? `style="border-color:color-mix(in srgb,${col} 50%,var(--line))"` : ''}>${esc(w.length > 90 ? w.slice(0, 87) + '…' : w)}</span>`).join('')}</div>
+        <div style="display:grid;gap:8px">${x.trig.slice(0, 3).map(t => `<div class="trig t-${t.t}"><span class="stripe"></span><div><div><span class="mini t-${t.t}">${TYPES[t.t] || esc(t.t)}</span><strong>${esc(t.label)}</strong></div>${t.q ? `<blockquote class="small">${hlq(t.q.length > 240 ? t.q.slice(0, 237) + '…' : t.q, t.hl)}</blockquote>` : ''}</div></div>`).join('')}</div>
+        ${x.counter.length ? `<p class="small muted" style="margin:0"><b style="color:var(--fg)">Counter-signal${x.counter.length > 1 ? 's' : ''}:</b> ${x.counter.slice(0, 2).map(t => esc(t.label)).join(' · ')}</p>` : ''}
+        <div class="foot"><span>${esc(c.period)} call · ${esc(fdate(c.date))}${(nc => nc ? ` · <b style="color:var(--fg)">next call ${esc(callWhen(nc))}</b>` : x.pending ? ` · <b style="color:var(--fg)">${esc(nextQ)} results due</b>` : '')(nextCall(c.id))}</span><button class="btn" data-open="${esc(c.id)}" data-k="${esc(x.key)}">Open the call</button></div>
+      </article>`; }).join('') || '<div class="empty">No companies match these filters.</div>'}</div>
+    ${rows.length > f.limit ? `<div style="text-align:center;margin-top:14px"><button class="btn" id="if-more">Show more (${rows.length - f.limit} left)</button></div>` : ''}`;
+}
+
 /* Management changes */
 const MG_VERB = {appointed: 'Appointed', reappointed: 'Re-appointed', resigned: 'Resigned', retired: 'Retired', removed: 'Removed', redesignated: 'Redesignated', passed_away: 'Passed away', other: 'Change'};
 const mgChange = x => `<div class="mg-ch"><span class="pill ${x.type === 'appointed' ? 'st-confirming' : x.type === 'redesignated' ? 'st-emerging' : 'v-flag'}">${MG_VERB[x.type] || esc(x.type)}</span> <b>${esc(x.role)}</b> · ${esc(x.person)}${x.promoter ? ' <span class="tag">promoter family</span>' : ''}${x.effective ? ` <span class="muted">· from ${esc(x.effective)}</span>` : ''}${x.reason ? `<div class="small muted">Reason: ${esc(x.reason)}</div>` : ''}${x.background ? `<div class="small muted">${esc(x.background)}</div>` : ''}</div>`;
@@ -1209,6 +1312,7 @@ function vHelp() {
       <div><b>Sector turns</b><span>Sub-sectors where supply discipline is building and pricing or utilisation is improving. This is the early sign of a turn.</span></div>
       <div><b>Themes</b><span>How many companies are discussing each investment theme, and how fast it is spreading.</span></div>
       <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the reasons and the lines from the call that say so. Uses the same Concall Signal Score as every other page. Filter to names whose next results are still to come.</span></div>
+      <div><b>Inflection watch</b><span>Companies whose latest call points to a sharp turn up or down, read from the triggers management gave. Each card shows what marks the turn, the trigger quotes behind it and any counter-signals. Switch between Upside and Downside, or keep only the Sharp ones.</span></div>
       <div><b>Management changes</b><span>Every top-management change filed on BSE (checked every 30 minutes, with a GitHub alert for each top-level change), and companies whose new management is pushing growth.</span></div>
       <div><b>Ideas & red flags</b><span>Standout single companies (divergence, first movers, hidden suppliers, credibility upgrades) and calls that need a check.</span></div>
       <div><b>Company panel</b><span>Opens from anywhere. The <b>Call summary</b> tab has financial highlights, segments, guidance, capex, demand, Q&A, risks and verbatim quotes. The <b>Signals</b> tab has the triggers, mental models, the eight readings behind the score, credibility, and other companies that name it.</span></div>
@@ -1235,7 +1339,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -1503,6 +1607,9 @@ document.addEventListener('click', e => {
   const mgt = t.closest('[data-mg]'); if (mgt) { const k = mgt.dataset.mg; S.mg[k] = !S.mg[k]; render(); return; }
   const ntc = t.closest('[data-ntc]'); if (ntc) { const k = ntc.dataset.ntc; S.near.chips.has(k) ? S.near.chips.delete(k) : S.near.chips.add(k); S.near.limit = 30; render(); return; }
   if (t.closest('#nt-more')) { S.near.limit += 30; render(); return; }
+  const ifs = t.closest('[data-ifs]'); if (ifs) { S.inf.side = ifs.dataset.ifs; S.inf.limit = 30; render(); return; }
+  const ifc = t.closest('[data-ifc]'); if (ifc) { const k = ifc.dataset.ifc; S.inf[k] = !S.inf[k]; S.inf.limit = 30; render(); return; }
+  if (t.closest('#if-more')) { S.inf.limit += 30; render(); return; }
   const it = t.closest('[data-it]'); if (it) { S.ideas.tab = it.dataset.it; render(); return; }
   const sec = t.closest('.trk .r.sec'); if (sec) { const n = S._secs[+sec.dataset.sec].name; S.openSec.has(n) ? S.openSec.delete(n) : S.openSec.add(n); render(); return; }
   const sub = t.closest('.trk .r.subr'); if (sub) { const [i, j] = sub.dataset.subrow.split('-').map(Number), n = S._secs[i].subs[j].name; S.openSub = S.openSub === n ? null : n; render(); return; }
@@ -1531,6 +1638,7 @@ document.addEventListener('change', e => {
   if (id === 'rs-big') { S.rs.big = e.target.value; S.rs.limit = 100; render(); }
   if (id === 'rs-days') { S.rs.days = +e.target.value; S.rs.limit = 100; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
+  if (id === 'if-big') { S.inf.big = e.target.value; S.inf.limit = 30; render(); }
   if (id === 'c-sort') { S.calls.sort = e.target.value; S.calls.limit = 50; fillCalls(); }
 });
 document.addEventListener('keydown', e => {
