@@ -271,6 +271,8 @@ table.res tr.wrow td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
 .wl-names span,.wl-names button{font-size:13px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);background:var(--panel)}
 .wl-banner{display:flex;gap:10px 16px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--line));background:linear-gradient(120deg,var(--goldsoft),transparent 70%),var(--panel);border-radius:14px;padding:12px 16px}
 @media (max-width:760px){.wl .r{grid-template-columns:minmax(0,1fr) auto}.wl .r>:nth-child(2),.wl .r>:nth-child(3){display:none}.wl .r .up-actions{grid-column:1/-1;justify-content:flex-start}}
+.ask-p{font-size:13.5px;line-height:1.5;border-left:2px solid var(--line);padding-left:10px}
+.ask-p mark.hl{--tc:var(--gold)}
 .mg .r{grid-template-columns:minmax(0,240px) minmax(0,1fr) 190px;align-items:start}
 .mg .r>:last-child{justify-content:flex-end}
 .mg-ch{font-size:14px}
@@ -582,7 +584,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -611,7 +613,7 @@ function daysBack(n) { const d = new Date(lastDate() || Date.now()); d.setDate(d
 
 /* ---------- views ---------- */
 const VIEWS = [
-  {group: 'Start', items: [['home', 'Today'], ['help', 'How to use']]},
+  {group: 'Start', items: [['home', 'Today'], ['ask', 'Ask the calls'], ['help', 'How to use']]},
   {group: 'Calls', items: [['calls', 'All calls'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Results', items: [['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
@@ -795,6 +797,194 @@ function vUpcoming() {
       : `<div class="empty">${calRows().length ? 'No announced calls match these filters.' : 'No call intimations read yet. They appear after the next nightly run.'}</div>`}
     ${held.length ? `<section class="up-day"><h3>Held, transcript awaited <span class="num">${held.length}</span></h3>
       <div class="rows up">${held.slice(0, 60).map(r => upRow(r, true)).join('')}</div></section>` : ''}`;
+}
+
+/* ---------- Ask the calls: search every call summary and quote, then have Claude read the shortlist ---------- */
+const ASK_FIELDS = {headline: 'Headline', overview: 'Overview', segments: 'Segments', guidance_outlook: 'Guidance', capex_capacity: 'Capex & capacity', demand_pricing: 'Demand & pricing',
+  qa_highlights: 'Q&A', financial_highlights: 'Financials', risks_watch: 'Risks', key_quotes: 'Quote', management_tone: 'Tone'};
+const ASK_EX = ['Which companies said crude or oil prices are not hurting their margins?', 'Who is guiding to margin expansion in H2 FY27, and why?', 'Which companies flagged weak rural demand?',
+  'Who is facing pricing pressure from Chinese imports?', 'Which companies have capacity going live before March 2027?', 'Who said the war in West Asia hurt freight or exports?'];
+const ASK = {idx: null, sample: undefined, ctl: null};
+const askUse = () => ASK.sample !== undefined ? Promise.resolve(ASK.sample) : (window.claude?.use ? claude.use('sample').catch(() => null) : Promise.resolve(null)).then(s => (ASK.sample = s || null));
+function askIndex() {
+  if (ASK.idx && ASK.idx.src === SUMS.data) return ASK.idx;
+  const P = [], S_ = SUMS.data || {}, str = x => typeof x === 'string' ? x : '';
+  const add = (key, f, t) => { t = String(t || '').trim(); if (t.length > 12) P.push({k: key, id: key.split('|')[0], f, t, l: t.toLowerCase()}); };
+  for (const [key, v] of Object.entries(S_)) {
+    for (const [f, x] of Object.entries(v || {})) {
+      if (typeof x === 'string') add(key, f, x);
+      else if (Array.isArray(x)) x.forEach(y => {
+        if (typeof y === 'string') add(key, f, y);
+        else if (y && f === 'qa_highlights') add(key, f, `Q: ${str(y.question)} A: ${str(y.answer)}`);
+        else if (y && f === 'segments') add(key, f, `${str(y.name)}: ${str(y.commentary)}`);
+        else if (y && f === 'financial_highlights') add(key, f, `${str(y.metric)}: ${str(y.value)} ${str(y.change)}`);
+      });
+    }
+  }
+  (D.calls || []).forEach(c => { const co = byId[c.id]; if (co && co.period === c.period) (co.triggers || []).forEach(t => t.q && add(c.key, 'trigger', `${t.label}: “${t.q}”`)); });
+  return (ASK.idx = {src: SUMS.data, P});
+}
+const askTerms = s => { s = String(s || '').toLowerCase().replace(/[“”]/g, '"'); const ph = [...s.matchAll(/"([^"]+)"/g)].map(m => m[1]);
+  return [...new Set([...ph, ...s.replace(/"[^"]*"/g, ' ').split(/[\s,;?!]+/)].map(x => x.replace(/^[^a-z0-9]+|[^a-z0-9%]+$/g, '').trim()).filter(x => x.length >= 2))]; };
+const ASK_STOP = new Set('the a an and or of to in on for with which who what companies company said say says have has are is was were by from about any their that this not no it its how why when did does do'.split(' '));
+function askHit(l, t) { if (t.length >= 4) return l.includes(t); const i = l.indexOf(t); if (i < 0) return false; return new RegExp('(^|[^a-z0-9])' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '([^a-z0-9]|$)').test(l); }
+/* groups: concept groups, each a list of terms; a call must touch every group. Returns ranked calls with their best passages. */
+function askRetrieve(groups, scope, max) {
+  const {P} = askIndex(), N = P.length || 1;
+  groups = groups.map(g => [...new Set(g.map(t => String(t).toLowerCase().trim()).filter(t => t.length >= 2 && !ASK_STOP.has(t)))]).filter(g => g.length);
+  if (!groups.length) return [];
+  const df = {}; groups.flat().forEach(t => { df[t] = 0; });
+  const inScope = new Set(scope.map(c => c.key)), mat = [];
+  for (let i = 0; i < P.length; i++) { const p = P[i]; let any = false; const m = [];
+    for (const t in df) if (askHit(p.l, t)) { df[t]++; m.push(t); any = true; }
+    if (any && inScope.has(p.k)) mat.push([p, m]); }
+  const idf = t => Math.log(N / (1 + df[t])) + 1, calls = {};
+  for (const [p, m] of mat) {
+    const gm = groups.map(g => g.some(t => m.includes(t)));
+    const ng = gm.filter(Boolean).length, sc = m.reduce((n, t) => n + idf(t), 0) * ng * ng;
+    const c = (calls[p.k] = calls[p.k] || {key: p.k, id: p.id, gs: groups.map(() => false), ps: []});
+    gm.forEach((b, i) => { if (b) c.gs[i] = true; }); c.ps.push({p, sc, ng});
+  }
+  let out = Object.values(calls).filter(c => c.gs.every(Boolean));
+  if (out.length < 8 && groups.length > 1) out = Object.values(calls).filter(c => c.gs.filter(Boolean).length >= groups.length - 1);
+  out.forEach(c => { c.ps.sort((a, b) => b.ng - a.ng || b.sc - a.sc); c.score = c.ps.slice(0, 3).reduce((n, x) => n + x.sc, 0); });
+  return out.sort((a, b) => b.score - a.score).slice(0, max);
+}
+function askScope() {
+  const f = S.ask; let cs = f.scope === 'quarter' ? callsQ() : (() => { const latest = {}; (D.calls || []).forEach(c => { if (!latest[c.id] || c.periodKey > latest[c.id].periodKey) latest[c.id] = c; }); return Object.values(latest); })();
+  if (f.big) cs = cs.filter(c => c.bigSector === f.big);
+  return cs;
+}
+const askCall = key => (D.calls || []).find(c => c.key === key) || {};
+const askSet = patch => { Object.assign(S.ask, patch); if (S.view === 'ask') paintAsk(); };
+async function askRun(mode) {
+  const f = S.ask, q = (($('#ask-q') || {}).value ?? f.q).trim(); if (!q) { $('#ask-q')?.focus(); return; }
+  ASK.ctl?.abort(); const ctl = (ASK.ctl = new AbortController());
+  askSet({q, busy: true, err: '', res: null, plan: null, stage: 'Loading call summaries…', mode, limit: 30});
+  await loadSums(); if (ctl.signal.aborted) return;
+  const scope = askScope(), max = f.depth;
+  try {
+    if (mode === 'keyword') {
+      const groups = askTerms(q).filter(t => !ASK_STOP.has(t)).map(t => [t]);
+      const hits = askRetrieve(groups, scope, 150);
+      return askSet({busy: false, stage: '', res: {mode, q, groups, hits, n: scope.length}});
+    }
+    const sample = await askUse();
+    if (!sample) return askSet({busy: false, stage: '', err: 'Ask Claude is not available in this view. Keyword search below still works.'});
+    askSet({stage: 'Working out what to search for…'});
+    const plan = await sample.json(`You help search Indian listed companies' earnings-call summaries. Turn the question into keyword groups for a literal substring search.
+Question: ${q}
+
+Reply with only JSON: {"focus": "<the question restated in under 15 words>", "groups": [["term", ...], ...]}
+- 1 to 3 groups. Each group is one concept the passage must touch (e.g. the cause, and the effect). A company is kept only if it touches every group, so do not add groups for words like "company" or "management", and never a group for negation words such as "no" or "not".
+- Each group: 6 to 18 lowercase words or short phrases that call summaries would actually use, including synonyms, abbreviations and related inputs (for crude: "crude", "oil price", "brent", "petrochemical", "feedstock", "raw material", "rm cost", "input cost", "polymer", "pvc", "naphtha"...). Prefer stems that match by substring ("margin" also matches "margins").
+Example: {"focus": "Margins not hurt by crude prices", "groups": [["crude", "brent", "oil price", "feedstock", "raw material", "input cost"], ["margin", "ebitda", "gross margin", "spread", "profitability"]]}`, {modelTier: 'quick', signal: ctl.signal});
+    const groups = (Array.isArray(plan?.groups) ? plan.groups : []).filter(Array.isArray).slice(0, 3);
+    if (!groups.length) throw {code: 'invalid_json'};
+    askSet({stage: 'Searching every call…', plan: {focus: String(plan.focus || ''), groups}});
+    await new Promise(r => setTimeout(r, 0));
+    const hits = askRetrieve(groups, scope, max);
+    if (!hits.length) return askSet({busy: false, stage: '', res: {mode, q, groups, focus: plan.focus, hits, n: scope.length, ai: {answer: 'No call in this scope touches all of the search terms. Try a wider scope or rephrase the question.', companies: []}}});
+    const pid = {}, blocks = hits.map((c, ci) => { const call = askCall(c.key), co = byId[c.id] || {};
+      const ps = c.ps.slice(0, 5).map((x, j) => { const id = `P${ci + 1}.${j + 1}`; pid[id] = x.p; return `[${id}] (${x.p.f === 'trigger' ? 'Verbatim trigger quote' : x.p.f === 'key_quotes' ? 'Verbatim quote' : ASK_FIELDS[x.p.f] || x.p.f}) ${x.p.t.slice(0, 520)}`; });
+      return `## C${ci + 1} · ${call.name || co.name || c.id} · ${call.sector || co.sector || ''} · ${call.period || ''}\n${ps.join('\n')}`; });
+    askSet({stage: `Claude is reading ${hits.length} companies…`});
+    const out = await sample.json(`You are an equity research analyst. Answer the question using ONLY the passages below, taken from summaries and verbatim quotes of Indian listed companies' latest earnings calls. Each company block is "C<n>"; each passage has an id like [P3.2].
+
+Question: ${q}
+
+Classify each company the passages actually speak to:
+- "match": the company clearly says what the question asks.
+- "partial": it touches the point with a caveat, a mixed picture, or only for one segment.
+- "opposite": it says the reverse (useful contrast; e.g. it IS facing the pressure the question asks about).
+Leave out companies whose passages do not address the question. Do not infer beyond the text; quote numbers only as written.
+
+Reply with only JSON:
+{"answer": "<3-5 plain sentences: what the calls say overall, the pattern by sector, and the main caveat>",
+ "companies": [{"c": "C<n>", "fit": "match|partial|opposite", "line": "<one sentence, specific, with figures where given>", "evidence": ["P<n>.<m>", ...]}]}
+Order companies by how strongly and specifically they answer the question, matches first. Use 1-3 evidence ids per company.
+
+${blocks.join('\n\n')}`, {signal: ctl.signal, onText: () => askSet({stage: `Claude is writing the answer (${hits.length} companies read)…`})});
+    const byC = Object.fromEntries(hits.map((c, i) => ['C' + (i + 1), c]));
+    const cos = (Array.isArray(out?.companies) ? out.companies : []).map(x => ({...x, h: byC[String(x.c)]})).filter(x => x.h && ['match', 'partial', 'opposite'].includes(x.fit))
+      .map(x => ({...x, ev: (Array.isArray(x.evidence) ? x.evidence : []).map(e => pid[String(e)]).filter(p => p && p.k === x.h.key)}));
+    askSet({busy: false, stage: '', res: {mode, q, groups, focus: plan.focus, hits, n: scope.length, ai: {answer: String(out?.answer || ''), companies: cos}}, tab: 'match'});
+  } catch (e) {
+    if (e?.code === 'cancelled') return askSet({busy: false, stage: ''});
+    const msg = {not_granted: 'Ask Claude was not allowed for this page. Keyword search still works.', sampling_disabled: 'Claude is not available on this account. Keyword search still works.',
+      rate_limited: 'Too many questions just now, or your Claude usage limit is reached. Try again in a little while.', refused: 'Claude declined this question. Try rephrasing it.',
+      prompt_too_large: 'Too much text for one question. Pick a sector or the Standard depth.', invalid_json: 'The answer came back in the wrong shape. Try again.', session_expired: 'Please sign in to Claude again.'}[e?.code];
+    askSet({busy: false, stage: '', err: msg || 'Something went wrong reaching Claude. Try again.'});
+  }
+}
+function askPassage(p, terms) {
+  let h = esc(p.t.length > 600 ? p.t.slice(0, 597) + '…' : p.t);
+  terms.filter(t => t.length >= 3).sort((a, b) => b.length - a.length).slice(0, 30).forEach(t => { const re = new RegExp('(' + esc(t).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'); h = h.replace(re, '<mark class="hl">$1</mark>'); });
+  const lab = p.f === 'trigger' ? 'Trigger · verbatim' : p.f === 'key_quotes' ? 'Quote · verbatim' : (ASK_FIELDS[p.f] || p.f) + ' · summary';
+  return `<div class="ask-p"><span class="mini t-${p.f === 'trigger' || p.f === 'key_quotes' ? 'supply' : 'util'}">${esc(lab)}</span> <span class="t-guidance">${h}</span></div>`;
+}
+function askCard(c, opts) {
+  const call = askCall(c.key), co = byId[c.id] || {}, terms = opts.terms;
+  const ps = opts.ev?.length ? opts.ev : c.ps.slice(0, 3).map(x => x.p);
+  return `<article class="card nt" ${opts.fit ? `style="border-color:${opts.fit === 'match' ? 'var(--up)' : opts.fit === 'opposite' ? 'var(--down)' : 'var(--line)'}"` : ''}>
+    <div class="top"><div style="min-width:0"><span class="num small muted">${opts.n ? '#' + opts.n + ' · ' : ''}${esc(call.sector || co.sector || '')}</span><h4>${star(c.id)}${esc(call.name || co.name || c.id)}</h4><span class="small muted">${esc(call.mcap || co.mcap || '')}${call.period ? ' · ' + esc(call.period) + ' call' : ''}</span></div>
+      <div class="ntsc">${opts.fit ? `<span class="pill ${opts.fit === 'match' ? 'st-confirming' : opts.fit === 'opposite' ? 'v-flag' : 'v-avg'}">${opts.fit === 'match' ? 'Says it' : opts.fit === 'opposite' ? 'Opposite' : 'Partly'}</span>` : ''}${call.score != null ? `<b style="color:${vcol(call.score, call.veto)};font-size:20px">${call.score}</b>` : ''}</div></div>
+    ${opts.line ? `<p style="margin:0;font-size:14.5px">${esc(opts.line)}</p>` : ''}
+    <div style="display:grid;gap:6px">${ps.map(p => askPassage(p, terms)).join('')}</div>
+    <div class="foot"><span>${call.date ? esc(fdate(call.date)) : ''}</span>${byId[c.id] ? `<button class="btn" data-open="${esc(c.id)}" data-k="${esc(c.key)}">Open the call</button>` : ''}</div></article>`;
+}
+function paintAsk() {
+  const el = $('#ask-out'); if (!el) return;
+  const f = S.ask, r = f.res;
+  $('#ask-go')?.toggleAttribute('disabled', !!f.busy); $('#ask-kw')?.toggleAttribute('disabled', !!f.busy);
+  const stop = $('#ask-stop'); if (stop) stop.hidden = !f.busy;
+  if (f.busy) { el.innerHTML = `<div class="card" style="display:flex;gap:12px;align-items:center"><span class="mark" aria-hidden="true" style="width:22px;height:22px"><i></i></span><span>${esc(f.stage || 'Working…')}</span></div>${f.plan ? `<p class="small muted">Searching for: ${f.plan.groups.map(g => esc(g.slice(0, 6).join(' / '))).join(' <b>and</b> ')}</p>` : ''}`; return; }
+  if (f.err) { el.innerHTML = `<div class="flag">${esc(f.err)}</div>`; return; }
+  if (!r) { el.innerHTML = ''; return; }
+  const terms = r.groups.flat().map(String);
+  const searched = `<p class="small muted">${r.focus ? `<b style="color:var(--fg)">${esc(r.focus)}</b> · ` : ''}Searched ${fmt(r.n)} calls for ${r.groups.map(g => esc(g.slice(0, 8).join(' / ') + (g.length > 8 ? ' …' : ''))).join(' <b>and</b> ')} · ${fmt(r.hits.length)} compan${r.hits.length === 1 ? 'y' : 'ies'} shortlisted</p>`;
+  if (r.mode === 'keyword') {
+    el.innerHTML = searched + (r.hits.length ? `<div class="nt-grid">${r.hits.slice(0, f.limit).map((c, i) => askCard(c, {terms, n: i + 1})).join('')}</div>${r.hits.length > f.limit ? `<div class="more"><button class="btn" id="ask-more">Show more (${r.hits.length - f.limit} left)</button></div>` : ''}` : '<div class="empty">No call mentions all of these words. Try fewer words, or Ask Claude, which also searches synonyms.</div>');
+    return;
+  }
+  const a = r.ai, cnt = k => a.companies.filter(x => x.fit === k).length, tab = f.tab || 'match';
+  const list = a.companies.filter(x => x.fit === tab);
+  el.innerHTML = `<section class="today" style="gap:10px"><span class="eyebrow">Claude’s answer</span><p style="font-size:16px;line-height:1.55">${esc(a.answer)}</p>
+      <p class="small muted">Read from the call summaries and verbatim quotes of the ${fmt(r.hits.length)} best-matching companies. Summaries are machine-written; open the call and check the transcript before acting.</p></section>
+    ${searched}
+    <div class="toolbar"><div class="seg" role="group" aria-label="Fit">${[['match', 'Says it'], ['partial', 'Partly'], ['opposite', 'Says the opposite']].map(([k, n]) => `<button data-asktab="${k}" aria-pressed="${tab === k}">${n} <span class="num">${cnt(k)}</span></button>`).join('')}</div>
+      ${a.companies.length ? `<button class="btn" id="ask-csv">Copy as table</button>` : ''}</div>
+    ${list.length ? `<div class="nt-grid">${list.map((x, i) => askCard(x.h, {terms, n: i + 1, fit: x.fit, line: x.line, ev: x.ev})).join('')}</div>` : `<div class="empty">No company in the shortlist ${tab === 'match' ? 'clearly says this' : tab === 'partial' ? 'partly says this' : 'says the opposite'}.</div>`}`;
+}
+function vAsk() {
+  const f = S.ask, bigs = [...new Set((D.calls || []).map(c => c.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
+  setTimeout(paintAsk, 0);
+  askUse().then(s => { const b = $('#ask-go'); if (b && !s) { b.hidden = true; const n = $('#ask-noai'); if (n) n.hidden = false; } });
+  return head('Ask the calls', 'Ask a question in plain words and find every company whose call speaks to it, with the lines that say so.', `
+      <ul><li><b>Ask Claude</b> turns your question into the words calls actually use (for crude: oil, Brent, feedstock, raw material…), searches every call summary, Q&A, quote and trigger, and has Claude read the best-matching companies and sort them into <b>Says it</b>, <b>Partly</b> and <b>Says the opposite</b>, each with the passages behind it.</li>
+      <li>It runs on your own Claude account. The first question asks you to allow it.</li>
+      <li><b>Keyword search</b> needs no Claude: it lists calls that mention every word you type. Put phrases in quotes.</li>
+      <li>Scope: each company’s latest call, or just the quarter picked at the top. <b>Wide</b> reads up to 80 companies instead of 40, and takes longer.</li>
+      <li>Passages marked <b>verbatim</b> are quotes checked against the transcript; the rest are from the machine-written call summary.</li></ul>`,
+      `<span class="badge">${fmt(Object.keys(SUMS.data || {}).length || D.summaryCount || 0)} call summaries</span>`) + `
+    <div class="card" style="display:grid;gap:10px">
+      <textarea id="ask-q" rows="2" placeholder="e.g. Which companies said crude prices are not putting pressure on margins?" aria-label="Your question" style="width:100%;resize:vertical;font-family:var(--body);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:16px;line-height:1.4">${esc(f.q)}</textarea>
+      <div class="toolbar">
+        <button class="btn primary" id="ask-go">Ask Claude</button><button class="btn" id="ask-kw">Keyword search</button><button class="btn" id="ask-stop" hidden>Stop</button>
+        <select id="ask-scope" aria-label="Scope"><option value="latest" ${f.scope === 'latest' ? 'selected' : ''}>Latest call per company</option><option value="quarter" ${f.scope === 'quarter' ? 'selected' : ''}>Quarter picked above (${esc(curQ() === 'all' ? 'All' : curQ())})</option></select>
+        <select id="ask-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
+        <select id="ask-depth" aria-label="Depth"><option value="40" ${f.depth === 40 ? 'selected' : ''}>Standard (40 companies)</option><option value="80" ${f.depth === 80 ? 'selected' : ''}>Wide (80 companies)</option></select>
+      </div>
+      <p class="small muted" id="ask-noai" hidden>Ask Claude is not available in this view, so only keyword search runs here.</p>
+      <div class="chips">${ASK_EX.map(x => `<button class="chip" data-askex="${esc(x)}">${esc(x)}</button>`).join('')}</div>
+    </div>
+    <div id="ask-out" style="display:grid;gap:14px"></div>`;
+}
+function askCsv() {
+  const r = S.ask.res; if (!r?.ai) return;
+  const rows = [['Company', 'Sector', 'Call', 'Score', 'Fit', 'What they said']].concat(r.ai.companies.map(x => { const c = askCall(x.h.key); return [c.name || x.h.id, c.sector || '', c.period || '', c.score ?? '', x.fit, x.line || '']; }));
+  const tsv = rows.map(r => r.map(v => String(v).replace(/[\t\n]/g, ' ')).join('\t')).join('\n');
+  navigator.clipboard?.writeText(tsv).then(() => { const b = $('#ask-csv'); if (b) b.textContent = 'Copied'; }).catch(() => {});
 }
 
 /* My watchlist: the user's own companies, whatever their size */
@@ -1361,6 +1551,7 @@ function vHelp() {
       <li><b>Ideas & red flags:</b> once a week, go through the shortlist and pick names to work up properly.</li>
       <li><b>Share:</b> Copy link in a company panel gives a link that opens straight to that company.</li></ol></section>
     <section id="h-views"><h3>What each view is for</h3><div class="vguide">
+      <div><b>Ask the calls</b><span>Ask a question in plain words (for example, which companies said crude is not hurting margins). Claude searches every call summary, Q&A, quote and trigger for the words calls actually use, reads the best matches and sorts them into says it, partly and says the opposite, with the passages behind each. Keyword search works without Claude.</span></div>
       <div><b>Today</b><span>The day’s headline, season progress, the best call, the strongest guidance, the top idea and the newest calls.</span></div>
       <div><b>All calls</b><span>Every call for the quarter in one ranked list. Sort best to worst or by newest, and filter by sector, sub-sector, guidance or red flags.</span></div>
       <div><b>Coming up</b><span>Earnings calls announced on BSE for the days ahead, with the time, the score of each company’s last call and a link to the filing with dial-in details. Also lists calls already held whose transcript has not been filed yet.</span></div>
@@ -1400,7 +1591,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -1680,6 +1871,13 @@ document.addEventListener('click', e => {
   const mgt = t.closest('[data-mg]'); if (mgt) { const k = mgt.dataset.mg; S.mg[k] = !S.mg[k]; render(); return; }
   const ntc = t.closest('[data-ntc]'); if (ntc) { const k = ntc.dataset.ntc; S.near.chips.has(k) ? S.near.chips.delete(k) : S.near.chips.add(k); S.near.limit = 30; render(); return; }
   if (t.closest('#nt-more')) { S.near.limit += 30; render(); return; }
+  if (t.closest('#ask-go')) { askRun('ai'); return; }
+  if (t.closest('#ask-kw')) { askRun('keyword'); return; }
+  if (t.closest('#ask-stop')) { ASK.ctl?.abort(); return; }
+  if (t.closest('#ask-csv')) { askCsv(); return; }
+  if (t.closest('#ask-more')) { S.ask.limit += 30; paintAsk(); return; }
+  const aex = t.closest('[data-askex]'); if (aex) { const q = $('#ask-q'); if (q) q.value = aex.dataset.askex; S.ask.q = aex.dataset.askex; askRun(ASK.sample === null ? 'keyword' : 'ai'); return; }
+  const atab = t.closest('[data-asktab]'); if (atab) { S.ask.tab = atab.dataset.asktab; paintAsk(); return; }
   const ifs = t.closest('[data-ifs]'); if (ifs) { S.inf.side = ifs.dataset.ifs; S.inf.limit = 30; render(); return; }
   const ifc = t.closest('[data-ifc]'); if (ifc) { const k = ifc.dataset.ifc; S.inf[k] = !S.inf[k]; S.inf.limit = 30; render(); return; }
   if (t.closest('#if-more')) { S.inf.limit += 30; render(); return; }
@@ -1698,6 +1896,7 @@ document.addEventListener('input', e => {
   if (e.target.id === 'up-search') { const v = e.target.value, pos = e.target.selectionStart; S.up.search = v; render(); const i = $('#up-search'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   if (e.target.id === 'c-search') { S.calls.search = e.target.value; S.calls.limit = 50; fillCalls(); }
   if (e.target.id === 'find') { findSel = 0; renderFind(); }
+  if (e.target.id === 'ask-q') S.ask.q = e.target.value;
 });
 document.addEventListener('change', e => {
   const id = e.target.id;
@@ -1712,6 +1911,9 @@ document.addEventListener('change', e => {
   if (id === 'rs-days') { S.rs.days = +e.target.value; S.rs.limit = 100; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
   if (id === 'if-big') { S.inf.big = e.target.value; S.inf.limit = 30; render(); }
+  if (id === 'ask-scope') S.ask.scope = e.target.value;
+  if (id === 'ask-big') S.ask.big = e.target.value;
+  if (id === 'ask-depth') S.ask.depth = +e.target.value;
   if (id === 'c-sort') { S.calls.sort = e.target.value; S.calls.limit = 50; fillCalls(); }
 });
 document.addEventListener('keydown', e => {
@@ -1721,6 +1923,7 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Enter') { e.preventDefault(); items[findSel]?.click(); return; }
     e.preventDefault(); findSel = (findSel + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length; renderFind(); return; }
   if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('.trk .r.sec')) { e.preventDefault(); e.target.click(); }
+  if (e.target.id === 'ask-q' && e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); askRun(ASK.sample === null ? 'keyword' : 'ai'); return; }
   if (e.key === '/' && !e.target.closest('input,select,textarea')) { e.preventDefault(); $('#find').focus(); }
   if (e.key === 'Tab' && S.drawer) { const f = [...$('.drawer').querySelectorAll('button,a,input,select,[tabindex="0"]')].filter(x => x.offsetParent);
     if (!f.length) return; if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f.at(-1).focus(); } else if (!e.shiftKey && document.activeElement === f.at(-1)) { e.preventDefault(); f[0].focus(); } }
