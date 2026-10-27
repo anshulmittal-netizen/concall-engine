@@ -1,0 +1,353 @@
+{
+ "doc_id": "IN-0a666167-219e-4e1a-9912-83fce133b781",
+ "market": "IN",
+ "company_id": "504132",
+ "name": "Permanent Magnets Ltd",
+ "doc_type": "transcript",
+ "date": "2026-10-27",
+ "period": "2026-09",
+ "title": "Permanent Magnets Ltd-$ - 504132 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q2 revenue INR72.5cr (+49% YoY) and 25% EBITDA margin on EV recovery, but alloys furnace teething, relay and Quantum commercial ramp pushed to FY28, and FY27 guidance trimmed.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Backlog conversion",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "we could not utilize the full capacity of the new furnace due to some teething issues"
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "commercial ramp-up will now move to the financial year '28"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Alloys furnace under-utilised, teething issues",
+    "quote": "we could not utilize the full capacity of the new furnace due to some teething issues",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Quantum revenue FY27 now nil",
+    "quote": "We do not get any revenue this year, but that it will get pushed to next year.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "EV revenue Q2 INR24cr vs Q1 INR15cr",
+    "quote": "In this quarter, INR24 crores. INR24 crores was the total automotive sales.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Alloys FY27 INR40-50cr vs earlier 3-4x FY26",
+    "quote": "the total revenue for the year is going to be about INR40 crores to INR50 crores",
+    "direction": -1,
+    "confidence": 0.75
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Alloys revenue FY27",
+    "value": "INR40-50 crores",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "the total revenue for the year is going to be about INR40 crores to INR50 crores"
+   },
+   {
+    "metric": "Relay commercial ramp",
+    "value": "pilot supplies H2 FY27; commercial in FY28",
+    "change": "cut",
+    "horizon": "FY28",
+    "quote": "commercial ramp-up will now move to the financial year '28"
+   },
+   {
+    "metric": "Quantum Magnetics revenue FY27",
+    "value": "nil",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "We do not get any revenue this year, but that it will get pushed to next year."
+   },
+   {
+    "metric": "Total revenue growth FY27",
+    "value": "20% to 30%",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "now the total overall growth can be somewhere between 20% to 30%"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "20% to 25%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "It will be in this range, 20% to 25%."
+   },
+   {
+    "metric": "Alloys FY28 revenue",
+    "value": "INR70-80 crores",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "next year, yes, it is possible to increase that to maybe INR70 crores, INR80 crores"
+   },
+   {
+    "metric": "Quantum Phase 2 commercial ramp",
+    "value": "FY27-28",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "Phase 2 commercial ramp-up should happen in Financial Year 27-28."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Quantum Magnetics revenue INR5-10cr FY27",
+    "outcome": "dropped",
+    "quote": "We do not get any revenue this year, but that it will get pushed to next year."
+   },
+   {
+    "metric": "Alloys 3x-4x FY26 revenue (INR70-80cr)",
+    "outcome": "missed",
+    "quote": "We lost a few months due to some teething issues. We lost that those sales."
+   },
+   {
+    "metric": "Relay revenue contribution from H2 FY27",
+    "outcome": "missed",
+    "quote": "commercial ramp-up will now move to the financial year '28"
+   },
+   {
+    "metric": "Phase 2 Quantum commissioning Q3",
+    "outcome": "met",
+    "quote": "the phase 2 capex covering block cutting, machining, and surface treatment was commissioned in October, in line with the quarter 3 timeline"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Quantum Magnetics",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Auto EV transition",
+   "Electronics manufacturing (EMS/PLI)",
+   "Defence indigenisation",
+   "Tariffs & trade policy",
+   "China+1 enquiries → orders"
+  ],
+  "red_flags": [
+   {
+    "label": "Repeated timeline slippage on alloys, relays, Quantum",
+    "quote": "it kept on getting delayed for a for quite some time now"
+   },
+   {
+    "label": "Penalties paid to customers for delay",
+    "quote": "we are incurring certain costs which we have to pay to the customers due to the delay"
+   },
+   {
+    "label": "EV demand not contracted beyond H2",
+    "quote": "We have orders for H2. We do not have orders for H1 of FY28."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 7,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Quantum FY27 revenue",
+    "quote": "I don't know whether it may happen or it may not happen. Right now, I don't have that clarity."
+   },
+   {
+    "topic": "Quantum import / China restriction solution",
+    "quote": "we have some solutions. But I don't want to mention those solutions what we have."
+   },
+   {
+    "topic": "FY28 EV and relay revenue",
+    "quote": "I don't want to comment anything on the revenue from relay for the next year."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Q2 FY27 standalone revenue rose 49% YoY to INR72.5 crore and EBITDA rose 159% to INR17.8 crore, led by EV demand.",
+  "overview": "Standalone revenue from operations was INR72.5 crore in Q2 FY27, up 49% YoY, driven by higher EV-application supplies, mainly to export customers. EBITDA was INR17.8 crore (25% margin) versus 14% a year earlier and 19% in Q1, attributed to product mix and operating leverage. Alloys revenue grew in H1 but a new furnace ran below capacity due to teething issues, so FY27 alloys guidance was cut to INR40-50 crore. Relays commercial ramp-up slipped to FY28, and Quantum Magnetics product approvals have not started, so FY27 revenue from that segment is now expected to be nil.",
+  "financial_highlights": [
+   {
+    "metric": "Standalone revenue from operations (Q2 FY27)",
+    "value": "INR72.5 crore",
+    "change": "+49% YoY"
+   },
+   {
+    "metric": "EBITDA (Q2 FY27)",
+    "value": "INR17.8 crore",
+    "change": "+159% YoY"
+   },
+   {
+    "metric": "EBITDA margin (Q2 FY27)",
+    "value": "25%",
+    "change": "vs 14% in Q2 FY26 and 19% in Q1 FY27"
+   },
+   {
+    "metric": "Automotive/EV revenue (Q2 FY27)",
+    "value": "INR24 crore",
+    "change": "vs INR15 crore in Q1 FY27 and INR10.5 crore in Q2 FY26"
+   },
+   {
+    "metric": "Alloys revenue (H1 FY27)",
+    "value": "about INR12 crore",
+    "change": "H1 revenue up significantly YoY, as stated"
+   },
+   {
+    "metric": "Q2 FY27 revenue split",
+    "value": "51% domestic, 49% export",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA margin (H1 FY27)",
+    "value": "25%",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "Automotive / EV",
+    "commentary": "Q2 FY27 automotive sales were INR24 crore, up from INR15 crore in Q1 and INR10.5 crore in Q2 FY26. Management says the uptick came from existing customer programs (mostly export, two to three customers), with similar levels expected for the rest of FY27."
+   },
+   {
+    "name": "Energy meters / smart meters",
+    "commentary": "Demand picked up modestly in H1 FY27 from a few select customers, and management expects similar levels going forward, dependent on utility installation pace. A water meter product is in pilot stage, with about 2,000-3,000 parts supplied; management sizes it at INR5-10 crore per product for one customer."
+   },
+   {
+    "name": "Alloys",
+    "commentary": "H1 FY27 revenue was about INR12 crore because the new furnace had breakdowns. FY27 is now guided at INR40-50 crore, versus an earlier 3-4x FY26 expectation (about INR70-80 crore). Virgin-alloy gross margin is 10-15%, and returns-based 15-25%; FY27 EBITDA margin is about breakeven or slightly higher."
+   },
+   {
+    "name": "Relays",
+    "commentary": "Pilot supplies are expected in H2 FY27, but commercial ramp-up has moved to FY28 after customer testing iterations. Management expects 15-20% gross margin, with no customer offtake agreements signed yet."
+   },
+   {
+    "name": "Quantum Magnetics",
+    "commentary": "Phase 2 (block cutting, machining, surface treatment) was commissioned in October 2026. Management now expects no FY27 revenue, versus an earlier INR5-10 crore guide. FY28 could be INR10-40 crore depending on one customer's share. ECMS approval gives 25% of capex as incentive, subject to conditions."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 total revenue growth now 20-30%, versus an earlier 20-30% expectation; relay growth reduced by delay and boosted by EV pickup.",
+   "FY27 full-year EBITDA margin expected at 20-25%, with H1 at 25%.",
+   "FY27 alloys revenue expected at INR40-50 crore; FY28 alloys could reach INR70-80 crore.",
+   "Quantum Magnetics FY27 revenue expected to be nil, pushed to FY28; FY28 range INR10-40 crore, with Phase 2 full-scale capacity of INR40-60 crore.",
+   "FY28 growth described as likely 'healthy' with no specific number yet; management to update in about three months.",
+   "New facility to consolidate plants about two years out, saving about INR5 crore a year in rent; building capex about INR30 crore plus land already acquired for INR25 crore."
+  ],
+  "capex_capacity": [
+   "Quantum Magnetics Phase 2 (block cutting, machining, surface treatment) commissioned in October 2026, in line with the earlier Q3 timeline; commercial ramp-up expected in FY28.",
+   "Quantum Magnetics ECMS approval: 25% of capex as incentive, subject to Phase 1/2 completion, employment and production-start conditions.",
+   "SPECS/MeitY-type scheme: INR400 crore approved for machinery only, for Phase 3 metal-to-block; not yet locked in equipment pricing; PML shareholding about 49-50%.",
+   "Alloys: new furnace installed but underutilised in H1 due to breakdowns; supplier issues being resolved, better utilisation expected in H2 FY27.",
+   "Consolidation into a single new facility: about two years away; land legal issues resolved; building about INR30 crore."
+  ],
+  "demand_pricing": [
+   "EV demand from two to three export-focused customers drove the Q2 increase, with the current forecast at similar levels for H2 FY27. Management has orders for H2 FY27, but none for H1 FY28, and no FY28 forecast yet.",
+   "Margins depend on mix: export margins are higher than domestic. Management is moving toward standardised PML-designed modules (sold internationally and to automotive, started in FY27), which it sees as more scalable.",
+   "Alloys orders from oil & gas, industrial, and small aerospace customers (domestic), plus remelting work. Shift in mix means H2 FY27 is likely more domestic.",
+   "Quantum Magnetics: talking to three to four customers across electronics, automotive and specialised motors; pricing and samples under discussion.",
+   "Management cited Chinese EV dominance and possible restrictions in Western markets as a factor for Western EV demand, but said it has no concrete data."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What changed in EV demand, and will it sustain into FY28?",
+    "answer": "Demand rose from existing export customer programs, partly deferred earlier and now recovering. Customers indicate similar levels for H2 FY27, but there is no FY28 forecast; management expects similar levels."
+   },
+   {
+    "question": "Will margins stay at 20%+ if EV demand holds?",
+    "answer": "Margin depends on product mix; export margins are higher. If EV demand stays at Q2 levels, margins should be similar to Q2, though management did not commit to a specific number."
+   },
+   {
+    "question": "Has the FY27 alloys target changed, and what margins apply?",
+    "answer": "FY27 alloys revenue is now INR40-50 crore (H1 about INR12 crore), down from earlier expectations because of lost months from teething issues. Virgin-alloy gross margin is 10-15%, returns 15-25%; FY28 could be INR70-80 crore."
+   },
+   {
+    "question": "Is the Quantum Magnetics INR5-10 crore FY27 revenue guidance still on track?",
+    "answer": "No. Management expects no FY27 revenue because the customer needs visits, plant audits and product approval first; FY28 is 'INR10-40 crore' depending on customer share."
+   },
+   {
+    "question": "What is the status of the INR400 crore PLI/MeitY capex and equipment pricing?",
+    "answer": "Machinery-only capex; it is at Quantum Magnetics (PML about 49-50%). Equipment pricing not locked; Phase 3 decision only after Phase 2 commercial ramp-up in FY28. PML did not apply for the other PLI scheme because it lacked the net worth requirement."
+   }
+  ],
+  "risks_watch": [
+   "EV demand concentration: two to three export customers, with no FY28 orders or forecast. Management noted the risk of Chinese EV competition and entry barriers in the West.",
+   "Alloys execution: furnace breakdowns, supplier issues, and customer delay penalties; H2 FY27 utilisation must improve to reach INR40-50 crore.",
+   "Relays and Quantum Magnetics: both depend on customer approvals with no offtake agreements. Quantum also depends on imported blocks, with China export restrictions a risk.",
+   "Management said it may not be able to give a clear FY28 growth number until about three months from the call."
+  ],
+  "management_tone": "Confident on EV and the margin recovery, but noticeably cautious and vague on relays, Quantum Magnetics and FY28, where it repeatedly declined to give numbers. Several guidance items were cut during the call.",
+  "key_quotes": [
+   "We have reported a healthy financial performance in quarter 2 across key parameters.",
+   "The margin improvement both on sequential and year-on-year basis came from a better product mix due to higher EV demand and positive operating leverage from higher business throughput.",
+   "We do not get any revenue this year, but that it will get pushed to next year.",
+   "Right now, I don't have that clarity."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Quantum Magnetics Phase 2 (block cutting, machining, surface treatment)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Consolidation into single new facility (building capex ~INR30 crore, land already acquired for INR25 crore)",
+    "size_pct": null,
+    "capex_cr": 30.0,
+    "q": 8,
+    "status": "under_construction",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 25.0,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "demand_or_share_gains",
+   "order_book",
+   "pricing_or_mix",
+   "capacity_coming"
+  ],
+  "clarity": "partial",
+  "qRev": 49.0,
+  "qEbitda": 159.0,
+  "outlook": 0,
+  "why": "FY27 total revenue growth guided at 20-30% (midpoint 25%), cut from relays and Quantum (nil FY27 revenue) and alloys (INR40-50 crore vs earlier ~INR70-80 crore), partly offset by EV demand from existing export programs with H2 FY27 orders in hand but no H1 FY28 orders; alloys furnace underutilised due to breakdowns.",
+  "mgmt": null
+ }
+}

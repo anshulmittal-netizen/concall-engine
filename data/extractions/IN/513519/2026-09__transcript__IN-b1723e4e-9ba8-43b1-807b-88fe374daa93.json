@@ -1,0 +1,392 @@
+{
+ "doc_id": "IN-b1723e4e-9ba8-43b1-807b-88fe374daa93",
+ "market": "IN",
+ "company_id": "513519",
+ "name": "Pitti Engineering Ltd",
+ "doc_type": "transcript",
+ "date": "2026-10-27",
+ "period": "2026-09",
+ "title": "Pitti Engineering Ltd-$ - 513519 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Pitti reaffirmed FY27 lamination 82,000 t and ~₹370 cr EBITDA on Q2 run-rate, but margins fell ~100 bps to 15.8% and a new ₹450 cr capex (modular, to FY31) was announced, with casting volume guidance left unreconciled.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "The total planned capex for this project is INR450 crores, comprising approximately INR125 crores towards land procurement and the remaining INR325 crores towards infrastructure, plant, and equipment."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "New ₹450 cr capex, cumulative ₹740 cr",
+    "quote": "the cumulative capex for the two announcements is INR740 crores",
+    "highlight": "cumulative capex for the two announcements is INR740 crores",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Casting utilisation ~52% on sales basis",
+    "quote": "So, the utilization is 52%, right?",
+    "highlight": "utilization is 52%",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "pricing",
+    "label": "Q2 EBITDA margin 15.8%, down ~100 bps",
+    "quote": "The EBITDA margins stood at 15.8%, impacted by an increase in forex loss",
+    "highlight": "EBITDA margins stood at 15.8%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 lamination 82,000 t reaffirmed",
+    "quote": "FY27, I think we'll still hold on to the upgraded guidance given last quarter.",
+    "highlight": "still hold on to the upgraded guidance",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Trade payables ₹470 cr from ₹236 cr",
+    "quote": "We will be looking to work more on the trade payables side rather than, leverage our cash positions",
+    "highlight": "work more on the trade payables side",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 lamination volume",
+    "value": "82,000 tons (H1 ~40,889 t)",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Yes, 82,000 tons, 82 plus 1,000 tons for the year."
+   },
+   {
+    "metric": "FY27 EBITDA",
+    "value": "on track for ~₹370 cr",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Yes. I think we are pretty much on track."
+   },
+   {
+    "metric": "Sustainable blended EBITDA margin",
+    "value": "17%+ at Q2 raw material prices",
+    "change": "new",
+    "horizon": "steady state",
+    "quote": "your sustainable blended margin should be in the vicinity of 17% plus EBITDA."
+   },
+   {
+    "metric": "Maharashtra incentive recovery",
+    "value": "~₹40 cr per annum from next year",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "we don't estimate that we would be able to recover more than INR40 crores per annum"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Lamination volume FY27",
+    "outcome": "met",
+    "quote": "H1 numbers are about 40,889 tons. So, if I just double this, you are at 82,000 tons."
+   },
+   {
+    "metric": "Casting volume FY27",
+    "outcome": "not_discussed",
+    "quote": "I think for the next call, we will try to simplify this and give the out-production numbers."
+   },
+   {
+    "metric": "FY27 EBITDA",
+    "outcome": "met",
+    "quote": "Yes. I think we are pretty much on track."
+   },
+   {
+    "metric": "FY27 effective tax rate",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Working capital release",
+    "outcome": "not_discussed",
+    "quote": ""
+   }
+  ],
+  "entities": [
+   {
+    "name": "Cummins",
+    "relation": "customer"
+   },
+   {
+    "name": "Marathon",
+    "relation": "customer"
+   },
+   {
+    "name": "Nidec",
+    "relation": "customer"
+   },
+   {
+    "name": "Caterpillar",
+    "relation": "customer"
+   },
+   {
+    "name": "Siemens Mobility",
+    "relation": "customer"
+   },
+   {
+    "name": "Progress Rail",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Railway capex",
+   "Capex cycle revival (private)",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Trade payables up to ₹470 cr from ₹236 cr",
+    "quote": "We will be looking to work more on the trade payables side rather than, leverage our cash positions"
+   },
+   {
+    "label": "Casting volume guidance not reconcilable; H1 casting figure not given",
+    "quote": "I'll have to get that number out. I think for the next call, we will try to simplify this"
+   },
+   {
+    "label": "Maharashtra incentive deferred ₹21 cr; FY27 other income lost",
+    "quote": "We have decided to defer this claim of incentive in the current year to the next financial year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 4,
+   "growth": 5,
+   "margin": 6,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Casting volume vs 17,000 t guidance",
+    "quote": "I need to pull that out. Like I said, it's not there on this table here, so I'll have to get that number out."
+   },
+   {
+    "topic": "Q1 FX loss figure",
+    "quote": "I don't have that number over here. I think our partners can get that across to you from SGA."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Pitti Engineering Q2 FY27 revenue rose 16.3% to INR581 crore, but EBITDA margin fell to 15.8% on forex, fuel/power and raw material costs.",
+  "overview": "Q2 FY27 total income was INR581 crore (up 16.3% YoY) and H1 revenue about INR1,110 crore (up roughly 15%), with results now reported standalone after merging two subsidiaries in September 2026. Adjusted EBITDA rose 13% to INR91 crore, but margin was 15.8%, hit by a INR4.61 crore forex loss, higher consumables/packing, fuel and power costs, and higher employee costs ahead of new capacity. Adjusted PAT fell to INR36 crore from INR43 crore, as Q2 FY26 included INR21 crore of Maharashtra incentive income that is now deferred to next year. Management announced a new INR450 crore lamination and machining capex (to FY31) on top of the INR290 crore Hyderabad project, and reiterated FY27 guidance.",
+  "financial_highlights": [
+   {
+    "metric": "Total income",
+    "value": "INR581 crore",
+    "change": "+16.3% YoY vs INR499 crore"
+   },
+   {
+    "metric": "H1 revenue",
+    "value": "INR1,110 crore",
+    "change": "approx. +15% YoY vs INR963 crore"
+   },
+   {
+    "metric": "Adjusted EBITDA",
+    "value": "INR91 crore",
+    "change": "+13% YoY vs INR80 crore"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "15.8%",
+    "change": "Down; around 100 bps decline per analyst calculation"
+   },
+   {
+    "metric": "Adjusted PAT",
+    "value": "INR36 crore",
+    "change": "Down from INR43 crore in Q2 FY26 (incl. INR21 crore incentive income)"
+   },
+   {
+    "metric": "Forex loss (in other expenses)",
+    "value": "INR4.61 crore",
+    "change": "Q1 FY27 figure not provided"
+   },
+   {
+    "metric": "Lamination and assembly volume",
+    "value": "21,600 tons",
+    "change": "+26% YoY"
+   },
+   {
+    "metric": "H1 lamination volume",
+    "value": "41,000 tons (40,889 tons)",
+    "change": "+22% YoY"
+   },
+   {
+    "metric": "Raw casting and machine components volume",
+    "value": "3,086 tons (Q2); 6,054 tons (H1)",
+    "change": "+6% (Q2); +1.6% (H1)"
+   },
+   {
+    "metric": "Trade payables",
+    "value": "INR470 crore",
+    "change": "From INR236 crore"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Traction motor and railway components",
+    "commentary": "27% of Q2 revenue, about INR156 crore, versus 32% a year earlier; management says absolute revenue is not declining sharply."
+   },
+   {
+    "name": "Power generation",
+    "commentary": "16% of Q2 revenue; management expects power gen to grow fastest from its current level."
+   },
+   {
+    "name": "Industrial and commercial applications",
+    "commentary": "12% of Q2 revenue."
+   },
+   {
+    "name": "Mining, oil and gas",
+    "commentary": "10% of Q2 revenue; management sees mining and off-highway as very robust for the next two years."
+   },
+   {
+    "name": "Special purpose motors",
+    "commentary": "8% of Q2 revenue."
+   },
+   {
+    "name": "Data centers",
+    "commentary": "7% of Q2 revenue; management caps the segment at about 9% of revenue over time, with customers including Cummins, Marathon and Nidec."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 lamination and assembly volume target of 82,000 tons retained; H1 was 40,889 tons, and Q4 is expected similar to or slightly above Q2, with Q3 dipping on festivals.",
+   "FY27 casting volume target of about 17,000 tons (production basis, including casting converted into machined output); management could not state H1 progress against it.",
+   "FY27 revenue at Q2 FY27 prices would be about INR2,350-2,400 crore at 82,000 tons lamination and 17,000 tons casting, per management's clarification.",
+   "Management said it is on track for the INR370 crore full-year guidance from the previous quarter.",
+   "Fuel and power cost pass-through from January; annual adjustment expected to restore margins by Q4; steel price increases are passed through quarterly.",
+   "Sustainable blended EBITDA margin of 17%+ at Q2 raw material prices; 18%+ possible at mix; machine components EBITDA margin above 25%.",
+   "Steady-state revenue potential of about INR3,800 crore by FY31 at full utilisation, with about INR850 crore from machine components and about INR3,000 crore from lamination.",
+   "Maharashtra incentive: management expects about INR40 crore per year recovery from next year, pursuing a 9-year period instead of the 7-year sanction."
+  ],
+  "capex_capacity": [
+   "New INR450 crore capex (INR125 crore land and building for Bangalore consolidation, INR325 crore for capacity) to take sheet metal capacity to 160,000 tpa (from 108,000) and machining to 1.31 million hours by FY31, phased to FY31.",
+   "Earlier INR290 crore Hyderabad greenfield casting and machining project, phased through FY30; cumulative INR740 crore, of which about INR250-260 crore is committed (land and buildings), rest modular.",
+   "Expected spend about INR150 crore in FY28 for the new project; Hyderabad land and building spend is about 90% within 18 months from 1 July.",
+   "H1 FY27 capex cash outflow about INR140 crore (INR100 crore capitalised; land of INR40-50 crore purchased).",
+   "Equipment lead time 6-8 months; capacity to come on stream modularly from Q2 FY28.",
+   "Bangalore is currently in leased facilities; a fifth and sixth lease are expected before the owned facility is ready. No state capex incentive in Bangalore beyond concessional land.",
+   "Copper winding is being explored for outsourcing first; in-house only if demand and margins justify it."
+  ],
+  "demand_pricing": [
+   "Management says demand remained robust despite Middle East-related inflation and supply chain disruption.",
+   "Data center demand strong from Cummins, Marathon and Nidec, with a few more marquee customers in development.",
+   "Railways supported by North American rail modernisation; mining and off-highway demand supporting machine components.",
+   "Raw material (steel) prices rising; steel is passed through quarterly, while fuel and power pass-through is annual.",
+   "Direct exports to grow significantly in absolute terms but remain stable to slightly lower as a share of sales, as customers prefer manufacturing in India.",
+   "Top five to seven customers (grouped by beneficial ownership) remain the bulk of revenue."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How much was the forex loss, and what was the prior quarter's figure?",
+    "answer": "Q2 forex loss was INR4.61 crore, booked in other expenses above EBITDA. Q1 FY27 figure not available on the call."
+   },
+   {
+    "question": "Will margins recover to 16-17%?",
+    "answer": "Fuel and power costs to be passed on from January and expected to normalise by Q4; steel is a quarterly pass-through. Inflation depresses percentage margin even when passed through."
+   },
+   {
+    "question": "Is the trade payables increase sustainable?",
+    "answer": "Yes. Trade payables rose to INR470 crore from INR236 crore; management intends to lean on payables rather than cash for materials ahead of the capex cycle."
+   },
+   {
+    "question": "How will the INR450 crore capex be funded?",
+    "answer": "Approximately INR150 crore in FY28, rest linked to demand through FY31; management believes it can be funded from internal accruals, with debt as the flexible option."
+   },
+   {
+    "question": "Why defer the Maharashtra incentive?",
+    "answer": "Sanction is for 7 years (INR57 crore per year), while local sales support about INR35-36 crore per year; management is seeking a 9-year period (INR44 crore per year) and expects about INR40 crore per year next year."
+   },
+   {
+    "question": "What is the steady-state margin at FY31 capacity?",
+    "answer": "Blended 17%+ at current Q2 raw material prices; 18% possible with mix. Machine components above 25% EBITDA margin; lamination margins are lower."
+   }
+  ],
+  "risks_watch": [
+   "Margin pressure from forex, fuel, power, consumables and raw material inflation; pass-through timing lags until Q4.",
+   "Higher employee costs from capacity ramp-up not yet absorbed; manpower cost up sharply QoQ.",
+   "Rising scrap and side-slit volumes; scrap realisation weak, and lower utilisation of side slits.",
+   "Execution risk in Q3 (festival and holiday season) and casting volume reporting that is not reconcilable against the 17,000-ton guidance.",
+   "Maharashtra incentive recovery depends on government approval of a 9-year period; disbursement still in process.",
+   "Capex funding: debt usage if demand arrives ahead of plan; Bangalore relies on leased sites until the owned facility is ready.",
+   "Management intends to change production and utilisation disclosures in the next call; the metric basis is unclear."
+  ],
+  "management_tone": "Confident on demand and long-term targets, but defensive and at times evasive on margin bridges, casting utilisation and per-ton metrics, which management said it would clean up next call.",
+  "key_quotes": [
+   "The forex loss in the quarter, INR4.61 crores.",
+   "So we are eligible to receive up to INR400 crores of the incentive.",
+   "Potentially, 18% is available. 17% would be pretty much a very comfortable number to hit with this mix.",
+   "Practically, it should be funded entirely from internal accruals if that clarifies."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Sheet metal capacity to 160,000 tpa (from 108,000) under new INR450 crore Bangalore consolidation and capacity capex, phased to FY31",
+    "size_pct": 48.0,
+    "capex_cr": 450.0,
+    "q": 4,
+    "status": "approved",
+    "mat": "major"
+   },
+   {
+    "what": "Hyderabad greenfield casting and machining project (INR290 crore earlier announcement, cumulative INR740 crore with new capex), modular, first capacity from Q2 ",
+    "size_pct": null,
+    "capex_cr": 290.0,
+    "q": 3,
+    "status": "under_construction",
+    "mat": "major"
+   }
+  ],
+  "util": 52.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "none",
+  "qRev": 16.3,
+  "qEbitda": 13.0,
+  "outlook": 1,
+  "why": "FY27 guidance held: 82,000 t lamination (H1 40,889 t, Q4 similar to Q2) and ~INR370 cr EBITDA on track, implying FY27 revenue ~INR2,350-2,400 cr at Q2 prices; backed by existing lamination run-rate and pass-through pricing, but no new capacity is live until FY28 and casting H1 progress was not stated.",
+  "mgmt": null
+ }
+}
