@@ -9,12 +9,12 @@
    rose-to-saffron glow for the headline moments; rose marks what you can act on. The five verdict colours run from
    chilli red through saffron and warm grey to leaf green and deep jade, and are used for scores only. */
 :root{
-  --bg:#FBF3EA; --rail:#F6E9DA; --panel:#FFFDF9; --panel2:#FCF2E7; --line:#F0E0CC; --line2:#E3CBAE;
-  --fg:#2B1820; --muted:#7B6066; --faint:#AA9396;
-  --accent:#B8285E; --accentsoft:rgba(184,40,94,.09); --onAccent:#FFFFFF; --saffron:#F0A23A; --saffronsoft:rgba(240,162,58,.20);
-  --v5:#16715A; --v4:#5E9F3A; --v3:#9C9088; --v2:#E0961E; --v1:#C23A2A;
-  --up:#3E8A3A; --down:#C23A2A; --warn:#B26A0E;
-  --teal:#13766B; --violet:#7D3FA8; --rose:#B8285E; --sand:#9A5A3D;
+  --bg:#FFF9F3; --rail:#FFF1E4; --panel:#FFFFFF; --panel2:#FFF6EC; --line:#F2E3D2; --line2:#E6CDB0;
+  --fg:#1C1015; --muted:#5A464C; --faint:#8C787D;
+  --accent:#D0215F; --accentsoft:rgba(208,33,95,.09); --onAccent:#FFFFFF; --saffron:#FF9F1C; --saffronsoft:rgba(255,159,28,.20);
+  --v5:#0B8466; --v4:#3FA52F; --v3:#968A82; --v2:#F29A12; --v1:#E0352B;
+  --up:#2E8F2A; --down:#D1302A; --warn:#B86A00;
+  --teal:#0A8478; --violet:#7A3CC4; --rose:#D0215F; --sand:#A35A35;
   --gold:var(--accent); --goldsoft:var(--accentsoft); --blue:var(--accent); --onGold:var(--onAccent);
   --shadow:0 1px 2px rgba(80,36,20,.05),0 10px 30px rgba(120,56,24,.08); --shadow2:0 20px 54px rgba(100,40,20,.18); --scrim:rgba(43,24,32,.34);
   --display:'Bricolage Grotesque','Avenir Next','Segoe UI',system-ui,sans-serif;
@@ -23,27 +23,27 @@
   --ease:cubic-bezier(.2,.8,.2,1); --r:18px; --r2:12px;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#1A1216; --rail:#1E151A; --panel:#251A20; --panel2:#2D2027; --line:#3A2B33; --line2:#4C3942;
-  --fg:#F7EBE3; --muted:#C4ADA8; --faint:#8F7A7C;
-  --accent:#F27BA3; --accentsoft:rgba(242,123,163,.14); --onAccent:#2A0E19; --saffron:#F2A94A; --saffronsoft:rgba(242,169,74,.16);
-  --v5:#2FA58A; --v4:#7DB24A; --v3:#7F746E; --v2:#C9952E; --v1:#E55B4A;
-  --up:#7DB24A; --down:#E55B4A; --warn:#E3A447;
-  --teal:#4EC3B4; --violet:#C79AEB; --rose:#F27BA3; --sand:#E2B39C;
+  --bg:#1D1519; --rail:#211820; --panel:#2A1F26; --panel2:#33262E; --line:#45343E; --line2:#5A4550;
+  --fg:#FFF6EF; --muted:#DCC8C2; --faint:#A8939A;
+  --accent:#FF8AB4; --accentsoft:rgba(255,138,180,.15); --onAccent:#2A0E19; --saffron:#FFB547; --saffronsoft:rgba(255,181,71,.16);
+  --v5:#34C29F; --v4:#8FCB4F; --v3:#8F837D; --v2:#E6A93A; --v1:#FF6A57;
+  --up:#8FCB4F; --down:#FF6A57; --warn:#FFBE5C;
+  --teal:#5AD6C6; --violet:#D3A8F5; --rose:#FF8AB4; --sand:#F0C2A8;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.3); --shadow2:0 20px 54px rgba(0,0,0,.55); --scrim:rgba(10,4,8,.62);
   color-scheme:dark; } }
 :root[data-theme="dark"]{
-  --bg:#1A1216; --rail:#1E151A; --panel:#251A20; --panel2:#2D2027; --line:#3A2B33; --line2:#4C3942;
-  --fg:#F7EBE3; --muted:#C4ADA8; --faint:#8F7A7C;
-  --accent:#F27BA3; --accentsoft:rgba(242,123,163,.14); --onAccent:#2A0E19; --saffron:#F2A94A; --saffronsoft:rgba(242,169,74,.16);
-  --v5:#2FA58A; --v4:#7DB24A; --v3:#7F746E; --v2:#C9952E; --v1:#E55B4A;
-  --up:#7DB24A; --down:#E55B4A; --warn:#E3A447;
-  --teal:#4EC3B4; --violet:#C79AEB; --rose:#F27BA3; --sand:#E2B39C;
+  --bg:#1D1519; --rail:#211820; --panel:#2A1F26; --panel2:#33262E; --line:#45343E; --line2:#5A4550;
+  --fg:#FFF6EF; --muted:#DCC8C2; --faint:#A8939A;
+  --accent:#FF8AB4; --accentsoft:rgba(255,138,180,.15); --onAccent:#2A0E19; --saffron:#FFB547; --saffronsoft:rgba(255,181,71,.16);
+  --v5:#34C29F; --v4:#8FCB4F; --v3:#8F837D; --v2:#E6A93A; --v1:#FF6A57;
+  --up:#8FCB4F; --down:#FF6A57; --warn:#FFBE5C;
+  --teal:#5AD6C6; --violet:#D3A8F5; --rose:#FF8AB4; --sand:#F0C2A8;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.3); --shadow2:0 20px 54px rgba(0,0,0,.55); --scrim:rgba(10,4,8,.62);
   color-scheme:dark; }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:radial-gradient(1200px 600px at 85% -10%,var(--saffronsoft),transparent 60%),radial-gradient(900px 500px at -10% 30%,var(--accentsoft),transparent 60%) fixed,var(--bg);color:var(--fg);font-family:var(--body);font-size:15.5px;line-height:1.55;
+body{background:radial-gradient(1200px 520px at 90% -12%,var(--saffronsoft),transparent 55%) fixed,var(--bg);color:var(--fg);font-family:var(--body);font-size:15.5px;line-height:1.55;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 72px}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
 h1,h2,h3,h4{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.01em}
@@ -55,7 +55,7 @@ a{color:var(--accent)}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 .eyebrow{font-family:var(--body);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .muted{color:var(--muted)}
-.small{font-size:13px}
+.small{font-size:13.5px}
 
 /* ---------- shell ---------- */
 .app{max-width:1480px;margin:0 auto;display:grid;grid-template-columns:244px minmax(0,1fr);gap:36px;align-items:start}
@@ -170,7 +170,7 @@ button.r::after{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3
 button.r:hover::after{transform:scaleY(1)}
 .r.hd{background:var(--panel2);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-block:11px}
 .r .nm{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.25}
-.r .sub{font-size:12.5px;color:var(--muted)}
+.r .sub{font-size:13px;color:var(--muted)}
 .r .why{font-size:13.5px;color:var(--muted);line-height:1.45}
 .calls .r{grid-template-columns:34px minmax(0,1.3fr) 170px 84px minmax(0,1fr) minmax(0,1.8fr) 104px 72px}
 .r .rk{font-family:var(--mono);font-size:12.5px;color:var(--faint)}
@@ -202,7 +202,7 @@ button.r:hover::after{transform:scaleY(1)}
 .legend i{width:10px;height:10px;border-radius:3px}
 .legend .num{color:var(--muted)}
 .chart{width:100%;display:block;overflow:visible}
-.chart text{font-family:var(--mono);fill:var(--muted)}
+.chart text{font-family:var(--mono);fill:var(--muted);font-weight:500}
 .chart .bar{transform-origin:bottom;transform-box:fill-box;animation:growY .9s var(--ease) both}
 @keyframes growY{from{transform:scaleY(0)}}
 .chart .hit{fill:transparent;cursor:default}
@@ -758,12 +758,12 @@ function histogram(scores, {h = 190} = {}) {
   const med = scores.length ? scores.slice().sort((a, b) => a - b)[Math.floor(scores.length / 2)] : null;
   const X = s => x0 + (s - lo) / (hi - lo) * (x1 - x0);
   return `<svg class="chart" viewBox="0 0 ${W} ${h}" role="img" aria-label="Score distribution of ${scores.length} calls">
-    ${ticks.map(v => `<line x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)" stroke-dasharray="${v ? '2 4' : ''}"/><text x="${x0 - 8}" y="${Y(v) + 3.5}" text-anchor="end" font-size="10">${v}</text>`).join('')}
+    ${ticks.map(v => `<line x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)" stroke-dasharray="${v ? '2 4' : ''}"/><text x="${x0 - 8}" y="${Y(v) + 3.5}" text-anchor="end" font-size="12.5">${v}</text>`).join('')}
     ${bins.map((b, i) => { const x = x0 + i * bw + 1, bh = y1 - Y(b.n);
       return `<rect class="bar" x="${x.toFixed(1)}" y="${Y(b.n).toFixed(1)}" width="${(bw - 2).toFixed(1)}" height="${Math.max(0, bh).toFixed(1)}" rx="4" fill="${VC[vband(b.b)]}" style="animation-delay:${i * .03}s"/>
         <rect class="hit" x="${(x0 + i * bw).toFixed(1)}" y="${y0}" width="${bw.toFixed(1)}" height="${y1 - y0}" data-tt="${ttA(`Score ${b.b}–${b.b + step - 1}\n${fmt(b.n)} call${b.n === 1 ? '' : 's'} · ${VNAMES[vband(b.b)]}`)}"/>`; }).join('')}
-    ${[20, 40, 50, 60, 70, 100].map(s => `<text x="${X(s)}" y="${h - 8}" text-anchor="middle" font-size="10">${s}</text>`).join('')}
-    ${med != null ? `<line x1="${X(med)}" x2="${X(med)}" y1="${y0}" y2="${y1}" stroke="var(--fg)" stroke-width="1.5" stroke-dasharray="3 3"/><text x="${X(med) + 5}" y="${y0 + 10}" font-size="10.5" style="fill:var(--fg)">median ${med}</text>` : ''}
+    ${[20, 40, 50, 60, 70, 100].map(s => `<text x="${X(s)}" y="${h - 8}" text-anchor="middle" font-size="12.5">${s}</text>`).join('')}
+    ${med != null ? `<line x1="${X(med)}" x2="${X(med)}" y1="${y0}" y2="${y1}" stroke="var(--fg)" stroke-width="1.5" stroke-dasharray="3 3"/><text x="${X(med) + 5}" y="${y0 + 10}" font-size="13" style="fill:var(--fg)">median ${med}</text>` : ''}
   </svg>`;
 }
 /* columns per day, last 14 days */
@@ -773,12 +773,12 @@ function pace(days, vals, {h = 170} = {}) {
   const top = step * Math.ceil(max / step), bw = (x1 - x0) / vals.length, Y = v => y1 - v / top * (y1 - y0), ticks = [];
   for (let v = 0; v <= top; v += step) ticks.push(v);
   return `<svg class="chart" viewBox="0 0 ${W} ${h}" role="img" aria-label="Calls filed per day over the last 14 days">
-    ${ticks.map(v => `<line x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)" stroke-dasharray="${v ? '2 4' : ''}"/><text x="${x0 - 7}" y="${Y(v) + 3.5}" text-anchor="end" font-size="10">${v}</text>`).join('')}
+    ${ticks.map(v => `<line x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)" stroke-dasharray="${v ? '2 4' : ''}"/><text x="${x0 - 7}" y="${Y(v) + 3.5}" text-anchor="end" font-size="12.5">${v}</text>`).join('')}
     ${vals.map((v, i) => { const last = i === vals.length - 1, x = x0 + i * bw + 4;
       return `<rect class="bar" x="${x.toFixed(1)}" y="${Y(v).toFixed(1)}" width="${(bw - 8).toFixed(1)}" height="${(y1 - Y(v)).toFixed(1)}" rx="4" fill="${last ? 'var(--saffron)' : 'var(--accent)'}" opacity="${v ? 1 : .25}" style="animation-delay:${i * .04}s"/>
-        ${v && (last || v === max) ? `<text x="${(x0 + i * bw + bw / 2).toFixed(1)}" y="${(Y(v) - 5).toFixed(1)}" text-anchor="middle" font-size="10.5" style="fill:var(--fg)">${v}</text>` : ''}
+        ${v && (last || v === max) ? `<text x="${(x0 + i * bw + bw / 2).toFixed(1)}" y="${(Y(v) - 5).toFixed(1)}" text-anchor="middle" font-size="13" style="fill:var(--fg)">${v}</text>` : ''}
         <rect class="hit" x="${(x0 + i * bw).toFixed(1)}" y="${y0}" width="${bw.toFixed(1)}" height="${y1 - y0}" data-tt="${ttA(`${wday(days[i])} ${fdate(days[i])}\n${v} call${v === 1 ? '' : 's'} filed`)}"/>`; }).join('')}
-    <text x="${x0}" y="${h - 6}" font-size="10">${esc(sdate(days[0]))}</text><text x="${x1}" y="${h - 6}" font-size="10" text-anchor="end">${esc(sdate(days.at(-1)))}</text></svg>`;
+    <text x="${x0}" y="${h - 6}" font-size="12.5">${esc(sdate(days[0]))}</text><text x="${x1}" y="${h - 6}" font-size="12.5" text-anchor="end">${esc(sdate(days.at(-1)))}</text></svg>`;
 }
 /* area sparkline with emphasised endpoint */
 function spark2(vals, color = 'var(--accent)') {
@@ -797,7 +797,7 @@ function semiGauge(v, {label = ''} = {}) {
     const [ax, ay] = p(from), [bx, by] = p(to); return `<path d="M${ax.toFixed(1)} ${ay.toFixed(1)}A104 104 0 0 1 ${bx.toFixed(1)} ${by.toFixed(1)}" fill="none" stroke="${col}" stroke-width="18"/>`; };
   return `<div class="gauge-w"><svg viewBox="0 0 260 150" role="img" aria-label="${esc(label)} ${v ?? '–'} of 100">
     ${arc(0, 39, 'var(--v1)')}${arc(40, 59, 'var(--v3)')}${arc(60, 100, 'var(--v5)')}
-    <text x="22" y="146" font-size="10" text-anchor="middle">0</text><text x="130" y="18" font-size="10" text-anchor="middle">50</text><text x="238" y="146" font-size="10" text-anchor="middle">100</text>
+    <text x="22" y="146" font-size="12.5" text-anchor="middle">0</text><text x="130" y="18" font-size="12.5" text-anchor="middle">50</text><text x="238" y="146" font-size="12.5" text-anchor="middle">100</text>
     <g class="needle" style="transform:rotate(${reduce ? a : -90}deg)" data-rot="${a}"><line x1="130" y1="130" x2="130" y2="40" stroke="var(--fg)" stroke-width="4" stroke-linecap="round"/></g>
     <circle cx="130" cy="130" r="9" fill="var(--fg)" stroke="var(--panel)" stroke-width="3"/></svg>
     <span class="gv" style="color:${gcol(v)}">${v ?? '–'}</span><span class="small" style="color:${gcol(v)};font-weight:600">${gword(v) || 'No calls yet'}</span></div>`;
