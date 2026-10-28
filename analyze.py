@@ -650,6 +650,8 @@ def build(market: str, log=print) -> dict:
         "theme_candidates": [t for t, n in cand.most_common(30) if n >= 2],
         "calls": calls, "tracker": tracker, "trackers": trackers, "summaryCount": len(summaries),
         "firstTimers": first_timers, "historyChecked": len(hist),
+        "portfolio": (lambda pf: {"companies": [{"id": c, "name": p["name"], "symbol": p["symbol"]} for c, p in pf["companies"].items()],
+                                  "etfs": pf["etfs"]})(__import__("universe").portfolio()) if market == "IN" else None,
         "mgmt": mgmt_list[:400], "mgmtChecked": read_json(DATA / f"mgmt_{market}.json", {}).get("checked"),
         "inProgress": [{"season": label_from_key(p, market), "calls": per_count[p]} for p in later],
         "calendar": calendar,

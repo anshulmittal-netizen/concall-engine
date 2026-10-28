@@ -417,7 +417,9 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
     site = {"checked": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M"),
             "calendar": sorted(cal.values(), key=lambda c: (c["date"], c["name"])), "results": out_rows,
             "watch": {"leadDays": watch["lead_days"], "notOnBse": watch["not_on_bse"],
-                      "companies": [{"id": c, "name": w["name"], "as": w["as"]} for c, w in watch["companies"].items()]}}
+                      "companies": [{"id": c, "name": w["name"], "as": w["as"]} for c, w in watch["companies"].items()],
+                      "portfolio": [{"id": c, "name": p["name"], "symbol": p["symbol"]} for c, p in watch["portfolio"]["companies"].items()],
+                      "etfs": watch["portfolio"]["etfs"]}}
     state["rows"] = {k: v for k, v in rows.items() if v["period"] not in periods}
     write_json(SITE_FILE, site)
     write_json(STATE_FILE, state)

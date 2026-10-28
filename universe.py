@@ -121,13 +121,26 @@ def _fill_india_mcap_yahoo(rows):
 
 
 # ------------------------------------------------------------------ US
+def portfolio() -> dict:
+    """portfolio.yaml: the user's holdings (companies by BSE code, plus ETFs that are shown but not tracked)."""
+    from common import load_yaml
+    p = load_yaml("portfolio.yaml") or {}
+    return {"companies": {str(c["code"]): {"code": str(c["code"]), "name": c["name"], "symbol": c.get("symbol") or ""}
+                          for c in (p.get("companies") or []) if c.get("code")},
+            "etfs": [{"symbol": e.get("symbol") or "", "name": e.get("name") or e.get("symbol") or ""} for e in (p.get("etfs") or [])]}
+
+
 def watchlist() -> dict:
-    """watchlist.yaml: companies whose results dates are highlighted and alerted, in or out of the universe."""
+    """watchlist.yaml plus the portfolio: companies whose results dates are highlighted and alerted."""
     from common import load_yaml
     w = load_yaml("watchlist.yaml") or {}
+    comps = {str(c["code"]): {"code": str(c["code"]), "name": c["name"], "as": c.get("as") or c["name"]}
+             for c in (w.get("companies") or []) if c.get("code")}
+    pf = portfolio()
+    for code, c in pf["companies"].items():
+        comps.setdefault(code, {"code": code, "name": c["name"], "as": c["symbol"] or c["name"]})
     return {"lead_days": int(w.get("lead_days") or 3), "not_on_bse": list(w.get("not_on_bse") or []),
-            "companies": {str(c["code"]): {"code": str(c["code"]), "name": c["name"], "as": c.get("as") or c["name"]}
-                          for c in (w.get("companies") or []) if c.get("code")}}
+            "companies": comps, "portfolio": pf}
 
 
 def with_watch(uni: dict) -> dict:

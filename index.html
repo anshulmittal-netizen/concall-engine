@@ -538,6 +538,29 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
 .bk-call{display:grid;gap:6px;padding:12px 14px;border-radius:12px;background:var(--panel2);border:1px solid var(--line)}
 @media (prefers-reduced-motion: reduce){.fc-in{transform:none!important}.fc .fc-back{display:none}.fc.on .fc-front{display:none}.fc.on .fc-back{display:grid;transform:none}}
 
+/* ---------- portfolio ---------- */
+.pf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:16px}
+.pf{display:grid;gap:14px;align-content:start;animation:rise .5s var(--ease) both;transition:transform .25s var(--ease),box-shadow .25s}
+.pf:hover{transform:translateY(-3px);box-shadow:var(--shadow2)}
+.pf-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.pf-top h4{font-size:18px;font-weight:600;line-height:1.2;margin-top:6px}
+.pf-sc{display:grid;justify-items:center;gap:2px;flex:none}
+.pf-rows{display:grid;gap:11px}
+.pf-rows>div{display:grid;gap:3px;padding-top:10px;border-top:1px dashed var(--line2)}
+.pf-th{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pf-when{font-size:14px}.pf-when.soon b{color:var(--warn)}
+.pf .foot{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.pf-tl{display:grid;gap:12px;max-height:560px;overflow:auto;padding-right:4px}
+.pf-day{display:grid;grid-template-columns:78px minmax(0,1fr);gap:12px;align-items:start}
+.pf-date{display:grid;gap:1px;padding:8px 10px;border-radius:12px;background:var(--panel2);text-align:center}
+.pf-date b{font-family:var(--display);font-size:14px}.pf-date span{font-size:12px;color:var(--muted)}
+.pf-evs{display:grid;gap:7px}
+.pf-ev{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;font-size:14px}
+.pf-feed{display:grid;gap:10px;max-height:560px;overflow:auto;padding-right:4px}
+.pf-it{display:grid;gap:4px;padding:10px 12px 10px 14px;border-radius:12px;background:var(--panel2);border-left:4px solid var(--tc)}
+.pf-meta{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.toolbar-sel{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:7px 10px;font-size:14px;color:var(--fg)}
+
 /* ---------- responsive ---------- */
 @media (max-width:1240px){
   .calls .r{grid-template-columns:30px minmax(0,1.4fr) 160px 84px minmax(0,2fr) 104px}
@@ -902,7 +925,7 @@ function animateWidgets(root) {
 
 /* ---------- views ---------- */
 const VIEWS = [
-  {group: 'Start', items: [['home', 'Today'], ['ask', 'Ask the calls'], ['help', 'How to use']]},
+  {group: 'Start', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['ask', 'Ask the calls'], ['help', 'How to use']]},
   {group: 'Calls', items: [['calls', 'All calls'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Results', items: [['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
@@ -912,7 +935,8 @@ const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
 function navCounts() {
   const t = trackerQ(), cq = callsQ();
   const rd = RES.data || {}, t0r = istToday();
-  return {calls: cq.length, upcoming: upcoming(7).length || '', watch: (n => n ? n + ' soon' : '')(watchSoon().length),
+  const pfSoon = pfRows().filter(x => x.nextRes && dayDiff(x.nextRes.date, istToday()) <= 3).length;
+  return {portfolio: pfSoon ? pfSoon + ' soon' : (pfList().length || ''), calls: cq.length, upcoming: upcoming(7).length || '', watch: (n => n ? n + ' soon' : '')(watchSoon().length),
     rescal: (rd.calendar || []).filter(c => c.date >= t0r && c.date <= addDays(t0r, 7)).length || '',
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
@@ -1506,6 +1530,101 @@ function vResults() {
       : `<div class="empty">${all.length ? 'No results match these filters. Widen the period or clear a filter.' : 'No results read yet. They appear after the next check.'}</div>`}`);
 }
 
+/* My portfolio: every update for the holdings in portfolio.yaml, in one place */
+const pfList = () => (RES.data?.watch?.portfolio || D.portfolio?.companies || []);
+const pfEtfs = () => (RES.data?.watch?.etfs || D.portfolio?.etfs || []);
+const pfIds = () => new Set(pfList().map(p => p.id));
+const isPf = id => pfIds().has(id);
+function pfRows() {
+  const t0 = istToday(), cal = RES.data?.calendar || [], res = RES.data?.results || [];
+  return pfList().map(p => {
+    const co = byId[p.id], calls = callsFor(p.id), last = calls[0];
+    const nextRes = cal.filter(c => c.id === p.id && c.date >= t0).sort((a, b) => a.date.localeCompare(b.date))[0];
+    const posted = res.filter(r => r.id === p.id).sort((a, b) => b.filed.localeCompare(a.filed))[0];
+    const mg = (D.mgmt || []).filter(m => m.id === p.id).sort((a, b) => b.date.localeCompare(a.date));
+    const meta = cal.find(c => c.id === p.id) || posted || {};
+    return {...p, co, last, calls, nextRes, posted, nc: nextCall(p.id), mg, mcap: co?.mcap || meta.mcap || '', sector: co?.sector || meta.sector || ''};
+  });
+}
+function pfFeed(rows) {
+  const t0 = istToday(), from = addDays(t0, -30), ev = [];
+  rows.forEach(x => {
+    (RES.data?.results || []).filter(r => r.id === x.id && r.filed.slice(0, 10) >= from).forEach(r => { const [, gl, gv] = gradeOf(rsGrade(r));
+      ev.push({d: r.filed.slice(0, 10), t: r.filed.slice(11, 16), k: 'Results', c: `var(--${gv})`, x, h: `${esc(r.label)} results filed: ${esc(gl.toLowerCase())}`,
+        s: `${esc(r.revLabel)} ${pctS(r.rev_yoy)} · ${esc(r.opLabel)} ${pctS(r.op_yoy)} · PAT ${pctS(r.pat_yoy)} on last year`, a: `<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Filing ↗</a>`}); });
+    x.calls.filter(c => c.date >= from).forEach(c => ev.push({d: c.date, k: 'Concall', c: vcol(c.score, c.veto), x, h: `${esc(c.period)} concall read: score ${c.score} (${verdict(c.score, c.veto).w})${c.delta ? `, ${c.delta > 0 ? 'up' : 'down'} ${Math.abs(c.delta)} on the last call` : ''}`,
+      s: esc(c.top || c.thesis || ''), a: `<button class="btn" data-open="${esc(x.id)}" data-k="${esc(c.key)}">Open the call</button>`}));
+    x.mg.filter(m => m.date >= from).forEach(m => ev.push({d: m.date, t: m.time, k: 'Management', c: 'var(--violet)', x, h: m.changes.map(ch => `${MG_VERB[ch.type] || 'Change'}: ${esc(ch.role)} · ${esc(ch.person)}`).join('<br>'),
+      s: m.top ? 'Top-level change' : '', a: m.url ? `<a class="btn" href="${esc(m.url)}" target="_blank" rel="noopener">Filing ↗</a>` : ''}));
+  });
+  return ev.sort((a, b) => b.d.localeCompare(a.d) || (b.t || '').localeCompare(a.t || ''));
+}
+function pfAhead(rows) {
+  const t0 = istToday(), t1 = addDays(t0, 21), ev = [];
+  rows.forEach(x => {
+    (RES.data?.calendar || []).filter(c => c.id === x.id && c.date >= t0 && c.date <= t1).forEach(c => ev.push({d: c.date, k: 'Results day', x, txt: 'Board meets to approve results'}));
+    calRows().filter(r => r.id === x.id && r.date >= t0 && r.date <= t1).forEach(r => ev.push({d: r.date, t: r.time, k: r.kind === 'earnings' ? 'Earnings call' : 'Investor call', x, txt: r.time ? t12(r.time) + ' IST' : 'Time in the filing', url: r.url}));
+  });
+  return ev.sort((a, b) => a.d.localeCompare(b.d) || (a.t || '99').localeCompare(b.t || '99'));
+}
+function pfCard(x, i) {
+  const co = x.co, p = x.posted, t0 = istToday(), dd = x.nextRes ? dayDiff(x.nextRes.date, t0) : null;
+  const res = p && (!x.nextRes || p.filed.slice(0, 10) >= addDays(x.nextRes.date, -1) || dd > 20) ? p : null;
+  const g = res ? gradeOf(rsGrade(res)) : null, mg90 = x.mg.find(m => m.date >= addDays(t0, -90));
+  return `<article class="card pf" style="animation-delay:${Math.min(i, 24) * .03}s">
+    <div class="pf-top"><div style="min-width:0"><span class="tag">${esc(x.symbol || x.id)}</span><h4>${esc(x.name)}</h4><span class="small muted">${esc(x.sector)}${x.mcap ? ' · ' + esc(x.mcap) : ''}</span></div>
+      ${co ? `<div class="pf-sc">${ring(co.score / 100, {size: 70, stroke: 7, color: vcol(co.score, co.veto), label: `<span style="font-size:20px;color:${vcol(co.score, co.veto)}">${co.score}</span>`, sub: ''})}${dcell(co.delta)}</div>` : '<span class="small muted">No call read</span>'}</div>
+    <div class="pf-rows">
+      <div><span class="eyebrow">Last concall</span>${x.last ? `<span><b>${esc(x.last.period)}</b> · ${esc(fdate(x.last.date))} · ${vpill(x.last.score, x.last.veto)}</span><span class="small muted pf-th">${esc(x.last.top || x.last.thesis || '')}</span>` : '<span class="small muted">Not read yet. It is read once its transcript is on BSE.</span>'}</div>
+      <div><span class="eyebrow">Results</span>${res ? `<span><span class="pill" style="--pc:var(--${g[2]})">${esc(g[1])}</span> <span class="small muted">${esc(res.label)} · filed ${esc(sdate(res.filed))}</span></span><span class="small">Revenue ${gTag(res.rev_yoy)} · PAT ${gTag(res.pat_yoy)} <span class="muted">on last year</span></span>`
+        : x.nextRes ? `<span class="pf-when ${dd <= 3 ? 'soon' : ''}"><b>${esc(whenTxt(dd))}</b> · ${esc(wday(x.nextRes.date) + ' ' + fdate(x.nextRes.date))}</span>` : '<span class="small muted">Date not announced yet</span>'}</div>
+      <div><span class="eyebrow">Earnings call</span><span class="small">${x.nc ? `${esc(callWhen(x.nc))}${x.nc.url ? ` · <a href="${esc(x.nc.url)}" target="_blank" rel="noopener">intimation ↗</a>` : ''}` : '<span class="muted">Not announced</span>'}</span></div>
+      ${mg90 ? `<div><span class="eyebrow" style="color:var(--violet)">Management change · ${esc(sdate(mg90.date))}</span><span class="small">${mg90.changes.slice(0, 2).map(ch => `${esc(MG_VERB[ch.type] || 'Change')}: ${esc(ch.role)} · ${esc(ch.person)}`).join('<br>')}</span></div>` : ''}
+    </div>
+    <div class="foot">${co ? `<button class="btn" data-open="${esc(x.id)}">Open the call</button>` : '<span></span>'}<a class="btn" href="https://www.bseindia.com/stock-share-price/x/x/${esc(x.id)}/" target="_blank" rel="noopener">BSE ↗</a></div></article>`;
+}
+const PF_SORT = {soon: ['Next event first', (a, b) => ((a.nextRes?.date || '9') .localeCompare(b.nextRes?.date || '9')) || a.name.localeCompare(b.name)],
+  score: ['Concall score', (a, b) => (b.co?.score ?? -1) - (a.co?.score ?? -1)], pat: ['Profit growth', (a, b) => (b.posted?.pat_yoy ?? -1e9) - (a.posted?.pat_yoy ?? -1e9)], name: ['Name', (a, b) => a.name.localeCompare(b.name)]};
+function vPortfolio() {
+  const wait = resLoading('portfolio');
+  const hd = head('My portfolio', 'Your holdings in one place: what was filed in the last 30 days, what is coming up, and each holding’s latest concall and results.', `
+      <ul><li>The holdings live in <b>portfolio.yaml</b> in the engine’s repository. Add or remove a line there and the page follows on the next refresh.</li>
+      <li>Every holding is also on the results watch: when its results board meeting is ${RES.data?.watch?.leadDays || 3} days away or closer, a GitHub issue labelled <b>results-watch</b> is opened, so GitHub emails you and pushes to the GitHub app. Holdings are starred across the dashboard.</li>
+      <li><b>Latest updates</b> lists results filed, concalls read and management changes for your holdings over the last 30 days. <b>Coming up</b> lists results days and earnings calls in the next three weeks.</li>
+      <li>ETFs hold no concalls or results, so they are listed at the bottom but not tracked.</li></ul>`,
+      `<span class="badge">${fmt(pfList().length)} holdings${pfEtfs().length ? ` · ${pfEtfs().length} ETFs` : ''}</span>`);
+  if (wait) return hd + wait;
+  if (!pfList().length) return hd + '<div class="empty">No holdings yet. Add them to portfolio.yaml in the engine’s repository.</div>';
+  const rows = pfRows(), feed = pfFeed(rows), ahead = pfAhead(rows), t0 = istToday();
+  const posted = rows.filter(x => x.posted && (!x.nextRes || x.posted.filed.slice(0, 10) >= addDays(x.nextRes.date, -1))).length;
+  const soon = rows.filter(x => x.nextRes && dayDiff(x.nextRes.date, t0) <= 7).length;
+  const scored = rows.filter(x => x.co), avg = scored.length ? Math.round(scored.reduce((n, x) => n + x.co.score, 0) / scored.length) : null;
+  const vc = vcounts(scored.map(x => x.co)), sort = S.pf?.sort || 'soon', list = rows.slice().sort(PF_SORT[sort][1]);
+  const byDay = {}; ahead.forEach(e => (byDay[e.d] = byDay[e.d] || []).push(e));
+  const kc = {Results: 'var(--v4)', Concall: 'var(--accent)', Management: 'var(--violet)'};
+  return hd + `
+    <div class="board">
+      <section class="w span3 kpi"><span class="l">Holdings tracked</span><span class="v" data-count="${rows.length}">${rows.length}</span><span class="l">${scored.length} with a concall read</span></section>
+      <section class="w span3 kpi"><span class="l">Results this season</span><span class="v">${posted}<span style="font-size:.5em;color:var(--muted)"> / ${rows.length}</span></span><span class="l">${soon} more due in the next 7 days</span></section>
+      <section class="w span3 kpi"><span class="l">Average concall score</span><span class="v" style="color:${avg == null ? 'var(--muted)' : vcol(avg)}">${avg ?? '–'}</span><span class="l">latest call of each holding</span></section>
+      <section class="w span3"><div class="w-head"><h3>Verdict mix</h3>${tip('verdict')}</div><div class="sb-stack">${[4, 3, 2, 1, 0].map(i => vc[i] ? `<i style="width:${100 * vc[i] / Math.max(1, scored.length)}%;background:${VC[i]}" data-tt="${ttA(`${VNAMES[i]}: ${vc[i]}`)}"></i>` : '').join('')}</div>
+        <div class="sb-leg">${[4, 3, 2, 1, 0].map(i => `<span style="--tc:${VC[i]}">${VNAMES[i]} ${vc[i]}</span>`).join('')}</div></section>
+    </div>
+    <div class="two">
+      <section class="w"><div class="w-head"><h3>Coming up · next 3 weeks</h3><span class="small muted">${ahead.length} events</span></div>
+        ${ahead.length ? `<div class="pf-tl">${Object.entries(byDay).map(([d, es]) => `<div class="pf-day"><div class="pf-date"><b>${dayDiff(d, t0) === 0 ? 'Today' : dayDiff(d, t0) === 1 ? 'Tomorrow' : esc(wday(d))}</b><span>${esc(sdate(d))}</span></div>
+          <div class="pf-evs">${es.map(e => `<div class="pf-ev"><span class="pill" style="--pc:${e.k === 'Results day' ? 'var(--saffron)' : 'var(--accent)'}">${esc(e.k)}</span><b>${esc(e.x.name)}</b><span class="small muted">${esc(e.txt)}</span>${e.url ? `<a class="small" href="${esc(e.url)}" target="_blank" rel="noopener">filing ↗</a>` : ''}</div>`).join('')}</div></div>`).join('')}</div>`
+          : '<div class="empty">No results days or earnings calls announced for your holdings in the next three weeks.</div>'}</section>
+      <section class="w"><div class="w-head"><h3>Latest updates · last 30 days</h3><span class="small muted">${feed.length} updates</span></div>
+        ${feed.length ? `<div class="pf-feed">${feed.slice(0, 40).map(e => `<div class="pf-it" style="--tc:${e.c}"><div class="pf-meta"><span class="pill" style="--pc:${kc[e.k]}">${esc(e.k)}</span><span class="small muted">${esc(sdate(e.d))}${e.t ? ' · ' + esc(e.t) : ''}</span></div>
+          <b>${esc(e.x.name)}</b><span class="small">${e.h}</span>${e.s ? `<span class="small muted">${e.s}</span>` : ''}<div>${e.a}</div></div>`).join('')}</div>`
+          : '<div class="empty">Nothing filed for your holdings in the last 30 days.</div>'}</section>
+    </div>
+    <section style="display:grid;gap:14px"><div class="list-head"><h3>Holdings</h3><select id="pf-sort" aria-label="Sort holdings" class="toolbar-sel">${Object.entries(PF_SORT).map(([k, [n]]) => `<option value="${k}" ${k === sort ? 'selected' : ''}>${n}</option>`).join('')}</select></div>
+      <div class="pf-grid">${list.map(pfCard).join('')}</div></section>
+    ${pfEtfs().length ? `<p class="small muted">ETFs in the portfolio, not tracked (no concalls or results): ${pfEtfs().map(e => `<b>${esc(e.symbol)}</b> ${esc(e.name)}`).join(' · ')}.</p>` : ''}`;
+}
+
 /* First-time callers */
 function vFirst() {
   const rows = (D.firstTimers || []).filter(r => (curQ() === 'all' || r.period === curQ()) && (!S.first.status || r.status === S.first.status));
@@ -1989,7 +2108,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, portfolio: vPortfolio, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -2014,7 +2133,7 @@ const SUMS = {data: null, p: null};
 const RES = {data: null, p: null};
 /* results watchlist (watchlist.yaml in the engine, carried in results_in.json) */
 let W_SRC = null, W_SET = new Set();
-const watchSet = () => { const w = RES.data?.watch; if (w !== W_SRC) { W_SRC = w; W_SET = new Set((w?.companies || []).map(c => c.id)); } return W_SET; };
+const watchSet = () => { const w = RES.data?.watch; if (w !== W_SRC || !W_SET.size) { W_SRC = w; W_SET = new Set([...(w?.companies || []).map(c => c.id), ...(D?.portfolio?.companies || []).map(c => c.id)]); } return W_SET; };
 const isW = id => watchSet().has(id);
 const star = id => isW(id) ? '<span class="wstar" title="On your watchlist">★</span> ' : '';
 const dayDiff = (a, b) => Math.round((Date.parse(a + 'T00:00:00Z') - Date.parse(b + 'T00:00:00Z')) / 864e5);
@@ -2315,6 +2434,7 @@ document.addEventListener('change', e => {
   if (id === 'rc-days') { S.rc.days = +e.target.value; render(); }
   if (id === 'rs-big') { S.rs.big = e.target.value; S.rs.limit = 100; render(); }
   if (id === 'rs-days') { S.rs.days = +e.target.value; S.rs.limit = 100; S.rs.climit = 36; render(); }
+  if (id === 'pf-sort') { S.pf = {sort: e.target.value}; render(); }
   if (id === 'rs-sort') { S.rs.sort = e.target.value; S.rs.dir = -1; S.rs.climit = 36; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
   if (id === 'if-big') { S.inf.big = e.target.value; S.inf.limit = 30; render(); }
@@ -2350,6 +2470,6 @@ $('#find').addEventListener('focus', renderFind);
   render();
   if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
   loadSums().then(() => renderNav());  /* near-term count uses lines from the summaries */
-  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming'].includes(S.view)) render(); });
+  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'portfolio'].includes(S.view)) render(); });
 })();
 </script>
