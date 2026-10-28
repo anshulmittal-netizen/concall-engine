@@ -5,16 +5,16 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400..700;1,400&display=swap">
 <style>
 /* Layout: research floor. A light, airy desk: left rail of views, a sticky quarter bar, and each view opens on a
-   board of live widgets (rings, gauges, histograms, heat tiles) before the detailed lists. Warm paper and plum ink, with a
-   rose-to-saffron glow for the headline moments; rose marks what you can act on. The five verdict colours run from
-   chilli red through saffron and warm grey to leaf green and deep jade, and are used for scores only. */
+   board of live widgets (rings, gauges, histograms, heat tiles) before the detailed lists. Ivory paper and forest ink, with a
+   soft gold glow for the headline moments; forest green marks what you can act on. The five verdict colours run from
+   red through amber and warm grey to leaf green and deep petrol blue, and are used for scores only. */
 :root{
-  --bg:#FFF9F3; --rail:#FFF1E4; --panel:#FFFFFF; --panel2:#FFF6EC; --line:#F2E3D2; --line2:#E6CDB0;
-  --fg:#1C1015; --muted:#5A464C; --faint:#8C787D;
-  --accent:#D0215F; --accentsoft:rgba(208,33,95,.09); --onAccent:#FFFFFF; --saffron:#FF9F1C; --saffronsoft:rgba(255,159,28,.20);
-  --v5:#0B8466; --v4:#3FA52F; --v3:#968A82; --v2:#F29A12; --v1:#E0352B;
-  --up:#2E8F2A; --down:#D1302A; --warn:#B86A00;
-  --teal:#0A8478; --violet:#7A3CC4; --rose:#D0215F; --sand:#A35A35;
+  --bg:#FAF7EE; --rail:#F2EDDF; --panel:#FFFFFF; --panel2:#F6F2E6; --line:#E7E0CC; --line2:#D5C9AA;
+  --fg:#13231A; --muted:#4A574E; --faint:#848D7E;
+  --accent:#1E6B45; --accentsoft:rgba(30,107,69,.09); --onAccent:#FFFFFF; --saffron:#C9961C; --saffronsoft:rgba(214,166,46,.20);
+  --v5:#0E6F8A; --v4:#3E9B3A; --v3:#998F85; --v2:#E09A1A; --v1:#D23B2C;
+  --up:#2F8A35; --down:#C8352A; --warn:#A86A00;
+  --teal:#0E7A70; --violet:#6E45B0; --rose:#B23A68; --sand:#9A5A35;
   --gold:var(--accent); --goldsoft:var(--accentsoft); --blue:var(--accent); --onGold:var(--onAccent);
   --shadow:0 1px 2px rgba(80,36,20,.05),0 10px 30px rgba(120,56,24,.08); --shadow2:0 20px 54px rgba(100,40,20,.18); --scrim:rgba(43,24,32,.34);
   --display:'Bricolage Grotesque','Avenir Next','Segoe UI',system-ui,sans-serif;
@@ -23,21 +23,21 @@
   --ease:cubic-bezier(.2,.8,.2,1); --r:18px; --r2:12px;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#1D1519; --rail:#211820; --panel:#2A1F26; --panel2:#33262E; --line:#45343E; --line2:#5A4550;
-  --fg:#FFF6EF; --muted:#DCC8C2; --faint:#A8939A;
-  --accent:#FF8AB4; --accentsoft:rgba(255,138,180,.15); --onAccent:#2A0E19; --saffron:#FFB547; --saffronsoft:rgba(255,181,71,.16);
-  --v5:#34C29F; --v4:#8FCB4F; --v3:#8F837D; --v2:#E6A93A; --v1:#FF6A57;
-  --up:#8FCB4F; --down:#FF6A57; --warn:#FFBE5C;
-  --teal:#5AD6C6; --violet:#D3A8F5; --rose:#FF8AB4; --sand:#F0C2A8;
+  --bg:#0F1914; --rail:#121D17; --panel:#17251D; --panel2:#1D2D24; --line:#2A3D32; --line2:#3B5144;
+  --fg:#F5F2E7; --muted:#CBD0C1; --faint:#8F9A89;
+  --accent:#6FCF97; --accentsoft:rgba(111,207,151,.14); --onAccent:#0B1A12; --saffron:#E8BA4A; --saffronsoft:rgba(232,186,74,.15);
+  --v5:#42AACB; --v4:#7CC45A; --v3:#8C8A80; --v2:#E3A83A; --v1:#F0654F;
+  --up:#7CC45A; --down:#F0654F; --warn:#F0BE5C;
+  --teal:#5AD6C6; --violet:#C9A6F2; --rose:#F08FB0; --sand:#F0C2A8;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.3); --shadow2:0 20px 54px rgba(0,0,0,.55); --scrim:rgba(10,4,8,.62);
   color-scheme:dark; } }
 :root[data-theme="dark"]{
-  --bg:#1D1519; --rail:#211820; --panel:#2A1F26; --panel2:#33262E; --line:#45343E; --line2:#5A4550;
-  --fg:#FFF6EF; --muted:#DCC8C2; --faint:#A8939A;
-  --accent:#FF8AB4; --accentsoft:rgba(255,138,180,.15); --onAccent:#2A0E19; --saffron:#FFB547; --saffronsoft:rgba(255,181,71,.16);
-  --v5:#34C29F; --v4:#8FCB4F; --v3:#8F837D; --v2:#E6A93A; --v1:#FF6A57;
-  --up:#8FCB4F; --down:#FF6A57; --warn:#FFBE5C;
-  --teal:#5AD6C6; --violet:#D3A8F5; --rose:#FF8AB4; --sand:#F0C2A8;
+  --bg:#0F1914; --rail:#121D17; --panel:#17251D; --panel2:#1D2D24; --line:#2A3D32; --line2:#3B5144;
+  --fg:#F5F2E7; --muted:#CBD0C1; --faint:#8F9A89;
+  --accent:#6FCF97; --accentsoft:rgba(111,207,151,.14); --onAccent:#0B1A12; --saffron:#E8BA4A; --saffronsoft:rgba(232,186,74,.15);
+  --v5:#42AACB; --v4:#7CC45A; --v3:#8C8A80; --v2:#E3A83A; --v1:#F0654F;
+  --up:#7CC45A; --down:#F0654F; --warn:#F0BE5C;
+  --teal:#5AD6C6; --violet:#C9A6F2; --rose:#F08FB0; --sand:#F0C2A8;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.3); --shadow2:0 20px 54px rgba(0,0,0,.55); --scrim:rgba(10,4,8,.62);
   color-scheme:dark; }
 
@@ -970,7 +970,7 @@ function vHome() {
         <div class="ring-wrap">${donut(vc, {size: 140, stroke: 22, center: fmt(cq.length), sub: 'calls'})}${verdictLegend(vc)}</div></section>
       <section class="w span5"><div class="w-head"><h3>Filing pace</h3><span class="small muted">last 14 days</span></div>
         ${pace(days, daily)}
-        <div class="w-foot"><span>Transcripts filed per day on BSE. The latest day is in saffron.</span></div></section>
+        <div class="w-foot"><span>Transcripts filed per day on BSE. The latest day is in gold.</span></div></section>
       <section class="w span3"><div class="w-head"><h3>Guidance mood</h3>${tip('gidx')}</div>
         ${semiGauge(gi, {label: 'Guidance index'})}
         <div class="w-foot"><span><b class="g-up">${fmt(raised)}</b> raised · <b class="g-dn">${fmt(cut)}</b> cut</span><button class="link" data-v="guidance">By sub-sector →</button></div></section>
