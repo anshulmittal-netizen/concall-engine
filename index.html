@@ -549,7 +549,7 @@ const GL = {
   models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
   nearterm:['Near-term strength','Companies scoring 60+ whose latest call shows at least three strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a Guidance-backed growth & capacity part of 0.75+. There is no separate score.'],
-  quarter:['Quarter switch','Pick the results season you want to look at. Calls, Best & worst, First-time callers, Sector tracker and Guidance all follow it. Sector turns, Themes and Ideas compare quarters, so they stay on the latest quarter with enough calls. “All” shows each company’s latest call.']
+  quarter:['Quarter switch','Pick the results season you want to look at. Every call-based view follows it: Today, All calls, First-time callers, Sector tracker, Guidance, Sector turns, Themes, Ideas, Near-term strength and Inflection watch show only that quarter’s calls. A season still in progress is compared with the quarter before it. Near-term strength and Inflection watch list companies whose latest call is from that quarter. “All” shows each company’s latest call, and the sector boards use the latest full quarter. Coming up, the results pages and Management changes go by date, not quarter.']
 };
 
 /* ---------- helpers ---------- */
@@ -597,6 +597,14 @@ function callsQ() {
   return Object.values(latest);
 }
 const trackerQ = () => { const t = D.trackers || {}; return t[curQ()] || t[D.season] || D.tracker || null; };
+/* the quarter the sector, theme and idea boards are built for: the one picked above ("All" uses the latest full quarter) */
+const boardQ = () => { const q = curQ(); return q !== 'all' && (D.sectorsBy || {})[q] ? q : D.season; };
+const sectorsQ = () => (D.sectorsBy || {})[boardQ()] || D.sectors || [];
+const themesQ = () => { const b = boardQ(), t = (D.themesBy || {})[b] || D.themes || []; return b === D.season ? t : t.filter(x => x.c.at(-1) > 0); };
+const ideasQ = () => (D.ideasBy || {})[boardQ()] || D.ideas || [];
+/* company reads (signals, triggers, growth) exist for each company's latest call; a quarter view keeps those from that quarter */
+const inQ = c => curQ() === 'all' || c.period === curQ();
+const callOf = (id, q) => (D.calls || []).find(x => x.id === id && x.period === q);
 const callsFor = id => (D.calls || []).filter(x => x.id === id).sort((a, b) => b.periodKey.localeCompare(a.periodKey));
 const lastDate = () => (D.calls || []).reduce((m, c) => c.date > m ? c.date : m, '');
 /* upcoming calls (from BSE call intimations) */
@@ -627,8 +635,8 @@ function navCounts() {
     rescal: (rd.calendar || []).filter(c => c.date >= t0r && c.date <= addDays(t0r, 7)).length || '',
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
-    guidance: t ? (t.guidanceLeaders || []).length : '', turns: (D.sectors || []).filter(s => s.hit).length || '',
-    themes: (D.themes || []).length, nearterm: (D.companies || []).map(ntRow).filter(Boolean).length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()), ideas: (D.ideas || []).filter(x => !x.red).length,
+    guidance: t ? (t.guidanceLeaders || []).length : '', turns: sectorsQ().filter(s => s.hit).length || '',
+    themes: themesQ().length, nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()), ideas: ideasQ().filter(x => !x.red).length,
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
 function renderNav() {
@@ -647,7 +655,10 @@ function head(title, purpose, how, badge = '') {
   return `<header class="vhead"><div class="row"><h2>${title}</h2>${badge}</div><p class="purpose">${purpose}</p>
     ${how ? `<details class="how" data-how="${S.view}" ${open ? 'open' : ''}><summary>How to use this view</summary><div class="body">${how}</div></details>` : ''}</header>`;
 }
-const focusBadge = () => `<span class="badge${curQ() !== D.season ? ' warn' : ''}">Based on ${esc(D.season)}${curQ() !== D.season ? ', the latest quarter with enough calls' : ''}</span>`;
+const focusBadge = () => { const b = boardQ(); return `<span class="badge${inProg(b) || curQ() === 'all' ? ' warn' : ''}">${curQ() === 'all' ? `All quarters · based on ${esc(b)}, the latest full quarter` : `${esc(b)} calls only${inProg(b) ? ' · season in progress' : ''}`}</span>`; };
+const latestBadge = () => curQ() === 'all' ? '<span class="badge">All quarters · latest call per company</span>'
+  : `<span class="badge${inProg(curQ()) ? ' warn' : ''}" title="Companies whose latest call is from ${esc(curQ())}. A company that has already held a later call appears under that quarter.">${esc(curQ())} calls only${inProg(curQ()) ? ' · season in progress' : ''}</span>`;
+const trkBadge = () => curQ() === 'all' ? focusBadge() : qBadge();
 const qBadge = () => `<span class="badge${inProg(curQ()) ? ' warn' : ''}">${curQ() === 'all' ? 'All quarters · latest call per company' : esc(curQ()) + (inProg(curQ()) ? ' · season in progress' : '')}</span>`;
 
 function companyRow(c, i, opts = {}) {
@@ -666,10 +677,11 @@ function companyRow(c, i, opts = {}) {
 function vHome() {
   const cq = callsQ().slice(), q = curQ(), t = trackerQ();
   const ranked = cq.filter(c => !c.veto).sort((a, b) => b.score - a.score);
-  const newest = (D.calls || []).slice().sort((a, b) => b.date.localeCompare(a.date) || b.score - a.score);
-  const d1 = (D.calls || []).filter(c => c.date === lastDate()).length, d7 = (D.calls || []).filter(c => c.date >= daysBack(7)).length;
-  const lead = t?.guidanceLeaders?.[0], th = (D.themes || []).slice().sort((a, b) => b.c.at(-1) - a.c.at(-1))[0];
-  const idea = (D.ideas || []).find(x => !x.red), ideaCo = idea && byId[idea.id];
+  const newest = cq.slice().sort((a, b) => b.date.localeCompare(a.date) || b.score - a.score);
+  const lastQ = newest[0]?.date || '';
+  const d1 = cq.filter(c => c.date === lastQ).length, d7 = cq.filter(c => c.date >= daysBack(7)).length;
+  const lead = t?.guidanceLeaders?.[0], th = themesQ().slice().sort((a, b) => b.c.at(-1) - a.c.at(-1))[0];
+  const idea = ideasQ().find(x => !x.red), ideaCo = idea && byId[idea.id];
   const firsts = (D.firstTimers || []).filter(r => q === 'all' || r.period === q);
   const rep = t?.reported || cq.length, uni = t?.universe || D.universe;
   const welcome = store.get('welcome', true);
@@ -682,7 +694,7 @@ function vHome() {
     <div class="hero">
       <section class="today">
         <span class="eyebrow">${esc(q === 'all' ? 'All quarters' : q)} results season</span>
-        <h3>${best ? `${esc(best.name)} has the strongest call so far, scoring ${best.score}.` : 'No calls read yet for this quarter.'} ${d1 ? `${d1} new call${d1 === 1 ? ' was' : 's were'} filed on ${esc(sdate(lastDate()))}, the latest filing day.` : ''}</h3>
+        <h3>${best ? `${esc(best.name)} has the strongest call so far, scoring ${best.score}.` : 'No calls read yet for this quarter.'} ${d1 ? `${d1} new call${d1 === 1 ? ' was' : 's were'} filed on ${esc(sdate(lastQ))}, the latest filing day${q !== 'all' ? ' for this quarter' : ''}.` : ''}</h3>
         <div class="stats">
           <div class="stat"><b data-count="${cq.length}">${fmt(cq.length)}</b><span>calls read${q !== 'all' ? ' this quarter' : ''}</span></div>
           <div class="stat"><b data-count="${d7}">${fmt(d7)}</b><span>filed in the last 7 days</span></div>
@@ -706,13 +718,13 @@ function vHome() {
     <section><div class="list-head"><h3>Where to look first</h3></div><div class="picks">
       ${best ? `<button class="pick" data-open="${esc(best.id)}" data-k="${esc(best.key)}"><span class="eyebrow">Best call · ${esc(best.period)}</span><strong>${esc(best.name)}</strong><span>${scoreCell(best.score, false)}</span><span class="small">${esc(best.top || best.thesis)}</span><span class="go">Open the call →</span></button>` : ''}
       ${lead ? `<button class="pick" data-v="guidance"><span class="eyebrow">Strongest guidance</span><strong>${esc(lead.name)}</strong><span class="small">Guidance index <b class="num" style="color:${gcol(lead.guidance)}">${lead.guidance}</b>. ${lead.raising} of ${lead.calls} companies raised guidance, ${lead.cutting} cut.</span><span class="go">See all sub-sectors →</span></button>` : ''}
-      ${ideaCo ? `<button class="pick" data-open="${esc(ideaCo.id)}"><span class="eyebrow">Top idea · ${esc(idea.type)}</span><strong>${esc(ideaCo.name)}</strong><span class="small">${esc(idea.why)}</span><span class="go">Open the call →</span></button>` : ''}
-      ${th ? `<button class="pick" data-v="themes"><span class="eyebrow">Most-discussed theme</span><strong>${esc(th.name)}</strong><span class="small">${fmt(th.c.at(-1))} companies discussed it in ${esc(D.season)} calls, across ${th.spans} sub-sectors.</span><span class="go">See all themes →</span></button>` : ''}
+      ${ideaCo ? `<button class="pick" data-open="${esc(ideaCo.id)}"><span class="eyebrow">Top idea · ${esc(boardQ())} · ${esc(idea.type)}</span><strong>${esc(ideaCo.name)}</strong><span class="small">${esc(idea.why)}</span><span class="go">Open the call →</span></button>` : ''}
+      ${th ? `<button class="pick" data-v="themes"><span class="eyebrow">Most-discussed theme</span><strong>${esc(th.name)}</strong><span class="small">${fmt(th.c.at(-1))} companies discussed it in ${esc(boardQ())} calls, across ${th.spans} sub-sectors.</span><span class="go">See all themes →</span></button>` : ''}
     </div></section>
     ${soon.length ? `<section><div class="list-head"><h3>Coming up · next 3 days</h3><button class="link" data-v="upcoming">See all</button></div>
       <div class="rows mini-list">${soon.slice(0, 8).map(r => { const co = byId[r.id]; return `<div class="r"><span style="min-width:0"><span class="nm" style="display:block">${esc(r.name)}${r.status === 'rescheduled' ? ' <span class="pill v-weak">Rescheduled</span>' : ''}</span><span class="sub">${esc(callWhen(r))} · ${esc(r.sector || '')}</span></span><span style="display:flex;gap:8px;align-items:center">${co ? `<span class="num small" style="color:${vcol(co.score, co.veto)}" title="Score of the last call read">${co.score}</span><button class="btn" data-open="${esc(r.id)}">Last call</button>` : ''}</span></div>`; }).join('')}</div></section>` : ''}
     <div class="two">
-      <section><div class="list-head"><h3>Newest calls</h3><button class="link" data-v="calls" data-sort="new">See all</button></div>
+      <section><div class="list-head"><h3>Newest calls · ${esc(q === 'all' ? 'all quarters' : q)}</h3><button class="link" data-v="calls" data-sort="new">See all</button></div>
         <div class="rows mini-list">${newest.slice(0, 8).map(c => `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key)}"><span style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span><span class="sub">${esc(sdate(c.date))} · ${esc(c.period)} · ${esc(c.sector)}</span></span>${scoreCell(c.score, c.veto)}</button>`).join('')}</div></section>
       <section><div class="list-head"><h3>Top calls · ${esc(q === 'all' ? 'all quarters' : q)}</h3><button class="link" data-v="calls" data-sort="best">See all</button></div>
         <div class="rows mini-list">${ranked.slice(0, 8).map(c => `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key)}"><span style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span><span class="sub">${esc(c.top || '')}</span></span>${scoreCell(c.score, c.veto)}</button>`).join('') || '<div class="empty">No calls yet.</div>'}</div></section>
@@ -1174,7 +1186,7 @@ function vTracker() {
   return head('Sector tracker', 'Every sector in the universe: how many companies have held their call, what is new today, and how their calls scored. Updated every morning.', `
       <ol><li><b>Read the top panel</b> for how far the season has got and how many calls came in each day.</li>
       <li><b>Click a sector</b> to open its sub-sectors. Click a sub-sector to list its companies.</li>
-      <li>Columns: <b>Reported</b> ${tip('coverage')}, <b>New</b> today / this week ${tip('new')}, <b>Avg score</b> ${tip('avg')}, <b>Guidance</b> index ${tip('gidx')} and the sector’s <b>best call</b>.</li></ol>`, qBadge()) + `
+      <li>Columns: <b>Reported</b> ${tip('coverage')}, <b>New</b> today / this week ${tip('new')}, <b>Avg score</b> ${tip('avg')}, <b>Guidance</b> index ${tip('gidx')} and the sector’s <b>best call</b>.</li></ol>`, trkBadge()) + `
     <section class="card cov">
       <div style="display:grid;gap:8px"><span class="eyebrow">${esc(t.season || '')} season so far</span>
         <div><span class="big" data-count="${t.reported}">${fmt(t.reported)}</span> <span class="muted">of ${fmt(t.universe)} companies have held their call</span></div>
@@ -1202,7 +1214,7 @@ function vGuidance() {
       <ul><li>Each card is a sub-sector. The <b>guidance index</b> ${tip('gidx')} runs from 0 (all cutting) through 50 (neutral) to 100 (all raising).</li>
       <li>Guidance from managements with a record of delivering counts for more.</li>
       <li>The quote is the strongest piece of guidance in that sub-sector. Open it to see the full call.</li>
-      <li>A sub-sector needs at least two calls this quarter to be ranked.</li></ul>`, qBadge()) + `
+      <li>A sub-sector needs at least two calls this quarter to be ranked.</li></ul>`, trkBadge()) + `
     <section class="sec"><h3>Guiding up</h3><div class="grid-auto">${lead.map((x, i) => gCard(x, i, true)).join('') || '<div class="empty">Leaders appear once sub-sectors have at least two calls this quarter.</div>'}</div></section>
     ${lag.length ? `<section class="sec"><h3>Weakest guidance</h3><div class="grid-auto">${lag.map((x, i) => gCard(x, i, false)).join('')}</div></section>` : ''}`;
 }
@@ -1227,7 +1239,7 @@ function sigList(hits, k) {
   const top = hits.slice().sort((a, b) => b.score - a.score).slice(0, 5);
   if (!top.length) return '<p class="more">No company here shows this on its latest call.</p>';
   return `<ol>${top.map(c => `<li><button class="sig-co" data-open="${esc(c.id)}" data-k="${esc(coKey(c))}">
-      <span class="r1"><b>${esc(c.name)}</b><span class="num" style="color:${vcol(c.score, c.veto)}">${c.score}${c.period !== D.season ? ` · ${esc(c.period)}` : ''}</span></span>
+      <span class="r1"><b>${esc(c.name)}</b><span class="num" style="color:${vcol(c.score, c.veto)}">${c.score}${c.period !== boardQ() ? ` · ${esc(c.period)}` : ''}</span></span>
       ${sigEvidence(c, k)}</button></li>`).join('')}</ol>${hits.length > 5 ? `<p class="more">Top 5 of ${hits.length} by score. Click a company to open the call.</p>` : ''}`;
 }
 function turnCard(g, B, pool) {
@@ -1238,35 +1250,35 @@ function turnCard(g, B, pool) {
 function bigSectorCards() {
   const by = {};
   (D.companies || []).forEach(c => { const b = c.bigSector && c.bigSector !== 'Unclassified' ? c.bigSector : null; if (b) (by[b] = by[b] || []).push(c); });
-  const subNames = new Set((D.sectors || []).map(s => s.name));
+  const subNames = new Set(sectorsQ().map(s => s.name)), bq = boardQ();
   return Object.entries(by).map(([name, cos]) => {
-    const now = cos.filter(c => c.period === D.season), n = now.length || 1;
+    const now = cos.filter(c => c.period === bq), n = now.length || 1;
     const s = Object.fromEntries(Object.keys(SIG_TEST).map(k => [k, [Math.round(100 * now.filter(SIG_TEST[k]).length / n)]]));
     return {name, n: now.length, s, cos, subs: [...new Set(cos.map(c => c.sector))].filter(x => subNames.has(x))};
   }).filter(g => g.n >= 3).sort((a, b) => b.n - a.n);
 }
 function vTurns() {
-  const all = (D.sectors || []), base = all.every(s => (s.s.supply || []).length < 2);
+  const all = sectorsQ(), bq = boardQ(), base = all.every(s => (s.s.supply || []).length < 2);
   const stages = [...new Set(all.map(s => s.stage))].sort((a, b) => STAGE_ORDER[a] - STAGE_ORDER[b]);
   const rows = all.filter(s => !S.turns.stage || s.stage === S.turns.stage).sort((a, b) => (b.hit - a.hit) || STAGE_ORDER[a.stage] - STAGE_ORDER[b.stage] || b.n - a.n);
   const B = [['supply', 'Supply discipline', 'var(--gold)'], ['util', 'Utilisation rising', 'var(--blue)'], ['pricing', 'Pricing improving', 'var(--teal)'], ['demand', 'Demand positive', 'var(--muted)']];
-  const lvl = S.turns.level || 'sub', subPool = name => (D.companies || []).filter(c => c.sector === name);
+  const lvl = S.turns.level || 'sub', subPool = name => (D.companies || []).filter(c => c.sector === name && c.period === bq);
   const levelBar = `<div class="toolbar"><button class="chip" data-tl="sub" aria-pressed="${lvl === 'sub'}">By sub-sector</button><button class="chip" data-tl="big" aria-pressed="${lvl === 'big'}">By sector</button></div>`;
   if (lvl === 'big') {
     const bs = bigSectorCards();
     return head('Sector turns', 'The same breadth signals rolled up to the broad sector. Open any signal to see the top companies behind it and the line from their call.', `
-      <ul><li>Breadth here is computed from each company’s ${esc(D.season)} call, across every sub-sector in the sector.</li>
+      <ul><li>Breadth here is computed from each company’s ${esc(bq)} call, across every sub-sector in the sector.</li>
       <li>Stages and turn flags are only set at sub-sector level; switch back to see them.</li></ul>`, focusBadge()) + levelBar + `
       <div class="grid-auto">${bs.map(g => `<article class="card turn">
         <div class="top"><div><h4>${esc(g.name)}</h4><span class="small muted">${g.n} companies · ${g.subs.length} sub-sector${g.subs.length === 1 ? '' : 's'}</span></div></div>
-        ${turnCard(g, B, g.cos.filter(c => c.period === D.season))}
+        ${turnCard(g, B, g.cos.filter(c => c.period === bq))}
         ${g.subs.length ? `<p class="small muted">${g.subs.map(esc).join(' · ')}</p>` : ''}</article>`).join('') || '<div class="empty">No sectors with three or more calls yet.</div>'}</div>`;
   }
   return head('Sector turns', 'Sub-sectors where the capital cycle may be turning: competitors hold back capacity, then pricing and utilisation start to improve before demand talk catches up.', `
       <ul><li>Each card shows <b>breadth</b> ${tip('breadth')}: the share of the sub-sector’s companies whose calls show each signal.</li>
       <li>The pattern to look for: supply discipline high, pricing or utilisation rising, demand still lukewarm. Those cards are marked <b>Turning</b> ${tip('stage')} and sorted to the top.</li>
-      <li>Only sub-sectors with at least three calls appear.</li></ul>`, focusBadge()) + `
-    ${base ? `<div class="welcome"><span>Only ${esc(D.season)} has enough calls so far, so these cards show where each sub-sector stands today. Turn flags need two quarters and will start once ${esc((D.inProgress || [])[0]?.season || 'the next quarter')} fills in.</span></div>` : ''}
+      <li>Only sub-sectors with at least three calls ${esc(bq === D.season ? 'this quarter' : 'in ' + bq)} appear.${inProg(bq) ? ` ${esc(bq)} is still in progress, so its cards compare the companies that have reported so far with ${esc(D.season)}, and each card shows the change in breadth.` : ''}</li></ul>`, focusBadge()) + `
+    ${base ? `<div class="welcome"><span>Only ${esc(bq)} has enough calls so far, so these cards show where each sub-sector stands today. Turn flags need two quarters and will start once ${esc((D.inProgress || [])[0]?.season || 'the next quarter')} fills in.</span></div>` : ''}
     ${levelBar}
     <div class="toolbar">${['', ...stages].map(s => `<button class="chip" data-st="${s}" aria-pressed="${S.turns.stage === s}">${s ? (all.find(x => x.stage === s)?.label || s) : 'All stages'} <span class="num">${s ? all.filter(x => x.stage === s).length : all.length}</span></button>`).join('')}</div>
     <div class="grid-auto">${rows.map(s => `<article class="card turn ${s.hit ? 'hit' : ''}">
@@ -1277,34 +1289,35 @@ function vTurns() {
 
 /* Themes */
 function vThemes() {
-  const th = (D.themes || []).slice().sort((a, b) => b.c.at(-1) - a.c.at(-1)), max = Math.max(1, ...th.map(t => t.c.at(-1)));
+  const bq = boardQ(), ip = inProg(bq), th = themesQ().slice().sort((a, b) => b.c.at(-1) - a.c.at(-1)), max = Math.max(1, ...th.map(t => t.c.at(-1)));
   return head('Themes', 'Investment themes that managements are talking about, counted by how many companies discussed each one. Rising counts show a theme spreading.', `
       <ul><li><b>Companies discussing</b> ${tip('themeCount')}: distinct companies that talked about the theme with substance.</li>
       <li>The sub-sectors column shows where the theme is concentrated.</li>
-      <li>Once two quarters are read, the change column shows which themes are spreading fastest, and the stage ${tip('stage')} moves off Baseline.</li></ul>`, focusBadge()) + `
-    <div class="rows th"><div class="r hd"><span>Theme</span><span>Companies discussing</span><span>Change</span><span>Stage</span></div>
-    ${th.map((t, i) => { const now = t.c.at(-1), ch = t.c.length > 1 ? now - t.c.at(-2) : null;
+      <li>Once two quarters are read, the change column shows which themes are spreading fastest, and the stage ${tip('stage')} moves off Baseline.</li>
+      ${ip ? `<li><b>${esc(bq)} is still in progress</b>, so far fewer companies have reported than in ${esc(D.season)}. The count is ${esc(bq)} companies only; the change column compares the <b>share</b> of each quarter’s calls that discussed the theme, in percentage points.</li>` : ''}</ul>`, focusBadge()) + `
+    <div class="rows th"><div class="r hd"><span>Theme</span><span>Companies discussing · ${esc(bq)}</span><span>${ip ? 'Share change' : 'Change'}</span><span>Stage</span></div>
+    ${th.map((t, i) => { const now = t.c.at(-1), pc = t.pc || [], ch = ip ? (pc.length > 1 ? Math.round(pc.at(-1) - pc.at(-2)) : null) : t.c.length > 1 ? now - t.c.at(-2) : null;
       return `<div class="r"><span style="min-width:0"><span class="nm" style="display:block">${esc(t.name)}${t.new ? ' <span class="pill st-emerging">New</span>' : ''}</span><span class="sub">${t.spans} sub-sectors · ${esc(t.sub || '')}</span></span>
-        <span class="thbar"><b class="num" style="min-width:34px">${fmt(now)}</b><span class="sbar"><i style="width:${100 * now / max}%;background:var(--gold);animation-delay:${Math.min(i, 20) * .02}s"></i></span></span>
-        <span>${ch == null ? '<span class="delta zero">–</span>' : dcell(ch)}</span><span><span class="pill st-${t.stage}">${esc(t.label)}</span></span></div>`; }).join('')}</div>
+        <span class="thbar"><b class="num" style="min-width:34px">${fmt(now)}</b>${ip && pc.length ? `<span class="small muted num" style="white-space:nowrap">${pc.at(-1)}%</span>` : ''}<span class="sbar"><i style="width:${100 * now / max}%;background:var(--gold);animation-delay:${Math.min(i, 20) * .02}s"></i></span></span>
+        <span>${ch == null ? '<span class="delta zero">–</span>' : dcell(ch)}${ip && ch ? '<span class="small muted"> pts</span>' : ''}</span><span><span class="pill st-${t.stage}">${esc(t.label)}</span></span></div>`; }).join('')}</div>
     ${(D.theme_candidates || []).length ? `<section class="sec"><h3>Ideas showing up often but not yet tracked as themes</h3><div class="chips">${D.theme_candidates.map(x => `<span class="tag">${esc(typeof x === 'string' ? x : x.name)}</span>`).join('')}</div></section>` : ''}`;
 }
 
 /* Ideas */
 function vIdeas() {
-  const red = S.ideas.tab === 'red', list = (D.ideas || []).filter(x => !!x.red === red && byId[x.id]);
-  const types = [...new Set((D.ideas || []).map(x => x.type))];
+  const bq = boardQ(), IQ = ideasQ(), red = S.ideas.tab === 'red', list = IQ.filter(x => !!x.red === red && byId[x.id]);
+  const types = [...new Set(IQ.map(x => x.type))];
   return head('Ideas & red flags', 'Single companies that stand out this season, plus the calls that need a closer look before anyone acts. A shortlist to work up, not a buy list.', `
       <ul>${types.map(t => `<li><b>${esc(t)}:</b> ${esc(IDEA_TYPES[t] || '')}</li>`).join('')}</ul>
-      <p>Open any card to read the full call and check the quotes before taking an idea further.</p>`, focusBadge()) + `
-    <div class="toolbar"><div class="seg"><button data-it="ideas" aria-pressed="${!red}">Ideas <span class="num">${(D.ideas || []).filter(x => !x.red).length}</span></button><button data-it="red" aria-pressed="${red}">Red flags <span class="num">${(D.ideas || []).filter(x => x.red).length}</span></button></div></div>
-    <div class="grid-auto">${list.map((x, i) => { const c = byId[x.id];
+      <p>Every idea and red flag here comes from a ${esc(bq)} call.${inProg(bq) ? ` ${esc(bq)} is still in progress, so the list grows as more companies report.` : ''} Open any card to read the full call and check the quotes before taking an idea further.</p>`, focusBadge()) + `
+    <div class="toolbar"><div class="seg"><button data-it="ideas" aria-pressed="${!red}">Ideas <span class="num">${IQ.filter(x => !x.red).length}</span></button><button data-it="red" aria-pressed="${red}">Red flags <span class="num">${IQ.filter(x => x.red).length}</span></button></div></div>
+    <div class="grid-auto">${list.map((x, i) => { const c = byId[x.id], k = callOf(x.id, bq) || c;
       return `<article class="card idea ${x.red ? 'red' : ''}">
         <div class="top"><span class="pill ${x.red ? 'v-flag' : 'st-confirming'}">${esc(x.type)}</span><span class="num small muted">${x.red ? '' : '#' + (i + 1)}</span></div>
         <h4>${esc(c.name)}</h4>
-        <div>${scoreCell(c.score, c.veto)}</div>
+        <div>${scoreCell(k.score, k.veto)}</div>
         <p>${esc(x.why)}</p>
-        <div class="foot"><span class="tag">${esc(c.sector)}</span><button class="btn" data-open="${esc(c.id)}">Open the call</button></div></article>`; }).join('') || '<div class="empty">Nothing here yet.</div>'}</div>`;
+        <div class="foot"><span class="tag">${esc(c.sector)} · ${esc(k.period || bq)}</span><button class="btn" data-open="${esc(c.id)}"${k.key ? ` data-k="${esc(k.key)}"` : ''}>Open the call</button></div></article>`; }).join('') || '<div class="empty">Nothing here yet.</div>'}</div>`;
 }
 
 /* Near-term strength: companies whose latest call points to strong results over the next one to few quarters.
@@ -1366,7 +1379,7 @@ function ntRow(c) {
     pending: c.period !== (quarters()[0]?.label) && quarters()[0] && inProg(quarters()[0].label)};
 }
 function ntRows() {
-  return (D.companies || []).map(ntRow).filter(Boolean).sort((a, b) => (b.gp?.pts || 0) - (a.gp?.pts || 0) || b.hot - a.hot || b.c.score - a.c.score);
+  return (D.companies || []).filter(inQ).map(ntRow).filter(Boolean).sort((a, b) => (b.gp?.pts || 0) - (a.gp?.pts || 0) || b.hot - a.hot || b.c.score - a.c.score);
 }
 function vNear() {
   const f = S.near, all = ntRows(), nextQ = quarters()[0]?.label;
@@ -1380,7 +1393,7 @@ function vNear() {
       <li>The only score shown is the <b>Concall Signal Score</b>, the same number as everywhere else. The list is ordered by its Guidance-backed growth & capacity points, then by the score. Stocks guiding strongly with no clear plan or capacity behind it are marked in red.</li>
       <li><b>${esc(nextQ || 'Next quarter')} results still to come</b> shows companies whose latest call is from the previous quarter, so the quarter they guided for has not been reported yet. These are the most timely names.</li>
       <li>The bullet lines are taken from the call summary and quotes. Open the call and check the transcript before acting.</li></ul>`,
-      `<span class="badge">Latest call per company</span>`) + `
+      latestBadge()) + `
     <div class="toolbar">
       <select id="nt-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
       ${Object.entries(CH).map(([k, [n, fn]]) => `<button class="chip" data-ntc="${k}" aria-pressed="${f.chips.has(k)}">${esc(n)} <span class="num">${all.filter(fn).length}</span></button>`).join('')}
@@ -1440,7 +1453,7 @@ function ifRow(c) {
   if (call.gCut > 0) add(dn, 15, 'Guidance cut'); else if ((b.guidance || 0) < 0) add(dn, 8, 'Guidance negative');
   if (c.archetype === 'Red flag') add(dn, 15, 'Red-flag call');
   else if (c.archetype === 'Capital-cycle warning') add(dn, 10, 'Capital-cycle warning');
-  const red = (D.ideas || []).find(x => x.red && x.id === c.id);
+  const red = ((D.ideasBy || {})[c.period] || D.ideas || []).find(x => x.red && x.id === c.id);
   if (red && !c.veto) add(dn, 12, red.why);
   if ((b.demand || 0) < 0) add(dn, 6, 'Demand weakening');
   if ((b.pricing || 0) < 0) add(dn, 6, 'Pricing under pressure');
@@ -1460,15 +1473,15 @@ function ifRow(c) {
 }
 let IF_CACHE = null;
 function ifRows() {
-  if (IF_CACHE && IF_CACHE.d === D) return IF_CACHE.r;
-  const all = (D.companies || []).map(ifRow).filter(Boolean), r = {};
+  if (IF_CACHE && IF_CACHE.d === D && IF_CACHE.q === curQ()) return IF_CACHE.r;
+  const all = (D.companies || []).filter(inQ).map(ifRow).filter(Boolean), r = {};
   ['up', 'dn'].forEach(s => {
     const a = all.filter(x => x.side === s).sort((x, y) => y.pts - x.pts || (s === 'up' ? y.c.score - x.c.score : x.c.score - y.c.score));
     const cut = a[Math.max(0, Math.floor(a.length * 0.2) - 1)]?.pts ?? Infinity;
     a.forEach(x => { x.sharp = x.pts >= cut && x.pts >= 50; });
     r[s] = a;
   });
-  IF_CACHE = {d: D, r};
+  IF_CACHE = {d: D, q: curQ(), r};
   return r;
 }
 function vInflect() {
@@ -1482,7 +1495,7 @@ function vInflect() {
       <li>It is listed on the <b>Downside</b> side when at least two triggers point down (or a veto) and the call shows a break: a veto, score down sharply, guidance cut or negative, a red-flag or capital-cycle warning, demand, pricing or utilisation turning down, or big guidance with no clear plan. Deflected questions, a guarded tone and working-capital stress add weight.</li>
       <li>Each company sits on the side where its evidence is stronger, and triggers pointing the other way are shown as <b>counter-signals</b>. <b>Sharp</b> marks the strongest fifth on each side. The list is ordered by the weight of evidence; the only score shown is the Concall Signal Score.</li>
       <li>Direction is read automatically from short trigger labels, so open the call and read the quotes before acting.</li></ul>`,
-      `<span class="badge">Latest call per company</span>`) + `
+      latestBadge()) + `
     <div class="toolbar">
       <div class="seg" role="group" aria-label="Direction"><button data-ifs="up" aria-pressed="${isUp}">▲ Upside <span class="num">${R.up.length}</span></button><button data-ifs="dn" aria-pressed="${!isUp}">▼ Downside <span class="num">${R.dn.length}</span></button></div>
       <select id="if-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>

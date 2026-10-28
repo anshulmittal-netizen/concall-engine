@@ -299,29 +299,39 @@ def build(market: str, log=print) -> dict:
                 first_seen[t].append((r["date"], cid))
             for t in r["new_themes"]:
                 cand[t] += 1
-    active_per_period = {p: sum(1 for per in recs.values() if p in per) for p in shown}
-    themes = []
-    for t, per in tcount.items():
-        c = [len(per.get(p, ())) for p in shown]
-        if not c or max(c) < 3:
-            continue
-        last, prev2 = c[-1], (c[-3] if len(c) >= 3 else c[0])
-        spans = len({sub[x] for x in per.get(current, ())})
-        share = last / max(1, active_per_period.get(current, 1))
-        if last >= 5 and last >= 2 * max(prev2, 1) and spans >= 2:
-            stage, label = "emerging", "Emerging"
-        elif prev2 and last < prev2 * 0.85:
-            stage, label = "deteriorating", "Fading"
-        elif share >= 0.12 and last < 1.3 * max(prev2, 1):
-            stage, label = "crowded", "Crowded"
-        elif last >= 1.15 * max(prev2, 1):
-            stage, label = "confirming", "Confirming"
-        else:
-            stage, label = "neutral", "Steady"
-        if len(shown) < 2:
-            stage, label = "neutral", "Baseline"
-        themes.append({"name": t, "c": c, "spans": spans, "stage": stage, "label": label, "new": t in cand,
-                       "sub": ", ".join(s for s, _ in Counter(sub[x] for x in per.get(current, ())).most_common(3))})
+    def build_themes(current, shown, in_progress=False):
+        active_per_period = {p: sum(1 for per in recs.values() if p in per) for p in shown}
+        themes = []
+        for t, per in tcount.items():
+            c = [len(per.get(p, ())) for p in shown]
+            if not c or max(c) < 3:
+                continue
+            # share of each quarter's calls that discussed the theme (a season in progress has far fewer calls,
+            # so its stage compares shares, not raw counts)
+            pc = [round(100 * n / max(1, active_per_period.get(p, 1)), 1) for n, p in zip(c, shown)]
+            last, prev2 = c[-1], (c[-3] if len(c) >= 3 else c[0])
+            if in_progress and len(c) >= 2:
+                base = pc[-3] if len(pc) >= 3 else pc[0]
+                prev2 = round(last * base / pc[-1]) if pc[-1] else prev2  # earlier share, scaled to this quarter's calls
+            spans = len({sub[x] for x in per.get(current, ())})
+            share = last / max(1, active_per_period.get(current, 1))
+            if last >= 5 and last >= 2 * max(prev2, 1) and spans >= 2:
+                stage, label = "emerging", "Emerging"
+            elif prev2 and last < prev2 * 0.85:
+                stage, label = "deteriorating", "Fading"
+            elif share >= 0.12 and last < 1.3 * max(prev2, 1):
+                stage, label = "crowded", "Crowded"
+            elif last >= 1.15 * max(prev2, 1):
+                stage, label = "confirming", "Confirming"
+            else:
+                stage, label = "neutral", "Steady"
+            if len(shown) < 2:
+                stage, label = "neutral", "Baseline"
+            themes.append({"name": t, "c": c, "pc": pc, "spans": spans, "stage": stage, "label": label, "new": t in cand,
+                           "sub": ", ".join(s for s, _ in Counter(sub[x] for x in per.get(current, ())).most_common(3))})
+        return themes
+
+    themes = build_themes(current, shown)
     tstage = {t["name"]: t["stage"] for t in themes}
     bonus = {"emerging": 1.0, "confirming": 0.7, "neutral": 0.5, "crowded": 0.25, "deteriorating": 0.2}
 
@@ -476,33 +486,38 @@ def build(market: str, log=print) -> dict:
     pct_of = {c["key"]: c["pct"] for c in calls}
 
     # 4) sector breadth
-    sectors = []
     groups = defaultdict(list)
     for cid in recs:
         groups[sub[cid]].append(cid)
-    for s, cids in groups.items():
-        series = {k: [] for k in ("supply", "util", "pricing", "demand")}
-        capex_up = []
-        for p in shown:
-            rs = [recs[c][p] for c in cids if p in recs[c]]
-            n = len(rs) or 1
-            series["supply"].append(round(100 * sum(r["blocks"]["supply"] >= 1 or r["capex"] in ("cut", "deferred", "cancelled") for r in rs) / n) if rs else None)
-            series["util"].append(round(100 * sum(r["util"] > 0 for r in rs) / n) if rs else None)
-            series["pricing"].append(round(100 * sum(r["blocks"]["pricing"] >= 1 for r in rs) / n) if rs else None)
-            series["demand"].append(round(100 * sum(r["blocks"]["demand"] >= 1 for r in rs) / n) if rs else None)
-            capex_up.append(round(100 * sum(r["capex"] == "raised" for r in rs) / n) if rs else None)
-        n_now = sum(1 for c in cids if current in recs[c])
-        if n_now < cfg["min_companies_per_sector"]:
-            continue
-        stage, label, hit, note = classify_sector(series, capex_up, n_now)
-        if len(shown) < 2 and stage in ("emerging", "deteriorating", "turning"):
-            stage, label, hit = "neutral", "Baseline", False
-            note = (f"First quarter on record: supply discipline {fill(series['supply'])[-1]}%, pricing "
-                    f"{fill(series['pricing'])[-1]}%, demand {fill(series['demand'])[-1]}% of {n_now} companies. Trend appears next quarter.")
-        sectors.append({"name": s, "mkt": market, "n": n_now, "stage": stage, "label": label, "hit": hit, "note": note,
-                        "s": {k: fill(v) for k, v in series.items()}})
-    order = {"turning": 0, "emerging": 1, "confirming": 2, "crowded": 3, "deteriorating": 4, "neutral": 5}
-    sectors.sort(key=lambda s: (order[s["stage"]], -s["n"]))
+
+    def build_sectors(current, shown):
+        sectors = []
+        for s, cids in groups.items():
+            series = {k: [] for k in ("supply", "util", "pricing", "demand")}
+            capex_up = []
+            for p in shown:
+                rs = [recs[c][p] for c in cids if p in recs[c]]
+                n = len(rs) or 1
+                series["supply"].append(round(100 * sum(r["blocks"]["supply"] >= 1 or r["capex"] in ("cut", "deferred", "cancelled") for r in rs) / n) if rs else None)
+                series["util"].append(round(100 * sum(r["util"] > 0 for r in rs) / n) if rs else None)
+                series["pricing"].append(round(100 * sum(r["blocks"]["pricing"] >= 1 for r in rs) / n) if rs else None)
+                series["demand"].append(round(100 * sum(r["blocks"]["demand"] >= 1 for r in rs) / n) if rs else None)
+                capex_up.append(round(100 * sum(r["capex"] == "raised" for r in rs) / n) if rs else None)
+            n_now = sum(1 for c in cids if current in recs[c])
+            if n_now < cfg["min_companies_per_sector"]:
+                continue
+            stage, label, hit, note = classify_sector(series, capex_up, n_now)
+            if len(shown) < 2 and stage in ("emerging", "deteriorating", "turning"):
+                stage, label, hit = "neutral", "Baseline", False
+                note = (f"First quarter on record: supply discipline {fill(series['supply'])[-1]}%, pricing "
+                        f"{fill(series['pricing'])[-1]}%, demand {fill(series['demand'])[-1]}% of {n_now} companies. Trend appears next quarter.")
+            sectors.append({"name": s, "mkt": market, "n": n_now, "stage": stage, "label": label, "hit": hit, "note": note,
+                            "s": {k: fill(v) for k, v in series.items()}})
+        order = {"turning": 0, "emerging": 1, "confirming": 2, "crowded": 3, "deteriorating": 4, "neutral": 5}
+        sectors.sort(key=lambda s: (order[s["stage"]], -s["n"]))
+        return sectors
+
+    sectors = build_sectors(current, shown)
     sec_stage = {s["name"]: s["stage"] for s in sectors}
 
     # capital-cycle warning: raising capex inside a crowded sub-sector
@@ -580,11 +595,30 @@ def build(market: str, log=print) -> dict:
     # 5) ideation
     ideas = build_ideas(out_cos, recs, first_seen, tstage, cfg, current)
 
-    themes.sort(key=lambda t: (-(t["c"][-1] - (t["c"][-3] if len(t["c"]) >= 3 else t["c"][0])), -t["c"][-1]))
+    # 5b) the same boards for every quarter on record, so the page's quarter switch shows each quarter's own
+    # sectors, themes and ideas (a season in progress is compared with the quarters before it).
+    def q_window(q):
+        return ([p for p in shown if p < q] + [q])[-cfg["periods_shown"]:]
+    sectors_by, themes_by, ideas_by = {}, {}, {}
+    for q in shown + later:
+        if not any(q in per for per in recs.values()):
+            continue
+        lab = label_from_key(q, market)
+        if q == current:
+            sectors_by[lab], themes_by[lab], ideas_by[lab] = sectors, themes, ideas
+            continue
+        win = q_window(q)
+        th_q = build_themes(q, win, in_progress=q in later)
+        sectors_by[lab] = build_sectors(q, win)
+        themes_by[lab] = th_q
+        ideas_by[lab] = build_ideas(out_cos, recs, first_seen, {t["name"]: t["stage"] for t in th_q}, cfg, q)
+
     other = read_json(SITE / "data" / f"{'us' if market == 'IN' else 'in'}.json", {})
     other_now = {t["name"]: t["c"][-1] for t in other.get("themes", [])}
-    for t in themes:
-        t["other"] = other_now.get(t["name"])
+    for ths in [themes] + [v for v in themes_by.values() if v is not themes]:
+        ths.sort(key=lambda t: (-(t["c"][-1] - (t["c"][-3] if len(t["c"]) >= 3 else t["c"][0])), -t["c"][-1]))
+        for t in ths:
+            t["other"] = other_now.get(t["name"])
 
     cur_cos = [c for c in out_cos if c["periodKey"] == current]
     tracker = build_tracker(calls, current, market, cls, comps)
@@ -612,6 +646,7 @@ def build(market: str, log=print) -> dict:
         "capNote": "Below ₹50,000 Cr" if market == "IN" else f"Below ${uni.get('cap_usd_mn', 0)/1000:.1f}B (₹50,000 Cr at ₹{uni.get('inr_per_usd', 0):.1f}/$)",
         "companies": sorted(out_cos, key=lambda c: (c["periodKey"] != current, -c["score"])),
         "sectors": sectors, "themes": themes, "ideas": ideas,
+        "sectorsBy": sectors_by, "themesBy": themes_by, "ideasBy": ideas_by,
         "theme_candidates": [t for t, n in cand.most_common(30) if n >= 2],
         "calls": calls, "tracker": tracker, "trackers": trackers, "summaryCount": len(summaries),
         "firstTimers": first_timers, "historyChecked": len(hist),
