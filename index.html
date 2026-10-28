@@ -1995,7 +1995,8 @@ async function fillSummary(key) {
   const all = await loadSums(); if (!S.drawer || S.drawer.key !== key || S.drawer.tab !== 'summary') return;
   const s = all[key], box = $('#dr-tab'); if (!box) return;
   if (!s) { box.innerHTML = '<div class="empty">This call has not been summarised yet. New calls are summarised the night they are read.</div>'; return; }
-  const list = (t, items) => items && items.length ? `<div class="scard"><h4>${t}</h4><ul>${items.map(v => `<li>${esc(v)}</li>`).join('')}</ul></div>` : '';
+  const real = items => (items || []).filter(v => /[^\W_]{2}/u.test(String(v ?? '')));
+  const list = (t, items) => (items = real(items)).length ? `<div class="scard"><h4>${t}</h4><ul>${items.map(v => `<li>${esc(v)}</li>`).join('')}</ul></div>` : '';
   box.innerHTML = `<div style="display:grid;gap:18px">
     <section class="sec"><h3 style="font-size:18px">${esc(s.headline)}</h3><p style="max-width:70ch">${esc(s.overview)}</p></section>
     ${(s.financial_highlights || []).length ? `<section class="sec"><h3>Financial highlights</h3><div class="fin">${s.financial_highlights.map(f => `<div><span>${esc(f.metric)}</span><b>${esc(f.value)}</b><span>${esc(f.change || '')}</span></div>`).join('')}</div></section>` : ''}

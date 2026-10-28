@@ -70,6 +70,7 @@ def _call(entry: dict, text: str) -> dict:
 
 LEAK_RX = re.compile(r'(?:</\w+>\s*)?<parameter name="(\w+)">')
 FIELDS = list(SUMMARY_TOOL["input_schema"]["properties"])
+SPILL_KEYS = set(FIELDS) | {"question", "answer", "metric", "value", "change", "name", "commentary"}
 XML_LEAK_RX = re.compile(r'(?:</\w+>\s*)*<(' + "|".join(FIELDS) + r')>')
 ANY_LEAK_RX = re.compile(r'<parameter name=|</?(?:' + "|".join(FIELDS) + r'|item)>')
 
@@ -164,12 +165,23 @@ def _normalize(s: dict) -> dict:
                         out.append(y)
         s[key] = out
     for key in ("guidance_outlook", "capex_capacity", "demand_pricing", "risks_watch", "key_quotes"):
-        out = []
+        out, spill = [], False
         for x in as_list(_jsonish(s.get(key))):
             x = _jsonish(x)
             for y in (x if isinstance(x, list) else [x]):
-                if isinstance(y, (str, int, float)) and _txt(y):
-                    out.append(_txt(y))
+                if not isinstance(y, (str, int, float)):
+                    continue
+                t = _txt(y)
+                # the model's output for later sections sometimes spills into this list as bare key names
+                # ("qa_highlights", "question") and JSON punctuation (",", ":[", "},{"): stop at the first key,
+                # and keep only lines with at least one word or number
+                if t.strip(' "\':,[]{}') in SPILL_KEYS:
+                    spill = True
+                    break
+                if re.search(r"[^\W_]{2}", t):
+                    out.append(t)
+            if spill:
+                break
         s[key] = out
     for key in ("headline", "overview", "management_tone"):
         v = _jsonish(s.get(key))
