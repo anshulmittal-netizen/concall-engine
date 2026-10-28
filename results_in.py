@@ -414,7 +414,12 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
             r["watch"] = True
         else:
             r.pop("watch", None)
-    site = {"checked": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M"),
+    try:  # share price around each result; never let it stop the run
+        import prices_in
+        log(f"  prices: {prices_in.attach(out_rows, comps, log)} of {len(out_rows)} results priced")
+    except Exception as ex:
+        log(f"  prices skipped: {ex}")
+    site = {"checked": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M"), "priced": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M"),
             "calendar": sorted(cal.values(), key=lambda c: (c["date"], c["name"])), "results": out_rows,
             "watch": {"leadDays": watch["lead_days"], "notOnBse": watch["not_on_bse"],
                       "companies": [{"id": c, "name": w["name"], "as": w["as"]} for c, w in watch["companies"].items()],
