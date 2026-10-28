@@ -504,6 +504,40 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
 .linkbox{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-family:var(--mono);font-size:12px}
 .dr-viz{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
 
+/* ---------- results flashcards ---------- */
+.fc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:18px}
+.fc{perspective:1400px;animation:rise .5s var(--ease) both}
+.fc-in{display:grid;transition:transform .7s cubic-bezier(.3,.9,.3,1.05);transform-style:preserve-3d;height:100%}
+.fc.on .fc-in{transform:rotateY(180deg)}
+.fc-face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px 20px;display:grid;gap:14px;align-content:start;position:relative;overflow:hidden;transition:box-shadow .25s,border-color .25s}
+.fc-face::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--gc)}
+.fc:hover .fc-face{box-shadow:var(--shadow2);border-color:color-mix(in srgb,var(--gc) 35%,var(--line))}
+.fc-back{transform:rotateY(180deg);background:linear-gradient(160deg,color-mix(in srgb,var(--gc) 7%,var(--panel)),var(--panel) 60%)}
+.fc.wfc .fc-face{border-color:color-mix(in srgb,var(--saffron) 55%,var(--line))}
+.fc-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.fc-head h4{font-size:18px;font-weight:600;line-height:1.22;margin-top:7px}
+.fc-when{display:grid;justify-items:end;gap:2px;flex:none;font-size:12px;color:var(--muted)}
+.fc-when b{font-family:var(--display);font-size:16px;color:var(--fg)}
+.fm-list{display:grid;gap:12px}
+.fm{display:grid;gap:6px}
+.fm-top{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:baseline}
+.fm-l{font-size:13px;color:var(--muted);font-weight:600}
+.fm-v{font-size:16px;font-weight:600}
+.fm-v small{font-size:11px;color:var(--muted);font-weight:500}
+.fm-bars{display:grid;gap:3px}
+.fm-bars i{display:block;height:7px;border-radius:5px;transform-origin:left;animation:grow .9s var(--ease) both}
+.fm-bars i.prev{background:var(--line2);opacity:.8}
+.fc-strip{display:flex;gap:8px 18px;flex-wrap:wrap;align-items:center;font-size:13.5px;color:var(--muted);padding-top:12px;border-top:1px dashed var(--line2)}
+.fc-strip b{color:var(--fg)}
+.fc-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-top:auto}
+.fc-back .fc-foot{justify-content:flex-end}
+.bk{display:grid;gap:8px}
+.bk-row{display:grid;grid-template-columns:minmax(0,1fr) auto 64px;gap:10px;align-items:baseline;font-size:13.5px}
+.bk-row .g{text-align:right;font-family:var(--mono);font-size:12.5px}
+.bk-row .num{font-size:12.5px;color:var(--muted)}
+.bk-call{display:grid;gap:6px;padding:12px 14px;border-radius:12px;background:var(--panel2);border:1px solid var(--line)}
+@media (prefers-reduced-motion: reduce){.fc-in{transform:none!important}.fc .fc-back{display:none}.fc.on .fc-front{display:none}.fc.on .fc-back{display:grid;transform:none}}
+
 /* ---------- responsive ---------- */
 @media (max-width:1240px){
   .calls .r{grid-template-columns:30px minmax(0,1.4fr) 160px 84px minmax(0,2fr) 104px}
@@ -645,6 +679,7 @@ const GL = {
   themeCount:['Companies discussing','Distinct companies that discussed the theme with substance in their call, not just a passing mention.'],
   rescal:['Results calendar','The board meeting dates companies have announced to BSE for approving their quarterly results, from BSE’s forthcoming-results list. Results are usually filed the same evening.'],
   posted:['Results posted','Numbers from the official XBRL results filing on BSE: consolidated (C) when the company files them, otherwise standalone (S). Growth compares the same basis: YoY with the same quarter last year, QoQ with the previous quarter. PAT is profit attributable to shareholders (after minority interest). Growth is left blank when the earlier figure was a loss or close to zero.'],
+  rsgrade:['Quarter grade','A plain read of the quarter against the same quarter last year. Strong: revenue up 15%+ and profit up 20%+ (and operating profit up 15%+). Solid: revenue and profit both up 5%+. Weak: a loss, profit down 10%+ or revenue down 5%+. Mixed: anything in between. It is separate from the Concall Signal Score.'],
   opprofit:['Operating profit','EBITDA for companies (profit before exceptional items and tax, plus finance costs and depreciation, less other income). For banks, pre-provision operating profit (PPOP) and net interest income (NII) in place of revenue. For other lenders and insurers, profit before tax, since interest is their main cost.'],
   upcoming:['Coming up','Earnings calls companies have announced on BSE, read from the call intimation each company must file before the call. Dates and times are read from the filing automatically, so open the intimation to confirm before dialling in. Reschedules replace the original date.'],
   first:['First-time callers','Confirmed: the transcript says it is the first or maiden call. Likely: BSE shows no earnings call transcript or analyst / investor meet filing for the company from 2019 until this call.'],
@@ -689,7 +724,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -1370,20 +1405,63 @@ function vResCal() {
       : `<div class="empty">${all.length ? 'No results dates match these filters.' : 'No results dates read yet. They appear after the next check.'}</div>`}`);
 }
 
-/* Results posted: summary table from the XBRL filings */
+/* Results posted: flashcards (or a table) from the XBRL filings */
 const RS_COLS = [['filed', 'Filed'], ['rev', 'Revenue'], ['rev_yoy', 'Rev YoY'], ['op', 'Op. profit'], ['op_yoy', 'Op YoY'], ['opm', 'Margin'], ['pat', 'PAT'], ['pat_yoy', 'PAT YoY'], ['pat_qoq', 'PAT QoQ'], ['eps', 'EPS']];
-const RS_CHIPS = {rev20: ['Revenue up 20%+', r => r.rev_yoy >= 20], pat20: ['PAT up 20%+', r => r.pat_yoy >= 20], patdn: ['PAT down YoY', r => r.pat_yoy < 0 || (r.pat < 0)],
+/* a plain grade for the quarter, from growth on last year; it is not the Concall Signal Score */
+const RS_GRADE = [['strong', 'Strong quarter', 'v5'], ['good', 'Solid quarter', 'v4'], ['mixed', 'Mixed quarter', 'v3'], ['weak', 'Weak quarter', 'v1']];
+function rsGrade(r) {
+  const rv = r.rev_yoy, op = r.op_yoy, pt = r.pat_yoy;
+  if ((r.pat != null && r.pat < 0) || (pt != null && pt <= -10) || (rv != null && rv <= -5)) return 'weak';
+  if (rv != null && rv >= 15 && pt != null && pt >= 20 && (op == null || op >= 15)) return 'strong';
+  if ((rv == null || rv >= 5) && (pt == null || pt >= 5) && (rv != null || pt != null)) return 'good';
+  return 'mixed';
+}
+const gradeOf = k => RS_GRADE.find(g => g[0] === k);
+const RS_CHIPS = {strong: ['Strong quarters', r => rsGrade(r) === 'strong'], rev20: ['Revenue up 20%+', r => r.rev_yoy >= 20], pat20: ['PAT up 20%+', r => r.pat_yoy >= 20], patdn: ['PAT down YoY', r => r.pat_yoy < 0 || (r.pat < 0)],
   mup: ['Margin up YoY', r => r.opm != null && r.opm_prev_yoy != null && r.opm > r.opm_prev_yoy], read: ['Companies we have read', r => !!byId[r.id]], watch: ['★ My watchlist', r => isW(r.id)]};
+const RS_SORTS = [['filed', 'Newest filed'], ['rev_yoy', 'Revenue growth'], ['pat_yoy', 'Profit growth'], ['op_yoy', 'Operating profit growth'], ['opm', 'Margin'], ['rev', 'Revenue size']];
 function rsRows() {
   const f = S.rs, t0 = istToday(), from = f.days ? addDays(t0, -f.days) : '', q = f.search.trim().toLowerCase();
   return (RES.data?.results || []).filter(r => (!from || r.filed.slice(0, 10) >= from) && (!f.big || r.bigSector === f.big) &&
     [...f.chips].every(k => RS_CHIPS[k][1](r)) && (!q || (r.name + ' ' + (r.sector || '') + ' ' + (r.bigSector || '')).toLowerCase().includes(q)))
     .sort((a, b) => { const x = a[f.sort], y = b[f.sort]; if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1; return (x > y ? 1 : x < y ? -1 : 0) * f.dir; });
 }
+const median = xs => { xs = xs.filter(v => v != null && isFinite(v)).sort((a, b) => a - b); return xs.length ? xs[Math.floor(xs.length / 2)] : null; };
+const pctS = v => v == null ? '–' : `${v > 0 ? '+' : ''}${v.toFixed(Math.abs(v) >= 100 ? 0 : 1)}%`;
+/* one metric on the card: this quarter against the same quarter last year, as two bars on one scale */
+function rsMetric(lab, now, prev, g, i) {
+  const m = Math.max(Math.abs(now ?? 0), Math.abs(prev ?? 0)) || 1, w = v => v == null ? 0 : Math.max(2, 100 * Math.abs(v) / m);
+  const col = g == null ? 'var(--v3)' : g >= 0 ? 'var(--up)' : 'var(--down)';
+  return `<div class="fm"><div class="fm-top"><span class="fm-l">${esc(lab)}</span><span class="fm-v num">₹${crF(now)} <small>Cr</small></span><span class="pill" style="--pc:${col}">${g == null ? '–' : (g >= 0 ? '▲ ' : '▼ ') + pctS(g).replace(/^[+-]/, '')}</span></div>
+    <div class="fm-bars" data-tt="${ttA(`${lab}\nThis quarter ₹${crF(now)} Cr\nSame quarter last year ₹${crF(prev)} Cr`)}"><i class="prev" style="width:${w(prev)}%;animation-delay:${i * .05}s"></i><i class="now" style="width:${w(now)}%;background:${col};animation-delay:${i * .05 + .1}s"></i></div></div>`;
+}
+function rsCard(r, i) {
+  const co = byId[r.id], gk = rsGrade(r), [, gl, gv] = gradeOf(gk), flipped = S.rs.flip.has(r.id + r.filed);
+  const mchg = r.opm != null && r.opm_prev_yoy != null ? Math.round((r.opm - r.opm_prev_yoy) * 100) : null;
+  const q = (lab, now, prev, g) => `<div class="bk-row"><span>${esc(lab)}</span><span class="num">₹${crF(prev)} → ₹${crF(now)}</span>${gTag(g)}</div>`;
+  return `<article class="fc${flipped ? ' on' : ''}${isW(r.id) ? ' wfc' : ''}" style="--gc:var(--${gv});animation-delay:${Math.min(i, 24) * .03}s">
+    <div class="fc-in">
+      <div class="fc-face fc-front">
+        <div class="fc-head"><div style="min-width:0"><span class="pill" style="--pc:var(--${gv})">${esc(gl)}</span>
+          <h4>${star(r.id)}${esc(r.name)}</h4><span class="small muted">${esc(r.label)} · ${esc(r.sector || '')}${r.mcap ? ' · ' + esc(r.mcap) : ''}</span></div>
+          <span class="fc-when"><b>${esc(sdate(r.filed))}</b><span>${esc(r.filed.slice(11, 16))} IST</span><span class="basis" title="${esc(r.basis)}">${r.basis === 'Consolidated' ? 'C' : 'S'}</span></span></div>
+        <div class="fm-list">${rsMetric(r.revLabel, r.rev, r.rev_prev_yoy, r.rev_yoy, 0)}${rsMetric(r.opLabel, r.op, r.op_prev_yoy, r.op_yoy, 1)}${rsMetric('Profit (PAT)', r.pat, r.pat_prev_yoy, r.pat_yoy, 2)}</div>
+        <div class="fc-strip"><span>Margin <b class="num">${r.opm == null ? '–' : r.opm.toFixed(1) + '%'}</b>${mchg == null ? '' : ` <span class="${mchg >= 0 ? 'gp' : 'gn'} num">${mchg >= 0 ? '+' : '−'}${Math.abs(mchg)} bp</span>`}</span><span>EPS <b class="num">${r.eps == null ? '–' : '₹' + r.eps.toFixed(2)}</b></span>${r.revised ? '<span class="tag">revised</span>' : ''}</div>
+        <div class="fc-foot"><span class="small muted">Bars: light = same quarter last year</span><button class="btn" data-flip="${esc(r.id + r.filed)}" aria-label="Show more for ${esc(r.name)}">More ↻</button></div>
+      </div>
+      <div class="fc-face fc-back" ${flipped ? '' : 'aria-hidden="true"'}>
+        <div class="fc-head"><div style="min-width:0"><span class="eyebrow">${esc(r.label)} · detail</span><h4>${esc(r.name)}</h4></div></div>
+        <div class="bk"><span class="eyebrow">On last quarter (QoQ)</span>${q(r.revLabel, r.rev, r.rev_prev_qoq, r.rev_qoq)}${q(r.opLabel, r.op, r.op_prev_qoq, r.op_qoq)}${q('PAT', r.pat, r.pat_prev_qoq, r.pat_qoq)}
+          <div class="bk-row"><span>EPS on last year</span><span class="num">₹${r.eps_prev_yoy == null ? '–' : r.eps_prev_yoy.toFixed(2)} → ₹${r.eps == null ? '–' : r.eps.toFixed(2)}</span>${gTag(r.eps_yoy)}</div></div>
+        ${co ? `<div class="bk-call"><span class="eyebrow">What management said last call · ${esc(co.period)} · score <b style="color:${vcol(co.score, co.veto)}">${co.score}</b></span><p class="small">${esc((callOf(r.id, co.period) || {}).gLine || co.thesis || '')}</p></div>` : '<p class="small muted">No concall read for this company yet.</p>'}
+        <div class="fc-foot">${co ? `<button class="btn" data-open="${esc(r.id)}">Last call</button>` : ''}<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Filing ↗</a><button class="btn primary" data-flip="${esc(r.id + r.filed)}">↺ Back</button></div>
+      </div>
+    </div></article>`;
+}
 function vResults() {
   const wait = resLoading('results'); const f = S.rs, all = RES.data?.results || [];
   const bigs = [...new Set(all.map(r => r.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
-  const rows = wait ? [] : rsRows(), shown = rows.slice(0, f.limit);
+  const rows = wait ? [] : rsRows(), cards = f.view !== 'table', lim = cards ? f.climit : f.limit, shown = rows.slice(0, lim);
   const marg = r => r.opm == null ? '<span class="v">–</span>' : `<span class="v">${r.opm.toFixed(1)}%</span>${r.opm_prev_yoy == null ? '<span class="g g0">–</span>' : `<span class="g ${r.opm >= r.opm_prev_yoy ? 'gp' : 'gn'}">${r.opm >= r.opm_prev_yoy ? '+' : '−'}${Math.round(Math.abs(r.opm - r.opm_prev_yoy) * 100)} bp</span>`}`;
   const tr = r => { const co = byId[r.id];
     return `<tr${isW(r.id) ? ' class="wrow"' : ''}><td class="co"><span class="nm">${star(r.id)}${esc(r.name)}</span><span class="basis" title="${esc(r.basis)}">${r.basis === 'Consolidated' ? 'C' : 'S'}</span>${r.revised ? ' <span class="tag">revised</span>' : ''}<br><span class="sub small muted">${esc(r.label)} · ${esc(r.sector || '')}${r.mcap ? ' · ' + esc(r.mcap) : ''}</span>
@@ -1394,21 +1472,37 @@ function vResults() {
       <td>${marg(r)}</td>
       <td><span class="v">${crF(r.pat)}</span></td><td>${gTag(r.pat_yoy)}</td><td>${gTag(r.pat_qoq)}</td>
       <td><span class="v">${r.eps == null ? '–' : r.eps.toFixed(2)}</span>${r.eps_yoy == null ? '' : gTag(r.eps_yoy)}</td></tr>`; };
-  return head('Results posted', 'Quarterly numbers as companies file them on BSE, with growth on last year and last quarter. Sort by any column to find the standout results.', `
+  const gm = RS_GRADE.map(([k]) => rows.filter(r => rsGrade(r) === k).length), tot = Math.max(1, rows.length);
+  const share = fn => Math.round(100 * rows.filter(fn).length / tot);
+  const medRev = median(rows.map(r => r.rev_yoy)), medPat = median(rows.map(r => r.pat_yoy));
+  const board = rows.length ? `<div class="board">
+      <section class="w span3 kpi"><span class="l">Results in view</span><span class="v" data-count="${rows.length}">${fmt(rows.length)}</span><span class="l">${fmt(rows.filter(r => r.filed.slice(0, 10) >= addDays(istToday(), -1)).length)} filed since yesterday</span></section>
+      <section class="w span3 kpi"><span class="l">Revenue up on last year</span><span class="v" style="color:var(--v5)">${share(r => r.rev_yoy > 0)}%</span><span class="l">median growth <b class="num">${pctS(medRev)}</b></span></section>
+      <section class="w span3 kpi"><span class="l">Profit up on last year</span><span class="v" style="color:var(--v4)">${share(r => r.pat_yoy > 0)}%</span><span class="l">median growth <b class="num">${pctS(medPat)}</b></span></section>
+      <section class="w span3"><div class="w-head"><h3>Quarter grades</h3>${tip('rsgrade')}</div>
+        <div class="sb-stack">${RS_GRADE.map(([k, n, v], i) => gm[i] ? `<i style="width:${100 * gm[i] / tot}%;background:var(--${v})" data-tt="${ttA(`${n}: ${gm[i]}`)}"></i>` : '').join('')}</div>
+        <div class="sb-leg">${RS_GRADE.map(([k, n, v], i) => `<span style="--tc:var(--${v})">${n.replace(' quarter', '')} ${gm[i]}</span>`).join('')}</div></section>
+    </div>` : '';
+  return head('Results posted', 'Quarterly numbers as companies file them on BSE, one card per result, with growth on last year and last quarter. Click More on a card for the detail and what management guided on its last call.', `
       <ul><li>Figures are ₹ Cr from the official XBRL filing ${tip('posted')}. <b>C</b> is consolidated, <b>S</b> standalone.</li>
+      <li>Each card shows revenue, operating profit and profit (PAT) against the same quarter last year: the light bar is last year, the coloured bar this quarter, on one scale.</li>
       <li><b>Op. profit</b> is EBITDA for companies, PPOP for banks and profit before tax for other lenders ${tip('opprofit')}. <b>Margin</b> is operating profit over revenue, with the change on last year in basis points.</li>
-      <li>Click a column heading to sort, again to reverse. <b>Last call</b> opens what management said on its previous concall, to check results against guidance.</li>
-      <li>BSE is checked every 30 minutes through the day. The XBRL can reach BSE a few hours after the results PDF.</li></ul>`,
+      <li>The grade on each card (Strong, Solid, Mixed, Weak) is a plain read of growth on last year ${tip('rsgrade')}. It is not the Concall Signal Score.</li>
+      <li>Switch to <b>Table</b> to compare many results side by side and sort by any column. BSE is checked every 30 minutes through the day.</li></ul>`,
       `<span class="badge">${RES.data?.checked ? 'BSE checked ' + esc(RES.data.checked.replace('T', ' ')) + ' UTC' : 'Not checked yet'}</span>`) + (wait || `
+    ${board}
     <div class="toolbar">
+      <div class="seg" role="group" aria-label="Layout"><button data-rsv="cards" aria-pressed="${cards}">▦ Cards</button><button data-rsv="table" aria-pressed="${!cards}">☰ Table</button></div>
       <input type="search" id="rs-search" placeholder="Search company or sector" value="${esc(f.search)}" aria-label="Search results">
       <select id="rs-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
       <select id="rs-days" aria-label="Period">${[[1, 'Today and yesterday'], [7, 'Last 7 days'], [30, 'Last 30 days'], [0, 'Whole season']].map(([d, n]) => `<option value="${d}" ${f.days === d ? 'selected' : ''}>${n}</option>`).join('')}</select>
+      ${cards ? `<select id="rs-sort" aria-label="Sort">${RS_SORTS.map(([k, n]) => `<option value="${k}" ${f.sort === k ? 'selected' : ''}>${n}</option>`).join('')}</select>` : ''}
     </div>
     <div class="toolbar">${Object.entries(RS_CHIPS).map(([k, [n]]) => `<button class="chip" data-rsc="${k}" aria-pressed="${f.chips.has(k)}">${n}</button>`).join('')}<span class="small muted">${fmt(rows.length)} result${rows.length === 1 ? '' : 's'}</span></div>
-    ${rows.length ? `<div class="res-wrap"><table class="res"><thead><tr><th>Company</th>${RS_COLS.map(([k, n]) => `<th><button data-rss="${k}" ${f.sort === k ? `aria-sort="${f.dir > 0 ? 'ascending' : 'descending'}"` : ''}>${n}${f.sort === k ? (f.dir > 0 ? ' ▲' : ' ▼') : ''}</button></th>`).join('')}</tr></thead>
-      <tbody>${shown.map(tr).join('')}</tbody></table></div>
-      ${rows.length > shown.length ? `<div class="more"><button class="btn" id="rs-more">Show 100 more</button><span class="count-line">${fmt(rows.length - shown.length)} more</span></div>` : ''}`
+    ${rows.length ? (cards ? `<div class="fc-grid">${shown.map(rsCard).join('')}</div>`
+      : `<div class="res-wrap"><table class="res"><thead><tr><th>Company</th>${RS_COLS.map(([k, n]) => `<th><button data-rss="${k}" ${f.sort === k ? `aria-sort="${f.dir > 0 ? 'ascending' : 'descending'}"` : ''}>${n}${f.sort === k ? (f.dir > 0 ? ' ▲' : ' ▼') : ''}</button></th>`).join('')}</tr></thead>
+      <tbody>${shown.map(tr).join('')}</tbody></table></div>`)
+      + (rows.length > shown.length ? `<div class="more"><button class="btn" id="rs-more">Show ${cards ? 36 : 100} more</button><span class="count-line">${fmt(rows.length - shown.length)} more</span></div>` : '')
       : `<div class="empty">${all.length ? 'No results match these filters. Widen the period or clear a filter.' : 'No results read yet. They appear after the next check.'}</div>`}`);
 }
 
@@ -2173,7 +2267,10 @@ document.addEventListener('click', e => {
   const rcc = t.closest('[data-rc]'); if (rcc) { const k = rcc.dataset.rc; S.rc[k] = !S.rc[k]; render(); return; }
   const rsc = t.closest('[data-rsc]'); if (rsc) { const k = rsc.dataset.rsc; S.rs.chips.has(k) ? S.rs.chips.delete(k) : S.rs.chips.add(k); S.rs.limit = 100; render(); return; }
   const rss = t.closest('[data-rss]'); if (rss) { const k = rss.dataset.rss; if (S.rs.sort === k) S.rs.dir *= -1; else { S.rs.sort = k; S.rs.dir = -1; } render(); return; }
-  if (t.closest('#rs-more')) { S.rs.limit += 100; render(); return; }
+  if (t.closest('#rs-more')) { if (S.rs.view === 'table') S.rs.limit += 100; else S.rs.climit += 36; render(); return; }
+  const rsv = t.closest('[data-rsv]'); if (rsv) { S.rs.view = rsv.dataset.rsv; store.set('rs-view', S.rs.view); render(); return; }
+  const fl = t.closest('[data-flip]'); if (fl) { const k = fl.dataset.flip, card = fl.closest('.fc'); S.rs.flip.has(k) ? S.rs.flip.delete(k) : S.rs.flip.add(k);
+    if (card) { card.classList.toggle('on', S.rs.flip.has(k)); card.querySelector('.fc-back')?.toggleAttribute('aria-hidden', !S.rs.flip.has(k)); } return; }
   const st = t.closest('[data-st]'); if (st) { S.turns.stage = st.dataset.st; render(); return; }
   const tl = t.closest('[data-tl]'); if (tl) { S.turns.level = tl.dataset.tl; render(); return; }
   const mgt = t.closest('[data-mg]'); if (mgt) { const k = mgt.dataset.mg; S.mg[k] = !S.mg[k]; render(); return; }
@@ -2217,7 +2314,8 @@ document.addEventListener('change', e => {
   if (id === 'rc-big') { S.rc.big = e.target.value; render(); }
   if (id === 'rc-days') { S.rc.days = +e.target.value; render(); }
   if (id === 'rs-big') { S.rs.big = e.target.value; S.rs.limit = 100; render(); }
-  if (id === 'rs-days') { S.rs.days = +e.target.value; S.rs.limit = 100; render(); }
+  if (id === 'rs-days') { S.rs.days = +e.target.value; S.rs.limit = 100; S.rs.climit = 36; render(); }
+  if (id === 'rs-sort') { S.rs.sort = e.target.value; S.rs.dir = -1; S.rs.climit = 36; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
   if (id === 'if-big') { S.inf.big = e.target.value; S.inf.limit = 30; render(); }
   if (id === 'ask-scope') S.ask.scope = e.target.value;
@@ -2248,6 +2346,7 @@ $('#find').addEventListener('focus', renderFind);
   D.companies.forEach(c => { byId[c.id] = c; });
   const h = location.hash.slice(1);
   S.view = RENDER[h] ? h : (RENDER[store.get('view', 'home')] ? store.get('view', 'home') : 'home');
+  S.rs.view = store.get('rs-view', 'cards') === 'table' ? 'table' : 'cards';
   render();
   if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
   loadSums().then(() => renderNav());  /* near-term count uses lines from the summaries */
