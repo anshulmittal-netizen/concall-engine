@@ -1,0 +1,368 @@
+{
+ "doc_id": "IN-b17194c9-527c-41c5-9a61-4a76d101c974",
+ "market": "IN",
+ "company_id": "500186",
+ "name": "Hindustan Oil Exploration Company Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-19",
+ "period": "2026-03",
+ "title": "Hindustan Oil Exploration Company Ltd - 500186 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Q4 FY26 PAT turned negative on HPCL crude sale reversal; production ramp to 10-11k boe/d by mid-2027 depends on pipeline access, rigs and unannounced funding, with no FY27 debt/EBITDA guidance given.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "we are producing only, let's say, 15 million standard cubic feet because of the pipeline constraints"
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "But because of financial constraints, IN R260 crores tied up in invoices for our crude sales, we couldn't take that up."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "INR260 cr tied up in crude invoices",
+    "quote": "because of financial constraints, IN R260 crores tied up in invoices for our crude sales, we couldn't take that up",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Dirok output 15 mmscfd vs 45 potential",
+    "quote": "we are producing only, let's say, 15 million standard cubic feet because of the pipeline constraints",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Output target 10-11k boe/d by mid-2027",
+    "quote": "Our target is to by 2027, we want to get to 10,000 to 11,000 barrels",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Debt/EBITDA outlook deferred to next quarter",
+    "quote": "In the next quarter, we'll give you the details because otherwise, you and I will run the danger of believing in a number",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Production",
+    "value": "10,000-11,000 boe/d by mid-2027; 22,000 boe/d by 2028; 32,000 boe/d by 2029",
+    "change": "new",
+    "horizon": "FY27-FY29",
+    "quote": "Our target is to by 2027, we want to get to 10,000 to 11,000 barrels and then by 2028, 22,000 barrels of oil and then by 2029, to 32,000 barrels of oil equivalent"
+   },
+   {
+    "metric": "Debt/EBITDA outlook FY27-FY28",
+    "value": "Not given; to be provided next quarter",
+    "change": "dropped",
+    "horizon": "FY27-FY28",
+    "quote": "So, at this stage, I would say let's leave it to understand a little more of how fast we will drill"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "HPCL",
+    "relation": "customer"
+   },
+   {
+    "name": "Oil India",
+    "relation": "partner"
+   },
+   {
+    "name": "Assam Gas Company",
+    "relation": "supplier"
+   },
+   {
+    "name": "NRL",
+    "relation": "customer"
+   },
+   {
+    "name": "PetroVietnam",
+    "relation": "peer"
+   },
+   {
+    "name": "ONGC",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Consolidation / competitor exits",
+   "Energy security",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Crude sale to HPCL reversed; INR260 cr tied in invoices",
+    "quote": "because of financial constraints, IN R260 crores tied up in invoices for our crude sales, we couldn't take that up"
+   },
+   {
+    "label": "Funding for drilling not secured",
+    "quote": "at this stage, we are looking at internal accruals and raising debts in the market from the i nstitutions, from the banks, etcetera, to fund"
+   },
+   {
+    "label": "Q4 PAT supported by inventory valuation and exceptional gain",
+    "quote": "This is a valuation gain, which has resulted in an exceptional item, which is posted to our P&L."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 6,
+   "margin": 1,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "FY27-28 debt and EBITDA outlook",
+    "quote": "So, at this stage, I would say let's leave it to understand a little more of how fast we will drill"
+   },
+   {
+    "topic": "Equity fundraise",
+    "quote": "That is a question that I may not be able to answer now."
+   },
+   {
+    "topic": "Dirok pipeline access date",
+    "quote": "But I can't put my finger to a date. I hope in 1 or 2 months"
+   }
+  ],
+  "hedge_index": 0.75
+ },
+ "summary": {
+  "headline": "HOEC's Q4 FY26 call: FY26 profit fell sharply after HPCL crude sale reversal; management targets 10,000-11,000 boepd by June 2027.",
+  "overview": "HOEC reported a loss-making FY26 at consolidated level, mainly due to reversal of a crude sale to HPCL, with revenue that would otherwise have been INR559 crores. Standalone PAT was INR288 crores versus INR344 crores last year, and management said that figure excludes unusual items. Management, led by new MD & CEO Baroruchi Mishra, outlined a production ramp-up plan across B-80, PY-1, Dirok and Kharsang, with 2P reserves of 60 MMBOE and 3P of 109 MMBOE. Funding (bank debt and internal accruals) and debt/EBITDA guidance were deferred to the next quarter. The HPCL crude is being resold to third parties at Brent-linked prices, with proceeds spread over 2 to 3 months.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue impact of HPCL sale reversal",
+    "value": "INR559 crores (revenue had sale gone through)",
+    "change": ""
+   },
+   {
+    "metric": "Standalone PAT (ex unusual items)",
+    "value": "INR288 crores",
+    "change": "vs INR344 crores in FY25"
+   },
+   {
+    "metric": "Standalone net sales",
+    "value": "INR274 crores",
+    "change": ""
+   },
+   {
+    "metric": "Lifting cost",
+    "value": "USD28.4/bbl",
+    "change": "vs USD28.6/bbl in FY25"
+   },
+   {
+    "metric": "Return ratios",
+    "value": "4.5% and 2.5%",
+    "change": "similar to previous year"
+   },
+   {
+    "metric": "Exceptional gain on Adbhoot 40% stake acquisition (fair value)",
+    "value": "INR32 crores",
+    "change": ""
+   },
+   {
+    "metric": "Q4 consolidated PAT",
+    "value": "INR9 crores",
+    "change": "includes INR14 crores from HPCL revenue derecognition, per analyst"
+   },
+   {
+    "metric": "Working capital tied up in HPCL crude invoices",
+    "value": "INR260 crores",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "B-80 (offshore, flagship)",
+    "commentary": "2P reserves of 26 MMBOE with only about 1 MMBOE produced; 2 subsea wells need workover post-monsoon and 3 new wells planned, with target of 4,000-5,000 boepd from the field by June 2027 per management."
+   },
+   {
+    "name": "PY-1 (offshore/onshore gas)",
+    "commentary": "Historically 45-50 MMSCF/d; plan to drill 2 development wells and a separate exploration well, with a 55 km subsea line to onshore processing. Management expects 12-15 MMSCF/d from PY-1 if campaign completes by June 2026-27 timeframe."
+   },
+   {
+    "name": "Dirok (Assam)",
+    "commentary": "Currently producing 0.3-0.4 MMSCM/d (about 15 MMSCF/d) versus potential of 45 MMSCF/d, constrained by DNPL pipeline; DNPL capacity ~1 MMSCMD with 2.5 MMSCMD potential. Three additional wells needed to reach 70 MMSCF/d, dependent on a 24-inch, 175 km DFL-Duliajan line in 2-3 years."
+   },
+   {
+    "name": "Kharsang",
+    "commentary": "9 wells drilled with production doubled; gross output 700+ boe/d; plan for another 9 wells to double again. Gas found in larger-than-expected volumes, evacuation path under review."
+   },
+   {
+    "name": "B-15",
+    "commentary": "Awarded by government; FDP in concept selection with 2-3 concepts, FEED to follow. Reserves 15 MMBOE in place; plans 3-5 wells and target 4,000-5,000 boepd."
+   },
+   {
+    "name": "Cambay (Gujarat)",
+    "commentary": "Focus on workovers, production enhancement and secondary recovery for low-cost incremental output."
+   }
+  ],
+  "guidance_outlook": [
+   "Production target of 10,000-11,000 boepd by June 2027 (management says 'definitely above 8,000' in line of sight), rising to 22,000 boepd in 2028 and 32,000 boepd in 2029.",
+   "Current production about 15,000 boepd with 4,000-6,000 boepd locked in pending infrastructure, per management's figures.",
+   "Reserves: 1P ~40 MMBOE, 2P ~60 MMBOE, 3P ~109 MMBOE; reserves valued at USD3-5 billion depending on oil price.",
+   "Debt and EBITDA outlook for FY27 and FY28 deferred to next quarter call.",
+   "Funding through internal accruals plus bank facilities; equity raise not ruled out but not confirmed.",
+   "HPCL crude proceeds expected over 2-3 months; conciliation process under COSA to close in coming months."
+  ],
+  "capex_capacity": [
+   "Drilling campaigns: 2 wells at PY-1 plus coiled tubing intervention, 2 workovers and 3 wells at B-80, 3 wells at Dirok (pending pipeline), and 9 wells at Kharsang; management referenced 20 wells in various preparation stages.",
+   "Management plans two rigs (one each for PY-1 and B-80) subject to funding and rig availability; rig tow insurance expires around May 2027.",
+   "DNPL pipeline: 55 km replacement section laid but still needs tie-in to main line; NRL shutdown may be required, with 1-2 months targeted for gas flow.",
+   "Dirok potential: 45 MMSCF/d at gross level, could reach 3x if all wells drilled; North Dirok exploration well could add 10-15 MMSCF/d.",
+   "Management said it is not buying offshore rigs for now."
+  ],
+  "demand_pricing": [
+   "Crude from HPCL reversed sale is being sold to third parties on a Brent-minus basis after initial firm-price weeks; buyers taking crude as-is with no processing.",
+   "Management said last crude cargo was sold at USD109/bbl; Dirok condensate expected at 200-250 bbl/d now and 700-900 bbl/d at 45 MMSCF/d gross.",
+   "Gas demand framed as a national shortage; government and PNGRB involvement cited to speed evacuation.",
+   "Diesel shortages and high oil prices are cited as raising offshore costs and rig rates.",
+   "FSO storage: sale possible at Brent once parcel reaches 100,000-150,000 bbl; roughly 150,000+ bbl currently."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What is the FY27 net production target and split by field?",
+    "answer": "Target of 10,000-11,000 boepd by June 2027; B-80 4,000-5,000 boepd, Dirok gas to 70 MMSCF/d at 3x potential, Kharsang doubling again from 700+ boepd gross."
+   },
+   {
+    "question": "When will the HPCL revenue be realised?",
+    "answer": "Crude is being lifted weekly (300-700 tons); full proceeds expected over 2-3 months, with sales to third-party buyers at Brent-linked pricing."
+   },
+   {
+    "question": "When will national grid connectivity for Dirok be resolved and what volumes follow?",
+    "answer": "Management hopes for flow in 1-2 months; Dirok could go from 0.3-0.4 MMSCM/d toward 0.8-0.9 MMSCM/d, with 1.1-1.2 MMSCM/d theoretical potential."
+   },
+   {
+    "question": "Why was the INR32 crore exceptional gain not deducted in operating cash flow?",
+    "answer": "CFO said it is a non-cash fair value gain on the 40% Adbhoot stake under Ind AS business combination accounting; treatment discussed with auditors KPMG."
+   },
+   {
+    "question": "Is any compensation being discussed with HPCL given the price change?",
+    "answer": "Invoice reversed and credit note issued; conciliation under COSA pending and outcome expected within months; no further commercial interaction until then."
+   },
+   {
+    "question": "Will equity funding be needed?",
+    "answer": "Management is considering bank facilities and internal accruals; equity not ruled out but no decision communicated."
+   },
+   {
+    "question": "What is B-80 workover timing and risk?",
+    "answer": "Two subsea well workovers were delayed by working capital tied up in HPCL invoices; to start post-monsoon, subject to November drilling window and rig availability."
+   }
+  ],
+  "risks_watch": [
+   "HPCL conciliation outcome and whether any loss arises on resale of inventory valued at 31 March 2026 prices.",
+   "Funding: no debt or EBITDA guidance yet; capex depends on bank facilities and internal accruals.",
+   "Dirok evacuation depends on DNPL tie-in, NRL shutdown and Assam Gas Company allocation; management's own estimate is 0.8-0.9 MMSCM/d versus 1.1-1.2 potential.",
+   "Rig availability and monsoon/weather windows for B-80 and PY-1 drilling; rig insurance expiry around May 2027.",
+   "Unresolved DFL-Duliajan pipeline timeline (2-3 years) constraining the 70 MMSCF/d Dirok ambition.",
+   "Opex per boe at about USD28 and rising diesel and rig costs."
+  ],
+  "management_tone": "Confident on the long-term reserve and production story, but cautious and evasive on near-term financials: debt/EBITDA guidance, funding and HPCL settlement terms were deferred. Management repeatedly qualified targets as dependent on funds, rigs, weather and pipeline access.",
+  "key_quotes": [
+   "We are targeting to get to 10,000 to 11,000 barrels by June of next year.",
+   "Our target is to by 2027, we want to get to 10,000 to 11,000 barrels and then by 2028, 22,000 barrels of oil and then by 2029, to 32,000 barrels of oil equivalent.",
+   "But at this stage, I would say let's leave it to understand a little more of how fast we will drill and those kind of things.",
+   "So, the net sale for the year is INR274 cores."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "PY-1 development wells (2) plus separate exploration well, with 55 km subsea line to onshore processing",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "B-80 workovers (2 subsea wells) and 3 new wells targeting 4,000-5,000 boepd field output",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "planned",
+    "mat": "major"
+   },
+   {
+    "what": "Kharsang: 9 more wells planned to double output again (9 wells already drilled)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Dirok: 3 additional wells to reach 70 MMSCF/d, gated by DNPL tie-in (55 km section laid) and 24-inch 175 km DFL-Duliajan line in 2-3 years",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "B-15 field development: 3-5 wells, target 4,000-5,000 boepd; FDP still in concept selection",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 6,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "new_products_or_markets"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "",
+  "mgmt": {
+   "roles": [
+    "MD & CEO"
+   ],
+   "note": "Baroruchi Mishra is the new MD & CEO and outlined the production ramp-up plan across B-80, PY-1, Dirok, Kharsang and B-15.",
+   "push": 2,
+   "initiatives": [
+    "Production target of 10,000-11,000 boepd by June 2027",
+    "22,000 boepd in 2028 and 32,000 boepd in 2029",
+    "Drill about 20 wells across PY-1, B-80, Dirok and Kharsang",
+    "Two rigs planned (PY-1 and B-80), subject to funding"
+   ]
+  }
+ }
+}

@@ -1,0 +1,359 @@
+{
+ "doc_id": "IN-464b6159-0bae-4cee-a64b-4bf6dbdf9a2a",
+ "market": "IN",
+ "company_id": "544399",
+ "name": "Srigee Dlm Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-13",
+ "period": "2026-03",
+ "title": "Srigee Dlm Ltd - 544399 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Plastics & polymers",
+  "thesis": "Srigee DLM says existing capacity is over 100% utilised and growth is space-capped until a new 10,850 sq m Greater Noida plant (~INR25cr capex plus land) is commissioned around August 2026; FY26 revenue INR72.31cr, PAT INR6.87cr.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 100,
+   "quote": "our existing capacity utilization, which is more than 100%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management cited PG Electroplast and Amber as peers achieving higher turnover per sq m.",
+   "quote": "Near about March '27, we would be expanding by around INR24 crores."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation above 100%, space-capped",
+    "quote": "The performance we have done is based on our existing capacity utilization, which is more than 100%.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "New Greater Noida plant, ~INR25cr capex",
+    "quote": "It will be around INR25 crores capital expenditure, apart from the land acquisition we have already done.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Raw-material cost shock absorbed in March",
+    "quote": "I had to bear that losses.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Customer concentration 95% to 91%",
+    "quote": "Last year, we were at 95% revenue from these customers, which has now come down to 91%.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "more than INR100 crores (management's personal target)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I am confident of achieving INR100 crores turnover in this current financial year"
+   },
+   {
+    "metric": "FY28 revenue",
+    "value": "INR200-250 crores (aspiration)",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "it will be approximately INR200 crores to INR250 crores. This is what we aspire to achieve."
+   },
+   {
+    "metric": "Commercial production new Greater Noida plant",
+    "value": "August 15 target, before Diwali",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "our target for commercial production is August 15"
+   },
+   {
+    "metric": "Polymer compounding output",
+    "value": "50 MT/month to 150 MT/month after move",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "We plan to expand this to 150 metric tons when we move to the new facility."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Symphony",
+    "relation": "customer"
+   },
+   {
+    "name": "Havells",
+    "relation": "customer"
+   },
+   {
+    "name": "Yamaha",
+    "relation": "customer"
+   },
+   {
+    "name": "Samsung",
+    "relation": "customer"
+   },
+   {
+    "name": "Reliance",
+    "relation": "supplier"
+   },
+   {
+    "name": "ICICI",
+    "relation": "partner"
+   },
+   {
+    "name": "PG Electroplast",
+    "relation": "peer"
+   },
+   {
+    "name": "Amber",
+    "relation": "peer"
+   },
+   {
+    "name": "DR Polymers",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Electronics manufacturing (EMS/PLI)",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Top-10 customers ~91% of revenue",
+    "quote": "Last year, we were at 95% revenue from these customers, which has now come down to 91%."
+   },
+   {
+    "label": "Management pays Rs ~3x polymer spike, absorbed losses",
+    "quote": "So I had to bear that losses."
+   },
+   {
+    "label": "Asset sale and debt funding of plant; funding gap",
+    "quote": "This is a INR50 crores project, so even after debt and equity, I will need more."
+   },
+   {
+    "label": "Space-capped growth, FY27 target unsupported by LOIs",
+    "quote": "I haven't received a formal LOI, but informally they have visited and assured me of the business."
+   },
+   {
+    "label": "Ecotech 10 plant shelved, funds shifted",
+    "quote": "We are not planning the Ecotech 10 facility right now because we shifted that fund to the new, larger plot."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 3,
+   "growth": 5,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Margin outlook FY27",
+    "quote": "it's too early to predict what will be the margins right now"
+   },
+   {
+    "topic": "Gross margin numbers and OEM pricing bifurcation",
+    "quote": "I don't have it right now."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Srigee DLM FY26 revenue INR 72.31 crore, PAT INR 6.87 crore (9.06% margin); H2 PAT more than doubled to INR 5.53 crore.",
+  "overview": "Management reported FY26 revenue from operations of INR 72.31 crore, total income of INR 75.76 crore, EBITDA of INR 9.23 crore (12.18% margin) and PAT of INR 6.87 crore. H2 FY26 total income was INR 54.34 crore, EBITDA INR 6.89 crore and PAT INR 5.53 crore, which more than doubled YoY. The core message is that existing capacity is over 100% utilised, so growth depends on moving to a larger Greater Noida plot (R11A, 10,850 sq m) targeted for commissioning around August 15, 2026. Management set an aspirational target of about INR 100 crore turnover in FY27 and INR 200-250 crore in FY28, though it is not formal guidance.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (FY26)",
+    "value": "INR 72.31 crore",
+    "change": ""
+   },
+   {
+    "metric": "Total income (FY26)",
+    "value": "INR 75.76 crore",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA (FY26)",
+    "value": "INR 9.23 crore; margin 12.18%",
+    "change": ""
+   },
+   {
+    "metric": "PAT (FY26)",
+    "value": "INR 6.87 crore; margin 9.06%",
+    "change": ""
+   },
+   {
+    "metric": "Total income (H2 FY26)",
+    "value": "INR 54.34 crore",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA (H2 FY26)",
+    "value": "INR 6.89 crore",
+    "change": ""
+   },
+   {
+    "metric": "PAT (H2 FY26)",
+    "value": "INR 5.53 crore",
+    "change": "More than doubled YoY"
+   },
+   {
+    "metric": "H2 FY26 revenue growth (analyst cited)",
+    "value": "Over 46% YoY",
+    "change": "As cited by analyst, not confirmed by management"
+   },
+   {
+    "metric": "Polymer compounding revenue (FY25, manufacturing plus trading)",
+    "value": "INR 11.257 crore",
+    "change": ""
+   },
+   {
+    "metric": "Top-10 customer revenue share",
+    "value": "91%",
+    "change": "Down from 95% last year"
+   },
+   {
+    "metric": "OEM / B2B share of revenue (ODM segment)",
+    "value": "76%",
+    "change": "Management said earlier it would be around 70%"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Plastic injection molding and assembly",
+    "commentary": "Core business serving Symphony, Havells, LG, Yamaha, Neelkamal and Elentec; management cited cooler assembly as a major line. Existing capacity is more than 100% utilised."
+   },
+   {
+    "name": "Mobile phone assembly (job work)",
+    "commentary": "Monthly sales rose from about INR 50 lakh to INR 1 crore this year. Management says this segment will contribute the most margin among the four verticals, though not the most sales, and that it currently holds under 10% share of Samsung's over 10 lakh phones assembled."
+   },
+   {
+    "name": "Polymer compounding (Polymos brand)",
+    "commentary": "Started about two years ago with one twin-screw extruder producing and selling about 50 MT per month. Roughly INR 1 crore per month is being generated; the target is INR 2.5-3 crore monthly this year, with a 150 MT/month plan at the new facility. Captive use is about 35-40 MT/month, or 25-30% of raw material needs."
+   },
+   {
+    "name": "Tool room and die",
+    "commentary": "Management called this one of two verticals whose potential is not yet fully harnessed, alongside polymer compounding. No revenue figure was given."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 turnover target of about INR 100 crore, described by management as a personal target and not a formal projection; H2 FY27 sales expected to double.",
+   "FY28 (April 2027 to March 2028) aspiration of INR 200-250 crore; at peak utilisation the new facility is expected to reach about INR 200 crore on about INR 25 crore capex, and management said at least INR 350 crore at the site.",
+   "Margins expected to be positive relative to current levels, with no quantified margin guidance.",
+   "Financing: debt cost discussed at 8-9%, with bank negotiations at 8-8.25% versus the bank's 9.5% ask; bank funding was expected by end of June 2026."
+  ],
+  "capex_capacity": [
+   "New Greater Noida facility R11A: 10,850 sq m plot (4x current space). Construction started; commercial production targeted August 15, 2026, with puja and move-in before Diwali (slippage possible).",
+   "Capex plan around INR 24-25 crore for FY27 by March 2027, apart from land already acquired. The overall project is described as about INR 50 crore, funded by IPO proceeds (INR 17 crore), bank debt and sale of smaller units and land.",
+   "Ecotech 10 (2,000 sq m plot) put on hold; funds shifted to the larger plot.",
+   "Current FAR is 1.50 against a permissible 4, giving room for vertical expansion.",
+   "IPO proceeds: 50% utilised by March 31, 2026; balance to be used in the current and next quarter."
+  ],
+  "demand_pricing": [
+   "Management said customer pricing is set quarterly, so the March 2026 polymer price spike (around 3x) was absorbed in margins; the company stocked up polymers in March 2026 to offset the war impact.",
+   "New PO pricing now reflects current market rates (polymer from about INR 100 to INR 140-150 per Reliance price list).",
+   "ODM pipeline: talks with three new customers, two of which have visited the site and informally confirmed business; Havells has indicated possible work. No formal LOI received. Product areas are hand blenders, juicer-mixer-grinders and home appliances.",
+   "Cooler demand is seasonal, with June to August typically slow. Management said mobile phone demand is strong."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What revenue is expected from polymer compounding over the next few years?",
+    "answer": "Management targets 3x expansion; current run-rate about INR 1 crore per month, with INR 2.5-3 crore per month targeted this year and 150 MT/month capacity at the new facility."
+   },
+   {
+    "question": "How sustainable is H2 FY26 growth, and what drove it?",
+    "answer": "Management said growth is sustainable and will expand, citing over 100% utilisation, the mobile assembly line adding margin, and rent savings after the move. Q1 sales were affected."
+   },
+   {
+    "question": "Ecotech 10 status and commercial production timing?",
+    "answer": "Ecotech 10 is on hold. The focus is R11A (10,850 sq m); commercial production is targeted for August 15, 2026, with possible slippage to before Diwali."
+   },
+   {
+    "question": "How much ODM revenue and what share is OEM?",
+    "answer": "Management said above 70%, and later gave 76% as the OEM/B2B share, with modelling sales being 100% OEM."
+   },
+   {
+    "question": "What is the impact of the war and polymer prices?",
+    "answer": "Management said the major impact falls on polymers, which are a crude derivative. The company bought heavily in March 2026 when prices were about 3x higher and absorbed the cost because customer pricing was fixed for the quarter."
+   },
+   {
+    "question": "What is the cost of debt for the new capex?",
+    "answer": "About 8-9%. Bank's regional manager initially discussed 8-8.25% against the bank's 9.5% ask; negotiations are ongoing."
+   },
+   {
+    "question": "Revenue at peak utilisation for the INR 25 crore capex?",
+    "answer": "Management said about INR 200 crore turnover at peak utilisation, and later at least INR 350 crore at the new site with a long-term aim of INR 1,000 crore."
+   }
+  ],
+  "risks_watch": [
+   "Space constraint: at 100%+ utilisation, new customers cannot be onboarded until R11A is commissioned; any delay past August 15, 2026 (or Diwali) would push out the FY27 target.",
+   "Funding: the balance of the ~INR 50 crore project depends on bank debt (not yet sanctioned at call time), sale of smaller units and land, and the debt cost being negotiated at 8-9.5%.",
+   "Customer concentration: top-10 customers still account for 91% of revenue.",
+   "Polymer price volatility from the war; pricing is reset quarterly, so cost spikes can hit margins before they are passed on.",
+   "Targets (INR 100 crore FY27, INR 200-250 crore FY28) are management aspirations with no formal guidance. Audit and qualification of the new plant by ODM customers is still pending.",
+   "Governance: first earnings call; management said transcripts will be uploaded going forward."
+  ],
+  "management_tone": "Confident and expansive on growth, with specific targets and a stated personal ambition of INR 1,000 crore. Less precise on financials: management repeatedly deferred to colleagues for figures, gave no quantified margin guidance, and described the bank loan terms as still under negotiation.",
+  "key_quotes": [
+   "We are expecting more than INR100 crores of this turnover achieving – I am confident of achieving INR100 crores turnover in this current financial year, because we have lost almost three, four months and two quarters will be wasted in this financial year.",
+   "Samsung is currently assembling more than 10 lakh phones. Currently, my contribution there is not even 10%.",
+   "So, whatever I am saying here, I am being very conservative."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "New Greater Noida facility R11A, 10,850 sq m plot (4x current space); polymer compounding to 150 MT/month",
+    "size_pct": null,
+    "capex_cr": 24.5,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "major"
+   }
+  ],
+  "util": 100.0,
+  "expansion": true,
+  "growth": 38.3,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "new_products_or_markets",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management targets about INR 100 crore FY27 turnover (vs INR 72.31 crore FY26, about 38% growth) and INR 200-250 crore FY28 as aspirations, backed by the R11A Greater Noida plant (10,850 sq m, ~INR 24-25 crore capex) targeted for August 15, 2026 commissioning, though slippage is possible and no formal orders or LOIs were cited.",
+  "mgmt": null
+ }
+}

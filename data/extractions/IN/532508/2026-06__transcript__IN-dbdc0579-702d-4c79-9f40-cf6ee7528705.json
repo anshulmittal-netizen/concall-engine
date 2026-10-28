@@ -1,0 +1,389 @@
+{
+ "doc_id": "IN-dbdc0579-702d-4c79-9f40-cf6ee7528705",
+ "market": "IN",
+ "company_id": "532508",
+ "name": "Jindal Stainless Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-10",
+ "period": "2026-06",
+ "title": "Jindal Stainless Ltd - 532508 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q1 FY27 volumes fell 7.3% YoY on gas shortage, utilisation at 69-70%, yet management held FY27 volume and H1 EBITDA/t guidance of INR18,000-20,000 while flagging gradual recovery.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 70,
+   "quote": "At the end of Q1, we were -- because of these disruptions and shortages, we were around 69-\n70%. It will definitely go up in this quarter."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "POSCO has gone and done absolute same thing what we did 4, 5 years ago in Indonesia; SAIL has done a similar deal with a government entity.",
+   "quote": "All our announced capex plan remains on track and adhering to stipulated timelines."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 69-70% at Q1 end",
+    "quote": "At the end of Q1, we were -- because of these disruptions and shortages, we were around 69-70%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Finished goods volume down 7.3% YoY",
+    "quote": "impacting our finished goods sales volume, which were down by 7.3% year-on-year.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "structure",
+    "label": "QCO extension to March 2027 sought",
+    "quote": "We expect that this extension that we have given to March should not be further extended.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Gas cost pass-through incomplete",
+    "quote": "we were not able to pass on maybe 100% of the gas price increase.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 sales volume growth",
+    "value": "8% to 10%",
+    "change": "held",
+    "quote": "we would still like to stick to the numbers that we had began the year with"
+   },
+   {
+    "metric": "H1 EBITDA per ton",
+    "value": "INR18,000 to INR20,000",
+    "change": "held",
+    "quote": "we would still be sticking to that. We would still be sticking to the guidance that we started with."
+   },
+   {
+    "metric": "Sales volume by FY29",
+    "value": "3.5 million tons per annum",
+    "change": "held",
+    "quote": "we remain fully committed to deliver on our sales volume target of 3.5 million tons per annum by FY29"
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "INR 2,400 – 2,600 crores",
+    "change": "held",
+    "quote": "this year capex plan is also what we have provided the guidelines is around INR 2,400 – 2,600 crores, which is on course."
+   },
+   {
+    "metric": "Indonesia utilisation",
+    "value": "70%-80% in first year of operation",
+    "change": "held",
+    "quote": "normally in the first year of operation, they are able to ramp up to 70%, 80% of capacity utilization"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 sales volume growth 8-10%",
+    "outcome": "not_discussed",
+    "quote": "we would still like to stick to the numbers that we had began the year with"
+   },
+   {
+    "metric": "H1 EBITDA per ton INR18,000-20,000",
+    "outcome": "not_discussed",
+    "quote": "we would still be sticking to that."
+   },
+   {
+    "metric": "Indonesia ramp to 70-80%",
+    "outcome": "not_discussed",
+    "quote": "they are ramping up. This is what I can say."
+   }
+  ],
+  "entities": [
+   {
+    "name": "POSCO",
+    "relation": "competitor"
+   },
+   {
+    "name": "SAIL",
+    "relation": "competitor"
+   },
+   {
+    "name": "Greenzo Energy",
+    "relation": "partner"
+   },
+   {
+    "name": "ICF Chennai",
+    "relation": "customer"
+   },
+   {
+    "name": "COSCO",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Railway capex",
+   "Tariffs & trade policy",
+   "Renewables & storage",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Volume guidance unverified after 7.3% decline",
+    "quote": "by Q2, I will come back with exactly what we feel the year-end would look like."
+   },
+   {
+    "label": "Repeated refusal to give monthly volume trend",
+    "quote": "It's too early to share these numbers."
+   },
+   {
+    "label": "Subsidiary-to-associate reclassification of PTGMI",
+    "quote": "now this company would be associate effective from 1st of July 2026"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 4,
+   "balance_sheet": 2,
+   "capex": 3,
+   "other": 9
+  },
+  "evasions": [
+   {
+    "topic": "FY27 volume guidance update",
+    "quote": "to give you this volume guidance or growth guidance, I would like one more quarter for that"
+   },
+   {
+    "topic": "Monthly volume trend June/July",
+    "quote": "It's too early to share these numbers."
+   },
+   {
+    "topic": "Closing inventory tonnage",
+    "quote": "We'll get back to you. I don't have it in front of me."
+   },
+   {
+    "topic": "Promoter blast furnace",
+    "quote": "As you know, this is a JSL call. Anything on the private company side"
+   }
+  ]
+ },
+ "summary": {
+  "headline": "Jindal Stainless Q1 FY27: revenue up 10.5% YoY and PAT up 7.7%, but finished-goods volume fell 7.3% on gas shortages; FY27 volume guidance held.",
+  "overview": "Q1 FY27 was resilient on profit but weak on volume, as industrial gas (LPG/propane) shortages and Middle East logistics issues hit the first weeks of April 2026. Revenue, EBITDA and PAT grew 10.5%, 1.4% and 7.7% YoY, with management prioritising value-added mix and thinner grades. Consolidated net debt fell to INR 2,950 crore (net debt/EBITDA 0.53x). Management kept FY27 volume guidance (8-10% growth) and the INR 18,000-20,000/t H1 EBITDA guidance, deferring any revision to the next quarter. Indonesia melt shop (1.2 MTPA) has started ramping up; the Jindal Stainless Indonesia structure changed from subsidiary to associate effective 1 July 2026.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue (consolidated)",
+    "value": "Growth 10.5% YoY",
+    "change": "+10.5% YoY"
+   },
+   {
+    "metric": "EBITDA (consolidated)",
+    "value": "Growth 1.4% YoY",
+    "change": "+1.4% YoY"
+   },
+   {
+    "metric": "PAT (consolidated)",
+    "value": "Growth 7.7% YoY",
+    "change": "+7.7% YoY"
+   },
+   {
+    "metric": "Finished goods sales volume",
+    "value": "Down 7.3% YoY",
+    "change": "-7.3% YoY"
+   },
+   {
+    "metric": "Consolidated net debt",
+    "value": "INR 2,950 crore",
+    "change": "Further reduced QoQ"
+   },
+   {
+    "metric": "Net debt to EBITDA",
+    "value": "0.53x",
+    "change": ""
+   },
+   {
+    "metric": "Net debt to equity",
+    "value": "0.14x",
+    "change": ""
+   },
+   {
+    "metric": "Grade mix (200 / 300 / 400 series)",
+    "value": "35% / 47% / 18%",
+    "change": "300-series was about 49% in Q2 FY26 per analyst"
+   },
+   {
+    "metric": "Capacity utilisation at end of Q1",
+    "value": "About 69-70%",
+    "change": "Expected to rise in Q2"
+   },
+   {
+    "metric": "Power and fuel cost as % of revenue",
+    "value": "About 10.5%",
+    "change": "Peak in Q1; down 40-50% from peak per management"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Chromeni (Indonesia / subsidiary)",
+    "commentary": "Utilisation about 80-85%; described as the major contributor in Q1 because it ran fully on pipe natural gas during the disruption."
+   },
+   {
+    "name": "Rathi Steel (subsidiary)",
+    "commentary": "Utilisation about 70% (Q1 hit by fuel shortage; about 80% before disruption); product mix being optimised each quarter."
+   },
+   {
+    "name": "Rabirun (subsidiary)",
+    "commentary": "EBITDA positive but small polishing business; cold rolling and BA line investment to be operational in FY28."
+   },
+   {
+    "name": "Indonesia 1.2 MTPA melt shop (PTGMI)",
+    "commentary": "Recently commissioned; ramping up after local approvals and certifications, with sales expected to build gradually. Now an associate from 1 July 2026."
+   },
+   {
+    "name": "RKEF / nickel business",
+    "commentary": "EBITDA positive in the last two quarters and in Q1 per management; volatile, mainly a raw material security play."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 sales volume growth of 8-10% held; management to update in Q2 (end of next quarter) and expects only gradual recovery in volume over the next few quarters.",
+   "H1 FY27 EBITDA per tonne guidance of INR 18,000-20,000 maintained; no revision yet.",
+   "FY27 capex plan of INR 2,400-2,600 crore is on track; cold rolling capacity to rise from 2 MTPA to at least 2.67 MTPA by FY28.",
+   "Target sales volume of 3.5 MTPA by FY29 reaffirmed.",
+   "HRAP (1.1 MTPA first phase) expected to be ready around end of Q3 FY27.",
+   "Indonesia ramp-up targeted at 70-80% utilisation in the first year of operation, per partner's track record.",
+   "Jajpur green hydrogen: 600 Nm3/hr expected to commission in August 2026; another 600 Nm3/hr planned next year; Hisar 200 Nm3/hr over next two quarters.",
+   "Maharashtra greenfield plant: detailed plan deferred by another one to two quarters pending land acquisition."
+  ],
+  "capex_capacity": [
+   "Downstream projects at Jajpur, Hisar and Kharagpur progressing; new equipment coming up each quarter over the next year, starting with Jajpur, then Kharagpur, then Hisar.",
+   "HRAP (1.1 MTPA first phase) expected around end of Q3 FY27, versus earlier expectation of first half FY27.",
+   "Cold rolling capacity target of at least 2.67 MTPA by FY28, up from 2 MTPA.",
+   "Pipe natural gas introduced at Jajpur; similar plans for Hisar and Ghaziabad.",
+   "Hisar greenhouse gas emission intensity down 12% YoY from energy-efficient ancillaries and waste heat recovery."
+  ],
+  "demand_pricing": [
+   "Management says demand was never the issue in Q1; the shortfall came from gas and logistics constraints, and whatever is produced will be sold.",
+   "Sales grew in automotive, appliances, white goods, railways and metro; Vande Bharat ferritic-to-austenitic shift and K-RIDE (ICF Chennai) spec support value-added grades.",
+   "Export volumes flat QoQ in absolute terms; export share rose only because the base shrank. Europe is roughly 30-40% of exports, and Europe plus US about 60%. Management targets new markets (Japan, South Korea, Brazil, Colombia) only where margins are good.",
+   "Pricing: gas cost pass-through to customers works in both directions, with a lag; the company could not pass on the full gas cost increase in Q1.",
+   "Scrap feed: Hisar about 85-90%, Jajpur about 70-75% (general); 90-95% of scrap sourced from domestic and Southeast Asia, less than 2-3% from Europe.",
+   "Antidumping duty: DGTR public hearing scheduled 9 September 2026; verifiers being appointed. QCO extended to March 2027, with management expecting no reversal before then."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How confident is management on 8-10% FY27 volume growth, and are exports (about 11% of volume) sustainable?",
+    "answer": "Guidance held for H1 with a fresh view in H2 if needed. Export volumes were stable QoQ; the higher share reflects a lower base, and the company intends to maintain export volumes to support EBITDA."
+   },
+   {
+    "question": "Did the gas shortage cost volume, and could margins have been better without it?",
+    "answer": "Management said FY27 volume guidance would otherwise have been met and that margins were better in principle; not all of the gas price increase could be passed on because India's cost rise was steeper than competitors'."
+   },
+   {
+    "question": "Has production returned to pre-war levels?",
+    "answer": "Yes. Shift from propane/LPG to pipe natural gas at Jajpur eased supply and cost pressure, and management says production is back to pre-disruption levels."
+   },
+   {
+    "question": "What were Q1 grade mix and power and fuel trends?",
+    "answer": "Mix was 35% 200-series, 47% 300-series, 18% 400-series. Power and fuel fell 40-50% from the Q1 peak, but has not returned to pre-war levels and fluctuates."
+   },
+   {
+    "question": "What is the status of the Maharashtra greenfield project and the Indonesia ramp-up?",
+    "answer": "Maharashtra still in land acquisition; detailed plan in another one to two quarters. Indonesia is ramping up, with 70-80% first-year utilisation expected; no further Indonesia capacity planned."
+   },
+   {
+    "question": "Why did PTGMI move from subsidiary to associate?",
+    "answer": "Control was held during construction; now in operation, the partner runs it, so JSL gave up board majority effective 1 July 2026. Share of profit will be booked as associate income; slab supply contract rights are unchanged and guidance is not affected."
+   }
+  ],
+  "risks_watch": [
+   "Volume recovery is gradual; June-July volumes not disclosed. Management will update in Q2.",
+   "Energy cost volatility: gas and LPG prices are still fluctuating, and pass-through lags.",
+   "Export pressure: EU quota reduction and Middle East war reduce EU and MENA volumes; new-market volumes take several quarters.",
+   "Regulatory: antidumping public hearing on 9 September 2026; QCO extension to March 2027 with risk of further extension.",
+   "Nickel/RKEF business volatility from Indonesian nickel ore policy changes.",
+   "Maharashtra greenfield project still lacks land and a firm plan.",
+   "Working capital and closing inventory (tonnage) not disclosed; management to follow up.",
+   "Indonesia melt shop ramp-up pace and the associate accounting change."
+  ],
+  "management_tone": "Confident on demand and balance sheet, but cautious and deferential on volume and margin guidance, which is being held until next quarter. Management was evasive on specifics (June-July volumes, CBAM intensity, inventory, PTGMI blast furnace), and repeatedly deferred numbers to later updates.",
+  "key_quotes": [
+   "And we're quite confident that we should be able to achieve.",
+   "Whatever we produce, we will sell.",
+   "Absolutely, demand was never a concern or never an issue, absolutely, yes.",
+   "no magic wand that we have that suddenly you can create that. So it will be a gradual recovery over the next few quarters."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "HRAP first phase 1.1 MTPA",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "Cold rolling capacity rise from 2 MTPA to at least 2.67 MTPA by FY28",
+    "size_pct": 33.5,
+    "capex_cr": null,
+    "q": 4,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "Jajpur green hydrogen 600 Nm3/hr",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "approved",
+    "mat": "minor"
+   },
+   {
+    "what": "Indonesia 1.2 MTPA melt shop (PTGMI) ramping up, now associate from 1 July 2026",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "major"
+   }
+  ],
+  "util": 70.0,
+  "expansion": true,
+  "growth": 9.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 10.5,
+  "qEbitda": 1.4,
+  "outlook": 1,
+  "why": "FY27 sales volume growth of 8-10% held (midpoint 9%), backed by HRAP 1.1 MTPA due around end Q3 FY27, Indonesia melt shop ramp-up and cold rolling expansion to 2.67 MTPA by FY28, but Q1 finished-goods volume fell 7.3% YoY and utilisation is only ~70%, so the guidance rests on partial rather than fully contracted evidence.",
+  "mgmt": null
+ }
+}

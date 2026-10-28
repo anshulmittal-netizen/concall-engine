@@ -1,0 +1,379 @@
+{
+ "doc_id": "IN-21dff0cd-599e-4bcb-8bc7-063a94508ff6",
+ "market": "IN",
+ "company_id": "500387",
+ "name": "Shree Cement Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-06",
+ "period": "2026-06",
+ "title": "Shree Cement Ltd - 500387 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cement & building materials",
+  "thesis": "Q1 FY27 consol EBITDA/t fell to Rs1,111 from Rs1,339 as fuel shifted to coal (1.95/kcal) and trade mix fell to 62%; management guides 40 MT FY27 and calls Q1 abnormal.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": -1,
+   "tone": -2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 62,
+   "quote": "Overall, it is 62%, which was almost the same as last year."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "I maintain my guidance at about INR1,500 crores for the year."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Consol EBITDA/t Rs1,339 → Rs1,111",
+    "quote": "this quarter, we have done 1,111, four times 1",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "util",
+    "label": "Trade mix 71% → 62%",
+    "quote": "62% is the trade against 71% in June '25",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume 40 MT maintained",
+    "quote": "I'm still sticking to my guidance of 40 million tons",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Realisation Rs4,919/t vs Rs4,854",
+    "quote": "Realization is INR4,919 per MT against INR4,854 last June '25.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 India volume",
+    "value": "40 million tonnes",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "I'm still sticking to my guidance of 40 million tons"
+   },
+   {
+    "metric": "FY27 capex (India)",
+    "value": "about INR1,500 crores",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "I maintain my guidance at about INR1,500 crores for the year."
+   },
+   {
+    "metric": "Depreciation FY27",
+    "value": "INR2,400-2,500 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "INR2,400 to INR2,500 crores is the depreciation number"
+   },
+   {
+    "metric": "Tax rate FY27",
+    "value": "about 30%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "tax rate would be about 30%"
+   },
+   {
+    "metric": "Fuel cost",
+    "value": "peaked at about 1.95 per kcal",
+    "change": "new",
+    "horizon": "Q2 FY27",
+    "quote": "we almost touched 1.95. And I feel, barring anything untoward happening in the Gulf war, the fuel price have almost peaked out."
+   },
+   {
+    "metric": "RMC EBITDA margin",
+    "value": "about 5% eventually",
+    "change": "new",
+    "horizon": "long term",
+    "quote": "the EBITDA of this business to at about 5% levels"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 volume 40 MT",
+    "outcome": "not_discussed",
+    "quote": "I had guided in March concall that we should do 40 million tons in FY '26-'27."
+   },
+   {
+    "metric": "Cost peak in Q2",
+    "outcome": "missed",
+    "quote": "I think we have almost peaked out in Q1."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Nuvoco",
+    "relation": "peer"
+   },
+   {
+    "name": "Dalmia",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Railway capex",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Consol EBITDA/t down 17% YoY; trade mix down 9pp",
+    "quote": "this quarter, we have done 1,111, four times 1"
+   },
+   {
+    "label": "Refuses to disclose UAE EBITDA and revenue",
+    "quote": "I'm not going to share it."
+   },
+   {
+    "label": "Mgmt asks analysts to switch to consol basis",
+    "quote": "time has probably come when we should look at consolidated numbers instead of standalone"
+   },
+   {
+    "label": "Evades pricing and next-year capex",
+    "quote": "Not at the moment. Please give me one more quarter"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 6,
+   "balance_sheet": 2,
+   "capex": 3,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "UAE EBITDA and revenue",
+    "quote": "I would not like to go into those kind of details for various reasons."
+   },
+   {
+    "topic": "Pricing outlook",
+    "quote": "I have never in my 40 years' career taken a call on how the selling price will be, sir."
+   },
+   {
+    "topic": "FY28 capex",
+    "quote": "Not at the moment. Please give me one more quarter, I'll get back to you in next con call."
+   },
+   {
+    "topic": "Freight cost",
+    "quote": "Where is the lower cost? You do your math again. Its not lower."
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "Shree Cement Q1 FY27 consol operational EBITDA fell to INR1,272 crore (1,111/t vs 1,339/t) on volume of 114.5 lakh t, as fuel switch and lower clinker factor hit costs.",
+  "overview": "Management asked analysts to shift to consolidated reporting (India plus UAE and other subsidiaries), citing ~10% of turnover from overseas and non-standalone businesses. Q1 was hit by the Middle East war: petcoke share fell from 54% to 9% and coal rose to 81% from 32%, while Omani gypsum did not arrive, raising fuel cost to about INR1.95/kcal and lowering the clinker conversion factor to 1.50 from 1.58. Trade mix fell to 62% from 71% and blended to 60% from 70%, which management attributes to a weaker conversion factor pushing more OPC into non-trade. Management says fuel cost has peaked and guides to better Q2 onwards, with FY27 volume target of 40 million tonnes reiterated.",
+  "segments": [
+   {
+    "name": "India grey cement (standalone)",
+    "commentary": "Capacity utilisation 62% overall (North 66%, East 60%, South 57%), flat YoY on a larger base. South sales rose from 11 lakh t to ~16.9 lakh t, North grew ~20%, East was flat; Q1 India volume about 10.4-10.5 million t."
+   },
+   {
+    "name": "UAE (Ras Al Khaimah)",
+    "commentary": "No meaningful sales in April and May due to the war, which dragged consolidated volume. Capacity doubling is underway to about 7 million t by Q3 FY27, funded from UAE cash; management declined to disclose UAE EBITDA or revenue."
+   },
+   {
+    "name": "RMC",
+    "commentary": "26 operational plants versus 19 at start of year, with 8 added in Q1 and 10 more planned next quarter. Management says RMC is EBITDA-neutral at present, targeting about 5% margin over time."
+   },
+   {
+    "name": "Northeast (Assam/Meghalaya) greenfield",
+    "commentary": "Plant planned for Q4 FY28 with 1 million t first phase and infrastructure for 4-5 million t; management says all approvals are in place."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 volume target maintained at 40 million t (India); H1 FY27 expected at about 19.5-20 million t (Q1 about 10.4-10.5 million t, Q2 guided at 9-9.5 million t).",
+   "Fuel cost has peaked at about INR1.95/kcal and should stay broadly stable barring Middle East escalation; packing cost and PVC prices have started easing.",
+   "Management expects healthier profitability from Q2 onward but does not give EBITDA guidance; cites 3.1 million t sold in July 2026 as of 31 July.",
+   "Trade/non-trade mix expected to normalise gradually; long-term aim is 70% trade, 30% non-trade, with conversion factor recovery as the lever.",
+   "FY27 capex guidance of about INR1,500 crore for India operations; FY28 capex to be given next quarter. Depreciation FY27 INR2,400-2,500 crore; tax rate about 30%.",
+   "Standalone share of consolidated revenue expected to fall from 88-89% to 75-80% over about five years."
+  ],
+  "capex_capacity": [
+   "India capex of INR456 crore in Q1 FY27 against full-year guidance of about INR1,500 crore.",
+   "UAE (Ras Al Khaimah) capacity doubling, with output to reach about 7 million t by Q3 FY27, funded from UAE cash flows.",
+   "Northeast greenfield plant to commission in Q4 FY28: 1 million t initial phase, site built for 4-5 million t; limestone available in region.",
+   "Renewable energy share of total energy rose to 66% from 61%; ~100 electric commercial vehicles to be commissioned this year; BESS piloted on a small scale.",
+   "Rail share of dispatches about 9% in Q1; railway sidings under Gati Shakti being pursued."
+  ],
+  "demand_pricing": [
+   "Industry demand expected to grow 7-8% pan-India; Shree aims for about 10%. FY26 volume was 35.4 million t versus 40 million t FY27 target.",
+   "East demand reported as up ~20% incrementally; Shree East volume flat YoY, constrained by conversion factor and coal quality.",
+   "Realisation of INR4,919/t vs INR4,854/t YoY; management says the gap to peers has narrowed to roughly INR10-12/bag but did not improve in Q1.",
+   "Premium sales hit by higher non-trade mix; management declined to give pricing guidance.",
+   "Sales push into Maharashtra and Gujarat, served by the South plant."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What were blended fuel cost, trade mix, clinker factor and realisation in Q1?",
+    "answer": "Fuel cost INR1.95/kcal; trade mix 62% (vs 71%), blended 60% (vs 70%); clinker factor 1.50 (vs 1.58); realisation INR4,919/t vs INR4,854/t a year earlier."
+   },
+   {
+    "question": "Will Q2 fuel cost rise further?",
+    "answer": "Management expects fuel cost to be broadly flat at INR1.95/kcal, with at most a INR0.02-0.03 increase, provided Middle East stays calm."
+   },
+   {
+    "question": "Why did the mix shift to non-trade?",
+    "answer": "Lower-quality coal raised clinker ash absorption and cut the conversion factor, leaving more OPC, which sells mainly into non-trade. Management expects normalisation over time, not a permanent change."
+   },
+   {
+    "question": "How much of the INR200 crore non-standalone EBITDA comes from UAE, and what are UAE EBITDA/revenue per tonne?",
+    "answer": "Management declined to split EBITDA or revenue for UAE or other subsidiaries and asked analysts to model consolidated figures only."
+   },
+   {
+    "question": "What is the Northeast plant economics given capex per tonne?",
+    "answer": "Management said the INR1,800 crore figure relates to 1 million t of a 4-5 million t site, not a standalone 1 million t project, and that it will proceed in learning steps."
+   },
+   {
+    "question": "Is there any inorganic growth plan given net cash?",
+    "answer": "No. Management said it is not pursuing acquisitions and will not buy capacity at about $110/t capex for $5 EBITDA/t assets."
+   }
+  ],
+  "risks_watch": [
+   "Middle East escalation could reverse the fuel and gypsum cost relief and disrupt the Oman gypsum and petcoke supply.",
+   "Trade mix recovery from 62% to the historical 70%; monitor the conversion factor path back above 1.50.",
+   "Reporting shift to consolidated numbers with limited disclosure of UAE and subsidiary EBITDA, revenue and capex; consol capex guidance still pending.",
+   "UAE volumes depend on war-affected sales resuming and on the capacity doubling to 7 million t by Q3 FY27.",
+   "Northeast plant permits and logistics; management says approvals are in place but local protests were reported in media."
+  ],
+  "management_tone": "Defensive on Q1 and evasive on consolidated segment figures, with repeated requests to treat Q1 as an abnormal quarter. Confident on fuel cost having peaked and on the 40 million t volume target, but declined to guide on price or EBITDA.",
+  "key_quotes": [
+   "Please consider Q1 as an abnormal quarter. I expect to do better Q2 onwards, if nothing untoward happens on Middle East front.",
+   "I think we have almost peaked out in Q1.",
+   "time has probably come when we should look at consolidated numbers instead of standalone.",
+   "I am giving the line to Mr. Subhash Jajoo. He has all the numbers. He'll give you."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Consolidated operational EBITDA (excl. other income)",
+    "value": "INR1,272 crore",
+    "change": "vs INR1,333 crore in June 2025 (down ~5%)"
+   },
+   {
+    "metric": "Consolidated operational EBITDA per tonne",
+    "value": "INR1,111/t",
+    "change": "vs INR1,339/t in June 2025"
+   },
+   {
+    "metric": "Consolidated volume",
+    "value": "114.5 lakh tonnes",
+    "change": "vs 99.6 lakh t in June 2025 (~15% up); vs 119.4 lakh t in March 2026 quarter"
+   },
+   {
+    "metric": "India realisation",
+    "value": "INR4,919/t",
+    "change": "vs INR4,854/t in June 2025; management confirmed comparison vs INR4,752 in Mar 2026 quarter per analyst"
+   },
+   {
+    "metric": "Clinker conversion factor",
+    "value": "1.50",
+    "change": "vs 1.58 in June 2025"
+   },
+   {
+    "metric": "Trade sales mix",
+    "value": "62%",
+    "change": "vs 71% in June 2025"
+   },
+   {
+    "metric": "Blended cement mix",
+    "value": "60%",
+    "change": "vs 70% in June 2025"
+   },
+   {
+    "metric": "Fuel cost",
+    "value": "INR1.95/kcal",
+    "change": "vs INR1.82/kcal earlier; management says it may rise only INR0.02-0.03"
+   },
+   {
+    "metric": "RMC revenue",
+    "value": "INR109 crore",
+    "change": "vs INR90 crore in March 2026 quarter and INR40 crore in June 2025"
+   },
+   {
+    "metric": "Consolidated net cash",
+    "value": "INR8,348 crore",
+    "change": "vs INR7,733 crore in June 2025"
+   },
+   {
+    "metric": "Capex spent in Q1",
+    "value": "INR456 crore (India)",
+    "change": ""
+   },
+   {
+    "metric": "Lead distance",
+    "value": "445 km",
+    "change": "vs 459 km previous quarter"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "UAE Ras Al Khaimah capacity doubling to about 7 million t",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Northeast (Assam/Meghalaya) greenfield plant, 1 million t first phase (infrastructure for 4-5 million t)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 7,
+    "status": "approved",
+    "mat": "moderate"
+   },
+   {
+    "what": "RMC plants: 8 added in Q1 and 10 more planned next quarter (26 operational vs 19 at start of year)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   }
+  ],
+  "util": 62.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": -5.0,
+  "outlook": 1,
+  "why": "FY27 India volume target of 40 Mt held (vs 35.4 Mt in FY26) with H1 guided at 19.5-20 Mt and July sales of 3.1 Mt, backed by UAE capacity doubling to ~7 Mt by Q3 FY27 and Northeast greenfield, but no revenue growth figure given and EBITDA fell ~5% in Q1.",
+  "mgmt": null
+ }
+}

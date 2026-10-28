@@ -1,0 +1,372 @@
+{
+ "doc_id": "IN-4e12e5f7-d85f-4461-88ce-1f8a6ff5a552",
+ "market": "IN",
+ "company_id": "544497",
+ "name": "Anlon Healthcare Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-09",
+ "period": "2026-03",
+ "title": "Anlon Healthcare Ltd - 544497 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Management guides FY27 revenue INR 380-400 Cr and ~24-25% consolidated EBITDA margin, but Q4 margin compressed on raw-material inflation, receivables run 130-140+ days and FCF stays negative until FY27 end.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 62,
+   "quote": "our facilities operating at a healthy capacity utilization of a pprox 62% at consolidated basis"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "the Capex is expected somewhere around INR130 CR"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Q4 EBITDA margin compressed on raw materials",
+    "quote": "we were holding the purchase order with the previous prices that we have not increased with the customer",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Receivable days 130-140 vs 180+ implied",
+    "quote": "the receivable days is somewhere between after i nvoice making, you have to consider 130 to 140 days",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue INR 380-400 Cr guided",
+    "quote": "we are able—mostly hopin g to close at between 380 to 400 CR",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Utilisation 62-65% consolidated",
+    "quote": "it is somewhere between 62 to 65%",
+    "direction": 0,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue FY27",
+    "value": "INR 380-400 Cr",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are able—mostly hopin g to close at between 380 to 400 CR"
+   },
+   {
+    "metric": "Revenue FY28",
+    "value": "INR 700-800 Cr run rate (as stated on call)",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "FY28 we are expecting between 700 to 800 CR"
+   },
+   {
+    "metric": "Consolidated EBITDA margin",
+    "value": "24-25% floor",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "consolidated overall margin would be between 24-25 and we'll not go below that margin"
+   },
+   {
+    "metric": "Revenue CAGR",
+    "value": "~30% over three years",
+    "change": "held",
+    "horizon": "3 years",
+    "quote": "we remain confident of delivering approximately 30% of revenue CAGR over the next three years"
+   },
+   {
+    "metric": "Operating cash flow",
+    "value": "Positive on annual basis by FY27 end",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "On annual basis FY27 will have the positive cash flow."
+   },
+   {
+    "metric": "Export share",
+    "value": "~60% of revenue in FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are trying to do the at least so mewhere around 60% of the export contribution in this FY27"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue FY26 INR 360-370 Cr",
+    "outcome": "missed",
+    "quote": "we were targeting around INR360-370 crores this year"
+   },
+   {
+    "metric": "EBITDA margin 30-35%",
+    "outcome": "dropped",
+    "quote": "whatever the EBITDA margin what we are expecting with the new topline of this FY27 between INR 380 to 400 CR, that will remain the same between 30 to 35% of the EBITDA margin"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Bizotic Life Science",
+    "relation": "partner"
+   },
+   {
+    "name": "CARE",
+    "relation": "competitor"
+   },
+   {
+    "name": "Brickwork",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "China+1 enquiries → orders",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Credit rating withdrawn; CARE 'issuer not cooperating'",
+    "quote": "the credit issuer is not cooperating"
+   },
+   {
+    "label": "Receivables 130-140 days; old dues >180 days",
+    "quote": "due to the previous receivable, which is old more than 180 days"
+   },
+   {
+    "label": "Operating cash flow negative (-47 Cr)",
+    "quote": "- 47 it is after consolidation"
+   },
+   {
+    "label": "Inventory build with 2x raw material costs",
+    "quote": "the price of the raw material in some most of the categories more than the double"
+   },
+   {
+    "label": "Management evasive on tax rate and several questions",
+    "quote": "I think that is I also need to check"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 9,
+   "capex": 2,
+   "growth": 5,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Tax rate for FY27/FY28",
+    "quote": "I think that is I also need to check that means for FY27 and 28 both."
+   },
+   {
+    "topic": "EBITDA margin guidance change (30-35% vs 25%)",
+    "quote": "EBITDA margin 25% is sustainable. Right now whateve r the EBITDA margin we are facing or having, that is not stable"
+   },
+   {
+    "topic": "Acquisition pipeline budget",
+    "quote": "So that is not the exact budget for that but depends"
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "Anlon FY26 consolidated income rose 42.98% to INR 172.22 crore and PAT 41.77% to INR 29.09 crore, but Q4 PAT fell to INR 11.07 crore from INR 16.65 crore.",
+  "overview": "Management reported FY26 consolidated total income of INR 172.22 crore (+42.98% YoY), EBITDA of INR 47.77 crore (+47.55%) and PAT of INR 29.09 crore (+41.77%), driven by the Apiqo and Bizotic acquisitions. Q4 total income rose to INR 50.90 crore from INR 48.97 crore, but PBT was flat at INR 14.44 crore and PAT fell to INR 11.07 crore, which management attributed to higher operating and development expenses and raw material cost spikes linked to the Middle East conflict. Management guided FY27 revenue to INR 380-400 crore, FY28 to INR 700-800 crore in one answer (INR 600-700 crore in another), and consolidated EBITDA margin of 24-25% as a floor, with a sharp reduction in receivables and cash-flow positivity targeted by end FY27. Several answers were inconsistent (EBITDA margin guidance ranged from 24-25% to 30-35%; FY28 revenue from 600-700 to 700-800 crore), and the call was disrupted by poor audio for several analysts.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated total income FY26",
+    "value": "INR 172.22 crore",
+    "change": "+42.98% YoY from INR 120.46 crore"
+   },
+   {
+    "metric": "Consolidated EBITDA FY26",
+    "value": "INR 47.77 crore",
+    "change": "+47.55% YoY"
+   },
+   {
+    "metric": "Consolidated PAT FY26",
+    "value": "INR 29.09 crore",
+    "change": "+41.77% YoY"
+   },
+   {
+    "metric": "Q4 FY26 total income",
+    "value": "INR 50.90 crore",
+    "change": "vs INR 48.97 crore in Q4 FY25"
+   },
+   {
+    "metric": "Q4 FY26 PBT",
+    "value": "INR 14.44 crore",
+    "change": "vs INR 15.49 crore in Q4 FY25"
+   },
+   {
+    "metric": "Q4 FY26 PAT",
+    "value": "INR 11.07 crore",
+    "change": "vs INR 16.65 crore in Q4 FY25"
+   },
+   {
+    "metric": "Capacity utilisation (consolidated)",
+    "value": "approx. 62% (management later said 62-65%)",
+    "change": ""
+   },
+   {
+    "metric": "Receivable days",
+    "value": "130-140 days on average (some domestic customers 150 days)",
+    "change": "Analyst cited 200+ days"
+   },
+   {
+    "metric": "Trade receivables FY26",
+    "value": "approx. INR 100 crore (per analyst question)",
+    "change": ""
+   },
+   {
+    "metric": "Cash flow (per analyst)",
+    "value": "-INR 23 crore prior period to -INR 47 crore after consolidation",
+    "change": "Management confirmed -47 post consolidation"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Pharmaceutical intermediates and APIs (Anlon standalone)",
+    "commentary": "Management says 5-6 DMF-linked products are already supplied to regulated markets, with 5-7 more expected to commercialise in FY27; export share targeted at about 60% in FY27. Products cited include Ketoprofen, Dexketoprofen and Loxoprofen Sodium in the NSAID category."
+   },
+   {
+    "name": "Apiqo Organics (acquired, early Jan 2026 per management)",
+    "commentary": "Acquired and consolidated for about 2.5 months in FY26. Management said its EBITDA margin is structurally lower (approx. 22-23%) as a chemical/intermediate manufacturer, and backward integration into intermediates is planned to start from Q2 FY27."
+   },
+   {
+    "name": "Bizotic Life Science (acquired)",
+    "commentary": "Consolidated for about 15 days in FY26. Management expects margins close to Anlon's, and says backward integration of intermediates has run for three to four years."
+   },
+   {
+    "name": "Industrial and fine/specialty chemicals",
+    "commentary": "Early-traction vertical; management is discussing a dedicated Apiqo capacity expansion with one or two customers, with margins slightly below pharma. No revenue figure was disclosed."
+   },
+   {
+    "name": "CDMO",
+    "commentary": "Three molecules in development for two global innovators. One is in validation with batches of hundreds of kg since March; commercial supply expected by Q3 FY27, with the other two in validation by Q2 FY27."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue guided at INR 380-400 crore, with a clear order book of INR 280-300 crore and a further INR 80-90 crore expected from products under qualification.",
+   "FY28 revenue guided at INR 700-800 crore in one answer and INR 600-700 crore in another, assuming 50-60% utilisation of the new Rajkot capacity from Q1 FY28 (six months of trial and validation).",
+   "Consolidated EBITDA margin guided at 24-25% as a floor, with management saying it will not sell below levels that breach that margin; a separate answer cited 30-35% for FY27 and the closing remarks used 25-30%.",
+   "Consolidated PAT: conservative FY27 estimate of INR 45 crore; management agreed INR 50-55 crore is achievable when asked.",
+   "Operating cash flow expected to turn positive on an annual basis by end FY27; management said it was '100% sure'.",
+   "Revenue CAGR of approx. 30% over three years stated in prepared remarks; peak revenue potential of the current 1,400-1,600 MTPA capacity stated at INR 450-500 crore at 80% utilisation."
+  ],
+  "capex_capacity": [
+   "Combined installed capacity after Apiqo and Bizotic: approx. 1,400-1,600 MTPA; consolidated utilisation approx. 62-65%, with management saying practical maximum is about 85%.",
+   "New greenfield capex at the existing Rajkot premises estimated at INR 130 crore; plant layout under approval, construction to start end of the month or early next month, commercial production targeted by Q1 FY28 (also referred to as mid-FY28).",
+   "Funding: term loan of INR 65-70 crore (about 50-60% of capex), balance from internal accruals; equipment orders placed 6-8 months ahead, with advance payments already made and part of the equipment installed.",
+   "Standalone peak revenue with expansion stated at INR 400-450 crore.",
+   "Capex and expansion of QC capacity already under way; management is considering a further INR 130 crore-type expansion to scale specialty chemicals at Apiqo, subject to customer commitments."
+  ],
+  "demand_pricing": [
+   "Management said raw material prices (solvents, catalysts) have more than doubled since the conflict, and prices change daily; Q4 margin pressure came from holding purchase orders at old prices, and customers are now being asked to pay higher prices as a force majeure.",
+   "Management said price increases are being negotiated and expects Q1 FY27 EBITDA margin to be close to the prior full-year level, but acknowledged this is uncertain if geopolitical conditions worsen.",
+   "Ketoprofen US DMF is delayed: a customer will file on Anlon's behalf, and timing has moved from Q2 FY27 to Q3 or Q4 FY27. Dexketoprofen Europe DMF is at the EDQM query stage, expected to close in two to three months.",
+   "Competitive positioning: few Indian players in Ketoprofen and Dexketoprofen (two to three in India, five to six globally); management cites proprietary methylation and Friedel-Crafts chemistry and landing-cost advantage.",
+   "Receivables: a distributor dispute left INR 20-30 crore pending in late 2025; INR 11 crore recovered and about INR 17 crore still outstanding. Management has stopped supply to customers paying beyond 120 days."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What is the FY27 revenue outlook and the peak potential of the current capacity?",
+    "answer": "FY27 visibility is INR 380-400 crore; peak revenue from 1,400-1,600 MTPA is INR 450-500 crore at about 80% utilisation (management said the practical ceiling is 85%)."
+   },
+   {
+    "question": "How much order book is in place and what are the CDMO timelines?",
+    "answer": "Clear order book is INR 280-300 crore, with INR 80-90 crore more expected. One CDMO product is in validation, with commercial supply expected by Q3 FY27; the other two validations by Q2 FY27."
+   },
+   {
+    "question": "What is the EBITDA margin outlook, and why did Q4 fall?",
+    "answer": "Management guided consolidated margin of 24-25% as a floor; Q4 fell because of unrecovered raw material cost increases, higher operating costs and the acquisitions. Management expects Q1 FY27 margins to recover to roughly the prior full-year level."
+   },
+   {
+    "question": "What is the funding plan for the capex, working capital and any acquisitions?",
+    "answer": "Capex is funded with INR 65-70 crore of term loans and internal accruals; management said there is no current equity dilution plan, with rights issue or promoter unsecured loans as possible options later. Working capital may need cash credit from banks after commissioning."
+   },
+   {
+    "question": "What is the receivables outlook and cash-flow timing?",
+    "answer": "Receivable days are 130-140 on average, and management expects them to stay at or above 180 days (per one answer), while also saying payments are running at 100-105 days now. Cash flow expected positive on an annual basis in FY27."
+   },
+   {
+    "question": "Credit rating and minority buy-out status?",
+    "answer": "CARE's 'issuer not cooperating' rating was linked to a dispute management called blackmail; Brickwork withdrew its rating and a fresh application is pending, with management expecting BBB- minimum within about 45 days. Management plans to acquire the remaining minority stake in Apiqo and Bizotic through share swaps, likely at the next AGM."
+   }
+  ],
+  "risks_watch": [
+   "Margin guidance is inconsistent across answers: 24-25% floor in several answers, 25-30% in prepared remarks, 30-35% in other answers. Track which figure is reported in Q1 FY27.",
+   "Raw material prices (solvents, catalysts) more than doubled since the conflict and reset daily; Q1 FY27 margin recovery depends on customers accepting force majeure price increases.",
+   "Receivables at 130-140 days on average (some 150 days), with management saying they will stay at or above 180 days; cash flow turning positive on an annual basis by end FY27 depends on collections and inventory release of 20-25% in Q2 FY27.",
+   "Capex of about INR 130 crore at Rajkot with commercial production targeted Q1 FY28; funding relies on INR 65-70 crore term loan plus internal accruals, with working capital needs possibly requiring cash credit after commissioning.",
+   "Credit rating status: CARE rating marked 'issuer not cooperating' and Brickwork withdrew its rating; a fresh application is pending with management expecting BBB- minimum within about 45 days.",
+   "Ketoprofen US DMF timing slipped to Q3 or Q4 FY27 through a customer filing; Dexketoprofen Europe DMF at EDQM query stage, expected to close in two to three months.",
+   "FY28 revenue guidance differs between INR 600-700 crore and INR 700-800 crore; FY27 PAT conservative INR 45 crore versus INR 50-55 crore said achievable."
+  ],
+  "key_quotes": [
+   "see, we are mainly in B2B business, so our price basically it is impacted on all the customer and they are it is taking time to convince for forward means forward to their customer.",
+   "But right now there is no planning, but I think once the capacity will be completed and we'll come with the commercial production, at that time we'll see that whatever the situation and if required, then our first preference is go with the financial institution instead of going further for the dilution.",
+   "So we are 100% sure by end of this FY27 it will be positive.",
+   "And by end of this FY27 with the positive cash flow and receivable days will remain at least 180 days, which is I think mostly API manufacturer is having."
+  ],
+  "management_tone": "Confident on FY27 revenue visibility and the FY27 cash-flow turn, but noticeably less precise on margins, where figures shifted across answers and management said raw-material pricing is unpredictable. Several answers were evasive or deflected (for example on tax rate, acquisition budget and the reason for the Q4 PAT decline), and the call was hampered by poor audio for several analysts.",
+  "_completed": 1
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "New greenfield capex at existing Rajkot premises, ~INR 130 crore; commercial production targeted Q1 FY28",
+    "size_pct": null,
+    "capex_cr": 130.0,
+    "q": 4,
+    "status": "approved",
+    "mat": "major"
+   },
+   {
+    "what": "Possible further ~INR 130 crore expansion to scale specialty chemicals at Apiqo, subject to customer commitments",
+    "size_pct": null,
+    "capex_cr": 130.0,
+    "q": null,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": 62.0,
+  "expansion": true,
+  "growth": 121.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "new_products_or_markets",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 3.9,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "FY27 revenue guided at INR 380-400 crore (vs FY26 INR 172 crore), backed by a stated INR 280-300 crore order book plus INR 80-90 crore under qualification; FY28 guidance is inconsistent (700-800 vs 600-700 crore) and depends on the INR 130 crore Rajkot plant running at 50-60% from Q1 FY28, with the term loan of INR 65-70 crore and advances already paid.",
+  "mgmt": null
+ }
+}

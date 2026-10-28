@@ -1,0 +1,266 @@
+{
+ "doc_id": "IN-7d5bf607-bb21-41fe-8911-a75778b48d39",
+ "market": "IN",
+ "company_id": "500124",
+ "name": "Dr Reddys Laboratories Ltd",
+ "doc_type": "transcript",
+ "date": "2026-07-15",
+ "period": "2026-06",
+ "title": "Dr Reddys Laboratories Ltd - 500124 - Announcement Under Regulation 30 Of SEBI (LODR) Regulations, 2015- Conference Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma & biotech",
+  "thesis": "Semaglutide scale-up API batch failed impurity spec, halting supply to OneSource until ~late Oct/Nov; 6-7 million pens guided for Nov–Mar, vs earlier plan; no recall, no penalties expected.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Customer stickiness",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -2,
+   "novelty": -1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "all the plans stay valid, we just have to move. Naturally, also, our facility needs to be supplemented with our API."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Semaglutide supply halt to ~Oct/Nov",
+    "quote": "there will be a halt of supply between now and September",
+    "direction": -1,
+    "confidence": 0.9
+   },
+   {
+    "type": "inventory",
+    "label": "OneSource inventory may need write-down",
+    "quote": "We may need to write down the batches that were associated with that. Probably, yes.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Pens guidance 6-7 million Nov–Mar",
+    "quote": "we will sell 6 to 7 million , in addition to what we sold already until now",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Demand exceeds supply",
+    "quote": "if we had 15 million, we could supply that also",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Semaglutide pens supply FY27",
+    "value": "6-7 million pens Nov–Mar",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "we will sell 6 to 7 million , in addition to what we sold already until now"
+   },
+   {
+    "metric": "Targeted 20%+ EBITDA margin",
+    "value": "unchanged, with some missed sales",
+    "change": "held",
+    "horizon": "medium term",
+    "quote": "So we are on the same pace and nothing has changed beside this event."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Semaglutide supply Q3-Q4 FY27 / 12 million pen first-year target",
+    "outcome": "missed",
+    "quote": "Obviously, we will miss to sell certain quantities in this period of time"
+   }
+  ],
+  "entities": [
+   {
+    "name": "OneSource",
+    "relation": "partner"
+   },
+   {
+    "name": "Sandoz",
+    "relation": "customer"
+   },
+   {
+    "name": "Torrent",
+    "relation": "customer"
+   },
+   {
+    "name": "Aspen",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "GLP-1 supply chain",
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Scale-up API batch failed impurity spec; supply halted",
+    "quote": "one of the impurities were found to be out of specifications upon testing of the finished drug product"
+   },
+   {
+    "label": "Possible inventory write-down at OneSource",
+    "quote": "We may need to write down the batches that were associated with that."
+   },
+   {
+    "label": "Backup supplier ~1 year away",
+    "quote": "It means that we are about one year away, give or take"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 4,
+   "margin": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Root cause of impurity",
+    "quote": "What caused the degradation? I don't know."
+   },
+   {
+    "topic": "Write-down value",
+    "quote": "Just to keep everybody honest. We are in the silent period, as you know"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Dr Reddy's halts semaglutide injectable API commercial supply after impurity out of spec in scale-up batch; 6-7 million pens now expected Nov-March.",
+  "overview": "Dr Reddy's disclosed on July 9, 2026 that an impurity from a scaled-up synthetic semaglutide API process was out of specification in finished drug product testing, halting API dispatch to long-term partner OneSource. Management says the issue is a process/reaction problem requiring parameter tweaks and repeat validation (three validation batches), with no equipment change expected. Commercial supply is now targeted to resume in October, with 6-7 million pens expected from November to March FY27 versus the earlier plan that assumed sales from July to October. Management says no recall, no regulatory filing change, no patient safety impact on product already supplied, and no penalties expected, though some customer down-payment arrangements may need renegotiation. The company said oral semaglutide is unaffected because it uses a different API source.",
+  "segments": [
+   {
+    "name": "Semaglutide injectable (OneSource partnership)",
+    "commentary": "Commercial API supply halted pending validation; resumption targeted for October with 6-7 million pens from November to March. Management says no penalties are anticipated, though some down-payment arrangements may need renegotiation."
+   },
+   {
+    "name": "Semaglutide oral tablets",
+    "commentary": "Management said there is no impact, as oral tablets use a different API source."
+   }
+  ],
+  "guidance_outlook": [
+   "Validation timeline: root cause in days to a week or two, validation batches and testing (sterility up to three weeks) through end-September, then commercial API to OneSource in October, and market supply from late October or early November.",
+   "Management reiterated the 20%-plus EBITDA margin target is unchanged, but acknowledged lost sales in the coming months versus what was discussed at the May and June investor meetings.",
+   "Captive manufacturing plans remain valid but will shift by a few months, since in-house facility API supply depends on post-validation output.",
+   "Backup injectable API supplier is about a year away because it needs a pre-approval supplement.",
+   "Management said demand exceeds supply and it is confident in demand going forward."
+  ],
+  "capex_capacity": [
+   "Scale-up of synthetic API process at the API facility was intended to increase API output for growing global semaglutide demand; the scale-up batch failed the impurity specification at finished product testing.",
+   "The in-house fill-finish facility is being built and will eventually be used for semaglutide and other products; management said plans shift by a few months.",
+   "Management said that, if the issue were not solved, the halt would last through September, with the backup supplier not available for about a year."
+  ],
+  "demand_pricing": [
+   "Management said demand exceeds supply: 'if we had 15 million, we could supply that also.'",
+   "Competition from Sandoz, Aspen and others was raised; management said some of these names are also being supplied by Dr Reddy's.",
+   "Partners in Canada (Sandoz, Torrent) and India were updated; some have alternatives. Canadian supply already shipped is unaffected, but future Canadian supply will be impacted."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What is the timeline for resolving the impurity issue, and how is supply affected?",
+    "answer": "Management expects validation completion around September, supply to OneSource in October and market supply from late October or early November; a halt is in effect until then. Management noted a risk of further delay."
+   },
+   {
+    "question": "Will re-validation need new regulatory submissions?",
+    "answer": "No; validation is a scale-up step with no specification or filing change, so no prior agency approval is needed."
+   },
+   {
+    "question": "Is any inventory at risk or any recall needed?",
+    "answer": "No recall, since scale-up batches were never shipped. Inventory held at OneSource is company-owned; management said it may need to be written down, with details in about two weeks."
+   },
+   {
+    "question": "Does the issue affect the 20%-plus EBITDA margin target and the 12 million pen first-year target?",
+    "answer": "Management said plans are unchanged beyond the lost sales; FY27 volume now expected at 6-7 million pens in addition to units already sold, which is below the earlier plan."
+   },
+   {
+    "question": "Is the impurity from raw material, process or equipment?",
+    "answer": "The impurity is from the API process and reaction, not raw material; management said parameter changes should fix it without equipment change."
+   },
+   {
+    "question": "Will there be penalties to partners?",
+    "answer": "Management said no penalties are anticipated, though some down-payment arrangements may need renegotiation."
+   }
+  ],
+  "risks_watch": [
+   "Validation risk: a further failure would push supply beyond the current October and November timeline.",
+   "Possible inventory write-down at OneSource, with quantification due in about two weeks.",
+   "Renegotiation of customer down-payment arrangements and potential loss of partners (Canada, India) who may choose alternatives.",
+   "Competitive intensity from new entrants (Sandoz, Aspen and others) during the supply gap.",
+   "Captive fill-finish facility timeline, which now shifts by a few months.",
+   "Q1 FY27 results (silent period) to show the financial impact of the disclosure."
+  ],
+  "management_tone": "Management was candid and direct about the halt and timeline but hedged on timing, repeatedly saying a further delay is possible and that the timeline is 'give or take'. It was firm that there is no recall, no regulatory filing change and no patient safety impact, and reiterated long-term commitment to OneSource.",
+  "key_quotes": [
+   "While the API itself met the specifications, one of the impurities were found to be out of specifications upon testing of the finished drug product.",
+   "There is no impact on the product's existing global regulatory filings, whether approved or currently under review.",
+   "Nothing has changed. Unfortunately, if we had 15 million, we could supply that also.",
+   "It has nothing to do with the cost here. It's about GMP."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Semaglutide pens expected to be supplied in FY27 post-disruption",
+    "value": "6-7 million pens (Nov to Mar)",
+    "change": "Earlier plan assumed sales from July to October; volumes lost in the halt period"
+   },
+   {
+    "metric": "Inventory at OneSource",
+    "value": "Not quantified",
+    "change": "Batches may need to be written down; management said details expected in about two weeks"
+   },
+   {
+    "metric": "Single batch recall in India",
+    "value": "One batch",
+    "change": "Management says unrelated to the scale-up issue"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "In-house semaglutide fill-finish facility (under construction; plans shift by a few months)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "under_construction",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": -1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": -1,
+  "why": "Semaglutide injectable API supply halted until October after an impurity failure; 6-7 million pens guided for Nov-Mar FY27 (a cut versus the earlier July-October sales plan), with the 20%+ EBITDA margin target held and demand said to exceed supply, but no revenue growth % quantified.",
+  "mgmt": null
+ }
+}
