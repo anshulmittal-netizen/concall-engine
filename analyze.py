@@ -435,7 +435,7 @@ def build(market: str, log=print) -> dict:
         delta = r["score"] - hist[-2] if len(hist) > 1 else 0
         out_cos.append({
             "id": cid, "name": u.get("name") or r["docs"][0]["name"], "ticker": u.get("ticker") or cid,
-            "mkt": market, "sector": sub[cid], "mcap": fmt_mcap(u, market),
+            "mkt": market, "sector": sub[cid], "mcap": fmt_mcap(u, market), "mcapCr": u.get("mcap_cr"),
             "macro": level(cid, "macro"), "bigSector": level(cid, "sector"), "industry": level(cid, "industry"),
             "period": label_from_key(last_p, market), "periodKey": last_p, "date": r["date"],
             "call": f"{label_from_key(last_p, market)} " + " + ".join(sorted({d['doc_type'] for d in r['docs']})) + f" · {fmt_date(dt.date.fromisoformat(r['date']))}",
@@ -469,7 +469,7 @@ def build(market: str, log=print) -> dict:
                           "gLine": (f"{g_best['metric']}: {g_best['value']}" + (f" ({g_best.get('horizon')})" if g_best.get('horizon') else "")) if g_best else "",
                           "period": label_from_key(p, market), "periodKey": p, "date": r["date"],
                           "score": r["score"], "delta": r["delta"], "veto": r["veto"], "archetype": r["archetype"],
-                          "thesis": r["thesis"], "top": t0, "cred": r["cred"], "credTested": r.get("credTested", 0), "mcap": fmt_mcap(u, market),
+                          "thesis": r["thesis"], "top": t0, "cred": r["cred"], "credTested": r.get("credTested", 0), "mcap": fmt_mcap(u, market), "mcapCr": u.get("mcap_cr"),
                           "hasSummary": any(d.get("summary") for d in r["docs"])})
             for d in r["docs"]:
                 if d.get("summary"):
@@ -643,7 +643,7 @@ def build(market: str, log=print) -> dict:
         "season": label_from_key(current, market) if current else None,
         "periods": [label_from_key(p, market) for p in shown],
         "universe": uni.get("count", 0), "scored": len(cur_cos),
-        "capNote": "Below ₹50,000 Cr" if market == "IN" else f"Below ${uni.get('cap_usd_mn', 0)/1000:.1f}B (₹50,000 Cr at ₹{uni.get('inr_per_usd', 0):.1f}/$)",
+        "capNote": ("All market caps" if uni.get("cap_inr_cr") is None else f"Below ₹{uni['cap_inr_cr']:,} Cr") if market == "IN" else f"Below ${uni.get('cap_usd_mn', 0)/1000:.1f}B (₹50,000 Cr at ₹{uni.get('inr_per_usd', 0):.1f}/$)",
         "companies": sorted(out_cos, key=lambda c: (c["periodKey"] != current, -c["score"])),
         "sectors": sectors, "themes": themes, "ideas": ideas,
         "sectorsBy": sectors_by, "themesBy": themes_by, "ideasBy": ideas_by,

@@ -1,4 +1,4 @@
-"""Build the sub-₹50,000 Cr universe for India and the US.
+"""Build the universe: every listed Indian company (all market caps) and US companies below ₹50,000 Cr.
 
 India: BSE active equity list + market cap (BSE field if present, else Yahoo `<code>.BO`).
        Or drop your own list at data/universe_IN_override.csv (code,name,industry,mcap_cr),
@@ -58,9 +58,11 @@ def _fresh(path, days) -> bool:
 def build_india(force=False) -> dict:
     cfg = settings()["universe"]
     out = DATA / "universe_IN.json"
-    if not force and _fresh(out, cfg["refresh_days"]):
-        return read_json(out)
-    cap, floor = cfg["mcap_cap_inr_cr"], cfg["mcap_floor_inr_cr"]
+    cap, floor = cfg.get("india_mcap_cap_inr_cr", cfg["mcap_cap_inr_cr"]), cfg["mcap_floor_inr_cr"] or 0
+    old = read_json(out, {}) if out.exists() else {}
+    # a changed cap rebuilds the list straight away instead of waiting for the weekly refresh
+    if not force and _fresh(out, cfg["refresh_days"]) and old.get("cap_inr_cr", 50000) == cap:
+        return old
 
     rows = []
     override = DATA / "universe_IN_override.csv"
@@ -89,9 +91,13 @@ def build_india(force=False) -> dict:
             rows.append({"code": code, "name": (s.get("Scrip_Name") or s.get("Issuer_Name") or "").strip(),
                          "ticker": (s.get("scrip_id") or "").strip(),
                          "industry": (s.get("INDUSTRY") or s.get("Industry") or "").strip(), "mcap_cr": mc})
-        # ~5% of active scrips carry no market cap on BSE (mostly illiquid / suspended); they are skipped.
+        # ~5% of active scrips carry no market cap on BSE (mostly illiquid / suspended). With no cap they are kept
+        # (they are listed, and file like anyone else); with a cap or floor they are skipped.
 
-    keep = [r for r in rows if r["mcap_cr"] is not None and floor <= r["mcap_cr"] < cap]
+    if cap is None and not floor:
+        keep = rows
+    else:
+        keep = [r for r in rows if r["mcap_cr"] is not None and floor <= r["mcap_cr"] < (cap if cap is not None else float("inf"))]
     uni = {"market": "IN", "built": today().isoformat(), "cap_inr_cr": cap,
            "count": len(keep), "companies": {r["code"]: r for r in keep}}
     write_json(out, uni)

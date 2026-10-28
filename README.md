@@ -1,7 +1,7 @@
 # Concall Signal Desk — engine
 
-Reads every concall transcript, management interview and investor presentation for listed companies
-below ₹50,000 Cr in **India** and the **US**, scores each one on the capital-cycle framework, and builds
+Reads every concall transcript, management interview and investor presentation for every listed company
+in **India** (all market caps) and for companies below ₹50,000 Cr in the **US**, scores each one on the capital-cycle framework, and builds
 the dashboard in `index.html` with a separate tab per market.
 
 Inputs are limited to concalls, interviews and presentations. Price data, financial statements, annual

@@ -573,7 +573,7 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
   <aside class="rail">
     <div class="brand">
       <div class="mark" aria-hidden="true"><i></i><b></b></div>
-      <div><h1>Concall Signal Desk</h1><p>India · below ₹50,000 Cr</p></div>
+      <div><h1>Concall Signal Desk</h1><p>India · all market caps</p></div>
     </div>
     <nav class="nav" id="nav" aria-label="Views"></nav>
     <div class="rail-foot" id="railfoot"></div>
@@ -637,7 +637,7 @@ const GL = {
   veto:['Veto','A serious negative (guidance withdrawn without reason, auditor or governance issue, regulatory action) caps the score at 40, however good the rest of the call was.'],
   guidance:['Guidance','What management said about the future in this call. Raised: targets lifted or new positive targets given. Cut: targets lowered or withdrawn. Steady: reiterated or no change.'],
   gidx:['Guidance index','0 to 100 for a group of companies. 50 is neutral. Above 60: more companies raised than cut. Below 40: cuts dominate. Companies whose management has delivered before count for more.'],
-  coverage:['Reported','Companies that have held and filed their call this quarter, out of all listed companies below ₹50,000 Cr in that sector.'],
+  coverage:['Reported','Companies that have held and filed their call this quarter, out of all listed companies in that sector.'],
   new:['New','Calls filed in the last day / the last 7 days. The engine reads new filings every night.'],
   avg:['Average score','Mean Concall Signal Score of the calls read in the group this quarter.'],
   breadth:['Breadth','Share of companies in the sub-sector whose call shows the signal. 60% supply discipline means 6 in 10 companies talked about holding back capacity.'],
@@ -959,7 +959,7 @@ function vHome() {
           <div class="legend"><div><i style="background:var(--accent)"></i><span>Held their call</span><span class="num">${fmt(rep)}</span></div>
             <div><i style="background:var(--panel2);box-shadow:inset 0 0 0 1px var(--line2)"></i><span>Still to report</span><span class="num">${fmt(Math.max(0, uni - rep))}</span></div>
             <div><i style="background:var(--saffron)"></i><span>New in 7 days</span><span class="num">${fmt(d7)}</span></div></div></div>
-        <div class="w-foot"><span>${fmt(uni)} listed companies below ₹50,000 Cr</span></div></section>
+        <div class="w-foot"><span>${fmt(uni)} listed companies, all market caps</span></div></section>
     </div>
     ${tickerStrip(cq)}
     <div class="board">
@@ -1009,10 +1009,13 @@ function vHome() {
 const SORTS = {best: ['Highest score', (a, b) => b.score - a.score], worst: ['Lowest score', (a, b) => a.score - b.score],
   up: ['Biggest improvement', (a, b) => b.delta - a.delta || b.score - a.score], down: ['Biggest drop', (a, b) => a.delta - b.delta || a.score - b.score],
   new: ['Newest first', (a, b) => b.date.localeCompare(a.date) || b.score - a.score]};
+const SIZES = {large: ['Large cap · ₹50,000 Cr+', v => v >= 50000], mid: ['Mid cap · ₹10,000–50,000 Cr', v => v >= 10000 && v < 50000],
+  small: ['Small cap · ₹2,000–10,000 Cr', v => v >= 2000 && v < 10000], micro: ['Micro cap · below ₹2,000 Cr', v => v != null && v < 2000]};
+const sizeOk = (c, k) => !k || SIZES[k][1](c.mcapCr ?? byId[c.id]?.mcapCr);
 const CHIPS = {raised: ['Guidance raised', c => c.g > 0], cut: ['Guidance cut', c => c.g < 0], flag: ['Red flags', c => c.veto], strong: ['Strong or Good (60+)', c => c.score >= 60 && !c.veto]};
 function filteredCalls() {
   const f = S.calls, q = f.search.toLowerCase();
-  return callsQ().filter(c => (!f.big || c.bigSector === f.big) && (!f.sub || c.sector === f.sub) &&
+  return callsQ().filter(c => (!f.big || c.bigSector === f.big) && (!f.sub || c.sector === f.sub) && sizeOk(c, f.size) &&
     [...f.chips].every(k => CHIPS[k][1](c)) &&
     (!q || [c.name, byId[c.id]?.ticker, c.sector, c.bigSector, c.industry, c.top].join(' ').toLowerCase().includes(q))).sort(SORTS[f.sort][1]);
 }
@@ -1022,7 +1025,7 @@ function vCalls() {
   const subs = [...new Set(all.filter(c => !f.big || c.bigSector === f.big).map(c => c.sector))].sort();
   return head('All calls', 'Every concall read for the quarter, ranked. Use it to find the best and worst calls, or to go through your sectors.', `
       <ol><li><b>Choose the quarter</b> at the top. The list shows every call filed and read for it.</li>
-      <li><b>Narrow it down</b> with Sector, Sub-sector, the search box or the quick filters (Guidance raised, Red flags…).</li>
+      <li><b>Narrow it down</b> with Sector, Sub-sector, Market cap, the search box or the quick filters (Guidance raised, Red flags…).</li>
       <li><b>Sort</b> by highest score for the best calls, lowest for the worst, Newest for what just came in, or Biggest improvement for companies whose story is getting better.</li>
       <li><b>Click a row</b> to open the company panel with the full call summary.</li></ol>
       <p class="muted">Score columns: the number is the Concall Signal Score ${tip('score')}, the label is its verdict ${tip('verdict')}, and the arrow shows the change since the company’s last call ${tip('change')}.</p>`, qBadge()) + `
@@ -1030,10 +1033,11 @@ function vCalls() {
       <input type="search" id="c-search" placeholder="Search name, sector or keyword" value="${esc(f.search)}" aria-label="Search calls">
       <select id="c-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(s => `<option ${s === f.big ? 'selected' : ''}>${esc(s)}</option>`).join('')}</select>
       <select id="c-sub" aria-label="Sub-sector"><option value="">All sub-sectors</option>${subs.map(s => `<option ${s === f.sub ? 'selected' : ''}>${esc(s)}</option>`).join('')}</select>
+      <select id="c-size" aria-label="Market cap"><option value="">All market caps</option>${Object.entries(SIZES).map(([k, [n]]) => `<option value="${k}" ${k === f.size ? 'selected' : ''}>${esc(n)}</option>`).join('')}</select>
       <select id="c-sort" aria-label="Sort">${Object.entries(SORTS).map(([k, [n]]) => `<option value="${k}" ${k === f.sort ? 'selected' : ''}>${n}</option>`).join('')}</select>
     </div>
     <div class="toolbar">${Object.entries(CHIPS).map(([k, [n]]) => `<button class="chip" data-chip="${k}" aria-pressed="${f.chips.has(k)}">${n}</button>`).join('')}
-      ${f.big || f.sub || f.search || f.chips.size ? '<button class="link" id="c-clear">Clear filters</button>' : ''}</div>
+      ${f.big || f.sub || f.size || f.search || f.chips.size ? '<button class="link" id="c-clear">Clear filters</button>' : ''}</div>
     <div id="c-list"></div>`;
 }
 function fillCalls() {
@@ -1286,7 +1290,7 @@ function askCsv() {
 function vWatch() {
   const wait = resLoading('watch'), W = RES.data?.watch, t0 = istToday();
   const hd = head('My watchlist', 'Your own list of companies: whose results are coming up, so you can prepare, and how the ones already out did.', `
-      <ul><li>The list lives in <b>watchlist.yaml</b> in the engine’s repository. Companies above ₹50,000 Cr are included for results and dates; their concalls are not read.</li>
+      <ul><li>The list lives in <b>watchlist.yaml</b> in the engine’s repository. Every listed company is covered, so watchlist companies have their concalls read too.</li>
       <li>Results dates come from BSE’s forthcoming-results list, checked every 30 minutes from 8:30 am to 11 pm IST. Companies must announce the board meeting at least two working days ahead.</li>
       <li>When a watchlist company is <b>${W?.leadDays || 3} days or less</b> from its results, a GitHub issue labelled <b>results-watch</b> is opened (one per check, listing each company once per date; a moved date is alerted again), so GitHub emails you and pushes to the GitHub app.</li>
       <li><b>Last call</b> opens what management guided last quarter, the best preparation before the numbers land.</li></ul>`,
@@ -1842,7 +1846,7 @@ function vHelp() {
   return head('How to use the desk', 'A short guide for the team: what each view is for, how the score works, and where the data comes from.', '') + `
   <div class="help"><article>
     <section id="h-what"><h3>What the desk does</h3>
-      <p>Every night the desk reads new concall transcripts filed on BSE by the ${fmt(D.universe)} listed Indian companies below ₹50,000 Cr. It reads each call through our capital-cycle framework, scores it, writes a detailed summary, and rolls the calls up by sector and theme. It uses concalls, analyst meets and investor presentations only. Prices, results filings and news are left out on purpose.</p></section>
+      <p>Every night the desk reads new concall transcripts filed on BSE by the ${fmt(D.universe)} listed Indian companies, across all market caps. It reads each call through our capital-cycle framework, scores it, writes a detailed summary, and rolls the calls up by sector and theme. It uses concalls, analyst meets and investor presentations only. Prices, results filings and news are left out on purpose.</p></section>
     <section id="h-routine"><h3>A 10-minute daily routine</h3><ol>
       <li><b>Today:</b> read the headline and the four picks under “Where to look first”, and check which calls are coming up in the next three days.</li>
       <li><b>All calls:</b> sort by Newest first and skim what came in overnight. Filter to the sectors you cover.</li>
@@ -2162,7 +2166,7 @@ document.addEventListener('click', e => {
   const dis = t.closest('[data-dismiss]'); if (dis) { store.set(dis.dataset.dismiss, false); render(); return; }
   const qb = t.closest('#qsel button'); if (qb) { S.q = qb.dataset.q; S.calls.limit = 50; S.calls.big = S.calls.sub = ''; render(); return; }
   const chip = t.closest('[data-chip]'); if (chip) { const k = chip.dataset.chip; S.calls.chips.has(k) ? S.calls.chips.delete(k) : S.calls.chips.add(k); S.calls.limit = 50; chip.setAttribute('aria-pressed', S.calls.chips.has(k)); render(); return; }
-  if (t.closest('#c-clear')) { Object.assign(S.calls, {search: '', big: '', sub: '', limit: 50}); S.calls.chips.clear(); render(); return; }
+  if (t.closest('#c-clear')) { Object.assign(S.calls, {search: '', big: '', sub: '', size: '', limit: 50}); S.calls.chips.clear(); render(); return; }
   if (t.closest('#c-more')) { S.calls.limit += 50; fillCalls(); return; }
   const fs = t.closest('[data-fs]'); if (fs) { S.first.status = fs.dataset.fs; render(); return; }
   const upc = t.closest('[data-up]'); if (upc) { const k = upc.dataset.up; S.up[k] = !S.up[k]; render(); return; }
@@ -2206,6 +2210,7 @@ document.addEventListener('change', e => {
   const id = e.target.id;
   if (id === 'c-big') { S.calls.big = e.target.value; S.calls.sub = ''; S.calls.limit = 50; render(); }
   if (id === 'c-sub') { S.calls.sub = e.target.value; S.calls.limit = 50; render(); }
+  if (id === 'c-size') { S.calls.size = e.target.value; S.calls.limit = 50; render(); }
   if (id === 'mg-days') { S.mg.days = +e.target.value; render(); }
   if (id === 'up-big') { S.up.big = e.target.value; render(); }
   if (id === 'up-days') { S.up.days = +e.target.value; render(); }

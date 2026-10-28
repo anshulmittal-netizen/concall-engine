@@ -1,7 +1,8 @@
 # Concall Signal Desk — engine settings (lean mode)
 
 universe:
-  mcap_cap_inr_cr: 50000
+  india_mcap_cap_inr_cr: null # India reads every listed company, all market caps (set a number to cap it again)
+  mcap_cap_inr_cr: 50000      # US cut-off (₹50,000 Cr at the live INR/USD rate)
   mcap_floor_inr_cr: 0
   mcap_floor_usd_mn: 0
   inr_per_usd_fallback: 88.0
