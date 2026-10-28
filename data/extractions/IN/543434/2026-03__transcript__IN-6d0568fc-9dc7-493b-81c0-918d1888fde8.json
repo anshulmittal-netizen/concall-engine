@@ -1,0 +1,162 @@
+{
+ "doc_id": "IN-6d0568fc-9dc7-493b-81c0-918d1888fde8",
+ "market": "IN",
+ "company_id": "543434",
+ "name": "Supriya Lifescience Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "Supriya Lifescience Ltd - 543434 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Record FY26 revenue of INR828 crores (+19%) and 35.5% EBITDA margin, but capacity build is ahead of demand: utilisation near 76%, debtor and inventory days rising, and FY27 growth guided as non-linear.",
+  "archetype": "None",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 76,
+   "quote": "capacity utilization, I think we are around 76%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "a large portion of the capex would be put up for Patalganga to the tune of about INR200 crores in the next 2 years"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation ~76%, debottlenecking underway",
+    "quote": "we are doing a lot of debottlenecking activities, and that's one of the reasons why we are taking the shutdown in quarter 2",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory days near 200",
+    "quote": "inventory days have been running at close to 200 days for 2 years now",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Raw-material increases passed to customers",
+    "quote": "we were able to pass them on to our customers, because we work with customers on a purchase order basis",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "INR1,000 cr FY27 revenue reiterated",
+    "quote": "Our trajectory towards the INR1,000 crores revenue milestone by financial year '27 remains firmly on track",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue FY27",
+    "value": "INR1,000 crores",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Our trajectory towards the INR1,000 crores revenue milestone by financial year '27 remains firmly on track"
+   },
+   {
+    "metric": "Revenue growth",
+    "value": "~20% annual",
+    "change": "held",
+    "horizon": "annual",
+    "quote": "We iterate our guidance of approximately 20% annual growth revenue and EBITDA margin, 33% to 35%."
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "33% to 35%",
+    "change": "held",
+    "horizon": "next 5-6 years",
+    "quote": "the margin would be around 33% to 35%"
+   },
+   {
+    "metric": "Working capital days",
+    "value": "170 to 180 days",
+    "change": "new",
+    "horizon": "FY27 onward",
+    "quote": "We are looking at around 170 to 180 days going forward."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revenue growth ~20%",
+    "outcome": "missed",
+    "quote": "Financial year '26 revenue grew to 18.9% year-on-year to INR828 crores, in line with our guided growth of ~20%"
+   },
+   {
+    "metric": "EBITDA margin 33-35%",
+    "outcome": "met",
+    "quote": "EBITDA margins were at 35.5% for FY26, surpassing our guided range of 33% to 35%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "DSM",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "China+1 enquiries → orders",
+   "Pharma CDMO / outsourcing",
+   "GLP-1 supply chain",
+   "Capacity bottleneck"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital days up to 170 from 124 in FY24",
+    "quote": "net working capital days was 170 days in FY26 compared to 158 days in FY25"
+   },
+   {
+    "label": "Inventory days near 200 for two years",
+    "quote": "inventory days have been running at close to 200 days for 2 years now"
+   },
+   {
+    "label": "Ambernath expenses ahead of revenue",
+    "quote": "the expenses of Ambernath have started for us, which is a very large number and the revenue from Ambernath has still not started"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 5,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Gross margin",
+    "quote": "we never guide on gross margin. So, I'll not be able to comment anything."
+   },
+   {
+    "topic": "Cardiovascular product volumes and pricing",
+    "quote": "any product-specific prices and costing cannot be discussed in this forum."
+   },
+   {
+    "topic": "Peak revenue potential from Ambernath and Patalganga",
+    "quote": "we'll not be able to guide on the full potential numbers"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

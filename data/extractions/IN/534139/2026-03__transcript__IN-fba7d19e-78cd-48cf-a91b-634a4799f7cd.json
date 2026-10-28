@@ -1,0 +1,123 @@
+{
+ "doc_id": "IN-fba7d19e-78cd-48cf-a91b-634a4799f7cd",
+ "market": "IN",
+ "company_id": "534139",
+ "name": "Schneider Electric Infrastructure Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-01",
+ "period": "2026-03",
+ "title": "Schneider Electric Infrastructure Ltd - 534139 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q4 FY26 sales flat at INR590 crore and margin hit by ~2.5% commodity drag; management held Q4 orders selectively and cited customer-requested delivery deferrals of 10-12%, with FY26 orders up 27.4%.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Customers asked to hold deliveries",
+    "quote": "they are asking us to hold the dispatches and ship to the next quarter",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Commodity drag ~2.5% on Q4 margin",
+    "quote": "Almost 2.5% is coming from commodity and is coming from the sales.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q4 order booking low by choice",
+    "quote": "that selectivity made the reasoning to have a low order booking in the Q4",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Delivery deferrals ~10-12% of orders",
+    "quote": "About 10% to 12%.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Tata Power",
+    "relation": "customer"
+   },
+   {
+    "name": "PFC",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Renewables & storage",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Delivery deferrals and low Q4 bookings",
+    "quote": "they are asking us to hold the dispatches and ship to the next quarter"
+   },
+   {
+    "label": "Management evasive on data-centre quantification",
+    "quote": "we'll not be able to give you an absolute percentage number"
+   },
+   {
+    "label": "Gross margin down 160 bps FY26 vs FY25",
+    "quote": "from 39.1% in FY25 to 37.5% in FY26. And now it is 36.6% in Q4"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 3,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Data-centre order quantification",
+    "quote": "it is nothing which can be quantified"
+   },
+   {
+    "topic": "Market share / BESS addressable market",
+    "quote": "it's very difficult to quantify the market"
+   },
+   {
+    "topic": "Deferral quantum",
+    "quote": "I'm not sure we can take the numbers in this call."
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

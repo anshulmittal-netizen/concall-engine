@@ -1,0 +1,287 @@
+{
+ "doc_id": "IN-09b14d91-5d9a-481d-8ab6-b702c430ecdf",
+ "market": "IN",
+ "company_id": "543983",
+ "name": "EMS Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-03",
+ "period": "2026-03",
+ "title": "EMS Ltd - 543983 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Q4 FY26 standalone revenue collapsed to Rs 84 cr and consolidated Rs 120 cr, with ~Rs 100 cr stuck in unbilled WIP; management blames permissions and government payment delays, and gave no firm FY27 numbers beyond a ~Rs 1,000 cr revenue plan.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -2,
+   "demand": -2,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": -2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Unbilled WIP ~Rs 100 cr",
+    "quote": "our inventory has increased about Rs. 100 crores because the works which are having some milestones couldn't be completed",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Q4 standalone revenue Rs 84 cr",
+    "quote": "FY '26 Quarter 4 has the total revenue is the 84 as a standalone of EMS Limited and consolidated revenue is 120",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue target ~Rs 1,000 cr",
+    "quote": "we should be able to target a revenue of about one third of that, somewhere about Rs. 1,000-odd crores",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "tone",
+    "label": "Repeated missed commitments",
+    "quote": "why do we have this misinformation on every con call",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "about Rs 1,000 cr (order win target Rs 1,500 cr)",
+    "change": "new",
+    "quote": "we should be able to target a revenue of about one third of that, somewhere about Rs. 1,000-odd crores"
+   },
+   {
+    "metric": "PAT margin",
+    "value": "about 15% (FY27 target)",
+    "change": "new",
+    "quote": "what we are targeting is upwards of profit after tax of 15%"
+   },
+   {
+    "metric": "Long-run revenue CAGR",
+    "value": "20%-25% to 2030",
+    "change": "new",
+    "quote": "we can hope to achieve somewhere around 20%-25% growth over the long run"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revenue growth ~30% / FY26 recovery of Q3 losses",
+    "outcome": "missed",
+    "quote": "FY '26 is a washout"
+   },
+   {
+    "metric": "Pledge reduction to near zero by end FY26",
+    "outcome": "missed",
+    "quote": "by the end of next year, it will be zero"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Kolkata Municipal Corporation",
+    "relation": "customer"
+   },
+   {
+    "name": "UP Jal Nigam",
+    "relation": "customer"
+   },
+   {
+    "name": "Delhi Jal Board",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 revenue down sharply, WIP build-up",
+    "quote": "our inventory has increased about Rs. 100 crores because the works which are having some milestones couldn't be completed"
+   },
+   {
+    "label": "Government payment delays to contractor",
+    "quote": "a prolonged cash flow constraint on the government side has delayed payments to contractors, including us"
+   },
+   {
+    "label": "Promoter pledge not reduced as promised",
+    "quote": "within 10 days of last quarter's earnings call, we again pledged 4.5 lakh shares on 10th of March to Tata AIG"
+   },
+   {
+    "label": "Fundraise resolution Rs 300 cr after 'no stress' claim",
+    "quote": "we are raising funds up to Rs. 300 crores"
+   },
+   {
+    "label": "Margin explanation dismissed as pseudo figure",
+    "quote": "Margin is basically a pseudo figure which is being reflected"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 4,
+   "margin": 3,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Pledge reduction commitment",
+    "quote": "Sir, I think there might be some confusion there. If you will check the latest filings"
+   },
+   {
+    "topic": "Fund raise after no-stress assurance",
+    "quote": "that was just a permission from the Board that we took. We did not act on it"
+   },
+   {
+    "topic": "Q1 FY27 revenue visibility",
+    "quote": "I don't think the numbers would be too good, but we are trying to improve on that"
+   }
+  ],
+  "hedge_index": 0.8
+ },
+ "summary": {
+  "headline": "EMS Q4 FY26 standalone revenue fell to Rs 84 crore and FY26 consolidated revenue to Rs 732 crore, down about 36-37%, on project delays and payment stress.",
+  "overview": "Management attributed the weak Q4 to about Rs 100 crore of unbilled work-in-progress, a West Bengal pre-election work halt on a Rs 780 crore project, bitumen supply issues in Uttarakhand, and a new SPARSH payment system slowing government payments. Consolidated Q4 revenue was Rs 120 crore, with tax of about Rs 4.3 crore cited for Q4 against that revenue, and management said consolidated Q4 margin was about 15%. The order book stood at Rs 1,837 crore at March 31, 2026, with Rs 209 crore added from UP Jal Nigam since. Management guided FY27 to exceed Rs 1,500 crore of order wins and around Rs 1,000 crore revenue, while also saying FY27 could approach Rs 950-970 crore. The call was dominated by individual investors questioning missed prior commitments, a Rs 300 crore fund-raise resolution, and pledged shares.",
+  "financial_highlights": [
+   {
+    "metric": "Q4 FY26 standalone revenue",
+    "value": "Rs 84 crore",
+    "change": "Significant fall YoY (no exact figure given)"
+   },
+   {
+    "metric": "Q4 FY26 consolidated revenue",
+    "value": "Rs 120 crore",
+    "change": "Significant fall YoY (no exact figure given)"
+   },
+   {
+    "metric": "FY26 standalone revenue",
+    "value": "Rs 608 crore",
+    "change": "About 36-37% fall YoY"
+   },
+   {
+    "metric": "FY26 consolidated revenue",
+    "value": "Rs 732 crore",
+    "change": "About 36-37% fall YoY"
+   },
+   {
+    "metric": "Q4 consolidated EBITDA/operating margin",
+    "value": "About 15% (as cited by analyst; management called margin a pseudo figure)",
+    "change": ""
+   },
+   {
+    "metric": "FY26 EBITDA margin",
+    "value": "About 21% (per CEO)",
+    "change": ""
+   },
+   {
+    "metric": "Q4 consolidated tax",
+    "value": "About Rs 4.3 crore current tax (management figure); analyst cited about 61% effective rate and Rs 6 crore net profit",
+    "change": ""
+   },
+   {
+    "metric": "Unexecuted order book at March 31, 2026",
+    "value": "Rs 1,837 crore",
+    "change": ""
+   },
+   {
+    "metric": "FY25 revenue (as cited)",
+    "value": "Rs 966 crore",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "Water and sewerage (urban, government-funded)",
+    "commentary": "Management said 70-75% of business comes from water supply and sewerage; the company works in seven states across HUD, AMRUT and Namami Gange projects and does not do rural schemes such as Jal Jeevan or Swachh Bharat."
+   },
+   {
+    "name": "West Bengal project",
+    "commentary": "A Rs 780 crore project with STPs and sewer laying; management expected Rs 70-80 crore per quarter but achieved about Rs 20 crore in Q4 due to the election work halt. Resumption is expected within 10-15 days of new officials joining."
+   },
+   {
+    "name": "Uttarakhand",
+    "commentary": "About Rs 50 crore of work is finished and awaiting billing in Dehradun, expected in Q1 FY27; bitumen supply and rain-related delays held up road restoration billing."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 order wins targeted at over Rs 1,500 crore, from Rs 2,500-3,000 crore of tenders in pipeline (Delhi Jal Board, Maharashtra) plus Rs 209 crore from UP Jal Nigam Varanasi.",
+   "FY27 revenue target of about Rs 1,000 crore, roughly one-third of a Rs 3,000 crore order book given 2-3 year execution; in a separate answer the analyst's summary of guidance was about Rs 970 crore, with management saying 'almost similar' to Rs 950 crore.",
+   "Management targets PAT margin of about 15% and operating (EBITDA) margin of about 25% in FY27, with margin normalising over 2-3 quarters and FY27 cited as the year to contain damage.",
+   "Long-run growth of about 20-25% CAGR through 2030, per management.",
+   "Q1 FY27 revenue expected to be weak ('I don't think the numbers would be too good'); no ballpark given."
+  ],
+  "capex_capacity": [
+   "West Bengal Rs 780 crore project, with roughly Rs 500 crore capex work to be completed over six quarters.",
+   "Around Rs 100 crore of finished-but-unbilled work-in-progress from milestones not achieved at year-end.",
+   "Machinery and manpower were deployed on sites in West Bengal before permissions were withheld; labour attrition takes 1-1.5 months to rebuild after payment stress."
+  ],
+  "demand_pricing": [
+   "Government payment delays linked to the SPARSH treasury-based escrow payment system, and to delayed AMRUT project payments, forced subcontractor payment gaps and work stoppages.",
+   "Pre-election halts in West Bengal and West Asia-linked bitumen supply disruption affected Q4 billing.",
+   "Management said Rs 300-400 crore of bids could be won in the coming month or so.",
+   "Management said the company is not planning to diversify from government or water sector clients."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What would Q4 consolidated top line and margin have been without the disruptions?",
+    "answer": "Management estimated about Rs 250 crore, adding about Rs 100 crore unbilled WIP, Rs 30-40 crore road restoration and Rs 50 crore West Bengal shortfall; margins would normalise to 16-17% or minimum 15% over 2-3 quarters."
+   },
+   {
+    "question": "Why is the Q4 effective tax rate so high?",
+    "answer": "Management said Q4 current tax was about Rs 4.3 crore against consolidated revenue of Rs 120 crore, roughly 7%; the analyst's 61% figure was not reconciled on the call."
+   },
+   {
+    "question": "What is the FY27 order book, and what top line is expected?",
+    "answer": "Order book was Rs 1,837 crore at March 31, 2026, plus Rs 209 crore from UP Jal Nigam; target order wins above Rs 1,500 crore and revenue about Rs 1,000 crore, with downward pressure from government funding delays."
+   },
+   {
+    "question": "Why does the FY27 target only return to FY25 levels after several years of growth?",
+    "answer": "Management cited geopolitical conditions and government funding delays; it reiterated a long-run 20-25% CAGR and said FY27 could be about Rs 950-970 crore if growth of 25-30% is achieved from FY26."
+   },
+   {
+    "question": "Why was a Rs 300 crore fund-raise resolution passed months after prior assurances of no balance sheet stress?",
+    "answer": "Management said the board resolution is valid for one year and was a precaution; no current plan to raise funds, except possibly for a large HAM project requiring equity."
+   },
+   {
+    "question": "Dehradun lost revenue and Q1 FY27 visibility?",
+    "answer": "About Rs 50 crore of finished work in Dehradun is awaiting billing and expected in Q1 FY27; Q1 revenue expected to remain weak."
+   }
+  ],
+  "risks_watch": [
+   "Receivables and government payment cycles (SPARSH, AMRUT, West Bengal) could keep delaying billing and WIP conversion; watch whether the Rs 100 crore WIP is billed in Q1 FY27.",
+   "Credibility gap: prior guidance on pledge reduction and balance-sheet stress was contradicted within weeks, per individual investors; the Rs 300 crore board resolution remains valid for a year.",
+   "Promoter pledge: investors said 4.5 lakh shares were pledged to Tata AIG on March 10, 2026; management said pledges are falling steadily and will reach zero by end-FY27.",
+   "Order conversion: Rs 2,500-3,000 crore pipeline versus Rs 1,500 crore FY27 order-win target.",
+   "Consolidated margin and tax inconsistency: the 15% margin and Q4 tax figures were contested on the call and not clearly reconciled.",
+   "Institutional holding: management said institutions exited after the share price rose above Rs 900, with no current institutional anchor."
+  ],
+  "management_tone": "Defensive and apologetic on the quarter, attributing shortfalls to government permissions, payments and weather; answers on the pledge, fund-raise and tax questions were vague or contradicted by the analysts' filings, and management repeatedly asserted confidence about FY27 recovery.",
+  "key_quotes": [
+   "We know this quarter's results are disappointing and we take full responsibility for keeping you informed and accountable.",
+   "We cannot force government's hand. If government does not give permission to excavate roads, we cannot work there.",
+   "So, what we are targeting is upwards of profit after tax of 15%.",
+   "It has been a perfect storm. We are trying to navigate it and our effort is sincere and…"
+  ]
+ }
+}

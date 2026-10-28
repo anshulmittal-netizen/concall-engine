@@ -1,0 +1,178 @@
+{
+ "doc_id": "IN-13d303b8-062d-4da4-9052-910e785dc78b",
+ "market": "IN",
+ "company_id": "544158",
+ "name": "SRM Contractors Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "SRM Contractors Ltd - 544158 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "FY26 revenue ₹1,026 cr (+94%) with 8.1% EBITDA margin, but management guides FY27 margins of 16–18% and ~₹250 cr capex funded partly by project debt, with a messy call on order book definitions.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capex cycle"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are expecting a capex of around INR250 crores"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth 45–55%",
+    "quote": "We expect revenue growth of approximately 45% to 55% with EBITDA margin expected to remain in the range of 16% to 18%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Unbilled revenue ~₹130 cr",
+    "quote": "currently, the unbilled revenue is around – we are ranging in around INR130 crores",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "FY27 capex ~₹250 cr, debt-funded",
+    "quote": "we are expecting a capex of around INR250 crores",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "45%–55%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We expect revenue growth of approximately 45% to 55%"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "16%–18%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "EBITDA margin expected to remain in the range of 16% to 18%"
+   },
+   {
+    "metric": "Order inflow FY27",
+    "value": "~₹2,000 cr",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Our targeted order inflow of financial ‘27 stands of approximately INR2,000 crore"
+   },
+   {
+    "metric": "Consolidated turnover FY26 (prior guidance)",
+    "value": "₹1,500–1,750 cr",
+    "change": "new",
+    "horizon": "FY26",
+    "quote": "this year our consolidated turnover should be between INR1,500 crores to INR1,750 crore"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Consolidated turnover FY26",
+    "outcome": "missed",
+    "quote": "Revenue grew 94% year-on-year to INR1,026 crore"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Spar Geo",
+    "relation": "competitor"
+   },
+   {
+    "name": "Bharat",
+    "relation": "competitor"
+   },
+   {
+    "name": "Pioneer",
+    "relation": "competitor"
+   },
+   {
+    "name": "KEC",
+    "relation": "competitor"
+   },
+   {
+    "name": "Gawar",
+    "relation": "competitor"
+   },
+   {
+    "name": "GRIL",
+    "relation": "competitor"
+   },
+   {
+    "name": "National Highway Authority of India",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Trade payables jump ₹68 cr to ~₹145 cr; FY26 auditor change and expense reclassification",
+    "quote": "we have seen a change in auditor in the current financial year"
+   },
+   {
+    "label": "Q4 gross margin falls to ~21% from 53–54% in Q2/Q3; unbilled revenue ~₹130 cr",
+    "quote": "the increase in COGS is just because of the fact that we – and we have an inventory of around INR47 crores as well"
+   },
+   {
+    "label": "Order book definition inconsistent (₹1,800 cr vs ₹3,000 cr; standalone vs consolidated)",
+    "quote": "INR1,800 crores is standalone"
+   },
+   {
+    "label": "Debt-to-equity quoted as '0.3% to 0.2%'; debt rise from equipment financing",
+    "quote": "Debt-to-equity ratio is -- will remain something like from 0.3% to 0.2% only."
+   },
+   {
+    "label": "Other financial assets ₹157 cr incl. ₹82 cr security deposits; ₹37 cr receivables >1 year moved to non-current",
+    "quote": "they've been classified as non-current"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 5,
+   "capex": 1,
+   "growth": 4,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Monthly revenue run-rate",
+    "quote": "We don't have any monthly run rate."
+   },
+   {
+    "topic": "Debt trajectory FY27/FY28",
+    "quote": "Estimating today would be a little difficult. We can get back at this over the next a few quarters."
+   },
+   {
+    "topic": "L1 order numbers",
+    "quote": "We will do that. Ankur -- you can send us a query to Ankur"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

@@ -1,0 +1,136 @@
+{
+ "doc_id": "IN-5721d785-3d4a-4938-aeb9-00ddbf83ea62",
+ "market": "IN",
+ "company_id": "532899",
+ "name": "Kaveri Seed Company Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-30",
+ "period": "2026-03",
+ "title": "Kaveri Seed Company Ltd - 532899 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "Kaveri built inventory 17% y/y on purpose, mgmt says prices may not rise in FY27 and revenue growth should be 15-20% on volume; channel and company inventories both high, a supply-side caution.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory up 17% vs sales 16%",
+    "quote": "Inventory was up by 17%. This year, we have produced more because last year, there was a lot of competition",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "No price hikes expected in FY27",
+    "quote": "we may not be able to increase the prices, like how we have increased last year",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue growth 15-20% FY27",
+    "quote": "Overall, the revenue should be in between the 15% to 20% growth.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Cotton new hybrids 10.3% → 30.05%",
+    "quote": "Contribution for new cotton hybrids improved significantly, increasing from 10.3% to 30.05%",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "15% to 20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Overall, the revenue should be in between the 15% to 20% growth."
+   },
+   {
+    "metric": "Cotton growth FY27",
+    "value": "more than 20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "But in cotton, it should be more than 20-odd percent."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Aditya",
+    "relation": "peer"
+   },
+   {
+    "name": "Genomix",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Anti-dumping protection"
+  ],
+  "red_flags": [
+   {
+    "label": "Customer advances down INR75-80 cr",
+    "quote": "we have received INR75 crores to INR80 crores of lower advances"
+   },
+   {
+    "label": "Channel inventory high across all 3 crops",
+    "quote": "So the inventory levels are pretty high in the system, especially with the companies."
+   },
+   {
+    "label": "Illegal BT cotton continuing in Gujarat",
+    "quote": "In Gujarat, it's still continuing as of now."
+   },
+   {
+    "label": "Tax litigation on agri income classification",
+    "quote": "we claim it as an agriculture income"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Advances and farmer cash flow",
+    "quote": "Not really, but the sentiment of the farmers or the cash flow is a bit tight across the channels."
+   },
+   {
+    "topic": "Write-offs of old inventory",
+    "quote": "So we may not worry about the write-offs"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

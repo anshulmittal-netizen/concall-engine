@@ -1,0 +1,153 @@
+{
+ "doc_id": "IN-8d847a6c-a14d-48ae-8223-9ce092b63160",
+ "market": "IN",
+ "company_id": "540775",
+ "name": "Khadim India Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-01",
+ "period": "2026-03",
+ "title": "Khadim India Ltd - 540775 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q4 FY26 revenue fell to INR83.6 cr (from 93.8 cr) with PAT margin 0.9%; management guides FY27 revenue ~INR400 cr at 14% EBITDA while inventory was cut ~40% and creditors slashed, signalling demand-led weakness rather than supply-side discipline.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -2,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 revenue down 11% YoY",
+    "quote": "revenue from operations stood at INR83.6 crores as against INR93.8 crores in the corresponding quarter last year, reflecting a decline",
+    "highlight": "revenue from operations stood at INR83.6 crores",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Raw material up 20-25% since Feb",
+    "quote": "The raw material prices are increased around 20% to 25% compared to -- in the month of February to now",
+    "highlight": "raw material prices are increased around 20% to 25%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue ~INR400 cr, 14% EBITDA",
+    "quote": "we are targeting a turnover of around INR400 crores and an EBITDA margin of 14% at present",
+    "highlight": "targeting a turnover of around INR400 crores",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "around INR400 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are targeting a turnover of around INR400 crores and an EBITDA margin of 14% at present"
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "14%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we will remain steady at the EBITDA level of 14%"
+   },
+   {
+    "metric": "FY27 gross margin",
+    "value": "48-50% range; ~50 bps improvement",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I think we can expect another 50-basis point improvement in gross margin"
+   },
+   {
+    "metric": "Net debt target",
+    "value": "INR110-115 crores",
+    "change": "new",
+    "horizon": "post restructuring",
+    "quote": "INR110 crores to INR115 crores"
+   },
+   {
+    "metric": "Steady-state COCO store count",
+    "value": "around 200",
+    "change": "new",
+    "horizon": "post cleanup",
+    "quote": "Around 200 COCO stores"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "KSR Footwear Limited",
+    "relation": "partner"
+   },
+   {
+    "name": "Skechers",
+    "relation": "partner"
+   },
+   {
+    "name": "British Walkers",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Rural demand recovery",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Creditors cut to fund working capital",
+    "quote": "we deliberately reduced the purchase and paid our creditors so that the creditors balance has also come down"
+   },
+   {
+    "label": "Cash and equity sharply lower post demerger",
+    "quote": "Demerger transfer was there."
+   },
+   {
+    "label": "Discounting of sub-INR500 products; price cuts",
+    "quote": "we have taken some price cut in our product s less than INR500"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 6,
+   "margin": 5,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Athleisure roadmap",
+    "quote": "we'll keep the athleisure to the extent it is required, but we will not go far-fetched in athleisure"
+   },
+   {
+    "topic": "Gross margin visibility",
+    "quote": "we cannot, I mean, give a comment on the gross margin because it depends on the volatility of the raw material price"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

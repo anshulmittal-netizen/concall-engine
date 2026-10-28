@@ -1,0 +1,178 @@
+{
+ "doc_id": "IN-f09f4132-cb15-40b4-9e5d-6fdfcec74719",
+ "market": "IN",
+ "company_id": "522101",
+ "name": "Kilburn Engineering Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-01",
+ "period": "2026-03",
+ "title": "Kilburn Engineering Ltd - 522101 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Q4 FY26 consol EBITDA 22.95% on INR189 cr revenue; order intake shifted a quarter with FY27 INR800-1,000 cr target, but receivables and working capital days rose from 169 to 184, weakening cash conversion.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "It remains the same what we've been guiding for in the last 2, 3 calls, which is around 40 crores odd."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Working capital days 169 → 184",
+    "quote": "in this FY26, our working capital days went from 169 to 184 days",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Order intake shifted a quarter",
+    "quote": "We have witnessed a shift by a quarter in closing some of our major orders.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 order intake INR800-1,000 cr",
+    "quote": "we are targeting an order intake of around INR800 crores to INR1,000 crores at group level",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "Expansion done by Sept-Oct 2026",
+    "quote": "We believe this will be completed by September, October of this year.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "pricing",
+    "label": "No cost pass-through",
+    "quote": "So, we don't have a pass-through.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "20% to 25%, revenue INR750-800 cr",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "We have set a growth target of 20% to 25% on top line over last year, which would result in a revenue of around INR750 crores to INR800 crores."
+   },
+   {
+    "metric": "Order intake FY27",
+    "value": "INR800-1,000 cr group",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are targeting an order intake of around INR800 crores to INR1,000 crores at group level"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "20% plus (22-23% operating range)",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "We hope to continue EBITDA margins of 20% plus."
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "around INR40 crore",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "It remains the same what we've been guiding for in the last 2, 3 calls, which is around 40 crores odd."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Lloyds Engineering",
+    "relation": "competitor"
+   },
+   {
+    "name": "Granules India",
+    "relation": "customer"
+   },
+   {
+    "name": "Monga Strayfield",
+    "relation": "peer"
+   },
+   {
+    "name": "M.E. Energy",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Middle East logistics disruption",
+   "Nuclear equipment orders",
+   "Working-capital normalisation",
+   "Waste heat recovery in steel and ferrous alloy",
+   "Order intake delay"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital days 169 to 184; receivables up ~INR100 cr",
+    "quote": "in this FY26, our working capital days went from 169 to 184 days"
+   },
+   {
+    "label": "Standalone operating cash flow negative, worsened INR9 cr to INR17 cr",
+    "quote": "our cash flow negative went from INR9 crores to INR17 crores"
+   },
+   {
+    "label": "Order intake shift, opening book lower than last year",
+    "quote": "I do agree with you that today, the opening order is on the lower side compared to last year."
+   },
+   {
+    "label": "Investor deck growth CAGR typo, not clarified in deck",
+    "quote": "I think it's a typo error by the IR team who's made it."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 1,
+   "growth": 6,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Order inflow breakup by subsidiary",
+    "quote": "We are not giving that breakup because we have mentioned in the past as well"
+   },
+   {
+    "topic": "Quantification of delayed orders",
+    "quote": "We have not missed orders. We have just mentioned that certain orders getting finalized have got shifted"
+   },
+   {
+    "topic": "Nuclear project rupee value",
+    "quote": "I would not know."
+   },
+   {
+    "topic": "Gross margin decline in Q4",
+    "quote": "it depends on product mix, also the type of orders we are executing."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

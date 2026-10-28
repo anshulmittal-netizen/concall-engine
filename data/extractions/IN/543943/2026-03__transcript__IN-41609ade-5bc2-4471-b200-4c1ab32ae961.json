@@ -1,0 +1,176 @@
+{
+ "doc_id": "IN-41609ade-5bc2-4471-b200-4c1ab32ae961",
+ "market": "IN",
+ "company_id": "543943",
+ "name": "Asarfi Hospital Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-30",
+ "period": "2026-03",
+ "title": "Asarfi Hospital Ltd - 543943 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Asarfi FY26 consolidated revenue up 42% to INR173.5 cr with 20% EBITDA margin, but no supply discipline signal: bed expansion to 500+ and FY27 INR260 cr target rest on an unannounced acquisition and cancer bed adds, with receivables aged 6-7 months.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 42,
+   "quote": "It is only, we are at 42% of capacity utilization of 65 beds"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "the current year capex would be between the tune of INR10 crores to INR12 crores, is that right?"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables aging 6-7 months",
+    "quote": "with regard to aging, it is around six to seven months.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue target INR260 cr",
+    "quote": "Yes, sir, we are working very hard and we should be able to achieve it.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Cancer bed count 65 to 150",
+    "quote": "expansion of cancer hospital capacity from 65 beds to 150 beds",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "tone",
+    "label": "Organ transplant approval repeatedly delayed",
+    "quote": "we are trying to obtain approval for the organ transplant facility",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue FY27",
+    "value": "INR260 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "what could be a top-line target for FY27 as you have mentioned it will be INR260 crores"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "at least 22%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We definitely would like to push it to at least 22% next year."
+   },
+   {
+    "metric": "Vision 2028 revenue",
+    "value": "around INR400 crore",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "achieving revenue of around INR400 crores, and improving EBITDA margin to 23% to 25%"
+   },
+   {
+    "metric": "Bed capacity",
+    "value": "500+ beds by 2028",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "scaling overall bed capacity to 500 plus beds"
+   },
+   {
+    "metric": "PAT margin FY27",
+    "value": "13% to 15%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "you targeted for 13% to 15% of PAT for the FY27"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Bone marrow transplant unit go-live",
+    "outcome": "missed",
+    "quote": "we had communicated that it will be started in around the last quarter of 2026 financial year"
+   },
+   {
+    "metric": "Hospital merger / acquisition completion",
+    "outcome": "missed",
+    "quote": "hopefully it should be done this financial year"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Ayushman Bharat",
+    "relation": "partner"
+   },
+   {
+    "name": "Government of Jharkhand",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables aged 6-7 months, government scheme delays",
+    "quote": "with regard to aging, it is around six to seven months."
+   },
+   {
+    "label": "Cancer hospital ARPOB sharp decline and patient drop",
+    "quote": "there is a sharp decline in ARPOB during the quarter"
+   },
+   {
+    "label": "Prior timelines missed (bone marrow, acquisition)",
+    "quote": "we had communicated that it will be started in around the last quarter of 2026 financial year"
+   },
+   {
+    "label": "Promoter-linked merger stalled by unresolved share inheritance",
+    "quote": "two or three shareholders had died and the heirs have not inherited the shares"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 3,
+   "balance_sheet": 4,
+   "capex": 3,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Cancer hospital EBITDA margin and utilisation outlook",
+    "quote": "we require some number crunching, and if you could write a mail to us"
+   },
+   {
+    "topic": "Other income INR3.66 cr in March 2025",
+    "quote": "Details of other income will be mailed to you."
+   },
+   {
+    "topic": "Acquisition model and hospital identity",
+    "quote": "what exact model we will be moving ahead, that is why we have not added hospitals"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

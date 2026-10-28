@@ -1,0 +1,143 @@
+{
+ "doc_id": "IN-da807c0a-deb1-461f-979b-39da81415d07",
+ "market": "IN",
+ "company_id": "543957",
+ "name": "Redtape Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "Redtape Ltd - 543957 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.87,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q4 FY26 EBITDA 19.4% and FY26 revenue INR2,415 crore (+19.6%), but inventory still ~170 days, payables fell sharply and management was evasive on payables, margins and apparel economics.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory days ~250 → ~170, target 150",
+    "quote": "it has come down from almost 250 days to 170 days right now. And the ideal situation is to keep it to 150 days.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin shrink from rebate accounting",
+    "quote": "the gross margin, you can see the shrinkage came because of the top-line, and not basically because anything we had done differently this year.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Inventory days",
+    "value": "150 days target, 'near future'",
+    "change": "new",
+    "quote": "And the ideal situation is to keep it to 150 days. That is what we are trying to do."
+   },
+   {
+    "metric": "Store additions FY27",
+    "value": "200 to 250 stores",
+    "change": "new",
+    "quote": "We are planning to add almost 200 to 250 stores."
+   },
+   {
+    "metric": "EBITDA margin range",
+    "value": "16% to 19%",
+    "change": "new",
+    "quote": "we are taking a very safe route of saying it should always be in the 16% to 19% range"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Flipkart",
+    "relation": "customer"
+   },
+   {
+    "name": "Myntra",
+    "relation": "customer"
+   },
+   {
+    "name": "Metro",
+    "relation": "peer"
+   },
+   {
+    "name": "Bata",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Rural demand recovery",
+   "Working capital"
+  ],
+  "red_flags": [
+   {
+    "label": "Payables days cut sharply, unexplained",
+    "quote": "I think, we'll have to come back on this. We'll have to come back on this."
+   },
+   {
+    "label": "Other income ~INR133 cr from marketplace rebates",
+    "quote": "the basic component of that is the discount, rebate and discount, which you get from the e-commerce platforms."
+   },
+   {
+    "label": "Inventory ~170 days, no provisioning policy",
+    "quote": "We don't do as such any provisioning"
+   },
+   {
+    "label": "Apparel/category margin not disclosed",
+    "quote": "we have not calculated margin as per the category"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 5,
+   "capex": 1,
+   "growth": 5,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Payable days drop",
+    "quote": "I think, we'll have to come back on this. We'll have to come back on this."
+   },
+   {
+    "topic": "Apparel margin",
+    "quote": "we have not calculated margin as per the category , because everything for us is under the same umbrella."
+   },
+   {
+    "topic": "Five-year revenue target",
+    "quote": "That's a forward-looking question. We would just like to say that we will continue in the same vein"
+   },
+   {
+    "topic": "Repeat customer data",
+    "quote": "I will not be very sure about it, I ’ll not like to put my thumb on it"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

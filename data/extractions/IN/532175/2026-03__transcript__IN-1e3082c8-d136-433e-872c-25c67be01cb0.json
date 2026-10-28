@@ -1,0 +1,155 @@
+{
+ "doc_id": "IN-1e3082c8-d136-433e-872c-25c67be01cb0",
+ "market": "IN",
+ "company_id": "532175",
+ "name": "Cyient Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-01",
+ "period": "2026-03",
+ "title": "Cyient Ltd - 532175 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Engineering & R&D services",
+  "thesis": "Cyient Semiconductors raising INR300 crore (INR200cr debt, INR100cr equity) at INR4,650cr valuation; supply-side signal is capital being raised for fabless build-out, with no capacity or utilisation data and breakeven slipping to late FY27/early FY28.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital allocation shift",
+   "Working-capital stress",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 2,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Breakeven slips to late FY27/early FY28",
+    "quote": "for now, we are still looking at a breakeven late FY27, early FY28. But based on the investor conversations, we'll come back.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "novelty",
+    "label": "External funding INR300cr at INR4,650cr valuation",
+    "quote": "a total of INR300 crore s with equity valuation at INR4,650 crores from EAAA Alternatives",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Parent commitment up to $100m; ~$30m deployed",
+    "quote": "We've already put in about $30 million. So, rest of the money is available.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Semiconductor EBIT breakeven",
+    "value": "Late FY27 / early FY28",
+    "change": "cut",
+    "horizon": "FY27-FY28",
+    "quote": "for now, we are still looking at a breakeven late FY27, early FY28."
+   },
+   {
+    "metric": "Parent investment commitment",
+    "value": "Up to $100 million",
+    "change": "held",
+    "quote": "Cyient is also committed to our original investment thesis of up to $100 million"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Breakeven by FY27 and FY28",
+    "outcome": "missed",
+    "quote": "we are still looking at a breakeven late FY27, early FY28."
+   }
+  ],
+  "entities": [
+   {
+    "name": "GlobalFoundries",
+    "relation": "partner"
+   },
+   {
+    "name": "Navitas",
+    "relation": "partner"
+   },
+   {
+    "name": "MIPS",
+    "relation": "partner"
+   },
+   {
+    "name": "TSMC",
+    "relation": "supplier"
+   },
+   {
+    "name": "EAAA Alternatives",
+    "relation": "partner"
+   },
+   {
+    "name": "Kinetic Technologies",
+    "relation": "peer"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Semiconductors & OSAT",
+   "Data-centre power & cooling",
+   "Capital allocation shift"
+  ],
+  "red_flags": [
+   {
+    "label": "Debt-funded Kinetic acquisition, ~$100m on subsidiary balance sheet",
+    "quote": "That's right, 80 plus 20, 100 in total on semiconductor balance sheet."
+   },
+   {
+    "label": "Valuation 6-7x revenue, self-referenced",
+    "quote": "This valuation roughly works out to be 6x revenue to 7x revenue, depending on which revenue we consider"
+   },
+   {
+    "label": "Breakeven target softened",
+    "quote": "But based on the investor conversations, we'll come back."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "balance_sheet": 4,
+   "margin": 1,
+   "capex": 0,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Debt interest rate",
+    "quote": "We can't disclose the rate because we're still not close to deal."
+   },
+   {
+    "topic": "PAT profitability timing",
+    "quote": "I mean in the lighter vein and say we'll get to EBIT profitability first"
+   },
+   {
+    "topic": "Navitas NVIDIA orders",
+    "quote": "obviously, Navitas will be in a better position to comment for the NVIDIA side of the equation."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

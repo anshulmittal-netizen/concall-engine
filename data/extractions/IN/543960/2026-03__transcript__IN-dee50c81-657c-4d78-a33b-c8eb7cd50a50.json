@@ -1,0 +1,311 @@
+{
+ "doc_id": "IN-dee50c81-657c-4d78-a33b-c8eb7cd50a50",
+ "market": "IN",
+ "company_id": "543960",
+ "name": "Concord Biotech Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-05",
+ "period": "2026-03",
+ "title": "Concord Biotech Ltd - 543960 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "FY26 API revenue fell 12% to INR 829 crore with utilisation uneven (Unit 2 at 30%, Unit 3 at 53%); management attributes it to timing and geopolitics, but gives no numeric FY27 guidance beyond \"slightly better\" than ~18% historical growth.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 53,
+   "quote": "the capacity utilization for the Unit 1 was 77%, Unit 2 was 30% and Unit 3 is \naround 53%"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "General capex is around to the tune of INR 20 crores, INR 30 crores. And as of now, there is no particular requirements per se."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Unit 2 utilisation only 30%",
+    "quote": "Unit 2 was 30% and Unit 3 is around 53%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory days 286 → 480",
+    "quote": "the inventory days have gone up to 480 days versus 286 days last year",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "No price growth in FY26 API",
+    "quote": "there has been no price growth for us. So all the volumes",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth slightly above ~18% history",
+    "quote": "we expect it to be slightly better off is how we are looking at this financial year",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "slightly better than historical ~18%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect it to be slightly better off is how we are looking at this financial year"
+   },
+   {
+    "metric": "Operating leverage / energy savings EBITDA",
+    "value": "1% to 1.5% EBITDA from power savings",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect around 1% to 1.5% positive impact on the EBITDA"
+   },
+   {
+    "metric": "Maintenance capex",
+    "value": "INR 20-30 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "General capex is around to the tune of INR 20 crores, INR 30 crores."
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "No guidance given",
+    "change": "dropped",
+    "horizon": "FY27",
+    "quote": "we have not given any guidance on the EBITDA"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Stellon Biotech",
+    "relation": "peer"
+   },
+   {
+    "name": "Celliimune Biotech",
+    "relation": "partner"
+   },
+   {
+    "name": "CDSCO",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Tariffs & trade policy",
+   "Pharma CDMO / outsourcing",
+   "China+1 enquiries → orders"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory days up to 480 from 286",
+    "quote": "the inventory days have gone up to 480 days versus 286 days last year"
+   },
+   {
+    "label": "Unit 2 utilisation 30%",
+    "quote": "Unit 2 was 30% and Unit 3 is around 53%"
+   },
+   {
+    "label": "Middle East tender in abeyance, US VA tender on hold",
+    "quote": "A major tender in the region remains in abeyance, which adversely impacted our revenues during the year."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 4,
+   "growth": 5,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Breakeven timing for Stellon and injectables",
+    "quote": "from a breakeven perspective, it's a little too early for me to say"
+   },
+   {
+    "topic": "Loss amount recovery in FY27",
+    "quote": "a little early for me to say"
+   },
+   {
+    "topic": "Middle East tender timing",
+    "quote": "nobody has that clarity, not even us"
+   }
+  ],
+  "hedge_index": 0.5
+ },
+ "summary": {
+  "headline": "Concord Biotech FY26 revenue fell 12% to a level where API sales were INR 829 crores, with management guiding to growth slightly above its ~18% historical rate in FY27.",
+  "overview": "FY26 was a difficult year: revenue declined about 12% and Q4 revenue fell 24% YoY, driven by a roughly three-month CDSCO-related halt in European supplies, a Middle East tender held in abeyance, and a US Veterans Affairs tender on hold. Management attributes the shortfall to timing rather than demand, pricing or market share loss, and says deferred volumes are spilling into FY27. Profitability held up better than revenue: reported FY26 EBITDA was INR 367 crores at about 35%, and PAT fell 30% to INR 260 crores. The company remains debt-free with over INR 414 crores of cash.",
+  "segments": [
+   {
+    "name": "API",
+    "commentary": "FY26 API revenue INR 829 crores (-12%); Q4 INR 264 crores (-27%). Management said there was no price growth and the decline was volume-driven. Anti-infectives and oncology are expected to grow faster than immunosuppressants in FY27."
+   },
+   {
+    "name": "Formulations",
+    "commentary": "Revenue fell about 13% in FY26 and 8% in Q4, mainly from the European halt and Middle East formulation tender. Management says the domestic and US formulation businesses grew."
+   },
+   {
+    "name": "Injectables (new facility)",
+    "commentary": "Expenses of about INR 38-39 crores in FY26 (about INR 10 crores per quarter). WHO-GMP certified; filings are under way with Southeast Asia and Africa as first targets. Management said full breakeven is more likely in FY27."
+   },
+   {
+    "name": "Stellon Biotech (US subsidiary)",
+    "commentary": "Set up in FY26 with licences for direct US marketing. Management expects first supplies in H1 FY27 with orders already in place, and expenses were fully booked in FY26."
+   },
+   {
+    "name": "CDMO",
+    "commentary": "Management classes only third-party IP work as CDMO; it expects 1-4% of FY26 revenue, with one advanced-stage opportunity that could change this."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 growth expected to be slightly better than the historical ~18% rate, with visibility in H1 and growth expected from Q1-Q2.",
+   "No formal EBITDA margin guidance. Management cited a 1-1.5% EBITDA tailwind from solar/renewable power, partly offset by higher LPG and furnace oil costs.",
+   "Gross margin expected to be in a similar range to historical levels for the full year.",
+   "API:formulation mix expected around 80:20 with a plus or minus 2-3% range.",
+   "Capex guided at INR 20-30 crores per year maintenance. A smaller topical facility may come in FY27; larger capex only for new customer projects.",
+   "Working capital intensity expected to be in line with historical levels; inventory days should normalise in FY27 H1."
+  ],
+  "capex_capacity": [
+   "Unit 1 is at optimal utilisation at 77%; Unit 2 at 30%; Unit 3 at about 53% (close to 50%).",
+   "Unit 4 expected to reach breakeven by next year.",
+   "Four units support peak revenue potential of about INR 3,000 crores.",
+   "FY26 capex of INR 65 crores included the soft gel facility and modifications for a larger-volume innovator project; CWIP is INR 79.3 crores.",
+   "Management expects another INR 50-100 crore capex cycle in 2-3 years and anything above INR 100 crores in 4-5 years."
+  ],
+  "demand_pricing": [
+   "Customers shifted from bulk buying to staggered quarterly procurement in H2 FY26, pushing revenue into later quarters.",
+   "Management says there is no pricing pressure on new second-source launches (Nystatin, Fusidic Acid); some mature products face price pressure from certain customers, offset by new regions.",
+   "Middle East exposure is about INR 50 crores at company level. The major tender was about INR 25 crores (formulation) and remains in abeyance; API supplies to the region are gradually resuming.",
+   "US Veterans Affairs tender not finalised and remains on hold; exposure was about INR 25 crores.",
+   "Fuel supply shortages in April 2026 were resolved, but LPG and furnace oil prices remain higher; about 10% of total costs are LPG or furnace oil based.",
+   "Commenced supplies of APIs to 2 innovator companies; 2 CDMO opportunities in discussion."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Is there visibility on FY27 growth starting in H1, and what size is the growth?",
+    "answer": "Management said there is a fair amount of visibility in H1 and expects FY27 growth slightly better than the historical ~18%, starting from Q1-Q2."
+   },
+   {
+    "question": "What is the Middle East exposure and tender size?",
+    "answer": "The tender was about INR 25 crores, mostly formulation. Total current Middle East exposure is about INR 50 crores at company level, with API supplies gradually building up."
+   },
+   {
+    "question": "What is the contribution of the injectable and Stellon losses?",
+    "answer": "Injectable expenses were about INR 38-39 crores for FY26, roughly INR 10 crores a quarter. Stellon costs were fully booked in FY26; management said full breakeven for both is more likely in FY27."
+   },
+   {
+    "question": "Why did inventory days rise to 480 from 286?",
+    "answer": "Management cited staggered customer procurement, shipments pushed into Q1-Q2 FY27, and higher fermentation utilisation with longer cycles. It expects this to moderate in the first half."
+   },
+   {
+    "question": "Is the formulation inventory at risk of write-off?",
+    "answer": "Management said it does not hold formulation inventory for the Middle East because of shelf-life issues; inventory is mainly API, so write-off risk is low."
+   },
+   {
+    "question": "What is the FY27 capex plan and CWIP of INR 79.3 crores?",
+    "answer": "Maintenance capex is INR 20-30 crores a year. CWIP reflects soft gel and modifications for an innovator project; no major growth capex is planned in H1 FY27."
+   }
+  ],
+  "risks_watch": [
+   "Recovery depends on Middle East tender timing and the geopolitical situation; management said it has no clarity on timing.",
+   "US Veterans Affairs tender remains on hold with no timeline.",
+   "Injectable and Stellon breakeven timing is uncertain; management declined to quantify.",
+   "Inventory days rose to 480 from 286, with INR 326 crore of inventory versus INR 240 crore; the company expects this to normalise in H1 FY27.",
+   "Fuel costs (LPG and furnace oil) remain elevated and could offset the 1-1.5% power savings.",
+   "CDMO contribution is small (1-4%) and depends on the pending advanced-stage opportunity."
+  ],
+  "management_tone": "Management was confident about FY27 recovery but cautious on specifics: it declined to give EBITDA guidance or a breakeven date for new units, and repeatedly tied the outlook to H1 visibility. Explanations for the miss were detailed and consistent, though the timing-versus-demand argument rests on deferred volumes that have not yet shown up in revenue.",
+  "key_quotes": [
+   "So we have a very good amount of visibility in the first half.",
+   "It is important to note, however, that this was not a case of pent-up demand where all deferred supplies could be immediately executed upon resumption.",
+   "The factors mentioned above were largely beyond our control and were not related to lower demand, loss of market share or pricing pressure.",
+   "So all the expenses that have been there for these 2 entities have been fully booked in the last financial year."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "API revenue Q4 FY26",
+    "value": "INR 264 crores",
+    "change": "-27% YoY"
+   },
+   {
+    "metric": "API revenue FY26",
+    "value": "INR 829 crores",
+    "change": "-12% YoY"
+   },
+   {
+    "metric": "Formulation revenue",
+    "value": "Q4 FY26 and FY26 degrowth of about 8% and 13% respectively",
+    "change": "-8% Q4, -13% FY"
+   },
+   {
+    "metric": "Total revenue degrowth",
+    "value": "Q4 FY26 -24%, FY26 -12%",
+    "change": ""
+   },
+   {
+    "metric": "Export vs domestic split",
+    "value": "FY26 53:47 domestic:export; Q4 52:48",
+    "change": "Exports -9% FY26; domestic -15% FY26"
+   },
+   {
+    "metric": "API:formulation mix",
+    "value": "About 80:20",
+    "change": "Within long-term range"
+   },
+   {
+    "metric": "Reported EBITDA FY26",
+    "value": "INR 367 crores, margin about 35%",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA margin excl. injectable and Stellon costs",
+    "value": "About 40.4% Q4 and 39% FY26",
+    "change": ""
+   },
+   {
+    "metric": "Profit after tax FY26",
+    "value": "INR 260 crores",
+    "change": "-30% YoY"
+   },
+   {
+    "metric": "Cash from operations FY26",
+    "value": "INR 267 crores, CFO/EBITDA about 73%",
+    "change": ""
+   },
+   {
+    "metric": "Capex FY26",
+    "value": "INR 65 crores",
+    "change": ""
+   },
+   {
+    "metric": "Cash and equivalents",
+    "value": "More than INR 414 crores at 31 March 2026; zero debt",
+    "change": ""
+   }
+  ]
+ }
+}

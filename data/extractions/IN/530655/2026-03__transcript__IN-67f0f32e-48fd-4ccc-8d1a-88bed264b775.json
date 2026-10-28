@@ -1,0 +1,352 @@
+{
+ "doc_id": "IN-67f0f32e-48fd-4ccc-8d1a-88bed264b775",
+ "market": "IN",
+ "company_id": "530655",
+ "name": "Goodluck India Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-03",
+ "period": "2026-03",
+ "title": "Goodluck India Ltd - 530655 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Industrial utilities & steam",
+  "thesis": "Q4 FY26 consol revenue flat-to-down with PAT up 34%, but FY26 revenue growth only ~4% vs 15-20% guided, working capital debt up to INR1,000 crores and inventory days rising; capex overrun unreconciled.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": -2,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -2
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 94,
+   "quote": "for this year, capacity utilization has been 94%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we have already added Defense vertical to be part of new global arms race"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory days rising, not normalised",
+    "quote": "It has not normalized so far, but we hope, with all the paper statements, that it will normalize",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 revenue growth 4-5% vs 15-20% guided",
+    "quote": "you had guided of 15% to 20% revenue growth, whereas we have fully achieved around 4% to 5%",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "supply",
+    "label": "Defence shell capacity 1.5 lakh → 4 lakh",
+    "quote": "augmenting the capacity to 4 lakh shells",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Shell price guidance withheld",
+    "quote": "we want to avoid giving these pric es, because it all depends on the supply and demand",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Defence FY27 execution INR250-300 crores",
+    "quote": "they are expecting almost INR250 crores to INR300 crores. So, I agree to that view.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 consolidated revenue growth",
+    "value": "14-15%",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "we still hope that we can be at the lower or 14%, 15% growth we still hope that we will get"
+   },
+   {
+    "metric": "Defence FY27 execution",
+    "value": "75-80% of 150,000 shell capacity; INR250-300 crores revenue",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect almost 75% to 80% execution this year"
+   },
+   {
+    "metric": "Defence EBITDA margin",
+    "value": "30-35%",
+    "change": "held",
+    "horizon": "FY27 onward",
+    "quote": "what the guidance we have given of 30%, 35%, it will prevail"
+   },
+   {
+    "metric": "Steel volume growth",
+    "value": "13-15%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "our volume growth, it will be 13% to 15% band in this coming financial year for the steel business"
+   },
+   {
+    "metric": "Capacity addition 5 lakh to 6 lakh MT",
+    "value": "40,000-45,000 t in FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "in the coming financial year, we will be doing almost 40,000 to 45,000 ton capacity addition"
+   },
+   {
+    "metric": "Debt repayment",
+    "value": "INR54 crores FY26; INR51 crores FY28",
+    "change": "new",
+    "horizon": "FY26-FY28",
+    "quote": "FY26, during current financial year, it will be INR54 crores. And again, financial year '28, it would be INR51 crores"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revenue growth 15-20%",
+    "outcome": "missed",
+    "quote": "you had guided of 15% to 20% revenue growth, whereas we have fully achieved around 4% to 5%"
+   },
+   {
+    "metric": "FY26 capex INR250 crores",
+    "outcome": "missed",
+    "quote": "we have been guiding for INR250 crores of capex at the consol level, and your cash flow shows INR350 crores"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Goodluck Astra Limited",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Renewables & storage",
+   "Anti-dumping protection",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital debt rising to INR1,000 crores",
+    "quote": "Debt has increased. Our working capital has increased"
+   },
+   {
+    "label": "Inventory build; realisations slowed",
+    "quote": "our inventory has increased, our realization has slowed down, and it is beyond our control"
+   },
+   {
+    "label": "Defence EBITDA 68-70% in first year, not sustainable",
+    "quote": "the EBITDA margins of 68% or 70%, these are not long sustaining"
+   },
+   {
+    "label": "Repeated evasion on capex, shell pricing, net debt, reconciliations",
+    "quote": "I will ask my team to connect to you, because you are asking for numbers"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 3,
+   "growth": 5,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Shell pricing and margins on new order",
+    "quote": "we want to avoid giving these pric es, because it all depends on the supply and demand"
+   },
+   {
+    "topic": "Capex reconciliation (INR340cr vs 250 guided)",
+    "quote": "I hope, you please check your figure"
+   },
+   {
+    "topic": "Defence segment numbers",
+    "quote": "these numbers, I hope, on this platform we should not discuss. My team will discuss with you"
+   },
+   {
+    "topic": "Inventory normalisation timing",
+    "quote": "Not yet. It has not normalized so far"
+   }
+  ],
+  "hedge_index": 0.8
+ },
+ "summary": {
+  "headline": "Goodluck India Q4 FY26 consolidated EBITDA margin above 10% and PAT up 34% YoY to over INR56 crore, while FY27 growth guidance was trimmed to 14-15%.",
+  "overview": "Q4 FY26 consolidated revenue was about INR1,097 crore, with management citing EBITDA margins above 10% and PAT up 34% YoY to over INR56 crore. Standalone Q4 sales fell to INR1,061.46 crore from INR1,104.62 crore, while standalone Q4 EBITDA rose 11.7% to INR104.19 crore. FY26 revenue growth of about 4% to 5% fell well short of the earlier 15-20% guidance, which management blamed on lower HRC prices and the West Asia conflict disrupting dispatches. Defence (artillery shells) began production in Jan-Feb 2026 after licensing in October 2025 and contributed about INR46 crore revenue and INR29 crore EBITDA in FY26, a margin inflated by start-up depreciation and interest per management.",
+  "financial_highlights": [
+   {
+    "metric": "Q4 FY26 consolidated revenue",
+    "value": "about INR1,097 crore",
+    "change": ""
+   },
+   {
+    "metric": "Q4 FY26 standalone sales",
+    "value": "INR1,061.46 crore",
+    "change": "vs INR1,104.62 crore in Q4 FY25 (down about 4%)"
+   },
+   {
+    "metric": "Q4 FY26 standalone EBITDA",
+    "value": "INR104.19 crore",
+    "change": "up 11.70% vs INR93.25 crore"
+   },
+   {
+    "metric": "Q4 FY26 standalone PAT (incl. OCI)",
+    "value": "INR48.53 crore",
+    "change": "vs INR42.12 crore"
+   },
+   {
+    "metric": "Q4 FY26 consolidated PAT",
+    "value": "over INR56 crore",
+    "change": "up 34% YoY"
+   },
+   {
+    "metric": "FY26 standalone sales",
+    "value": "INR4,067.71 crore",
+    "change": "up 3.4% vs INR3,935.89 crore"
+   },
+   {
+    "metric": "FY26 standalone EBITDA",
+    "value": "INR395.80 crore",
+    "change": "up 21% vs INR326.79 crore"
+   },
+   {
+    "metric": "FY26 standalone PAT",
+    "value": "INR173.44 crore",
+    "change": "up about 7% vs INR161.74 crore"
+   },
+   {
+    "metric": "FY26 consolidated total income",
+    "value": "INR4,100.25 crore",
+    "change": "up 4.2%"
+   },
+   {
+    "metric": "FY26 consolidated EBITDA",
+    "value": "INR418.49 crore",
+    "change": "up about 26% vs INR332.16 crore"
+   },
+   {
+    "metric": "FY26 consolidated PAT",
+    "value": "INR182.58 crore",
+    "change": "up 10.2%"
+   },
+   {
+    "metric": "FY26 consolidated EPS",
+    "value": "INR56.07",
+    "change": "vs INR50.66 (up 10.7%)"
+   },
+   {
+    "metric": "Net debt as on March 2026",
+    "value": "about INR1,000 crore (working capital loans INR800 crore, term loan INR200 crore), cash and bank about INR50 crore",
+    "change": ""
+   },
+   {
+    "metric": "FY26 capex (as queried)",
+    "value": "INR340 crore per analyst; management said capex/WIP about INR232 crore",
+    "change": "vs INR250 crore guidance"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Defence (artillery shells, Goodluck Defence)",
+    "commentary": "FY26 revenue about INR46 crore and EBITDA about INR29 crore; capacity 150,000 shells with 75-80% execution targeted in FY27 (INR250-300 crore revenue indicated). Capacity expansion to 400,000 shells is planned at about INR400 crore capex, not yet started."
+   },
+   {
+    "name": "Steel / legacy businesses",
+    "commentary": "Management cited FY26 production growth of about 11% against sales growth of about 5%, and 94% overall capacity utilisation. Standalone capacity is about 5 lakh tonnes, with a target of 6 lakh tonnes within 9-12 months."
+   },
+   {
+    "name": "Hydraulic tubes (construction equipment)",
+    "commentary": "Utilisation was about 50% in FY26, targeted at 65-70% in FY27 with the ramp-up in progress."
+   },
+   {
+    "name": "Solar structures and GI conduit / front fork tubes",
+    "commentary": "Solar sales rose 33% in FY26 with utilisation still low. Conduit pipe EBITDA guided at 15-20% (mainly US exports) and front fork tubes at 15-16%, with 35,000-45,000 tonnes of added capacity in FY27."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue growth guided at about 14-15% (earlier 15-20%), with management hopeful but conditional on West Asia conflict easing.",
+   "Defence EBITDA margin guided at 30-35% once volumes are sufficient, though management said FY26's margin was not sustainable.",
+   "Gross margin said to be sustainable (analyst cited about 27-28% to about 33% YoY improvement).",
+   "FY27 steel volume growth guided at 13-15%, with the West Asia crisis expected to be resolved.",
+   "Capacity addition of about 40,000-45,000 tonnes in FY27 (GI conduit and front fork tubes), with total capacity of 6 lakh tonnes targeted this financial year.",
+   "Term-loan repayments of INR54 crore in FY26 and INR51 crore in FY28. FY27 capex guidance deferred to next quarter."
+  ],
+  "capex_capacity": [
+   "Defence shell capacity: 150,000 shells currently, with expansion to 400,000 shells under consideration at about INR400 crore capex. Management said it has not started and timing could slip to FY28.",
+   "Standalone steel capacity about 5 lakh tonnes, aiming for 6 lakh tonnes via GI conduit pipe and front fork tube lines (9-12 months).",
+   "Hydraulic tube utilisation about 50% in FY26, targeted at 65-70% in FY27.",
+   "FY26 overall capacity utilisation 94%; segment-wise figures not disclosed on the call.",
+   "Management said the capex spent in FY26 was mainly WIP of about INR232 crore, with the balance mostly machining capex, and that the major capex is still to come."
+  ],
+  "demand_pricing": [
+   "Management said defence demand is very strong and supply-constrained, citing ReArm Europe, ReArm Gulf and Replenish US, with market demand estimated at 8-9 million shells against 2-3 million new supply.",
+   "A recent order of about 20,000 shells was reported in the press at about INR26,100 per shell; management declined to confirm or guide on pricing.",
+   "Steel prices fell from April 2025 to April 2026 per management, though an analyst noted HRC rose from about INR48,000 to INR58,000 per tonne between December 2025 and May 2026.",
+   "West Asia conflict raised consumable costs; management said pass-through takes 1-2 quarters. Exports slowed by about 5-10% due to longer transit times.",
+   "Raw material (HRC) shortage in March-April reportedly persists, per management."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What was FY26 defence revenue and EBITDA, and why is the margin so high?",
+    "answer": "Revenue was INR46 crore and EBITDA INR29 crore. Management attributed the high margin to start-up depreciation and interest being booked over only 2-3 months of production, with material stuck at port. It said 30-35% margins are the sustainable guidance."
+   },
+   {
+    "question": "Will the FY27 steel business grow, given utilisation near 95%?",
+    "answer": "Management said capacity is being added via GI conduit pipe and front fork tube lines, taking capacity to 6 lakh tonnes in 9-12 months, so volume growth of 13-15% is expected in steel."
+   },
+   {
+    "question": "Why did FY26 revenue grow only 4-5% against the 15-20% guidance?",
+    "answer": "Management said lower steel prices from April 2025 to April 2026 hurt realisation, and the West Asia conflict disrupted dispatches in March. FY27 guidance was trimmed to 14-15%."
+   },
+   {
+    "question": "Why did capex and debt rise above guidance?",
+    "answer": "Management disputed the INR340 crore capex figure, citing WIP of about INR232 crore. Debt rose because working capital increased from slower realisations and inventory build-up in the domestic glut."
+   },
+   {
+    "question": "What is the net debt and repayment schedule?",
+    "answer": "Net debt about INR1,000 crore at March 2026 (INR800 crore working capital, INR200 crore term loan) against about INR50 crore cash. Term-loan repayments are INR54 crore in FY26 and INR51 crore in FY28."
+   },
+   {
+    "question": "What EBITDA margin is expected for conduit pipes and front fork tubes?",
+    "answer": "Management said conduit pipe margins are normally 15-25% and planning should use 15-20%. Front fork tube margins were put at 15-16%."
+   },
+   {
+    "question": "Will the West Asia crisis hit Q1 FY27 and margins?",
+    "answer": "Management said it is premature to call Q1. It expects margins to hold through product and market reshuffling, with a possible 5-10% export impact that could resolve within weeks."
+   }
+  ],
+  "risks_watch": [
+   "Capex disclosure and reconciliation: management gave conflicting capex and segment revenue figures (INR232 crore WIP versus INR340 crore cash flow; INR33 crore consolidated-minus-standalone versus INR46 crore defence).",
+   "Working capital and inventory days have risen and management said normalisation is not yet visible, pushing debt higher.",
+   "Defence margin sustainability: FY26 margin was flattered by start-up costs, and the guided 30-35% has not yet been demonstrated.",
+   "Timing of the 400,000-shell expansion (about INR400 crore) and of the 6 lakh tonne steel capacity.",
+   "Management declined to give shell pricing or margin on the recent order, and deferred the defence IPO and subsidiary questions to separate channels."
+  ],
+  "management_tone": "Confident and forward-looking on defence demand and long-term margin goals, but evasive on specifics. Management often deferred numbers to the IR team, declined to guide on shell pricing and the IPO, and gave conflicting figures on capex and segment revenue.",
+  "key_quotes": [
+   "So the EBITDA margins of 68% or 70%, these are not long sustaining.",
+   "Demand is so much at this time.",
+   "Gross margin will be sustained. It is a sustainable margin, what we have given.",
+   "Supply will always be constrained. In next 4, 5 years, my perception is, supply will be constrained. Demand will not be a problem."
+  ]
+ }
+}

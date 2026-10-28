@@ -1,0 +1,141 @@
+{
+ "doc_id": "IN-b7e5eb0c-9dba-4dc5-af56-06c0ea917261",
+ "market": "IN",
+ "company_id": "543271",
+ "name": "Jubilant Ingrevia Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-29",
+ "period": "2026-03",
+ "title": "Jubilant Ingrevia Ltd - 543271 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 FY26 record revenue Rs 1,179 crore (+12% YoY) and EBITDA Rs 172 crore, led by Specialty; supply discipline is not discussed, while acetyls spreads face a likely inventory-driven fall after Q1.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Supply exit",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 90,
+   "quote": "we run our plants at 90% plus utilization levels"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Chinese Pyridine plants run at 30%, 40% utilization levels",
+   "quote": "we will continue with the range of Rs. 400 crore to Rs. 500 crore of yearly capex"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Pyridine capacity 90%+ utilised; China 30-40%",
+    "quote": "The plants in China typically run at 30%, 40% utilization levels",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Acetic acid prices falling; acetyls spreads to normalise",
+    "quote": "we are already seeing acetic acid prices coming down",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "EBITDA growth at least 20% YoY FY27",
+    "quote": "we aspire to get at least 20% year-on-year growth in EBITDA on the full year basis",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Big agro contract visibility only for Q1",
+    "quote": "So far, they gave us the visibility for first quarter of volumes",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year EBITDA growth",
+    "value": "at least 20% YoY",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we will stick to our overall guidance of achieving at least 20% growth in EBITDA through the year"
+   },
+   {
+    "metric": "Annual capex",
+    "value": "Rs 400-500 crore",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we will continue with the range of Rs. 400 crore to Rs. 500 crore of yearly capex"
+   },
+   {
+    "metric": "Specialty Chemicals sustainable EBITDA margin",
+    "value": "23-25% post corporate overheads",
+    "change": "held",
+    "horizon": "ongoing",
+    "quote": "the sustainable margin for our Specialty Chemical portfolio as a whole should be between 23% to 25%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Remidex Pharma",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Specialty chem destocking end",
+   "Pharma CDMO / outsourcing",
+   "China+1 enquiries → orders",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Agro CDMO customer volume visibility limited to Q1",
+    "quote": "So far, they gave us the visibility for first quarter of volumes"
+   },
+   {
+    "label": "Acetyls inventory gain likely to reverse",
+    "quote": "whatever inventory impact has to come, we will be able to nullify within this quarter or at best in the early part of next quarter"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 6,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Quarterly EBITDA growth quantification",
+    "quote": "So that is why we do not give that guidance."
+   },
+   {
+    "topic": "$300m contract volumes for FY27",
+    "quote": "We are discussing with them about various volume scenarios for rest of the year."
+   },
+   {
+    "topic": "Rupee benefit on CDMO contract",
+    "quote": "it will not be just as linear, as you said"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

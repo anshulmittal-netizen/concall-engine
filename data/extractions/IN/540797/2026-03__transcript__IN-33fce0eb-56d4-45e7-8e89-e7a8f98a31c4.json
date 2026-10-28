@@ -1,0 +1,162 @@
+{
+ "doc_id": "IN-33fce0eb-56d4-45e7-8e89-e7a8f98a31c4",
+ "market": "IN",
+ "company_id": "540797",
+ "name": "Shalby Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "Shalby Ltd - 540797 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Shalby's Q4 FY26 consolidated EBITDA rose 43% to INR37.4 crore on a 9.4% revenue gain, but standalone EBITDA fell and PAT was lifted mainly by a tax-regime change, not operations.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Management change",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 48,
+   "quote": "with an overall occupancy of 48%"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we do not see a large spending coming into the FY '27 and onwards"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Occupancy 48% group, 50% ex-Intl",
+    "quote": "with an overall occupancy of 48%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "International revenue fell YoY",
+    "quote": "the Middle East impacting our little off par operations",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "FY26 capex about INR160 crore; FY27 spend expected lower",
+    "quote": "we do not see a large spending coming into the FY '27 and onwards",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Franchise rollout slowed from 50-unit plan",
+    "quote": "it seems like we may not be able to do it as aggressively as we had planned earlier",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Hospital revenue growth",
+    "value": "minimum 15% CAGR long term",
+    "change": "new",
+    "horizon": "long term",
+    "quote": "we are looking at sustainable growth of minimum 15% as a CAGR"
+   },
+   {
+    "metric": "Implant revenue 2030",
+    "value": "INR600-650 crore",
+    "change": "new",
+    "horizon": "FY30",
+    "quote": "we are looking at somewhere close to INR600 crores to INR650 crores from a top line standpoint"
+   },
+   {
+    "metric": "Franchise rollout",
+    "value": "not quantified; slower than earlier plan",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "it seems like we may not be able to do it as aggressively as we had planned earlier"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Curexo",
+    "relation": "partner"
+   },
+   {
+    "name": "Shri Vaishnav Vidyapeeth",
+    "relation": "partner"
+   },
+   {
+    "name": "CGHS",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Medical devices"
+  ],
+  "red_flags": [
+   {
+    "label": "PAT inflated by tax change",
+    "quote": "Our consolidated PAT stands at INR18.5 crores with a PAT margin of 6.2% as against loss of INR12.2 crores in the Q4 '25."
+   },
+   {
+    "label": "Standalone EBITDA down YoY",
+    "quote": "Our standalone EBITDA stands at INR37.1 crores as against INR38 crores in Q4 '25."
+   },
+   {
+    "label": "Gross margin fell ~90% to ~85%, unexplained",
+    "quote": "there has been a slight decrease by the reasons of the new doctors which we are recruiting"
+   },
+   {
+    "label": "Evasive on FY27 margin, debt and guidance",
+    "quote": "It would not be -- that we are restricted to comment on the numbers"
+   },
+   {
+    "label": "Borrowings rising; net debt INR446.2 crore group",
+    "quote": "with a net debt of INR446.2"
+   },
+   {
+    "label": "Implant business EBITDA only just positive",
+    "quote": "we still have some distance to go to get it into a double-digit EBITDA"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 6,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "FY27/FY28 consolidated EBITDA margin and debt levels",
+    "quote": "It would not be -- that we are restricted to comment on the numbers"
+   },
+   {
+    "topic": "Shalby International EBITDA breakeven timeline",
+    "quote": "by the restriction, we cannot comment on the timeline"
+   },
+   {
+    "topic": "FY27 guidance",
+    "quote": "So mostly, I have covered as to the measures which we have taken on various fronts"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

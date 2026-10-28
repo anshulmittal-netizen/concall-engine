@@ -1,0 +1,177 @@
+{
+ "doc_id": "IN-454eb7a5-8d90-41df-9526-2338a7cf9a26",
+ "market": "IN",
+ "company_id": "544532",
+ "name": "Solarworld Energy Solutions Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "Solarworld Energy Solutions Ltd - 544532 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical contracting",
+  "thesis": "Solar EPC-plus-module integrator guides FY27 revenue near INR2,000 crore (70% of INR2,800 crore order book) with margins 8–11%, but module line utilisation is only ~40–45% on captive orders and the cell line is not until June 2027.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 40,
+   "quote": "that will give me a utilization of maybe close to about 40%, 45%. As we add more orders, I think we should expect a 60%, 65% utilization for that line."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said other manufacturers are setting up capacity for DCR cells, and ALMM-2 cell shortage expected for 6-12 months.",
+   "quote": "other manufacturers are definitely setting up capacities as well"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Module line utilisation ~40-45% on captive orders",
+    "quote": "that will give me a utilization of maybe close to about 40%, 45%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Margin range cut to 8-11% from prior 11% PAT",
+    "quote": "So we would say somewhere between 8% to 11% is where we should lie in terms of overall margins.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Copper up ~40%, aluminium ~50% vs Oct 2025",
+    "quote": "copper compared to October 2025, copper is maybe up by about 40%. Aluminum is up by about 50%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue ~INR2,000 crore",
+    "quote": "maybe close to INR2,000 crores in the current -- in FY27.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Cell line delayed to June 2027",
+    "quote": "The commercial operation is targeted by June 2027.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue from order book",
+    "value": "~INR2,000 crore (70% of INR2,800 crore order book)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "maybe close to INR2,000 crores in the current -- in FY27."
+   },
+   {
+    "metric": "EBITDA/PAT margin",
+    "value": "8% to 11%",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "So we would say somewhere between 8% to 11% is where we should lie in terms of overall margins."
+   },
+   {
+    "metric": "BESS revenue",
+    "value": "INR800-1,000 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "It should go to about, maybe close to about INR800 crores to INR1,000 crores this year."
+   },
+   {
+    "metric": "Module line break-even utilisation",
+    "value": "30-35%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I would say that we achieve a break-even maybe at about a 30%, 35% utilization on that line."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue INR1,500 crore with 11% PAT margin (promised in Q1)",
+    "outcome": "missed",
+    "quote": "in Q1, we had promised that you'd give us a 1500-floor top line with an 11% PAT margin."
+   },
+   {
+    "metric": "Cell line operational Dec 2026-Jan 2027",
+    "outcome": "missed",
+    "quote": "we have decided that this line will start by June 2027 commercially."
+   }
+  ],
+  "entities": [
+   {
+    "name": "NTPC REL",
+    "relation": "customer"
+   },
+   {
+    "name": "NTPC",
+    "relation": "customer"
+   },
+   {
+    "name": "SJVN",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Battery energy storage (BESS)",
+   "ALMM / DCR cell mandate",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Missed prior top-line and margin promise",
+    "quote": "in Q1, we had promised that you'd give us a 1500-floor top line with an 11% PAT margin."
+   },
+   {
+    "label": "SJVN receivables and claims unrecognised",
+    "quote": "we are entitled to various kind of claims like idling charges, interest charges on delayed payment and loss of profit charges."
+   },
+   {
+    "label": "Cell line funds unspent, timeline slipped",
+    "quote": "we have not spent anything from the funds which we have raised for solar cell."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 4,
+   "growth": 8,
+   "margin": 6,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Quarterly revenue ramp H1/H2",
+    "quote": "Very difficult to predict, but we'll try to achieve what we are seeing over the year."
+   },
+   {
+    "topic": "FY27 order inflow",
+    "quote": "Sir I really can't predict that."
+   },
+   {
+    "topic": "DCR module demand volume",
+    "quote": "I would not be able to answer that question very correctly."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

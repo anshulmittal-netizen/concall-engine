@@ -1,0 +1,157 @@
+{
+ "doc_id": "IN-3b63f152-ae91-4d27-981d-82cd0b59d57b",
+ "market": "IN",
+ "company_id": "544340",
+ "name": "Rikhav Securities Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "Rikhav Securities Ltd - 544340 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Weak H2 FY26 with PAT of INR1.20 crore and EBITDA of INR6.57 crore after cash-market share losses of INR20-23 crore; management guides FY27 brokerage growth of about 20% and offers little new capacity-discipline evidence.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": -1,
+   "demand": -2,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Cash-market investment cut by INR50 crore",
+    "quote": "we have reduced the investment in shares to the extent of INR50 crores and we planning to reduce investment in shares of another INR50 crores",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Retail and HNI brokerage slack for six months",
+    "quote": "retail and HNI also, there is a slack in the market, so it is a very difficult to improve the brokerage in the last six months",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 brokerage growth about 20%",
+    "quote": "We expect around 20% growth in brokerage and the cliental and around 20% to 25% growth in the algo trading and delta hedging income",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue about INR40 crore",
+    "quote": "March 27, it is a full year around INR40 crores",
+    "direction": 1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 brokerage growth",
+    "value": "around 20%",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY27 algo trading and delta hedging income growth",
+    "value": "20% to 25%",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY27 full-year revenue",
+    "value": "around INR40 crores",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "Cash market investment cap",
+    "value": "not more than INR50 crores this year",
+    "change": "new",
+    "horizon": "FY27"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Kotak Mutual Fund",
+    "relation": "customer"
+   },
+   {
+    "name": "Bank of India",
+    "relation": "customer"
+   },
+   {
+    "name": "RBL Bank",
+    "relation": "customer"
+   },
+   {
+    "name": "SBI",
+    "relation": "customer"
+   },
+   {
+    "name": "LIC",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capital allocation shift"
+  ],
+  "red_flags": [
+   {
+    "label": "Cash-market share losses INR20-23 crore",
+    "quote": "loss from cash market shares of old investment, to be amounting to around INR20 crores to INR23 crores"
+   },
+   {
+    "label": "Unrecognised SLBM profit INR4.33 crore",
+    "quote": "unrealized profit of INR4.33 crores from SLBM transactions has not been recognized in financial statements"
+   },
+   {
+    "label": "Inconsistent revenue explanations, evasive on questions",
+    "quote": "You send me this query specifically via email, I will reply to you in writing."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 3,
+   "margin": 3,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Revenue jump / stock-in-trade purchases",
+    "quote": "You send me this query specifically via email, I will reply to you in writing."
+   },
+   {
+    "topic": "SME inventory exposure filters",
+    "quote": "That we are ascertaining. But the market condition is such that even good company doesn't have the returns just now."
+   },
+   {
+    "topic": "Delay-assisted execution share",
+    "quote": "That figure is not worked out. We'll have to calculate it through."
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

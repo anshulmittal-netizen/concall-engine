@@ -1,0 +1,197 @@
+{
+ "doc_id": "IN-a450e0b0-cb38-46b7-bf07-10d0846b7432",
+ "market": "IN",
+ "company_id": "524654",
+ "name": "Natural Capsules Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-03",
+ "period": "2026-03",
+ "title": "Natural Capsules Ltd - 524654 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Q4 EBITDA margin 2.28% on deferred dispatches; FY26 EBITDA loss Rs 1.56 cr; FY27 guidance Rs 274 cr revenue with API at ~Rs 70 cr and no PLI assumed, but debt stays Rs 100-110 cr.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -2,
+   "structure": -2,
+   "inventory": 0,
+   "demand": -2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 25,
+   "quote": "Land utilization at this point of time is roughly around 25% to 30%."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Chinese steroidal API overcapacity; Chinese players dumping into India at prices that may not cover costs.",
+   "quote": "Ican think about Rs. 25 crores to Rs. 30 crores of expenses could be required to put up these two clean rooms."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Indian steroidal API prices below cost",
+    "quote": "Indian prices are very, very significantly lower, | would say and may not even cover their costs.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "API land utilisation 25-30%",
+    "quote": "Land utilization at this point of time is roughly around 25% to 30%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "US HPMC sales stopped after July",
+    "quote": "Post-July, the sales abruptly stopped.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Prior API breakeven timeline missed",
+    "quote": "there have been multiple instances starting FY24 till FY26, where timelines on earnings calls were not met.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Fermentation ~40% capacity spare, Fermbox to use",
+    "quote": "at least about 40% of our capacity becomes spare in fermentation.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated FY27 revenue",
+    "value": "Rs 274 crore (gelatin 170, HPMC 20, domestic API 70, Fermbox CMO 14)",
+    "change": "new",
+    "quote": "we are talking about a consolidated level Rs.274 crores."
+   },
+   {
+    "metric": "HPMC FY27 revenue",
+    "value": "Rs 20 crore",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "We are now anticipating revenue of about 20 crores from HPMC line."
+   },
+   {
+    "metric": "Debt FY27",
+    "value": "Rs 100-110 crore",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "I see around Es. 100 crores to Rs. 110 crores total debt on the consolidated basis."
+   },
+   {
+    "metric": "API domestic gross margin FY27",
+    "value": "2-3% gross; EBITDA negligible to low single digit",
+    "change": "new",
+    "quote": "There we are expecting a margin of about 2-3% at the gross level."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "API cash breakeven by end Q4 FY26",
+    "outcome": "missed",
+    "quote": "commercial sales only commenced in Q4 FY26."
+   },
+   {
+    "metric": "HPMC FY26 revenue Rs 25 crore",
+    "outcome": "missed",
+    "quote": "we could not achieve the targeted revenue of 25 crores and we achieved only around Rs. 8 crores."
+   },
+   {
+    "metric": "API revenue Rs 240-250 crore target by FY29",
+    "outcome": "not_discussed",
+    "quote": "Yes, Rs. 250 crore target is still there in front of us."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Fermbox Bio-Private Limited",
+    "relation": "partner"
+   },
+   {
+    "name": "Strides",
+    "relation": "customer"
+   },
+   {
+    "name": "Dr. Reddy's",
+    "relation": "peer"
+   },
+   {
+    "name": "ACG Group",
+    "relation": "competitor"
+   },
+   {
+    "name": "Health Caps",
+    "relation": "competitor"
+   },
+   {
+    "name": "Kinwan",
+    "relation": "peer"
+   },
+   {
+    "name": "Aurobindo Pharma",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Import substitution",
+   "Tariffs & trade policy",
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Near-zero cash, loss-making consolidated P&L, fundraising under consideration",
+    "quote": "there are close to five concurrent strategic priorities for a company at a near zero cash balance and a loss making consolidated P&L."
+   },
+   {
+    "label": "Repeated missed timelines FY24-FY26",
+    "quote": "there have been multiple instances starting FY24 till FY26, where timelines on earnings calls were not met."
+   },
+   {
+    "label": "HPMC FY26 shortfall, US sales halted",
+    "quote": "that was mainly due to stoppage of exports to US."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 5,
+   "capex": 2,
+   "balance_sheet": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Expected HPMC revenue in base case and delay sensitivity",
+    "quote": "So, looking into the uncertainty of the US market where the business of Neutra segment has completely slowed down."
+   },
+   {
+    "topic": "Fermbox revenue scale-up and PLI timing",
+    "quote": "since there is uncertainty of timing and all that we have desisted from giving a forecast."
+   },
+   {
+    "topic": "Claw-back clause status",
+    "quote": "the claw-back clause is referring to FY29 figures and that also is already mentioned in our shareholders agreement"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

@@ -1,0 +1,107 @@
+{
+ "doc_id": "IN-0ea8f7aa-8ddb-4113-a77b-57ade89c739f",
+ "market": "IN",
+ "company_id": "544557",
+ "name": "Glottis Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-01",
+ "period": "2026-03",
+ "title": "Glottis Ltd - 544557 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Glottis is a freight forwarder with FY26 revenue down on softer freight rates and volumes (89,098 TEUs), margins thin at 5.2% PAT, and receivables up about 70% from extended credit days, a weak-quality signal.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables up ~70% on extended credit",
+    "quote": "we have given extended credit days, because of that our trade receivables increased",
+    "highlight": "we have given extended credit days",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "FY26 volumes lower on weak trade",
+    "quote": "Volume remained lower compared to last year, largely due to slower global trade movements, inventory correction across major markets",
+    "highlight": "Volume remained lower compared to last year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Freight rates soft; FY26 revenue down",
+    "quote": "Freight rates remain soft and customers across industry planned shipment cautiously",
+    "highlight": "Freight rates remain soft",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue / volume outlook FY27",
+    "value": "No numeric guidance; management 'very positive' on FY27",
+    "change": "new",
+    "quote": "We are very positive in FY26-FY27, and we are taking lot of measures to cover up this revenue"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Churchgate Partners",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables up ~70%; credit days extended to retain customers",
+    "quote": "we have given extended credit days, because of that our trade receivables increased"
+   },
+   {
+    "label": "Other current assets surge (advances, prepaid)",
+    "quote": "we have just advance paid to our suppliers and the prepaid expenses actually"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 1,
+   "margin": 0,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue direction",
+    "quote": "We are very positive in FY26-FY27, and we are taking lot of measures to cover up this revenue"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "doc_id": "IN-368ad7de-c210-4c8b-8769-1e36a7fa275f",
+ "market": "IN",
+ "company_id": "530067",
+ "name": "CSL Finance Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "CSL Finance Ltd - 530067 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "CSL Finance's wholesale book grows but SME retail stalled: AUM up 21% to Rs 1,448 cr, yet SME share fell to 31% and Q4 disbursements dropped 16% QoQ to Rs 301 cr.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Customer stickiness",
+   "Working-capital stress",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": -2,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "SME retail stalled, share 48% to 31%",
+    "quote": "SME retail performance has been underwhelming",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "New lenders entering sub-Rs 10 lakh SME",
+    "quote": "influx of new competition from previously MSI heavy lenders who are now lending aggressively in their secured SME portfolio",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 AUM growth 15%-25%",
+    "quote": "The next year guidance will be in line with anything between 15%-25%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Gross NPA 1.1% vs 0.46% a year ago",
+    "quote": "Gross NPA stood at 1.1% in Q4FY26 compared to 0.46% in Q4FY25",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 PAT down 7% QoQ on ECL and write-offs",
+    "quote": "PAT for Quarter 4 FY26 was reported as Rs. 19.4 crore which was up by 2% year-on-year though down 7% sequentially",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 AUM growth",
+    "value": "15%-25%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "The next year guidance will be in line with anything between 15%-25%"
+   },
+   {
+    "metric": "Credit cost",
+    "value": "stabilising around 0.5%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "the credit cost which has been around 0.5%, I think we should be stabilizing between that credit cost only"
+   },
+   {
+    "metric": "Gross and net NPA",
+    "value": "no absolute increase in FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we don't expect that the absolute gross and net NPA should increase in the next financial year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Bank of Baroda",
+    "relation": "partner"
+   },
+   {
+    "name": "Acuité Ratings and Research",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "SME growth stalled; branch attrition and team changes",
+    "quote": "there have been changes in the senior team that resulted in some attrition, I would say little higher attrition in our branches"
+   },
+   {
+    "label": "Gross NPA up to 1.1% from 0.46%",
+    "quote": "Gross NPA stood at 1.1% in Q4FY26 compared to 0.46% in Q4FY25"
+   },
+   {
+    "label": "Lower ECL/NPA resolutions, higher H2 impairments",
+    "quote": "We recorded higher impairments in the second half of the year partly due to lower NPA resolutions"
+   },
+   {
+    "label": "Management to reset SME policies, no SME guidance",
+    "quote": "we would be better to comment on any projections and the numbers and the expansion strategy in the coming quarters itself"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "balance_sheet": 2,
+   "margin": 1,
+   "capex": 0,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "SME growth and expansion outlook",
+    "quote": "we would be better to comment on any projections and the numbers and the expansion strategy in the coming quarters itself"
+   },
+   {
+    "topic": "Q4 disbursement guidance",
+    "quote": "it is better to see it more on a yearly basis rather than quarterly"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

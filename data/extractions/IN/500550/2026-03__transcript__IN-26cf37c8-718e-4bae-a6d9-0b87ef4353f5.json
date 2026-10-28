@@ -1,0 +1,149 @@
+{
+ "doc_id": "IN-26cf37c8-718e-4bae-a6d9-0b87ef4353f5",
+ "market": "IN",
+ "company_id": "500550",
+ "name": "Siemens Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-03",
+ "period": "2026-03",
+ "title": "Siemens Ltd - 500550 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Record ₹450bn backlog and Q6 orders up 33%, but EBITDA margin fell 290bp to 9.7% on commodity and Euro-driven material cost (74% of revenue); price hikes lag 3–4 months.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "we are examining the expansion requirements for our mobility factories, both in Nashik as well as in Chhatrapati Sambhajinagar"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Material cost 69% → 74% of revenue",
+    "quote": "In quarter 2, the material cost was reported as 69% of revenue. And in quarter 6, the number went up to 74%.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "New orders +33% YoY in Q6",
+    "quote": "New orders moved strongly to INR 67.3 billion, up 33% year-on-year",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA margin 12.6% → 9.7%",
+    "quote": "EBITDA margin moved from 12.6 to 9.7, down 290 basis points.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory build and receivables up",
+    "quote": "we increased our inventory levels also based on the West Asia crisis",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Mobility factory expansion under review",
+    "quote": "we are examining the expansion requirements for our mobility factories",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Quarterly guidance",
+    "value": "Not given",
+    "change": "held",
+    "quote": "we are not giving guidance on the next or the future quarters"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Siemens AG",
+    "relation": "partner"
+   },
+   {
+    "name": "Schneider",
+    "relation": "competitor"
+   },
+   {
+    "name": "ABB",
+    "relation": "competitor"
+   },
+   {
+    "name": "Eaton",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Railway capex",
+   "Grid capex & transformers",
+   "Anti-dumping protection",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin compression from commodity and FX",
+    "quote": "EBITDA margin moved from 12.6 to 9.7, down 290 basis points."
+   },
+   {
+    "label": "Cash conversion slipping; contract assets up",
+    "quote": "our contract assets are going up"
+   },
+   {
+    "label": "Value adjustments on 9K HP loco order undisclosed",
+    "quote": "We haven't disclosed the value adjustment numbers"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 3,
+   "growth": 5,
+   "margin": 5,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Backlog value after loco value adjustment",
+    "quote": "So, we will come back to you with this number. We don't have it offhand."
+   },
+   {
+    "topic": "Data-centre share of order book",
+    "quote": "it would probably be in the range of 12 to 15 or so."
+   },
+   {
+    "topic": "Localisation capex plans",
+    "quote": "I will not be able to give you specifics about our strategic plans over the next couple of years."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

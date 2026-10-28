@@ -1,0 +1,171 @@
+{
+ "doc_id": "IN-9fdd3c2d-0ac9-40c1-8ac3-9097826fd4fe",
+ "market": "IN",
+ "company_id": "500780",
+ "name": "Zuari Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-01",
+ "period": "2026-03",
+ "title": "Zuari Industries Ltd - 500780 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.94,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "Record sugar crush of 159.7 lakh quintal and 101.7% utilisation, but holding-company debt guided down ~INR1,200 crore to ~INR700 crore via Dubai and associate inflows, which management has promised for several quarters.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Deleveraging",
+   "Capacity bottleneck",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 101.7,
+   "quote": "we achieved the highest ever capacity utilization of 101.7%"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said ethanol overcapacity is about 100%, with bids of about 1,800 crore litres against 1,050 crore litres of OMC tenders; ZEBPL expansion plans put on hold.",
+   "quote": "we have put those expansion plans on hold"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Ethanol expansion plans put on hold",
+    "quote": "we have put those expansion plans on hold, and we are first trying to stabilize the investment",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Sugar utilisation 101.7%, record",
+    "quote": "we achieved the highest ever capacity utilization of 101.7%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Net debt ~INR700 cr by year-end",
+    "quote": "we will be standing at a position of around INR700 crores as at the end of the year",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "Ethanol overcapacity ~100%",
+    "quote": "So it's almost like a 100% over capacity currently in ethanol",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "OMC second/third-round tenders not yet out",
+    "quote": "the OMC tenders which are supposed to come the second and the third round have not come yet",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net debt at year-end FY27",
+    "value": "~INR700 crore",
+    "change": "new",
+    "horizon": "end FY27",
+    "quote": "we will be standing at a position of around INR700 crores as at the end of the year"
+   },
+   {
+    "metric": "Dubai inflows",
+    "value": "INR850-900 crore over next six months",
+    "change": "new",
+    "horizon": "six months",
+    "quote": "about INR850 crores to INR900 crores should flow into us over the next six months"
+   },
+   {
+    "metric": "Associate inflow",
+    "value": "~INR258 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the inflows from our associate company of around INR258 crores"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Zuari Envien Bioenergy Private Limited",
+    "relation": "partner"
+   },
+   {
+    "name": "Chambal Fertilisers",
+    "relation": "peer"
+   },
+   {
+    "name": "Paradeep Phosphates",
+    "relation": "peer"
+   },
+   {
+    "name": "Texmaco Rail & Engineering",
+    "relation": "peer"
+   },
+   {
+    "name": "Texmaco Infrastructure & Holdings",
+    "relation": "peer"
+   },
+   {
+    "name": "Simon India",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Housing & real-estate cycle",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Repeated deleveraging timeline slippage",
+    "quote": "last one, two quarters I've been hearing that this will be deleveraged every quarter"
+   },
+   {
+    "label": "Investment value down ~20%",
+    "quote": "the value of all your investments have gone down by 20%, which is around INR1,000 crores"
+   },
+   {
+    "label": "Texmaco provision",
+    "quote": "They have just made a provision of INR700 crores in their balance sheet"
+   },
+   {
+    "label": "Ethanol overcapacity and no OMC tenders",
+    "quote": "the OMC tenders which are supposed to come the second and the third round have not come yet"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 5,
+   "capex": 1,
+   "growth": 4,
+   "margin": 1,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Deleveraging timing",
+    "quote": "We do not comment on the share prices."
+   },
+   {
+    "topic": "Texmaco Rail provision and Delhi project",
+    "quote": "I think that question is best asked to that company -- Texmaco Infra Holdings."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

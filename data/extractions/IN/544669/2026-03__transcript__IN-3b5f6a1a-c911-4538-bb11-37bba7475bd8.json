@@ -1,0 +1,162 @@
+{
+ "doc_id": "IN-3b5f6a1a-c911-4538-bb11-37bba7475bd8",
+ "market": "IN",
+ "company_id": "544669",
+ "name": "Admach Systems Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-01",
+ "period": "2026-03",
+ "title": "Admach Systems Ltd - 544669 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Q4 FY26 call shows margin slipping (gross 33%→29%), receivables jumping to ~150-160 days and negative operating cash flow, with FY27 EBITDA >20% targeted but backed by machines still being commissioned.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Currently I don't foresee any capex investment immediately, but if it comes to some specific project where we can increase our margin or save our times or save our overheads, for sure we will go for it."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables ~150-160 days vs ~90 earlier",
+    "quote": "earlier it was lower than like 90 days receivables, that has gone to 150 -160 days",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin 33% → 29% HoH",
+    "quote": "Why has our gross margin reduced from 33% to 29% on HOH basis?",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 EBITDA margin target above 20%",
+    "quote": "FY27 company is targeting for 20% to -- above 20%.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Offers >INR200 cr quoted, ~60-65% conversion",
+    "quote": "the offers which have gone to our customers with the current scenario are of the tune of more than INR200 crores, which we have already quoted",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "above 20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "FY27 company is targeting for 20% to -- above 20%."
+   },
+   {
+    "metric": "Working capital days FY27",
+    "value": "about 75",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "About 75."
+   },
+   {
+    "metric": "Revenue scale",
+    "value": "will easily pass INR 100 crores this year",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "this year we will easily pass INR 100 crores"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Tata Steel",
+    "relation": "customer"
+   },
+   {
+    "name": "Nuclear Fuel Complex",
+    "relation": "customer"
+   },
+   {
+    "name": "Braun Machinefabrik",
+    "relation": "partner"
+   },
+   {
+    "name": "Nordinkraft",
+    "relation": "partner"
+   },
+   {
+    "name": "Siemens",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Capex cycle revival (private)",
+   "Working-capital stress",
+   "Nearshoring / reshoring (US)"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables stretched to ~150-160 days",
+    "quote": "earlier it was lower than like 90 days receivables, that has gone to 150 -160 days"
+   },
+   {
+    "label": "Negative operating cash flow; management blamed post-listing changes",
+    "quote": "the major reason for the negative working operations cash flow from operations that there are some major changes in working capital"
+   },
+   {
+    "label": "Low tax charge (~9.5% current tax vs ~25% prior periods) unexplained",
+    "quote": "I see a profit before tax of INR6 crores and a current tax of INR 53 lakhs, which is like around 9.5%"
+   },
+   {
+    "label": "Revenue recognised on inspected but undispatched machines",
+    "quote": "till that time it will remain as our you can say stock or inventory"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 3,
+   "growth": 5,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Receivables / tax charge",
+    "quote": "Actually... we checking the books actually where it is mentioned."
+   },
+   {
+    "topic": "Revenue by product and segment bifurcation",
+    "quote": "I will get back to you. We are we have just we have just finished the book"
+   },
+   {
+    "topic": "Advances from customers figure",
+    "quote": "Just one moment, we'll give the figure."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

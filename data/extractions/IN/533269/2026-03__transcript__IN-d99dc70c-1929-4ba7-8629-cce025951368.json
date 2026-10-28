@@ -1,0 +1,183 @@
+{
+ "doc_id": "IN-d99dc70c-1929-4ba7-8629-cce025951368",
+ "market": "IN",
+ "company_id": "533269",
+ "name": "VA Tech Wabag Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-01",
+ "period": "2026-03",
+ "title": "VA Tech Wabag Ltd - 533269 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Order book INR 17,200 crore (over 4x revenue) and net cash ~INR 950 crore, but management guided only to 15–20% growth and 13–15% EBITDA with no new numbers; India-cluster margin slippage is glossed over.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Order book up 26% vs revenue 20%",
+    "quote": "Year-over-year, our order backlog grew by 26%. When our revenue grew by 20%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Growth guardrail held at 15–20%",
+    "quote": "we will grow at a 15% to 20%, continue to grow profitably. Our EBITDA margins will remain 13% to 15%.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "tone",
+    "label": "India segment profit slide questioned",
+    "quote": "The profits have come down from INR 127 crore to INR 60 crore in the last quarter.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth",
+    "value": "15% to 20% CAGR",
+    "change": "held",
+    "horizon": "medium term",
+    "quote": "we will grow at a 15% to 20%, continue to grow profitably."
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "13% to 15%",
+    "change": "held",
+    "horizon": "medium term",
+    "quote": "Our EBITDA margins will remain 13% to 15%."
+   },
+   {
+    "metric": "O&M share of revenue",
+    "value": "20%",
+    "change": "held",
+    "horizon": "3 to 5 years",
+    "quote": "our medium-term 3 to 5-year outlook is to take it to 20%"
+   },
+   {
+    "metric": "Kuwait order",
+    "value": "order expected within quarter",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "It's very imminent the one from Kuwait should happen I think next month. Within this quarter we can get that."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue growth 15–20% CAGR",
+    "outcome": "met",
+    "quote": "this year we did almost 20% on the higher side of the band"
+   },
+   {
+    "metric": "EBITDA 13–15%",
+    "outcome": "met",
+    "quote": "EBITDA 13% to 15%, we've firmly remained in that band"
+   },
+   {
+    "metric": "ROCE over 20%",
+    "outcome": "missed",
+    "quote": "ROCE over 20% we are getting closer to that"
+   },
+   {
+    "metric": "O&M 20% of revenue",
+    "outcome": "not_discussed",
+    "quote": "O&M at 17% we said that our medium-term 3 to 5-year outlook is to take it to 20%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Pani Energy",
+    "relation": "partner"
+   },
+   {
+    "name": "Xylem",
+    "relation": "peer"
+   },
+   {
+    "name": "Aramco",
+    "relation": "customer"
+   },
+   {
+    "name": "BAPCO",
+    "relation": "customer"
+   },
+   {
+    "name": "BPCL",
+    "relation": "customer"
+   },
+   {
+    "name": "Reliance",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Water & wastewater",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "India profit drop questioned",
+    "quote": "The profits have come down from INR 127 crore to INR 60 crore in the last quarter."
+   },
+   {
+    "label": "Revenue flat year-on-year in India",
+    "quote": "it has been quite flat, not even a 5% growth year-on-year"
+   },
+   {
+    "label": "Price variation covers only 70% of costs",
+    "quote": "But still, it only covers 70% of our costs, not 100% of the cost."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "India segment profitability",
+    "quote": "So look at blended margins and look at it multi-annually instead of for a quarter"
+   },
+   {
+    "topic": "Guidance revision for next year",
+    "quote": "Once we have the new strategy, obviously new guardrails will be drawn out"
+   },
+   {
+    "topic": "Order inflow target FY27",
+    "quote": "Rest everything is information."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

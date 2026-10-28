@@ -1,0 +1,143 @@
+{
+ "doc_id": "IN-0ae3a31b-28d5-4551-9372-f273f1906293",
+ "market": "IN",
+ "company_id": "500480",
+ "name": "Cummins India Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-03",
+ "period": "2026-03",
+ "title": "Cummins India Ltd - 500480 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.92,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Cummins India FY26 sales up 18% to INR11,950 crore with data centres at 30-35% of domestic power gen, but management guided only moderate growth, flagged commodity and supplier cost pressure, and gave no new capacity; utilisation about 70%.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 70,
+   "quote": "our overall capacity utilization is hovering around 70% today"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "Parent investing close to $450 million to add 20 GW capacity by 2030, per analyst question; management confirmed capacity additions for engines for data centres.",
+   "quote": "we are adding capacity as our parent has mentioned, and this largely goes towards engines that go into data center market"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Data centre share 30-35% of power gen",
+    "quote": "the data center business would have contributed between 30% to 35% of our overall power generation domestic revenue",
+    "highlight": "30% to 35% of our overall power generation",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 guided to moderate growth only",
+    "quote": "The company expects moderate growth across segments in the financial year 2026/'27.",
+    "highlight": "moderate growth across segments",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "No major capex; utilisation ~70%",
+    "quote": "For now, no major capital expenditure plan.",
+    "highlight": "no major capital expenditure plan",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Power gen pricing largely sustaining",
+    "quote": "Largely pricing has sustained at the levels we have.",
+    "highlight": "Largely pricing has sustained",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 sales growth",
+    "value": "moderate growth across segments",
+    "change": "new",
+    "horizon": "FY2026/27",
+    "quote": "The company expects moderate growth across segments in the financial year 2026/'27."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "CTIPL",
+    "relation": "supplier"
+   },
+   {
+    "name": "Perkins",
+    "relation": "competitor"
+   },
+   {
+    "name": "Baudouin",
+    "relation": "competitor"
+   },
+   {
+    "name": "Adani",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Battery storage (BESS)",
+   "Railway capex",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Commodity and supplier cost pressure on orders already taken",
+    "quote": "We, of course, try to pass on the commodity increases to our customers. There usually is some lag"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 9,
+   "margin": 4,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Quantifying FY27 moderate growth",
+    "quote": "I won't be able to give you a currency depreciation number."
+   },
+   {
+    "topic": "Price vs volume split",
+    "quote": "that would be very tough to do"
+   },
+   {
+    "topic": "Data centre margin outlook",
+    "quote": "that is very difficult to answer"
+   },
+   {
+    "topic": "BESS contribution",
+    "quote": "we are not able to share with you what we see as the contribution"
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

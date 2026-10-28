@@ -1,0 +1,161 @@
+{
+ "doc_id": "IN-300f3b7a-4d8c-4c83-93b6-6cadda47b31e",
+ "market": "IN",
+ "company_id": "532815",
+ "name": "SMS Pharmaceuticals Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-30",
+ "period": "2026-03",
+ "title": "SMS Pharmaceuticals Ltd - 532815 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Management guides FY27 revenue growth of 15% with EBITDA margin above FY26's 20%, citing ibuprofen backward integration and an 800 MT/month capacity build by FY27 end; a Middle East-driven solvent cost squeeze already dented Q4 gross margin by 2%.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 80,
+   "quote": "we are almost 80% already utilizing our existing capacity"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Upon completion of our current capex program in FY27, our installed capacity will increase to 800 metric tons per month."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Ibuprofen utilisation ~80%",
+    "quote": "we are almost 80% already utilizing our existing capacity",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Ibuprofen capacity 500 → 800 MT/month",
+    "quote": "Upon completion of our current capex program in FY27, our installed capacity will increase to 800 metric tons per month.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Ibuprofen price rise from war",
+    "quote": "there is a price increase also that is happening in products like ibuprofen",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth 15%",
+    "quote": "we are guiding for 15% revenue growth while aiming to further improve upon our FY26 EBITDA margin of 20%",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "15%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are guiding for 15% revenue growth"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "above FY26 level of 20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "aiming to further improve upon our FY26 EBITDA margin of 20%"
+   },
+   {
+    "metric": "Installed capacity",
+    "value": "800 MT per month",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "our installed capacity will increase to 800 metric tons per month"
+   },
+   {
+    "metric": "Revenue growth FY28-29",
+    "value": "20-25% target",
+    "change": "new",
+    "horizon": "FY28-FY29",
+    "quote": "we anticipate at least a 20%, 25% growth rate going forward"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "VKT Pharma",
+    "relation": "partner"
+   },
+   {
+    "name": "SMS Life Sciences",
+    "relation": "peer"
+   },
+   {
+    "name": "Chemo",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Specialty chem destocking end",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "China+1 enquiries → orders"
+  ],
+  "red_flags": [
+   {
+    "label": "Solvent cost spike cut Q4 gross margin ~2pp",
+    "quote": "that resulted in increase of raw material cost for the product"
+   },
+   {
+    "label": "Anti-diabetic segment deprioritised",
+    "quote": "we proactively adjusted our strategy at the beginning of Q3 FY26 before the impact became visible"
+   },
+   {
+    "label": "Single customer 28% of revenue",
+    "quote": "one of the largest customers is giving us 28% of the total revenue"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 3,
+   "margin": 3,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Anti-inflammatory volume trend",
+    "quote": "we are increasing the sales. With backward integration, we are trying to increase the margins as well"
+   },
+   {
+    "topic": "Customer identity",
+    "quote": "No, we cannot disclose the name of the customers here in this platform"
+   },
+   {
+    "topic": "Ibuprofen share of revenue",
+    "quote": "Roughly around 20%. It is roughly around 20%."
+   }
+  ],
+  "hedge_index": 0.4,
+  "thesis_placeholder": "x"
+ }
+}

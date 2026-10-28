@@ -1,0 +1,180 @@
+{
+ "doc_id": "IN-0d539e38-f711-48e5-9fdb-a0a845759e3e",
+ "market": "IN",
+ "company_id": "539083",
+ "name": "Inox Wind Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "Inox Wind Ltd - 539083 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Renewables",
+  "thesis": "Inox Wind Q4 FY26 revenue flat at INR1,306 crore with FY26 top line INR4,600 crore vs INR5,000 crore guidance; FY27 guided up ~75%, but working-capital slippage and PSU receivable delays persist.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables slow; PSU payment delays",
+    "quote": "On the receivable front, there has been some challenges, especially in our PSU contracts, where we have seen payment delays.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 revenue INR4,600 cr vs INR5,000 cr guide",
+    "quote": "as against the guideline of INR5,000 crores, which we have given in the last call, we have achieved INR4,600 crores",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "novelty",
+    "label": "Shift to equipment supply: 75-80% of order book",
+    "quote": "we have now pivoted towards almost 75% to 80% of our order book now being equipment supply.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth ~75%, EBITDA margin ~20%",
+    "quote": "we expect our consolidated revenue to grow by around 75% over FY26 with EBITDA margin to be 20% to 20%.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 consolidated revenue growth",
+    "value": "~75% over FY26",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect our consolidated revenue to grow by around 75% over FY26"
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "with EBITDA margin to be 20% to 20%"
+   },
+   {
+    "metric": "Inox Green FY27 EBITDA",
+    "value": "upwards of INR600 crore",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we maintain our FY27 EBITDA guidance to be upwards of INR600 crores"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revenue INR5,000 crore",
+    "outcome": "missed",
+    "quote": "as against the guideline of INR5,000 crores, which we have given in the last call, we have achieved INR4,600 crores"
+   },
+   {
+    "metric": "Net working capital days ~200",
+    "outcome": "missed",
+    "quote": "we were quite confident of achieving net working capital days of about 200 days"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Inox Clean Energy",
+    "relation": "partner"
+   },
+   {
+    "name": "Inox Green",
+    "relation": "partner"
+   },
+   {
+    "name": "Inox Renewable Solutions",
+    "relation": "partner"
+   },
+   {
+    "name": "CESC",
+    "relation": "customer"
+   },
+   {
+    "name": "Aditya Birla",
+    "relation": "customer"
+   },
+   {
+    "name": "Gentari / Amplus",
+    "relation": "customer"
+   },
+   {
+    "name": "Jakson Green",
+    "relation": "customer"
+   },
+   {
+    "name": "First Energy",
+    "relation": "customer"
+   },
+   {
+    "name": "Leap Green",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Renewables & storage",
+   "Capex cycle revival (private)",
+   "Working-capital stress"
+  ],
+  "red_flags": [
+   {
+    "label": "FY26 revenue miss vs guidance",
+    "quote": "we have achieved INR4,600 crores and this INR400 crores of makeover will happen in the qu arter 1, quarter 2 time scale."
+   },
+   {
+    "label": "Related-party order dependence (Inox Clean)",
+    "quote": "we expect to receive large recurring order inflows from our Group Company, Inox Clean Energy, over the next few years."
+   },
+   {
+    "label": "Other income ~INR40 cr from acquisition debt inflates Green EBITDA",
+    "quote": "majority of the other income which you are seeing in our P&L statement related to the two strategic, related to the debt which we have acquired"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 4,
+   "margin": 3,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "FY26 megawatt execution",
+    "quote": "That is the number that we have refrained from giving."
+   },
+   {
+    "topic": "Standalone cash/dividend policy for Inox Green",
+    "quote": "Let the consolidation of the two companies happen. Once that happens, I'm sure the Board in all its wisdom will put in place a dividend policy."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

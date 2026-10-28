@@ -1,0 +1,296 @@
+{
+ "doc_id": "IN-1415b0d1-431e-4249-9fd2-31862d4f0206",
+ "market": "IN",
+ "company_id": "544354",
+ "name": "Solarium Green Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-06",
+ "period": "2026-03",
+ "title": "Solarium Green Energy Ltd - 544354 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "FY26 revenue up 60% to ₹368 cr but PAT only ₹20.5 cr as gross margin fell to ~30% and finance cost rose to ₹10.5 cr; module plant running at ~45% utilisation with ALMM-II and captive-demand dependence unresolved.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 45,
+   "quote": "Currently, the factory is running at around 45% utilization. We have reduced the utilization for last 10 days because of this ALMM2 applicability."
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "We are not foreseeing any major CAPEX during this year. FY27 majority will be anchored around the execution and the ramp-up in quantum modeling."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Module plant utilisation ~45%, cut 10 days",
+    "quote": "Currently, the factory is running at around 45% utilization. We have reduced the utilization for last 10 days because of this ALMM2 applicability.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin 34.5% → ~30%",
+    "quote": "gross margins have declined from 34.5% to around 30%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Trade receivables ₹90.9 cr → ₹152.6 cr",
+    "quote": "Trade disable on the balance sheet stood at ₹152.6 crores at the year-end up from ₹90.9 crores",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 EBITDA margin 10-12% (no revenue number)",
+    "quote": "this should be in the range of say 10% to 12% to be transferred.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "10% to 12%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "this should be in the range of say 10% to 12% to be transferred."
+   },
+   {
+    "metric": "Revenue growth FY27",
+    "value": "at least at past two-year growth rate",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we kind of see the revenue continue to grow more at whatever rate it has grown in the past couple of years."
+   },
+   {
+    "metric": "Captive consumption of module output",
+    "value": "50% to 60%",
+    "change": "new",
+    "horizon": "near term",
+    "quote": "we are targeting 50 % to 60% in-house consumption of production at least."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "NTPC",
+    "relation": "customer"
+   },
+   {
+    "name": "PM Surya Ghar",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Electronics manufacturing (EMS/PLI)",
+   "Anti-dumping protection",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Module plant at ~45% utilisation, cut for 10 days",
+    "quote": "Currently, the factory is running at around 45% utilization. We have reduced the utilization for last 10 days because of this ALMM2 applicability."
+   },
+   {
+    "label": "Receivables up ~68% vs revenue up 60%",
+    "quote": "Trade disable on the balance sheet stood at ₹152.6 crores at the year-end up from ₹90.9 crores"
+   },
+   {
+    "label": "PAT flat despite 60% revenue growth; H2 PAT +2%",
+    "quote": "And PAT grew 2%. With both the gross margin compression and the high finance costs"
+   },
+   {
+    "label": "Evasive on FY26 captive share and order conversion specifics",
+    "quote": "It is a bit tricky situation at this point in time."
+   },
+   {
+    "label": "Inconsistent interest-cost explanation (term loan described as working capital)",
+    "quote": "for the term loan, it's repayable over the next six years and it is a working capital loan."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 1,
+   "growth": 3,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Module cost vs realisation / margin per panel",
+    "quote": "It is a bit tricky situation at this point in time."
+   },
+   {
+    "topic": "Cell capacity availability under ALMM-II",
+    "quote": "So, again, as I said, from a cell standpoint, Shruti, you are right. But at the same point in time"
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "FY26 total income rose 60% to ₹368 crores, but PAT only edged up to ₹20.5 crores as finance costs hit ₹10.5 crores and gross margin fell to ~30%.",
+  "overview": "Solarium Green Energy reported FY26 total income of ₹368 crores (up 60% YoY) and EBITDA of ₹35.3 crores (~9.6% margin), with PAT of ₹20.5 crores. Growth came from large ground-mounted EPC projects, which carry lower gross margins; gross margin fell to ~30% from 34.5%. Finance costs rose to ₹10.5 crores from ₹3.5 crores as the 1.2 GW module plant was financed, and receivables and inventory built up. The 1.2 GW Ahmedabad module facility began production only in mid-March 2026 and was running at ~45% utilisation at the time of the call.",
+  "financial_highlights": [
+   {
+    "metric": "Total income FY26",
+    "value": "₹368 crores",
+    "change": "+60% vs ₹230 crores in FY25"
+   },
+   {
+    "metric": "EBITDA FY26",
+    "value": "₹35.3 crores (~9.6% margin on total income)",
+    "change": "vs ₹26.9 crores in FY25 (~31% growth)"
+   },
+   {
+    "metric": "Gross profit FY26",
+    "value": "₹111 crores at ~30% gross margin",
+    "change": "vs ₹79 crores at 34.5% in FY25; gross profit +40% YoY"
+   },
+   {
+    "metric": "PAT FY26",
+    "value": "₹20.5 crores (~5.6% of total income)",
+    "change": "vs ₹18.6 crores in FY25"
+   },
+   {
+    "metric": "Finance cost FY26",
+    "value": "₹10.5 crores",
+    "change": "vs ₹3.5 crores in FY25"
+   },
+   {
+    "metric": "H2 FY26 revenue",
+    "value": "₹251 crores",
+    "change": "+70% vs ₹188 crores in H2 FY25"
+   },
+   {
+    "metric": "H2 FY26 PAT growth",
+    "value": "+2% YoY (EBITDA +27% YoY)",
+    "change": ""
+   },
+   {
+    "metric": "Trade receivables (year-end)",
+    "value": "₹152.6 crores",
+    "change": "vs ₹90.9 crores in FY25"
+   },
+   {
+    "metric": "Inventories (year-end)",
+    "value": "₹99.7 crores",
+    "change": ""
+   },
+   {
+    "metric": "Cash and bank balances (year-end)",
+    "value": "₹90.4 crores",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated total assets",
+    "value": "₹459 crores",
+    "change": "vs ₹234 crores in FY25"
+   }
+  ],
+  "segments": [
+   {
+    "name": "C&I and ground-mounted EPC",
+    "commentary": "Revenue rose to ₹227 crores from ₹114 crores in FY25. Management attributes growth mainly to large EPC execution; a 50 MW AC ground-mounted project in Maharashtra was won at over ₹185 crores."
+   },
+   {
+    "name": "Essential rooftop / residential",
+    "commentary": "Revenue of ₹80 crores in FY26 (end-to-end installations); management says a ~₹10-12 crore monthly run rate excluding kits over the last 3-4 months."
+   },
+   {
+    "name": "Distribution (incl. solar kits)",
+    "commentary": "Revenue of ₹61 crores, partly reflecting reclassification of solar kit revenue into this vertical; kit sales added ~₹14 crores in FY26."
+   },
+   {
+    "name": "Module manufacturing (1.2 GW, Ahmedabad)",
+    "commentary": "Commissioned in FY26 with production starting mid-March 2026; ~45% utilisation, with output so far used in distribution sales. External module orders on hand are ~₹35-40 crores."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 EBITDA margin expected at 10-12%; management confirmed exit FY27 margin of ~10-12% when asked, versus ~8-9% currently cited by an analyst.",
+   "Margins expected to be 'minimally protected' at FY26 levels, with no further fall anticipated as the business moves to a lower fixed-cost model.",
+   "Revenue expected to grow at least at the rate of the past couple of years, with growth expected to accelerate as the manufacturing facility goes live.",
+   "Manufacturing targeted at gross/overall margins above 15% on a cost-plus basis.",
+   "Finance cost to fall as a share of revenue as manufacturing assets generate returns; absolute interest cost expected to stay in a similar range or rise marginally.",
+   "No major capex planned in FY27; focus on execution and ramp-up.",
+   "Pipeline conversion of ~60% of the ~300 MW EPC pipeline expected within 2-3 months (per Ankit Garg); separately, conversion expected over 3-6 months per Himanshu Garg."
+  ],
+  "capex_capacity": [
+   "1.2 GW fully automated module plant in Ahmedabad commissioned; capable of 4,000 panels/day at up to 23.5% cell efficiency, including G12 panels up to 725 Wp.",
+   "Plant utilisation ~45%; utilisation was cut for ~10 days to assess market response to the ALMM-II circular.",
+   "Targeted in-house consumption of 50-60% of production: 40-50% via own EPC projects, plus solar kits and other EPC players' orders.",
+   "Confirmed captive module consumption of ~65 MW within EPC order book; forward pipeline of 300+ MW under discussion.",
+   "CAPEX for the module plant ~₹90 crores, plus ~₹100 crores working capital."
+  ],
+  "demand_pricing": [
+   "Executed order book exceeds ₹300 crores; management says almost 100% will execute within FY27.",
+   "Ground-mounted EPC order in hand ~₹185 crores; large project receivables expected to be much shorter, with a ₹150 crore project needing under ₹30-35 crores of working capital.",
+   "Residential end-to-end monthly run rate ~₹10-12 crores; expected ₹16-18 crores including solar kits by calendar year-end.",
+   "Sarathi partner network above 450 partners across 25+ cities; company ranks second among 20,000+ vendors under PM Surya Ghar.",
+   "ALMM-II: order book largely covers projects bid before 31 August 2025 where non-domestic cells remain allowed; company says it is at an advanced stage of securing domestic cells for residential EPC and kits.",
+   "Management says cell capacity of ~30 GW is expected to be sufficient within 6-8 months; cost-plus pricing means cell price increases are passed through to customers."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What is the factory utilisation and how will output split between captive and external sales?",
+    "answer": "Utilisation is ~45%, reduced for 10 days due to ALMM-II. Management targets 50-60% in-house consumption (EPC, solar kits, other EPC players), with the rest sold externally."
+   },
+   {
+    "question": "How is client and project concentration managed in large EPC?",
+    "answer": "Management said concentrated large sites reduce the number of decision-makers versus many distributed sites (200-250 sites executed earlier), so focus has moved to bigger ground-mounted projects."
+   },
+   {
+    "question": "What is the FY27 revenue and margin guidance?",
+    "answer": "Margins expected to be minimally protected at FY26 levels; revenue growth expected at least at past rates, accelerating with the factory. No numeric FY27 guidance given."
+   },
+   {
+    "question": "What are the debt levels, interest cost and repayment?",
+    "answer": "About ₹100 crores-plus of working capital overdraft, repayable on demand, plus a ~₹50 crore term loan repayable over six years. FY26 interest cost was ₹10.5 crores; management did not expect it to reach ₹30-35 crores in FY27."
+   },
+   {
+    "question": "What drove the increase in other current liabilities from ₹4 crores to ₹36 crores?",
+    "answer": "About ₹19 crores is payable to creditors for fixed assets (capex) classified as current liabilities, ~₹2 crores is year-end employee payables, and ~₹5.5 crores is advances from customers."
+   },
+   {
+    "question": "What is the margin outlook for the manufacturing business and how does domestic cell sourcing affect it?",
+    "answer": "Management said it targets above 15% gross/overall margin on a cost-plus model and expects at least ~15% margin to hold, though market conditions may shift over 3-6 months."
+   }
+  ],
+  "risks_watch": [
+   "Gross margin pressure from the shift to lower-margin ground-mounted EPC; FY26 gross margin ~30% vs 34.5%.",
+   "Finance cost burden: ₹100 crores-plus of repayable-on-demand working capital debt; FY26 finance cost ₹10.5 crores vs ₹3.5 crores.",
+   "Working capital intensity: trade receivables up to ₹152.6 crores from ₹90.9 crores.",
+   "ALMM-II and domestic cell availability/pricing; management noted a new MNRE circular requiring monthly price declarations.",
+   "Low factory utilisation (~45%) and reliance on captive demand; conversion of the 300 MW pipeline is uncertain (a single 100 MW award is binary).",
+   "Project concentration in a 150 MW Maharashtra project; analyst noted it is a significant portion of revenue.",
+   "Inconsistent figures on call: EBITDA margin cited as ~9.5% and ~8-9%; management's FY27 guidance of 10-12% exit margin is a key test."
+  ],
+  "management_tone": "Confident and forward-looking on strategy and the ramp-up, but cautious and at times vague on numbers such as utilisation timing, cell sourcing and conversion rates. Management avoided a direct answer on the PAT trajectory and gave no formal numeric FY27 revenue guidance.",
+  "key_quotes": [
+   "We consciously added ground mounted large EPC project as another scheme for the business.",
+   "We do not see ALM M-II as an unmanageable constraint and in fact our manufacturing scale position us reasonably well at the broader industry transition towards the greater domestic content.",
+   "In a larger ground -mounted, generally, unlike the 120, 150 days kind of cycle in government projects, in these sort of projects , we generally kind of keep getting the money during the execution itself."
+  ]
+ }
+}

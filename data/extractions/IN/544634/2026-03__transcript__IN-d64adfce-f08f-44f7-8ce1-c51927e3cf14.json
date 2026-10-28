@@ -1,0 +1,136 @@
+{
+ "doc_id": "IN-d64adfce-f08f-44f7-8ce1-c51927e3cf14",
+ "market": "IN",
+ "company_id": "544634",
+ "name": "Aequs Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "Aequs Ltd - 544634 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Consumer capacity is ramping into 23% utilisation with INR500 crore more capex in FY27 and Hasbro exit, while aerospace grows 27% with 20% margin guided; supply side is expanding ahead of demand.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 23,
+   "quote": "driving capacity utilization from 23% today to a target of 40% to 50% by the year end"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "in our consumer segment, we have planned about INR500 crores approx for the full year FY27"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Consumer utilisation 23%, target 40-50%",
+    "quote": "driving capacity utilization from 23% today to a target of 40% to 50% by the year end",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Consumer capex INR500 cr in FY27",
+    "quote": "in our consumer segment, we have planned about INR500 crores approx for the full year FY27",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "NWC days 132 → 151; inventory built 4-6 weeks ahead",
+    "quote": "Net working capital days increased to 151 days in FY26 from 132 days in FY’ 25",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Hasbro stops raising POs",
+    "quote": "Hasbro has informed us that it has revised manufacturing and sourcing strategy and told us they will stop raising POS with us",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Aerospace FY27 growth 25-30%, margin ~20%",
+    "quote": "which should deliver 25% to 30% revenue growth, with EBITDA margins maintained at 20% at the segment level",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Aerospace revenue growth FY27",
+    "value": "25% to 30%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "which should deliver 25% to 30% revenue growth, with EBITDA margins maintained at 20% at the segment level"
+   },
+   {
+    "metric": "Aerospace EBITDA margin",
+    "value": "about 20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "EBITDA margins maintained at 20% at the segment level"
+   },
+   {
+    "metric": "Consolidated revenue growth FY27",
+    "value": "45% to 50%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting approximately 45% to 50% top -line revenue growth"
+   },
+   {
+    "metric": "Consumer revenue growth FY27",
+    "value": "125% to 150%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "On consumer, we see a revenue growth of about 125% to 150%"
+   },
+   {
+    "metric": "Consumer EBITDA breakeven",
+    "value": "Q4 FY27",
+    "change": "new",
+    "horizon": "Q4 FY27",
+    "quote": "Q4 FY27 will be the quarter wherein we will hit EBITDA break -breakeven"
+   },
+   {
+    "metric": "Consumer utilisation",
+    "value": "40% to 50% by year end FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "driving capacity utilization from 23% today to a target of 40% to 50% by the year end"
+   },
+   {
+    "metric": "Consolidated PAT breakeven",
+    "value": "H1 FY28",
+    "change": "new",
+    "horizon": "H1 FY28",
+    "quote": "we fully expect to see consolidated PAT hit break-even by H1 FY28"
+   }
+  ],
+  "prior_guidance_check": [],
+  "red_flags": [],
+  "evasions": [],
+  "entities": [],
+  "analyst_mix": {},
+  "themes": []
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "doc_id": "IN-5f93845f-bfb6-490d-a670-8b3bfdd0a0f3",
+ "market": "IN",
+ "company_id": "539660",
+ "name": "Best Agrolife Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-01",
+ "period": "2026-03",
+ "title": "Best Agrolife Ltd - 539660 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "FY26 revenue fell 31% to ₹1,257 crore and Q4 EBITDA was negative ₹27 crore, with a ₹50–70 crore March sales deferral and 2 price hikes as the recovery case; no numeric FY27 guidance.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": -2,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "our capacity utilization going up to 80-90% during the season and off season we are at around 50-60%"
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "we are postponing the newer capex which we are supposed to do in our existing plant. So, that we are keeping it on hold."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "New plant capex put on hold",
+    "quote": "we are postponing the newer capex which we are supposed to do in our existing plant",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Two rounds of price hikes Apr–May",
+    "quote": "the Company implemented two rounds of price increases during April and May 2026",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory ₹958cr → ₹651cr",
+    "quote": "inventory levels have reduced significantly from approximately ₹958 crore in FY24 to ₹773 crore in FY25 and further to ₹651 crore as of March 31, 2026",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q4 revenue down 43% YoY",
+    "quote": "revenue from operations for Q4 FY26 stood at ₹156 crore as against ₹274 crore in Q4 FY25, representing a decline of 43% year-on-year",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "tone",
+    "label": "Receivables and bank line at 85–90%",
+    "quote": "our utilization of the bank facilities it is at around 85-90%",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 specific numbers",
+    "value": "none given",
+    "change": "dropped",
+    "quote": "for next year we are not giving any specific number on the guidance part"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q4 FY26 minimal losses",
+    "outcome": "missed",
+    "quote": "we thought in our earlier guidance that Q4 will have minimal losses"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Dhanuka",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Rural demand recovery",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Missed Q4 guidance; losses doubled",
+    "quote": "you have even doubled the losses compared to year on year"
+   },
+   {
+    "label": "Receivables ~50% of sales; >6-month debt ₹200cr+",
+    "quote": "you have receivables worth of 500 crores and the sales are roughly 1000 crores"
+   },
+   {
+    "label": "Bank lines 85–90% utilised",
+    "quote": "our utilization of the bank facilities it is at around 85-90%"
+   },
+   {
+    "label": "Sales return ~20–21% of sales",
+    "quote": "Presently we are at around 20 -21% of sales return"
+   },
+   {
+    "label": "Poor audio quality; answers partly inaudible",
+    "quote": "your answers have been inaudible to many of us throughout the call"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 2,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "FY27 guidance",
+    "quote": "for next year we are not giving any specific number on the guidance part"
+   },
+   {
+    "topic": "Receivables write-off and capital raise",
+    "quote": "So, the B2C cycles are quite long."
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

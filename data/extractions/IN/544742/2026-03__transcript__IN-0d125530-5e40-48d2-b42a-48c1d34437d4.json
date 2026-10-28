@@ -1,0 +1,144 @@
+{
+ "doc_id": "IN-0d125530-5e40-48d2-b42a-48c1d34437d4",
+ "market": "IN",
+ "company_id": "544742",
+ "name": "Sai Parenterals Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-29",
+ "period": "2026-03",
+ "title": "Sai Parenterals Ltd - 544742 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "FY27 guided to INR750 crore revenue at 17% EBITDA margin while none of the INR440 crore capex adds FY27 output; Q4 FY26 consolidated EBITDA margin was only 15%, so the margin step-up is unproven.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Working-capital stress",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "all the projects remain on track and are expected to be completed during FY 2027"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "INR440 cr capex, zero FY27 output",
+    "quote": "none of the ongoing capex projects, the INR440 crores capex program are expected to contribute to FY 127 financial performance",
+    "highlight": "none of the ongoing capex projects",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue INR750 cr at 17% EBITDA",
+    "quote": "we are targeting a revenue of INR750 crores for the financial year 27 with an EBITDA margin in the range of 17%",
+    "highlight": "targeting a revenue of INR750 crores",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital 25-30% of incremental revenue",
+    "quote": "we would look at about 25% of additional revenues as the working capital requirement",
+    "highlight": "about 25% of additional revenues",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q4 FY26 consolidated revenue INR198 cr",
+    "quote": "the revenue stood at INR198 crores with the EBITDA at INR29 crores, which is at 15% EBITDA over revenues",
+    "highlight": "EBITDA at INR29 crores",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 consolidated revenue",
+    "value": "INR750 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are targeting a revenue of INR750 crores for the financial year 27"
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "17%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "with an EBITDA margin in the range of 17% mFY27"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Noumed Pharmaceuticals",
+    "relation": "partner"
+   },
+   {
+    "name": "Wesfarmers Health",
+    "relation": "customer"
+   },
+   {
+    "name": "EBOS Group",
+    "relation": "customer"
+   },
+   {
+    "name": "Novartis",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Import substitution"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 margin 15% vs 17% FY27 target",
+    "quote": "which is at 15% EBITDA over revenues, and a PAT of INR13 crores, which reflects about 6.6% of revenes"
+   },
+   {
+    "label": "PBT declined despite revenue doubling; deferred tax credit lifts PAT",
+    "quote": "there are two components of the tax being shown negative. One is the deferred tax assct being ereated"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 2,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Revenue conservatism and EBITDA bridge to 17%",
+    "quote": "we will review ourselves once more and we will come up with any incremental this thing"
+   },
+   {
+    "topic": "Deferred tax credit explanation",
+    "quote": "the company has moved from the old tax regime to the new tax regime"
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

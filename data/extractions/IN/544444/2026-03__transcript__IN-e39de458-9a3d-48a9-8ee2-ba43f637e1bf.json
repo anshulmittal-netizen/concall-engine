@@ -1,0 +1,175 @@
+{
+ "doc_id": "IN-e39de458-9a3d-48a9-8ee2-ba43f637e1bf",
+ "market": "IN",
+ "company_id": "544444",
+ "name": "Glen Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-01",
+ "period": "2026-03",
+ "title": "Glen Industries Ltd - 544444 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Plastics & polymers",
+  "thesis": "Glen is adding ~3x plastic food-container capacity and paper food packaging (~750 MT, INR130-135 cr capex, INR500 cr turnover target by FY28) while PLA/paper straw utilisation is only 28-34% and EBITDA margin has compressed to 18-19% on pass-through of PLA costs.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Working-capital stress",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 77.74,
+   "quote": "healthy capacity utilization of approximately 77.74% for thin-wall food containers, 28.33% and 34.13% for PLA straws and paper straws respectively"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "now the project cost has risen from what we were anticipating earlier, it will be around INR130 to INR135 crores"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex raised INR100 cr → INR130-135 cr",
+    "quote": "now the project cost has risen from what we were anticipating earlier, it will be around INR130 to INR135 crores",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory 5-5.5 months vs 4 normal",
+    "quote": "Today, it may be around 5-5.5 months.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Straw utilisation capped ~35%",
+    "quote": "I don't think it can go beyond 35%. If I average out the total yearly demand, it will never exceed 35 %.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Food container price pass-through monthly",
+    "quote": "we instantly pass on the prices to our export customer and domestic customer both way, upward or downward",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY28 turnover",
+    "value": "INR500 crore plus",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "FY28 we are targeting for 500 plus turnover with the EBITDA of 90 plus."
+   },
+   {
+    "metric": "FY28 EBITDA",
+    "value": "INR90 crore plus (~18-19% margin)",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "Our sustainable margin is between 18% to 19%."
+   },
+   {
+    "metric": "New capacity commercial production",
+    "value": "from September 2026, fully operational by Dec 2026",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect that the project will be starting commercial production from September."
+   },
+   {
+    "metric": "FY27 incremental revenue from new capacity",
+    "value": "INR100-125 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We are expecting between INR100 crores to INR125 crores which will be contributing in the financial year FY26 - '27."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "New capacity start Q1 FY27",
+    "outcome": "missed",
+    "quote": "we wanted to establish the new capacity in the Quarter 1, but you know, due to SIR and due to elections in West Bengal"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Parle",
+    "relation": "customer"
+   },
+   {
+    "name": "Dabur",
+    "relation": "customer"
+   },
+   {
+    "name": "Coca-Cola",
+    "relation": "customer"
+   },
+   {
+    "name": "Haldiram",
+    "relation": "customer"
+   },
+   {
+    "name": "Indian Oil",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory 5-5.5 months, receivables/working capital rising",
+    "quote": "Today, it may be around 5-5.5 months."
+   },
+   {
+    "label": "EBITDA margin 24% FY25 to 18-19% FY26; PAT down",
+    "quote": "the margin squeezed from 23% to 18%."
+   },
+   {
+    "label": "Land parcel still mortgaged; sale plan unresolved",
+    "quote": "that is actually still mortgaged to bank"
+   },
+   {
+    "label": "Capex overrun with FX-driven cost increase",
+    "quote": "the currency fluctuation, which has gone from 85, 86 to now 87 to now it is 96"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 4,
+   "growth": 5,
+   "margin": 6,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Ask for EBITDA per kg disclosure",
+    "quote": "So, we have to look into the statistics of same, whether it is viable or not and whether it is feasible or not."
+   },
+   {
+    "topic": "Pipeline of new products",
+    "quote": "We have a lot of plans, but right now I don't want to disclose them."
+   },
+   {
+    "topic": "Straw capex economics",
+    "quote": "No, no, we are not making any further capex."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

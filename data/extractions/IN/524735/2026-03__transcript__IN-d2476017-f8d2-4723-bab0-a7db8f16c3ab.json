@@ -1,0 +1,165 @@
+{
+ "doc_id": "IN-d2476017-f8d2-4723-bab0-a7db8f16c3ab",
+ "market": "IN",
+ "company_id": "524735",
+ "name": "Hikal Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-03",
+ "period": "2026-03",
+ "title": "Hikal Ltd - 524735 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Q4 FY26 margin recovered to 20.3% EBITDA and crop volumes improved, but FY26 revenue fell to INR1,713 cr, pharma lost Q4 shipments to a US FDA warning letter, and FY27 guidance was withheld.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital cycle",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 82.5,
+   "quote": "pharma plants at Panoli and Bangalore operating at an average capacity utilization of nearly 80% to 85%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we have incurred capital expenditure of INR149 crores for debottlenecking, regulatory upgrades, and expanding CDMO capacities"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Pharma utilisation ~80-85%",
+    "quote": "operating at an average capacity utilization of nearly 80% to 85%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Crop pricing still under pressure",
+    "quote": "pricing pressures still remain. China has not increased prices on the agrochemical side.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 guidance withheld",
+    "quote": "I don't want to give any forward-looking guidance in this quarter, I would be in a better position to do it after quarter 1 results.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Pharma Q4 shipments lost to FDA issue",
+    "quote": "for the quarter 4, we have lost the business. But it will come back in the next few quarters",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Pharma revenue growth FY26",
+    "value": "10% growth (given Feb 2026, per analyst)",
+    "change": "cut",
+    "quote": "we did give a guidance of growth in February, no doubt about it"
+   },
+   {
+    "metric": "FY27 revenue growth",
+    "value": "not given; growth expected",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "FY '27, I don't want to give any guidance, as I mentioned."
+   },
+   {
+    "metric": "FY30 revenue plan",
+    "value": "INR6,000 cr plan still stands (delayed 2-3 years)",
+    "change": "held",
+    "horizon": "FY30",
+    "quote": "we have FY '30 plan which still stands"
+   },
+   {
+    "metric": "Animal Health revenue",
+    "value": "INR500 cr+ business in 4-5 years",
+    "change": "held",
+    "horizon": "4-5 years",
+    "quote": "we're still on track with the guidance that we gave you in September to build a INR500 crores plus business in the next 4 to 5 years"
+   },
+   {
+    "metric": "DMF filings",
+    "value": "5 to 6 annually",
+    "change": "new",
+    "horizon": "annual",
+    "quote": "We are now targeting 5 to 6 DMF filings annually compared to 2 to 3 filings historically"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Pharma revenue growth FY26 (~10%)",
+    "outcome": "missed",
+    "quote": "while our revenues for Pharma division are down Y-o-Y"
+   },
+   {
+    "metric": "Crop flat revenue FY26",
+    "outcome": "met",
+    "quote": "the crop business had its own structural issues from the industry perspective, which was more or less flattish compared to the previous year"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Zoetis",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Anti-dumping protection",
+   "China+1 enquiries → orders",
+   "Animal health CDMO",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "US FDA warning letter at Bangalore; Q4 pharma shipments lost",
+    "quote": "we have been advised by our GMP consultants to pressure test the system a little more and go slow for some production activities"
+   },
+   {
+    "label": "Exceptional items INR85 cr; PBT negative",
+    "quote": "PBT stood at negative INR79.3 crores, which is after providing INR85 crores as an exceptional item for the entire year"
+   },
+   {
+    "label": "Three years of flat-to-declining revenue",
+    "quote": "last 3 years have been flattish, if not some years have even degrown"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 2,
+   "balance_sheet": 1,
+   "capex": 2,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue guidance",
+    "quote": "I don't want to give any guidance, as I mentioned. There's a lot of uncertainty."
+   },
+   {
+    "topic": "Pricing on Chinese inputs and FY27 margin",
+    "quote": "we do expect FY '27 margins to sustain at improved levels"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

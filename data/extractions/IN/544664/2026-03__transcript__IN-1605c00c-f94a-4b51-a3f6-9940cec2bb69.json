@@ -1,0 +1,151 @@
+{
+ "doc_id": "IN-1605c00c-f94a-4b51-a3f6-9940cec2bb69",
+ "market": "IN",
+ "company_id": "544664",
+ "name": "KSH International Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-30",
+ "period": "2026-03",
+ "title": "KSH International Ltd - 544664 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Capacity-led growth: installed capacity 43,445 t rising to ~59,000 t, utilisation ~70% in Q4, EBITDA/ton ~INR 74,000 in Q4 and ~67,600 for FY26, with 65-70k guided as sustainable.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Mix shift",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 70,
+   "quote": "Consolidated company utilization was approximately 70% during Q4."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said transformer OEMs are not backward integrating and that new CTC entrants may take five to seven years to qualify.",
+   "quote": "once Phase II of our Supa expansion is complete, we would have an installed capacity of roughly 59,000 metric tons."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation ~70% in Q4",
+    "quote": "Consolidated company utilization was approximately 70% during Q4.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capacity 43,445 t → ~59,000 t",
+    "quote": "once Phase II of our Supa expansion is complete, we would have an installed capacity of roughly 59,000 metric tons.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA/ton ~INR 74,000 in Q4",
+    "quote": "we reported an EBITDA per ton of approximately INR 74,000, up from roughly INR 64,500 in Q3 and 60,000 a year ago",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital days 65-68",
+    "quote": "working capital days, calculated on average balances, which remain between 65 to 68 days in FY26",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "New CTC entrants 5-7 yrs to qualify",
+    "quote": "new entrants have taken anywhere from five to seven years to finally come up to a 765kV range as well",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA per ton (sustainable range)",
+    "value": "INR 65,000-70,000 long term; 67,000-74,000 in another answer",
+    "change": "held",
+    "quote": "we feel a range of around 65,000 to 70,000 per metric ton will be sustainable on a long-term basis"
+   },
+   {
+    "metric": "FY27 volume growth",
+    "value": "at least last year's growth rate of ~21%",
+    "change": "new",
+    "quote": "at the very least we should be able to do last year's growth, which is 21%"
+   },
+   {
+    "metric": "Payable days",
+    "value": "above 25 days, close to 30 by year end",
+    "change": "new",
+    "quote": "the current year also are targeted to improve the payable days beyond 25 to close to 30 days by the end of the year"
+   },
+   {
+    "metric": "Export share",
+    "value": "back to ~40% over next couple of years",
+    "change": "new",
+    "quote": "Our endeavor is to take it back up to about 40% over the next couple of years"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA per ton range",
+    "outcome": "met",
+    "quote": "For FY26, we delivered EBITDA per ton above our expected range of around 65,000 to 67,000 per metric ton."
+   }
+  ],
+  "entities": [
+   {
+    "name": "PGCIL",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Auto EV transition",
+   "Anti-dumping protection",
+   "Capex cycle revival (private)",
+   "Nearshoring / reshoring (US)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow negative on working capital build",
+    "quote": "the cash flows from operating activities, mainly because of the investments that are going into the receivables as well as inventory is negative in the current year"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 4,
+   "capex": 2,
+   "balance_sheet": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "CTC volume by product",
+    "quote": "That level of granularity is not something that we do provide."
+   },
+   {
+    "topic": "Channel and CTC competitor entry",
+    "quote": "Sir, you're not available, sir."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

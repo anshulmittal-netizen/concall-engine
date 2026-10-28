@@ -1,0 +1,162 @@
+{
+ "doc_id": "IN-704ecf99-f228-43b3-85c6-29430dfac8f3",
+ "market": "IN",
+ "company_id": "542649",
+ "name": "Rail Vikas Nigam Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "Rail Vikas Nigam Ltd - 542649 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Q4 FY26 standalone EBITDA margin fell to 5.83% (from 10.36% in Q3) on onerous contracts and JV reconciliation; management guides FY27 revenue up 15-20% with margin recovery, but Q1 expected to be challenging.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Standalone EBITDA margin 10.36% → 5.83%",
+    "quote": "EBITDA margin reduced from 10.36% in quarter three to 5.83% in quarter four FY26",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "₹3,400 cr receivable from MoR delayed",
+    "quote": "INR 3,400 crores were recoverable from MoR, which we could not get within this year, but we have received now in April",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth 15-20% guided",
+    "quote": "We are definitely expecting a good rise in our revenue, which will be around, say, 15-20%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Onerous contract charge ₹54 cr",
+    "quote": "adjust for the onerous contract of INR 54 crores",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Standalone revenue growth FY27",
+    "value": "15-20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We are definitely expecting a good rise in our revenue, which will be around, say, 15-20%"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "improve vs FY26, Q1 FY27 slightly challenging",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "even the margins will definitely increase. That I want to assure you. And it will be much better than this year."
+   },
+   {
+    "metric": "Vande Bharat deliveries",
+    "value": "5 sets in first year after prototype, 120 sets in five years",
+    "change": "new",
+    "horizon": "5 years",
+    "quote": "Thereafter, in the first year, five sets will be supplied. Thereafter, it will be increased, and the total 120 sets will be supplied in five years time."
+   },
+   {
+    "metric": "Rishikesh Karnaprayag completion",
+    "value": "December 2029",
+    "change": "new",
+    "horizon": "2029",
+    "quote": "Target for completion by December 2029"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Ministry of Railways",
+    "relation": "customer"
+   },
+   {
+    "name": "Krishnapatnam Railway Company",
+    "relation": "partner"
+   },
+   {
+    "name": "Bharat Sanchar Nigam Limited",
+    "relation": "customer"
+   },
+   {
+    "name": "Kinet Railway Solutions",
+    "relation": "partner"
+   },
+   {
+    "name": "NMDC",
+    "relation": "customer"
+   },
+   {
+    "name": "Visakhapatnam Port Trust",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Railway capex",
+   "Consolidation / competitor exits",
+   "Defence indigenisation"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables stuck: Krishnapatnam ₹1,116 cr incl. ₹890 cr interest",
+    "quote": "the total receivable, which is due from the Krishnapatnam stands at INR 1,116 crore"
+   },
+   {
+    "label": "Margin collapse on onerous contracts",
+    "quote": "The decline in the above parameter is mainly driven by a few onerous contracts and reconciliation adjustment relating to joint ventures."
+   },
+   {
+    "label": "PAT down 43% QoQ-style margin pressure",
+    "quote": "PAT declined by 19.66% QoQ and 43.14% quarter four to quarter four compared to FY25-26"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 2,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Krishnapatnam recovery timeline",
+    "quote": "we hope that in the coming two years time, mostly their receivables will be wiped out"
+   },
+   {
+    "topic": "Defence logistics upgrade",
+    "quote": "we will not be able to explain here. There will be many strategic projects in pipeline."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

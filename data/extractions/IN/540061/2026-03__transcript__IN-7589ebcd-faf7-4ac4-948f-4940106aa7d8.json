@@ -1,0 +1,160 @@
+{
+ "doc_id": "IN-7589ebcd-faf7-4ac4-948f-4940106aa7d8",
+ "market": "IN",
+ "company_id": "540061",
+ "name": "Bigbloc Construction Ltd",
+ "doc_type": "transcript",
+ "date": "2026-06-02",
+ "period": "2026-03",
+ "title": "Bigbloc Construction Ltd - 540061 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Building materials",
+  "thesis": "Volumes up 40% in Q4 but EBITDA margin only 7.36% and FY26 net loss ~INR 9 crore; management says pricing pass-through is lagging raw-material costs up 5-15%, with utilisation at 78% in Q4 and no capex committed.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 78,
+   "quote": "Average capacity utilization during the quarter improved to around 78%."
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 53% (Q1) → 78% (Q4)",
+    "quote": "Capacity utilization has been steadily rising from 53% in Q1 to 78% in Q4",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Raw material costs up 5-15%",
+    "quote": "the costs have escalated by approximately anywhere between 5% to 15%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Cost pass-through started last quarter",
+    "quote": "since last quarter, we have been able to pass on some increase in cost to the customer",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Q1 FY27 volume ~20% up YoY",
+    "quote": "we have been able to see almost 20 percent growth in volumes in Q1 FY27 as compared to Q1 FY26",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 volume growth",
+    "value": "10-20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are targeting a volume growth in the range of almost 10% to 20%"
+   },
+   {
+    "metric": "FY27 capacity utilisation increase",
+    "value": "10-14%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We expect a healthy 10 -14% increase in capacity utilization during FY27."
+   },
+   {
+    "metric": "Return to profit",
+    "value": "in FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "hopefully in this year, we should be returning to profits again"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Siam Cement Bigbloc Construction Technology",
+    "relation": "peer"
+   },
+   {
+    "name": "L&T",
+    "relation": "customer"
+   },
+   {
+    "name": "Runwal",
+    "relation": "customer"
+   },
+   {
+    "name": "Shapoorji",
+    "relation": "customer"
+   },
+   {
+    "name": "PSP",
+    "relation": "customer"
+   },
+   {
+    "name": "Adani",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Net loss ~INR 9 cr FY26 despite 26% revenue growth",
+    "quote": "At the PAT level, the company reported a net loss of around INR 9 crores."
+   },
+   {
+    "label": "Margin guidance vague; recovery pinned on pass-through",
+    "quote": "hopefully, we will be able to pass on the further increase in cost to the customer"
+   },
+   {
+    "label": "Carbon credit monetisation claimed but no revenue",
+    "quote": "in FY26, there has been no contribution in revenues or profitability from the carbon credits at all."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Realisation trend",
+    "quote": "So, their selling price was almost similar as compared to Q3."
+   },
+   {
+    "topic": "Capex plan",
+    "quote": "we will be coming up with the expansion plan for the same, hopefully, in the upcoming quarters."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}
