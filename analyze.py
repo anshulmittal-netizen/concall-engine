@@ -652,15 +652,44 @@ def build(market: str, log=print) -> dict:
         "firstTimers": first_timers, "historyChecked": len(hist),
         "portfolio": (lambda pf: {"companies": [{"id": c, "name": p["name"], "symbol": p["symbol"]} for c, p in pf["companies"].items()],
                                   "etfs": pf["etfs"]})(__import__("universe").portfolio()) if market == "IN" else None,
+        "people": _people(market, {c["key"] for c in calls}),
         "mgmt": mgmt_list[:400], "mgmtChecked": read_json(DATA / f"mgmt_{market}.json", {}).get("checked"),
         "inProgress": [{"season": label_from_key(p, market), "calls": per_count[p]} for p in later],
         "calendar": calendar,
         # results calendar + posted results as of this build; the page prefers data/results_in.json when newer
         "results": read_json(DATA / "results_in.json", None) if market == "IN" else None,
     }
-    write_json(SITE / "data" / f"{market.lower()}.json", data)
+    write_json(SITE / "data" / f"{market.lower()}.json", data, compact=True)  # the page's main file: kept small
     log(f"{market}: wrote {len(out_cos)} companies, {len(sectors)} sectors, {len(themes)} themes, {len(ideas)} ideas")
     return data
+
+
+def _people(market: str, keys: set) -> dict | None:
+    """Who asked questions on each call (participants.py), compact for the page:
+    firms as [key, name] once, and per call [[analyst, firm index, turns], ...]."""
+    import participants
+    store = read_json(DATA / f"participants_{market}.json", {}) or {}
+    if not store:
+        return None
+    names = participants.firm_names(store)
+    firms, fidx, calls = [], {}, {}
+    for v in sorted(store.values(), key=lambda v: v.get("date") or ""):
+        key = f"{v['id']}|{v.get('period')}"
+        if key not in keys:
+            continue
+        row = {r[0].lower(): r for r in calls.get(key, [])}
+        for p in v.get("p", []):
+            fk = participants.firm_key(p["firm"]) if p["firm"] else ""
+            if fk and fk not in fidx:
+                fidx[fk] = len(firms)
+                firms.append([fk, names.get(fk, p["firm"])])
+            k = p["name"].lower()
+            if k in row:
+                row[k][2] += p["q"]
+            else:
+                row[k] = [p["name"], fidx.get(fk, -1), p["q"]]
+        calls[key] = list(row.values())
+    return {"firms": firms, "calls": calls}
 
 
 def _guidance(cs):

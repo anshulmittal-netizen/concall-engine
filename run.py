@@ -228,6 +228,11 @@ def cmd_history(a):
     history.update(earliest, log)
 
 
+def cmd_participants(a):
+    import participants
+    participants.run(a.market, get_text, log, a.limit)
+
+
 def cmd_analyze(a):
     analyze.build(a.market, log)
 
@@ -254,12 +259,17 @@ def cmd_all(a):
             cmd_growth(a2)
         except Exception as ex:  # never let the growth reads stop the night's run
             log(f"growth reads skipped: {ex}")
+    try:  # who asked questions on each call: read from the transcript text, no model calls
+        import participants
+        participants.run(a.market, get_text, log)
+    except Exception as ex:
+        log(f"participants skipped: {ex}")
     cmd_analyze(a)
 
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "mgmt", "history", "analyze", "all", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "mgmt", "history", "participants", "analyze", "all", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
@@ -268,7 +278,7 @@ def main(argv=None):
     a = p.parse_args(argv)
     if a.command != "serve" and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "mgmt": cmd_mgmt, "history": cmd_history, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "mgmt": cmd_mgmt, "history": cmd_history, "participants": cmd_participants, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":

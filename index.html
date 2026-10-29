@@ -541,6 +541,16 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
 .fc-px{display:flex;justify-content:space-between;align-items:flex-end;gap:8.5px;flex-wrap:wrap;padding:9.5px 11px;border-radius:12px;background:var(--panel2);border:1px solid var(--line)}
 .fc-px-now{display:grid;gap:2px}.fc-px-now b{font-family:var(--display);font-size:18px;line-height:1.1}
 .fc-px-mv{display:grid;justify-items:end;gap:3.5px}
+/* ---------- who's asking ---------- */
+.ppl-sum{display:flex;flex-wrap:wrap;gap:5px 14px;align-items:center;font-size:11.5px;color:var(--muted)}
+.ppl-sum b{color:var(--fg);font-size:13px}
+.ppl{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));gap:5px}
+.ppl-c{position:relative;display:grid;gap:1px;text-align:left;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--tc);border-radius:8px;padding:5px 8px;font-size:10.5px;transition:border-color .15s,transform .15s var(--ease)}
+.ppl-c:not([disabled]):hover{border-color:var(--accent);transform:translateY(-1px)}
+.ppl-c b{font-size:11.5px}.ppl-c span{color:var(--muted)}
+.ppl-c i{position:absolute;top:4px;right:5px;font-style:normal;font-size:8.5px;font-weight:700;color:var(--up);text-transform:uppercase;letter-spacing:.06em}
+.ppl-row{grid-template-columns:minmax(0,1fr) 80px 30px}
+.ppl-open{border-color:var(--accent)}
 /* ---------- portfolio ---------- */
 .pf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290.5px),1fr));gap:13.5px}
 .pf{display:grid;gap:12px;align-content:start;animation:rise .5s var(--ease) both;transition:transform .25s var(--ease),box-shadow .25s}
@@ -706,6 +716,8 @@ const GL = {
   rescal:['Results calendar','The board meeting dates companies have announced to BSE for approving their quarterly results, from BSE’s forthcoming-results list. Results are usually filed the same evening.'],
   posted:['Results posted','Numbers from the official XBRL results filing on BSE: consolidated (C) when the company files them, otherwise standalone (S). Growth compares the same basis: YoY with the same quarter last year, QoQ with the previous quarter. PAT is profit attributable to shareholders (after minority interest). Growth is left blank when the earlier figure was a loss or close to zero.'],
   pxmove:['Price move after results','The reference is the last close before the market could react: the previous close for results filed before 3 pm IST, that day’s close for results filed at 3 pm or later (too late to trade on). Day 1 is the next session’s close against it; since results is the latest price against it. Prices are daily closes from Yahoo Finance, NSE first, and can be delayed. Moves include the whole market’s move that day.'],
+  people:['Who was on the call','The analysts and investors who asked questions, read from the moderator’s introduction of each questioner in the transcript (“the next question is from the line of Ranvir Singh from Nuvama Wealth”). Turns counts how often each one came back. Firms are matched by name, so the same firm spelt differently on two calls may show twice. Only questioners are counted, not everyone who listened in.'],
+  peoplenew:['New fund houses','A mutual fund, AMC, insurer or pension fund that asked questions on this call but on none of the company’s earlier calls we have read. A new institution taking an interest can come before it buys.'],
   rsgrade:['Quarter grade','A plain read of the quarter against the same quarter last year. Strong: revenue up 15%+ and profit up 20%+ (and operating profit up 15%+). Solid: revenue and profit both up 5%+. Weak: a loss, profit down 10%+ or revenue down 5%+. Mixed: anything in between. It is separate from the Concall Signal Score.'],
   opprofit:['Operating profit','EBITDA for companies (profit before exceptional items and tax, plus finance costs and depreciation, less other income). For banks, pre-provision operating profit (PPOP) and net interest income (NII) in place of revenue. For other lenders and insurers, profit before tax, since interest is their main cost.'],
   upcoming:['Coming up','Earnings calls companies have announced on BSE, read from the call intimation each company must file before the call. Dates and times are read from the filing automatically, so open the intimation to confirm before dialling in. Reschedules replace the original date.'],
@@ -930,7 +942,7 @@ function animateWidgets(root) {
 /* ---------- views ---------- */
 const VIEWS = [
   {group: 'Start', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['ask', 'Ask the calls'], ['help', 'How to use']]},
-  {group: 'Calls', items: [['calls', 'All calls'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
+  {group: 'Calls', items: [['calls', 'All calls'], ['people', 'Who’s asking'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Results', items: [['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
   {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes'], ['ideas', 'Ideas & red flags']]}
@@ -973,7 +985,7 @@ const qBadge = () => `<span class="badge${inProg(curQ()) ? ' warn' : ''}">${curQ
 function companyRow(c, i, opts = {}) {
   return `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key || '')}">
     <span class="rk c-rk">${opts.rank ?? i + 1}</span>
-    <span class="c-co" style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span><span class="sub">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}${esc(c.period || '')}</span></span>
+    <span class="c-co" style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span><span class="sub">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}${esc(c.period || '')}${(n => n ? ` · ${n} on the call` : '')(callPeople(c.key || '').length)}</span></span>
     <span class="c-sc">${scoreCell(c.score, c.veto, i)}</span>
     <span class="c-ch">${dcell(c.delta)}</span>
     <span class="c-sec sub" style="min-width:0">${esc(c.sector)}${c.bigSector && c.bigSector !== c.sector ? '<br>' + esc(c.bigSector) : ''}</span>
@@ -1645,6 +1657,93 @@ function vPortfolio() {
     ${pfEtfs().length ? `<p class="small muted">ETFs in the portfolio, not tracked (no concalls or results): ${pfEtfs().map(e => `<b>${esc(e.symbol)}</b> ${esc(e.name)}`).join(' · ')}.</p>` : ''}`;
 }
 
+/* Who's asking: analysts and investors on each call, read from the transcripts (participants.py) */
+const PEOPLE = () => D.people || {firms: [], calls: {}};
+const FT = [['indiv', 'Individual', /individual investor/i, 'var(--faint)'],
+  ['media', 'Media', /cnbc|\bet now|reuters|bloomberg|economic times|business standard|moneycontrol|\bmint\b|times of india|ndtv|zee business|press trust|\bpti\b|businessline|financial express|bq prime|news|television|\btv\b/i, 'var(--rose)'],
+  ['fund', 'Fund / AMC', /mutual fund|\bamc\b|asset management|life insurance|general insurance|insurance\b|pension|provident|sovereign|family office|\bfund\b/i, 'var(--v5)'],
+  ['broker', 'Broker / research', /securities|broking|stock ?brok|institutional equities|capital markets|equities|research|investec|nuvama|motilal|ambit|kotak|jm financial|axis capital|iifl|hsbc|jefferies|macquarie|morgan stanley|goldman|citi|nomura|clsa|ubs|bofa|haitong|emkay|dolat|prabhudas|elara|nirmal bang|antique|systematix|centrum|anand rathi|phillip ?capital|sbicap|equirus|batlivala|spark capital|monarch|choice|arihant|ventura|sharekhan|geojit|yes securities|bob capital|dam capital|pl capital|investec/i, 'var(--accent)'],
+  ['pms', 'PMS / wealth', /\bpms\b|portfolio|wealth|investment advis|advisors?\b|advisory/i, 'var(--saffron)'],
+  ['other', 'Other investor', /./, 'var(--v3)']];
+const firmType = n => (FT.find(t => t[2].test(n || '')) || FT.at(-1));
+function callPeople(key) {
+  const P = PEOPLE(), rows = P.calls[key] || [];
+  return rows.map(([name, fi, q]) => { const f = P.firms[fi]; return {name, q, fk: f ? f[0] : '', firm: f ? f[1] : ''}; });
+}
+const prevCallKey = (id, key) => { const cs = callsFor(id), i = cs.findIndex(c => c.key === key); return i >= 0 ? cs[i + 1]?.key : undefined; };
+function peopleBlock(id, key) {
+  const ps = callPeople(key);
+  if (!D.people) return '';
+  if (!ps.length) return `<section class="sec"><h3>Who was on the call ${tip('people')}</h3><p class="small muted">No questioners could be read from this transcript (some list only first names, or the Q&A was not transcribed).</p></section>`;
+  const pk = prevCallKey(id, key), prev0 = pk ? callPeople(pk) : null, prev = prev0 && prev0.length ? prev0 : null, pf = prev ? new Set(prev.map(p => p.fk).filter(Boolean)) : null;
+  const firms = new Set(ps.map(p => p.fk).filter(Boolean)), fresh = pf ? [...firms].filter(f => !pf.has(f)).length : null;
+  const mix = FT.map(t => [t, ps.filter(p => firmType(p.firm)[0] === t[0]).length]).filter(x => x[1]);
+  return `<section class="sec"><h3>Who was on the call ${tip('people')}</h3>
+    <div class="ppl-sum"><span><b class="num">${ps.length}</b> questioner${ps.length === 1 ? '' : 's'}</span><span><b class="num">${firms.size}</b> firm${firms.size === 1 ? '' : 's'}</span>
+      ${prev ? `<span>${dcell(ps.length - prev.length)} vs last call (${prev.length})</span>${fresh ? `<span class="pill" style="--pc:var(--up)">${fresh} new firm${fresh === 1 ? '' : 's'}</span>` : ''}` : ''}</div>
+    <div class="sb-stack" style="height:10px">${mix.map(([t, n]) => `<i style="width:${100 * n / ps.length}%;background:${t[3]}" data-tt="${ttA(`${t[1]}: ${n}`)}"></i>`).join('')}</div>
+    <div class="sb-leg">${mix.map(([t, n]) => `<span style="--tc:${t[3]}">${t[1]} ${n}</span>`).join('')}</div>
+    <div class="ppl">${ps.map(p => { const t = firmType(p.firm), isNew = pf && p.fk && !pf.has(p.fk);
+      return `<button class="ppl-c" data-firm="${esc(p.fk)}" ${p.fk ? '' : 'disabled'} style="--tc:${t[3]}"><b>${esc(p.name)}</b><span>${esc(p.firm || 'Firm not stated')}${p.q > 1 ? ` · ${p.q} turns` : ''}</span>${isNew ? '<i>new</i>' : ''}</button>`; }).join('')}</div></section>`;
+}
+/* firm and analyst roll-ups for the picked quarter */
+function peopleStats() {
+  const cq = callsQ(), byFirm = {}, byName = {}, P = PEOPLE();
+  cq.forEach(c => callPeople(c.key).forEach(p => {
+    if (p.fk) { const f = (byFirm[p.fk] = byFirm[p.fk] || {fk: p.fk, name: p.firm, calls: [], people: new Set(), q: 0}); f.calls.push(c); f.people.add(p.name); f.q += p.q; }
+    const nk = p.name.toLowerCase() + '|' + p.fk, a = (byName[nk] = byName[nk] || {name: p.name, firm: p.firm, fk: p.fk, calls: [], q: 0}); a.calls.push(c); a.q += p.q;
+  }));
+  return {cq, firms: Object.values(byFirm).sort((a, b) => b.calls.length - a.calls.length || b.q - a.q), people: Object.values(byName).sort((a, b) => b.calls.length - a.calls.length || b.q - a.q)};
+}
+function vPeople() {
+  if (!D.people) return head('Who’s asking', 'The analysts and investors who asked questions on each call.', '') + '<div class="empty">Participants appear after the next nightly run reads the transcripts.</div>';
+  const f = S.ppl = S.ppl || {type: '', search: '', open: ''}, st = peopleStats(), q = f.search.trim().toLowerCase();
+  const withP = st.cq.filter(c => callPeople(c.key).length), totP = withP.reduce((n, c) => n + callPeople(c.key).length, 0);
+  const pass = x => (!f.type || firmType(x.firm || x.name)[0] === f.type) && (!q || (x.name + ' ' + (x.firm || '')).toLowerCase().includes(q));
+  const firms = st.firms.filter(x => x.fk && pass(x) && (f.type === 'indiv' || firmType(x.name)[0] !== 'indiv')), people = st.people.filter(pass);
+  const maxF = Math.max(1, ...firms.slice(0, 25).map(x => x.calls.length)), maxA = Math.max(1, ...people.slice(0, 20).map(x => x.calls.length));
+  /* interest vs the company's previous call, and firms new to a company */
+  const moves = withP.map(c => { const pk = prevCallKey(c.id, c.key), prev = pk ? callPeople(pk) : null; if (!prev || !prev.length) return null;
+      const now = callPeople(c.key), pf = new Set(prev.map(p => p.fk).filter(Boolean)), nf = [...new Set(now.map(p => p.fk).filter(fk => fk && !pf.has(fk)))];
+      return {c, now: now.length, prev: prev.length, d: now.length - prev.length, nf: nf.map(k => now.find(p => p.fk === k)), funds: nf.filter(k => firmType(now.find(p => p.fk === k).firm)[0] === 'fund').length}; }).filter(Boolean);
+  const rising = moves.filter(m => m.d > 0).sort((a, b) => b.d - a.d || b.now - a.now).slice(0, 10);
+  const fundNew = moves.filter(m => m.funds).sort((a, b) => b.funds - a.funds || b.nf.length - a.nf.length).slice(0, 12);
+  const mix = FT.map(t => [t, st.cq.reduce((n, c) => n + callPeople(c.key).filter(p => firmType(p.firm)[0] === t[0]).length, 0)]);
+  const open = f.open && st.firms.find(x => x.fk === f.open);
+  setTimeout(() => animateWidgets($('#view')), 0);
+  return head('Who’s asking', 'The analysts and investors who asked questions on each call, with their firms. Track which firms are following a company, who is new to the call, and where interest is rising.', `
+      <ul><li>Questioners are read from each transcript’s Q&A, from the moderator’s introduction (“the next question is from the line of … from …”) ${tip('people')}.</li>
+      <li><b>Most active firms</b> counts the calls a firm asked questions on this quarter. Click a firm to see every company it followed.</li>
+      <li><b>Interest rising</b> compares the number of questioners with the company’s previous call. <b>New fund houses</b> lists calls where a mutual fund, AMC or insurer asked questions for the first time on our record.</li>
+      <li>Firm types are read from the firm’s name, so a few may be misfiled. Open any call to see its full list in the company panel.</li></ul>`, qBadge()) + `
+    <div class="board">
+      <section class="w span3 kpi"><span class="l">Questioners on the record</span><span class="v" data-count="${totP}">${fmt(totP)}</span><span class="l">across ${fmt(withP.length)} of ${fmt(st.cq.length)} calls</span></section>
+      <section class="w span3 kpi"><span class="l">Distinct firms</span><span class="v" data-count="${st.firms.length}">${fmt(st.firms.length)}</span><span class="l">${fmt(st.people.length)} people</span></section>
+      <section class="w span3 kpi"><span class="l">Questioners per call</span><span class="v">${withP.length ? (totP / withP.length).toFixed(1) : '–'}</span><span class="l">median call ${median(withP.map(c => callPeople(c.key).length)) ?? '–'}</span></section>
+      <section class="w span3"><div class="w-head"><h3>Who they are</h3></div><div class="sb-stack">${mix.filter(x => x[1]).map(([t, n]) => `<i style="width:${100 * n / Math.max(1, totP)}%;background:${t[3]}" data-tt="${ttA(`${t[1]}: ${fmt(n)}`)}"></i>`).join('')}</div>
+        <div class="sb-leg">${mix.map(([t, n]) => `<span style="--tc:${t[3]}">${t[1]} ${fmt(n)}</span>`).join('')}</div></section>
+    </div>
+    <div class="toolbar"><input type="search" id="ppl-search" placeholder="Search analyst or firm" value="${esc(f.search)}" aria-label="Search analysts and firms">
+      ${[['', 'All'], ...FT.map(t => [t[0], t[1]])].map(([k, n]) => `<button class="chip" data-pt="${k}" aria-pressed="${f.type === k}">${n}</button>`).join('')}</div>
+    ${open ? `<section class="w ppl-open"><div class="w-head"><h3>${esc(open.name)} <span class="pill" style="--pc:${firmType(open.name)[3]}">${firmType(open.name)[1]}</span></h3><button class="btn" data-firm="">Close ✕</button></div>
+      <p class="small muted">${open.calls.length} call${open.calls.length === 1 ? '' : 's'} this quarter · ${open.people.size} ${open.people.size === 1 ? 'person' : 'people'}: ${[...open.people].map(esc).join(', ')}</p>
+      <div class="chips">${open.calls.slice().sort((a, b) => b.date.localeCompare(a.date)).map(c => `<button class="btn" data-open="${esc(c.id)}" data-k="${esc(c.key)}">${star(c.id)}${esc(c.name)} · <span style="color:${vcol(c.score, c.veto)}">${c.score}</span></button>`).join('')}</div></section>` : ''}
+    <div class="two">
+      <section class="w"><div class="w-head"><h3>Most active firms</h3><span class="small muted">${fmt(firms.length)} firms</span></div>
+        <div class="movers">${firms.slice(0, 25).map((x, i) => { const t = firmType(x.name); return `<button class="mv ppl-row" data-firm="${esc(x.fk)}" data-tt="${ttA(`${x.name}\n${x.calls.length} calls · ${x.people.size} people · ${x.q} turns`)}"><b>${esc(x.name)}</b>
+          <span class="tr"><i style="width:${100 * x.calls.length / maxF}%;background:${t[3]};animation-delay:${i * .03}s"></i></span><span class="num small">${x.calls.length}</span></button>`; }).join('') || '<p class="small muted">No firm matches.</p>'}</div></section>
+      <section class="w"><div class="w-head"><h3>Most active analysts</h3><span class="small muted">${fmt(people.length)} people</span></div>
+        <div class="movers">${people.slice(0, 20).map((x, i) => `<button class="mv ppl-row" data-firm="${esc(x.fk)}" ${x.fk ? '' : 'disabled'} data-tt="${ttA(`${x.name} · ${x.firm || 'firm not stated'}\nOn ${x.calls.length} calls: ${x.calls.slice(0, 8).map(c => c.name.replace(/ Ltd\.?$/, '')).join(', ')}${x.calls.length > 8 ? '…' : ''}`)}"><b>${esc(x.name)} <span class="muted" style="font-weight:400">· ${esc(x.firm || '–')}</span></b>
+          <span class="tr"><i style="width:${100 * x.calls.length / maxA}%;background:${firmType(x.firm)[3]};animation-delay:${i * .03}s"></i></span><span class="num small">${x.calls.length}</span></button>`).join('') || '<p class="small muted">No analyst matches.</p>'}</div></section>
+    </div>
+    <div class="two">
+      <section class="w"><div class="w-head"><h3>Interest rising</h3><span class="small muted">more questioners than the last call</span></div>
+        ${rising.length ? `<div class="rows mini-list">${rising.map(m => `<button class="r" data-open="${esc(m.c.id)}" data-k="${esc(m.c.key)}"><span style="min-width:0"><span class="nm" style="display:block">${star(m.c.id)}${esc(m.c.name)}</span><span class="sub">${m.prev} → ${m.now} questioners${m.nf.length ? ` · new: ${m.nf.slice(0, 3).map(p => esc(p.firm)).join(', ')}${m.nf.length > 3 ? '…' : ''}` : ''}</span></span><span class="delta up">▲${m.d}</span></button>`).join('')}</div>` : '<p class="small muted">Needs a previous call on record to compare with.</p>'}</section>
+      <section class="w"><div class="w-head"><h3>New fund houses on the call</h3>${tip('peoplenew')}</div>
+        ${fundNew.length ? `<div class="rows mini-list">${fundNew.map(m => `<button class="r" data-open="${esc(m.c.id)}" data-k="${esc(m.c.key)}"><span style="min-width:0"><span class="nm" style="display:block">${star(m.c.id)}${esc(m.c.name)}</span><span class="sub">${m.nf.filter(p => firmType(p.firm)[0] === 'fund').map(p => esc(p.firm)).join(', ')}</span></span><span class="pill" style="--pc:var(--v5)">${m.funds} new</span></button>`).join('')}</div>` : '<p class="small muted">No mutual fund, AMC or insurer is new to a call this quarter yet.</p>'}</section>
+    </div>`;
+}
+
 /* First-time callers */
 function vFirst() {
   const rows = (D.firstTimers || []).filter(r => (curQ() === 'all' || r.period === curQ()) && (!S.first.status || r.status === S.first.status));
@@ -2128,7 +2227,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, portfolio: vPortfolio, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -2236,6 +2335,7 @@ async function fillSummary(key) {
   const list = (t, items) => (items = real(items)).length ? `<div class="scard"><h4>${t}</h4><ul>${items.map(v => `<li>${esc(v)}</li>`).join('')}</ul></div>` : '';
   box.innerHTML = `<div style="display:grid;gap:18px">
     <section class="sec"><h3 style="font-size:15px">${esc(s.headline)}</h3><p style="max-width:70ch">${esc(s.overview)}</p></section>
+    ${peopleBlock(S.drawer.id, key)}
     ${(s.financial_highlights || []).length ? `<section class="sec"><h3>Financial highlights</h3><div class="fin">${s.financial_highlights.map(f => `<div><span>${esc(f.metric)}</span><b>${esc(f.value)}</b><span>${esc(f.change || '')}</span></div>`).join('')}</div></section>` : ''}
     <div class="scards">
       ${(s.segments || []).length ? `<div class="scard"><h4>Segments</h4><ul>${s.segments.map(g => `<li><b>${esc(g.name)}:</b> ${esc(g.commentary)}</li>`).join('')}</ul></div>` : ''}
@@ -2394,6 +2494,8 @@ document.addEventListener('click', e => {
   if (t.closest('[data-close]')) { closeCo(); return; }
   const v = t.closest('[data-v]');
   if (v) { if (v.dataset.sort) { S.calls.sort = v.dataset.sort; S.calls.limit = 50; } if (S.drawer) closeCo(); go(v.dataset.v); return; }
+  const fm = t.closest('[data-firm]'); if (fm && !fm.disabled) { if (S.drawer) closeCo(); S.ppl = {...(S.ppl || {type: '', search: ''}), open: fm.dataset.firm}; if (S.view !== 'people') go('people'); else render(); if (fm.dataset.firm) setTimeout(() => $('.ppl-open')?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'}), 60); return; }
+  const pt = t.closest('[data-pt]'); if (pt) { S.ppl = {...(S.ppl || {search: '', open: ''}), type: pt.dataset.pt}; render(); return; }
   const sj = t.closest('[data-sec-jump]'); if (sj) { S.openSec.add(sj.dataset.secJump); render(); setTimeout(() => [...document.querySelectorAll('.trk .r.sec')].find(x => x.textContent.trim().startsWith(sj.dataset.secJump))?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'center'}), 60); return; }
   const mvb = t.closest('[data-mv]'); if (mvb) { S.mv = mvb.dataset.mv; render(); return; }
   const dis = t.closest('[data-dismiss]'); if (dis) { store.set(dis.dataset.dismiss, false); render(); return; }
@@ -2436,6 +2538,7 @@ document.addEventListener('click', e => {
 $('#nav').addEventListener('click', e => { const b = e.target.closest('[data-v]'); if (b) { e.stopPropagation(); if (S.drawer) closeCo(); go(b.dataset.v); } });
 document.addEventListener('toggle', e => { const d = e.target; if (d.matches && d.matches('details[data-how]')) store.set('how-' + d.dataset.how, d.open); }, true);
 document.addEventListener('input', e => {
+  if (e.target.id === 'ppl-search') { const pos = e.target.selectionStart; S.ppl = {...(S.ppl || {type: '', open: ''}), search: e.target.value}; render(); const i = $('#ppl-search'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   for (const [id, st] of [['rc-search', S.rc], ['rs-search', S.rs]]) if (e.target.id === id) { const pos = e.target.selectionStart; st.search = e.target.value; render(); const i = $('#' + id); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   if (e.target.id === 'up-search') { const v = e.target.value, pos = e.target.selectionStart; S.up.search = v; render(); const i = $('#up-search'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   if (e.target.id === 'c-search') { S.calls.search = e.target.value; S.calls.limit = 50; fillCalls(); }

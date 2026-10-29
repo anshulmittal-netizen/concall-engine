@@ -36,11 +36,13 @@ def read_json(path: Path, default=None):
         return default
 
 
-def write_json(path: Path, obj) -> None:
+def write_json(path: Path, obj, compact: bool = False) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
+    text = (json.dumps(obj, ensure_ascii=False, separators=(",", ":"), default=str) if compact
+            else json.dumps(obj, ensure_ascii=False, indent=1, default=str))
+    tmp.write_text(text, encoding="utf-8")
     tmp.replace(path)
 
 
