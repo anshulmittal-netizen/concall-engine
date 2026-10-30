@@ -118,12 +118,20 @@ def cmd_results(a):
     results_in.run(universe.with_watch(uni), log=log, max_companies=a.limit or 80)
 
 
+def _billing(msg: str) -> bool:
+    """An account problem (no API credit), not a problem with the document."""
+    m = (msg or "").lower()
+    return "credit balance is too low" in m or "billing" in m
+
+
 def cmd_extract(a):
     import extract, textify
     man_path = DATA / f"manifest_{a.market}.json"
     manifest = read_json(man_path, {})
     allowed = set(settings()["inputs"]["india" if a.market == "IN" else "us"]) | ({"interview"} if a.interviews else set())
     for e in manifest.values():  # give failed reads one more try
+        if e["status"] == "error" and _billing(e.get("error", "")):  # never the document's fault: retry freely
+            e["status"] = "listed"; e.pop("error", None); continue
         if e["status"] == "error" and e.get("attempts", 1) < 2:
             e["status"] = "listed"; e["attempts"] = e.get("attempts", 1) + 1
     todo = [e for e in manifest.values() if e["status"] == "listed" and e["doc_type"] in allowed]
@@ -172,6 +180,9 @@ def cmd_extract(a):
             e["status"] = "extracted"; e["model"] = x["model"]; done += 1
             log(f"  ✓ {e['name']} · {e['doc_type']} · {e['date']} · verified {x['verified_share']:.0%}")
         except Exception as ex:  # keep going; record the failure
+            if _billing(str(ex)):  # out of API credit: every later read would fail the same way
+                log(f"  Anthropic API credit balance too low: stopping reads. {e['name']} stays in the backlog.")
+                break
             e["status"] = "error"; e["error"] = str(ex)[:300]; fail += 1
             traceback.print_exc(limit=1)
         finally:
