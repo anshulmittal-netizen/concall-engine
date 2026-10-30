@@ -470,6 +470,7 @@ def build(market: str, log=print) -> dict:
                           "period": label_from_key(p, market), "periodKey": p, "date": r["date"],
                           "score": r["score"], "delta": r["delta"], "veto": r["veto"], "archetype": r["archetype"],
                           "thesis": r["thesis"], "top": t0, "cred": r["cred"], "credTested": r.get("credTested", 0), "mcap": fmt_mcap(u, market), "mcapCr": u.get("mcap_cr"),
+                          "themes": r["themes"],
                           "hasSummary": any(d.get("summary") for d in r["docs"])})
             for d in r["docs"]:
                 if d.get("summary"):
@@ -648,6 +649,8 @@ def build(market: str, log=print) -> dict:
         "sectors": sectors, "themes": themes, "ideas": ideas,
         "sectorsBy": sectors_by, "themesBy": themes_by, "ideasBy": ideas_by,
         "theme_candidates": [t for t, n in cand.most_common(30) if n >= 2],
+        # the seed dictionary, so the page can find each theme's wording in the call summaries
+        "themeAliases": {str(k): [str(a) for a in (v or [])] for k, v in (load_yaml("themes.yaml") or {}).items()},
         "calls": calls, "tracker": tracker, "trackers": trackers, "summaryCount": len(summaries),
         "firstTimers": first_timers, "historyChecked": len(hist),
         "portfolio": (lambda pf: {"companies": [{"id": c, "name": p["name"], "symbol": p["symbol"]} for c, p in pf["companies"].items()],
