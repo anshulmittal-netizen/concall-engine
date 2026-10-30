@@ -147,6 +147,7 @@ details.how b{font-weight:700}
 .toolbar select,.toolbar input[type=search]{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:7px 9.5px;font-size:11.5px;max-width:100%;color:var(--fg)}
 .toolbar input[type=search]{flex:1 1 220px;min-width:0}
 .chip{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:5px 11px;font-size:11px;font-weight:500;color:var(--muted);transition:all .18s var(--ease)}
+.hd-why{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px;max-width:340px}.hd-why .tag{font-size:9px;padding:1px 6px}.hd-s{font-size:15px;font-weight:700;color:var(--accent)}
 .chip:hover{border-color:var(--line2);color:var(--fg)}
 .chip[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accentsoft)}
 .count-line{font-size:11px;color:var(--muted)}
@@ -759,6 +760,7 @@ const GL = {
   rescal:['Results calendar','The board meeting dates companies have announced to BSE for approving their quarterly results, from BSE’s forthcoming-results list. Results are usually filed the same evening.'],
   posted:['Results posted','Numbers from the official XBRL results filing on BSE: consolidated (C) when the company files them, otherwise standalone (S). Growth compares the same basis: YoY with the same quarter last year, QoQ with the previous quarter. PAT is profit attributable to shareholders (after minority interest). Growth is left blank when the earlier figure was a loss or close to zero.'],
   pxmove:['Price move after results','The reference is the last close before the market could react: the previous close for results filed before 3 pm IST, that day’s close for results filed at 3 pm or later (too late to trade on). Day 1 is the next session’s close against it; since results is the latest price against it. Prices are daily closes from Yahoo Finance, NSE first, and can be delayed. Moves include the whole market’s move that day.'],
+  hidden:['Hidden turnarounds score','Points for the latest posted result: revenue growth on last year (1 for 20%+, 2 for 35%+, 3 for 60%+), the rise in operating margin on last year (1 for 2+ points, 2 for 5+, 3 for 10+), operating profit up 100%+ (1), revenue up 15%+ on last quarter (1), a margin of 15% or more (1) and no concall on record (1). A falling margin costs 1. Highest possible is 10. Modelled on Hindusthan Insulators: revenue +147%, margin 9.5%→43.6%, no concall, before the share went up about five times.'],
   people:['Who was on the call','The analysts and investors who asked questions, read from the moderator’s introduction of each questioner in the transcript (“the next question is from the line of Ranvir Singh from Nuvama Wealth”). Turns counts how often each one came back. Firms are matched by name, so the same firm spelt differently on two calls may show twice. Only questioners are counted, not everyone who listened in.'],
   peoplenew:['New fund houses','A mutual fund, AMC, insurer or pension fund that asked questions on this call but on none of the company’s earlier calls we have read. A new institution taking an interest can come before it buys.'],
   rsgrade:['Quarter grade','A plain read of the quarter against the same quarter last year. Strong: revenue up 15%+ and profit up 20%+ (and operating profit up 15%+). Solid: revenue and profit both up 5%+. Weak: a loss, profit down 10%+ or revenue down 5%+. Mixed: anything in between. It is separate from the Concall Signal Score.'],
@@ -807,7 +809,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pd: {size: '', days: 14, tier: 'strong', post: 14}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, hd: {big: '', search: '', stage: 'notrerated', cap: 8000, min: 7, nocall: false, limit: 50}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pd: {size: '', days: 14, tier: 'strong', post: 14}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -989,7 +991,7 @@ const VIEWS = [
   {group: 'Calls', items: [['calls', 'All calls'], ['people', 'Who’s asking'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Results', items: [['pead', 'Results to watch (PEAD)'], ['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
-  {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes']]}
+  {group: 'Ideas', items: [['hidden', 'Hidden turnarounds'], ['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes']]}
 ];
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
 function navCounts() {
@@ -1002,6 +1004,7 @@ function navCounts() {
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: cyData('sub').rows.filter(r => r.ph === 'turn' && !r.thin).length || '',
+    hidden: RES.data ? (n => n || '')(hdRows().filter(x => x.st[0] === 'early').length) : '',
     themes: themesQ().length, nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
@@ -1603,6 +1606,84 @@ function vResults() {
       <tbody>${shown.map(tr).join('')}</tbody></table></div>`)
       + (rows.length > shown.length ? `<div class="more"><button class="btn" id="rs-more">Show ${cards ? 36 : 100} more</button><span class="count-line">${fmt(rows.length - shown.length)} more</span></div>` : '')
       : `<div class="empty">${all.length ? 'No results match these filters. Widen the period or clear a filter.' : 'No results read yet. They appear after the next check.'}</div>`}`);
+}
+
+/* Hidden turnarounds: the Hindusthan Insulators pattern. A small company whose latest results show revenue
+   growing fast, a sharp jump in margin and profit, ideally with no concall (few analysts follow it), while
+   the share price has not yet re-rated. Read from Results posted, refreshed hourly with it. */
+const hdCap = r => { const v = byId[r.id]?.mcapCr; if (v != null) return v; const m = String(r.mcap || '').replace(/[^\d.]/g, ''); return m ? +m : null; };
+function hdScore(r) {
+  if (r.bank || r.rev == null || r.rev_yoy == null || r.opm == null || r.opm_prev_yoy == null || r.pat == null) return null;
+  if (r.pat <= 0 || r.rev < 15 || r.rev_yoy < 20) return null;
+  if ((r.rev_prev_yoy ?? 0) < 5 || r.opm_prev_yoy < -50 || r.rev_yoy > 500) return null; // tiny base: growth on a near-zero year ago
+  const dm = r.opm - r.opm_prev_yoy, why = []; let s = 0;
+  const add = (n, t) => { s += n; if (n > 0) why.push(t); };
+  add(r.rev_yoy >= 60 ? 3 : r.rev_yoy >= 35 ? 2 : 1, `Revenue ${pctS(r.rev_yoy)}`);
+  add(dm >= 10 ? 3 : dm >= 5 ? 2 : dm >= 2 ? 1 : 0, `Margin ${r.opm_prev_yoy.toFixed(0)}→${r.opm.toFixed(0)}%`);
+  add((r.op_yoy ?? 0) >= 100 ? 1 : 0, `EBITDA ${pctS(r.op_yoy)}`);
+  add((r.rev_qoq ?? 0) >= 15 ? 1 : 0, 'Up on last quarter too');
+  add(r.opm >= 15 ? 1 : 0, 'Margin 15%+');
+  add(!byId[r.id] ? 1 : 0, 'No concall: few analysts');
+  if (dm < 0) s -= 1;
+  return {s, dm, why};
+}
+const hdRun = p => p ? (p.m12 ?? p.m6) : null; // a recent listing has only the 6-month change
+const HD_STAGE = [['early', 'Not moved yet', 'v5', p => hdRun(p) != null && hdRun(p) < 30 && (p.m6 ?? 0) < 50],
+  ['moving', 'Started moving', 'saffron', p => hdRun(p) != null && hdRun(p) < 100 && (p.m6 ?? 0) < 100],
+  ['rerated', 'Already re-rated', 'rose', p => hdRun(p) != null], ['nopx', 'No price history', 'faint', () => true]];
+const hdStage = p => HD_STAGE.find(x => x[3](p));
+function hdRows() {
+  const f = S.hd, all = RES.data?.results || [], last = {};
+  all.forEach(r => { if (!last[r.id] || r.filed > last[r.id].filed) last[r.id] = r; });
+  return Object.values(last).map(r => { const sc = hdScore(r); return sc && {r, ...sc, cap: hdCap(r), st: hdStage(r.px)}; })
+    .filter(x => x && x.s >= f.min && x.cap != null && x.cap >= 100 && x.cap <= f.cap && (!f.big || x.r.bigSector === f.big)
+      && (f.stage === 'all' || (f.stage === 'notrerated' ? x.st[0] !== 'rerated' : x.st[0] === f.stage)) && (!f.nocall || !byId[x.r.id])
+      && (!f.search || (x.r.name + ' ' + (x.r.sector || '')).toLowerCase().includes(f.search.toLowerCase())))
+    .sort((a, b) => b.s - a.s || (a.r.px?.m12 ?? 999) - (b.r.px?.m12 ?? 999));
+}
+function vHidden() {
+  const wait = resLoading('hidden'), f = S.hd;
+  const hd = head('Hidden turnarounds', 'Small companies whose latest results look like Hindusthan Insulators did before its re-rating: revenue growing fast, margins jumping, profit surging, few analysts on it, and a share price that has not caught up yet.', `
+      <ul><li>Each company’s latest posted result is scored ${tip('hidden')}: revenue growth on last year (up to 3 points), the jump in operating margin (up to 3), operating profit doubling (1), growth on last quarter too (1), a margin of 15%+ (1) and having no concall on record (1), since few analysts follow those. A falling margin costs a point.</li>
+      <li>Left out: banks and lenders, loss-makers, revenue under ₹15 Cr a quarter or growing under 20%, and growth on a near-zero base a year ago.</li>
+      <li><b>Stage</b> is how far the share has already run: <b>not moved yet</b> is under 30% over 12 months, <b>started moving</b> under 100%, <b>already re-rated</b> beyond that. The default view hides the re-rated ones: the pattern pays when you find it before the price does.</li>
+      <li>One strong quarter can be a one-off order, a price spike or a write-back. Read the filing and wait for the next quarter to confirm before trusting it. Most of these are small and thinly traded.</li>
+      <li>It refreshes with Results posted, every hour through the results season.</li></ul>`,
+    `<span class="badge">From ${fmt((RES.data?.results || []).length)} results posted</span>`);
+  if (wait) return hd + wait;
+  const rows = hdRows(), all = (RES.data?.results || []), bigs = [...new Set(all.map(r => r.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
+  const shown = rows.slice(0, f.limit), n = k => rows.filter(x => x.st[0] === k).length;
+  const tr = x => { const r = x.r, p = r.px, co = byId[r.id];
+    return `<tr${isW(r.id) ? ' class="wrow"' : ''}><td class="co"><span class="nm">${star(r.id)}${esc(r.name)}</span><br><span class="sub small muted">${esc(r.sector || '')} · ₹${fmt(Math.round(x.cap))} Cr · ${esc(r.label)} filed ${esc(sdate(r.filed))}</span>
+        <div class="hd-why">${x.why.map(w => `<span class="tag">${esc(w)}</span>`).join('')}</div>
+        <div class="up-actions" style="justify-content:flex-start;margin-top:5px">${co ? `<button class="btn" data-open="${esc(r.id)}">Last call · ${co.score}</button>` : ''}<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Filing ↗</a></div></td>
+      <td><span class="v hd-s">${x.s}</span></td>
+      <td><span class="v">${crF(r.rev)}</span>${gTag(r.rev_yoy)}${gTag(r.rev_qoq, 'QoQ')}</td>
+      <td><span class="v">${r.opm.toFixed(1)}%</span><span class="g ${x.dm >= 0 ? 'gp' : 'gn'}">was ${r.opm_prev_yoy.toFixed(1)}%</span></td>
+      <td><span class="v">${crF(r.op)}</span>${gTag(r.op_yoy)}</td>
+      <td><span class="v">${crF(r.pat)}</span>${r.pat_prev_yoy != null && r.pat_prev_yoy <= 0 ? '<span class="g gp">back to profit</span>' : gTag(r.pat_yoy)}</td>
+      <td>${p ? `<span class="v">${pxF(p.now)}</span>${p.move == null ? '' : gTag(p.move, 'since')}` : '–'}</td>
+      <td>${p?.m12 == null ? '<span class="v">–</span>' : `<span class="v">${pctS(p.m12)}</span>`}${p?.m6 == null ? '' : gTag(p.m6, '6m')}${p?.offHi == null ? '' : `<span class="g g0">${p.offHi === 0 ? 'at 1y high' : p.offHi + '% off high'}</span>`}</td>
+      <td><span class="pill" style="--pc:var(--${x.st[2]})">${esc(x.st[1])}</span></td></tr>`; };
+  return hd + `
+    <div class="board">
+      <section class="w span3 kpi"><span class="l">Match the pattern</span><span class="v" data-count="${rows.length}">${rows.length}</span><span class="l">with these filters</span></section>
+      <section class="w span3 kpi"><span class="l">Not moved yet</span><span class="v" style="color:var(--v5)">${n('early')}</span><span class="l">under 30% in 12 months</span></section>
+      <section class="w span3 kpi"><span class="l">Started moving</span><span class="v" style="color:var(--saffron)">${n('moving')}</span><span class="l">30–100% in 12 months</span></section>
+      <section class="w span3 kpi"><span class="l">No concall on record</span><span class="v" style="color:var(--accent)">${rows.filter(x => !byId[x.r.id]).length}</span><span class="l">few analysts follow them</span></section>
+    </div>
+    <div class="toolbar">
+      <input type="search" id="hd-search" placeholder="Search company or sector" value="${esc(f.search)}" aria-label="Search">
+      <select id="hd-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
+      <select id="hd-stage" aria-label="Stage">${[['notrerated', 'Not re-rated yet'], ['early', 'Not moved yet'], ['moving', 'Started moving'], ['rerated', 'Already re-rated'], ['all', 'Every stage']].map(([k, t]) => `<option value="${k}" ${k === f.stage ? 'selected' : ''}>${t}</option>`).join('')}</select>
+      <select id="hd-cap" aria-label="Market cap">${[[2000, 'Under ₹2,000 Cr'], [8000, 'Under ₹8,000 Cr'], [20000, 'Under ₹20,000 Cr']].map(([v, t]) => `<option value="${v}" ${v === f.cap ? 'selected' : ''}>${t}</option>`).join('')}</select>
+      <select id="hd-min" aria-label="Minimum score">${[[5, 'Score 5+'], [7, 'Score 7+'], [9, 'Score 9+']].map(([v, t]) => `<option value="${v}" ${v === f.min ? 'selected' : ''}>${t}</option>`).join('')}</select>
+      <button class="chip" data-hdc="nocall" aria-pressed="${f.nocall}">No concall only</button>
+    </div>
+    ${rows.length ? `<div class="res-wrap"><table class="res"><thead><tr><th>Company</th><th>Score</th><th>Revenue · YoY</th><th>Margin</th><th>EBITDA · YoY</th><th>PAT · YoY</th><th>Price</th><th>12 m run</th><th>Stage</th></tr></thead>
+      <tbody>${shown.map(tr).join('')}</tbody></table></div>`
+      + (rows.length > shown.length ? `<div class="more"><button class="btn" id="hd-more">Show 50 more</button><span class="count-line">${fmt(rows.length - shown.length)} more</span></div>` : '')
+      : `<div class="empty">${all.length ? 'Nothing matches these filters yet. Lower the minimum score or include every stage. More results arrive every hour in the season.' : 'No results read yet.'}</div>`}`;
 }
 
 /* My portfolio: every update for the holdings in portfolio.yaml, in one place */
@@ -2684,7 +2765,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, hidden: vHidden, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -2965,6 +3046,8 @@ document.addEventListener('click', e => {
   const rcc = t.closest('[data-rc]'); if (rcc) { const k = rcc.dataset.rc; S.rc[k] = !S.rc[k]; render(); return; }
   const rsc = t.closest('[data-rsc]'); if (rsc) { const k = rsc.dataset.rsc; S.rs.chips.has(k) ? S.rs.chips.delete(k) : S.rs.chips.add(k); S.rs.limit = 100; render(); return; }
   const rss = t.closest('[data-rss]'); if (rss) { const k = rss.dataset.rss; if (S.rs.sort === k) S.rs.dir *= -1; else { S.rs.sort = k; S.rs.dir = -1; } render(); return; }
+  const hdc = t.closest('[data-hdc]'); if (hdc) { S.hd.nocall = !S.hd.nocall; S.hd.limit = 50; render(); return; }
+  if (t.closest('#hd-more')) { S.hd.limit += 50; render(); return; }
   if (t.closest('#rs-more')) { if (S.rs.view === 'table') S.rs.limit += 100; else S.rs.climit += 36; render(); return; }
   const rsv = t.closest('[data-rsv]'); if (rsv) { S.rs.view = rsv.dataset.rsv; store.set('rs-view', S.rs.view); render(); return; }
   const fl = t.closest('[data-flip]'); if (fl) { const k = fl.dataset.flip, card = fl.closest('.fc'); S.rs.flip.has(k) ? S.rs.flip.delete(k) : S.rs.flip.add(k);
@@ -3010,7 +3093,7 @@ $('#nav').addEventListener('click', e => { const b = e.target.closest('[data-v]'
 document.addEventListener('toggle', e => { const d = e.target; if (d.matches && d.matches('details[data-how]')) store.set('how-' + d.dataset.how, d.open); }, true);
 document.addEventListener('input', e => {
   if (e.target.id === 'ppl-search') { const pos = e.target.selectionStart; S.ppl = {...(S.ppl || {type: '', open: ''}), search: e.target.value}; render(); const i = $('#ppl-search'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
-  for (const [id, st] of [['rc-search', S.rc], ['rs-search', S.rs]]) if (e.target.id === id) { const pos = e.target.selectionStart; st.search = e.target.value; render(); const i = $('#' + id); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
+  for (const [id, st] of [['rc-search', S.rc], ['rs-search', S.rs], ['hd-search', S.hd]]) if (e.target.id === id) { const pos = e.target.selectionStart; st.search = e.target.value; render(); const i = $('#' + id); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   if (e.target.id === 'up-search') { const v = e.target.value, pos = e.target.selectionStart; S.up.search = v; render(); const i = $('#up-search'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   if (e.target.id === 'c-search') { S.calls.search = e.target.value; S.calls.limit = 50; fillCalls(); }
   if (e.target.id === 'find') { findSel = 0; renderFind(); }
@@ -3026,6 +3109,10 @@ document.addEventListener('change', e => {
   if (id === 'up-days') { S.up.days = +e.target.value; render(); }
   if (id === 'rc-big') { S.rc.big = e.target.value; render(); }
   if (id === 'rc-days') { S.rc.days = +e.target.value; render(); }
+  if (id === 'hd-big') { S.hd.big = e.target.value; S.hd.limit = 50; render(); }
+  if (id === 'hd-stage') { S.hd.stage = e.target.value; S.hd.limit = 50; render(); }
+  if (id === 'hd-cap') { S.hd.cap = +e.target.value; S.hd.limit = 50; render(); }
+  if (id === 'hd-min') { S.hd.min = +e.target.value; S.hd.limit = 50; render(); }
   if (id === 'rs-big') { S.rs.big = e.target.value; S.rs.limit = 100; render(); }
   if (id === 'rs-days') { S.rs.days = +e.target.value; S.rs.limit = 100; S.rs.climit = 36; render(); }
   if (id === 'pf-sort') { S.pf = {sort: e.target.value}; render(); }
@@ -3075,6 +3162,6 @@ $('#themesel').addEventListener('click', e => { const b = e.target.closest('[dat
   render();
   if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
   loadSums().then(() => renderNav());  /* near-term count uses lines from the summaries */
-  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'portfolio', 'pead', 'themes', 'turns'].includes(S.view)) render(); });
+  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'portfolio', 'pead', 'themes', 'turns', 'hidden'].includes(S.view)) render(); });
 })();
 </script>
