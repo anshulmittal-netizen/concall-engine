@@ -372,6 +372,16 @@ table.res tr.wrow td:first-child{box-shadow:inset 3px 0 0 var(--warn)}
 .mg .r>:last-child{justify-content:flex-end}
 .mg-ch{font-size:11.5px}
 @media (max-width:760px){.mg .r{grid-template-columns:minmax(0,1fr)}}
+.pd .r{grid-template-columns:minmax(0,1.6fr) 84px 78px 78px 78px 96px 170px}
+.pd .r .num{font-size:11px}
+.pd-st{--pc:var(--muted)}.pd-st.ok{--pc:var(--up)}.pd-st.meh{--pc:var(--warn)}.pd-st.bad{--pc:var(--down)}
+.pd-tr{display:grid;gap:0;font-size:11.5px}
+.pd-tr div{display:grid;grid-template-columns:minmax(0,1fr) 54px 64px 62px;gap:8.5px;padding:6px 0;border-top:1px solid var(--line);align-items:baseline}
+.pd-tr div:first-child{border-top:0;font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.pd-tr .num{text-align:right}
+.nt .why-chips span.bad{border-color:color-mix(in srgb,var(--down) 45%,var(--line));color:var(--down)}
+@media (max-width:760px){.pd .r{grid-template-columns:minmax(0,1fr) auto}.pd .r>:nth-child(n+2):not(:last-child){display:none}.pd .r.hd{display:none}.pd .r .m-pd{display:block}}
+.m-pd{display:none;font-size:10.5px;color:var(--muted)}
 .nt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,325.5px),1fr));gap:13.5px}
 .nt{display:grid;gap:9.5px;align-content:start;transition:transform .25s var(--ease),box-shadow .25s}
 .nt:hover{transform:translateY(-3px);box-shadow:var(--shadow2)}
@@ -727,6 +737,7 @@ const GL = {
   schema:['Signal read','Eight readings of the call, each scored −2 (clearly negative) to +2 (clearly positive). They feed the score.'],
   models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
+  pead:['Results to watch (PEAD)','Post-earnings announcement drift: shares of companies that beat tend to keep rising for weeks after the results, not just on day 1. This page lists small, mid and micro caps (below ₹50,000 Cr) reporting soon whose last concall points to a strong quarter, ranked on the Concall Signal Score plus 6 points for positive guidance, 6 for raised guidance and minus 8 for a cut. After results it shows which of them beat (profit up 20%+ on last year) and rose on day 1, the usual trigger for a drift trade.'],
   nearterm:['Near-term strength','Companies scoring 60+ whose latest call shows at least three strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a Guidance-backed growth & capacity part of 0.75+. There is no separate score.'],
   quarter:['Quarter switch','Pick the results season you want to look at. Every call-based view follows it: Today, All calls, First-time callers, Sector tracker, Guidance, Sector turns, Themes, Ideas, Near-term strength and Inflection watch show only that quarter’s calls. A season still in progress is compared with the quarter before it. Near-term strength and Inflection watch list companies whose latest call is from that quarter. “All” shows each company’s latest call, and the sector boards use the latest full quarter. Coming up, the results pages and Management changes go by date, not quarter.']
 };
@@ -763,7 +774,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pd: {size: '', days: 14, tier: 'strong', post: 14}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -943,7 +954,7 @@ function animateWidgets(root) {
 const VIEWS = [
   {group: 'Start', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['ask', 'Ask the calls'], ['help', 'How to use']]},
   {group: 'Calls', items: [['calls', 'All calls'], ['people', 'Who’s asking'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
-  {group: 'Results', items: [['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
+  {group: 'Results', items: [['pead', 'Results to watch (PEAD)'], ['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
   {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes'], ['ideas', 'Ideas & red flags']]}
 ];
@@ -953,6 +964,7 @@ function navCounts() {
   const rd = RES.data || {}, t0r = istToday();
   const pfSoon = pfRows().filter(x => x.nextRes && dayDiff(x.nextRes.date, istToday()) <= 3).length;
   return {portfolio: pfSoon ? pfSoon + ' soon' : (pfList().length || ''), calls: cq.length, upcoming: upcoming(7).length || '', watch: (n => n ? n + ' soon' : '')(watchSoon().length),
+    pead: (p => p ? (n => n ? n + ' soon' : '')(p.pre.filter(x => x.tier === 'strong' && dayDiff(x.x.date, t0r) <= 3).length) : '')(peadData()),
     rescal: (rd.calendar || []).filter(c => c.date >= t0r && c.date <= addDays(t0r, 7)).length || '',
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
@@ -2172,6 +2184,136 @@ function vMgmt() {
       <span style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">${m.url ? `<a class="btn" href="${esc(m.url)}" target="_blank" rel="noopener">Filing ↗</a>` : ''}${m.inCalls ? `<button class="btn" data-open="${esc(m.id)}">Open read</button>` : ''}</span></div>`).join('') || '<div class="empty">No management changes in this period.</div>'}</div></section>`;
 }
 
+/* Results to watch (PEAD): a pre-results shortlist read from each company's last concall, then which shortlisted names
+   beat and rose on day 1. Rebuilt in the browser from in.json and results_in.json, so it follows every refresh. */
+const PEAD_MIN = 76, PEAD_WATCH = 70, PEAD_BEAT = 20;
+/* words in the last call's read that say last quarter was flattered or will not repeat */
+const PEAD_CAUTION = /\b(inventory gains?|one-?offs?|one-?time|temporary|non-structural|weak[- ]base|normali[sz]\w*|slightly lower|surcharge|furnace|price-led|flattered)\b/i;
+const peadPts = (call, score) => score + (call.g > 0 ? 6 : 0) + (call.gRaised > 0 ? 6 : 0) - (call.gCut > 0 ? 8 : 0);
+const sizeOf = m => Object.keys(SIZES).find(k => SIZES[k][1](m)) || '';
+const SIZE_SHORT = {mid: 'Mid cap', small: 'Small cap', micro: 'Micro cap'};
+function peadQs() {
+  const rs = RES.data?.results || [];
+  const rq = rs.reduce((m, r) => r.period > m ? r.period : m, '');
+  if (!rq) return null;
+  const [y, m] = rq.split('-').map(Number), pm = m > 3 ? m - 3 : m + 9, py = m > 3 ? y : y - 1;
+  const cq = `${py}-${String(pm).padStart(2, '0')}`;
+  return {rq, cq, lab: (D.calls || []).find(c => c.periodKey === cq)?.period || '', rlab: rs.find(r => r.period === rq)?.label || ''};
+}
+let PEAD_CACHE = null;
+function peadData() {
+  if (!RES.data || !D) return null;
+  const t0 = istToday();
+  if (PEAD_CACHE && PEAD_CACHE.d === D && PEAD_CACHE.r === RES.data && PEAD_CACHE.t === t0) return PEAD_CACHE.v;
+  const Q = peadQs(); if (!Q) return null;
+  const rs = (RES.data.results || []).filter(r => r.period === Q.rq), posted = new Map(rs.map(r => [r.id, r]));
+  /* how each sector is reporting so far this season */
+  const secv = {}; rs.forEach(r => { if (!r.bank && r.pat_yoy != null && r.sector) (secv[r.sector] = secv[r.sector] || []).push(Math.max(-100, Math.min(300, r.pat_yoy))); });
+  const secMed = s => secv[s]?.length >= 5 ? {m: median(secv[s]), n: secv[s].length} : null;
+  const up = {}; (RES.data.calendar || []).forEach(x => { if (x.date >= t0 && !posted.has(x.id) && (!up[x.id] || x.date < up[x.id].date)) up[x.id] = x; });
+  const pre = [];
+  Object.values(up).forEach(x => {
+    const c = byId[x.id]; if (!c || c.periodKey !== Q.cq) return;
+    const m = c.mcapCr; if (!(m > 0 && m < 50000) || c.veto || (c.flags || []).length) return;
+    const call = callOf(c.id, c.period) || {}, p = peadPts(call, c.score);
+    if (p < PEAD_WATCH) return;
+    const gr = c.growth || {}, b = c.blocks || {}, plus = [], hard = [], soft = [];
+    if (call.gRaised > 0) plus.push('Guidance raised'); else if (call.g > 0) plus.push('Guidance positive');
+    const near = (gr.adds || []).filter(a => a.q != null && a.q <= 1 && a.mat !== 'minor' && !['deferred', 'planned'].includes(a.status));
+    if (near.length) plus.push(near.some(a => a.q === 0) ? 'New capacity already live' : 'Capacity going live this quarter');
+    if (gr.growth >= 20) plus.push(`Growth guided ~${Math.round(gr.growth)}%`);
+    if (gr.qRev >= 20) plus.push(`Last quarter revenue +${Math.round(gr.qRev)}%`);
+    if ((gr.util || 0) >= 85) plus.push(`Utilisation ~${Math.round(gr.util)}%`);
+    if ((b.demand || 0) >= 2) plus.push('Strong demand');
+    const sm = secMed(c.sector);
+    if (sm && sm.m >= 25) plus.push(`Sector reporting well: median profit ${pctS(sm.m)} (${sm.n} in)`);
+    if (call.gCut > 0) hard.push('Guidance cut on the last call');
+    if (c.planFlag) hard.push('Big guidance without a clear plan');
+    const cm = [c.thesis, gr.why, c.top].filter(Boolean).join(' ').match(PEAD_CAUTION);
+    if (cm) hard.push(`Last quarter may not repeat (“${cm[0]}”)`);
+    if (sm && sm.m < 5) soft.push(`Sector reporting weak: median profit ${pctS(sm.m)} (${sm.n} in)`);
+    const tier = hard.length ? 'skip' : p >= PEAD_MIN && plus.length >= 2 && !soft.length ? 'strong' : 'watch';
+    pre.push({c, call, x, p, plus, minus: [...hard, ...soft], tier, near, size: sizeOf(m)});
+  });
+  pre.sort((a, b) => a.x.date.localeCompare(b.x.date) || b.p - a.p);
+  /* names already reported this season, read from the call before their results */
+  const post = [];
+  rs.forEach(r => {
+    const c = byId[r.id], call = c && callOf(r.id, Q.lab); if (!call) return;
+    const m = c.mcapCr; if (!(m > 0 && m < 50000)) return;
+    const p = peadPts(call, call.score), px = r.px || {};
+    const beat = r.pat_yoy != null ? r.pat_yoy >= PEAD_BEAT : (r.pat > 0 && r.rev_yoy >= PEAD_BEAT);
+    const st = !px.reactDate ? ['wait', 'Market reacts next session', ''] : beat && px.react > 0 ? ['ok', 'Beat · up on day 1', 'ok'] : beat ? ['meh', 'Beat · market not convinced', 'meh'] : ['bad', 'No beat', 'bad'];
+    post.push({c, call, r, p, beat, px, st, size: sizeOf(m), drift: px.reactDate && px.nowDate > px.reactDate ? px.move - px.react : null, pick: p >= PEAD_MIN && !call.veto});
+  });
+  const v = {Q, pre, post, nPosted: rs.length};
+  PEAD_CACHE = {d: D, r: RES.data, t: t0, v};
+  return v;
+}
+function peadTrack(post) {
+  const grp = (n, xs) => { const rx = xs.filter(x => x.px.reactDate), up = rx.filter(x => x.px.react > 0), conf = xs.filter(x => x.st[0] === 'ok' && x.drift != null);
+    return {n, k: xs.length, pat: median(xs.map(x => x.r.pat_yoy)), upPct: rx.length ? Math.round(100 * up.length / rx.length) : null, d1: median(rx.map(x => x.px.react)), drift: median(conf.map(x => x.drift)), nd: conf.length}; };
+  return [grp(`Shortlist (${PEAD_MIN}+ points)`, post.filter(x => x.pick)), grp('Rest with a concall', post.filter(x => !x.pick && x.p >= 0))];
+}
+function vPead() {
+  const wait = resLoading('pead'); if (wait) return head('Results to watch (PEAD)', 'Loading…', '') + wait;
+  const P = peadData(), f = S.pd, t0 = istToday();
+  if (!P) return head('Results to watch (PEAD)', 'No results posted for the current season yet.', '') + '<div class="empty">The shortlist appears once BSE results for the new quarter start coming in.</div>';
+  const {Q} = P, okSize = x => !f.size || x.size === f.size;
+  const pre = P.pre.filter(x => okSize(x) && dayDiff(x.x.date, t0) <= f.days);
+  const shown = pre.filter(x => f.tier === 'all' ? x.tier !== 'skip' : x.tier === f.tier);
+  const days = {}; shown.forEach(x => (days[x.x.date] = days[x.x.date] || []).push(x));
+  const post = P.post.filter(x => x.pick && okSize(x) && x.r.filed.slice(0, 10) >= addDays(t0, -f.post))
+    .sort((a, b) => ({ok: 0, wait: 1, meh: 2, bad: 3}[a.st[0]] - {ok: 0, wait: 1, meh: 2, bad: 3}[b.st[0]]) || b.r.filed.localeCompare(a.r.filed));
+  const tr = peadTrack(P.post), cnt = k => pre.filter(x => x.tier === k).length;
+  const dayLab = d => d === t0 ? 'Today' : d === addDays(t0, 1) ? 'Tomorrow' : `${wday(d)} · ${fdate(d)}`;
+  const card = (x, i) => { const c = x.c, nc = nextCall(c.id);
+    return `<article class="card nt${x.tier === 'strong' && i < 3 ? ' top3' : ''}">
+      <div class="top"><div style="min-width:0"><span class="num small muted">${esc(SIZE_SHORT[x.size] || '')} · ${esc(c.mcap || '')} · ${esc(c.sector)}</span><h4>${star(c.id)}${esc(c.name)}</h4>
+        <span class="small muted">Results ${esc(whenTxt(dayDiff(x.x.date, t0)).toLowerCase())}${nc ? ` · call ${esc(callWhen(nc))}` : ''} · ${x.call.gRaised > 0 ? '<b class="g-up">guidance raised</b>' : x.call.g > 0 ? '<span class="g-up">guidance positive</span>' : 'guidance steady'}</span></div>
+        <div class="ntsc"><span class="eyebrow" style="font-size:8px">Concall Signal Score</span><b style="color:${vcol(c.score, c.veto)}">${c.score}</b><span class="small muted num" title="Score plus guidance points used to rank this list">${x.p} pts</span></div></div>
+      <div class="why-chips">${x.plus.map(w => `<span class="hot">${esc(w)}</span>`).join('')}${x.minus.map(w => `<span class="bad">${esc(w)}</span>`).join('')}</div>
+      <p class="small" style="margin:0">${esc(c.thesis || c.top || '')}</p>
+      ${x.near.length ? `<p class="small muted" style="margin:0"><b>Capacity:</b> ${esc(x.near.slice(0, 2).map(a => a.what + (a.q === 0 ? ' (live)' : ' (this quarter)')).join(' · '))}</p>` : ''}
+      <div class="foot"><span>${esc(c.period)} call · ${esc(sdate(c.date))}</span><span style="display:flex;gap:6px"><a class="btn" href="https://www.bseindia.com/stock-share-price/x/x/${esc(c.id)}/" target="_blank" rel="noopener">BSE ↗</a><button class="btn" data-open="${esc(c.id)}">Last call</button></span></div>
+    </article>`; };
+  const prow = x => { const r = x.r, c = x.c;
+    return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(SIZE_SHORT[x.size] || '')} · ${esc(c.mcap || '')} · filed ${esc(sdate(r.filed))} · ${x.call.score} on the ${esc(Q.lab)} call</span>
+        <span class="m-pd">Profit ${pctS(r.pat_yoy)} · Day 1 ${x.px.reactDate ? pctS(x.px.react) : '–'} · Since ${pctS(x.px.move)}</span></span>
+      <span class="num">${pctS(r.rev_yoy)}</span><span class="num">${pctS(r.pat_yoy)}</span><span class="num ${x.px.react > 0 ? 'gp' : x.px.react < 0 ? 'gn' : ''}">${x.px.reactDate ? pctS(x.px.react) : '–'}</span>
+      <span class="num ${x.px.move > 0 ? 'gp' : x.px.move < 0 ? 'gn' : ''}">${x.px.reactDate ? pctS(x.px.move) : '–'}</span>
+      <span><span class="pill pd-st ${x.st[2]}">${esc(x.st[1])}</span></span>
+      <span class="up-actions"><button class="btn" data-v="results">Numbers</button><button class="btn" data-open="${esc(c.id)}">Calls</button></span></div>`; };
+  const skips = pre.filter(x => x.tier === 'skip').sort((a, b) => b.p - a.p);
+  return head('Results to watch (PEAD)', `Small, mid and micro caps reporting ${esc(Q.rlab)} results soon whose ${esc(Q.lab)} concall points to a strong quarter. After results, the shortlisted names that beat and rose on day 1. A shortlist to trade from, not a buy list.`, `
+      <ol><li><b>Before results:</b> the cards list companies below ₹50,000 Cr whose results are due, ranked on the ${esc(Q.lab)} Concall Signal Score ${tip('score')} plus 6 points for positive guidance, 6 for raised guidance and minus 8 for a cut. <b>Strong</b> means ${PEAD_MIN}+ points, at least two supporting reasons and no warning. Green tags are reasons for, red tags reasons against.</li>
+      <li><b>High score, but careful</b> lists names that would rank but where the last call says the quarter was flattered (inventory gains, one-offs, temporary prices), guidance was cut, or there is no clear plan behind big guidance.</li>
+      <li><b>After results:</b> a beat here means profit up ${PEAD_BEAT}%+ on last year. <b>Beat · up on day 1</b> is the usual entry signal for a post-results drift trade. Strong numbers alone are not enough: the market may already expect them.</li>
+      <li><b>Track record</b> is recomputed on every refresh from the ${esc(Q.rlab)} results already posted, so you can see whether the shortlist is working this season.</li>
+      <li>There are no consensus estimates or pre-results price run-ups here. Check those, and the transcript, before you trade.</li></ol>`,
+      `<span class="badge">${RES.data?.checked ? 'BSE checked ' + esc(RES.data.checked.replace('T', ' ')) + ' UTC' : ''}</span>`) + `
+    <div class="board">
+      <section class="w span4 kpi"><span class="l">Strong candidates reporting in ${f.days >= 60 ? 'all announced dates' : `the next ${f.days} days`}</span><span class="v" style="color:var(--accent)">${cnt('strong')}</span><span class="l">${cnt('watch')} more to watch · ${cnt('skip')} high scores to treat with care</span></section>
+      <section class="w span8"><div class="w-head"><h3>Track record · ${esc(Q.rlab)} so far</h3><span class="small muted">${fmt(P.post.length)} small, mid and micro caps with a ${esc(Q.lab)} call have reported</span></div>
+        <div class="pd-tr"><div><span>Group</span><span class="num">Median profit YoY</span><span class="num">Up on day 1</span><span class="num">Median day 1</span></div>
+        ${tr.map(g => `<div><span>${esc(g.n)} <span class="muted">· ${g.k}</span></span><span class="num">${pctS(g.pat)}</span><span class="num">${g.upPct == null ? '–' : g.upPct + '%'}</span><span class="num">${pctS(g.d1)}</span></div>`).join('')}</div>
+        <div class="w-foot"><span>After a beat and a day-1 rise, shortlisted names have moved a median <b class="num">${pctS(tr[0].drift)}</b> more since (${tr[0].nd} names). Small samples early in the season.</span></div></section>
+    </div>
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="Show">${[['strong', 'Strong'], ['watch', 'Watch'], ['all', 'Both']].map(([k, n]) => `<button data-pdt="${k}" aria-pressed="${f.tier === k}">${n} <span class="num">${k === 'all' ? cnt('strong') + cnt('watch') : cnt(k)}</span></button>`).join('')}</div>
+      ${['mid', 'small', 'micro'].map(k => `<button class="chip" data-pdz="${k}" aria-pressed="${f.size === k}">${SIZE_SHORT[k]} <span class="num">${P.pre.filter(x => x.size === k && x.tier !== 'skip' && dayDiff(x.x.date, t0) <= f.days).length}</span></button>`).join('')}
+      <select id="pd-days" aria-label="Period">${[[3, 'Next 3 days'], [7, 'Next 7 days'], [14, 'Next 14 days'], [60, 'All announced']].map(([d, n]) => `<option value="${d}" ${f.days === d ? 'selected' : ''}>${n}</option>`).join('')}</select>
+    </div>
+    ${Object.keys(days).length ? Object.entries(days).map(([d, xs]) => `<section class="up-day"><h3>${esc(dayLab(d))} <span class="num">${xs.length} compan${xs.length === 1 ? 'y' : 'ies'}</span></h3>
+      <div class="nt-grid">${xs.sort((a, b) => b.p - a.p).map(card).join('')}</div></section>`).join('') : '<div class="empty">No companies on the shortlist for these filters.</div>'}
+    ${skips.length ? `<details class="how"><summary>High score, but careful · ${skips.length}</summary><div class="body"><div class="rows mini-list">${skips.map(x => `<button class="r" data-open="${esc(x.c.id)}"><span style="min-width:0"><span class="nm" style="display:block">${esc(x.c.name)}</span><span class="sub">${esc(sdate(x.x.date))} · ${esc(SIZE_SHORT[x.size] || '')} · ${esc(x.minus.join(' · '))}</span></span><span class="num small" style="color:${vcol(x.c.score)}">${x.c.score}</span></button>`).join('')}</div></div></details>` : ''}
+    <section><div class="list-head"><h3>After results · shortlisted names</h3>
+      <select id="pd-post" style="background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:6px 9px;font-size:11.5px" aria-label="Filed within">${[[3, 'Last 3 days'], [7, 'Last 7 days'], [14, 'Last 14 days'], [60, 'This season']].map(([d, n]) => `<option value="${d}" ${f.post === d ? 'selected' : ''}>${n}</option>`).join('')}</select></div>
+      ${post.length ? `<div class="rows pd"><div class="r hd"><span>Company</span><span>Rev YoY</span><span>Profit YoY</span><span>Day 1</span><span>Since results</span><span>Status</span><span></span></div>${post.map(prow).join('')}</div>`
+        : '<div class="empty">No shortlisted company has reported in this window yet.</div>'}
+      <p class="small muted" style="margin-top:8px">Prices are daily closes and can lag by a day. Day 1 is the first session the market could trade on the results. ${tip('pxmove')}</p></section>`;
+}
+
 /* Help */
 function vHelp() {
   const W = [['Guidance-backed growth & capacity', 45], ['Industry supply discipline', 20], ['Results delivered', 15], ['Pricing & utilisation', 10], ['Demand', 5], ['New developments & themes', 3], ['Tone & candour', 2]];
@@ -2199,6 +2341,7 @@ function vHelp() {
       <div><b>Guidance leaders</b><span>Sub-sectors ranked by how strongly management is guiding up, and the weakest ones.</span></div>
       <div><b>Sector turns</b><span>Sub-sectors where supply discipline is building and pricing or utilisation is improving. This is the early sign of a turn.</span></div>
       <div><b>Themes</b><span>How many companies are discussing each investment theme, and how fast it is spreading.</span></div>
+      <div><b>Results to watch (PEAD)</b><span>Small, mid and micro caps reporting in the days ahead whose last concall points to a strong quarter, with the reasons for and against, and a list of names that look good on score but where last quarter may not repeat. After results it shows which shortlisted names beat and rose on day 1 (the usual entry signal for a post-results drift trade), and a live track record of how the shortlist has done this season.</span></div>
       <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the reasons and the lines from the call that say so. Uses the same Concall Signal Score as every other page. Filter to names whose next results are still to come.</span></div>
       <div><b>Inflection watch</b><span>Companies whose latest call points to a sharp turn up or down, read from the triggers management gave. Each card shows what marks the turn, the trigger quotes behind it and any counter-signals. Switch between Upside and Downside, or keep only the Sharp ones.</span></div>
       <div><b>Management changes</b><span>Every top-management change filed on BSE (checked every 30 minutes, with a GitHub alert for each top-level change), and companies whose new management is pushing growth.</span></div>
@@ -2227,7 +2370,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -2515,6 +2658,8 @@ document.addEventListener('click', e => {
   const st = t.closest('[data-st]'); if (st) { S.turns.stage = st.dataset.st; render(); return; }
   const tl = t.closest('[data-tl]'); if (tl) { S.turns.level = tl.dataset.tl; render(); return; }
   const mgt = t.closest('[data-mg]'); if (mgt) { const k = mgt.dataset.mg; S.mg[k] = !S.mg[k]; render(); return; }
+  const pdz = t.closest('[data-pdz]'); if (pdz) { S.pd.size = S.pd.size === pdz.dataset.pdz ? '' : pdz.dataset.pdz; render(); return; }
+  const pdt = t.closest('[data-pdt]'); if (pdt) { S.pd.tier = pdt.dataset.pdt; render(); return; }
   const ntc = t.closest('[data-ntc]'); if (ntc) { const k = ntc.dataset.ntc; S.near.chips.has(k) ? S.near.chips.delete(k) : S.near.chips.add(k); S.near.limit = 30; render(); return; }
   if (t.closest('#nt-more')) { S.near.limit += 30; render(); return; }
   if (t.closest('#ask-go')) { askRun('ai'); return; }
@@ -2559,6 +2704,8 @@ document.addEventListener('change', e => {
   if (id === 'rs-days') { S.rs.days = +e.target.value; S.rs.limit = 100; S.rs.climit = 36; render(); }
   if (id === 'pf-sort') { S.pf = {sort: e.target.value}; render(); }
   if (id === 'rs-sort') { S.rs.sort = e.target.value; S.rs.dir = -1; S.rs.climit = 36; render(); }
+  if (id === 'pd-days') { S.pd.days = +e.target.value; render(); }
+  if (id === 'pd-post') { S.pd.post = +e.target.value; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
   if (id === 'if-big') { S.inf.big = e.target.value; S.inf.limit = 30; render(); }
   if (id === 'ask-scope') S.ask.scope = e.target.value;
@@ -2593,6 +2740,6 @@ $('#find').addEventListener('focus', renderFind);
   render();
   if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
   loadSums().then(() => renderNav());  /* near-term count uses lines from the summaries */
-  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'portfolio'].includes(S.view)) render(); });
+  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'portfolio', 'pead'].includes(S.view)) render(); });
 })();
 </script>
