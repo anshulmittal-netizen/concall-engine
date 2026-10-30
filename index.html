@@ -962,7 +962,7 @@ const VIEWS = [
   {group: 'Calls', items: [['calls', 'All calls'], ['people', 'Who’s asking'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Results', items: [['pead', 'Results to watch (PEAD)'], ['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
-  {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes'], ['ideas', 'Ideas & red flags']]}
+  {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes']]}
 ];
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
 function navCounts() {
@@ -975,7 +975,7 @@ function navCounts() {
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: sectorsQ().filter(s => s.hit).length || '',
-    themes: themesQ().length, nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()), ideas: ideasQ().filter(x => !x.red).length,
+    themes: themesQ().length, nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
 function renderNav() {
@@ -1020,7 +1020,6 @@ function vHome() {
   const lastQ = newest[0]?.date || '';
   const d1 = cq.filter(c => c.date === lastQ).length, d7 = cq.filter(c => c.date >= daysBack(7)).length;
   const lead = t?.guidanceLeaders?.[0], th = themesQ().slice().sort((a, b) => b.c.at(-1) - a.c.at(-1))[0];
-  const idea = ideasQ().find(x => !x.red), ideaCo = idea && byId[idea.id];
   const firsts = (D.firstTimers || []).filter(r => q === 'all' || r.period === q);
   const rep = t?.reported || cq.length, uni = t?.universe || D.universe, share = rep / Math.max(1, uni);
   const welcome = store.get('welcome', true);
@@ -1077,7 +1076,6 @@ function vHome() {
     <section><div class="list-head"><h3>Where to look first</h3></div><div class="picks">
       ${best ? `<button class="pick" data-open="${esc(best.id)}" data-k="${esc(best.key)}"><span class="eyebrow">Best call · ${esc(best.period)}</span><strong>${esc(best.name)}</strong><span>${scoreCell(best.score, false)}</span><span class="small">${esc(best.top || best.thesis)}</span><span class="go">Open the call →</span></button>` : ''}
       ${lead ? `<button class="pick" data-v="guidance"><span class="eyebrow">Strongest guidance</span><strong>${esc(lead.name)}</strong><span class="small">Guidance index <b class="num" style="color:${gcol(lead.guidance)}">${lead.guidance}</b>. ${lead.raising} of ${lead.calls} companies raised guidance, ${lead.cutting} cut.</span><span class="go">See all sub-sectors →</span></button>` : ''}
-      ${ideaCo ? `<button class="pick" data-open="${esc(ideaCo.id)}"><span class="eyebrow">Top idea · ${esc(boardQ())} · ${esc(idea.type)}</span><strong>${esc(ideaCo.name)}</strong><span class="small">${esc(idea.why)}</span><span class="go">Open the call →</span></button>` : ''}
       ${(r => r ? `<button class="pick" data-thsel="${esc(r.name)}"><span class="eyebrow">Theme to watch · ${esc(boardQ())}</span><strong>${esc(r.name)}</strong><span class="small">${r.s.n} companies (${r.share.toFixed(1)}% of calls${r.ch != null ? `, ${thPts(r.ch)} pts` : ''}), average score ${Math.round(r.s.avg)} (${thPts(r.edge)} vs all calls).</span><span class="go">Open the theme →</span></button>` : '')(themeData().rows.filter(r => r.read !== 'broad' && r.read !== 'niche').sort((a, b) => TH_SORTS.signal[1](b) - TH_SORTS.signal[1](a))[0])}
     </div></section>
     ${soon.length ? `<section><div class="list-head"><h3>Coming up · next 3 days</h3><button class="link" data-v="upcoming">See all</button></div>
@@ -2102,22 +2100,6 @@ function vTheme(T, r) {
       <div class="rows th-co"><div class="r hd"><span>Company</span><span>Score · guidance</span><span>What they said</span><span>${esc(T.rlab || 'Next')} results</span><span></span></div>${xs.map(crow).join('') || '<div class="empty">No companies match these filters.</div>'}</div></section>`;
 }
 
-/* Ideas */
-function vIdeas() {
-  const bq = boardQ(), IQ = ideasQ(), red = S.ideas.tab === 'red', list = IQ.filter(x => !!x.red === red && byId[x.id]);
-  const types = [...new Set(IQ.map(x => x.type))];
-  return head('Ideas & red flags', 'Single companies that stand out this season, plus the calls that need a closer look before anyone acts. A shortlist to work up, not a buy list.', `
-      <ul>${types.map(t => `<li><b>${esc(t)}:</b> ${esc(IDEA_TYPES[t] || '')}</li>`).join('')}</ul>
-      <p>Every idea and red flag here comes from a ${esc(bq)} call.${inProg(bq) ? ` ${esc(bq)} is still in progress, so the list grows as more companies report.` : ''} Open any card to read the full call and check the quotes before taking an idea further.</p>`, focusBadge()) + `
-    <div class="toolbar"><div class="seg"><button data-it="ideas" aria-pressed="${!red}">Ideas <span class="num">${IQ.filter(x => !x.red).length}</span></button><button data-it="red" aria-pressed="${red}">Red flags <span class="num">${IQ.filter(x => x.red).length}</span></button></div></div>
-    <div class="grid-auto">${list.map((x, i) => { const c = byId[x.id], k = callOf(x.id, bq) || c;
-      return `<article class="card idea ${x.red ? 'red' : ''}">
-        <div class="top"><span class="pill ${x.red ? 'v-flag' : 'st-confirming'}">${esc(x.type)}</span><span class="num small muted">${x.red ? '' : '#' + (i + 1)}</span></div>
-        <h4>${esc(c.name)}</h4>
-        <div>${scoreCell(k.score, k.veto)}</div>
-        <p>${esc(x.why)}</p>
-        <div class="foot"><span class="tag">${esc(c.sector)} · ${esc(k.period || bq)}</span><button class="btn" data-open="${esc(c.id)}"${k.key ? ` data-k="${esc(k.key)}"` : ''}>Open the call</button></div></article>`; }).join('') || '<div class="empty">Nothing here yet.</div>'}</div>`;
-}
 
 /* Near-term strength: companies whose latest call points to strong results over the next one to few quarters.
    Built in the page from the engine's readings of each company's latest call, plus forward-looking lines in its summary. */
@@ -2490,7 +2472,6 @@ function vHelp() {
       <li><b>All calls:</b> sort by Newest first and skim what came in overnight. Filter to the sectors you cover.</li>
       <li><b>Open a company</b> that looks interesting. Read the call summary first, then the Signals tab to see why it scored the way it did.</li>
       <li><b>Sector tracker:</b> check who in that sector has reported and whether guidance is improving.</li>
-      <li><b>Ideas & red flags:</b> once a week, go through the shortlist and pick names to work up properly.</li>
       <li><b>Share:</b> Copy link in a company panel gives a link that opens straight to that company.</li></ol></section>
     <section id="h-views"><h3>What each view is for</h3><div class="vguide">
       <div><b>Ask the calls</b><span>Ask a question in plain words (for example, which companies said crude is not hurting margins). Claude searches every call summary, Q&A, quote and trigger for the words calls actually use, reads the best matches and sorts them into says it, partly and says the opposite, with the passages behind each. Keyword search works without Claude.</span></div>
@@ -2509,7 +2490,6 @@ function vHelp() {
       <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the reasons and the lines from the call that say so. Uses the same Concall Signal Score as every other page. Filter to names whose next results are still to come.</span></div>
       <div><b>Inflection watch</b><span>Companies whose latest call points to a sharp turn up or down, read from the triggers management gave. Each card shows what marks the turn, the trigger quotes behind it and any counter-signals. Switch between Upside and Downside, or keep only the Sharp ones.</span></div>
       <div><b>Management changes</b><span>Every top-management change filed on BSE (checked every 30 minutes, with a GitHub alert for each top-level change), and companies whose new management is pushing growth.</span></div>
-      <div><b>Ideas & red flags</b><span>Standout single companies (divergence, first movers, hidden suppliers, credibility upgrades) and calls that need a check.</span></div>
       <div><b>Company panel</b><span>Opens from anywhere. The <b>Call summary</b> tab has financial highlights, segments, guidance, capex, demand, Q&A, risks and verbatim quotes. The <b>Signals</b> tab has the triggers, mental models, the eight readings behind the score, credibility, and other companies that name it.</span></div>
     </div></section>
     <section id="h-quarter"><h3>The quarter switch</h3><p>${esc(GL.quarter[1])} A small orange dot marks a season still in progress.</p></section>
@@ -2534,7 +2514,7 @@ function vHelp() {
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
-const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, ideas: vIdeas, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -2842,7 +2822,6 @@ document.addEventListener('click', e => {
   const ifs = t.closest('[data-ifs]'); if (ifs) { S.inf.side = ifs.dataset.ifs; S.inf.limit = 30; render(); return; }
   const ifc = t.closest('[data-ifc]'); if (ifc) { const k = ifc.dataset.ifc; S.inf[k] = !S.inf[k]; S.inf.limit = 30; render(); return; }
   if (t.closest('#if-more')) { S.inf.limit += 30; render(); return; }
-  const it = t.closest('[data-it]'); if (it) { S.ideas.tab = it.dataset.it; render(); return; }
   const sec = t.closest('.trk .r.sec'); if (sec) { const n = S._secs[+sec.dataset.sec].name; S.openSec.has(n) ? S.openSec.delete(n) : S.openSec.add(n); render(); return; }
   const sub = t.closest('.trk .r.subr'); if (sub) { const [i, j] = sub.dataset.subrow.split('-').map(Number), n = S._secs[i].subs[j].name; S.openSub = S.openSub === n ? null : n; render(); return; }
   const dq = t.closest('#dr-q button'); if (dq) { S.drawer.key = dq.dataset.k; drawDrawer(false); return; }
