@@ -1,8 +1,7 @@
 """Share price around each posted result (India), for the Results posted page.
 
 For every result on the page: the close before the market could react, the first session's move
-(the reaction day), the move from then to the latest price, and how far the stock had already run
-(6- and 12-month change, distance from the 1-year high) for the Hidden turnarounds screen. Prices are daily closes from Yahoo
+(the reaction day), and the move from then to the latest price. Prices are daily closes from Yahoo
 (NSE symbol first, BSE as a fallback); the latest bar is live while the market is open.
 
 Reaction day: results filed before 15:00 IST are priced in the same session (the reference is the
@@ -25,7 +24,7 @@ def _closes(tickers: list[str], log=print) -> dict:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
             try:
-                d = yf.download(chunk, period="1y", interval="1d", progress=False, auto_adjust=False,
+                d = yf.download(chunk, period="3mo", interval="1d", progress=False, auto_adjust=False,
                                 group_by="ticker", threads=True)
             except Exception as ex:  # a failed batch keeps the earlier prices
                 log(f"  prices: batch failed ({ex})")
@@ -53,19 +52,7 @@ def _px(series, filed: str):
     return {"ref": round(rv, 2), "refDate": dates[ref],
             "react": pct(series[react][1], rv) if react is not None else None,
             "reactDate": dates[react] if react is not None else None,
-            "now": round(nv, 2), "nowDate": dates[-1], "move": pct(nv, rv), **_trend(series)}
-
-
-def _trend(series) -> dict:
-    """How far the stock has already run: change over 6 and 12 months, and distance from the 1-year high."""
-    last = dt.date.fromisoformat(series[-1][0])
-    def back(days):
-        cut = (last - dt.timedelta(days=days)).isoformat()
-        older = [v for d, v in series if d <= cut]
-        return older[-1] if older else None
-    nv, hi = series[-1][1], max(v for _, v in series)
-    pct = lambda b: round(100 * (nv / b - 1)) if b else None
-    return {"m6": pct(back(182)), "m12": pct(back(358)), "offHi": round(100 * (nv / hi - 1)) if hi else None}
+            "now": round(nv, 2), "nowDate": dates[-1], "move": pct(nv, rv)}
 
 
 def attach(rows: list[dict], comps: dict, log=print) -> int:
@@ -74,9 +61,6 @@ def attach(rows: list[dict], comps: dict, log=print) -> int:
     sym = {k: v for k, v in sym.items() if v}
     ns = _closes(sorted({f"{s}.NS" for s in sym.values()}), log)
     miss = sorted({f"{s}.BO" for s in sym.values() if f"{s}.NS" not in ns})
-    # NSE history can be short (a recent move from BSE-only): take the 6- and 12-month trend from BSE then
-    short = lambda ser: (dt.date.fromisoformat(ser[-1][0]) - dt.date.fromisoformat(ser[0][0])).days < 330
-    miss += sorted({f"{s}.BO" for s in sym.values() if f"{s}.NS" in ns and short(ns[f"{s}.NS"])})
     bo = _closes(miss, log) if miss else {}
     n = 0
     for r in rows:
@@ -84,9 +68,6 @@ def attach(rows: list[dict], comps: dict, log=print) -> int:
         series = ns.get(f"{s}.NS") or bo.get(f"{s}.BO") if s else None
         px = _px(series, r["filed"]) if series else None
         if px:
-            ser_bo = bo.get(f"{s}.BO")
-            if series is not bo.get(f"{s}.BO") and ser_bo and short(series) and not short(ser_bo):
-                px.update(_trend(ser_bo))
             px["sym"] = s
             px["ex"] = "NSE" if f"{s}.NS" in ns else "BSE"
             r["px"] = px
