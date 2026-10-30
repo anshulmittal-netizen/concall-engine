@@ -1,0 +1,190 @@
+{
+ "doc_id": "IN-91fbadba-0e4c-4f88-bd0c-584daf71d217",
+ "market": "IN",
+ "company_id": "500257",
+ "name": "Lupin Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "Lupin Ltd - 500257 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Lupin posted record Q4 with 29.4% EBITDA margin and 75% gross margin, but guides FY27 to ~25% margin and high-single-digit growth as Tolvaptan and Mirabegron face competition; US revenue guided to high-single or low-double-digit erosion.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Pricing power",
+   "Customer stickiness",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "FY27 margin guide ~25% from 29.7%",
+    "quote": "we expect to grow our top line high-single digits with margins at around 25% in FY27",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "structure",
+    "label": "Tolvaptan and Mirabegron generic competition",
+    "quote": "we have factored that in both competition for Mirabegron as well as Tolvaptan",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "pricing",
+    "label": "US erosion high-single to low-double digit FY27",
+    "quote": "maybe it's a high single digit or low double-digit erosion in terms of revenues",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Q4 US sales USD 371m, +6% QoQ cc",
+    "quote": "the U .S business recorded sales of USD 371 million, 6% higher QoQ in constant currency terms",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin 75% from 61.7% YoY",
+    "quote": "Gross Margins continued their upward trajectory during the quar ter at 75% up from 61.7% in Q4 FY25",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "high-single digit (Rupee terms)",
+    "change": "held",
+    "quote": "we expect to grow our top line high-single digits with margins at around 25% in FY27"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "around 25%",
+    "change": "cut",
+    "quote": "we expect to grow our top line high-single digits with margins at around 25% in FY27"
+   },
+   {
+    "metric": "US sales FY27",
+    "value": "USD 1 billion plus",
+    "change": "new",
+    "quote": "In FY27 to be a billion dollar plus."
+   },
+   {
+    "metric": "R&D spend FY27",
+    "value": "around 8% of sales",
+    "change": "new",
+    "quote": "We expect R&D to be around 8% of sales for the next fiscal."
+   },
+   {
+    "metric": "ETR FY27",
+    "value": "25% - 26%",
+    "change": "new",
+    "quote": "For FY27, we expect the ETR to be about 25% - 26%"
+   },
+   {
+    "metric": "India outperformance vs IPM",
+    "value": "1.2x to 1.3x",
+    "change": "held",
+    "quote": "we remain confident that our India formulations business will continue to outperform IPM by 1.2x to 1.3x going forward"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 margin guidance 27% to 28%",
+    "outcome": "met",
+    "quote": "significantly higher than a margin guidance of 27% to 28%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Astellas",
+    "relation": "partner"
+   },
+   {
+    "name": "Valorum",
+    "relation": "partner"
+   },
+   {
+    "name": "VISUfarma",
+    "relation": "partner"
+   },
+   {
+    "name": "Teva",
+    "relation": "competitor"
+   },
+   {
+    "name": "GSK",
+    "relation": "competitor"
+   },
+   {
+    "name": "Zydus",
+    "relation": "competitor"
+   },
+   {
+    "name": "Cipla",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Specialty chem destocking end",
+   "Pharma CDMO / outsourcing",
+   "GLP-1 supply chain",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 margin fell QoQ on Mirabegron settlement payout and one-time M&A costs",
+    "quote": "we have captured what we have, paid out Astellas on account of Mirabegron settlement as part of the manufacturing other expenses line"
+   },
+   {
+    "label": "Freight and raw material inflation from Middle East crisis, unquantified",
+    "quote": "These are dark clouds on the horizon"
+   },
+   {
+    "label": "Ellipta filing stalled on product PK",
+    "quote": "It is really to achieve the product PK. We, believe that we've got the right device in place."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 4,
+   "balance_sheet": 2,
+   "capex": 0,
+   "other": 8
+  },
+  "evasions": [
+   {
+    "topic": "Freight and raw material inflation impact",
+    "quote": "I don't want to do it at this stage."
+   },
+   {
+    "topic": "Biosimilar revenue estimate",
+    "quote": "We haven't called out the actual revenues from biosimilars"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

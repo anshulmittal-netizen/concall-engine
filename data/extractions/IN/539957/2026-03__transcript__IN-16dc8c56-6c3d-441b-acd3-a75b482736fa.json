@@ -1,0 +1,145 @@
+{
+ "doc_id": "IN-16dc8c56-6c3d-441b-acd3-a75b482736fa",
+ "market": "IN",
+ "company_id": "539957",
+ "name": "Mahanagar Gas Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "Mahanagar Gas Ltd - 539957 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Industrial utilities & steam",
+  "thesis": "City gas distributor under LNG supply curtailment: I&C supply cut to ~80%, March volumes lost ~20-22% in industrial, but FY26 volume grew 8.25% and management targets 10%+ FY27 growth with ~INR1,200 crore capex.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Supply exit",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "Overall, in the month of March, we lost about 1.25 lakh, 1.3 lakh scmd out of, let's say, Feb average of 5.75. About 20%, 22% volume we lost."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Certainly, it will be whatever we have been giving, INR1,200 crores range. It can be a little more than that if we are able to do and see"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "CNG pass-through incomplete",
+    "quote": "It's certainly not fully passed on. Cost increase, considering mixing of pooled gas and current Brent level, other gas prices have gone up.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "FY26 volume growth 8.25%",
+    "quote": "Average gas sales for the current year ending 31st March 2026 is 4.585 mmscmd, whereas it was 4.235 mmscmd in the last financial year, which is an increase of 8.25%.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "HH supply cut to ~50% in March",
+    "quote": "HH was curtailed to a slightly lower level, maybe to 50% of our 1.5 contracted quantity.",
+    "direction": -1,
+    "confidence": 0.65
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume >10% possible, unquantified margin",
+    "quote": "we can definitely -- if number of customers get added faster, we can achieve 10% volume. Okay . Not necessarily, I'm saying 26-27.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 volume growth",
+    "value": ">10% possible if faster connections",
+    "change": "new",
+    "quote": "we can definitely -- if number of customers get added faster, we can achieve 10% volume."
+   },
+   {
+    "metric": "EBITDA per SCM",
+    "value": "endeavour to maintain more than INR8",
+    "change": "new",
+    "quote": "we will maintain more than INR8 EBITDA per SCM, but we'll have to consider multiple factors"
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "INR1,200 crore range, possibly more",
+    "change": "held",
+    "quote": "it will be whatever we have been giving, INR1,200 crores range."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "GAIL",
+    "relation": "supplier"
+   },
+   {
+    "name": "Petronet LNG",
+    "relation": "peer"
+   },
+   {
+    "name": "IGX",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Housing & real-estate cycle",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin visibility lost; CNG pass-through incomplete",
+    "quote": "Coming to margins, I think it's a very difficult call as of today because nobody knows how long this kind of a situation and supply of RLNG will improve."
+   },
+   {
+    "label": "Q4 PAT down QoQ; FY26 PAT 847 vs 1,041 crore",
+    "quote": "Net profit after tax for FY 2025 -'26 is INR847 crores compared to net profit after tax for the previous financial year of INR1,041 crores."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 4,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Pooled gas pricing and duration",
+    "quote": "We are not privy to that. So, we don't know."
+   },
+   {
+    "topic": "FY27 margin guidance",
+    "quote": "giving a number is really difficult as of now."
+   },
+   {
+    "topic": "Pool discontinuation timing",
+    "quote": "all depends on how fast and when West Asia crisis is over, which nobody can tell today."
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

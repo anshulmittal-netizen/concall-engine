@@ -1,0 +1,158 @@
+{
+ "doc_id": "IN-c9ff033d-90d7-4c8e-a9d7-bdccdbc1f4f7",
+ "market": "IN",
+ "company_id": "544657",
+ "name": "Pajson Agro India Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "Pajson Agro India Ltd - 544657 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "Capacity is expanding from 18,000 to 70,000 MT by FY30 with INR76 crore capex, but FY27 guides only ~20% growth from existing plant and a 15-16% EBITDA margin after an FX-driven fall from ~18%.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 86,
+   "quote": "our 18,000 metric ton facility in Andhra Pradesh operated at a staggering 86% utilization capacity"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "the total capex for the new capacity is about INR76 crores and this is without the land"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "FY26 utilisation 86%",
+    "quote": "our 18,000 metric ton facility in Andhra Pradesh operated at a staggering 86% utilization capacity",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "New capex INR76 cr for 35,000 MT",
+    "quote": "the total capex for the new capacity is about INR76 crores and this is without the land",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA margin 18% → 11% H2",
+    "quote": "we expect the margins to be steady",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Trade receivables up on credit to institutions",
+    "quote": "with institutional customers there is more credit involved, hence we are seeing that our trade receivables have increased",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin (steady state)",
+    "value": "15% to 16%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We expect 15% to 16% EBITDA."
+   },
+   {
+    "metric": "Existing facility revenue growth",
+    "value": "~20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect another increment of about 20% to 22% -20% from the current levels"
+   },
+   {
+    "metric": "New facility utilisation",
+    "value": "15% FY27, 65-70% FY28, 85-90% FY29",
+    "change": "new",
+    "horizon": "FY27-FY29",
+    "quote": "we are looking at 65% to 70% of capacity utilization and then reaching at 85%-90% utilization rate by the next fiscal"
+   },
+   {
+    "metric": "Greenfield capacity",
+    "value": "70,000 MT by FY30",
+    "change": "new",
+    "horizon": "FY30",
+    "quote": "We have embarked on an ambitious Greenfield expansion to take our capacity to 70,000 metric tons by FY30."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Royal Mewa",
+    "relation": "peer"
+   },
+   {
+    "name": "Vietnam",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin fell ~18% to ~11% in H2; H2 PAT up only 8.97%",
+    "quote": "H2 saw some margins compression due to a spike in raw cashew nuts prices, forex, and global shipping disruptions"
+   },
+   {
+    "label": "Working capital and receivables rising; short-term advances INR31.95 cr",
+    "quote": "we are seeing that our trade receivables have increased"
+   },
+   {
+    "label": "Near-zero hedging; 93-94% of RCN imported",
+    "quote": "balance 93% to 94% was all imported"
+   },
+   {
+    "label": "Management inconsistency on margin trajectory",
+    "quote": "we expect the margins to be steady"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 4,
+   "growth": 5,
+   "margin": 6,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Margin uplift at new plant",
+    "quote": "I cannot give the exact numbers but definitely a couple of percent."
+   },
+   {
+    "topic": "Hedging and pass-through",
+    "quote": "we think that that is how it's going to balance it out itself"
+   },
+   {
+    "topic": "Sourcing margin differential India vs Africa",
+    "quote": "it is all about the pricing and all that you have to buy throughout the season"
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

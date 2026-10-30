@@ -1,0 +1,143 @@
+{
+ "doc_id": "IN-cc1ba034-f065-4365-970c-c405cb0c4d9c",
+ "market": "IN",
+ "company_id": "543332",
+ "name": "Epigral Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-06",
+ "period": "2026-03",
+ "title": "Epigral Ltd - 543332 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 revenue record INR736 cr with utilisation above 80% and EBITDA margin 23%, but management gave no FY27 value or margin guidance and war-driven price gains are expected only in Q1.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 80,
+   "quote": "resulting in overall plant utilization above 80 %"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "our capacity expansion projects of Epichlorohydrin and CPVC are progressing on track and within budget"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Caustic utilisation 67-70% → 78-85%",
+    "quote": "the plant that we were running at 67%, 70% utilization levels, after the November has been running in the range of 78% to 80%, 83%, 85% utilization levels",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Caustic ECU ~INR37,000 vs ~INR30,000 in Q4",
+    "quote": "current ECU would be ranging somewhere around INR37,000 kind of thing",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume growth 10-12%",
+    "quote": "we are targeting around 10% to 12% of volume growth from here on",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "April volumes soft; growth from May",
+    "quote": "April was bit of a quarter where there was a volume bit low compared to what it was in a normal case",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Interest cost driven by FX mark-to-market",
+    "quote": "it's just a mark-to-market impact which has been there in the interest cost put together",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Volume growth FY27",
+    "value": "10% to 12%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are targeting around 10% to 12% of volume growth from here on"
+   },
+   {
+    "metric": "Chlorine captive consumption",
+    "value": "90% to 95% by FY28 from 75%",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "we expect this 75% chlorine captive consumption to reach around 90% to 95% captive consumption"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "maintain achieved range; no number",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "I would defer giving any guidance on the EBITDA margins. But what we have achieved so far, we would be maintaining in that range."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Renewables & storage",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Finance cost up ~35% from FX mark-to-market on swap",
+    "quote": "it's just a mark-to-market impact which has been there in the interest cost put together"
+   },
+   {
+    "label": "Chlorotoluene ramp slow, utilisation undisclosed",
+    "quote": "it will be difficult to give an absolute utilization level as of now"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Realisations by product vs Q3",
+    "quote": "It's difficult to give all the numbers together, maybe we can take this offline."
+   },
+   {
+    "topic": "FY27 value growth / top-line",
+    "quote": "in terms of value growth, it will be difficult to give you any kind of specific guidance. We would avoid that."
+   },
+   {
+    "topic": "Peak EBITDA target",
+    "quote": "I would avoid giving any number"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

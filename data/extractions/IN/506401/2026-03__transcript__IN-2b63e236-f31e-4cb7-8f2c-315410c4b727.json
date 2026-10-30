@@ -1,0 +1,163 @@
+{
+ "doc_id": "IN-2b63e236-f31e-4cb7-8f2c-315410c4b727",
+ "market": "IN",
+ "company_id": "506401",
+ "name": "Deepak Nitrite Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Deepak Nitrite Ltd-$ - 506401 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 EBITDA margin rebounded to 18% from 11% on phenolics spreads (EBIT margin 20%), but nitric acid ran at ~45% utilisation and management guides only to Q1 beating Q4 with no numeric guidance.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 45,
+   "quote": "we were roughly at about 45% of utilization"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "our capex includes the ability to have this in a slightly disjointed manner"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Nitric acid utilisation ~45% in Q4",
+    "quote": "we were roughly at about 45% of utilization",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Phenolics EBIT margin 20% in Q4",
+    "quote": "EBIT margins improved to 20% during Q4",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "China nitration tailwind 'already started'",
+    "quote": "It has already started happening.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "inventory",
+    "label": "Feedstock bought on dips, higher inventory",
+    "quote": "We ended up with a much larger inventory than we would traditionally have had in Q4",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q1 FY27 to be better than Q4",
+    "quote": "we anticipate Q1 to be better than Q4, which was, of course, better than Q3",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q1 FY27 profitability vs Q4",
+    "value": "better than Q4",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "we anticipate Q1 to be better than Q4"
+   },
+   {
+    "metric": "Standalone margins FY27 vs FY26",
+    "value": "stronger margin profile",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect a stronger margin profile, even for the standalone business, compared with FY26"
+   },
+   {
+    "metric": "Polycarbonate commissioning",
+    "value": "June 2028",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "we are expecting it to be commissioned by June 2028"
+   },
+   {
+    "metric": "MIBK/MIBC commissioning",
+    "value": "Q2 FY27",
+    "change": "held",
+    "horizon": "Q2 FY27",
+    "quote": "scheduled for commissioning in Q2 FY27"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Praxair India",
+    "relation": "partner"
+   },
+   {
+    "name": "Chem Tech",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Nitration chemistry",
+   "China+1 enquiries → orders",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivable days up, shift to dealership/CSA model",
+    "quote": "we have changed the model, because today we are passing through a very volatile situation, and we do not want to risk our outstanding"
+   },
+   {
+    "label": "Realisations down in Advanced Intermediates",
+    "quote": "it was the realization which was lower as compared to earlier years"
+   },
+   {
+    "label": "Nitric acid plant technical issues, bought from market",
+    "quote": "we had to secure nitric acid from the market"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 3,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Phenol China-India spread / peer spreads",
+    "quote": "it's not possible for me to comment on the spreads of other companies and other countries"
+   },
+   {
+    "topic": "Phenol and IPA production numbers",
+    "quote": "I continue with my position of not going into details on production numbers"
+   },
+   {
+    "topic": "Nitration/hydrogenation utilisation",
+    "quote": "No, those plants are fully operational."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

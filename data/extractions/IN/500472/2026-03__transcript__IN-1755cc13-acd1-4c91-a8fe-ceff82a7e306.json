@@ -1,0 +1,176 @@
+{
+ "doc_id": "IN-1755cc13-acd1-4c91-a8fe-ceff82a7e306",
+ "market": "IN",
+ "company_id": "500472",
+ "name": "SKF India Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-26",
+ "period": "2026-03",
+ "title": "SKF India Ltd - 500472 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Post-demerger SKF India auto margins guided to 11-12% PBT (vs ~20% FY25 cited by analysts), with FY26 sales +12.8% but PBT down 694bp, capex ~INR 500cr over FY26-28 and industrial trading filling capacity gaps.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital allocation shift",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "capacity is limited"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "from '26 to '28, we have around INR 500 crores investment, which will go through each year. This year, '26, will be around INR 200 crores."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "PBT margin guided 11-12% near term",
+    "quote": "we could be looking at 11-12% kind of margin in the near future",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Capex ~INR 500cr over FY26-28",
+    "quote": "from '26 to '28, we have around INR 500 crores investment",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Net working capital up 4.6% QoQ",
+    "quote": "It increased by about 4.6% due to one -off factors",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "pricing",
+    "label": "Aftermarket price hikes started",
+    "quote": "yes, it is started, that I can give you",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Sustainable PBT margin",
+    "value": "11-12% near term",
+    "change": "new",
+    "quote": "we could be looking at 11-12% kind of margin in the near future"
+   },
+   {
+    "metric": "Revenue CAGR to 2028",
+    "value": "6-8%",
+    "change": "new",
+    "quote": "you can consider around 6% to 8% CAGR"
+   },
+   {
+    "metric": "Capex FY26-28",
+    "value": "INR 500 crore total; ~INR 200 crore in FY26",
+    "change": "new",
+    "quote": "from '26 to '28, we have around INR 500 crores investment"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "SKF India Industrial Limited",
+    "relation": "partner"
+   },
+   {
+    "name": "Bajaj",
+    "relation": "customer"
+   },
+   {
+    "name": "Mahindra",
+    "relation": "customer"
+   },
+   {
+    "name": "Tata",
+    "relation": "customer"
+   },
+   {
+    "name": "TVS Motors",
+    "relation": "customer"
+   },
+   {
+    "name": "Honda",
+    "relation": "customer"
+   },
+   {
+    "name": "Suzuki",
+    "relation": "customer"
+   },
+   {
+    "name": "Royal Enfield",
+    "relation": "customer"
+   },
+   {
+    "name": "Schaeffler India",
+    "relation": "competitor"
+   },
+   {
+    "name": "Timken",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Auto EV transition",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin reset post-demerger; disclosure gap",
+    "quote": "the investor communication and the disclosures have dropped substantially"
+   },
+   {
+    "label": "Trading from affiliate to fill capacity",
+    "quote": "we are short of little capacity. So, we are buying from Industrial"
+   },
+   {
+    "label": "Related-party rent and service charges unquantified",
+    "quote": "No as of now. We don't have that exactly"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 2,
+   "margin": 9,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Revenue split by 2W/PV/CV",
+    "quote": "We don't comment on the sub-segments per se"
+   },
+   {
+    "topic": "Related-party payouts to Industrial",
+    "quote": "No as of now. We don't have that exactly and this whole case started from last October, so it is too early"
+   },
+   {
+    "topic": "Demerger and margin history",
+    "quote": "Everything is true, what we said. It's maybe a matter of time."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

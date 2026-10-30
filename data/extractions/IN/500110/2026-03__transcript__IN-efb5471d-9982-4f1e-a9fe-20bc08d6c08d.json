@@ -1,0 +1,141 @@
+{
+ "doc_id": "IN-efb5471d-9982-4f1e-a9fe-20bc08d6c08d",
+ "market": "IN",
+ "company_id": "500110",
+ "name": "Chennai Petroleum Corporation Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-28",
+ "period": "2026-03",
+ "title": "Chennai Petroleum Corporation Ltd - 500110 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Record 11.71 MMT throughput (112% of 10.5 MMT capacity) and Q4 GRM $13.75/bbl, but management concedes ~$10.3 core and export duties/RTP cap are pressuring net cracks; capex modest at INR2,000 crore over 2-3 years.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 112,
+   "quote": "highest ever crude throughput of 11.71 MMT, million metric ton, which equivalents to 112% of installed capacity"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Group 2, Group 3 LOBS for which all approvals are in place and the project execution has started in full swing"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Throughput 112% of capacity FY26",
+    "quote": "highest ever crude throughput of 11.71 MMT",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Net cracks near long-term average",
+    "quote": "The net GRM based on realized RTP is pretty close to the long-term average.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "INR2,000 crore capex over 2-3 years",
+    "quote": "This INR2,000 crores will happen over 2 to 3 years.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Capex",
+    "value": "INR2,000 crore over 2-3 years plus ~INR500 crore annual normal capex",
+    "change": "new",
+    "horizon": "FY27-FY29",
+    "quote": "This INR2,000 crores will happen over 2 to 3 years. Besides, every year, you can assume another INR500 crores is our normal capex."
+   },
+   {
+    "metric": "Throughput",
+    "value": "No M&I in first 6 months of FY27; scheduled M&I near Sept-Oct",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "in the first 6 months, we don't see any M&I. So it may not be there."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Indian Oil",
+    "relation": "customer"
+   },
+   {
+    "name": "EIL",
+    "relation": "partner"
+   },
+   {
+    "name": "Singapore benchmark",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Export duty and RTP pressure on net cracks",
+    "quote": "The net GRM based on realized RTP is pretty close to the long-term average."
+   },
+   {
+    "label": "Forex loss in other expenses",
+    "quote": "for the whole year, it will be around INR350 crores."
+   },
+   {
+    "label": "Middle East crude supply disruption",
+    "quote": "What has impacted i s that maybe 30% to 40% was affected over a very short period"
+   },
+   {
+    "label": "Management evasion on RTP and crude premiums",
+    "quote": "I think it will not be appropriate for me to deliberate on RTP pricing."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 2,
+   "margin": 9,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "RTP discount and export duty impact on margins",
+    "quote": "I think it will not be appropriate for me to deliberate on RTP pricing."
+   },
+   {
+    "topic": "Profit foregone selling to IOCL",
+    "quote": "I will not assign anything as profit forgone because I'm selling at market price"
+   },
+   {
+    "topic": "Crude pricing and Russian discount",
+    "quote": "The price, whatever I tell you will be wrong because what is happening"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

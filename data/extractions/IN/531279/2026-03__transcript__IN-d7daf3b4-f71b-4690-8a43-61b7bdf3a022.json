@@ -1,0 +1,195 @@
+{
+ "doc_id": "IN-d7daf3b4-f71b-4690-8a43-61b7bdf3a022",
+ "market": "IN",
+ "company_id": "531279",
+ "name": "Trishakti Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "Trishakti Industries Ltd - 531279 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Crane rental capex-led expansion: FY26 capex INR 210 crore vs INR 100 crore guidance, but receivables near 200 days, subvention income of INR 4.58 crore inflates EBITDA, and payables of INR 159 crore sit off the debt line.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital cycle",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -2,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "we scaled our fleet from just eight machines in FY25 -- FY24 to over 140 machines today with near full utilization"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we significantly outperformed our CapEx guidance of INR 100 crores in FY26 by deploying INR 210 crores of fresh CapEx during this year"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "FY26 capex INR 210 cr vs INR 100 cr guided",
+    "quote": "significantly outperformed our CapEx guidance of INR 100 crores in FY26 by deploying INR 210 crores of fresh CapEx",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Trade receivables ~200 days",
+    "quote": "our trade receivable cycleis about 200 days, is because there is a very small amount of a family settlement",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "guidance",
+    "label": "Subvention INR 4.58 cr in EBITDA",
+    "quote": "Our reported EBITDA includes INR 4.58 crores of subvention income classified under other income.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Order book INR 60 cr+ for FY27",
+    "quote": "currently, our order book is INR 60 crores and above for FY27, financial year",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 crane hiring revenue",
+    "value": "INR 62.5 crore (per slide; management says FY26 INR 33 crore is actual)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the INR 62 crores which we are talking about, currently our ARR from the last month is approximately INR 5 crores"
+   },
+   {
+    "metric": "FY28 crane hiring revenue",
+    "value": "INR 95 crore",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "crane hiring revenue growth in INR lakhs 62.5 crores and then INR 95 crores in FY28"
+   },
+   {
+    "metric": "Debt to equity",
+    "value": "around 1.5, blended over time; keep below 2x",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "this debt to equity of around 1.5, eventually, we will blend it out to be 1.5"
+   },
+   {
+    "metric": "ROC",
+    "value": "22-25% targeted",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "targeted ROC of 22-25%, which is our strategy to continue to scale up"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 capex",
+    "outcome": "met",
+    "quote": "we significantly outperformed our CapEx guidance of INR 100 crores in FY26 by deploying INR 210 crores"
+   },
+   {
+    "metric": "FY26 net top line",
+    "outcome": "met",
+    "quote": "we have always given that FY26, we would have done a net top line of INR 20 crores to INR 22 crores"
+   },
+   {
+    "metric": "Receivable days normalising in FY27",
+    "outcome": "not_discussed",
+    "quote": "But in FY27, it will be normalized. That I can assure you."
+   }
+  ],
+  "entities": [
+   {
+    "name": "L&T",
+    "relation": "customer"
+   },
+   {
+    "name": "Reliance Industries",
+    "relation": "customer"
+   },
+   {
+    "name": "Tata Steel",
+    "relation": "customer"
+   },
+   {
+    "name": "RVNL",
+    "relation": "customer"
+   },
+   {
+    "name": "NCC",
+    "relation": "customer"
+   },
+   {
+    "name": "Jindal",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Renewables & storage",
+   "Railway capex",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables ~200 days; family settlement overhang",
+    "quote": "the only reason why the trade receivables are about 200 days, is because there is a very small amount of a family settlement"
+   },
+   {
+    "label": "Subvention income inside EBITDA; margin 62% reported",
+    "quote": "Our reported EBITDA includes INR 4.58 crores of subvention income classified under other income."
+   },
+   {
+    "label": "Contracts only on paper to 31 Dec",
+    "quote": "on paper, we just have it till 31st December"
+   },
+   {
+    "label": "Unbilled revenue rising INR 2 cr to 4.5 cr",
+    "quote": "the unbilled amount has gone up"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 5,
+   "capex": 2,
+   "growth": 4,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Debt levels by FY27",
+    "quote": "Right now itis very difficult for me to give you the exact figures."
+   },
+   {
+    "topic": "Subvention income nature",
+    "quote": "maybe I can just tell you for now that it's a quite complicated structure"
+   },
+   {
+    "topic": "Cost of borrowing inclusive of interest",
+    "quote": "We can talk about it post the call because it's a very -- it's such a topic where I have to give you the exact percentages"
+   },
+   {
+    "topic": "Net block",
+    "quote": "Netblock, I'll have to calculate, and I'll tell you. I don't have the exact data."
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

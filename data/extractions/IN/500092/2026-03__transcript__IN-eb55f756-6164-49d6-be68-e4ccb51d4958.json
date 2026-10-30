@@ -1,0 +1,135 @@
+{
+ "doc_id": "IN-eb55f756-6164-49d6-be68-e4ccb51d4958",
+ "market": "IN",
+ "company_id": "500092",
+ "name": "Crisil Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-24",
+ "period": "2026-03",
+ "title": "Crisil Ltd - 500092 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Crisil Q1 FY26 revenue jumped 30.1% and PAT 45.9%, but management flagged FX gains and a USD4.5m timing pull-forward in RAS, so underlying growth is weaker than headline and no numeric guidance was given.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q1 revenue +30.1% includes timing effect",
+    "quote": "the accelerated closure of renewals in one of our global businesses has led to incremental revenues of approximately USD4.5 million in quarter 1 FY26",
+    "highlight": "incremental revenues of approximately USD4.5 million",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Bond issuance down 12% in Q1 CY26",
+    "quote": "In Q1 2026, the bond issuances declined by 12% on Y -o-Y basis.",
+    "highlight": "the bond issuances declined by 12%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Ratings pricing kept vague",
+    "quote": "Pricing is a very sensitive matter. Of course, deal by deal, we will not have a visibility of what's happening on pricing",
+    "highlight": "Pricing is a very sensitive matter",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Industry bank credit growth FY27",
+    "value": "around 13%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We expect the bank credit to grow at around 13% in fiscal 2027"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "S&P Global Ratings",
+    "relation": "partner"
+   },
+   {
+    "name": "S&P Global",
+    "relation": "partner"
+   },
+   {
+    "name": "PriceMetrix",
+    "relation": "peer"
+   },
+   {
+    "name": "GCCs",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Gen-AI disruption",
+   "Housing & real-estate cycle",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q1 growth flattered by timing and FX",
+    "quote": "aided by both underlying business growth as well as certain timing effects"
+   },
+   {
+    "label": "Bond issuance softness and substitution to bank loans",
+    "quote": "substitution of corporate bonds with bank loans by many large corporates"
+   },
+   {
+    "label": "Management declines forward guidance",
+    "quote": "we don't make any forward-looking statements"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 8,
+   "margin": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Ratings pricing",
+    "quote": "Pricing is a very sensitive matter. Of course, deal by deal, we will not have a visibility of what's happening on pricing"
+   },
+   {
+    "topic": "Forward guidance on ratings and GAC growth",
+    "quote": "no comment on any forward-looking statement"
+   },
+   {
+    "topic": "RAS order book",
+    "quote": "Sorry, we don't comment on order books of individual businesses."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

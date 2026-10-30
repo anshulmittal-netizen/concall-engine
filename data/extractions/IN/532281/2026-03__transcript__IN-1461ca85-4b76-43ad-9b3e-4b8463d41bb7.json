@@ -1,0 +1,155 @@
+{
+ "doc_id": "IN-1461ca85-4b76-43ad-9b3e-4b8463d41bb7",
+ "market": "IN",
+ "company_id": "532281",
+ "name": "HCL Technologies Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-24",
+ "period": "2026-03",
+ "title": "HCL Technologies Ltd - 532281 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "FY27 guidance of 1% to 4% cc revenue and 17.5% to 18.5% EBIT margin, with two US telecom and SAP-related clients cutting spend; deflation of 2% to 3% for portfolio flagged as an emerging drag.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Customer stickiness",
+   "Working-capital stress",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 revenue guide 1% to 4% cc",
+    "quote": "The revenue growth guidance for the full year is 1% to 4% in constant currency and 1.5% to 4.5% for Services.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Two US clients cut discretionary spend",
+    "quote": "two large clients in the U.S. during the quarter. We expect the impact to continue for rest of the calendar year as well",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "AI deflation 2% to 3% on portfolio",
+    "quote": "it would translate to 2% to 3% for our portfolio",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Software revenue down 28% QoQ",
+    "quote": "Our software business declined 28% sequentially, and 14% on a YoY basis.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth (cc)",
+    "value": "1% to 4%",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY27 services revenue growth (cc)",
+    "value": "1.5% to 4.5%",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY27 EBIT margin",
+    "value": "17.5% to 18.5%",
+    "change": "new",
+    "horizon": "FY27"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "HPE",
+    "relation": "partner"
+   },
+   {
+    "name": "Google",
+    "relation": "partner"
+   },
+   {
+    "name": "AWS",
+    "relation": "partner"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Microsoft",
+    "relation": "partner"
+   },
+   {
+    "name": "CrowdStrike",
+    "relation": "partner"
+   },
+   {
+    "name": "SAP",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "AI deflation in IT services",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Two US clients cutting IT budgets",
+    "quote": "These customers are going through business challenges which are not related specifically to the macroeconomic conditio ns and have decided to scale down their IT budget significantly."
+   },
+   {
+    "label": "Q4 software revenue down 28% QoQ",
+    "quote": "Our software business declined 28% sequentially, and 14% on a YoY basis."
+   },
+   {
+    "label": "DSO up 3 days to 84",
+    "quote": "Our DSO is currently at 84 days, increased by three days QoQ."
+   }
+  ],
+  "evasions": [
+   {
+    "topic": "Deal TCV recovery and product business trajectory",
+    "quote": "whether these deals will come back depends on many variables. So it's too early to say and the timing of closure is unpredictable."
+   },
+   {
+    "topic": "Geopolitics vs guidance softness",
+    "quote": "I don't want to kind of say that geopolitics is driving this."
+   }
+  ],
+  "hedge_index": 0.4,
+  "analyst_mix": {}
+ }
+}

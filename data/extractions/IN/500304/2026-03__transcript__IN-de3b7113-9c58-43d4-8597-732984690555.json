@@ -1,0 +1,161 @@
+{
+ "doc_id": "IN-de3b7113-9c58-43d4-8597-732984690555",
+ "market": "IN",
+ "company_id": "500304",
+ "name": "NIIT Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-19",
+ "period": "2026-03",
+ "title": "NIIT Ltd - 500304 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "FY26 revenue up 9% to INR3,902m (organic core roughly flat in Q4) with EBITDA about -INR40m; order intake up 17% to INR4,209m gives book-to-bill above 1, but management guides an investment cycle to continue.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Backlog conversion",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "We are past the peak on capital investment in platform in the current investment cycle, and we expect capital expenditure to moderate from here."
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Order intake +17% to INR4,209m",
+    "quote": "Our order intake grew 17% to INR4.2 billion or INR4,209 million, which is above our full year revenue",
+    "highlight": "Our order intake grew 17% to INR4.2 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Q1 FY27 double-digit revenue growth",
+    "quote": "For Q1 FY '27, we expect double -digit revenue growth year -on-year in Q1 FY '27.",
+    "highlight": "we expect double -digit revenue growth",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Capex peak passed, to moderate",
+    "quote": "We are past the peak on capital investment in platform in the current investment cycle, and we expect capital expenditure to moderate from here.",
+    "highlight": "we expect capital expenditure to moderate from here",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Margins stay negative into Q1",
+    "quote": "we expect breakeven to low single -digit negative EBITDA margin in Q1",
+    "highlight": "breakeven to low single -digit negative EBITDA margin in Q1",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q1 FY27 revenue growth",
+    "value": "double-digit YoY",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "we expect double -digit revenue growth year -on-year in Q1 FY '27"
+   },
+   {
+    "metric": "Q1 FY27 EBITDA margin",
+    "value": "breakeven to low single-digit negative",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "we expect breakeven to low single -digit negative EBITDA margin in Q1"
+   },
+   {
+    "metric": "FY27 revenue and margin",
+    "value": "stronger revenue growth, improving margin than FY26",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect stronger revenue growth, improving margin and continued order intake momentum for FY '27 as compared to '26"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revenue growth 7-8%",
+    "outcome": "met",
+    "quote": "This is ahead of our 7% to 8% guidance that we gave in January."
+   },
+   {
+    "metric": "FY26 EBITDA breakeven to low single-digit negative",
+    "outcome": "met",
+    "quote": "EBITDA for FY '26 was negative INR40 million, a negative margin of approximately 1%, which is within our guided range."
+   }
+  ],
+  "entities": [
+   {
+    "name": "iamneo",
+    "relation": "peer"
+   },
+   {
+    "name": "RPS Consulting",
+    "relation": "peer"
+   },
+   {
+    "name": "IFBI",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Customer stickiness"
+  ],
+  "red_flags": [
+   {
+    "label": "Organic revenue barely growing; growth mostly from acquisition",
+    "quote": "Excluding our acquisition iamneo, the organic revenue for Q4 was INR875 million, which is a marginal increase year -on-year"
+   },
+   {
+    "label": "Management hedges FY27 guidance quarter by quarter",
+    "quote": "we'll have to keep revisiting this every quarter. It depends on how the rest of the world plays out."
+   },
+   {
+    "label": "Organic headcount down 30 while iamneo added hires",
+    "quote": "At organic level, headcou nt decreased by 30."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "FY27 growth quantification",
+    "quote": "The question is the economic uncertainty and the overall environment uncertainty actually does not allow us to say that we can stand on top of the roof"
+   },
+   {
+    "topic": "Inorganic acquisition pipeline",
+    "quote": "we can only talk when something fructifies, otherwise, it tends to become speculative."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

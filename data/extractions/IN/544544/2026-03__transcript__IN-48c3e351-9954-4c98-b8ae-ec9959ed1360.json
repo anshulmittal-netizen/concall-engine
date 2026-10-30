@@ -1,0 +1,149 @@
+{
+ "doc_id": "IN-48c3e351-9954-4c98-b8ae-ec9959ed1360",
+ "market": "IN",
+ "company_id": "544544",
+ "name": "Telge Projects Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Telge Projects Ltd - 544544 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Engineering & R&D services",
+  "thesis": "Asset-light BIM/structural engineering firm with no capacity or utilisation disclosure; growth is acquisition-aided, receivable days jumped 73→108, and 60–70% CAGR guidance is unsupported by a Rs 25 cr order book.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Hidden supplier",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivable days 73 → 108",
+    "quote": "Receivable days expanded from 73 days to 108 days.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "60–70% CAGR target, no numbers backing",
+    "quote": "we are confident to achieve 60% to 70% CAGR growth in the upcoming financial year",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Order book Rs 25 cr, pipeline Rs 6 cr",
+    "quote": "our current active order book stands at approximately Rs. 25 crores",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "US hourly rate $25–35 → $45–60 target",
+    "quote": "In previous years, we used to stick to rates between $25 to $35 per hour. Now what we are targeting is $45 to $60 per hour even.",
+    "direction": 1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth",
+    "value": "60–70% CAGR, FY27 and beyond",
+    "change": "new",
+    "horizon": "FY27 onwards",
+    "quote": "we are confident to achieve 60% to 70% CAGR growth in the upcoming financial year"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "~35%, PAT margin 20–23%, maintain Q4 levels",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are trying to maintain the same values in the upcoming year. Not trying to go below that."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Edward Farr Architects",
+    "relation": "partner"
+   },
+   {
+    "name": "Midwest",
+    "relation": "partner"
+   },
+   {
+    "name": "Draftco",
+    "relation": "partner"
+   },
+   {
+    "name": "Anthropic",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables 73→108 days; related-party concentration",
+    "quote": "the major portion is with to the related party only"
+   },
+   {
+    "label": "Employee cost ~45% of revenue, up from ~35%",
+    "quote": "the employee cost as a percent of revenue is quite high for this year, it's around 45%"
+   },
+   {
+    "label": "Growth mainly from acquisitions, organic slowdown questioned",
+    "quote": "where do we see getting, like our organic growth has slowed down?"
+   },
+   {
+    "label": "Acquisition-driven PAT and margin consolidation unclear",
+    "quote": "we cannot completely bifurcate like this company is having that performance"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 6,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Organic vs inorganic growth split",
+    "quote": "we cannot completely bifurcate like this company is having that performance"
+   },
+   {
+    "topic": "Receivables and related-party exposure",
+    "quote": "the major portion is with to the related party only"
+   },
+   {
+    "topic": "Q1 visibility",
+    "quote": "Yes, that is 100% going to expand and grow from what we have at the moment."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

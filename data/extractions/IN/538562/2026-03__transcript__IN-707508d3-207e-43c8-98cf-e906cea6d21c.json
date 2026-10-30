@@ -1,0 +1,169 @@
+{
+ "doc_id": "IN-707508d3-207e-43c8-98cf-e906cea6d21c",
+ "market": "IN",
+ "company_id": "538562",
+ "name": "Skipper Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-05",
+ "period": "2026-03",
+ "title": "Skipper Ltd - 538562 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Record Q4 and FY26 with order book INR8,502 cr and utilisation above 85%, but FY27 revenue guided only 15% (vs 20-25% historically) as bidding slipped on transformer/HVDC and ROW constraints.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 85,
+   "quote": "Utilization levels has remained strong and are above 85%, indicating strong demand and execution momentum."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "For FY '27, our capex guidance will be similar to previous years. It will be about INR250 crores."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation above 85%",
+    "quote": "Utilization levels has remained strong and are above 85%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth 15%, PAT ~30%",
+    "quote": "For FY '27, we are giving a guidance of 15% growth on revenue and approximately a 30% growth in bottom line.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables up ~2x to INR1,485 cr",
+    "quote": "it's almost double in FY '26 compared to FY '25, INR1,485 crores despite 20% growth",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capacity 450k t by June; 75k t/yr adds",
+    "quote": "we are on track to reach 450,000 tons per year capacity by June '26.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "FY26 inflows INR5,678 cr; bidding slipped",
+    "quote": "FY '26 saw some temporary moderation in ordering due to execution size constraints",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "15%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "For FY '27, we are giving a guidance of 15% growth on revenue and approximately a 30% growth in bottom line."
+   },
+   {
+    "metric": "PAT growth FY27",
+    "value": "~30%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "approximately a 30% growth in bottom line"
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "INR250 cr",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "It will be about INR250 crores."
+   },
+   {
+    "metric": "Capacity",
+    "value": "450,000 t by June 2026; 6 lakh t by FY28",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "we are on track to reach 450,000 tons per year capacity by June '26."
+   },
+   {
+    "metric": "Long-term EBITDA margin",
+    "value": "12% aspirational",
+    "change": "held",
+    "horizon": "long term",
+    "quote": "long term, we will definitely move towards our aspirational margin of 12%."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Tata Power",
+    "relation": "customer"
+   },
+   {
+    "name": "Adani",
+    "relation": "customer"
+   },
+   {
+    "name": "Resonia",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Tariffs & trade policy",
+   "Pharma CDMO / outsourcing",
+   "Capacity bottleneck"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables nearly doubled",
+    "quote": "it's almost double in FY '26 compared to FY '25, INR1,485 crores despite 20% growth"
+   },
+   {
+    "label": "Mgmt blames timing of INR260 cr receipt",
+    "quote": "close to about INR260 crores of funds, which was supposed to receive on the last week of March was received on the 1st and the 2nd of April"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 6,
+   "margin": 3,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Order inflow conversion and quantum",
+    "quote": "hard for me to put a number, but that's what we have seen historically in the past."
+   },
+   {
+    "topic": "FY27 EBITDA margin guidance",
+    "quote": "I'm not able to give an exact guidance of how much it will translate to the EBITDA."
+   },
+   {
+    "topic": "Per-km HVDC opportunity size",
+    "quote": "It's hard to put a benchmark number on that."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,180 @@
+{
+ "doc_id": "IN-98d37ef7-4c61-4634-8110-ae73ea07ce23",
+ "market": "IN",
+ "company_id": "542323",
+ "name": "KPI Green Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-18",
+ "period": "2026-03",
+ "title": "KPI Green Energy Ltd - 542323 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "KPI Green FY26 PAT Rs509cr (+57%) on IPP ramp, but inventory up ~4x, interest up ~130% and CPP order book (Rs5,246cr) fell short of the Rs6,000cr cited last quarter; execution risk rising.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital cycle",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we have added more capacity. We have taken -- we have started 250-megawatt, 370 megawatt and then also our 240 megawatts."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory up ~4x YoY",
+    "quote": "we've seen substantial increase in inventory, about a 4x increase in inventory and 2x increase in inventory days",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Growth guide 50-60% → 40-50%",
+    "quote": "we are now speaking about 40%, 50%. Could you help us understand why this decrease?",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "IPP capacity to ~1.7GW this FY",
+    "quote": "we are planning to get it in this financial year, 1.7 gigawatt on the IPP side",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "CPP order book Rs5,246cr",
+    "quote": "we have approximately INR5,246 crores of order book on the CPP side",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue/PAT growth (CAGR/YoY)",
+    "value": "40% to 50% YoY",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "we are binded to grow at a rate of 40% to 50% year-on-year"
+   },
+   {
+    "metric": "Interest/ROE recovery",
+    "value": "ROE back to earlier levels next year",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "next year, we'll see again ROE coming back to the earlier levels. That is what we are targeting."
+   },
+   {
+    "metric": "10 GW target",
+    "value": "10 GW by 2030",
+    "change": "held",
+    "horizon": "FY30",
+    "quote": "We are on track to achieve our 10-gigawatt target by 2030"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Growth 50-60% YoY",
+    "outcome": "dropped",
+    "quote": "we are speaking about 50% to 60%, but now we are seeing about 40%, 50%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "GUVNL",
+    "relation": "customer"
+   },
+   {
+    "name": "Adani Green",
+    "relation": "customer"
+   },
+   {
+    "name": "Aditya Birla",
+    "relation": "customer"
+   },
+   {
+    "name": "SJVN",
+    "relation": "customer"
+   },
+   {
+    "name": "GSECL",
+    "relation": "customer"
+   },
+   {
+    "name": "Sundrops Energia",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory ~4x YoY, days doubled",
+    "quote": "we have stocked inventory because we have huge orders which have lined up"
+   },
+   {
+    "label": "Interest cost up ~130%, peak ~Rs300cr",
+    "quote": "Our interest cost is up almost 130% to INR182 crores"
+   },
+   {
+    "label": "Growth guidance cut without explanation",
+    "quote": "There I don't see any decrease, 50% to 60% is there and 40% to 50%."
+   },
+   {
+    "label": "Order book figures inconsistent",
+    "quote": "out of INR5,426 crores, INR1,500 crores is already executed"
+   },
+   {
+    "label": "Promoter pledge ~50% of shares",
+    "quote": "around 50% of the promoter shares are pledged"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 2,
+   "growth": 5,
+   "margin": 3,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "CPP order book reconciliation",
+    "quote": "I'll give you an exact calculation out of the total capacity in the order book. So out of INR5,426 crores"
+   },
+   {
+    "topic": "Order-to-capacity conversion and EPC pricing split",
+    "quote": "we cannot give that breakup in the public domain because it's our business"
+   },
+   {
+    "topic": "Maharashtra grid stabilisation charge impact",
+    "quote": "As of today, we are not sure how much it will be impacted."
+   },
+   {
+    "topic": "Growth guidance change",
+    "quote": "There I don't see any decrease, 50% to 60% is there and 40% to 50%."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

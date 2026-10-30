@@ -1,0 +1,155 @@
+{
+ "doc_id": "IN-feb25ff5-8619-451b-812f-a8b2e950b248",
+ "market": "IN",
+ "company_id": "544258",
+ "name": "Western Carriers (India) Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Western Carriers (India) Ltd - 544258 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cables & wires",
+  "thesis": "Western Carriers is a rail-based logistics operator, not a cables maker, so subsector is a poor fit; Q4 EXIM containers fell 3.2% YoY and 11% QoQ, EBITDA margin slipped to 5%, and management gave no numbers but promised sequential improvement.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": -2,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "We reduced our capex from the planned INR100 crores last year to about INR74 odd crores this year, seeing the variation in the EXIM trade."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Debtors above INR600 cr; days target <120",
+    "quote": "who are these end parties who owe INR600 plus crores in receivables?",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Q4 EXIM containers down 10.96% QoQ",
+    "quote": "the 34,404 EXIM numbers are compared to the 38,638 containers in Q3 of this year, which shows a reduction of 4,234 containers",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 capex INR100 cr, tied to demand",
+    "quote": "our intention is a further capex of INR100 crores in this FY27, which remains linked to strong customer demand and will be calibrated to market conditions",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Domestic containers up 17.8% YoY in Q4",
+    "quote": "the domestic numbers have increased to 23,350 from 19,824 an absolute increase of 3,526 containers",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin",
+    "value": "recover toward ~7%",
+    "change": "new",
+    "horizon": "FY27 onward",
+    "quote": "we hope to bring it back to where we were starting FY25 which is around almost 7%"
+   },
+   {
+    "metric": "Debtor days",
+    "value": "below 120",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We are targeting to bring our debtor days to below 120 in this current financial year."
+   },
+   {
+    "metric": "Capex",
+    "value": "INR100 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "our intention is a further capex of INR100 crores in this FY27"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Vedanta",
+    "relation": "customer"
+   },
+   {
+    "name": "Jindal Stainless",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Railway capex",
+   "Nearshoring / reshoring (US)",
+   "Rural demand recovery",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Negative operating cash flow FY25 and FY26",
+    "quote": "your operating cash flow has been negative in both these years"
+   },
+   {
+    "label": "Debt up INR172 cr to INR217 cr despite IPO proceeds",
+    "quote": "your debt has gone up from INR172 crores to INR217 crores"
+   },
+   {
+    "label": "Receivables rising; debtor days above target",
+    "quote": "our debtor days has definitely not been coming to the target that we would like"
+   },
+   {
+    "label": "Refused segment breakup and margin split",
+    "quote": "we do not salami slice our numbers"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 1,
+   "growth": 2,
+   "margin": 3,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Forward margin and earnings guidance",
+    "quote": "Don't want to give any future forward guidance Priyanka"
+   },
+   {
+    "topic": "Segment margins domestic vs EXIM",
+    "quote": "So it's hard to really say what are the margins in domestic movements compared to EXIM."
+   },
+   {
+    "topic": "Revenue split rail, road, water",
+    "quote": "we do not salami slice our revenues per se"
+   },
+   {
+    "topic": "Cash flow and receivables timing",
+    "quote": "The timing of operating cash flow improvement will depend on realizations, collecting cycles"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

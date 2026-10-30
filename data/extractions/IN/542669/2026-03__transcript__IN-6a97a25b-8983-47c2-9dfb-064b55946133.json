@@ -1,0 +1,190 @@
+{
+ "doc_id": "IN-6a97a25b-8983-47c2-9dfb-064b55946133",
+ "market": "IN",
+ "company_id": "542669",
+ "name": "BMW Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "BMW Industries Ltd - 542669 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Legacy tube/CRM conversion runs at ~34% utilisation with no new capex; Bokaro greenfield (~INR803 crore) starts phased commissioning Q1 FY27, with management guiding ~75% revenue CAGR FY25–FY28 and blended EBITDA margin 12–13%.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 34.2,
+   "quote": "we are still at about 34.2%. Now we expect stable state tubes and pipes utilization to be in the range of about 60% to 65%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Mentioned Manaksia Color Coated as a listed peer with 5-9% EBITDA margins, but no comment on its capacity.",
+   "quote": "we are looking at starting saleable production of the color coated section in this quarter"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Tubes utilisation 34.2% → 60–65% target",
+    "quote": "we expect the utilization levels to go from the existing 33%- 34%-odd to closer to 60% to 65%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Bokaro ~INR803 cr greenfield, phase one Q1 FY27",
+    "quote": "which remains on track for phased commissioning starting quarter one FY '27",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables up ~INR80 cr → ~INR150 cr",
+    "quote": "one of our key customers holding back payments because of March quarter",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "75% revenue CAGR FY25–FY28 reiterated",
+    "quote": "We reiterate our earlier guidance of a CAGR of approximately 75% over FY '25 to FY '28 period",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue CAGR FY25–FY28",
+    "value": "~75%",
+    "change": "held",
+    "horizon": "FY25–FY28",
+    "quote": "We reiterate our earlier guidance of a CAGR of approximately 75% over FY '25 to FY '28 period"
+   },
+   {
+    "metric": "Operating EBITDA CAGR FY25–FY28",
+    "value": "~45%",
+    "change": "held",
+    "horizon": "FY25–FY28",
+    "quote": "operating EBITDA and PAT is expected to grow at a CAGR of nearly 45 % and 40% respectively"
+   },
+   {
+    "metric": "PAT CAGR FY25–FY28",
+    "value": "~40%",
+    "change": "held",
+    "horizon": "FY25–FY28",
+    "quote": "operating EBITDA and PAT is expected to grow at a CAGR of nearly 45 % and 40% respectively"
+   },
+   {
+    "metric": "EBITDA margin FY28",
+    "value": "12–13%",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "EBITDA and PAT margins are expected to gradually stabilize at around 12 % to 13% and 5% to 6% respectively by FY '28"
+   },
+   {
+    "metric": "PAT margin FY28",
+    "value": "5–6%",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "EBITDA and PAT margins are expected to gradually stabilize at around 12 % to 13% and 5% to 6% respectively by FY '28"
+   },
+   {
+    "metric": "Bokaro project ROCE",
+    "value": "15%+ blended",
+    "change": "new",
+    "horizon": "Steady state",
+    "quote": "on a blended basis, we expect to reach 15 plus"
+   },
+   {
+    "metric": "Bokaro working capital cycle",
+    "value": "30–40 days",
+    "change": "new",
+    "horizon": "Steady state",
+    "quote": "I think it's fair to say between 30 to 40 days is comfortable"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue CAGR FY25–FY28 ~75%",
+    "outcome": "held",
+    "quote": "We reiterate our earlier guidance of a CAGR of approximately 75% over FY '25 to FY '28 period"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Manaksia Color Coated",
+    "relation": "peer"
+   },
+   {
+    "name": "Indian Oil Corporation",
+    "relation": "supplier"
+   },
+   {
+    "name": "L&T",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Anti-dumping protection",
+   "Renewables & storage",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables up ~INR80 cr to ~INR150 cr; blamed on customer payment timing",
+    "quote": "trade receivables that have increased significantly from approximately 80 crores in FY '25 to around INR150 crores in FY '26"
+   },
+   {
+    "label": "Subsidy income excluded from projections",
+    "quote": "we have not even taken it as a part of our financial projec tions"
+   },
+   {
+    "label": "Ambiguous guidance basis; CAGR clarified after questions",
+    "quote": "this is a compounded annual growth rate between FY25 and FY28"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 5,
+   "growth": 6,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Bokaro quarterly/stage-wise revenue",
+    "quote": "Stage one, we are not giving a breakdown of stage -wise or quarter -wise, so I think we' ll just stick with that"
+   },
+   {
+    "topic": "Order book",
+    "quote": "it's a little early for us to be accumulating an order book because my plants are not yet commissioned"
+   },
+   {
+    "topic": "Export share and EU market",
+    "quote": "I wouldn't want to discriminate against anyone"
+   },
+   {
+    "topic": "Spreads",
+    "quote": "in the steel industry , it's best not to focus on the short -term aberrations"
+   }
+  ]
+ }
+}

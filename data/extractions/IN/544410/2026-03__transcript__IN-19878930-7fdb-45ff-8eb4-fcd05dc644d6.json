@@ -1,0 +1,415 @@
+{
+ "doc_id": "IN-19878930-7fdb-45ff-8eb4-fcd05dc644d6",
+ "market": "IN",
+ "company_id": "544410",
+ "name": "Prostarm Info Systems Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-28",
+ "period": "2026-03",
+ "title": "Prostarm Info Systems Ltd - 544410 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q4 revenue fell 35% QoQ to INR105 cr as execution slipped into Q1 FY27; management guides FY27 ~INR430 cr (INR336 cr order-in-hand plus ~INR100 cr channel) and EBITDA 12–13%, but working capital days jumped to 185 from 68.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "This year we are hoping to touch 25% to 40% utilization in this financial year."
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "Management said large corporates such as Adani delayed or postponed capex from Q4 to Q1.",
+   "quote": "many lots of big corporate has delayed their postponed their capex in Q4"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Working capital days 68 → 185",
+    "quote": "working capital days increased to 185 days from 68 days in FY25",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Cost of production 72.2% → 72.78%",
+    "quote": "cost of production has gone up from 72.2% to 72.78%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Jhajjar utilisation 25–40% FY27, ~70% FY28",
+    "quote": "This year we are hoping to touch 25% to 40% utilization in this financial year.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue ~INR430 cr, 25%+ growth",
+    "quote": "So minimum 25% growth is there with us is there for next financial year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q4 revenue -35% QoQ, deferred to Q1",
+    "quote": "certain project execution s scheduled for March were deferred and are now expected to be executed during quarter one of FY27",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "~INR430 crore (INR336 cr order in hand + ~INR100 cr channel), minimum 25% growth",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "So minimum 25% growth is there with us is there for next financial year"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "12% to 13%; base not less than 10%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "EBITDA margin would be there in the range of 12% to 13%"
+   },
+   {
+    "metric": "PAT margin Q1 and Q2 FY27",
+    "value": "8.5% to 9.5%",
+    "change": "new",
+    "horizon": "Q1-Q2 FY27",
+    "quote": "PAT percentage would be in the range of 8.5% to around 9.5%"
+   },
+   {
+    "metric": "Operating cash flow",
+    "value": "positive for FY27 as a whole",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we'll be cash flow positive as we said for FY27 as a whole"
+   },
+   {
+    "metric": "Receivable days exit FY27",
+    "value": "120 to 150 days",
+    "change": "new",
+    "horizon": "FY27 exit",
+    "quote": "In FY27, the receivable days would be something around roughly around at 120 to 150 days."
+   },
+   {
+    "metric": "Jhajjar BESS capacity utilisation",
+    "value": "25% to 40% FY27; ~70% FY28",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "Next year we are very hopeful to touch 70%."
+   },
+   {
+    "metric": "Gujarat UPS facility commissioning",
+    "value": "Q2 FY27 (slipped from Q1)",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "The facility is now expected to become operational by Q2 , FY27."
+   },
+   {
+    "metric": "Jhajjar 1.2 GWh commissioning",
+    "value": "end of Q1 FY27",
+    "change": "held",
+    "horizon": "Q1 FY27",
+    "quote": "is expected to become operational at the end of Q1."
+   },
+   {
+    "metric": "UPS growth",
+    "value": "more than 30%-40% over next two years",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "Maybe more than 30% . 40% growth in next two year"
+   },
+   {
+    "metric": "Equity dilution",
+    "value": "not planned for working capital",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "No, as such we are not planning for it, for equity dilution."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Operating cash flow positive in FY27 (prior call)",
+    "outcome": "met",
+    "quote": "we are still on track of that"
+   },
+   {
+    "metric": "Gujarat UPS commissioning Q1 FY27 (prior)",
+    "outcome": "missed",
+    "quote": "Earlier, commissioning was targeted for Q1 , FY27; however, timelines were impacted"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Adani",
+    "relation": "customer"
+   },
+   {
+    "name": "South Eastern Railway",
+    "relation": "customer"
+   },
+   {
+    "name": "L&T",
+    "relation": "customer"
+   },
+   {
+    "name": "Karnataka Power",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Anti-dumping protection",
+   "Electronics manufacturing (EMS/PLI)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables INR254 cr; aging ~241 days",
+    "quote": "the debtors stood at around INR 254 crores"
+   },
+   {
+    "label": "Operating cash flow negative ~INR48 cr",
+    "quote": "the cash flow being negative at around INR48 crores"
+   },
+   {
+    "label": "Q4 margin fall and cost of production up",
+    "quote": "the cost of production has gone up from 72.2% to 72.78%"
+   },
+   {
+    "label": "Management evasive on capacity utilisation and BESS IRR; Karnataka legal hurdles",
+    "quote": "as we do not have control on the legal issues, legal side issues of Karnataka"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 2,
+   "growth": 4,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Capacity utilisation and maximum revenue potential",
+    "quote": "it would be bit difficult to answer, but however I would try to frame it"
+   },
+   {
+    "topic": "Margin drop and supply-chain quantification",
+    "quote": "So, it is not about one particular item having an effect"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Prostarm Q4 FY26 operating revenue rose 27% YoY to INR105 crore but fell 35% QoQ, with FY26 revenue at INR386 crore (+10%) as March billings slipped into Q1 FY27.",
+  "overview": "Q4 FY26 revenue of about INR105 crore grew 27% YoY but fell 35% QoQ, as project executions scheduled for March were deferred to Q1 FY27 due to West Asia-linked supply chain and gas-availability disruptions. EBITDA was about INR11 crore (down ~3% YoY) at a 10.43% margin, and PAT was about INR8 crore (up ~16% YoY) at a 7.56% margin. For FY26, revenue was INR386 crore (+10%), EBITDA margin fell 98 bps to 12%, and PAT was about INR33 crore (+14%). Working capital days rose to 185 from 68 as receivables reached about INR254 crore, mostly from one large project, and management guided to FY27 operating cash flow turning positive and FY27 revenue growth of at least 25%.",
+  "financial_highlights": [
+   {
+    "metric": "Operating revenue (Q4 FY26)",
+    "value": "INR105 crore",
+    "change": "+27% YoY; -35% QoQ"
+   },
+   {
+    "metric": "EBITDA (Q4 FY26)",
+    "value": "approx. INR11 crore, margin 10.43%",
+    "change": "approx. -3% YoY"
+   },
+   {
+    "metric": "PAT (Q4 FY26)",
+    "value": "approx. INR8 crore, margin 7.56%",
+    "change": "approx. +16% YoY"
+   },
+   {
+    "metric": "Operating revenue (FY26)",
+    "value": "INR386 crore",
+    "change": "approx. +10% YoY"
+   },
+   {
+    "metric": "EBITDA margin (FY26)",
+    "value": "12%",
+    "change": "down 98 bps from 12.98% in FY25"
+   },
+   {
+    "metric": "PAT (FY26)",
+    "value": "approx. INR33 crore, margin 8.55%",
+    "change": "approx. +14% YoY; FY25 PAT margin 8.24%"
+   },
+   {
+    "metric": "Employee expenses (FY26)",
+    "value": "INR29 crore",
+    "change": "from INR22 crore in FY25; headcount 425 to 470"
+   },
+   {
+    "metric": "Working capital (FY26)",
+    "value": "INR83 crore, 185 days",
+    "change": "from INR64 crore and 68 days in FY25"
+   },
+   {
+    "metric": "Debtors (March 2026)",
+    "value": "approx. INR254 crore",
+    "change": "about INR158 crore relates to one large project"
+   },
+   {
+    "metric": "Fixed deposits",
+    "value": "over INR102 crore",
+    "change": ""
+   },
+   {
+    "metric": "Long-term debt",
+    "value": "approx. INR80 lakh (company described as effectively net debt-free)",
+    "change": "from INR3.4 crore in March 2025"
+   },
+   {
+    "metric": "Executable order book (end FY26)",
+    "value": "approx. INR1,106 crore; plus L1 orders approx. INR96 crore; total approx. INR1,202 crore",
+    "change": ""
+   },
+   {
+    "metric": "Bids under evaluation",
+    "value": "approx. INR257 crore",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "UPS and power conditioning",
+    "commentary": "Core product made in two Pune facilities; Gujarat plant (1 kVA to 600 kVA UPS) now expected operational by Q2 FY27, delayed from Q1 FY27 by supply chain issues. Management expects UPS growth above 30-40% over the next two years."
+   },
+   {
+    "name": "Lithium battery packs and BESS",
+    "commentary": "Navi Mumbai lithium battery pack facility is commercial; 1.20 GWh Jhajjar (Haryana) BESS plant is near commissioning, expected operational by end Q1 FY27, with a capex of about INR25 crore. BESS developer projects (rental model, about INR63 crore rental per year) are being sought for hive-off, with Bihar EPC targeted for FY27 and Karnataka subject to legal issues."
+   },
+   {
+    "name": "Solar EPC, channel and services",
+    "commentary": "Management cites channel business of about INR100 crore per year (FY26: about INR107 crore). Services include installation, AMCs and rentals; EPC is executed for solar and BESS projects."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue: management cites at least 25% growth; visible base of about INR430 crore (INR336 crore order book excluding BESS developer projects plus about INR100 crore channel business), with minimum-revenue framing and additional orders excluded.",
+   "Q1 and Q2 FY27: expected to carry the deferred billings; Q1 FY27 revenue is expected to grow YoY.",
+   "EBITDA margin: 12-13% expected on a YoY basis, with possible short-term disturbances; base EBITDA margin should not be below 10% in models.",
+   "Q1 and Q2 FY27 margin target: EBITDA 12-13%, PAT 8.5-9.5%.",
+   "Operating cash flow: still expected to turn positive for FY27 as a whole, with improvement visible from Q3 FY27; receivable days targeted at 120-150 days exiting FY27.",
+   "Jhajjar BESS plant utilisation: 25-40% in FY27 and about 70% in FY28 (per management, assuming operations from around July 2026).",
+   "Working capital: no equity dilution planned; requirements to be met from bank borrowings and internal accruals. Promoter holding about 73%."
+  ],
+  "capex_capacity": [
+   "Jhajjar, Haryana: 1.20 GWh BESS assembly plant, capex about INR25 crore, revenue potential about INR1,000 crore at full utilisation; machines largely installed, expected fully operational in Q1 FY27.",
+   "Gujarat UPS plant (1 kVA to 600 kVA): project cost not more than INR5-6 crore per management; capacity of 3,000-5,000 units per day (about 9 lakh units per year), revenue potential INR500-600 crore; now expected Q2 FY27, delayed from Q1 FY27 by supply chain issues.",
+   "Three facilities currently operational: two in Pune (UPS and power conditioning) and one lithium battery pack facility in Navi Mumbai; 100 MWh lithium expansion cost about INR3.5-4 crore.",
+   "Management says capacity is not constrained: imports from China are customised, and servo units, isolation transformers and some UPS are sourced from job workers and subcontractors.",
+   "Management estimates total potential revenue of about INR1,700-1,800 crore from all facilities at 100% localised manufacturing, excluding imports."
+  ],
+  "demand_pricing": [
+   "Order book: executable order in hand approx. INR1,106 crore plus L1 approx. INR96 crore (total approx. INR1,202 crore) at end FY26; bids of approx. INR257 crore under evaluation.",
+   "Customers include Adani, Karnataka Power, Bihar Power, L&T, West Bengal Medical, South Central Railway, SAIL and India One. Government share of revenue is 43%; private is the rest, with the same payment cycle.",
+   "Q4 shortfall: a single Adani order of about INR40-43 crore was deferred from Q4 to Q1 FY27; management says Q4 revenue would otherwise have been about INR430 crore-plus.",
+   "Cost pressures: freight costs more than doubled in Q4 versus earlier; the USD rose more than 10% over three to four months; China removed BESS export incentives from April 1, 2026, raising costs on orders placed earlier. Management says Q1 onward pricing reflects these costs.",
+   "Gross margin pressure: cost of production rose to 72.78% from 72.2%. Management cites order-to-order margin mix and says EBITDA by segment is not disclosed."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why did receivables jump and when will they be collected?",
+    "answer": "Debtors were about INR254 crore, with about INR158 crore from one large project executed in Q3 and completed in Q4. Most of that is expected in Q1 FY27, and excluding it, debtor days would be about 90 instead of 241."
+   },
+   {
+    "question": "Is operating cash flow still expected positive in FY27 and is equity dilution planned?",
+    "answer": "Management reiterated FY27 positive operating cash flow, with improvement from Q3 FY27. Cash flow was negative about INR48 crore due to receivables and about INR20 crore of supplier advances. No equity dilution is planned; promoter holding is about 73%."
+   },
+   {
+    "question": "What is the base EBITDA margin for modelling?",
+    "answer": "Management says overall EBITDA is in the 12-13% range YoY, with base margin not below 10%. Segment-level margins are not reported because projects are order-based and products are cross-sold."
+   },
+   {
+    "question": "Why did Q4 margins fall and what is the outlook?",
+    "answer": "Management attributes the drop to project mix, higher employee costs (INR29 crore vs INR22 crore), a 72.78% cost of production and the USD appreciation. It expects 12-13% EBITDA going forward, with Q1 and Q2 PAT of 8.5-9.5%."
+   },
+   {
+    "question": "What is the FY27 revenue guidance?",
+    "answer": "Management cites at least 25% growth, a base of about INR430 crore (INR336 crore order book excluding BESS developer projects plus about INR100 crore channel business)."
+   },
+   {
+    "question": "What is the status of the BESS developer projects and their IRR?",
+    "answer": "Management is seeking to hive off both developer projects, with Prostarm retaining the EPC work. Project IRR is about 10-11%. Bihar EPC is targeted for FY27; Karnataka depends on legal issues."
+   }
+  ],
+  "risks_watch": [
+   "Receivables: about INR254 crore at March 2026, with 185 working capital days in FY26 and target 120-150 days at FY27 exit. Q1 collection of the about INR158 crore project receivable is the key test.",
+   "Supply chain and cost: freight, USD volatility and China's removal of BESS export incentives from April 1, 2026 could keep pressuring margins.",
+   "Execution timelines: Gujarat UPS plant slipped from Q1 to Q2 FY27; Jhajjar BESS plant needs to be operational by end Q1 FY27.",
+   "Developer BESS hive-off: pending, with lithium price and currency issues cited; any one-time gain is undetermined. Karnataka EPC depends on legal issues.",
+   "Employee cost growth (INR22 crore to INR29 crore) ahead of revenue; ESOP pool of 40 lakh with about 13.26 lakh outstanding at March 2026."
+  ],
+  "management_tone": "Confident on medium-term growth and FY27 visibility, but defensive on the Q4 miss, which management attributes to deferred billings and supply disruptions. Answers on segment margins, the Gujarat capacity ramp and the BESS hive-off were vague or deferred.",
+  "key_quotes": [
+   "So, only one order gets postponed to Q1 and we got a hit of INR40 crores.",
+   "Base EBITDA if you take, that should not be less than 10%. Should not be less than that.",
+   "No, as such we are not planning for it, for equity dilution."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "1.20 GWh Jhajjar (Haryana) BESS assembly plant",
+    "size_pct": null,
+    "capex_cr": 25.0,
+    "q": 1,
+    "status": "trial_runs",
+    "mat": "major"
+   },
+   {
+    "what": "Gujarat UPS plant (1 kVA to 600 kVA), 3,000-5,000 units/day (~9 lakh units/yr)",
+    "size_pct": null,
+    "capex_cr": 5.5,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "100 MWh lithium battery pack expansion",
+    "size_pct": null,
+    "capex_cr": 3.75,
+    "q": null,
+    "status": "planned",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 25.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 27.0,
+  "qEbitda": -3.0,
+  "outlook": 1,
+  "why": "Management guides FY27 revenue of at least 25% growth, backed by a ~INR336 crore order book plus ~INR100 crore channel business (~INR430 crore visible base), with Q4 deferrals (Adani ~INR40-43 crore) shifting into Q1-Q2 FY27 and the Jhajjar BESS (INR25 crore capex, end Q1 FY27) and Gujarat UPS (Q2 FY27) plants coming online, though the Gujarat plant has already slipped once and BESS utilisation ta",
+  "mgmt": null
+ }
+}

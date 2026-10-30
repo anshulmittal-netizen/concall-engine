@@ -1,0 +1,172 @@
+{
+ "doc_id": "IN-efba5f5d-03e8-40f0-a841-4d40db9f2779",
+ "market": "IN",
+ "company_id": "500410",
+ "name": "ACC Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-10",
+ "period": "2026-03",
+ "title": "ACC Ltd - 500410 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cables & wires",
+  "thesis": "ACC's combined Ambuja-group call reset FY27 volume to ~80 Mt (+8%) and capex to Rs6,000-6,500 cr, with cost peaking at Rs4,500/t in March and a Rs250/t cut targeted, but no price recovery yet.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capital cycle",
+   "Capital allocation shift",
+   "Management change",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -2,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 57,
+   "quote": "Sanghi still remains at around, say, at 57% on cement capacity utilization, while Penna is 46%"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "it makes sense to push a little bit of the capex, but without losing eyesight on the overall, say, market share"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "FY27 capex Rs6,000-6,500 cr",
+    "quote": "for FY '27, we are keeping an estimate of almost INR6,000 crores to INR6,500 crores",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Sanghi 57%, Penna 46% utilisation",
+    "quote": "Sanghi still remains at around, say, at 57% on cement capacity utilization, while Penna is 46%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "March prices up only ~Rs10/bag",
+    "quote": "Otherwise, ballpark for the quarter of March, around ballpark INR10.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Industry growth 5-5.5% FY27",
+    "quote": "the industry may grow at around, say, 5% to 5.5%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Capacity end-state timeline pushed to FY30",
+    "quote": "the target plans of FY '28, it could move a year or 2, let us say, on a safer side, I would say that FY '30",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 consolidated volume",
+    "value": "~80 Mt (~8% growth)",
+    "change": "held",
+    "quote": "On our overall consol volumes, we are expecting it to grow in FY '28 -- '27 by almost, say, 8% to around 80 million -odd tonnes."
+   },
+   {
+    "metric": "Cost per tonne reduction FY27",
+    "value": "Rs250/t minimum, Rs4,250/t target",
+    "change": "new",
+    "quote": "cost, we are looking at roughly INR250 a tonne reduction this year and then another reduction of INR250 next year as well."
+   },
+   {
+    "metric": "Capacity end FY27",
+    "value": "~119 Mt",
+    "change": "cut",
+    "quote": "We are expecting to hit capacity of almost 119 million tonnes by end of FY '27."
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "Rs6,000-6,500 cr",
+    "change": "new",
+    "quote": "for FY '27, we are keeping an estimate of almost INR6,000 crores to INR6,500 crores"
+   },
+   {
+    "metric": "Utilisation target acquired assets",
+    "value": "Sanghi 65-70%, Penna 55-60%",
+    "change": "new",
+    "quote": "Sanghi is concerned, I will peg myself at almost like 65% to 70%. And so far as Penna is concerned, I will consider around 55% to 60%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Cost Rs4,000/t exit by March 2026",
+    "outcome": "missed",
+    "quote": "we are closer to INR4,100 a tonne. "
+   },
+   {
+    "metric": "Capacity 155 Mt target",
+    "outcome": "dropped",
+    "quote": "we are moving away from the time line"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Orient Cement",
+    "relation": "peer"
+   },
+   {
+    "name": "Penna Cement",
+    "relation": "peer"
+   },
+   {
+    "name": "Sanghi Industries",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Cost guidance miss and cost peak claim",
+    "quote": "we are closer to INR4,100 a tonne"
+   },
+   {
+    "label": "Acquired-asset breakdowns and capex delays",
+    "quote": "we've not been able to deliver projects in the stipulated time"
+   },
+   {
+    "label": "Negative operating cash flow / receivables from Ambuja",
+    "quote": "ACC will find negative operating cash flow"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 4,
+   "growth": 5,
+   "margin": 8,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "EBITDA per tonne target",
+    "quote": "I think any guidance on EBITDA will be difficult at this stage."
+   },
+   {
+    "topic": "Inorganic / JP assets",
+    "quote": "it would be inappropriate from my side to answer anything on that"
+   }
+  ],
+  "hedge_index": 0.6,
+  "hedge_index_note": "Heavy hedging on cost and pricing",
+  "themes": []
+ }
+}

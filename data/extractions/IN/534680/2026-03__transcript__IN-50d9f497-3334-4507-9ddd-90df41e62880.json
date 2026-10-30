@@ -1,0 +1,173 @@
+{
+ "doc_id": "IN-50d9f497-3334-4507-9ddd-90df41e62880",
+ "market": "IN",
+ "company_id": "534680",
+ "name": "SRG Housing Finance Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-16",
+ "period": "2026-03",
+ "title": "SRG Housing Finance Ltd - 534680 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "NBFC & lending",
+  "thesis": "Small-ticket housing lender growing AUM 37% to INR 1,042 cr with GNPA 1.77% and CRAR 38.6%, but no capacity or supply-side signal; guidance of ~INR 600 cr disbursements and INR 1,300-1,400 cr AUM is management's own demand read.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 disbursement target ~INR 600 cr",
+    "quote": "we are targeting of approximately INR 600 crores of disbursement for this year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Cost of borrowing 10.88% → ~10.70%",
+    "quote": "it may decline from 10.88% to around 10.70%",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "tone",
+    "label": "Mgmt contradicts itself on cost of borrowing",
+    "quote": "Let us say for next one to two years, it will come down from 63% to 61%.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 disbursements",
+    "value": "~INR 600 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are targeting of approximately INR 600 crores of disbursement for this year"
+   },
+   {
+    "metric": "FY27 AUM",
+    "value": "INR 1,300-1,400 crore (target 1,500)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "It will be around INR 1300 crores to INR 1400 crores"
+   },
+   {
+    "metric": "ROE",
+    "value": "12-13%",
+    "change": "new",
+    "horizon": "1-2 years",
+    "quote": "we will go around 12% to 13%"
+   },
+   {
+    "metric": "Cost of borrowing",
+    "value": "~10.70%",
+    "change": "new",
+    "horizon": "1-2 years",
+    "quote": "it may decline from 10.88% to around 10.70%"
+   },
+   {
+    "metric": "AUM",
+    "value": "~INR 2,000 crore in two years",
+    "change": "new",
+    "horizon": "2 years",
+    "quote": "in the next two years, we want to cross it around INR 2000 crores"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Disbursement growth ~INR 500 crore",
+    "outcome": "not_discussed",
+    "quote": "Earlier, you have actually guided about INR 500 crores of disbursement growth."
+   }
+  ],
+  "entities": [
+   {
+    "name": "SBI",
+    "relation": "partner"
+   },
+   {
+    "name": "HDFC Bank",
+    "relation": "partner"
+   },
+   {
+    "name": "LIC Housing Finance",
+    "relation": "partner"
+   },
+   {
+    "name": "Aptus",
+    "relation": "competitor"
+   },
+   {
+    "name": "Acuité",
+    "relation": "other"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Mgmt cost-of-borrowing guidance misstated on call (63% vs 10.88%) and corrected post-call",
+    "quote": "Note: Please note that on the con call, the cost of borrowing data was mentioned incorrectly"
+   },
+   {
+    "label": "Equity raise flagged as leverage nears 5x-6x",
+    "quote": "once our leverage crosses the 5x–6x range, we will certainly look at raising additional equity"
+   },
+   {
+    "label": "Rajasthan GNPA concentration questioned, answer deflected",
+    "quote": "the portfolio is quite big in Rajasthan when we compare it to other states"
+   },
+   {
+    "label": "Ticket size +41% with LTV rising 46.6% to 50.7%, explained as product nature",
+    "quote": "it is more about the nature of the product that we are into"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 3,
+   "margin": 1,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Rajasthan GNPA concentration",
+    "quote": "Sir, nothing in particular, if I say so, that there is no reason to it."
+   },
+   {
+    "topic": "Competition from larger lenders on ticket size",
+    "quote": "Not really, sir, because the customer profile remains the same."
+   },
+   {
+    "topic": "Collections stage-1 composition",
+    "quote": "These averages work on a comparative basis."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

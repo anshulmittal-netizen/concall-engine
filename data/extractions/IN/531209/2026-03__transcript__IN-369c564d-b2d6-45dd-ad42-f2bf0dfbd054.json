@@ -1,0 +1,110 @@
+{
+ "doc_id": "IN-369c564d-b2d6-45dd-ad42-f2bf0dfbd054",
+ "market": "IN",
+ "company_id": "531209",
+ "name": "Nucleus Software Exports Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-26",
+ "period": "2026-03",
+ "title": "Nucleus Software Exports Ltd - 531209 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Software products",
+  "thesis": "Q4 revenue flat YoY at INR 224.77 crore while EBITDA fell to INR 34.62 crore from INR 74.33 crore; order book jumped to INR 1,044 crore but management gives no guidance and lost Bajaj Finance to a competitor.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Customer stickiness",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": -2,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "structure",
+    "label": "Bajaj Finance moved to competitor",
+    "quote": "they have been, on their own invested in a company which is a competitor to us",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Order book INR 657 cr → 1,044 cr",
+    "quote": "The order book position is INR 1,044.31 crore including INR 899.44 crore of product business",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "tone",
+    "label": "Declined to give RFP win rate",
+    "quote": "That is detail we may not be able to provide.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Bajaj Finance",
+    "relation": "customer"
+   },
+   {
+    "name": "HDFC Bank",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Lost Bajaj Finance to competitor",
+    "quote": "they have been, on their own invested in a company which is a competitor to us"
+   },
+   {
+    "label": "EBITDA down ~53% YoY in Q4",
+    "quote": "EBITDA for this quarter is at INR 34.62 crore against INR 32.72 crore QoQ and INR 74.33 crore YoY"
+   },
+   {
+    "label": "Customers not migrating to FinnOne Neo",
+    "quote": "customers are not migrating from FinnOne to FinnOne Neo"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 4,
+   "margin": 1,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Win rate in RFPs",
+    "quote": "That is detail we may not be able to provide."
+   },
+   {
+    "topic": "HDFC Bank share loss",
+    "quote": "We cannot really comment on our competitors and their ways of working"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

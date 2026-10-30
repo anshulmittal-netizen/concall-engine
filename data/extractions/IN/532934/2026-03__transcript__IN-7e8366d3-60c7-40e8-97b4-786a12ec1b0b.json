@@ -1,0 +1,174 @@
+{
+ "doc_id": "IN-7e8366d3-60c7-40e8-97b4-786a12ec1b0b",
+ "market": "IN",
+ "company_id": "532934",
+ "name": "PPAP Automotive Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-19",
+ "period": "2026-03",
+ "title": "PPAP Automotive Ltd - 532934 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q4 revenue INR175.5 cr (+18.6% YoY) with utilisation ~78%, but FY27 guidance withheld, FY26 guidance missed, and battery still loss-making; supply discipline is not evidenced.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 78,
+   "quote": "Capacity utilization levels also improved meaningfully to approximately 78%, reflecting stronger throughput across facilities"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation ~78% in Q4",
+    "quote": "Capacity utilization levels also improved meaningfully to approximately 78%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 guidance deferred to Q1",
+    "quote": "the company has decided that it will provide its financial year '27 guidance during the quarter 1 financial year '27 earnings announcement",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Raw material cost pass-through ~50% covered",
+    "quote": "out of that, almost 50% is already covered with the customer. We have the pass -on policy with the customer.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Battery loss cut 60-70%, PBT profit targeted",
+    "quote": "this battery segment should be profitable at the PBT level",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 company guidance",
+    "value": "to be given in Q1 FY27 results",
+    "change": "dropped",
+    "quote": "the company has decided that it will provide its financial year '27 guidance during the quarter 1 financial year '27 earnings announcement"
+   },
+   {
+    "metric": "Battery business FY27 utilisation",
+    "value": "100% of plant and machinery utilised",
+    "change": "new",
+    "quote": "we expect that the whole plant and machinery will be 100% utilized in this year, financial year '27"
+   },
+   {
+    "metric": "Overall utilisation FY27",
+    "value": "80%-82% over time",
+    "change": "new",
+    "quote": "over a period of time in next year, I think utilization will improve to 80%, 82%"
+   },
+   {
+    "metric": "Battery PBT",
+    "value": "profitable at PBT level FY27",
+    "change": "new",
+    "quote": "this year, on a stand -alone basis, this battery segment should be profitable at the PBT level"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revised guidance (Jan 2026)",
+    "outcome": "missed",
+    "quote": "resulting in a variance even against the revised guidance"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Maruti Suzuki",
+    "relation": "customer"
+   },
+   {
+    "name": "Tata Motors",
+    "relation": "customer"
+   },
+   {
+    "name": "Mahindra & Mahindra",
+    "relation": "customer"
+   },
+   {
+    "name": "Honda",
+    "relation": "customer"
+   },
+   {
+    "name": "VinFast",
+    "relation": "customer"
+   },
+   {
+    "name": "Euler Motors",
+    "relation": "customer"
+   },
+   {
+    "name": "Kia",
+    "relation": "customer"
+   },
+   {
+    "name": "Tokai Kogyo Company Limited",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Auto EV transition",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Guidance missed and withheld for FY27",
+    "quote": "the company has decided that it will provide its financial year '27 guidance during the quarter 1 financial year '27 earnings announcement"
+   },
+   {
+    "label": "One-time wage code charge INR3.6 cr",
+    "quote": "an additional one -time employee benefit obligation of approximately INR3.6 crores arising from the Labor Code implementation challenges"
+   },
+   {
+    "label": "Gross debt INR195 cr vs net INR103 cr",
+    "quote": "On the net level, our debt is reduced to INR103 crores. For the gross level, it is around INR195 crores"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Battery breakeven timing",
+    "quote": "So this year, based on what orders we executed in quarter 4, in financial year '27, we expect a full recovery of this business."
+   },
+   {
+    "topic": "Peer growth comparison",
+    "quote": "It's not related to the automotive industry per se."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

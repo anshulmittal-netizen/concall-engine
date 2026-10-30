@@ -1,0 +1,184 @@
+{
+ "doc_id": "IN-62bf0b89-bf3a-4a73-9d75-9e760950e764",
+ "market": "IN",
+ "company_id": "544502",
+ "name": "Amanta Healthcare Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-21",
+ "period": "2026-03",
+ "title": "Amanta Healthcare Ltd - 544502 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Medical devices",
+  "thesis": "Capacity doubling from 6.6 to ~12 crore bottles (SteriPort line 3) due ~20 June; management targets 24-25% EBITDA margin, but commissioning, 4-month polymer buffer and inventory build point to a slow ramp.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": -1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "With utilization levels remaining healthy, we are now expanding capacity from 6.6 crore bottles per year to roughly 12 crore bottles per year."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said Otsuka and B. Braun are putting some efforts in some markets; no peer capacity comments.",
+   "quote": "we are now expanding capacity from 6.6 crore bottles per year to roughly 12 crore bottles per year"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capacity 6.6 → ~12 crore bottles",
+    "quote": "expanding capacity from 6.6 crore bottles per year to roughly 12 crore bottles per year",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Polymer buffer 3 → 4 months",
+    "quote": "Usually, we keep three months buffer. At the moment we keep four months buffer.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "EBITDA margin 24-25% blended",
+    "quote": "we will be expecting between 24% to 25% EBITDA margin going forward",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables pulled in via price hikes",
+    "quote": "as we increase the prices, they keep on paying us little early and book new orders with the existing prices",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin (blended, post SteriPort)",
+    "value": "24% to 25%",
+    "change": "new",
+    "horizon": "FY27 onward",
+    "quote": "we will be expecting between 24% to 25% EBITDA margin going forward"
+   },
+   {
+    "metric": "SteriPort line EBITDA margin",
+    "value": "about 27%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "The new product line is expected to have about 27% EBITDA margin only for SteriPort"
+   },
+   {
+    "metric": "SteriPort incremental revenue FY27",
+    "value": "INR80-85 crore (assumed by analyst, accepted by management)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "so from 20th June we are hoping to be operational. So we should get three full quarters."
+   },
+   {
+    "metric": "Working capital cycle",
+    "value": "to about 110 days",
+    "change": "new",
+    "horizon": "near future",
+    "quote": "we expect it to go about 110 days in near future"
+   },
+   {
+    "metric": "Finance cost reduction",
+    "value": "Replace INR30-40 crore debt at lower rate in next six months",
+    "change": "new",
+    "horizon": "next six months",
+    "quote": "we should still be able to replace around INR30 crores to INR40 crores of debt with lower interest rate in next six months also"
+   },
+   {
+    "metric": "Solar savings",
+    "value": "INR75 lakh a month",
+    "change": "new",
+    "horizon": "from late May 2026",
+    "quote": "that I think will save roughly INR75 lakh a month"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Otsuka",
+    "relation": "competitor"
+   },
+   {
+    "name": "B. Braun",
+    "relation": "competitor"
+   },
+   {
+    "name": "Eurohead",
+    "relation": "competitor"
+   },
+   {
+    "name": "Bajaj Finance",
+    "relation": "partner"
+   },
+   {
+    "name": "Apollo",
+    "relation": "customer"
+   },
+   {
+    "name": "CRISIL",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Capacity bottleneck",
+   "Polymer cost pass-through",
+   "Two-port IV system shift",
+   "Working capital",
+   "Deleveraging",
+   "Captive solar"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital cycle 120-125 days",
+    "quote": "our current working capital cycle is about 100-plus days. To be precise, it will be ranging between 120 to 125 days"
+   },
+   {
+    "label": "Inventory pile-up expected post expansion",
+    "quote": "So, in first quarter there could be some ramp up of finished goods."
+   },
+   {
+    "label": "Capacity commissioning timeline slipped; no reliable visibility",
+    "quote": "we have visibility of around three months to six months in some markets"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 3,
+   "growth": 3,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Quantifying SteriPort share of Apollo and corporate chain sales",
+    "quote": "it is very, very difficult for us to exactly quantify that how much quantity went to Apollo"
+   },
+   {
+    "topic": "Next-quarter order visibility",
+    "quote": "At this moment, I don't have the number, but I can probably dig out the numbers"
+   }
+  ],
+  "hedge_index": 0.35
+ }
+}

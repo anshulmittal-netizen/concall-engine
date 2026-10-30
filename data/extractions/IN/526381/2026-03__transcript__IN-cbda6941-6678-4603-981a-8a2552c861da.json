@@ -1,0 +1,109 @@
+{
+ "doc_id": "IN-cbda6941-6678-4603-981a-8a2552c861da",
+ "market": "IN",
+ "company_id": "526381",
+ "name": "Patel Integrated Logistics Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "Patel Integrated Logistics Ltd-$ - 526381 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "Q4 FY26 profit rose on margin and cost control, but the call gave no capacity, utilisation or inventory data; management leaned on promotional claims and a Rajpat subsidiary with no numbers beyond an unsupported 25% revenue add.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "International rates up 15% since March",
+    "quote": "As I'm talking to you from March, 15%, international rates have increased. So, rates are hardening.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "tone",
+    "label": "Valuation rerating claim without guidance",
+    "quote": "we are expecting very soon the company will have a valuation rerating",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Rajpat Logistics revenue",
+    "value": "adds another 25% to the ~INR400 crore base",
+    "change": "new",
+    "horizon": "3-5 years",
+    "quote": "Rajpat will add another 25% from that."
+   },
+   {
+    "metric": "Rajpat Logistics ROCE",
+    "value": "upward of 15%",
+    "change": "new",
+    "horizon": "long term",
+    "quote": "we are expecting a upward of 15% in return on capital employed from that business"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Rajpat Logistics Limited",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Dividend 30% of PAT on tiny cash base; DSO/ROCE claims unquantified",
+    "quote": "It is basically 30% of our profit after tax"
+   },
+   {
+    "label": "Non-core property redevelopment, no numbers",
+    "quote": "we are actively pursuing for the redevelopment"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 3,
+   "margin": 1,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Volume growth FY27",
+    "quote": "it is very difficult to tell right now"
+   },
+   {
+    "topic": "Warehousing capacity",
+    "quote": "right now immediately we are not looking"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

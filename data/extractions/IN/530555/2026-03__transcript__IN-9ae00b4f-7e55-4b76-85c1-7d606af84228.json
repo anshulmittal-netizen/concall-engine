@@ -1,0 +1,383 @@
+{
+ "doc_id": "IN-9ae00b4f-7e55-4b76-85c1-7d606af84228",
+ "market": "IN",
+ "company_id": "530555",
+ "name": "Paramount Communications Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-28",
+ "period": "2026-03",
+ "title": "Paramount Communications Ltd-$ - 530555 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cables & wires",
+  "thesis": "Capacity-constrained cable maker at full utilisation; FY26 EBITDA margin fell to 6% on US tariffs, with Narmadapuram greenfield (INR 300 cr, FY28) the main supply expansion and FY27 guided at 15-20% top-line growth.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "Our existing two plants at Dharuhera and Kushkhera have effectively been running at optimal utilization for the past three, four years."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "The project at Narmadapuram envisages an investment of approximately INR 300 crores by FY28"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Narmadapuram greenfield INR 300 cr by FY28",
+    "quote": "The project at Narmadapuram envisages an investment of approximately INR 300 crores by FY28",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Power cable orders record INR 466 cr, up 66%",
+    "quote": "Within that, power cable orders are at a record INR 466 crores, up 66% YoY.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Q4 receivables spike, 3/4 recovered by mid-May",
+    "quote": "more than three quarters of this amount having already been recovered",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "US tariffs at 50% forced sub-economic margins",
+    "quote": "even where it meant accepting orders as a sub-economic margin, albeit at much lower volumes",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 top-line growth",
+    "value": "15-20%, assuming current metal prices hold",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we should be achieving some 15-20% growth in top line. That should be around minimum 10% of volume growth."
+   },
+   {
+    "metric": "FY27 volume growth",
+    "value": "minimum 10%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "That should be around minimum 10% of volume growth."
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "return to pre-tariff (FY25) levels by end FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "by end of FY27, we hope to achieve the pre-tariff, you know, pre-U.S. tariff levels of margin also."
+   },
+   {
+    "metric": "Narmadapuram revenue",
+    "value": "INR 500 cr FY28, INR 1,200 cr FY29",
+    "change": "new",
+    "horizon": "FY28-FY29",
+    "quote": "We are targeting sales of approximately INR 500 crores from Narmadapuram in FY28, which will scale up to INR 1,200 crores in FY29."
+   },
+   {
+    "metric": "Narmadapuram margin",
+    "value": "9-10% EBITDA",
+    "change": "new",
+    "horizon": "FY28 onward",
+    "quote": "margin from this Narmadapuram plant are expected to be between 9-10%."
+   },
+   {
+    "metric": "Revenue milestone",
+    "value": "INR 5,000 cr by FY31",
+    "change": "new",
+    "horizon": "FY31",
+    "quote": "we will begin to achieve the revenue milestone of INR 5,000 crores in the next five years, that is by FY31"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Power Grid Corporation",
+    "relation": "customer"
+   },
+   {
+    "name": "NTPC",
+    "relation": "customer"
+   },
+   {
+    "name": "BHEL",
+    "relation": "customer"
+   },
+   {
+    "name": "L&T",
+    "relation": "customer"
+   },
+   {
+    "name": "Vietnam",
+    "relation": "competitor"
+   },
+   {
+    "name": "South Korea",
+    "relation": "competitor"
+   },
+   {
+    "name": "Cambodia",
+    "relation": "competitor"
+   },
+   {
+    "name": "Ecuador",
+    "relation": "competitor"
+   },
+   {
+    "name": "Egypt",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Tariffs & trade policy",
+   "Nearshoring / reshoring (US)",
+   "Capacity bottleneck"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables roughly doubled YoY, Q4 dispatch lumped",
+    "quote": "more than 65% were dispatched in the second half of Q4, which was all lumped up towards the end of Q4"
+   },
+   {
+    "label": "Sub-economic margin export orders accepted",
+    "quote": "even where it meant accepting orders as a sub-economic margin, albeit at much lower volumes"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 3,
+   "margin": 2,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Trade receivables quantum",
+    "quote": "If don't see the cash number, I don't make an offer, and guess I would like to check."
+   },
+   {
+    "topic": "Long-term margin and size targets",
+    "quote": "As far as margins are concerned, let us be honest, they are always a function to an extent of the way markets are"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Paramount Communications Q4 FY26 revenue rose 24.5% QoQ to INR 573 crore, but FY26 EBITDA fell to INR 117.5 crore (6% margin) on US tariff disruption.",
+  "overview": "Q4 FY26 showed a sequential recovery: revenue INR 573 crore (+13.6% YoY, +24.5% QoQ), EBITDA incl. other income INR 38.8 crore at 6.7% margin, and PAT INR 20.5 crore. FY26 revenue rose about 23% to INR 1,912 crore, but absolute EBITDA and PAT declined YoY due to US tariffs escalating from 10% to 50% during 2025. Management redirected volumes to domestic demand, which grew about 27%, and retained a US presence at sub-economic margins. The Narmadapuram greenfield plant (INR 300 crore, Phase 1) is the main growth lever, with a stated INR 5,000 crore revenue ambition by FY31.",
+  "segments": [
+   {
+    "name": "Domestic B2B industrial",
+    "commentary": "Grew 37.3% to INR 1,001 crore in FY26, led by power cables; domestic order book at INR 508 crore (87% of order book)."
+   },
+   {
+    "name": "Domestic B2C and distribution",
+    "commentary": "Grew 10.6% to INR 179 crore in FY26."
+   },
+   {
+    "name": "Domestic B2G (government/PSU)",
+    "commentary": "Stable at about INR 182 crore in FY26, so its share of revenue fell."
+   },
+   {
+    "name": "Exports (USA-led)",
+    "commentary": "Grew 13.9% to INR 550 crore in FY26 despite tariffs; eight active US distributors versus two in FY22."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 (informal, assuming current metal prices hold): top-line growth of 15-20% and at least 10% volume growth; no formal guidance given.",
+   "Margins expected to return to FY25 levels as a first milestone, with pre-tariff margin levels targeted by end of FY27.",
+   "Narmadapuram Phase 1: investment about INR 300 crore by FY28; partial operations from Q1 FY28; sales target about INR 500 crore in FY28 and INR 1,200 crore in FY29; expected 9-10% margin and 3-4 year payback.",
+   "Long-term aspiration: INR 5,000 crore revenue by FY31, implying doubling every 3-4 years; Phase 1 capacity alone seen at INR 3,600-4,000 crore, with Phase 2 (INR 200-300 crore capex) to exceed INR 5,000 crore.",
+   "Working capital expected to normalise within Q1 FY27 after receivables rose on Q4 back-ended dispatches."
+  ],
+  "capex_capacity": [
+   "Two existing plants at Dharuhera (Haryana) and Kushkhera (Rajasthan) described as running at optimal utilisation for three to four years; physical space constraint reached.",
+   "Existing-plant capex of about INR 50-55 crore a year, over INR 160 crore across the past three years.",
+   "Narmadapuram (Madhya Pradesh): about 31 acres allotted by MPIDC and possession taken; civil works underway; long-lead machinery ordered; building construction to start shortly; commissioning from FY28.",
+   "Narmadapuram products: EHV cables up to 132 kV (starting with 33 kV, then 66 kV and 132 kV), transmission conductors, elastomeric EBeam and EPR cables, lead-sheathed rubber cables; EHV approvals expected by FY28.",
+   "Funding: about INR 122 crore of equity raised (about INR 92 crore from investors, about INR 30 crore from promoters), plus internal accruals and modest debt; current debt only about INR 110 crore of working capital limits."
+  ],
+  "demand_pricing": [
+   "Management cites six demand drivers: India T&D capex of INR 3.35 lakh crore (FY26-30), renewables (210-220 GW solar and 50-60 GW wind by FY30), data centres (about 70% higher cable density for AI facilities), US grid capex above USD 1 trillion, construction capex of INR 18-19 lakh crore, and railways (FY27 budget INR 3 lakh crore).",
+   "US tariffs: 10% reciprocal tariff from 2 Apr 2025, raised to 25% in August and 50% by end-August 2025; IEEPA tariffs invalidated by US Supreme Court (Feb-Apr 2026), which management says restored India's competitiveness.",
+   "Management says it kept US presence at sub-economic margins at lower volumes; competitors from Vietnam, South Korea, Cambodia, Ecuador and Egypt had a tariff advantage in FY26.",
+   "Pricing policy: no firm-price orders with delivery beyond 3-4 months; metal is bought the next working day after order receipt; price-variation formulas increasingly accepted by customers.",
+   "Management expects Q2 FY27 onwards to see stronger US demand pull, with one or two new products to be launched in the US next quarter.",
+   "Middle East, Europe, Australia and Africa flagged as opportunistic markets, with the Middle East a focus area in coming quarters."
+  ],
+  "qa_highlights": [
+   {
+    "question": "When will the new plant reach optimum utilisation, and what is the payback and FY27 guidance?",
+    "answer": "Phase 1 (INR 300 crore) targets INR 1,200 crore revenue by FY29; payback 3-4 years; margin 9-10%. No formal guidance, but 15-20% top-line growth and at least 10% volume growth assumed if metal prices hold."
+   },
+   {
+    "question": "Why has the domestic market not scaled up the top line or bottom line over the past year?",
+    "answer": "Management said the constraint is capacity, not demand; the plants have run at full utilisation for four years, and the company diverted US volume to domestic. FY24 precedent: US sales fell from INR 400 crore to INR 280 crore while domestic doubled from INR 400 crore to INR 800 crore."
+   },
+   {
+    "question": "Why did receivables roughly double, and when will they normalise?",
+    "answer": "More than 65% of Q4 sales were dispatched in the second half of the quarter; over three-quarters had been realised by 15 May 2026. Working capital cycle moved only from 99 to 101 days; CFO said most dispatches are against LCs."
+   },
+   {
+    "question": "Can Paramount return to FY25 margins, and what drives margin expansion?",
+    "answer": "FY25 EBITDA margin is the first milestone. Drivers: new products, US tariff normalisation, power, renewable and data-centre demand, and operating leverage on volume growth."
+   },
+   {
+    "question": "Will EHV lead times exceed 5-6 months, and how is raw material risk handled?",
+    "answer": "Management said it avoids long-delivery firm-price orders and prefers 3-4 month horizons or price-variation clauses; EHV would follow the same policy."
+   },
+   {
+    "question": "What is the longer-term aspirational revenue and margin view?",
+    "answer": "INR 5,000 crore by FY31; Phase 1 capacity can reach about INR 3,600-4,000 crore, and Phase 2 to exceed INR 5,000 crore. Margins expected to move towards peer range as scale grows."
+   },
+   {
+    "question": "Why raise equity when the balance sheet has low leverage?",
+    "answer": "Equity was about INR 122 crore of the INR 300 crore project; management said it diversifies the funding mix, with working capital needs still to be bank-funded and current debt about INR 110 crore."
+   }
+  ],
+  "risks_watch": [
+   "Receivables: working capital cycle at 101 days; management says receivables normalise in Q1 FY27 with over three-quarters of Q4 receivables already collected. Watch the Q1 FY27 receivable run-rate.",
+   "US tariff regime and recovery: margins in the US remain below pre-tariff levels; watch whether volumes and margins improve each quarter from Q2 FY27.",
+   "Narmadapuram execution: commissioning slated for Q1 FY28 with EHV approvals expected by FY28; the 9-10% margin and INR 1,200 crore FY29 target depend on it.",
+   "Raw material (copper and aluminium) pass-through: policy is to avoid long firm-price orders, but EHV and longer-cycle orders may test this.",
+   "Management's FY31 INR 5,000 crore target and the FY27 guidance are informal and conditional on metal prices holding."
+  ],
+  "management_tone": "Confident and forward-looking on demand, US recovery and Narmadapuram, while openly acknowledging a difficult FY26. Answers on receivables and FY27 guidance were less precise, with management declining formal guidance and the CFO deferring current cash figures.",
+  "financial_highlights": [
+   {
+    "metric": "Q4 FY26 revenue",
+    "value": "INR 573 crore",
+    "change": "+13.6% YoY, +24.5% QoQ"
+   },
+   {
+    "metric": "Q4 FY26 EBITDA incl. other income",
+    "value": "INR 38.8 crore; margin 6.7%",
+    "change": "margin up 250 bps QoQ from 4.3%"
+   },
+   {
+    "metric": "Q4 FY26 PAT",
+    "value": "INR 20.5 crore",
+    "change": "+9.5% YoY, +175% QoQ"
+   },
+   {
+    "metric": "FY26 revenue from operations",
+    "value": "INR 1,912 crore",
+    "change": "~+23% YoY from INR 1,557 crore"
+   },
+   {
+    "metric": "FY26 EBITDA incl. other income",
+    "value": "INR 117.5 crore; margin 6%",
+    "change": "absolute decline YoY"
+   },
+   {
+    "metric": "FY26 PAT",
+    "value": "INR 60 crore; PAT margin 3.1%; EPS INR 1.97",
+    "change": "absolute decline YoY"
+   },
+   {
+    "metric": "FY26 domestic revenue",
+    "value": "INR 1,361 crore; 71% of total",
+    "change": "~+27% YoY; share up from 69%"
+   },
+   {
+    "metric": "FY26 exports",
+    "value": "INR 550 crore",
+    "change": "+13.9% YoY"
+   },
+   {
+    "metric": "Order book at 31 Mar 2026",
+    "value": "INR 583 crore (domestic INR 508 crore, exports INR 76 crore)",
+    "change": "power cable orders record INR 466 crore, +66% YoY"
+   },
+   {
+    "metric": "FY26 metal throughput",
+    "value": "29,664 metric tons",
+    "change": "~+12% YoY"
+   },
+   {
+    "metric": "Non-recurring: keyman insurance maturity in other income",
+    "value": "INR 27.8 crore",
+    "change": ""
+   },
+   {
+    "metric": "Non-recurring: labour code one-time charge",
+    "value": "INR 2.4-2.5 crore",
+    "change": ""
+   },
+   {
+    "metric": "Net worth",
+    "value": "INR 778 crore",
+    "change": "from INR 202 crore in FY22"
+   },
+   {
+    "metric": "Working capital cycle",
+    "value": "101 days in FY26 vs 99 days in FY25",
+    "change": "+2 days"
+   }
+  ],
+  "key_quotes": [
+   "Our existing two plants at Dharuhera and Kushkhera have effectively been running at optimal utilization for the past three, four years.",
+   "Following the U.S. Supreme Court rulings between February and April 2026, which invalidated the tariffs imposed under IEEPA, India's competitive position has, of course, now been restored.",
+   "A long-delivery firm-price order is what we consider a huge risk that no company should indulge in.",
+   "The first milestone that we have to reach is to exceed or rather reach the sort of EBITDA margin that we were having for FY25.",
+   "So, the cycle overall has gone up only by two days, which means that we have been able to compress our creditors and stocks in proportion to the receivables that have gone up."
+  ],
+  "_completed": 1
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Narmadapuram greenfield plant, Phase 1 (EHV cables up to 132 kV, transmission conductors, EBeam/EPR and lead-sheathed rubber cables)",
+    "size_pct": null,
+    "capex_cr": 300.0,
+    "q": 7,
+    "status": "under_construction",
+    "mat": "major"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 17.5,
+  "gs": 1,
+  "turnaround": true,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 13.6,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Informal FY27 guidance of 15-20% top-line growth (minimum 10% volume) rests on a record INR 583 crore order book (power cable orders INR 466 crore, +66%) and strong domestic demand, while the main long-term lever, Narmadapuram (INR 300 crore), only starts partial operations in Q1 FY28, so FY27 growth relies mainly on existing plants running at optimal utilisation.",
+  "mgmt": null
+ }
+}

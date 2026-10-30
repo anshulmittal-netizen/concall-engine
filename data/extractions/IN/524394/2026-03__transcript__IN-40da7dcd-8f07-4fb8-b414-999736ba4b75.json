@@ -1,0 +1,136 @@
+{
+ "doc_id": "IN-40da7dcd-8f07-4fb8-b414-999736ba4b75",
+ "market": "IN",
+ "company_id": "524394",
+ "name": "Vimta Labs Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-12",
+ "period": "2026-03",
+ "title": "Vimta Labs Ltd-$ - 524394 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Vimta's Q4 FY26 revenue rose 16.6% YoY to INR1,120m with 37.6% EBITDA margin, but management gave no capacity or capex discipline signals and flagged utilisation ramp, war-related cost pressure and weaker electronics.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Utilization will slowly pick up because you don't build a facility wherein you're going to occupy it immediately."
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "New facility utilisation still ramping",
+    "quote": "utilization will pick up this year a little more next year, more the following year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Margin correction of 1-2% guided",
+    "quote": "you can expect a correction of 1%, 2% depending on how things are panning out right now",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Electronics weak, leadership fixed",
+    "quote": "Last year for us has not been very exciting in this segment",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "novelty",
+    "label": "Biologics CRO entry, no clients signed",
+    "quote": "We have good inquiries and we will be closing them soon",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin",
+    "value": "Sustain in stable and competitive range; correction of 1-2%",
+    "change": "held",
+    "quote": "you can expect a correction of 1%, 2% depending on how things are panning out right now"
+   },
+   {
+    "metric": "Revenue growth",
+    "value": "20-25% CAGR target described as stretch but doable",
+    "change": "held",
+    "quote": "It's a stretch number, but definitely doable. And that's what we target each year."
+   },
+   {
+    "metric": "Biologics margins",
+    "value": "Around current region, a percent or few percent here and there",
+    "change": "new",
+    "quote": "we think the margins should be around this region"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "INR500 crore annualised revenue run-rate",
+    "outcome": "missed",
+    "quote": "we said we will try and get to those run rates by Q4. But again, Q4 some headwinds in terms of external factors"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Systematix Institutional Equities",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Electronics manufacturing (EMS/PLI)",
+   "Tariffs & trade policy",
+   "Biologics CRO entry",
+   "Food testing exports"
+  ],
+  "red_flags": [
+   {
+    "label": "Missed INR500cr run-rate target",
+    "quote": "some things did not happen for us which we were expecting"
+   },
+   {
+    "label": "Geopolitical input cost and lead-time pressure",
+    "quote": "The cost of some input materials, consumables has gone up slightly. There is a slightly longer lead time"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 3,
+   "balance_sheet": 2,
+   "capex": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Segment margins",
+    "quote": "We don't differentiate the margins between our service lines."
+   },
+   {
+    "topic": "Capital deployment of cash",
+    "quote": "As of now, there are no firmed-up thoughts on what we will do with this money"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

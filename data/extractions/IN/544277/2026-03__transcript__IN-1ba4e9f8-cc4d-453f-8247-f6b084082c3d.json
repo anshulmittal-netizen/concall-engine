@@ -1,0 +1,152 @@
+{
+ "doc_id": "IN-1ba4e9f8-cc4d-453f-8247-f6b084082c3d",
+ "market": "IN",
+ "company_id": "544277",
+ "name": "Waaree Energies Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-08",
+ "period": "2026-03",
+ "title": "Waaree Energies Ltd - 544277 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Record FY26 but Q4 margin fell to ~18.6% on commodity, freight and mix; FY27 operating EBITDA guided to Rs7,000-7,700 crore on 10 GW cell ramp, with capex of ~Rs30,000 crore raising supply risk.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Working-capital stress",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said industry module capacity is hard to pin down and some lower-efficiency oversupply exists, but it does not see oversupply in high-efficiency modules.",
+   "quote": "There could be oversupply in the lower efficiency modules, but that's not where Waaree plays."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Cash conversion ~27% on inventory build",
+    "quote": "the cash flow operations percentage has significantly come down",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Capex ~Rs30,000 crore planned",
+    "quote": "We have planned a capex of approximately INR30,000 crores across verticals",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Commodity-led price pass-through started",
+    "quote": "customers have started factoring the increased price in the new commodity levels already",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 operating EBITDA Rs7,000-7,700 crore",
+    "quote": "guiding for operating EBITDA of INR7,000 crores to INR7,700 crores for financial year 27",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Order book ~Rs53,000 crore, up from Rs47,000 crore",
+    "quote": "Our order book continues to remain robust to approximately INR53,000 crores",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Operating EBITDA FY27",
+    "value": "INR7,000-7,700 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "guiding for operating EBITDA of INR7,000 crores to INR7,700 crores for financial year 27"
+   },
+   {
+    "metric": "Cell capacity utilisation FY28",
+    "value": "80-85%",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "The safe assumption could be to assume 80%-85%utilization on the full year scale for FY'28 on the cell capacity."
+   },
+   {
+    "metric": "Long-range EBITDA margin",
+    "value": "19-20% for a decade",
+    "change": "new",
+    "horizon": "long term",
+    "quote": "the safest assumption there will be is your 19 %-20% margin consistent for a decade long at least"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 reported EBITDA Rs5,500-6,000 crore",
+    "outcome": "met",
+    "quote": "our reported total EBITDA of INR 6,617 crores has surpassed our guidance range"
+   }
+  ],
+  "entities": [
+   {
+    "name": "United Polysilicon",
+    "relation": "partner"
+   },
+   {
+    "name": "Associated Power Structures Limited",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Cash conversion ~27% vs EBITDA",
+    "quote": "the cash flow operations percentage has significantly come down"
+   },
+   {
+    "label": "Q4 margin compression",
+    "quote": "There was limited movement of ships inbound as well as outbound"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 3,
+   "growth": 5,
+   "margin": 6,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Fundraise size and objects",
+    "quote": "We will soon also be laying out the request for approval from the shareholders for raising this capital up to INR10,000 odd crores."
+   },
+   {
+    "topic": "BESS unit economics and FY29 revenue",
+    "quote": "too early to comment on any guidance around the revenue in FY29 for this"
+   },
+   {
+    "topic": "ALMM II timing",
+    "quote": "Very difficult to answer with government also not able to answer so far."
+   }
+  ],
+  "hedge_index": 0.3,
+  "themes": []
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "doc_id": "IN-d6484a6f-9e3a-410c-af6d-571e33d37caf",
+ "market": "IN",
+ "company_id": "532612",
+ "name": "Indoco Remedies Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "Indoco Remedies Ltd - 532612 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma CDMO / API & CDMO",
+  "thesis": "Q4 FY26 revenue up 25.8% YoY to INR 4,291 mn and standalone EBITDA margin 14.7%, but receivables up ~45% against ~9% revenue growth, debt near INR 960 cr, and capex tightly controlled.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Working-capital stress",
+   "Deleveraging",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "there is very tight control on CAPEX now"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables up ~45% vs revenue ~9%",
+    "quote": "The standalone trade receivables grew 45% while revenues grew only about 9%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Capex tightly controlled; no major capex 2 yrs",
+    "quote": "we don't plan any major CAPEX now in next 2 years",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Standalone revenue +25.8% YoY",
+    "quote": "growing at 25.8% and 10.1% growth respectively",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Supplier payments delayed; MSME dues up",
+    "quote": "we have not paid suppliers on time given some of the cash flow situation we had",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Repay ~INR 140 cr a year for 3 years",
+    "quote": "about INR 140 crore every year for next 3 years",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Debt repayment",
+    "value": "~INR 140 cr per year for next 3 years, prepay a little more",
+    "change": "new",
+    "horizon": "FY27-FY29",
+    "quote": "about INR 140 crore every year for next 3 years"
+   },
+   {
+    "metric": "Consolidated EBITDA",
+    "value": "maintain EBITDA levels to service debt over next four quarters",
+    "change": "held",
+    "horizon": "next 4 quarters",
+    "quote": "with you know, EBITDA number, which we would like to maintain during next four quarters"
+   },
+   {
+    "metric": "Capex",
+    "value": "no major capex in next 2 years",
+    "change": "new",
+    "horizon": "2 years",
+    "quote": "we don't plan any major CAPEX now in next 2 years"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Sunway",
+    "relation": "partner"
+   },
+   {
+    "name": "IQVIA",
+    "relation": "peer"
+   },
+   {
+    "name": "Pfizer",
+    "relation": "peer"
+   },
+   {
+    "name": "Entod",
+    "relation": "competitor"
+   },
+   {
+    "name": "Sunways",
+    "relation": "competitor"
+   },
+   {
+    "name": "Clarity Pharma",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Premiumisation in consumption",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables stretched; MSME/supplier payments delayed",
+    "quote": "there has been some, where we have not paid suppliers on time given some of the cash flow situation we had"
+   },
+   {
+    "label": "Debt ~INR 960 cr; ECB forex loss INR 24 cr in finance cost",
+    "quote": "almost half a portion of this finance cost is towards the exchange"
+   },
+   {
+    "label": "Warren Remedies API under validation; losses persist",
+    "quote": "that is putting pressure on the entire Warren Remedies numbers"
+   },
+   {
+    "label": "Q4 primary sales down 20% vs IQVIA down 8% (stomatologicals)",
+    "quote": "my primaries are down 20%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 6,
+   "capex": 0,
+   "growth": 5,
+   "margin": 2,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Receivables ageing breakdown",
+    "quote": "I will allow Pramod to give you answers on some of your concerns"
+   },
+   {
+    "topic": "Clarity Pharma contribution",
+    "quote": "Clarity business is yet to come to a sizable level where we can talk about"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

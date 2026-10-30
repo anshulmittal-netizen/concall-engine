@@ -1,0 +1,205 @@
+{
+ "doc_id": "IN-a153fb95-a7d3-423a-9bf1-05f76d2e3b99",
+ "market": "IN",
+ "company_id": "543334",
+ "name": "Nuvoco Vistas Corporation Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-17",
+ "period": "2026-03",
+ "title": "Nuvoco Vistas Corporation Ltd - 543334 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Building materials",
+  "thesis": "Record Q4 volume of 6 Mt and EBITDA of INR590 crore, but a fuel and packaging cost shock of about INR200/t against only partial price hikes of INR8-15/bag leaves margins under pressure for 1-2 quarters.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 95,
+   "quote": "markets in North, we are kind of operating at 95% capacity utilization"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "'27 and '28 will be INR900 crores for '27 and INR960 crores for '28."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Price hikes INR8-12 trade vs ~INR200/t cost rise",
+    "quote": "we are still -- and then the INR100 packing cost increases there. So roughly, still, we are behind",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "North capacity utilisation ~95%",
+    "quote": "markets in North, we are kind of operating at 95% capacity utilization",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex INR900 cr FY27, INR960 cr FY28",
+    "quote": "'27 and '28 will be INR900 crores for '27 and INR960 crores for '28.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "inventory",
+    "label": "Bag inventory only 15-20 days",
+    "quote": "typically, we carry about 15 to 20 days of bag inventory",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Fuel cost Q1 INR1.51-1.55 vs Q4 INR1.44",
+    "quote": "we are foreseeing a number for fuel cost in Q1, anywhere between INR1.51 to INR1.55",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Industry volume growth FY27",
+    "value": "7% to 9%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I'm still looking positive for this industry to grow anywhere between 7% to 9% in the coming year as well."
+   },
+   {
+    "metric": "Blended fuel cost Q1 FY27 (INR per million kcal)",
+    "value": "1.51 to 1.55",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "we are foreseeing a number for fuel cost in Q1, anywhere between INR1.51 to INR1.55"
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "INR900 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "'27 and '28 will be INR900 crores for '27 and INR960 crores for '28."
+   },
+   {
+    "metric": "Capex FY28",
+    "value": "INR960 crore",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "'27 and '28 will be INR900 crores for '27 and INR960 crores for '28."
+   },
+   {
+    "metric": "Net debt to EBITDA",
+    "value": "2x to 2.5x by FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "our goal has been to maintain that debt level to 2 x to 2.5x EBITDA. And there, we will meet ou r numbers during the fiscal FY27."
+   },
+   {
+    "metric": "AFR share of fuel mix FY27",
+    "value": "13% plus",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "FY27, our target is to get this AFR percentage from -- as a company from 10% to plus 13%"
+   },
+   {
+    "metric": "Petcoke reduction East (bps)",
+    "value": "300 to 500 bps from Q4 level",
+    "change": "new",
+    "horizon": "near term",
+    "quote": "reduce the consumption of petcoke by at least 300 to 500 basis points from Q4 actual consumption"
+   },
+   {
+    "metric": "Vadraj clinker/grinding commissioning",
+    "value": "Q3 FY27 to Q1 FY28",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "The clinker unit and grinding units are planned to be commissioned in phases between Q3 FY '27 and Q1 FY '28."
+   },
+   {
+    "metric": "East debottlenecking 4 Mt",
+    "value": "All online by end FY27",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Jajpur should happen in the next 2 to 3 months, and Arasmeta will happen by the end of this year."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "East debottlenecking timeline (end FY26 / Q1 FY27 first commissioning)",
+    "outcome": "missed",
+    "quote": "Jajpur should happen in the next 2 to 3 months, and Arasmeta will happen by the end of this year."
+   },
+   {
+    "metric": "FY26 capex guidance INR700 crore",
+    "outcome": "met",
+    "quote": "we ended with INR712 crores, a small INR10 crores increase."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Vadraj Cement",
+    "relation": "partner"
+   },
+   {
+    "name": "IOCL",
+    "relation": "supplier"
+   },
+   {
+    "name": "Reliance",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Capex cycle revival (private)",
+   "Housing & real-estate cycle",
+   "Tariffs & trade policy",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Packaging granule shortage and rake constraints",
+    "quote": "we are having serious problems of rake availability as well and we have resorted to moving material by road"
+   },
+   {
+    "label": "Price hikes lag cost inflation",
+    "quote": "at INR200 per ton with the kind of price increase, net of GST, there is still going to be some gap"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 1,
+   "growth": 2,
+   "margin": 6,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Pricing strategy and cost-price reconciliation",
+    "quote": "I will not be answering this question because I cannot do a mathematical reconciliation"
+   },
+   {
+    "topic": "AFR and diesel freight sensitivity",
+    "quote": "I don't think in this investors call, I wouldn't be able to give a pricing strategy of the company"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

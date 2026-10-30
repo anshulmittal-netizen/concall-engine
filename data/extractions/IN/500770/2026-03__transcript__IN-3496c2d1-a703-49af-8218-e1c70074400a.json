@@ -1,0 +1,163 @@
+{
+ "doc_id": "IN-3496c2d1-a703-49af-8218-e1c70074400a",
+ "market": "IN",
+ "company_id": "500770",
+ "name": "Tata Chemicals Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-09",
+ "period": "2026-03",
+ "title": "Tata Chemicals Ltd - 500770 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 FY26 consolidated EBITDA fell to INR 274 crores from 327 crores on soda ash price weakness, with a INR 1,837 crore US goodwill impairment; supply exits are real but early, and China inventory sits near 1.8 million tons.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Supply exit",
+   "Capital cycle",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "China inventories remain elevated."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Mothballing in US and maintenance closures in China noted; no peer capex discussed beyond that.",
+   "quote": "our capex for the soda ash business is going to be only when the cycle returns"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "US 1.36 Mt plant mothballed",
+    "quote": "one of the producers with 1.36 million tons capacity has also mothballed its plant",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Chinese output cut, permit expiry at 800kt plant",
+    "quote": "One unit, which is about 800,000 tons Hubli plant, sort of had an expiration of production permit",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Imports halved from 70-100kt/month",
+    "quote": "that has reduced to half right now",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "China soda ash inventory ~1.8 Mt",
+    "quote": "The inventories are close to 1.8 million tons, but it's been stable.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "SE Asia prices unremunerative",
+    "quote": "This resulted in Southeast Asia prices remaining unremunerative, especially for the US producers.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 capex ~INR 1,300 cr; debt flat",
+    "quote": "Around INR 1,300 crores capex for next year, Arjun.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 capex",
+    "value": "~INR 1,300 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Around INR 1,300 crores capex for next year, Arjun."
+   },
+   {
+    "metric": "Net debt ex-leases",
+    "value": "similar to March 2026 level (~INR 5,961 crores)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect the debt to remain overall at similar levels"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Rallis",
+    "relation": "peer"
+   },
+   {
+    "name": "Tata Consumer",
+    "relation": "customer"
+   },
+   {
+    "name": "NTPC",
+    "relation": "customer"
+   },
+   {
+    "name": "Solvay",
+    "relation": "competitor"
+   },
+   {
+    "name": "Novabay Pte Limited",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Anti-dumping protection",
+   "Renewables & storage",
+   "Tariffs & trade policy",
+   "Specialty chem destocking end"
+  ],
+  "red_flags": [
+   {
+    "label": "INR 1,837 cr goodwill impairment and INR 159 cr deferred tax write-off",
+    "quote": "An exceptional charge of INR 1,837 crores is provided on account of impairment of goodwill in US"
+   },
+   {
+    "label": "Kenya HFO supply ~40-45 days cover",
+    "quote": "they've got about 40 days of supply"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 3,
+   "growth": 2,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Silica plant IRR and EBITDA",
+    "quote": "The next call we'll update you watching all of people."
+   },
+   {
+    "topic": "UK gas cost pass-through",
+    "quote": "the issue in UK why I'm not commenting is"
+   },
+   {
+    "topic": "Freight cost increase query",
+    "quote": "Yes, come back on that separately. I don't have the numbers offhand."
+   }
+  ],
+  "hedge_index": 0.55
+ }
+}

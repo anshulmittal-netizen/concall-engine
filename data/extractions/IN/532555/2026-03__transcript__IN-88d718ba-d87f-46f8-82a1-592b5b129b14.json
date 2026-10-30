@@ -1,0 +1,389 @@
+{
+ "doc_id": "IN-88d718ba-d87f-46f8-82a1-592b5b129b14",
+ "market": "IN",
+ "company_id": "532555",
+ "name": "NTPC Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-27",
+ "period": "2026-03",
+ "title": "NTPC Ltd - 532555 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "NTPC added a record 9,618 MW in FY26 and plans 9,557 MW in FY27 and 10,039 MW in FY28, with coal PLF at 72.04% against the rest-of-India average of 63.20%.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 72.04,
+   "quote": "NTPC coal station achieved a PLF of 72.04% against rest of India average of 63.20%."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "In FY26, we have incurred a group capex of INR49,068 crores as compared to INR44,636 crores in the previous year."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Coal PLF 72.04% vs RoI 63.20%",
+    "quote": "NTPC coal station achieved a PLF of 72.04% against rest of India average of 63.20%.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Record FY26 capacity addition 9,618 MW",
+    "quote": "During the year, we have added 9,618 MW of capacity.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "NGEL FY27 capex INR35,800 crores",
+    "quote": "For NGEL, for current year it would be c apex of INR 35,800 crores.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 capacity addition (group)",
+    "value": "9,557 MW (thermal 1,070; hydro 250; RE 8,237)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are planning around 9,557 MW of capacity."
+   },
+   {
+    "metric": "FY28 capacity addition (group)",
+    "value": "10,039 MW",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "The year next, FY28, the total plant capacity addition is 10,039 MW"
+   },
+   {
+    "metric": "NGEL RE capacity addition per year",
+    "value": "average 8 GW per annum",
+    "change": "held",
+    "horizon": "FY27-FY28",
+    "quote": "we are planning an average of 8 GW per annum."
+   },
+   {
+    "metric": "Group capex to FY32",
+    "value": "INR 6,22,000 crores",
+    "change": "new",
+    "horizon": "FY26-FY32",
+    "quote": "We have a broad c apex for the group of INR 6,22,000 crores till the financial '32"
+   },
+   {
+    "metric": "Final dividend FY26",
+    "value": "INR3.50 per share; total INR9",
+    "change": "new",
+    "horizon": "FY26",
+    "quote": "NTPC Board has recommended a final dividend for FY26 of INR3.50 per share"
+   },
+   {
+    "metric": "NGEL pipeline",
+    "value": "reduced from 32 GW to 30 GW",
+    "change": "cut",
+    "horizon": "current",
+    "quote": "the numbers have come down from 32 GW to 30 GW"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "NGEL FY26 capacity addition of about 5 GW",
+    "outcome": "missed",
+    "quote": "we were planning around 5 GW , and some of the units spilled over to the next year or we expect it to spill over."
+   }
+  ],
+  "entities": [
+   {
+    "name": "THDC",
+    "relation": "peer"
+   },
+   {
+    "name": "NEEPCO",
+    "relation": "peer"
+   },
+   {
+    "name": "Hindustan Urvarak",
+    "relation": "peer"
+   },
+   {
+    "name": "IOCL",
+    "relation": "partner"
+   },
+   {
+    "name": "Mizuho Bank",
+    "relation": "supplier"
+   },
+   {
+    "name": "ASHVINI",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Railway capex",
+   "Grid capex & transformers",
+   "Interest-rate relief",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "NGEL FY26 addition shortfall vs 5 GW plan",
+    "quote": "some of the units spilled over to the next year or we expect it to spill over."
+   },
+   {
+    "label": "Transmission connectivity gaps for FY27",
+    "quote": "we have the firm connectivity of 57% and T-GNA of 38%."
+   },
+   {
+    "label": "One-off provisions and ERV in other expenses",
+    "quote": "we have also provided for some INR 478 crores provisioning"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 4,
+   "margin": 3,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Other expenses breakdown for NGEL power charges and O&M",
+    "quote": "So breakup of other expense we'll provide to you."
+   },
+   {
+    "topic": "Listing of THDC, NEEPCO, Hindustan Urvarak",
+    "quote": "No, there are no definitive plans at this point of time."
+   }
+  ],
+  "hedge_index": 0.3
+ },
+ "summary": {
+  "headline": "NTPC group added a record 9,618 MW in FY26 and standalone Q4 PAT rose 51.4% to INR8,747 crores.",
+  "overview": "NTPC's Q4 FY26 and FY26 call (hosted by JM Financial, 23 May 2026) showed standalone Q4 PAT up 51.4% YoY to INR8,747 crores, while FY26 standalone total income fell 2.69% to INR1,69,725 crores on lower daytime demand and backing down of thermal plants. Group PAT rose 15% to INR27,546 crores and NGEL revenue grew 29% in FY26. Management guided to about 9,557 MW of FY27 capacity additions, mostly renewables via JVs and subsidiaries, and flagged a higher FY27 renewable grid-connectivity risk. Management said West Asia tensions have no material operational impact, with about 18 days of coal stock and about 18% of coal needs met from captive mines.",
+  "financial_highlights": [
+   {
+    "metric": "Standalone total income Q4 FY26",
+    "value": "INR44,030 crores",
+    "change": "vs INR45,813 crores in Q4 FY25 (down)"
+   },
+   {
+    "metric": "Standalone PAT Q4 FY26",
+    "value": "INR8,747 crores",
+    "change": "+51.4% YoY vs INR5,778 crores"
+   },
+   {
+    "metric": "Standalone total income FY26",
+    "value": "INR1,69,725 crores",
+    "change": "-2.69% vs INR1,74,414 crores"
+   },
+   {
+    "metric": "Standalone PAT FY26",
+    "value": "INR23,162 crores",
+    "change": "+18% vs INR19,649 crores"
+   },
+   {
+    "metric": "Standalone adjusted PAT FY26",
+    "value": "INR19,530 crores",
+    "change": "+8% vs INR18,016 crores"
+   },
+   {
+    "metric": "Group total income FY26",
+    "value": "INR1,89,799 crores",
+    "change": "vs INR1,90,862 crores in FY25"
+   },
+   {
+    "metric": "Group PAT FY26",
+    "value": "INR27,546 crores",
+    "change": "+15% vs INR23,953 crores"
+   },
+   {
+    "metric": "NGEL consolidated revenue FY26",
+    "value": "INR2,858 crores",
+    "change": "+29%"
+   },
+   {
+    "metric": "NGEL operating EBITDA FY26",
+    "value": "INR2,475 crores",
+    "change": "+29%; EBITDA margin 87%"
+   },
+   {
+    "metric": "NGEL revenue Q4 FY26",
+    "value": "INR913 crores",
+    "change": "+47% vs INR622 crores"
+   },
+   {
+    "metric": "NGEL operating EBITDA Q4 FY26",
+    "value": "INR775 crores",
+    "change": "+38% vs INR560 crores"
+   },
+   {
+    "metric": "Weighted average interest rate on borrowings FY26",
+    "value": "5.98%",
+    "change": "vs 6.61% in FY25"
+   }
+  ],
+  "segments": [
+   {
+    "name": "NTPC standalone",
+    "commentary": "Standalone Q4 PAT INR8,747 crores (+51.4%); FY26 standalone capex INR28,462 crores vs INR22,965 crores; standalone regulatory equity INR94,631 crores. Other expenses rose to INR6,972 crores from INR5,806 crores, including INR784 crores exchange variation offset by INR780 crores regulatory income."
+   },
+   {
+    "name": "NTPC Green Energy (NGEL)",
+    "commentary": "FY26 generation 14.6 BU vs 6.8 BU in FY25 (+114%); 4,225 MW added in FY26 vs 2,977 MW in FY25. Curtailment of 314 MU plus 135 MU TRAS loss; grid-curtailment EBITDA impact about INR90 crores, TRAS compensated."
+   },
+   {
+    "name": "Group renewables",
+    "commentary": "Group added 4,738 MW RE in FY26; installed RE capacity 12,068 MW including 490 MW added in FY27 to date. Group capacity 89,108 MW at 31 March 2026, crossed 90 GW as of the call."
+   },
+   {
+    "name": "Coal and mining",
+    "commentary": "Captive mine output 47.88 million tonnes (+8.5%); Pakri Barwadih Northwest mine under commercial operation from 1 April 2026. Mining business fully transferred to NTPC Mining Limited, a wholly owned subsidiary."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 group capacity addition planned at about 9,557 MW: thermal 1,070 MW, hydro 250 MW, renewables 8,237 MW (176 MW standalone, 9,381 MW JVs/subsidiaries).",
+   "FY28 planned addition 10,039 MW (thermal 1,460 MW, hydro 444 MW incl. Vishnugad Pipalkoti, renewables 8,135 MW); FY29 planned 11,478 MW (renewables 8,408 MW, thermal 3,070 MW).",
+   "Group capex plan of INR6,22,000 crores to FY32, with about INR3 lakh crores for renewables; NGEL capex INR35,800 crores in FY27, INR46,000 crores in FY28, INR48,000 crores in FY29, funded at 80:20 debt-equity.",
+   "Renewable target of 60 GW by 2032, with NGEL planning about 8 GW per year on average, and possible inorganic additions.",
+   "Final FY26 dividend INR3.50 per share (subject to shareholder approval), taking total FY26 dividend to INR9 per share including INR5.50 interim.",
+   "Mahi Banswara nuclear project: first concrete by August 2027 and first unit synchronisation targeted November 2032; nuclear island EPC NIT expected 15 June 2026."
+  ],
+  "capex_capacity": [
+   "Group capex INR49,068 crores in FY26 vs INR44,636 crores in FY25; group gross PP&E up 16% to INR4,70,618 crores.",
+   "Group had over 34 GW under construction: 16.5 GW coal, about 2.6 GW hydro, 15 GW renewables. Patratu Stage 1 Unit 2 completed trial operation in Q1 FY27; Unit 3 expected within FY27. TTPS Stage 3 Unit 1 (660 MW) expected Q3 FY28.",
+   "Pumped storage: 18,010 MW group plan; THDC Tehri PSP fully operational (last 250 MW unit in April 2026); 3-5 GW PSP expected commercial by 2032-33.",
+   "Battery storage: 5 GWh co-located BESS at thermal stations under cost-plus; 1,320 MW renewable-side BESS (320 MW standalone under execution, 1,000 MW co-located under tender); about 4 GW more in planning.",
+   "FY27 firm transmission connectivity 57% and T-GNA 38% for NGEL capacity; FY28 firm 88% plus 3% T-GNA; FY29 firm 84%."
+  ],
+  "demand_pricing": [
+   "Power demand rose sharply since last quarter; record peak demand of 271 GW and daily generation of 6,268 million units on 21 May 2026.",
+   "NTPC coal stations PLF 72.04% in FY26 vs rest-of-India average 63.20%; group generation 432.2 BU vs 438.7 BU in FY25.",
+   "Thermal backing down due to RE injection: technical minimum support of 55% PLF assured via SCUC/SCED; units can take reserve shutdown below 55% and still be paid.",
+   "Management said thermal compensation within 100% to 55% range is adequate for heat rate and auxiliary consumption degradation; FY26 sales include these compensations.",
+   "PPA cover for capacity additions: about 79% for FY27, 71% for FY28 (8,069 MW), 66% for FY29 (about 8,400 MW)."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Breakdown of FY27 and FY28 capacity additions between standalone, subsidiaries and JVs?",
+    "answer": "FY27 planned 9,557 MW, with 9,381 MW from JVs/subsidiaries and 176 MW from standalone renewables; FY28 planned 10,039 MW; FY29 planned 11,478 MW."
+   },
+   {
+    "question": "What was NGEL curtailment and EBITDA impact in FY26?",
+    "answer": "Curtailment of 314 MU plus TRAS loss of 135 MU; TRAS compensated, grid curtailment via temporary GNA impact about INR90 crores."
+   },
+   {
+    "question": "Why did NGEL pipeline fall from 32 GW to 30 GW?",
+    "answer": "NGEL CFO said the pipeline was normalised to reflect actual progress in JVs/subsidiaries; additional MoUs could lift it later."
+   },
+   {
+    "question": "Is the FY26 profit inclusive of thermal backing-down compensation?",
+    "answer": "Management said yes; sales include the heat rate and auxiliary consumption compensation within the 100-55% range."
+   },
+   {
+    "question": "Why did other expenses rise sharply?",
+    "answer": "Standalone other expenses rose to INR6,972 crores from INR5,806 crores (+20%): exchange variation INR784 crores offset by INR780 crores regulatory income, plus one-time provisions of INR478 crores (EESL INR193 crores, NBPPL INR149 crores, Garhi Dam INR100 crores) and O&M up INR198 crores."
+   },
+   {
+    "question": "Possible listing of THDC, NEEPCO and Hindustan Urvarak?",
+    "answer": "No definitive plans; the matter is at senior policy level, and THDC is a JV with the UP government."
+   }
+  ],
+  "risks_watch": [
+   "FY27 renewable grid connectivity (57% firm, 38% T-GNA) implies curtailment risk until connectivity is added.",
+   "PPA tie-up for FY29 (about 66%) and FY28 (71%) capacity is below FY27 (79%).",
+   "NGEL pipeline cut from 32 GW to 30 GW; Rajasthan 1.5 GW project awaiting commercial offtake settlement with Rajasthan.",
+   "Weak tariff competitive bidding wins in FY26 (NGEL stays away below threshold returns).",
+   "Possible listing of THDC, NEEPCO and Hindustan Urvarak, still at policy level.",
+   "Heatwave and El Nino could keep demand elevated through 2026 and into early 2027."
+  ],
+  "management_tone": "Confident on capacity addition, fuel security and the 55% technical minimum protection; cautious and deferential on NGEL pipeline, transmission and the listing question, which were deferred to other executives or policy-level decisions. Several detailed numbers (NGEL CUF, other-expense breakup) were promised later rather than given on the call.",
+  "key_quotes": [
+   "From NTPC's perspective, the current developments are not expected to have any material operational impact.",
+   "making the highest ever annual capacity addition since inception.",
+   "So we are running at maximum, we are getting the support.",
+   "Whereas my margins are protected because once my plants are available, the fixed charges has to be given to me, which improves the element of return on equity."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "FY27 group capacity addition ~9,557 MW (thermal 1,070 MW, hydro 250 MW, renewables 8,237 MW; 176 MW standalone, 9,381 MW JVs/subsidiaries)",
+    "size_pct": null,
+    "capex_cr": 35800.0,
+    "q": 4,
+    "status": "planned",
+    "mat": "major"
+   },
+   {
+    "what": "FY28 group capacity addition 10,039 MW (thermal 1,460 MW, hydro 444 MW, renewables 8,135 MW)",
+    "size_pct": null,
+    "capex_cr": 46000.0,
+    "q": 8,
+    "status": "planned",
+    "mat": "major"
+   },
+   {
+    "what": "TTPS Stage 3 Unit 1 660 MW thermal, expected Q3 FY28",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 7,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Patratu Stage 1 Unit 3 expected within FY27 (Unit 2 completed trial operation in Q1 FY27)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 3,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Mahi Banswara nuclear project, first unit synchronisation targeted November 2032",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 24,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": 72.04,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": -3.9,
+  "qEbitda": 51.4,
+  "outlook": 1,
+  "why": "Management plans ~9,557 MW of FY27 additions (8,237 MW renewables, mostly via JVs/subsidiaries) and 10,039 MW in FY28, with NGEL capex of INR35,800 crore in FY27, but no revenue growth figure is guided, the NGEL pipeline was cut from 32 to 30 GW, and standalone FY26 total income fell 2.69%.",
+  "mgmt": null
+ }
+}

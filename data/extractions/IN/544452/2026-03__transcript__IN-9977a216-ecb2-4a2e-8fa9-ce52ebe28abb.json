@@ -1,0 +1,272 @@
+{
+ "doc_id": "IN-9977a216-ecb2-4a2e-8fa9-ce52ebe28abb",
+ "market": "IN",
+ "company_id": "544452",
+ "name": "Swastika Castal Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-27",
+ "period": "2026-03",
+ "title": "Swastika Castal Ltd - 544452 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.91,
+ "read": {
+  "subsector": "Other",
+  "thesis": "FY26 revenue up ~17-19% on volume, but operating cash flow turned negative from deliberate working-capital build (inventory, advance payments to vendors) and capex commissioned only in March; no numeric FY27 guidance.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we have commissioned all our machinery in the month of March, the expansion of capital -- the capex."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Operating cash flow negative in FY26",
+    "quote": "our operating cash flow was impacted mainly due to higher working capital during the year",
+    "highlight": "operating cash flow was impacted mainly due to higher working capital",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Capex commissioned March 2026",
+    "quote": "we have commissioned all our machinery in the month of March, the expansion of capital -- the capex",
+    "highlight": "commissioned all our machinery in the month of March",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth qualitative only",
+    "quote": "While we would prefer not to provide a specific guidance at this stage, we believe FY'27 has the potential to deliver strong growth",
+    "highlight": "we would prefer not to provide a specific guidance",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "stronger than FY26, unquantified",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we believe FY'27 has the potential to deliver strong growth -- stronger growth in comparison to '26"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Hitachi",
+    "relation": "customer"
+   },
+   {
+    "name": "ABB",
+    "relation": "customer"
+   },
+   {
+    "name": "Siemens",
+    "relation": "customer"
+   },
+   {
+    "name": "Toshiba",
+    "relation": "customer"
+   },
+   {
+    "name": "Trench",
+    "relation": "customer"
+   },
+   {
+    "name": "QAG",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Working capital & cash conversion",
+   "Grid capex & transformers",
+   "Defence indigenisation",
+   "Railway capex",
+   "Export expansion"
+  ],
+  "red_flags": [
+   {
+    "label": "Negative operating cash flow despite revenue growth",
+    "quote": "our operating cash flow turned negative"
+   },
+   {
+    "label": "Advance payments to vendors and inventory build",
+    "quote": "we procured as well as made more stock than it was required"
+   },
+   {
+    "label": "Customer collections delayed at March year-end",
+    "quote": "There was a bit of customer collection issue, a bit, I would say, there was some delays because of March ending"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 3,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue guidance",
+    "quote": "it is very difficult to give you in figures"
+   },
+   {
+    "topic": "Margin sustainability",
+    "quote": "the margins are influenced by factors such as raw material price, market conditions and this"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Swastika Castal FY26 total income rose 19.50% to INR36.19 crore, EBITDA INR6.22 crore, PAT INR3.28 crore; operating cash flow turned negative on deliberate working capital build.",
+  "overview": "First earnings call since BSE SME listing, covering H2 and full-year FY26. Management attributed growth mainly to volume rather than price, with pricing impact described as very limited. Operating cash flow turned negative, which management said was a deliberate choice: advance payments to vendors, locked raw material pricing, and higher strategic inventory ahead of commissioning of expansion machinery in March 2026. Management expects FY27 to be a full year of enhanced capacity and says growth should be stronger than FY26, but declined to give a numeric guidance.",
+  "financial_highlights": [
+   {
+    "metric": "Total income (FY26)",
+    "value": "INR36.19 crore",
+    "change": "+19.50% YoY"
+   },
+   {
+    "metric": "EBITDA (FY26)",
+    "value": "INR6.22 crore",
+    "change": ""
+   },
+   {
+    "metric": "Profit after tax (FY26)",
+    "value": "INR3.28 crore",
+    "change": ""
+   },
+   {
+    "metric": "Revenue growth (as cited by analyst on call)",
+    "value": "approximately 17%",
+    "change": "YoY, analyst figure, not confirmed by management"
+   },
+   {
+    "metric": "Operating cash flow (FY26)",
+    "value": "Negative",
+    "change": "Driven by higher working capital; amount not disclosed on call"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Power transmission and electrical equipment",
+    "commentary": "Management said power is the largest end-market for the company and has strong potential; named customers include Hitachi, ABB, Siemens, GE and Toshiba."
+   },
+   {
+    "name": "Other industrial end-markets",
+    "commentary": "Company also serves infra/power capital equipment, railways, oil and gas, and fire-fighting equipment; railways is being expanded and government GeM tenders for defence components have recently been pursued."
+   }
+  ],
+  "guidance_outlook": [
+   "No numeric FY27 revenue guidance; management said FY27 has potential for stronger growth than FY26.",
+   "FY27 will be the first full year with the benefit of enhanced capacity from the expansion.",
+   "Management expects some benefits from the expansion in the near term and a larger financial impact in the medium term.",
+   "Margins expected to be sustainable and to improve with scale, operating leverage, fixed-cost absorption and productivity gains; raw material and market conditions noted as influences.",
+   "Expects working capital and cash conversion to improve as supply chain stabilises and customer collections normalise, which management said happened in April and May 2026."
+  ],
+  "capex_capacity": [
+   "Expansion capex was completed and all machinery was commissioned in March 2026, per management.",
+   "Management said the company held higher inventory to feed the newly commissioned machines.",
+   "Management cited an order book and improved capacity as drivers of higher volumes, but did not quantify capacity or utilisation.",
+   "Capex for the year was described as strategic, though the amount was not disclosed on the call."
+  ],
+  "demand_pricing": [
+   "Volume, not price, drove FY26 revenue growth; management said pricing impact was very limited.",
+   "Management said current customers are booked for at least the next five years, per what he was told by them.",
+   "Two new export customers added in FY26: QAG (Australia-based multinational) and Trench (Europe). Also won orders from another Hitachi factory where the company had not previously supplied.",
+   "Export presence cited in Europe, Mexico and the US.",
+   "Raw material and fuel costs are passed through to customers monthly under price variation clauses with most customers."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What drove FY26 revenue growth: volume, realisation or new customers?",
+    "answer": "Management said growth was volume-led on strong customer demand and better execution; pricing impact was very limited."
+   },
+   {
+    "question": "Why did operating cash flow turn negative despite revenue growth?",
+    "answer": "Management called it a deliberate choice: faster advance payments to vendors to secure raw material amid geopolitical disruption, locked pricing, higher strategic inventory for the new machines, and March-end customer collection delays that eased in April and May."
+   },
+   {
+    "question": "When will the capex contribute meaningfully to revenue and returns?",
+    "answer": "Some benefits expected in the near term through capacity, order book and operating leverage; the large financial impact is expected in the medium term."
+   },
+   {
+    "question": "What is the sustainable margin outlook?",
+    "answer": "Management believes margins are sustainable and can improve with scale, operating leverage, fixed-cost absorption and cost and productivity initiatives; raw material prices and market conditions are influences."
+   },
+   {
+    "question": "What is FY27 revenue growth guidance?",
+    "answer": "No figure given; management said FY27 is projected to grow faster than FY26, supported by expansion and customer order books."
+   },
+   {
+    "question": "Are export opportunities growing?",
+    "answer": "Yes. Management is in talks with several customers and said export potential will rise, building on the two new export accounts added in FY26."
+   }
+  ],
+  "risks_watch": [
+   "Negative operating cash flow in FY26 from working capital build; watch for cash conversion improvement and collection days in Q1 FY27.",
+   "Vendor advance payments and inventory build may tie up capital if demand for the added capacity lags.",
+   "Raw material and fuel price volatility linked to geopolitical disruption; pass-through clauses cover most customers but timing gaps can affect margins.",
+   "Dependence on a concentrated set of large power and electrical OEM customers.",
+   "No quantified FY27 guidance; capacity utilisation and expansion-driven revenue are unquantified.",
+   "Recent BSE SME listing, with limited trading history and disclosure track record."
+  ],
+  "management_tone": "Confident and optimistic on demand and expansion, but vague on numbers: management repeatedly declined to quantify FY27 guidance and margins. It was more forthcoming in defending the negative operating cash flow as a deliberate, supply-security decision, and it cited a return to normal collections in April and May.",
+  "key_quotes": [
+   "So, the growth was because of volume, which supported from strong customer demand, improving our executions also, execution capabilities also. The pricing impact was relatively very, very, very limited.",
+   "So, in order to ensure uninterrupted production and avoid any impact on our customer commitments, because that is what we are emphasizing on because of our relationships, good relationship with our customer.",
+   "While we would prefer not to provide a specific guidance at this stage, we believe FY'27 has the potential to deliver strong growth -- stronger growth in comparison to '26."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Expansion machinery (all machinery commissioned) at Swastika Castal, completed March 2026; capacity not quantified",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "moderate"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management declined numeric FY27 guidance but said FY27 has potential for stronger growth than FY26 as the March 2026 expansion becomes a full year contributor, backed by a commissioned expansion, an order book and two new export customers, though capacity and utilisation were not quantified.",
+  "mgmt": null
+ }
+}

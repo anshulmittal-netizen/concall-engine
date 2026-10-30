@@ -1,0 +1,164 @@
+{
+ "doc_id": "IN-93c0efd7-1d06-4619-973a-769a8d0b6913",
+ "market": "IN",
+ "company_id": "503722",
+ "name": "Banswara Syntex Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-26",
+ "period": "2026-03",
+ "title": "Banswara Syntex Ltd-$ - 503722 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Textiles & apparel",
+  "thesis": "Yarn utilisation fell to 77% on labour shortages while Fabric and Garment carry growth; FY27 revenue guided to INR1,450–1,500 crores with EBITDA margin 10.5–11%, but net debt rose to INR483 crores with no long-term debt reduction until FY28.",
+  "archetype": "None",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 77,
+   "quote": "The capacity utilization stood at 78% during quarter four FY26 and 77% for the full year."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "The capex has been planned around INR135 crores to INR140 crores."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Yarn utilisation 77% FY26, labour-constrained",
+    "quote": "Lower utilization levels during the quarter were primarily due to the labor shortages, particularly in spinning",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Yarn realisations up INR30-35 per kg",
+    "quote": "realizations did improve during the year by approximately INR30 to INR35 per kilo",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue INR1,450-1,500 crores",
+    "quote": "expect revenues between the range of INR1,450 crores to INR1,500 crores in FY 2027",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Net debt up to INR483 crores",
+    "quote": "The net debt as on 31st March , 2026 stood at INR483 crores as compared to INR456 crores",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Garment revenue +40% in Q4 to INR96 crores",
+    "quote": "The Garment revenues increased in the last quarter by 40% to INR96 crores",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "INR1,450–1,500 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "expect revenues between the range of INR1,450 crores to INR1,500 crores in FY 2027"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "10.5%–11% medium-term",
+    "change": "new",
+    "horizon": "medium-term",
+    "quote": "we expect margins to remain between the range of 10.5% to 11% over the medium-term"
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "INR135–140 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "The capex has been planned around INR135 crores to INR140 crores."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Garment and Fabric growth 15-20%",
+    "outcome": "met",
+    "quote": "the FY26 revenues increased year -on-year by 5% to a record of INR569 crores"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Walmart",
+    "relation": "customer"
+   },
+   {
+    "name": "JC Penney",
+    "relation": "customer"
+   },
+   {
+    "name": "Mango",
+    "relation": "customer"
+   },
+   {
+    "name": "Celio",
+    "relation": "customer"
+   },
+   {
+    "name": "Marks & Spencer",
+    "relation": "customer"
+   },
+   {
+    "name": "Tesca Textiles",
+    "relation": "partner"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Net debt up INR27 crores; no LT debt reduction until FY28",
+    "quote": "there will not be a reduction. You will see some high in long term FY2027 due to planned capex on that."
+   },
+   {
+    "label": "Yarn utilisation labour-constrained, unresolved into Q1",
+    "quote": "the labor shortages still continue to be a challenge in spinning"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 4,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Garment segment EBITDA and timeline to INR2,000 crores revenue",
+    "quote": "let's give this a break until the next quarter and then maybe we can address this better"
+   },
+   {
+    "topic": "Segment margins",
+    "quote": "the segmental EBITDA will be a misleading or rather not an accurate one"
+   }
+  ],
+  "hedge_index": 0.4,
+  "themes": []
+ }
+}

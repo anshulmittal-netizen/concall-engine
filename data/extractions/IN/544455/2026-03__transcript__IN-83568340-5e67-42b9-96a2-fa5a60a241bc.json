@@ -1,0 +1,165 @@
+{
+ "doc_id": "IN-83568340-5e67-42b9-96a2-fa5a60a241bc",
+ "market": "IN",
+ "company_id": "544455",
+ "name": "GNG Electronics Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "GNG Electronics Ltd - 544455 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Refurbished-PC seller reports Q4 PAT up ~3x and FY26 revenue +34%, but inventory swelled to INR743 crore and debtors rose to INR206 crore, so margin gains rest on a bet on rising component prices.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory INR490cr → INR743cr in 12 months",
+    "quote": "the same number is INR743 crore now, right?",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Debtor days rising to ~40",
+    "quote": "debtors were at about INR285 crore. That's gone down to INR206 crore as at the end of March.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Realisation up on component inflation",
+    "quote": "the ASPs have increased from almost INR29,000 per laptop to INR30,000",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 guide ~25% revenue, +50bp PAT margin",
+    "quote": "we can give at around 25% revenue growth and PAT margin expansion of around 50 basis points",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Refurb capacity ~150k units/month",
+    "quote": "We can say that we have capacity of doing around 150k units per month.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "~25%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we can give at around 25% revenue growth"
+   },
+   {
+    "metric": "PAT margin expansion FY27",
+    "value": "at least 50 bp",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "The PAT level growth, an increment of at least 50 basis points from the current levels."
+   },
+   {
+    "metric": "Net debt",
+    "value": "trajectory toward ~INR300 crore",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "That is the trajectory we expect going forward."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Net debt ~INR450 crore (Q3 guide)",
+    "outcome": "met",
+    "quote": "as of March end, we've got that number down to about INR300 crore"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Ingram",
+    "relation": "partner"
+   },
+   {
+    "name": "Supertron",
+    "relation": "partner"
+   },
+   {
+    "name": "IDC",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Electronics Bazaar refurb demand",
+   "Pricing power"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory ~INR743cr, 3-4 months of sales, bet on price rises",
+    "quote": "this number is almost 3-4 months of quantum"
+   },
+   {
+    "label": "Debtor days stretched to ~40; credit to distributors",
+    "quote": "credit is paramount for that to happen"
+   },
+   {
+    "label": "Management rejects inventory price-fall risk without quantification",
+    "quote": "the prices are not going to go down before January 2028"
+   },
+   {
+    "label": "Margin fell QoQ in Q4 with volume push over margin",
+    "quote": "there's always a push of volume over margins"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 1,
+   "growth": 3,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Share of refurbished in distributor inventory",
+    "quote": "It's difficult for me to give you a precise number, but it will be a small percentage"
+   },
+   {
+    "topic": "Ingram and Supertron revenue contribution",
+    "quote": "It's a very, very small percentage. It's a minuscule percentage"
+   },
+   {
+    "topic": "Refurb capacity utilisation",
+    "quote": "We can say that we have capacity of doing around 150k units per month."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

@@ -1,0 +1,160 @@
+{
+ "doc_id": "IN-3ec525b2-8c03-4280-900f-3c0b7786e429",
+ "market": "IN",
+ "company_id": "532440",
+ "name": "MPS Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-25",
+ "period": "2026-03",
+ "title": "MPS Ltd - 532440 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "FY26 EBITDA INR 236 crore (30.7% margin) and FY27 guided to cross INR 300 crore EBITDA, but no capacity or capex signal; Q4 ex-AJE research margin softened and no dividend declared.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 EBITDA above INR 300 crore",
+    "quote": "the Company is expected to comfortably cross INR 300 crores in EBITDA in FY’27",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "novelty",
+    "label": "Unbound adds ~INR 11-12 crore revenue in 50 days",
+    "quote": "the revenue was in the range of INR 11 crores to INR 12 crores, and the EBITDA margin was around, I think, 18.5% to 19%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Pre-acceptance B2B services growth >90%",
+    "quote": "we saw more than 90% growth in pre-acceptance services",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Corporate learning revenue down 16.5% in FY26",
+    "quote": "FY’26 revenue closed at INR 96 crores, down 16.5% versus FY’25",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 EBITDA",
+    "value": "comfortably cross INR 300 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the Company is expected to comfortably cross INR 300 crores in EBITDA in FY’27"
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "30% to 35%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "probably somewhere in the 30% to 35% EBITDA range"
+   },
+   {
+    "metric": "Unbound monthly revenue",
+    "value": "USD 750,000 to USD 950,000 per month",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We're expecting to go to USD 750,000 to USD 950,000 a month in FY ’27"
+   },
+   {
+    "metric": "Unbound exit EBITDA margin",
+    "value": "25% to 30%",
+    "change": "new",
+    "horizon": "FY27 exit",
+    "quote": "the goal is to exit at somewhere between 25% to 30%"
+   },
+   {
+    "metric": "FY28 revenue",
+    "value": "approximately INR 1,500 crores (intact)",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "It is intact and in absolute line of sight."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY28 revenue INR 1,500 crore (Vision 2027)",
+    "outcome": "held"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Unbound Medicine",
+    "relation": "partner"
+   },
+   {
+    "name": "AJE",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "AI in research integrity",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Per-client revenue declining; ex-AJE Q4 margin softened",
+    "quote": "there's some sluggishness in the Q4 margin profile"
+   },
+   {
+    "label": "AI disruption risk to commoditised production work",
+    "quote": "AI is going to super-compress the price of commoditized production work"
+   },
+   {
+    "label": "No final dividend for FY26",
+    "quote": "the Board has chosen not to recommend a final dividend"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "margin": 2,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Revenue split of FY27 guidance / constant currency",
+    "quote": "The constant currency is not correct. So maybe we can take that off -line."
+   },
+   {
+    "topic": "Ex-AJE headcount increase",
+    "quote": "My understanding is that the headcount has been offshored to India."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

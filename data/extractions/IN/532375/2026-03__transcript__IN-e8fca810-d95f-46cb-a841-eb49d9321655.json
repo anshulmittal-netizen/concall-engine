@@ -1,0 +1,180 @@
+{
+ "doc_id": "IN-e8fca810-d95f-46cb-a841-eb49d9321655",
+ "market": "IN",
+ "company_id": "532375",
+ "name": "Tips Music Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "Tips Music Ltd - 532375 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Media & entertainment",
+  "thesis": "Q4 revenue up 32% YoY to INR103.9 cr and PAT up 93%, but management attributed it to a repertoire surge with no one-offs; FY27 target is 20% top-line and 20% bottom-line, with content spend guided to INR80–90 cr.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 revenue +32% YoY",
+    "quote": "The company recorded quarterly revenue of INR103.9 crores, delivering a YoY growth of 32%.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 target 20% top-line and bottom-line",
+    "quote": "our target is to achieve same number 20% on top-line growth and 20% bottom-line growth.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Content cost deferred to Q1 FY27",
+    "quote": "Hai Jawani Toh Ishq Hona Hai, which was actually was supposed to release in February/March theatrical and music was supposed to release in January, that got postponed to June.",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "tone",
+    "label": "Repeated refusal to give revenue split",
+    "quote": "Sorry, we can't give you that. It's a competitive world, we can't reveal that.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 top-line growth",
+    "value": "20%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "our target is to achieve same number 20% on top-line growth and 20% bottom-line growth."
+   },
+   {
+    "metric": "FY27 bottom-line (PAT) growth",
+    "value": "20%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "our target is to achieve same number 20% on top-line growth and 20% bottom-line growth."
+   },
+   {
+    "metric": "FY27 content spend",
+    "value": "INR80-90 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we want to spend around INR80 crores, INR90 crores this year."
+   },
+   {
+    "metric": "Content cost as % of revenue (prior target)",
+    "value": "18%",
+    "change": "cut",
+    "horizon": "FY26",
+    "quote": "the target you are mentioning is around I guess 18% of revenue as per our earlier call?"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "PAT growth FY26",
+    "outcome": "met",
+    "quote": "PAT amounted to INR216.6 crores, showing a YoY increase of 30%."
+   },
+   {
+    "metric": "Content cost ~18% of revenue",
+    "outcome": "missed",
+    "quote": "that got postponed to June. So that was the hit we have, otherwise we could have reached our target."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Warner Chappell Music",
+    "relation": "partner"
+   },
+   {
+    "name": "YouTube",
+    "relation": "partner"
+   },
+   {
+    "name": "Sony Publishing",
+    "relation": "partner"
+   },
+   {
+    "name": "Tips Films",
+    "relation": "partner"
+   },
+   {
+    "name": "Spotify",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 growth unexplained; management denies one-offs without numbers",
+    "quote": "Nothing Kavish, no one off is there.."
+   },
+   {
+    "label": "Related-party advances to Tips Films not quantified",
+    "quote": "I won't be able to share the exact details, but it would be driven by the contractual terms between Tips Films and Tips Music"
+   },
+   {
+    "label": "Q4 employee cost up 78% YoY on provisions",
+    "quote": "the employee cost increased by 78% YoY on account of provisions made for annual increments."
+   },
+   {
+    "label": "YouTube Shorts views declining ahead of June renewal; negotiator departed",
+    "quote": "Now with him stepping down, what is the plan to take this forward and have you also managed to find a replacement for the position?"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 5,
+   "margin": 3,
+   "balance_sheet": 2,
+   "capex": 0,
+   "other": 14
+  },
+  "evasions": [
+   {
+    "topic": "Revenue split YouTube vs Warner",
+    "quote": "Sorry, we can't give you that. It's a competitive world, we can't reveal that."
+   },
+   {
+    "topic": "Q4 non-digital surge sustainability",
+    "quote": "how they perform we don't know, how will customers behave."
+   },
+   {
+    "topic": "Related-party advance to Tips Films",
+    "quote": "I won't be able to share the exact details"
+   },
+   {
+    "topic": "Volume vs value growth split",
+    "quote": "we don't share that data in terms of breakup of volume and value growth."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,167 @@
+{
+ "doc_id": "IN-d8ebb52b-df38-4b4d-b549-fb10c64ad946",
+ "market": "IN",
+ "company_id": "544291",
+ "name": "Rajesh Power Services Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-29",
+ "period": "2026-03",
+ "title": "Rajesh Power Services Ltd - 544291 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical contracting",
+  "thesis": "FY26 revenue up 52% to ₹1,628 Cr with order book ₹3,326 Cr, but receivables jumped to ₹350 Cr, payables stretched to ~58 days, and the ₹2,200 Cr L1/bid book is still unawarded.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables ₹181 Cr → ₹350 Cr (H2)",
+    "quote": "the receivables have gone from INR 181 crores to INR 350 crores",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Debtors ~78 days, March bullet billing",
+    "quote": "the debtors getting moved to around 78 days, as we discussed",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Order-book target ₹4,500 Cr missed",
+    "quote": "There is no shortfall. It's just the tender results are not out.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "FY26 order inflow ₹2,743 Cr",
+    "quote": "During FY’26, the company recorded order inflows of INR 2,743 crores",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue growth ~40% held",
+    "quote": "No, we are sticking with our previously committed guidance. No revision.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth",
+    "value": "~40% CAGR next 2-3 years; FY27 40%",
+    "change": "held",
+    "quote": "So, for the next FY’27, we are looking at a 40% growth."
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "11%-12%",
+    "change": "held",
+    "quote": "Roughly, EBITDA between 11% to 12% and PAT between 8% to 9%."
+   },
+   {
+    "metric": "FY26 year-end order book",
+    "value": "INR 4,500 Cr target (per prior call)",
+    "change": "cut",
+    "quote": "There is no shortfall. It's just the tender results are not out."
+   },
+   {
+    "metric": "FY27 closing order book",
+    "value": "above INR 5,000 Cr",
+    "change": "new",
+    "quote": "We are targeting somewhere above INR 5,000 crores of order book for FY27, closing."
+   },
+   {
+    "metric": "FY27 order inflow",
+    "value": "INR 4,000-5,000 Cr",
+    "change": "new",
+    "quote": "we are targeting at further order inflows of roughly around INR 4,000 to INR 5,000 crores at the end of the year."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 year-end order book ₹4,500 Cr",
+    "outcome": "missed",
+    "quote": "There is no shortfall. It's just the tender results are not out."
+   },
+   {
+    "metric": "Revenue growth 35%-40%",
+    "outcome": "met",
+    "quote": "In FY’26, revenue grew 52% to ₹1,628 Cr"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Battery storage (BESS)",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables nearly doubled vs H2FY25",
+    "quote": "the receivables have gone from INR 181 crores to INR 350 crores"
+   },
+   {
+    "label": "Payables stretched to ~58 days; short-term borrowing ₹29 Cr → ₹82 Cr",
+    "quote": "Now it has become around 58."
+   },
+   {
+    "label": "Gujarat 85-90% of order book; concentration",
+    "quote": "currently Gujarat is around 85% to 90%, and the rest is outside Gujarat"
+   },
+   {
+    "label": "Employee cost and margin questions evaded",
+    "quote": "So what we are committing is not a decrease in margin, but a stabilized margin."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 6,
+   "capex": 1,
+   "growth": 7,
+   "margin": 4,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Working capital / MSME payables",
+    "quote": "So, if you ask us from a cash stress for our working capital, we don't see that stress on our books."
+   },
+   {
+    "topic": "Margin trajectory on niche projects",
+    "quote": "So what we are committing is not a decrease in margin, but a stabilized margin."
+   },
+   {
+    "topic": "Equity size for BESS",
+    "quote": "We are determining the project size currently."
+   }
+  ],
+  "hedge_index": 0.4,
+  "entities": []
+ }
+}

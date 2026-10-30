@@ -1,0 +1,124 @@
+{
+ "doc_id": "IN-d45ca55b-f468-4d8f-aafd-91185726e17c",
+ "market": "IN",
+ "company_id": "523754",
+ "name": "Mahindra EPC Irrigation Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-29",
+ "period": "2026-03",
+ "title": "Mahindra EPC Irrigation Ltd - 523754 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "Management reports record FY26 revenue of INR315.8 crores (+14.8%) and PBT of INR16.99 crores, but Q4 PBT fell to INR6.4 crores on a March PE pipe price spike and receivables are high at INR217 crores.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "your company registered a growth of 14.8% with INR315.8 crores revenue versus FY25 revenue of 275.1 crores"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "quote": "So we do have capex plans. We have capex plans every year and then obviously we manage our capex planning basis the requirements of the business"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Raw material prices spike in March",
+    "quote": "in February 2026, on average, the PE pipe grades saw a 58%, 59% price increase",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Project order book INR54 crores visible",
+    "quote": "There is definitely visibility for the INR55 crores, it's actually INR54 crores.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables INR217 crores, 80-90% subsidy",
+    "quote": "about 80% to 90% of it comes from the subsidy business",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Price hike pending government decision",
+    "quote": "Difficult to call, a point in time when the discussions will conclude",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth / margin outlook",
+    "value": "No numeric outlook; management does not give outlooks",
+    "change": "held",
+    "quote": "we don't tend to give outlooks"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Mahindra & Mahindra",
+    "relation": "partner"
+   },
+   {
+    "name": "Crisil",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Anti-dumping protection",
+   "Water & wastewater",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Negative operating FCF over 3-5 years",
+    "quote": "Last four years is total zero, and even five years if I ever were to take it's negative INR22 crores?"
+   },
+   {
+    "label": "Q4 PBT down on raw material spike",
+    "quote": "the company registered a INR6.4 crores PBT versus INR9.4 crores last Q4"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 1,
+   "growth": 2,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Price increase timing and EBITDA margin target",
+    "quote": "we don't tend to give outlooks"
+   },
+   {
+    "topic": "Receivables collection timing",
+    "quote": "Difficult to call, a point in time when the discussions will conclude"
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

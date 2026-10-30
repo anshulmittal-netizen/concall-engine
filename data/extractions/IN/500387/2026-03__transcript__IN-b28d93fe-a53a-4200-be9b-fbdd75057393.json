@@ -1,0 +1,187 @@
+{
+ "doc_id": "IN-b28d93fe-a53a-4200-be9b-fbdd75057393",
+ "market": "IN",
+ "company_id": "500387",
+ "name": "Shree Cement Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "Shree Cement Ltd - 500387 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cables & wires",
+  "thesis": "Shree Cement's Q4 FY26 volume rose 11% YoY, but utilisation at 66% and planned capex cut to ~INR1,500 crore for FY27 point to a supply-side slowdown while management pivots to chasing volume.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Supply discipline",
+   "Capital cycle",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 66,
+   "quote": "Capacity utilization during the quarter stood at 66% as compared to 56% during December 2025."
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "Management said a competitor's last call also showed it had slowed its aggression.",
+   "quote": "We have slowed down the capex. Even in the last concall of one of our competitors, they have also slowed their aggression."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 56% → 66% QoQ",
+    "quote": "Capacity utilization during the quarter stood at 66% as compared to 56% during December 2025.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "FY27 capex ~INR1,500 crore",
+    "quote": "the total capex estimation for the year '26-'27 is approximately INR1,500 crores and it should take its own course.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Price hike ~INR25 a bag in past month",
+    "quote": "About INR25 a bag.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Cost push INR150-200/t in Q1",
+    "quote": "there will be a cost impact of INR150 to INR200 in the second quarter as compared to the March '26.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Slowdown after 15 April",
+    "quote": "Till 15th April everything was all right. After that little slowdown has come.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Competition pressure may rise",
+    "quote": "As Mr. Bangur has said it is possible that competition pressure might rise",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year FY27 cement volume",
+    "value": "about 40 million tons",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect to reach about 40 million tons in this year. '2627, we should be around 40 million tons."
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "approx INR1,500 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the total capex estimation for the year '26-'27 is approximately INR1,500 crores"
+   },
+   {
+    "metric": "Depreciation FY27",
+    "value": "INR1,600-1,700 crore",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Yes, we are sticking to that."
+   },
+   {
+    "metric": "Capacity 80 MTPA",
+    "value": "80 million tons by 2029",
+    "change": "held",
+    "horizon": "FY29",
+    "quote": "We intend to reach 80 million tons by '29, but let us see."
+   },
+   {
+    "metric": "Fuel cost per kcal",
+    "value": "up 10-12% in Q1 from INR1.60",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "which is likely to go up by 10% to 12% in Q1. Q2 we are not in a position to comment."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 volume growth 2-3%",
+    "outcome": "met",
+    "quote": "we have delivered 2.2%."
+   },
+   {
+    "metric": "Narrow price gap to top player by INR15-20 a bag",
+    "outcome": "met",
+    "quote": "We have delivered on both these accounts"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Union Cement",
+    "relation": "peer"
+   },
+   {
+    "name": "Shree Cement East Private Limited",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Railway capex",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Packing and fuel cost push INR150-200/t in Q1",
+    "quote": "there will be a cost impact of INR150 to INR200 in the second quarter as compared to the March '26."
+   },
+   {
+    "label": "Mid-quarter demand slowdown in April-May",
+    "quote": "After that little slowdown has come."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 3,
+   "growth": 3,
+   "margin": 6,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "EBITDA per ton outlook",
+    "quote": "we have never in our history given any guidance on EBITDA per ton."
+   },
+   {
+    "topic": "Q2 cost impact",
+    "quote": "Q2 we are not in a position to comment."
+   },
+   {
+    "topic": "Fly ash availability in North",
+    "quote": "Hear me out come in Kolkata we will sit and talk and then make you understand."
+   },
+   {
+    "topic": "Regional pricing breakup",
+    "quote": "I don't have that kind of a breakup, but South is okay."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

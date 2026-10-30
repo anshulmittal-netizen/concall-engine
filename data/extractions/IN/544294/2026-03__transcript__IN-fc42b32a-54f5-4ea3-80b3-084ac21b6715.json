@@ -1,0 +1,178 @@
+{
+ "doc_id": "IN-fc42b32a-54f5-4ea3-80b3-084ac21b6715",
+ "market": "IN",
+ "company_id": "544294",
+ "name": "Rossell Techsys Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "Rossell Techsys Ltd - 544294 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Revenue up 87% to INR485 crore with EBITDA margin compressing to about 13.6%, management attributes it to qualification investment and guides FY27 growth similar to FY26 with a QIP planned, no numeric margin guidance beyond 17-22% band.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we have taken a strategic decision to lease an additional facility of approximately 210,000 square feet in close proximity to our existing operations"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "EBITDA margin down: FY25 ~15% to FY26 ~13.6%",
+    "quote": "our EBITDA increased from INR38 crores to INR66 crores",
+    "highlight": "EBITDA increased from INR38 crores to INR66 crores",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory coverage 10 to 7.67 months",
+    "quote": "Inventory coverage improved significantly from 10 months historically to 7.67 months",
+    "highlight": "Inventory coverage improved significantly from 10 months",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Growth FY27 similar to FY26 (~87%)",
+    "quote": "we're targeting the same kind of growth this year as well on our revenue moving forward",
+    "highlight": "targeting the same kind of growth this year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Semi and space revenue 300-400% growth targeted",
+    "quote": "we're looking at close to a 300% to 400% growth on our revenue from the previous year for both semiconductors and space",
+    "highlight": "300% to 400% growth on our revenue",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "similar to FY26 (~87%)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we're targeting the same kind of growth this year as well on our revenue moving forward"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "17% to 22% for current competencies; improvement in FY27",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "I've always said the margins will be between 17% to 22%"
+   },
+   {
+    "metric": "Semiconductor and space revenue",
+    "value": "300% to 400% growth",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we're looking at close to a 300% to 400% growth on our revenue from the previous year for both semiconductors and space"
+   },
+   {
+    "metric": "Inventory coverage",
+    "value": "from 7.6 months toward 4 months",
+    "change": "new",
+    "horizon": "long term",
+    "quote": "eventually be a 4 month inventory company"
+   },
+   {
+    "metric": "Semiconductor revenue potential",
+    "value": "US$200 million in three to five years",
+    "change": "new",
+    "horizon": "3-5 years",
+    "quote": "we can do up to even US$200 million in three years or four years from now"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "INR1,300 crore revenue in two years (prior call)",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Boeing",
+    "relation": "customer"
+   },
+   {
+    "name": "Amazon",
+    "relation": "customer"
+   },
+   {
+    "name": "Blue Origin",
+    "relation": "peer"
+   }
+  ],
+  "evasions": [
+   {
+    "topic": "PAT margin / profitability for FY27",
+    "quote": "So difficult to answer that question now, but from our current levels"
+   },
+   {
+    "topic": "MRO revenue size / TAM",
+    "quote": "To put a number might be tricky like Rishabh said, it's something we are working on"
+   },
+   {
+    "topic": "Cash flow positivity",
+    "quote": "We are expecting a ramp up I think in the coming years you should be able to see much improvisation in that."
+   }
+  ],
+  "hedge_index": 0.6,
+  "red_flags": [
+   {
+    "label": "Margin compression despite revenue doubling",
+    "quote": "Margins have been sequentially weaker and impact lower than what we have been aiming for and guiding for"
+   },
+   {
+    "label": "Debt rising; QIP to fund working capital",
+    "quote": "if we see the debt has been increasing"
+   },
+   {
+    "label": "Management says inventory coverage ~7.6 months vs 4-month aim; no cash flow positivity timeline",
+    "quote": "We are expecting a ramp up I think in the coming years"
+   },
+   {
+    "label": "Customer-funded pass-through not uniform",
+    "quote": "Some customers agree to it, some don't"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 1,
+   "growth": 6,
+   "margin": 4,
+   "other": 5
+  },
+  "themes": [
+   "Defence indigenisation",
+   "Semiconductors & OSAT",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ]
+ }
+}

@@ -1,0 +1,158 @@
+{
+ "doc_id": "IN-4f991634-ac17-424b-ae16-ec67875b4485",
+ "market": "IN",
+ "company_id": "500067",
+ "name": "Blue Star Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-12",
+ "period": "2026-03",
+ "title": "Blue Star Ltd - 500067 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Blue Star's FY26 cost pass-through is only ~8% of a 13% required price rise, with management guiding UCP margin 8-8.5% and Sri City RAC plant at ~100% utilisation, with the next line decision deferred to October.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 100,
+   "quote": "it is operating at 100% capacity, which is somewhere around 6.5 lakh units"
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "What we were to invest last year, we said that we will postpone and look at it in October."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Sri City RAC plant at 100% utilisation",
+    "quote": "it is operating at 100% capacity, which is somewhere around 6.5 lakh units",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Next RAC line decision deferred to October",
+    "quote": "What we were to invest last year, we said that we will postpone and look at it in October.",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "pricing",
+    "label": "Price hike ~8% realised of 13% needed",
+    "quote": "we would have realized up to 8% out of 13% price increase, 5 more percentage of increase will happen",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "UCP margin 8-8.5% held for FY27",
+    "quote": "as far as this financial year is concerned, as we see today, we believe 8% to 8.5% is possible",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Summer set in 13 April; primary pickup",
+    "quote": "We have been waiting for the summer season to take off in a big way, which indeed happened on 13th of April.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Segment 1 (EM projects & commercial AC) EBIT margin",
+    "value": "7% to 7.5%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we want to continue to ma intain that 7% to 7.5% outlook"
+   },
+   {
+    "metric": "Segment 2 (UCP) margin",
+    "value": "8% to 8.5%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Segment 2, we want to maintain 8% to 8.5%, okay?"
+   },
+   {
+    "metric": "Annual capex",
+    "value": "Rs 250-350 Crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the annual capex can be anywhere in the region of around RS.250 Crore to RS.350 Crore"
+   },
+   {
+    "metric": "Commercial AC growth",
+    "value": "8% to 10%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "The outlook continues to be around 8% to 10% kind of growth"
+   },
+   {
+    "metric": "Data centre MEP revenue",
+    "value": "Rs 1,000 Crore to Rs 3,000 Crore in 3 years",
+    "change": "new",
+    "horizon": "3 years",
+    "quote": "the MEP part of that RS.1,000 Crore has the potential to go to RS.3,000 Crore within 3 years"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Data-centre power & cooling",
+   "Premiumisation in consumption",
+   "Auto EV transition",
+   "Tariffs & trade policy",
+   "Rural demand recovery",
+   "Electronics manufacturing (EMS/PLI)"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin pressure through FY27 from commodity and plastic costs",
+    "quote": "The margins will be continuing to be under pressure until 2030."
+   },
+   {
+    "label": "Channel inventory built ahead of price hike",
+    "quote": "They had bought inventory in December because there was an energy level change."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 4,
+   "margin": 5,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Advertising spend and margin protection",
+    "quote": "There is no intent to stop our investments"
+   },
+   {
+    "topic": "Provision reversal question",
+    "quote": "What provision reversal I am not able to follow."
+   },
+   {
+    "topic": "Payables decline on balance sheet",
+    "quote": "Sorry, Nikhil, about the balance sheet and capex."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

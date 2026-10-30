@@ -1,0 +1,159 @@
+{
+ "doc_id": "IN-896b82aa-3c28-44d9-8798-8573249f77ec",
+ "market": "IN",
+ "company_id": "532698",
+ "name": "Nitin Spinners Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "Nitin Spinners Ltd - 532698 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.94,
+ "read": {
+  "subsector": "Textile & apparel",
+  "thesis": "Yarn spread up to ~INR120-125/kg from ~INR110 with spinning at 98%+ utilisation and ~INR1,100 crore capex (fabric +35m m, spinning +22k t) commissioning H2 FY27 — supply adds ahead, demand and spreads firm.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 98,
+   "quote": "spinning capacity was operating at over 98% utilization and woven fabric capacity was operating at over 90% utilization"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said some domestic capacity has gone out from obsolescence and lack of working capital, and few new entrants expected.",
+   "quote": "I don't expect that majority of the capacity, which had very small economic sense will come back"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Spinning utilisation over 98%",
+    "quote": "spinning capacity was operating at over 98% utilization",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "structure",
+    "label": "Domestic capacity exits, unlikely to return",
+    "quote": "Some of these capacities have gone out because of obsolescence, because of lack of working capital",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Yarn spread INR110 → INR120-125/kg",
+    "quote": "The last quarter spreads were about INR110 a kg and now it is about INR125",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "New capacity adds ~INR1,100 crore, H2 FY27",
+    "quote": "we'll add another 35 million meters to 70 (Errata: Actual Number to be read as 75) million meters annually and spinning capacity by another 22,000 tons",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Normalised EBITDA margin",
+    "value": "16% to 20%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "our normal margin should be in the range of 16% to 20%. We expect that we should be able to maintain"
+   },
+   {
+    "metric": "Revenue uplift from new capacity and yarn normalisation",
+    "value": "30% to 35% over existing revenue",
+    "change": "new",
+    "horizon": "post capex",
+    "quote": "we should be -- from here onwards, we should be easily able to add 30% to 35% of our -- to our existing revenue numbers"
+   },
+   {
+    "metric": "Renewable power savings",
+    "value": "INR50 crore per annum; INR30-35 crore this year",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect that we will have a saving of around INR30 crores to INR35 crores"
+   },
+   {
+    "metric": "Total debt",
+    "value": "INR1,900-2,000 crore after commissioning",
+    "change": "new",
+    "horizon": "post commissioning",
+    "quote": "our normal total debt, we are expecting to be less than -- in the range of about INR1,900 crores to INR2,000 crores"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Normalised EBITDA margin 16-20%",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "SMIFS Limited",
+    "relation": "peer"
+   },
+   {
+    "name": "Bangladesh",
+    "relation": "competitor"
+   },
+   {
+    "name": "Vietnam",
+    "relation": "competitor"
+   },
+   {
+    "name": "China",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)",
+   "Anti-dumping protection",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Knitted fabric utilisation low, customers lost to competitors",
+    "quote": "we also lost some of the customers to other competing countries, which we are trying to make up"
+   },
+   {
+    "label": "Management declined to share inventory numbers",
+    "quote": "I'm sorry that I cannot share the numbers on the inventory side"
+   }
+  ],
+  "evasions": [
+   {
+    "topic": "Inventory levels",
+    "quote": "I'm sorry that I cannot share the numbers on the inventory side"
+   },
+   {
+    "topic": "Future capex",
+    "quote": "At this point of time, I will not be able to comment on the future capex"
+   },
+   {
+    "topic": "Fabric margin target",
+    "quote": "we are not targeting any margins. And specifically, we do not give any numbers for the fabric margins"
+   }
+  ],
+  "hedge_index": 0.4,
+  "analyst_mix": {}
+ }
+}

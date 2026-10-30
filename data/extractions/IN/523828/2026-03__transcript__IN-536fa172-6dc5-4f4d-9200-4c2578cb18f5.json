@@ -1,0 +1,198 @@
+{
+ "doc_id": "IN-536fa172-6dc5-4f4d-9200-4c2578cb18f5",
+ "market": "IN",
+ "company_id": "523828",
+ "name": "Menon Bearings Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-24",
+ "period": "2026-03",
+ "title": "Menon Bearings Ltd-$ - 523828 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Management guides ~25% annual growth toward INR500 crore by FY28 and 20-22% EBITDA margin, with utilisation rising (Bi-Metal 85%, Alkop 65%) but no hard capacity expansion beyond modest capex of about INR35 crore over two years.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Operating leverage",
+   "Pass-through pricing",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 85,
+   "quote": "we are up to the production targets and capacity utilization to the extent of 85% in Bi-Metal"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Planned CapEx for Menon Bearings, it is a bearing division, it is a Bi-Metal division, INR25 crores for next two years."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Bi-Metal utilisation 85%",
+    "quote": "capacity utilization to the extent of 85% in Bi-Metal",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Raw material pass-through quarterly",
+    "quote": "we were successful in passing on that burden of raw material to the customers to the larger extent",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Debtor turnover above 180 days",
+    "quote": "the total turnaround time of debtors is more than 180 days",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "INR500 cr revenue by FY28 target",
+    "quote": "we will take all -out efforts to see how we can reach INR500 crores by '28",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin",
+    "value": "20% to 22% for next two years",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "it should be about between 20 % to 22% during next two years"
+   },
+   {
+    "metric": "Revenue growth",
+    "value": "25% year-on-year",
+    "change": "new",
+    "horizon": "next few years",
+    "quote": "we are targeting at a rate of 25% year-on-year for next few years"
+   },
+   {
+    "metric": "FY27 revenue",
+    "value": "more than INR360 crore",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "Precisely, what we have estimated is more than INR 360 crores."
+   },
+   {
+    "metric": "Asset turnover",
+    "value": "2x consolidated",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "we should be able to reach asset turnover of 2. By '28, we should be reaching that 100%."
+   },
+   {
+    "metric": "Alkop revenue",
+    "value": "more than INR120 crore in next 2 years",
+    "change": "new",
+    "horizon": "2 years",
+    "quote": "we can reach more than INR120 crores in next 2 years so far as Alkop is concerned"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revenue INR275 crore then INR290 crore",
+    "outcome": "met",
+    "quote": "We had given a figure of INR 275 crore for this year that we have already achieved."
+   },
+   {
+    "metric": "Dynamometer delivery by last year August",
+    "outcome": "missed",
+    "quote": "we are 100% sure that it will be completed by August"
+   }
+  ],
+  "entities": [
+   {
+    "name": "John Deere",
+    "relation": "customer"
+   },
+   {
+    "name": "Eaton",
+    "relation": "customer"
+   },
+   {
+    "name": "Taco Prestolite",
+    "relation": "customer"
+   },
+   {
+    "name": "Mayekawa",
+    "relation": "customer"
+   },
+   {
+    "name": "Tesla",
+    "relation": "customer"
+   },
+   {
+    "name": "Honeywell",
+    "relation": "customer"
+   },
+   {
+    "name": "Tata Motors",
+    "relation": "customer"
+   },
+   {
+    "name": "Allison Transmission",
+    "relation": "customer"
+   },
+   {
+    "name": "Magna Transmission",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Auto EV transition",
+   "Railway capex",
+   "Aerospace diversification",
+   "Export growth",
+   "Pass-through pricing"
+  ],
+  "red_flags": [
+   {
+    "label": "Debtors over 180 days, export receivables stretched",
+    "quote": "the total turnaround time of debtors is more than 180 days"
+   },
+   {
+    "label": "Repeated delayed commissioning of dynamometer",
+    "quote": "we actually ordered this machine or testing machine for (from) two other manufacturers but unfortunately they could not complete"
+   },
+   {
+    "label": "Interest expense rising, working capital strain",
+    "quote": "The one thing which is sticking out is the high interest expenses."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 6,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Order book split by auto vs rail vs aerospace",
+    "quote": "Truly speaking, we are not bifurcating order book solution into auto and HCV/LCV."
+   },
+   {
+    "topic": "Export ex-works shift",
+    "quote": "So, it's not very easy. Some customers are..."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

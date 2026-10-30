@@ -1,0 +1,150 @@
+{
+ "doc_id": "IN-844e0e92-d7ea-4694-83ab-3db6069931f9",
+ "market": "IN",
+ "company_id": "540595",
+ "name": "Tejas Networks Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-21",
+ "period": "2026-03",
+ "title": "Tejas Networks Ltd - 540595 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "FY26 was a loss-making transition year: revenue ₹1,103 cr and PAT loss ₹909 cr, with inventory ₹2,438 cr and receivables ₹3,258 cr; no numeric guidance, only a 'goal' of PAT-positive FY27.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory ₹2,438 cr vs ₹2,363 cr QoQ",
+    "quote": "Inventory at the end of the quarter stood at INR2,438 crores compared to INR2,363 crores in the previous quarter.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables ₹3,258 cr, BSNL collections pending",
+    "quote": "we expect the receivables to progressively come down over the next couple of quarters.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "No numeric guidance; PAT-positive FY27 is 'the goal'",
+    "quote": "Yes, we don't give the financial guidance, but yes, that's the goal.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Order book ₹1,514 cr vs ₹1,019 cr YoY",
+    "quote": "We ended with INR1,514 crores at the end of Q4 as opposed to INR1,019 crores at the end of Q4 of FY25.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Investment not cut; intangibles ₹400 cr → ₹960 cr",
+    "quote": "we had not cut down on the investments during the year because of our outlook for the future",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Financial guidance",
+    "value": "None; PAT-positive FY27 described as a goal",
+    "change": "dropped",
+    "quote": "Yes, we don't give the financial guidance, but yes, that's the goal."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "BSNL",
+    "relation": "customer"
+   },
+   {
+    "name": "NEC",
+    "relation": "partner"
+   },
+   {
+    "name": "Rakuten Symphony",
+    "relation": "partner"
+   },
+   {
+    "name": "TCS",
+    "relation": "customer"
+   },
+   {
+    "name": "BharatNet",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Electronics manufacturing (EMS/PLI)"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory and receivables build; net debt ₹3,531 cr",
+    "quote": "The cash position at the end of the quarter was INR505 crores and a net debt of INR3,531 crores."
+   },
+   {
+    "label": "Debt-funded intangibles with FY26 PAT loss ₹909 cr",
+    "quote": "our investment in intangible is debt funded"
+   },
+   {
+    "label": "CFO resignation and board changes",
+    "quote": "Mr. Sumit Dhingra, our current CFO, has resigned from the services of the company"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 5,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue and margin guidance",
+    "quote": "we've never given revenue or any other financial number guidance in the past. And so, I think we will stick to that."
+   },
+   {
+    "topic": "BSNL add-on PO timing",
+    "quote": "For now, I don't think we have any further clarity with respect to the BSNL add-on order."
+   },
+   {
+    "topic": "NEC deal size",
+    "quote": "typically we do not go into specific deal numbers and all"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

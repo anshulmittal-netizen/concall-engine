@@ -1,0 +1,154 @@
+{
+ "doc_id": "IN-4e7700c5-bb08-4fdf-afcf-175cb3eaeff9",
+ "market": "IN",
+ "company_id": "543276",
+ "name": "Craftsman Automation Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-13",
+ "period": "2026-03",
+ "title": "Craftsman Automation Ltd - 543276 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Powertrain utilisation only ~65-70% and alloy wheels at ~3M annualised exit vs 5.5M capacity, with management deferring further alloy expansion; FY27 growth guided mid-teens and capex undecided until September.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 60,
+   "quote": "Overall, if you take that new powertrain business also into consideration, our capacity utilization is around 60%."
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "We want to wait and watch on this matter. We are looking at the commodity prices pass through on the aluminum pricing."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Alloy wheel exit ~3M vs 5.5M capacity",
+    "quote": "our exit rate is around close to 3 million (nos) on the annualized basis as of March, and our capacity is around 5.5 million (nos).",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Alloy wheel expansion deferred past FY26",
+    "quote": "I don't think we'll take a decision in this financial year to further stretch the alloy wheel capacity.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Powertrain utilisation 65-70%",
+    "quote": "Powertrain, we are still at around 65%, 70% because there are some pockets and segments where the customers are not doing well.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth mid-teens",
+    "quote": "It is truly double digit, most probably, in the mid-teens, I would say.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Sunbeam margins still single-digit, reset underway",
+    "quote": "We are just lacking behind on the margin-wise with a single, still at single-digit for various reasons.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "mid-teens, double digit",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "It is truly double digit, most probably, in the mid-teens, I would say."
+   },
+   {
+    "metric": "Net debt to EBITDA",
+    "value": "below 2 this year, then ~1.5",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "it'll be less than 2, I would say, in the coming, the current year itself, totally. And then it'll go down further to 1.5."
+   },
+   {
+    "metric": "Aluminium business revenue",
+    "value": "$1 billion in 2-3 years",
+    "change": "held",
+    "horizon": "2-3 years",
+    "quote": "I think it will be 2 to 3 years' time."
+   },
+   {
+    "metric": "Stationary engine order book",
+    "value": "first $100 million revenue in FY29-30",
+    "change": "held",
+    "horizon": "FY29-FY30",
+    "quote": "we will be able to reach that $100 million sort of revenue in '29, '30."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Sunbeam",
+    "relation": "peer"
+   },
+   {
+    "name": "DR Axion",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital outflow INR600 crore FY26 after INR400 crore FY25",
+    "quote": "in FY 2025 there was a negative working capital impact of about INR400 crores, and FY 2026 there's another INR600 crores."
+   },
+   {
+    "label": "Labour cost inflation and manpower pressure",
+    "quote": "What is worrying us the inflationary manpower cost, which is very difficult to pass on to customer."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 2,
+   "margin": 3,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "FY27 capex quantum",
+    "quote": "On FY 2027 itself, we are not very clear about the capex as today"
+   },
+   {
+    "topic": "Sunbeam margin timing",
+    "quote": "We will see the results coming into Q2 from Sunbeam."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

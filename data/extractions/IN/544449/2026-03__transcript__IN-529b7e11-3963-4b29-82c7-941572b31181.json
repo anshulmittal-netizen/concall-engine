@@ -1,0 +1,143 @@
+{
+ "doc_id": "IN-529b7e11-3963-4b29-82c7-941572b31181",
+ "market": "IN",
+ "company_id": "544449",
+ "name": "Anthem Biosciences Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Anthem Biosciences Ltd - 544449 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "FY26 revenue grew about 15% to Rs 2,124 cr with EBITDA up 31% to Rs 990 cr; management refused FY27 guidance but disclosed Unit 4 capex of about Rs 700 cr next year, lifting capacity sharply.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said Korea and China large companies have built massive large-molecule capacity, ahead of Anthem.",
+   "quote": "we plug away at this , because I think in terms of early development, Anthem is a very, very good partner"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Unit 4 capex ~Rs 1,200 cr over two years",
+    "quote": "we are looking at investing almost about Rs. 1,200 odd crores across two years, this year FY27 and in FY28",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Destocking behind us, restocking now",
+    "quote": "the destocking that had to happen has already happened. So, this year, everything will be in the positive territory, they are restocking now.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "No FY27 guidance given",
+    "quote": "We want to refrain from giving any guidance for FY27 or FY28",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Specialty ingredients Q4 growth 8%",
+    "quote": "We delivered about 8% growth in the fourth quarter",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "none given; long-term aspiration around 20%",
+    "change": "dropped",
+    "quote": "We want to refrain from giving any guidance for FY27 or FY28"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "held at 38-40% implied by delivery to date",
+    "change": "held",
+    "quote": "We've delivered so far, and we'll continue to deliver those numbers going forward as well."
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "about Rs 700 crore, then about Rs 500 crore",
+    "change": "new",
+    "quote": "Roughly about Rs. 700 crores and then post that will be about Rs. 500 crores."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue growth ~20%",
+    "outcome": "missed",
+    "quote": "we delivered about 15% revenue growth"
+   },
+   {
+    "metric": "EBITDA and PAT growth ~20%",
+    "outcome": "met",
+    "quote": "a 30% EBITDA growth and 30% plus PAT growth for FY26"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Celltrion",
+    "relation": "competitor"
+   },
+   {
+    "name": "Samsung",
+    "relation": "competitor"
+   },
+   {
+    "name": "Lonza",
+    "relation": "competitor"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Revenue growth missed own 20% target",
+    "quote": "Last year , we missed out on one parameter"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 5,
+   "margin": 2,
+   "other": 8
+  },
+  "evasions": [
+   {
+    "topic": "FY27 guidance",
+    "quote": "I would refrain from giving a forward -looking FY27 or a near-term guidance"
+   },
+   {
+    "topic": "Specialty ingredients order book",
+    "quote": "We don't have order book sort of a concept in specialty ingredients"
+   }
+  ],
+  "hedge_index": 0.4,
+  "themes": []
+ }
+}

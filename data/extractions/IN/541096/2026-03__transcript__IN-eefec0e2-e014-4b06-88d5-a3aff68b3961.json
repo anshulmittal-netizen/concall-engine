@@ -1,0 +1,173 @@
+{
+ "doc_id": "IN-eefec0e2-e014-4b06-88d5-a3aff68b3961",
+ "market": "IN",
+ "company_id": "541096",
+ "name": "Bharat Parenterals Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-20",
+ "period": "2026-03",
+ "title": "Bharat Parenterals Ltd - 541096 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Standalone BPL revenue fell 23% to INR 234 cr with utilisation at 48%/21%/24%, so supply is loose; FY27 guide of 10-15% growth rests on a INR 171 cr order book and two pending audits.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 48,
+   "quote": "We are at 48% on the General, 21% on beta-lactam, and 24% on cephalosporins."
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "we don't need fresh capex to grow the standalone business by 10% to 15% next year."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Standalone utilisation 48% / 21% / 24%",
+    "quote": "We are at 48% on the General, 21% on beta-lactam, and 24% on cephalosporins.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Standalone revenue down 23% to INR 234 cr",
+    "quote": "the revenue for FY '26 stood at INR234 crores against INR 304 crores last year, a decline of about 23%.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Varenyam Bio commercial timeline pushed to Q4 FY29",
+    "quote": "we are 3 months, at least one quarter running behind on schedule",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "novelty",
+    "label": "Innoxel first positive EBITDA quarter INR 1.4 cr",
+    "quote": "In Q4 FY '26, Innoxel turned EBITDA positive for the first time.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Standalone revenue growth FY27",
+    "value": "10% to 15%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we expect revenue growth of 10% to 15% with EBITDA margins in the same 10% to 15% range."
+   },
+   {
+    "metric": "Innoxel revenue growth FY27",
+    "value": "35% to 45%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "For Innoxel, we expect revenue growth of 35% to 45% with EBITDA margins of 20% to 25%."
+   },
+   {
+    "metric": "Varenyam Healthcare revenue growth FY27",
+    "value": "20% to 25%",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "For Varenyam Healthcare, we expect revenue growth of about 20% to 25% with EBITDA margins of 8% to 13%."
+   },
+   {
+    "metric": "Innoxel out-licensing income FY27",
+    "value": "INR 70 crores to INR 90 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "overall out-licensing income is expected between INR 70 crores to INR 90 crores."
+   },
+   {
+    "metric": "Varenyam Bio commissioning",
+    "value": "September 2027",
+    "change": "cut",
+    "horizon": "FY28",
+    "quote": "commissioning of the facility in September of 2027"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Standalone revenue growth 12% to 14% (prior call, per analyst)",
+    "outcome": "missed",
+    "quote": "the standalone business will grow by 12% to 14% on the top-line basis"
+   },
+   {
+    "metric": "Varenyam Healthcare FY27 top-line INR 75-80 cr (prior, per management recollection)",
+    "outcome": "dropped",
+    "quote": "the guidance was always somewhere around INR 75 crores of top-line revenue, between INR 75 crores and an INR 80 crores"
+   },
+   {
+    "metric": "Varenyam Bio commercialisation in FY27 (prior call, per analyst)",
+    "outcome": "missed",
+    "quote": "we are 3 months, at least one quarter running behind on schedule"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Innoxel Lifesciences",
+    "relation": "partner"
+   },
+   {
+    "name": "Varenyam Healthcare",
+    "relation": "partner"
+   },
+   {
+    "name": "Varenyam Biolifesciences",
+    "relation": "partner"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Standalone revenue down 23%; guidance cut and missed",
+    "quote": "the revenue for FY '26 stood at INR234 crores against INR 304 crores last year, a decline of about 23%."
+   },
+   {
+    "label": "Varenyam Bio timeline slipped one quarter or more",
+    "quote": "we are 3 months, at least one quarter running behind on schedule"
+   },
+   {
+    "label": "Consolidated PAT lower; Innoxel PAT loss INR 43.4 cr",
+    "quote": "PAT loss to INR 43.4 crores from INR 67.9 crores last year."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 2,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Standalone growth base and recovery path",
+    "quote": "The base business, we are expecting partial recovery this year."
+   },
+   {
+    "topic": "Innoxel CDMO revenue share by FY28",
+    "quote": "The total number is something that I will not be able to give at this moment"
+   }
+  ],
+  "hedge_index": 0.5,
+  "themes": []
+ }
+}

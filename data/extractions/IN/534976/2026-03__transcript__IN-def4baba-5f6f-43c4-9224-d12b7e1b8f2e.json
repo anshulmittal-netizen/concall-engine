@@ -1,0 +1,157 @@
+{
+ "doc_id": "IN-def4baba-5f6f-43c4-9224-d12b7e1b8f2e",
+ "market": "IN",
+ "company_id": "534976",
+ "name": "V-Mart Retail Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-13",
+ "period": "2026-03",
+ "title": "V-Mart Retail Ltd - 534976 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Q4 FY26 revenue +24% with 12% LTL (10th straight quarter) and EBITDA +56% to INR106 cr at 10.9% margin, but gross margin fell 1% and capex is guided up to INR170-180 cr.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "For the next year, the capex is estimated at roughly around INR170 crores, INR180 crores."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Days of inventory down 3 days",
+    "quote": "our days of inventory also improved by 3 days, which is on a 5-quarter rolling average basis",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Yarn up 10-15%, apparel cost up 5-7%",
+    "quote": "there is a rise of almost 10% to 15% in the yarn prices, which effectively converts to almost 5% to 7% in the apparel prices",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Capex guided up to INR170-180 cr",
+    "quote": "For the next year, the capex is estimated at roughly around INR170 crores, INR180 crores.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Competitors opening many stores",
+    "quote": "The competition has got good targets, where they're trying to open up a lot of stores in the coming quarters and coming year as well.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Store additions guided 13-15% area growth",
+    "quote": "The guidance for the next year remains the same at 13% to 15% area addition every year",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Area addition",
+    "value": "13% to 15% every year, net of 1-2% closures",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "The guidance for the next year remains the same at 13% to 15% area addition every year"
+   },
+   {
+    "metric": "Capex",
+    "value": "INR170-180 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "For the next year, the capex is estimated at roughly around INR170 crores, INR180 crores."
+   },
+   {
+    "metric": "Long-term ROC",
+    "value": "18% then 20%+, 22% aspiration",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "So right now we are around 14.5% we want to go to 18% and then maybe 20% and above 20%."
+   },
+   {
+    "metric": "Rent as % of sales",
+    "value": "around 7%, 7-7.5% ballpark",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "we should be hovering and then we should be comfortable around say 6%, 7% to 7.5% and 7% is the ballpark figure"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "LimeRoad",
+    "relation": "peer"
+   },
+   {
+    "name": "Unlimited",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Rural demand recovery",
+   "Premiumisation in consumption",
+   "Water & wastewater"
+  ],
+  "red_flags": [
+   {
+    "label": "Gross margin down 1% YoY with inventory provisions",
+    "quote": "gross margins actually for the quarter decreased year-on-year by 1%. This was on account of provision taken on inventory"
+   },
+   {
+    "label": "Crude-linked input cost squeeze on FY27 deliveries",
+    "quote": "all the raw materials, all the products, all the services, which are all getting affected because of the crude oil prices going up"
+   },
+   {
+    "label": "Management declined to give margin timeline",
+    "quote": "Now to set a timeline, whether this will happen in the next year or the year after that, I can't see that."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 3,
+   "capex": 2,
+   "balance_sheet": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "FY27 margin trajectory",
+    "quote": "Now to set a timeline, whether this will happen in the next year or the year after that, I can't see that."
+   },
+   {
+    "topic": "Margin bridge question",
+    "quote": "Sameer, please talk to Anand and come and help my FP&A team"
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

@@ -1,0 +1,144 @@
+{
+ "doc_id": "IN-8f14388d-b29b-4119-8016-9c363132beee",
+ "market": "IN",
+ "company_id": "530813",
+ "name": "KRBL Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "KRBL Ltd - 530813 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "Q4 domestic revenue record INR1,230 cr (+22%) but exports fell 33% to INR279 cr on Middle East disruption; paddy and rice inventory fell to 657k tonnes and no export run-rate or guidance was given.",
+  "archetype": "None",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 exports down 33% to INR279 cr",
+    "quote": "Our export revenues for Q4 FY2026 stood at INR279 crores compared to INR450 crores in Q4 FY2025.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Domestic realisation +2-3% expected Q1",
+    "quote": "I think another 2% to 3% improvement in average realization will be seen in quarter one in the domestic front.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Rice inventory 476k → 427k tons",
+    "quote": "rice inventory stood at 230,000 tons and 427,000 tons, respectively, compared to 217,000 tons and 476,000 tons",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Domestic volume growth ~10% target",
+    "quote": "we are working towards the 10% volume growth year-over-year.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Domestic volume growth FY27",
+    "value": "~10% YoY",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are working towards the 10% volume growth year-over-year."
+   },
+   {
+    "metric": "Domestic realisation Q1 FY27",
+    "value": "+2% to 3% QoQ",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "another 2% to 3% improvement in average realization will be seen in quarter one in the domestic front."
+   },
+   {
+    "metric": "Dividend FY26",
+    "value": "450% of face value (INR103 cr)",
+    "change": "new",
+    "horizon": "FY26",
+    "quote": "A dividend of 450% of face value translating into INR103 crores has been approved by the Board"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "USDA",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Rural demand recovery",
+   "Premiumisation in consumption",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "ED matter sub judice; management declined to respond",
+    "quote": "as the ED matter is sub judice , we will not be in a position to respond to queries on this matter."
+   },
+   {
+    "label": "Export channel inventory not quantified; April export run-rate withheld",
+    "quote": "We don’t have. April number, we don’t."
+   },
+   {
+    "label": "Real estate capital allocation undecided",
+    "quote": "we are not very clear whether we should invest in real estate or not"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 5,
+   "margin": 1,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Q4 market share",
+    "quote": "we don't have Q4 market share levels."
+   },
+   {
+    "topic": "April export run-rate and Q1 export trend",
+    "quote": "We'll not be able to share month-wise numbers."
+   },
+   {
+    "topic": "Export channel inventory",
+    "quote": "difficult to comment on channel inventory"
+   },
+   {
+    "topic": "Rice price outlook FY27",
+    "quote": "It is too premature to comment anything on the price."
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

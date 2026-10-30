@@ -1,0 +1,158 @@
+{
+ "doc_id": "IN-cce6df52-2903-4f3c-bd91-5d533d41adaa",
+ "market": "IN",
+ "company_id": "544060",
+ "name": "RBZ Jewellers Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-19",
+ "period": "2026-03",
+ "title": "RBZ Jewellers Ltd - 544060 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Gems & jewellery",
+  "thesis": "Gold jeweller with no FY27 guidance; capacity utilisation only 50-55%, management says no manufacturing capex needed, while two large and two mid-format stores need ~INR125-150 crore inventory each, debt rising to ~1:1.2.",
+  "archetype": "None",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 52.5,
+   "quote": "The capacity utilization is approximately 50% or 55%."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "I think right now, we are not looking for any kind of capex in manufacturing setup."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation ~50-55%, no mfg capex",
+    "quote": "The capacity utilization is approximately 50% or 55%.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Trade receivables 17 to 56 crore",
+    "quote": "our trade receivables have jumped like from 17 to 56",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "No FY27 guidance given",
+    "quote": "There is no guidance for this year, frankly saying.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Gold price up; ~3-4 pt inventory gain assumed",
+    "quote": "assuming that around INR10 crores to INR12 crores or INR10 crores to INR11 crores or INR12 crores should be an inventory gain number",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue and PAT",
+    "value": "none given",
+    "change": "dropped",
+    "quote": "There is no guidance for this year, frankly saying."
+   },
+   {
+    "metric": "Surat and Rajkot store timelines",
+    "value": "operations by Q2 FY27",
+    "change": "held",
+    "quote": "both the showrooms are targeted to commence operations by quarter 2 of FY27."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q4 revenue growth in line with prior guidance",
+    "outcome": "met",
+    "quote": "revenue growth broadly in line with the guidance and expectations shared with investors in the previous quarter"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Shringar",
+    "relation": "competitor"
+   },
+   {
+    "name": "BlueStone",
+    "relation": "competitor"
+   },
+   {
+    "name": "CaratLane",
+    "relation": "competitor"
+   },
+   {
+    "name": "IIJS",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)",
+   "Working-capital stress"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables jumped 17 to 56 crore; mgmt cites exhibition-driven spike",
+    "quote": "our trade receivables have jumped like from 17 to 56"
+   },
+   {
+    "label": "Gold inventory on balance sheet funded by short-term debt (INR120 crore); peak debt 1:1.2",
+    "quote": "INR120 crores are in short-term debt?"
+   },
+   {
+    "label": "Inventory gains undisclosed; PAT ex-gains guided loosely as INR40-45 crore",
+    "quote": "somewhere around INR40 crores, INR45 crores should be the PAT"
+   },
+   {
+    "label": "Management declined FY27 guidance; evasive on Surat/Rajkot sales ramp",
+    "quote": "we would really not give out the guidance for this year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 3,
+   "growth": 6,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "FY27 guidance",
+    "quote": "I think in the scenarios like this, we would really not give out the guidance for this year."
+   },
+   {
+    "topic": "Inventory gain number",
+    "quote": "currently, I do not have a number on it."
+   },
+   {
+    "topic": "Surat/Rajkot sales ramp",
+    "quote": "this is too much a nascent kind of a stage wherein we would comment anything."
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

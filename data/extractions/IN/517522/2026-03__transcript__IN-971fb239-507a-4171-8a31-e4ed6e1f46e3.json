@@ -1,0 +1,169 @@
+{
+ "doc_id": "IN-971fb239-507a-4171-8a31-e4ed6e1f46e3",
+ "market": "IN",
+ "company_id": "517522",
+ "name": "Rajratan Global Wire Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-29",
+ "period": "2026-03",
+ "title": "Rajratan Global Wire Ltd - 517522 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cables & wires",
+  "thesis": "Q4 FY26 EBITDA margin dipped on a ~INR10,000/t steel spike not passed through until April; management guides 13-14% sustainable margin and ~17-18% FY27 volume growth to ~155,000t, while Chennai capacity doubles to 60,000t amid admitted industry overcapacity.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": -1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 88,
+   "quote": "Chennai reached peak in the month of March, which was 85% to 90% of installed capacity."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said current capacity is much more than demand and some global players may not survive.",
+   "quote": "we have decided to put in balancing machines to double the capacity"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Chennai capacity 30,000t → 60,000t",
+    "quote": "we will become a 60,000 tons capacity plant by second quarter of this financial year",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Price hike passed on from April",
+    "quote": "we have been able to pass on the price increase in the current quarter",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Capacity exceeds demand; consolidation",
+    "quote": "Currently capacity is much more than the demand.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Raw material share 57% → 63%",
+    "quote": "If you look at our raw material consumption percentage from 57% has gone to 63% in the current quarter.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Tyre market share back to 42-43%",
+    "quote": "our market share has again reached to 42% to 43%, which had come down to 35% to 37%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Sustainable consolidated EBITDA margin",
+    "value": "13.5% to 14%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "You can continue to assume that we will be able to maintain this EBITDA level 13.5% to 14% safely."
+   },
+   {
+    "metric": "Volume growth",
+    "value": "17% to 18%; ~155,000 t total sales",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "next year you can estimate a 155,000 tons of total sales if things remain normal globally."
+   },
+   {
+    "metric": "Thailand volume",
+    "value": "10% to 11% growth to 55,000-56,000 t",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Thailand from current year volume which is close to 51,000 will grow to 55,000 to 56,000."
+   },
+   {
+    "metric": "Indian exports",
+    "value": "~15,000 t",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Next year probably we are expecting to touch about 15,000 tons of export from India."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Margin reversal to 13-14% (from 9M call)",
+    "outcome": "missed",
+    "quote": "the margin dip is purely because of the sudden increase in wire rod price"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Rajratan Thailand",
+    "relation": "peer"
+   },
+   {
+    "name": "Rajratan USA",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Capex cycle revival (private)",
+   "Nearshoring / reshoring (US)",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 EBITDA miss; RM cost not passed through",
+    "quote": "we could not achieve the EBITDA targeted EBITDA. That is because of the high prices of raw material."
+   },
+   {
+    "label": "Rising debt and working capital",
+    "quote": "we don't expect any reduction in working capital requirement, rather we see some more requirement of working capital."
+   },
+   {
+    "label": "PLI targets missed, benefit uncertain",
+    "quote": "first year target -- targeted production as committed to them and second year targeted production was also not achieved"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 5,
+   "growth": 6,
+   "margin": 7,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Regional EBITDA and Thailand/US margins",
+    "quote": "I think we'll give you this answer separately. I don't have that calculation right now."
+   },
+   {
+    "topic": "Tariff impact on US revenue",
+    "quote": "Don't expect us to tell you everything."
+   },
+   {
+    "topic": "Chennai utilisation ramp",
+    "quote": "Specific things are very difficult to commit today."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

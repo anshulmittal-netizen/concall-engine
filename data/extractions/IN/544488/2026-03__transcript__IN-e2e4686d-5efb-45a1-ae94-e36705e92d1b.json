@@ -1,0 +1,169 @@
+{
+ "doc_id": "IN-e2e4686d-5efb-45a1-ae94-e36705e92d1b",
+ "market": "IN",
+ "company_id": "544488",
+ "name": "Vikram Solar Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-13",
+ "period": "2026-03",
+ "title": "Vikram Solar Ltd - 544488 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Record FY26 revenue of INR4,800 crores and 3.3 GW shipments, but per-watt EBITDA falling from ~INR6 toward INR1.75–2 on non-DCR volumes as cell costs rise and captive cell is delayed to FY28.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -2,
+   "structure": -1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said the industry will rationalise to 80-100 GW of integrated capacity; headline module capacity announcements by others were dismissed as addressed by backward integration.",
+   "quote": "The discussion around the headline module capacity announcements will be addressed by the imminent backward integration."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Per-watt EBITDA falls to INR1.75-2",
+    "quote": "the non-DCR volume should deliver an EBITDA of per watt peak at INR1.75 to INR2 throughout the year on an average basis",
+    "highlight": "EBITDA of per watt peak at INR1.75 to INR2",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Captive cell delayed; 9 GW cell by Q4 FY27",
+    "quote": "the first cell rolling out in December 2026, taking us to roughly 70% of backward integration",
+    "highlight": "first cell rolling out in December 2026",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 cost up INR0.80 vs realisation up INR0.60 per watt",
+    "quote": "the cost actually went up by INR0.80. So that INR0.20 Additional incremental cost has dented the per -unit EBITDA",
+    "highlight": "cost actually went up by INR0.80",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Order book 8.2 GW; distribution orders removed",
+    "quote": "Our order book stands at 8.2 gigawatts as on 31st March 2026",
+    "highlight": "order book stands at 8.2 gigawatts",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 EBITDA INR1,500-1,600 crore on 7.5-8 GW",
+    "quote": "we plan to deliver approx. 7.5 to 8 gigawatts in FY27 to deliver an EBITDA about 74% more than what we have delivered in FY26",
+    "highlight": "7.5 to 8 gigawatts in FY27",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 production",
+    "value": "7.5-8 GW",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we plan to deliver approx. 7.5 to 8 gigawatts in FY27"
+   },
+   {
+    "metric": "FY27 EBITDA",
+    "value": "INR1,500-1,600 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "which therefore works out to a range of 1,500 to 1,600 crores"
+   },
+   {
+    "metric": "Non-DCR EBITDA per watt peak",
+    "value": "INR1.75-2",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the non-DCR volume should deliver an EBITDA of per watt peak at INR1.75 to INR2 throughout the year"
+   },
+   {
+    "metric": "Debt at 31 Mar 2027",
+    "value": "INR3,200 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the closing debt for 31st March 27 can therefore be considered to be at INR3,200 crores"
+   },
+   {
+    "metric": "Cell module utilisation (nameplate)",
+    "value": "70-75%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "for cells that number is higher between 70% to 75% on nameplate"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Debt level INR3,500 crore by end FY27",
+    "outcome": "dropped",
+    "quote": "the closing debt for 31st March 27 can therefore be considered to be at INR3,200 crores"
+   },
+   {
+    "metric": "6 GW module addition (Gangaikondan) on schedule",
+    "outcome": "met",
+    "quote": "it's intact. So, it continues to commission within June, and the schedule is intact."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Jupiter International",
+    "relation": "supplier"
+   },
+   {
+    "name": "Siemens",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Backward integration",
+   "Anti-dumping protection",
+   "Railway capex",
+   "Renewables & storage",
+   "Premiumisation in consumption",
+   "Nearshoring / reshoring (US)",
+   "Tariffs & trade policy",
+   "Data-centre power & cooling"
+  ],
+  "red_flags": [
+   {
+    "label": "Distribution orders removed from order book",
+    "quote": "The order inflow does not include distribution. We have taken that out of order booking format."
+   },
+   {
+    "label": "Export order reliant on IPP with US incentive sunset",
+    "quote": "that particular project in question was deemed unviable by the IPP because of a sunset of certain incentives in the US market"
+   },
+   {
+    "label": "Interest cost rising sequentially",
+    "quote": "why has there been an increase in the interest expense sequentially?"
+   }
+  ],
+  "hedge_index": 0.4,
+  "evasions": [],
+  "analyst_mix": {}
+ }
+}

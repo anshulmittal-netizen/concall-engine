@@ -1,0 +1,187 @@
+{
+ "doc_id": "IN-d5e97a49-2498-4a33-b8b0-92e7a2422182",
+ "market": "IN",
+ "company_id": "543288",
+ "name": "Deep Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-21",
+ "period": "2026-03",
+ "title": "Deep Industries Ltd - 543288 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Q4 revenue up 49% to INR248.7 crores and FY27 growth guided at 25-30%, but order book flat near INR3,000 crores for 4-5 quarters, a INR208 crore Kandla receivable write-off, and INR160 crore Dolphin receivables still held.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 100,
+   "quote": "our assets are 100% utilized"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are doing capex of around INR150 crores under PEC this year"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Rig fleet utilisation 100%",
+    "quote": "our assets are 100% utilized",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "FY26 capex plan ~INR300 crores",
+    "quote": "for this year, we are targeting to have capex of around INR300 crores",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "INR208 crore receivable write-off",
+    "quote": "the company has elected to write off these legacy trade receivables",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Order book flat near INR3,000 crores",
+    "quote": "our order book has stagnated at around this INR3,000 crore odd level for the past 4, 5 quarters",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth 25-30% guided",
+    "quote": "we are expecting growth of around 25% to 30% year-on-year, so definitely",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "25-30% YoY (~INR950-1,100 crores cited)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting growth of around 25% to 30% year-on-year, so definitely"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "44-45% year-on-year",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we should be able to maintain EBITDA of 44%, 45% year-on-year"
+   },
+   {
+    "metric": "Dolphin top line",
+    "value": "~INR150 crores with ~60% EBITDA",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting top line of around INR150 crores from this financial year and the current FY27 with EBITDA of almost 60%"
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "~INR300 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are targeting to have capex of around INR300 crores"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "ONGC",
+    "relation": "customer"
+   },
+   {
+    "name": "Oil India",
+    "relation": "customer"
+   },
+   {
+    "name": "Dolphin Offshore",
+    "relation": "partner"
+   },
+   {
+    "name": "Kandla Energy and Chemicals Limited",
+    "relation": "partner"
+   },
+   {
+    "name": "Advait Green Energy",
+    "relation": "partner"
+   },
+   {
+    "name": "Bvishal",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Production enhancement contracts (PEC)",
+   "Higher capacity drilling rigs",
+   "Offshore charter (Dolphin)",
+   "Green hydrogen",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "INR208 crore exceptional write-off of Kandla receivables",
+    "quote": "we have taken write-off of around INR208 crores of Kandla legacy trade receivables"
+   },
+   {
+    "label": "INR160 crore Dolphin legacy receivables still on books",
+    "quote": "out of total INR160 crores of Dolphin Group trade receivables, we have a good amount of arbitration award in our favor"
+   },
+   {
+    "label": "Dolphin Q4 ECL provision ~INR10 crore and margin squeeze",
+    "quote": "we had one, one -off item of ECL, which is expected credit loss provisioning of around INR10 crores"
+   },
+   {
+    "label": "Mori-5 stop production order, 5-6 month PEC delay",
+    "quote": "the incident has resulted into a 5 - to 6-month shift in our production enhancement time line"
+   },
+   {
+    "label": "Rig damaged, force majeure on workover contract",
+    "quote": "those matters are currently under active consideration, and they are going through the formalities"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 4,
+   "growth": 9,
+   "margin": 3,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Order book stagnation and timing of inflows",
+    "quote": "maybe in some quarter or 2, you would see that numbers also coming quite above to what the current levels are"
+   },
+   {
+    "topic": "Dolphin margin decline",
+    "quote": "So what explains that?"
+   },
+   {
+    "topic": "Rig damage / workover contract eligibility",
+    "quote": "those matters are currently under active consideration, and they are going through the formalities"
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

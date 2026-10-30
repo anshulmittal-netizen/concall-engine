@@ -1,0 +1,160 @@
+{
+ "doc_id": "IN-90b5a5c3-d15b-4b56-b52b-cc5fc3e5cb97",
+ "market": "IN",
+ "company_id": "531201",
+ "name": "Shilchar Technologies Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "Shilchar Technologies Ltd - 531201 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "FY26 dispatches ~6,000 MVA of 7,500 MVA capacity (79% utilisation on dispatches), Q4 margin hit by ~INR35-40 cr stranded Middle East exports and oil up ~100%; FY27 guide INR800-850 cr with price revisions unconfirmed.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 79,
+   "quote": "So 79% or almost 6000 MVA is the dispatches we have done in '26."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said everyone is expanding right now but demand is enough to absorb it.",
+   "quote": "it's not, I mean, everyone is expanding right now. But at the same time, if you look at the numbers and if you look at the, you know, demand being generated"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Oil price up ~100% since February",
+    "quote": "oil prices have become almost double than what we used to buy in month of February",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume guide ~7,000 MVA",
+    "quote": "Around 7,000 MVA.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Gavasad-3 adds 6,500 MVA by April 2027",
+    "quote": "will add 6,500 MVA and take our total installed capacity to 14,000 MVA, remains on track for commissioning in April '27",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue target cut to INR800 cr",
+    "quote": "I remember in last concall, you people were speaking about INR850 crores to INR900 crores for FY'27, right? And now we are speaking about INR800 crores.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "INR800-850 crore (conservatively INR800 crore)",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "it will be INR800 crores to INR850 crores. Just conservatively, I am saying INR800."
+   },
+   {
+    "metric": "FY27 dispatch volume",
+    "value": "around 7,000 MVA",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Around 7,000 MVA."
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "maintain 29-31% or higher (best effort)",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Yes, we'll do our best to maintain the same margin or even increase the margin."
+   },
+   {
+    "metric": "Gavasad-3 commissioning",
+    "value": "April 2027",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "remains on track for commissioning in April '27"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 revenue",
+    "outcome": "dropped",
+    "quote": "I remember in last concall, you people were speaking about INR850 crores to INR900 crores for FY'27, right?"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Yash Highvoltage",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Middle East shipping disruption",
+   "Raw material inflation",
+   "Grid capex & transformers",
+   "Renewables & storage",
+   "Tariffs & trade policy",
+   "Capacity bottleneck"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory / WIP build with stranded export dispatches",
+    "quote": "we had to stop the production. I mean, we did not convert it into the finished goods"
+   },
+   {
+    "label": "Price pass-through unconfirmed on fixed-price orders",
+    "quote": "whatever orders are there at the fixed price, we are demanding price rise."
+   },
+   {
+    "label": "Management refused April actuals",
+    "quote": "No, unfortunately, I won't be able to give you the number."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 9,
+   "margin": 8,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "April 2026 actual numbers",
+    "quote": "No, unfortunately, I won't be able to give you the number."
+   },
+   {
+    "topic": "Q1 FY27 sales split",
+    "quote": "I won't be able to, you know, give you the exact figures, but it will be a normal quarter."
+   },
+   {
+    "topic": "Production utilisation",
+    "quote": "we are not at liberty to share that but it is higher than 79%."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

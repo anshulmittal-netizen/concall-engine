@@ -1,0 +1,177 @@
+{
+ "doc_id": "IN-fd3961f9-d3d8-414d-b6d8-b5c13f3dcb82",
+ "market": "IN",
+ "company_id": "512329",
+ "name": "SG Mart Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-07",
+ "period": "2026-03",
+ "title": "SG Mart Ltd - 512329 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Industrial utilities & steam",
+  "thesis": "Q4 business EBITDA ~INR50 crores ex-INR6 crores inventory gain, with FY27 INR300-350 crores annualised EBITDA guide reaffirmed but hedged on Middle East and steel supply; capex of ~INR600 crores over two years is a growth bet, not discipline.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "Dubai service center will also start contributing significantly"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we already ha ve taken approval of around INR600 crores of capex for two years"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex ~INR600 crores approved over two years",
+    "quote": "we already ha ve taken approval of around INR600 crores of capex for two years",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory gain INR6 crores in Q4",
+    "quote": "INR6 crores was inventory gain for the quarter",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "B2B volume below Q3 on steel shortage",
+    "quote": "the B2B volume is lower than quarter 3 because of shortage of steel supply",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Renewables ramp 5,000 to 8,000-9,000 tons monthly",
+    "quote": "So we will come to 8,000 to 9,000 tons of monthly volume.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 EBITDA INR300-350 crores reiterated",
+    "quote": "we did guide for INR 300 crores to INR350 cror es of annualized EBITDA for FY27",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 annualised EBITDA",
+    "value": "INR300-350 crores",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we did guide for INR 300 crores to INR350 cror es of annualized EBITDA for FY27"
+   },
+   {
+    "metric": "Service centres added in FY27",
+    "value": "3 more, 11-12 total",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We're going to add three more during this year, okay."
+   },
+   {
+    "metric": "Renewable structures volume FY27",
+    "value": "130,000-150,000 tons",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we should be around 130,000 to 150,000 tons for the full year"
+   },
+   {
+    "metric": "Profile volume FY27",
+    "value": "100,000 tons plus",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "here also we can expect like 100,000 tons plus annual volume"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 annualised EBITDA INR300-350 crores",
+    "outcome": "met",
+    "quote": "we are confident that we should be near that number unless there is more loss of business due to war"
+   }
+  ],
+  "entities": [
+   {
+    "name": "APL Apollo",
+    "relation": "partner"
+   },
+   {
+    "name": "JSW Neo",
+    "relation": "competitor"
+   },
+   {
+    "name": "Infra Market",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Steel supply shortage",
+   "Middle East crisis",
+   "Consolidation / competitor exits",
+   "Renewables & storage",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Q3 inventory loss INR15-20 crores; EBITDA ex-inventory flattered",
+    "quote": "In quarter three, there was inventory loss of around INR15 crores, INR 20 crores"
+   },
+   {
+    "label": "PAT growth lagging EBITDA; cash used for capex",
+    "quote": "So that's why EBITDA growth doesn't match PAT growth."
+   },
+   {
+    "label": "Evasion on Dubai net block and gross margin query",
+    "quote": "Okay, we'll revert to this later. My team is working on it."
+   },
+   {
+    "label": "Working capital cut to 20 days via inventory and debtor rationalisation",
+    "quote": "We brought down the working capital days to 20 with inventory and debtor rationalization."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 5,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Dubai net block and consolidated gross margin",
+    "quote": "Okay, we'll revert to this later. My team is working on it."
+   },
+   {
+    "topic": "Dubai net block increase",
+    "quote": "No, I think there could be -- we are checking on this. We'll revert during this call only."
+   },
+   {
+    "topic": "Monthly or quarterly guidance",
+    "quote": "as of now, it becomes very difficult to give any guidance on a monthly or quarterly basis"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

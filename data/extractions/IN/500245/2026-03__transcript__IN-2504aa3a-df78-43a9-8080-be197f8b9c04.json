@@ -1,0 +1,165 @@
+{
+ "doc_id": "IN-2504aa3a-df78-43a9-8080-be197f8b9c04",
+ "market": "IN",
+ "company_id": "500245",
+ "name": "Kirloskar Ferrous Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-15",
+ "period": "2026-03",
+ "title": "Kirloskar Ferrous Industries Ltd - 500245 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Pig iron volumes fell 3% in Q4 and Hiriyur BF was idle 3.5 months, but management sees pig iron prices recovering (+INR4,000/t since December) and targets 1.85 lakh t castings in FY27.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply exit",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 70,
+   "quote": "we are at 4,200 last quarter against 6,000 tons, I would say this is about 70%"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "it would be part of our capex plan of about INR600 crores, INR700 crores per year"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Pig iron prices up INR4,000/t since Dec",
+    "quote": "pig iron prices are up INR4,000",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Solapur casting utilisation ~70%",
+    "quote": "we are at 4,200 last quarter against 6,000 tons, I would say this is about 70%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Hiriyur BF idle ~3.5 months in FY26",
+    "quote": "stoppage of Hiriyur blast furnace for almost 3.5 months because of the market conditions not being conducive",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Casting FY27 target 1.85 lakh t",
+    "quote": "1,85,000 kind of n umber remains our target",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Casting volume FY27",
+    "value": "1,80,000-1,90,000 t (production)",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "1,80,000, 1,85,000, 1,90,000 is the numbers we look forward"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "just above 12.5%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I expect that we are just above 12.5% of EBITDA"
+   },
+   {
+    "metric": "Tube volume growth",
+    "value": "10-11%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we should bring in around 10% to 11% volumetric growth"
+   },
+   {
+    "metric": "Overall volume growth",
+    "value": "at least 15%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I definitely look for ward that we should succeed in getting at least 15% growth once again"
+   },
+   {
+    "metric": "Solar+wind commissioning",
+    "value": "35 MW solar and 25 MW wind by Aug-Sep 2026",
+    "change": "new",
+    "horizon": "Q2 FY27",
+    "quote": "we are pushing hard to commission another 35 megawatts of solar power plant by July, August"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Casting volume 20-25% growth",
+    "outcome": "dropped",
+    "quote": "Our effort to grow 20%, 25% are not realistic."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Oliver Engineering",
+    "relation": "partner"
+   },
+   {
+    "name": "ONGC",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Railway capex",
+   "Renewables & storage",
+   "Auto EV transition",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Solapur ramp-up slow; 'ticklish'",
+    "quote": "Solapur is ticklish and we are at 4,200"
+   },
+   {
+    "label": "Casting target cut from 20-25% to 15%",
+    "quote": "Our effort to grow 20%, 25% are not realistic."
+   },
+   {
+    "label": "Management could not answer EBITDA/other-expense question",
+    "quote": "I need to come back. I don't have ready numbers."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 7,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "EBITDA margin trajectory and other expenses",
+    "quote": "I need to come back. I don't have ready numbers. I didn't look from that angle."
+   },
+   {
+    "topic": "Pending tube order book",
+    "quote": "Right now I don't have the figure of what is the pending orders right now."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

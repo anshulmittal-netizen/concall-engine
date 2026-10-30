@@ -1,0 +1,123 @@
+{
+ "doc_id": "IN-8d05f65f-d209-4936-8187-181a5992fd0e",
+ "market": "IN",
+ "company_id": "500101",
+ "name": "Arvind Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "Arvind Ltd - 500101 - Transcript Of AAML''s Acquisition Investor Call",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.82,
+ "read": {
+  "subsector": "Textiles & apparel",
+  "thesis": "Arvind buys 61% of US needle-punch nonwovens maker Dalco-GFT at 7.75x CY25 EBITDA (EV ~$136m) with 85% utilisation, adding a line for ~$5m capex a year and targeting mid-teens growth.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital allocation shift",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 85,
+   "quote": "Utilization is around 85% of the capacity."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "There is already a plan to put in approximately $5 million of capex every year."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 85%, lines added",
+    "quote": "Because we are at 85% capacity utilization, and we will do a $5 million capex every year, we should be able to grow in the mid-teens",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue growth 10–12%, margin mid-teens",
+    "quote": "we will continue to maintain that 10% to 12% revenue growth and mid-teens margin expansion or margin growth rather",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "Dalco capex ~$5m/yr for new lines",
+    "quote": "thumb rule $5 million represents 1 line of capacity",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Dalco revenue growth",
+    "value": "mid-teens",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "we should be able to grow in the mid-teens rather than 10%"
+   },
+   {
+    "metric": "Arvind India growth",
+    "value": "high teens, hopefully 20% plus",
+    "change": "held",
+    "horizon": "medium term",
+    "quote": "So we will still want to grow in the high teens and hopefully 20% plus."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Dalco-GFT",
+    "relation": "partner"
+   },
+   {
+    "name": "Honda",
+    "relation": "customer"
+   },
+   {
+    "name": "Hyundai",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Auto EV transition",
+   "Nearshoring / reshoring (US)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Debt-funded deal, leverage above comfort",
+    "quote": "The financial ratios post acquisition of Dalco-GFT is within the covenants that we have already signed in for."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 3,
+   "growth": 4,
+   "margin": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Goodwill and full balance sheet",
+    "quote": "Let me have the goodwill number worked out for you."
+   }
+  ],
+  "hedge_index": 0.4,
+  "thesis_placeholder": "x"
+ }
+}

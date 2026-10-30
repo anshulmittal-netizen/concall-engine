@@ -1,0 +1,170 @@
+{
+ "doc_id": "IN-5b703c4e-5c38-4593-b612-a610e2a1fc9f",
+ "market": "IN",
+ "company_id": "540048",
+ "name": "S.P. Apparels Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-26",
+ "period": "2026-03",
+ "title": "S.P. Apparels Ltd - 540048 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Garment exporters",
+  "thesis": "Q4 consolidated EBITDA fell to INR 44 cr (12.2% margin) on volume softness; management guides INR 2,000 cr FY27 revenue at 14-15% EBITDA, but utilisation is only 64% and capacity expansion is being deferred to FY28.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 64,
+   "quote": "our utilization is only 64%. There is a good headwind for us to improve our utilization level in the current Indian factories."
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "We have just slowed down the project because of the US tariff uncertainty."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation only 64%",
+    "quote": "our utilization is only 64%",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Salem and Sivakasi expansion deferred to FY28",
+    "quote": "So, safely we are betting on FY28 for Salem expansion.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "US orders return; pace to improve from Aug-26",
+    "quote": "We are expecting the pace to improve from August ‘26.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 INR 2,000 cr target vs ~INR 1,600 cr run-rate",
+    "quote": "we are looking at INR 2000 crores next year. On a consolidated basis with a 14%-15% EBITDA.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated revenue FY27",
+    "value": "INR 2,000 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are looking at INR 2000 crores next year. On a consolidated basis with a 14%-15% EBITDA."
+   },
+   {
+    "metric": "Consolidated EBITDA margin FY27",
+    "value": "14%-15%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "On a consolidated basis with a 14%-15% EBITDA."
+   },
+   {
+    "metric": "Sri Lanka FOB revenue FY27",
+    "value": "INR 200-250 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are aiming for INR 200 to INR 250 crores during the next financial year out of Sri Lanka."
+   },
+   {
+    "metric": "SPUK revenue FY27",
+    "value": "GBP 12-14 million",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we should be anywhere between 12-14 million on the numbers for SPUK for the whole year FY27."
+   },
+   {
+    "metric": "Solar capacity",
+    "value": "4.5 MW by March 27",
+    "change": "new",
+    "horizon": "Mar-27",
+    "quote": "we are committed to reaching around 4.5 MW by March ‘27."
+   },
+   {
+    "metric": "Export mix target FY27",
+    "value": "US 30% / Euro 35% / UK 35%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are looking at with respect to 30% with US, 35% with Euro and 35% UK."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Bangladesh",
+    "relation": "competitor"
+   },
+   {
+    "name": "Sri Lanka",
+    "relation": "competitor"
+   },
+   {
+    "name": "Young Brand Apparel",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "China+1 enquiries → orders",
+   "Interest-rate relief",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Guidance vs capacity math gap",
+    "quote": "Where is the balance 150 going to come from?"
+   },
+   {
+    "label": "Retail finance cost; equity raise deferred",
+    "quote": "there is an elevated interest cost on Retail Venture which needs to be supported through equity."
+   },
+   {
+    "label": "Contingent tariff reimbursement counted as upside",
+    "quote": "there is a strong probability that a portion of these discount credits will be reimbursed by customers"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 6,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Sri Lanka and Salem ramp-up math vs INR 2,000 cr",
+    "quote": "That is why we are aiming for INR 2000 crores next year considering all these things."
+   },
+   {
+    "topic": "Labour disruption",
+    "quote": "Actually, it is not a labor disruption."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

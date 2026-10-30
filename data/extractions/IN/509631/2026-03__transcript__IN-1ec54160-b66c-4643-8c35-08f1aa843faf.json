@@ -1,0 +1,163 @@
+{
+ "doc_id": "IN-1ec54160-b66c-4643-8c35-08f1aa843faf",
+ "market": "IN",
+ "company_id": "509631",
+ "name": "HEG Advanced Materials Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-08",
+ "period": "2026-03",
+ "title": "HEG Advanced Materials Ltd - 509631 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Graphite electrode maker at >90% utilisation with H2 price hikes planned, but Q4 volumes fell ~1,000 t and FY27 H1 EBITDA guided only ~17–20% versus 22% prior.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Pricing power",
+   "Capacity bottleneck",
+   "Supply discipline",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 95,
+   "quote": "If you strictly talk about capacity utilization on production, actually it’s 95% for the quarter."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said no peer has announced any electrode capacity addition; HEG is expanding 80k→100k t and to 115k t by early 2028.",
+   "quote": "excep t our expansion, there is nobody who has even announced anything as yet."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Production utilisation ~95% in Q4",
+    "quote": "If you strictly talk about capacity utilization on production, actually it’s 95% for the quarter.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Price hikes planned for H2 on uncommitted volumes",
+    "quote": "definitely towards H2, our aim is to have price increase, not only to protect our margins, but to help improve further.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "No peer electrode capacity announced",
+    "quote": "excep t our expansion, there is nobody who has even announced anything as yet.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "H1 FY27 EBITDA margin ~17–18%, not 22%",
+    "quote": "these two quarters where we have committed volumes maybe around 17-18 or something.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin Q1–Q2 FY27",
+    "value": "around 20% (CFO); ~17–18% committed volumes (MD)",
+    "change": "cut",
+    "quote": "the EBITDA range will be the 20% we can say for the next 1st Quarter and to 2nd Quarter."
+   },
+   {
+    "metric": "Price increase on unbooked orders in H2",
+    "value": "Quantum undetermined; targeted for H2",
+    "change": "new",
+    "quote": "definitely towards H2, our aim is to have price increase"
+   },
+   {
+    "metric": "100k→115k t capacity expansion",
+    "value": "Operational by early 2028",
+    "change": "held",
+    "quote": "we have already announced our next expansion to 115,000 tons, which is likely to be operational by earl y 2028."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA margin ~22% sustained for next couple of quarters",
+    "outcome": "missed",
+    "quote": "Then in Q4, because of all these Middle East crisis, we could not sustain that kind of margin."
+   }
+  ],
+  "entities": [
+   {
+    "name": "GrafTech",
+    "relation": "peer"
+   },
+   {
+    "name": "TACC Limited",
+    "relation": "partner"
+   },
+   {
+    "name": "Panasonic",
+    "relation": "customer"
+   },
+   {
+    "name": "CATL",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Pricing power",
+   "Middle East disruption",
+   "Anti-dumping protection",
+   "Pharma CDMO / outsourcing",
+   "Specialty chem destocking end",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 loss from GrafTech mark-to-market and FX",
+    "quote": "We reported a loss of INR 189 crores. This is mainly attributable to fair values and impact on foreign investment"
+   },
+   {
+    "label": "Q4 sales volume down ~1,000 t; low-price mix",
+    "quote": "there is a slightly less volume to the tune of, I guess, about 1000 tons and some depression in price"
+   },
+   {
+    "label": "Investment in GrafTech thesis dependent on needle coke",
+    "quote": "it went down by 30%-40%. It has recovered a lot in the last 2-3 months."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 2,
+   "margin": 4,
+   "capex": 1,
+   "balance_sheet": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Rupee benefit net of dollar costs",
+    "quote": "We can take it offline. We don’t want to talk about specifics numbers."
+   },
+   {
+    "topic": "Price hike quantum",
+    "quote": "How much will be the quantum, whether it will be 300, 400, 500 is very difficult to say at this stage."
+   },
+   {
+    "topic": "Chinese UHP export share vs peers",
+    "quote": "So, they have to explain to their stakeholders why they are at this."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

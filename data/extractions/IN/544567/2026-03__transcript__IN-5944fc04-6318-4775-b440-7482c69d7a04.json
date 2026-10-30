@@ -1,0 +1,160 @@
+{
+ "doc_id": "IN-5944fc04-6318-4775-b440-7482c69d7a04",
+ "market": "IN",
+ "company_id": "544567",
+ "name": "Infinity Infoway Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-07",
+ "period": "2026-03",
+ "title": "Infinity Infoway Ltd - 544567 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Small-cap SaaS/ERP firm guiding ZeroTouch to 20-22% of revenue and FY27 growth of 60-70%, but no capacity, utilisation or pricing data backs it; supply-side evidence is absent.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Backlog conversion",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "novelty",
+    "label": "ZeroTouch 20-22% of revenue FY27",
+    "quote": "we are expecting the contribution of the revenue from ZeroTouch in this financial year around 20% to 22%",
+    "highlight": "contribution of the revenue from ZeroTouch",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth 60-70%",
+    "quote": "we are expecting around 60% to 70% growth of what we are doing right now",
+    "highlight": "60% to 70% growth",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Gulf market entry, no numbers",
+    "quote": "we are planning for a Gulf country and specifically UAE, it is the first criteria",
+    "highlight": "planning for a Gulf country",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "ZeroTouch share of revenue",
+    "value": "20% to 22% in FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting the contribution of the revenue from ZeroTouch in this financial year around 20% to 22%"
+   },
+   {
+    "metric": "Revenue growth FY27",
+    "value": "60% to 70% over current run-rate",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting around 60% to 70% growth of what we are doing right now"
+   },
+   {
+    "metric": "ZeroTouch EBITDA/project margin",
+    "value": "50% to 60%",
+    "change": "new",
+    "horizon": "project life",
+    "quote": "we are expecting around 50% to 60% margin on running of this project"
+   },
+   {
+    "metric": "ZeroTouch market share",
+    "value": "1% to 2% this year, up to 10% later",
+    "change": "new",
+    "horizon": "FY27 onward",
+    "quote": "we are planning to at least capture 1% to 2% market share this year and more market share up to 10% in the upcoming years"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "NPST",
+    "relation": "partner"
+   },
+   {
+    "name": "TCS ION",
+    "relation": "competitor"
+   },
+   {
+    "name": "Zoho Corporation",
+    "relation": "competitor"
+   },
+   {
+    "name": "NSDL payment bank",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Govt tenders / digital exam",
+   "Gulf expansion",
+   "Fintech ERP (TimePay)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Pilot-stage fintech revenue, approval pending",
+    "quote": "there is certain approval pending on designing parts from the issuer of the card bank"
+   },
+   {
+    "label": "Unverified 50-60% margin and 3,000-4,000 machine capacity claims",
+    "quote": "we are expecting around 50% to 60% margin on running of this project"
+   },
+   {
+    "label": "Capitalised intangibles of INR 8.15 cr under development",
+    "quote": "Intangible Asset Under Development. This pertains to around INR 8.15 crores"
+   },
+   {
+    "label": "Vague answer on intangible capex vs RHP",
+    "quote": "So, these are the various three line items currently under development."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Intangible asset under development vs RHP ZeroTouch capex",
+    "quote": "So, these are the various three line items currently under development."
+   },
+   {
+    "topic": "Competitive risk from TCS ION / Zoho",
+    "quote": "we have also competed two to three different places with the bigger player"
+   },
+   {
+    "topic": "Margin sustainability at scale",
+    "quote": "in a bottom line, it is very difficult when you scale and to maintain the margin"
+   }
+  ],
+  "hedge_index": 0.4,
+  "thesis_placeholder": "x"
+ }
+}

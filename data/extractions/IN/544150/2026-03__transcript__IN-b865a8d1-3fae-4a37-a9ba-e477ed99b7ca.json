@@ -1,0 +1,170 @@
+{
+ "doc_id": "IN-b865a8d1-3fae-4a37-a9ba-e477ed99b7ca",
+ "market": "IN",
+ "company_id": "544150",
+ "name": "KP Green Engineering Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-18",
+ "period": "2026-03",
+ "title": "KP Green Engineering Ltd - 544150 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "FY26 revenue ₹1,250cr (+78%) with utilisation only 30–34% and inventory days up to ~195 from ~96; growth and margin claims rest on an order book management says executes entirely in FY27.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital cycle",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 32,
+   "quote": "30% to 34% is my present capacity utilization."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we will be continuing the capex during the year for which the fruits will be visible in the next year."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 30–34% today",
+    "quote": "30% to 34% is my present capacity utilization.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory days ~96 → ~195",
+    "quote": "they have increased sharply from around 96 days to 195 days as per some data reports.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth 40–50% minimum",
+    "quote": "you know, 40 to 50% year -on-year growth in all the KP Group companies we have given it.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Order book ₹1,800cr+, 22–23% group",
+    "quote": "So, 22% to 23% is internal and rest all is external.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "40–50% YoY minimum",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "you know, 40 to 50% year -on-year growth in all the KP Group companies we have given it."
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "16–20% range",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we'll try to maintain in the range of 16 to 20%."
+   },
+   {
+    "metric": "Capacity utilisation FY27",
+    "value": "40–60%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we might go to 40%, 55%, 60% this year with the growth."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "BSNL",
+    "relation": "customer"
+   },
+   {
+    "name": "KP Energy",
+    "relation": "peer"
+   },
+   {
+    "name": "Nextracker",
+    "relation": "partner"
+   },
+   {
+    "name": "GameChange Solar",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Railway capex",
+   "Data-centre power & cooling",
+   "Defence indigenisation",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Utilisation 30–34% while adding capacity via debt",
+    "quote": "30% to 34% is my present capacity utilization."
+   },
+   {
+    "label": "Inventory build funded by short-term borrowing",
+    "quote": "we have utilized all our working capital limits so that we can stock up inventory"
+   },
+   {
+    "label": "Royalty 2% paid to promoter-linked entity",
+    "quote": "we are only giving 2%. And believe me, there is no, intra -company which is reduced"
+   },
+   {
+    "label": "Order book definition inconsistent (LOA vs PPT)",
+    "quote": "till we don't get the LOA, we don't mention in the BSE that we have received this order."
+   },
+   {
+    "label": "Half-yearly reporting only; quarterly refused",
+    "quote": "half-yearly is something which is compulsory, we do that."
+   },
+   {
+    "label": "Cash decline reclassified to other financial assets",
+    "quote": "any FDs which are more than one year, it will not be part of the current asset."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 6,
+   "capex": 3,
+   "growth": 5,
+   "margin": 3,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Inventory normalisation timing",
+    "quote": "inventory is not something which I can assure you."
+   },
+   {
+    "topic": "Debt and working capital",
+    "quote": "Proportionately, your stock will automatically, as the condition smoothens"
+   },
+   {
+    "topic": "Royalty / related-party payments",
+    "quote": "it is towards building the brand, further strong, strengthening the brand"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

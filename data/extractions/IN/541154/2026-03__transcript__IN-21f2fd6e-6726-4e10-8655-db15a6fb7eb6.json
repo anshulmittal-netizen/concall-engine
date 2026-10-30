@@ -1,0 +1,186 @@
+{
+ "doc_id": "IN-21f2fd6e-6726-4e10-8655-db15a6fb7eb6",
+ "market": "IN",
+ "company_id": "541154",
+ "name": "Hindustan Aeronautics Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Hindustan Aeronautics Ltd - 541154 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Defence & aerospace",
+  "thesis": "FY26 revenue up 7% to INR33,050 crore with 30% EBITDA margin; LCA Mk1A deliveries slipped to Aug–Sep and FY27 guidance is only 10–12% growth, with 15–20 LCA deliveries dependent on GE engines.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Supply exit",
+   "Backlog conversion",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "Not a single production line is idle because we are continuously building the structures and equipping them."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We plan to invest around INR12,000 crores in these projects by 2030."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth 10–12%",
+    "quote": "Yes, it will be in the range of 10% to 12% minimum.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "LCA deliveries hinge on GE engines",
+    "quote": "June, we are expecting 1 engine now. Then afterwards, it is going to August. From August, they have committed 2.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory up ~INR9,000 crore in FY26",
+    "quote": "you've added about INR9,000-odd crores into your inventory this year.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "LCA first deliveries slip to Aug–Sep",
+    "quote": "we are hoping to resolve everything and stabilize by August or September.",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "10% to 12% minimum (double-digit)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Yes, it will be in the range of 10% to 12% minimum."
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "around 30%-31%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "And the EBITDA margin, we have always maintained around 30%, 31%, and it will be maintained."
+   },
+   {
+    "metric": "LCA Mk1A deliveries FY27",
+    "value": "around 20 aircraft",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are planning to deliver around 20 LCA."
+   },
+   {
+    "metric": "HTT-40 deliveries FY27",
+    "value": "around 20 plus",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are planning around 20 plus this year to deliver."
+   },
+   {
+    "metric": "Orders expected next 2 years",
+    "value": "INR90,000 crore including ROH",
+    "change": "new",
+    "horizon": "2 years",
+    "quote": "In total, we expect to receive orders of INR90,000 crores, including the ROH orders, during the next 2 years."
+   },
+   {
+    "metric": "Capex to 2030",
+    "value": "around INR12,000 crore",
+    "change": "new",
+    "horizon": "by 2030",
+    "quote": "We plan to invest around INR12,000 crores in these projects by 2030."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "LCA Mk1A first delivery timing",
+    "outcome": "missed",
+    "quote": "we are hoping to resolve everything and stabilize by August or September."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Honeywell",
+    "relation": "supplier"
+   },
+   {
+    "name": "ADA",
+    "relation": "partner"
+   },
+   {
+    "name": "Safran Aircraft Engines",
+    "relation": "partner"
+   },
+   {
+    "name": "Pawan Hans",
+    "relation": "customer"
+   },
+   {
+    "name": "ICG",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "LCA delivery slip, engine dependence",
+    "quote": "June, we are expecting 1 engine now. Then afterwards, it is going to August."
+   },
+   {
+    "label": "Possible LDs on GE engines, unquantified",
+    "quote": "It's not the right time to say what the penalties will be— we cannot quantify them right now."
+   },
+   {
+    "label": "Inventory up ~INR9,000 crore",
+    "quote": "you've added about INR9,000-odd crores into your inventory this year."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 5,
+   "margin": 3,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "LCA software / technical issue specifics",
+    "quote": "I will restrict myself to saying that we are moving in a very positive direction"
+   },
+   {
+    "topic": "Penalties from GE",
+    "quote": "It's not the right time to say what the penalties will be— we cannot quantify them right now."
+   },
+   {
+    "topic": "Pipeline order values",
+    "quote": "Since these contracts are not yet 100% finalized, that's why I did not give detailed numbers"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

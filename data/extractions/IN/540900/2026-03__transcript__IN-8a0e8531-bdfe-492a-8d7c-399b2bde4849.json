@@ -1,0 +1,122 @@
+{
+ "doc_id": "IN-8a0e8531-bdfe-492a-8d7c-399b2bde4849",
+ "market": "IN",
+ "company_id": "540900",
+ "name": "Newgen Software Technologies Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-06",
+ "period": "2026-03",
+ "title": "Newgen Software Technologies Ltd - 540900 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "FY26 revenue grew 6% to INR1,574 cr with adjusted PAT up 6%, but management declined to guide FY27 and flagged slower large-deal closures in India, Middle East and EMEA, plus a rising receivables problem.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "India license revenue down 20-30%",
+    "quote": "in India we have more like more than 20%, 30% fall in the license revenue",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables up on EMEA collections",
+    "quote": "our ability to collect in EMEA over the last 1-month has drastically affected the EMEA trade receivables",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "No FY27 growth number given",
+    "quote": "projecting a number for next year may not be advisable",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Order book up ~13% YoY",
+    "quote": "our overall order book at the end of the year compared to last year has grown by around 13%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "not given",
+    "change": "dropped",
+    "quote": "projecting a number for next year may not be advisable"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Dolat Capital",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Cybersecurity spend",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables rising, EMEA collections slow",
+    "quote": "The collection from the region have also been slower on that account, which has in turn affected the overall DSO."
+   },
+   {
+    "label": "Management declines FY27 guidance",
+    "quote": "I think we'll just wait for 1 or 2 quarters till we are getting a much more, better insight"
+   },
+   {
+    "label": "Large-deal license decline in India",
+    "quote": "we had a very strong pipeline built over 2 years on account of large public sector deals"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 5,
+   "margin": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "FY27 growth guidance",
+    "quote": "I would right now hold my horses to claim what is that number"
+   },
+   {
+    "topic": "Annuity breakup by quarter",
+    "quote": "I won't have that it's going to be too difficult mathematic."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

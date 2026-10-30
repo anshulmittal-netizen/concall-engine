@@ -1,0 +1,156 @@
+{
+ "doc_id": "IN-474200af-c02c-45af-a523-815d444558f9",
+ "market": "IN",
+ "company_id": "526423",
+ "name": "Kriti Industries India Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-13",
+ "period": "2026-03",
+ "title": "Kriti Industries India Ltd-$ - 526423 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Plastics & polymers",
+  "thesis": "FY26 volume fell 13% to 58,630 MT and revenue fell 19%, but Q4 turned profitable with EBITDA margin 12.91% on a PVC inventory gain; management has put capex on hold for two quarters.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capital cycle",
+   "Inventory gain",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "Plant utilization was fairly good, fairly comfortable in Q4."
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "Management said most organized peers are adding capacity across regions, without quantifying it.",
+   "quote": "we are putting CAPEX on hold because we have already invested for all the developments and we will observe first two quarters"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex on hold for two quarters",
+    "quote": "we are putting CAPEX on hold because we have already invested for all the developments",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Q4 utilisation above company average",
+    "quote": "We are almost above average utilization for our company.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "inventory",
+    "label": "Q4 inventory build of INR 72 crore",
+    "quote": "with a INR 72 crore inventory build driving profitability",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Agri volume down 11% FY26",
+    "quote": "Agricultural segment, 47,638 metric tons, 11% decline.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue",
+    "value": "INR 1,000 crore target (reiterated, no timeline change)",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "we will definitely target towards our guidance"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "10% by FY28",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "what ROCE can you expect at the targeted INR 1000 crore revenue and 10% margin by FY28?"
+   },
+   {
+    "metric": "Volume growth FY27",
+    "value": "Positive growth, above industry average, no number given",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we certainly look forward to a positive growth. And it should be in access to the industry average"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue INR 1,000 crore",
+    "outcome": "missed",
+    "quote": "we will definitely target towards our guidance"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Valorem Advisors",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Specialty chem destocking end",
+   "Anti-dumping protection",
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Rural demand recovery",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 profit driven by inventory gain and PVC price swings",
+    "quote": "as things are very volatile today, it is difficult to predict. But still, we may see some advantage on inventory side."
+   },
+   {
+    "label": "Revenue guidance missed and reiterated without timeline",
+    "quote": "we will definitely target towards our guidance"
+   },
+   {
+    "label": "Vague answers on margin, freight and utilisation",
+    "quote": "The exact breakup I will not have it here"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Other expenses / freight breakup",
+    "quote": "The exact breakup I will not have it here, but there has to be reason"
+   },
+   {
+    "topic": "Utilisation percentage",
+    "quote": "I don't have any hand in terms of exact numbers, but fairly."
+   },
+   {
+    "topic": "ROCE at INR 1,000 crore target",
+    "quote": "We are targeting and we are doing our best that we achieve these numbers."
+   },
+   {
+    "topic": "Weighted PVC inventory cost",
+    "quote": "It is as per the market prices, we are comfortable"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

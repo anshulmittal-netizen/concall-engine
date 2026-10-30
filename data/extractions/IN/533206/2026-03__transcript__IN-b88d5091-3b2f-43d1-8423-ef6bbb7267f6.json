@@ -1,0 +1,155 @@
+{
+ "doc_id": "IN-b88d5091-3b2f-43d1-8423-ef6bbb7267f6",
+ "market": "IN",
+ "company_id": "533206",
+ "name": "SJVN Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-21",
+ "period": "2026-03",
+ "title": "SJVN Ltd - 533206 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.92,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "SJVN's FY26 PAT was flat at INR 1,008 crore, with Q4 lifted by a one-off INR 679 crore tariff true-up; new Buxar thermal and solar are loss-making until PLF and CUF ramp, and management has put its 25 GW target under review.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Working-capital stress",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 60,
+   "quote": "it has started operating at a PLF of around 60%. Once this PLF goes up to around 70% plus, this plant will start bringing in profit."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said tenders from SJVNL, NHAI, SECI and NTPC have all signed only 25% to 30% of capacity, with tariffs falling in later bids.",
+   "quote": "this year we have a CAPEX plan of around 9,400 and for FY '28 and FY '29, we have a plan of 7,800 and 7,500 respectively."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "25 GW / 50 GW targets under review",
+    "quote": "But the target which you were speaking about 25,000, 50,000, that is that we are reviewing it.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "util",
+    "label": "Buxar Unit-1 PLF ~60%, loss-making",
+    "quote": "it has started operating at a PLF of around 60%. Once this PLF goes up to around 70% plus, this plant will start bringing in profit.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "RE PPAs signed ~6 of 16 GW",
+    "quote": "we have awarded a contract of around like 16 Gigawatts, 16,000 Megawatts and out of that, we have signed a PSA of around 6 Gigawatt.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Bikaner curtailment ~120 MW of 1,000 MW",
+    "quote": "there is a curtailment of around 120 Megawatt. So, that is due to the SVR requirement.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 capacity addition",
+    "value": "Buxar 660 MW thermal, Dhaulasidh 69.5 MW hydro, ~1,555 MW solar by March 2027",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY28 capacity addition",
+    "value": "~650 MW solar",
+    "change": "new",
+    "horizon": "FY28"
+   },
+   {
+    "metric": "Nepal Arun-III commissioning",
+    "value": "all four units by December 2028",
+    "change": "new",
+    "horizon": "FY29"
+   },
+   {
+    "metric": "Capex",
+    "value": "~9,400 crore FY27; 7,800 FY28; 7,500 FY29",
+    "change": "new",
+    "horizon": "FY27-FY29"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "NHAI",
+    "relation": "peer"
+   },
+   {
+    "name": "SECI",
+    "relation": "peer"
+   },
+   {
+    "name": "NTPC",
+    "relation": "peer"
+   },
+   {
+    "name": "Assam Power Distribution Company",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Grid capex & transformers",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Unbilled revenue INR 906 cr; tariff order-driven revenue spike",
+    "quote": "This includes INR 906 crores as unbilled debtors as on 31st March '26 as against INR 136 crores as on 31st March '25."
+   },
+   {
+    "label": "SGEL loss INR 258 cr on revenue INR 510 cr",
+    "quote": "That translates to a loss of INR 258 crores in this year as compared to INR 151 crores in the last year."
+   },
+   {
+    "label": "Impairment INR 174 cr under Ind AS 36",
+    "quote": "recognition of impairment losses amounting to INR 174 crores as per AS36."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "PPA conversion of pending ~9 GW",
+    "quote": "Very, very difficult to say anything as of now."
+   },
+   {
+    "topic": "Renewable tender demand and PPA pendency",
+    "quote": "there is a possibility that all the PPAs may not be done"
+   }
+  ],
+  "hedge_index": 0.55
+ }
+}

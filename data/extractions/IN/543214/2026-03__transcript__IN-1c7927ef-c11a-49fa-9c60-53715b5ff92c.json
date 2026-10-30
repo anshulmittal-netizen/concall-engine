@@ -1,0 +1,155 @@
+{
+ "doc_id": "IN-1c7927ef-c11a-49fa-9c60-53715b5ff92c",
+ "market": "IN",
+ "company_id": "543214",
+ "name": "NDR Auto Components Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-18",
+ "period": "2026-03",
+ "title": "NDR Auto Components Ltd - 543214 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q4 FY26 margin record 11.90% and order book INR650 crore (up from INR450 crore) mostly Maruti, but capex is own-program, no capacity-discipline signal; FY30 INR3,000 crore target lacks INR1,000 crore visibility.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Customer stickiness",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are going to do another INR 40 to INR50 crore to execute our new order book."
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Order book INR450 → 650 crore",
+    "quote": "our order book as on 31st March 2026 stood at INR650 crore, which also is the highest in the history",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY30 target INR3,000 crore; INR1,000 crore not yet visible",
+    "quote": "INR1,000 crore is something I think you will have to give us more time on.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin lifted by vendor volume discounts",
+    "quote": "we have also got some discounts from our vendors that has led to it.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "Hayashi JV start delayed April → June",
+    "quote": "It is basically because of some operational issues that we have delayed it by two months.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue to FY30",
+    "value": "INR3,000 crore (NDR standalone)",
+    "change": "held",
+    "horizon": "FY30",
+    "quote": "That should be our guidance till FY '30."
+   },
+   {
+    "metric": "Bharat Seats revenue FY30",
+    "value": "INR3,500 crore",
+    "change": "new",
+    "horizon": "FY30",
+    "quote": "Bharat Seats maybe you can take a INR3,500 crore guidance by FY30."
+   },
+   {
+    "metric": "FY27 annual guidance",
+    "value": "not given",
+    "change": "dropped",
+    "horizon": "FY27",
+    "quote": "We do not give annual guidance."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Hayashi JV production start",
+    "outcome": "missed",
+    "quote": "It is basically because of some operational issues that we have delayed it by two months."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Maruti Suzuki",
+    "relation": "customer"
+   },
+   {
+    "name": "Toyota",
+    "relation": "customer"
+   },
+   {
+    "name": "Hayashi",
+    "relation": "partner"
+   },
+   {
+    "name": "Bharat Seats",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Auto EV transition",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow restated after filing error",
+    "quote": "There was an error in filing has been rectified on 13 th May by filing revised consolidated cashflow"
+   },
+   {
+    "label": "Evasive on FY27 and new OEM pipeline",
+    "quote": "When something converts, then I think we will share that with you."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 6,
+   "margin": 2,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "INR1,000 crore of new orders to reach FY30 target",
+    "quote": "INR1,000 crore is something I think you will have to give us more time on."
+   },
+   {
+    "topic": "FY27 revenue trajectory",
+    "quote": "for next year we do not want to share a current guidance because some programs get delayed"
+   },
+   {
+    "topic": "New OEM discussions",
+    "quote": "When something converts, then I think we will share that with you."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

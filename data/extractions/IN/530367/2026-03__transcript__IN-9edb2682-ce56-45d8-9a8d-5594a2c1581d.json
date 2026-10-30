@@ -1,0 +1,183 @@
+{
+ "doc_id": "IN-9edb2682-ce56-45d8-9a8d-5594a2c1581d",
+ "market": "IN",
+ "company_id": "530367",
+ "name": "NRB Bearings Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "NRB Bearings Ltd - 530367 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q4 FY26 EBITDA margin 19.5% and FY26 PAT up 77% to INR146 crore; management says reported utilisation ~85% with bottlenecks, brownfield capex of INR200 crore over 18 months, and FY27 capex closer to INR120 crore.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 85,
+   "quote": "While reported utilization is roughly 85%, in reality effective utilization at several of our plants is much closer to full"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "No, it'll be closer INR 120 crores and the reason for that is we're also looking at land."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Reported utilisation ~85%, plants near full",
+    "quote": "While reported utilization is roughly 85%, in reality effective utilization at several of our plants is much closer to full",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Brownfield capex ~INR200 crore over 18 months",
+    "quote": "we have already explained the 200 crore capex which will happen over next 18 months",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "International business growth 10-14% FY27",
+    "quote": "we expect 10 to 14% growth in our international business this year, as per our current business plan",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin dip blamed on forex",
+    "quote": "Fundamentally only one reason, foreign exchange.",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "tone",
+    "label": "Repeated refusal to disclose export and capex split",
+    "quote": "we don't like to give out too many numbers which are not in the public domain",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "International business growth FY27",
+    "value": "10-14%, maybe 15%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect 10 to 14% growth in our international business this year"
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "~INR120 crore (incl. land)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "No, it'll be closer INR 120 crores and the reason for that is we're also looking at land."
+   },
+   {
+    "metric": "Five-year revenue aspiration",
+    "value": "INR2,500 crore",
+    "change": "new",
+    "horizon": "5 years",
+    "quote": "in a five -year timeframe we would be around 2,500 crores"
+   },
+   {
+    "metric": "Industrial share of business",
+    "value": "20-25% aim",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "our aim is to have it as 20% to 25% of our business"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Mahant Toolroom",
+    "relation": "partner"
+   },
+   {
+    "name": "Hindustan Aeronautics",
+    "relation": "customer"
+   },
+   {
+    "name": "Siemens",
+    "relation": "customer"
+   },
+   {
+    "name": "Magna",
+    "relation": "customer"
+   },
+   {
+    "name": "BMW",
+    "relation": "customer"
+   },
+   {
+    "name": "Daimler",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Defence indigenisation",
+   "Electronics manufacturing (EMS/PLI)",
+   "Import substitution",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Gross margin dip attributed to forex and accounting anomaly",
+    "quote": "So there was an aberration because of the exchange rate differential on the last day of the year."
+   },
+   {
+    "label": "Inventory defended as 'close to optimal' with no days disclosed",
+    "quote": "NRB's improved inventory position is close to optimal at this point"
+   },
+   {
+    "label": "Refuses to split export, standalone and capex figures",
+    "quote": "we don't like to give out too many numbers which are not in the public domain"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 5,
+   "margin": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Export and aftermarket growth split",
+    "quote": "I really feel that just exports won't give you a good picture."
+   },
+   {
+    "topic": "Capex split standalone vs subsidiaries",
+    "quote": "we fundamentally drive this on consolidation."
+   },
+   {
+    "topic": "Siemens contract details",
+    "quote": "I'm sorry we do not share that information"
+   },
+   {
+    "topic": "Mahant order book execution timing",
+    "quote": "If you have a little patience, trust me, we saved three years."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

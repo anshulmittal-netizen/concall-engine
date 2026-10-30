@@ -1,0 +1,162 @@
+{
+ "doc_id": "IN-984221fe-23c5-4a1b-9343-adc2de2ece90",
+ "market": "IN",
+ "company_id": "532977",
+ "name": "Bajaj Auto Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-12",
+ "period": "2026-03",
+ "title": "Bajaj Auto Ltd - 532977 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Record Q4 with 20.8% EBITDA margin, but management flags 3.5–4% of revenue commodity inflation in Q1 with only ~40% priced back and motorcycle industry growth guided down to 7–9% from ~20%.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Commodity inflation 3.5–4% of revenue Q1",
+    "quote": "we are currently estimating a material cost inflation impact of approximately 3.5% to 4% of revenue",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "demand",
+    "label": "Motorcycle growth 20% → 7–9% near term",
+    "quote": "bound to slow down the mot orcycle category from its rocking 20% growth in Q4 to we estimate 7% to 9% in the near term",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Chetak capacity expansion needed",
+    "quote": "we have now reached a position where we think a substantive increase in capacity in Chetak is needed",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Price hike covers ~40% of inflation",
+    "quote": "we have taken very judicious pricing actions to offset about 40% of this impact so far",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Exports to 220k units per month",
+    "quote": "pushing exports to the 220 K plus levels",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Motorcycle industry growth",
+    "value": "7% to 9% near term",
+    "change": "new",
+    "quote": "we estimate 7% to 9% in the near term"
+   },
+   {
+    "metric": "Commodity cost inflation (Q1 vs Q4)",
+    "value": "3.5% to 4% of revenue",
+    "change": "new",
+    "quote": "we are currently estimating a material cost inflation impact of approximately 3.5% to 4% of revenue"
+   },
+   {
+    "metric": "Exports volume per month",
+    "value": "220k+ units per month",
+    "change": "new",
+    "quote": "pushing exports to the 220 K plus levels"
+   },
+   {
+    "metric": "Sequential margin",
+    "value": "Hold margin flat",
+    "change": "held",
+    "quote": "Sequentially, we look to hold margin flat"
+   },
+   {
+    "metric": "Buyback and dividend payout",
+    "value": "INR5,633 cr buyback plus INR4,192 cr final dividend",
+    "change": "new",
+    "quote": "a final dividend of INR150 per share that will aggregate to INR4,192 crores"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "KTM",
+    "relation": "peer"
+   },
+   {
+    "name": "Triumph",
+    "relation": "peer"
+   },
+   {
+    "name": "Bajaj Mobility AG",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Electronics manufacturing (EMS/PLI)",
+   "Electric 2W/3W transition",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q1 commodity shock 3.5–4% of revenue; pricing covers ~40%",
+    "quote": "we have taken very judicious pricing actions to offset about 40% of this impact so far"
+   },
+   {
+    "label": "Demand softening and April volumes impaired 10–15% by supply constraints",
+    "quote": "impaired availability to service demand by about 10% to 15%"
+   },
+   {
+    "label": "Unhedged FX; realising at market",
+    "quote": "we're not hedged, and therefore, we are realizing at market"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 3,
+   "capex": 1,
+   "balance_sheet": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Full-year motorcycle growth and export vs domestic split",
+    "quote": "how exactly the chips fall between exports and domestic motorcycles is difficult to say"
+   },
+   {
+    "topic": "Price hike appetite and margin tolerance",
+    "quote": "I think next round of pricing will probably be the last of the recourses that we will take, if at all required"
+   }
+  ],
+  "hedge_index": 0.35
+ }
+}

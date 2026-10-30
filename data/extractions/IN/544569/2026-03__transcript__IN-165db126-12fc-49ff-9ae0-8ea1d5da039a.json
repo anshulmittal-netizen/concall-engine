@@ -1,0 +1,152 @@
+{
+ "doc_id": "IN-165db126-12fc-49ff-9ae0-8ea1d5da039a",
+ "market": "IN",
+ "company_id": "544569",
+ "name": "Tata Motors Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-19",
+ "period": "2026-03",
+ "title": "Tata Motors Ltd - 544569 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Q4 FY26 volumes up 25% and EBITDA margin 13.9%, but management flagged 100bps commodity hit in Q4, more in Q1, only a 2% price rise with partial pass-through, and no FY27 guidance beyond single-digit Q1 growth.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Operating leverage",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we expect FY27 also our guidance would remain similar, 2% to 4% of revenue"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Commodity hit 100bps Q4, more in Q1",
+    "quote": "we've already seen around 100 basis point impact in Q4. Beyond the impact in Q4, we have also seen significantly higher impact being seen in Q1",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "2% price hike, not full pass-through",
+    "quote": "we have taken a 2% price increase in the month of April, but we have decided to not pass on the entire commodity increases",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q4 wholesale volume +25% YoY",
+    "quote": "Q4 wholesale reached close to 131.8K units, 25% year-on-year increase",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Q1 growth only single-digit or more",
+    "quote": "we should see a single -digit growth, if not more, in Q1",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Tata Motors outpaced TIV: +25% vs +19%",
+    "quote": "the offtake TIV grew 19% YoY in Q4 while Tata Motors volumes outpaced the industry at 25% YoY growth",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q1 FY27 volume growth",
+    "value": "single-digit growth, if not more",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "we should see a single -digit growth, if not more, in Q1"
+   },
+   {
+    "metric": "Capex/investment as % of revenue",
+    "value": "2% to 4% of revenue",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we expect FY27 also our guidance would remain similar, 2% to 4% of revenue"
+   },
+   {
+    "metric": "Iveco transaction closure",
+    "value": "Q2 FY27",
+    "change": "held",
+    "horizon": "Q2 FY27",
+    "quote": "we expect this to kind of spill into Q2, and that's where our timeline for deal closure is going to be Q2"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Iveco",
+    "relation": "partner"
+   },
+   {
+    "name": "Tata Cummins",
+    "relation": "partner"
+   },
+   {
+    "name": "BillionE Mobility",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Commodity cost inflation",
+   "Iveco acquisition",
+   "EV commercial vehicles",
+   "Indonesia export order",
+   "Diesel price sensitivity",
+   "Electric bus tenders"
+  ],
+  "red_flags": [
+   {
+    "label": "Commodity cost squeeze into Q1 with partial pass-through",
+    "quote": "we have decided to not pass on the entire commodity increases"
+   },
+   {
+    "label": "Middle East shipments halted",
+    "quote": "we have had no shipments to Middle East in the last two months"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 3,
+   "balance_sheet": 2,
+   "capex": 1,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Mid-teens/teens EBITDA margin guidance under cost headwinds",
+    "quote": "we will have to go really quarter by quarter"
+   },
+   {
+    "topic": "FY27 demand outlook",
+    "quote": "we will have to take quarter-by-quarter rather than projecting for the whole year"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

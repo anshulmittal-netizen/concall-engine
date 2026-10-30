@@ -1,0 +1,135 @@
+{
+ "doc_id": "IN-3def4a8e-d505-4b28-8150-8bb256b3aea6",
+ "market": "IN",
+ "company_id": "526612",
+ "name": "Blue Dart Express Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-18",
+ "period": "2026-03",
+ "title": "Blue Dart Express Ltd - 526612 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "Blue Dart Q4 FY26 PBT before exceptional fell about 17% on ~8% revenue growth, with tonnage up only 4.6% and margins under pressure; management gave no numeric FY27 guidance.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 85,
+   "quote": "So it continues to be at around 85% on a pallet utilization level."
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "our capex for the year is almost INR 360 crores, whereas standalone, it is INR 120 crores."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Q4 PBT before exceptional down ~17%",
+    "quote": "there is a drop of about 17% in the comparable PBT before exceptional items for the quarter",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Q4 tonnage growth slows to 4.6%",
+    "quote": "For the quarter, it is 4.6%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Price hikes absorbed by mix and cost",
+    "quote": "it would be better than 3% to 4% is what I can say.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Surface shipment per kg slowing",
+    "quote": "The shipment per kg for ground surface has ....I think, has come down as compared to earlier years",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Volume growth FY27",
+    "value": "not given",
+    "change": "dropped",
+    "quote": "Without really giving color of forward-looking statement"
+   },
+   {
+    "metric": "PBT margin",
+    "value": "lagging 7-8% target, no timeline",
+    "change": "held",
+    "quote": "As soon as possible, that's what we'll track."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "PBT margin 7-8% guidance",
+    "outcome": "missed",
+    "quote": "I think we are lagging that guidance by some distance."
+   }
+  ],
+  "entities": [
+   {
+    "name": "DHL",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "E-commerce logistics volume",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "PBT margin target missed",
+    "quote": "I think we are lagging that guidance by some distance."
+   },
+   {
+    "label": "Q4 profit down ~17% on higher costs",
+    "quote": "there is a drop of about 17% in the comparable PBT before exceptional items for the quarter"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 5,
+   "margin": 6,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "FY27 volume growth",
+    "quote": "Without really giving color of forward-looking statement"
+   },
+   {
+    "topic": "Price hike realisation %",
+    "quote": "Very difficult to quote a specific percentage"
+   },
+   {
+    "topic": "Segment market share",
+    "quote": "We'll not have updated numbers."
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

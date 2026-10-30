@@ -1,0 +1,381 @@
+{
+ "doc_id": "IN-8d8202a0-c734-4758-8d91-e8537894db90",
+ "market": "IN",
+ "company_id": "532843",
+ "name": "Fortis Healthcare Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-29",
+ "period": "2026-03",
+ "title": "Fortis Healthcare Ltd - 532843 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Hospital margins rose to 22.2% in FY26 and management reaffirmed 25% by FY28, but occupancy slipped to 68% and CGHS/ECHS onco price caps are cutting volume in Punjab, with capex guided at about INR900 crores a year.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capacity bottleneck",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 68,
+   "quote": "Our hospital occupancy in financial year '26 was 68% compared to 69% in financial year '25"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we expect to incur around INR900 crores annually on the capex, which may include 60% towards maintenance capex"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Onco price cap hits Punjab volumes",
+    "quote": "the medical onco drug capping that has also led to a drop in the revenue and occupancy to some extent",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Hospital revenue growth 15%+ FY27",
+    "quote": "we are well poised to see on hospital side, 15% plus revenue growth",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "supply",
+    "label": "Shalimar Bagh 300-bed deferral",
+    "quote": "Shalimar Bagh, definitely, there is a delay in the expansion",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "FMRI occupancy 85-90%",
+    "quote": "We are operating at around 85%, 90% occupancy level. We are actually facing bed shortage",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Hospital revenue growth FY27",
+    "value": "15%+",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are well poised to see on hospital side, 15% plus revenue growth"
+   },
+   {
+    "metric": "Hospital EBITDA margin FY27",
+    "value": "+150 bps",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect another 150 basis point margin improvement for the current financial year"
+   },
+   {
+    "metric": "Hospital EBITDA margin target",
+    "value": "25% by FY28",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "that guidance remains absolutely intact"
+   },
+   {
+    "metric": "Diagnostics EBITDA margin FY27",
+    "value": "23% to 24%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "for the coming year as well, we'll be around 23% to 24% kind of EBITDA margins"
+   },
+   {
+    "metric": "Diagnostics revenue growth FY27",
+    "value": "double digits",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we'll definitely improve and touch about double digits this year is what we are hoping"
+   },
+   {
+    "metric": "Brownfield bed addition FY27",
+    "value": "500-plus beds",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Next year, we are targeting around 500-plus bed expansion"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Hospital EBITDA margin 25% by FY28",
+    "outcome": "held",
+    "quote": "that guidance remains absolutely intact"
+   },
+   {
+    "metric": "Diagnostics EBITDA margin 22% to 23% FY26",
+    "outcome": "met",
+    "quote": "this year, we said that we'll be around 22% to 23% in terms of EBITDA. So we are there."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Agilus Diagnostics",
+    "relation": "partner"
+   },
+   {
+    "name": "CGHS",
+    "relation": "customer"
+   },
+   {
+    "name": "ECHS",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Occupancy falling at large hospitals",
+    "quote": "it seems like we've seen occupancy dropping in a lot of our larger hospitals like FMRI, BG Road, Faridabad"
+   },
+   {
+    "label": "Diagnostics Q4 margin down YoY",
+    "quote": "The operating EBITDA margin, excluding the one-offs, stood at 20.1% in quarter 4 of financial year '26 as against 23.4%"
+   },
+   {
+    "label": "BG Road occupancy 55%",
+    "quote": "this unit, the occupancy level is low"
+   },
+   {
+    "label": "Net debt rising",
+    "quote": "net debt-to-EBITDA of 1.09x as on March 31, 2026, as aga inst 0.93 on March 31, 2025"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 4,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Organic doctor additions",
+    "quote": "I don't think, Tushar, we have that number offhand. This is an ongoing thing. We don't really track it that way."
+   },
+   {
+    "topic": "CGHS onco cap timeline",
+    "quote": "Very difficult, Shyam, to give any time line for this"
+   },
+   {
+    "topic": "Gleneagles revenue and EBITDA",
+    "quote": "we don't have number for Gleneagles right now because it is not getting consolidated with us"
+   }
+  ],
+  "hedge_index": 0.35
+ },
+ "summary": {
+  "headline": "Fortis FY26 consolidated revenue rose 17.3% to INR9,128 crores and EBITDA margin expanded to 22.8%; FY27 guidance is 15%+ hospital revenue growth.",
+  "overview": "FY26 consolidated revenue reached INR9,128 crores (+17.3%), with hospital revenue up 19.1% to INR7,773 crores and consolidated operating EBITDA up 31.3% to INR2,085 crores (22.8% margin vs 20.4%). Q4 FY26 consolidated revenue was INR2,365 crores (+17.8%) and PAT rose 44.2% to INR271 crores. Management flagged softer Q4 occupancy at several large hospitals, attributed to a drop in international patients and a government price cap on oncology drugs affecting CGHS/ECHS business in Punjab. Net debt rose to INR2,334 crores (1.09x net debt/EBITDA) on acquisitions and investments.",
+  "segments": [
+   {
+    "name": "Hospitals",
+    "commentary": "FY26 revenue INR7,773 crores (+19.1%), operating EBITDA margin 22.2% vs 20.5%; ~85% of consolidated revenue and EBITDA. Q4 revenue INR2,023 crores (+19%), Q4 EBITDA margin 22.1%. Occupancy 68% vs 69%; ARPOB up 3.4% to INR2.51 crores."
+   },
+   {
+    "name": "Diagnostics (Agilus)",
+    "commentary": "FY26 gross revenue INR1,527 crores (+8.5%), operating EBITDA INR360 crores (23.6% margin vs 17.7%; 23.2% ex one-offs). Q4 gross revenue INR387 crores (+11.1%), EBITDA INR85 crores, margin 22%; Q4 tests ~10 million (+5%). Preventive health 13% of mix vs 11%; B2C:B2B 52:48 for FY26."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 hospital revenue growth guided at 15%+ on an ongoing (organic) basis; acquisitions excluded and additive.",
+   "FY27 hospital EBITDA margin expected to improve by about 150 bps; long-term target of 25% by FY28 reaffirmed, with management seeing 1.5%-2% annual improvement.",
+   "Diagnostics FY27 EBITDA margin guided at 23%-24%; revenue growth targeted at double digits (currently ~8.5%), with ~70% volume and ~30% value mix.",
+   "Jaipur expected to grow ~15% in FY27 with 13%-14% EBITDA margin.",
+   "Brownfield bed additions of 500+ in FY27 and ~1,800 beds over the next 4 years; capex about INR900 crores annually (about 60% maintenance).",
+   "Dividend of INR1 per share (10% of face value), fourth consecutive year, subject to shareholder approval.",
+   "IHH reportedly plans to raise stake to 50% and infuse ~INR10,000 crores fresh equity; no timeline given."
+  ],
+  "capex_capacity": [
+   "FY26 capex about INR700 crores; ~250 beds added via brownfield (Manesar, Noida, Faridabad) and ~800 beds added in total including acquisitions.",
+   "Acquired People Tree Hospital (125 beds, Bengaluru, Jan 2026) with land for 300+ beds; Shrimann Super Specialty Jalandhar (228 beds, Jul 2025) with land for 450+ beds; 200-bed Greater Noida lease (Sep 2025); Adayu 36-bed mental health facility in Gurugram (Nov 2025).",
+   "FMRI new tower to be operationalised within about a week, opening ~100 beds in FY27 on a phased basis; FY27 brownfield additions of 400+ beds per earlier statement, with 500+ per later remark.",
+   "Shalimar Bagh expansion delayed pending approvals; ~300 beds moved from FY28 to FY29; Mohali, Shalimar Bagh and Amritsar large towers ~2.5-3 years away.",
+   "BG Road has ~100 beds of brownfield capacity uncommissioned until occupancy improves; Mulund considering another tower."
+  ],
+  "demand_pricing": [
+   "Hospital occupancy 68% in FY26 vs 69%; occupied beds up 15% (management cited 3,270 to 2,838, a figure order inverted in the transcript). FMRI at 85-95% occupancy; BG Road at ~55% vs ~63-64% area norm.",
+   "International patient revenue +18.5% to INR639 crores (7.8% of hospital revenue); Q4 international growth ~11%. Management is diversifying to Africa and other markets.",
+   "Oncology drug price capping (~30% of MRP) under CGHS/ECHS led Fortis to stop some high-cost drug cases, mainly in Punjab; no timeline for resolution. Management said margin impact is limited.",
+   "Focus specialties grew 18.9% and make up 62% of hospital revenue; radiation therapy volumes +19%, robotic surgeries +66%.",
+   "Diagnostics: 40.8 million tests in FY26 vs 39.2 million; 50+ new tests added; Illumina NovaSeq X operational at Mumbai reference lab."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why are occupancies falling at large hospitals such as FMRI and BG Road, and how will this improve?",
+    "answer": "Vivek Goyal attributed the drop mainly to lower international business (Q4 growth ~11% vs 18-20% for the year) and oncology drug capping in Punjab. He said BG Road is low due to TPA/cash mix, intense competition and a 55% level versus a 63-64% area norm, with a target above 60%."
+   },
+   {
+    "question": "Will margins expand given new capacity and doctor cost pressure?",
+    "answer": "Ashutosh Raghuvanshi said doctor costs rose slightly but further increases are not expected; the 25% FY28 margin target is intact, with 1.5-2% annual improvement now seen as more confident."
+   },
+   {
+    "question": "How much revenue did the 800 new beds contribute?",
+    "answer": "Vivek Goyal said Q4 hospital revenue of INR2,000 crores would be INR1,928 crores excluding People Tree, Adayu and Jalandhar, so new-unit contribution is small."
+   },
+   {
+    "question": "What is the revenue and EBITDA of Gleneagles?",
+    "answer": "Management does not consolidate Gleneagles and does not track full-year numbers; it is trending around INR70 per month."
+   },
+   {
+    "question": "Is Diagnostics demerger being considered?",
+    "answer": "Vivek Goyal said the focus is on profitability, this is not the time to lock value, and alternatives may be considered once the business matures."
+   },
+   {
+    "question": "Is the Gleneagles transaction moving forward?",
+    "answer": "Management said it is under deliberation and evaluation; no timeline, and it would need majority-of-minority approval."
+   },
+   {
+    "question": "What is the Manesar run-rate and FMRI ARPOB driver?",
+    "answer": "Manesar FY26 revenue was INR140 crores at ~48% occupancy (new beds being added) and reached EBITDA breakeven. FMRI ARPOB rise was attributed to gross-basis international business, MR Linac, Gamma Knife and day-care oncology."
+   },
+   {
+    "question": "Why is Jaipur and FEHI improving, and why build a Bangalore hospital in a competitive market?",
+    "answer": "Management cited operational efficiency, new facilities and clinical talent at FEHI; Jaipur expected to grow ~15% at 13-14% margin. The People Tree site is a less competitive micro-market with underserved catchment, per Ashutosh Raghuvanshi."
+   }
+  ],
+  "risks_watch": [
+   "Oncology drug price caps under CGHS/ECHS and the pace of revenue loss in Punjab, with no resolution timeline.",
+   "Occupancy at large hospitals (FMRI, BG Road, Faridabad) and absorption of new beds in Gurgaon and Noida amid doctor cost pressure.",
+   "International patient growth slowing (Q4 ~11%) and sustainability of domestic growth offsetting it.",
+   "Shalimar Bagh approval delays moving ~300 beds from FY28 to FY29.",
+   "Debt rise to 1.09x net debt/EBITDA after acquisitions; FY27 capex about INR900 crores.",
+   "Pending Gleneagles transaction and IHH equity infusion, both without timelines."
+  ],
+  "management_tone": "Confident on full-year financials and FY27 guidance, reaffirming the 25% FY28 hospital margin target. Cautious and evasive on the oncology pricing issue, Gleneagles, IHH capital and some occupancy questions, giving no timelines or figures where they were requested.",
+  "key_quotes": [
+   "If at all, we are more confident now that we can continue to deliver this progress every year, at least to 1.5% to 2% year-on-year.",
+   "So revenue-wise, we are well poised to see on hospital side, 15% plus revenue growth.",
+   "And I think this is not the right time to do any sort of value locking at this point."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue FY26",
+    "value": "INR9,128 crores",
+    "change": "+17.3% YoY"
+   },
+   {
+    "metric": "Hospital business revenue FY26",
+    "value": "INR7,773 crores",
+    "change": "+19.1% YoY"
+   },
+   {
+    "metric": "Diagnostics net revenue FY26",
+    "value": "INR1,355 crores",
+    "change": "+8% YoY"
+   },
+   {
+    "metric": "Consolidated operating EBITDA FY26",
+    "value": "INR2,085 crores; margin 22.8%",
+    "change": "+31.3% YoY; vs 20.4% in FY25"
+   },
+   {
+    "metric": "Consolidated PAT FY26",
+    "value": "INR1,064 crores",
+    "change": "+31.5% YoY (INR809 crores in FY25)"
+   },
+   {
+    "metric": "Consolidated revenue Q4 FY26",
+    "value": "INR2,365 crores",
+    "change": "+17.8% YoY"
+   },
+   {
+    "metric": "Hospital operating EBITDA Q4 FY26",
+    "value": "INR446 crores; margin 22.1%",
+    "change": "vs INR372 crores in Q4 FY25"
+   },
+   {
+    "metric": "Consolidated PAT Q4 FY26",
+    "value": "INR271 crores",
+    "change": "+44.2% YoY"
+   },
+   {
+    "metric": "Net debt (31 Mar 2026)",
+    "value": "INR2,334 crores; 1.09x net debt/EBITDA",
+    "change": "vs 0.93x on 31 Mar 2025"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "FMRI new tower opening ~100 beds in phased manner (operationalised within about a week)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "trial_runs",
+    "mat": "minor"
+   },
+   {
+    "what": "Brownfield bed additions of 500+ beds in FY27 (Manesar, Noida, Faridabad area per earlier FY26 pattern)",
+    "size_pct": null,
+    "capex_cr": 900.0,
+    "q": 2,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Acquired People Tree Hospital (125 beds, Bengaluru) with land for 300+ beds",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "planned",
+    "mat": "minor"
+   },
+   {
+    "what": "Shalimar Bagh expansion (~300 beds) deferred from FY28 to FY29",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 8,
+    "status": "deferred",
+    "mat": "moderate"
+   },
+   {
+    "what": "Mohali, Shalimar Bagh and Amritsar large towers ~2.5-3 years away",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 10,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": 68.0,
+  "expansion": true,
+  "growth": 15.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains",
+   "new_products_or_markets"
+  ],
+  "clarity": "partial",
+  "qRev": 17.8,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management guides FY27 hospital revenue growth of 15%+ (organic, excluding acquisitions), backed partly by 500+ brownfield beds, FMRI tower ramp (~100 beds, 85-95% occupancy), and international/focus specialty growth, but the Shalimar Bagh 300-bed expansion slipped to FY29 and the 2.5-3 year large towers leave little new capacity before FY28.",
+  "mgmt": null
+ }
+}

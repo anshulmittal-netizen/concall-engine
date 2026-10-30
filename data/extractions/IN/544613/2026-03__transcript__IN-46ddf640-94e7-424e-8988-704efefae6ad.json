@@ -1,0 +1,149 @@
+{
+ "doc_id": "IN-46ddf640-94e7-424e-8988-704efefae6ad",
+ "market": "IN",
+ "company_id": "544613",
+ "name": "Fujiyama Power Systems Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Fujiyama Power Systems Ltd - 544613 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q4 revenue Rs 9,008mn (+87.5% YoY) and FY26 EBITDA margin 18.5%, but capacity additions are ramping slowly, inventory days rose to 83 from 71, and FY27 guidance is +50% revenue with PAT margin 11-13%.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 65,
+   "quote": "Now at present, we are running around 65%, but we are ramping up and we expect in a month or two it will be around 80%."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are also setting up a 1,200 megawatt TOPCon solar cell manufacturing facility at Ratlam."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory days 120 → 180",
+    "quote": "your inventory days, which has gone up from some 120 to 180",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Exit utilisation ~65%",
+    "quote": "Now at present, we are running around 65%, but we are ramping up",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue guidance +50%",
+    "quote": "In current year, our guidance 1s 50% up in revenue, sir.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Bawal 1.3 GWh lead-acid plant fire",
+    "quote": "Operations at the facility have been temporarily suspended",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "~50%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "In current year, our guidance 1s 50% up in revenue, sir."
+   },
+   {
+    "metric": "PAT margin FY27",
+    "value": "11% to 13%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "you can consider the guidance 11% to 13% basically for PAT margin."
+   },
+   {
+    "metric": "Ratlam 2 GW peak revenue",
+    "value": "Rs 5,000 crore",
+    "change": "new",
+    "horizon": "Peak, full utilisation by Q4 FY28",
+    "quote": "We can go up to Rs. 5,000 crores in terms of revenue."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Churchgate Partners",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Rooftop solar (PM Surya Ghar)",
+   "Backward integration",
+   "ALMM 2 / DCR cells",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory days up ~50-60%; raw material ~Rs 500 crore+",
+    "quote": "your inventory days, which has gone up from some 120 to 180"
+   },
+   {
+    "label": "BIS seizure of 2 instances, 10-15 SKUs in question",
+    "quote": "out of 500, I think around 10 to 15 SKUs are there in the question."
+   },
+   {
+    "label": "Bawal fire, lead-acid capacity 1.3 GWh suspended",
+    "quote": "The affected facility had a lead-acid battery manufacturing capacity of 1.3 gigawatt"
+   },
+   {
+    "label": "Management avoids segment volume disclosure",
+    "quote": "we want to avoid details because of competition."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 5,
+   "margin": 4,
+   "other": 9
+  },
+  "evasions": [
+   {
+    "topic": "Segment volume / market share",
+    "quote": "Sir, I mean, we want to avoid details because of competition."
+   },
+   {
+    "topic": "Competitive pricing pressure in new southern states",
+    "quote": "Yes, sir. Sir, actually, if you see our growth from last year to this year, it is a growth on every state."
+   },
+   {
+    "topic": "Long-term margin trajectory",
+    "quote": "PAT margins depend on many things. Mainly it is demand and supply basically which drives the margin."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

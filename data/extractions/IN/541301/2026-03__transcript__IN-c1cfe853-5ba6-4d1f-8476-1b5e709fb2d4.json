@@ -1,0 +1,139 @@
+{
+ "doc_id": "IN-c1cfe853-5ba6-4d1f-8476-1b5e709fb2d4",
+ "market": "IN",
+ "company_id": "541301",
+ "name": "Orient Electric Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-15",
+ "period": "2026-03",
+ "title": "Orient Electric Ltd - 541301 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q4 revenue up 10% to INR948 cr and EBITDA margin 8.2%, but gross margin fell to 31% on commodity inflation; calibrated price hikes (~6% in April) only partly offset costs and double-digit margin path is deferred.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "April price hike ~6% across categories",
+    "quote": "in April, we've taken about close to 6% price increase",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital days 23 to over 30",
+    "quote": "our working capital days have increased. It's gone up to over 30 days from 23 days last year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin hit 100-150 bps from commodities",
+    "quote": "it's impacted our gross margin, I would say, about 100, 150 basis points",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Channel inventory elevated, dealers cautious",
+    "quote": "Elevated channel inventory prompted dealers to approach replenishment with caution",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Gross margin",
+    "value": "32% to 34%",
+    "change": "held",
+    "horizon": "long term",
+    "quote": "we've always given guidance of saying 32% to 34% should be our gross margin"
+   },
+   {
+    "metric": "Double-digit EBITDA margin",
+    "value": "double-digit",
+    "change": "held",
+    "horizon": "over next 6 to 8 quarters (prior), now trending",
+    "quote": "from a structural perspective, we are trending towards a double-digit margin"
+   },
+   {
+    "metric": "Revenue ambition",
+    "value": "INR5,000 crores",
+    "change": "held",
+    "horizon": "long term",
+    "quote": "our journey towards INR5,000 crores and a double -digit EBITDA there"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Double-digit EBITDA margin in 6-8 quarters",
+    "outcome": "missed",
+    "quote": "we have been unable to achieve the same"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Haryana",
+    "relation": "other"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital days up 23 to 30+",
+    "quote": "our working capital days have increased. It's gone up to over 30 days from 23 days last year"
+   },
+   {
+    "label": "Double-digit margin target missed",
+    "quote": "we have been unable to achieve the same"
+   }
+  ],
+  "analyst_mix": {
+   "margin": 4,
+   "growth": 3,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Price hike needed to offset full cost inflation",
+    "quote": "It is not. And I will be very honest with you, the industry has not been able to do."
+   },
+   {
+    "topic": "Q1 primary vs secondary channel inventory",
+    "quote": "So unfair for me to give you a real live quarter 1 update."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

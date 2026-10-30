@@ -1,0 +1,164 @@
+{
+ "doc_id": "IN-ed8ab31e-3115-4b4d-833b-1061a82377de",
+ "market": "IN",
+ "company_id": "532726",
+ "name": "Gallantt Ispat Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-12",
+ "period": "2026-03",
+ "title": "Gallantt Ispat Ltd - 532726 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "FY26 volume growth only 1.7% and revenue up 3.95%; EBITDA/ton rose to INR 8,785 from 8,300, but management offers no capacity utilisation data beyond 88% and no peer capacity commentary, with 1.0→1.3 Mt expansion and INR 3,000 cr capex underway.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 88,
+   "quote": "But we have taken lot of initiatives and now we are at 88%."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "the current expansion plan which is there with INR 3,000 crores, that will increase our capacity to 1.3 million ton production."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 80% → 88%",
+    "quote": "in past we have been achieving a capacity utilization of almost 80%. But we have taken lot of initiatives and now we are at 88%.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capacity 1.0 → 1.3 Mt on INR 3,000 cr capex",
+    "quote": "that will increase our capacity to 1.3 million ton production",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue INR 5,300–5,400 cr target",
+    "quote": "the overall revenue should go up to somewhere around INR 5,300 crores, INR 5,400 crores with that",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA/ton INR 8,300 → 8,785",
+    "quote": "improved meaningfully from INR 8,300 per ton in FY25 to INR 8,785 per ton in FY26",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue after INR 3,000 cr capex",
+    "value": "INR 5,300-5,400 crore",
+    "change": "new",
+    "horizon": "post-expansion",
+    "quote": "the overall revenue should go up to somewhere around INR 5,300 crores, INR 5,400 crores with that"
+   },
+   {
+    "metric": "EBITDA margin with mine integration",
+    "value": "around 20%",
+    "change": "new",
+    "horizon": "post-completion",
+    "quote": "we should be somewhere around 20%"
+   },
+   {
+    "metric": "EBITDA improvement from captive mines",
+    "value": "INR 2,000 per ton",
+    "change": "new",
+    "horizon": "post-mines",
+    "quote": "We expect this to translate into an EBITDA improvement of approximately INR 2,000 per ton"
+   },
+   {
+    "metric": "Capacity utilisation",
+    "value": "90-92%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect somewhere around 90%, 92% will be a good level of capacity utilization"
+   },
+   {
+    "metric": "Steel capacity expansion commissioning",
+    "value": "H2 FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "this should commence production sometime in H2 of this financial year"
+   },
+   {
+    "metric": "Mines capex completion",
+    "value": "FY28",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "That is likely to be completed by FY28."
+   },
+   {
+    "metric": "Medium-term growth plan",
+    "value": "Present in Q2 FY27",
+    "change": "new",
+    "horizon": "Q2 FY27",
+    "quote": "intend to present this opportunity in Q2 FY27"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "NMDC",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Railway capex",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "INR 440 cr borrowings alongside INR 800 cr surplus; cash lent intercorporate at 12% payable on demand",
+    "quote": "we have deployed the money in the intercorporate market at an interest rate of 12%, and this amount is payable on demand within three months"
+   },
+   {
+    "label": "Inconsistent capex funding statements (internal accruals vs equity/external borrowing)",
+    "quote": "implementation of that project from a balanced funding proposal with equity and external borrowing"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 2,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Capex funding mix",
+    "quote": "No, in INR 3,000 crores program there is no equity program. It is all from internal generation."
+   },
+   {
+    "topic": "Solar power cost share",
+    "quote": "Not right at this moment sir."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

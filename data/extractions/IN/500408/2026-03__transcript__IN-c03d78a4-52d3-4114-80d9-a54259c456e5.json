@@ -1,0 +1,149 @@
+{
+ "doc_id": "IN-c03d78a4-52d3-4114-80d9-a54259c456e5",
+ "market": "IN",
+ "company_id": "500408",
+ "name": "Tata Elxsi Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-24",
+ "period": "2026-03",
+ "title": "Tata Elxsi Ltd - 500408 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Engineering & R&D services",
+  "thesis": "Q4 FY26 revenue INR993.8 cr, up 0.9% QoQ cc, with healthcare down 13.1% and FY27 growth cut to high single digit; margin gain mostly currency, not capacity discipline.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Operating leverage",
+   "Backlog conversion",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 73,
+   "quote": "Yes, we are at 73% utilization. So, I think we can go all the way up to 80% or slightly more than 80%"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 growth cut to high single digit",
+    "quote": "maybe, I would be a little more conservative and say maybe a higher single digit is what we should look at",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Healthcare down 13.1% QoQ cc",
+    "quote": "Our Healthcare and Life Sciences vertical de-grew by 13.1% quarter -on-quarter in constant currency terms",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "util",
+    "label": "Utilisation 73%, room to 80%+",
+    "quote": "we can go all the way up to 80% or slightly more than 80%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Aggressive competitor pricing in some bids",
+    "quote": "there has been competition that has priced very, very aggressively, and we are also a little bit surprised",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Automotive exit high-single digit",
+    "quote": "maybe we would look at a high-single digit exit, may not get into a double-digit for automotive",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "higher single digit, not double digit",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "we might be looking at a single digit, higher single digit growth for the financial year. We may not look at a double-digit growth"
+   },
+   {
+    "metric": "Q4 FY27 PBT margin exit",
+    "value": "around 27%",
+    "change": "held",
+    "horizon": "Q4 FY27",
+    "quote": "we want to take it to 27 in Q4 FY '27"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 double-digit growth aspiration",
+    "outcome": "dropped"
+   },
+   {
+    "metric": "Healthcare bottoming in Q3, recovery",
+    "outcome": "missed",
+    "quote": "those deals have not closed, and that resulted in this situation that we've had"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Terumo Corporation",
+    "relation": "customer"
+   },
+   {
+    "name": "HAL",
+    "relation": "customer"
+   },
+   {
+    "name": "Aeronautical Development Agency",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Defence indigenisation",
+   "Auto EV transition",
+   "Data-centre power & cooling",
+   "Agentic AI in IT services"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin gain mostly FX (155 bps of 130 bps net)",
+    "quote": "150-155 basis points is coming from the currency movements"
+   },
+   {
+    "label": "Growth cut and healthcare deal slippage",
+    "quote": "Unfortunately for us, those deals have not closed"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 5,
+   "balance_sheet": 0,
+   "capex": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Pricing and AI deflation",
+    "quote": "We don't know whether it is because that they have used GenAI or they have assumed that GenAI will lead to certain productivity."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

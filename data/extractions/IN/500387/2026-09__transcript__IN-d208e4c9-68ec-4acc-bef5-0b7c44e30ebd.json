@@ -1,0 +1,408 @@
+{
+ "doc_id": "IN-d208e4c9-68ec-4acc-bef5-0b7c44e30ebd",
+ "market": "IN",
+ "company_id": "500387",
+ "name": "Shree Cement Ltd",
+ "doc_type": "transcript",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "Shree Cement Ltd - 500387 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cement & building materials",
+  "thesis": "India volume +18% YoY to 9.31 Mt at 56% utilisation, but EBITDA/t fell to INR966 on fuel; capex H2 guided INR700-800 cr versus prior ~INR1,500 cr full year, implying a cut.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Supply discipline",
+   "Pricing power",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 56,
+   "quote": "better capacity utilization in our India operations, which increased to 56% compared to 52% in the corresponding quarter last year"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "we expect in the second half, it would be around INR700 crores to INR800 crores"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "India utilisation 52% → 56% YoY",
+    "quote": "better capacity utilization in our India operations, which increased to 56% compared to 52%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Realisation +1% YoY, October better than September",
+    "quote": "October is better than September, for example, right?",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "H2 capex INR700-800 cr",
+    "quote": "we expect in the second half, it would be around INR700 crores to INR800 crores",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Trade receivables up INR300 cr",
+    "quote": "Yes, trade receivable increased by INR300 crores",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume 40-41 Mt reiterated",
+    "quote": "we should be between 40 million to 41 million tons",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 India volume",
+    "value": "40-41 million tonnes",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we should be between 40 million to 41 million tons"
+   },
+   {
+    "metric": "FY27 capex H2",
+    "value": "INR700-800 crores in H2",
+    "change": "cut",
+    "horizon": "H2 FY27",
+    "quote": "we expect in the second half, it would be around INR700 crores to INR800 crores"
+   },
+   {
+    "metric": "Tax rate FY27",
+    "value": "31% to 32%",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "you may assume that it will be between 31% to 32% for the year"
+   },
+   {
+    "metric": "Fuel cost Q3",
+    "value": "about INR2.20 per kcal",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "for the coming quarter, we believe this will be around INR2.20"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 India volume",
+    "outcome": "met",
+    "quote": "we should be between 40 million to 41 million tons"
+   },
+   {
+    "metric": "FY27 capex (India)",
+    "outcome": "not_discussed",
+    "quote": "Capital expenditure is INR895 crores for the first half"
+   },
+   {
+    "metric": "Depreciation FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Tax rate FY27",
+    "outcome": "missed",
+    "quote": "you may assume that it will be between 31% to 32% for the year"
+   },
+   {
+    "metric": "Fuel cost",
+    "outcome": "missed",
+    "quote": "the landed cost was INR2.09 as against INR1.66 last year and INR1.95 for the June quarter"
+   },
+   {
+    "metric": "RMC EBITDA margin",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Union Cement Company",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Railway capex",
+   "Alternate fuel substitution",
+   "Nearshoring / reshoring (US)"
+  ],
+  "red_flags": [
+   {
+    "label": "Trade receivables +INR300 cr; cash flow inventory +INR600 cr anomaly",
+    "quote": "Yes, trade receivable increased by INR300 crores"
+   },
+   {
+    "label": "Fuel cost above prior guidance; EBITDA/t down YoY",
+    "quote": "consolidated EBITDA per ton declined to INR966 from INR1,055 a year ago, primarily due to a higher fuel cost"
+   },
+   {
+    "label": "Pet coke cut to 11% from 66%, shift to imported coal",
+    "quote": "pet coke was almost 11%. Imported coal was 75%"
+   },
+   {
+    "label": "Freight cut may not persist; no one-offs claimed",
+    "quote": "This one quarter does not say much, it could be also because demand was good"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 5,
+   "margin": 6,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Power external sales / earmarked capacity",
+    "quote": "I think it's better to avoid this question because power division, we are not going to share any separate details."
+   },
+   {
+    "topic": "UAE EBITDA margin",
+    "quote": "We will not be able to share separately the EBITDA margins of UAE."
+   },
+   {
+    "topic": "Pure cement cost of production",
+    "quote": "Pure cement data is not available, we will give you later on."
+   },
+   {
+    "topic": "Price outlook and cost beyond Q3",
+    "quote": "any forecast beyond that is difficult to give"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Shree Cement Q2 FY27 India volumes rose 18% YoY to 9.31 mt, but consol EBITDA/ton fell to INR966 on higher fuel cost.",
+  "overview": "India sales volume grew about 18% YoY to 9.31 million tonnes, with realisation up 1% to INR4,870 per tonne. Consolidated EBITDA rose about 4% YoY to INR1,016 crore, but EBITDA per tonne fell to INR966 from INR1,055, mainly due to higher fuel cost (landed cost INR2.09 per kcal vs INR1.66 a year ago). Sequentially, volumes fell 11% in India and consolidated EBITDA dropped from INR1,272 crore on seasonality, West Asia conflict and weak monsoon. Management reiterated 40-41 million tonne India volume guidance for FY27 and an 80 million tonne capacity target.",
+  "financial_highlights": [
+   {
+    "metric": "India sales volume",
+    "value": "9.31 million tonnes",
+    "change": "+18% YoY from 7.91 mt; -11% QoQ from 10.49 mt"
+   },
+   {
+    "metric": "India realisation",
+    "value": "INR4,870 per tonne",
+    "change": "+1% YoY from INR4,840; -1% QoQ from INR4,919"
+   },
+   {
+    "metric": "Consolidated sales volume",
+    "value": "10.52 million tonnes",
+    "change": "+14% YoY from 9.23 mt; -8% QoQ from 11.45 mt"
+   },
+   {
+    "metric": "Consolidated EBITDA",
+    "value": "INR1,016 crore",
+    "change": "+4% YoY from INR974 crore; -20% QoQ from INR1,272 crore"
+   },
+   {
+    "metric": "Consolidated EBITDA per tonne",
+    "value": "INR966",
+    "change": "from INR1,055 YoY and INR1,111 QoQ"
+   },
+   {
+    "metric": "Blended cost of production",
+    "value": "INR4,636 per tonne",
+    "change": "vs INR4,245 YoY and INR4,329 QoQ"
+   },
+   {
+    "metric": "Capex",
+    "value": "INR895 crore in H1",
+    "change": "H2 expected INR700-800 crore"
+   },
+   {
+    "metric": "Consolidated net cash",
+    "value": "INR8,168 crore",
+    "change": ""
+   },
+   {
+    "metric": "Ready-mix volume",
+    "value": "2.73 lakh cubic metres",
+    "change": "+153% YoY"
+   },
+   {
+    "metric": "Ready-mix revenue",
+    "value": "INR129 crore",
+    "change": "+182% YoY; EBITDA positive"
+   },
+   {
+    "metric": "Effective tax rate",
+    "value": "around 31-32%",
+    "change": "old tax regime"
+   },
+   {
+    "metric": "Premium cement share",
+    "value": "29%",
+    "change": "from 21% a year ago and 23% in Q1"
+   },
+   {
+    "metric": "Trade share",
+    "value": "61%",
+    "change": "balance non-trade"
+   },
+   {
+    "metric": "Rail mix",
+    "value": "8.5%",
+    "change": "from 11% YoY and 9% QoQ"
+   },
+   {
+    "metric": "Lead distance",
+    "value": "427 km",
+    "change": "from 441 km YoY and 445 km QoQ"
+   }
+  ],
+  "segments": [
+   {
+    "name": "India cement",
+    "commentary": "Volumes 9.31 mt (+18% YoY); capacity utilisation 56% vs 52% a year ago. Realisation INR4,870 per tonne. South grew fastest, followed by North and then East, per management."
+   },
+   {
+    "name": "UAE (Union Cement, step-down subsidiary)",
+    "commentary": "New 3 mt cement mill commissioned in September 2026, taking capacity to 7 mtpa. H1 FY27 volume about 2.1 mt; management expects similar H2 run-rate and about 4-5 mt annualised after the new mill ramps (about 30% utilisation in first year)."
+   },
+   {
+    "name": "Ready-mix concrete",
+    "commentary": "28 commercial plants plus captive units, 35 plants in total. Volume 2.73 lakh cubic metres (+153% YoY), revenue INR129 crore (+182% YoY), EBITDA positive."
+   },
+   {
+    "name": "Power",
+    "commentary": "Total power capacity about 1,170 MW: 503 MW thermal and 667 MW green (WHR, solar, wind). Green power was 65.2% of electricity consumption in Q2. Around 80 MW of additional renewable capacity in progress. External power sales not disclosed."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 India volume guidance of 40-41 million tonnes; management said it could reach up to 41 mt.",
+   "Q3 landed fuel cost guided at about INR2.15-2.20 per kcal (vs INR2.09 in Q2); CFO also cited around INR2.20.",
+   "Q3 cost expected to be broadly similar to Q2 per management; bag and other external costs hard to forecast.",
+   "Management expects Q3 and Q4 performance reasonably better, if not similar, to Q2.",
+   "Capex guided at INR700-800 crore for H2 FY27.",
+   "Meghalaya greenfield integrated plant expected to commission in the quarter ending 31 March 2028.",
+   "Target to reach 80 million tonnes capacity in the short term; commitment to grow slightly faster than industry.",
+   "Working capital: clinker inventory build of about INR100 crore expected to be consumed; sustainable inventory change INR60-70 crore by year-end.",
+   "Premium share internal target above 40% within a few years."
+  ],
+  "capex_capacity": [
+   "Meghalaya greenfield integrated plant: construction mobilised, contractors and orders placed; commissioning now targeted for the quarter ending 31 March 2028 after state government hearing cleared doubts.",
+   "UAE: new 3 mt cement mill commissioned in September 2026; total UAE capacity 7 mtpa.",
+   "India capacity about 70 mt per management; utilisation 56% in Q2.",
+   "Green power capacity 667 MW with about 80 MW more under implementation.",
+   "Alternate fuel/TSR rose from about 2% to about 5%; more plants being commissioned for AFR handling."
+  ],
+  "demand_pricing": [
+   "Industry demand growth estimated at 7-10% in Q2 per management, with weak monsoon hitting rural demand; infrastructure, railways, housing and data centres supporting demand.",
+   "Prices improved in October vs September per management; industry reports of INR20-25 per bag hikes in North and East referenced by an analyst.",
+   "Premium cement sells INR25-35 per bag above base; newer premium brands (Total, Marble) about INR35-40 higher.",
+   "Non-trade share rising due to institutional and infrastructure projects; management says trade remains core.",
+   "Blended cement share about 58% vs 68% a year ago; pet coke fell to about 11% of fuel mix from 66%, imported coal 75%.",
+   "Freight cost per tonne fell sharply in Q2 due to lower run-to-market, lean-season railway discounts and data-based freight fixation; management says no one-offs but may not be sustained."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What was landed fuel cost per kcal and outlook for Q3 and Q4?",
+    "answer": "Q2 landed cost INR2.09 vs INR1.66 a year ago and INR1.95 in Q1; Q3 guided at about INR2.15-2.20 based on order pipeline."
+   },
+   {
+    "question": "Expected H2 volume growth and industry demand?",
+    "answer": "Management said demand triggers are strong; industry growth 7-10% in Q2; Shree expects to grow slightly better than industry if demand holds at around 7%."
+   },
+   {
+    "question": "Blended cost of production and pure cement cost?",
+    "answer": "Blended cost INR4,636 per tonne vs INR4,245 YoY and INR4,329 QoQ; pure cement cost not available, to be provided later."
+   },
+   {
+    "question": "Freight cost drop and whether one-off?",
+    "answer": "Driven by lower run-to-market, lean-season railway discounts and data-based freight fixation; management said there is no one-off."
+   },
+   {
+    "question": "Trade vs non-trade mix and Meghalaya status?",
+    "answer": "Trade 61%, balance non-trade; Meghalaya protests cleared by state government, workforce and contractors mobilised, commissioning in FY28 still targeted."
+   },
+   {
+    "question": "UAE volume outlook after new 3 mt mill?",
+    "answer": "H1 UAE volume about 2.1 mt; H2 similar; annualised UAE total about 4-5 mt after new capacity ramps (about 30% of 3 mt taken in first year)."
+   }
+  ],
+  "risks_watch": [
+   "Weak monsoon could delay rural cement demand recovery in H2.",
+   "Fuel cost: Q3 landed cost guided up to INR2.20 per kcal; pet coke to imported coal shift and alternative fuel ramp-up need monitoring.",
+   "Freight savings in Q2 may not be sustained beyond lean season, per management.",
+   "West Asia conflict affecting UAE demand; new UAE mill ramp-up typically takes 2-3 years.",
+   "Meghalaya plant execution after local protests; commissioning date Q4 FY28 (March 2028 quarter).",
+   "Receivables up about INR300 crore QoQ, contributing to working capital pressure.",
+   "Packaging/bag cost and other external costs described as rapidly moving and hard to forecast."
+  ],
+  "management_tone": "Confident on volumes, pricing and premium mix, with a clear 40-41 mt FY27 guide. Cautious and evasive on granular disclosures: clinker volumes, UAE revenue and EBITDA, power external sales and pure cement cost were withheld, and cost outlook was qualified as hard to forecast.",
+  "key_quotes": [
+   "If this trend continues, then what we have promised you all that our growth will be slightly better than the industry.",
+   "Trade has been our bread and butter. So trade, we will be pushing.",
+   "What I say is the most efficient producer. That is our core DNA that we'll continue to push.",
+   "So we have gradually reduced the use of pet coke because of the increased prices."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "3 mt cement mill in UAE (Union Cement), taking UAE capacity to 7 mtpa",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Meghalaya greenfield integrated cement plant",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "About 80 MW additional renewable (green) power capacity in progress",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "under_construction",
+    "mat": "minor"
+   }
+  ],
+  "util": 56.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": 4.0,
+  "outlook": 1,
+  "why": "FY27 India volume guided at 40-41 Mt (reiterated), backed by 56% utilisation and UAE 3 mt mill commissioned Sept 2026, with Meghalaya greenfield plant slated for quarter ending 31 Mar 2028; Q2 India volumes +18% YoY and consolidated EBITDA +4% YoY, but Q3 fuel cost guided higher at INR2.15-2.20/kcal.",
+  "mgmt": null
+ }
+}

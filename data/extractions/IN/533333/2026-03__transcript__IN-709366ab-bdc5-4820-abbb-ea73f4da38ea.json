@@ -1,0 +1,175 @@
+{
+ "doc_id": "IN-709366ab-bdc5-4820-abbb-ea73f4da38ea",
+ "market": "IN",
+ "company_id": "533333",
+ "name": "Fineotex Chemical Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-21",
+ "period": "2026-03",
+ "title": "Fineotex Chemical Ltd - 533333 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 FY26 revenue up 162% to INR314 cr and PAT up 118% to INR44 cr on acquired CrudeChem (CCT); supply-side evidence thin, Ambernath utilisation only 60-62%, and management gave soft targets (US$200m by 2028, 18-20% EBITDA) without hard numbers.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Consolidation",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 61,
+   "quote": "overall, we are at 60%, 62% broadly at the moment on the quarter 4 numbers"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are now in process of doubling the manufacturing capacity in CrudeChem"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "CCT capacity doubling underway",
+    "quote": "we are now in process of doubling the manufacturing capacity in CrudeChem",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Group utilisation ~61%",
+    "quote": "overall, we are at 60%, 62% broadly at the moment on the quarter 4 numbers",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "US$200m CCT revenue pulled to 2028",
+    "quote": "It should be definitely before 2028",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital 79-90 days, OCF negative",
+    "quote": "even if it's up to 90 days, it's not a big problem for us",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Raw material costs passed on",
+    "quote": "We keep passing on the increase. And by and large, our team has done a very good job",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "CCT revenue",
+    "value": "US$200 million",
+    "change": "raised",
+    "horizon": "FY28 (pulled forward from 2030)",
+    "quote": "Earlier, our expectation to touch $200 million was something in 2030."
+   },
+   {
+    "metric": "Blended EBITDA margin",
+    "value": "18% to 20%",
+    "change": "new",
+    "horizon": "FY27 possibly",
+    "quote": "On a blended level, we would always look at getting to an easy EBITDA of around 18% to 20%"
+   },
+   {
+    "metric": "CCT EBITDA margin",
+    "value": "around 15%",
+    "change": "new",
+    "horizon": "not specified",
+    "quote": "comfortably, we should be at EBITDA of 15% more or less."
+   },
+   {
+    "metric": "CCT stake",
+    "value": "79-80% after further 25% buyout in Jan 2028",
+    "change": "new",
+    "horizon": "Jan 2028",
+    "quote": "that further 25% has to be sold by them to Finotech's in January '28"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "CrudeChem Technologies Group",
+    "relation": "partner"
+   },
+   {
+    "name": "Halliburton",
+    "relation": "customer"
+   },
+   {
+    "name": "Schlumberger",
+    "relation": "customer"
+   },
+   {
+    "name": "Shell",
+    "relation": "customer"
+   },
+   {
+    "name": "Exxon",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Nearshoring / reshoring (US)",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow negative for FY26; working capital ~79-90 days",
+    "quote": "even if it's up to 90 days, it's not a big problem for us"
+   },
+   {
+    "label": "Vague or unverifiable acquired-business numbers (CCT Q4 revenue ~INR165-170 cr not detailed)",
+    "quote": "I cannot give most of the details right now"
+   },
+   {
+    "label": "Management says it cannot give forward-looking statements on FY27/28 revenue",
+    "quote": "So, I would not be able to share any forward-looking statements here."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 1,
+   "growth": 9,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "FY27/FY28 revenue guidance",
+    "quote": "So, I would not be able to share any forward-looking statements here."
+   },
+   {
+    "topic": "CCT Q4 segment numbers",
+    "quote": "I cannot give most of the details right now"
+   },
+   {
+    "topic": "Raw material basket inflation",
+    "quote": "It's very difficult to answer you numerically."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

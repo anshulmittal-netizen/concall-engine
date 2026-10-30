@@ -1,0 +1,154 @@
+{
+ "doc_id": "IN-f31b8c88-07aa-46ae-9ed3-29fbeac038dd",
+ "market": "IN",
+ "company_id": "544244",
+ "name": "Gala Precision Engineering Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-18",
+ "period": "2026-03",
+ "title": "Gala Precision Engineering Ltd - 544244 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Engineering & R&D services",
+  "thesis": "Chennai fastener plant ramping from ~35% utilisation toward INR80cr FY27 (67-70% of INR120cr capacity) while Phase 2 adds capacity; margins dipped to 16.5% on INR3.23cr forex loss, with price pass-through lag.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 35,
+   "quote": "During FY26, the plant operated at around 35% utilization and we expect utilization level to improve meaningfully in FY26."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "for the current year, we are seeing approximately INR50 crores something we may be able to deploy plus minus depend when we finalize the land"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Chennai utilisation ~35% FY26 → ~67-70% FY27",
+    "quote": "approximately INR80 crores something will be achieving the manufacturing or sale value in next year, which is going to be approximately 67% 70% of INR120 crores",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Phase 2 capex adds INR120cr capacity",
+    "quote": "that again will add another 5 crores per month capacity or annual capacity of additional 60 crores",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory days 103, target cut ~10 days",
+    "quote": "overall inventory level are at 103 days and we see it should not go above 103 days",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "pricing",
+    "label": "Pass-through lag; price talks from April",
+    "quote": "we already started discussion since beginning of April itself",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth",
+    "value": "20-25% overall; wind fasteners 25-30% short term",
+    "change": "new",
+    "quote": "we are looking to grow 20% to 25% sector in overall revenue term"
+   },
+   {
+    "metric": "Chennai FY27 sales",
+    "value": "INR80cr approx",
+    "change": "new",
+    "quote": "we are seeing approximately INR80 crores something will be achieving"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "17% to 19%",
+    "change": "new",
+    "quote": "we expect the margins to stabilize between 17% to 19%"
+   },
+   {
+    "metric": "Export share",
+    "value": "35% to 40% of sales",
+    "change": "new",
+    "quote": "export will continue to be between 35% to 40% of our sales"
+   },
+   {
+    "metric": "Cash flow conversion",
+    "value": "maintain or improve ~10% YoY",
+    "change": "new",
+    "quote": "we will maintain or we will try to improve by 10% or 10% or so on year-on-year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Vestas",
+    "relation": "customer"
+   },
+   {
+    "name": "NHK Spring",
+    "relation": "competitor"
+   },
+   {
+    "name": "Stumpp, Schuele and Somappa",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Anti-dumping protection",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Chennai plant at ~35% utilisation FY26",
+    "quote": "During FY26, the plant operated at around 35% utilization"
+   },
+   {
+    "label": "Forex loss INR3.23cr hit margins; cash flow constrained by inventory build",
+    "quote": "the drop is essentially mainly is on account of the forex loss, which is almost 1%, which is around INR3.23 crores"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 4,
+   "growth": 6,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Forex benefit quantification",
+    "quote": "I don't have the exact numbers; I will just answer that separately."
+   },
+   {
+    "topic": "Land acquisition timing",
+    "quote": "So, we are quite close to in closing this land, but still not close, that is the fact."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

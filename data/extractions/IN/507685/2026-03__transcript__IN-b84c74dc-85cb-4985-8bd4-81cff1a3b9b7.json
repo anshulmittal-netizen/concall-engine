@@ -1,0 +1,139 @@
+{
+ "doc_id": "IN-b84c74dc-85cb-4985-8bd4-81cff1a3b9b7",
+ "market": "IN",
+ "company_id": "507685",
+ "name": "Wipro Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-17",
+ "period": "2026-03",
+ "title": "Wipro Ltd - 507685 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.92,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Wipro Q4 FY26 revenue flat sequentially (+0.2% cc) with Americas 2 down 2.6% QoQ and Q1 guided -2% to 0%; book-to-bill weak at ~1.3x on $3.5bn orders, with large deal ramp delays and margin pressure ahead.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Backlog conversion",
+   "Customer stickiness",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Q1 guide -2% to 0% QoQ cc",
+    "quote": "In Q1, we are guiding for a sequential growth of minus 2% to 0% in constant currency terms.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Americas 2 down 2.6% QoQ",
+    "quote": "Americas 2 declined 2.6% sequentially and 6.7% on a YoY basis.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Large deals margin dilution flagged",
+    "quote": "The y will come with their share of lower margins, especially as we start these deals, right?",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Unbilled revenue up over $80m",
+    "quote": "the unbilled revenue has grown this quarter for more than $80 million.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "IT Services revenue Q1 FY27 (cc QoQ)",
+    "value": "-2% to 0%",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "In Q1, we are guiding for a sequential growth of minus 2% to 0% in constant currency terms."
+   },
+   {
+    "metric": "Operating margin medium term",
+    "value": "maintain in narrow band",
+    "change": "held",
+    "horizon": "medium term",
+    "quote": "our endeavour would be to maintain these margins in a narrow band in the medium term."
+   },
+   {
+    "metric": "Share buyback",
+    "value": "INR15,000 crore at INR250/share, ~5.7% of paid-up capital",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "the Board of Directors have announced and approved a buyback of INR15,000 crores at a price of INR250 per share."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Olam Group",
+    "relation": "customer"
+   },
+   {
+    "name": "Capco",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Agentic AI in IT services",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q1 guide implies sharp organic decline ex-deals",
+    "quote": "So these aside, I think the remaining business seems to be quite a sharp decline in Q1."
+   },
+   {
+    "label": "Top client sequential decline",
+    "quote": "it's a sequential decline. But from a YoY standpoint, it continues to have grown."
+   },
+   {
+    "label": "Unbilled revenue build",
+    "quote": "the unbilled revenue has grown this quarter for more than $80 million."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 6,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Ramp-up delay cause on large BFSI deal",
+    "quote": "The reason for the delay is a very client specific, but we see opportunity coming up sooner than later"
+   },
+   {
+    "topic": "Inorganic contribution in Q1 guide",
+    "quote": "They are not inorganic. They are actually strategic deal wins."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "doc_id": "IN-c49f5cd8-0bd8-4333-8186-c0d1d8ab601f",
+ "market": "IN",
+ "company_id": "543619",
+ "name": "Concord Control Systems Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-19",
+ "period": "2026-03",
+ "title": "Concord Control Systems Ltd - 543619 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Concord reports FY26 revenue INR 210.47 crore, EBITDA INR 62.1 crore and a INR 697 crore order book (3.3x revenue), but receivables and short-term debt rose sharply and management gave no capacity, utilisation or cash-conversion numbers.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables up sharply, no cash conversion",
+    "quote": "Trade receivables have increased significantly during the year.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital rise expected to persist",
+    "quote": "So, we should expect this type of working capital going forward also, right?",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Fusion revenue timing slipped",
+    "quote": "So I hope this year will be a revenue contributing year as well.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Order book INR 697 crore, 3.3x revenue",
+    "quote": "our executable order book as of 31 March , 2026 stands at approximately INR 697 crores.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth",
+    "value": "40% to 50% CAGR",
+    "change": "held",
+    "horizon": "medium term"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "20% to 25%",
+    "change": "held",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "Fusion Electronics revenue",
+    "value": "about INR 200 crore at full scale",
+    "change": "new",
+    "horizon": "full scale"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Progota",
+    "relation": "partner"
+   },
+   {
+    "name": "Fusion Electronics",
+    "relation": "partner"
+   },
+   {
+    "name": "NTPC",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Railway capex",
+   "Electronics manufacturing (EMS/PLI)",
+   "Renewables & storage",
+   "Defence indigenisation"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables and short-term debt rising; no peak debt guidance",
+    "quote": "Very difficult to comment today, because in the Q1, we will always have higher receivables coming from our clients."
+   },
+   {
+    "label": "Operating cash flow timing unanswered",
+    "quote": "So, there's no liquidity challenge at all?"
+   },
+   {
+    "label": "Fusion turnaround with no FY26 revenue disclosed",
+    "quote": "It's a turnaround story."
+   },
+   {
+    "label": "Evasive answers on Kavach tender and loco count",
+    "quote": "We'll come back to you with the exact numbers."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 5,
+   "margin": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Operating cash flow and when working capital turns positive",
+    "quote": "There is absolutely no issue in railway payments. It's just a cycle and a process."
+   },
+   {
+    "topic": "Peak debt and balance sheet",
+    "quote": "Very difficult to comment today"
+   },
+   {
+    "topic": "Kavach loco tender count",
+    "quote": "We'll come back to you with the exact numbers."
+   },
+   {
+    "topic": "Fusion FY26 revenue",
+    "quote": "It's a turnaround story. And it is one of the largest installed capacities"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

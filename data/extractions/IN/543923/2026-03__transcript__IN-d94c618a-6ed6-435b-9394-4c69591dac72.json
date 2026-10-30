@@ -1,0 +1,182 @@
+{
+ "doc_id": "IN-d94c618a-6ed6-435b-9394-4c69591dac72",
+ "market": "IN",
+ "company_id": "543923",
+ "name": "IKIO Technologies Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-08",
+ "period": "2026-03",
+ "title": "IKIO Technologies Ltd - 543923 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q4 revenue up 47% YoY to INR165 cr and FY26 EBITDA margin ~13%, but management guides FY27 growth of 20-22% with working capital stretched and no order book; supply-side evidence thin.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 70,
+   "quote": "the mature units are working at good efficiency levels, close to around anywhere, if I have to give a number, vaguely around 70% plus"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we are, I think, left with around -- from the IPO proceeds, somewhere around INR35 crores, INR36 crores of CapEx, which we intend to utilize in this financial year"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Working capital hit; 2-3 quarters more",
+    "quote": "working capital has been sort of got a slight hit because of whatever is happening geopolitically",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth 20-22%",
+    "quote": "somewhere close to around 20% to 22% growth in FY '27",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "No order book; US business not started",
+    "quote": "business has not yet started because, again, of whatever was happening geopolitically",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Mature units ~70%+, new units lower",
+    "quote": "the mature units are working at good efficiency levels, close to around anywhere, if I have to give a number, vaguely around 70% plus",
+    "direction": 0,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "20-22% YoY",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "somewhere close to around 20% to 22% growth in FY '27"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "15-16%, in line with FY26",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Yes, around -- yes, same line, 15% to 16%."
+   },
+   {
+    "metric": "Long-term EBITDA margin target",
+    "value": "18-20%",
+    "change": "new",
+    "horizon": "multi-year",
+    "quote": "our target is also to reach around 18% to 20%"
+   },
+   {
+    "metric": "Capex FY27 from IPO proceeds",
+    "value": "INR35-36 cr",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "somewhere around INR35 crores, INR36 crores of CapEx, which we intend to utilize in this financial year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Signify",
+    "relation": "customer"
+   },
+   {
+    "name": "Honeywell",
+    "relation": "customer"
+   },
+   {
+    "name": "Dixon",
+    "relation": "peer"
+   },
+   {
+    "name": "Lumax Industries",
+    "relation": "peer"
+   },
+   {
+    "name": "FIEM",
+    "relation": "peer"
+   },
+   {
+    "name": "Focus Lighting",
+    "relation": "peer"
+   },
+   {
+    "name": "Calcom Vision",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Tariffs & trade policy",
+   "Electronics manufacturing (EMS/PLI)",
+   "Auto EV transition",
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "China+1 enquiries → orders"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital stretched; inventory build from design changes",
+    "quote": "we are now having multiple inventories because, let's say, a certain design, we are not able to produce because of shortage of a certain component"
+   },
+   {
+    "label": "Single-customer concentration (Signify) falling sales",
+    "quote": "there has been a decline also in the sales in the Home Lighting segment"
+   },
+   {
+    "label": "Management says no order book; FY27 guidance is planning-based",
+    "quote": "So we don't have an order book kind of situation with our customers."
+   },
+   {
+    "label": "Utilisation not disclosed on consolidated basis",
+    "quote": "it's very hard to comment on the utilization level on a console basis"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 4,
+   "balance_sheet": 3,
+   "capex": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Consolidated utilisation",
+    "quote": "it's very hard to comment on the utilization level on a console basis"
+   },
+   {
+    "topic": "R&D spend",
+    "quote": "I honestly don't have that number right now in front of me"
+   },
+   {
+    "topic": "Steady-state working capital days",
+    "quote": "we are not in the right time right now"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

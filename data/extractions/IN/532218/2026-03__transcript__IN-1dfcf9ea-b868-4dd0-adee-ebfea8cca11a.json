@@ -1,0 +1,122 @@
+{
+ "doc_id": "IN-1dfcf9ea-b868-4dd0-adee-ebfea8cca11a",
+ "market": "IN",
+ "company_id": "532218",
+ "name": "South Indian Bank Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-13",
+ "period": "2026-03",
+ "title": "South Indian Bank Ltd - 532218 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Bank posted record FY26 profit of INR1,455 crore (+12%) with GNPA down to 1.43% and Q4 credit cost of 3bp, but management flags credit cost troughed and guides FY27 loan growth of 15-16%.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 loan growth 15-16%",
+    "quote": "we are still aiming to get between 15% and 16%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "NIM up 9bp in Q4",
+    "quote": "over the last two quarters our NIMs have improved by about 15 basis points, I mean six basis points in Q3 and nine basis points in Q4",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Credit cost trough, expected to rise",
+    "quote": "I think if anything, both slippages and credit cost should trend upwards",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Treasury income nil in Q4 vs INR77 crore Q3",
+    "quote": "in Q3, we had an income of around INR77 crores, so that is almost nil in Q4",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Advances growth FY27",
+    "value": "15% to 16%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are still aiming to get between 15% and 16%"
+   },
+   {
+    "metric": "Corporate share of book",
+    "value": "38% to 33%",
+    "change": "new",
+    "horizon": "2-3 years",
+    "quote": "the corporate goes down from 38 to 33"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Rural demand recovery",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Gold loan price-risk exposure",
+    "quote": "if the price of gold were to dip by more than that, then there will be some incremental hit to the bank"
+   },
+   {
+    "label": "CEO succession pending",
+    "quote": "my term ends on the 30th of September"
+   },
+   {
+    "label": "Opex growth to resume",
+    "quote": "expenses cannot be kept at this level indefinitely"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 3,
+   "margin": 3,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Credit cost outlook",
+    "quote": "these are unknown, unknown"
+   },
+   {
+    "topic": "NRI deposit West Asia exposure",
+    "quote": "The exact number as to what proportion of our NRI book is West Asia and what is not is not available with me right now"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

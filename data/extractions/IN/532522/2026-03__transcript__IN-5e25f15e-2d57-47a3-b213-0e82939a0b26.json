@@ -1,0 +1,167 @@
+{
+ "doc_id": "IN-5e25f15e-2d57-47a3-b213-0e82939a0b26",
+ "market": "IN",
+ "company_id": "532522",
+ "name": "Petronet LNG Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "Petronet LNG Ltd - 532522 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.75,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Dahej utilisation fell to about 53% in March on Qatar supply disruption, with Jan-Feb near 108%; management says April-May are at the same depressed level, so volumes at risk persist into FY27.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Supply exit",
+   "Operating leverage",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 53,
+   "quote": "the Dahej capacity utilization during March was around 53 % and Kochi was slightly more than 20%."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Dahej utilisation Mar ~53%",
+    "quote": "the Dahej capacity utilization during March was around 53 %",
+    "direction": -1,
+    "confidence": 0.9
+   },
+   {
+    "type": "util",
+    "label": "Apr-May utilisation same as March",
+    "quote": "No. It is, more or less at the same level.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Kochi tariff hike 5%",
+    "quote": "5%. That is constant.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Petchem project capex FY27",
+    "value": "about INR 7,500 crore",
+    "change": "new",
+    "quote": "that is about INR 7,500 crore plus minus, you can assume 10%"
+   },
+   {
+    "metric": "Total capex FY27",
+    "value": "around INR 9,000 crores; FY28 around 10% more",
+    "change": "new",
+    "quote": "FY '28 also should be at the same level around 10% more or less"
+   },
+   {
+    "metric": "Dividend",
+    "value": "endeavour to maintain same absolute level",
+    "change": "held",
+    "quote": "the endeavour is to maintain the same level of dividend"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 capex about INR 3,000 crore",
+    "outcome": "missed",
+    "quote": "the cash what has been spent is INR 2,511 crore"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Qatar Energy",
+    "relation": "supplier"
+   },
+   {
+    "name": "GAIL",
+    "relation": "customer"
+   },
+   {
+    "name": "Indian Oil",
+    "relation": "customer"
+   },
+   {
+    "name": "BPCL",
+    "relation": "customer"
+   },
+   {
+    "name": "GSPC",
+    "relation": "customer"
+   },
+   {
+    "name": "ExxonMobil",
+    "relation": "supplier"
+   },
+   {
+    "name": "Equinor",
+    "relation": "supplier"
+   },
+   {
+    "name": "Performance Chemiserve",
+    "relation": "customer"
+   },
+   {
+    "name": "Gujarat Gas",
+    "relation": "customer"
+   },
+   {
+    "name": "ONGC",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Utilisation collapse at Dahej (March 53%)",
+    "quote": "the Dahej capacity utilization during March was around 53 %"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 4,
+   "growth": 3,
+   "margin": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Utilisation outlook for FY27",
+    "quote": "So, I would request you to wait till the end of this quarter and see how things pass."
+   },
+   {
+    "topic": "Volume-at-risk and contract proportions",
+    "quote": "So, it is their prerogative which cargo they want to bring to Dahej"
+   },
+   {
+    "topic": "Qatar contract details",
+    "quote": "Yes, Maulik, this information we are not sharing actually. We do not share."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

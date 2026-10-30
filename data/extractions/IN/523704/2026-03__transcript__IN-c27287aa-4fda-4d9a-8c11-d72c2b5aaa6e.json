@@ -1,0 +1,165 @@
+{
+ "doc_id": "IN-c27287aa-4fda-4d9a-8c11-d72c2b5aaa6e",
+ "market": "IN",
+ "company_id": "523704",
+ "name": "Mastek Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-24",
+ "period": "2026-03",
+ "title": "Mastek Ltd - 523704 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Mastek Q4 FY26 was stable: revenue up 3.6% QoQ in INR, EBITDA 16.1%, 12-month backlog $300.4M (+13.5% YoY USD), but management gave no numeric FY27 growth guidance and flagged heavy renewal price cuts.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -2,
+   "structure": -1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 80,
+   "quote": "Utilization rate improved during Q4 at 80%, which was an improvement of 3.3% from Q3 and 1.7% from Q2."
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Renewal discounts 10-15%, possibly higher",
+    "quote": "we had renewed some of our contracts with anywhere around 10% to 15% discount. But depending on the nature of business and the nature of customers, it could go much higher than that",
+    "highlight": "10% to 15% discount",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "12-month backlog $300.4M, +13.5% YoY",
+    "quote": "We closed the year with 12-month backlog of $300.4 million, a sequential growth of 1.5% and a Y-o-Y growth of 13.5% in USD",
+    "highlight": "12-month backlog of $300.4 million",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Utilisation 80% in Q4",
+    "quote": "Utilization rate improved during Q4 at 80%, which was an improvement of 3.3% from Q3",
+    "highlight": "Utilization rate improved during Q4 at 80%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "No numeric FY27 growth guidance",
+    "quote": "So usually, we don't give guidance on future numbers. Having said that, we believe it will be a better performance than the previous year.",
+    "highlight": "we don't give guidance on future numbers",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "North America margin down on wage hike",
+    "quote": "on North America, it's mostly the pressure of the revenue still stabilizing as well as the impact of the wage hike",
+    "highlight": "pressure of the revenue still stabilizing",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "16% to 16.1%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "maintaining margin percentage for the coming period at 16% -16.1% is where we see the margin performances"
+   },
+   {
+    "metric": "Revenue growth FY27",
+    "value": "better than FY26, no number",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we believe it will be a better performance than the previous year"
+   },
+   {
+    "metric": "Tax rate",
+    "value": "24.5% to 24.7%",
+    "change": "new",
+    "horizon": "steady state",
+    "quote": "Going forward, our average effective tax rate would be 24.5% to 24.7%."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Oracle Health",
+    "relation": "partner"
+   },
+   {
+    "name": "Oracle",
+    "relation": "partner"
+   },
+   {
+    "name": "Anthropic",
+    "relation": "peer"
+   },
+   {
+    "name": "NHS",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "AI services deflation",
+   "Consolidation / competitor exits",
+   "Customer stickiness"
+  ],
+  "red_flags": [
+   {
+    "label": "Renewal price cuts 10-15%+",
+    "quote": "The renewals clearly are being extremely price competitive."
+   },
+   {
+    "label": "Labor Code exceptional charge INR23.7 cr",
+    "quote": "we recognized an exceptional and incremental impact of INR23.7 crores, which includes gratuity of INR16 crores"
+   },
+   {
+    "label": "Q3 EBITDA restated 16.1% to 16.8%",
+    "quote": "The Q3 EBITDA has improved from 16.1% to 16.8%."
+   },
+   {
+    "label": "Wartime AMEA revenue pulled from Q2",
+    "quote": "it was around $0.5 million worth of WAR revenue that we were able to recognize that we had postponed in Q2"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 4,
+   "balance_sheet": 3,
+   "capex": 0,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue growth quantum",
+    "quote": "So usually, we don't give guidance on future numbers."
+   },
+   {
+    "topic": "North America 12-month backlog",
+    "quote": "the 12 -month order backlog has not increased significantly"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

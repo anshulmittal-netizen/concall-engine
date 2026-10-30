@@ -1,0 +1,133 @@
+{
+ "doc_id": "IN-cb98b133-f861-495c-aef8-6e5c47aeaed8",
+ "market": "IN",
+ "company_id": "543599",
+ "name": "Ksolves India Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-06",
+ "period": "2026-03",
+ "title": "Ksolves India Ltd - 543599 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Q4 FY26 revenue INR 43.03 cr (+29.1% YoY, +1.7% QoQ) with FY26 EBITDA margin down to 29.7% from 34.8% on planned investments; FY27 guided 18-20% growth, 25-30% margin, and DFM product write-off-style retreat.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "QoQ growth only 1.7% in Q4",
+    "quote": "Right now, we are seeing only 1.7% quarter-on-quarter. This 1s because of the war.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth 18-20% vs FY26 18.4%",
+    "quote": "we expect annual revenue growth to be around 18% to 20% and EBITDA margins to be in the range of 25% to 30%",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "novelty",
+    "label": "DFM product ~INR 2 cr expensed, no big FY27 spend",
+    "quote": "approx. INR 2 crores was expensed in FY26, and we expect no further big investments on DFM development in FY27.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "tone",
+    "label": "Wide 25-30% margin band, hedged",
+    "quote": "considering geopolitical factors, I'm trying to be conservative, and that's why I have given you the bracket",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Annual revenue growth FY27",
+    "value": "18% to 20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect annual revenue growth to be around 18% to 20%"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "25% to 30%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "EBITDA margins to be in the range of 25% to 30%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "SAP",
+    "relation": "competitor"
+   },
+   {
+    "name": "Odoo",
+    "relation": "competitor"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Product (DFM) spend ~INR 2 cr with little revenue; management now says little opportunity",
+    "quote": "But still, honestly speaking, I do not see a lot of opportunity in DFM."
+   },
+   {
+    "label": "PAT flat for three years as margins fell",
+    "quote": "our margins have been declined, due to which our PAT has been nearly identical over the last three years"
+   },
+   {
+    "label": "Wide margin band attributed to geopolitics",
+    "quote": "Considering geopolitical factors, I'm trying to be conservative"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "margin": 4,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Pipeline / deal wins for FY27",
+    "quote": "We have already given the guidance range for revenues and margins."
+   },
+   {
+    "topic": "AI share of revenue",
+    "quote": "AI 1s not a stand-alone revenue factor. It's embedded in all the technologies"
+   },
+   {
+    "topic": "AI efficiency impact on employee cost",
+    "quote": "we have not exactly measured, , what the results will be."
+   }
+  ],
+  "hedge_index": 0.6,
+  "themes": []
+ }
+}

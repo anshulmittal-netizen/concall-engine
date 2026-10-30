@@ -1,0 +1,187 @@
+{
+ "doc_id": "IN-774c7ea8-7561-4371-a674-a3f5cf8e806f",
+ "market": "IN",
+ "company_id": "540879",
+ "name": "Apollo Micro Systems Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-21",
+ "period": "2026-03",
+ "title": "Apollo Micro Systems Ltd - 540879 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Defence & aerospace",
+  "thesis": "Q4 FY26 revenue up 81% to INR293 crore and order book INR1,432 crore, but management gave no numeric FY27 guidance, deferred large orders pending customer approvals, and working capital remains stretched at 359 days.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are setting up all the test facilities, so that is something that will contribute to the overall holding periods"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Working capital cycle 359 days in FY26",
+    "quote": "reducing from 626 days in FY21 to 359 days in FY26",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Organic growth 45-50% guidance missed (~36%)",
+    "quote": "that couldn't happen because of the certain approvals, you know, which got pending actually from our customer",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Order book INR1,432 crore at Q4",
+    "quote": "Our order book as of 31st March stood at INR1,432 crores on a consolidated basis",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Large orders expected in FY27, no numbers",
+    "quote": "We'll continue to grow at similar pace.",
+    "direction": 0,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth",
+    "value": "Continue at similar pace",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "We'll continue to grow at similar pace."
+   },
+   {
+    "metric": "IDL Explosives revenue guidance",
+    "value": "Not given; to be discussed from Q3",
+    "change": "dropped",
+    "horizon": "FY27",
+    "quote": "As of now I'm not able to give any guidance on IDL."
+   },
+   {
+    "metric": "Promoter pledge to zero",
+    "value": "Expected to exit this financial year",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "in the upcoming financial year, we are going to come out of this and we stand by that actually"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Organic revenue growth 45-50% CAGR",
+    "outcome": "missed",
+    "quote": "that couldn't happen because of the certain approvals, you know, which got pending actually from our customer"
+   },
+   {
+    "metric": "15% standalone PAT margin",
+    "outcome": "met",
+    "quote": "We commit; we deliver. We close the year with the full year PAT margin of 16%."
+   },
+   {
+    "metric": "Promoter pledge to zero in FY26",
+    "outcome": "missed",
+    "quote": "I remember last year when we discussed the idea was to bring it down completely to zero in FY2026, but as I can check it is still around 39%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "IDL Explosives",
+    "relation": "partner"
+   },
+   {
+    "name": "DRDO",
+    "relation": "partner"
+   },
+   {
+    "name": "BrahMos",
+    "relation": "partner"
+   },
+   {
+    "name": "Indian Navy",
+    "relation": "partner"
+   },
+   {
+    "name": "GRSE",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Anti-dumping protection",
+   "Electronics manufacturing (EMS/PLI)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables/inventory bloat: 359-day working capital cycle",
+    "quote": "reducing from 626 days in FY21 to 359 days in FY26"
+   },
+   {
+    "label": "Organic growth guidance missed; approvals pending",
+    "quote": "that couldn't happen because of the certain approvals, you know, which got pending actually from our customer"
+   },
+   {
+    "label": "Loss-making IDL Explosives; no guidance",
+    "quote": "For last few years, IDL was loss making"
+   },
+   {
+    "label": "Promoter pledge still ~39% vs zero target",
+    "quote": "as I can check it is still around 39%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 6,
+   "margin": 1,
+   "other": 9
+  },
+  "evasions": [
+   {
+    "topic": "Order book composition",
+    "quote": "Composition of order book we have never given, you know, I would like to refrain from the questions"
+   },
+   {
+    "topic": "IDL margins and revenue guidance",
+    "quote": "As of now I'm not able to give any guidance on IDL."
+   },
+   {
+    "topic": "FY27 margin and revenue estimate",
+    "quote": "We'll continue to grow at similar pace."
+   },
+   {
+    "topic": "Promoter pledge roadmap",
+    "quote": "Immediately roadmap I cannot tell"
+   },
+   {
+    "topic": "Ballistic missile and R&D fund",
+    "quote": "I have no comments on it."
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

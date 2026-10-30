@@ -1,0 +1,166 @@
+{
+ "doc_id": "IN-548fbee6-7260-4cac-9fa8-db08c4c870fd",
+ "market": "IN",
+ "company_id": "543933",
+ "name": "Cyient DLM Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-27",
+ "period": "2026-03",
+ "title": "Cyient DLM Ltd - 543933 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "FY26 revenue fell 17% to INR12,615m while order book hit a record INR24,166m (book-to-bill 1.5x); management gave no FY27 revenue number, only directional growth.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Backlog conversion",
+   "Working-capital stress",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Order book INR24,166m, highest in 10 quarters",
+    "quote": "The order book reached its highest level in last 10 quarters.",
+    "highlight": "highest level in last 10 quarters",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory days elevated, DSO mid-70s",
+    "quote": "Inventory days remained elevated through FY '26, largely driven by advanced stocking for the long-lead components and program ramp -ups.",
+    "highlight": "Inventory days remained elevated through FY '26",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "No FY27 revenue guidance given",
+    "quote": "we are not giving any other guidance right now on the revenue side",
+    "highlight": "not giving any other guidance right now on the revenue side",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 margin 11.7% EBITDA, sequential high",
+    "quote": "EBITDA improved 11.7% and PAT stood at 6.1%.",
+    "highlight": "",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "Growth expected YoY in all four quarters; no numeric guidance",
+    "change": "new",
+    "quote": "FY '27, you'll be starting seeing the growth, year-over-year growth we'll be seeing it in all the quarters"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "Double-digit sustained",
+    "change": "held",
+    "quote": "we are confident of sustaining the margins moving forward"
+   },
+   {
+    "metric": "Net working capital days",
+    "value": "100 to 120 days target",
+    "change": "new",
+    "quote": "Our target is to reach about 100 to 120 in terms of the number of days"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q4 revenue / YoY growth (from Q3 call)",
+    "outcome": "missed",
+    "quote": "we were confident of meeting our revenue Y -o-Y as well"
+   },
+   {
+    "metric": "FY27 ~25% growth (per analyst citing Q3)",
+    "outcome": "dropped",
+    "quote": "we are not giving any guidance right now on that"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Altek",
+    "relation": "peer"
+   },
+   {
+    "name": "Rafael",
+    "relation": "customer"
+   },
+   {
+    "name": "Thales",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Electronics manufacturing (EMS/PLI)",
+   "Tariffs & trade policy",
+   "Semiconductors & OSAT",
+   "Customer stickiness"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 revenue down 13.8% YoY, FY26 down 17%",
+    "quote": "On a year -on-year basis, it is down by 13.8%, mainly due to the large order closure in Q4 FY '25."
+   },
+   {
+    "label": "Revenue shortfall attributed to West Asia material delays",
+    "quote": "the materials got delayed, that's usually all our m aterials comes through the European -- I mean West Asia"
+   },
+   {
+    "label": "Other expenses rising despite revenue decline",
+    "quote": "our other expenses have gone from INR29 crores to INR44 crores."
+   },
+   {
+    "label": "Order book definition is POs only, excludes TCV",
+    "quote": "We won't take anything which is a TCV and all those, we won't take it as a part of our order book."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 6,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue growth / quantification",
+    "quote": "We are not giving any guidance right now on that in terms of how much of the order intake will be converted as a revenue in FY '27"
+   },
+   {
+    "topic": "Quantifying West Asia revenue deferral",
+    "quote": "We don't want to get into the exact quantification of this stuff."
+   },
+   {
+    "topic": "Other expenses increase",
+    "quote": "the other expenses is a mix of both the India and U.S. operations put together"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

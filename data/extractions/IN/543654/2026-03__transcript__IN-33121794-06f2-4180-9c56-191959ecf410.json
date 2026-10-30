@@ -1,0 +1,132 @@
+{
+ "doc_id": "IN-33121794-06f2-4180-9c56-191959ecf410",
+ "market": "IN",
+ "company_id": "543654",
+ "name": "Global Health Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-20",
+ "period": "2026-03",
+ "title": "Global Health Ltd - 543654 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Medanta FY26 supply build-out continues: 623 beds added, ~2,700 greenfield beds and FY27 capex INR 800–900 crore; mature-hospital margin 24.4% and Noida losses narrowing (Q4 loss INR 236m vs Q3 INR 320m).",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 61,
+   "quote": "representing occupancy of approximately 61% on expanded bed capaci ty and around 64% excluding Noida Hospital"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management cited two competitor hospitals coming up in Gurgaon around September-October, but did not describe their capacity in detail.",
+   "quote": "the overall capex for the year will be somewhere around INR 800 crores to INR 900 crores"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "FY27 capex INR 800–900 crore",
+    "quote": "the overall capex for the year will be somewhere around INR 800 crores to INR 900 crores",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Quarter occupancy ~61%, ~64% ex-Noida",
+    "quote": "representing occupancy of approximately 61% on expanded bed capaci ty and around 64% excluding Noida Hospital",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Noida Q4 loss narrowed",
+    "quote": "Q4 loss reduced to INR 236 million even as bed capacity expanded from 328 to 382",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Developing ARPOB up 4% to INR 56,500",
+    "quote": "ARPOB rising 4% to INR56,500",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Mature hospital margin",
+    "value": "24%–25% range",
+    "change": "new",
+    "quote": "we are feeling fairly confident about the margin profile remaining in this kind of 24% - 25% range"
+   },
+   {
+    "metric": "Capex FY28",
+    "value": "INR 600–700 crore",
+    "change": "new",
+    "quote": "Next year, it will be in the range of INR 600 crores to INR 700 crores."
+   },
+   {
+    "metric": "Bed additions",
+    "value": "~500 beds short term; ~2,700 beds via 5 greenfield projects over 3–4 years",
+    "change": "new",
+    "quote": "the company expects to add approximately 500 beds across its existing hospitals with a minimum capex investment"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Max Dwarka",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Noida ramp-up losses; occupancy ~30%",
+    "quote": "Our occupancy in our Noida hospital is currently running somewhere around 30%"
+   },
+   {
+    "label": "Mature-hospital margin down 40 bps",
+    "quote": "Matured margins were nominally down by 40 basis points during the year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 6,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Noida breakeven timing",
+    "quote": "I don't want to give you a definitive commitment because it really depends on how much accumulated losses we are carrying"
+   },
+   {
+    "topic": "Gurgaon competitor impact on doctor attrition",
+    "quote": "we are not overly worried either on the demand side or on our ability to attract or retain clinical talent"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

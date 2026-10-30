@@ -1,0 +1,198 @@
+{
+ "doc_id": "IN-395c72f9-eb55-421b-aaad-a52e19bf088c",
+ "market": "IN",
+ "company_id": "500425",
+ "name": "Ambuja Cements Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-10",
+ "period": "2026-03",
+ "title": "Ambuja Cements Ltd - 500425 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.96,
+ "read": {
+  "subsector": "Cement",
+  "thesis": "Ambuja's Q4 FY26 cost hit ~INR4,500/t with FY27 cost reduction of only INR250/t and capex cut to INR6,000–6,500 cr; utilisation at acquired Sanghi (57%) and Penna (46%) is the drag, and pricing is still under pressure.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capital cycle",
+   "Supply discipline",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 57,
+   "quote": "Sanghi still remains at around, say, at 57% on cement capacity utilization, while Penna is 46%"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "for FY '27, we are keeping an estimate of almost INR6,000 crores to INR6,500 crores."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "FY27 capex INR6,000–6,500 cr",
+    "quote": "for FY '27, we are keeping an estimate of almost INR6,000 crores to INR6,500 crores.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capacity target pushed out to FY30",
+    "quote": "the target plans of FY '28, it could move a year or 2, let us say, on a safer side, I would say that FY '30.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Industry price up only ~INR10 in March",
+    "quote": "ballpark for the quarter of March, around ballpark INR10. Now with the demand getting a little softer, the pressure on pricing definitely is higher.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Sanghi 57%, Penna 46% utilisation",
+    "quote": "Sanghi still remains at around, say, at 57% on cement capacity utilization, while Penna is 46%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Cost reduction only INR250/t in FY27",
+    "quote": "cost, we are looking at roughly INR250 a tonne reduction this year and then another reduction of INR250 next year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "FY27 volume 80 mt, ~8% growth",
+    "quote": "we are expecting it to grow in FY '28 -- '27 by almost, say, 8% to around 80 million -odd tonnes",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated volume FY27",
+    "value": "~80 million tonnes (~8% growth)",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we are expecting it to grow in FY '28 -- '27 by almost, say, 8% to around 80 million -odd tonnes"
+   },
+   {
+    "metric": "Capacity by end FY27",
+    "value": "~119 million tonnes",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "We are expecting to hit capacity of almost 119 million tonnes by end of FY '27."
+   },
+   {
+    "metric": "Cost reduction FY27",
+    "value": "INR250/t reduction, another INR250 in FY28",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "cost, we are looking at roughly INR250 a tonne reduction this year and then another reduction of INR250 next year"
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "INR6,000–6,500 crore",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "for FY '27, we are keeping an estimate of almost INR6,000 crores to INR6,500 crores."
+   },
+   {
+    "metric": "Utilisation target for Sanghi and Penna",
+    "value": "Raise utilisation by at least 5% to 10%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the target is to increase the utilization by at least 5% to 10% for these assets"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Industry-leading capacity expansion to 140-155 mt",
+    "outcome": "cut",
+    "quote": "the target plans of FY '28, it could move a year or 2, let us say, on a safer side, I would say that FY '30."
+   }
+  ],
+  "entities": [
+   {
+    "name": "ACC",
+    "relation": "peer"
+   },
+   {
+    "name": "Orient Cement",
+    "relation": "peer"
+   },
+   {
+    "name": "Sanghi Industries",
+    "relation": "peer"
+   },
+   {
+    "name": "Penna Cement",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Premiumisation in consumption",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Cost target missed; Q4 cost ~INR4,500/t vs INR4,000 guided",
+    "quote": "we have achieved a figure of INR4,400 a tonne, which is almost 10% higher to our own target"
+   },
+   {
+    "label": "Non-core working capital up sharply",
+    "quote": "that non-core working capital ex cash, that seems to have gone up significantly"
+   },
+   {
+    "label": "Negative operating cash flow at ACC",
+    "quote": "your ACC's operating cash flows are negative, sharply negative for the year"
+   },
+   {
+    "label": "Management admits project delays and breakdowns",
+    "quote": "we did not choose the right contractor for execution"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 4,
+   "growth": 4,
+   "margin": 9,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Cost trajectory vs earlier INR4,000 target",
+    "quote": "please don't mistaken with INR4,000 as average for the March quarter"
+   },
+   {
+    "topic": "Working capital reconciliation",
+    "quote": "which specific non-core you are referring to, for example, you can connect to me offline"
+   },
+   {
+    "topic": "EBITDA per tonne guidance",
+    "quote": "I think any guidance on EBITDA will be difficult at this stage."
+   },
+   {
+    "topic": "JP assets",
+    "quote": "it would be inappropriate from my side to answer anything on that"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

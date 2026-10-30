@@ -1,0 +1,147 @@
+{
+ "doc_id": "IN-12193b71-c5ec-451a-88de-805dd54fbb7c",
+ "market": "IN",
+ "company_id": "540078",
+ "name": "Mitsu Chem Plast Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-08",
+ "period": "2026-03",
+ "title": "Mitsu Chem Plast Ltd - 540078 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Plastics & polymers",
+  "thesis": "Q4 EBITDA margin hit 16.45% but management calls 10% sustainable; FY26 margin 9.90% on 5.4% revenue growth, with a 30% FY27 growth target that is a planning figure, not order-backed.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Q4 margin lift partly raw-material windfall",
+    "quote": "some part, the extra margin has come up from maybe the war situation",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth ~30%, planning not order-backed",
+    "quote": "it is never a more than order book for more than one month. So definitely it is a planning only",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "novelty",
+    "label": "IBC entry, capacity and capex undisclosed",
+    "quote": "We will be very early into this. So let us come up.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Revenue deliberately cut for margin",
+    "quote": "we are compromising with our sales which are not profitable",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "minimum 30%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "minimum, minimum 30% growth this year, minimum."
+   },
+   {
+    "metric": "EBITDA margin sustainable floor",
+    "value": "minimum 10%",
+    "change": "new",
+    "horizon": "ongoing",
+    "quote": "So minimum 10% will sustain."
+   },
+   {
+    "metric": "Revenue target",
+    "value": "INR1,000 crores by FY28",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "achieving INR1,000 crores in annual revenue by FY'28"
+   },
+   {
+    "metric": "IBC plant start",
+    "value": "Quarter 2 start",
+    "change": "new",
+    "horizon": "Q2 FY27",
+    "quote": "We have already announced that Quarter 2 we will start."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Time Technoplast",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin lift partly raw-material windfall",
+    "quote": "some part, the extra margin has come up from maybe the war situation"
+   },
+   {
+    "label": "Capex and IBC economics undisclosed",
+    "quote": "We will require capex for sure."
+   },
+   {
+    "label": "Evasive on competitor margin gap",
+    "quote": "I would not like to give answer on this. Sorry."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 5,
+   "capex": 2,
+   "balance_sheet": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Margin gap vs peer Time Technoplast",
+    "quote": "I would not like to comment on any competitor work."
+   },
+   {
+    "topic": "Capex quantum for FY27",
+    "quote": "We will announce that very soon."
+   },
+   {
+    "topic": "IBC margin and capacity",
+    "quote": "We will be very early into this. So let us come up."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

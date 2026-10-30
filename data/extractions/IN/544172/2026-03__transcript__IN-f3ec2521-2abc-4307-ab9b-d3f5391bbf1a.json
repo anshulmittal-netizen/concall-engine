@@ -1,0 +1,149 @@
+{
+ "doc_id": "IN-f3ec2521-2abc-4307-ab9b-d3f5391bbf1a",
+ "market": "IN",
+ "company_id": "544172",
+ "name": "Indegene Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-06",
+ "period": "2026-03",
+ "title": "Indegene Ltd - 544172 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Indegene is a life-sciences commercial/medical outsourcing services firm, not supply-capacity driven; Q4 revenue crossed ₹1,000 crore (up 32.8% YoY) but management gave no formal FY27 revenue guidance and margin recovery rests on investment payback.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 revenue ₹1,000 crore+, up 32.8% YoY",
+    "quote": "growing 6.5% quarter-on-quarter and a strong 32.8% year-over-year",
+    "highlight": "32.8% year-over-year",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "No formal FY27 revenue guidance",
+    "quote": "we're not providing formal revenue guidance",
+    "highlight": "not providing formal revenue guidance",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Tectonic win with largest customer",
+    "quote": "We won a significant Tectonic engagement starting with Germany",
+    "highlight": "We won a significant Tectonic engagement",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Margin recovery pushed to H2 FY27",
+    "quote": "the second half of FY27 will see us revert to the earlier levels of higher margins",
+    "highlight": "second half of FY27 will see us revert",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 margin",
+    "value": "Margin recovery to earlier levels in H2 FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the second half of FY27 will see us revert to the earlier levels of higher margins"
+   },
+   {
+    "metric": "Revenue",
+    "value": "No formal revenue guidance",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we're not providing formal revenue guidance"
+   },
+   {
+    "metric": "DSO",
+    "value": "Mid-60s to 70 days steady state",
+    "change": "new",
+    "horizon": "steady",
+    "quote": "I would guide towards mid-60s to 70 days on a steady basis"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "BioPharm",
+    "relation": "peer"
+   },
+   {
+    "name": "Warn",
+    "relation": "peer"
+   },
+   {
+    "name": "Cake Communications",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Customer stickiness",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Exceptional US TCPA class action provision ₹203 million",
+    "quote": "we have provided ₹203 million towards the estimated cost of settling the U.S. class action lawsuit"
+   },
+   {
+    "label": "Adjusted EBITDA excludes ₹241m forex hedge charge via retroactive hedge accounting",
+    "quote": "the adjustment to the EBITDA is made to reflect the impact on profitability if the contracts that were contracted between April 2025 and December 2025 were also considered as cash flow hedges"
+   },
+   {
+    "label": "Margin investment shelved recovery timing",
+    "quote": "the investments that we made, resulting in 150 basis points impact on our EBITDA margins"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 2,
+   "margin": 3,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Revenue per employee drivers",
+    "quote": "our on-site offshore mix has remained fairly stable over the past many years"
+   },
+   {
+    "topic": "Largest-cohort stagnation (10 clients above $10m unchanged)",
+    "quote": "We hear that cohort is stable."
+   }
+  ],
+  "hedge_index": 0.35
+ }
+}

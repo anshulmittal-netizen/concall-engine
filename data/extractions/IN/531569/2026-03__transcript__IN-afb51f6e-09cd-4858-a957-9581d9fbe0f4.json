@@ -1,0 +1,164 @@
+{
+ "doc_id": "IN-afb51f6e-09cd-4858-a957-9581d9fbe0f4",
+ "market": "IN",
+ "company_id": "531569",
+ "name": "Sanjivani Paranteral Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-20",
+ "period": "2026-03",
+ "title": "Sanjivani Paranteral Ltd - 531569 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Q4 base-business revenue fell as March exports to the Middle East were lost to the Iran conflict; management guides FY27 base at INR 80-85 crore and Pune IV at INR 60-65 crore, with no capacity or capex signals.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 40,
+   "quote": "it will be gradually like 40%, 45% 60% and by the 4th Quarter it will be at the 70% utilization"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Pune IV utilisation 40% → 70% by Q4",
+    "quote": "it will be gradually like 40%, 45% 60% and by the 4th Quarter it will be at the 70% utilization",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Export disruption in March 2026",
+    "quote": "we were not able to execute exports during the month of March 2026 due to disruption in the shipping and trade movement",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Raw material and packing costs rose in March",
+    "quote": "the company witnessed an increase in the raw material and the packing input cost during March '26",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 base INR 80-85 crore, IV INR 60-65 crore",
+    "quote": "on a base business, we should be around 80-85 and on the IV plant from the Pune, we should be in the range of 60 -65 for the annual",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Base business revenue FY27",
+    "value": "INR 80-85 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "on a base business, we should be around 80-85 and on the IV plant from the Pune, we should be in the range of 60 -65 for the annual"
+   },
+   {
+    "metric": "Pune IV revenue FY27",
+    "value": "INR 60-65 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "on the IV plant from the Pune, we should be in the range of 60 -65 for the annual"
+   },
+   {
+    "metric": "Base business EBITDA margin",
+    "value": "15.5% to 16.5%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the baseline business, the EBITDA would range around 15.5% to 16.5% EBITDA"
+   },
+   {
+    "metric": "Pune IV EBITDA margin",
+    "value": "17% to 18%",
+    "change": "new",
+    "horizon": "annualised",
+    "quote": "on an annualized basis, we expect EBITDA margins of around 17% to 18%"
+   },
+   {
+    "metric": "Receivable days",
+    "value": "55 to 60 days",
+    "change": "new",
+    "horizon": "coming periods",
+    "quote": "We would be in the range of 55 to 60 in the coming periods"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Farbe Firma",
+    "relation": "peer"
+   },
+   {
+    "name": "Kamala Lifesciences",
+    "relation": "peer"
+   },
+   {
+    "name": "Prague Ventures",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy",
+   "Working capital"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables up sharply vs FY24",
+    "quote": "there is a huge jump in receivables"
+   },
+   {
+    "label": "Pune IV product approvals pending",
+    "quote": "product-wise approvals remain an ongoing process"
+   },
+   {
+    "label": "Export concentration in disrupted regions",
+    "quote": "Middle East is a key export market for the company"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 5,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Pune quarterly revenue inflection",
+    "quote": "It would be difficult to comment on this right now"
+   },
+   {
+    "topic": "Peer comparison",
+    "quote": "That would be difficult to comment on the peers for an apple-to-apple comparisons"
+   },
+   {
+    "topic": "Five-year outlook",
+    "quote": "we won't be commenting right now anything beyond a year"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

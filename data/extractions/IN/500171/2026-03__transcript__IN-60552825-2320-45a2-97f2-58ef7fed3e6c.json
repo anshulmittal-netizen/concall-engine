@@ -1,0 +1,159 @@
+{
+ "doc_id": "IN-60552825-2320-45a2-97f2-58ef7fed3e6c",
+ "market": "IN",
+ "company_id": "500171",
+ "name": "GHCL Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "GHCL Ltd - 500171 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Soda ash prices still under pressure with volume up ~11% but pricing down ~10% YoY; capacity cuts only \"some time away\" and new Greenfield soda ash timeline unset, though management says costs are now being passed through.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Supply discipline",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "Chinese supply reduction is some time away; one US facility of 1.3 million tons mothballed; Inner Mongolia added around 7 million tons.",
+   "quote": "one of the US facility has been kind of a mothball, okay, which is roughly 1.3 million tons"
+  },
+  "triggers": [
+   {
+    "type": "structure",
+    "label": "US soda ash 1.3Mt mothballed",
+    "quote": "one of the US facility has been kind of a mothball, okay, which is roughly 1.3 million tons",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Volume +11%, pricing -10%",
+    "quote": "there is approximately around 11% of the volume growth has happened, whereas your pricing has gone down by 10%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Imports down, industry inventory eased",
+    "quote": "the imports have significantly come down in the last quarter",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Chinese supply cut 'some time away'",
+    "quote": "meaningful supply reduction remains some time away",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Greenfield soda ash timeline unset",
+    "quote": "at this point of time very specifically it will be difficult to say when we are starting the construction",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 bromine and vacuum salt revenue",
+    "value": "approx INR 120 crore in FY27; ~INR 160 crore full-year; EBITDA margin 40-45%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "In FY27, this number will be INR 120 crores approximately. The margin remains almost the same level at 40-45%."
+   },
+   {
+    "metric": "Bromine and vacuum salt full commissioning",
+    "value": "Q1 FY27",
+    "change": "held",
+    "horizon": "Q1 FY27",
+    "quote": "We expect full commissioning to take place in Q1 FY27."
+   },
+   {
+    "metric": "Peak revenue from bromine and vacuum salt",
+    "value": "INR 170 crore at full utilisation",
+    "change": "new",
+    "horizon": "steady state",
+    "quote": "I said that the peak numbers will be INR 170 crores."
+   },
+   {
+    "metric": "Debt-equity ratio",
+    "value": "will never cross one",
+    "change": "held",
+    "horizon": "ongoing",
+    "quote": "our debt -equity ratio will never cross one"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Emkay Global Financial Services",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Import substitution",
+   "Solar glass demand",
+   "Specialty chem destocking end",
+   "Capex cycle revival (private)",
+   "China+1 enquiries → orders"
+  ],
+  "red_flags": [
+   {
+    "label": "Volume up, price down ~10% YoY",
+    "quote": "there is approximately around 11% of the volume growth has happened, whereas your pricing has gone down by 10%"
+   },
+   {
+    "label": "Payout ~87% of PAT with greenfield capex ahead",
+    "quote": "which represents a substantial 87% of full year FY26 PAT"
+   },
+   {
+    "label": "Greenfield timeline undefined",
+    "quote": "at this point of time very specifically it will be difficult to say when we are starting the construction"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 3,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "EBITDA margin outlook FY27",
+    "quote": "how this will shape up in the next month we do not know right now"
+   },
+   {
+    "topic": "Greenfield soda ash construction start",
+    "quote": "at this point of time very specifically it will be difficult to say when we are starting the construction"
+   },
+   {
+    "topic": "Pricing outlook",
+    "quote": "saying something definitely is going to be very difficult"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

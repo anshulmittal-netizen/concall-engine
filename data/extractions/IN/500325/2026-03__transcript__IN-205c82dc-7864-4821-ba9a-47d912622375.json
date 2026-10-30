@@ -1,0 +1,129 @@
+{
+ "doc_id": "IN-205c82dc-7864-4821-ba9a-47d912622375",
+ "market": "IN",
+ "company_id": "500325",
+ "name": "Reliance Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-26",
+ "period": "2026-03",
+ "title": "Reliance Industries Ltd - 500325 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Q4 EBITDA flat YoY as O2C fell 4% on crude premiums, freight and SAED; refining cracks strong but throughput fell to 19.5 MMT from 20.3 and consumer businesses carried earnings.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply exit",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "we were running our refinery at close to capacity"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "Regional refineries cut back capacity on lack of crude, about 3 million barrels per day, and Middle East refining offline about 3 million bpd.",
+   "quote": "another 3 million barrels of capacity closure"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Regional refinery capacity closures ~3 mb/d",
+    "quote": "that is another 3 million barrels of capacity closure",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Gasoil crack $35.4, ATF $36.3",
+    "quote": "Gasoil cracks have gone up to $35.4",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Naphtha-based crackers starved; ethylene rate 80%→60%",
+    "quote": "the operating rate, ethylene operating rate in this part of the world dropped from 80% to 60%",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "pricing",
+    "label": "SAED imposed on diesel from 27 March",
+    "quote": "SAED, effective 27 March 2026, we have the SAED also",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Crude throughput 20.3 → 19.5 MMT",
+    "quote": "Now it is about 19.5",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Qatar Energy",
+    "relation": "supplier"
+   },
+   {
+    "name": "Samsung C&T",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Specialty chem destocking end",
+   "Consolidation / competitor exits",
+   "Renewables & storage",
+   "Data-centre power & cooling",
+   "Tariffs & trade policy",
+   "Premiumisation in consumption",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Retail EBITDA margin dilution from quick commerce",
+    "quote": "my margins, they have come down a bit because my hyper local deliveries are growing pretty rapidly"
+   },
+   {
+    "label": "Fuel retail losses under-recoveries",
+    "quote": "losses are significant even for us, I would presume, in this quarter"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 8,
+   "margin": 4,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Fuel retail losses and pricing",
+    "quote": "So, there is some pain, but we have to look at the long-term picture."
+   },
+   {
+    "topic": "Jio ROIC / financial goalposts",
+    "quote": "I am not going to put numbers to where we want to be in one or two years."
+   }
+  ],
+  "hedge_index": 0.4,
+  "subsector_placeholder": "x"
+ }
+}

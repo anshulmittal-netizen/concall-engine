@@ -1,0 +1,143 @@
+{
+ "doc_id": "IN-b7cc585f-a4aa-4e92-abc6-50147d468148",
+ "market": "IN",
+ "company_id": "540005",
+ "name": "LTM Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-29",
+ "period": "2026-03",
+ "title": "LTM Ltd - 540005 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.92,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "IT services read: Q4 USD revenue +1.2% QoQ and 8.1% YoY, but no numeric FY27 guidance and margin fell 100bp QoQ to 15.1% on wage hikes; supply signals are absent, so this is a demand-and-pricing story with hedged tone.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 85.7,
+   "quote": "Our utilization, excluding trainees, stood at 85.7% for the quarter, compared to 86.9% in Q3."
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 86.9% → 85.7%",
+    "quote": "Our utilization, excluding trainees, stood at 85.7% for the quarter, compared to 86.9% in Q3.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 EBIT margin down 100bp QoQ",
+    "quote": "Q4 operating EBIT margin declined by 100 -basis points sequentially to 15.1%.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q4 order inflow USD 1.7bn",
+    "quote": "Order inflow remains stable, closing at US D 1.7 billion. This marks our sixth consecutive quarter with inflows exceeding USD 1.5 billion.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Top BFSI account decline, bottoming",
+    "quote": "in Q1 onwards, I would expect the growth trajectory will begin for that particular account. It is just that the recovery acceleration will not match the speed of the decline",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2027 revenue growth",
+    "value": "No numeric guidance; management says 'continue our growth momentum for the full year'",
+    "change": "held",
+    "quote": "I see no reason than to believe that we will continue the same growth momentum that we have built in the entire FY2026 that will flow into FY2027."
+   },
+   {
+    "metric": "Five-year revenue",
+    "value": "Double revenue in five years (~15% CAGR)",
+    "change": "new",
+    "quote": "I am looking at doubling down the revenue in five years."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Microsoft",
+    "relation": "partner"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "Salesforce",
+    "relation": "partner"
+   },
+   {
+    "name": "Uniphore",
+    "relation": "partner"
+   },
+   {
+    "name": "Anthropic",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Management refuses numeric FY27 guidance",
+    "quote": "as you would know that we do not give any specific guidance number."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 6,
+   "margin": 2,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "FY2027 growth guidance",
+    "quote": "we never give guidance, right."
+   },
+   {
+    "topic": "Margin target",
+    "quote": "I would not like to give a specific number as guidance in terms of what we are targeting"
+   },
+   {
+    "topic": "Top account recovery timing",
+    "quote": "There may be one or two quarters where we will go through, a sort of softness"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

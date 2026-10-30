@@ -1,0 +1,152 @@
+{
+ "doc_id": "IN-30dac0c2-b410-430a-91d8-513b98695a19",
+ "market": "IN",
+ "company_id": "500252",
+ "name": "LMW Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-25",
+ "period": "2026-03",
+ "title": "LMW Ltd - 500252 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Textile machinery order book rose to Rs 3,300 cr (all booked in Q4) with textile utilisation only 50-55%, while machine tool utilisation 70-75% and ATC order book flat near Rs 360 cr.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capital cycle",
+   "Supply discipline",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 52,
+   "quote": "for us the capacity utilization on the textile side would be somewhere around 50, 55%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are also adding capacities there. In fact, if you have seen the financials this year almost 50% of our Capex has gone into ATC"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "TMD order book Rs 3,300 cr",
+    "quote": "The order book stands at 3300 crores and that has been an increase in the last quarter",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Textile utilisation 50-55%",
+    "quote": "the capacity utilization on the textile side would be somewhere around 50, 55%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "No price hikes in MTD",
+    "quote": "No, no price hikes and MTD division",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Textile spinner capex restart cited",
+    "quote": "the cotton yarn producers are becoming active, they are modernizing and it is slowly starting",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Textile offtake",
+    "value": "much larger offtake of machines expected",
+    "change": "new",
+    "quote": "We would anticipate that going forward there will be much larger offtake of machines."
+   },
+   {
+    "metric": "ATC capacity yield",
+    "value": "capacities to yield higher turnover in second half of FY27",
+    "change": "new",
+    "quote": "All these capacities will start yielding higher turnover probably once they come into production probably in the second part of the year, current year."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Boeing",
+    "relation": "customer"
+   },
+   {
+    "name": "Airbus",
+    "relation": "customer"
+   },
+   {
+    "name": "ISRO",
+    "relation": "customer"
+   },
+   {
+    "name": "HAL",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Premiumisation in consumption",
+   "Nearshoring / reshoring (US)",
+   "Defence indigenisation",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Thin ATC order book, long-cycle working capital",
+    "quote": "It is a highly intensive working capital intensive business because the raw materials are all sourced from, from abroad."
+   },
+   {
+    "label": "LMW Global and China subsidiary losses",
+    "quote": "For the current year the loss stands at 32 crores as against a profit of 1.9 crores for the previous year"
+   },
+   {
+    "label": "Bank support needed for working capital",
+    "quote": "the bank's ability to fund working capital for us and that is something we need to immediately support on this."
+   },
+   {
+    "label": "Mgmt declined price hike quantum",
+    "quote": "We can't anyway tell you how much what we are planning and that's not something which can anyway share with you."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 3,
+   "margin": 1,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Raw material price hike quantum",
+    "quote": "We can't anyway tell you how much what we are planning and that's not something which can anyway share with you."
+   },
+   {
+    "topic": "ATC scale-up numbers",
+    "quote": "The opportunity is definitely there but we don't give out numbers as to what we will do."
+   },
+   {
+    "topic": "Customer names",
+    "quote": "customer names and the projects would be difficult."
+   }
+  ],
+  "hedge_index": 0.55
+ }
+}

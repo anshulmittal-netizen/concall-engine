@@ -1,0 +1,139 @@
+{
+ "doc_id": "IN-b4c43e8c-14ca-4509-ad4e-f0d2973bfb6e",
+ "market": "IN",
+ "company_id": "537291",
+ "name": "Nath Bio-Genes (India) Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "Nath Bio-Genes (India) Ltd - 537291 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Seed company with FY26 revenue INR 4,316m (+19%) and gross margin down to 56% from 63%; inventory build to INR 4,446m and FY27 guidance of 15-20% top-line growth, with no capacity expansion (capex mainly land and vehicles).",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Nath has not been investing much in CapEx. If you go through my balance sheet, so you will find that we have only land bank as CapEx"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory up to INR 4,446m",
+    "quote": "Inventory increased to INR 4,446 million, in line with our planned scaled up for the upcoming season",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin 63% → 56%",
+    "quote": "The year saw a major normalization of gross margin from the elevated 63% in FY25",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 top line growth 15-20%",
+    "quote": "we expect the top line to be growing between 15 -20% around that time, and I'm again being conservative",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Cotton stock build; production overshoot",
+    "quote": "this year, when we gave a 100, we got almost 70-80",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 top-line growth",
+    "value": "15-20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect the top line to be growing between 15 -20% around that time"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "maintained with slightly upward trend",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the EBITDA margin would be maintained with the slightly upward trend in EBITDA as well as in the net profit margin"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "China",
+    "relation": "competitor"
+   },
+   {
+    "name": "Uzbekistan JV",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Consolidation / competitor exits",
+   "China+1 enquiries → orders",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow negative; inventory building",
+    "quote": "as per the formula, it is definitely going negative by about INR 13 crores"
+   },
+   {
+    "label": "Inventory rising since FY24 despite revenue growth",
+    "quote": "Inventory is going up and up since March 2024?"
+   },
+   {
+    "label": "Finance costs up 39% on working capital",
+    "quote": "Finance costs increased to INR 133 million from INR 96 million in FY25"
+   },
+   {
+    "label": "Management admits production overshoot and carrying cost",
+    "quote": "I know carrying inventory is a little costly affair"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 3,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Uzbekistan revenue targets and market share",
+    "quote": "we have not yet put in any targets financially"
+   },
+   {
+    "topic": "Pricing headroom in cotton Bt",
+    "quote": "Now, that is very difficult to predict in the cotton market."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

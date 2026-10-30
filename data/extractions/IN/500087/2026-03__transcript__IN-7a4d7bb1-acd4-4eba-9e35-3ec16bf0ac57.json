@@ -1,0 +1,147 @@
+{
+ "doc_id": "IN-7a4d7bb1-acd4-4eba-9e35-3ec16bf0ac57",
+ "market": "IN",
+ "company_id": "500087",
+ "name": "Cipla Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-15",
+ "period": "2026-03",
+ "title": "Cipla Ltd - 500087 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Cipla guides FY27 EBITDA margin 18.5-20% and a US$1bn run-rate by FY27 end, excluding Lanreotide; supply-side signals are limited to capex plateauing after 'built enough capacity', with a war-driven cost headwind flagged.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Mix shift",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we have capex, which we have increased steadily over the last 3 years. So this cycle will probably reduce after another year or so because we've built enough capacity for the products that we want to supply"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 EBITDA margin 18.5-20%",
+    "quote": "We expect the EBITDA margins to be in the range of 18.5% to 20% and this would be actually achieved with a sequential improvement quarter-on-quarter",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex cycle to reduce after ~1 year",
+    "quote": "this cycle will probably reduce after another year or so because we've built enough capacity for the products that we want to supply",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "US run-rate target $1bn by FY27 end",
+    "quote": "our aim is to cross $1 billion mark as a run rate towards the end of this financial year, i.e., FY '27",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Lanreotide supply disruption, excluded from guidance",
+    "quote": "this guidance does not include any contribution from Lanreotide in FY '27",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "US revenue run-rate",
+    "value": "$1bn run-rate by end FY27",
+    "change": "new",
+    "horizon": "FY27 exit",
+    "quote": "our aim is to cross $1 billion mark as a run rate towards the end of this financial year, i.e., FY '27"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "18.5% to 20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We expect the EBITDA margins to be in the range of 18.5% to 20%"
+   },
+   {
+    "metric": "R&D spend",
+    "value": "about 7% of sales",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "We are guiding towards 7%-ish on R&D spend as a percentage of sales"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Four respiratory approvals in FY26",
+    "outcome": "met",
+    "quote": "as we had guided, we were expecting four approvals this year. Ventolin has already got approved"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Eli Lilly",
+    "relation": "partner"
+   },
+   {
+    "name": "Mannkind Corporation",
+    "relation": "partner"
+   },
+   {
+    "name": "Pfizer",
+    "relation": "partner"
+   },
+   {
+    "name": "Kemwell",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Biosimilars",
+   "Respiratory generics",
+   "Lanreotide remediation",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Lanreotide supply disruption; FY27 guide excludes it",
+    "quote": "this guidance does not include any contribution from Lanreotide in FY '27"
+   },
+   {
+    "label": "War-driven input and sourcing cost pressure",
+    "quote": "we have started to see some impact of ongoing geopolitical situation within the operating expenses"
+   }
+  ],
+  "evasions": [
+   {
+    "topic": "Quarterly/product-wise US revenue breakup",
+    "quote": "the reason we are not able to give a quarter -wise kind of breakup or a product -wise breakup is because the timing of launch"
+   },
+   {
+    "topic": "Indore site classification timing",
+    "quote": "We are waiting for the classification. I can't comment on that."
+   }
+  ],
+  "hedge_index": 0.4,
+  "analyst_mix": {}
+ }
+}

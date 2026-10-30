@@ -1,0 +1,151 @@
+{
+ "doc_id": "IN-1f238f1c-c2c0-41df-aacc-24b2682df984",
+ "market": "IN",
+ "company_id": "532953",
+ "name": "V-Guard Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-18",
+ "period": "2026-03",
+ "title": "V-Guard Industries Ltd - 532953 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q4 revenue +14.1% and EBITDA +19.3% on volume, but FY26 EBITDA margin fell to 8.8% from 9.2%; ~75% of an 8–13% input-cost pass-through landed, with the balance pending as high-cost inventory arrives.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Price hikes ~75% landed",
+    "quote": "We have probably landed about 75% of what price increases are required so far",
+    "highlight": "landed about 75% of what price increases are required",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "EBITDA margin at least 10% (FY27)",
+    "quote": "I wouldn't say 11%, 12%, I would say at least 10% is what we would like to expect there.",
+    "highlight": "at least 10% is what we would like to expect",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Wires entrant + lighting peers entering",
+    "quote": "one more big player is entering this segment end of this year",
+    "highlight": "one more big player is entering this segment",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "TPW fan stockouts, no channel inventory",
+    "quote": "neither we have inventory nor our partners have inventory and we are having stockouts",
+    "highlight": "neither we have inventory nor our partners have inventory",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Summer weak in non-South; April mixed",
+    "quote": "Non-South, it's been a mixed bag.",
+    "highlight": "Non-South, it's been a mixed bag",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Volume growth",
+    "value": "10% to 12% volume, 1% to 2% price, ~15% total (aspirational)",
+    "change": "held",
+    "horizon": "medium term",
+    "quote": "we strive to grow between 10% to 12% in volume and there is a 1% to 2% price growth culminating into 15% growth"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "at least 10%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I wouldn't say 11%, 12%, I would say at least 10% is what we would like to expect there."
+   },
+   {
+    "metric": "Volume growth in Consumer Durables",
+    "value": "good growth on low base",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "this year we should have a good growth in Consumer Durables because of the low base effect"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Sunflame",
+    "relation": "peer"
+   },
+   {
+    "name": "Eveready",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Renewables & storage",
+   "Electronics manufacturing (EMS/PLI)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Channel finance on ~35% of debtors",
+    "quote": "approximately 35% of our business goes through channel financing arrangement"
+   },
+   {
+    "label": "Raw material shortages (polymer, sulfuric acid)",
+    "quote": "we are having stockouts"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 4,
+   "balance_sheet": 2,
+   "capex": 0,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Consolidation in cooling/wires",
+    "quote": "I don't see consolidation happening."
+   },
+   {
+    "topic": "Channel inventory in non-South",
+    "quote": "it's a mixed bag."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

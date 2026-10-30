@@ -1,0 +1,136 @@
+{
+ "doc_id": "IN-5a025a1e-4f50-4d71-a7b3-97d91ccd77cb",
+ "market": "IN",
+ "company_id": "532735",
+ "name": "R Systems International Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-13",
+ "period": "2026-03",
+ "title": "R Systems International Ltd - 532735 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Revenue up 29.9% YoY to INR 574.8 cr but organic growth was flat QoQ and utilisation fell to 80.5% from ~84% as bench was built for AI; margin gain partly FX-driven.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 80.5,
+   "quote": "bringing our utilization down to about 80.5%, which was at its peak at about 84%"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation ~84% → 80.5%",
+    "quote": "bringing our utilization down to about 80.5%, which was at its peak at about 84%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "TTM ACV wins $76.5m → $82.5m",
+    "quote": "We had $76.5 million of ACV on a TTM basis last quarter. We are reporting $82.5 million of ACV wins this quarter.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Organic growth flat QoQ",
+    "quote": "we have largely remained flat organically",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Adjusted EBITDA margin",
+    "value": "maintain in ~17%+ range (reported 20.1%, ~19% ex-FX)",
+    "change": "held",
+    "quote": "We have continued to maintain our margins in a very healthy range, as we had guided in the +17% margin, kind of a range."
+   },
+   {
+    "metric": "Organic revenue growth",
+    "value": "no forward guidance; confident in organic growth",
+    "change": "not_discussed",
+    "quote": "while we don't provide any forward guidance and flavors"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Novigo",
+    "relation": "partner"
+   },
+   {
+    "name": "Blackstone",
+    "relation": "competitor"
+   },
+   {
+    "name": "Anthropic",
+    "relation": "competitor"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "competitor"
+   },
+   {
+    "name": "Everest Group",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Agentic AI in IT services",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Organic growth flat QoQ; reported growth mostly acquisition and FX",
+    "quote": "we have largely remained flat organically"
+   },
+   {
+    "label": "SG&A dip from AR provision reversal",
+    "quote": "This is mainly due to reversal of conservative AR provision on account of realization in this quarter"
+   },
+   {
+    "label": "Novigo restated revenue ~$21-22m vs ~$32m at acquisition",
+    "quote": "That restated will stand at about $21-$22 million a year."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "margin": 2,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Organic growth outlook",
+    "quote": "while we don't provide any forward guidance and flavors, but very high confidence"
+   },
+   {
+    "topic": "AI revenue split",
+    "quote": "it's not exactly coming from a system, so we are not reporting it yet"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

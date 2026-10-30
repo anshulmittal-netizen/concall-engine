@@ -1,0 +1,140 @@
+{
+ "doc_id": "IN-48657cd0-0d55-4623-805a-a0e15476df7b",
+ "market": "IN",
+ "company_id": "500575",
+ "name": "Voltas Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-20",
+ "period": "2026-03",
+ "title": "Voltas Ltd - 500575 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Consumer durables",
+  "thesis": "Voltas RAC channel inventory cut to under 45 days (near 30) and April ran close to record March, but UCP margin fell to ~3.2% in FY26 from 8.4% and management gave no hard margin number.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "The Chennai and Pantnagar manufacturing facilities are currently operating at better utilization levels as compared to the previous year."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we plan to continue doing that"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Channel inventory under 45 days",
+    "quote": "the channel inventory has dropped dramatically. It's less than 45 days now, probably closer to 30 days",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Blended price hike 6-7% plus 1-2%",
+    "quote": "it was a blended 6%- 7% because it was 5 % for the 3-star",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "demand",
+    "label": "April near March record",
+    "quote": "April also, we have almost done very close to that number",
+    "direction": 1,
+    "confidence": 0.45
+   },
+   {
+    "type": "pricing",
+    "label": "Margin recovery left unquantified",
+    "quote": "We don't want to guess that number now",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Chennai at 1.5m units, next capex deferred 1-2 yrs",
+    "quote": "we will wait for another 1-2 years more before we do our next investment",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "UCP gross margin recovery",
+    "value": "gradual step-up towards FY25 levels, no number",
+    "change": "held",
+    "quote": "I think it will be a gradual step-up. As Sridhar was mentioning"
+   },
+   {
+    "metric": "RAC industry growth FY27",
+    "value": "15-20%",
+    "change": "new",
+    "quote": "this will certainly expect it to grow at least 15% to 20% is what we feel"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Arcelik",
+    "relation": "partner"
+   },
+   {
+    "name": "Beko",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Data-centre power & cooling",
+   "Auto EV transition",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Unallocated costs up sharply, FX and treasury MTM",
+    "quote": "one of the reason is the forex impact and the mark-to-market from the treasury angle"
+   },
+   {
+    "label": "Inventory moderately elevated at Q4 end",
+    "quote": "Inventory levels during the quarter remained moderately elevated"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 7,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "UCP margin recovery quantum",
+    "quote": "We don't want to guess that number now because many of the things like the dollar"
+   },
+   {
+    "topic": "Margin trajectory FY27",
+    "quote": "we just want to sort of keep that as a goal rather than look at percentage gross margin is probably not driving us"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

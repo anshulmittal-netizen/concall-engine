@@ -1,0 +1,155 @@
+{
+ "doc_id": "IN-6640bc3d-df80-4922-b19b-5c11c2cf6941",
+ "market": "IN",
+ "company_id": "500405",
+ "name": "Supreme Petrochem Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "Supreme Petrochem Ltd - 500405 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.88,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 volumes up 5.4% and EBITDA margin 15.9% on inventory-heavy March pricing; management refuses to quantify inventory gains/losses, ABS running at 65% of design, and FY27 volume guidance of 8-10% is conditional on normalcy by June.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Working-capital stress",
+   "Supply exit",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 65,
+   "quote": "currently operating at around 65% of the design capacity, pending restoration of the impacted equipment"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "Haryana PS/EPS spend deferred until IOC styrene monomer plant commissioning date is clear",
+   "quote": "we are not committing any expense for that at the moment"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "ABS running at 65% of design",
+    "quote": "currently operating at around 65% of the design capacity, pending restoration of the impacted equipment",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Haryana PS/EPS capex deferred",
+    "quote": "we are not committing any expense for that at the moment",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Non-OEM demand hit in April",
+    "quote": "the demand from the OEM sectors is good, but in the non-OEM sector, the demand has taken a big beating",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume growth 8-10%, conditional",
+    "quote": "if everything becomes normal by June end and July sees the normal behavior in the global market, we should be doing 8% to 10% volume growth this year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory gain/loss unquantifiable",
+    "quote": "it's very difficult to estimate the gains or the inventory gain or loss at the moment",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 volume growth",
+    "value": "8% to 10%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we should be doing 8% to 10% volume growth this year"
+   },
+   {
+    "metric": "FY27 company capex",
+    "value": "around Rs.250 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "for the Company as a whole, we will be doing around Rs.250 crores"
+   },
+   {
+    "metric": "ABS utilisation FY27",
+    "value": "80-90% of capacity",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect that we should be able to do close to 85%, 90% or 80% of that capacity this year now"
+   },
+   {
+    "metric": "Xmold utilisation FY27",
+    "value": "65 to 70% of capacity",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "this year, we should be doing close to say 70% of that capacity or 65 to 70% of that capacity"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "IOC",
+    "relation": "partner"
+   },
+   {
+    "name": "Xmold",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory gains/losses unquantifiable; SM bought at high prices",
+    "quote": "we are aware that inventory loss might come the moment the whole situation normalizes"
+   },
+   {
+    "label": "Debtors INR 520 cr; working capital rising",
+    "quote": "I see a bit of higher working capital investment, largely driven by higher debtor, INR 520 crores as of 31st March"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Inventory gain/loss quantification",
+    "quote": "it's very difficult to estimate the gains or the inventory gain or loss at the moment"
+   },
+   {
+    "topic": "Raw material sourcing mix (Gulf vs China vs US)",
+    "quote": "we source some from Asia and from China at the moment"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

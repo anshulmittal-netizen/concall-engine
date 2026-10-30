@@ -1,0 +1,149 @@
+{
+ "doc_id": "IN-d5af7885-67cd-4c92-8689-e924373a476a",
+ "market": "IN",
+ "company_id": "532400",
+ "name": "Birlasoft Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-13",
+ "period": "2026-03",
+ "title": "Birlasoft Ltd - 532400 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Engineering & R&D services",
+  "thesis": "IT services firm with no capacity lever: Q4 revenue flat QoQ in INR at INR 1,348.6 crore, FY26 revenue down 1.2%, and margin gains came from walking away from low-margin deals and one-offs, not demand.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 revenue down 3.7% QoQ cc",
+    "quote": "resulted in revenue for the quarter declining 3.7% quarter-on-quarter in constant currency and in dollar terms, to $145.3 million",
+    "highlight": "declining 3.7% quarter-on-quarter",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "util",
+    "label": "Margin gain: FX + one-offs ~340bp",
+    "quote": "the forex tailwind gave us a 170-basis point benefit. And the other items that I talked about gave us another 170 points benefit",
+    "highlight": "another 170 points benefit",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Q4 net new TCV very soft",
+    "quote": "Q4 specifically, our net new is obviously very soft",
+    "highlight": "net new is obviously very soft",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "No revenue guidance; steady-state EBITDA 15%+",
+    "quote": "as we make some of these investments, we will continue to do that for the required growth that we need",
+    "highlight": "",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Steady-state EBITDA margin",
+    "value": "upward of 15%",
+    "change": "held",
+    "quote": "our steady state margins that we should expect is going to be upward of 15%"
+   },
+   {
+    "metric": "Revenue guidance",
+    "value": "none given",
+    "change": "dropped",
+    "quote": "we do not give out guidance"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Steady-state EBITDA margin 15%+",
+    "outcome": "met",
+    "quote": "our EBITDA margin for Q4 increased to 18.5%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Palantir",
+    "relation": "peer"
+   },
+   {
+    "name": "SAP",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Agentic AI in IT services",
+   "Consolidation / competitor exits",
+   "Pricing power"
+  ],
+  "red_flags": [
+   {
+    "label": "Six quarters without QoQ growth",
+    "quote": "6 quarters, we've not grown, right?"
+   },
+   {
+    "label": "Margin lifted by one-offs and FX",
+    "quote": "the forex tailwind gave us a 170-basis point benefit"
+   },
+   {
+    "label": "DSO up to 62 days",
+    "quote": "our DSO for the period under review increased sequentially to 62 days"
+   },
+   {
+    "label": "Capital allocation opaque on cash",
+    "quote": "Unfortunately, at this time, I will not be able to say anything on behalf of the Board"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 8,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Revenue growth timing",
+    "quote": "it's hard to say which quarter onwards it will happen"
+   },
+   {
+    "topic": "Cash return to shareholders",
+    "quote": "Unfortunately, at this time, I will not be able to say anything on behalf of the Board"
+   },
+   {
+    "topic": "Deal intake threshold",
+    "quote": "I would not like to give the exact number"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

@@ -1,0 +1,158 @@
+{
+ "doc_id": "IN-3d21003b-38ad-4e7d-b269-feef92ee5c59",
+ "market": "IN",
+ "company_id": "543325",
+ "name": "Rolex Rings Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-21",
+ "period": "2026-03",
+ "title": "Rolex Rings Ltd - 543325 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "FY26 revenue flat at INR1,144 cr despite US exports down ~30%; management guides FY27 growth 15–17% and utilisation only 62–63%, with a 25% US tariff now accepted by customers.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Backlog conversion",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 62.5,
+   "quote": "we are in the range of 62% to 63% of utilization of my available or achievable capacity"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "there would be there a minimum INR30 crores to INR40 crores bare minimum capex plus maintenance capex"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 62–63% — spare capacity",
+    "quote": "we are in the range of 62% to 63% of utilization of my available or achievable capacity",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth 15–17% guided",
+    "quote": "we are expecting somewhere about 15%, 17% growth in fiscal '27",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory days stretched incl. in-transit",
+    "quote": "considering that sales in transit, it would be touching 150 or 160 days",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "US orders expected to recover from Q1FY27",
+    "quote": "we expect U.S. order flows to resume meaningfully from Q1 of current fiscal",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "15-17%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting somewhere about 15%, 17% growth in fiscal '27"
+   },
+   {
+    "metric": "FY28 revenue growth",
+    "value": "high-teen",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "a bit on a higher -- a high-teen growth in the fiscal 2028"
+   },
+   {
+    "metric": "Operating EBITDA margin floor",
+    "value": "not less than 20.5%-21%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "operating EBITDA would not be less than 20.5%, 21% kind of thing"
+   },
+   {
+    "metric": "Gross margin range",
+    "value": "49-53%",
+    "change": "new",
+    "horizon": "normal",
+    "quote": "you may expect overall gross margin to the extent of in the range of 49 to 53 percentage"
+   },
+   {
+    "metric": "Annual capex",
+    "value": "INR30-40 cr minimum plus maintenance (~INR50 cr)",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "there would be there a minimum INR30 crores to INR40 crores bare minimum capex plus maintenance capex"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "INR1.75 bn order inflow conversion to FY26 revenue",
+    "outcome": "missed",
+    "quote": "out of that INR175 crores, maybe INR75 crores, INR80-odd crores business, something we were able to add into my fiscal '26 business"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Anti-dumping protection",
+   "Tariffs & trade policy",
+   "Auto EV transition",
+   "Consolidation / competitor exits",
+   "Nearshoring / reshoring (US)",
+   "China+1 enquiries → orders",
+   "Import substitution"
+  ],
+  "red_flags": [
+   {
+    "label": "Customs duty receivables unrecovered (~INR22 cr, ~50% receivable)",
+    "quote": "almost 50% of that are yet to be receivable from the customers"
+   },
+   {
+    "label": "Sales in transit inflating inventory days 150-160",
+    "quote": "considering that sales in transit, it would be touching 150 or 160 days"
+   },
+   {
+    "label": "Several US programs on hold; INR175 cr order conversion only partly met",
+    "quote": "a couple of programs are still on hold at U.S."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 4,
+   "margin": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Peer competitors / market share",
+    "quote": "I don't want to name any serious competitor"
+   },
+   {
+    "topic": "Dividend policy",
+    "quote": "we are in the thought process to even offer further dividend"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

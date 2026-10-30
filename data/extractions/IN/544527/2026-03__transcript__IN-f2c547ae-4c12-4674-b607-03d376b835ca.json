@@ -1,0 +1,191 @@
+{
+ "doc_id": "IN-f2c547ae-4c12-4674-b607-03d376b835ca",
+ "market": "IN",
+ "company_id": "544527",
+ "name": "Atlanta Electricals Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-15",
+ "period": "2026-03",
+ "title": "Atlanta Electricals Ltd - 544527 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q4 FY26 revenue up 81.7% YoY to INR747.6 cr with EBITDA margin near 20%, but Vadod ran at ~39% utilisation and management is preparing a capex-led EHV build-out with working-capital needs rising to 80-90 days.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 39,
+   "quote": "unit four operated at approximately 39% of the nameplate capacity, which is 30,000 MVA"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said capacity expansion across manufacturers is 'to meet the demand generation' and that industry capacity 'is going to still fall short of the requirement'.",
+   "quote": "whatever amount of capacity Indian manufacturers are going to put up, it is going to still fall short of the requirement"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Vadod utilisation 39% → 65% target FY27",
+    "quote": "We expect it to be 65% in this particular year and then eventually taking it to 100% in the next financial year.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "IDT + tank/radiator capex INR245-250 cr",
+    "quote": "for IDT it is around INR65 crores of capex and for backward integration, it is INR170 to INR180 crores of the capex.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "~75% of order book has price variation clause",
+    "quote": "Approximately 75% of the order is on with the price variation clause",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Year-end inventory drawn down, 'planned' per management",
+    "quote": "inventory was deliberately drawn down in March end to facilitate those maintenance windows smoothly.",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Order book INR2,493 cr; orders INR2,507 cr in FY26",
+    "quote": "Team Atlanta booked INR2,507 crores of new order during FY26, which elevated our unexecuted order book on 31st March 2026 to INR2,493 crores",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth",
+    "value": "~40% CAGR for next 3 years",
+    "change": "held",
+    "horizon": "FY27-FY29",
+    "quote": "we would be growing at about 40% CAGR for next 3 years"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "18%-20% band, stable",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we maintain a standard that it's going to be stable"
+   },
+   {
+    "metric": "Vadod utilisation",
+    "value": "65% in FY27, 100% in FY28",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "We expect it to be 65% in this particular year and then eventually taking it to 100% in the next financial year."
+   },
+   {
+    "metric": "Net working capital days",
+    "value": "80s-90s in FY27-FY28",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "our net working capital days will go up around 80s and 90s"
+   },
+   {
+    "metric": "Export revenue share",
+    "value": "15% of revenue in 3 years",
+    "change": "new",
+    "horizon": "3 years",
+    "quote": "in next 3 years' time, we have this target of taking our exports to 15% of the total revenue"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue growth 40% target",
+    "outcome": "met",
+    "quote": "comfortably ahead of the 40% growth trajectory targeted we had set for the year"
+   },
+   {
+    "metric": "Vadod ~35% utilisation",
+    "outcome": "met",
+    "quote": "We expect it to be like we suggested before going public, about 35% in the last financial year, which is about 39%."
+   },
+   {
+    "metric": "Debt repayment",
+    "outcome": "met",
+    "quote": "As of 31st March '26, the closing balance on all term loans is nil."
+   }
+  ],
+  "entities": [
+   {
+    "name": "PGCIL",
+    "relation": "customer"
+   },
+   {
+    "name": "Atlanta Trafo Limited",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Defence indigenisation",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Working-capital days to rise from ~64 to 80-90",
+    "quote": "our net working capital days will go up around 80s and 90s"
+   },
+   {
+    "label": "Year-end inventory drawdown described as planned",
+    "quote": "On the year-end inventory position, I would like to confirm that it was a planned decision."
+   },
+   {
+    "label": "Non-PVC ~25% of order book exposed to commodity cost",
+    "quote": "rest of the orders are without price variation clause"
+   },
+   {
+    "label": "OIP bushing supply issues",
+    "quote": "We are seeing in particular supply issues on the OIP bushings"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 3,
+   "margin": 3,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Data-centre order size and count of active inquiries",
+    "quote": "We do not have any fixed numbers or specific numbers to tell you at this moment."
+   },
+   {
+    "topic": "Export market identity and progress",
+    "quote": "It would not be fair on our part to maybe commit or comment as to which markets we are approaching"
+   },
+   {
+    "topic": "Q1 commodity hit",
+    "quote": "it's quite early for us to comment on that"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,171 @@
+{
+ "doc_id": "IN-5ef60f00-5f16-4334-a868-20ec13402feb",
+ "market": "IN",
+ "company_id": "530999",
+ "name": "Balaji Amines Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-23",
+ "period": "2026-03",
+ "title": "Balaji Amines Ltd-$ - 530999 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 EBITDA margin 25% on 12% revenue growth, but supply-side is expanding into weak utilisation (DME, DMF, butylamines, battery chemicals at 20-25%) while management guides 25-30% volume growth by FY27 end.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capital cycle",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 37.5,
+   "quote": "we roughly at a company level operate at 35%, 40% utilization"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Its total INR750 crores in first phase, we'll be spending about INR350 crores to INR400 crores."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Company utilisation ~35-40% (analyst est.)",
+    "quote": "we roughly at a company level operate at 35%, 40% utilization",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Specialty capex INR750cr phased, FY26-27 spend INR275-290cr",
+    "quote": "INR275 crores to INR290 crores",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Raw material prices 2.5-3x normal",
+    "quote": "sometimes it is double even 3 times also 2.5 times of it's regular prices",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "pricing",
+    "label": "EDA/DETA prices fell from ~300 to 270-280",
+    "quote": "Average Q4 numbers are about 300. And today, it is about 270 to 280.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume growth 10-15% (cut from 25-30%)",
+    "quote": "I assume it will be 10% to 15% volume growth should be there",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Volume growth",
+    "value": "25% to 30% by end FY27; later 10-15% for FY27",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "I assume it will be 10% to 15% volume growth should be there"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "22% to 23% sustainable",
+    "change": "new",
+    "horizon": "FY27 end",
+    "quote": "the EBITDA should be sustainable between 22% to 23%, on the total sales"
+   },
+   {
+    "metric": "Specialty Chemicals revenue",
+    "value": "INR3,000 crores by FY28",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "We will be definitely reaching INR3,000 crores in 2028."
+   },
+   {
+    "metric": "DME utilisation",
+    "value": "30-40% FY27, 50-60% by year end, 80-90% later",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Our current financial year maybe about 30% to 40%, we should be in a position to utilize"
+   },
+   {
+    "metric": "Consolidated capex FY27",
+    "value": "INR275-290 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "INR275 crores to INR290 crores"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "INR2,000 crore revenue by FY28 (prior call, per analyst)",
+    "outcome": "dropped"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Balaji Specialty Chemicals Limited",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Specialty chem destocking end",
+   "Capex cycle revival (private)",
+   "Anti-dumping protection",
+   "Electronics manufacturing (EMS/PLI)",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Subsidiary plant running 10-15 days a month",
+    "quote": "It is working 10 days, working and 15 days is working for the modifications"
+   },
+   {
+    "label": "Volume guidance cut from 25-30% to 10-15%",
+    "quote": "I assume it will be 10% to 15% volume growth should be there"
+   },
+   {
+    "label": "Analyst INR2,000cr target vs mgmt INR3,000cr; sizeable capex continues",
+    "quote": "We will be definitely reaching INR3,000 crores in 2028."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 4,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Capex rationale vs low utilisation",
+    "quote": "I don't know where from you got the figures."
+   },
+   {
+    "topic": "Subsidiary other expenses / modelling",
+    "quote": "Drop a mail to CS, we'll definitely try to give you your answer"
+   },
+   {
+    "topic": "BSE stake / IPO",
+    "quote": "It's too early, Rajiv, to discuss."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

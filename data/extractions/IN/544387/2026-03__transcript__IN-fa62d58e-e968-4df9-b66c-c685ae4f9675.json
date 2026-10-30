@@ -1,0 +1,211 @@
+{
+ "doc_id": "IN-fa62d58e-e968-4df9-b66c-c685ae4f9675",
+ "market": "IN",
+ "company_id": "544387",
+ "name": "Desco Infratech Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-09",
+ "period": "2026-03",
+ "title": "Desco Infratech Ltd - 544387 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Small CGD EPC player with H2 revenue up ~99% to INR 118.8 cr, but margins squeezed by new power/solar EPC, operating cash flow still negative (~INR 18-19 cr) and unsecured NBFC debt at 16-17%; FY27 growth targets are unsupported by any capacity or order data.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are even expanding our plant to set up another 15 to 20 tons per day capacity by a period of next 18 months"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Operating cash flow negative INR 18-19 cr",
+    "quote": "our operation negative cash flow is I think INR 18 crores to INR 19 crores",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Margin squeezed by power/solar EPC mix",
+    "quote": "The margins got a little bit squeezed due to our entry in power distribution and solar EPC solution projects",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue growth 70-80% YoY",
+    "quote": "I can see the revenue growth by I think minimum 70% to 80% year-on-year",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Order book INR 345 cr, 330-332 cr CGD",
+    "quote": "out of INR 345 crores, INR 330 crores – INR 332 crores remains with the city gas distribution sector",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "structure",
+    "label": "Bidding aggression lowering margins",
+    "quote": "people are doing more aggressive bidding, then we will not get or we will have to match with competitive intensity",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "70-80% YoY",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I can see the revenue growth by I think minimum 70% to 80% year-on-year"
+   },
+   {
+    "metric": "Revenue INR 1,000 cr",
+    "value": "INR 1,000 cr by 2030",
+    "change": "new",
+    "horizon": "FY2030",
+    "quote": "what I foresee is INR 1,000 crores we will be able to achieve easily by 2030"
+   },
+   {
+    "metric": "Debt-to-equity",
+    "value": "max 0.3x",
+    "change": "new",
+    "horizon": "~1.5 years",
+    "quote": "the debt-to-equity ratio may go maximum at 0.3 in coming 1.5 years or something"
+   },
+   {
+    "metric": "Operating cash flow",
+    "value": "positive in 1-2 years",
+    "change": "new",
+    "horizon": "next 2 years",
+    "quote": "in coming next 2 years, we will be reporting the cash flow operating that will be positive"
+   },
+   {
+    "metric": "CBG capacity",
+    "value": "15-18 TPD combined expansion",
+    "change": "new",
+    "horizon": "~18 months",
+    "quote": "we are even expanding our plant to set up another 15 to 20 tons per day capacity by a period of next 18 months"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Operating cash flow improvement",
+    "outcome": "missed",
+    "quote": "our operation negative cash flow is I think INR 18 crores to INR 19 crores"
+   },
+   {
+    "metric": "Margin sustainability (CGD 15.3% PAT)",
+    "outcome": "not_discussed",
+    "quote": "It remains the consistent with 15.3% profit after tax"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Bharat Petroleum Corporation Limited",
+    "relation": "customer"
+   },
+   {
+    "name": "GAIL India",
+    "relation": "customer"
+   },
+   {
+    "name": "Indian Oil",
+    "relation": "customer"
+   },
+   {
+    "name": "Indraprastha Gas Limited",
+    "relation": "customer"
+   },
+   {
+    "name": "Torrent Group",
+    "relation": "customer"
+   },
+   {
+    "name": "Adani Group",
+    "relation": "customer"
+   },
+   {
+    "name": "Likhitha Infra",
+    "relation": "competitor"
+   },
+   {
+    "name": "KP Group",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Negative operating cash flow despite profit growth",
+    "quote": "the cash flow is still negative"
+   },
+   {
+    "label": "Unsecured NBFC debt at 16-17%",
+    "quote": "considering every NBFCs at the rate of around 16% to 17% per annum for now"
+   },
+   {
+    "label": "Unbilled/WIP inflating other current assets",
+    "quote": "other current assets are they are basically work in progress"
+   },
+   {
+    "label": "Evasive answer on margin decline and promoter motive",
+    "quote": "no one wants to show profits to pay taxes to the government"
+   },
+   {
+    "label": "Unbilled and retention receivables stretching cycle",
+    "quote": "there is an involvement of retention amount in debtors"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 2,
+   "growth": 3,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Margin contraction quantification",
+    "quote": "Yes, so like it's a good question Aniket, thank you for this question. Yes, the margins are sustainable at this current level."
+   },
+   {
+    "topic": "Cash flow vs working capital",
+    "quote": "Sir, it will become positive the reason is that we are in a listed space now."
+   },
+   {
+    "topic": "Why profits not shown to taxes",
+    "quote": "no one wants to show profits to pay taxes to the government"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

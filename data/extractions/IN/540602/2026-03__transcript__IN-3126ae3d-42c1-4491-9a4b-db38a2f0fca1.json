@@ -1,0 +1,147 @@
+{
+ "doc_id": "IN-3126ae3d-42c1-4491-9a4b-db38a2f0fca1",
+ "market": "IN",
+ "company_id": "540602",
+ "name": "GTPL Hathway Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-21",
+ "period": "2026-03",
+ "title": "GTPL Hathway Ltd - 540602 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Cables & wires",
+  "thesis": "Cable/broadband operator posted a Q4 loss on one-offs, subscriber growth stalled, and management guides capex to ~INR350 crore a year with no near-term reduction, so supply is expanding into a flat base.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Competitive capex",
+   "Consolidation",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We are looking forward that next year we will be again back to INR350 crores"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex ~INR350 cr/yr, no cut for 3 yrs",
+    "quote": "I'm not looking forward for at least for next 3 years that we will going to reduce our capex.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Broadband net adds 15k in FY26",
+    "quote": "Overall in the year, we have added 15k, but this quarter was a bit muted.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Operating EBITDA margin 24-25% → 22% → 18% Q4",
+    "quote": "this quarter we have 18%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Consolidation of 40-45m subs via acquisitions",
+    "quote": "we are very aggressive towards the consolidation, and we will work towards that",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Capex per annum",
+    "value": "~INR350 crore for FY27-FY29",
+    "change": "new",
+    "horizon": "FY27-FY29",
+    "quote": "we are looking forward for somewhere around INR350 crores per annum"
+   },
+   {
+    "metric": "ROCE",
+    "value": "back to ~15% in 2-3 years",
+    "change": "new",
+    "horizon": "2-3 years",
+    "quote": "we are hopeful that we will achieve back again 15% in next 2 to 3 years ROCEs"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Airtel",
+    "relation": "competitor"
+   },
+   {
+    "name": "Jio",
+    "relation": "competitor"
+   },
+   {
+    "name": "AirFiber",
+    "relation": "competitor"
+   },
+   {
+    "name": "Free Dish",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 PAT loss on one-offs",
+    "quote": "This quarter has become exceptional as the company has reported negative profit after tax."
+   },
+   {
+    "label": "Subscriber base flat in cable and broadband",
+    "quote": "there is no increase in the subscriber base of cable TV and broadband both side."
+   },
+   {
+    "label": "Operating margin decline 24-25% to 18%",
+    "quote": "our margins have been at least on the operating side that we used to say that 24% margin"
+   },
+   {
+    "label": "Fresh investment impairment (INR7.5-8 cr)",
+    "quote": "there is a onetime investment impairment"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Acquisition volume and timing",
+    "quote": "It's a very speculative question, Harsh, as you know."
+   },
+   {
+    "topic": "Margin and PAT recovery path",
+    "quote": "we are rethinking on the whole business from last 1.5 year"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

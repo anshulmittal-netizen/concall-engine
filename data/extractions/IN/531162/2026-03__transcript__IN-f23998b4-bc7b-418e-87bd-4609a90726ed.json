@@ -1,0 +1,168 @@
+{
+ "doc_id": "IN-f23998b4-bc7b-418e-87bd-4609a90726ed",
+ "market": "IN",
+ "company_id": "531162",
+ "name": "Emami Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-25",
+ "period": "2026-03",
+ "title": "Emami Ltd-$ - 531162 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "FMCG",
+  "thesis": "Q4 FY26 revenue down 4% and EBITDA down 15% on weak summer and Middle East disruption, though gross margin rose 250bps to 68.4% and receivables fell over INR100 crores.",
+  "archetype": "None",
+  "mental_models": [
+   "Working-capital stress",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 1,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables cut by over INR100 crores",
+    "quote": "we consciously reduced our receivables by over INR100 crores during the year, a 10 days improvement in the working capital cycle",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Weighted price increase around 3%",
+    "quote": "Yes. It's around 3%.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Ex-summer domestic growth 11% in Q4",
+    "quote": "Our domestic business ex of summer portfolio demonstrated healthy resilience, growing strongly in double digits at 11% in Q4 '26",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Talc summer portfolio down 40%",
+    "quote": "The summer portfolio was the principal drag declining by 22% with talcum powders alone declining by 40%.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "International Q1 growth close to single digit",
+    "quote": "quarter 1 should also remain close to single-digit growth types only",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "International business growth",
+    "value": "good double-digit growth from Q2",
+    "change": "new",
+    "horizon": "Q2 FY27 onwards",
+    "quote": "from second quarter, we should be able to deliver good double-digit growth."
+   },
+   {
+    "metric": "Investee companies growth",
+    "value": "sustain 30% YoY growth",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "The idea going forward across the portfolio is to sustain growth at 30% year -on-year while improving the bottom line as well."
+   },
+   {
+    "metric": "Investee companies EBITDA",
+    "value": "increase absolute EBITDA by about INR15 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "This year, the intent is to increase the absolute EBITDA by about INR15 crores."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Brillare",
+    "relation": "peer"
+   },
+   {
+    "name": "The Man Company",
+    "relation": "peer"
+   },
+   {
+    "name": "Axiom",
+    "relation": "peer"
+   },
+   {
+    "name": "IncNut",
+    "relation": "peer"
+   },
+   {
+    "name": "Campa Cola",
+    "relation": "competitor"
+   },
+   {
+    "name": "Dabur",
+    "relation": "competitor"
+   },
+   {
+    "name": "BCG",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Rural demand recovery",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Talc/summer volume collapse ~INR100cr lost",
+    "quote": "We lost almost INR100 crores of business in talc last year."
+   },
+   {
+    "label": "Ad spend ~19.6% of sales, rising with new ventures",
+    "quote": "it is almost 20%, right, 19.6%."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 2,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "BoroPlus FY27 growth outlook",
+    "quote": "I can't predict for BoroPlus for now."
+   },
+   {
+    "topic": "Copra price impact on hair oil",
+    "quote": "I don't track copra prices, very honestly, because we don't use that."
+   },
+   {
+    "topic": "Margin recovery to 26-27% EBITDA",
+    "quote": "Let's wait and see, Harit, still there is some pressure as far as the input costs are concerned"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

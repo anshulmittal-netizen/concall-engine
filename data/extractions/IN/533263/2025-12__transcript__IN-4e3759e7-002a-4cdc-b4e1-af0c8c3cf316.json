@@ -1,0 +1,132 @@
+{
+ "doc_id": "IN-4e3759e7-002a-4cdc-b4e1-af0c8c3cf316",
+ "market": "IN",
+ "company_id": "533263",
+ "name": "Orient Green Power Company Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-15",
+ "period": "2025-12",
+ "title": "Orient Green Power Company Ltd - 533263 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Renewables",
+  "thesis": "Wind IPP with FY26 PAT of INR 72 crore (up 70%) on favourable wind and interest refund, but Q4 loss before tax INR 16.4 crore; 1 GW target depends on external equity that management could not timeline.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capital allocation shift",
+   "Capacity bottleneck",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "the wind availability was somewhat lower compared to the similar period in the previous year"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Every wind company in India had the same issue in Q4.",
+   "quote": "We have successfully added 9.9 megawatts of wind capacity in this fiscal."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Q4 wind availability lower YoY",
+    "quote": "the wind availability was somewhat lower compared to the similar period in the previous year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Solar 17.6 MW under construction",
+    "quote": "We are also in the process of constructing 17.6 megawatts of solar capacity, which will be commissioned in Q1",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "1 GW target unfunded, no timeline",
+    "quote": "I am not in a position to give you a timeline right now.",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Renewable capacity target",
+    "value": "1 GW",
+    "change": "held",
+    "horizon": "multi-year",
+    "quote": "The target is on."
+   },
+   {
+    "metric": "Solar capacity under construction",
+    "value": "17.6 MW commissioning Q1 FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "which will be commissioned in Q1 and probably will enter full production during the course of Q2"
+   },
+   {
+    "metric": "9.9 MW wind revenue FY27 (normal wind)",
+    "value": "INR 14 crore revenue, INR 10 crore EBITDA",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we should get again about INR 14 crores of revenue and about INR 10 crores of EBITDA"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Adani Green",
+    "relation": "peer"
+   },
+   {
+    "name": "NTPC Green",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Capital allocation shift"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 pre-tax loss INR 16.4 crore",
+    "quote": "Loss before exceptional items and tax was about INR 16.4 crores during this quarter"
+   },
+   {
+    "label": "Evasive on 1 GW funding and promoter control",
+    "quote": "We cannot talk about all this until it happens."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "1 GW target funding and timeline",
+    "quote": "I am not in a position to give you a timeline right now."
+   },
+   {
+    "topic": "Asset valuation / sale",
+    "quote": "Sir, I cannot discuss all this on a public call Faisal."
+   }
+  ],
+  "hedge_index": 0.8
+ }
+}

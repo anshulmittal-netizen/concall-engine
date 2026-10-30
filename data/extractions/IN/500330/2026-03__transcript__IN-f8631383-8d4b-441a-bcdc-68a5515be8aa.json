@@ -1,0 +1,152 @@
+{
+ "doc_id": "IN-f8631383-8d4b-441a-bcdc-68a5515be8aa",
+ "market": "IN",
+ "company_id": "500330",
+ "name": "Raymond Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-12",
+ "period": "2026-03",
+ "title": "Raymond Ltd - 500330 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Engineering (aero + precision auto) EBITDA up sharply on synergies, but Q4 consolidated EBITDA margin fell to 13.9% from 16.4% and FY26 flat at INR335 crores; INR930 crores five-year capex is the supply signal.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capital cycle",
+   "Capacity bottleneck",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "we have the capacity to grow this business by 25% for next year within our existing system"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Raymond is embarking on a transformative INR930 crores capital expenditure program over the next 5 years"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex INR930 crores over 5 years",
+    "quote": "Raymond is embarking on a transformative INR930 crores capital expenditure program over the next 5 years to meet surging international demand.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Aero growth 25% CAGR target",
+    "quote": "we will continue to keep our trend of 25% growth till we reach the new greenfield facility",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Andhra commercial start late CY27",
+    "quote": "It will be in the second half -- it will be like second half or towards the last quarter FY '28",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Auto tariffs cut to 18%",
+    "quote": "in automotive, the tariffs are definitely down to 18% now",
+    "direction": 1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Aerospace revenue growth",
+    "value": "25% year-on-year",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "we are targeting a 25% growth year-on-year"
+   },
+   {
+    "metric": "New components per year",
+    "value": "250 this year",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I would say 250 is possible to be made this year"
+   },
+   {
+    "metric": "Capex",
+    "value": "INR930 crores over 5 years",
+    "change": "new",
+    "horizon": "5 years",
+    "quote": "Raymond is embarking on a transformative INR930 crores capital expenditure program over the next 5 years"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Safran",
+    "relation": "customer"
+   },
+   {
+    "name": "Rolls Royce",
+    "relation": "peer"
+   },
+   {
+    "name": "GROB",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Aerospace supply chain localisation",
+   "China+1 enquiries → orders",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy",
+   "Electronics manufacturing (EMS/PLI)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 EBITDA margin down 250bp on lower other income",
+    "quote": "EBITDA stood at INR85 crores with an EBITDA margin of 13.9% in Q4 FY '26"
+   },
+   {
+    "label": "Aero order book ~5x annual revenue, conversion gap questioned",
+    "quote": "when we're looking at this order book of INR2,300 crores over 5 years, it's just INR460 crores a year"
+   },
+   {
+    "label": "Management evasive on order book breakup and cash reconciliation",
+    "quote": "I don't think it's okay for me to give you a direct breakup"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 3,
+   "growth": 5,
+   "margin": 3,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "LEAP / engine programme order book breakup",
+    "quote": "I don't think it's okay for me to give you a direct breakup"
+   },
+   {
+    "topic": "Order book vs revenue conversion",
+    "quote": "These are just orders that you've had in the past."
+   },
+   {
+    "topic": "Net cash reconciliation",
+    "quote": "So, there are investments in other marketable securities, right?"
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

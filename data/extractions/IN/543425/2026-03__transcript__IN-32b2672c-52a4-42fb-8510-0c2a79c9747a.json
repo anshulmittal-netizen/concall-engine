@@ -1,0 +1,164 @@
+{
+ "doc_id": "IN-32b2672c-52a4-42fb-8510-0c2a79c9747a",
+ "market": "IN",
+ "company_id": "543425",
+ "name": "C.E. Info Systems Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-25",
+ "period": "2026-03",
+ "title": "C.E. Info Systems Ltd - 543425 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q4 rebound (revenue +54.8% QoQ, EBITDA margin 44.6%) but FY26 revenue only INR474 crores vs INR463 crores; management still targets INR1,000 crores by FY28 with a INR1,750 crores order book, while receivables rose to INR176 crores from INR133 crores.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Order conversion 17-18% of open book",
+    "quote": "around 17%, 18%, I guess, 18% got converted into revenue",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables INR133 crores → INR176 crores",
+    "quote": "The AR base that trade receivables, it was INR133 crores in last year, that is March '25, that has gone to INR176 crores in March '26?",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Q4 revenue +54.8% QoQ rebound",
+    "quote": "revenue growing by 54.8%, EBITDA increasing by 141% and PAT also growing by 171%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY28 INR1,000 crores target kept, timing open",
+    "quote": "the question is only could be of timing",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "Above 20% / confident of 25% (not formally quantified)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "there is no reason not to believe that we cannot grow at 25% in the FY27"
+   },
+   {
+    "metric": "IoT EBITDA margin",
+    "value": "16% for FY27",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are hoping to increase that 16% in this year"
+   },
+   {
+    "metric": "Revenue target",
+    "value": "INR1,000 crores by FY28, timing may slip",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "So our road map continues with INR1,000 crores."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q4 revenue growth (Q3 call: similar or better than last year Q4)",
+    "outcome": "missed",
+    "quote": "If more revenue could have been converted in Q4, it would have been 75%. That's the gap."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Amazon Now",
+    "relation": "customer"
+   },
+   {
+    "name": "Hyundai",
+    "relation": "customer"
+   },
+   {
+    "name": "Mappls DT Private Limited",
+    "relation": "peer"
+   },
+   {
+    "name": "Gtropy Systems Private Limited",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Railway capex",
+   "Auto EV transition",
+   "Defence indigenisation",
+   "Data-centre power & cooling"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables up 32% on flat revenue",
+    "quote": "The AR base that trade receivables, it was INR133 crores in last year, that is March '25, that has gone to INR176 crores in March '26?"
+   },
+   {
+    "label": "Q4 revenue miss vs own expectation; pushouts",
+    "quote": "If more revenue could have been converted in Q4, it would have been 75%. That's the gap."
+   },
+   {
+    "label": "Government deferrals and re-tender",
+    "quote": "a lot of them got delayed or deferred for the next year"
+   },
+   {
+    "label": "Inventory build in IoT hardware amid rising memory prices",
+    "quote": "our inventory levels have grown. Yes, inventory levels have grown to stock up to support the increased demand"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 3,
+   "balance_sheet": 3,
+   "capex": 1,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Quantify government deferral size",
+    "quote": "Hard to say. I mean new orders that could have been won and then could have been executed in part"
+   },
+   {
+    "topic": "Order-to-revenue conversion range",
+    "quote": "Hard to explain because it depends on different contracts."
+   },
+   {
+    "topic": "Inventory gain in IoT margin",
+    "quote": "I don't think that's the reason I wish that's not -- the reason for margin expansion is simply operating leverage"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

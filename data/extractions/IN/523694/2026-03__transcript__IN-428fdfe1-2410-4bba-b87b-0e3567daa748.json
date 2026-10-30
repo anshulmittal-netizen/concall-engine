@@ -1,0 +1,140 @@
+{
+ "doc_id": "IN-428fdfe1-2410-4bba-b87b-0e3567daa748",
+ "market": "IN",
+ "company_id": "523694",
+ "name": "Apcotex Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "Apcotex Industries Ltd - 523694 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 FY26 EBITDA up 42% to INR 55 cr on Nitrile latex margin spike that management calls partly a March war blip; NBR at 100% utilisation, no major capacity until FY28, ADD not notified.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply discipline",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 95,
+   "quote": "for Q4, I am talking about Q4, not for the whole financial year, but for Q4, we were between 90% and 100% across all our plants"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "FY '27, no. Most of this capacity will come on stream in FY '28."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Q4 utilisation 90-100% across plants",
+    "quote": "we were between 90% and 100% across all our plants, all our factories",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Nitrile latex capacity step-up deferred to FY28",
+    "quote": "if that capacity comes on stream, it will be in the next financial year, not this financial year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Nitrile margins temporary March spike",
+    "quote": "that may be partly because of this war situation. So, we are waiting to see how things land",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Chinese latex entering Egypt and Turkey",
+    "quote": "For the first time, we are seeing in Turkey and Egypt, for example, Chinese latex coming in there",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Volume growth FY27",
+    "value": "double-digit to low double-digit volume growth",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "if the demand is there and we do have capacity to grow by another in double- digits, low double-digits in volume for the whole year"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "better than average of last year",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect margins to be better than the average of last year, at least for this coming year"
+   },
+   {
+    "metric": "ApcoBuild growth",
+    "value": "double digit",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we will continue to grow at double digits"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Finance Ministry",
+    "relation": "peer"
+   },
+   {
+    "name": "DGTR",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Specialty chem destocking end"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin spike partly one-month war windfall",
+    "quote": "especially the month of March could have been a little bit of a blip"
+   },
+   {
+    "label": "Working capital reversal risk",
+    "quote": "some of it now will be sucked back into working capital"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 6,
+   "balance_sheet": 3,
+   "capex": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Nitrile latex EBITDA contribution",
+    "quote": "I do not have the EBITDA number."
+   },
+   {
+    "topic": "Nitrile latex margin guidance",
+    "quote": "So, I do not have any number for you in terms of giving guidance for Nitrile latex margins"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

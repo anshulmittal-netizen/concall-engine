@@ -1,0 +1,183 @@
+{
+ "doc_id": "IN-d7e0acfe-1180-4572-b3c1-364508f3f936",
+ "market": "IN",
+ "company_id": "513519",
+ "name": "Pitti Engineering Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Pitti Engineering Ltd-$ - 513519 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.94,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Pitti announces INR290 crore casting capex (capacity to 36,000 t, more than doubling) while FY26 utilisation was only 71% for casting and Q4 export shipments slipped about INR20 crore, so supply is expanding ahead of demand.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capital cycle",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 71,
+   "quote": "utilization levels improved to 76% for sheet metal, 81% for machining and 71% for casting"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are announcing a new capex program to further expand our capacities and address growing demand"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Casting utilisation FY26 71%",
+    "quote": "utilization levels improved to 76% for sheet metal, 81% for machining and 71% for casting",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Net working capital release INR125 cr",
+    "quote": "We expect INR125 crores release from working capital",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q4 export shortfall ~INR20 cr",
+    "quote": "around about INR20-odd crores of sales have not taken place",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume target 78k t lamination",
+    "quote": "we have targeted 78,000 tons of sales",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Lamination sales volume FY27",
+    "value": "78,000 tons",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we have targeted 78,000 tons of sales"
+   },
+   {
+    "metric": "Machine component sales volume FY27",
+    "value": "16,000 tons",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are targeting around about 16,000 tons of sales"
+   },
+   {
+    "metric": "Revenue FY27",
+    "value": "INR2,300 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "This should in current commodity price terms translate into roughly INR2,300 crores of top line"
+   },
+   {
+    "metric": "Net debt FY28 without further lamination capex",
+    "value": "INR250 crore",
+    "change": "new",
+    "horizon": "FY28-29",
+    "quote": "I would estimate that your net debt should be down to about INR250-odd crores"
+   },
+   {
+    "metric": "Greenfield casting facility commissioning",
+    "value": "Q1 FY30",
+    "change": "new",
+    "horizon": "FY30",
+    "quote": "The facility is expected to be commissioned by Q1 FY30"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Inventory target INR300 crore by FY29",
+    "outcome": "dropped",
+    "quote": "We see the inventory levels maintaining at around INR390 crores, INR400 crores level going forward"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Wabtec",
+    "relation": "customer"
+   },
+   {
+    "name": "Siemens Mobility",
+    "relation": "customer"
+   },
+   {
+    "name": "Progress Rail",
+    "relation": "customer"
+   },
+   {
+    "name": "Caterpillar",
+    "relation": "customer"
+   },
+   {
+    "name": "Alstom",
+    "relation": "customer"
+   },
+   {
+    "name": "Voith",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Railway capex",
+   "Nearshoring / reshoring (US)",
+   "China+1 enquiries → orders",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 export revenue degrowth and ~INR20 cr sales slipped",
+    "quote": "around about INR20-odd crores of sales have not taken place"
+   },
+   {
+    "label": "Payables fell, inventory held at INR400 cr",
+    "quote": "our days payable have gone down"
+   },
+   {
+    "label": "Net debt ~INR570 cr with new debt-funded capex",
+    "quote": "the remaining is going to be funded through net debt"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 5,
+   "growth": 4,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "PAT guidance FY27/FY28",
+    "quote": "That would be a little difficult for me to predict"
+   },
+   {
+    "topic": "Export recovery timing",
+    "quote": "So I don't want to comment."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

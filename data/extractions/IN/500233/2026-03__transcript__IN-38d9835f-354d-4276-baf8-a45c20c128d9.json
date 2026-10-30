@@ -1,0 +1,153 @@
+{
+ "doc_id": "IN-38d9835f-354d-4276-baf8-a45c20c128d9",
+ "market": "IN",
+ "company_id": "500233",
+ "name": "Kajaria Ceramics Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-07",
+ "period": "2026-03",
+ "title": "Kajaria Ceramics Ltd - 500233 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Building materials",
+  "thesis": "Q4 FY26 volume +11% and EBITDA margin 19.19% (vs 10.01%) as Morbi gas shutdown removes a key competitor's supply, but Morbi restart from 1 May and gas-price pass-through add uncertainty; no volume guidance given.",
+  "archetype": "Value migration",
+  "mental_models": [
+   "Supply exit",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "our production will be, as Rishi said just now, from 16th of April, all the plants are running at full capacity"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Morbi plants shut in March; production -7%",
+    "quote": "The production has fallen by 7% during the quarter due to shutdown of our Morbi plants in March",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Price hike 12-13% North, 16-17% Morbi",
+    "quote": "we have taken a price increase of roughly 12% to 13% in our North plants and Morbi has been slightly higher around 16% to 17%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Only 70-90 Morbi plants running",
+    "quote": "as of today, there are only about 70, 80, 90 plants which are running",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital cycle 65 → 51 days",
+    "quote": "the working capital cycle improved by 14 days to 51 days as compared to 65 days on 31st of December",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Volume growth 11% in Q4",
+    "quote": "this quarter we achieved a volume growth of 11%",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin",
+    "value": "18% to 19%",
+    "change": "new",
+    "horizon": "current scenario",
+    "quote": "we should be maintaining between 18% to 19%"
+   },
+   {
+    "metric": "Volume growth",
+    "value": "no volume guidance",
+    "change": "dropped",
+    "horizon": "FY27",
+    "quote": "we have decided not to give any volume guidance"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Somany",
+    "relation": "competitor"
+   },
+   {
+    "name": "Johnson",
+    "relation": "competitor"
+   },
+   {
+    "name": "Orient",
+    "relation": "competitor"
+   },
+   {
+    "name": "GAIL",
+    "relation": "supplier"
+   },
+   {
+    "name": "GSPC",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Anti-dumping protection",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Outsourcing supply uncertain; Morbi plants not at full run",
+    "quote": "Outsourcing is still a little problem because as we just said that at Morbi a lot of plants are still shut down"
+   },
+   {
+    "label": "Price cut risk: flexibility on discounts",
+    "quote": "We might be a little more flexible in terms of our pricing."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 4,
+   "capex": 0,
+   "balance_sheet": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Q1 volume and April growth",
+    "quote": "we cannot break it down quarter-wise, but the good momentum has started now"
+   },
+   {
+    "topic": "Volume guidance FY27-29",
+    "quote": "we will not see over and above"
+   },
+   {
+    "topic": "Salary reinstatement",
+    "quote": "we have yet to take a call"
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

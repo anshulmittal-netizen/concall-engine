@@ -1,0 +1,385 @@
+{
+ "doc_id": "IN-f61b58be-4b33-4a4e-a82c-27e9a99d4370",
+ "market": "IN",
+ "company_id": "544545",
+ "name": "Trualt Bioenergy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-28",
+ "period": "2026-03",
+ "title": "Trualt Bioenergy Ltd - 544545 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "Ethanol offtake collapsed to ~26 crore litres vs 72 crore bid, utilisation under 35% and INR460-500 crore inventory built; FY27 volume target of 40-55 crore litres rests on unenforced court orders.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -2,
+   "structure": -2,
+   "inventory": -2,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 35,
+   "quote": "taking up capacity utilization to less than 35%"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "there is no plan for the company for any additional capex"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation under 35%",
+    "quote": "taking up capacity utilization to less than 35%",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "ENA price falls INR62-63 to INR55-56",
+    "quote": "the price of ENA, which was estimated to stay at around INR62 to INR63 a litre, has now fallen down to INR55 to INR56 a litre",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory INR460-500 crore built up",
+    "quote": "you will see an inventory of almost about INR460 close to INR500 crores of inventory that is already built up",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume target 40 to 55 crore litres",
+    "quote": "we will leave no stone unturned to achieving that number of at least minimum 40 crore litres",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Industry oversupply from allocation mess",
+    "quote": "there was an oversupply of ethanol available in the country",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 ethanol volume",
+    "value": "at least 40 crore litres, bonus 55 crore litres",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "at least minimum 40 crore litres. And a bonus, if we achieve, it will be 55 crore litres."
+   },
+   {
+    "metric": "CBG capacity",
+    "value": "10 TPD to 162 TPD by FY27 end",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "taking our gross production capacity from 10 tons per day to 162 tons per day"
+   },
+   {
+    "metric": "Retail outlets",
+    "value": "more than 90 by next financial year",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "take our total count to more than 90 retail outlets by the next financial year"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Ethanol volume 15 crore litres implementation / revenue run rate INR350-400 crore per month",
+    "outcome": "missed",
+    "quote": "Now, we could not do that because of the allocation methodology that we just spoke of entirely."
+   },
+   {
+    "metric": "Ethanol volume target 37 crore litres (Feb call)",
+    "outcome": "missed",
+    "quote": "we have already done that close to 24 crore litres of volume"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Sumitomo Corporation",
+    "relation": "partner"
+   },
+   {
+    "name": "GAIL",
+    "relation": "partner"
+   },
+   {
+    "name": "Honeywell UOP",
+    "relation": "partner"
+   },
+   {
+    "name": "NABARD",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Anti-dumping protection",
+   "Tariffs & trade policy",
+   "Renewables & storage",
+   "Consumer durables"
+  ],
+  "red_flags": [
+   {
+    "label": "OMCs reneging on purchase orders and court order",
+    "quote": "the private sector OMCs went back on the already executed purchase orders"
+   },
+   {
+    "label": "Inventory build-up and receivables reliance",
+    "quote": "you will see an inventory of almost about INR460 close to INR500 crores of inventory that is already built up"
+   },
+   {
+    "label": "PAT halved on higher depreciation and finance cost",
+    "quote": "the PAT which was booked at INR140 crores during the previous year of 31st March 2025 has now established at INR80.26 crores"
+   },
+   {
+    "label": "Management did not meet investors in prior quarter",
+    "quote": "management has not been active in the last quarter"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 2,
+   "capex": 2,
+   "balance_sheet": 2,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "FY27 total volume",
+    "quote": "We cannot tell you the figure of FY 2027."
+   },
+   {
+    "topic": "FY27 revenue",
+    "quote": "let me not give a direct answer to how much we could close that for the current financial year FY 2027"
+   },
+   {
+    "topic": "Ethanol price after 2026-27",
+    "quote": "I don't know whether I can comment on that or not"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "TruAlt FY26 standalone revenue fell to INR1,704 crore and PAT to INR80.26 crore as OMC ethanol allocation was cut to about 34% of bids.",
+  "overview": "FY26 was a difficult year: ethanol tender allocation was cut to about 26 crore litres against a 72 crore litre bid, and private OMCs sought to revise prices on purchase orders already issued at about INR60 per litre. Standalone revenue fell about 9% to INR1,704 crore, while EBITDA margin rose to 19.81% from 18.98%. PAT fell to INR80.26 crore from INR140 crore, driven by depreciation (up to INR84 crore) after three dual-feed plants were capitalised, higher finance cost (INR157.85 crore) and deferred tax. Management is relying on a pending 15 crore litre court-ordered allocation, plus SAF, CBG and fuel-retail expansion for growth.",
+  "segments": [
+   {
+    "name": "Ethanol",
+    "commentary": "FY26 ethanol sales about 24-26 crore litres (about 3 crore litres ENA) at average realisation of about INR67 per litre; OMC allocation was about 26 crore litres vs 72 crore litre bid. Current sales run rate about 2.2 crore litres per month vs 5.5-6 crore litre capacity."
+   },
+   {
+    "name": "Compressed Biogas (CBG)",
+    "commentary": "First plant (10 TPD) generates about INR42 crore revenue at 85%+ utilisation; Sumitomo JV (TruAlt Gas, 49% partner) plans three 20 TPD plants and GAIL JV (Leafiniti, 49%) plans six plants of 12 TPD, targeting 162 TPD gross by Q4 FY27. Management guides about 50% EBITDA margin."
+   },
+   {
+    "name": "Fuel retail",
+    "commentary": "Seven franchise outlets operating with zero capex, generating about INR100-105 crore revenue and about 5% EBITDA; target of 11 outlets near term and 87 total (11 plus 76 shortlisted) subject to crude stabilisation."
+   },
+   {
+    "name": "Sustainable Aviation Fuel (SAF)",
+    "commentary": "Planned 10 crore litre per annum plant in Andhra Pradesh (MoU signed); Honeywell UOP technology transfer agreement signed; FID awaits long-term offtake contract and pricing. Plans to divert about 20 crore litres of ethanol capacity to SAF."
+   },
+   {
+    "name": "DDGS (by-product, within ethanol)",
+    "commentary": "DDGS revenue about INR28 crore in FY26, at base price about INR24 per kg; operations were mostly on syrup in Q3 and Q4."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 ethanol volume target of at least 40 crore litres, with 55 crore litres if the pending 15 crore litre court-ordered allocation is implemented; management declined to give a revenue figure.",
+   "Management expects the 15 crore litre court-ordered allocation to be implemented by about September 2026 (H1 FY27), dependent on the Supreme Court LTOA matter being disposed of; courts resume about 3 June.",
+   "CBG: three TruAlt Gas plants (Sumitomo) and six Leafiniti plants (GAIL) to be commissioned by Q4 FY27, bringing gross capacity to about 162 TPD; EPC tenders for Leafiniti to be floated in early June 2026.",
+   "Fuel retail: 76 shortlisted outlets to be fast-tracked once crude prices stabilise, with total count above 90 by next financial year (earlier stated 87 by year-end).",
+   "Management says the INR150 crore PMG1 subsidy approval is at the final Secretary-level committee; receipt is linked to plant commissioning, expected in 24-30 months (FY29).",
+   "Management says no additional capex is planned beyond the capitalised dual-feed plants, but CBG and SAF expansions are in progress."
+  ],
+  "capex_capacity": [
+   "Five ethanol plants fully commissioned; three of five converted to dual-feed (maize/broken rice), with more than INR400 crore capitalised, driving higher depreciation.",
+   "Ethanol capacity about 55-60 crore litres on 300-330 operating days; management targets syrup operation for about 100 days in the crushing season and 200-230 days on alternative grains for dual-feed units.",
+   "CBG: current 10 TPD operating; TruAlt Gas building three 20 TPD plants; Leafiniti targets six 12 TPD plants with six sites identified and land procurement advanced.",
+   "CBG funding is a 70:30 debt-to-equity mix; Sumitomo debt tied up with NABARD at 8.65%, and Leafiniti has four or five sanctions at lower rates.",
+   "SAF: land identified in Andhra Pradesh near a seaport; FID to follow a long-term offtake contract."
+  ],
+  "demand_pricing": [
+   "Average ethanol sales realisation about INR67 per litre; ENA realisation about INR62 per litre; ENA market price fell from an expected INR62-63 to about INR55-56 per litre.",
+   "Public sector OMC contract prices: maize-based INR71, syrup-based INR65, damaged grains INR64, B-heavy molasses INR60, FCI rice INR58, C-heavy molasses INR58.",
+   "Private OMCs (8 crore litres allocated) requested price revision from about INR60 per litre; only about 1.6 crore litres lifted so far, with 6.2 crore litres still pending.",
+   "Court order (4 February 2026) values the pending 15.62 crore litres at about INR1,062 crore; management states inventory of about INR460-500 crore is built up.",
+   "CBG billed at about INR84-85 per kg; rumoured Sampoorn policy could lift gas price to INR100 and add INR5 per kg PLI (unconfirmed by management).",
+   "Management cites a blending increase from 20% to 21% (notified), with E22/E27/E30 BIS standards and E85/E100 notified; each 1% blending adds about 55-56 crore litres of demand."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What was total FY26 ethanol volume and when did the allocation change happen?",
+    "answer": "About 24 crore litres sold versus 30 crore litres of tender allocation; management said the mechanism had not changed, but the 15 crore litre court-ordered carry-forward was not implemented."
+   },
+   {
+    "question": "When will the 15 crore litre court order be implemented?",
+    "answer": "Management hopes for implementation by September or H1 FY27, after the court-pending LTOA matter is disposed of; the OMCs were past the 90-day period set by the 4 February order."
+   },
+   {
+    "question": "What are the economics of ethanol, PLI and interest subvention?",
+    "answer": "Other income of about INR68.28 crore; Karnataka PLI at 1.75% of turnover; interest subvention up to 50% of term-loan interest capped at 6% per annum, per CFO explanation."
+   },
+   {
+    "question": "How will CBG be funded and sourced?",
+    "answer": "70:30 debt-equity; Sumitomo plants sourced from TruAlt's own spent wash and press mud; GAIL plants sourced from the open market, with at least three times raw material within 20 km of each site."
+   },
+   {
+    "question": "What is the working-capital cycle?",
+    "answer": "Receivables about 21 days (realised in 15-17 days on average); payables up to about 60 days; net working capital about 40 days."
+   },
+   {
+    "question": "What is the feedstock split?",
+    "answer": "Group companies supplied under 55% of FY26 feedstock; over 45% was sourced from the open market, with the share from non-group sources expected to rise."
+   }
+  ],
+  "risks_watch": [
+   "Pending 15 crore litre court-ordered allocation has not been implemented; timing depends on the Supreme Court LTOA matter and OMC compliance.",
+   "Private OMCs (8 crore litres) have sought price revision from about INR60 per litre; 6.2 crore litres still unlifted, and ENA prices have fallen to about INR55-56 per litre.",
+   "Higher depreciation and finance cost are compressing PBT and PAT, with standalone PAT down about 43%.",
+   "CBG expansion depends on the Sampoorn policy (rumoured, not notified) and on the Sumitomo land dispute that cut one plant from four to three.",
+   "Retail expansion (76 outlets) is paused due to crude price volatility; SAF FID awaits an offtake contract and pricing.",
+   "Standalone inventory of about INR460-500 crore is unsold and needs liquidation in FY27."
+  ],
+  "management_tone": "Confident and combative on the policy and court outcome, with repeated apologies for the missed 15 crore litre allocation and for limited investor engagement. Management was evasive on FY27 revenue and on the Sampoorn policy, and declined to share rumoured terms.",
+  "key_quotes": [
+   "We did not succumb to the pressure. We hold our grounds and we have been chasing the OMCs to honour the purchase orders and lift the quantities.",
+   "Trust me, we are leaving no stones unturned.",
+   "Once we get the implementation of this additional 15 crore litres, adding to the already 40 crore litres, including the private and the public sector OMCs, we will reach our peak production capacity."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Standalone revenue (top line)",
+    "value": "INR1,704 crore",
+    "change": "vs INR1,880 crore in FY25 (about -9%)"
+   },
+   {
+    "metric": "Standalone total income",
+    "value": "INR1,772 crore",
+    "change": "vs INR1,940 crore in FY25"
+   },
+   {
+    "metric": "COGS as % of sales",
+    "value": "65.06%",
+    "change": "vs 67.44% in FY25"
+   },
+   {
+    "metric": "EBITDA margin (standalone)",
+    "value": "19.81%",
+    "change": "vs 18.98% in FY25"
+   },
+   {
+    "metric": "Finance cost",
+    "value": "INR157.85 crore",
+    "change": "up 11.92% from INR141 crore"
+   },
+   {
+    "metric": "Depreciation",
+    "value": "INR84 crore",
+    "change": "vs INR64.59 crore (up about 30%)"
+   },
+   {
+    "metric": "Profit before tax (standalone)",
+    "value": "INR109.47 crore",
+    "change": "vs INR152.15 crore in FY25"
+   },
+   {
+    "metric": "PAT (standalone)",
+    "value": "INR80.26 crore",
+    "change": "vs INR140 crore in FY25; net profit ratio 4.51%"
+   },
+   {
+    "metric": "Consolidated revenue",
+    "value": "INR1,813 crore",
+    "change": "vs INR1,965 crore (about -7%)"
+   },
+   {
+    "metric": "Consolidated PAT",
+    "value": "INR96.86 crore",
+    "change": "vs INR146.63 crore in FY25"
+   },
+   {
+    "metric": "Consolidated EBITDA margin",
+    "value": "20.98%",
+    "change": "vs about 19% earlier"
+   },
+   {
+    "metric": "Leafiniti Bioenergy PAT",
+    "value": "INR18.07 crore",
+    "change": "vs INR6.33 crore (about 3x)"
+   },
+   {
+    "metric": "Debt-equity (standalone / consolidated)",
+    "value": "0.61 / 0.63",
+    "change": ""
+   },
+   {
+    "metric": "ROCE (standalone)",
+    "value": "9.91%",
+    "change": ""
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "CBG: TruAlt Gas (Sumitomo JV) three 20 TPD plants",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 3,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "CBG: Leafiniti (GAIL JV) six 12 TPD plants",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 3,
+    "status": "planned",
+    "mat": "minor"
+   },
+   {
+    "what": "SAF: planned 10 crore litre per annum plant in Andhra Pradesh (MoU signed, FID awaits offtake)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": 35.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "new_products_or_markets"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "FY27 ethanol volume guided to at least 40 crore litres (55 crore litres if the pending 15 crore litre court allocation is implemented, expected by about September 2026), versus about 24-26 crore litres sold in FY26; CBG capacity guided from 10 to 162 TPD by Q4 FY27, but EPC tenders for Leafiniti are not yet floated and the court allocation depends on a pending Supreme Court matter, so backing is p",
+  "mgmt": null
+ }
+}

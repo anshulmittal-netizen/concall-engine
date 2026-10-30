@@ -1,0 +1,170 @@
+{
+ "doc_id": "IN-e035f817-9421-4e22-989a-b5114865b5e2",
+ "market": "IN",
+ "company_id": "541929",
+ "name": "Synergy Green Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Synergy Green Industries Ltd - 541929 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Foundry capacity expanded 30k→45k tpa but FY26 revenue grew only 3.5% and PBDIT margin fell to 13.1%; FY27 guide ~33% growth to ₹500 cr and 300bp margin expansion, with utilisation ramp of 4–5 months still unproven.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 80,
+   "quote": "we plan to achieve about 80 percent of our expanded capacities utilized"
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "the big capex will happen in FY 28 onwards"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Next capex deferred to FY28",
+    "quote": "the big capex will happen in FY 28 onwards",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Expanded capacity utilisation target ~80%",
+    "quote": "we plan to achieve about 80 percent of our expanded capacities utilized",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue ~33% growth to ₹500 cr",
+    "quote": "We're projecting a 33% growth that takes our revenues to 500 crores in FY27",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Commodity lag risk on rising inputs",
+    "quote": "if it goes on continuously upward the cycle then always, we carry this lag actually no",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "~₹500 cr (~33% growth); ₹500-530 range discussed",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "We're projecting a 33% growth that takes our revenues to 500 crores in FY27"
+   },
+   {
+    "metric": "FY27 PBDIT margin expansion",
+    "value": "over 300 bp YoY",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "PBDIT margins are expected to expand by over 300 basis points year-on-year"
+   },
+   {
+    "metric": "Export share of revenue",
+    "value": "25-30% of revenue, stable",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Our export revenues are projected to remain stable in line with the previous year’s contributing around 25 to 30% of our revenue"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 revenue ₹530-550 cr",
+    "outcome": "dropped",
+    "quote": "we are now taking 500 crore revenue projection"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Vestas",
+    "relation": "customer"
+   },
+   {
+    "name": "Nordex",
+    "relation": "customer"
+   },
+   {
+    "name": "Envision",
+    "relation": "customer"
+   },
+   {
+    "name": "L&T",
+    "relation": "customer"
+   },
+   {
+    "name": "BHEL",
+    "relation": "customer"
+   },
+   {
+    "name": "Siemens Gamesa",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Capex cycle revival (private)",
+   "Anti-dumping protection",
+   "Import substitution"
+  ],
+  "red_flags": [
+   {
+    "label": "Revenue guidance cut from ₹530-550 cr to ₹500 cr",
+    "quote": "why are we now taking 500 crore revenue projection"
+   },
+   {
+    "label": "Commodity cost lag and Q4 ramp slippage",
+    "quote": "it may take four five months to come to 80 by 90 percent kind of the level"
+   },
+   {
+    "label": "Other expenses jump questioned",
+    "quote": "why this one hard jump in current quarter"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 3,
+   "growth": 4,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Quarterly sales tonnage and realisation",
+    "quote": "offhand I don't have if you write a mail I can reply it separately"
+   },
+   {
+    "topic": "Other expenses step-up",
+    "quote": "you should compare as a proportion as a percentage of thing than looking at an absolute number"
+   },
+   {
+    "topic": "Fundraise timing and size",
+    "quote": "we are looking at the Q4 F27 or Q1 Q2 of FY28"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

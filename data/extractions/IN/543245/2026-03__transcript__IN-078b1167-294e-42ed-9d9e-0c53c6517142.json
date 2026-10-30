@@ -1,0 +1,173 @@
+{
+ "doc_id": "IN-078b1167-294e-42ed-9d9e-0c53c6517142",
+ "market": "IN",
+ "company_id": "543245",
+ "name": "Gland Pharma Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-20",
+ "period": "2026-03",
+ "title": "Gland Pharma Ltd - 543245 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Q4 FY26 revenue up 22% to INR17,428m with base-business EBITDA margin 41%, but supply-side expansion continues: INR2,000 crore capex over three years and 140m GLP-1 cartridge capacity ahead of contracted demand.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "Fontenay is at almost 100%. That's why we kept -- we'll add a line"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "around INR2,000 crores, we're investing in the next 3 years in addition to about INR300 crores this year."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex INR2,000 crore over 3 years",
+    "quote": "around INR2,000 crores, we're investing in the next 3 years in addition to about INR300 crores this year.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Fontenay at almost 100%",
+    "quote": "Like Fontenay is at almost 100%. That's why we kept -- we'll add a line",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Consol growth 12-13% FY27 (ex-GLP-1)",
+    "quote": "As a consol, we are looking at around 13%, 12% to 13% growth.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Dalbavancin demand up post Vizient",
+    "quote": "the customer has won the Vizient contract as well. So the numbers are actually up from the first quarter",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Vials/glass suppliers seek 5-6% hike",
+    "quote": "there is a request from the suppliers to increase it by 5% to 6%.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated revenue growth FY27 (constant currency, ex-GLP-1)",
+    "value": "12-13%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "As a consol, we are looking at around 13%, 12% to 13% growth."
+   },
+   {
+    "metric": "Base business EBITDA margin FY26",
+    "value": "33-35%",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "we still guide for the year as a base business around 35%, 33% to 35% and as a consol basis, around 25%, 26% EBITDA."
+   },
+   {
+    "metric": "Cenexi revenue FY27",
+    "value": "close to EUR200 million",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "FY '27, EUR200 million is the target we are looking at."
+   },
+   {
+    "metric": "Cenexi EBITDA FY27",
+    "value": "mid-single to high-single digit",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "for FY '27, our target is to reach at least mid -single digit, high single-digit EBITDA."
+   },
+   {
+    "metric": "Consol revenue CAGR next four years",
+    "value": "15%",
+    "change": "new",
+    "horizon": "FY27-FY30",
+    "quote": "The next four years, we're looking at a CAGR of 15% at a consol basis."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Cenexi",
+    "relation": "partner"
+   },
+   {
+    "name": "Fosun",
+    "relation": "peer"
+   },
+   {
+    "name": "Vizient",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "GLP-1 supply chain",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Undisclosed GLP-1 contracted volumes against 140m capacity",
+    "quote": "it's very difficult to assume numbers without actually having to know when the approvals will come in which market."
+   },
+   {
+    "label": "Middle East/ROW shipments halted",
+    "quote": "we didn't ship anything to that space."
+   },
+   {
+    "label": "Constant-currency growth not disclosed",
+    "quote": "We can come back to you on that."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 5,
+   "margin": 4,
+   "capex": 3,
+   "balance_sheet": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "GLP-1 contracted volumes and approvals",
+    "quote": "So I can't give you more details because if I tell whether the customer got approved or not, then it's very obvious."
+   },
+   {
+    "topic": "Constant currency growth Q4",
+    "quote": "We can come back to you on that. It's very difficult to tell"
+   },
+   {
+    "topic": "Contracted share of 140m capacity",
+    "quote": "it is not possible for us to give you how much of the capacity has been contracted"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "doc_id": "IN-637ea100-5ea2-4794-80a2-2da745ab9d16",
+ "market": "IN",
+ "company_id": "532993",
+ "name": "Sejal Glass Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-19",
+ "period": "2026-03",
+ "title": "Sejal Glass Ltd - 532993 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q4 FY26 consolidated EBITDA margin 17.5% and FY26 PAT INR 29.03 cr, but India utilisation is low (tempering 13-64%) and management guides UAE growth ~20% with FY27 India ~INR 200 cr, a plan that depends on Glasstech ramp-up.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 64,
+   "quote": "the tempering capacity utilization is around 64%., our IG is 30% and lamination is 87%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we had already ordered some machines which are yet to be installed. Because of this geopolitical, it was delayed by one quarter"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Silvassa tempering utilisation 64%, target ~75%",
+    "quote": "the tempering capacity, more or less it will be in the range of 75%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "UAE machines ordered, install Q2/Q3",
+    "quote": "we are expecting that in Q2 or Q3, we will be installing these machines and it will start producing",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Glass prices up 7-8% on energy surcharge",
+    "quote": "there is an increase of around 8% in the glass prices because of the energy cost",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Glasstech EBITDA breakeven reached",
+    "quote": "in the last month, we are at EBITDA breakeven",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 consolidated revenue",
+    "value": "INR 500+ crore",
+    "change": "new",
+    "quote": "For FY27, we are considering total overall (500+) crores"
+   },
+   {
+    "metric": "FY27 India revenue",
+    "value": "~INR 200 crore (Glasstech 110, Silvassa 90)",
+    "change": "new",
+    "quote": "we are expecting around 200 crores from India over a year ‘26-27"
+   },
+   {
+    "metric": "FY27 consolidated EBITDA margin",
+    "value": "17.5% to 18%",
+    "change": "new",
+    "quote": "we will maintain around 17.5% to 18% EBITDA"
+   },
+   {
+    "metric": "UAE quarterly turnover Q1 FY27",
+    "value": "AED 31 million",
+    "change": "new",
+    "quote": "we are going to close around 31 million (AED)"
+   },
+   {
+    "metric": "Glasstech EBITDA margin this quarter",
+    "value": "at least 10%",
+    "change": "new",
+    "quote": "This quarter, we are expecting at least 10% EBITDA positive"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 EBITDA margin ~18% (from prior call, per analyst)",
+    "outcome": "met",
+    "quote": "we will maintain around 17.5% to 18% EBITDA"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Glasstech",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Glass processing value-add mix shift",
+   "Anti-dumping protection",
+   "Consolidation / competitor exits",
+   "Middle East geopolitical disruption"
+  ],
+  "red_flags": [
+   {
+    "label": "UAE geopolitical slowdown and supply chain disruption",
+    "quote": "there is a little bit slowdown in the real esta te"
+   },
+   {
+    "label": "India plants at low utilisation; Glasstech negative margin",
+    "quote": "Glasstech units have given a negative margin"
+   },
+   {
+    "label": "Management says India revenue FY26 ~63 cr standalone vs proforma decline questioned",
+    "quote": "Without Glasstech, we did only 63 crores"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 5,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Glasstech FY26 proforma revenue vs prior year",
+    "quote": "No, it was not there. Glasstech came only in May and June."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

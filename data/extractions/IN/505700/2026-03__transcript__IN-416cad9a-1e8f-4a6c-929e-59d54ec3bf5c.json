@@ -1,0 +1,139 @@
+{
+ "doc_id": "IN-416cad9a-1e8f-4a6c-929e-59d54ec3bf5c",
+ "market": "IN",
+ "company_id": "505700",
+ "name": "Elecon Engineering Company Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-22",
+ "period": "2026-03",
+ "title": "Elecon Engineering Company Ltd - 505700 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Gear revenue fell 21% YoY to INR472 crore on deferred dispatches and no FY27 guidance; utilisation only 56-60% with ~INR800 crore idle investments, so supply discipline is strong but demand timing is weak.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Backlog conversion",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 58,
+   "quote": "we are at this moment with the addition of capex is around 56% to 60% utilization is there."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we have roughly spent about INR95 crores towards different -different categories."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 56-60%",
+    "quote": "around 56% to 60% utilization is there",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 guidance held, not given",
+    "quote": "we are holding our guidance for FY '27 at this stage and will revisit our outlook",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Gear order book INR894 crore",
+    "quote": "the open order book that we have is about INR894 crores as of March 31, 2026",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA target 22-24% if demand returns",
+    "quote": "we will be able to go back to the EBITDA levels that we had suggested even earlier, which is close to 22% to 24%",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue and margin guidance",
+    "value": "none, held",
+    "change": "dropped",
+    "quote": "As previously communicated, we will not be providing forward -looking guidance for FY27."
+   },
+   {
+    "metric": "EBITDA margin recovery",
+    "value": "22% to 24% if domestic orders go smoothly",
+    "change": "held",
+    "quote": "we will be able to go back to the EBITDA levels that we had suggested even earlier, which is close to 22% to 24%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Indian Navy",
+    "relation": "customer"
+   },
+   {
+    "name": "Shipyard",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Middle East disruption",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables up to ~INR720 crore",
+    "quote": "That number has gone up from INR610 crores to about INR720 crores."
+   },
+   {
+    "label": "Revenue guidance withdrawn for FY27",
+    "quote": "we are holding our guidance for FY '27 at this stage"
+   },
+   {
+    "label": "Goodwill impairment INR102 crore",
+    "quote": "This excludes the one -time impairment of goodwill of INR102 crores"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 5,
+   "margin": 5,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "FY27 margin and growth guidance",
+    "quote": "Right now, we can 't comment on that specifically because of the current scenario"
+   },
+   {
+    "topic": "Navy development order margin impact",
+    "quote": "For the navy orders, we will come back to you."
+   },
+   {
+    "topic": "Deferred revenue quantification",
+    "quote": "We are at the last leg and we are having an LOI right now."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

@@ -1,0 +1,145 @@
+{
+ "doc_id": "IN-94d39cb2-949f-4101-bb88-e2cdcf64fe63",
+ "market": "IN",
+ "company_id": "543235",
+ "name": "Angel One Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-22",
+ "period": "2026-03",
+ "title": "Angel One Ltd - 543235 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Financial services",
+  "thesis": "Q4 FY26 broking volumes rebounded (orders +13.3% QoQ to 431m, EB/DAT margin 41.7%, normalised 44.4%), but cash market share fell 117 bps QoQ and management guided only to flat employee cost and a 2.5-3% new-business drag.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Orders +13.3% QoQ to 431m",
+    "quote": "orders executed on the platform increased by 13.3% sequentially to 431 million",
+    "highlight": "orders executed on the platform increased by 13.3%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Employee cost flat FY27 vs FY26 (~₹11bn)",
+    "quote": "we will likely be within the same range of the FY 2026 number, which is about ₹11 billion, including the ESOP cost",
+    "highlight": "within the same range of the FY 2026 number",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Cash share down 117 bps QoQ",
+    "quote": "In cash, specifically, you are seeing a year -over-year drop of about 37 bps and a quarter-over-quarter drop of 117 bps.",
+    "highlight": "quarter-over-quarter drop of 117 bps",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Newer-business drag 2.5-3% for FY27",
+    "quote": "for the current year we will have in the range bound of about 2.5 to 3%",
+    "highlight": "in the range bound of about 2.5 to 3%",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Employee cost incl. ESOP",
+    "value": "about ₹11 billion, flat vs FY26",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we will likely be within the same range of the FY 2026 number, which is about ₹11 billion, including the ESOP cost"
+   },
+   {
+    "metric": "Operating margin drag from newer businesses",
+    "value": "2.5% to 3%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "for the current year we will have in the range bound of about 2.5 to 3%"
+   },
+   {
+    "metric": "Tax rate",
+    "value": "25% to 26% of PBT as other businesses scale",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "the tax rate will come to about 25% to 26% of the PBT"
+   },
+   {
+    "metric": "IPL spend",
+    "value": "about ₹1.5 billion for the season",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "overall it will be about ₹1.5 billion, as we have been spending in the past as well"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Broking & distribution EBDAT margin 40-45% (exit rate)",
+    "outcome": "met",
+    "quote": "normalized EB DAT margin improved by 498 basis points sequentially to 44.4%"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Cash market share falling; March one-off ₹192m client reimbursement",
+    "quote": "a one-time reimbursement of ₹192 million to clients arising from an external market infrastructure disruption"
+   },
+   {
+    "label": "Cohort disclosure dropped from presentation",
+    "quote": "last year you disclosed the cohort analysis, this time it is missing in the PPT"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 4,
+   "balance_sheet": 2,
+   "capex": 0,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Cash market share and cohort data",
+    "quote": "I wouldn't read too much into it. There isn't any meaningful shift on that."
+   },
+   {
+    "topic": "Margin guidance beyond FY27",
+    "quote": "Look, I won't give you a specific number on it."
+   },
+   {
+    "topic": "MTF return profile",
+    "quote": "Unfortunately, we don't share that number with anyone."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

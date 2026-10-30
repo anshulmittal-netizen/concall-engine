@@ -1,0 +1,131 @@
+{
+ "doc_id": "IN-613ff85b-fec0-4c84-aa8f-d5f3a5f83b6d",
+ "market": "IN",
+ "company_id": "544282",
+ "name": "Sagility Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-15",
+ "period": "2026-03",
+ "title": "Sagility Ltd - 544282 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Healthcare BPO beat FY26 guidance on seasonal revenue (6% vs 5.5% guided); FY27 guided to low double-digit cc organic growth and 24-25% EBITDA margin, with AI compression rising to ~2%.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 growth low double-digit cc",
+    "quote": "we are confident of growing in the low double -digits in constant currency for FY '27",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q4 ACV $30.7M signed",
+    "quote": "We signed $30.7 million of potential steady state ACV",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "AI compression 1-1.5% → ~2%",
+    "quote": "we are predicting the compression to be more like 2% in FY '27",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 organic revenue growth (cc)",
+    "value": "low double-digit",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are confident of growing in the low double -digits in constant currency for FY '27"
+   },
+   {
+    "metric": "FY27 adjusted EBITDA margin",
+    "value": "24% to 25%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Our guidance for adjusted EBITDA margin is between 24% and 25%"
+   },
+   {
+    "metric": "Surge/seasonal revenue share FY26",
+    "value": "around 6% of full-year revenue",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "That gave us uplift in quarter four."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 seasonal revenue share",
+    "outcome": "met"
+   },
+   {
+    "metric": "FY26 adjusted EBITDA margin guidance",
+    "outcome": "met",
+    "quote": "exceeding the guidance provided at the end of Q3"
+   }
+  ],
+  "entities": [
+   {
+    "name": "BroadPath",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "AI compression in BPO",
+   "Consolidation / competitor exits",
+   "Medicare Advantage rate environment",
+   "Onshore delivery mix"
+  ],
+  "red_flags": [
+   {
+    "label": "Cash conversion lower in FY26",
+    "quote": "Cash conversion in FY '26 is lower compared to previous year"
+   },
+   {
+    "label": "Other expenses rising on IT and AI spend",
+    "quote": "higher IT costs and investment that we did in IT from an AI and transformation kind of a perspective"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 4,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "FY27 growth vs organic compression",
+    "quote": "we will revise the guidance, as we go along, depending on the visibility that we have"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,160 @@
+{
+ "doc_id": "IN-b3ce7b8b-31ec-4dda-9add-70e857e33dd2",
+ "market": "IN",
+ "company_id": "500335",
+ "name": "Birla Corporation Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "Birla Corporation Ltd - 500335 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cement",
+  "thesis": "Capacity held near 21.5 Mtpa until Maihar Line-II (6 Mtpa total to 27.5 by FY29) with ~INR4,300 crore net capex; utilisation near 99% ex-Mukutban, but FY26 EBITDA flagged flat-ish and cash flow weakened on incentive receivables and fuel stock build.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply discipline",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 99,
+   "quote": "close to kind of a 99% utilizatio n is there"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said some peers announced expansions and are rolling back or slowing capacity; some new UP grinding units are grinding OPC.",
+   "quote": "I do notice that some people had announced capacity expansion are on a rollback or have announced some rollback or slowdown in their capacity."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex ~INR4,300 cr net to 27.5 Mtpa",
+    "quote": "INR4,753 crores including GST. Net of GST, it is about INR4,300 crore",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Ex-Mukutban utilisation ~99%",
+    "quote": "close to kind of a 99% utilizatio n is there",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Fuel stock build hits cash flow",
+    "quote": "we consciously built up inventory at the year end",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Incentive receivable ~INR500 cr",
+    "quote": "Receivable is about INR500 crores.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Cost up INR150-175/t from Q1",
+    "quote": "INR150 to INR175 per ton",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 volume",
+    "value": "mid-single digit growth",
+    "change": "new",
+    "quote": "I said mid-single digit in terms of volume."
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "INR900 crores",
+    "change": "new",
+    "quote": "For FY '27 it is INR900 crores."
+   },
+   {
+    "metric": "FY27 incentive income",
+    "value": "around INR130 crores",
+    "change": "new",
+    "quote": "we expect the incentives to go up to around INR130 crores"
+   },
+   {
+    "metric": "FY27 EBITDA",
+    "value": "similar range to previous FY",
+    "change": "new",
+    "quote": "We expect EBITDA to b e similar range to the previous financial year"
+   },
+   {
+    "metric": "Peak net debt this capex cycle",
+    "value": "around INR4,000 crores; debt/EBITDA not above 2.5x",
+    "change": "new",
+    "quote": "the peak net debt should be in the range of INR4,000 crores"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Coal India subsidiaries",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow fell sharply vs prior year",
+    "quote": "our operating cash flow has kind of declined very sharply versus the previous year"
+   },
+   {
+    "label": "Net debt rising to ~INR4,000 cr peak",
+    "quote": "the peak net debt should be in the range of INR4,000 crores"
+   },
+   {
+    "label": "Repeated refusal to give FY27 EBITDA guidance",
+    "quote": "We are not going to give any specific guidance."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 5,
+   "capex": 3,
+   "growth": 4,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "FY27 EBITDA guidance",
+    "quote": "We are not going to give any specific guidance."
+   },
+   {
+    "topic": "Premium/blended share trajectory to 100%",
+    "quote": "But it's difficult to say when we will reach 100 or whether -- what is the level we are today"
+   },
+   {
+    "topic": "Interest cost FY27",
+    "quote": "It's difficult to g ive an estimate on that because most of our term loans are linked to external benchmarks."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

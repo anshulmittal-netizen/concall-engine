@@ -1,0 +1,151 @@
+{
+ "doc_id": "IN-25e837c3-611f-46ef-99ee-9948485a9e47",
+ "market": "IN",
+ "company_id": "543320",
+ "name": "Eternal Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-06",
+ "period": "2026-03",
+ "title": "Eternal Ltd - 543320 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "Quick commerce is pursuing ~60% NOV CAGR over three years with no margin cushion disclosed; management keeps marketing spend high and says competition is not changing its stance, so supply and pricing discipline are unproven.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Customer stickiness",
+   "Operating leverage",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "structure",
+    "label": "Competitors pulled back on marketing",
+    "quote": "We feel a lot of our competitors in the market have pulled back on this so we're seeing extremely low cost of customer acquisition",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Dark stores 3,000 by March; no FY27 store number",
+    "quote": "we're not planning to give out any specific number guidance on that",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Competitive activity unchanged",
+    "quote": "Competitive activity hasn't meaningfully changed from the last time we were on this call.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth now not 100%",
+    "quote": "Yes, it will not be 100%, but we are not guiding to a specific number.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Quick commerce NOV CAGR (three years)",
+    "value": "~60%",
+    "change": "new",
+    "horizon": "3 years",
+    "quote": "We've given overall guidance of 60% CAGR"
+   },
+   {
+    "metric": "Dark stores",
+    "value": "3,000 by March",
+    "change": "held",
+    "horizon": "March 2026",
+    "quote": "we're on track on our guidance for March of 3,000 stores"
+   },
+   {
+    "metric": "Quick commerce steady-state adjusted margin",
+    "value": "5-6%",
+    "change": "new",
+    "horizon": "steady state",
+    "quote": "As we move to 5-6% margin that we are saying we will get to at some point"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 quick commerce growth ~100%",
+    "outcome": "dropped",
+    "quote": "Yes, it will not be 100%, but we are not guiding to a specific number."
+   },
+   {
+    "metric": "Dark stores 3,000 by March",
+    "outcome": "met",
+    "quote": "we're on track on our guidance for March of 3,000 stores"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Swiggy",
+    "relation": "competitor"
+   },
+   {
+    "name": "Hyperpure",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Growth-over-margin reinvestment",
+    "quote": "we are more leaning towards growth"
+   },
+   {
+    "label": "Undisclosed city-level and warehouse data",
+    "quote": "we don't disclose that"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 8,
+   "margin": 4,
+   "balance_sheet": 1,
+   "capex": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Ad split by business",
+    "quote": "I don't think we can strip that apart and get into each of those."
+   },
+   {
+    "topic": "Warehousing capacity history",
+    "quote": "Albinder Singh Dhindsa: Swapnil, we don't disclose that."
+   },
+   {
+    "topic": "Top 20 city growth breakup",
+    "quote": "we don't give that breakup, and we won't be able to give you that color."
+   },
+   {
+    "topic": "Metro vs tier-2 size per store",
+    "quote": "we don't disclose the breakup intentionally of our business in larger cities versus emerging cities."
+   }
+  ],
+  "hedge_index": 0.5,
+  "themes": []
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "doc_id": "IN-86548927-fb47-4687-975c-b0e9d78662b7",
+ "market": "IN",
+ "company_id": "544537",
+ "name": "Jain Resource Recycling Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-25",
+ "period": "2026-03",
+ "title": "Jain Resource Recycling Ltd - 544537 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "Q4 copper EBITDA/ton collapsed to about INR14,000 from INR42,000 in Q3 on formula mismatch and war costs; management guides normalised INR30,000–32,000/ton, but the reset rests on management's own assertion, with copper utilisation only about 65%.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 65,
+   "quote": "presently we are utilizing around 65% of the total installed capacity, while lead we are almost close to 97% to 100%"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "this all put together plus the phase two of the copper value-added project will be around INR115 to INR120 crores"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Copper EBITDA/ton fell to ~INR14,000",
+    "quote": "this quarter we are at INR14,000",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Normalised copper EBITDA INR30–32k/t",
+    "quote": "the management expects normalized EBITDA to stabilize at approximately INR32,000 to INR30,000 on a steady state basis",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital cycle 66 days",
+    "quote": "the overall working capital cycle stood at around 66 days",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Copper utilisation ~65%",
+    "quote": "copper, presently we are utilizing around 65% of the total installed capacity",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Lead utilisation 97–100%",
+    "quote": "lead we are almost close to 97% to 100%",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Copper normalised EBITDA per ton",
+    "value": "INR30,000–32,000/t steady state",
+    "change": "new",
+    "horizon": "forward",
+    "quote": "the management expects normalized EBITDA to stabilize at approximately INR32,000 to INR30,000 on a steady state basis"
+   },
+   {
+    "metric": "Working capital cycle",
+    "value": "below 60 days",
+    "change": "new",
+    "horizon": "forward",
+    "quote": "the working capital cycle which is around presently 66 days which should come down further below 60"
+   },
+   {
+    "metric": "Copper anode capacity",
+    "value": "1,600 MT/month after second furnace",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "taking the total anode capacity to 1,600 metric ton per month"
+   },
+   {
+    "metric": "Copper downstream EBITDA margin uplift",
+    "value": "2% to 4%",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "Copper downstream project has potential to further increase the EBITDA margin from 2% to 4%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "C&Y Group",
+    "relation": "partner"
+   },
+   {
+    "name": "MSC",
+    "relation": "supplier"
+   },
+   {
+    "name": "Maersk",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Copper value-added integration",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Working-capital stress"
+  ],
+  "red_flags": [
+   {
+    "label": "Copper EBITDA/t collapse to ~INR14k from INR42k",
+    "quote": "this quarter we are at INR14,000"
+   },
+   {
+    "label": "Operating cash flow about minus INR600 crore",
+    "quote": "this year it has gone to minus negative INR600 crores"
+   },
+   {
+    "label": "Hedge M2M booked in other expenses",
+    "quote": "this other expense was maintaining this fair value of hedges. So, this was in positive M2M"
+   },
+   {
+    "label": "Receivables classification change (NFRA)",
+    "quote": "the number of days receivable if you can see that 15 to 18 days it is well managed"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 3,
+   "margin": 5,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Hormuz-stuck raw material share",
+    "quote": "percentage I can't say but it's not that great percentage of raw material"
+   },
+   {
+    "topic": "Formula mechanics",
+    "quote": "This is little complicated for you, Sumant. If you can call me or separately email"
+   },
+   {
+    "topic": "Stuck material value",
+    "quote": "The value and the figures I can separately email to you."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

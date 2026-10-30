@@ -1,0 +1,142 @@
+{
+ "doc_id": "IN-43adf819-163e-4d19-8e0d-389e45e1fb6d",
+ "market": "IN",
+ "company_id": "539118",
+ "name": "VRL Logistics Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "VRL Logistics Ltd - 539118 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cables & wires",
+  "thesis": "Volume decline narrowing: Q4 tonnage up ~3% YoY after FY26 down ~7%, management guides 6-7% FY27 growth, but relies on fuel pass-through and a fleet adds plan of ~500 vehicles, not a capacity cut.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Customer stickiness",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "overall capital expenditure will be around INR300 crores for the full year"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 tonnage up ~3% YoY",
+    "quote": "we are in a position to grow by around 3% in the volumes",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Fuel surcharge and rate hikes passed through",
+    "quote": "we are adding one line item in the contract that is the fuel surcharge",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Vehicle fleet shrinking, hires up",
+    "quote": "the vehicle capacity has been reduced compared to last year versus the Q4. For example, last year, we were at around 6,100",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "pricing",
+    "label": "Bulk diesel procurement cut 41%→36%",
+    "quote": "The quantity directly purchased from the refinery is reduced from 41% to 36%",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 tonnage volume growth",
+    "value": "6% to 7% full year; at least 2% sequential growth per quarter",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting to grow at least around 6% to 7% for the full year basis"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "around 20% plus / 21% plus",
+    "change": "held",
+    "horizon": "next quarters",
+    "quote": "we are hoping that definitely, we can pass it on this cost to the customers and maintain the EBITDA margins in the range of around 20% plu s going forward"
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "INR300-350 crores",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting around INR300 crores to INR350 crores capital expenditure"
+   },
+   {
+    "metric": "Net branch additions FY27",
+    "value": "at least around 100",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Net branches itself, we are expecting at least around 100 numbers in the coming year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Delhivery",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Fuel cost pass-through lag and bulk diesel loss",
+    "quote": "some basis points may impact on the margin because of this facility has been withdrawn"
+   },
+   {
+    "label": "Volume decline in plastic/petrochemical commodities",
+    "quote": "the demand of such product is coming down"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 4,
+   "margin": 3,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Kilometre-level data",
+    "quote": "Because of the bulk information, we are unable to compute that information, but we are trying to do that."
+   },
+   {
+    "topic": "Cross-industry volume growth drivers",
+    "quote": "Volume growth pressure is -- see, volume growth pressure is not on account of the increase in fuel rate."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

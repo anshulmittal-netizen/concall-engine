@@ -1,0 +1,187 @@
+{
+ "doc_id": "IN-9c0bb7f0-5b4f-4588-bec9-f7cc5cf7ac77",
+ "market": "IN",
+ "company_id": "544280",
+ "name": "Afcons Infrastructure Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Afcons Infrastructure Ltd - 544280 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Q4 loss of INR 89 crore on payment stalls, one-offs and no margin recognition; FY26 order inflow INR 4,125 crore vs INR 30,000 crore FY27 target, and no revenue or margin guidance.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": -2,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "No FY27 revenue or margin guidance",
+    "quote": "it would be prudent to wait for greater visibility before providing specific revenue growth or EBITDA margin guidance for FY27",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "FY26 order inflow INR 4,125 crore",
+    "quote": "we secured new orders worth INR 4,125 crores, excluding approximately INR 3,800 crores of variation",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Net working capital 143 days",
+    "quote": "this networking capital number of around 143 days",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 one-off provisions ~INR 260-265 crore",
+    "quote": "all this put together, the quantum could be around say INR 260-265 crores",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Order booking guidance INR 30,000 crore",
+    "quote": "we expect to book another INR 15,000 crores of more orders, making a total order booking guidance of INR 30,000 crores",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 order booking",
+    "value": "INR 30,000 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "making a total order booking guidance of INR 30,000 crores for the current financial year"
+   },
+   {
+    "metric": "FY27 revenue growth and EBITDA margin",
+    "value": "not provided",
+    "change": "dropped",
+    "horizon": "FY27",
+    "quote": "it would be prudent to wait for greater visibility before providing specific revenue growth or EBITDA margin guidance for FY27"
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "INR 725 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "FY27, we are looking at a CAPEX of around INR 725 crores"
+   },
+   {
+    "metric": "FY27 debt reduction",
+    "value": "sizable drop in debt",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "for this financial year FY27, we will see a sizable drop in the debt number"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q4 revenue growth (prior call expectation of ~19-20% Q4 growth)",
+    "outcome": "missed",
+    "quote": "we have seen a 19% degrowth in the 4th Quarter"
+   },
+   {
+    "metric": "FY26 order booking guidance",
+    "outcome": "missed",
+    "quote": "The order intake was below our earlier expectations, largely on account of the deferment of several large project awards"
+   },
+   {
+    "metric": "FY26 revenue growth of at least 5%",
+    "outcome": "missed",
+    "quote": "revenue stood at INR 12,322 crores, reflecting a decline of 5.4% year -on-year"
+   },
+   {
+    "metric": "Working capital days target ~120",
+    "outcome": "missed",
+    "quote": "these monies we were looking at getting monetized before March. That is what we were discussing. But it did not happen."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Pune Ring Road",
+    "relation": "customer"
+   },
+   {
+    "name": "Nagpur-Gondiya",
+    "relation": "customer"
+   },
+   {
+    "name": "Vadhavan",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Payment delays / state liquidity",
+   "Middle East conflict supply chain",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 net loss INR 89 crore, first ever quarterly loss",
+    "quote": "we have made a loss in the quarter for the first time since we started publishing quarterly numbers from 2010"
+   },
+   {
+    "label": "Customers withholding payments, receivable days 143",
+    "quote": "the payments were not coming from the customers"
+   },
+   {
+    "label": "Interest-bearing customer advances ~40%",
+    "quote": "almost 40% of the overall advances were interest bearing"
+   },
+   {
+    "label": "Revenue guidance withheld for FY27",
+    "quote": "it would be prudent to wait for greater visibility before providing specific revenue growth"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 6,
+   "capex": 1,
+   "growth": 7,
+   "margin": 4,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue and margin guidance",
+    "quote": "So, same for even for margin also, the normal long term guidance that we have eleven percent. So, that will also we will right now will not be kind of giving any kind of guidance on that front."
+   },
+   {
+    "topic": "Receivables by project and customer",
+    "quote": "other than UP Jal-Jevan Mission Project and maybe project in Gabon, we do not have any specific names to be given."
+   },
+   {
+    "topic": "Ask about future interest-bearing advance share",
+    "quote": "But where this number will go?"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

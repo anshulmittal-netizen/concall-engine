@@ -1,0 +1,155 @@
+{
+ "doc_id": "IN-694e837b-2748-4d66-8b39-0f6768e4d08b",
+ "market": "IN",
+ "company_id": "539686",
+ "name": "K.P. Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-18",
+ "period": "2026-03",
+ "title": "K.P. Energy Ltd - 539686 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Renewables",
+  "thesis": "FY26 revenue INR 1,506 cr (+57%) and Q4 EBITDA margin 21%, but operating cash flow fell on inventory build; order book ~2 GW worth ~INR 3,000 cr with ~50% from group entities.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we have the upcoming projects of 100 megawatt each, two projects of 100 megawatt each in the IPP segment"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Operating cash flow down on inventory build",
+    "quote": "What changed the whole trajectory in term of the operating cash flow was only the inventory count.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Order book ~2 GW, ~INR 3,000 cr",
+    "quote": "Our current order book stands at nearly 2 gigawatt across multi-year projects with a total value of approximately INR 3,000 crores",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth 40-50%",
+    "quote": "we are expecting in the coming year and we already have sufficient orders in hand for the same",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q4 IPP generation down YoY",
+    "quote": "there is a marginal decrease in terms of the wind performance",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "40% to 50%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting in the coming year and we already have sufficient orders in hand for the same"
+   },
+   {
+    "metric": "Cost of IPP projects (equity)",
+    "value": "INR 1,700+ cr total project cost, ~INR 450+ cr equity",
+    "change": "new",
+    "horizon": "24 months from PPA",
+    "quote": "roughly we can say that about INR 1,700 plus crores of total both the projects put together will be the project cost"
+   },
+   {
+    "metric": "Interest cost on new IPP debt",
+    "value": "7.5% to 8.5%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expected to range between 7.5% to 8.5% depending upon our cycle"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "KPI Green",
+    "relation": "customer"
+   },
+   {
+    "name": "IBM Maximo",
+    "relation": "partner"
+   },
+   {
+    "name": "CARE Ratings",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow fell on inventory build",
+    "quote": "What changed the whole trajectory in term of the operating cash flow was only the inventory count."
+   },
+   {
+    "label": "Half of order book from group entity",
+    "quote": "approximately 50% is from the Group entity and the balance 50 is outside"
+   },
+   {
+    "label": "Cash conversion cycle 100-150 days",
+    "quote": "it ranges from about let's say 100 to 150 depending upon the customer"
+   },
+   {
+    "label": "Related-party turbine and arm's length execution for KPI Green",
+    "quote": "the IPP segments of KPI for wind segment will be executed by KP Energy on arm's length basis"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 1,
+   "growth": 4,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Operating cash flow and working capital normalisation",
+    "quote": "Working capital cycle, yes, you see there are two factors which are affecting it."
+   },
+   {
+    "topic": "Offshore wind participation and revenue expectation",
+    "quote": "we are already geared up to have some sort of discussion with various customers"
+   },
+   {
+    "topic": "Gross margin in Q4",
+    "quote": "I did not understand your question because the overall gross margins are still higher."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

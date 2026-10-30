@@ -1,0 +1,174 @@
+{
+ "doc_id": "IN-1f18e79f-82d7-4f2c-ae24-d0b2b0982ea2",
+ "market": "IN",
+ "company_id": "526807",
+ "name": "Seamec Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-26",
+ "period": "2026-03",
+ "title": "Seamec Ltd - 526807 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Seamec's FY26 record year (consol revenue Rs1,000cr, +47%; EBITDA Rs447cr) rests on DSV charters, but management guides ~15% FY27 growth with 40-42% margins, Paladin idle and no fleet capex beyond ANANT (~$70m).",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply discipline",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 100,
+   "quote": "the vessel utilization as such is almost 100%, barring off -hires"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said there are no new competitors and foreign owners are not keen on entering India; it is not chasing growth aggressively.",
+   "quote": "we are definitely not chasing the growth aggressively because these are all high CAPEX items"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Vessel utilisation ~100%",
+    "quote": "the vessel utilization as such is almost 100%, barring off -hires",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Not chasing fleet growth aggressively",
+    "quote": "we are definitely not chasing the growth aggressively because these are all high CAPEX items",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Diamond rate ~$8,750/day; renewal +10-15%",
+    "quote": "we are looking at an increase of maybe around 10% to 15%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 growth ~15%, margin 40-42%",
+    "quote": "we are expecting about 15% growth in top line and bottom line next year",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Paladin idle in Dubai, Q4 and Q1 lost",
+    "quote": "Seamec Paladin has not operated for Q4. And even Q1, we are not seeing the operations till date.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Rates a 'balanced' market, no tightening",
+    "quote": "it is fairly balanced right now",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "~15%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are expecting about 15% growth in top line and bottom line next year"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "40-42%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the margin should be in the range of 40% to 42%"
+   },
+   {
+    "metric": "ANANT acquisition capex",
+    "value": "~$70 million",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "the ANANT is roughly about $70 million, which is the scheduled CAPEX"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "ONGC",
+    "relation": "customer"
+   },
+   {
+    "name": "L&T",
+    "relation": "customer"
+   },
+   {
+    "name": "Saudi Aramco",
+    "relation": "customer"
+   },
+   {
+    "name": "British Petroleum",
+    "relation": "partner"
+   },
+   {
+    "name": "Reliance",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "UK subsidiary impairment",
+    "quote": "we have just taken that impairment"
+   },
+   {
+    "label": "Paladin idle; geopolitical execution risk",
+    "quote": "prolonged instability or a broader regional conflict could affect contractual execution timelines"
+   },
+   {
+    "label": "Vague answer on margin and pricing",
+    "quote": "Sir, your assumption is not right and I would not like to comment further beyond 15%."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 3,
+   "capex": 2,
+   "balance_sheet": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue upside beyond 15%",
+    "quote": "I would not like to comment further beyond 15%"
+   },
+   {
+    "topic": "Charter rate cycle position",
+    "quote": "it is not that much buoyant"
+   },
+   {
+    "topic": "Funding of ANANT acquisition",
+    "quote": "that is depending upon the transaction, and whatever is best for the stakeholder"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

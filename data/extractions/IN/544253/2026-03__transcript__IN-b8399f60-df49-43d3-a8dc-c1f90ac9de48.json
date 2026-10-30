@@ -1,0 +1,166 @@
+{
+ "doc_id": "IN-b8399f60-df49-43d3-a8dc-c1f90ac9de48",
+ "market": "IN",
+ "company_id": "544253",
+ "name": "Kross Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-16",
+ "period": "2026-03",
+ "title": "Kross Ltd - 544253 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q4 revenue +22% YoY to INR 225.4 cr with EBITDA margin 14.9%, but a ~5% steel/commodity pass-through lags one quarter, so Q1 margin pressure is flagged; capex shifts to seamless tube (~INR 100 cr FY27).",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "we are struggling to meet the demand which is being given to us, struggling to ramp up to meet our peak capacity"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "it is going to be approximately INR 100 crores for FY27. And for the other business, it is going to be at around INR 20 crores to INR 25 crores."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Extruded axle plant demand exceeds supply",
+    "quote": "we are struggling to meet the demand which is being given to us, struggling to ramp up to meet our peak capacity",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "~5% price hike to market, steel +INR 3-5/kg",
+    "quote": "it is approximately 5% till the time there is settlement",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Q1 margin pressure from pass-through lag",
+    "quote": "we should see a margin pressure in Q1",
+    "direction": -1,
+    "confidence": 0.55
+   },
+   {
+    "type": "guidance",
+    "label": "EBITDA margin 14-15% guided",
+    "quote": "between 14% to 15% margin is what we are looking at for the further quarters as well",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q4 revenue growth 22%; FY27 expected similar",
+    "quote": "that is what we would be looking at for this financial year as well",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "~22% (subject to demand)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "that is what we would be looking at for this financial year as well"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "14% to 15%",
+    "change": "new",
+    "horizon": "next quarters",
+    "quote": "between 14% to 15% margin is what we are looking at for the further quarters as well"
+   },
+   {
+    "metric": "Tractor share of revenue",
+    "value": "~15% in two years",
+    "change": "new",
+    "horizon": "2 years",
+    "quote": "We remain on track to increase the contribution of the tractor segment to approximately 15% of total revenue over the next two years."
+   },
+   {
+    "metric": "Seamless tube revenue",
+    "value": "contribution from FY28",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "revenue growth from the seamless unit will start in FY28"
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "INR 100 cr seamless + INR 20-25 cr other",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "it is going to be approximately INR 100 crores for FY27"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Tata Motors",
+    "relation": "customer"
+   },
+   {
+    "name": "Ashok Leyland",
+    "relation": "customer"
+   },
+   {
+    "name": "Wesman",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Railway capex",
+   "Tariffs & trade policy",
+   "Auto EV transition",
+   "Backlog conversion"
+  ],
+  "red_flags": [
+   {
+    "label": "Q1 margin pressure from unrecovered commodity costs",
+    "quote": "so, we should see a margin pressure in Q1"
+   },
+   {
+    "label": "Steel mills holding only 50-60% of normal stock",
+    "quote": "what they are following is approximately 50%-60% of that only"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Trailer axle price increase vs. competitor",
+    "quote": "if we have our way, we would love to increase it further, but things have to be sold also"
+   },
+   {
+    "topic": "Quantifying FY27 revenue growth",
+    "quote": "It all depends on how the business continues to be doing."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

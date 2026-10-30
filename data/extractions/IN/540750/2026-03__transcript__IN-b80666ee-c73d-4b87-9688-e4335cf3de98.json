@@ -1,0 +1,162 @@
+{
+ "doc_id": "IN-b80666ee-c73d-4b87-9688-e4335cf3de98",
+ "market": "IN",
+ "company_id": "540750",
+ "name": "Indian Energy Exchange Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "Indian Energy Exchange Ltd - 540750 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q4 FY26 volumes hit a record 39.4 BU (+24.3% YoY) and FY26 profit rose 14.9%, but DAM prices fell 12.2% YoY to INR 3.89/unit and market coupling is a live threat to the exchange's price-discovery role.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Pricing power",
+   "Competitive capex",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -2,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "DAM price down 12.2% YoY",
+    "quote": "the prices in the Day Ahead Market at INR 3.89 per unit were down 12.2% year -on-year",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Market coupling draft via Grid India",
+    "quote": "CERC issued draft regulations for market coupling, according to which Grid India would act as the market coupling operator",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q4 volume record 39.4 BU, +24.3%",
+    "quote": "highest ever quarterly traded electricity volume of 39.4 billion units, higher by 24.3% on a year-on-year basis",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume growth 15-20% (verbal)",
+    "quote": "we should be able to maintain this volume growth of 15 % to 20%",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Gas exchange Q1 volume flat YoY",
+    "quote": "maybe in the first qua rter, we may not get any growth with respect to the last year's first quarter",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Electricity volume growth FY27",
+    "value": "15% to 20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we should be able to maintain this volume growth of 15 % to 20%"
+   },
+   {
+    "metric": "IGX gas volume growth",
+    "value": "no growth in Q1 FY27, growth from Q2",
+    "change": "new",
+    "horizon": "Q1-Q2 FY27",
+    "quote": "from second quarter onwards, we should be able to achieve growth"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Grid India",
+    "relation": "peer"
+   },
+   {
+    "name": "HPX",
+    "relation": "competitor"
+   },
+   {
+    "name": "PXIL",
+    "relation": "competitor"
+   },
+   {
+    "name": "MCX",
+    "relation": "competitor"
+   },
+   {
+    "name": "SECI",
+    "relation": "partner"
+   },
+   {
+    "name": "Juniper Green Energy",
+    "relation": "customer"
+   },
+   {
+    "name": "ACME Solar",
+    "relation": "customer"
+   },
+   {
+    "name": "Adani Green",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Renewables & storage",
+   "Tariffs & trade policy",
+   "Electricity futures",
+   "Coal exchange opportunity"
+  ],
+  "red_flags": [
+   {
+    "label": "Market coupling could erode DAM share",
+    "quote": "if one exchange data does not get aggregated at the place, then you'll lose significant buy and sell volume"
+   },
+   {
+    "label": "Other income down ~29% QoQ on treasury MTM",
+    "quote": "there was a significant correction in the market during this month of March. So a bit of mark-to-market impacts were there"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 3,
+   "margin": 2,
+   "other": 8
+  },
+  "evasions": [
+   {
+    "topic": "Market coupling timeline",
+    "quote": "it's very difficult to say on that"
+   },
+   {
+    "topic": "Buyback decision",
+    "quote": "there is still no fi nal decision has been taken by SEBI so far"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

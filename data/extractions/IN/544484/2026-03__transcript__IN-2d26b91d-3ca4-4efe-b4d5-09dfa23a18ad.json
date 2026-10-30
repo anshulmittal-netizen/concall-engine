@@ -1,0 +1,126 @@
+{
+ "doc_id": "IN-2d26b91d-3ca4-4efe-b4d5-09dfa23a18ad",
+ "market": "IN",
+ "company_id": "544484",
+ "name": "BlueStone Jewellery and Lifestyle Ltd",
+ "doc_type": "transcript",
+ "date": "2026-04-29",
+ "period": "2026-03",
+ "title": "BlueStone Jewellery and Lifestyle Ltd - 544484 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Gems & jewellery",
+  "thesis": "Q4 SSSG of 34% and 340 stores, but inventory turns fell from 1.34x to about 1.13x and management guided no FY27 revenue target; supply side is loosening, not tightening.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory turns 1.34x → ~1.13x",
+    "quote": "our inventory turns ha ve fallen from 1.3x to close to 1.13x",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Store additions cut in FY26 (65 vs 83)",
+    "quote": "we’ve opened only 65 stores",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q4 SSSG 34%",
+    "quote": "Same-store sales growth of 34% this quarter demonstrates that demand environment is resilient.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Franchisee stores to drop in FY27-28",
+    "quote": "‘27 and ‘28 is going to see a substantial drop in terms of the franchisee-owned company-operated stores.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Store additions",
+    "value": "~20% distribution growth annually",
+    "change": "held",
+    "horizon": "FY27-FY28",
+    "quote": "adding close to 20% to our distribution on an annual basis"
+   },
+   {
+    "metric": "A&P spend",
+    "value": "not below 6% of revenue",
+    "change": "new",
+    "horizon": "ongoing",
+    "quote": "our plan is to not drop it at below 6%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Premiumisation in consumption",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory turns falling",
+    "quote": "our inventory turns ha ve fallen from 1.3x to close to 1.13x"
+   },
+   {
+    "label": "Store plan revised down vs RHP",
+    "quote": "why the store expansion plan has been revised down?"
+   },
+   {
+    "label": "No FY27 revenue guidance",
+    "quote": "So we have no specific comment that is forward-looking at this point"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 4,
+   "margin": 3,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "March exit rate",
+    "quote": "So no specific commentary on March exit"
+   },
+   {
+    "topic": "FY27 revenue target",
+    "quote": "So we have no specific comment that is forward-looking at this point"
+   },
+   {
+    "topic": "Entry-level revenue contribution",
+    "quote": "That breakup we’ll not be able to provide"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

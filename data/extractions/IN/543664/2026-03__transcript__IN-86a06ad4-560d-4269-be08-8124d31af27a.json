@@ -1,0 +1,176 @@
+{
+ "doc_id": "IN-86a06ad4-560d-4269-be08-8124d31af27a",
+ "market": "IN",
+ "company_id": "543664",
+ "name": "Kaynes Technology India Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-19",
+ "period": "2026-03",
+ "title": "Kaynes Technology India Ltd - 543664 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Kaynes missed its FY26 revenue guidance (INR4,500 cr cut to ~INR4,000 cr, delivered ~INR3,626 cr) and OCF was about INR600 cr negative, driven by metering receivables of ~INR1,365 cr; no numeric FY27 guidance given.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Management change",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 revenue guide cut INR4,500 cr → ~INR3,600 cr",
+    "quote": "we ended the year with close to INR3,600 crores of revenue",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "guidance",
+    "label": "No numeric FY27 guidance; 'not giving a guidance'",
+    "quote": "Our idea was not to give a guidance.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Metering receivables INR1,365 cr",
+    "quote": "it's about INR1,365 crores, including the -- in the total revenue, the receivables on this business",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "OSAT visibility >INR25,000 mn over 5 years",
+    "quote": "revenue visibility of over INR25,000 million over the next 5 years",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Growth vs market",
+    "value": "Outgrow EMS market at 2x market growth (~15-16%)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we'll be doubling the market growth"
+   },
+   {
+    "metric": "OSAT and PCB revenue",
+    "value": "PCB INR300-400 cr; OSAT INR250-300 cr",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "PCB of around INR300 crores to INR400 crores, and OSAT of around INR250 crores to INR300 crores"
+   },
+   {
+    "metric": "Rail revenue growth",
+    "value": "~20-25% growth; margins above 30%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "rail business, I'm expecting this year to grow by around 20%, 25%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revenue",
+    "outcome": "missed",
+    "quote": "we ended the year with close to INR3,600 crores of revenue"
+   },
+   {
+    "metric": "FY26 OCF marginally negative",
+    "outcome": "missed",
+    "quote": "OCF INR600 crores of negative"
+   },
+   {
+    "metric": "Smart meter revenue FY26 ~INR800 cr",
+    "outcome": "missed",
+    "quote": "it has come at almost INR1,000 crores"
+   },
+   {
+    "metric": "EMS cash flow positive FY26",
+    "outcome": "met",
+    "quote": "our cash flow was INR250 crores positive when compared to INR65 crores last year"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Iskraemeco",
+    "relation": "partner"
+   },
+   {
+    "name": "August Electronics",
+    "relation": "partner"
+   },
+   {
+    "name": "KEMPL",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Smart meter / AMISP working capital",
+   "Electronics manufacturing (EMS/PLI)",
+   "Semiconductors & OSAT",
+   "Railway capex",
+   "Electrical equipment"
+  ],
+  "red_flags": [
+   {
+    "label": "Guidance cut and missed",
+    "quote": "we sincerely understand and appreciate that the guidance what we have given, we could not meet"
+   },
+   {
+    "label": "OCF deeply negative; metering receivables up",
+    "quote": "the total number has gone up because of this"
+   },
+   {
+    "label": "Management/board restructuring",
+    "quote": "There has been some top management restructuring and role realignment in this phase."
+   },
+   {
+    "label": "Evasive on guidance",
+    "quote": "Sorry, if we have made you to put it in a confusing state by not giving the exact number."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 5,
+   "capex": 0,
+   "growth": 3,
+   "margin": 1,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Revenue guidance sanctity",
+    "quote": "we are committing for our growth based on what market can pull in"
+   },
+   {
+    "topic": "Working capital path",
+    "quote": "we will try to work on the positive, but at least 70% to 80% of this will come down for sure"
+   },
+   {
+    "topic": "Securitisation progress",
+    "quote": "we have only discounted to around INR40 crores or so"
+   }
+  ],
+  "hedge_index": 0.8
+ }
+}

@@ -1,0 +1,172 @@
+{
+ "doc_id": "IN-05d5b259-8e5d-4a65-b42d-e812b1819eda",
+ "market": "IN",
+ "company_id": "544283",
+ "name": "ACME Solar Holdings Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "ACME Solar Holdings Ltd - 544283 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.89,
+ "read": {
+  "subsector": "Renewables",
+  "thesis": "FY26 revenue up 59% to INR2,507 crore with ~90% EBITDA margin, but growth is now BESS merchant arbitrage (2.3 GWh, ~INR2.2 crore/day) and capex timing is being deferred around transmission delays; no numeric prior guidance was supplied to test against.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capital allocation shift",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 26.9,
+   "quote": "Our CUF stood at 26.9% in Q4."
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "Industry-wide: developers defer module procurement when substations lag; 'that is how the industry has been doing'.",
+   "quote": "We can defer our sizable capex of modules because modules are available just in time"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Solar capex deferred until CTU ready",
+    "quote": "we are deferring the solar part of capex. We are not installing the modules.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "BESS realisation INR2.2 crore/day",
+    "quote": "it is delivering net realization value of approximately INR2.2 crores per day",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Target 1.5 GW generation and ~10 GWh BESS in FY27",
+    "quote": "we are targeting 1.5 gigawatts of projects in this financial year, right, and around 10 gigawatt hour of battery",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Solar least-sold tender segment",
+    "quote": "plain solar is the hardest to sell",
+    "direction": -1,
+    "confidence": 0.35
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Commissioning of generation capacity FY27",
+    "value": "1.5 GW",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are targeting 1.5 gigawatts of projects in this financial year"
+   },
+   {
+    "metric": "Battery installation FY27",
+    "value": "~10 GWh (8.5 GWh merchant, 1.5 GWh FDRE)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "10 gigawatt hour of battery during the next of the calendar year"
+   },
+   {
+    "metric": "Under-construction commissioning",
+    "value": "By FY28",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "these will be commissioned by FY 28"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "SECI",
+    "relation": "customer"
+   },
+   {
+    "name": "NHPC",
+    "relation": "customer"
+   },
+   {
+    "name": "NTPC",
+    "relation": "customer"
+   },
+   {
+    "name": "SJVN",
+    "relation": "customer"
+   },
+   {
+    "name": "Tata",
+    "relation": "customer"
+   },
+   {
+    "name": "CERC",
+    "relation": "peer"
+   },
+   {
+    "name": "CTU",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Grid capex & transformers",
+   "Tariffs & trade policy",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Battery-linked merchant revenue at ~75-80% margin assumed, arbitrage duration uncertain",
+    "quote": "This is anybody's guess in terms of that."
+   },
+   {
+    "label": "Pre-COD plant energised and sold via battery, not grid-connected",
+    "quote": "we are installing the solar and we are installing the entire power generation also, but we are not connecting it."
+   },
+   {
+    "label": "CFO change during the period",
+    "quote": "He has decided to pursue career opportunities outside of ACME."
+   },
+   {
+    "label": "Capital advances ~INR323 crore to suppliers",
+    "quote": "Capital advances, Roughly INR323 crores."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 4,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "BESS arbitrage duration",
+    "quote": "This is anybody's guess in terms of that."
+   },
+   {
+    "topic": "Gross block vs run-rate EBITDA",
+    "quote": "we don't have that number in this year"
+   },
+   {
+    "topic": "Run-rate EBITDA in rupees",
+    "quote": "So, 87% is our EBITDA for this year, right."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

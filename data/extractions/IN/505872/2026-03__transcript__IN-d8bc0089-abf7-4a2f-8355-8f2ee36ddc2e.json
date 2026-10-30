@@ -1,0 +1,147 @@
+{
+ "doc_id": "IN-d8bc0089-abf7-4a2f-8355-8f2ee36ddc2e",
+ "market": "IN",
+ "company_id": "505872",
+ "name": "WPIL Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-25",
+ "period": "2026-03",
+ "title": "WPIL Ltd - 505872 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Consolidated Q4 revenue fell 11% to INR511 crore while standalone project revenue collapsed to INR92 crore from INR253 crore; FY26 order book ~INR6,000 crore largely from a South African win, with JJM receivables stuck (~INR350 crore overdue).",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Backlog conversion",
+   "Working-capital stress",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "We don't see much capex demand requirement, but we do see some small brownfield addition needed to take care of the excess -- the capacity required for Indian growth, product growth."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "JJM receivables ~INR350 crore overdue",
+    "quote": "the total clear receivables overdue to us is roughly about INR350 crores",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "South Africa order win ~ZAR4 billion",
+    "quote": "Including South Africa, our order book is right now about ZAR4 billion.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "No numeric FY27 revenue guidance",
+    "quote": "we would not like to do that, but we will be updating",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Consol EBITDA margin 17.16% FY26",
+    "quote": "EBITDA rising 9% and margins improving to 17.16%",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin band",
+    "value": "15% to 20%",
+    "change": "held",
+    "quote": "our main mandate has always been to add the EBITDA margins between 15% to 20% on a whole"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "PCI Africa",
+    "relation": "partner"
+   },
+   {
+    "name": "Deepak Chemicals",
+    "relation": "customer"
+   },
+   {
+    "name": "DVC",
+    "relation": "customer"
+   },
+   {
+    "name": "WPIL Thailand",
+    "relation": "partner"
+   },
+   {
+    "name": "MISA Italy",
+    "relation": "partner"
+   },
+   {
+    "name": "Eigenbau South Africa",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Water & wastewater",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "JJM receivables stuck, no movement",
+    "quote": "it's a major area which is stuck with dead --no movement on this for some time"
+   },
+   {
+    "label": "Q4 consol revenue down 11%, standalone project revenue down sharply",
+    "quote": "the project business continued to remain subdued during the quarter with revenues at INR92 crores compared to INR253 crores last year"
+   },
+   {
+    "label": "NSE listing not yet applied; capital raise needed",
+    "quote": "we are unable to comply until we raise funds"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 1,
+   "growth": 4,
+   "margin": 4,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue / growth quantification",
+    "quote": "No, we would not like to do that, but we will be updating"
+   },
+   {
+    "topic": "Margin for FY27",
+    "quote": "I think we will see on the higher side, as we have said, the bandwidth we look at is 15% to 20%."
+   },
+   {
+    "topic": "Q4 margin decline explanation",
+    "quote": "you cannot take 1 quarter and one area because as a benchmark and extrapolate"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

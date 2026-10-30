@@ -1,0 +1,159 @@
+{
+ "doc_id": "IN-2d90c91b-81a7-49be-8b81-10f34990bb3b",
+ "market": "IN",
+ "company_id": "533098",
+ "name": "NHPC Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-25",
+ "period": "2026-03",
+ "title": "NHPC Ltd - 533098 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "Q4 FY26 PAT Rs 1,460 Cr was inflated by a one-off Rs 1,156 Cr DTL reversal (about Rs 900 Cr net), so adjusted earnings are weaker; FY26 generation up 16% but PAF down to 74.75%.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Regulatory moat"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 74.75,
+   "quote": "Our PAF for FY’26 stands at 74.75% against the corresponding previous period PAF of 78.87%, which is about 4% lower."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "CAPEX during FY’26 is Rs. 13,689 Crore as against Rs. 11,596 Crore in the corresponding period of previous year on consolidated basis."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "PAF 74.75% vs 78.87%",
+    "quote": "Our PAF for FY’26 stands at 74.75% against the corresponding previous period PAF of 78.87%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Capex Rs 13,689 Cr vs 11,596 Cr",
+    "quote": "CAPEX during FY’26 is Rs. 13,689 Crore as against Rs. 11,596 Crore",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Subansiri units: 4 of 8 commissioned, rest by Mar'27",
+    "quote": "Remaining four units are expected to be commissioned one -by-one till March'27.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Parbati-II & Subansiri booked at 80% of AFC",
+    "quote": "We have been booking our revenue based on the 80% of the total expected AFC in Subansiri Lower and Parbati-II, both.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Subansiri Lower units commissioned by Mar'27",
+    "value": "Remaining 4 of 8 units",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Remaining four units are expected to be commissioned one -by-one till March'27."
+   },
+   {
+    "metric": "Hydro capacity commissioned in FY27",
+    "value": "2,994 MW",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "all these hydro assets, we are goi ng to commission 2,994 MW in FY’ 27."
+   },
+   {
+    "metric": "Parbati-II CERC tariff order",
+    "value": "by 30 June",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "we are expecting an order from CERC by 30th of June."
+   },
+   {
+    "metric": "Teesta-V generation restart",
+    "value": "June 2026",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "it is expected that the power station will start generation in June'26."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "CERC",
+    "relation": "peer"
+   },
+   {
+    "name": "Government of Arunachal Pradesh",
+    "relation": "partner"
+   },
+   {
+    "name": "J&K State Power Development Corporation",
+    "relation": "partner"
+   },
+   {
+    "name": "JPCL",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Pumped storage",
+   "Regulatory tariff recovery",
+   "Hydro capacity additions"
+  ],
+  "red_flags": [
+   {
+    "label": "Revenue booked above billable tariff (80% AFC vs 75% billing)",
+    "quote": "We have been booking our revenue based on the 80% of the total expected AFC in Subansiri Lower and Parbati-II, both."
+   },
+   {
+    "label": "Parbati-II loss for FY26 despite Q4 shortfall booking",
+    "quote": "On yearly basis, Parbati-II has given a loss of Rs. 150 Crore"
+   },
+   {
+    "label": "Receivables >45 days Rs 242 Cr",
+    "quote": "Dues more than 45 days is Rs. 242 Crore."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 3,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Parbati-II / Subansiri shortfall booking under CERC rules",
+    "quote": "It is allowed."
+   },
+   {
+    "topic": "Subansiri Upper timing",
+    "quote": "Subansiri Upper, we may not be going this year. Next year , we may be going for that."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

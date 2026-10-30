@@ -1,0 +1,145 @@
+{
+ "doc_id": "IN-13d7f086-90c5-4ad1-ba7b-7b06b519c225",
+ "market": "IN",
+ "company_id": "532668",
+ "name": "Aurionpro Solutions Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-15",
+ "period": "2026-03",
+ "title": "Aurionpro Solutions Ltd - 532668 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "FY26 revenue grew 20.2% to INR 1,411 cr with Q4 missed on Middle East and hyperscaler timing; management refuses FY27 growth number while front-loading INR 150-200 cr of development spend and INR 200-250 cr working capital.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we have significantly stepped up both expensed and capitalized investments to meet what we feel are generational opportunities opening up in AI and data centers"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "No FY27 growth number given",
+    "quote": "it would be very unfair for us to throw a half-baked number out because there are uncertainties we don't know",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Development spend INR 150-200 cr",
+    "quote": "I would think the number is somewhere between 150 and 200 crores over the next four quarters",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital INR 200-250 cr",
+    "quote": "the INR 200 crores – INR 250 crore sort of number is the right number",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Order book 1800 cr, 68-72% executable",
+    "quote": "somewhere in the range of 70%-odd, maybe slightly less, let's say between 68 % and 72 %",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "No number; growth ahead of industry",
+    "change": "dropped",
+    "quote": "we will continue to grow ahead of the industry growth rate"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "No significant margin dip planned",
+    "change": "held",
+    "quote": "We are not planning on any significant margin dip because the scale of the orders increases."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue growth ~30% (FY26 plan)",
+    "outcome": "missed",
+    "quote": "the revenue actually grew 20.2% to INR 1 ,411 crores"
+   },
+   {
+    "metric": "EBITDA margin 20-21% guided range",
+    "outcome": "met",
+    "quote": "EBITDA margin was 20.02% and PAT margin was 15.02%, we ll within the guided ranges of 20% to 21% and 15% to 16%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Fenixys",
+    "relation": "peer"
+   },
+   {
+    "name": "MMRDA",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Pharma CDMO / outsourcing",
+   "Cybersecurity spend",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 revenue miss >INR 100 cr; FY27 growth number withheld",
+    "quote": "obviously, you fell more than INR 100 crores short of it"
+   },
+   {
+    "label": "Front-loaded investment ahead of revenue",
+    "quote": "that investment in your expenses beforehand and then missing the revenue, that is what causes the problem"
+   },
+   {
+    "label": "Balance-sheet pressure guided for FY27",
+    "quote": "we would rather absorb temporary balance sheet pressure than underinvest"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 5,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue growth",
+    "quote": "I am hesitant to throw a planning number out there"
+   },
+   {
+    "topic": "Competition from frontier AI labs",
+    "quote": "I don't see any immediate signs of it"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

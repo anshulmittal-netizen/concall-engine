@@ -1,0 +1,140 @@
+{
+ "doc_id": "IN-8d19fa17-6a49-46a2-910f-e9167c0b9c99",
+ "market": "IN",
+ "company_id": "533655",
+ "name": "Triveni Turbine Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Triveni Turbine Ltd - 533655 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Q4 revenue record ₹6.8bn (+26%) but margin compressed on NTPC low-margin order and MTM loss; receivables swelled to ₹6.39bn (84 days vs 49), closing order book +8% to ₹20.54bn.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Working-capital stress",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivable days 84 vs 49",
+    "quote": "The average trade receivable days stood at 84 days versus 49 days as of the 31st of March 2025.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Export orders record ₹5.16bn, +174%",
+    "quote": "Export orders booking touched a record high of ₹5.16 billion during the quarter, registering a growth of 174% year -over-year",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Closing order book +8% to ₹20.54bn",
+    "quote": "resulting in our closing outstanding order book increasing by 8% year-on-year to ₹20.54 billion.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 margin compression on mix and MTM",
+    "quote": "the margin compression was principally due to a change in segmental mix",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Order book growth / minimum growth",
+    "value": "~9% growth in enquiry closing order book cited as minimum growth indication",
+    "change": "new",
+    "quote": "what we do have is a growth in the enquiry closing order book by about 9%"
+   },
+   {
+    "metric": "Exports vs domestic revenue FY27",
+    "value": "exports expected to exceed domestic",
+    "change": "new",
+    "quote": "this year, we believe exports would be more than the domestic."
+   },
+   {
+    "metric": "US subsidiary FY27",
+    "value": "at worst breakeven, targeted profitable",
+    "change": "new",
+    "quote": "we believe that this current year should be positive, if not at worst breakeven."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "NTPC",
+    "relation": "customer"
+   },
+   {
+    "name": "Siemens",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Geothermal",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Renewables & storage",
+   "Nearshoring / reshoring (US)"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables 84 days, ₹6.39bn",
+    "quote": "receivables at the end of March 31, 2026, stood at ₹6.39 billion"
+   },
+   {
+    "label": "Low-margin NTPC strategic order; BESS project cost overruns",
+    "quote": "which has already had some cost increases. But having absorbed those, the project is still marginally profitable."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 4,
+   "balance_sheet": 2,
+   "capex": 0,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Order book growth guidance",
+    "quote": "we shy away from giving direct giving guidance"
+   },
+   {
+    "topic": "Margin trajectory",
+    "quote": "It's difficult to answer your question about have your margins bottomed out."
+   },
+   {
+    "topic": "CO2 energy storage business plan",
+    "quote": "Right now, we would like to finish our current project before we actually project out what our business plan will be for that."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

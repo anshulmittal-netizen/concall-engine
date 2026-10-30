@@ -1,0 +1,147 @@
+{
+ "doc_id": "IN-0c0e2fac-e8a3-4e6c-b773-d37f337d7829",
+ "market": "IN",
+ "company_id": "500294",
+ "name": "NCC Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-20",
+ "period": "2026-03",
+ "title": "NCC Ltd - 500294 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Record INR83,004 cr order book (~4x book-to-bill) but management withheld all FY27 guidance citing uncertainty; standalone FY26 revenue fell 9% and consolidated EBITDA margin in Q4 was 8.83% vs 9.07%.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": -2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "the capex plan is INR500 crores"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 guidance withheld",
+    "quote": "So we have decided not to give any guidance for FY27.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Receivable days 87 → 73",
+    "quote": "the number of days also has decreased from 87 days to 73 days in the current quarter",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex FY27 INR500 cr vs FY26 ~INR912 cr",
+    "quote": "FY27, the capex plan is INR500 crores.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Standalone revenue FY26 down 9%",
+    "quote": "For the full year, the turnover stands at INR 17,669 crores as against INR 19,393 crores",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Cost pressure, escalation cover partial",
+    "quote": "About 74% of the contracts, we have escalation clauses. But I'm not very sure",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue, margin, order inflow guidance",
+    "value": "none given",
+    "change": "dropped",
+    "quote": "So we have decided not to give any guidance for FY27."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Vizag Urban",
+    "relation": "partner"
+   },
+   {
+    "name": "Pachhwara Coal Mining",
+    "relation": "partner"
+   },
+   {
+    "name": "L&T",
+    "relation": "peer"
+   },
+   {
+    "name": "Kalpataru",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Railway capex",
+   "Rural demand recovery",
+   "Water & wastewater",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "No FY27 guidance despite record order book",
+    "quote": "So we have decided not to give any guidance for FY27."
+   },
+   {
+    "label": "Escalation cover uncertain",
+    "quote": "But I'm not very sure whether the increase in the prices will completely get covered under the escalation clauses."
+   },
+   {
+    "label": "JJM UP receivables and interest load",
+    "quote": "As far as the receivables are concerned, the receivables have come down to INR3,015 crores"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 6,
+   "capex": 2,
+   "growth": 5,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "FY27 guidance (revenue, margin, inflows)",
+    "quote": "It is not really helpful to talk about any hypothetical number and tomorrow revise that number."
+   },
+   {
+    "topic": "Execution rate ahead",
+    "quote": "we'll be able to tell you at the end of the quarter, we have to wait, watch and see patiently."
+   },
+   {
+    "topic": "Standalone segment backlog breakup",
+    "quote": "We will give you, 1 minute."
+   }
+  ],
+  "hedge_index": 0.85
+ }
+}

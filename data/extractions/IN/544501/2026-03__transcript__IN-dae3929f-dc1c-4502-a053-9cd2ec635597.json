@@ -1,0 +1,179 @@
+{
+ "doc_id": "IN-dae3929f-dc1c-4502-a053-9cd2ec635597",
+ "market": "IN",
+ "company_id": "544501",
+ "name": "Sugs Lloyd Ltd",
+ "doc_type": "transcript",
+ "date": "2026-05-22",
+ "period": "2026-03",
+ "title": "Sugs Lloyd Ltd - 544501 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "FY26 revenue up ~70% to INR300 crore with margins held near 14%, but receivables are stretched, Q4 carried 40% of sales, and the INR600+ crore order is 18-24 month execution with thin disclosure on capex and working capital.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables stretched; Q4 = 40% of sales",
+    "quote": "majority, 40% of our sales has happened in Q4",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue INR600 crore reiterated",
+    "quote": "Yes, it is very much achievable. We are on line.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Order book INR825 crore; INR640 crore SCADA order",
+    "quote": "Our order book as of now stands around INR825 crores",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Price variation clauses protect margins",
+    "quote": "majority of our orders are with price variation clause",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Q4 margin dip blamed on one-off MAHAGENCO delay",
+    "quote": "there had been certain, you know, interference from local political, you know, fraternity",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "INR600 crore",
+    "change": "held",
+    "quote": "Yes, it is very much achievable. We are on line."
+   },
+   {
+    "metric": "FY28 revenue",
+    "value": "INR1,000 crore",
+    "change": "held",
+    "quote": "Our target of INR1,000 crores revenue by financial year '28 is firmly on track."
+   },
+   {
+    "metric": "FPI share of revenue",
+    "value": "around 10% in FY28",
+    "change": "new",
+    "quote": "We intend a contribution of around 10% of the total revenue from FPIs."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revenue",
+    "outcome": "met",
+    "quote": "delivering a turnover of INR300 crores against our stated guidance of INR270 crores"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Tata Power DISCOMs",
+    "relation": "customer"
+   },
+   {
+    "name": "NPCL",
+    "relation": "customer"
+   },
+   {
+    "name": "Konkan Railway",
+    "relation": "customer"
+   },
+   {
+    "name": "BSES",
+    "relation": "customer"
+   },
+   {
+    "name": "MAHAGENCO",
+    "relation": "customer"
+   },
+   {
+    "name": "L&T",
+    "relation": "competitor"
+   },
+   {
+    "name": "Voltas",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Railway capex"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables rising; Q4 concentration",
+    "quote": "Improving receivables is our top priority and we are working hard on it."
+   },
+   {
+    "label": "Creditor days stretched 18 to 61",
+    "quote": "our earlier creditor days which used to be 18 days, this year we have brought it to 61 days"
+   },
+   {
+    "label": "Fund-based limits 49 of 60 crore used; credit rated BBB minus",
+    "quote": "against INR60 crores fund-based, the utilized was INR49 crores"
+   },
+   {
+    "label": "Order-book reconciliation gap and GST inclusion",
+    "quote": "The order of INR640 crores is inclusive of 18% GST."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 6,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Timing of large-ticket orders",
+    "quote": "it is very difficult to say when we will be able to receive those"
+   },
+   {
+    "topic": "FPI margin figures",
+    "quote": "we may not be able to comment exactly on the figures, on the margins for FPIs"
+   },
+   {
+    "topic": "Q4 margin cause",
+    "quote": "numbers will have to go through, Mishra"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}
