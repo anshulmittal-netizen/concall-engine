@@ -171,6 +171,13 @@ button.r{position:relative}
 button.r:hover{background:var(--panel2)}
 button.r::after{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--accent);transform:scaleY(0);transition:transform .2s var(--ease)}
 button.r:hover::after{transform:scaleY(1)}
+.r.hd>span.hs{cursor:pointer;user-select:none;border-radius:6px;transition:color .15s}
+.r.hd>span.hs:hover{color:var(--fg)}
+.r.hd>span.hs::after{content:"\2195";margin-left:4px;font-size:10px;opacity:.45;letter-spacing:0}
+.r.hd>span.hs[aria-sort="descending"]::after{content:"\25BC";opacity:1;color:var(--accent);font-size:8px}
+.r.hd>span.hs[aria-sort="ascending"]::after{content:"\25B2";opacity:1;color:var(--accent);font-size:8px}
+.r.hd>span.hs[aria-sort]{color:var(--accent)}
+table.res th button:not([aria-sort])::after{content:" \2195";opacity:.45}
 .r.hd{background:var(--panel2);font-weight:600;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-block:9.5px}
 .r .nm{font-family:var(--display);font-weight:600;font-size:13px;line-height:1.25}
 .r .sub{font-size:11px;color:var(--muted)}
@@ -1130,7 +1137,13 @@ function vHome() {
 /* All calls */
 const SORTS = {best: ['Highest score', (a, b) => b.score - a.score], worst: ['Lowest score', (a, b) => a.score - b.score],
   up: ['Biggest improvement', (a, b) => b.delta - a.delta || b.score - a.score], down: ['Biggest drop', (a, b) => a.delta - b.delta || a.score - b.score],
-  new: ['Newest first', (a, b) => b.date.localeCompare(a.date) || b.score - a.score]};
+  new: ['Newest first', (a, b) => b.date.localeCompare(a.date) || b.score - a.score],
+  old: ['Oldest first', (a, b) => a.date.localeCompare(b.date) || b.score - a.score],
+  az: ['Company A–Z', (a, b) => a.name.localeCompare(b.name)], za: ['Company Z–A', (a, b) => b.name.localeCompare(a.name)],
+  secaz: ['Sub-sector A–Z', (a, b) => (a.sector || '').localeCompare(b.sector || '') || b.score - a.score], secza: ['Sub-sector Z–A', (a, b) => (b.sector || '').localeCompare(a.sector || '') || b.score - a.score],
+  gup: ['Guidance: most positive', (a, b) => (b.g ?? -99) - (a.g ?? -99) || b.score - a.score], gdn: ['Guidance: most negative', (a, b) => (a.g ?? 99) - (b.g ?? 99) || b.score - a.score]};
+/* Clickable column titles on the calls list map to these sorts: [first click, second click]. */
+const CALL_HSORT = {'#': ['best', 'worst'], 'Company': ['az', 'za', 1], 'Score': ['best', 'worst'], 'Change': ['up', 'down'], 'Sub-sector': ['secaz', 'secza', 1], 'Guidance': ['gup', 'gdn'], 'Filed': ['new', 'old']};
 const SIZES = {large: ['Large cap · ₹50,000 Cr+', v => v >= 50000], mid: ['Mid cap · ₹10,000–50,000 Cr', v => v >= 10000 && v < 50000],
   small: ['Small cap · ₹2,000–10,000 Cr', v => v >= 2000 && v < 10000], micro: ['Micro cap · below ₹2,000 Cr', v => v != null && v < 2000]};
 const sizeOk = (c, k) => !k || SIZES[k][1](c.mcapCr ?? byId[c.id]?.mcapCr);
@@ -2688,6 +2701,91 @@ function vHelp() {
   </article>
   <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
+
+
+/* ---------- sortable column titles ----------
+   Every list with a title row (.rows > .r.hd) gets clickable titles: first click sorts numbers high→low
+   (text A→Z), second click reverses, third click restores the original order. The choice is remembered per list while the page
+   is open and re-applied whenever the view re-renders. The calls list is paginated, so its titles drive the data sort instead. */
+const HS = {};
+const hsLabel = sp => { const c = sp.cloneNode(true); c.querySelectorAll('[data-tip],.i').forEach(x => x.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); };
+const hsKey = rows => S.view + '|' + [...rows.querySelector(':scope>.r.hd').children].map(hsLabel).join('|');
+function hsText(cell) { return cell ? cell.textContent.replace(/\s+/g, ' ').trim().replace(/[\u2605\u2606]/g, '').trim() : ''; }
+function hsVal(cell) {
+  if (!cell) return null;
+  let t = cell.textContent.replace(/\s+/g, ' ').trim().replace(/[\u2605\u2606]/g, '').trim();
+  if (!t || /^[\u2014\u2013\-\u00B7]+$/.test(t)) return null;
+  let m = t.match(/^(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)(?: (\d{4}))?/);
+  if (m) return (m[3] ? +m[3] : 0) * 10000 + (MON.indexOf(m[2]) + 1) * 100 + +m[1];
+  m = t.match(/^(\d{1,2}):(\d{2})/); if (m) return +m[1] * 60 + +m[2];
+  m = t.replace(/[\u2212\u2013]/g, '-').match(/^[+\-]?\s*\u20B9?\s*[+\-]?\d[\d,]*(\.\d+)?/);
+  if (m) { const neg = /^-|^\+?\s*\u20B9?\s*-/.test(m[0]); const v = parseFloat(m[0].replace(/[^\d.]/g, '')); return isFinite(v) ? (neg ? -v : v) : t.toLowerCase(); }
+  return t.toLowerCase();
+}
+function hsGroups(rows) {
+  const out = []; [...rows.children].forEach(el => {
+    if (el.classList.contains('hd')) return;
+    if (el.classList.contains('r') && !el.classList.contains('subr')) out.push([el]);
+    else if (out.length && el.classList.contains('subr')) out.at(-1).push(el);
+    else out.push([el]);
+  });
+  return out;
+}
+function hsSort(rows) {
+  const hd = rows.querySelector(':scope>.r.hd'); if (!hd) return;
+  const st = HS[hsKey(rows)], spans = [...hd.children];
+  spans.forEach((sp, i) => { if (st && st.i === i) sp.setAttribute('aria-sort', st.dir < 0 ? 'descending' : 'ascending'); else sp.removeAttribute('aria-sort'); });
+  const groups = hsGroups(rows);
+  groups.forEach((g, n) => { if (g[0].dataset.hsOrig == null) g[0].dataset.hsOrig = n; });
+  const rest = groups.filter(g => !g[0].classList.contains('r')), gs = groups.filter(g => g[0].classList.contains('r'));
+  if (st) {
+    let vals = new Map(gs.map(g => [g, hsVal(g[0].children[st.i])]));
+    const vs = [...vals.values()].filter(v => v != null), nums = vs.filter(v => typeof v === 'number').length;
+    if (nums * 2 < vs.length) vals = new Map(gs.map(g => [g, vals.get(g) == null ? null : hsText(g[0].children[st.i]).toLowerCase()]));
+    gs.sort((a, b) => { const x = vals.get(a), y = vals.get(b);
+      if (x == null && y == null) return a[0].dataset.hsOrig - b[0].dataset.hsOrig; if (x == null) return 1; if (y == null) return -1;
+      if (typeof x !== typeof y) return typeof x === 'number' ? -1 : 1;
+      const c = typeof x === 'number' ? x - y : x.localeCompare(y);
+      return (c || 0) * (st.dir < 0 ? -1 : 1) || a[0].dataset.hsOrig - b[0].dataset.hsOrig; });
+  } else gs.sort((a, b) => a[0].dataset.hsOrig - b[0].dataset.hsOrig);
+  const want = gs.concat(rest).flat(), have = [...rows.children].filter(el => el !== hd);
+  if (want.length === have.length && want.every((el, n) => el === have[n])) return;
+  want.forEach(el => rows.appendChild(el));
+}
+function hsDecorate(root) {
+  root.querySelectorAll('.rows>.r.hd').forEach(hd => {
+    const rows = hd.parentElement, calls = rows.classList.contains('calls');
+    [...hd.children].forEach((sp, i) => {
+      const lab = hsLabel(sp);
+      if (!lab || (calls && !CALL_HSORT[lab])) return;
+      sp.classList.add('hs'); sp.setAttribute('role', 'button'); sp.tabIndex = 0; sp.dataset.hsi = i;
+      if (!sp.title) sp.title = 'Sort by ' + lab + ' (click again to reverse)';
+      if (calls) { const k = CALL_HSORT[lab], cur = S.calls.sort; const [a, d] = k[2] ? ['ascending', 'descending'] : ['descending', 'ascending']; if (cur === k[0]) sp.setAttribute('aria-sort', a); else if (cur === k[1]) sp.setAttribute('aria-sort', d); }
+    });
+    if (!calls) hsSort(rows);
+  });
+}
+function hsClick(sp) {
+  const hd = sp.parentElement, rows = hd.parentElement, i = +sp.dataset.hsi;
+  if (rows.classList.contains('calls')) {
+    const k = CALL_HSORT[hsLabel(sp)]; S.calls.sort = S.calls.sort === k[0] ? k[1] : k[0]; S.calls.limit = 50;
+    const sel = $('#c-sort'); if (sel) sel.value = S.calls.sort; fillCalls(); return;
+  }
+  const key = hsKey(rows), st = HS[key];
+  if (!st || st.i !== i) {
+    const vs = hsGroups(rows).filter(g => g[0].classList.contains('r')).map(g => hsVal(g[0].children[i])).filter(v => v != null);
+    const first = vs.filter(v => typeof v === 'number').length * 2 >= vs.length ? -1 : 1;  // numbers: high→low first; text: A→Z first
+    HS[key] = {i, dir: first, first};
+  } else if (st.dir === st.first) st.dir = -st.dir; else delete HS[key];
+  document.querySelectorAll('.rows>.r.hd').forEach(h => { if (hsKey(h.parentElement) === key) hsSort(h.parentElement); });
+}
+(() => {
+  let busy = false;
+  const mo = new MutationObserver(() => { if (busy) return; busy = true; try { hsDecorate(document); } finally { mo.takeRecords(); busy = false; } });
+  ['#view', '#drawer-root'].forEach(q => { const el = $(q); if (el) mo.observe(el, {childList: true, subtree: true}); });
+  document.addEventListener('click', e => { if (e.target.closest('[data-tip]')) return; const sp = e.target.closest('.r.hd>span.hs'); if (!sp) return; e.stopPropagation(); busy = true; try { hsClick(sp); hsDecorate(document); } finally { mo.takeRecords(); busy = false; } }, true);
+  document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('.r.hd>span.hs')) { e.preventDefault(); e.target.click(); } });
+})();
 
 const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
