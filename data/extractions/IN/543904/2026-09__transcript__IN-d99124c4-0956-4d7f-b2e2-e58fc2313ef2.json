@@ -1,0 +1,361 @@
+{
+ "doc_id": "IN-d99124c4-0956-4d7f-b2e2-e58fc2313ef2",
+ "market": "IN",
+ "company_id": "543904",
+ "name": "Mankind Pharma Ltd",
+ "doc_type": "transcript",
+ "date": "2026-10-30",
+ "period": "2026-09",
+ "title": "Mankind Pharma Ltd - 543904 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Mankind Q2 FY27 revenue up 17% to Rs 4,338 cr with EBITDA margin 27.1%; but India Rx volume growth 6.2% and chronic/price-led gains come with no capacity or capex-discipline signal, and working capital stretched to 51 days.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "NOWC 46 → 51 days TTM",
+    "quote": "The net operating working capital for the quarter on trailing 12-month basis has increased to 51 days as compared to 46 days",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Cash flow/EBITDA 92% → 81%",
+    "quote": "In H1 FY27 our cash flow to EBITDA ratio has decreased to 81% as compared to 92% in H1 FY26",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Volume growth 6.2% in Q2",
+    "quote": "outperforming IPM with a volume growth of 6. 2% in Quarter 2",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Consumer growth cut to single digit",
+    "quote": "Right now, this year we expect that growth will be in single-digit.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Capex 4.9% vs 6-7% guide",
+    "quote": "The CAPEX as a percentage of revenue is 4. 9% of the total revenue, which is lower than our guidance of 6% to 7% of revenue",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consumer Healthcare growth FY27",
+    "value": "single-digit",
+    "change": "cut",
+    "quote": "Right now, this year we expect that growth will be in single-digit."
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "25.5% to 26.5%",
+    "change": "held",
+    "quote": "we would like to maintain the same guidance , 25.5 to 26.5 %"
+   },
+   {
+    "metric": "R&D spend FY27",
+    "value": "upper end, close to 3% of revenue",
+    "change": "raised",
+    "quote": "we expect the R&D spend to be at the upper end of the guidance , which will be close to 3% of the revenue"
+   },
+   {
+    "metric": "International growth FY27",
+    "value": "double growth",
+    "change": "new",
+    "quote": "So, we expect double growth in international business in the Financial Year ‘27."
+   },
+   {
+    "metric": "Anti-infective growth",
+    "value": "match IPM in coming quarters",
+    "change": "new",
+    "quote": "in coming quarters, probably it will match the IPM growth in anti -infectives"
+   },
+   {
+    "metric": "Outperformance vs IPM",
+    "value": "1.1x to 1.2x next two quarters",
+    "change": "new",
+    "quote": "it would be around 1.1 to 1.2x, which we can see in next two quarters"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Gross margin (FY27)",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "EBITDA margin (FY27)",
+    "outcome": "met",
+    "quote": "we would like to maintain the same guidance , 25.5 to 26.5 %"
+   },
+   {
+    "metric": "Consumer Healthcare growth (Q2 onwards)",
+    "outcome": "missed",
+    "quote": "Right now, this year we expect that growth will be in single-digit."
+   },
+   {
+    "metric": "BSV growth (FY27)",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Capex as % of revenue (FY27)",
+    "outcome": "missed",
+    "quote": "The CAPEX as a percentage of revenue is 4. 9% of the total revenue, which is lower than our guidance of 6% to 7% of revenue for FY27."
+   },
+   {
+    "metric": "R&D spend (FY27)",
+    "outcome": "held",
+    "quote": "we expect the R&D spend to be at the upper end of the guidance , which will be close to 3% of the revenue"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Armed Cell Therapeutics",
+    "relation": "partner"
+   },
+   {
+    "name": "IQVIA",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "GLP-1 supply chain",
+   "Rural demand recovery",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital days up 46 → 51",
+    "quote": "The net operating working capital for the quarter on trailing 12-month basis has increased to 51 days as compared to 46 days"
+   },
+   {
+    "label": "Consumer growth cut to single digit",
+    "quote": "Right now, this year we expect that growth will be in single-digit."
+   },
+   {
+    "label": "Tax disallowance Rs 1,609 cr exposure",
+    "quote": "if that holds up, how do you see the tax class interest going there"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 2,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Consumer e-commerce split",
+    "quote": "I am just answering your question , what question you asked about consumer side"
+   },
+   {
+    "topic": "Margin ceiling / FY28 guidance",
+    "quote": "we will come up with a reliable guidance , when we will come up for FY28 data point"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Mankind Q2 FY27 revenue rose 17.3% YoY to Rs 4,338 crore, with EBITDA margin up 210 bps to 27.1%.",
+  "overview": "Mankind delivered another strong quarter, with revenue up 17.3% YoY to Rs 4,338 crore and reported EBITDA up 27.2% to Rs 1,175 crore. Domestic revenue rose 14.8% to Rs 3,657 crore, with India Rx-type growth outperforming IPM at 1.1x, driven by chronic and a recovering acute portfolio. International revenue grew 33% to Rs 680 crore, led by BSV specialty and new US launches. Consumer healthcare was weak at Rs 229 crore, and management guided only single-digit growth for FY27 in that segment.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations",
+    "value": "Rs 4,338 crore",
+    "change": "+17.3% YoY (Q2 FY26: Rs 3,697 crore)"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "Rs 1,175 crore",
+    "change": "+27.2% YoY"
+   },
+   {
+    "metric": "EBITDA margin (reported)",
+    "value": "27.1%",
+    "change": "+210 bps YoY (Q2 FY26: 25.0%)"
+   },
+   {
+    "metric": "Gross margin",
+    "value": "72.2%",
+    "change": "+90 bps YoY (Q2 FY26: 71.3%)"
+   },
+   {
+    "metric": "H1 FY27 EBITDA margin",
+    "value": "26.7%",
+    "change": "+230 bps YoY"
+   },
+   {
+    "metric": "PAT",
+    "value": "Rs 716 crore",
+    "change": "+37.7% YoY; PAT margin 16.5% vs 14.1%"
+   },
+   {
+    "metric": "Diluted EPS",
+    "value": "Rs 17.2 (Rs 1 face value)",
+    "change": ""
+   },
+   {
+    "metric": "Cash EPS",
+    "value": "Rs 22.9",
+    "change": "+29.1% YoY (Q2 FY26: Rs 17.7)"
+   },
+   {
+    "metric": "Net debt",
+    "value": "Rs 2,639 crore",
+    "change": "Net debt to adjusted EBITDA 0.6x (TTM)"
+   },
+   {
+    "metric": "H1 FY27 cash flow from operations",
+    "value": "Rs 1,819 crore",
+    "change": "+11.1% YoY; cash flow to EBITDA 81% vs 92%"
+   },
+   {
+    "metric": "Effective tax rate (H1 FY27)",
+    "value": "24%",
+    "change": "vs 17.1% in H1 FY26, due to new tax regime"
+   },
+   {
+    "metric": "Net operating working capital",
+    "value": "51 days (TTM)",
+    "change": "vs 46 days a year ago"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Domestic business",
+    "commentary": "Revenue rose 14.8% YoY to Rs 3,657 crore; Mankind core domestic ex-consumer grew 16%, and BSV domestic grew mid-teens. Chronic grew 19% in cardiac and 16% in anti-diabetic, and acute recovered with vitamins and minerals +26% and gastro +19%."
+   },
+   {
+    "name": "International business",
+    "commentary": "Revenue rose 33% YoY to Rs 680 crore; BSV grew 34%, Mankind International grew 29% and other international markets grew 37%. Management expects double-digit international growth in FY27."
+   },
+   {
+    "name": "Consumer healthcare",
+    "commentary": "Revenue was Rs 229 crore, hit by slow category offtake and weakness in East and South. Management expects single-digit growth for FY27, but e-commerce grew about 100% and is around 15% of segment sales."
+   },
+   {
+    "name": "BSV specialty",
+    "commentary": "Strong brand growth: Humog +51%, Lonopin +45%, Anti-D +37%, ASVS +45%. Management said mandate brands grew 30%+ in the recent period."
+   }
+  ],
+  "guidance_outlook": [
+   "EBITDA margin guidance maintained at 25.5% to 26.5% for FY27; management said the company is tracking ahead of this range.",
+   "R&D spend expected at the upper end of 2.8% to 3% of revenue for FY27, including ACTx impact; Q2 R&D was 2.5% of sales.",
+   "Capex guidance of 6% to 7% of revenue for FY27; H1 capex was 4.9% of revenue.",
+   "Outperformance versus IPM expected at 1.1x to 1.2x over the next two quarters.",
+   "Chronic share ambition to rise 100 to 200 bps a year, with a 4 to 5 year goal of 50%; the chronic share excluding BSV was 37.4% in Q2.",
+   "Management expects BSV margin to converge toward the overall company margin, and says operating leverage will support margins. A FY28 guidance update is expected later."
+  ],
+  "capex_capacity": [
+   "H1 FY27 capex was Rs 214 crore (4.9% of revenue), below the 6% to 7% FY27 guidance.",
+   "D&A rose to Rs 236 crore in Q2 FY27 from Rs 222 crore a year ago, in line with asset capitalisation.",
+   "Company is on track to repay acquisition-related debt by FY28.",
+   "Q1 FY27 included an NCD repayment of Rs 1,250 crore; finance cost fell to Rs 105 crore in Q2 from Rs 110 crore in Q1."
+  ],
+  "demand_pricing": [
+   "IQVIA secondary sales grew 15.7% in Q2, against IPM growth of 14.2% excluding tirzepatide; volume growth was 6.2% in Q2 versus 4.7% in Q1 FY27.",
+   "Sales price increases and chronic mix drove the gross margin gain; GST 2.0 transition compressed Q2 FY26 margins.",
+   "Field force productivity was about Rs 7.4 lakh TTM in Q2 FY27, up from about Rs 7 lakh in FY26; MR additions are about 7% this year.",
+   "Brands above Rs 50 crore rose to 63 (MAT Sep-26) from 54 in FY26; brands above Rs 100 crore rose to 26 from 22.",
+   "Hospital revenue grew 23% YoY.",
+   "Anti-infectives grew 5.4% in Q2 versus 3.6% in Q1; management expects them to match IPM growth in coming quarters.",
+   "Modern trade and e-commerce share of consumer business rose to 18% from 12%."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Is the export growth organic or inorganic, and how should the full year look?",
+    "answer": "Export growth was above 30% versus 20% guided on constant currency, with the excess driven by currency benefit. BSV grew 34% and Mankind International and other international markets grew 29% and 37%."
+   },
+   {
+    "question": "Can Mankind sustain growth above industry in India Rx?",
+    "answer": "Management said it expects to outperform IPM, but Sudipta Roy guided to 1.1x to 1.2x outperformance over the next two quarters, given IPM unpredictability."
+   },
+   {
+    "question": "What is the funding runway for ACTx (Armed Cell Therapeutics)?",
+    "answer": "Current commitment is EUR 48 million, which is sufficient through FY28. Clinical results are expected in about two years, after which the company is open to partnering or self-funding."
+   },
+   {
+    "question": "What is the impact of the Supreme Court-mandated committee on marketing practices?",
+    "answer": "Arjun Juneja said Mankind has prepared for UCPMP compliance for 7 to 8 years and is ready to comply with whatever the committee recommends."
+   },
+   {
+    "question": "What is the status of the tax litigation?",
+    "answer": "Management said a favourable Commissioner of Appeals order quashed four years of demand and cut exposure by about Rs 300 crore. Provisions are fully booked, so no change to financial metrics is expected."
+   },
+   {
+    "question": "What is the plan for consumer healthcare after weak performance?",
+    "answer": "Rajeev Juneja said management is unhappy with consumer performance and expects single-digit growth this year with recovery in FY28. Share gains came in Manforce and Prega News, and e-commerce grew 100%."
+   }
+  ],
+  "risks_watch": [
+   "Consumer healthcare growth is weak (Rs 229 crore) and guided to single digits for FY27; the recovery depends on the planned transformation.",
+   "Working capital rose to 51 days from 46, and cash flow to EBITDA fell to 81% from 92%.",
+   "Effective tax rate rose to 24% from 17.1% under the new regime.",
+   "Anti-infectives are still lagging IPM, and brands like Moxikin D-CV and Cefakind were flagged as weak.",
+   "ACTx funding covers only up to FY28, and the R&D spend will weigh on margins.",
+   "Regulatory tightening on marketing practices (UCPMP) following the Supreme Court process.",
+   "Weak monsoon could hit acute anti-infective demand, though management said the impact was limited."
+  ],
+  "management_tone": "Confident on domestic momentum and the margin trajectory, with management stating that it outperforms IPM and that margin guidance is held. Candid and unusually self-critical on consumer healthcare, where Rajeev Juneja said the company is \"not happy\" with performance. Evasive on the quantitative FY28 margin path and on the ACTx funding plan beyond FY28.",
+  "key_quotes": [
+   "So, we expect double growth in international business in the Financial Year ‘27.",
+   "Rahul, very good question. But let me explain to you that if you just look at last year, this quarter was having the highest sales.",
+   "Very bluntly I am talking to you. Very honestly I am talking to you.",
+   "Right now, this year we expect that growth will be in single-digit."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [],
+  "util": null,
+  "expansion": false,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "demand_or_share_gains",
+   "pricing_or_mix",
+   "new_products_or_markets"
+  ],
+  "clarity": "none",
+  "qRev": 17.3,
+  "qEbitda": 27.2,
+  "outlook": 1,
+  "why": "Management guides to double-digit international growth and 1.1x-1.2x IPM outperformance over the next two quarters, backed by share gains (IQVIA secondary sales +15.7%, volume +6.2%) and BSV brand growth, but gives no specific capacity or order numbers; consumer healthcare guidance was cut to single-digit and EBITDA margin 25.5%-26.5% was held while tracking ahead.",
+  "mgmt": null
+ }
+}

@@ -1,0 +1,350 @@
+{
+ "doc_id": "IN-ef671c48-68c9-439c-9409-d8ebd0a56672",
+ "market": "IN",
+ "company_id": "500087",
+ "name": "Cipla Ltd",
+ "doc_type": "transcript",
+ "date": "2026-10-30",
+ "period": "2026-09",
+ "title": "Cipla Ltd - 500087 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.94,
+ "read": {
+  "subsector": "Pharma",
+  "thesis": "Cipla held FY27 EBITDA margin 18.5–20% and $1bn US exit run-rate despite US revenue of $172m; the bridge rests on unapproved launches and a new US MDI plant still ramping supply.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Backlog conversion",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "US exit run-rate $1bn held",
+    "quote": "We continue to maintain the guidance to exit this fiscal year with $1 billion annualized revenue run rate.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Ventolin ramp gated by new US site supply",
+    "quote": "these are from our North America manufacturing site, which is a new facility. So it is a function of the supply ramp- up",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "India branded prescription +15% YoY",
+    "quote": "In our branded prescription business, we continue to outperform the market, delivering 15% growth",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Consumer business headwinds from costs and pricing",
+    "quote": "there were some headwinds in the form of costs and pricing, which we're working on mitigating",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "US exit run-rate",
+    "value": "$1 billion annualised",
+    "change": "held",
+    "horizon": "FY27 exit",
+    "quote": "We continue to maintain the guidance to exit this fiscal year with $1 billion annualized revenue run rate."
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "18.5% to 20%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "for the EBITDA guidance for the full year will be 18.5% to 20%. We are not changing the guidance."
+   },
+   {
+    "metric": "Tax rate",
+    "value": "27% to 27.5%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "It will be in the range of 27% to 27.5%, Neha."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 EBITDA margin",
+    "outcome": "met",
+    "quote": "for the EBITDA guidance for the full year will be 18.5% to 20%. We are not changing the guidance."
+   },
+   {
+    "metric": "US exit run-rate",
+    "outcome": "not_discussed",
+    "quote": "We continue to maintain the guidance to exit this fiscal year with $1 billion annualized revenue run rate."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Qilu Pharmaceutical",
+    "relation": "partner"
+   },
+   {
+    "name": "CTTQ, SinoBiopharm",
+    "relation": "partner"
+   },
+   {
+    "name": "Pharmathen",
+    "relation": "partner"
+   },
+   {
+    "name": "Kemwell",
+    "relation": "partner"
+   },
+   {
+    "name": "Proventil generics",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits",
+   "GLP-1 supply chain"
+  ],
+  "red_flags": [
+   {
+    "label": "US exit run-rate needs ~$80m/qtr step-up from $172m, unapproved launches gate it",
+    "quote": "we are working towards delivering that kind of exit run rate"
+   },
+   {
+    "label": "Pithampur US FDA Form 483 with 7 observations",
+    "quote": "U.S. FDA also conducted a follow-up GMP inspection at our Pithampur facility in India in this previous quarter and issued 7 observations in Form 483"
+   },
+   {
+    "label": "Lanreotide supply not in exit run-rate",
+    "quote": "Lanreotide we don't anticipate being bad for this financial year"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 8,
+   "margin": 4,
+   "balance_sheet": 1,
+   "capex": 1,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Product-wise US ramp contribution",
+    "quote": "it's a little bit hard for us to give product-wise guidance"
+   },
+   {
+    "topic": "Approval timing and CRLs",
+    "quote": "We normally are not able to talk about individual product goal dates or CRLs."
+   },
+   {
+    "topic": "Dovato first-to-file status",
+    "quote": "I think can we get back to you on that?"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Cipla Q2 FY27 revenue rose 4% QoQ to INR 7,404 crore with EBITDA margin at 18.7%, while the $1 billion US exit run-rate guidance was reiterated.",
+  "overview": "Cipla reported Q2 FY27 revenue of INR 7,404 crore, up 4% QoQ, with One India posting its highest-ever quarterly revenue and 12% YoY growth. EBITDA margin excluding other income was 18.7%, up 200 bps QoQ, and PAT was INR 878 crore (11.9% of sales). North America revenue was $172 million, up $10 million QoQ, and management kept its exit-FY27 run-rate target of $1 billion and FY27 EBITDA margin guidance of 18.5% to 20%. Key US launches (generic Advair DPI, Ventolin ramp) depend on supply ramp-up and three pending approvals.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue",
+    "value": "INR 7,404 crore",
+    "change": "+4% QoQ"
+   },
+   {
+    "metric": "EBITDA margin (excl. other income)",
+    "value": "18.7%",
+    "change": "+200 bps QoQ"
+   },
+   {
+    "metric": "Gross margin after material costs",
+    "value": "64.4%",
+    "change": "up 7% QoQ (as stated)"
+   },
+   {
+    "metric": "Total expenses",
+    "value": "INR 3,382 crore",
+    "change": "+4% QoQ"
+   },
+   {
+    "metric": "R&D expense",
+    "value": "INR 423 crore (5.7% of revenue)",
+    "change": ""
+   },
+   {
+    "metric": "Profit after tax",
+    "value": "INR 878 crore (11.9% of sales)",
+    "change": "+77 bps QoQ margin"
+   },
+   {
+    "metric": "Effective tax rate",
+    "value": "27.2%",
+    "change": ""
+   },
+   {
+    "metric": "Net cash equivalent balance",
+    "value": "INR 9,823 crore; total debt incl. leases INR 699 crore",
+    "change": "as of 30 Sep 2026"
+   },
+   {
+    "metric": "North America revenue",
+    "value": "$172 million",
+    "change": "+$10 million QoQ"
+   },
+   {
+    "metric": "EMEU revenue",
+    "value": "$101 million",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "One India",
+    "commentary": "Grew 12% YoY, highest-ever quarterly revenue; branded prescription grew 15% vs market per IQVIA YTD Sep 2026, with respiratory +11%, antidiabetes +50% (incl. GLP-1), urology +11%, dermatology +16%. Chronic mix 60.3% (MAT Sep 2026)."
+   },
+   {
+    "name": "Trade generics",
+    "commentary": "Strong double-digit QoQ growth with 15+ new launches in the quarter, but only mid-single-digit YoY growth due to seasonality and cost factors."
+   },
+   {
+    "name": "Consumer Health",
+    "commentary": "Management described high single-digit growth with cost and pricing headwinds; expects good double-digit growth going forward. Nicotex, Omnigel and Cipladine cited as category leaders."
+   },
+   {
+    "name": "North America",
+    "commentary": "Revenue $172 million, up $10 million QoQ; Cipla holds #1 US albuterol MDI share at 22%. Generic Advair (first DPI from US network) approved in Q2, launch in Q3."
+   },
+   {
+    "name": "South Africa",
+    "commentary": "Private-market secondary growth 6.5% vs market 5% (IQVIA MAT Aug 2026); management attributed primary-data dip to accounting change and a lost tender won back via court ruling."
+   },
+   {
+    "name": "EMEU",
+    "commentary": "Revenue $101 million in the quarter amid geopolitical and market-specific headwinds; cost discipline cited."
+   }
+  ],
+  "guidance_outlook": [
+   "Exit FY27 with a $1 billion annualised North America revenue run rate (vs $172 million in Q2); reiterated, with no product-wise split given.",
+   "FY27 EBITDA margin guidance of 18.5% to 20% maintained; sequential margin improvement expected in Q3 and Q4.",
+   "R&D expense guided at 6% to 7% of revenue for FY27; management said it would give next-year guidance with Q4 results.",
+   "FY27 effective tax rate guided at 27% to 27.5%.",
+   "Three significant US launches expected this fiscal year (two respiratory MDI products and one peptide); Lanreotide not expected to resume supply this fiscal year and is excluded from the exit run rate.",
+   "Consumer business expected to return to good double-digit growth after current headwinds.",
+   "Filings planned at 45 to 50 over the next 3 years for North America, versus about 10 on average historically."
+  ],
+  "capex_capacity": [
+   "Generic Advair is the first DPI from the new US manufacturing plant; launch took a couple of months longer than normal after approval in July.",
+   "Ventolin ramp is constrained by supply from the new North America manufacturing site; management said the constraint is supply, not commercial share, and expects an exponential rather than multiple-fold increase in H2.",
+   "Four biosimilar programmes under development; Pembrolizumab (Qilu partnership, North America) to be filed next year to launch around 2029 patent expiry.",
+   "Aspergen joint venture (majority owned by Cipla, with Kemwell) provides drug substance/product facility access for biosimilars.",
+   "Pithampur facility received 7 Form 483 observations in the latest US FDA follow-up GMP inspection; Invagen Long Island concluded with zero 483s; Invagen Unit 3 classified VAI."
+  ],
+  "demand_pricing": [
+   "Albuterol MDI: approx. 24 million unit market; Cipla at 22% share in a crowded market with Proventil generics.",
+   "GLP-1: Yurpeak now second-largest GLP brand in India; management cited 5% to 10% MoM growth in tirzepatide.",
+   "Government margin cap on high-priced oncology products announced; management said it does not expect significant impact.",
+   "Trade generics: management flagged cost-related factors and seasonality weighing on YoY growth.",
+   "Consumer: cost and pricing headwinds cited; management said brands continued to gain share."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What bridges US revenue from about $170 million to the $250 million (about $1 billion annualised) exit rate?",
+    "answer": "Management pointed to ramp-up of Ventolin and Advair plus four respiratory and one peptide launch expected this year; said there are multiple pathways and kept guidance. Ventolin was described as a big driver, and Lanreotide is excluded from the exit rate."
+   },
+   {
+    "question": "Will the three pending US approvals be needed to hit the exit rate?",
+    "answer": "Management said Ventolin alone covers much of the gap and that the combination of new and existing products gives confidence. It declined to split contribution by product and said approval timing depends on FDA review."
+   },
+   {
+    "question": "Why is EBITDA and Q4 margin expected to improve sequentially?",
+    "answer": "Dinesh Jain said the expected US ramp-up drives sequential improvement; the company guided to an improvement from Q3 to Q4, bucking typical Q4 seasonality."
+   },
+   {
+    "question": "Did the Q2 other expense jump include one-offs?",
+    "answer": "Dinesh Jain said there was no one-off; Q2 expense base is seasonally higher than Q1 and reflects launch-related investment ahead of revenue."
+   },
+   {
+    "question": "What drove the South Africa reported decline despite secondary outperformance?",
+    "answer": "Achin Gupta cited an accounting change that restates top line but keeps EBITDA unchanged, plus a lost tender that is being contested; a favourable court ruling has come through."
+   },
+   {
+    "question": "Is R&D going to remain at 6% to 7% of revenue, and do biosimilars need Phase III trials?",
+    "answer": "Management said FY27 R&D stays at 6% to 7% of revenue and that the FDA is generally waiving Phase III for biosimilars; the lead programme received FDA consultation supporting this."
+   }
+  ],
+  "risks_watch": [
+   "Three significant US approvals (two respiratory MDI products and one peptide) are pending; their timing is outside management's control and the $1 billion exit run rate depends on them.",
+   "Ventolin and Advair ramp depends on the new US plant reaching full supply; delays would push the run rate.",
+   "Pithampur plant received 7 Form 483 observations; the site's OAI status and future US approvals are a watch item.",
+   "Lanreotide supply remains disrupted; resumption timing is uncertain and excluded from guidance.",
+   "Trade generics and consumer business face cost and pricing headwinds; YoY growth was mid-single-digit in trade generics.",
+   "Government oncology margin cap discussions are ongoing; impact not yet clear."
+  ],
+  "management_tone": "Confident on US launches and guidance, with repeated reassurance that approvals are expected this year. Evasive on product-level contribution to the exit run rate and on specific goal dates or CRLs, citing competition sensitivity and FDA timing.",
+  "key_quotes": [
+   "We continue to maintain the guidance to exit this fiscal year with $1 billion annualized revenue run rate.",
+   "So it's probably not 2, 3, 4x. It will be an exponential increase from where we are.",
+   "We are not reporting segment -wise profitability numbers.",
+   "But we are confident of the approval."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "New North America manufacturing site (supplies Ventolin; first DPI from US network, generic Advair, launched Q3 after approval in July)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Three significant US launches this FY (two respiratory MDI products and one peptide) dependent on supply ramp-up",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "planned",
+    "mat": "moderate"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "new_products_or_markets",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 4.0,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management held the exit-FY27 $1 billion North America run-rate (vs $172M in Q2) and FY27 EBITDA margin of 18.5%-20%, with backing from the new US plant supplying Ventolin and three US launches, but no specific volume or timing numbers were given for the ramp and approvals are still pending.",
+  "mgmt": null
+ }
+}
