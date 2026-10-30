@@ -1,3 +1,4 @@
+<script>try{var t=JSON.parse(localStorage.getItem("csd2-theme"));if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <title>Concall Signal Desk</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,6 +97,8 @@ a{color:var(--accent)}
 .find input{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8.5px 12px 8.5px 32.5px;font-size:12px;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .2s}
 .find input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 4px var(--accentsoft)}
 .find svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.theme-seg{flex:none}.theme-seg button{padding:6px 9px}.theme-seg svg{display:block}
+@media (max-width:760px){.theme-seg span{display:none}}
 .find-res{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow2);padding:5px;display:grid;gap:2px;z-index:25;max-height:60vh;overflow:auto;animation:enter .2s var(--ease) both}
 .find-res button{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8.5px;text-align:left;background:none;border:0;border-radius:10px;padding:7.5px 9.5px}
 .find-res button:hover,.find-res button.on{background:var(--panel2)}
@@ -691,6 +694,11 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
         <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.6 3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
         <input id="find" type="search" placeholder="Find a company by name or ticker" aria-label="Find a company" autocomplete="off">
         <div class="find-res" id="findres" hidden></div>
+      </div>
+      <div class="seg theme-seg" id="themesel" role="group" aria-label="Colour theme">
+        <button data-theme-set="auto" title="Match my device" aria-label="Auto theme"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 2a6 6 0 0 1 0 12z" fill="currentColor"/></svg><span>Auto</span></button>
+        <button data-theme-set="light" title="Light theme" aria-label="Light theme"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3"/></g></svg><span>Light</span></button>
+        <button data-theme-set="dark" title="Dark theme" aria-label="Dark theme"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 10.2A6 6 0 0 1 5.8 2.5a6 6 0 1 0 7.7 7.7z" fill="currentColor"/></svg><span>Dark</span></button>
       </div>
     </div>
     <main id="view" class="view" aria-live="polite"><div class="empty">Loading the latest calls…</div></main>
@@ -3048,6 +3056,11 @@ document.addEventListener('keydown', e => {
     if (!f.length) return; if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f.at(-1).focus(); } else if (!e.shiftKey && document.activeElement === f.at(-1)) { e.preventDefault(); f[0].focus(); } }
 });
 $('#find').addEventListener('focus', renderFind);
+/* light / dark / auto: saved per browser, applied before first paint by the script at the top */
+function applyTheme(m) { const r = document.documentElement; if (m === 'light' || m === 'dark') r.setAttribute('data-theme', m); else r.removeAttribute('data-theme');
+  document.querySelectorAll('[data-theme-set]').forEach(b => b.setAttribute('aria-pressed', b.dataset.themeSet === m)); }
+applyTheme(store.get('theme', 'auto'));
+$('#themesel').addEventListener('click', e => { const b = e.target.closest('[data-theme-set]'); if (!b) return; e.stopPropagation(); store.set('theme', b.dataset.themeSet); applyTheme(b.dataset.themeSet); });
 
 /* ---------- boot ---------- */
 (async function boot() {
