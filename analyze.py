@@ -471,6 +471,9 @@ def build(market: str, log=print) -> dict:
                           "score": r["score"], "delta": r["delta"], "veto": r["veto"], "archetype": r["archetype"],
                           "thesis": r["thesis"], "top": t0, "cred": r["cred"], "credTested": r.get("credTested", 0), "mcap": fmt_mcap(u, market), "mcapCr": u.get("mcap_cr"),
                           "themes": r["themes"],
+                          # the call's capital-cycle reads, so the page can build sector breadth for any quarter
+                          "cyc": {"supply": r["blocks"]["supply"], "pricing": r["blocks"]["pricing"], "demand": r["blocks"]["demand"],
+                                  "structure": r["blocks"]["structure"], "inventory": r["blocks"]["inventory"], "util": r["util"], "capex": r["capex"]},
                           "hasSummary": any(d.get("summary") for d in r["docs"])})
             for d in r["docs"]:
                 if d.get("summary"):

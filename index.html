@@ -325,6 +325,25 @@ svg text{font-family:var(--mono)}
 .th-co .r{grid-template-columns:minmax(0,1.1fr) 180px minmax(0,2fr) 100px 96px;align-items:start}
 .th-co .scorecell{margin-bottom:3px}
 .th-ev{line-height:1.5}
+.cy .r{grid-template-columns:minmax(0,1.9fr) 118px 82px 82px 92px 86px 64px minmax(0,.9fr)}
+.cy .r .sub{display:block;line-height:1.4}
+.cy-phs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.cy-ph{text-align:left;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--tc);border-radius:var(--r2);padding:10px 12px;display:grid;gap:3px;align-content:start;box-shadow:var(--shadow);transition:transform .2s var(--ease),border-color .2s}
+.cy-ph:hover{transform:translateY(-2px)}.cy-ph[aria-pressed="true"]{box-shadow:0 0 0 3px color-mix(in srgb,var(--tc) 30%,transparent),var(--shadow)}
+.cy-ph b{font-family:var(--display);font-size:14px}.cy-ph .cy-n{font-size:20px;font-weight:600;color:var(--tc)}
+.cy-sig{display:grid;gap:4px}
+.cy-row{display:grid;grid-template-columns:170px minmax(0,1fr) 92px;gap:10px;align-items:center;background:none;border:0;border-radius:8px;padding:4px 5px;font-size:11.5px;text-align:left}
+.cy-row:not([disabled]):hover,.cy-row[aria-pressed="true"]{background:var(--panel2)}.cy-row[disabled]{cursor:default}
+.cy-row .num{text-align:right}
+.cy-tr{position:relative;height:12px;background:var(--panel2);border-radius:6px;box-shadow:inset 0 0 0 1px var(--line)}
+.cy-tr i{position:absolute;left:0;top:0;bottom:0;border-radius:6px;transform-origin:left;animation:grow .9s var(--ease) both}
+.cy-tr em{position:absolute;top:-4px;bottom:-4px;width:3px;margin-left:-1.5px;background:var(--fg);border-radius:2px}
+.cy-tr s{position:absolute;top:-2px;bottom:-2px;width:2px;margin-left:-1px;background:var(--faint);opacity:.6;text-decoration:none}
+.cy-cs{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.cy-c{font-size:9.5px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--muted);background:var(--panel)}
+.cy-c.ok{color:var(--up);border-color:color-mix(in srgb,var(--up) 40%,var(--line))}.cy-c.bad{color:var(--down);border-color:color-mix(in srgb,var(--down) 40%,var(--line))}
+@media (max-width:900px){.cy-phs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.cy .r{grid-template-columns:minmax(0,1fr) auto}.cy .r>:nth-child(n+3){display:none}.cy .r.hd{display:none}.cy-row{grid-template-columns:120px minmax(0,1fr) 70px}}
 @media (max-width:760px){.th2 .r{grid-template-columns:minmax(0,1fr) auto}.th2 .r>:nth-child(3),.th2 .r>:nth-child(4),.th2 .r>:nth-child(5){display:none}.th2 .r.hd{display:none}
   .th-co .r{grid-template-columns:minmax(0,1fr) auto}.th-co .r>:nth-child(2){grid-column:1/-1;order:2}.th-co .r>:nth-child(3){grid-column:1/-1;order:3}.th-co .r>:nth-child(4){order:1}.th-co .r>:nth-child(5){grid-column:1/-1;order:4;justify-content:flex-start}.th-co .r.hd{display:none}}
 
@@ -780,7 +799,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pd: {size: '', days: 14, tier: 'strong', post: 14}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pd: {size: '', days: 14, tier: 'strong', post: 14}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -974,7 +993,7 @@ function navCounts() {
     rescal: (rd.calendar || []).filter(c => c.date >= t0r && c.date <= addDays(t0r, 7)).length || '',
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
-    guidance: t ? (t.guidanceLeaders || []).length : '', turns: sectorsQ().filter(s => s.hit).length || '',
+    guidance: t ? (t.guidanceLeaders || []).length : '', turns: cyData('sub').rows.filter(r => r.ph === 'turn' && !r.thin).length || '',
     themes: themesQ().length, nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
@@ -1896,34 +1915,177 @@ function bigSectorCards() {
     return {name, n: now.length, s, cos, subs: [...new Set(cos.map(c => c.sector))].filter(x => subNames.has(x))};
   }).filter(g => g.n >= 3).sort((a, b) => b.n - a.n);
 }
+/* Sector turns: where each sector sits in the capital cycle, read from what its companies said on their calls.
+   Built in the page from each call's cycle reads (calls[].cyc): supply, pricing, utilisation, demand and capex. */
+const CY_MIN = 3, CY_THIN = 8;
+const CY_PH = {
+  turn: ['Turning up', 'st-turning', 'var(--v5)', 'Early stage. More companies say industry supply is being held back than say it is being added, and pricing or utilisation is improving, while demand talk is still muted. This is the point the capital cycle framework looks for: the turn shows up in supply and pricing before it shows up in demand.'],
+  up: ['Upswing', 'st-confirming', 'var(--up)', 'Pricing is improving for clearly more companies than it is weakening, and most companies describe demand as good. The turn is confirmed and easy to see, so more of it may already be in share prices.'],
+  none: ['No clear signal', 'st-neutral', 'var(--v3)', 'Readings are mixed or flat. Nothing points clearly up or down yet.'],
+  over: ['Overbuilding', 'st-crowded', 'var(--warn)', 'Many more companies report capacity being added in the industry than held back. Late stage: new supply tends to cap pricing a few quarters out.'],
+  down: ['Downswing', 'st-deteriorating', 'var(--down)', 'Pricing is weakening for more companies than it is improving, or pricing and demand both fell against last quarter.']};
+const CY_ORDER = ['turn', 'up', 'none', 'over', 'down'];
+const CY_SHORT = {"turn": "Supply held back and prices firming, while demand talk is still quiet.", "up": "Pricing and demand both strong; the turn is visible.", "none": "Readings mixed or flat.", "over": "More capacity being added than held back.", "down": "Pricing weakening, or pricing and demand both falling."};
+const cyOf = c => c.cyc || (byId[c.id]?.period === c.period ? {...(byId[c.id].blocks || {}), util: byId[c.id].util, capex: byId[c.id].capex} : null);
+const cyNet = v => v == null ? '–' : `${v > 0 ? '+' : ''}${Math.round(v)}`;
+function cyBreadth(cs) {
+  const ys = cs.map(cyOf).filter(Boolean), n = ys.length, f = p => n ? 100 * ys.filter(p).length / n : null;
+  const b = {n, disc: f(y => y.supply >= 1 || ['cut', 'deferred', 'cancelled'].includes(y.capex)), add: f(y => y.supply <= -1), capex: f(y => y.capex === 'raised'),
+    pup: f(y => y.pricing >= 1), pdn: f(y => y.pricing <= -1), uup: f(y => y.util > 0), udn: f(y => y.util < 0), dup: f(y => y.demand >= 1), ddn: f(y => y.demand <= -1)};
+  if (n) Object.assign(b, {sup: b.disc - b.add, pr: b.pup - b.pdn, ut: b.uup - b.udn, de: b.dup - b.ddn});
+  return b;
+}
+function cyPhase(b, p) {
+  const ok = p && p.n >= CY_MIN, d = k => ok ? b[k] - p[k] : null, R = Math.round, chg = k => d(k) == null ? '' : ` (${cyNet(d(k))} vs last quarter)`;
+  if (b.sup >= 15 && b.pr >= 0 && ((d('pr') ?? 0) >= 15 || (d('ut') ?? 0) >= 15 || b.pr >= 25) && b.dup < 60)
+    return ['turn', `${R(b.disc)}% say supply is held back against ${R(b.add)}% adding; pricing net ${cyNet(b.pr)}${chg('pr')}, utilisation net ${cyNet(b.ut)}${chg('ut')}; only ${R(b.dup)}% call demand good.`];
+  if (b.pr >= 20 && b.dup >= 60) return ['up', `Pricing improving for ${R(b.pup)}% against weakening for ${R(b.pdn)}%${chg('pr')}; ${R(b.dup)}% call demand good.`];
+  if (b.sup <= -20) return ['over', `${R(b.add)}% report capacity being added in the industry against ${R(b.disc)}% holding back; ${R(b.capex)}% are expanding themselves.`];
+  if (b.pr <= -10 || ((d('pr') ?? 0) <= -15 && (d('de') ?? 0) <= -15))
+    return ['down', `Pricing weakening for ${R(b.pdn)}% against improving for ${R(b.pup)}%${chg('pr')}; demand net ${cyNet(b.de)}${chg('de')}.`];
+  return ['none', `Supply net ${cyNet(b.sup)}, pricing net ${cyNet(b.pr)}${chg('pr')}, demand good for ${R(b.dup)}%.`];
+}
+let CY_CACHE = null;
+function cyData(lvl) {
+  const bq = boardQ(), rd = RES.data, key = `${bq}|${lvl}`;
+  if (CY_CACHE && CY_CACHE.d === D && CY_CACHE.k === key && CY_CACHE.r === rd) return CY_CACHE.v;
+  const cs = (D.calls || []).filter(c => c.period === bq), pk = cs[0]?.periodKey || '', prevQ = quarters().find(q => q.key < pk);
+  const pcs = prevQ ? (D.calls || []).filter(c => c.period === prevQ.label) : [];
+  const rq = pk ? nextPeriod(pk) : '', res = new Map((rd?.results || []).filter(r => r.period === rq).map(r => [r.id, r]));
+  const rlab = (rd?.results || []).find(r => r.period === rq)?.label || '';
+  const gk = c => lvl === 'big' ? c.bigSector : c.sector, okG = g => g && g !== 'Unclassified';
+  const qavg = cs.length ? cs.reduce((a, c) => a + c.score, 0) / cs.length : 0;
+  const rstat = xs => { const rs = xs.map(c => res.get(c.id)).filter(Boolean), rx = rs.filter(r => r.px?.reactDate);
+    return {rn: rs.length, pat: median(rs.map(r => r.pat_yoy)), beat: rs.length ? 100 * rs.filter(r => r.pat_yoy != null && r.pat_yoy >= TH_BEAT).length / rs.length : null, d1: median(rx.map(r => r.px.react))}; };
+  const groups = {}, pgroups = {};
+  cs.forEach(c => { if (okG(gk(c))) (groups[gk(c)] = groups[gk(c)] || []).push(c); });
+  pcs.forEach(c => { if (okG(gk(c))) (pgroups[gk(c)] = pgroups[gk(c)] || []).push(c); });
+  const rows = Object.entries(groups).filter(([, xs]) => xs.length >= CY_MIN).map(([name, xs]) => {
+    const b = cyBreadth(xs), p = pgroups[name] ? cyBreadth(pgroups[name]) : null, [ph, why] = cyPhase(b, p);
+    const avg = xs.reduce((a, c) => a + c.score, 0) / xs.length;
+    return {name, xs, b, p: p && p.n >= CY_MIN ? p : null, ph, why, avg, edge: avg - qavg, thin: xs.length < CY_THIN, r: rstat(xs),
+      up: 100 * xs.filter(c => c.gRaised > 0 || c.g > 0).length / xs.length, cut: 100 * xs.filter(c => c.gCut > 0 || c.g < 0).length / xs.length,
+      parent: lvl === 'sub' ? xs[0].bigSector : null};
+  });
+  const v = {bq, pk, prevQ: prevQ?.label || '', rq, rlab, res, cs, qavg, rows, all: rstat(cs), allB: cyBreadth(cs), lvl};
+  CY_CACHE = {d: D, k: key, r: rd, v};
+  return v;
+}
+const CY_SORTS = {phase: ['Cycle stage, early first', (a, b) => CY_ORDER.indexOf(a.ph) - CY_ORDER.indexOf(b.ph) || a.thin - b.thin || b.b.pr - a.b.pr],
+  n: ['Most companies', (a, b) => b.xs.length - a.xs.length], pr: ['Pricing net, best first', (a, b) => b.b.pr - a.b.pr], prc: ['Pricing improving fastest', (a, b) => ((b.p ? b.b.pr - b.p.pr : -999) - (a.p ? a.b.pr - a.p.pr : -999))],
+  sup: ['Tightest supply', (a, b) => b.b.sup - a.b.sup], res: ['Best results so far', (a, b) => (b.r.rn >= 3 ? b.r.pat : -999) - (a.r.rn >= 3 ? a.r.pat : -999)]};
+function cyMap(T) {
+  const rows = T.rows.filter(r => !r.thin); if (rows.length < 3) return '<p class="small muted">Not enough sectors with eight or more calls yet.</p>';
+  const W = 640, H = 320, P = 36, xm = Math.max(30, ...rows.map(r => Math.abs(r.b.sup))) * 1.12, ym = Math.max(30, ...rows.map(r => Math.abs(r.b.pr))) * 1.12, nm = Math.max(...rows.map(r => r.xs.length));
+  const X = v => P + (v + xm) / (2 * xm) * (W - 2 * P), Y = v => H - P - (v + ym) / (2 * ym) * (H - 2 * P), Rr = n => 5 + 16 * Math.sqrt(n / nm);
+  const placed = [], show = new Set();
+  rows.slice().sort((a, b) => (a.ph === 'turn' ? -1 : 0) - (b.ph === 'turn' ? -1 : 0) || b.xs.length - a.xs.length).forEach(r => { const x = X(r.b.sup), y = Y(r.b.pr) - Rr(r.xs.length) - 4, w = Math.min(24, r.name.length) * 5.4;
+    if (show.size < 10 && !placed.some(q => Math.abs(q.y - y) < 12 && Math.abs(q.x - x) < (q.w + w) / 2 + 4)) { placed.push({x, y, w}); show.add(r.name); } });
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Cycle map: supply against pricing for each sector">
+    <rect x="${X(0)}" y="${P}" width="${W - P - X(0)}" height="${Y(0) - P}" fill="var(--accentsoft)" rx="8"/>
+    <line x1="${P}" x2="${W - P}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line2)"/><line x1="${X(0)}" x2="${X(0)}" y1="${P}" y2="${H - P}" stroke="var(--line2)"/>
+    <text x="${W - P - 4}" y="${P + 14}" text-anchor="end" font-size="10" style="fill:var(--accent);font-weight:600">Supply held back · prices firming</text>
+    <text x="${P + 4}" y="${P + 14}" font-size="10">Supply being added · prices firming</text>
+    <text x="${W - P - 4}" y="${H - P - 6}" text-anchor="end" font-size="10">Supply held back · prices soft</text>
+    <text x="${P + 4}" y="${H - P - 6}" font-size="10">Supply being added · prices soft</text>
+    <text x="${W / 2}" y="${H - 6}" text-anchor="middle" font-size="10">← more capacity being added · supply net · more held back →</text>
+    <text x="10" y="${H / 2}" text-anchor="middle" font-size="10" transform="rotate(-90 10 ${H / 2})">pricing net (improving − weakening)</text>
+    ${rows.sort((a, b) => b.xs.length - a.xs.length).map(r => `<g data-cysel="${esc(r.name)}" style="cursor:pointer" data-tt="${ttA(`${r.name} · ${CY_PH[r.ph][0]}\n${r.xs.length} companies · supply net ${cyNet(r.b.sup)} · pricing net ${cyNet(r.b.pr)}\nDemand good for ${Math.round(r.b.dup)}% · average score ${Math.round(r.avg)}`)}">
+      <circle cx="${X(r.b.sup).toFixed(1)}" cy="${Y(r.b.pr).toFixed(1)}" r="${Rr(r.xs.length).toFixed(1)}" fill="${CY_PH[r.ph][2]}" fill-opacity=".5" stroke="${CY_PH[r.ph][2]}" stroke-width="1.3"/>
+      ${show.has(r.name) ? `<text x="${X(r.b.sup).toFixed(1)}" y="${(Y(r.b.pr) - Rr(r.xs.length) - 4).toFixed(1)}" text-anchor="middle" font-size="9.5" style="fill:var(--fg)">${esc(r.name.length > 24 ? r.name.slice(0, 22) + '…' : r.name)}</text>` : ''}</g>`).join('')}
+  </svg>`;
+}
+const cyDelta = (v, p) => p == null ? '' : (d => `<span class="delta ${d > 0.5 ? 'up' : d < -0.5 ? 'dn' : 'zero'}">${cyNet(d)}</span>`)(v - p);
 function vTurns() {
-  const all = sectorsQ(), bq = boardQ(), base = all.every(s => (s.s.supply || []).length < 2);
-  const stages = [...new Set(all.map(s => s.stage))].sort((a, b) => STAGE_ORDER[a] - STAGE_ORDER[b]);
-  const rows = all.filter(s => !S.turns.stage || s.stage === S.turns.stage).sort((a, b) => (b.hit - a.hit) || STAGE_ORDER[a.stage] - STAGE_ORDER[b.stage] || b.n - a.n);
-  const B = [['supply', 'Supply discipline', 'var(--gold)'], ['util', 'Utilisation rising', 'var(--blue)'], ['pricing', 'Pricing improving', 'var(--teal)'], ['demand', 'Demand positive', 'var(--muted)']];
-  const lvl = S.turns.level || 'sub', subPool = name => (D.companies || []).filter(c => c.sector === name && c.period === bq);
-  const levelBar = `<div class="toolbar"><button class="chip" data-tl="sub" aria-pressed="${lvl === 'sub'}">By sub-sector</button><button class="chip" data-tl="big" aria-pressed="${lvl === 'big'}">By sector</button></div>`;
-  if (lvl === 'big') {
-    const bs = bigSectorCards();
-    return head('Sector turns', 'The same breadth signals rolled up to the broad sector. Open any signal to see the top companies behind it and the line from their call.', `
-      <ul><li>Breadth here is computed from each company’s ${esc(bq)} call, across every sub-sector in the sector.</li>
-      <li>Stages and turn flags are only set at sub-sector level; switch back to see them.</li></ul>`, focusBadge()) + levelBar + `
-      <div class="grid-auto">${bs.map(g => `<article class="card turn">
-        <div class="top"><div><h4>${esc(g.name)}</h4><span class="small muted">${g.n} companies · ${g.subs.length} sub-sector${g.subs.length === 1 ? '' : 's'}</span></div></div>
-        ${turnCard(g, B, g.cos.filter(c => c.period === bq))}
-        ${g.subs.length ? `<p class="small muted">${g.subs.map(esc).join(' · ')}</p>` : ''}</article>`).join('') || '<div class="empty">No sectors with three or more calls yet.</div>'}</div>`;
-  }
-  return head('Sector turns', 'Sub-sectors where the capital cycle may be turning: competitors hold back capacity, then pricing and utilisation start to improve before demand talk catches up.', `
-      <ul><li>Each card shows <b>breadth</b> ${tip('breadth')}: the share of the sub-sector’s companies whose calls show each signal.</li>
-      <li>The pattern to look for: supply discipline high, pricing or utilisation rising, demand still lukewarm. Those cards are marked <b>Turning</b> ${tip('stage')} and sorted to the top.</li>
-      <li>Only sub-sectors with at least three calls ${esc(bq === D.season ? 'this quarter' : 'in ' + bq)} appear.${inProg(bq) ? ` ${esc(bq)} is still in progress, so its cards compare the companies that have reported so far with ${esc(D.season)}, and each card shows the change in breadth.` : ''}</li></ul>`, focusBadge()) + `
-    ${base ? `<div class="welcome"><span>Only ${esc(bq)} has enough calls so far, so these cards show where each sub-sector stands today. Turn flags need two quarters and will start once ${esc((D.inProgress || [])[0]?.season || 'the next quarter')} fills in.</span></div>` : ''}
-    ${levelBar}
-    <div class="toolbar">${['', ...stages].map(s => `<button class="chip" data-st="${s}" aria-pressed="${S.turns.stage === s}">${s ? (all.find(x => x.stage === s)?.label || s) : 'All stages'} <span class="num">${s ? all.filter(x => x.stage === s).length : all.length}</span></button>`).join('')}</div>
-    <div class="grid-auto">${rows.map(s => `<article class="card turn ${s.hit ? 'hit' : ''}">
-      <div class="top"><div><h4>${esc(s.name)}</h4><span class="small muted">${s.n} companies</span></div><span class="pill st-${s.stage}">${esc(s.label)}</span></div>
-      ${turnCard(s, B, subPool(s.name))}
-      <p class="small muted">${esc(s.note)}</p></article>`).join('') || '<div class="empty">No sub-sectors in this stage.</div>'}</div>`;
+  const f = S.cy; if (!RES.data) loadRes().then(() => { if (S.view === 'turns') render(); });
+  if (f.sel) { const T = cyData(f.sel.lvl), r = T.rows.find(x => x.name === f.sel.name); if (r) return vTurn(T, r); f.sel = null; }
+  const T = cyData(f.lvl), ip = inProg(T.bq);
+  const rows = T.rows.filter(r => (!f.ph || r.ph === f.ph) && (f.thin || !r.thin)).sort(CY_SORTS[f.sort][1]);
+  const byPh = k => T.rows.filter(r => r.ph === k && (f.thin || !r.thin));
+  const resPh = CY_ORDER.map(k => { const xs = T.rows.filter(r => r.ph === k).flatMap(r => r.xs), rs = xs.map(c => T.res.get(c.id)).filter(Boolean), rx = rs.filter(r => r.px?.reactDate);
+    return {k, n: rs.length, pat: median(rs.map(r => r.pat_yoy)), d1: median(rx.map(r => r.px.react))}; });
+  const movers = T.rows.filter(r => r.p && !r.thin).sort((a, b) => (b.b.pr - b.p.pr) - (a.b.pr - a.p.pr));
+  return head('Sector turns', `Where each sector sits in the capital cycle, read from what its own companies said on their ${esc(T.bq)} calls about industry supply, pricing, utilisation and demand. Click any sector for the companies and what they said.`, `
+      <p><b>The idea in one line:</b> returns improve when an industry stops adding capacity. Competitors hold back or exit, so utilisation and pricing firm up, usually before managements start talking up demand. Later, good returns attract new capacity and pricing weakens again. This page reads each sector’s position from its companies’ calls.</p>
+      <ul><li><b>Supply net</b>: the share of companies saying industry supply is being held back (or deferring their own capex) minus the share saying capacity is being added. Positive means supply is tightening.</li>
+      <li><b>Pricing net</b>: share seeing pricing improve minus share seeing it weaken. <b>Utilisation net</b> works the same way. <b>Demand good</b> is the share describing demand as positive.</li>
+      <li>Small figures beside each value are the change in points against ${esc(T.prevQ || 'the quarter before')}, shown when that quarter had ${CY_MIN}+ calls in the sector.</li>
+      <li><b>Stages</b>, checked in this order: ${CY_ORDER.map(k => `<b>${CY_PH[k][0]}</b> — ${esc(CY_PH[k][3])}`).join(' ')}</li>
+      <li>Sectors with fewer than ${CY_THIN} calls are marked <b>thin</b> and hidden unless you include them: one or two companies can swing every figure.</li>
+      ${ip ? `<li><b>${esc(T.bq)} is still in progress</b> (${fmt(T.cs.length)} calls so far), so most sectors are thin. Switch to ${esc(D.season)} above for a full season.</li>` : ''}</ul>`, focusBadge()) + `
+    <div class="cy-phs">${CY_ORDER.map(k => `<button class="cy-ph" data-cyph="${k}" aria-pressed="${f.ph === k}" style="--tc:${CY_PH[k][2]}"><span class="eyebrow">${k === 'turn' ? 'Early' : k === 'up' ? 'Confirmed' : k === 'over' ? 'Late' : k === 'down' ? 'Weakening' : 'Mixed'}</span><b>${CY_PH[k][0]}</b><span class="num cy-n">${byPh(k).length}</span><span class="small muted">${esc(CY_SHORT[k])}</span></button>`).join('')}</div>
+    <div class="board">
+      <section class="w span8"><div class="w-head"><h3>Cycle map</h3><span class="small muted">sectors with ${CY_THIN}+ calls · bubble size = companies</span></div>
+        ${cyMap(T)}
+        <div class="w-foot"><span>Top-right (shaded): supply held back and prices firming, the healthiest place to be. Colour shows the stage. Click a bubble to open the sector.</span></div></section>
+      <section class="w span4"><div class="w-head"><h3>Pricing improving fastest</h3><span class="small muted">vs ${esc(T.prevQ)}</span></div>
+        ${movers.length ? `<div class="rows mini-list">${movers.slice(0, 6).map(r => `<button class="r" data-cysel="${esc(r.name)}"><span style="min-width:0"><span class="nm" style="display:block;font-size:12px">${esc(r.name)}</span><span class="sub">${r.xs.length} companies · now ${cyNet(r.b.pr)}</span></span><b class="num small g-up">${cyNet(r.b.pr - r.p.pr)} pts</b></button>`).join('')}</div>` : '<p class="small muted">Needs two quarters of calls.</p>'}
+        ${resPh.some(x => x.n >= 5) ? `<div class="w-head"><h3>Does the stage show in results?</h3></div><div class="pd-tr"><div><span>Stage</span><span class="num">Reported</span><span class="num">Median profit</span><span class="num">Day 1</span></div>
+          ${resPh.filter(x => x.n).map(x => `<div><span><span class="dot" style="background:${CY_PH[x.k][2]}"></span> ${CY_PH[x.k][0]}</span><span class="num">${x.n}</span><span class="num">${pctS(x.pat)}</span><span class="num">${pctS(x.d1)}</span></div>`).join('')}</div>
+          <p class="small muted">${esc(T.rlab)} results of the companies in each stage so far.</p>` : ''}</section>
+    </div>
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="Level"><button data-cylvl="sub" aria-pressed="${f.lvl === 'sub'}">Sub-sectors</button><button data-cylvl="big" aria-pressed="${f.lvl === 'big'}">Sectors</button></div>
+      <select id="cy-sort" aria-label="Sort">${Object.entries(CY_SORTS).map(([k, [n]]) => `<option value="${k}" ${f.sort === k ? 'selected' : ''}>${esc(n)}</option>`).join('')}</select>
+      <button class="chip" data-cythin="1" aria-pressed="${f.thin}">Include thin <span class="num">${T.rows.filter(r => r.thin).length}</span></button>
+      ${f.ph ? `<button class="chip" data-cyph="${f.ph}" aria-pressed="true">${CY_PH[f.ph][0]} ✕</button>` : ''}
+      <span class="small muted">${rows.length} ${f.lvl === 'big' ? 'sectors' : 'sub-sectors'}</span>
+    </div>
+    <div class="rows cy"><div class="r hd"><span>${f.lvl === 'big' ? 'Sector' : 'Sub-sector'}</span><span>Stage</span><span title="Value, then change vs last quarter">Supply net · chg</span><span>Pricing net · chg</span><span>Utilisation · chg</span><span>Demand good · chg</span><span>Avg score</span><span>${esc(T.rlab || 'Next')} results</span></div>
+    ${rows.map(r => `<button class="r" data-cysel="${esc(r.name)}"><span style="min-width:0"><span class="nm" style="display:block">${esc(r.name)}${r.thin ? ' <span class="tag">thin</span>' : ''}</span><span class="sub">${r.xs.length} companies · ${esc(r.why)}</span></span>
+      <span><span class="pill ${CY_PH[r.ph][1]}">${CY_PH[r.ph][0]}</span></span>
+      <span class="num">${cyNet(r.b.sup)} ${cyDelta(r.b.sup, r.p?.sup)}</span><span class="num">${cyNet(r.b.pr)} ${cyDelta(r.b.pr, r.p?.pr)}</span><span class="num">${cyNet(r.b.ut)} ${cyDelta(r.b.ut, r.p?.ut)}</span><span class="num">${Math.round(r.b.dup)}% ${cyDelta(r.b.dup, r.p?.dup)}</span>
+      <span><b class="num" style="color:${vcol(Math.round(r.avg))}">${Math.round(r.avg)}</b></span>
+      <span class="small">${r.r.rn ? `<b class="num">${pctS(r.r.pat)}</b> <span class="muted">· ${r.r.rn} in</span>` : '<span class="muted">none yet</span>'}</span></button>`).join('') || '<div class="empty">No sectors match.</div>'}</div>`;
+}
+const CY_SIG = [['disc', 'Supply held back', 'Industry capacity held back, competitors exiting, or own capex cut or deferred', 'var(--v5)'], ['add', 'Capacity being added', 'Industry capacity coming on, new entrants or competitive capex', 'var(--warn)'],
+  ['pup', 'Pricing improving', '', 'var(--up)'], ['pdn', 'Pricing weakening', '', 'var(--down)'], ['uup', 'Utilisation rising', '', 'var(--teal)'], ['udn', 'Utilisation falling', '', 'var(--down)'],
+  ['dup', 'Demand good', '', 'var(--accent)'], ['ddn', 'Demand weak', '', 'var(--down)'], ['capex', 'Expanding own capacity', 'Company raised its own capex plans', 'var(--saffron)']];
+function vTurn(T, r) {
+  const f = S.cy, lvl = f.sel.lvl, R = Math.round;
+  const res = c => T.res.get(c.id), up = {}; (RES.data?.calendar || []).forEach(x => { if (x.date >= istToday() && !T.res.has(x.id) && (!up[x.id] || x.date < up[x.id].date)) up[x.id] = x; });
+  const CH = {disc: ['Supply held back', y => y.supply >= 1 || ['cut', 'deferred', 'cancelled'].includes(y.capex)], add: ['Capacity being added', y => y.supply <= -1], pup: ['Pricing improving', y => y.pricing >= 1], pdn: ['Pricing weakening', y => y.pricing <= -1], uup: ['Utilisation rising', y => y.util > 0], capex: ['Expanding', y => y.capex === 'raised']};
+  const SORT = {score: (a, b) => b.score - a.score, cyc: (a, b) => { const s = c => { const y = cyOf(c) || {}; return (y.supply || 0) + (y.pricing || 0) + (y.util || 0); }; return s(b) - s(a) || b.score - a.score; },
+    results: (a, b) => (res(b)?.pat_yoy ?? -1e9) - (res(a)?.pat_yoy ?? -1e9), mcap: (a, b) => (b.mcapCr || 0) - (a.mcapCr || 0)};
+  const xs = r.xs.filter(c => (!f.size || sizeOf(c.mcapCr ?? byId[c.id]?.mcapCr) === f.size) && (!f.sig || (cyOf(c) && CH[f.sig][1](cyOf(c))))).sort(SORT[f.csort]);
+  const subs = lvl === 'big' ? cyData('sub').rows.filter(s => s.parent === r.name).sort((a, b) => b.xs.length - a.xs.length) : [];
+  const soon = r.xs.filter(c => up[c.id]).sort((a, b) => up[a.id].date.localeCompare(up[b.id].date));
+  const chip = (v, pos, neg, lab) => v > 0 ? `<span class="cy-c ok">${pos}</span>` : v < 0 ? `<span class="cy-c bad">${neg}</span>` : '';
+  const said = `${r.xs.length} companies in ${r.name} held a ${T.bq} call. Stage: ${CY_PH[r.ph][0].toLowerCase()}. ${r.why} Their calls average ${R(r.avg)} against ${R(T.qavg)} for all calls; ${R(r.up)}% guided up and ${R(r.cut)}% cut.${r.r.rn ? ` ${r.r.rn} have posted ${T.rlab} results: median profit ${pctS(r.r.pat)} against ${pctS(T.all.pat)} for all.` : ''}`;
+  const crow = c => { const y = cyOf(c) || {}, co = byId[c.id], rr = res(c), u = up[c.id];
+    const tr = co && co.period === c.period ? (co.triggers || []).filter(t => ['supply', 'pricing', 'util', 'structure', 'inventory'].includes(t.t) && t.q) : [];
+    return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.mcap || '')}${lvl === 'big' ? ' · ' + esc(c.sector) : ''}</span>
+        <span class="cy-cs">${y.supply >= 1 || ['cut', 'deferred', 'cancelled'].includes(y.capex) ? '<span class="cy-c ok">Supply held back</span>' : y.supply <= -1 ? '<span class="cy-c bad">Capacity being added</span>' : ''}${chip(y.pricing, 'Pricing ↑', 'Pricing ↓')}${chip(y.util, 'Utilisation ↑', 'Utilisation ↓')}${chip(y.demand, 'Demand good', 'Demand weak')}${y.capex === 'raised' ? '<span class="cy-c">Expanding</span>' : ''}</span></span>
+      <span>${scoreCell(c.score, c.veto)}<span class="small">${c.gRaised > 0 ? '<span class="g-up">▲ Raised</span>' : gcell(c.g)}</span></span>
+      <span class="small th-ev">${tr.length ? tr.slice(0, 2).map(t => `<span style="display:block;margin-bottom:4px"><span class="mini t-${esc(t.t)}">${esc(TYPES[t.t] || t.t)}</span><b>${esc(t.label)}</b> <span class="muted">“${esc(t.q.length > 200 ? t.q.slice(0, 197) + '…' : t.q)}”</span></span>`).join('') : `<span class="muted">${esc(c.top || c.thesis || '')}</span>`}</span>
+      <span class="small">${rr ? `Profit <b class="num ${rr.pat_yoy > 0 ? 'gp' : rr.pat_yoy < 0 ? 'gn' : ''}">${pctS(rr.pat_yoy)}</b><br><span class="muted">Day 1 ${rr.px?.reactDate ? pctS(rr.px.react) : '–'}</span>` : u ? `<span class="muted">Results</span><br><b>${esc(sdate(u.date))}</b>` : '<span class="muted">–</span>'}</span>
+      <span class="up-actions"><button class="btn" data-open="${esc(c.id)}" data-k="${esc(c.key)}">Open call</button></span></div>`; };
+  return head(esc(r.name), said, `
+      <ul><li><b>Signals now vs ${esc(T.prevQ || 'last quarter')}</b>: each bar is the share of the ${r.xs.length} companies whose call showed the signal; the grey tick is last quarter${r.p ? ` (${r.p.n} calls)` : ', not shown because last quarter had too few calls'}. All ${esc(T.bq)} calls are shown faintly for comparison.</li>
+      <li>The company list shows each call’s cycle reads as tags, and the supply, pricing and utilisation lines management actually said. Filter by a signal to see who is driving it.</li>
+      <li><b>Ask the calls</b> sends a question about this sector’s pricing, capacity and demand to the Ask page.</li></ul>`,
+      `<span class="pill ${CY_PH[r.ph][1]}">${CY_PH[r.ph][0]}</span>${r.thin ? '<span class="badge warn">thin: under 8 calls</span>' : ''}${focusBadge()}`) + `
+    <div class="toolbar"><button class="btn" data-cysel="">← All ${lvl === 'big' ? 'sectors' : 'sub-sectors'}</button>${r.parent ? `<button class="btn" data-cysel="${esc(r.parent)}" data-cylv="big">Sector: ${esc(r.parent)}</button>` : ''}<button class="btn primary" data-cyask="${esc(r.name)}">Ask the calls about this sector</button></div>
+    <div class="board">
+      <section class="w span3 kpi"><span class="l">Stage</span><span class="v" style="color:${CY_PH[r.ph][2]};font-size:26px">${CY_PH[r.ph][0]}</span><span class="l">${esc(CY_SHORT[r.ph])}</span></section>
+      <section class="w span3 kpi"><span class="l">Supply net · pricing net</span><span class="v">${cyNet(r.b.sup)} · ${cyNet(r.b.pr)}</span><span class="l">all calls ${cyNet(T.allB.sup)} · ${cyNet(T.allB.pr)}</span></section>
+      <section class="w span3 kpi"><span class="l">Average score</span><span class="v" style="color:${vcol(R(r.avg))}">${R(r.avg)}</span><span class="l">${thPts(r.edge)} vs all calls · guiding up ${R(r.up)}% / cut ${R(r.cut)}%</span></section>
+      <section class="w span3 kpi"><span class="l">${esc(T.rlab || 'Next')} results · median profit</span><span class="v">${r.r.rn ? pctS(r.r.pat) : '–'}</span><span class="l">${r.r.rn ? `${r.r.rn} in · ${thPct(r.r.beat)} beat · day 1 ${pctS(r.r.d1)}` : 'none filed yet'} · all ${pctS(T.all.pat)}</span></section>
+      <section class="w span${subs.length ? 7 : 12}"><div class="w-head"><h3>Signals now vs ${esc(T.prevQ || 'last quarter')}</h3><span class="small muted">share of companies · click to filter the list</span></div>
+        <div class="cy-sig">${CY_SIG.map(([k, n, d, col]) => `<button class="cy-row" data-cysig="${CH[k] ? k : ''}" ${CH[k] ? '' : 'disabled'} aria-pressed="${f.sig === k}" ${d ? `data-tt="${ttA(d)}"` : ''}><span>${n}</span>
+          <span class="cy-tr"><i style="width:${r.b[k]}%;background:${col}"></i>${r.p ? `<em style="left:${r.p[k]}%" title="${esc(T.prevQ)}: ${R(r.p[k])}%"></em>` : ''}<s style="left:${T.allB[k]}%" title="All calls: ${R(T.allB[k])}%"></s></span>
+          <span class="num">${R(r.b[k])}% ${r.p ? cyDelta(r.b[k], r.p[k]) : ''}</span></button>`).join('')}</div>
+        <div class="w-foot"><span>Bar: ${esc(T.bq)} · dark tick: ${esc(T.prevQ || 'last quarter')} · faint tick: all ${esc(T.bq)} calls.</span></div></section>
+      ${subs.length ? `<section class="w span5"><div class="w-head"><h3>Sub-sectors</h3></div><div class="rows mini-list">${subs.map(s => `<button class="r" data-cysel="${esc(s.name)}" data-cylv="sub"><span style="min-width:0"><span class="nm" style="display:block;font-size:12px">${esc(s.name)}</span><span class="sub">${s.xs.length} companies · pricing net ${cyNet(s.b.pr)}</span></span><span class="pill ${CY_PH[s.ph][1]}">${CY_PH[s.ph][0]}</span></button>`).join('')}</div></section>` : ''}
+    </div>
+    ${soon.length ? `<section><div class="list-head"><h3>Reporting soon</h3><button class="link" data-v="pead">Results to watch →</button></div><div class="chips">${soon.slice(0, 16).map(c => `<button class="chip" data-open="${esc(c.id)}">${esc(c.name.replace(/ Ltd\.?$/, ''))} · <b class="num" style="color:${vcol(c.score)}">${c.score}</b> · ${esc(sdate(up[c.id].date))}</button>`).join('')}</div></section>` : ''}
+    <section><div class="list-head"><h3>Companies</h3><span class="small muted">${xs.length} of ${r.xs.length}</span></div>
+      <div class="toolbar">
+        <select id="cy-csort" aria-label="Sort companies">${[['cyc', 'Strongest cycle reads'], ['score', 'Highest score'], ['results', 'Best profit growth'], ['mcap', 'Largest first']].map(([k, n]) => `<option value="${k}" ${f.csort === k ? 'selected' : ''}>${n}</option>`).join('')}</select>
+        ${['large', 'mid', 'small', 'micro'].map(k => `<button class="chip" data-cyz="${k}" aria-pressed="${f.size === k}">${{large: 'Large', mid: 'Mid', small: 'Small', micro: 'Micro'}[k]}</button>`).join('')}
+        ${f.sig ? `<button class="chip" data-cysig="${f.sig}" aria-pressed="true">${esc(CH[f.sig][0])} ✕</button>` : ''}
+      </div>
+      <div class="rows th-co"><div class="r hd"><span>Company · cycle reads</span><span>Score · guidance</span><span>What they said on supply, pricing, utilisation</span><span>${esc(T.rlab || 'Next')} results</span><span></span></div>${xs.map(crow).join('') || '<div class="empty">No companies match these filters.</div>'}</div></section>`;
 }
 
 /* Themes */
@@ -2484,7 +2646,7 @@ function vHelp() {
       <div><b>First-time callers</b><span>Companies holding their first-ever earnings call. Useful for finding names before they get coverage.</span></div>
       <div><b>Sector tracker</b><span>All sectors and sub-sectors: how many companies have reported, what came in today, average score, guidance and best call. Updated daily.</span></div>
       <div><b>Guidance leaders</b><span>Sub-sectors ranked by how strongly management is guiding up, and the weakest ones.</span></div>
-      <div><b>Sector turns</b><span>Sub-sectors where supply discipline is building and pricing or utilisation is improving. This is the early sign of a turn.</span></div>
+      <div><b>Sector turns</b><span>Where each sector and sub-sector sits in the capital cycle, read from its companies’ calls: is industry supply being held back or added, is pricing and utilisation improving, and is demand talk strong yet. Stages run Turning up (early), Upswing (confirmed), Overbuilding (late) and Downswing. A cycle map and the results of each stage come first; click a sector for its signals against last quarter, its sub-sectors and every company with what it said on supply and pricing.</span></div>
       <div><b>Themes</b><span>The big ideas managements raise on their calls. A map shows which themes are spreading and whether the stronger companies are the ones talking about them; the table adds guidance and how those companies did in the results that followed. Click a theme for its trend, sectors, size mix, related themes, the companies discussing it with the line each one said, and who reports next.</span></div>
       <div><b>Results to watch (PEAD)</b><span>Small, mid and micro caps reporting in the days ahead whose last concall points to a strong quarter, with the reasons for and against, and a list of names that look good on score but where last quarter may not repeat. After results it shows which shortlisted names beat and rose on day 1 (the usual entry signal for a post-results drift trade), and a live track record of how the shortlist has done this season.</span></div>
       <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the reasons and the lines from the call that say so. Uses the same Concall Signal Score as every other page. Filter to names whose next results are still to come.</span></div>
@@ -2802,6 +2964,13 @@ document.addEventListener('click', e => {
   const st = t.closest('[data-st]'); if (st) { S.turns.stage = st.dataset.st; render(); return; }
   const tl = t.closest('[data-tl]'); if (tl) { S.turns.level = tl.dataset.tl; render(); return; }
   const mgt = t.closest('[data-mg]'); if (mgt) { const k = mgt.dataset.mg; S.mg[k] = !S.mg[k]; render(); return; }
+  const cys = t.closest('[data-cysel]'); if (cys) { Object.assign(S.cy, {sel: cys.dataset.cysel ? {name: cys.dataset.cysel, lvl: cys.dataset.cylv || S.cy.sel?.lvl || S.cy.lvl} : null, size: '', sig: '', csort: 'cyc'}); if (S.drawer) closeCo(); if (S.view !== 'turns') go('turns'); else render(true); return; }
+  const cyp = t.closest('[data-cyph]'); if (cyp) { S.cy.ph = S.cy.ph === cyp.dataset.cyph ? '' : cyp.dataset.cyph; render(); return; }
+  const cyl = t.closest('[data-cylvl]'); if (cyl) { S.cy.lvl = cyl.dataset.cylvl; render(); return; }
+  if (t.closest('[data-cythin]')) { S.cy.thin = !S.cy.thin; render(); return; }
+  const cyz = t.closest('[data-cyz]'); if (cyz) { S.cy.size = S.cy.size === cyz.dataset.cyz ? '' : cyz.dataset.cyz; render(); return; }
+  const cyg = t.closest('[data-cysig]'); if (cyg) { if (cyg.dataset.cysig) { S.cy.sig = S.cy.sig === cyg.dataset.cysig ? '' : cyg.dataset.cysig; render(); } return; }
+  const cya = t.closest('[data-cyask]'); if (cya) { S.ask.q = `What are ${cya.dataset.cyask} companies saying about industry capacity, pricing and demand?`; go('ask'); setTimeout(() => { const q = $('#ask-q'); if (q) q.value = S.ask.q; askRun(ASK.sample === null ? 'keyword' : 'ai'); }, 60); return; }
   const ths = t.closest('[data-thsel]'); if (ths) { Object.assign(S.th, {sel: ths.dataset.thsel || null, size: '', sec: '', raised: false, csort: 'score'}); if (S.drawer) closeCo(); if (S.view !== 'themes') go('themes'); else render(true); return; }
   const thc = t.closest('[data-thc]'); if (thc) { const k = thc.dataset.thc; S.th[k] = !S.th[k]; render(); return; }
   const thz = t.closest('[data-thz]'); if (thz) { S.th.size = S.th.size === thz.dataset.thz ? '' : thz.dataset.thz; render(); return; }
@@ -2853,6 +3022,8 @@ document.addEventListener('change', e => {
   if (id === 'rs-days') { S.rs.days = +e.target.value; S.rs.limit = 100; S.rs.climit = 36; render(); }
   if (id === 'pf-sort') { S.pf = {sort: e.target.value}; render(); }
   if (id === 'rs-sort') { S.rs.sort = e.target.value; S.rs.dir = -1; S.rs.climit = 36; render(); }
+  if (id === 'cy-sort') { S.cy.sort = e.target.value; render(); }
+  if (id === 'cy-csort') { S.cy.csort = e.target.value; render(); }
   if (id === 'th-sort') { S.th.sort = e.target.value; render(); }
   if (id === 'th-csort') { S.th.csort = e.target.value; render(); }
   if (id === 'pd-days') { S.pd.days = +e.target.value; render(); }
@@ -2891,6 +3062,6 @@ $('#find').addEventListener('focus', renderFind);
   render();
   if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
   loadSums().then(() => renderNav());  /* near-term count uses lines from the summaries */
-  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'portfolio', 'pead', 'themes'].includes(S.view)) render(); });
+  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'portfolio', 'pead', 'themes', 'turns'].includes(S.view)) render(); });
 })();
 </script>
