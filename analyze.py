@@ -22,6 +22,37 @@ WATCH_RX = re.compile(r"receivable|debtor days|working capital|related.party|ple
 BSE_ATTACH = "https://www.bseindia.com/xml-data/corpfiling/AttachLive/{f}"
 
 
+SUMMARY_PART_BYTES = 8_000_000  # each published file must stay under the artifact's 16 MB per-file limit
+
+
+def write_summary_parts(market: str, summaries: dict) -> None:
+    """Write call summaries as several compact files of at most SUMMARY_PART_BYTES each
+    (summaries_<m>_1.json, _2, ...) plus a small index at summaries_<m>.json listing them.
+    The dashboard reads the index, fetches every part in parallel and merges them."""
+    import json
+    m = market.lower()
+    out = SITE / "data"
+    parts, cur, size = [], {}, 2
+    for key in sorted(summaries):
+        n = len(json.dumps({key: summaries[key]}, ensure_ascii=False, separators=(",", ":"), default=str).encode()) - 1
+        if cur and size + n > SUMMARY_PART_BYTES:
+            parts.append(cur)
+            cur, size = {}, 2
+        cur[key] = summaries[key]
+        size += n
+    if cur or not parts:
+        parts.append(cur)
+    names = []
+    for i, part in enumerate(parts, 1):
+        name = f"summaries_{m}_{i}.json"
+        write_json(out / name, part, compact=True)
+        names.append(f"data/{name}")
+    for stale in out.glob(f"summaries_{m}_*.json"):
+        if f"data/{stale.name}" not in names and re.fullmatch(rf"summaries_{m}_\d+\.json", stale.name):
+            stale.unlink()
+    write_json(out / f"summaries_{m}.json", {"parts": names, "count": len(summaries)})
+
+
 def clip(x, lo=-1.0, hi=1.0):
     return max(lo, min(hi, x))
 
@@ -628,7 +659,7 @@ def build(market: str, log=print) -> dict:
     tracker = build_tracker(calls, current, market, cls, comps)
     trackers = {label_from_key(p, market): build_tracker(calls, p, market, cls, comps)
                 for p in shown + later if any(c["periodKey"] == p for c in calls)}
-    write_json(SITE / "data" / f"summaries_{market.lower()}.json", summaries)
+    write_summary_parts(market, summaries)
     calendar = None
     if market == "IN":
         import calendar_in

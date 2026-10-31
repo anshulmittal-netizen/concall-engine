@@ -2859,7 +2859,12 @@ function watchSoon() {
 /* the separate file is refreshed through the day; in.json carries a copy from the nightly build. Use the newer. */
 const loadRes = () => RES.data ? Promise.resolve(RES.data) : (RES.p = RES.p || fetch('data/results_in.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : {}).catch(() => ({}))
   .then(j => { const a = j || {}, b = (D && D.results) || {}; return (RES.data = (b.checked || '') > (a.checked || '') ? b : a); }));
-const loadSums = () => SUMS.data ? Promise.resolve(SUMS.data) : (SUMS.p = SUMS.p || fetch('data/summaries_in.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(j => (SUMS.data = j || {})));
+/* summaries_in.json is an index {parts: [paths], count}; the summaries themselves are split across those parts
+   (each kept under the per-file size limit) and merged here. An old single-file summaries_in.json still loads as is. */
+const getJson = u => fetch(u, {cache: 'no-store'}).then(r => r.ok ? r.json() : {}).catch(() => ({}));
+const loadSums = () => SUMS.data ? Promise.resolve(SUMS.data) : (SUMS.p = SUMS.p || getJson('data/summaries_in.json').then(j =>
+  j && Array.isArray(j.parts) ? Promise.all(j.parts.filter(p => /^data\/summaries_in_\d+\.json$/.test(p)).map(getJson)).then(ps => Object.assign({}, ...ps.map(p => p || {}))) : j
+).then(j => (SUMS.data = j || {})));
 function hlq(q, hl) { const s = esc(q); if (!hl) return s; const h = esc(hl), i = s.indexOf(h); return i < 0 ? s : s.slice(0, i) + `<mark class="hl">${h}</mark>` + s.slice(i + h.length); }
 function spark(vals, labels) {
   if (!vals || vals.length < 2) return '<p class="small muted">The score history line appears from the company’s second call.</p>';
