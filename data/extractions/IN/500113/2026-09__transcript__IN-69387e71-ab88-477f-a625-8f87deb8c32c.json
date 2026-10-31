@@ -1,0 +1,372 @@
+{
+ "doc_id": "IN-69387e71-ab88-477f-a625-8f87deb8c32c",
+ "market": "IN",
+ "company_id": "500113",
+ "name": "Steel Authority of India Ltd",
+ "doc_type": "transcript",
+ "date": "2026-10-31",
+ "period": "2026-09",
+ "title": "Steel Authority of India Ltd - 500113 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "SAIL Q2 FY27 volumes up 5% YoY and EBITDA up to INR4,561 crore with inventory down to 15 days, but FY27 volume guidance cut to ~21 Mt from 22 Mt and iron ore sales target trimmed to 7-8 Mt.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 2,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "Crude steel production in Q2 is 4.85 million tons with a growth of 2% over Q1 and 4% over Q2 last year."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Our projects in IISCO Steel Plant are the ones where the cash flows are going to increase immediately."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Steel inventory 2.15 → 1.59 Mt",
+    "quote": "By 30th September, total steel inventory stands at 1.59 million tons",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Oct NSR up ~INR4,000/t over Q2",
+    "quote": "the month of October, the long NSR is INR58,700, flat is INR61,700. Means around INR4,000 increase over Q2.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 volume cut 22 → 21 Mt",
+    "quote": "We are looking at 21 million tons right now.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Capex FY27 ~INR15,000 cr; INR1.2 lakh cr over 4 yrs",
+    "quote": "Because in 4 years, we have to spend around INR1,20,000 crores on capex.",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year sales volume",
+    "value": "~21 million tonnes",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "Maybe around 21 million tons because in H1, we achieved 9.33 million tons."
+   },
+   {
+    "metric": "Capex",
+    "value": "INR15,000 crore FY27 (H2 INR9,000-10,000 crore)",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "This year our guidance is for INR15,000 crores."
+   },
+   {
+    "metric": "Iron ore third-party sales",
+    "value": "7-8 million tonnes",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "our target is around 7 million to 8 million tons for this year."
+   },
+   {
+    "metric": "Cost reduction",
+    "value": "not quantified",
+    "change": "not_discussed",
+    "horizon": "FY27",
+    "quote": "actions being taken on efficiency improvement and cost reduction front"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Full-year sales volume",
+    "outcome": "dropped",
+    "quote": "Maybe around 21 million tons because in H1, we achieved 9.33 million tons."
+   },
+   {
+    "metric": "Capex",
+    "outcome": "met",
+    "quote": "H1 figure is INR5,500 crores, which is almost at the same level as the BE target."
+   },
+   {
+    "metric": "Iron ore third-party sales",
+    "outcome": "missed",
+    "quote": "There are issues not in Odisha Group of Mines, issues in Jharkhand Group of Mine because of on the price front as well as approval front"
+   },
+   {
+    "metric": "Cost reduction",
+    "outcome": "not_discussed",
+    "quote": "actions being taken on efficiency improvement and cost reduction front"
+   }
+  ],
+  "entities": [
+   {
+    "name": "RINL",
+    "relation": "supplier"
+   },
+   {
+    "name": "NMDC",
+    "relation": "partner"
+   },
+   {
+    "name": "NSL",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Railway capex",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Coal cost up INR1,700/t vs prior guidance of cut",
+    "quote": "it has increased to INR22,930 per ton, which is INR1,700 per ton because of the geopolitical situations"
+   },
+   {
+    "label": "Return ratios single-digit; FPO and debt-funded INR1.2 lakh cr capex",
+    "quote": "it would put pressure on return ratios, which are already in single-digit percentage."
+   },
+   {
+    "label": "Labour code provision INR350 cr; quarter EBITDA/t down",
+    "quote": "our labor code related expenses, which was INR198 crores this quarter and overall INR350 crores"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 4,
+   "growth": 3,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Iron ore sales Q2 split",
+    "quote": "Quarter 2, almost kind of 1.1 million ton to 1.2 million ton would be in quarter 1. This is my guesswork."
+   },
+   {
+    "topic": "Funding mix for expansion",
+    "quote": "So the rest will come through debt. And debt will come based on the incremental requirements"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "SAIL Q2 FY27 PAT rose to INR1,774 crore on 5.2 MT sales and EBITDA of INR4,561 crore, despite higher imported coking coal costs.",
+  "overview": "SAIL's Q2 FY27 sales volume rose 24% QoQ to 5.2 MT and turnover reached INR31,766 crore (+20% YoY), with EBITDA of INR4,561 crore and PAT of INR1,774 crore. Imported coking coal rose about INR1,700/t QoQ to INR22,930/t, compressing margins, though volume, inventory reduction and high-end mix offset it. Borrowings fell to INR20,583 crore and inventory dropped to 1.59 MT, while management guided to about 21 MT FY27 sales (cut from 22 MT) and a capex step-up to INR15,000 crore this year and over INR1.2 lakh crore over FY27-FY31. Management said Q3 and Q4 prices and technical parameters should improve, with October NSR up about INR4,000/t over the Q2 average.",
+  "segments": [
+   {
+    "name": "Iron ore fines (external sales)",
+    "commentary": "H1 sales about 2.5 MT vs 0.9 MT last year (+167%), with profit of INR388 crore vs INR124 crore CPLY. FY27 target is 7-8 MT vs internal 10 MT target."
+   },
+   {
+    "name": "Rails and bars",
+    "commentary": "Rails were about 8% of volume and bar and rod about 22% of production volume; rails hold a larger share of turnover. Rail sales expected at 1.2-1.3 MT this year."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 saleable steel sales guidance cut to about 21 MT from 22 MT, with H1 at 9.33 MT; includes about 0.5 MT of RINL volume and no NMDC sales.",
+   "FY27 iron ore production now expected at 48-50 MT vs 56 MT internal target; H1 was about 19.5-20 MT.",
+   "FY27 capex guidance INR15,000 crore (H1 INR5,500 crore; Q3+Q4 INR9,000-10,000 crore); FY28 above INR20,000 crore, FY29 about INR25,000 crore; about INR1.2 lakh crore over FY27-FY31.",
+   "Imported coking coal guided at about INR23,500/t in Q3 and about INR22,000-23,000/t in Q4; Q3 average around INR23,800-23,900/t (about INR1,000 above Q2).",
+   "Inventory target of 1.2-1.3 MT by year-end (15 days at 30 Sep vs 17.5 days at 31 Mar); plants and ports target 30-35 days.",
+   "Employee count expected at about 46,000 by FY27 year-end and 26,000 by 2031; separations of 3,000-4,000 a year plus VRS.",
+   "Interest cost may rise in H2 after a 25 bp repo hike; management expects debt to rise from FY28 as capex ramps."
+  ],
+  "capex_capacity": [
+   "Expansion from 20 MT to 35 MT across IISCO, Bokaro, Bhilai and Rourkela; IISCO packages already ordered and work started, Bokaro in advanced tendering, Bhilai tendering to start shortly, Rourkela DPR ready for in-principle approval.",
+   "Rowghat iron ore mine: interim mining at about 3 MT under EC; ramp-up path 2, 3, 4, 6, 9, 14 MT over 3-4 years after MDO main mining starts (1+ year away).",
+   "Tasra coking coal mine to start production from January 2027, expected to lower imported coking coal dependence.",
+   "Gua mines to expand from 4 MT to 10 MT via MDO appointment; 2 MT RSP pellet plant on course and in advanced stage.",
+   "Long-term aspiration of 100 MT iron ore by FY31-32 (80-85 MT is the fallback); excludes Chiria."
+  ],
+  "demand_pricing": [
+   "Q2 average NSR was about INR54,400/t long and INR57,000/t flat (average INR55,500/t); October NSR is INR58,700/t long and INR61,700/t flat, about INR4,000/t above Q2.",
+   "Imported coal index (Platts) peaked at $290/t in August and stabilised at $266-267/t.",
+   "Q2 EBITDA hit by rainy-season furnace and raw material issues in Jharkhand and Odisha; technical parameters improved in October.",
+   "Rail price revision had about INR300 crore positive impact in Q1 and nil in Q2.",
+   "Q2 EBITDA per tonne about INR8,170 vs H1 about INR9,561; management targets INR11,000-12,000/t levels in Q3-Q4.",
+   "Management cited WSA forecast of 1.7% global steel demand growth in CY27 and India consumption growth of about 8% in CY26 and CY27."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why raise equity upfront when capex spans 4-5 years, given single-digit return ratios?",
+    "answer": "Management agreed timing matters and said the FPO will be timed to investor confidence; capex will be funded through about INR50,000 crore of internal accruals over 4 years, with debt and FPO later."
+   },
+   {
+    "question": "Will FY27 volume still be 22 MT and does it include RINL and NMDC?",
+    "answer": "Guidance is now about 21 MT given H1 of 9.33 MT; it includes RINL (H1 184,000 t, Q2 88,000 t, full-year up to 0.5 MT) but excludes NMDC."
+   },
+   {
+    "question": "Imported coal price outlook, given earlier guidance of a INR1,000-2,000 decline?",
+    "answer": "Q2 average was INR22,930/t, Q3 expected about INR23,500 and Q4 about INR22,000-23,000; management said there was no change in accounting policy and the earlier view assumed prices would fall."
+   },
+   {
+    "question": "Capex ramp-up and annual spend trajectory?",
+    "answer": "FY27 capex guided at INR15,000 crore, FY28 above INR20,000 crore, FY29 INR25,000 crore; about INR1.2 lakh crore spend over FY27-FY31, confirmed as FY27-FY31."
+   },
+   {
+    "question": "Labour code provision of INR198 crore in Q2 (INR350 crore cumulative)?",
+    "answer": "Booked under other expenses (repairs and maintenance line) on best estimate using infrastructure rates; final industrial rates are not yet notified, so plus or minus adjustments are possible."
+   },
+   {
+    "question": "Iron ore sales quarterly split and issues?",
+    "answer": "Q1 was about 1.0-1.1 MT and Q2 about 1.1-1.2 MT (management estimates); constraints are permits and pricing in Jharkhand, with Rowghat and Dalli-Rajhara as sources for Chhattisgarh."
+   }
+  ],
+  "risks_watch": [
+   "Imported coking coal prices (INR23,500-24,000/t in Q3 per guidance) and coal-driven margin pressure.",
+   "Sales volume trajectory vs 21 MT guidance; inventory reduction to 1.2-1.3 MT depends on Q3-Q4 volume.",
+   "Iron ore external sales (7-8 MT target) constrained by Jharkhand permits and pricing; Rowghat ramp-up depends on MDO main mining.",
+   "Capex of about INR1.2 lakh crore over FY27-FY31 with debt rising from FY28; FPO timing and dilution impact on return ratios.",
+   "Labour code provision of INR350 crore may move once final rates are notified; higher repo rate may lift borrowing cost in H2.",
+   "Iron ore production guidance cut to 48-50 MT vs 56 MT internal target."
+  ],
+  "management_tone": "Confident on volume, debt and margin recovery and on Q3-Q4 seasonality, but cautious on coal costs and FY27 volume, which was trimmed. Evasive on the FPO timing, expansion funding and the Rowghat and Gua timelines, which were framed as staggered or \"ambitious\".",
+  "key_quotes": [
+   "Quarter 3 and quarter 4 are traditionally the strongest quarter for steel industry and for the steel companies as well.",
+   "So we are actively pursuing those things, and these are at different, different stages of tendering and in its approval stages.",
+   "Generally, it is around 6 months, somewhere wise because of the systems and procedures."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Q2 FY27 sales volume",
+    "value": "5.2 MT",
+    "change": "+5% YoY, +24% QoQ"
+   },
+   {
+    "metric": "Q2 FY27 crude steel production",
+    "value": "4.85 MT",
+    "change": "+4% YoY, +2% QoQ"
+   },
+   {
+    "metric": "Q2 FY27 sales turnover",
+    "value": "INR31,766 crore",
+    "change": "+20% YoY, +22% QoQ"
+   },
+   {
+    "metric": "Q2 FY27 EBITDA",
+    "value": "INR4,561 crore",
+    "change": "Not stated"
+   },
+   {
+    "metric": "Q2 FY27 PBT",
+    "value": "INR2,356 crore",
+    "change": "vs INR553 crore CPLY, INR2,159 crore Q1"
+   },
+   {
+    "metric": "Q2 FY27 PAT",
+    "value": "INR1,774 crore",
+    "change": "vs INR427 crore CPLY, INR1,636 crore Q1"
+   },
+   {
+    "metric": "H1 FY27 EBITDA",
+    "value": "INR8,917 crore",
+    "change": "+55% YoY"
+   },
+   {
+    "metric": "H1 FY27 PAT",
+    "value": "INR3,410 crore",
+    "change": "+207% YoY"
+   },
+   {
+    "metric": "Borrowings at 30 Sep 2026",
+    "value": "INR20,583 crore",
+    "change": "-INR1,146 crore QoQ, -INR1,080 crore vs 31 Mar"
+   },
+   {
+    "metric": "Debt-equity ratio",
+    "value": "0.34x",
+    "change": "Improved"
+   },
+   {
+    "metric": "Cost of borrowings H1 FY27",
+    "value": "6.34%",
+    "change": "vs 6.42% last year"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Expansion from 20 MT to 35 MT across IISCO, Bokaro, Bhilai and Rourkela; IISCO packages ordered and work started, Bokaro in advanced tendering, Bhilai tendering",
+    "size_pct": 75.0,
+    "capex_cr": null,
+    "q": null,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "Tasra coking coal mine (raw material, not steel capacity) starting production January 2027",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "approved",
+    "mat": "minor"
+   },
+   {
+    "what": "Gua iron ore mine expansion from 4 MT to 10 MT via MDO appointment",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "planned",
+    "mat": "minor"
+   },
+   {
+    "what": "2 MT RSP pellet plant, on course and in advanced stage",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Rowghat iron ore mine: interim mining about 3 MT under EC; ramp-up 2, 3, 4, 6, 9, 14 MT over 3-4 years after MDO main mining starts (1+ year away)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "approved",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": -1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": 20.0,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "FY27 sales volume guidance cut to about 21 MT from 22 MT (H1 at 9.33 MT), while Q2 turnover rose 20% YoY and October NSR is about INR4,000/t above Q2 average; the 20-to-35 MT expansion has IISCO packages ordered but no commissioning date given, so backing is only partial.",
+  "mgmt": null
+ }
+}
