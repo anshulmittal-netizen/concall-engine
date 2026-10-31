@@ -15,6 +15,10 @@ on:
         description: "Only summaries + growth reads, then rebuild the site (no fetch or extract)"
         type: boolean
         default: false
+      only_about:
+        description: "Only write the missing one-line business introductions, then rebuild the site"
+        type: boolean
+        default: false
 
 concurrency: { group: engine-data, cancel-in-progress: false }
 
@@ -43,6 +47,10 @@ jobs:
           ARGS=""
           if [ -n "${{ inputs.since }}" ]; then ARGS="$ARGS --since ${{ inputs.since }}"; fi
           if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          if [ "${{ inputs.only_about }}" = "true" ]; then
+            python run.py about --market IN && python run.py analyze --market IN || { python run.py analyze --market IN; exit 1; }
+            exit 0
+          fi
           if [ "${{ inputs.only_summaries }}" = "true" ]; then
             python run.py summarize --market IN && python run.py growth --market IN && python run.py analyze --market IN || { python run.py analyze --market IN; exit 1; }
             exit 0

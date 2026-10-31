@@ -279,6 +279,7 @@ def build(market: str, log=print) -> dict:
     uni, manifest, by_co = load(market)
     comps = uni["companies"]
     tmap = theme_mapper()
+    about_lines = read_json(DATA / f"about_{market}.json", {}) or {}  # one line per company: what the business does
 
     # 1) per company, per period merged records
     recs = {}  # cid -> {period: rec}
@@ -475,6 +476,7 @@ def build(market: str, log=print) -> dict:
             "triggers": [{"t": t["type"], "label": t["label"], "q": t.get("quote", ""), "hl": t.get("highlight", "")} for t in r["triggers"]],
             "flags": r["flags"], "blocks": r["blocks"], "util": r["util"], "capex": r["capex"],
             "hist": hist[-cfg["periods_shown"]:], "histLabels": [label_from_key(k, market) for k in keys][-cfg["periods_shown"]:],
+            "about": about_lines.get(cid, {}).get("line", ""),
             "themes": r["themes"], "verified": r["verified"], "breakdown": r.get("breakdown"),
             "growth": r.get("growth"), "planFlag": (r.get("breakdown") or {}).get("parts", [{}])[0].get("in", [{}])[0].get("flag", ""),
             "sources": [source_link(d, manifest, market) for d in r["docs"]],

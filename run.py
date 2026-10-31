@@ -219,6 +219,11 @@ def cmd_growth(a):
     growth.run(a.market, a.limit, log)
 
 
+def cmd_about(a):
+    import about
+    about.run(a.market, a.limit, log)
+
+
 def cmd_mgmt(a):
     import mgmt
     days = a.days or 2
@@ -270,6 +275,10 @@ def cmd_all(a):
             cmd_growth(a2)
         except Exception as ex:  # never let the growth reads stop the night's run
             log(f"growth reads skipped: {ex}")
+        try:
+            cmd_about(a2)
+        except Exception as ex:  # never let the about lines stop the night's run
+            log(f"about lines skipped: {ex}")
     try:  # who asked questions on each call: read from the transcript text, no model calls
         import participants
         participants.run(a.market, get_text, log)
@@ -280,7 +289,7 @@ def cmd_all(a):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "mgmt", "history", "participants", "analyze", "all", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "about", "mgmt", "history", "participants", "analyze", "all", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
@@ -289,7 +298,7 @@ def main(argv=None):
     a = p.parse_args(argv)
     if a.command != "serve" and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "mgmt": cmd_mgmt, "history": cmd_history, "participants": cmd_participants, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "about": cmd_about, "mgmt": cmd_mgmt, "history": cmd_history, "participants": cmd_participants, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":

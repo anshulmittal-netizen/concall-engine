@@ -563,6 +563,9 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
 .fc:hover .fc-face{box-shadow:var(--shadow2);border-color:color-mix(in srgb,var(--gc) 35%,var(--line))}
 .fc-back{transform:rotateY(180deg);background:linear-gradient(160deg,color-mix(in srgb,var(--gc) 7%,var(--panel)),var(--panel) 60%)}
 .fc.wfc .fc-face{border-color:color-mix(in srgb,var(--saffron) 55%,var(--line))}
+.about-l{display:block;font-size:11.5px;line-height:1.45;color:var(--muted);margin-top:3px}
+.about-dr{display:block;font-size:13.5px;line-height:1.5;color:var(--fg);opacity:.86;margin-top:7px;max-width:70ch}
+.r .about-l{font-size:11px;margin-top:2px}
 .fc-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
 .fc-head h4{font-size:15px;font-weight:600;line-height:1.22;margin-top:6px}
 .fc-when{display:grid;justify-items:end;gap:2px;flex:none;font-size:10px;color:var(--muted)}
@@ -804,6 +807,9 @@ function verdict(score, veto) {
 const vcol = (s, veto) => veto ? 'var(--v1)' : s >= 70 ? 'var(--v5)' : s >= 60 ? 'var(--v4)' : s >= 50 ? 'var(--muted)' : s >= 40 ? 'var(--warn)' : 'var(--v1)';
 const vpill = (s, veto) => { const v = verdict(s, veto); return `<span class="pill ${v.c}">${v.w}</span>`; };
 const scoreCell = (s, veto, i = 0) => `<span class="scorecell"><b style="color:${vcol(s, veto)}">${s}</b><span class="sbar"><i style="width:${s}%;background:${vcol(s, veto)};animation-delay:${Math.min(i, 20) * .02}s"></i></span>${vpill(s, veto)}</span>`;
+/* one plain line on what the business does (engine: about.py), shown wherever a company is introduced */
+const aboutOf = id => byId[id]?.about || '';
+const aboutP = (id, cls = 'about-l') => (a => a ? `<span class="${cls}">${esc(a)}</span>` : '')(aboutOf(id));
 const dcell = d => d ? `<span class="delta ${d > 0 ? 'up' : 'dn'}">${d > 0 ? '▲' : '▼'}${Math.abs(d)}</span>` : '<span class="delta zero">–</span>';
 const gcell = g => g > 0 ? '<span class="g-up">▲ Raised</span>' : g < 0 ? '<span class="g-dn">▼ Cut</span>' : '<span class="g-flat">Steady</span>';
 const gword = g => g == null ? '' : g >= 60 ? 'Raising' : g <= 40 ? 'Cutting' : 'Mixed';
@@ -1041,7 +1047,7 @@ const qBadge = () => `<span class="badge${inProg(curQ()) ? ' warn' : ''}">${curQ
 function companyRow(c, i, opts = {}) {
   return `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key || '')}">
     <span class="rk c-rk">${opts.rank ?? i + 1}</span>
-    <span class="c-co" style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}${esc(c.period || '')}${(n => n ? ` · ${n} on the call` : '')(callPeople(c.key || '').length)}</span></span>
+    <span class="c-co" style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}${esc(c.period || '')}${(n => n ? ` · ${n} on the call` : '')(callPeople(c.key || '').length)}</span>${aboutP(c.id)}</span>
     <span class="c-sc">${scoreCell(c.score, c.veto, i)}</span>
     <span class="c-ch">${dcell(c.delta)}</span>
     <span class="c-sec sub" style="min-width:0">${esc(c.sector)}${c.bigSector && c.bigSector !== c.sector ? '<br>' + esc(c.bigSector) : ''}</span>
@@ -1553,7 +1559,7 @@ function rsCard(r, i) {
     <div class="fc-in">
       <div class="fc-face fc-front">
         <div class="fc-head"><div style="min-width:0"><span class="pill" style="--pc:var(--${gv})">${esc(gl)}</span>
-          <h4>${star(r.id)}${esc(r.name)}</h4><span class="small muted">${esc(r.label)} · ${esc(r.sector || '')}${r.mcap ? ' · ' + esc(r.mcap) : ''}</span></div>
+          <h4>${star(r.id)}${esc(r.name)}</h4><span class="small muted">${esc(r.label)} · ${esc(r.sector || '')}${r.mcap ? ' · ' + esc(r.mcap) : ''}</span>${aboutP(r.id)}</div>
           <span class="fc-when"><b>${esc(sdate(r.filed))}</b><span>${esc(r.filed.slice(11, 16))} IST</span><span class="basis" title="${esc(r.basis)}">${r.basis === 'Consolidated' ? 'C' : 'S'}</span></span></div>
         ${rsPrice(r)}
         <div class="fm-list">${rsMetric(r.revLabel, r.rev, r.rev_prev_yoy, r.rev_yoy, 0)}${rsMetric(r.opLabel, r.op, r.op_prev_yoy, r.op_yoy, 1)}${rsMetric('Profit (PAT)', r.pat, r.pat_prev_yoy, r.pat_yoy, 2)}</div>
@@ -2080,7 +2086,7 @@ function vTurn(T, r) {
   const said = `${r.xs.length} companies in ${r.name} held a ${T.bq} call. Stage: ${CY_PH[r.ph][0].toLowerCase()}. ${r.why} Their calls average ${R(r.avg)} against ${R(T.qavg)} for all calls; ${R(r.up)}% guided up and ${R(r.cut)}% cut.${r.r.rn ? ` ${r.r.rn} have posted ${T.rlab} results: median profit ${pctS(r.r.pat)} against ${pctS(T.all.pat)} for all.` : ''}`;
   const crow = c => { const y = cyOf(c) || {}, co = byId[c.id], rr = res(c), u = up[c.id];
     const tr = co && co.period === c.period ? (co.triggers || []).filter(t => ['supply', 'pricing', 'util', 'structure', 'inventory'].includes(t.t) && t.q) : [];
-    return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.mcap || '')}${lvl === 'big' ? ' · ' + esc(c.sector) : ''}</span>
+    return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.mcap || '')}${lvl === 'big' ? ' · ' + esc(c.sector) : ''}</span>${aboutP(c.id)}
         <span class="cy-cs">${y.supply >= 1 || ['cut', 'deferred', 'cancelled'].includes(y.capex) ? '<span class="cy-c ok">Supply held back</span>' : y.supply <= -1 ? '<span class="cy-c bad">Capacity being added</span>' : ''}${chip(y.pricing, 'Pricing ↑', 'Pricing ↓')}${chip(y.util, 'Utilisation ↑', 'Utilisation ↓')}${chip(y.demand, 'Demand good', 'Demand weak')}${y.capex === 'raised' ? '<span class="cy-c">Expanding</span>' : ''}</span></span>
       <span>${scoreCell(c.score, c.veto)}<span class="small">${c.gRaised > 0 ? '<span class="g-up">▲ Raised</span>' : gcell(c.g)}</span></span>
       <span class="small th-ev">${tr.length ? tr.slice(0, 2).map(t => `<span style="display:block;margin-bottom:4px"><span class="mini t-${esc(t.t)}">${esc(TYPES[t.t] || t.t)}</span><b>${esc(t.label)}</b> <span class="muted">“${esc(t.q.length > 200 ? t.q.slice(0, 197) + '…' : t.q)}”</span></span>`).join('') : `<span class="muted">${esc(c.top || c.thesis || '')}</span>`}</span>
@@ -2251,7 +2257,7 @@ function vTheme(T, r) {
   const maxC = Math.max(1, ...cc);
   const said = `${r.s.n} companies (${r.share.toFixed(1)}% of ${T.bq} calls) discussed it${r.ch != null ? `, ${Math.abs(r.ch) < 0.05 ? 'the same share as' : `${r.ch > 0 ? 'up' : 'down'} ${Math.abs(r.ch).toFixed(1)} points from`} ${T.prevQ}` : ''}. Their calls average ${Math.round(r.s.avg)}, ${Math.abs(r.edge) < 0.5 ? 'in line with' : `${Math.abs(r.edge).toFixed(1)} points ${r.edge > 0 ? 'above' : 'below'}`} all ${T.bq} calls. ${thPct(r.s.up)} guided up and ${thPct(r.s.cut)} cut.${r.s.rn ? ` Of the ${r.s.rn} that have posted ${T.rlab} results, median profit growth is ${pctS(r.s.pat)} against ${pctS(T.all.pat)} for all, ${thPct(r.s.beat)} grew profit ${TH_BEAT}%+ and ${thPct(r.s.d1up)} rose on day 1.` : ''}`;
   const crow = c => { const rr = res(c), ev = thEvidence(c.key, re)[0], u = up[c.id], sz = sizeOf(c.mcapCr ?? byId[c.id]?.mcapCr);
-    return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(SIZE_SHORT[sz] || (sz === 'large' ? 'Large cap' : ''))}${c.mcap ? ' · ' + esc(c.mcap) : ''} · ${esc(c.sector)}</span></span>
+    return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(SIZE_SHORT[sz] || (sz === 'large' ? 'Large cap' : ''))}${c.mcap ? ' · ' + esc(c.mcap) : ''} · ${esc(c.sector)}</span>${aboutP(c.id)}</span>
       <span>${scoreCell(c.score, c.veto)}<span class="small">${c.gRaised > 0 ? '<span class="g-up">▲ Raised</span>' : gcell(c.g)}</span></span>
       <span class="small th-ev">${ev ? `<span class="mini t-${ev.f === 'trigger' || ev.f === 'key_quotes' ? 'supply' : 'util'}">${esc(ev.f === 'trigger' || ev.f === 'key_quotes' ? 'Quote' : ASK_FIELDS[ev.f] || ev.f)}</span>${(s => { const m = s.match(re); if (!m) return esc(s); const i = m.index; let a = Math.max(0, i - 140), b = Math.min(s.length, i + m[0].length + 160); if (a) { const sp = s.indexOf(' ', a); a = sp > 0 && sp < i ? sp + 1 : a; } if (b < s.length) { const sp = s.lastIndexOf(' ', b); b = sp > i + m[0].length ? sp : b; }
         return (a ? '…' : '') + esc(s.slice(a, i)) + `<mark class="hl t-util">${esc(m[0])}</mark>` + esc(s.slice(i + m[0].length, b)) + (b < s.length ? '…' : ''); })(ev.t)}` : `<span class="muted">${SUMS.data ? esc(c.top || c.thesis || '') : 'Loading what they said…'}</span>`}</span>
@@ -2371,7 +2377,7 @@ function vNear() {
     <p class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'}</p>
     <div class="nt-grid">${rows.slice(0, f.limit).map((x, i) => { const c = x.c;
       return `<article class="card nt ${i < 3 && !f.big && !f.chips.size ? 'top3' : ''}">
-        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc(c.mcap || '')}${x.gp ? `${c.mcap ? ' · ' : ''}Guidance-backed growth ${x.gp.pts.toFixed(1)} of ${Math.round(x.gp.w * 100)}` : ''}</span></div>
+        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4>${aboutP(c.id)}<span class="small muted">${esc(c.mcap || '')}${x.gp ? `${c.mcap ? ' · ' : ''}Guidance-backed growth ${x.gp.pts.toFixed(1)} of ${Math.round(x.gp.w * 100)}` : ''}</span></div>
           <div class="ntsc"><span class="eyebrow" style="font-size:8px">Concall Signal Score</span><b style="color:${vcol(c.score, c.veto)}">${c.score}</b>${vpill(c.score, c.veto)}</div></div>
         <div class="why-chips">${[...x.why.filter(w => w[1] !== -1).slice(0, 7), ...x.why.filter(w => w[1] === -1)].map(([w, hot]) => `<span class="${hot === 1 ? 'hot' : ''}" ${hot === -1 ? 'style="color:var(--down)"' : ''}>${esc(w)}</span>`).join('')}</div>
         ${x.nearTxt.length || x.gwhy ? `<p class="small" style="margin:0"><b>Capacity & growth:</b> ${esc([x.gwhy, ...x.nearTxt.map(t => 'Adding ' + t)].filter(Boolean).join(' · '))}</p>` : ''}
@@ -2474,7 +2480,7 @@ function vInflect() {
     <p class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'} ${isUp ? 'turning up' : 'turning down'}</p>
     <div class="nt-grid">${rows.slice(0, f.limit).map((x, i) => { const c = x.c;
       return `<article class="card nt" style="${x.sharp ? `border-color:${col}` : ''}">
-        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}${esc(c.archetype && c.archetype !== 'None' ? c.archetype : c.industry || '')}</span></div>
+        <div class="top"><div style="min-width:0"><span class="num small muted">#${i + 1} · ${esc(c.sector)}</span><h4>${esc(c.name)}</h4>${aboutP(c.id)}<span class="small muted">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}${esc(c.archetype && c.archetype !== 'None' ? c.archetype : c.industry || '')}</span></div>
           <div class="ntsc"><span class="pill" style="--pc:${col}">${isUp ? '▲' : '▼'} ${x.sharp ? 'Sharp' : 'Building'}</span><span class="eyebrow" style="font-size:8px">Concall Signal Score</span><b style="color:${vcol(c.score, c.veto)}">${c.score}</b>${dcell(c.delta)}</div></div>
         <div class="why-chips">${x.marks.slice(0, 6).map(([w, , q]) => `<span class="${q ? 'hot' : ''}" ${q ? `style="border-color:color-mix(in srgb,${col} 50%,var(--line))"` : ''}>${esc(w.length > 90 ? w.slice(0, 87) + '…' : w)}</span>`).join('')}</div>
         <div style="display:grid;gap:8px">${x.trig.slice(0, 3).map(t => `<div class="trig t-${t.t}"><span class="stripe"></span><div><div><span class="mini t-${t.t}">${TYPES[t.t] || esc(t.t)}</span><strong>${esc(t.label)}</strong></div>${t.q ? `<blockquote class="small">${hlq(t.q.length > 240 ? t.q.slice(0, 237) + '…' : t.q, t.hl)}</blockquote>` : ''}</div></div>`).join('')}</div>
@@ -2603,7 +2609,7 @@ function vPead() {
   const dayLab = d => d === t0 ? 'Today' : d === addDays(t0, 1) ? 'Tomorrow' : `${wday(d)} · ${fdate(d)}`;
   const card = (x, i) => { const c = x.c, nc = nextCall(c.id);
     return `<article class="card nt${x.tier === 'strong' && i < 3 ? ' top3' : ''}">
-      <div class="top"><div style="min-width:0"><span class="num small muted">${esc(SIZE_SHORT[x.size] || '')} · ${esc(c.mcap || '')} · ${esc(c.sector)}</span><h4>${star(c.id)}${esc(c.name)}</h4>
+      <div class="top"><div style="min-width:0"><span class="num small muted">${esc(SIZE_SHORT[x.size] || '')} · ${esc(c.mcap || '')} · ${esc(c.sector)}</span><h4>${star(c.id)}${esc(c.name)}</h4>${aboutP(c.id)}
         <span class="small muted">Results ${esc(whenTxt(dayDiff(x.x.date, t0)).toLowerCase())}${nc ? ` · call ${esc(callWhen(nc))}` : ''} · ${x.call.gRaised > 0 ? '<b class="g-up">guidance raised</b>' : x.call.g > 0 ? '<span class="g-up">guidance positive</span>' : 'guidance steady'}</span></div>
         <div class="ntsc"><span class="eyebrow" style="font-size:8px">Concall Signal Score</span><b style="color:${vcol(c.score, c.veto)}">${c.score}</b><span class="small muted num" title="Score plus guidance points used to rank this list">${x.p} pts</span></div></div>
       <div class="why-chips">${x.plus.map(w => `<span class="hot">${esc(w)}</span>`).join('')}${x.minus.map(w => `<span class="bad">${esc(w)}</span>`).join('')}</div>
@@ -2612,7 +2618,7 @@ function vPead() {
       <div class="foot"><span>${esc(c.period)} call · ${esc(sdate(c.date))}</span><span style="display:flex;gap:6px"><a class="btn" href="https://www.bseindia.com/stock-share-price/x/x/${esc(c.id)}/" target="_blank" rel="noopener">BSE ↗</a><button class="btn" data-open="${esc(c.id)}">Last call</button></span></div>
     </article>`; };
   const prow = x => { const r = x.r, c = x.c;
-    return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(SIZE_SHORT[x.size] || '')} · ${esc(c.mcap || '')} · filed ${esc(sdate(r.filed))} · ${x.call.score} on the ${esc(Q.lab)} call</span>
+    return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(SIZE_SHORT[x.size] || '')} · ${esc(c.mcap || '')} · filed ${esc(sdate(r.filed))} · ${x.call.score} on the ${esc(Q.lab)} call</span>${aboutP(c.id)}
         <span class="m-pd">Profit ${pctS(r.pat_yoy)} · Day 1 ${x.px.reactDate ? pctS(x.px.react) : '–'} · Since ${pctS(x.px.move)}</span></span>
       <span class="num">${pctS(r.rev_yoy)}</span><span class="num">${pctS(r.pat_yoy)}</span><span class="num ${x.px.react > 0 ? 'gp' : x.px.react < 0 ? 'gn' : ''}">${x.px.reactDate ? pctS(x.px.react) : '–'}</span>
       <span class="num ${x.px.move > 0 ? 'gp' : x.px.move < 0 ? 'gn' : ''}">${x.px.reactDate ? pctS(x.px.move) : '–'}</span>
@@ -2898,7 +2904,7 @@ function drawDrawer(fresh) {
   <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="dr-name">
     <div class="dr-top"><span class="eyebrow">Company</span><span style="display:flex;gap:8px;align-items:center"><span id="copied" class="copied" aria-live="polite"></span><button class="btn" id="copylink">Copy link</button><button class="btn" data-close aria-label="Close panel">Close ✕</button></span></div>
     <div class="dr-body" id="dr-body">
-      <header class="dr-head"><span class="eyebrow">${esc(x.period || c.period)} call · filed ${esc(fdate(x.date || c.date))}</span><h2 id="dr-name">${esc(c.name)} <span class="dr-wl">${star(id)}</span></h2>
+      <header class="dr-head"><span class="eyebrow">${esc(x.period || c.period)} call · filed ${esc(fdate(x.date || c.date))}</span><h2 id="dr-name">${esc(c.name)} <span class="dr-wl">${star(id)}</span></h2>${aboutP(id, 'about-dr')}
         <div class="crumbs">${path.length ? `<span class="tag">${path.map(esc).join(' › ')}</span>` : ''}${c.mcap ? `<span class="tag">${esc(c.mcap)}</span>` : ''}${c.ticker && c.ticker !== c.id ? `<span class="tag">${esc(c.ticker)}</span>` : ''}${pdf ? `<a class="tag" href="${esc(pdf.url)}" target="_blank" rel="noopener" style="color:var(--blue)">Transcript PDF ↗</a>` : ''}${(nc => nc ? `<a class="tag nextcall" href="${esc(nc.url || '#')}" target="_blank" rel="noopener" title="From the company's call intimation on BSE">Next call: ${esc(callWhen(nc))} ↗</a>` : '')(nextCall(id))}</div></header>
       ${cs.length > 1 ? `<div class="toolbar"><span class="eyebrow">Calls read</span><div class="seg" id="dr-q">${cs.map(k => `<button data-k="${esc(k.key)}" aria-pressed="${k.key === x.key}">${esc(k.period)} · ${k.score}</button>`).join('')}</div></div>` : ''}
       <section class="verdict">
@@ -3077,7 +3083,7 @@ function renderFind() {
   const hits = D.companies.filter(c => (c.name + ' ' + (c.ticker || '') + ' ' + c.id).toLowerCase().includes(q))
     .sort((a, b) => (a.name.toLowerCase().startsWith(q) ? 0 : 1) - (b.name.toLowerCase().startsWith(q) ? 0 : 1) || b.score - a.score).slice(0, 8);
   findSel = Math.min(findSel, Math.max(0, hits.length - 1));
-  box.innerHTML = hits.length ? hits.map((c, i) => `<button data-open="${esc(c.id)}" class="${i === findSel ? 'on' : ''}"><b>${esc(c.name)}</b><span class="num" style="color:${vcol(c.score, c.veto)}">${c.score}</span><span>${esc(c.sector)} · ${esc(c.period)}</span><span>${esc(c.ticker || '')}</span></button>`).join('')
+  box.innerHTML = hits.length ? hits.map((c, i) => `<button data-open="${esc(c.id)}" class="${i === findSel ? 'on' : ''}"><b>${esc(c.name)}</b><span class="num" style="color:${vcol(c.score, c.veto)}">${c.score}</span><span>${esc(c.sector)} · ${esc(c.period)}</span><span>${esc(c.ticker || '')}</span>${c.about ? `<span style="grid-column:1/-1;line-height:1.4">${esc(c.about)}</span>` : ''}</button>`).join('')
     : '<span class="small muted" style="padding:8px 10px">No company with a call read matches. Its transcript may not be filed yet.</span>';
   box.hidden = false;
 }
