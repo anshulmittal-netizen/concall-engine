@@ -24,6 +24,13 @@ TODAY = API + "NSTodayResults_ng/w"
 ARCH = API + "Result_Arch_ng/w?scrip_cd={code}"
 ANN = (API + "AnnSubCategoryGetData/w?pageno={p}&strCat=Result&strPrevDate={d0}&strScrip=&strSearch=P"
        "&strToDate={d1}&strType=C&subcategory=-1")
+# filings that go with a result: the results PDF, the investor presentation and the press release
+DOCS = (API + "AnnSubCategoryGetData/w?pageno={p}&strCat={cat}&strPrevDate={d0}&strScrip=&strSearch=P"
+        "&strToDate={d1}&strType=C&subcategory={sub}")
+DOC_KINDS = [("result", "Result", "-1"), ("presentation", "Company%20Update", "Investor%20Presentation"),
+             ("press", "Company%20Update", "Press%20Release%20%2F%20Media%20Release")]
+PDF = "https://www.bseindia.com/xml-data/corpfiling/AttachLive/{f}"
+RX_RES_WORDS = re.compile(r"result|financial|quarter|q[1-4]\b|half.?year|performance|earnings", re.I)
 SITE_FILE = DATA / "results_in.json"
 STATE_FILE = DATA / "results_state_IN.json"
 BSE = "https://www.bseindia.com"
@@ -222,6 +229,60 @@ def build_row(http: Http, state: dict, code: str, name: str, lender: bool = Fals
     return row
 
 
+def collect_docs(http: Http, state: dict, comps: dict, t0: dt.date, backfill_days: int, log=print) -> None:
+    """Results PDFs, investor presentations and press releases filed on BSE since the last check, kept per company
+    for 75 days in state["docs"] as {k, d, u, t}. The first run looks back backfill_days."""
+    docs = state.setdefault("docs", {})
+    since = dt.date.fromisoformat(state["docs_checked"]) - dt.timedelta(days=1) if state.get("docs_checked") \
+        else t0 - dt.timedelta(days=backfill_days)
+    n = 0
+    for kind, cat, sub in DOC_KINDS:
+        w0 = since
+        while w0 <= t0:
+            w1 = min(t0, w0 + dt.timedelta(days=6))
+            for p in range(1, 100):
+                t = (_json(http, DOCS.format(p=p, cat=cat, sub=sub, d0=w0.strftime("%Y%m%d"), d1=w1.strftime("%Y%m%d"))) or {}).get("Table") or []
+                if not t:
+                    break
+                for x in t:
+                    code, att = str(x.get("SCRIP_CD", "")).strip(), (x.get("ATTACHMENTNAME") or "").strip()
+                    if code not in comps or not att:
+                        continue
+                    u = PDF.format(f=att)
+                    lst = docs.setdefault(code, [])
+                    if any(d["u"] == u for d in lst):
+                        continue
+                    lst.append({"k": kind, "d": str(x.get("NEWS_DT") or w0.isoformat())[:16],
+                                "u": u, "t": str(x.get("HEADLINE") or x.get("NEWSSUB") or "")[:160]})
+                    n += 1
+            w0 = w1 + dt.timedelta(days=1)
+    keep = (t0 - dt.timedelta(days=75)).isoformat()
+    for code in list(docs):
+        docs[code] = [d for d in docs[code] if d["d"][:10] >= keep]
+        if not docs[code]:
+            del docs[code]
+    state["docs_checked"] = t0.isoformat()
+    log(f"  filings: {n} new results PDFs, presentations and press releases")
+
+
+def docs_for(state: dict, code: str, filed: str) -> list[dict]:
+    """The filings that go with a result filed at `filed`: results PDF from the day before to the day after,
+    presentation from two days before to ten days after, press release from the day before to three days after
+    (results-worded ones first). At most two of each kind."""
+    f = dt.date.fromisoformat(filed[:10])
+    win = {"result": (-1, 1), "presentation": (-2, 10), "press": (-1, 3)}
+    out = []
+    for kind, (a, b) in win.items():
+        xs = [d for d in (state.get("docs") or {}).get(code, []) if d["k"] == kind
+              and (f + dt.timedelta(days=a)).isoformat() <= d["d"][:10] <= (f + dt.timedelta(days=b)).isoformat()]
+        if kind == "press":
+            xs.sort(key=lambda d: (not RX_RES_WORDS.search(d["t"]), abs((dt.date.fromisoformat(d["d"][:10]) - f).days)))
+        else:
+            xs.sort(key=lambda d: abs((dt.date.fromisoformat(d["d"][:10]) - f).days))
+        out += [{"k": d["k"], "u": d["u"], "t": d["t"], "d": d["d"]} for d in xs[:2]]
+    return out
+
+
 # ------------------------------------------------------------------ run
 ART_URL = "https://claude.ai/artifact/Y3XcRY258aCXgadeZKZbh3"
 WATCH_LABEL = "results-watch"
@@ -373,6 +434,10 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
                     due.setdefault(code, str(x.get("NEWS_DT", ""))[:10] or t0.isoformat())
         w0 = w1 + dt.timedelta(days=1)
     state["ann_checked"] = t0.isoformat()
+    try:  # filings that go with each result; never let them stop the run
+        collect_docs(http, state, comps, t0, backfill_days, log)
+    except Exception as ex:
+        log(f"  filings skipped: {ex}")
     for c in cal.values():
         if c["date"] <= t0.isoformat():
             due.setdefault(c["id"], c["date"])
@@ -410,6 +475,8 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
         k, u = cls.get(r["id"], {}), comps.get(r["id"], {})
         r["sector"], r["bigSector"] = k.get("subsector") or "", k.get("sector") or ""
         r["mcap"] = f"₹{u['mcap_cr']:,.0f} Cr" if u.get("mcap_cr") else ""
+        if "filed" in r:
+            r["docs"] = docs_for(state, r["id"], r["filed"])
         if r["id"] in watch["companies"]:
             r["watch"] = True
         else:

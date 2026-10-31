@@ -167,10 +167,12 @@ details.how b{font-weight:700}
 .rows{display:grid;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);overflow:hidden;box-shadow:var(--shadow)}
 .r{display:grid;gap:3.5px 13.5px;align-items:center;padding:12px 15.5px;border-top:1px solid var(--line);text-align:left;background:none;border-left:0;border-right:0;border-bottom:0;width:100%;transition:background .18s}
 .r:first-child{border-top:0}
-button.r{position:relative}
-button.r:hover{background:var(--panel2)}
-button.r::after{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--accent);transform:scaleY(0);transition:transform .2s var(--ease)}
-button.r:hover::after{transform:scaleY(1)}
+button.r,.r[role=button]{position:relative;cursor:pointer}
+button.r:hover,.r[role=button]:hover{background:var(--panel2)}
+button.r::after,.r[role=button]::after{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--accent);transform:scaleY(0);transition:transform .2s var(--ease)}
+button.r:hover::after,.r[role=button]:hover::after{transform:scaleY(1)}
+.calls .about-l{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.r .doc-l{font-size:9.5px;padding:1px 7px;display:inline-block;margin-top:3px}
 .r.hd>span.hs{cursor:pointer;user-select:none;border-radius:6px;transition:color .15s}
 .r.hd>span.hs:hover{color:var(--fg)}
 .r.hd>span.hs::after{content:"\2195";margin-left:4px;font-size:10px;opacity:.45;letter-spacing:0}
@@ -581,6 +583,9 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
 .fm-bars i.prev{background:var(--line2);opacity:.8}
 .fc-strip{display:flex;gap:7px 15.5px;flex-wrap:wrap;align-items:center;font-size:11px;color:var(--muted);padding-top:10px;border-top:1px dashed var(--line2)}
 .fc-strip b{color:var(--fg)}
+.rs-docs{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.doc-l{font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:99px;border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));color:var(--accent);background:var(--panel);text-decoration:none;white-space:nowrap}
+.doc-l:hover{background:var(--accentsoft)}.doc-l.off{color:var(--faint);border-color:var(--line);border-style:dashed;font-weight:500;cursor:default}.doc-l.off:hover{background:var(--panel)}
 .fc-foot{display:flex;justify-content:space-between;align-items:center;gap:7px;flex-wrap:wrap;margin-top:auto}
 .fc-back .fc-foot{justify-content:flex-end}
 .bk{display:grid;gap:7px}
@@ -808,6 +813,8 @@ const vcol = (s, veto) => veto ? 'var(--v1)' : s >= 70 ? 'var(--v5)' : s >= 60 ?
 const vpill = (s, veto) => { const v = verdict(s, veto); return `<span class="pill ${v.c}">${v.w}</span>`; };
 const scoreCell = (s, veto, i = 0) => `<span class="scorecell"><b style="color:${vcol(s, veto)}">${s}</b><span class="sbar"><i style="width:${s}%;background:${vcol(s, veto)};animation-delay:${Math.min(i, 20) * .02}s"></i></span>${vpill(s, veto)}</span>`;
 /* one plain line on what the business does (engine: about.py), shown wherever a company is introduced */
+/* the transcript PDF on BSE for a call (calls[].src), or the company's latest source when it is that call */
+const callSrc = c => c.src || (byId[c.id]?.period === c.period ? ((byId[c.id].sources || []).find(s => s.url && s.type === 'transcript') || (byId[c.id].sources || []).find(s => s.url))?.url : '') || '';
 const aboutOf = id => byId[id]?.about || '';
 const aboutP = (id, cls = 'about-l') => (a => a ? `<span class="${cls}">${esc(a)}</span>` : '')(aboutOf(id));
 const dcell = d => d ? `<span class="delta ${d > 0 ? 'up' : 'dn'}">${d > 0 ? '▲' : '▼'}${Math.abs(d)}</span>` : '<span class="delta zero">–</span>';
@@ -1045,15 +1052,16 @@ const trkBadge = () => curQ() === 'all' ? focusBadge() : qBadge();
 const qBadge = () => `<span class="badge${inProg(curQ()) ? ' warn' : ''}">${curQ() === 'all' ? 'All quarters · latest call per company' : esc(curQ()) + (inProg(curQ()) ? ' · season in progress' : '')}</span>`;
 
 function companyRow(c, i, opts = {}) {
-  return `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key || '')}">
+  const src = callSrc(c), tl = src ? `<a class="doc-l" href="${esc(src)}" target="_blank" rel="noopener" title="Transcript PDF on BSE">Transcript ↗</a>` : '';
+  return `<div class="r" role="button" tabindex="0" data-open="${esc(c.id)}" data-k="${esc(c.key || '')}">
     <span class="rk c-rk">${opts.rank ?? i + 1}</span>
     <span class="c-co" style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.mcap || '')}${c.mcap ? ' · ' : ''}${esc(c.period || '')}${(n => n ? ` · ${n} on the call` : '')(callPeople(c.key || '').length)}</span>${aboutP(c.id)}</span>
     <span class="c-sc">${scoreCell(c.score, c.veto, i)}</span>
     <span class="c-ch">${dcell(c.delta)}</span>
     <span class="c-sec sub" style="min-width:0">${esc(c.sector)}${c.bigSector && c.bigSector !== c.sector ? '<br>' + esc(c.bigSector) : ''}</span>
     <span class="c-why why" style="min-width:0">${esc(c.top || c.thesis || '')}</span>
-    <span class="c-meta"><span class="c-g small">${gcell(c.g)}</span><span class="c-date sub num">${esc(sdate(c.date))}</span><span class="m-only sub">${dcell(c.delta)} vs last call · ${esc(c.sector)}</span></span>
-  </button>`;
+    <span class="c-meta"><span class="c-g small">${gcell(c.g)}</span><span class="c-date sub num">${esc(sdate(c.date))}${tl ? '<br>' + tl : ''}</span><span class="m-only sub">${dcell(c.delta)} vs last call · ${esc(c.sector)}${tl ? ' · ' + tl : ''}</span></span>
+  </div>`;
 }
 
 /* Home */
@@ -1480,6 +1488,15 @@ function vWatch() {
 /* Results calendar: board meeting dates announced for results */
 const crF = v => v == null ? '–' : Math.abs(v) >= 100 ? fmt(Math.round(v)) : v.toLocaleString('en-IN', {maximumFractionDigits: 1});
 const gTag = (v, lab = '') => v == null ? `<span class="g g0">${lab ? lab + ' ' : ''}–</span>` : `<span class="g ${v > 0 ? 'gp' : v < 0 ? 'gn' : 'g0'}">${lab ? lab + ' ' : ''}${v > 0 ? '+' : ''}${v.toFixed(Math.abs(v) >= 100 ? 0 : 1)}%</span>`;
+/* the filings that go with a result (engine: results_in.docs_for): results PDF, investor presentation, press release */
+const DOC_LAB = {result: 'Results PDF', presentation: 'Presentation', press: 'Press release'};
+function rsDocs(r, {compact = false} = {}) {
+  const ds = r.docs || [], a = (u, t, tt) => `<a class="doc-l" href="${esc(u)}" target="_blank" rel="noopener"${tt ? ` title="${esc(tt)}"` : ''}>${esc(t)} ↗</a>`;
+  const out = ['result', 'presentation', 'press'].map(k => { const xs = ds.filter(d => d.k === k);
+    if (!xs.length) return k === 'result' ? a(r.url, 'Results on BSE') : compact ? '' : `<span class="doc-l off" title="Not on BSE yet. Presentations often follow a few days after the results.">No ${DOC_LAB[k].toLowerCase()} yet</span>`;
+    return xs.map((d, i) => a(d.u, DOC_LAB[k] + (xs.length > 1 ? ' ' + (i + 1) : ''), `${d.t} · ${d.d.replace('T', ' ')}`)).join(''); }).join('');
+  return `<div class="rs-docs">${out}${a(`https://www.bseindia.com/stock-share-price/x/x/${r.id}/corp-announcements/`, 'All filings')}</div>`;
+}
 function resLoading(name) { if (!RES.data) { loadRes().then(() => { if (S.view === name) render(); renderNav(); }); return '<div class="empty">Loading results…</div>'; } return ''; }
 function vResCal() {
   const wait = resLoading('rescal'); const f = S.rc, t0 = istToday(), t1 = addDays(t0, f.days), q = f.search.trim().toLowerCase();
@@ -1564,6 +1581,7 @@ function rsCard(r, i) {
         ${rsPrice(r)}
         <div class="fm-list">${rsMetric(r.revLabel, r.rev, r.rev_prev_yoy, r.rev_yoy, 0)}${rsMetric(r.opLabel, r.op, r.op_prev_yoy, r.op_yoy, 1)}${rsMetric('Profit (PAT)', r.pat, r.pat_prev_yoy, r.pat_yoy, 2)}</div>
         <div class="fc-strip"><span>Margin <b class="num">${r.opm == null ? '–' : r.opm.toFixed(1) + '%'}</b>${mchg == null ? '' : ` <span class="${mchg >= 0 ? 'gp' : 'gn'} num">${mchg >= 0 ? '+' : '−'}${Math.abs(mchg)} bp</span>`}</span><span>EPS <b class="num">${r.eps == null ? '–' : '₹' + r.eps.toFixed(2)}</b></span>${r.revised ? '<span class="tag">revised</span>' : ''}</div>
+        ${rsDocs(r)}
         <div class="fc-foot"><span class="small muted">Bars: light = same quarter last year</span><button class="btn" data-flip="${esc(r.id + r.filed)}" aria-label="Show more for ${esc(r.name)}">More ↻</button></div>
       </div>
       <div class="fc-face fc-back" ${flipped ? '' : 'aria-hidden="true"'}>
@@ -1586,7 +1604,7 @@ function vResults() {
   const marg = r => r.opm == null ? '<span class="v">–</span>' : `<span class="v">${r.opm.toFixed(1)}%</span>${r.opm_prev_yoy == null ? '<span class="g g0">–</span>' : `<span class="g ${r.opm >= r.opm_prev_yoy ? 'gp' : 'gn'}">${r.opm >= r.opm_prev_yoy ? '+' : '−'}${Math.round(Math.abs(r.opm - r.opm_prev_yoy) * 100)} bp</span>`}`;
   const tr = r => { const co = byId[r.id];
     return `<tr${isW(r.id) ? ' class="wrow"' : ''}><td class="co"><span class="nm">${star(r.id)}${esc(r.name)}</span><span class="basis" title="${esc(r.basis)}">${r.basis === 'Consolidated' ? 'C' : 'S'}</span>${r.revised ? ' <span class="tag">revised</span>' : ''}<br><span class="sub small muted">${esc(r.label)} · ${esc(r.sector || '')}${r.mcap ? ' · ' + esc(r.mcap) : ''}</span>
-        <div class="up-actions" style="justify-content:flex-start;margin-top:5px">${co ? `<button class="btn" data-open="${esc(r.id)}">Last call · ${co.score}</button>` : ''}<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Filing ↗</a></div></td>
+        <div class="up-actions" style="justify-content:flex-start;margin-top:5px">${co ? `<button class="btn" data-open="${esc(r.id)}">Last call · ${co.score}</button>` : ''}</div><div style="margin-top:5px">${rsDocs(r, {compact: true})}</div></td>
       <td><span class="v">${esc(sdate(r.filed))}</span><span class="g g0">${esc(r.filed.slice(11, 16))}</span></td>
       <td><span class="v">${crF(r.rev)}</span><span class="g g0">${esc(r.revLabel)}</span></td><td>${gTag(r.rev_yoy)}${gTag(r.rev_qoq, 'QoQ')}</td>
       <td><span class="v">${crF(r.op)}</span><span class="g g0">${esc(r.opLabel)}</span></td><td>${gTag(r.op_yoy)}${gTag(r.op_qoq, 'QoQ')}</td>
@@ -2898,7 +2916,7 @@ function closeCo() {
 function drawDrawer(fresh) {
   const {id, key, tab} = S.drawer, c = byId[id], cs = callsFor(id), x = cs.find(k => k.key === key) || cs[0] || c;
   const path = [c.macro, c.bigSector, c.sector, c.industry].filter((v, i, a) => v && v !== 'Unclassified' && a.indexOf(v) === i);
-  const pdf = (c.sources || []).find(s => s.url);
+  const pdf = (u => u ? {url: u} : null)(x.src) || (c.sources || []).find(s => s.url);
   const sigNote = x.period && c.period && x.period !== c.period ? `<p class="small muted">The signal read below is from the latest call (${esc(c.period)}). Switch to it above to match.</p>` : '';
   const html = `<div class="scrim" data-close></div>
   <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="dr-name">
@@ -3091,6 +3109,7 @@ function renderFind() {
 /* ---------- events ---------- */
 document.addEventListener('click', e => {
   const t = e.target;
+  if (t.closest('a[href]:not([data-jump])')) return;  /* links open on their own, without opening the row behind them */
   const wt = t.closest('[data-wt]'); if (wt) { e.preventDefault(); e.stopPropagation(); wlToggle(wt.dataset.wt); render(); if (S.drawer) drawDrawer(); renderNav(); return; }
   const tipB = t.closest('[data-tip]'); if (tipB) { e.preventDefault(); e.stopPropagation(); showTip(tipB); return; }
   if (!t.closest('#pop')) hideTip();
@@ -3199,7 +3218,7 @@ document.addEventListener('keydown', e => {
     const items = [...$('#findres').querySelectorAll('button')]; if (!items.length) return;
     if (e.key === 'Enter') { e.preventDefault(); items[findSel]?.click(); return; }
     e.preventDefault(); findSel = (findSel + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length; renderFind(); return; }
-  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('.trk .r.sec')) { e.preventDefault(); e.target.click(); }
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('.trk .r.sec, .r[role=button]')) { e.preventDefault(); e.target.click(); }
   if (e.target.id === 'ask-q' && e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); askRun(ASK.sample === null ? 'keyword' : 'ai'); return; }
   if (e.key === '/' && !e.target.closest('input,select,textarea')) { e.preventDefault(); $('#find').focus(); }
   if (e.key === 'Tab' && S.drawer) { const f = [...$('.drawer').querySelectorAll('button,a,input,select,[tabindex="0"]')].filter(x => x.offsetParent);
