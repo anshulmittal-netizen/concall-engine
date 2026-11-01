@@ -1,0 +1,344 @@
+{
+ "doc_id": "IN-04ee3f76-eb28-46d5-a25d-bfbf349c9abe",
+ "market": "IN",
+ "company_id": "509930",
+ "name": "Supreme Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-01",
+ "period": "2026-09",
+ "title": "Supreme Industries Ltd - 509930 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Plastics & polymers",
+  "thesis": "Piping volume turned to +24% in Q2 after a weak Q1, but H1 volume only about +1% and management cut FY27 volume guidance to about 10% overall, with margin guide held at 14–14.5% despite Q2 margins near 13%.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "we have good capacity available and we have got properly covered in raw material also"
+  },
+  "capex": {
+   "direction": "cut",
+   "quote": "Outflow should not be more than INR700 crores to INR750 crores.",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Piping volume +24% in Q2",
+    "quote": "Plastic Piping System business grew by 24% in volume and 42% in value terms.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Overall volume guide cut to ~10%",
+    "quote": "we expect company-wide volume growth of about 10% for FY27, despite the big de-growth during first quarter.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Customers keeping minimum inventory",
+    "quote": "customers are now remaining very cautious. They are keeping the inventory at a minimum level",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "Capex FY27 cut to INR700-750 cr",
+    "quote": "Outflow should not be more than INR700 crores to INR750 crores.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Packaging margin squeezed, price hikes lag",
+    "quote": "we were not able to get the price increase so easily acceptable because they are interested in lower.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Overall volume growth FY27",
+    "value": "about 10%",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "we expect company-wide volume growth of about 10% for FY27, despite the big de-growth during first quarter."
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "14% to 14.5% operating margin",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we have given guidance of increasing operating margin between 14% to 14.5% for the full year."
+   },
+   {
+    "metric": "Piping volume growth FY27",
+    "value": "13%",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "We have given volume growth of 13% in the piping business."
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "INR700-750 crore outflow",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "Outflow should not be more than INR700 crores to INR750 crores."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Piping volume growth FY27",
+    "outcome": "missed",
+    "quote": "We have given volume growth of 13% in the piping business."
+   },
+   {
+    "metric": "Overall volume growth FY27",
+    "outcome": "missed",
+    "quote": "we expect company-wide volume growth of about 10% for FY27"
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "outcome": "held",
+    "quote": "we have given guidance of increasing operating margin between 14% to 14.5% for the full year."
+   },
+   {
+    "metric": "Capex FY27",
+    "outcome": "met",
+    "quote": "Outflow should not be more than INR700 crores to INR750 crores."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Oil Marketing Companies",
+    "relation": "customer"
+   },
+   {
+    "name": "Nal Se Jal",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Housing & real-estate cycle",
+   "Tariffs & trade policy",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Volume guidance cut twice; H1 volume ~+1%",
+    "quote": "bringing first-half volume growth to about 2% year on year."
+   },
+   {
+    "label": "Q2 margin ~13% vs 14–14.5% FY guide; margin hold unexplained",
+    "quote": "We've still given the margin guidance for the full year at 14% to 14.5%."
+   },
+   {
+    "label": "Inconsistent capex and revenue guidance (INR13,500–14,000 cr revenue quoted)",
+    "quote": "FY27, we expect our business to grow between INR13,500 crores to INR14,000 crores"
+   },
+   {
+    "label": "Management evasive on price pass-through and inventory gains",
+    "quote": "we cannot say, but we think the customers are now remaining very cautious."
+   }
+  ],
+  "analyst_mix": {
+   "margin": 4,
+   "growth": 6,
+   "capex": 1,
+   "balance_sheet": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Margin miss and price pass-through",
+    "quote": "We are increasing the price after 10 to 15 year gap to help my distributors repair their balance sheet."
+   },
+   {
+    "topic": "Inventory gain quantum",
+    "quote": "But the overall inventory gain, we will get precisely when we close the year in the month of March next year."
+   },
+   {
+    "topic": "Packaging and Industrial recovery in H2",
+    "quote": "As of today, crude price remains quite high."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Supreme Industries H1 FY27 standalone PAT rose 31% to Rs 487 crore on 22% value growth, but volume grew only about 1%; FY27 volume growth guided at about 10%.",
+  "overview": "H1 FY27 sales volume was 341,991 MT (up about 1% YoY) and revenue from operations was Rs 6,079 crore (up 22%). Standalone operating profit rose 34% to Rs 829 crore and PAT rose 31% to Rs 487 crore. Q2 showed a sharp rebound in Plastic Piping (volume +24%, value +42%), while Consumer Products and Packaging lagged on polymer price volatility. Management cut company-wide FY27 volume growth guidance to about 10% and reiterated a 14% to 14.5% operating margin for the full year.",
+  "financial_highlights": [
+   {
+    "metric": "Sales volume H1 FY27",
+    "value": "341,991 MT",
+    "change": "about +1% YoY vs 338,224 MT"
+   },
+   {
+    "metric": "Revenue from operations H1 FY27",
+    "value": "Rs 6,079 crore",
+    "change": "about +22% YoY vs Rs 5,003 crore"
+   },
+   {
+    "metric": "Standalone operating profit H1 FY27",
+    "value": "Rs 829 crore",
+    "change": "+34% YoY vs Rs 617 crore"
+   },
+   {
+    "metric": "Standalone PAT H1 FY27",
+    "value": "Rs 487 crore",
+    "change": "+31% YoY vs Rs 371 crore"
+   },
+   {
+    "metric": "Value-added products turnover Q2 FY27",
+    "value": "Rs 1,476 crore",
+    "change": "+38% YoY vs Rs 1,072 crore"
+   },
+   {
+    "metric": "Employee cost H1 FY27",
+    "value": "Rs 330 crore",
+    "change": "vs Rs 580 crore last year as stated by CFO; Q1 employee cost stated as Rs 168 crore, up 25% YoY"
+   },
+   {
+    "metric": "Operating margin Q2 FY27",
+    "value": "about 13%",
+    "change": "analyst cited; below management's full-year 14% to 14.5% guidance"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Plastic Piping Systems",
+    "commentary": "Q2 volume +24% and value +42% YoY; H1 volume growth about 2%. Q1 volume had fallen about 13.5%. Growth mainly from housing; October-to-date (about 25 days) volume growth 23%."
+   },
+   {
+    "name": "Packaging",
+    "commentary": "Q2 volume +3% and value +22% YoY. Margins contracted as polythene and polypropylene costs rose and packaging film prices could not be raised quickly."
+   },
+   {
+    "name": "Industrial Products",
+    "commentary": "Q2 volume +13% and value +49% YoY. No volume guidance given; custom moulding for industrial customers."
+   },
+   {
+    "name": "Consumer Products",
+    "commentary": "Q2 volume -14% and value +2% YoY. Pressure from polypropylene availability and price; furniture made from polypropylene."
+   },
+   {
+    "name": "Others (incl. PVC windows & doors, raw material trading)",
+    "commentary": "Others revenue rose from about Rs 20 crore to about Rs 80 crore, per analyst question; includes PVC windows & doors and surplus raw material sales. MOHO bath fittings sit within Plastic Piping."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 company-wide volume growth guided at about 10%, reduced from earlier levels after Q1 de-growth.",
+   "FY27 piping volume growth guided at 13%, cut from 15% and then 17%; H2 would require roughly 22% growth over H1 per analyst math.",
+   "FY27 revenue of Rs 13,500 crore to Rs 14,000 crore for Supreme Industries standalone, per Chairman.",
+   "FY27 operating margin guided at 14% to 14.5%.",
+   "FY27 capex cash outflow not to exceed Rs 700 crore to Rs 750 crore, funded through internal accruals.",
+   "Inventory gains expected to be recognised in H1 overall; final figure at year-end close in March 2027."
+  ],
+  "capex_capacity": [
+   "New units under work at Bihar, Jammu, Erode, Puducherry and Malanpur, plus brownfield expansion at various sites, progressing as planned.",
+   "Composite cylinder utilisation improving gradually as procurement has begun at all three Oil Marketing Companies.",
+   "Gas pipe fittings now supplied from five locations (East, West, South, North, Northeast).",
+   "Capacity described as ample across multiple sites; most orders delivered within 48 hours.",
+   "Employee cost increase partly reflects new units not present in H1 last year; no new greenfield expected in H2, so H1 employee cost is the H2 benchmark (excluding director commission)."
+  ],
+  "demand_pricing": [
+   "Management says the Q2 piping growth came mainly from housing; agriculture expected to contribute for the full year.",
+   "PVC prices rose in October and cPVC price hike announced effective 1 November, around 3% to 7% by product; management says customers can absorb it.",
+   "Price increases passed on with a lag of about 10 to 15 days, which management said helps distributors repair their balance sheets.",
+   "Industry PVC volume in H1 FY27 de-grew about 10%, per raw material producer data (Chairman).",
+   "CPVC volume grew 38.5% in H1 FY27.",
+   "Nal Se Jal orders expected to be much lower than budget this year; management does not expect a large contribution.",
+   "Polypropylene prices high; Middle East polythene supply disrupted, making packaging price pass-through difficult."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Does the cut to 13% piping growth look achievable, and could it be cut again?",
+    "answer": "Chairman said no further cut is expected, citing about 23% volume growth in October to date (25 days), adequate capacity and raw material cover."
+   },
+   {
+    "question": "Why did margins fall in Q2 and what drives recovery?",
+    "answer": "Management reiterated FY27 margin guidance of 14% to 14.5%; CFO cited high raw material prices; packaging margins hit by inability to pass on polythene costs."
+   },
+   {
+    "question": "What is the FY27 capex outflow?",
+    "answer": "CFO said outflow should not exceed Rs 700 to 750 crore."
+   },
+   {
+    "question": "What is the FY27 revenue and margin guidance?",
+    "answer": "Rs 13,500 crore to Rs 14,000 crore revenue and 14% to 14.5% operating margin."
+   },
+   {
+    "question": "Is Supreme gaining share at the expense of unorganised players?",
+    "answer": "Chairman said Supreme's market share grew YoY while the industry declined about 10% in H1, per raw material producer data."
+   },
+   {
+    "question": "What is full-year employee cost?",
+    "answer": "CFO said H1 employee cost was Rs 330 crore versus Rs 580 crore last year; H1 level used as H2 benchmark."
+   }
+  ],
+  "risks_watch": [
+   "Piping volume growth guidance of 13% needs about 22% H2 growth over H1, per analyst math; watch October-December volume print.",
+   "Margins below the 14% to 14.5% full-year guidance in Q1 and Q2; packaging and consumer margins under pressure.",
+   "Crude and polymer volatility, West Asia geopolitics, and rupee depreciation raising imported raw material costs.",
+   "Consumer products volume down 14% in Q2 on polypropylene availability and government-driven diversion to LPG.",
+   "Nal Se Jal government-funded orders weak; state fund matching and unpaid bills delay recovery.",
+   "Inventory gains and channel inventory levels; customers keeping inventory at minimum."
+  ],
+  "management_tone": "Confident on piping volume momentum and October trends, but cautious on the wider macro. Management was defensive when pressed on margin shortfall and packaging pricing, and gave indirect answers on inventory gains and price pass-through.",
+  "key_quotes": [
+   "Going at the present situation, we do not expect any lower number to be announced again.",
+   "We have given volume growth of 13% in the piping business.",
+   "We are very comfortable at 14%, 14.5% we get a very good return on our investment.",
+   "Nal Se Jal this year as on today, I can say it is going to be much lower than what was the budget."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "New units under work at Bihar, Jammu, Erode, Puducherry and Malanpur, plus brownfield expansion at various sites",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "under_construction",
+    "mat": "moderate"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "FY27 company-wide volume growth cut to about 10% and piping volume to 13%, with H1 volume only about +1%, so H2 needs a sharp pickup; backing rests on new units at five sites (no commissioning dates given) and Q2 piping rebound, while the 14-14.5% margin guide was held.",
+  "mgmt": null
+ }
+}
