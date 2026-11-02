@@ -1,0 +1,458 @@
+{
+ "doc_id": "IN-96a205df-34bd-43a7-8434-7d2cd84b9f97",
+ "market": "IN",
+ "company_id": "532884",
+ "name": "Refex Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-02",
+ "period": "2026-09",
+ "title": "Refex Industries Ltd - 532884 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q2 FY27 revenue up 36% to Rs560 cr but EBITDA margin 16% and PAT Rs60 cr; wind execution guidance cut from Rs1,700-1,800 cr to Rs1,300-1,400 cr, ash volume ramp to 90,000 tpd still targeted.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Backlog conversion",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Wind execution cut to Rs1,300-1,400 cr",
+    "quote": "We'll do a business of INR1,300 crores to INR1,400 crores in the current financial year.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables Rs1,251 cr on H1 revenue Rs1,677 cr",
+    "quote": "Because of turnover also has increased.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Ash volume 35,000-40,000 t in Q2",
+    "quote": "This Q2 was quite less. It was around 35,000 to 40,000.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Ash growth 20-25% held",
+    "quote": "we'll have 20% to 25% of the revenue growth in the years to come.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Wind execution FY27",
+    "value": "Rs1,300-1,400 cr",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "We'll do a business of INR1,300 crores to INR1,400 crores in the current financial year."
+   },
+   {
+    "metric": "Ash handling run rate",
+    "value": "90,000 tpd by Q4",
+    "change": "held",
+    "horizon": "Q4 FY27",
+    "quote": "So by fourth quarter, 90,000 that we have been targeting?"
+   },
+   {
+    "metric": "Ash handling EBITDA margin",
+    "value": "15-18%",
+    "change": "held",
+    "horizon": "ongoing",
+    "quote": "Our EBITDA margin in the stand -alone basis will be between 15% to 18%"
+   },
+   {
+    "metric": "Ash revenue growth",
+    "value": "20-25% YoY",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "On a year-to-year basis, we'll have 20% to 25% growth"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Wind execution FY27",
+    "outcome": "missed",
+    "quote": "We'll do a business of INR1,300 crores to INR1,400 crores in the current financial year."
+   },
+   {
+    "metric": "Ash handling run rate",
+    "outcome": "not_discussed",
+    "quote": "Yes. That's the target."
+   },
+   {
+    "metric": "Ash handling EBITDA margin",
+    "outcome": "met",
+    "quote": "Our EBITDA margin in the stand -alone basis will be between 15% to 18%"
+   },
+   {
+    "metric": "Mobility discontinued ops",
+    "outcome": "not_discussed",
+    "quote": "Our leadership team is fully committed to bring a PAT level profitability in a year's time."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Torrent",
+    "relation": "customer"
+   },
+   {
+    "name": "KP Energy",
+    "relation": "customer"
+   },
+   {
+    "name": "Jindal",
+    "relation": "customer"
+   },
+   {
+    "name": "UltraTech",
+    "relation": "peer"
+   },
+   {
+    "name": "ACC",
+    "relation": "peer"
+   },
+   {
+    "name": "Birla Corp",
+    "relation": "peer"
+   },
+   {
+    "name": "Suzlon",
+    "relation": "peer"
+   },
+   {
+    "name": "Inox",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Wind equipment localisation",
+   "Consolidation / competitor exits",
+   "Anti-dumping protection",
+   "Premiumisation in consumption",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Wind execution guidance cut ~25%",
+    "quote": "We'll do a business of INR1,300 crores to INR1,400 crores in the current financial year."
+   },
+   {
+    "label": "Promoter pledge ~50% of holding",
+    "quote": "like 50% of the promoters holding close to 50% is still pledged"
+   },
+   {
+    "label": "Receivables cycle 120-130 days",
+    "quote": "it is the same receivable cycle of 120 to 130 days."
+   },
+   {
+    "label": "Finance cost up via TReDS while cash high",
+    "quote": "finance cost has gone up, but there is an impact on the gross margin."
+   },
+   {
+    "label": "Mobility not yet PAT positive; Q1 guidance on exit not discussed",
+    "quote": "Our leadership team is fully committed to bring a PAT level profitability in a year's time."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 6,
+   "margin": 4,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Ash Q4 90,000 tpd volume",
+    "quote": "Yes. That's the target."
+   },
+   {
+    "topic": "Promoter pledge and valuation",
+    "quote": "So I'll not like to comment on the market."
+   },
+   {
+    "topic": "Ash H2 growth quantification",
+    "quote": "I do not want to comment anything on a number term."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Refex Q2 FY27 standalone revenue rose 36% YoY to INR560 crore and PAT 13% to INR60 crore, despite monsoon-hit ash volumes.",
+  "overview": "Standalone Q2 FY27 revenue from continuing operations was INR560 crore (up 36% YoY) with EBITDA of INR91 crore (16% margin, up 22%) and PAT of INR60 crore (up 13%). H1 FY27 revenue was INR1,179 crore (up 55%) and PAT INR133 crore (up 55%). Management attributed the weak Q2 volumes to monsoon disruption in ash handling, and said wind execution and the new RMC and green mobility businesses are at early stages. The demerger of green mobility awaits NCLT final approval, with the next hearing on 11 November 2026.",
+  "segments": [
+   {
+    "name": "Ash & Coal Handling (core)",
+    "commentary": "Q2 volumes were weak at about 35,000-40,000 tonnes due to monsoon, with volume recovering into H2. Management guides 20-25% revenue growth for FY27 and FY28, and a Q4 target of 90,000 tonnes."
+   },
+   {
+    "name": "Wind energy (turbine equipment)",
+    "commentary": "Q2 revenue INR201 crore and EBITDA INR11.32 crore after a loss in Q1. Order book is about INR1,100-1,200 crore; FY27 execution guided at INR1,300-1,400 crore, with margins of 4-5% EBITDA and 2.5-3% PAT."
+   },
+   {
+    "name": "Ready-mix concrete (new)",
+    "commentary": "Pune plant (Charholi) started operations on 25 September 2026 (management also says 1 October); Hoskote and Kalyan followed. Asset-light lease model, 60 cum/hour capacity, with about 4,000-4,500 cum/month expected from Pune."
+   },
+   {
+    "name": "Green mobility",
+    "commentary": "Q2 revenue INR36 crore with first positive EBITDA of INR1.3 crore. Management targets PAT-level profitability within a year; demerger into a separately listed company is pending NCLT approval."
+   }
+  ],
+  "guidance_outlook": [
+   "Ash & Coal Handling revenue growth of 20-25% YoY for FY27 and FY28, with H2 FY27 growth stated as 'good' but not quantified.",
+   "Standalone EBITDA margin guided at 15-18%.",
+   "Wind FY27 execution of INR1,300-1,400 crore; part of the order book spills into Q1 FY28. Large-volume price negotiation expected to close in 30-45 days.",
+   "Demerger of green mobility expected to complete within 2-3 months, subject to NCLT and regulatory approvals.",
+   "Wind indigenous manufacturing plant expected to be operational in 12-14 months, with margin benefit about 6 months later; aspiration of 17-20% margins similar to Inox and Suzlon."
+  ],
+  "capex_capacity": [
+   "Pune RMC plant (Charholi) capacity 60 cum/hour, expected 4,000-4,500 cum/month; asset-light, no capex per management.",
+   "RMC rollout planned in Mumbai, Bangalore, Hyderabad, Kolkata and Chennai; Hoskote (Karnataka) and Kalyan (near Mumbai) plants added.",
+   "Wind indigenous manufacturing plant under setup, expected operational in 12-14 months.",
+   "Ash handling volume target of 90,000 tonnes in Q4 FY27, against 35,000-40,000 tonnes in Q2."
+  ],
+  "demand_pricing": [
+   "India to add up to 8 GW of wind capacity in FY27 vs 6 GW in FY26; 1.8 GW added in Jul-Sep 2026 quarter (+30% QoQ, +21% YoY); cumulative 59.2 GW.",
+   "Coal-based thermal capacity target raised to 150 GW by 2035 from 97 GW earlier.",
+   "Ash & coal order book about INR1,700 crore, mostly tender-driven; management expects INR50-100 crore orders to be announced weekly.",
+   "Indian RMC market expected to grow from 240 million cum (INR1.25 lakh crore, 2025) to 317 million cum (INR1.74 lakh crore, 2031), a 7% CAGR.",
+   "Wind customers: Torrent, KP Energy and Jindal; initial supplies completed to all three."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Wind order pipeline and timing of closure?",
+    "answer": "Final price negotiation for a large-volume order; closure expected in 30-45 days, with management saying the quantum is substantial and will be announced. Existing wind order book is about INR1,100 crore."
+   },
+   {
+    "question": "Does the RMC business have margin potential and competitive edge over cement players?",
+    "answer": "Management cited UltraTech and RDC Concrete earning about 10% profit on RMC; expects better margins through zero-capex, tech-driven operations. RMC is expected to contribute meaningfully from FY28; FY27 is set-up year."
+   },
+   {
+    "question": "Working capital and receivables: why is receivable at INR1,251 crore?",
+    "answer": "Management said the cycle is 120-130 days, driven by retention money and billing/certification delays of up to 70 days; target is to hold about 130 days. Management said zero amount is overdue or at risk of bad debt."
+   },
+   {
+    "question": "Finance cost rise versus cash balance and other income decline?",
+    "answer": "Management said vendors are now paid through TReDS, which raises finance cost (INR13 crore to INR17 crore QoQ) but lowers direct cost; the bank balance rose at quarter-end and fluctuates intra-quarter."
+   },
+   {
+    "question": "Promoter pledge status?",
+    "answer": "Management said about INR400-450 crore is secondary pledge for an acquisition, expected to be released in 3-5 months; about INR100 crore is borrowing-linked and to be cleared in 12-24 months. Management denied any forced-selling risk."
+   }
+  ],
+  "risks_watch": [
+   "Monsoon-linked volume volatility in ash handling; Q2 volume was 35,000-40,000 tonnes, against a 90,000 tonne Q4 target.",
+   "Working capital intensity: receivables of INR1,251 crore against H1 revenue of INR1,677 crore (note: this H1 figure is combined across segments as stated in Q&A), with 120-130 day cycle.",
+   "Promoter pledge: about 50% of promoter holding is pledged; the pledge reduction timeline depends on acquisition-linked repayments.",
+   "Wind margins depend on indigenisation timing (12-14 months) and on closing the large-volume order.",
+   "Demerger approval timing: NCLT adjourned to 11 November 2026; completion guided in 2-3 months.",
+   "Finance cost rising (INR13 crore to INR17 crore QoQ) under the TReDS payment arrangement; watch whether COGS savings offset it."
+  ],
+  "management_tone": "Confident on the core ash business and the wind and RMC outlook, but cautious on near-term quarterly numbers, which management attributed to monsoon. Management was evasive on valuation and on the H2 growth figure, which was not quantified beyond 'good growth'.",
+  "key_quotes": [
+   "Despite these weather -related challenges, we have made a healthy year -on-year progress with revenue up by 36% and PAT up by 13% in the Q2FY27and PAT up by 56% in H1 FY27on year-to-year basis.",
+   "And we are purely going with a zero capex model, asset-light model.",
+   "There will not be a single share of any forced selling at any point of time despite of any fall in the share price, which is not under our control."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Standalone revenue (continuing ops), Q2 FY27",
+    "value": "INR560 crore",
+    "change": "+36% YoY vs INR411 crore"
+   },
+   {
+    "metric": "Standalone EBITDA, Q2 FY27",
+    "value": "INR91 crore",
+    "change": "+22% YoY vs INR74 crore; margin 16%"
+   },
+   {
+    "metric": "Standalone PAT, Q2 FY27",
+    "value": "INR60 crore",
+    "change": "+13% YoY vs INR53 crore"
+   },
+   {
+    "metric": "Standalone revenue, H1 FY27",
+    "value": "INR1,179 crore",
+    "change": "+55% YoY vs INR760 crore"
+   },
+   {
+    "metric": "Standalone EBITDA, H1 FY27",
+    "value": "INR196 crore",
+    "change": "+17% YoY vs INR114 crore"
+   },
+   {
+    "metric": "Standalone PAT, H1 FY27",
+    "value": "INR133 crore",
+    "change": "+55% YoY vs INR86 crore"
+   },
+   {
+    "metric": "Wind energy revenue, Q2 FY27",
+    "value": "INR201 crore",
+    "change": "vs INR297 crore in Q1 FY27"
+   },
+   {
+    "metric": "Wind energy EBITDA, Q2 FY27",
+    "value": "INR11.32 crore",
+    "change": "vs minus INR3 crore in Q1 FY27"
+   },
+   {
+    "metric": "Green mobility revenue, Q2 FY27",
+    "value": "INR36 crore",
+    "change": "+10% QoQ vs INR33 crore"
+   },
+   {
+    "metric": "Green mobility EBITDA, Q2 FY27",
+    "value": "INR1.3 crore",
+    "change": "vs INR0.8 crore in Q1 FY27; first positive EBITDA"
+   },
+   {
+    "metric": "Trade receivables",
+    "value": "INR1,251 crore",
+    "change": "120-130 day cycle, per management"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Ready-mix concrete Pune plant (Charholi), 60 cum/hour, asset-light lease",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Wind indigenous turbine manufacturing plant",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "under_construction",
+    "mat": "moderate"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 22.5,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 36.0,
+  "qEbitda": 22.0,
+  "outlook": 1,
+  "why": "Management guides 20-25% ash & coal revenue growth for FY27 and FY28 (midpoint 22.5%), backed by a ~INR1,700 crore tender-driven ash order book and a 90,000 t Q4 target versus 35,000-40,000 t in Q2; wind execution of INR1,300-1,400 crore is backed by an INR1,100-1,200 crore order book, and the Pune RMC plant started in September 2026.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Standalone EBITDA margin guided at 15-18% (Q2 at 16%), wind margins moving from a Q1 loss to INR11.32 crore EBITDA in Q2, and indigenisation expected to add margin about 6 months after the 12-14 month build, with an aspiration of 17-20%."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "Q1 FY28 for wind plant; Q4 FY27 ash volume",
+    "why": "Pune RMC plant (60 cum/hour) started in Sep 2026 and Hoskote and Kalyan followed; wind indigenous plant is expected operational in 12-14 months, and the ash target of 90,000 t in Q4 FY27 is up from 35,000-40,000 t in Q2."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "H2 FY27 into FY28",
+    "why": "Ash & coal guided at 20-25% YoY growth for FY27 and FY28 (midpoint 22.5%) against a ~INR1,700 crore order book; wind FY27 execution of INR1,300-1,400 crore is backed by an INR1,100-1,200 crore order book."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "unlikely",
+    "when": "",
+    "why": "Management says RMC rollout is asset-light with no capex, and the wind plant is already under setup, so no new capex programme was signalled; utilisation was not disclosed."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "Ash growth held at 20-25%, EBITDA margin held at 15-18%, and wind execution guided at INR1,300-1,400 crore against an order book of INR1,100-1,200 crore, with Q2 volumes weak on monsoon, so no basis for a raise."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Q2 ash volume of 35,000-40,000 t is far below the 90,000 t Q4 target and H2 growth was not quantified, while the brief's guidance table flags the FY27 wind execution figure as a cut."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "RMC rollout planned across Mumbai, Bangalore, Hyderabad, Kolkata and Chennai after Pune, Hoskote and Kalyan, with Pune expected at 4,000-4,500 cum/month; RMC contribution expected meaningfully from FY28."
+   },
+   {
+    "k": "order_book",
+    "label": "Large-volume wind order closure",
+    "call": "likely",
+    "when": "next 1-2 months",
+    "why": "Final price negotiation expected to close in 30-45 days with quantum described as substantial; existing wind order book about INR1,100 crore."
+   },
+   {
+    "k": "corporate_action",
+    "label": "Green mobility demerger",
+    "call": "possible",
+    "when": "2-3 months, NCLT hearing 11 Nov 2026",
+    "why": "Completion guided in 2-3 months subject to NCLT and regulatory approvals; NCLT adjourned to 11 November 2026."
+   },
+   {
+    "k": "working_capital",
+    "label": "Receivables cycle to about 130 days",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Receivables INR1,251 crore on a 120-130 day cycle; management targets holding about 130 days, with billing delays of up to 70 days, and promoter pledge release of INR400-450 crore expected in 3-5 months."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on the ash business, wind order closure and RMC outlook but cautious on the weak Q2 volumes from monsoon; analysts pressed on receivables of INR1,251 crore, finance cost rise, promoter pledge and the unquantified H2 growth."
+  }
+ }
+}

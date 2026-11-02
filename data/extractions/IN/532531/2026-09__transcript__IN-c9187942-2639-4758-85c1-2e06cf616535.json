@@ -1,0 +1,476 @@
+{
+ "doc_id": "IN-c9187942-2639-4758-85c1-2e06cf616535",
+ "market": "IN",
+ "company_id": "532531",
+ "name": "Strides Pharma Science Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-02",
+ "period": "2026-09",
+ "title": "Strides Pharma Science Ltd - 532531 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Q2 record revenue ₹1,430 crore (+17% YoY) but gross margin fell to 56.0% and working capital rose ₹307 crore; FY28 US $375m aspiration pushed out, with Ex-US now 102% of US.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 1,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "it should be around the INR300 crores mark. If you look at our spends have reduced from Q1 into Q2"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Cash-to-cash cycle 137 days, up 13 days",
+    "quote": "Our cash -to-cash cycle stood at 137 days. This is up 13 days from March 2026",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "US $375m FY28 aspiration slips",
+    "quote": "Given how the market has evolved, we now expect to reach this a little beyond FY28. The timing has moved; the ambition has not.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin 60.9% → 56.0% QoQ",
+    "quote": "Gross margin stood at 56.0%, compared with 57.8% in Q2 last year and 60.9% in Q1",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Ex-US 102% of US revenue",
+    "quote": "in Q2 FY27 it reached 102%, crossing the US well ahead of schedule",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Net debt/EBITDA rises to 1.72x",
+    "quote": "The ratio now stands at 1.72x, reflecting the INR211 crores increase in net debt during H1",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Gross margin",
+    "value": "58% to 60% range maintained",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we'll be in the range of that 58% to 60%, and we'll continue to maintain that range"
+   },
+   {
+    "metric": "US revenue aspiration",
+    "value": "about $375m, now a little beyond FY28",
+    "change": "cut",
+    "horizon": "FY28",
+    "quote": "we now expect to reach this a little beyond FY28. The timing has moved; the ambition has not."
+   },
+   {
+    "metric": "Product launches",
+    "value": "4 to 6 launches in H2",
+    "change": "new",
+    "horizon": "H2 FY27",
+    "quote": "So we expect to launch 4 to 6 products."
+   },
+   {
+    "metric": "Sandoz acquisition close",
+    "value": "close in Q3",
+    "change": "held",
+    "horizon": "Q3 FY27",
+    "quote": "we expect it to close in Q3"
+   },
+   {
+    "metric": "Net debt-free path",
+    "value": "aspiration unchanged; debt to remain working-capital driven through FY29",
+    "change": "held",
+    "horizon": "FY29",
+    "quote": "that aspiration has not changed"
+   },
+   {
+    "metric": "Capex",
+    "value": "around INR300 crores FY27; FY28 slightly lower",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "it should be around the INR300 crores mark"
+   },
+   {
+    "metric": "Finance cost",
+    "value": "INR40-45 crores per quarter",
+    "change": "new",
+    "horizon": "H2 FY27",
+    "quote": "It will be within a range between that INR40 crores to INR45 crores"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Gross margin range",
+    "outcome": "met",
+    "quote": "for the first half, gross margins stood at a healthy 58.3%"
+   },
+   {
+    "metric": "US revenue aspiration",
+    "outcome": "missed",
+    "quote": "we now expect to reach this a little beyond FY28. The timing has moved"
+   },
+   {
+    "metric": "Product launches",
+    "outcome": "not_discussed",
+    "quote": "we launched three products, taking our commercialised portfolio to 75 products"
+   },
+   {
+    "metric": "Sandoz acquisition close",
+    "outcome": "missed",
+    "quote": "we expect it to close in Q3"
+   },
+   {
+    "metric": "Net debt-free path",
+    "outcome": "not_discussed",
+    "quote": "that aspiration has not changed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Sandoz",
+    "relation": "partner"
+   },
+   {
+    "name": "OneSource",
+    "relation": "partner"
+   },
+   {
+    "name": "Endo",
+    "relation": "supplier"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital up ₹307 crore in H1; CCC 137 days",
+    "quote": "absolute working capital increasing by INR307 crores during the first half"
+   },
+   {
+    "label": "US dollar revenue flat YoY; price erosion acknowledged",
+    "quote": "it has got to do more with the mix of products"
+   },
+   {
+    "label": "Gross margin down QoQ; 58% guide relies on H2 cost recovery",
+    "quote": "we are confident of sustaining our H1 gross margins going forward"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 3,
+   "growth": 5,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Launch count / H2 launch products",
+    "quote": "It does not hinge on a particular product. It is more broad -based"
+   },
+   {
+    "topic": "Gross margin Q3/Q4 trajectory",
+    "quote": "The way I would say is our focus remains on EBITDA and PAT"
+   },
+   {
+    "topic": "Price erosion in US",
+    "quote": "It will not be price erosion. It will also be some volumes -- some volumes also that we give up"
+   }
+  ],
+  "hedge_index": 0.4,
+  "themes": []
+ },
+ "summary": {
+  "headline": "Strides Q2 FY27 revenue hit a record ₹14,297 million (+17% YoY), with Ex-US overtaking US, but FY28 US $375m aspiration slips beyond FY28.",
+  "overview": "Q2 FY27 delivered record revenue of ₹14,297 million (+17% YoY, +13% QoQ) and record EBITDA of ₹2,509 million, though EBITDA margin fell to 17.6% from 19.0% a year earlier on higher material, freight and logistics costs. Ex-US revenue reached ₹6,963 million (+31% YoY) and exceeded US revenue for the first time, reaching 102% of US revenue in the quarter. US revenue of ₹6,855 million (+9% YoY) recovered sequentially, but management pushed the ~$375 million US revenue aspiration beyond FY28 while keeping the overall FY28 growth ambition intact. Working capital rose ₹307 million in H1 as inventory was built, lifting net debt to EBITDA to 1.72x.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue",
+    "value": "₹14,297 million",
+    "change": "+17% YoY, +13% QoQ"
+   },
+   {
+    "metric": "Gross margin",
+    "value": "56.0%",
+    "change": "vs 57.8% in Q2 FY26 and 60.9% in Q1 FY27"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "₹2,509 million (17.6% margin)",
+    "change": "+8% YoY; margin vs 19.0% in Q2 FY26 and 18.2% in Q1 FY27"
+   },
+   {
+    "metric": "Operational PAT",
+    "value": "₹1,358 million",
+    "change": "+12% YoY (call stated 11.5% for ₹136 crore)"
+   },
+   {
+    "metric": "Operational EPS",
+    "value": "₹14.7",
+    "change": "vs ₹13.2 in Q2 FY26"
+   },
+   {
+    "metric": "Reported PAT (Q2)",
+    "value": "₹134 crore, reported EPS ₹14.2",
+    "change": ""
+   },
+   {
+    "metric": "H1 FY27 revenue",
+    "value": "₹2,695 crore",
+    "change": "+15.1% YoY"
+   },
+   {
+    "metric": "H1 FY27 EBITDA",
+    "value": "₹481 crore (17.8% margin)",
+    "change": "+6.9% YoY"
+   },
+   {
+    "metric": "H1 FY27 operational PAT",
+    "value": "₹259 crore, operational EPS ₹28.1",
+    "change": "+9.8% YoY"
+   },
+   {
+    "metric": "H1 FY27 reported PAT",
+    "value": "₹300 crore",
+    "change": "+26.4% YoY, includes Pivot Path divestment gain recognised in Q1"
+   },
+   {
+    "metric": "Net debt to EBITDA",
+    "value": "1.72x",
+    "change": "net debt up ₹211 crore in H1 on working capital"
+   }
+  ],
+  "segments": [
+   {
+    "name": "US",
+    "commentary": "Q2 revenue ₹6,855 million ($73 million), +9% YoY and +9% QoQ; H1 ₹13,137 million, +7% YoY. Commercialised portfolio at 75 products after three launches in the quarter; top-three positions in 38 products contributing about 70% of US revenue."
+   },
+   {
+    "name": "Ex-US",
+    "commentary": "Q2 revenue ₹6,963 million, +31% YoY; H1 ₹12,838 million, +24% YoY. Ex-US was 76% of US in FY25, 90% in FY26 and 102% in Q2 FY27. Growth broad-based across UK, Europe (partnered and German private-label OTC), Nordics, Australia, Francophone Africa and South Africa."
+   },
+   {
+    "name": "Controlled Substances (within US)",
+    "commentary": "Five commercialised oral solid CS products contribute about 6% of US revenue, addressing a ~$750 million market. Pipeline of more than 10 CS products (nasal sprays, patches, films) targets a ~$4.5 billion addressable market."
+   }
+  ],
+  "guidance_outlook": [
+   "FY28 overall revenue growth ambition 'firmly in place', but the ~$375 million US revenue aspiration now expected 'a little beyond FY28'.",
+   "Management said Ex-US could reach upwards of $375 million in FY28 and expects Ex-US to keep growing faster than the company average.",
+   "H2 expected stronger than H1, with 4 to 6 US launches planned and Q3 relaunch of a controlled-substance patch.",
+   "Gross margin expected in the 58% to 60% range, with H1's 58.3% described as sustainable.",
+   "Net finance cost expected in the ₹40 to ₹45 crore range for H2 FY27.",
+   "Capex around ₹300 crore by end FY27; FY28 capex 'slightly lower'.",
+   "Net debt to EBITDA expected to stabilise and improve by year end; cash-to-cash cycle expected to improve starting next quarter.",
+   "Bottom line expected to grow ahead of top line; trailing ROCE of 14.4%, expected to improve.",
+   "Latin America not expected to contribute meaningfully until about FY29-30."
+  ],
+  "capex_capacity": [
+   "Capex and intangibles of ₹208 crore deployed in H1 FY27; cash-flow capex about ₹265 crore including ₹60 crore of payments for prior-year investments.",
+   "Investments include IP purchases, nasal spray and transdermal patch programmes.",
+   "First nasal spray (controlled substance) has a GDUFA goal date in H2 FY27, with approval expected in Q4; third nasal spray filed in September 2026.",
+   "Controlled-substance patch relaunch expected in Q3, acquired from Endo ANDAs.",
+   "Chestnut Ridge (US) facility has capacity for US-manufactured controlled-substance products."
+  ],
+  "demand_pricing": [
+   "US B2B partner business had a strong order book with new wins from a partnered product, recent launches and other molecules; wins expected to show up over coming quarters.",
+   "US pricing pressure: US revenue flat in dollar terms YoY, attributed to product mix, price adjustments tied to currency and volume given up; management cited cost improvement plans as an offset.",
+   "Drug-shortage opportunities in oral solids have largely normalised; remaining shortages seen mainly in injectables and patches.",
+   "Controlled Substances growth constrained by quota allocations, which are set twice a year and have improved progressively; CS share moved from 0% to 6% of US revenue over a couple of years.",
+   "Ex-US: shipment delays from Q1 resolved with no spillover into Q2; management said the Q2 level is a new run rate excluding Sandoz.",
+   "Sandoz Francophone Africa deal awaiting antitrust approval in a few countries, expected to close in Q3. Multiple new out-licensing deals signed in H1.",
+   "Input cost, freight and logistics costs elevated due to the geopolitical situation; management expects alternate sourcing and procurement initiatives to help."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What is driving non-US momentum, and what growth is possible over 2-3 years including Sandoz?",
+    "answer": "Badree said growth is broad-based across B2B and B2C markets, with some sub-$30m markets growing fast and $50m+ markets in mid-teens. He expects Ex-US to reach upwards of the $375 million aspiration in FY28, with Sandoz adding scale over 1-2 years."
+   },
+   {
+    "question": "When will the new US differentiated products contribute meaningfully?",
+    "answer": "Vikesh said meaningful contribution is expected in FY28-FY29, a slip of about 3-4 quarters, with the milestone reached by FY29."
+   },
+   {
+    "question": "Will gross margin improve sequentially in H2?",
+    "answer": "Vikesh said Q4 purchases made at the height of disruption were consumed in Q2 and cost initiatives are now playing out, so 58% margins are sustainable. He said the focus is EBITDA and PAT, with quarter-on-quarter growth over the longer term."
+   },
+   {
+    "question": "Is the FY28 aspiration tied to specific products, and why was it deferred?",
+    "answer": "Vikesh said it was an aspiration, not guidance, and is broad-based rather than dependent on one product. Reasons: lower shortages in the US and a decision not to launch products below profitability thresholds."
+   },
+   {
+    "question": "How will the Ex-US mix affect gross margin?",
+    "answer": "Badree said company gross margin will stay in the 58% to 60% range, and that each Ex-US market should be healthy within that range."
+   },
+   {
+    "question": "Will working capital remain elevated, and what is the finance cost outlook?",
+    "answer": "Badree said cash conversion should improve from the next quarter as inventory normalises. Finance cost is expected at ₹40 to ₹45 crore for H2, versus ₹43 crore in Q2."
+   },
+   {
+    "question": "Is Ex-US Q2 a new run rate, and what is the capex plan?",
+    "answer": "Badree confirmed the Q2 Ex-US level is a new run rate excluding Sandoz. Vikesh said capex is around ₹300 crore by year end and slightly lower in FY28."
+   },
+   {
+    "question": "Why was US dollar revenue flat YoY, and is the controlled-substance quota gain from market share?",
+    "answer": "Vikesh cited product mix, price adjustments to currency and volumes given up. He said the CS quota gains reflect market share gains rather than market expansion."
+   }
+  ],
+  "risks_watch": [
+   "US growth slow: $73 million in Q2 and a $375 million aspiration pushed beyond FY28; watch for the H2 recovery and the 4 to 6 launches.",
+   "Gross margin at 56.0% in Q2 versus 58.3% in H1; a sustained 58% to 60% range depends on cost initiatives and input prices.",
+   "Net debt to EBITDA at 1.72x with working capital up ₹307 million; the debt-free aspiration timing is not explicitly reaffirmed.",
+   "Controlled-substance growth depends on twice-yearly quota allocations; the first nasal spray approval is expected in Q4.",
+   "Sandoz Francophone Africa deal closing expected in Q3, subject to antitrust approvals.",
+   "Obsolescence provisions of about ₹70 crore charged to P&L (presentation change in cash flow statement, per management)."
+  ],
+  "management_tone": "Confident on the Ex-US business and overall growth, but measured and somewhat defensive on the US, where the FY28 aspiration has moved out. Management was specific on margin and working capital recovery timing but offered limited product-level detail on H2 launches.",
+  "key_quotes": [
+   "Our goal was for Ex-US revenue to match the US by FY28, and we have achieved that in Q2 FY27 itself.",
+   "The timing has moved; the ambition has not.",
+   "We will not compromise on profitability or the quality of our business to chase revenue.",
+   "Cash conversion cycle definitely will improve in the coming quarters."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "First nasal spray (controlled substance) GDUFA goal date in H2 FY27, approval expected Q4; approval is not capacity but a launch",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Controlled-substance patch relaunch acquired from Endo ANDAs (product relaunch, not new plant)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "planned",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 15.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "new_products_or_markets",
+   "pricing_or_mix",
+   "cost_actions",
+   "order_book"
+  ],
+  "clarity": "partial",
+  "qRev": 17.0,
+  "qEbitda": 8.0,
+  "outlook": 1,
+  "why": "Management expects H2 stronger than H1 with 4 to 6 US launches, a Q3 CS patch relaunch and Ex-US growing faster than the company average, with bottom line growing ahead of top line; revenue growth guidance is not quantified, and the US $375m aspiration slipped to a little beyond FY28, so backing is partial (launches, Sandoz close, order book) rather than clear capacity.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Gross margin guided to 58% to 60% (Q2 at 56.0%, H1 at 58.3%) as Q4 FY26 high-cost purchases were consumed and cost initiatives play out, though EBITDA margin was 17.6% vs 19.0% a year ago."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "unlikely",
+    "when": "",
+    "why": "No new plant or line is discussed; capex is around ₹300 crore by end FY27 and slightly lower in FY28, with H1 capex and intangibles at ₹208 crore on IP and programme spend, not capacity build-out."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "Ex-US grew 31% YoY to ₹6,963 million and is seen growing faster than the company average, with the Sandoz Francophone Africa close expected in Q3, while US revenue grew only 9% YoY."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "unlikely",
+    "when": "",
+    "why": "Utilisation is not disclosed and management frames capex as steady at about ₹300 crore with FY28 slightly lower, so no new capex programme is signalled."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "possible",
+    "when": "H2 FY27",
+    "why": "Management expects H2 stronger than H1 with 4 to 6 US launches and Ex-US at a new run rate of ₹6,963 million (+31% YoY), but no quantified revenue upgrade was given."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "The US $375m aspiration has slipped to 'a little beyond FY28' and US revenue was flat in dollar terms YoY at $73m in Q2, though management did not cut revenue guidance."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "Management expects 4 to 6 US launches in H2, a Q3 relaunch of the controlled-substance patch from Endo ANDAs, and first nasal spray approval in Q4 after its GDUFA date in H2."
+   },
+   {
+    "k": "new_markets",
+    "label": "Sandoz Francophone Africa deal close",
+    "call": "likely",
+    "when": "Q3 FY27",
+    "why": "Deal awaits antitrust approval in a few countries and is expected to close in Q3, with Sandoz adding Ex-US scale over 1-2 years."
+   },
+   {
+    "k": "order_book",
+    "label": "US B2B partner order book wins",
+    "call": "likely",
+    "when": "next few quarters",
+    "why": "A strong order book with new wins from a partnered product, recent launches and other molecules is expected to show up over coming quarters."
+   },
+   {
+    "k": "working_capital",
+    "label": "Cash conversion and net debt improvement",
+    "call": "likely",
+    "when": "from Q3 FY27",
+    "why": "Cash-to-cash cycle expected to improve from next quarter as inventory normalises, after ₹307 million working capital build in H1 that lifted net debt/EBITDA to 1.72x."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on Ex-US growth, the 58% to 60% gross margin range and cash-conversion recovery, but defensive on the US, where the $375m aspiration slipped past FY28; analysts pushed on the US timing, margin recovery and product-level detail for H2 launches."
+  }
+ }
+}
