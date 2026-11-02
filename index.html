@@ -423,31 +423,6 @@ table.res tr.wrow td:first-child{box-shadow:inset 3px 0 0 var(--warn)}
 @media (max-width:760px){.wl .r{grid-template-columns:minmax(0,1fr) auto}.wl .r>:nth-child(2),.wl .r>:nth-child(3){display:none}.wl .r .up-actions{grid-column:1/-1;justify-content:flex-start}}
 .ask-p{font-size:11px;line-height:1.5;border-left:2px solid var(--line2);padding-left:9.5px}
 .ask-p mark.hl{--tc:var(--accent)}
-.an .r{grid-template-columns:62px minmax(0,1.1fr) 150px minmax(0,2.2fr) 120px 150px;align-items:start}
-.an .r.hd{align-items:center}
-.an .r.an-hi{box-shadow:inset 3px 0 0 var(--v5)}
-.an .r.wrow.an-hi{box-shadow:inset 3px 0 0 var(--warn)}
-.an-when{display:grid;gap:1px}
-.an-tr{display:flex;flex-wrap:wrap;gap:4px;align-content:start}
-.an-p{font-size:9px}
-.an-mat{flex-basis:100%;font-size:10px;color:var(--muted)}
-.an-mat.an-mh{color:var(--v5);font-weight:600}
-.an-s{font-size:12px;line-height:1.45}
-.an-h{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.an-v{display:grid;gap:1px;text-align:right}
-.an .up-actions{justify-content:flex-end}
-.an-bars{display:grid;gap:3px}
-.an-bars .cy-row{grid-template-columns:132px minmax(0,1fr) 44px}
-.an-chip{display:inline-flex;align-items:center;gap:6px}
-.an-chip[aria-pressed="true"]{border-color:var(--pc);color:var(--fg);background:color-mix(in srgb,var(--pc) 12%,var(--panel))}
-.an-chip .num{font-size:10px;color:var(--muted)}
-.an-rep{grid-template-columns:minmax(0,1fr) auto 34px}
-.an-co{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-.an-co>div{display:grid;grid-template-columns:52px 150px minmax(0,1fr);gap:10px;padding:8px 12px;border-top:1px solid var(--line);font-size:12px;align-items:start}
-.an-co>div:first-child{border-top:0}
-@media (max-width:760px){.an .r{grid-template-columns:minmax(0,1fr) auto}.an .r.hd{display:none}.an .r>.an-when{grid-column:1/-1;display:flex;gap:8px}
-  .an .r>:nth-child(4){grid-column:1/-1}.an .r>.an-v{text-align:left}.an .up-actions{justify-content:flex-start}
-  .an-co>div{grid-template-columns:52px minmax(0,1fr)}.an-co>div>:last-child{grid-column:1/-1}}
 .mg .r{grid-template-columns:minmax(0,240px) minmax(0,1fr) 190px;align-items:start}
 .mg .r>:last-child{justify-content:flex-end}
 .mg-ch{font-size:11.5px}
@@ -1074,7 +1049,7 @@ const VIEWS = [
   {group: 'Calls', items: [['calls', 'All calls'], ['people', 'Who’s asking'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Results', items: [['pead', 'Results to watch (PEAD)'], ['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
-  {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['ann', 'Announcements'], ['mgmt', 'Management changes']]}
+  {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes']]}
 ];
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
 function navCounts() {
@@ -1088,7 +1063,6 @@ function navCounts() {
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: cyData('sub').rows.filter(r => r.ph === 'turn' && !r.thin).length || '',
     themes: themesQ().length, nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
-    ann: ANN.data ? (n => n ? n + ' new' : '')((ANN.data.items || []).filter(x => x.m === 'h' && x.d >= addDays(istToday(), -1)).length) : '',
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
 function renderNav() {
@@ -2604,117 +2578,6 @@ function vMgmt() {
       <span style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">${m.url ? `<a class="btn" href="${esc(m.url)}" target="_blank" rel="noopener">Filing ↗</a>` : ''}${m.inCalls ? `<button class="btn" data-open="${esc(m.id)}">Open the call</button>` : ''}</span></div>`).join('') || '<div class="empty">No management changes in this period.</div>'}</div></section>`;
 }
 
-/* Announcements: BSE corporate filings tagged into triggers by the engine (ann.py) for screening ideas. Their own file,
-   data/ann_in.json, refreshed every 30 minutes. Each row: id, c (BSE code), d/t (IST date, time), tr (triggers, main first),
-   h (BSE headline), s (Claude's one-line read), m (materiality h/m/l), se (p/n/ne), v (₹ Cr), pr (% of annual revenue), pm (% of market cap),
-   cp (counterparty), tl (timeline), a (attachment), top (top-level management change), dir (rating up/down/same). */
-const ANN = {data: null, p: null};
-const loadAnn = () => ANN.data ? Promise.resolve(ANN.data) : (ANN.p = ANN.p || getJson('data/ann_in.json')
-  .then(j => (ANN.data = j && Array.isArray(j.items) ? j : {items: [], triggers: {}, companies: {}})));
-function annLoading(name) { if (!ANN.data) { loadAnn().then(() => { if (S.view === name) render(); renderNav(); }); return '<div class="empty">Loading announcements…</div>'; } return ''; }
-const AN_COL = {order: 'var(--v5)', acq: 'var(--violet)', merger: 'var(--rose)', mgmt: 'var(--saffron)', capex: 'var(--teal)', fund: 'var(--sand)', capret: 'var(--v4)',
-  partner: 'var(--accent)', approval: 'var(--up)', rating: 'var(--v3)', holder: 'var(--faint)', update: 'var(--muted)', red: 'var(--down)'};
-const AN_ORDER = ['order', 'acq', 'merger', 'capex', 'mgmt', 'fund', 'capret', 'partner', 'approval', 'rating', 'holder', 'update', 'red'];
-const AN_MAT = {h: 'High', m: 'Medium', l: 'Low', '?': 'Being read'};
-const AN_SORTS = {new: ['Newest first', (a, b) => (b.d + b.t).localeCompare(a.d + a.t)],
-  rev: ['Biggest vs revenue', (a, b) => (b.pr ?? -1) - (a.pr ?? -1) || (b.v ?? -1) - (a.v ?? -1)],
-  val: ['Biggest value (₹ Cr)', (a, b) => (b.v ?? -1) - (a.v ?? -1)],
-  mat: ['Most material first', (a, b) => (AN_MRANK[a.m] ?? 2) - (AN_MRANK[b.m] ?? 2) || (b.d + b.t).localeCompare(a.d + a.t)]};
-const AN_MRANK = {h: 0, m: 1, '?': 2, l: 3};
-S.an = {tr: new Set(), days: 7, size: '', mat: false, se: '', watch: false, calls: false, read: false, search: '', sort: 'new', limit: 60};
-const anName = x => ANN.data?.companies?.[x.c]?.[0] || byId[x.c]?.name || x.c;
-const anMcap = x => ANN.data?.companies?.[x.c]?.[1] ?? byId[x.c]?.mcapCr;
-const anTr = k => ANN.data?.triggers?.[k]?.[0] || k;
-const anSince = days => addDays(istToday(), -(days - 1));
-const anCr = v => v == null ? '' : `₹${v >= 100 ? fmt(Math.round(v)) : v.toLocaleString('en-IN', {maximumFractionDigits: 1})} Cr`;
-const anPill = (k, x) => `<span class="pill an-p" style="--pc:${AN_COL[k] || 'var(--muted)'}">${esc(anTr(k))}${k === 'rating' && x?.dir && x.dir !== 'same' ? (x.dir === 'up' ? ' ▲' : ' ▼') : ''}${k === 'mgmt' && x?.top ? ' · top' : ''}</span>`;
-/* every filter except the trigger chips, so the chip counts show what each trigger would add */
-function anBase() {
-  const f = S.an, since = anSince(f.days), q = f.search.trim().toLowerCase();
-  return (ANN.data?.items || []).filter(x => x.d >= since && (!f.size || SIZES[f.size][1](anMcap(x))) && (!f.mat || x.m === 'h')
-    && (!f.se || x.se === f.se) && (!f.watch || isW(x.c)) && (!f.calls || byId[x.c]) && (!f.read || x.s)
-    && (!q || anName(x).toLowerCase().includes(q) || (x.h || '').toLowerCase().includes(q) || (x.s || '').toLowerCase().includes(q) || (x.cp || '').toLowerCase().includes(q)));
-}
-const anRows = base => { const f = S.an, rows = f.tr.size ? base.filter(x => x.tr.some(t => f.tr.has(t))) : base.slice(); return rows.sort(AN_SORTS[f.sort][1]); };
-/* companies with the same trigger more than once in the period: repeat order wins, serial acquirers, steady capacity adds */
-function anRepeats(rows) {
-  const m = {};
-  rows.forEach(x => { const t = x.tr[0]; if (!['order', 'acq', 'capex', 'partner', 'approval', 'fund'].includes(t)) return;
-    const k = x.c + '|' + t, r = (m[k] = m[k] || {c: x.c, t, n: 0, v: 0, pr: 0, last: ''}); r.n++; r.v += x.v || 0; r.pr += x.pr || 0; if (x.d > r.last) r.last = x.d; });
-  return Object.values(m).filter(r => r.n >= 2).sort((a, b) => b.n - a.n || b.pr - a.pr || b.v - a.v);
-}
-function anRow(x) {
-  const nm = anName(x), mc = anMcap(x), co = byId[x.c], sec = co?.sector;
-  const val = x.v != null ? `<b class="num">${anCr(x.v)}</b>${x.pr != null ? `<span class="sub num" data-tt="${ttA('Value as a share of annualised revenue (last four quarters filed on BSE)')}">${x.pr >= 100 ? fmt(Math.round(x.pr)) : x.pr}% of revenue</span>` : ''}${x.pm != null ? `<span class="sub num">${x.pm}% of m-cap</span>` : ''}` : '';
-  const meta = [x.cp ? 'With ' + x.cp : '', x.tl ? 'Over ' + x.tl : ''].filter(Boolean).join(' · ');
-  return `<div class="r${isW(x.c) ? ' wrow' : ''}${x.m === 'h' ? ' an-hi' : ''}">
-    <span class="an-when"><b class="num">${esc(sdate(x.d))}</b><span class="sub num">${esc(x.t || '')}</span></span>
-    <span style="min-width:0"><span class="nm" style="display:block">${star(x.c)}${esc(nm)}</span><span class="sub">${mc ? '₹' + fmt(Math.round(mc)) + ' Cr' : ''}${mc && sec ? ' · ' : ''}${esc(sec || '')}</span></span>
-    <span class="an-tr">${x.tr.slice(0, 3).map(k => anPill(k, x)).join('')}<span class="an-mat an-m${x.m}" title="Materiality">${AN_MAT[x.m] || ''}${x.se === 'p' ? ' · good news' : x.se === 'n' ? ' · bad news' : ''}</span></span>
-    <span style="min-width:0;display:grid;gap:3px">${x.s ? `<span class="an-s">${esc(x.s)}</span><span class="sub an-h">${esc(x.h)}</span>` : `<span class="an-s">${esc(x.h)}</span>`}${meta ? `<span class="sub">${esc(meta)}</span>` : ''}</span>
-    <span class="an-v">${val}</span>
-    <span class="up-actions">${x.a ? `<a class="btn" href="https://www.bseindia.com/xml-data/corpfiling/AttachLive/${esc(x.a)}" target="_blank" rel="noopener">Filing ↗</a>` : ''}${co ? `<button class="btn" data-open="${esc(x.c)}">Last call · ${co.score}</button>` : ''}</span>
-  </div>`;
-}
-function vAnn() {
-  const wait = annLoading('ann'), f = S.an, A = ANN.data || {};
-  const how = `<ul><li>Every corporate announcement our companies file on BSE is read <b>every 30 minutes</b> from 8:30 am to 11 pm IST and tagged into triggers. Routine filings (newspaper ads, trading-window closures, investor-meet notices, certificates) are left out.</li>
-      <li>Pick one or more <b>triggers</b> to screen for ideas, then narrow by period, market cap, materiality and news direction. The counts on each trigger follow your other filters.</li>
-      <li>Orders, deals, capex, fund raises, partnerships, approvals, press releases and red flags are <b>read by Claude</b> from the filing for a one-line takeaway, the value in ₹ Cr, the counterparty and the timeline. Values are compared with <b>annualised revenue</b> (last four quarters filed on BSE) and market cap.</li>
-      <li><b>Materiality</b>: High means it could move earnings or the stock, for example an order worth 15%+ of revenue or 5%+ of market cap, a big approval or a top-management exit.</li>
-      <li><b>Repeat triggers</b> lists companies with the same trigger twice or more in the period: steady order wins, serial acquirers, capacity added in steps.</li>
-      <li>Star a company to add it to your watchlist, then use <b>My watchlist</b> to see only its filings.</li></ul>`;
-  const badge = `<span class="badge">${A.checked ? 'BSE checked ' + esc(A.checked.replace('T', ' ')) + ' UTC' : 'Not checked yet'}</span>`;
-  const top = head('Announcements', 'Corporate announcements filed on BSE, tagged into triggers you can screen for ideas: order wins, acquisitions, management changes, capex, fund raises, approvals, business updates and red flags.', how, badge);
-  if (wait) return top + wait;
-  if (!(A.items || []).length) return top + '<div class="empty">No announcements read yet. They appear after the next 30-minute check.</div>';
-  const base = anBase(), rows = anRows(base), shown = rows.slice(0, f.limit);
-  const cnt = {}; base.forEach(x => x.tr.forEach(t => { cnt[t] = (cnt[t] || 0) + 1; }));
-  const orders = rows.filter(x => x.tr[0] === 'order'), oval = orders.reduce((n, x) => n + (x.v || 0), 0);
-  const hi = rows.filter(x => x.m === 'h').length, pos = rows.filter(x => x.se === 'p').length, neg = rows.filter(x => x.se === 'n').length;
-  const days = []; for (let i = Math.min(f.days, 30) - 1; i >= 0; i--) days.push(addDays(istToday(), -i));
-  const perDay = days.map(d => rows.filter(x => x.d === d).length);
-  const big = rows.filter(x => x.pr != null).sort((a, b) => b.pr - a.pr).slice(0, 8);
-  const rep = anRepeats(rows).slice(0, 8);
-  const trMax = Math.max(1, ...AN_ORDER.map(k => cnt[k] || 0));
-  const board = `<div class="board">
-      <section class="w span4 kpi"><span class="l">Announcements in view</span><span class="v" data-count="${rows.length}">${fmt(rows.length)}</span><span class="l"><b class="num">${fmt(hi)}</b> high materiality · <b class="num g-up">${fmt(pos)}</b> good · <b class="num g-dn">${fmt(neg)}</b> bad news</span>${days.length > 1 ? spark2(perDay) : ''}</section>
-      <section class="w span4 kpi"><span class="l">Order wins</span><span class="v" style="color:var(--v5)">${fmt(orders.length)}</span><span class="l">${oval ? `worth <b class="num">${anCr(oval)}</b> where the value is stated` : 'values appear once filings are read'}</span></section>
-      <section class="w span4 kpi"><span class="l">Companies filing</span><span class="v" style="color:var(--accent)">${fmt(new Set(rows.map(x => x.c)).size)}</span><span class="l"><b class="num">${fmt(rows.filter(x => x.s).length)}</b> filings read by Claude · <b class="num">${fmt(rows.filter(x => byId[x.c]).length)}</b> from companies with calls read</span></section>
-      <section class="w span4"><div class="w-head"><h3>By trigger</h3><span class="small muted">click to filter</span></div>
-        <div class="an-bars">${AN_ORDER.filter(k => cnt[k]).map(k => `<button class="cy-row" data-antr="${k}" aria-pressed="${f.tr.has(k)}"><span>${esc(anTr(k))}</span><span class="cy-tr"><i style="width:${(100 * cnt[k] / trMax).toFixed(1)}%;background:${AN_COL[k]}"></i></span><span class="num">${fmt(cnt[k])}</span></button>`).join('')}</div></section>
-      <section class="w span4"><div class="w-head"><h3>Biggest vs revenue</h3><span class="small muted">order or deal value</span></div>
-        <div class="movers">${big.length ? big.map(x => `<button class="mv" ${byId[x.c] ? `data-open="${esc(x.c)}"` : ''} data-tt="${ttA(`${anName(x)} · ${anTr(x.tr[0])}\n${anCr(x.v)} · ${sdate(x.d)}${x.s ? '\n' + x.s : ''}`)}"><b>${esc(anName(x))}</b><span class="tr"><i style="width:${Math.min(100, x.pr).toFixed(1)}%;background:${AN_COL[x.tr[0]]}"></i></span><span class="num">${x.pr >= 100 ? fmt(Math.round(x.pr)) : x.pr}%</span></button>`).join('') : '<span class="small muted">Shown once orders and deals with a stated value are read.</span>'}</div></section>
-      <section class="w span4"><div class="w-head"><h3>Repeat triggers</h3><span class="small muted">same trigger 2+ times</span></div>
-        <div class="movers">${rep.length ? rep.map(r => `<button class="mv an-rep" ${byId[r.c] ? `data-open="${esc(r.c)}"` : ''} data-tt="${ttA(`${anName(r)} · ${r.n}× ${anTr(r.t)}${r.v ? '\n' + anCr(r.v) + ' in total' : ''}${r.pr ? ' · ' + Math.round(r.pr) + '% of revenue' : ''}\nlatest ${sdate(r.last)}`)}"><b>${esc(anName(r))}</b>${anPill(r.t)}<span class="num">${r.n}×</span></button>`).join('') : '<span class="small muted">No company has the same trigger twice in this period.</span>'}</div></section>
-    </div>`;
-  return top + `${board}
-    <div class="toolbar an-trs">${AN_ORDER.map(k => `<button class="chip an-chip" data-antr="${k}" aria-pressed="${f.tr.has(k)}" style="--pc:${AN_COL[k]}" title="${esc(A.triggers?.[k]?.[1] || '')}"><i class="dot" style="background:${AN_COL[k]}"></i>${esc(anTr(k))} <span class="num">${fmt(cnt[k] || 0)}</span></button>`).join('')}${f.tr.size ? '<button class="link" id="an-clear">Clear triggers</button>' : ''}</div>
-    <div class="toolbar">
-      <input type="search" id="an-search" placeholder="Search company, headline or counterparty" value="${esc(f.search)}" aria-label="Search announcements">
-      <select id="an-days" aria-label="Period">${[[1, 'Today'], [2, 'Today and yesterday'], [7, 'Last 7 days'], [30, 'Last 30 days'], [90, 'Last 90 days']].map(([d, n]) => `<option value="${d}" ${f.days === d ? 'selected' : ''}>${n}</option>`).join('')}</select>
-      <select id="an-size" aria-label="Market cap"><option value="">All sizes</option>${Object.entries(SIZES).map(([k, [n]]) => `<option value="${k}" ${f.size === k ? 'selected' : ''}>${esc(n)}</option>`).join('')}</select>
-      <select id="an-sort" aria-label="Sort">${Object.entries(AN_SORTS).map(([k, [n]]) => `<option value="${k}" ${f.sort === k ? 'selected' : ''}>${n}</option>`).join('')}</select>
-    </div>
-    <div class="toolbar">
-      <button class="chip" data-anc="mat" aria-pressed="${f.mat}">High materiality</button>
-      <button class="chip" data-anse="p" aria-pressed="${f.se === 'p'}">Good news</button><button class="chip" data-anse="n" aria-pressed="${f.se === 'n'}">Bad news</button>
-      <button class="chip" data-anc="read" aria-pressed="${f.read}">Read by Claude</button>
-      <button class="chip" data-anc="watch" aria-pressed="${f.watch}">★ My watchlist</button>
-      <button class="chip" data-anc="calls" aria-pressed="${f.calls}">Companies with calls read</button>
-      <span class="small muted">${fmt(rows.length)} announcement${rows.length === 1 ? '' : 's'}</span></div>
-    ${rows.length ? `<div class="rows an"><div class="r hd"><span>Filed</span><span>Company</span><span>Trigger</span><span>What happened</span><span>Value</span><span></span></div>${shown.map(anRow).join('')}</div>`
-      + (rows.length > shown.length ? `<div class="more"><button class="btn" id="an-more">Show 60 more</button><span class="count-line">${fmt(rows.length - shown.length)} more</span></div>` : '')
-      : '<div class="empty">No announcements match these filters. Widen the period or clear a filter.</div>'}`;
-}
-/* the company panel: its recent tagged filings */
-function annSection(id) {
-  const xs = (ANN.data?.items || []).filter(x => x.c === id).slice(0, 8);
-  if (!xs.length) return '';
-  return `<section class="sec"><h3>Recent announcements</h3><div class="an-co">${xs.map(x => `<div><span class="small muted num">${esc(sdate(x.d))}</span><span>${x.tr.slice(0, 2).map(k => anPill(k, x)).join('')}</span>
-    <span style="min-width:0">${esc(x.s || x.h)}${x.v != null ? ` <b class="num">${anCr(x.v)}</b>` : ''}${x.a ? ` <a href="https://www.bseindia.com/xml-data/corpfiling/AttachLive/${esc(x.a)}" target="_blank" rel="noopener" style="color:var(--blue)">filing ↗</a>` : ''}</span></div>`).join('')}</div></section>`;
-}
-
 /* Results to watch (PEAD): a pre-results shortlist read from each company's last concall, then which shortlisted names
    beat and rose on day 1. Rebuilt in the browser from in.json and results_in.json, so it follows every refresh. */
 const PEAD_MIN = 76, PEAD_WATCH = 70, PEAD_BEAT = 20;
@@ -3165,7 +3028,7 @@ $('#xl').addEventListener('click', e => { e.stopPropagation(); if (e.target.clos
 document.addEventListener('click', e => { if (!e.target.closest('#xl')) { const m = $('#xl-menu'); if (m && !m.hidden) xlToggle(false); } });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#xl-menu').hidden) { xlToggle(false); $('#xl-btn').focus(); } });
 
-const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, ann: vAnn, mgmt: vMgmt, help: vHelp};
+const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -3377,7 +3240,6 @@ function signalsHtml(c) {
       <section class="sec"><h3>Management credibility ${tip('cred')}</h3>${c.credTested === 0 ? '<p><b>Untested.</b> <span class="muted">This builds once guidance from an earlier call can be checked against what was delivered.</span></p>' : `<p><b class="num" style="font-size:18px">${c.cred}</b> <span class="muted">of 100, from ${c.credTested} piece${c.credTested === 1 ? '' : 's'} of past guidance checked.</span></p>`}</section>
     </div>
     ${mgmtSection(c)}
-    ${annSection(c.id)}
     ${(c.themes || []).length ? `<section class="sec"><h3>Themes discussed</h3><div class="chips">${c.themes.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></section>` : ''}
     ${(c.namedBy || []).length ? `<section class="sec"><h3>Named in other companies’ calls ${tip('namedBy')}</h3><div class="chips">${c.namedBy.map(n => `<button class="btn" data-open="${esc(n.id)}" title="Called it “${esc(n.as)}” in their ${esc(n.period)} call">${esc(n.name)} · ${esc(n.relation)}</button>`).join('')}</div></section>` : ''}
     ${(c.sources || []).filter(s => s.url).length ? `<section class="sec"><h3>Source documents</h3><div class="chips">${c.sources.filter(s => s.url).map(s => `<a class="tag" style="color:var(--blue)" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.type)} · ${esc(fdate(s.date))} ↗</a>`).join('')}</div></section>` : ''}
@@ -3533,11 +3395,6 @@ document.addEventListener('click', e => {
     if (card) { card.classList.toggle('on', S.rs.flip.has(k)); card.querySelector('.fc-back')?.toggleAttribute('aria-hidden', !S.rs.flip.has(k)); } return; }
   const st = t.closest('[data-st]'); if (st) { S.turns.stage = st.dataset.st; render(); return; }
   const tl = t.closest('[data-tl]'); if (tl) { S.turns.level = tl.dataset.tl; render(); return; }
-  const antr = t.closest('[data-antr]'); if (antr) { const k = antr.dataset.antr; S.an.tr.has(k) ? S.an.tr.delete(k) : S.an.tr.add(k); S.an.limit = 60; render(); return; }
-  const anc = t.closest('[data-anc]'); if (anc) { const k = anc.dataset.anc; S.an[k] = !S.an[k]; S.an.limit = 60; render(); return; }
-  const anse = t.closest('[data-anse]'); if (anse) { S.an.se = S.an.se === anse.dataset.anse ? '' : anse.dataset.anse; S.an.limit = 60; render(); return; }
-  if (t.closest('#an-clear')) { S.an.tr.clear(); S.an.limit = 60; render(); return; }
-  if (t.closest('#an-more')) { S.an.limit += 60; render(); return; }
   const mgt = t.closest('[data-mg]'); if (mgt) { const k = mgt.dataset.mg; S.mg[k] = !S.mg[k]; render(); return; }
   const cys = t.closest('[data-cysel]'); if (cys) { Object.assign(S.cy, {sel: cys.dataset.cysel ? {name: cys.dataset.cysel, lvl: cys.dataset.cylv || S.cy.sel?.lvl || S.cy.lvl} : null, size: '', sig: '', csort: 'cyc'}); if (S.drawer) closeCo(); if (S.view !== 'turns') go('turns'); else render(true); return; }
   const cyp = t.closest('[data-cyph]'); if (cyp) { S.cy.ph = S.cy.ph === cyp.dataset.cyph ? '' : cyp.dataset.cyph; render(); return; }
@@ -3577,7 +3434,7 @@ $('#nav').addEventListener('click', e => { const b = e.target.closest('[data-v]'
 document.addEventListener('toggle', e => { const d = e.target; if (d.matches && d.matches('details[data-how]')) store.set('how-' + d.dataset.how, d.open); }, true);
 document.addEventListener('input', e => {
   if (e.target.id === 'ppl-search') { const pos = e.target.selectionStart; S.ppl = {...(S.ppl || {type: '', open: ''}), search: e.target.value}; render(); const i = $('#ppl-search'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
-  for (const [id, st] of [['rc-search', S.rc], ['rs-search', S.rs], ['an-search', S.an]]) if (e.target.id === id) { const pos = e.target.selectionStart; st.search = e.target.value; render(); const i = $('#' + id); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
+  for (const [id, st] of [['rc-search', S.rc], ['rs-search', S.rs]]) if (e.target.id === id) { const pos = e.target.selectionStart; st.search = e.target.value; render(); const i = $('#' + id); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   if (e.target.id === 'up-search') { const v = e.target.value, pos = e.target.selectionStart; S.up.search = v; render(); const i = $('#up-search'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   if (e.target.id === 'c-search') { S.calls.search = e.target.value; S.calls.limit = 50; fillCalls(); }
   if (e.target.id === 'find') { findSel = 0; renderFind(); }
@@ -3589,9 +3446,6 @@ document.addEventListener('change', e => {
   if (id === 'c-sub') { S.calls.sub = e.target.value; S.calls.limit = 50; render(); }
   if (id === 'c-size') { S.calls.size = e.target.value; S.calls.limit = 50; render(); }
   if (id === 'mg-days') { S.mg.days = +e.target.value; render(); }
-  if (id === 'an-days') { S.an.days = +e.target.value; S.an.limit = 60; render(); }
-  if (id === 'an-size') { S.an.size = e.target.value; S.an.limit = 60; render(); }
-  if (id === 'an-sort') { S.an.sort = e.target.value; S.an.limit = 60; render(); }
   if (id === 'up-big') { S.up.big = e.target.value; render(); }
   if (id === 'up-days') { S.up.days = +e.target.value; render(); }
   if (id === 'rc-big') { S.rc.big = e.target.value; render(); }
@@ -3646,7 +3500,6 @@ $('#themesel').addEventListener('click', e => { const b = e.target.closest('[dat
   render();
   if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
   setTimeout(() => loadSums().then(() => renderNav()), 5000);  /* near-term count uses lines from the summaries; started late so an opened company's summary part comes first */
-  loadAnn().then(() => { renderNav(); if (S.view === 'ann') render(); if (S.drawer) drawDrawer(false); });
   loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'portfolio', 'pead', 'themes', 'turns'].includes(S.view)) render(); });
 })();
 </script>
