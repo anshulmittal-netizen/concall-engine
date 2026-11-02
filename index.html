@@ -93,7 +93,7 @@ a{color:var(--accent)}
 .seg button[aria-pressed="true"]{background:var(--accent);color:var(--onAccent);box-shadow:0 4px 14px color-mix(in srgb,var(--accent) 30%,transparent)}
 .seg .num{font-size:9.5px;opacity:.7;font-weight:500}
 .prog-dot{width:7px;height:7px;border-radius:50%;background:var(--warn);display:inline-block;animation:breathe 2s ease-in-out infinite}
-.find{position:relative;flex:1 1 260px;max-width:440px;margin-left:auto}
+.find{position:relative;flex:1 1 220px;max-width:380px;margin-left:auto}
 .find input{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8.5px 12px 8.5px 32.5px;font-size:12px;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .2s}
 .find input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 4px var(--accentsoft)}
 .find svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted)}
@@ -107,7 +107,10 @@ a{color:var(--accent)}
 .xl-menu b{font-family:var(--display);font-weight:600;font-size:12.5px}
 .xl-menu span{font-size:10.5px;color:var(--muted);line-height:1.4}
 .xl-st{margin:0;padding:2px 10px 5px;font-size:10.5px;color:var(--muted)}.xl-st:empty{display:none}
+@media (max-width:1400px){.theme-seg span{display:none}}
 @media (max-width:760px){.xl-btn span{display:none}}
+.disc{max-width:980px;margin:6px 0 0;padding:12px 0 0;border-top:1px solid var(--line);font-size:10.5px;line-height:1.55;color:var(--muted)}
+.disc b{color:var(--fg)}
 .theme-seg{flex:none}.theme-seg button{padding:6px 9px}.theme-seg svg{display:block}
 @media (max-width:760px){.theme-seg span{display:none}}
 .find-res{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow2);padding:5px;display:grid;gap:2px;z-index:25;max-height:60vh;overflow:auto;animation:enter .2s var(--ease) both}
@@ -753,6 +756,7 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
       </div>
     </div>
     <main id="view" class="view" aria-live="polite"><div class="empty">Loading the latest calls…</div></main>
+    <footer class="disc" role="note"><b>Disclaimer.</b> Not investment advice. Concall Signal Desk is an information tool: scores, verdicts and lists are generated automatically from public company filings and earnings calls, may contain errors, and are not a recommendation to buy, sell or hold any security. Do your own research and speak with your SEBI-registered investment adviser before investing. Investments in securities markets are subject to market risks. <button class="link" data-v="help" data-disc="1" style="font-size:inherit">Full disclaimer</button></footer>
   </div>
 </div>
 <div id="pop" role="dialog" hidden></div>
@@ -2709,6 +2713,14 @@ function vHelp() {
   const W = [['Guidance-backed growth & capacity', 45], ['Industry supply discipline', 20], ['Results delivered', 15], ['Pricing & utilisation', 10], ['Demand', 5], ['New developments & themes', 3], ['Tone & candour', 2]];
   return head('How to use the desk', 'A short guide for the team: what each view is for, how the score works, and where the data comes from.', '') + `
   <div class="help"><article>
+    <section id="h-disclaimer"><h3>Disclaimer</h3>
+      <p><b>Nothing on Concall Signal Desk is investment advice or a recommendation</b> to buy, sell or hold any security, and nothing here takes into account your objectives, finances or risk appetite.</p>
+      <ul><li>Scores, verdicts, red flags, themes and every list (including Near-term strength, Inflection watch and Results to watch) are generated automatically from public company filings, results and earnings-call transcripts. They can be incomplete, out of date or wrong.</li>
+        <li>Summaries and quotes are machine-made readings of what management said. Always check the original filing or transcript before relying on them.</li>
+        <li>Past results and past price moves do not indicate future performance.</li>
+        <li>Do your own research, and speak with your SEBI-registered investment adviser before making any investment decision.</li>
+        <li>Investments in securities markets are subject to market risks. Read all related documents carefully before investing.</li></ul>
+    </section>
     <section id="h-what"><h3>What the desk does</h3>
       <p>Every night the desk reads new concall transcripts filed on BSE by the ${fmt(D.universe)} listed Indian companies, across all market caps. It reads each call through our capital-cycle framework, scores it, writes a detailed summary, and rolls the calls up by sector and theme. It uses concalls, analyst meets and investor presentations only. Prices, results filings and news are left out on purpose.</p></section>
     <section id="h-routine"><h3>A 10-minute daily routine</h3><ol>
@@ -2849,6 +2861,7 @@ function hsClick(sp) {
    "Full data" exports every call, result and calendar entry. Each sheet carries the Concall Signal Desk brand:
    a faint diagonal watermark behind the cells, a title row, and the print header and footer. */
 const XL_BRAND = 'Concall Signal Desk', XL_GREEN = 'FF1E6B45';
+const XL_DISC = 'Not investment advice. Concall Signal Desk is an information tool: scores, verdicts and lists are generated automatically from public company filings and earnings calls, may contain errors, and are not a recommendation to buy, sell or hold any security. Do your own research and speak with your SEBI-registered investment adviser before investing. Investments in securities markets are subject to market risks.';
 let XLJS = null;
 const xlLib = () => (XLJS = XLJS || new Promise((res, rej) => {
   if (window.ExcelJS) return res(window.ExcelJS);
@@ -2885,6 +2898,7 @@ function xlAddSheet(wb, used, markId, sh, meta) {
   ws.addBackgroundImage(markId);
   const n = Math.max(sh.cols.length, 2);
   ws.mergeCells(1, 1, 1, n); ws.mergeCells(2, 1, 2, n);
+  ws.mergeCells(3, 1, 3, n); Object.assign(ws.getCell(3, 1), {value: XL_DISC, font: {name: 'Arial', size: 8, color: {argb: 'FF848D7E'}}, alignment: {wrapText: true, vertical: 'top'}}); ws.getRow(3).height = 34;
   Object.assign(ws.getCell(1, 1), {value: XL_BRAND, font: {name: 'Arial', bold: true, size: 16, color: {argb: XL_GREEN}}});
   Object.assign(ws.getCell(2, 1), {value: `${meta.sub} · exported ${meta.at}`, font: {name: 'Arial', italic: true, size: 9, color: {argb: 'FF4A574E'}}});
   ws.getRow(1).height = 24;
