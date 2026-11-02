@@ -813,11 +813,11 @@ const GL = {
   themeCount:['Companies discussing','Distinct companies that discussed the theme with substance in their call, not just a passing mention.'],
   rescal:['Results calendar','The board meeting dates companies have announced to BSE for approving their quarterly results, from BSE’s forthcoming-results list. Results are usually filed the same evening.'],
   posted:['Results posted','Numbers from the official XBRL results filing on BSE: consolidated (C) when the company files them, otherwise standalone (S). Growth compares the same basis: YoY with the same quarter last year, QoQ with the previous quarter. PAT is profit attributable to shareholders (after minority interest). Growth is left blank when the earlier figure was a loss or close to zero.'],
-  pxmove:['Price move after results','The reference is the last close before the market could react: the previous close for results filed before 3 pm IST, that day’s close for results filed at 3 pm or later (too late to trade on). Day 1 is the next session’s close against it; since results is the latest price against it. Prices are daily closes from Yahoo Finance, NSE first, and can be delayed. Moves include the whole market’s move that day.'],
+  pxmove:['Price move after results','The reference is the last close before the market could react: the previous close for results filed before 3 pm IST, that day’s close for results filed at 3 pm or later (too late to trade on). “Day 1” is the next session’s close against it; “Since results” is the latest price against it. Prices are daily closes from Yahoo Finance, NSE first, and can be delayed. Moves include the whole market’s move that day.'],
   people:['Who was on the call','The analysts and investors who asked questions, read from the moderator’s introduction of each questioner in the transcript (“the next question is from the line of Ranvir Singh from Nuvama Wealth”). Turns counts how often each one came back. Firms are matched by name, so the same firm spelt differently on two calls may show twice. Only questioners are counted, not everyone who listened in.'],
-  peoplenew:['New fund houses','A mutual fund, AMC, insurer or pension fund that asked questions on this call but on none of the company’s earlier calls we have read. A new institution taking an interest can come before it buys.'],
+  peoplenew:['New fund houses','A mutual fund, AMC, insurer or pension fund that asked questions on this call but not on the company’s previous call we read. A new institution taking an interest can come before it buys.'],
   rsgrade:['Quarter grade','A plain read of the quarter against the same quarter last year. Strong: revenue up 15%+ and profit up 20%+ (and operating profit up 15%+). Solid: revenue and profit both up 5%+. Weak: a loss, profit down 10%+ or revenue down 5%+. Mixed: anything in between. It is separate from the Concall Signal Score.'],
-  opprofit:['Operating profit','EBITDA for companies (profit before exceptional items and tax, plus finance costs and depreciation, less other income). For banks, pre-provision operating profit (PPOP) and net interest income (NII) in place of revenue. For other lenders and insurers, profit before tax, since interest is their main cost.'],
+  opprofit:['Operating profit','EBITDA for most companies (profit before exceptional items and tax, plus finance costs and depreciation, less other income). For banks, pre-provision operating profit (PPOP) and net interest income (NII) in place of revenue. For other lenders and insurers, profit before tax, since interest is their main cost.'],
   upcoming:['Coming up','Earnings calls companies have announced on BSE, read from the call intimation each company must file before the call. Dates and times are read from the filing automatically, so open the intimation to confirm before dialling in. Reschedules replace the original date.'],
   first:['First-time callers','Confirmed: the transcript says it is the first or maiden call. Likely: BSE shows no earnings call transcript or analyst / investor meet filing for the company from 2019 until this call.'],
   namedBy:['Named in other calls','Companies whose own transcript names this company, with how they described it: customer, supplier, peer or partner. Only exact full-name matches count.'],
@@ -826,8 +826,8 @@ const GL = {
   models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
   pead:['Results to watch (PEAD)','Post-earnings announcement drift: shares of companies that beat tend to keep rising for weeks after the results, not just on day 1. This page lists small, mid and micro caps (below ₹50,000 Cr) reporting soon whose last concall points to a strong quarter, ranked on the Concall Signal Score plus 6 points for positive guidance, 6 for raised guidance and minus 8 for a cut. After results it shows which of them beat (profit up 20%+ on last year) and rose on day 1, the usual trigger for a drift trade.'],
-  nearterm:['Near-term strength','Companies scoring 60+ whose latest call shows at least three strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a Guidance-backed growth & capacity part of 0.75+. There is no separate score.'],
-  quarter:['Quarter switch','Pick the results season you want to look at. Every call-based view follows it: Today, All calls, First-time callers, Sector tracker, Guidance, Sector turns, Themes, Ideas, Near-term strength and Inflection watch show only that quarter’s calls. A season still in progress is compared with the quarter before it. Near-term strength and Inflection watch list companies whose latest call is from that quarter. “All” shows each company’s latest call, and the sector boards use the latest full quarter. Coming up, the results pages and Management changes go by date, not quarter.']
+  nearterm:['Near-term strength','Companies scoring 60+ whose latest call shows at least three strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a score of 0.75+ on the guidance-backed growth & capacity part. There is no separate score.'],
+  quarter:['Quarter switch','Pick the results season you want to look at. Every call-based view follows it: Today, All calls, First-time callers, Sector tracker, Guidance leaders, Sector turns, Themes, Who’s asking, Near-term strength and Inflection watch show only that quarter’s calls. A season still in progress is compared with the quarter before it. Near-term strength and Inflection watch list companies whose latest call is from that quarter. “All” shows each company’s latest call, and the sector boards use the latest full quarter. Coming up, the results pages and Management changes go by date, not quarter.']
 };
 
 /* ---------- helpers ---------- */
@@ -920,7 +920,7 @@ function donut(counts, {size = 150, stroke = 22, center = '', sub = ''} = {}) {
   const tot = counts.reduce((a, b) => a + b, 0) || 1, r = (size - stroke) / 2, c = 2 * Math.PI * r;
   let acc = 0;
   const segs = counts.map((n, i) => { const len = c * n / tot, gap = n && n < tot ? 2 : 0;
-    const s = n ? `<circle class="arc" cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="${VC[i]}" stroke-width="${stroke}" stroke-dasharray="${Math.max(0, len - gap).toFixed(1)} ${c.toFixed(1)}" stroke-dashoffset="${(-acc).toFixed(1)}" data-tt="${ttA(`${VNAMES[i]}: ${fmt(n)} calls (${Math.round(100 * n / tot)}%)`)}" style="animation:pop .8s var(--ease) ${i * .08}s both"/>` : '';
+    const s = n ? `<circle class="arc" cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none" stroke="${VC[i]}" stroke-width="${stroke}" stroke-dasharray="${Math.max(0, len - gap).toFixed(1)} ${c.toFixed(1)}" stroke-dashoffset="${(-acc).toFixed(1)}" data-tt="${ttA(`${VNAMES[i]}: ${fmt(n)} call${n === 1 ? '' : 's'} (${Math.round(100 * n / tot)}%)`)}" style="animation:pop .8s var(--ease) ${i * .08}s both"/>` : '';
     acc += len; return s; }).join('');
   return `<div class="ring" style="width:${size}px;height:${size}px"><svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" role="img" aria-label="Verdict mix">${segs}</svg>
     <div class="ctr"><b>${center}</b><span>${sub}</span></div></div>`;
@@ -997,7 +997,7 @@ const guideIdx = cs => cs.length ? Math.round(50 + 50 * cs.reduce((n, c) => n + 
 const vcounts = cs => { const n = [0, 0, 0, 0, 0]; cs.forEach(c => { n[c.veto ? 0 : vband(c.score)]++; }); return n; };
 function verdictLegend(counts) {
   const tot = counts.reduce((a, b) => a + b, 0) || 1;
-  return `<div class="legend">${[4, 3, 2, 1, 0].map(i => `<div><i style="background:${VC[i]}"></i><span>${VNAMES[i]}${i === 0 ? ' / red flag' : ''}</span><span class="num">${fmt(counts[i])} · ${Math.round(100 * counts[i] / tot)}%</span></div>`).join('')}</div>`;
+  return `<div class="legend">${[4, 3, 2, 1, 0].map(i => `<div><i style="background:${VC[i]}"></i><span>${VNAMES[i]}${i === 0 ? ' / Red flag' : ''}</span><span class="num">${fmt(counts[i])} · ${Math.round(100 * counts[i] / tot)}%</span></div>`).join('')}</div>`;
 }
 function moversList(cs, dir) {
   const rows = cs.filter(c => dir > 0 ? c.delta > 0 : c.delta < 0).sort((a, b) => dir > 0 ? b.delta - a.delta : a.delta - b.delta).slice(0, 6);
@@ -1157,7 +1157,7 @@ function vHome() {
       <section class="w span4"><div class="w-head"><h3>Biggest movers</h3>${tip('change')}</div>
         <div class="seg" role="group" aria-label="Direction" id="mv-seg"><button data-mv="up" aria-pressed="${S.mv !== 'dn'}">▲ Improved</button><button data-mv="dn" aria-pressed="${S.mv === 'dn'}">▼ Slipped</button></div>
         ${moversList(cq, S.mv === 'dn' ? -1 : 1)}
-        <div class="w-foot"><span>${fmt(hasPrev)} calls have an earlier call to compare with.</span></div></section>
+        <div class="w-foot"><span>${fmt(hasPrev)} call${hasPrev === 1 ? ' has' : 's have'} an earlier call to compare with.</span></div></section>
       <section class="w span12"><div class="w-head"><h3>Sectors at a glance</h3><button class="link" data-v="tracker">Sector tracker →</button></div>
         ${sectorHeat(cq)}</section>
     </div>
@@ -1177,7 +1177,7 @@ function vHome() {
     <section class="card"><div class="list-head"><h3>Your daily routine</h3></div>
       <ol class="steps">
         <li><span><b>Scan the board above</b> for the season’s shape, the movers and the sectors running hot.</span></li>
-        <li><span><b>Open All calls</b>, sort by Newest, and filter to your sectors.</span></li>
+        <li><span><b>Open All calls</b>, sort by Newest first, and filter to your sectors.</span></li>
         <li><span><b>Click any company</b> to read the full call summary, then the signals behind its score.</span></li>
         <li><span><b>Check the Sector tracker</b> to see who in the sector has reported and how guidance is moving.</span></li>
         <li><span><b>Share a company</b> with the team using Copy link in its panel.</span></li>
@@ -1211,7 +1211,7 @@ function vCalls() {
   return head('All calls', 'Every concall read for the quarter, ranked. Use it to find the best and worst calls, or to go through your sectors.', `
       <ol><li><b>Choose the quarter</b> at the top. The list shows every call filed and read for it.</li>
       <li><b>Narrow it down</b> with Sector, Sub-sector, Market cap, the search box or the quick filters (Guidance raised, Red flags…).</li>
-      <li><b>Sort</b> by highest score for the best calls, lowest for the worst, Newest for what just came in, or Biggest improvement for companies whose story is getting better.</li>
+      <li><b>Sort</b> by highest score for the best calls, lowest for the worst, Newest first for what just came in, or Biggest improvement for companies whose story is getting better.</li>
       <li><b>Click a row</b> to open the company panel with the full call summary.</li></ol>
       <p class="muted">Score columns: the number is the Concall Signal Score ${tip('score')}, the label is its verdict ${tip('verdict')}, and the arrow shows the change since the company’s last call ${tip('change')}.</p>`, qBadge()) + `
     <div class="toolbar">
@@ -1228,7 +1228,7 @@ function vCalls() {
 function fillCalls() {
   const rows = filteredCalls(), f = S.calls, shown = rows.slice(0, f.limit), box = $('#c-list'); if (!box) return;
   const vc = vcounts(rows), gu = rows.filter(c => c.gRaised > 0 || c.g >= 1).length, gd = rows.filter(c => c.gCut > 0 || c.g <= -1).length, gs = rows.length - gu - gd;
-  const gbar = (n, col, lab) => n ? `<i style="width:${100 * n / Math.max(1, rows.length)}%;background:${col}" data-tt="${ttA(`${lab}: ${fmt(n)} calls`)}"></i>` : '';
+  const gbar = (n, col, lab) => n ? `<i style="width:${100 * n / Math.max(1, rows.length)}%;background:${col}" data-tt="${ttA(`${lab}: ${fmt(n)} call${n === 1 ? '' : 's'}`)}"></i>` : '';
   box.innerHTML = (rows.length ? `<div class="board" style="margin-bottom:18px">
       <section class="w span7"><div class="w-head"><h3>Score spread</h3><span class="small muted">${fmt(rows.length)} calls in this list</span></div>${histogram(rows.map(c => c.score), {h: 160})}</section>
       <section class="w span5"><div class="w-head"><h3>Verdicts and guidance</h3></div>
@@ -1354,7 +1354,7 @@ async function askRun(mode) {
       return askSet({busy: false, stage: '', res: {mode, q, groups, hits, n: scope.length}});
     }
     const sample = await askUse();
-    if (!sample) return askSet({busy: false, stage: '', err: 'Ask Claude is not available in this view. Keyword search below still works.'});
+    if (!sample) return askSet({busy: false, stage: '', err: 'Ask Claude is not available in this view. Keyword search still works.'});
     askSet({stage: 'Working out what to search for…'});
     const plan = await sample.json(`You help search Indian listed companies' earnings-call summaries. Turn the question into keyword groups for a literal substring search.
 Question: ${q}
@@ -1600,7 +1600,7 @@ const pxF = v => v == null ? '–' : '₹' + v.toLocaleString('en-IN', {minimumF
 const mvPill = (v, lab) => v == null ? '' : `<span class="pill" style="--pc:${v > 0 ? 'var(--up)' : v < 0 ? 'var(--down)' : 'var(--v3)'}">${v > 0 ? '▲' : v < 0 ? '▼' : ''} ${Math.abs(v).toFixed(1)}%${lab ? ' ' + lab : ''}</span>`;
 function rsPrice(r) {
   const p = r.px; if (!p) return '<div class="fc-px"><span class="small muted">No share price found for this company.</span></div>';
-  const tt = ttA(`Close before results ${pxF(p.ref)} (${fdate(p.refDate)})${p.reactDate ? `\nReaction day ${fdate(p.reactDate)}: ${p.react > 0 ? '+' : ''}${p.react}%` : ''}\nLatest ${pxF(p.now)} (${fdate(p.nowDate)}, ${p.ex})`);
+  const tt = ttA(`Close before results ${pxF(p.ref)} (${fdate(p.refDate)})${p.reactDate ? `\nDay 1 (${fdate(p.reactDate)}): ${p.react > 0 ? '+' : ''}${p.react}%` : ''}\nLatest ${pxF(p.now)} (${fdate(p.nowDate)}, ${p.ex})`);
   return `<div class="fc-px" data-tt="${tt}"><div class="fc-px-now"><span class="eyebrow">Share price · ${esc(p.ex)}</span><b class="num">${pxF(p.now)}</b></div>
     <div class="fc-px-mv">${p.reactDate ? `${mvPill(p.move, 'since results')}<span class="small muted">Day 1 (${esc(sdate(p.reactDate))}) <b class="${p.react > 0 ? 'gp' : p.react < 0 ? 'gn' : ''} num">${p.react > 0 ? '+' : ''}${p.react}%</b></span>` : `<span class="small muted">${p.nowDate < r.filed.slice(0, 10) || istToday() > r.filed.slice(0, 10) ? 'No trades since the results' : 'Market reacts in the next session'}</span>`}</div></div>`;
 }
@@ -1625,7 +1625,7 @@ function rsCard(r, i) {
         <div class="bk"><span class="eyebrow">On last quarter (QoQ)</span>${q(r.revLabel, r.rev, r.rev_prev_qoq, r.rev_qoq)}${q(r.opLabel, r.op, r.op_prev_qoq, r.op_qoq)}${q('PAT', r.pat, r.pat_prev_qoq, r.pat_qoq)}
           ${r.px ? `<span class="eyebrow" style="margin-top:6px">Share price around the results</span>
           <div class="bk-row"><span>Close before results</span><span class="num">${esc(sdate(r.px.refDate))}</span><span class="g num">${pxF(r.px.ref)}</span></div>
-          <div class="bk-row"><span>Reaction day</span><span class="num">${r.px.reactDate ? esc(sdate(r.px.reactDate)) : 'next session'}</span>${gTag(r.px.react)}</div>
+          <div class="bk-row"><span>Day 1</span><span class="num">${r.px.reactDate ? esc(sdate(r.px.reactDate)) : 'next session'}</span>${gTag(r.px.react)}</div>
           <div class="bk-row"><span>Latest · ${esc(r.px.ex)}</span><span class="num">${pxF(r.px.now)}</span>${gTag(r.px.move)}</div>` : ''}
           <div class="bk-row"><span>EPS on last year</span><span class="num">₹${r.eps_prev_yoy == null ? '–' : r.eps_prev_yoy.toFixed(2)} → ₹${r.eps == null ? '–' : r.eps.toFixed(2)}</span>${gTag(r.eps_yoy)}</div></div>
         ${co ? `<div class="bk-call"><span class="eyebrow">What management said last call · ${esc(co.period)} · score <b style="color:${vcol(co.score, co.veto)}">${co.score}</b></span><p class="small">${esc((callOf(r.id, co.period) || {}).gLine || co.thesis || '')}</p></div>` : '<p class="small muted">No concall read for this company yet.</p>'}
@@ -1662,7 +1662,7 @@ function vResults() {
   return head('Results posted', 'Quarterly numbers as companies file them on BSE, one card per result, with growth on last year and last quarter. Click More on a card for the detail and what management guided on its last call.', `
       <ul><li>Figures are ₹ Cr from the official XBRL filing ${tip('posted')}. <b>C</b> is consolidated, <b>S</b> standalone.</li>
       <li>Each card shows revenue, operating profit and profit (PAT) against the same quarter last year: the light bar is last year, the coloured bar this quarter, on one scale.</li>
-      <li><b>Op. profit</b> is EBITDA for companies, PPOP for banks and profit before tax for other lenders ${tip('opprofit')}. <b>Margin</b> is operating profit over revenue, with the change on last year in basis points.</li>
+      <li><b>Op. profit</b> is EBITDA for most companies, PPOP for banks and profit before tax for other lenders and insurers ${tip('opprofit')}. <b>Margin</b> is operating profit over revenue, with the change on last year in basis points.</li>
       <li>The grade on each card (Strong, Solid, Mixed, Weak) is a plain read of growth on last year ${tip('rsgrade')}. It is not the Concall Signal Score.</li>
       <li><b>Share price</b> is the latest close on NSE (BSE where NSE has none), live while the market is open ${tip('pxmove')}. <b>Day 1</b> is the first session after the results; <b>since results</b> runs from the close before the results to the latest price.</li>
       <li>Switch to <b>Table</b> to compare many results side by side and sort by any column. BSE is checked every 30 minutes through the day.</li></ul>`,
@@ -1744,8 +1744,8 @@ function vPortfolio() {
       <ul><li>The holdings live in <b>portfolio.yaml</b> in the engine’s repository. Add or remove a line there and the page follows on the next refresh.</li>
       <li>Every holding is also on the results watch: when its results board meeting is ${RES.data?.watch?.leadDays || 3} days away or closer, a GitHub issue labelled <b>results-watch</b> is opened, so GitHub emails you and pushes to the GitHub app. Holdings are starred across the dashboard.</li>
       <li><b>Latest updates</b> lists results filed, concalls read and management changes for your holdings over the last 30 days. <b>Coming up</b> lists results days and earnings calls in the next three weeks.</li>
-      <li>ETFs hold no concalls or results, so they are listed at the bottom but not tracked.</li></ul>`,
-      `<span class="badge">${fmt(pfList().length)} holdings${pfEtfs().length ? ` · ${pfEtfs().length} ETFs` : ''}</span>`);
+      <li>ETFs have no concalls or results, so they are listed at the bottom but not tracked.</li></ul>`,
+      `<span class="badge">${fmt(pfList().length)} holdings${pfEtfs().length ? ` · ${pfEtfs().length} ETF${pfEtfs().length === 1 ? '' : 's'}` : ''}</span>`);
   if (wait) return hd + wait;
   if (!pfList().length) return hd + '<div class="empty">No holdings yet. Add them to portfolio.yaml in the engine’s repository.</div>';
   const rows = pfRows(), feed = pfFeed(rows), ahead = pfAhead(rows), t0 = istToday();
@@ -1764,11 +1764,11 @@ function vPortfolio() {
         <div class="sb-leg">${[4, 3, 2, 1, 0].map(i => `<span style="--tc:${VC[i]}">${VNAMES[i]} ${vc[i]}</span>`).join('')}</div></section>
     </div>
     <div class="two">
-      <section class="w"><div class="w-head"><h3>Coming up · next 3 weeks</h3><span class="small muted">${ahead.length} events</span></div>
+      <section class="w"><div class="w-head"><h3>Coming up · next 3 weeks</h3><span class="small muted">${ahead.length} event${ahead.length === 1 ? '' : 's'}</span></div>
         ${ahead.length ? `<div class="pf-tl">${Object.entries(byDay).map(([d, es]) => `<div class="pf-day"><div class="pf-date"><b>${dayDiff(d, t0) === 0 ? 'Today' : dayDiff(d, t0) === 1 ? 'Tomorrow' : esc(wday(d))}</b><span>${esc(sdate(d))}</span></div>
           <div class="pf-evs">${es.map(e => `<div class="pf-ev"><span class="pill" style="--pc:${e.k === 'Results day' ? 'var(--saffron)' : 'var(--accent)'}">${esc(e.k)}</span><b>${esc(e.x.name)}</b><span class="small muted">${esc(e.txt)}</span>${e.url ? `<a class="small" href="${esc(e.url)}" target="_blank" rel="noopener">filing ↗</a>` : ''}</div>`).join('')}</div></div>`).join('')}</div>`
           : '<div class="empty">No results days or earnings calls announced for your holdings in the next three weeks.</div>'}</section>
-      <section class="w"><div class="w-head"><h3>Latest updates · last 30 days</h3><span class="small muted">${feed.length} updates</span></div>
+      <section class="w"><div class="w-head"><h3>Latest updates · last 30 days</h3><span class="small muted">${feed.length} update${feed.length === 1 ? '' : 's'}</span></div>
         ${feed.length ? `<div class="pf-feed">${feed.slice(0, 40).map(e => `<div class="pf-it" style="--tc:${e.c}"><div class="pf-meta"><span class="pill" style="--pc:${kc[e.k]}">${esc(e.k)}</span><span class="small muted">${esc(sdate(e.d))}${e.t ? ' · ' + esc(e.t) : ''}</span></div>
           <b>${esc(e.x.name)}</b><span class="small">${e.h}</span>${e.s ? `<span class="small muted">${e.s}</span>` : ''}<div>${e.a}</div></div>`).join('')}</div>`
           : '<div class="empty">Nothing filed for your holdings in the last 30 days.</div>'}</section>
@@ -1835,12 +1835,12 @@ function vPeople() {
   return head('Who’s asking', 'The analysts and investors who asked questions on each call, with their firms. Track which firms are following a company, who is new to the call, and where interest is rising.', `
       <ul><li>Questioners are read from each transcript’s Q&A, from the moderator’s introduction (“the next question is from the line of … from …”) ${tip('people')}.</li>
       <li><b>Most active firms</b> counts the calls a firm asked questions on this quarter. Click a firm to see every company it followed.</li>
-      <li><b>Interest rising</b> compares the number of questioners with the company’s previous call. <b>New fund houses</b> lists calls where a mutual fund, AMC or insurer asked questions for the first time on our record.</li>
+      <li><b>Interest rising</b> compares the number of questioners with the company’s previous call. <b>New fund houses</b> lists calls where a mutual fund, AMC or insurer asked questions and was not on the company’s previous call.</li>
       <li>Firm types are read from the firm’s name, so a few may be misfiled. Open any call to see its full list in the company panel.</li></ul>`, qBadge()) + `
     <div class="board">
       <section class="w span3 kpi"><span class="l">Questioners on the record</span><span class="v" data-count="${totP}">${fmt(totP)}</span><span class="l">across ${fmt(withP.length)} of ${fmt(st.cq.length)} calls</span></section>
       <section class="w span3 kpi"><span class="l">Distinct firms</span><span class="v" data-count="${st.firms.length}">${fmt(st.firms.length)}</span><span class="l">${fmt(st.people.length)} people</span></section>
-      <section class="w span3 kpi"><span class="l">Questioners per call</span><span class="v">${withP.length ? (totP / withP.length).toFixed(1) : '–'}</span><span class="l">median call ${median(withP.map(c => callPeople(c.key).length)) ?? '–'}</span></section>
+      <section class="w span3 kpi"><span class="l">Questioners per call</span><span class="v">${withP.length ? (totP / withP.length).toFixed(1) : '–'}</span><span class="l">median per call ${median(withP.map(c => callPeople(c.key).length)) ?? '–'}</span></section>
       <section class="w span3"><div class="w-head"><h3>Who they are</h3></div><div class="sb-stack">${mix.filter(x => x[1]).map(([t, n]) => `<i style="width:${100 * n / Math.max(1, totP)}%;background:${t[3]}" data-tt="${ttA(`${t[1]}: ${fmt(n)}`)}"></i>`).join('')}</div>
         <div class="sb-leg">${mix.map(([t, n]) => `<span style="--tc:${t[3]}">${t[1]} ${fmt(n)}</span>`).join('')}</div></section>
     </div>
@@ -1851,10 +1851,10 @@ function vPeople() {
       <div class="chips">${open.calls.slice().sort((a, b) => b.date.localeCompare(a.date)).map(c => `<button class="btn" data-open="${esc(c.id)}" data-k="${esc(c.key)}">${star(c.id)}${esc(c.name)} · <span style="color:${vcol(c.score, c.veto)}">${c.score}</span></button>`).join('')}</div></section>` : ''}
     <div class="two">
       <section class="w"><div class="w-head"><h3>Most active firms</h3><span class="small muted">${fmt(firms.length)} firms</span></div>
-        <div class="movers">${firms.slice(0, 25).map((x, i) => { const t = firmType(x.name); return `<button class="mv ppl-row" data-firm="${esc(x.fk)}" data-tt="${ttA(`${x.name}\n${x.calls.length} calls · ${x.people.size} people · ${x.q} turns`)}"><b>${esc(x.name)}</b>
+        <div class="movers">${firms.slice(0, 25).map((x, i) => { const t = firmType(x.name); return `<button class="mv ppl-row" data-firm="${esc(x.fk)}" data-tt="${ttA(`${x.name}\n${x.calls.length} call${x.calls.length === 1 ? '' : 's'} · ${x.people.size} ${x.people.size === 1 ? 'person' : 'people'} · ${x.q} turn${x.q === 1 ? '' : 's'}`)}"><b>${esc(x.name)}</b>
           <span class="tr"><i style="width:${100 * x.calls.length / maxF}%;background:${t[3]};animation-delay:${i * .03}s"></i></span><span class="num small">${x.calls.length}</span></button>`; }).join('') || '<p class="small muted">No firm matches.</p>'}</div></section>
       <section class="w"><div class="w-head"><h3>Most active analysts</h3><span class="small muted">${fmt(people.length)} people</span></div>
-        <div class="movers">${people.slice(0, 20).map((x, i) => `<button class="mv ppl-row" data-firm="${esc(x.fk)}" ${x.fk ? '' : 'disabled'} data-tt="${ttA(`${x.name} · ${x.firm || 'firm not stated'}\nOn ${x.calls.length} calls: ${x.calls.slice(0, 8).map(c => c.name.replace(/ Ltd\.?$/, '')).join(', ')}${x.calls.length > 8 ? '…' : ''}`)}"><b>${esc(x.name)} <span class="muted" style="font-weight:400">· ${esc(x.firm || '–')}</span></b>
+        <div class="movers">${people.slice(0, 20).map((x, i) => `<button class="mv ppl-row" data-firm="${esc(x.fk)}" ${x.fk ? '' : 'disabled'} data-tt="${ttA(`${x.name} · ${x.firm || 'firm not stated'}\nOn ${x.calls.length} call${x.calls.length === 1 ? '' : 's'}: ${x.calls.slice(0, 8).map(c => c.name.replace(/ Ltd\.?$/, '')).join(', ')}${x.calls.length > 8 ? '…' : ''}`)}"><b>${esc(x.name)} <span class="muted" style="font-weight:400">· ${esc(x.firm || '–')}</span></b>
           <span class="tr"><i style="width:${100 * x.calls.length / maxA}%;background:${firmType(x.firm)[3]};animation-delay:${i * .03}s"></i></span><span class="num small">${x.calls.length}</span></button>`).join('') || '<p class="small muted">No analyst matches.</p>'}</div></section>
     </div>
     <div class="two">
@@ -1899,7 +1899,7 @@ function dailyChart(t) {
   const ticks = []; for (let v = 0; v <= top; v += step) ticks.push(v);
   return `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Calls filed per day over the last 14 days">
     ${ticks.map(v => `<line x1="${x0}" x2="${x1}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--line)"/><text x="${x0 - 6}" y="${Y(v) + 3.5}" text-anchor="end" font-size="10" fill="var(--muted)">${v}</text>`).join('')}
-    ${vals.map((v, i) => `<rect x="${(x0 + i * bw + 3).toFixed(1)}" y="${Y(v).toFixed(1)}" width="${(bw - 6).toFixed(1)}" height="${(y1 - Y(v)).toFixed(1)}" rx="3" fill="${i === vals.length - 1 ? 'var(--gold)' : 'var(--blue)'}" opacity="${v ? 1 : .3}"><title>${esc(fdate(days[i]))}: ${v} calls</title></rect>${v ? `<text x="${(x0 + i * bw + bw / 2).toFixed(1)}" y="${(Y(v) - 4).toFixed(1)}" text-anchor="middle" font-size="10" fill="var(--fg)">${v}</text>` : ''}`).join('')}
+    ${vals.map((v, i) => `<rect x="${(x0 + i * bw + 3).toFixed(1)}" y="${Y(v).toFixed(1)}" width="${(bw - 6).toFixed(1)}" height="${(y1 - Y(v)).toFixed(1)}" rx="3" fill="${i === vals.length - 1 ? 'var(--gold)' : 'var(--blue)'}" opacity="${v ? 1 : .3}"><title>${esc(fdate(days[i]))}: ${v} call${v === 1 ? '' : 's'}</title></rect>${v ? `<text x="${(x0 + i * bw + bw / 2).toFixed(1)}" y="${(Y(v) - 4).toFixed(1)}" text-anchor="middle" font-size="10" fill="var(--fg)">${v}</text>` : ''}`).join('')}
     <text x="${x0}" y="${H - 6}" font-size="10" fill="var(--muted)">${esc(sdate(days[0]))}</text>
     <text x="${x1}" y="${H - 6}" font-size="10" text-anchor="end" fill="var(--muted)">${esc(sdate(days.at(-1)))}</text></svg>`;
 }
@@ -1923,7 +1923,7 @@ function vTracker() {
   const secs = (t.sectors || []).slice().sort((a, b) => b.calls - a.calls);
   S._secs = secs;
   const pct = Math.round(100 * t.reported / Math.max(1, t.universe));
-  return head('Sector tracker', 'Every sector in the universe: how many companies have held their call, what is new today, and how their calls scored. Updated every morning.', `
+  return head('Sector tracker', 'Every sector in the universe: how many companies have held their call, what is new today, and how their calls scored. Updated every night as new calls are read.', `
       <ol><li><b>Read the top panel</b> for how far the season has got and how many calls came in each day.</li>
       <li><b>Click a sector</b> to open its sub-sectors. Click a sub-sector to list its companies.</li>
       <li>Columns: <b>Reported</b> ${tip('coverage')}, <b>New</b> today / this week ${tip('new')}, <b>Avg score</b> ${tip('avg')}, <b>Guidance</b> index ${tip('gidx')} and the sector’s <b>best call</b>.</li></ol>`, trkBadge()) + `
@@ -2106,7 +2106,7 @@ function vTurns() {
         <div class="w-foot"><span>Top-right (shaded): supply held back and prices firming, the healthiest place to be. Colour shows the stage. Click a bubble to open the sector.</span></div></section>
       <section class="w span4"><div class="w-head"><h3>Pricing improving fastest</h3><span class="small muted">vs ${esc(T.prevQ)}</span></div>
         ${movers.length ? `<div class="rows mini-list">${movers.slice(0, 6).map(r => `<button class="r" data-cysel="${esc(r.name)}"><span style="min-width:0"><span class="nm" style="display:block;font-size:12px">${esc(r.name)}</span><span class="sub">${r.xs.length} companies · now ${cyNet(r.b.pr)}</span></span><b class="num small g-up">${cyNet(r.b.pr - r.p.pr)} pts</b></button>`).join('')}</div>` : '<p class="small muted">Needs two quarters of calls.</p>'}
-        ${resPh.some(x => x.n >= 5) ? `<div class="w-head"><h3>Does the stage show in results?</h3></div><div class="pd-tr"><div><span>Stage</span><span class="num">Reported</span><span class="num">Median profit</span><span class="num">Day 1</span></div>
+        ${resPh.some(x => x.n >= 5) ? `<div class="w-head"><h3>Does the stage show in results?</h3></div><div class="pd-tr"><div><span>Stage</span><span class="num">Reported</span><span class="num">Median profit YoY</span><span class="num">Day 1</span></div>
           ${resPh.filter(x => x.n).map(x => `<div><span><span class="dot" style="background:${CY_PH[x.k][2]}"></span> ${CY_PH[x.k][0]}</span><span class="num">${x.n}</span><span class="num">${pctS(x.pat)}</span><span class="num">${pctS(x.d1)}</span></div>`).join('')}</div>
           <p class="small muted">${esc(T.rlab)} results of the companies in each stage so far.</p>` : ''}</section>
     </div>
@@ -2137,7 +2137,7 @@ function vTurn(T, r) {
   const subs = lvl === 'big' ? cyData('sub').rows.filter(s => s.parent === r.name).sort((a, b) => b.xs.length - a.xs.length) : [];
   const soon = r.xs.filter(c => up[c.id]).sort((a, b) => up[a.id].date.localeCompare(up[b.id].date));
   const chip = (v, pos, neg, lab) => v > 0 ? `<span class="cy-c ok">${pos}</span>` : v < 0 ? `<span class="cy-c bad">${neg}</span>` : '';
-  const said = `${r.xs.length} companies in ${r.name} held a ${T.bq} call. Stage: ${CY_PH[r.ph][0].toLowerCase()}. ${r.why} Their calls average ${R(r.avg)} against ${R(T.qavg)} for all calls; ${R(r.up)}% guided up and ${R(r.cut)}% cut.${r.r.rn ? ` ${r.r.rn} have posted ${T.rlab} results: median profit ${pctS(r.r.pat)} against ${pctS(T.all.pat)} for all.` : ''}`;
+  const said = `${r.xs.length} companies in ${r.name} held a ${T.bq} call. Stage: ${CY_PH[r.ph][0].toLowerCase()}. ${r.why} Their calls average ${R(r.avg)} against ${R(T.qavg)} for all calls; ${R(r.up)}% guided up and ${R(r.cut)}% cut.${r.r.rn ? ` ${r.r.rn} ${r.r.rn === 1 ? 'has' : 'have'} posted ${T.rlab} results: median profit ${pctS(r.r.pat)} against ${pctS(T.all.pat)} for all.` : ''}`;
   const crow = c => { const y = cyOf(c) || {}, co = byId[c.id], rr = res(c), u = up[c.id];
     const tr = co && co.period === c.period ? (co.triggers || []).filter(t => ['supply', 'pricing', 'util', 'structure', 'inventory'].includes(t.t) && t.q) : [];
     return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.mcap || '')}${lvl === 'big' ? ' · ' + esc(c.sector) : ''}</span>${aboutP(c.id)}
@@ -2147,7 +2147,7 @@ function vTurn(T, r) {
       <span class="small">${rr ? `Profit <b class="num ${rr.pat_yoy > 0 ? 'gp' : rr.pat_yoy < 0 ? 'gn' : ''}">${pctS(rr.pat_yoy)}</b><br><span class="muted">Day 1 ${rr.px?.reactDate ? pctS(rr.px.react) : '–'}</span>` : u ? `<span class="muted">Results</span><br><b>${esc(sdate(u.date))}</b>` : '<span class="muted">–</span>'}</span>
       <span class="up-actions"><button class="btn" data-open="${esc(c.id)}" data-k="${esc(c.key)}">Open call</button></span></div>`; };
   return head(esc(r.name), said, `
-      <ul><li><b>Signals now vs ${esc(T.prevQ || 'last quarter')}</b>: each bar is the share of the ${r.xs.length} companies whose call showed the signal; the grey tick is last quarter${r.p ? ` (${r.p.n} calls)` : ', not shown because last quarter had too few calls'}. All ${esc(T.bq)} calls are shown faintly for comparison.</li>
+      <ul><li><b>Signals now vs ${esc(T.prevQ || 'last quarter')}</b>: each bar is the share of the ${r.xs.length} companies whose call showed the signal; the dark tick is last quarter${r.p ? ` (${r.p.n} calls)` : ', not shown because last quarter had too few calls'}. All ${esc(T.bq)} calls are shown faintly for comparison.</li>
       <li>The company list shows each call’s cycle reads as tags, and the supply, pricing and utilisation lines management actually said. Filter by a signal to see who is driving it.</li>
       <li><b>Ask the calls</b> sends a question about this sector’s pricing, capacity and demand to the Ask page.</li></ul>`,
       `<span class="pill ${CY_PH[r.ph][1]}">${CY_PH[r.ph][0]}</span>${r.thin ? '<span class="badge warn">thin: under 8 calls</span>' : ''}${focusBadge()}`) + `
@@ -2419,7 +2419,7 @@ function vNear() {
   if (!SUMS.data) loadSums().then(() => { if (S.view === 'nearterm') render(); });
   return head('Near-term strength', 'Companies whose latest call points to strong results over the next quarter or the next few quarters, with the reasons from the call. A shortlist to check, not a buy list.', `
       <ul><li>A company is listed when its Concall Signal Score is 60 or more and its latest call shows <b>at least three strong near-term signals</b> (major or moderate capacity going live within 3 quarters, growth guided at 15% or more, a turnaround guided, a clear plan to deliver, a strong quarter, guidance strongly positive or raised, strong demand, the next quarter called out, or a management that delivers on guidance), or the <b>Guidance-backed growth & capacity</b> part of its score is 0.75 or higher (34 of 45 points). Calls with a veto, a guidance cut, or negative guidance or demand are left out.</li>
-      <li>The only score shown is the <b>Concall Signal Score</b>, the same number as everywhere else. The list is ordered by its Guidance-backed growth & capacity points, then by the score. Stocks guiding strongly with no clear plan or capacity behind it are marked in red.</li>
+      <li>The only score shown is the <b>Concall Signal Score</b>, the same number as everywhere else. The list is ordered by its Guidance-backed growth & capacity points, then by the score. Stocks guiding strongly with no clear plan or capacity behind them are marked in red.</li>
       <li><b>${esc(nextQ || 'Next quarter')} results still to come</b> shows companies whose latest call is from the previous quarter, so the quarter they guided for has not been reported yet. These are the most timely names.</li>
       <li>The bullet lines are taken from the call summary and quotes. Open the call and check the transcript before acting.</li></ul>`,
       latestBadge()) + `
@@ -2520,8 +2520,8 @@ function vInflect() {
   const col = isUp ? 'var(--up)' : 'var(--down)';
   return head('Inflection watch', 'Companies whose latest call points to a sharp turn, up or down, read from the triggers management gave on the call. A list to dig into, not a trade list.', `
       <ul><li>Every trigger in a call is read as <b>pointing up or down</b>: from its wording first (raised, record, commissioned, ramping against cut, delayed, pressure, deflected), and from the call’s own signal reading for that type when the wording is neutral.</li>
-      <li>A company is listed on the <b>Upside</b> side when at least two triggers point up and the call shows a real turn: score up sharply on the last call, a turnaround guided, a cyclical bottoming, guidance raised, major capacity going live within 3 quarters, utilisation and pricing rising together, supply exiting or consolidating, or signals turning up against the last call.</li>
-      <li>It is listed on the <b>Downside</b> side when at least two triggers point down (or a veto) and the call shows a break: a veto, score down sharply, guidance cut or negative, a red-flag or capital-cycle warning, demand, pricing or utilisation turning down, or big guidance with no clear plan. Deflected questions, a guarded tone and working-capital stress add weight.</li>
+      <li>A company is listed on the <b>Upside</b> side when at least two triggers point up and the call shows a real turn: score up sharply on the last call, a turnaround guided, a cyclical bottoming, guidance raised, major or moderate capacity going live within 3 quarters, utilisation and pricing rising together, supply exiting or consolidating, or signals turning up against the last call.</li>
+      <li>It is listed on the <b>Downside</b> side when at least two triggers point down (or there is a veto) and the call shows a break: a veto, score down sharply, guidance cut or negative, a red-flag or capital-cycle warning, demand, pricing or utilisation turning down, or big guidance with no clear plan. Deflected questions, a guarded tone and working-capital stress add weight.</li>
       <li>Each company sits on the side where its evidence is stronger, and triggers pointing the other way are shown as <b>counter-signals</b>. <b>Sharp</b> marks the strongest fifth on each side. The list is ordered by the weight of evidence; the only score shown is the Concall Signal Score.</li>
       <li>Direction is read automatically from short trigger labels, so open the call and read the quotes before acting.</li></ul>`,
       latestBadge()) + `
@@ -2562,7 +2562,7 @@ function vMgmt() {
       <ul><li>BSE is checked <b>every 30 minutes</b> from 8:30 am to 11 pm IST. Each filing is read for who changed, in what role, and why.</li>
       <li><b>Top-level</b> means CEO, MD, CFO, COO, chairman, executive or whole-time directors, presidents and business heads. Independent directors, company secretaries and auditors are left out.</li>
       <li>Each new top-level change <b>opens a GitHub issue</b> in the engine’s repository, so GitHub emails you (and pushes to the GitHub mobile app) straight away.</li>
-      <li><b>New management pushing growth</b> lists companies whose latest call shows new top management with a growth plan. A specific, ambitious plan adds 4 points to the Concall Signal Score, a clear but less specific one adds 2.</li></ul>`,
+      <li><b>New management pushing growth</b> lists companies whose latest call shows new top management with a growth plan. A specific, ambitious plan adds 4 points to the Concall Signal Score; a clear but less specific one adds 2.</li></ul>`,
       `<span class="badge">${D.mgmtChecked ? 'BSE checked ' + esc(D.mgmtChecked.replace('T', ' ')) + ' UTC' : 'Not checked yet'}</span>`) + `
     ${pushing.length ? `<section><div class="list-head"><h3>New management pushing growth</h3><span class="small muted">${pushing.length} from the latest calls</span></div>
       <div class="nt-grid">${pushing.slice(0, 12).map(c => `<article class="card nt"><div class="top"><div style="min-width:0"><span class="num small muted">${esc(c.sector)}</span><h4>${esc(c.name)}</h4><span class="small muted">${esc((c.mgmtCall.roles || []).join(' · '))}</span></div>
@@ -2575,7 +2575,7 @@ function vMgmt() {
       <button class="chip" data-mg="top" aria-pressed="${f.top}">Top-level only</button><button class="chip" data-mg="inCalls" aria-pressed="${f.inCalls}">Companies with calls read</button><span class="small muted">${rows.length} filing${rows.length === 1 ? '' : 's'}</span></div>
     <div class="rows mg">${rows.slice(0, 200).map(m => `<div class="r"><span style="min-width:0"><span class="nm" style="display:block">${esc(m.name)}</span><span class="sub">${esc(fdate(m.date))}${m.time ? ' · ' + esc(m.time) : ''}${m.top ? ' · <b style="color:var(--gold)">top-level</b>' : ''}</span></span>
       <span style="min-width:0;display:grid;gap:6px">${m.changes.map(mgChange).join('')}</span>
-      <span style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">${m.url ? `<a class="btn" href="${esc(m.url)}" target="_blank" rel="noopener">Filing ↗</a>` : ''}${m.inCalls ? `<button class="btn" data-open="${esc(m.id)}">Open read</button>` : ''}</span></div>`).join('') || '<div class="empty">No management changes in this period.</div>'}</div></section>`;
+      <span style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">${m.url ? `<a class="btn" href="${esc(m.url)}" target="_blank" rel="noopener">Filing ↗</a>` : ''}${m.inCalls ? `<button class="btn" data-open="${esc(m.id)}">Open the call</button>` : ''}</span></div>`).join('') || '<div class="empty">No management changes in this period.</div>'}</div></section>`;
 }
 
 /* Results to watch (PEAD): a pre-results shortlist read from each company's last concall, then which shortlisted names
@@ -2673,25 +2673,25 @@ function vPead() {
     </article>`; };
   const prow = x => { const r = x.r, c = x.c;
     return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(SIZE_SHORT[x.size] || '')} · ${esc(c.mcap || '')} · filed ${esc(sdate(r.filed))} · ${x.call.score} on the ${esc(Q.lab)} call</span>${aboutP(c.id)}
-        <span class="m-pd">Profit ${pctS(r.pat_yoy)} · Day 1 ${x.px.reactDate ? pctS(x.px.react) : '–'} · Since ${pctS(x.px.move)}</span></span>
+        <span class="m-pd">Profit ${pctS(r.pat_yoy)} · Day 1 ${x.px.reactDate ? pctS(x.px.react) : '–'} · Since results ${pctS(x.px.move)}</span></span>
       <span class="num">${pctS(r.rev_yoy)}</span><span class="num">${pctS(r.pat_yoy)}</span><span class="num ${x.px.react > 0 ? 'gp' : x.px.react < 0 ? 'gn' : ''}">${x.px.reactDate ? pctS(x.px.react) : '–'}</span>
       <span class="num ${x.px.move > 0 ? 'gp' : x.px.move < 0 ? 'gn' : ''}">${x.px.reactDate ? pctS(x.px.move) : '–'}</span>
       <span><span class="pill pd-st ${x.st[2]}">${esc(x.st[1])}</span></span>
       <span class="up-actions"><button class="btn" data-v="results">Numbers</button><button class="btn" data-open="${esc(c.id)}">Calls</button></span></div>`; };
   const skips = pre.filter(x => x.tier === 'skip').sort((a, b) => b.p - a.p);
-  return head('Results to watch (PEAD)', `Small, mid and micro caps reporting ${esc(Q.rlab)} results soon whose ${esc(Q.lab)} concall points to a strong quarter. After results, the shortlisted names that beat and rose on day 1. A shortlist to trade from, not a buy list.`, `
+  return head('Results to watch (PEAD)', `Small, mid and micro caps reporting ${esc(Q.rlab)} results soon whose ${esc(Q.lab)} concall points to a strong quarter. After results, the shortlisted names that beat and rose on day 1. A shortlist to research further, not a buy list.`, `
       <ol><li><b>Before results:</b> the cards list companies below ₹50,000 Cr whose results are due, ranked on the ${esc(Q.lab)} Concall Signal Score ${tip('score')} plus 6 points for positive guidance, 6 for raised guidance and minus 8 for a cut. <b>Strong</b> means ${PEAD_MIN}+ points, at least two supporting reasons and no warning. Green tags are reasons for, red tags reasons against.</li>
       <li><b>High score, but careful</b> lists names that would rank but where the last call says the quarter was flattered (inventory gains, one-offs, temporary prices), guidance was cut, or there is no clear plan behind big guidance.</li>
-      <li><b>After results:</b> a beat here means profit up ${PEAD_BEAT}%+ on last year. <b>Beat · up on day 1</b> is the usual entry signal for a post-results drift trade. Strong numbers alone are not enough: the market may already expect them.</li>
+      <li><b>After results:</b> a beat here means profit up ${PEAD_BEAT}%+ on last year. <b>Beat · up on day 1</b> is the pattern that post-results drift studies look at. Strong numbers alone are not enough: the market may already expect them.</li>
       <li><b>Track record</b> is recomputed on every refresh from the ${esc(Q.rlab)} results already posted, so you can see whether the shortlist is working this season.</li>
       <li>There are no consensus estimates or pre-results price run-ups here. Check those, and the transcript, before you trade.</li></ol>`,
       `<span class="badge">${RES.data?.checked ? 'BSE checked ' + esc(RES.data.checked.replace('T', ' ')) + ' UTC' : ''}</span>`) + `
     <div class="board">
-      <section class="w span4 kpi"><span class="l">Strong candidates reporting in ${f.days >= 60 ? 'all announced dates' : `the next ${f.days} days`}</span><span class="v" style="color:var(--accent)">${cnt('strong')}</span><span class="l">${cnt('watch')} more to watch · ${cnt('skip')} high scores to treat with care</span></section>
+      <section class="w span4 kpi"><span class="l">Strong candidates reporting ${f.days >= 60 ? 'on any announced date' : `in the next ${f.days} days`}</span><span class="v" style="color:var(--accent)">${cnt('strong')}</span><span class="l">${cnt('watch')} more to watch · ${cnt('skip')} high scores to treat with care</span></section>
       <section class="w span8"><div class="w-head"><h3>Track record · ${esc(Q.rlab)} so far</h3><span class="small muted">${fmt(P.post.length)} small, mid and micro caps with a ${esc(Q.lab)} call have reported</span></div>
-        <div class="pd-tr"><div><span>Group</span><span class="num">Median profit YoY</span><span class="num">Up on day 1</span><span class="num">Median day 1</span></div>
+        <div class="pd-tr"><div><span>Group</span><span class="num">Median profit growth YoY</span><span class="num">Up on day 1</span><span class="num">Median day 1</span></div>
         ${tr.map(g => `<div><span>${esc(g.n)} <span class="muted">· ${g.k}</span></span><span class="num">${pctS(g.pat)}</span><span class="num">${g.upPct == null ? '–' : g.upPct + '%'}</span><span class="num">${pctS(g.d1)}</span></div>`).join('')}</div>
-        <div class="w-foot"><span>After a beat and a day-1 rise, shortlisted names have moved a median <b class="num">${pctS(tr[0].drift)}</b> more since (${tr[0].nd} names). Small samples early in the season.</span></div></section>
+        <div class="w-foot"><span>After a beat and a day-1 rise, shortlisted names have moved a median <b class="num">${pctS(tr[0].drift)}</b> more since (${tr[0].nd} name${tr[0].nd === 1 ? '' : 's'}). Small samples early in the season.</span></div></section>
     </div>
     <div class="toolbar">
       <div class="seg" role="group" aria-label="Show">${[['strong', 'Strong'], ['watch', 'Watch'], ['all', 'Both']].map(([k, n]) => `<button data-pdt="${k}" aria-pressed="${f.tier === k}">${n} <span class="num">${k === 'all' ? cnt('strong') + cnt('watch') : cnt(k)}</span></button>`).join('')}</div>
@@ -2722,15 +2722,15 @@ function vHelp() {
         <li>Investments in securities markets are subject to market risks. Read all related documents carefully before investing.</li></ul>
     </section>
     <section id="h-what"><h3>What the desk does</h3>
-      <p>Every night the desk reads new concall transcripts filed on BSE by the ${fmt(D.universe)} listed Indian companies, across all market caps. It reads each call through our capital-cycle framework, scores it, writes a detailed summary, and rolls the calls up by sector and theme. It uses concalls, analyst meets and investor presentations only. Prices, results filings and news are left out on purpose.</p></section>
+      <p>Every night the desk reads new concall transcripts filed on BSE by the ${fmt(D.universe)} listed Indian companies, across all market caps. It reads each call through our capital-cycle framework, scores it, writes a detailed summary, and rolls the calls up by sector and theme. The score uses concalls, analyst meets and investor presentations only; prices, results filings and news are left out of it on purpose.</p></section>
     <section id="h-routine"><h3>A 10-minute daily routine</h3><ol>
       <li><b>Today:</b> read the headline and the four picks under “Where to look first”, and check which calls are coming up in the next three days.</li>
       <li><b>All calls:</b> sort by Newest first and skim what came in overnight. Filter to the sectors you cover.</li>
-      <li><b>Open a company</b> that looks interesting. Read the call summary first, then the Signals tab to see why it scored the way it did.</li>
+      <li><b>Open a company</b> that looks interesting. Read the call summary first, then the <b>Signals behind the score</b> tab to see why it scored the way it did.</li>
       <li><b>Sector tracker:</b> check who in that sector has reported and whether guidance is improving.</li>
-      <li><b>Share:</b> Copy link in a company panel gives a link that opens straight to that company.</li></ol></section>
+      <li><b>Share:</b> the <b>Copy link</b> button in a company panel gives a link that opens straight to that company.</li></ol></section>
     <section id="h-views"><h3>What each view is for</h3><div class="vguide">
-      <div><b>Ask the calls</b><span>Ask a question in plain words (for example, which companies said crude is not hurting margins). Claude searches every call summary, Q&A, quote and trigger for the words calls actually use, reads the best matches and sorts them into says it, partly and says the opposite, with the passages behind each. Keyword search works without Claude.</span></div>
+      <div><b>Ask the calls</b><span>Ask a question in plain words (for example, which companies said crude is not hurting margins). Claude searches every call summary, Q&A, quote and trigger for the words calls actually use, reads the best matches and sorts them into “says it”, “partly” and “says the opposite”, with the passages behind each. Keyword search works without Claude.</span></div>
       <div><b>Today</b><span>The day’s headline, season progress, the best call, the strongest guidance, the top idea and the newest calls.</span></div>
       <div><b>All calls</b><span>Every call for the quarter in one ranked list. Sort best to worst or by newest, and filter by sector, sub-sector, guidance or red flags.</span></div>
       <div><b>Coming up</b><span>Earnings calls announced on BSE for the days ahead, with the time, the score of each company’s last call and a link to the filing with dial-in details. Also lists calls already held whose transcript has not been filed yet.</span></div>
@@ -2740,7 +2740,7 @@ function vHelp() {
       <div><b>First-time callers</b><span>Companies holding their first-ever earnings call. Useful for finding names before they get coverage.</span></div>
       <div><b>Sector tracker</b><span>All sectors and sub-sectors: how many companies have reported, what came in today, average score, guidance and best call. Updated daily.</span></div>
       <div><b>Guidance leaders</b><span>Sub-sectors ranked by how strongly management is guiding up, and the weakest ones.</span></div>
-      <div><b>Sector turns</b><span>Where each sector and sub-sector sits in the capital cycle, read from its companies’ calls: is industry supply being held back or added, is pricing and utilisation improving, and is demand talk strong yet. Stages run Turning up (early), Upswing (confirmed), Overbuilding (late) and Downswing. A cycle map and the results of each stage come first; click a sector for its signals against last quarter, its sub-sectors and every company with what it said on supply and pricing.</span></div>
+      <div><b>Sector turns</b><span>Where each sector and sub-sector sits in the capital cycle, read from its companies’ calls: is industry supply being held back or added, are pricing and utilisation improving, and is demand talk strong yet. Stages run Turning up (early), Upswing (confirmed), Overbuilding (late) and Downswing. A cycle map and the results of each stage come first; click a sector for its signals against last quarter, its sub-sectors and every company with what it said on supply and pricing.</span></div>
       <div><b>Themes</b><span>The big ideas managements raise on their calls. A map shows which themes are spreading and whether the stronger companies are the ones talking about them; the table adds guidance and how those companies did in the results that followed. Click a theme for its trend, sectors, size mix, related themes, the companies discussing it with the line each one said, and who reports next.</span></div>
       <div><b>Results to watch (PEAD)</b><span>Small, mid and micro caps reporting in the days ahead whose last concall points to a strong quarter, with the reasons for and against, and a list of names that look good on score but where last quarter may not repeat. After results it shows which shortlisted names beat and rose on day 1 (the usual entry signal for a post-results drift trade), and a live track record of how the shortlist has done this season.</span></div>
       <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the reasons and the lines from the call that say so. Uses the same Concall Signal Score as every other page. Filter to names whose next results are still to come.</span></div>
@@ -2751,10 +2751,10 @@ function vHelp() {
     <section id="h-quarter"><h3>The quarter switch</h3><p>${esc(GL.quarter[1])} A small orange dot marks a season still in progress.</p></section>
     <section id="h-score"><h3>How the score works</h3>
       <p>The Concall Signal Score runs from 0 to 100. The model reads the call into eight readings, each from −2 to +2, plus a growth reading (growth or turnaround guided, how management plans to deliver it, capacity coming live, utilisation, this quarter’s growth), and they are combined with these weights:</p>
-      <div class="weights">${W.map(([n, w]) => `<div class="w"><span>${n}</span><span class="sbar"><i style="width:${w / 30 * 100}%"></i></span><span class="num">${w}</span></div>`).join('')}</div>
-      <ul><li>For a company’s first call in our data, the score reflects where the business stands now. From the second call on, 60% is the level and 40% is the change since last call.</li>
+      <div class="weights">${W.map(([n, w]) => `<div class="w"><span>${n}</span><span class="sbar"><i style="width:${w / 45 * 100}%"></i></span><span class="num">${w}</span></div>`).join('')}</div>
+      <ul><li>For a company’s first call in our data, the score reflects where the business stands now. From the second call on, 60% is the level and 40% is the change since the last call.</li>
       <li>Guidance counts for more when management has delivered past guidance. With no track record yet (“untested”), guidance counts only 85% of its distance from neutral. Every company’s exact working is on the <b>Score breakdown</b> tab of its panel.</li>
-      <li>A veto ${tip('veto')} caps the score at 40. Smaller warning signs take off 4 points each, up to 8.</li>
+      <li>A veto ${tip('veto')} caps the score at 40. Smaller warning signs (watch-points) take off 4 points each, up to 8.</li>
       <li><b>Guidance-backed growth & capacity</b> carries the most weight (45) because the market pays for growth. Strong growth or turnaround guidance counts in full only when management shows how it will get there (capacity coming live, an order book, spare capacity) and has delivered before; strong guidance with no clear plan or capacity is discounted. Major capacity going live in the next 2–3 quarters lifts the score; a plant running near full with no expansion holds it back.</li><li><b>Industry supply discipline</b> comes next (20), then <b>results delivered</b> this quarter (15).</li></ul>
       <p>Verdict labels:</p><div class="bands">${[[75, 'Strong 70+'], [65, 'Good 60–69'], [55, 'Average 50–59'], [45, 'Weak 40–49'], [30, 'Poor below 40']].map(([s, l]) => `<span class="pill ${verdict(s).c}">${l}</span>`).join('')}<span class="pill v-flag">Red flag: veto applied</span></div>
       <p class="muted">Scores are relative. Most calls land between 45 and 65, so a 70 is a top-5% call. The percentile in each company panel shows where a call ranks within its quarter.</p></section>
@@ -2767,7 +2767,7 @@ function vHelp() {
       <li><b>Use:</b> internal research only. The reads are produced by an AI model, so check the transcript before acting on anything.</li></ul></section>
     <section id="h-gloss"><h3>Glossary</h3><dl class="gl">${Object.values(GL).map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}</dl></section>
   </article>
-  <nav class="toc" aria-label="On this page">${[['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
+  <nav class="toc" aria-label="On this page">${[['h-disclaimer', 'Disclaimer'], ['h-what', 'What the desk does'], ['h-routine', 'Daily routine'], ['h-views', 'Each view'], ['h-quarter', 'Quarter switch'], ['h-score', 'How the score works'], ['h-data', 'Data and timing'], ['h-gloss', 'Glossary']].map(([h, n]) => `<a href="#${h}" data-jump="${h}">${n}</a>`).join('')}</nav></div>`;
 }
 
 
@@ -2929,7 +2929,7 @@ const xlCallSheet = (name, calls) => ({name, cols: [
     xlNum(c.mcapCr ?? byId[c.id]?.mcapCr), c.archetype || '', c.top || '', c.thesis || '', (c.themes || []).join(', ')])});
 const xlResSheet = (name, rs) => ({name, cols: [
   {h: 'Company', w: 32}, {h: 'BSE code', w: 10}, {h: 'Quarter', w: 10}, {h: 'Basis', w: 13}, {h: 'Filed', w: 17, time: true}, {h: 'Sector', w: 22}, {h: 'Sub-sector', w: 24}, {h: 'Market cap', w: 14},
-  {h: 'Revenue (₹ Cr)', w: 13, f: '#,##0.0'}, {h: 'Rev YoY', w: 9, f: XL_PCT}, {h: 'Rev QoQ', w: 9, f: XL_PCT}, {h: 'Op. profit (₹ Cr)', w: 13, f: '#,##0.0'}, {h: 'Op YoY', w: 9, f: XL_PCT},
+  {h: 'Revenue (₹ Cr)', w: 13, f: '#,##0.0'}, {h: 'Rev YoY', w: 9, f: XL_PCT}, {h: 'Rev QoQ', w: 9, f: XL_PCT}, {h: 'Op. profit (₹ Cr)', w: 13, f: '#,##0.0'}, {h: 'Op. profit YoY', w: 9, f: XL_PCT},
   {h: 'Margin', w: 9, f: '0.0"%"'}, {h: 'Margin a year ago', w: 10, f: '0.0"%"'}, {h: 'PAT (₹ Cr)', w: 12, f: '#,##0.0'}, {h: 'PAT YoY', w: 9, f: XL_PCT}, {h: 'PAT QoQ', w: 9, f: XL_PCT},
   {h: 'EPS', w: 9, f: '0.00'}, {h: 'EPS YoY', w: 9, f: XL_PCT}, {h: 'Price', w: 10, f: '#,##0.00'}, {h: 'Day 1', w: 9, f: XL_PCT}, {h: 'Since results', w: 10, f: XL_PCT},
   {h: 'Last call score', w: 10, f: '0'}, {h: 'BSE filing', w: 12}],
@@ -3011,7 +3011,7 @@ async function xlExport(kind) {
       if (S.view === 'calls') sheets = [[xlCallSheet(`Calls ${S.q || ''}`.trim(), filteredCalls()), `${q}${vn}${xlFilterNote()}`]];
       else if (S.view === 'results' && RES.data) sheets = [[xlResSheet('Results posted', rsRows()), `${vn} · as filtered and sorted`]];
       else sheets = xlDomSheets().map(sh => [sh, `${q}${vn} · as shown on screen`]);
-      if (!sheets.length || !sheets.some(([sh]) => sh.rows.length)) { st.textContent = 'Nothing to export in this view. Try Full data.'; return; }
+      if (!sheets.length || !sheets.some(([sh]) => sh.rows.length)) { st.textContent = 'Nothing to export in this view. Use Full data.'; return; }
       fname = `Concall Signal Desk - ${vn.replace(/[\\\/:*?"<>|]/g, '')} - ${stamp}.xlsx`;
     }
     sheets.forEach(([sh, sub]) => xlAddSheet(wb, used, markId, sh, {sub, at}));
@@ -3171,7 +3171,7 @@ function drawDrawer(fresh) {
           <div><span>Archetype ${tip('archetype')}</span><b>${esc(x.archetype || c.archetype)}</b></div>
         </div>
       </section>
-      ${x.veto ? `<div class="flag">Veto applied: the score is capped at 40. See Red flags on the Signals tab. ${tip('veto')}</div>` : ''}
+      ${x.veto ? `<div class="flag">Veto applied: the score is capped at 40. See Red flags on the Signals behind the score tab. ${tip('veto')}</div>` : ''}
       <section class="oneline"><span class="eyebrow">The call in one line</span><p>${esc(x.thesis || c.thesis)}</p>${x.gLine ? `<p class="small" style="font-family:var(--body);font-weight:400;font-size:11.5px;margin-top:8px"><b>Key guidance:</b> ${esc(x.gLine)}</p>` : ''}</section>
       <div class="dtabs" role="tablist"><button role="tab" data-dt="summary" aria-selected="${tab === 'summary'}">Call summary</button><button role="tab" data-dt="signals" aria-selected="${tab === 'signals'}">Signals behind the score</button><button role="tab" data-dt="score" aria-selected="${tab === 'score'}">Score breakdown</button></div>
       <div id="dr-tab">${tab === 'signals' ? sigNote + signalsHtml(c) : tab === 'score' ? sigNote + scoreHtml(c) : '<p class="muted">Loading the summary…</p>'}</div>
@@ -3237,7 +3237,7 @@ function signalsHtml(c) {
       ${BLOCKS.map(([k, lab], i) => { const v = (c.blocks || {})[k] || 0; return `<div class="srow"><span>${lab}</span><span class="strack">${v ? `<span class="sfill ${v > 0 ? 'pos' : 'neg'}" style="width:${Math.abs(v) * 25}%;animation-delay:${i * .05}s"></span>` : ''}</span><span class="sv">${v > 0 ? '+' : ''}${v}</span></div>`; }).join('')}</div></div></section>
     <div class="two" style="gap:20px">
       <section class="sec"><h3>Score by call</h3>${spark(c.hist, hl)}</section>
-      <section class="sec"><h3>Management credibility ${tip('cred')}</h3>${c.credTested === 0 ? '<p><b>Untested.</b> <span class="muted">This builds once guidance from an earlier call can be checked against what was delivered.</span></p>' : `<p><b class="num" style="font-size:18px">${c.cred}</b> <span class="muted">of 100, from ${c.credTested} pieces of past guidance checked.</span></p>`}</section>
+      <section class="sec"><h3>Management credibility ${tip('cred')}</h3>${c.credTested === 0 ? '<p><b>Untested.</b> <span class="muted">This builds once guidance from an earlier call can be checked against what was delivered.</span></p>' : `<p><b class="num" style="font-size:18px">${c.cred}</b> <span class="muted">of 100, from ${c.credTested} piece${c.credTested === 1 ? '' : 's'} of past guidance checked.</span></p>`}</section>
     </div>
     ${mgmtSection(c)}
     ${(c.themes || []).length ? `<section class="sec"><h3>Themes discussed</h3><div class="chips">${c.themes.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div></section>` : ''}
@@ -3326,7 +3326,7 @@ function scoreHtml(c) {
         <tr><td>Demand</td><td>5%</td><td>Demand reading</td></tr>
         <tr><td>New developments & themes</td><td>3%</td><td>Novelty reading and the stage of the strongest theme discussed</td></tr>
         <tr><td>Tone & candour</td><td>2%</td><td>Tone reading and how hedged the answers were</td></tr></table>
-      <p>The readings (−2 to +2) are made by an AI model reading the transcript through the capital-cycle framework; everything after that is fixed arithmetic, recomputed each night. Guidance-backed growth and capacity carry the most weight because the market pays for growth, but only growth management can show how it will deliver; big guidance with no capacity, orders or plan behind it is discounted. Industry supply discipline comes next. Watch-points (receivables, working capital, related-party items, pledges, resignations, cash burn, liquidity) take 4 points each, up to 8. A veto (auditor issues, default, fraud, regulatory action, insolvency, guidance dropped without explanation, or heavy evasion with very negative tone) caps the score at 40.</p>
+      <p>The readings (−2 to +2) are made by an AI model reading the transcript through the capital-cycle framework; everything after that is fixed arithmetic, recomputed each night. Guidance-backed growth and capacity carry the most weight because the market pays for growth, but only for growth that management can show how it will deliver; big guidance with no capacity, orders or plan behind it is discounted. Industry supply discipline comes next. Watch-points (receivables, working capital, related-party items, pledges, resignations, cash burn, liquidity) take 4 points each, up to 8. A veto (auditor issues, default, fraud, regulatory action, insolvency, guidance dropped without explanation, or heavy evasion with very negative tone) caps the score at 40.</p>
     </div></details>
   </div>`;
 }
@@ -3492,7 +3492,7 @@ $('#themesel').addEventListener('click', e => { const b = e.target.closest('[dat
   renderNav();
   let ok = false;
   try { const r = await fetch('data/in.json', {cache: 'no-store'}); if (r.ok) { const j = await r.json(); if (j && Array.isArray(j.companies)) { D = j; ok = true; } } } catch (e) {}
-  if (!ok) { $('#view').innerHTML = '<div class="empty">The latest results could not be loaded. Reload the page to try again.</div>'; return; }
+  if (!ok) { $('#view').innerHTML = '<div class="empty">The latest data could not be loaded. Reload the page to try again.</div>'; return; }
   D.companies.forEach(c => { byId[c.id] = c; });
   const h = location.hash.slice(1);
   S.view = RENDER[h] ? h : (RENDER[store.get('view', 'home')] ? store.get('view', 'home') : 'home');
