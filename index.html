@@ -97,6 +97,17 @@ a{color:var(--accent)}
 .find input{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8.5px 12px 8.5px 32.5px;font-size:12px;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .2s}
 .find input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 4px var(--accentsoft)}
 .find svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.xl{position:relative;flex:none}
+.xl-btn{padding:7.5px 11px;box-shadow:var(--shadow);border-color:var(--line)}
+.xl-btn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent)}
+.xl-menu{position:absolute;right:0;top:calc(100% + 8px);width:min(300px,calc(100vw - 32px));background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow2);padding:5px;display:grid;gap:2px;z-index:26;animation:enter .2s var(--ease) both}
+.xl-menu button{display:grid;gap:2px;text-align:left;background:none;border:0;border-radius:10px;padding:8.5px 10px}
+.xl-menu button:hover:not([disabled]){background:var(--panel2)}
+.xl-menu button[disabled]{opacity:.5;cursor:not-allowed}
+.xl-menu b{font-family:var(--display);font-weight:600;font-size:12.5px}
+.xl-menu span{font-size:10.5px;color:var(--muted);line-height:1.4}
+.xl-st{margin:0;padding:2px 10px 5px;font-size:10.5px;color:var(--muted)}.xl-st:empty{display:none}
+@media (max-width:760px){.xl-btn span{display:none}}
 .theme-seg{flex:none}.theme-seg button{padding:6px 9px}.theme-seg svg{display:block}
 @media (max-width:760px){.theme-seg span{display:none}}
 .find-res{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow2);padding:5px;display:grid;gap:2px;z-index:25;max-height:60vh;overflow:auto;animation:enter .2s var(--ease) both}
@@ -726,6 +737,14 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
         <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.6 3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
         <input id="find" type="search" placeholder="Find a company by name or ticker" aria-label="Find a company" autocomplete="off">
         <div class="find-res" id="findres" hidden></div>
+      </div>
+      <div class="xl" id="xl">
+        <button class="btn xl-btn" id="xl-btn" aria-haspopup="menu" aria-expanded="false" title="Download as an Excel workbook"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8M4.5 6.8L8 10.3l3.5-3.5M2.5 12.5v1h11v-1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Export to Excel</span></button>
+        <div class="xl-menu" id="xl-menu" role="menu" hidden>
+          <button role="menuitem" data-xl="view"><b>This view, as filtered</b><span id="xl-view-sub">What is on screen now, with your filters and sort</span></button>
+          <button role="menuitem" data-xl="all"><b>Full data</b><span>Every call read, every result posted and the results calendar, no filters</span></button>
+          <p class="xl-st" id="xl-st" aria-live="polite"></p>
+        </div>
       </div>
       <div class="seg theme-seg" id="themesel" role="group" aria-label="Colour theme">
         <button data-theme-set="auto" title="Match my device" aria-label="Auto theme"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 2a6 6 0 0 1 0 12z" fill="currentColor"/></svg><span>Auto</span></button>
@@ -2823,6 +2842,177 @@ function hsClick(sp) {
   document.addEventListener('click', e => { if (e.target.closest('[data-tip]')) return; const sp = e.target.closest('.r.hd>span.hs'); if (!sp) return; e.stopPropagation(); busy = true; try { hsClick(sp); hsDecorate(document); } finally { mo.takeRecords(); busy = false; } }, true);
   document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('.r.hd>span.hs')) { e.preventDefault(); e.target.click(); } });
 })();
+
+
+/* ---------- Excel export ----------
+   "This view, as filtered" exports what the current view shows (all matching rows, not just the first page);
+   "Full data" exports every call, result and calendar entry. Each sheet carries the Concall Signal Desk brand:
+   a faint diagonal watermark behind the cells, a title row, and the print header and footer. */
+const XL_BRAND = 'Concall Signal Desk', XL_GREEN = 'FF1E6B45';
+let XLJS = null;
+const xlLib = () => (XLJS = XLJS || new Promise((res, rej) => {
+  if (window.ExcelJS) return res(window.ExcelJS);
+  const sc = document.createElement('script'); sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js';
+  sc.onload = () => window.ExcelJS ? res(window.ExcelJS) : rej(new Error('Excel library missing'));
+  sc.onerror = () => { XLJS = null; rej(new Error('The Excel library could not be loaded. Check your connection and try again.')); };
+  document.head.appendChild(sc);
+}));
+function xlMark() {
+  const c = document.createElement('canvas'); c.width = 1100; c.height = 700; const g = c.getContext('2d');
+  g.translate(550, 350); g.rotate(-Math.PI / 7); g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillStyle = 'rgba(30,107,69,0.10)'; g.font = '700 76px Arial, Helvetica, sans-serif'; g.fillText(XL_BRAND, 0, 0);
+  return c.toDataURL('image/png').split(',')[1];
+}
+const xlSafe = t => String(t).replace(/&/g, '&&');
+const xlSheetName = (t, used) => { let n = String(t || 'Sheet').replace(/[\[\]:*?\/\\]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 31) || 'Sheet', k = 2;
+  while (used.has(n.toLowerCase())) n = n.slice(0, 27) + ' (' + k++ + ')'; used.add(n.toLowerCase()); return n; };
+const xlDate = s => { if (!s) return null; const m = String(s).match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?/); return m ? new Date(Date.UTC(+m[1], m[2] - 1, +m[3], +(m[4] || 0), +(m[5] || 0))) : s; };
+const xlNum = v => v == null || v === '' || !isFinite(v) ? null : +v;
+/* A shown value like "62", "+3.0", "-12.4%" or "1,234" becomes a number; anything else stays text. */
+function xlCell(t) {
+  t = String(t ?? '').replace(/[★☆]/g, '').replace(/\s*\n\s*/g, ' · ').replace(/\s+/g, ' ').trim();
+  if (!t || /^[–—\-]$/.test(t)) return {v: null};
+  const m = t.replace(/−/g, '-').match(/^([+\-]?)₹?\s?(\d[\d,]*(?:\.\d+)?)(%?)$/);
+  if (m) { const v = parseFloat(m[2].replace(/,/g, '')) * (m[1] === '-' ? -1 : 1); return {v, f: m[3] ? '+0.0"%";-0.0"%";0.0"%"' : (/\./.test(m[2]) ? '#,##0.0#' : '#,##0')}; }
+  return {v: t};
+}
+function xlAddSheet(wb, used, markId, sh, meta) {
+  const ws = wb.addWorksheet(xlSheetName(sh.name, used), {
+    views: [{state: 'frozen', ySplit: 4, showGridLines: true}],
+    pageSetup: {orientation: 'landscape', fitToPage: true, fitToWidth: 1, fitToHeight: 0, margins: {left: .4, right: .4, top: .6, bottom: .6, header: .3, footer: .3}},
+    headerFooter: {oddHeader: `&L&"Arial,Bold"&12${xlSafe(XL_BRAND)}&R&8${xlSafe(meta.sub)}`, oddFooter: `&L&8${xlSafe(XL_BRAND)} · exported ${xlSafe(meta.at)}&RPage &P of &N`},
+    properties: {tabColor: {argb: XL_GREEN}}});
+  ws.addBackgroundImage(markId);
+  const n = Math.max(sh.cols.length, 2);
+  ws.mergeCells(1, 1, 1, n); ws.mergeCells(2, 1, 2, n);
+  Object.assign(ws.getCell(1, 1), {value: XL_BRAND, font: {name: 'Arial', bold: true, size: 16, color: {argb: XL_GREEN}}});
+  Object.assign(ws.getCell(2, 1), {value: `${meta.sub} · exported ${meta.at}`, font: {name: 'Arial', italic: true, size: 9, color: {argb: 'FF4A574E'}}});
+  ws.getRow(1).height = 24;
+  const hr = ws.getRow(4);
+  sh.cols.forEach((c, i) => { const cell = hr.getCell(i + 1); cell.value = c.h;
+    cell.font = {name: 'Arial', bold: true, size: 10, color: {argb: 'FFFFFFFF'}};
+    cell.fill = {type: 'pattern', pattern: 'solid', fgColor: {argb: XL_GREEN}};
+    cell.alignment = {vertical: 'middle', wrapText: true}; });
+  hr.height = 30;
+  sh.rows.forEach((r, j) => { const row = ws.getRow(5 + j);
+    sh.cols.forEach((c, i) => { let x = r[i]; const cell = row.getCell(i + 1);
+      if (x && typeof x === 'object' && !(x instanceof Date) && 'v' in x) { cell.value = x.v; if (x.f) cell.numFmt = x.f; if (x.link) cell.value = {text: x.v, hyperlink: x.link}; }
+      else { cell.value = x ?? null; if (c.f) cell.numFmt = c.f; else if (x instanceof Date) cell.numFmt = c.time ? 'dd mmm yyyy hh:mm' : 'dd mmm yyyy'; }
+      cell.font = {name: 'Arial', size: 10, ...(x && x.link ? {color: {argb: 'FF1E6B45'}, underline: true} : {})};
+      cell.alignment = {vertical: 'top', wrapText: !!c.wrap}; }); });
+  sh.cols.forEach((c, i) => { ws.getColumn(i + 1).width = c.w || 14; });
+  if (sh.rows.length) ws.autoFilter = {from: {row: 4, column: 1}, to: {row: 4 + sh.rows.length, column: sh.cols.length}};
+  return ws;
+}
+const XL_PCT = '+0.0"%";-0.0"%";0.0"%"';
+const xlCallSheet = (name, calls) => ({name, cols: [
+  {h: 'Company', w: 32}, {h: 'Ticker', w: 12}, {h: 'BSE code', w: 10}, {h: 'Quarter', w: 10}, {h: 'Call date', w: 12}, {h: 'Score', w: 8, f: '0'},
+  {h: 'Verdict', w: 10}, {h: 'Change vs last call', w: 11, f: '+0;-0;0'}, {h: 'Guidance', w: 12}, {h: 'Guidance line', w: 40, wrap: true}, {h: 'Credibility', w: 10, f: '0'},
+  {h: 'Sector', w: 22}, {h: 'Sub-sector', w: 24}, {h: 'Industry', w: 22}, {h: 'Market cap (₹ Cr)', w: 14, f: '#,##0'}, {h: 'Archetype', w: 20},
+  {h: 'What stood out', w: 44, wrap: true}, {h: 'Thesis', w: 70, wrap: true}, {h: 'Themes', w: 40, wrap: true}],
+  rows: calls.map(c => [c.name, byId[c.id]?.ticker || '', c.id, c.period, xlDate(c.date), xlNum(c.score), verdict(c.score, c.veto).w, xlNum(c.delta),
+    c.g > 0 ? 'Raised / positive' : c.g < 0 ? 'Cut / negative' : 'Steady', c.gLine || '', xlNum(c.cred), c.bigSector || '', c.sector || '', c.industry || '',
+    xlNum(c.mcapCr ?? byId[c.id]?.mcapCr), c.archetype || '', c.top || '', c.thesis || '', (c.themes || []).join(', ')])});
+const xlResSheet = (name, rs) => ({name, cols: [
+  {h: 'Company', w: 32}, {h: 'BSE code', w: 10}, {h: 'Quarter', w: 10}, {h: 'Basis', w: 13}, {h: 'Filed', w: 17, time: true}, {h: 'Sector', w: 22}, {h: 'Sub-sector', w: 24}, {h: 'Market cap', w: 14},
+  {h: 'Revenue (₹ Cr)', w: 13, f: '#,##0.0'}, {h: 'Rev YoY', w: 9, f: XL_PCT}, {h: 'Rev QoQ', w: 9, f: XL_PCT}, {h: 'Op. profit (₹ Cr)', w: 13, f: '#,##0.0'}, {h: 'Op YoY', w: 9, f: XL_PCT},
+  {h: 'Margin', w: 9, f: '0.0"%"'}, {h: 'Margin a year ago', w: 10, f: '0.0"%"'}, {h: 'PAT (₹ Cr)', w: 12, f: '#,##0.0'}, {h: 'PAT YoY', w: 9, f: XL_PCT}, {h: 'PAT QoQ', w: 9, f: XL_PCT},
+  {h: 'EPS', w: 9, f: '0.00'}, {h: 'EPS YoY', w: 9, f: XL_PCT}, {h: 'Price', w: 10, f: '#,##0.00'}, {h: 'Day 1', w: 9, f: XL_PCT}, {h: 'Since results', w: 10, f: XL_PCT},
+  {h: 'Last call score', w: 10, f: '0'}, {h: 'BSE filing', w: 12}],
+  rows: rs.map(r => [r.name, r.id, r.label || r.period, r.basis || '', xlDate(r.filed), r.bigSector || '', r.sector || '', r.mcap || '',
+    xlNum(r.rev), xlNum(r.rev_yoy), xlNum(r.rev_qoq), xlNum(r.op), xlNum(r.op_yoy), xlNum(r.opm), xlNum(r.opm_prev_yoy), xlNum(r.pat), xlNum(r.pat_yoy), xlNum(r.pat_qoq),
+    xlNum(r.eps), xlNum(r.eps_yoy), xlNum(r.px?.now), xlNum(r.px?.react), xlNum(r.px?.move), xlNum(byId[r.id]?.score),
+    r.url && /^https:\/\/www\.bseindia\.com\//.test(r.url) ? {v: 'Open', link: r.url} : ''])});
+const xlCalSheet = (name, cal) => ({name, cols: [{h: 'Company', w: 32}, {h: 'BSE code', w: 10}, {h: 'Board meeting', w: 13}, {h: 'Sector', w: 24}, {h: 'Sub-sector', w: 24}, {h: 'Market cap', w: 14}, {h: 'Last call score', w: 10, f: '0'}],
+  rows: cal.slice().sort((a, b) => (a.date || '').localeCompare(b.date || '') || a.name.localeCompare(b.name)).map(r => [r.name, r.id, xlDate(r.date), r.bigSector || '', r.sector || '', r.mcap || '', xlNum(byId[r.id]?.score)])});
+/* Lists drawn on the page: every .rows list with a title row and every results-style table. Lists with the same
+   columns (e.g. one per day) go into one sheet with a Group column. */
+function xlDomSheets() {
+  const view = $('#view'), groups = new Map(), title = (view.querySelector('.vhead h2')?.textContent || 'This view').trim();
+  view.querySelectorAll('.rows').forEach(rows => {
+    const hd = rows.querySelector(':scope>.r.hd'); if (!hd) return;
+    const keep = [...hd.children].map((sp, i) => [i, hsLabel(sp)]).filter(([, l]) => l);
+    const sec = rows.closest('section,.up-day')?.querySelector('h3,h4');
+    const grp = (sec?.childNodes[0]?.textContent || sec?.textContent || '').trim();
+    const sig = keep.map(k => k[1]).join('|');
+    if (!groups.has(sig)) groups.set(sig, {name: (rows.closest('section')?.querySelector('.list-head h3,.w-head h3')?.textContent || title).trim(), keep, rows: [], grps: new Set()});
+    const G = groups.get(sig);
+    rows.querySelectorAll(':scope>.r:not(.hd)').forEach(r => {
+      const cells = keep.map(([i]) => xlCell(r.children[i]?.innerText ?? ''));
+      if (r.classList.contains('subr') && cells[0].v) cells[0] = {v: '↳ ' + cells[0].v};
+      G.rows.push([{v: grp}, ...cells]); G.grps.add(grp); });
+  });
+  view.querySelectorAll('table').forEach(tb => {
+    const hs = [...tb.querySelectorAll('thead th, tr:first-child th')].map(th => th.innerText.replace(/[▲▼↕]/g, '').trim()); if (!hs.length) return;
+    const rows = [...tb.querySelectorAll('tbody tr')].filter(tr => tr.querySelector('td')).map(tr => [{v: ''}, ...[...tr.children].map(td => xlCell(td.innerText))]);
+    groups.set('table|' + hs.join('|'), {name: title, keep: hs.map((h, i) => [i, h]), rows, grps: new Set()});
+  });
+  return [...groups.values()].filter(G => G.rows.length).map(G => {
+    const useGrp = [...G.grps].filter(Boolean).length > 1;
+    const cols = (useGrp ? [{h: 'Group', w: 18}] : []).concat(G.keep.map(([, l]) => ({h: l, w: Math.min(48, Math.max(10, l.length + 4)), wrap: true})));
+    const rows = G.rows.map(r => useGrp ? r : r.slice(1));
+    cols.forEach((c, i) => { const longest = Math.max(...rows.slice(0, 200).map(r => String(r[i]?.v ?? '').length)); c.w = Math.min(60, Math.max(c.w, Math.min(longest, 60) * .9)); c.wrap = longest > 40; });
+    return {name: G.name, cols, rows};
+  });
+}
+const xlViewName = () => VIEWS.flatMap(g => g.items).find(([k]) => k === S.view)?.[1] || 'Dashboard';
+function xlViewPlan() {
+  if (S.view === 'calls') { const n = filteredCalls().length; return {n, sub: `${fmt(n)} calls matching your filters and sort`}; }
+  if (S.view === 'results' && RES.data) { const n = rsRows().length; return {n, sub: `${fmt(n)} results matching your filters and sort`}; }
+  if (S.view === 'help' || S.view === 'ask') return {n: 0, sub: 'This view has no table to export. Use Full data.'};
+  const sh = xlDomSheets(), n = sh.reduce((a, x) => a + x.rows.length, 0);
+  return n ? {n, sub: `${fmt(n)} rows from ${sh.length} ${sh.length === 1 ? 'list' : 'lists'} on screen, as sorted`} : {n: 0, sub: 'This view has no table to export. Use Full data.'};
+}
+function xlFilterNote() {
+  const f = S.calls, bits = [];
+  if (S.view === 'calls') { if (f.big) bits.push(f.big); if (f.sub) bits.push(f.sub); if (f.size) bits.push(SIZES[f.size][0]); [...f.chips].forEach(k => bits.push(CHIPS[k][0])); if (f.search) bits.push(`search "${f.search}"`); bits.push(SORTS[f.sort][0]); }
+  return bits.length ? ' · ' + bits.join(', ') : '';
+}
+async function xlSave(wb, filename) {
+  const buf = await wb.xlsx.writeBuffer();
+  const blob = new Blob([buf], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+  const dl = window.claude?.use ? await window.claude.use('downloads').catch(() => null) : null;
+  if (dl) { try { await dl.save({filename, data: blob}); return 'Saved.'; } catch (e) { if (e?.code === 'declined') return 'Download cancelled.'; if (e?.code === 'rate_limited') return 'A download prompt is already open.'; throw e; } }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename; document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 4000); return 'Downloaded.';
+}
+let xlBusy = false;
+async function xlExport(kind) {
+  if (xlBusy) return; xlBusy = true; const st = $('#xl-st'); st.textContent = 'Preparing the workbook…';
+  try {
+    const ExcelJS = await xlLib();
+    const wb = new ExcelJS.Workbook(); wb.creator = XL_BRAND; wb.company = XL_BRAND; wb.title = XL_BRAND; wb.created = new Date();
+    const markId = wb.addImage({base64: xlMark(), extension: 'png'}), used = new Set();
+    const now = new Date(), at = now.toLocaleString('en-IN', {timeZone: 'Asia/Kolkata', day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit'}) + ' IST';
+    const stamp = istToday(); let sheets = [], fname;
+    if (kind === 'all') {
+      const res = await loadRes();
+      const calls = (D.calls || []).slice().sort((a, b) => b.date.localeCompare(a.date) || b.score - a.score);
+      sheets = [[xlCallSheet('All calls', calls), `Every call read · data updated ${fdate(D.generated)}`],
+        [xlResSheet('Results posted', (res?.results || []).slice().sort((a, b) => b.filed.localeCompare(a.filed))), `Every result posted · checked ${fdate(res?.checked)}`],
+        [xlCalSheet('Results calendar', res?.calendar || []), 'Announced board meetings']];
+      fname = `Concall Signal Desk - full data - ${stamp}.xlsx`;
+    } else {
+      const vn = xlViewName(), q = S.q ? `${S.q} · ` : '';
+      if (S.view === 'calls') sheets = [[xlCallSheet(`Calls ${S.q || ''}`.trim(), filteredCalls()), `${q}${vn}${xlFilterNote()}`]];
+      else if (S.view === 'results' && RES.data) sheets = [[xlResSheet('Results posted', rsRows()), `${vn} · as filtered and sorted`]];
+      else sheets = xlDomSheets().map(sh => [sh, `${q}${vn} · as shown on screen`]);
+      if (!sheets.length || !sheets.some(([sh]) => sh.rows.length)) { st.textContent = 'Nothing to export in this view. Try Full data.'; return; }
+      fname = `Concall Signal Desk - ${vn.replace(/[\\\/:*?"<>|]/g, '')} - ${stamp}.xlsx`;
+    }
+    sheets.forEach(([sh, sub]) => xlAddSheet(wb, used, markId, sh, {sub, at}));
+    st.textContent = await xlSave(wb, fname);
+  } catch (e) { st.textContent = e?.message && !e.code ? e.message : 'The export could not be saved here.'; }
+  finally { xlBusy = false; }
+}
+function xlToggle(open) {
+  const m = $('#xl-menu'), b = $('#xl-btn'); open = open ?? m.hidden; m.hidden = !open; b.setAttribute('aria-expanded', open);
+  if (open) { const p = xlViewPlan(), vb = m.querySelector('[data-xl="view"]'); $('#xl-view-sub').textContent = p.sub; vb.disabled = !p.n; $('#xl-st').textContent = ''; }
+}
+$('#xl').addEventListener('click', e => { e.stopPropagation(); if (e.target.closest('#xl-btn')) return xlToggle();
+  const it = e.target.closest('[data-xl]'); if (it && !it.disabled) xlExport(it.dataset.xl); });
+document.addEventListener('click', e => { if (!e.target.closest('#xl')) { const m = $('#xl-menu'); if (m && !m.hidden) xlToggle(false); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#xl-menu').hidden) { xlToggle(false); $('#xl-btn').focus(); } });
 
 const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
