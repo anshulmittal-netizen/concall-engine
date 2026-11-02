@@ -44,7 +44,7 @@ ANALYST_TONE = ["enthusiastic", "supportive", "neutral", "probing", "skeptical"]
 _ROW = {"type": "object", "required": ["call", "when", "why"], "properties": {
     "call": {"type": "string", "enum": CALLS, "description": "surely = already under way or firmly committed with a date; likely = management guided it with a plan behind it; "
              "possible = hinted or depends on conditions; unlikely = the call points the other way; no_signal = not discussed"},
-    "when": {"type": "string", "description": "Expected timing relative to the call, e.g. 'Q4 FY27', 'H2 FY27', 'FY28', 'next 2-3 quarters'. Empty if no_signal or no timing"},
+    "when": {"type": "string", "description": "Expected timing only, short (under 60 characters), e.g. 'Q4 FY27', 'H2 FY27', 'FY28', 'next 2-3 quarters'. Put amounts and detail in 'why', not here. Empty if no_signal or no timing"},
     "why": {"type": "string", "description": "One sentence with the numbers and the reason, e.g. 'Utilisation at 88% and brownfield headroom used up, so a new plant is likely to be announced'. Empty if no_signal"},
 }}
 
@@ -110,13 +110,22 @@ def _call(x: dict) -> dict:
     raise RuntimeError("no outlook read")
 
 
+def _clip(v, n: int) -> str:
+    """Trim to n characters on a word boundary, with an ellipsis, so a long field never ends mid-word."""
+    t = " ".join(str(v or "").split())
+    if len(t) <= n:
+        return t
+    cut = t[:n - 1].rsplit(" ", 1)[0].rstrip(" ,;:(-")
+    return cut + "…"
+
+
 def _row(v, kind: str, label: str) -> dict:
     v = v if isinstance(v, dict) else {}
     if isinstance(v.get("call"), dict):          # the model sometimes nests the row one level deeper
         v = v["call"]
     call = str(v.get("call") or "no_signal").strip().lower().replace(" ", "_")
     call = call if call in CALLS else "no_signal"
-    when, why = str(v.get("when") or "").strip()[:60], str(v.get("why") or "").strip()[:400]
+    when, why = _clip(v.get("when"), 120), _clip(v.get("why"), 600)
     if call == "no_signal":
         when = ""
     return {"k": kind, "label": label, "call": call, "when": when, "why": why}
