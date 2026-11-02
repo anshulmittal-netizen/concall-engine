@@ -22,13 +22,14 @@ WATCH_RX = re.compile(r"receivable|debtor days|working capital|related.party|ple
 BSE_ATTACH = "https://www.bseindia.com/xml-data/corpfiling/AttachLive/{f}"
 
 
-SUMMARY_PART_BYTES = 8_000_000  # each published file must stay under the artifact's 16 MB per-file limit
+SUMMARY_PART_BYTES = 1_500_000  # small parts, so the dashboard fetches only the one holding a call (well under the 16 MB file limit)
 
 
 def write_summary_parts(market: str, summaries: dict) -> None:
     """Write call summaries as several compact files of at most SUMMARY_PART_BYTES each
     (summaries_<m>_1.json, _2, ...) plus a small index at summaries_<m>.json listing them.
-    The dashboard reads the index, fetches every part in parallel and merges them."""
+    Parts are in call-key order and the index lists each part's first key ("first"), so the dashboard can fetch
+    just the part holding one call; views that need every summary fetch all parts in parallel and merge them."""
     import json
     m = market.lower()
     out = SITE / "data"
@@ -50,7 +51,8 @@ def write_summary_parts(market: str, summaries: dict) -> None:
     for stale in out.glob(f"summaries_{m}_*.json"):
         if f"data/{stale.name}" not in names and re.fullmatch(rf"summaries_{m}_\d+\.json", stale.name):
             stale.unlink()
-    write_json(out / f"summaries_{m}.json", {"parts": names, "count": len(summaries)})
+    first = [min(part) if part else "" for part in parts]
+    write_json(out / f"summaries_{m}.json", {"parts": names, "first": first, "count": len(summaries)})
 
 
 def clip(x, lo=-1.0, hi=1.0):

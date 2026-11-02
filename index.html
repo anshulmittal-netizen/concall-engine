@@ -2899,9 +2899,27 @@ const loadRes = () => RES.data ? Promise.resolve(RES.data) : (RES.p = RES.p || f
 /* summaries_in.json is an index {parts: [paths], count}; the summaries themselves are split across those parts
    (each kept under the per-file size limit) and merged here. An old single-file summaries_in.json still loads as is. */
 const getJson = u => fetch(u, {cache: 'no-store'}).then(r => r.ok ? r.json() : {}).catch(() => ({}));
-const loadSums = () => SUMS.data ? Promise.resolve(SUMS.data) : (SUMS.p = SUMS.p || getJson('data/summaries_in.json').then(j =>
-  j && Array.isArray(j.parts) ? Promise.all(j.parts.filter(p => /^data\/summaries_in_\d+\.json$/.test(p)).map(getJson)).then(ps => Object.assign({}, ...ps.map(p => p || {}))) : j
+/* Each part is fetched once and shared. When the index also lists "first" (the first call key in each part, parts
+   being in key order), one call's summary needs only its own part, so the company panel opens without waiting for all of them. */
+const SUMP = {}, sumPart = p => (SUMP[p] = SUMP[p] || getJson(p));
+const sumIdx = () => (SUMS.ip = SUMS.ip || getJson('data/summaries_in.json'));
+const sumParts = j => j.parts.filter(p => /^data\/summaries_in_\d+\.json$/.test(p));
+const loadSums = () => SUMS.data ? Promise.resolve(SUMS.data) : (SUMS.p = SUMS.p || sumIdx().then(j =>
+  j && Array.isArray(j.parts) ? Promise.all(sumParts(j).map(sumPart)).then(ps => Object.assign({}, ...ps.map(p => p || {}))) : j
 ).then(j => (SUMS.data = j || {})));
+async function loadSum(key) {
+  if (SUMS.data) return SUMS.data[key];
+  const j = await sumIdx();
+  if (!(j && Array.isArray(j.parts))) return (await loadSums())[key];
+  let ps = sumParts(j);
+  if (Array.isArray(j.first) && j.first.length === j.parts.length) {
+    let n = 0; j.first.forEach((f, i) => { if (String(f) <= key) n = i; });
+    ps = sumParts({parts: [j.parts[n]]});
+  }
+  const got = await Promise.all(ps.map(sumPart));
+  for (const d of got) if (d && d[key]) return d[key];
+  return undefined;
+}
 function hlq(q, hl) { const s = esc(q); if (!hl) return s; const h = esc(hl), i = s.indexOf(h); return i < 0 ? s : s.slice(0, i) + `<mark class="hl">${h}</mark>` + s.slice(i + h.length); }
 function spark(vals, labels) {
   if (!vals || vals.length < 2) return '<p class="small muted">The score history line appears from the company’s second call.</p>';
@@ -2984,8 +3002,8 @@ function outlookTable(o) {
     ${tone}</div></section>`;
 }
 async function fillSummary(key) {
-  const all = await loadSums(); if (!S.drawer || S.drawer.key !== key || S.drawer.tab !== 'summary') return;
-  const s = all[key], box = $('#dr-tab'); if (!box) return;
+  const s = await loadSum(key); if (!S.drawer || S.drawer.key !== key || S.drawer.tab !== 'summary') return;
+  const box = $('#dr-tab'); if (!box) return;
   if (!s) { box.innerHTML = '<div class="empty">This call has not been summarised yet. New calls are summarised the night they are read.</div>'; return; }
   const real = items => (items || []).filter(v => /[^\W_]{2}/u.test(String(v ?? '')));
   const list = (t, items) => (items = real(items)).length ? `<div class="scard"><h4>${t}</h4><ul>${items.map(v => `<li>${esc(v)}</li>`).join('')}</ul></div>` : '';
@@ -3277,7 +3295,7 @@ $('#themesel').addEventListener('click', e => { const b = e.target.closest('[dat
   S.rs.view = store.get('rs-view', 'cards') === 'table' ? 'table' : 'cards';
   render();
   if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
-  loadSums().then(() => renderNav());  /* near-term count uses lines from the summaries */
+  setTimeout(() => loadSums().then(() => renderNav()), 5000);  /* near-term count uses lines from the summaries; started late so an opened company's summary part comes first */
   loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'portfolio', 'pead', 'themes', 'turns'].includes(S.view)) render(); });
 })();
 </script>
