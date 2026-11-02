@@ -512,6 +512,8 @@ def build(market: str, log=print) -> dict:
             for d in r["docs"]:
                 if d.get("summary"):
                     summaries[key] = _site_summary(d["summary"])
+                    if (d.get("outlook") or {}).get("rows"):   # forward triggers for the next 2-4 quarters
+                        summaries[key]["outlook"] = {"rows": d["outlook"]["rows"], "tone": d["outlook"].get("tone")}
                     break
     calls.sort(key=lambda c: (c["periodKey"], c["score"]), reverse=True)
     # percentile within the season: share of that quarter's calls this one beats

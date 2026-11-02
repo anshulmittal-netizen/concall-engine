@@ -497,6 +497,18 @@ dl.gl dd{margin:0}
 .scard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 13.5px}
 .scard h4{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:7.5px;font-family:var(--body);font-weight:600}
 .scard ul{margin:0;padding-left:15.5px;display:grid;gap:5px;font-size:12px}
+.ft{display:grid;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);overflow:hidden;box-shadow:var(--shadow)}
+.ft .fr{display:grid;grid-template-columns:minmax(0,190px) 96px 100px minmax(0,1fr);gap:4px 13.5px;align-items:baseline;padding:9.5px 15.5px;border-top:1px solid var(--line);font-size:12px}
+.ft .fr:first-child{border-top:0}
+.ft .fr.hd{background:var(--panel2);font-weight:600;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-block:8px}
+.ft .fr.ns{color:var(--faint)}.ft .fr.ns .pill{opacity:.7}
+.ft .fr.tone{background:color-mix(in srgb,var(--panel2) 60%,transparent)}
+.ft .fl{font-family:var(--display);font-weight:600;font-size:12.5px;line-height:1.3}
+.ft .fw{font-family:var(--mono);font-size:10.5px;white-space:nowrap}
+.ft .fy{color:var(--muted);line-height:1.45}
+.fc-surely{--pc:var(--v5)}.fc-likely{--pc:var(--up)}.fc-possible{--pc:var(--warn)}.fc-unlikely{--pc:var(--down)}.fc-no_signal{--pc:var(--faint)}
+.fc-up{--pc:var(--up)}.fc-mid{--pc:var(--muted)}.fc-dn{--pc:var(--down)}
+@media (max-width:760px){.ft .fr{grid-template-columns:minmax(0,1fr) auto}.ft .fr .fw{grid-column:1}.ft .fr .fy{grid-column:1/-1}.ft .fr.hd{display:none}.ft .fr .fw.e{display:none}}
 .qa{display:grid;gap:7px}
 .qa details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:9.5px 13px}
 .qa summary{cursor:pointer;font-weight:600}
@@ -2950,6 +2962,26 @@ function drawDrawer(fresh) {
   if (tab === 'summary') fillSummary(x.key);
   animateWidgets(root);
 }
+/* Forward triggers: what the call points to over the next 2-4 quarters (outlook.py). Discussed triggers first. */
+const FT_CALL = {surely: 'Surely', likely: 'Likely', possible: 'Possible', unlikely: 'Unlikely', no_signal: 'No signal'};
+const FT_ORD = {surely: 0, likely: 1, possible: 2, unlikely: 3, no_signal: 4};
+const FT_TONE = {confident: 'up', constructive: 'up', enthusiastic: 'up', supportive: 'up', cautious: 'mid', neutral: 'mid', probing: 'mid', defensive: 'dn', evasive: 'dn', skeptical: 'dn'};
+function outlookTable(o) {
+  const rows = ((o && o.rows) || []).slice();
+  if (!rows.length) return '';
+  rows.sort((a, b) => (FT_ORD[a.call] ?? 4) - (FT_ORD[b.call] ?? 4));
+  const cap = w => w ? w[0].toUpperCase() + w.slice(1) : '';
+  const t = o.tone || {};
+  const tone = (t.mgmt || t.analysts) ? `<div class="fr tone"><span class="fl">Management / analyst tone</span>
+      <span>${t.mgmt ? `<span class="pill fc-${FT_TONE[t.mgmt] || 'mid'}">Mgmt: ${esc(cap(t.mgmt))}</span>` : ''}</span>
+      <span>${t.analysts ? `<span class="pill fc-${FT_TONE[t.analysts] || 'mid'}">Analysts: ${esc(cap(t.analysts))}</span>` : ''}</span>
+      <span class="fy">${esc(t.note || '')}</span></div>` : '';
+  return `<section class="sec"><h3>Fundamental triggers · next 2–4 quarters</h3>
+    <span class="small muted">What this call points to, judged from the call summary. Surely = under way or committed with a date; Likely = guided with a plan; Possible = hinted or conditional.</span>
+    <div class="ft"><div class="fr hd"><span>Trigger</span><span>Call</span><span>When</span><span>Why</span></div>
+    ${rows.map(r => `<div class="fr${r.call === 'no_signal' ? ' ns' : ''}"><span class="fl">${esc(r.label)}</span><span><span class="pill fc-${esc(r.call)}">${FT_CALL[r.call] || esc(r.call)}</span></span><span class="fw${r.when ? '' : ' e'}">${esc(r.when || '–')}</span><span class="fy">${esc(r.why || (r.call === 'no_signal' ? 'Not discussed on the call.' : ''))}</span></div>`).join('')}
+    ${tone}</div></section>`;
+}
 async function fillSummary(key) {
   const all = await loadSums(); if (!S.drawer || S.drawer.key !== key || S.drawer.tab !== 'summary') return;
   const s = all[key], box = $('#dr-tab'); if (!box) return;
@@ -2958,6 +2990,7 @@ async function fillSummary(key) {
   const list = (t, items) => (items = real(items)).length ? `<div class="scard"><h4>${t}</h4><ul>${items.map(v => `<li>${esc(v)}</li>`).join('')}</ul></div>` : '';
   box.innerHTML = `<div style="display:grid;gap:18px">
     <section class="sec"><h3 style="font-size:15px">${esc(s.headline)}</h3><p style="max-width:70ch">${esc(s.overview)}</p></section>
+    ${outlookTable(s.outlook)}
     ${peopleBlock(S.drawer.id, key)}
     ${(s.financial_highlights || []).length ? `<section class="sec"><h3>Financial highlights</h3><div class="fin">${s.financial_highlights.map(f => `<div><span>${esc(f.metric)}</span><b>${esc(f.value)}</b><span>${esc(f.change || '')}</span></div>`).join('')}</div></section>` : ''}
     <div class="scards">
