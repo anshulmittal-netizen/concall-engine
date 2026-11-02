@@ -9,6 +9,10 @@ on:
         description: "Days of filings to read (backfill)"
         required: false
         default: "2"
+      ann_days:
+        description: "Days of corporate announcements to read (backfill)"
+        required: false
+        default: "2"
 
 concurrency: { group: mgmt-watch, cancel-in-progress: false }   # own group: never waits behind the nightly run
 
@@ -33,6 +37,14 @@ jobs:
       - name: Commit
         if: always()
         run: ./mgmt_commit.sh
+      - name: Corporate announcements (order wins, deals, capex, fund raises, red flags)
+        continue-on-error: true   # never hold up management-change alerts
+        timeout-minutes: 40
+        run: python run.py ann --market IN --days ${{ inputs.ann_days || '2' }}
+      - name: Commit announcements
+        if: always()
+        continue-on-error: true
+        run: ./ann_commit.sh
       - name: Results calendar and posted results
         continue-on-error: true   # never hold up management-change alerts
         timeout-minutes: 25

@@ -14,6 +14,7 @@ reports, press releases, broker notes and news are deliberately out of scope.
 | Concall transcripts | BSE corporate announcements (free) | Licensed provider plug-in, FMP to start (`FMP_API_KEY`, Ultimate plan) |
 | Investor presentations | BSE corporate announcements | SEC EDGAR 8-K EX-99 exhibits (free) |
 | Interviews | Channel watchlist → local transcription (`--interviews`) | Same |
+| Corporate announcements | BSE announcements every 30 minutes (`ann.py`, `python run.py ann --market IN --days 2`): tagged into triggers (order win, acquisition, merger, management change, capex, fund raise, buyback / bonus / split, partnership, approval / launch, credit rating, promoter deal, business update, red flag); high-signal filings read by Claude for value, counterparty and materiality. Dashboard: Ideas → Announcements | – |
 | Upcoming calls | BSE "Analyst / Investor Meet" call intimations, read nightly (`calendar_in.py`, `python run.py calendar --market IN`) | – |
 | Universe & market cap | BSE scrip list (or your own CSV) | SEC ticker list + FMP market cap (Yahoo fallback) |
 

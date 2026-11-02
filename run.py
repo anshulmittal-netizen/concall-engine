@@ -235,6 +235,11 @@ def cmd_mgmt(a):
     mgmt.run(a.market, days=days, notify_days=1 if days > 7 else 3, log=log)  # a backfill alerts only for today's filings
 
 
+def cmd_ann(a):
+    import ann
+    ann.run(a.market, days=a.days or 2, log=log)
+
+
 def cmd_history(a):
     """First-time concall check against BSE filing history (cached; only new companies are checked)."""
     import glob
@@ -298,16 +303,16 @@ def cmd_all(a):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "outlook", "about", "mgmt", "history", "participants", "analyze", "all", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "outlook", "about", "mgmt", "ann", "history", "participants", "analyze", "all", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
-    p.add_argument("--days", type=int, help="mgmt: how many days of filings to read")
+    p.add_argument("--days", type=int, help="mgmt / ann: how many days of filings to read")
     p.add_argument("--interviews", action="store_true", help="include interview channels (local machine only)")
     a = p.parse_args(argv)
     if a.command != "serve" and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "outlook": cmd_outlook, "about": cmd_about, "mgmt": cmd_mgmt, "history": cmd_history, "participants": cmd_participants, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "outlook": cmd_outlook, "about": cmd_about, "mgmt": cmd_mgmt, "ann": cmd_ann, "history": cmd_history, "participants": cmd_participants, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":

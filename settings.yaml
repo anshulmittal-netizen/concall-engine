@@ -41,6 +41,12 @@ run:
   backfill_days: 200           # current + previous quarter
   lookback_days: 10
 
+announcements:                 # corporate announcement tracker (ann.py), refreshed every 30 minutes with the mgmt watch
+  keep_days: 90                # days of tagged filings on the dashboard
+  read_days: 90                # Claude reads high-signal filings this far back (newest first)
+  max_reads_per_run: 300       # Claude reads per 30-minute run; a backfill clears over the following runs
+  read_workers: 6
+
 analysis:
   periods_shown: 6
   min_companies_per_sector: 3
