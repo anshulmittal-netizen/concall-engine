@@ -1151,6 +1151,55 @@ def slots_for(L: dict, key: str, state: dict, t0: dt.date, ever: dict) -> dict:
     return out
 
 
+# ------------------------------------------------------------------ world themes and gradual climbers
+def gradual(vals: list) -> dict | None:
+    """A steady climb: at least three seasons with scores, each one higher than the last, a total rise of 8-60 points
+    and no single jump above 35 (a jump is a surprise, not a gradual pick-up)."""
+    pts = [v for v in vals if v is not None]
+    if len(pts) < 3:
+        return None
+    last3 = pts[-3:]
+    steps = [b - a for a, b in zip(last3, last3[1:])]
+    rise = last3[-1] - last3[0]
+    if all(x > 0 for x in steps) and 8 <= rise <= 60 and max(steps) <= 35:
+        return {"rise": round(rise), "from": round(last3[0]), "to": round(last3[-1])}
+    return None
+
+
+def world_themes(out_sectors: list[dict]) -> dict:
+    cfg = load_yaml("global_themes.yaml") or {}
+    by_id = {L["id"]: (L, s["name"]) for s in out_sectors for L in s["leaders"]}
+    themes = []
+    for t in cfg.get("themes") or []:
+        live = []
+        for lid in t.get("leaders") or []:
+            hit = by_id.get(str(lid))
+            if hit:
+                L, sec = hit
+                live.append({"id": L["id"], "name": L["name"], "mkt": L["mkt"], "sector": sec, "trend": L["trend"], "score": L["score"]})
+        dirs = [x["trend"]["dir"] for x in live if x["trend"].get("label") not in ("No data", "New")]
+        themes.append({**{k: t.get(k) for k in ("market", "theme", "status", "why", "evidence", "india", "sources")},
+                       "leaders": live, "confirm": (sum(dirs) / len(dirs)) if dirs else None})
+    sec_cl, co_cl = [], []
+    for s in out_sectors:
+        for mkt in ("IN", "GL"):
+            Ls = [L for L in s["leaders"] if L["mkt"] == mkt]
+            series = []
+            for i in range(len(Ls[0]["scores"]) if Ls else 0):
+                v = [L["scores"][i] for L in Ls if L["scores"][i] is not None]
+                series.append(round(sum(v) / len(v)) if v else None)
+            g = gradual(series)
+            if g:
+                sec_cl.append({"name": s["name"], "mkt": mkt, "series": series, **g})
+        for L in s["leaders"]:
+            g = gradual(L["scores"])
+            if g:
+                co_cl.append({"id": L["id"], "name": L["name"], "mkt": L["mkt"], "country": L["country"], "sector": s["name"],
+                              "series": L["scores"], **g})
+    return {"asOf": cfg.get("as_of"), "markets": cfg.get("markets") or [], "themes": themes,
+            "climbers": {"sectors": sorted(sec_cl, key=lambda x: -x["rise"]), "companies": sorted(co_cl, key=lambda x: -x["rise"])}}
+
+
 # ------------------------------------------------------------------ build
 def build(log=log_, limit: int | None = None, live: bool = True) -> dict:
     cfg = (settings().get("leaders") or {})
@@ -1290,6 +1339,10 @@ def build(log=log_, limit: int | None = None, live: bool = True) -> dict:
             "weights": w, "thresholds": {"up": up, "down": down}, "bseLive": bse_live, "coverage": cov, "coverageBy": covm,
             "gaps": sorted(gaps, key=lambda g: (g["st"] != "missing", g["season"], g["sector"])),
             "upcoming": sorted(ups, key=lambda u: u["date"]), "sectors": out_sectors, "readsThisRun": nread}
+    try:
+        site["world"] = world_themes(out_sectors)
+    except Exception as ex:
+        log(f"leaders: world themes skipped ({ex})")
     write_json(SITE_FILE, site, compact=True)
     log(f"leaders: {cov['ok']} of {cov['expected']} expected events linked, {cov['held']} confirmed without a document, "
         f"{cov['missing']} missing, {cov['unsourced']} need a manual link, {cov['awaited']} awaited, {cov['sweep']} waiting for the first BSE sweep · {nread} documents read")

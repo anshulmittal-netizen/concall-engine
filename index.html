@@ -765,6 +765,19 @@ a.ld-slot:hover{outline:1px solid var(--accent)}.ld-go{font-size:10px;color:var(
   .ld-rows .r>span:nth-child(3),.ld-rows .r>span:nth-child(6){display:none}.ld-rows .r>span:nth-child(4),.ld-rows .r>span:nth-child(5){grid-column:1/-1}
   .ld-cmp .r{grid-template-columns:1fr 1fr}.ld-cmp .r>span:first-child,.ld-cmp .r>span:last-child{grid-column:1/-1}
   .ld-gap .r{grid-template-columns:1fr}.ld-co-r{align-items:flex-start}}
+
+.wt-mk{margin:20px 0}.wt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.wt-th{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:var(--r);padding:14px 16px;display:grid;gap:8px;align-content:start;min-width:0}
+.wt-th header{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.wt-th h4{margin:0;font-family:var(--display);font-size:16px}
+.wt-th p{margin:0}.wt-why{font-size:13.5px;line-height:1.5}.wt-in{color:var(--muted)}
+.wt-ev>div{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.wt-chip{font:inherit;font-size:12px;padding:3px 9px;border-radius:999px;border:1px solid color-mix(in srgb,var(--c) 35%,transparent);background:color-mix(in srgb,var(--c) 10%,transparent);color:var(--fg);cursor:pointer}
+.wt-src{display:flex;flex-wrap:wrap;gap:4px 12px}.wt-src a{color:var(--accent)}
+.wt-climb{background:var(--panel2);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:8px}
+.wt-cl2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.wt-cl2>div{display:grid;gap:6px;align-content:start;min-width:0}
+.wt-cl{display:grid;grid-template-columns:minmax(0,1fr) 132px 44px;gap:10px;align-items:center;font:inherit;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 10px;color:inherit;cursor:pointer}
+.wt-cl:hover{border-color:var(--accent)}
+@media (max-width:760px){.wt-cl2{grid-template-columns:1fr}.wt-grid{grid-template-columns:1fr}.wt-cl{grid-template-columns:minmax(0,1fr) 44px}.wt-cl .ld-sp{display:none}}
 </style>
 
 <div class="app">
@@ -3170,20 +3183,60 @@ function ldCompare(d) {
     <span><button class="linkish ld-jump" data-ldj="GL|${esc(s.name)}">${ldPill(g)}</button><span class="ld-sub">${esc(s.leaders.filter(L => L.mkt === 'GL').map(L => L.name).join(', '))}</span></span>
     <span class="small">${esc(read(i, g))}</span></div>`).join('')}</div>`;
 }
+/* World themes: per market, what is leading, picking up or fading and why (global_themes.yaml), with live evidence
+   from the leaders data, and the sectors / companies whose scores are climbing steadily. */
+const WT_ST = {leading: ['Leading', 'var(--up)'], picking_up: ['Picking up', 'var(--saffron)'], fading: ['Fading', 'var(--down)']};
+const wtConfirm = (c, st) => (c = c == null ? c : st === 'fading' ? -c : c, c == null) ? '<span class="small muted">Our data: not enough seasons yet</span>'
+  : `<span class="small" style="color:${c > .25 ? 'var(--up)' : c < -.25 ? 'var(--down)' : 'var(--muted)'}">Our data ${c > .25 ? 'agrees' : c < -.25 ? 'disagrees' : 'is mixed'}</span>`;
+function wtTheme(t) {
+  const [lab, col] = WT_ST[t.status] || [t.status, 'var(--faint)'];
+  return `<article class="wt-th" style="--c:${col}">
+    <header><h4>${esc(t.theme)}</h4><span class="ld-pill" style="--c:${col}">${lab}</span></header>
+    <p class="wt-why">${esc(t.why)}</p>
+    ${t.evidence ? `<p class="small"><b>Evidence:</b> ${esc(t.evidence)}</p>` : ''}
+    ${(t.leaders || []).length ? `<div class="wt-ev"><span class="eyebrow">Leaders we track</span> ${wtConfirm(t.confirm, t.status)}<div>${t.leaders.map(L => `<button class="wt-chip ld-jump" data-ldj="${L.mkt}|${esc(L.sector)}" style="--c:${LD_COL[L.trend.dir] ?? 'var(--faint)'}" title="${esc(L.sector)} · ${esc(L.trend.label)}${L.score != null ? ' · score ' + L.score : ''}">${L.trend.dir > 0 ? '▲' : L.trend.dir < 0 ? '▼' : '■'} ${esc(L.name)}</button>`).join('')}</div></div>` : ''}
+    ${t.india ? `<p class="small wt-in"><b>India read-across:</b> ${esc(t.india)}</p>` : ''}
+    <p class="small wt-src">${(t.sources || []).map(s => s.u.startsWith('#') ? `<span>${esc(s.t)}</span>` : `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)} ↗</a>`).join('')}</p>
+  </article>`;
+}
+function ldWorld(d) {
+  const W = d.world; if (!W) return '<div class="empty">No world themes yet. Run <code>python run.py leaders</code>.</div>';
+  const f = ldS(), wm = f.wm || '', mk = W.markets.filter(m => !wm || m === wm);
+  const cnt = st => W.themes.filter(t => t.status === st && (!wm || t.market === wm)).length;
+  const cl = W.climbers || {sectors: [], companies: []}, labs = d.seasons.map(s => s.label);
+  const inMk = x => !wm || (wm === 'India' ? x.mkt === 'IN' : wm === 'Commodities' ? false : x.mkt === 'GL' && (wm === 'US' ? x.country === 'US' : wm === 'Europe' ? ['UK', 'DE', 'FR', 'CH', 'ES', 'IT', 'DK', 'NL', 'IE', 'LU'].includes(x.country) : wm === 'Japan' ? x.country === 'JP' : wm === 'Korea' ? x.country === 'KR' : wm === 'Taiwan' ? x.country === 'TW' : wm === 'China' ? ['CN', 'HK'].includes(x.country) : true));
+  return `<p class="small muted" style="margin:0 0 12px">Themes researched as of ${esc(fdate(W.asOf))}; the leader chips and the steady-climber lists update with every run.</p>
+  <div class="toolbar">${[''].concat(W.markets).map(m => `<button class="chip" data-wm="${esc(m)}" aria-pressed="${wm === m}">${m || 'All markets'}</button>`).join('')}</div>
+  <section class="ld-sum">
+    <div class="card ld-k"><span class="eyebrow">Leading</span><b style="color:var(--up)">${cnt('leading')}</b><span class="small muted">themes</span></div>
+    <div class="card ld-k"><span class="eyebrow">Picking up</span><b style="color:var(--saffron)">${cnt('picking_up')}</b><span class="small muted">themes</span></div>
+    <div class="card ld-k"><span class="eyebrow">Fading</span><b style="color:var(--down)">${cnt('fading')}</b><span class="small muted">themes</span></div>
+    <div class="card ld-k"><span class="eyebrow">Steady climbers</span><b>${cl.sectors.length + cl.companies.length}</b><span class="small muted">${cl.sectors.length} sectors · ${cl.companies.length} companies</span></div>
+  </section>
+  <section class="wt-climb"><div class="list-head"><h3>Picking up gradually: what our data shows</h3><span class="small muted">Score up three seasons in a row, by 8–60 points in total, with no single jump above 35</span></div>
+    <div class="wt-cl2">
+      <div><span class="eyebrow">Sectors</span>${cl.sectors.filter(inMk).map(x => `<button class="wt-cl ld-jump" data-ldj="${x.mkt}|${esc(x.name)}"><span><b>${esc(x.name)}</b><span class="ld-sub">${x.mkt === 'IN' ? 'India leaders' : 'Global leaders'} · ${x.from > 0 ? '+' : ''}${x.from} → ${x.to > 0 ? '+' : ''}${x.to}</span></span>${ldSpark(x.series, labs)}<b class="num" style="color:var(--up)">+${x.rise}</b></button>`).join('') || '<p class="small muted">None in this market yet.</p>'}</div>
+      <div><span class="eyebrow">Companies</span>${cl.companies.filter(inMk).slice(0, 20).map(x => `<button class="wt-cl ld-jump" data-ldj="${x.mkt}|${esc(x.sector)}"><span><b>${esc(x.name)}</b><span class="ld-sub">${esc(x.country || '')} · ${esc(x.sector)} · ${x.from > 0 ? '+' : ''}${x.from} → ${x.to > 0 ? '+' : ''}${x.to}</span></span>${ldSpark(x.series, labs)}<b class="num" style="color:var(--up)">+${x.rise}</b></button>`).join('') || '<p class="small muted">None in this market yet.</p>'}</div>
+    </div></section>
+  ${mk.map(m => { const ts = W.themes.filter(t => t.market === m); if (!ts.length) return '';
+    return `<section class="wt-mk"><div class="list-head"><h3>${esc(m)}</h3><span class="small muted">${['leading', 'picking_up', 'fading'].map(s => `${ts.filter(t => t.status === s).length} ${WT_ST[s][0].toLowerCase()}`).join(' · ')}</span></div>
+      <div class="wt-grid">${['leading', 'picking_up', 'fading'].flatMap(s => ts.filter(t => t.status === s)).map(wtTheme).join('')}</div></section>`; }).join('')}
+  <p class="small muted">Our data agrees / disagrees compares each theme with the current trend of the leaders we track for it. This is research to inform your own view, not investment advice.</p>`;
+}
 function vLeaders() {
   const d = LD.data; if (!d) { loadLd().then(() => { if (S.view === 'leaders' || S.view === 'ledger') render(); renderNav(); }); return '<div class="empty">Loading sector leaders…</div>'; }
   if (!d.sectors) return head('Sector leaders', '', '') + '<div class="empty">No leader data yet. Run <code>python run.py leaders</code>.</div>';
   const f = ldS(), tab = f.tab, cvb = d.coverageBy || {}, nIN = d.sectors.reduce((n, s) => n + s.leaders.filter(L => L.mkt === 'IN').length, 0), nGL = d.sectors.reduce((n, s) => n + s.leaders.filter(L => L.mkt === 'GL').length, 0);
-  const mrows = tab === 'VS' ? null : ldMarketRows(d, tab), cnt = k => mrows.filter(r => r.agg.dir === k).length, cv = cvb[tab] || {};
-  const tabs = [['IN', `India · ${nIN} leaders`], ['GL', `Global · ${nGL} leaders`], ['VS', 'India vs Global']];
+  const mrows = tab === 'VS' || tab === 'WT' ? null : ldMarketRows(d, tab), cnt = k => mrows.filter(r => r.agg.dir === k).length, cv = cvb[tab] || {};
+  const tabs = [['IN', `India · ${nIN} leaders`], ['GL', `Global · ${nGL} leaders`], ['VS', 'India vs Global'], ['WT', 'World themes']];
   return head('Sector leaders', `Each sector’s bellwethers: 2 Indian and 4 global leaders, with every result, earnings call and investor deck of the last four seasons, and whether the sector is getting better or worse.`, `
-    <ul><li>Pick <b>India</b> or <b>Global</b> to see one market at a time, or <b>India vs Global</b> to compare them sector by sector.</li>
+    <ul><li>Pick <b>India</b> or <b>Global</b> to see one market at a time, <b>India vs Global</b> to compare them sector by sector, or <b>World themes</b> for what is leading, picking up and fading in each country, and why.</li>
     <li>Each season scores <b>−100 to +100</b>: management tone on the call (40%), guidance raised or cut against what was promised (30%), and reported numbers, revenue growth and margin change year on year (30%). Parts not read yet are left out, not counted as zero.</li>
     <li><b>Improving / Deteriorating</b>: the latest season is ${d.thresholds?.up || 10}+ points above or below the average of the earlier ones. <b>One season so far</b> means there is nothing earlier to compare with yet.</li>
     <li>Tap a sector to open each company’s season-by-season table. ✓ opens the document, ↗ IR site opens the company’s investor page where that webcast or deck sits, ● happened but the document is not linked yet, ! overdue and not found.</li></ul>`,
     `<span class="badge">Updated ${esc(fdate(d.generated))}</span>`) + `
   <div class="ld-tabs" role="tablist">${tabs.map(([k, n]) => `<button role="tab" aria-selected="${tab === k}" data-ldt="${k}">${n}</button>`).join('')}</div>
-  ${tab === 'VS' ? ldCompare(d) : `
+  ${tab === 'WT' ? ldWorld(d) : tab === 'VS' ? ldCompare(d) : `
   <section class="ld-sum">
     <button class="card ld-k" data-ldf="up" aria-pressed="${f.f === 'up'}"><span class="eyebrow">Improving</span><b style="color:var(--up)">${cnt(1)}</b><span class="small muted">of ${mrows.length} sectors</span></button>
     <button class="card ld-k" data-ldf="down" aria-pressed="${f.f === 'down'}"><span class="eyebrow">Deteriorating</span><b style="color:var(--down)">${cnt(-1)}</b><span class="small muted">of ${mrows.length} sectors</span></button>
@@ -3192,7 +3245,7 @@ function vLeaders() {
   </section>
   ${f.f ? `<div class="toolbar"><button class="chip" data-ldf="${f.f}" aria-pressed="true">${{up: 'Improving', down: 'Deteriorating', flat: 'Steady or too early'}[f.f]} ✕</button></div>` : ''}
   ${ldTable(d, tab)}`}
-  ${(d.upcoming || []).filter(u => tab === 'VS' || u.mkt === tab).length ? `<p class="small" style="margin-top:14px"><b>Results coming up:</b> ${d.upcoming.filter(u => tab === 'VS' || u.mkt === tab).slice(0, 14).map(u => `${esc(sdate(u.date))} ${esc(u.name)}${u.what === 'call' ? ' (call)' : ''}`).join(' · ')}</p>` : ''}
+  ${tab !== 'WT' && (d.upcoming || []).filter(u => tab === 'VS' || u.mkt === tab).length ? `<p class="small" style="margin-top:14px"><b>Results coming up:</b> ${d.upcoming.filter(u => tab === 'VS' || u.mkt === tab).slice(0, 14).map(u => `${esc(sdate(u.date))} ${esc(u.name)}${u.what === 'call' ? ' (call)' : ''}`).join(' · ')}</p>` : ''}
   <p class="small muted">Sources: BSE filings and XBRL (India); SEC filings, Motley Fool call transcripts, company results pages and Yahoo Finance (global).</p>`;
 }
 function vLedger() {
@@ -3560,6 +3613,7 @@ document.addEventListener('click', e => {
   const ldt = t.closest('[data-ldt]'); if (ldt) { const f = ldS(); f.tab = ldt.dataset.ldt; f.f = ''; render(); return; }
   const ldj = t.closest('[data-ldj]'); if (ldj) { const f = ldS(), [m, n] = ldj.dataset.ldj.split('|'); f.tab = m; f.f = ''; f.open.add(m + '|' + n); render(); setTimeout(() => document.querySelector(`[data-lds="${CSS.escape(m + '|' + n)}"]`)?.scrollIntoView({block: 'start'}), 50); return; }
   const ldf = t.closest('[data-ldf]'); if (ldf) { const f = ldS(); f.f = f.f === ldf.dataset.ldf ? '' : ldf.dataset.ldf; render(); return; }
+  const wmb = t.closest('[data-wm]'); if (wmb) { ldS().wm = wmb.dataset.wm; render(); return; }
   const ldlm = t.closest('[data-ldlm]'); if (ldlm) { ldS().lm = ldlm.dataset.ldlm; render(); return; }
   const ldg = t.closest('[data-ldg]'); if (ldg) { const f = ldS(); f.lead = f.lead === ldg.dataset.ldg ? '' : ldg.dataset.ldg; render(); return; }
   if (!t.closest('.find')) $('#findres').hidden = true;
