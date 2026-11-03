@@ -120,7 +120,7 @@ def load() -> list[dict]:
                          "cadence": "quarterly", "country": "IN", "sector": s["sector"]})
         for x in s.get("global") or []:
             rows.append({"id": x["yf"], "mkt": "GL", "name": x["name"], "yf": x["yf"], "sec": x.get("sec"),
-                         "ir": x.get("ir"), "cadence": x.get("cadence", "quarterly"), "country": x.get("country", ""),
+                         "ir": x.get("ir"), "adr": x.get("adr"), "events": x.get("events"), "cadence": x.get("cadence", "quarterly"), "country": x.get("country", ""),
                          "call_on_updates": x.get("call_on_updates", True), "fy_end": int(x.get("fy_end", 12)),
                          "fy_label": x.get("fy_label", "end"), "sector": s["sector"]})
         out.append({"sector": s["sector"], "watch": s.get("watch", ""), "leaders": rows})
@@ -608,6 +608,47 @@ def sec_numbers(L: dict, state: dict, log=log_):
                      "src": "SEC XBRL", "unit": "USD m"}
 
 
+# ------------------------------------------------------------------ Motley Fool call transcripts (US listings and ADRs)
+FOOL_SM = "https://www.fool.com/sitemap/{y}/{m:02d}"
+RX_FOOL = re.compile(r"https://www\.fool\.com/earnings/call-transcripts/(\d{4})/(\d{2})/(\d{2})/([a-z0-9-]+?)-([a-z0-9.]+)-(q[1-4]|h[12]|fy)-(\d{4})-earnings-call-transcript/?")
+
+
+def fool(leaders: list[dict], state: dict, keys: list[str], log=log_):
+    """Full earnings-call transcripts for every leader listed in New York (ADRs included), from the publisher's
+    monthly sitemaps. Months older than two are kept from earlier runs; recent months are re-read."""
+    cache = state.setdefault("fool", {})
+    http = Http(UA, 0.4)
+    first = season_end(keys[0]) - dt.timedelta(days=45)
+    t0 = today()
+    y, m = first.year, first.month
+    while (y, m) <= (t0.year, t0.month):
+        ym = f"{y}-{m:02d}"
+        recent = (t0.year * 12 + t0.month) - (y * 12 + m) <= 1
+        if ym not in cache or recent:
+            r = http.get(FOOL_SM.format(y=y, m=m), timeout=60)
+            if r.status_code == 200:
+                cache[ym] = sorted({mm.group(0) for mm in RX_FOOL.finditer(r.text)})
+            else:
+                log(f"  transcripts: sitemap {ym} HTTP {r.status_code}")
+        m += 1
+        if m > 12:
+            y, m = y + 1, 1
+    by = {}
+    for ym, urls in cache.items():
+        for u in urls:
+            mm = RX_FOOL.match(u)
+            if mm:
+                by.setdefault(mm.group(5).upper(), []).append((f"{mm.group(1)}-{mm.group(2)}-{mm.group(3)}", u, mm.group(6).upper(), mm.group(7)))
+    n = 0
+    for L in leaders:
+        tk = (L.get("adr") or L.get("sec") or "").upper()
+        for d, u, per, yr in by.get(tk, []):
+            key = season_for(state, L["id"], d)
+            if key in keys:
+                n += add_doc(state, L["id"], {"k": "call", "d": d, "s": key, "u": u, "t": f"Earnings call transcript, {per} {yr}", "src": "Fool"})
+    log(f"leaders: {n} new call transcripts linked from the Motley Fool")
+
+
 # ------------------------------------------------------------------ company results pages
 RX_LINKDATE = [re.compile(r"(20\d\d)[-_/](0[1-9]|1[0-2])[-_/](\d\d)"), re.compile(r"(20\d\d)(0[1-9]|1[0-2])([0-3]\d)"),
                re.compile(r"/(20\d\d)-(0[1-9]|1[0-2])/"), re.compile(r"\b(2[4-9])(0[1-9]|1[0-2])([0-3]\d)-")]
@@ -995,6 +1036,9 @@ def slots_for(L: dict, key: str, state: dict, t0: dt.date, ever: dict) -> dict:
                            "note": ("Call scheduled" + ("" if dd else ", date in the notice")) if not past else ("Call held; transcript due within 5 working days" if not late else "Call held but no transcript filed")}
         elif not reported:
             out["call"] = {"st": "awaited", "d": out["results"].get("d")}
+        elif L.get("events") and reported:
+            out["call"] = {"st": "site", "u": L["events"], "d": None, "src": "company site",
+                           "note": "No free transcript: the results call webcast and replay are on the company's site"}
         elif not ever.get("call"):
             sourced = L["mkt"] == "IN" or L.get("ir") or os.environ.get("FMP_API_KEY")
             out["call"] = {"st": "none" if L["mkt"] == "IN" else "unsourced",
@@ -1060,6 +1104,10 @@ def build(log=log_, limit: int | None = None, live: bool = True) -> dict:
             sec(GLL, state, keys, log)
         except Exception as ex:
             log(f"leaders: SEC skipped ({ex})")
+        try:
+            fool(GLL, state, keys, log)
+        except Exception as ex:
+            log(f"leaders: transcripts skipped ({ex})")
         for L in GLL:
             try:
                 sec_numbers(L, state, log)
@@ -1080,7 +1128,8 @@ def build(log=log_, limit: int | None = None, live: bool = True) -> dict:
     write_json(STATE_FILE, state, compact=True)
 
     out_sectors, gaps, ups = [], [], []
-    cov = {"expected": 0, "ok": 0, "held": 0, "missing": 0, "unsourced": 0, "awaited": 0, "sweep": 0}
+    covm = {}
+    cov = {"expected": 0, "ok": 0, "held": 0, "site": 0, "missing": 0, "unsourced": 0, "awaited": 0, "sweep": 0}
     for s in sectors:
         rows = []
         for L in s["leaders"]:
@@ -1093,8 +1142,16 @@ def build(log=log_, limit: int | None = None, live: bool = True) -> dict:
                 sl = slots_for(L, key, state, t0, ever)
                 for kind, v in sl.items():
                     st = v["st"]
-                    if st in ("ok", "held", "missing", "unsourced"):
+                    cm = covm.setdefault(L["mkt"], {"expected": 0, "ok": 0, "held": 0, "site": 0, "missing": 0, "unsourced": 0, "awaited": 0, "sweep": 0,
+                                                     "calls": 0, "callsLinked": 0})
+                    if st in ("ok", "held", "site", "missing", "unsourced"):
                         cov["expected"] += 1
+                        cm["expected"] += 1
+                    if st in cm:
+                        cm[st] += 1
+                    if kind == "call" and st not in ("none", "awaited"):
+                        cm["calls"] += 1
+                        cm["callsLinked"] += st == "ok"
                     if st in cov:
                         cov[st] += 1
                     if st in ("missing", "unsourced"):
@@ -1147,9 +1204,9 @@ def build(log=log_, limit: int | None = None, live: bool = True) -> dict:
         out_sectors.append({"name": s["sector"], "watch": s["watch"], "all": a, "in": ai, "gl": ag, "series": series,
                             "divergence": bool(ai["dir"] and ag["dir"] and ai["dir"] != ag["dir"]), "leaders": rows})
     cov["linkedPct"] = round(100 * cov["ok"] / cov["expected"]) if cov["expected"] else None
-    cov["confirmedPct"] = round(100 * (cov["ok"] + cov["held"]) / cov["expected"]) if cov["expected"] else None
+    cov["confirmedPct"] = round(100 * (cov["ok"] + cov["held"] + cov["site"]) / cov["expected"]) if cov["expected"] else None
     site = {"generated": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M"), "seasons": [season_label(k) for k in keys],
-            "weights": w, "thresholds": {"up": up, "down": down}, "bseLive": bse_live, "coverage": cov,
+            "weights": w, "thresholds": {"up": up, "down": down}, "bseLive": bse_live, "coverage": cov, "coverageBy": covm,
             "gaps": sorted(gaps, key=lambda g: (g["st"] != "missing", g["season"], g["sector"])),
             "upcoming": sorted(ups, key=lambda u: u["date"]), "sectors": out_sectors, "readsThisRun": nread}
     write_json(SITE_FILE, site, compact=True)

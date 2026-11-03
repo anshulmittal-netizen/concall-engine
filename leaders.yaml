@@ -19,6 +19,8 @@
   global:
     - {yf: JPM, sec: JPM, name: JPMorgan Chase, country: US}
     - {yf: HSBA.L, sec: HSBC, name: HSBC Holdings, country: UK, ir: "https://www.hsbc.com/investors/results-and-announcements/all-reporting"}
+    - {yf: BAC, sec: BAC, name: Bank of America, country: US}
+    - {yf: MUFG, sec: MUFG, name: Mitsubishi UFJ Financial, country: JP}
 
 - sector: NBFC & Consumer Lending
   watch: AUM growth, cost of funds, consumer credit stress, collection efficiency
@@ -28,6 +30,8 @@
   global:
     - {yf: AXP, sec: AXP, name: American Express, country: US}
     - {yf: COF, sec: COF, name: Capital One, country: US}
+    - {yf: SYF, sec: SYF, name: Synchrony Financial, country: US}
+    - {yf: ALLY, sec: ALLY, name: Ally Financial, country: US}
 
 - sector: Insurance
   watch: New business margin (VNB), persistency, combined ratio, pricing cycle
@@ -37,6 +41,8 @@
   global:
     - {yf: CB, sec: CB, name: Chubb, country: US}
     - {yf: 1299.HK, name: AIA Group, country: HK, cadence: half+updates, ir: "https://www.aia.com/en/investor-relations/overview/results-presentations"}
+    - {yf: PGR, sec: PGR, name: Progressive, country: US}
+    - {yf: MET, sec: MET, name: MetLife, country: US}
 
 - sector: Asset & Wealth Management
   watch: Net flows, yields, market-linked AUM, retail participation
@@ -46,6 +52,8 @@
   global:
     - {yf: BLK, sec: BLK, name: BlackRock, country: US}
     - {yf: UBSG.SW, sec: UBS, name: UBS Group, country: CH}
+    - {yf: MS, sec: MS, name: Morgan Stanley, country: US}
+    - {yf: SCHW, sec: SCHW, name: Charles Schwab, country: US}
 
 - sector: IT Services
   watch: Deal wins / TCV, discretionary spend, AI deflation, pricing, headcount
@@ -55,6 +63,8 @@
   global:
     - {yf: ACN, sec: ACN, name: Accenture, country: US}
     - {yf: CTSH, sec: CTSH, name: Cognizant, country: US}
+    - {yf: IBM, sec: IBM, name: IBM, country: US}
+    - {yf: EPAM, sec: EPAM, name: EPAM Systems, country: US}
 
 - sector: Semiconductors & EMS
   watch: AI demand, capacity adds, utilisation, component pricing, PLI ramp
@@ -64,6 +74,8 @@
   global:
     - {yf: 2330.TW, sec: TSM, name: TSMC, country: TW}
     - {yf: NVDA, sec: NVDA, name: Nvidia, country: US}
+    - {yf: ASML, sec: ASML, name: ASML Holding, country: NL}
+    - {yf: JBL, sec: JBL, name: Jabil, country: US}
 
 - sector: Telecom & Towers
   watch: ARPU and tariff action, subscriber adds, capex intensity
@@ -73,6 +85,8 @@
   global:
     - {yf: TMUS, sec: TMUS, name: T-Mobile US, country: US}
     - {yf: DTE.DE, name: Deutsche Telekom, country: DE, ir: "https://www.telekom.com/en/investor-relations/publications/financial-results"}
+    - {yf: VZ, sec: VZ, name: Verizon, country: US}
+    - {yf: AMX, sec: AMX, name: America Movil, country: MX}
 
 - sector: Oil, Gas & Refining
   watch: Refining (GRM) and chemical spreads, upstream realisations, capex discipline
@@ -82,6 +96,8 @@
   global:
     - {yf: XOM, sec: XOM, name: ExxonMobil, country: US}
     - {yf: SHEL.L, sec: SHEL, name: Shell, country: UK}
+    - {yf: CVX, sec: CVX, name: Chevron, country: US}
+    - {yf: TTE, sec: TTE, name: TotalEnergies, country: FR}
 
 - sector: Power Utilities
   watch: Power demand, PLF, capacity pipeline, renewable mix, tariffs
@@ -91,6 +107,8 @@
   global:
     - {yf: NEE, sec: NEE, name: NextEra Energy, country: US}
     - {yf: IBE.MC, name: Iberdrola, country: ES}
+    - {yf: DUK, sec: DUK, name: Duke Energy, country: US}
+    - {yf: CEG, sec: CEG, name: Constellation Energy, country: US}
 
 - sector: Renewable Equipment
   watch: Module / turbine pricing, order book, capacity additions, import duties
@@ -100,6 +118,8 @@
   global:
     - {yf: FSLR, sec: FSLR, name: First Solar, country: US}
     - {yf: VWS.CO, name: Vestas Wind Systems, country: DK, ir: "https://www.vestas.com/en/investor/reports-and-presentations/presentations"}
+    - {yf: NXT, sec: NXT, name: Nextracker, country: US}
+    - {yf: CSIQ, sec: CSIQ, name: Canadian Solar, country: CA}
 
 - sector: Capital Goods & EPC
   watch: Order inflow, order book, execution, margins, private capex
@@ -109,6 +129,8 @@
   global:
     - {yf: SIE.DE, name: Siemens, country: DE, ir: "https://www.siemens.com/en-us/company/investor-relations/financial-results/", fy_end: 9}
     - {yf: CAT, sec: CAT, name: Caterpillar, country: US}
+    - {yf: PWR, sec: PWR, name: Quanta Services, country: US}
+    - {yf: EMR, sec: EMR, name: Emerson Electric, country: US}
 
 - sector: Electrical Equipment & T&D
   watch: Grid / data-centre orders, transformer lead times, pricing, capacity adds
@@ -118,6 +140,8 @@
   global:
     - {yf: SU.PA, name: Schneider Electric, country: FR, cadence: half+updates}
     - {yf: GEV, sec: GEV, name: GE Vernova, country: US}
+    - {yf: ETN, sec: ETN, name: Eaton, country: US}
+    - {yf: VRT, sec: VRT, name: Vertiv, country: US}
 
 - sector: Defence & Aerospace
   watch: Order inflow, indigenisation, budgets, export orders, execution
@@ -127,6 +151,8 @@
   global:
     - {yf: LMT, sec: LMT, name: Lockheed Martin, country: US}
     - {yf: RHM.DE, name: Rheinmetall, country: DE}
+    - {yf: RTX, sec: RTX, name: RTX, country: US}
+    - {yf: GD, sec: GD, name: General Dynamics, country: US}
 
 - sector: Automobiles
   watch: Volumes, inventory at dealers, discounts, EV mix, rural vs urban demand
@@ -136,6 +162,8 @@
   global:
     - {yf: 7203.T, sec: TM, name: Toyota Motor, country: JP, ir: "https://global.toyota/en/ir/financial-results/", fy_end: 3}
     - {yf: 1211.HK, name: BYD, country: CN}
+    - {yf: TSLA, sec: TSLA, name: Tesla, country: US}
+    - {yf: HMC, sec: HMC, name: Honda Motor, country: JP}
 
 - sector: Auto Components
   watch: OEM production schedules, EV content, export demand, commodity pass-through
@@ -145,6 +173,8 @@
   global:
     - {yf: 6902.T, name: Denso, country: JP, fy_end: 3}
     - {yf: APTV, sec: APTV, name: Aptiv, country: US}
+    - {yf: BWA, sec: BWA, name: BorgWarner, country: US}
+    - {yf: MGA, sec: MGA, name: Magna International, country: CA}
 
 - sector: Pharmaceuticals
   watch: US generics price erosion, launches, GLP-1, branded growth
@@ -154,6 +184,8 @@
   global:
     - {yf: LLY, sec: LLY, name: Eli Lilly, country: US}
     - {yf: TEVA, sec: TEVA, name: Teva Pharmaceutical, country: IL}
+    - {yf: NVO, sec: NVO, name: Novo Nordisk, country: DK}
+    - {yf: VTRS, sec: VTRS, name: Viatris, country: US}
 
 - sector: CDMO / CRDMO
   watch: Biotech funding, RFQs, Biosecure-driven shifts, capacity utilisation
@@ -163,6 +195,8 @@
   global:
     - {yf: LONN.SW, name: Lonza Group, country: CH, cadence: half+updates}
     - {yf: 2359.HK, name: WuXi AppTec, country: CN}
+    - {yf: TMO, sec: TMO, name: Thermo Fisher Scientific, country: US}
+    - {yf: CRL, sec: CRL, name: Charles River Laboratories, country: US}
 
 - sector: Hospitals
   watch: Occupancy, ARPOB, bed additions, payer mix
@@ -172,6 +206,8 @@
   global:
     - {yf: HCA, sec: HCA, name: HCA Healthcare, country: US}
     - {yf: 5225.KL, name: IHH Healthcare, country: MY}
+    - {yf: UHS, sec: UHS, name: Universal Health Services, country: US}
+    - {yf: THC, sec: THC, name: Tenet Healthcare, country: US}
 
 - sector: FMCG / Staples
   watch: Volume growth, rural vs urban, input inflation, pricing, premiumisation
@@ -181,6 +217,8 @@
   global:
     - {yf: NESN.SW, name: Nestle, country: CH, cadence: half+updates}
     - {yf: ULVR.L, sec: UL, name: Unilever, country: UK, cadence: half+updates}
+    - {yf: PG, sec: PG, name: Procter & Gamble, country: US}
+    - {yf: CL, sec: CL, name: Colgate-Palmolive, country: US}
 
 - sector: Retail
   watch: Same-store growth, footfall, store additions, discretionary demand
@@ -190,6 +228,8 @@
   global:
     - {yf: WMT, sec: WMT, name: Walmart, country: US}
     - {yf: ITX.MC, name: Inditex, country: ES, ir: "https://www.inditex.com/itxcomweb/us/en/investors/finance"}
+    - {yf: COST, sec: COST, name: Costco, country: US}
+    - {yf: TJX, sec: TJX, name: TJX Companies, country: US}
 
 - sector: Cement
   watch: Volumes, realisations, fuel cost, capacity additions and consolidation
@@ -199,6 +239,8 @@
   global:
     - {yf: HOLN.SW, name: Holcim, country: CH, cadence: half+updates, ir: "https://www.holcim.com/investors"}
     - {yf: HEI.DE, name: Heidelberg Materials, country: DE, ir: "https://www.heidelbergmaterials.com/en/investor-relations/reports-and-presentations"}
+    - {yf: CRH, sec: CRH, name: CRH, country: IE}
+    - {yf: MLM, sec: MLM, name: Martin Marietta Materials, country: US}
 
 - sector: Paints & Building Materials
   watch: Decorative volume vs value, competitive intensity, raw-material deflation
@@ -208,6 +250,8 @@
   global:
     - {yf: SHW, sec: SHW, name: Sherwin-Williams, country: US}
     - {yf: SGO.PA, name: Saint-Gobain, country: FR, cadence: half+updates}
+    - {yf: PPG, sec: PPG, name: PPG Industries, country: US}
+    - {yf: RPM, sec: RPM, name: RPM International, country: US}
 
 - sector: Steel
   watch: Spreads, China exports, safeguard duties, capacity additions
@@ -217,6 +261,8 @@
   global:
     - {yf: MT.AS, sec: MT, name: ArcelorMittal, country: LU}
     - {yf: NUE, sec: NUE, name: Nucor, country: US}
+    - {yf: PKX, sec: PKX, name: POSCO Holdings, country: KR}
+    - {yf: STLD, sec: STLD, name: Steel Dynamics, country: US}
 
 - sector: Non-ferrous Metals & Mining
   watch: Aluminium / copper / zinc prices, cost curve, supply discipline
@@ -226,6 +272,8 @@
   global:
     - {yf: BHP.AX, sec: BHP, name: BHP Group, country: AU, cadence: half+updates, call_on_updates: false}
     - {yf: RIO.L, sec: RIO, name: Rio Tinto, country: UK, cadence: half+updates, call_on_updates: false}
+    - {yf: FCX, sec: FCX, name: Freeport-McMoRan, country: US}
+    - {yf: AA, sec: AA, name: Alcoa, country: US}
 
 - sector: Specialty & Agro Chemicals
   watch: Destocking, China pricing, CDMO/CSM order flow, end-market demand
@@ -235,6 +283,8 @@
   global:
     - {yf: BAS.DE, name: BASF, country: DE, ir: "https://www.basf.com/global/en/investors/calendar-and-publications/presentations"}
     - {yf: DOW, sec: DOW, name: Dow, country: US}
+    - {yf: CTVA, sec: CTVA, name: Corteva, country: US}
+    - {yf: LYB, sec: LYB, name: LyondellBasell, country: NL}
 
 - sector: Fertilisers & Agri Inputs
   watch: Monsoon, subsidy, raw-material (ammonia, phosphoric acid) costs, farm income
@@ -244,6 +294,8 @@
   global:
     - {yf: NTR, sec: NTR, name: Nutrien, country: CA}
     - {yf: DE, sec: DE, name: Deere, country: US}
+    - {yf: CF, sec: CF, name: CF Industries, country: US}
+    - {yf: MOS, sec: MOS, name: Mosaic, country: US}
 
 - sector: Real Estate
   watch: Pre-sales, launches, collections, inventory months, pricing
@@ -253,6 +305,8 @@
   global:
     - {yf: DHI, sec: DHI, name: D.R. Horton, country: US}
     - {yf: 8801.T, name: Mitsui Fudosan, country: JP, ir: "https://www.mitsuifudosan.co.jp/english/corporate/ir/library/", fy_end: 3}
+    - {yf: LEN, sec: LEN, name: Lennar, country: US}
+    - {yf: PLD, sec: PLD, name: Prologis, country: US}
 
 - sector: Ports & Logistics
   watch: Cargo volumes, freight rates, Red Sea / trade routes, EXIM trends
@@ -262,6 +316,8 @@
   global:
     - {yf: MAERSK-B.CO, name: A.P. Moller-Maersk, country: DK}
     - {yf: UPS, sec: UPS, name: UPS, country: US}
+    - {yf: FDX, sec: FDX, name: FedEx, country: US}
+    - {yf: ZIM, sec: ZIM, name: ZIM Integrated Shipping, country: IL}
 
 - sector: Consumer Electricals & Cables
   watch: Cooling demand, wire & cable volumes, copper pass-through, data-centre cables
@@ -271,6 +327,8 @@
   global:
     - {yf: 6367.T, name: Daikin Industries, country: JP, ir: "https://www.daikin.com/investor/library/results_materials", fy_end: 3, fy_label: start}
     - {yf: PRY.MI, name: Prysmian, country: IT, ir: "https://www.prysmian.com/en/investors"}
+    - {yf: CARR, sec: CARR, name: Carrier Global, country: US}
+    - {yf: TT, sec: TT, name: Trane Technologies, country: US}
 
 - sector: Internet Platforms
   watch: Order growth, take rates, quick-commerce intensity, ad spend, profitability
@@ -280,6 +338,8 @@
   global:
     - {yf: AMZN, sec: AMZN, name: Amazon, country: US}
     - {yf: 3690.HK, name: Meituan, country: CN, ir: "https://www.meituan.com/en-US/investor-relations"}
+    - {yf: GOOGL, sec: GOOGL, name: Alphabet, country: US}
+    - {yf: BABA, sec: BABA, name: Alibaba Group, country: CN}
 
 - sector: Travel & Hospitality
   watch: RevPAR, occupancy, ADR, airline yields and capacity, travel demand
@@ -289,6 +349,8 @@
   global:
     - {yf: MAR, sec: MAR, name: Marriott International, country: US}
     - {yf: BKNG, sec: BKNG, name: Booking Holdings, country: US}
+    - {yf: HLT, sec: HLT, name: Hilton Worldwide, country: US}
+    - {yf: DAL, sec: DAL, name: Delta Air Lines, country: US}
 
 - sector: Textiles & Apparel
   watch: Brand order books, inventory, China+1 sourcing, cotton prices, tariffs
@@ -298,3 +360,5 @@
   global:
     - {yf: NKE, sec: NKE, name: Nike, country: US}
     - {yf: 2313.HK, name: Shenzhou International, country: CN, cadence: half}
+    - {yf: LULU, sec: LULU, name: Lululemon Athletica, country: US}
+    - {yf: GIL, sec: GIL, name: Gildan Activewear, country: CA}
