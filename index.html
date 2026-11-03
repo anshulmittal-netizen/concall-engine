@@ -3101,10 +3101,10 @@ function ldSpark(vals, labels = []) {
     ${pts.length > 1 ? `<path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>` : ''}
     ${pts.map(p => `<circle cx="${X(p[0]).toFixed(1)}" cy="${Y(p[1]).toFixed(1)}" r="${p === last ? 3.8 : 2.4}" fill="${p === last ? 'var(--saffron)' : 'var(--accent)'}"><title>${esc(labels[p[0]] || '')}: ${p[1]}</title></circle>`).join('')}</svg>`;
 }
-const LD_ST = {ok: ['✓', 'var(--up)', 'Open'], held: ['●', 'var(--accent)', 'Held'], site: ['↗', 'var(--teal)', 'Webcast'],
+const LD_ST = {ok: ['✓', 'var(--up)', 'Open'], held: ['●', 'var(--accent)', 'Held'], site: ['↗', 'var(--teal)', 'IR site'],
   awaited: ['…', 'var(--faint)', 'Due'], missing: ['!', 'var(--down)', 'Missing'], unsourced: ['?', 'var(--warn)', 'Add link'],
   none: ['–', 'var(--faint)', 'None'], sweep: ['↻', 'var(--v5)', 'To check']};
-const LD_STN = {ok: 'Linked', held: 'Happened; document not linked yet', site: 'No free transcript; webcast and replay on the company site',
+const LD_STN = {ok: 'Linked', held: 'Happened; document not linked yet', site: 'On the company’s investor site (no free copy elsewhere)',
   awaited: 'Not due yet', missing: 'Overdue and not found', unsourced: 'No automatic source; add the link', none: 'Company does not do this', sweep: 'Not checked yet'};
 function ldSlot(s, what) {
   s = s || {st: 'none'};
@@ -3180,7 +3180,7 @@ function vLeaders() {
     <ul><li>Pick <b>India</b> or <b>Global</b> to see one market at a time, or <b>India vs Global</b> to compare them sector by sector.</li>
     <li>Each season scores <b>−100 to +100</b>: management tone on the call (40%), guidance raised or cut against what was promised (30%), and reported numbers, revenue growth and margin change year on year (30%). Parts not read yet are left out, not counted as zero.</li>
     <li><b>Improving / Deteriorating</b>: the latest season is ${d.thresholds?.up || 10}+ points above or below the average of the earlier ones. <b>One season so far</b> means there is nothing earlier to compare with yet.</li>
-    <li>Tap a sector to open each company’s season-by-season table. ✓ opens the document, ↗ Webcast opens the company’s results-call page, ● happened but the document is not linked yet, ! overdue and not found.</li></ul>`,
+    <li>Tap a sector to open each company’s season-by-season table. ✓ opens the document, ↗ IR site opens the company’s investor page where that webcast or deck sits, ● happened but the document is not linked yet, ! overdue and not found.</li></ul>`,
     `<span class="badge">Updated ${esc(fdate(d.generated))}</span>`) + `
   <div class="ld-tabs" role="tablist">${tabs.map(([k, n]) => `<button role="tab" aria-selected="${tab === k}" data-ldt="${k}">${n}</button>`).join('')}</div>
   ${tab === 'VS' ? ldCompare(d) : `

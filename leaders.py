@@ -666,9 +666,9 @@ def probe_fool(leaders: list[dict], state: dict, keys: list[str], by: dict, log=
     """The sitemaps miss many older transcripts. For each reported season with no call transcript, build the
     transcript's address from the company's known address stem, the results date and the fiscal quarter label, and
     keep it only if the page exists. Misses are remembered so they are not asked again."""
-    http = Http(UA, 0.35)
+    http = Http(UA, 0.3)
     tried = state.setdefault("fool_tried", {})
-    found = 0
+    found, budget = 0, 400  # addresses checked per run; later runs carry on where this one stopped
     for L in leaders:
         tk = (L.get("adr") or L.get("sec") or "").upper()
         if not tk:
@@ -706,9 +706,13 @@ def probe_fool(leaders: list[dict], state: dict, keys: list[str], by: dict, log=
                     for off in (0, 1, 2, 3, -1):  # transcripts are often posted a few days after the call
                         dd = ed + dt.timedelta(days=off)
                         url = f"https://www.fool.com/earnings/call-transcripts/{dd.year}/{dd.month:02d}/{dd.day:02d}/{stem}-{tk.lower()}-q{q}-{yr}-earnings-call-transcript/"
-                        if url in tried:
+                        if url in tried or budget <= 0:
                             continue
-                        r = http.get(url, timeout=30, allow_redirects=False)
+                        budget -= 1
+                        try:
+                            r = http.get(url, timeout=12, allow_redirects=False)
+                        except Exception:
+                            continue
                         tried[url] = r.status_code
                         if r.status_code == 200:
                             hit = (url, dd.isoformat(), q, yr)
@@ -1130,6 +1134,9 @@ def slots_for(L: dict, key: str, state: dict, t0: dt.date, ever: dict) -> dict:
         out["deck"] = {"st": "none", "note": "Updates usually come without a deck"}
     elif not reported:
         out["deck"] = {"st": "awaited", "d": out["results"].get("d")}
+    elif not ever.get("deck") and L["mkt"] == "GL" and (L.get("events") or (state.get("irsite") or {}).get(lid)):
+        out["deck"] = {"st": "site", "u": L.get("events") or state["irsite"][lid], "d": None, "src": "company site",
+                       "note": "Presentation not filed with regulators: it is on the company's investor site"}
     elif not ever.get("deck"):
         out["deck"] = {"st": "none" if L["mkt"] == "IN" else "unsourced",
                        "note": "No investor presentation in any tracked season" if L["mkt"] == "IN" else "Deck not found where we look: add the link by hand"}
