@@ -75,6 +75,25 @@ def season_of(d: str) -> str:
     return period_key(reported_quarter_end(dt.date.fromisoformat(d[:10])))
 
 
+def nearest_qend(d: dt.date) -> str:
+    cands = [dt.date(y, m, {3: 31, 6: 30, 9: 30, 12: 31}[m]) for y in (d.year - 1, d.year, d.year + 1) for m in (3, 6, 9, 12)]
+    return period_key(min(cands, key=lambda q: abs((q - d).days)))
+
+
+def season_for(state: dict, lid: str, date: str) -> str:
+    """The season an event belongs to. For companies whose fiscal quarters end off the calendar quarters (Accenture,
+    Nike, Walmart, Nvidia, Deere, Inditex) it is the calendar quarter nearest the fiscal quarter being reported."""
+    ends = (state.get("fq") or {}).get(lid)
+    if not ends:
+        return season_of(date)
+    d = dt.date.fromisoformat(date[:10])
+    past = [dt.date.fromisoformat(e) for e in ends if dt.date.fromisoformat(e) < d and (d - dt.date.fromisoformat(e)).days <= 120]
+    if not past:  # project the fiscal calendar forward by whole years
+        past = [dt.date.fromisoformat(e).replace(year=d.year - k) for e in ends for k in (0, 1)
+                if dt.date.fromisoformat(e).replace(year=d.year - k) < d and (d - dt.date.fromisoformat(e).replace(year=d.year - k)).days <= 120]
+    return nearest_qend(max(past)) if past else season_of(date)
+
+
 def season_end(key: str) -> dt.date:
     y, m = map(int, key.split("-"))
     return dt.date(y, m, {3: 31, 6: 30, 9: 30, 12: 31}[m])
@@ -204,7 +223,8 @@ def india_live(leaders: list[dict], state: dict, keys: list[str], log=log_) -> b
     import results_in
     for L in leaders:
         code, n, ok = L["code"], 0, True
-        w0 = d0
+        swept = (state.get("bse_swept") or {}).get(code)
+        w0 = max(d0, dt.date.fromisoformat(swept) - dt.timedelta(days=10)) if swept else d0  # after the first full sweep, only recent filings
         while w0 <= d1:  # BSE allows at most 12 months per query
           w1 = min(d1, w0 + dt.timedelta(days=180))
           seen = set()
@@ -316,6 +336,14 @@ def yahoo(L: dict, state: dict, keys: list[str], log=log_):
         return
     t = yf.Ticker(sym)
     lid = L["id"]
+    try:  # fiscal quarter ends first: they decide which season each report date belongs to
+        q = t.quarterly_income_stmt
+    except Exception:
+        q = None
+    if q is not None and not q.empty:
+        ends = [(c.date() if hasattr(c, "date") else dt.date.fromisoformat(str(c)[:10])) for c in q.columns]
+        if sum(e.month not in (3, 6, 9, 12) for e in ends) >= len(ends) / 2:
+            state.setdefault("fq", {})[lid] = sorted({e.isoformat() for e in ends})
     first = season_end(keys[0]) - dt.timedelta(days=10)
     dates = []
     try:
@@ -335,11 +363,7 @@ def yahoo(L: dict, state: dict, keys: list[str], log=log_):
             if trusted or len(dates) <= 2:
                 state.setdefault("next", {})[lid] = d.isoformat()
         elif trusted:
-            add_event(state, lid, season_of(d.isoformat()), d.isoformat(), "Yahoo")
-    try:
-        q = t.quarterly_income_stmt
-    except Exception:
-        q = None
+            add_event(state, lid, season_for(state, lid, d.isoformat()), d.isoformat(), "Yahoo")
     if q is None or q.empty:
         return
     rows = {}
@@ -360,7 +384,8 @@ def yahoo(L: dict, state: dict, keys: list[str], log=log_):
         prev = next((v for e, v in rows.items() if 350 <= (end - e).days <= 380), None)
         # the season this quarter was reported in: by its report date when known, otherwise by its end date
         rep = min((dt.date.fromisoformat(v["d"]) for v in ev.values() if v.get("d") and dt.date.fromisoformat(v["d"]) > end), default=None)
-        key = season_of(rep.isoformat()) if rep and (rep - end).days < 120 else period_key(reported_quarter_end(end + dt.timedelta(days=20)))
+        key = (season_for(state, lid, rep.isoformat()) if rep and (rep - end).days < 120 else nearest_qend(end)) if lid in (state.get("fq") or {}) \
+            else (season_of(rep.isoformat()) if rep and (rep - end).days < 120 else period_key(reported_quarter_end(end + dt.timedelta(days=20))))
         if L["mkt"] == "IN" and key in nums and nums[key].get("src") == "BSE XBRL":
             continue  # the exchange filing wins
         g = lambda a, b: None if a is None or b is None or b <= 0 else round(100 * (a - b) / abs(b), 1)
@@ -390,7 +415,7 @@ def sec(leaders: list[dict], state: dict, keys: list[str], log=log_):
             for v in r.json().values():
                 cik.setdefault(v["ticker"].upper(), int(v["cik_str"]))
     idx = state.setdefault("sec_idx", {})
-    since = (season_end(keys[0]) + dt.timedelta(days=1)).isoformat()
+    since = (season_end(keys[0]) - dt.timedelta(days=45)).isoformat()  # off-calendar fiscal quarters report early
     for L in leaders:
         c = cik.get((L.get("sec") or "").upper())
         if not c:
@@ -430,9 +455,9 @@ def sec(leaders: list[dict], state: dict, keys: list[str], log=log_):
                     k = "release" if _reads_like_results(http, state, x) else None
                 if not k:
                     continue
-                if k in ("results", "release"):
-                    add_event(state, L["id"], season_of(fdate), fdate, "SEC")
-                n += add_doc(state, L["id"], {"k": k, "d": fdate, "s": season_of(fdate), "u": x["url"],
+                if k == "release" and is_results_doc({"k": k, "src": "SEC", "t": f"{form} · {x['desc']}"}):
+                    add_event(state, L["id"], season_for(state, L["id"], fdate), fdate, "SEC")
+                n += add_doc(state, L["id"], {"k": k, "d": fdate, "s": season_for(state, L["id"], fdate), "u": x["url"],
                                              "t": f"{form} · {x['desc']}"[:200], "src": "SEC"})
         log(f"  {L['name']}: {n} new SEC exhibits")
 
@@ -572,7 +597,7 @@ def sec_numbers(L: dict, state: dict, log=log_):
         e = dt.date.fromisoformat(end)
         prev = next((x for x in rev if 350 <= (e - dt.date.fromisoformat(x)).days <= 380), None)
         rep = min((dt.date.fromisoformat(v["d"]) for v in ev.values() if v.get("d") and dt.date.fromisoformat(v["d"]) > e), default=None)
-        key = season_of(rep.isoformat()) if rep and (rep - e).days < 120 else period_key(reported_quarter_end(e + dt.timedelta(days=20)))
+        key = season_for(state, L["id"], rep.isoformat()) if rep and (rep - e).days < 120 else nearest_qend(e)
         o, op_p = op.get(end), op.get(prev) if prev else None
         opm = round(100 * o / rev[end], 1) if o is not None and rev[end] else None
         opm_p = round(100 * op_p / rev[prev], 1) if prev and op_p is not None and rev.get(prev) else None
@@ -737,6 +762,8 @@ def read_new(leaders: list[dict], state: dict, keys: list[str], limit: int, log=
         for d in (state.get("docs") or {}).get(L["id"], []):
             if d["k"] not in ("call", "release", "deck") or d.get("s") not in keys or d["u"] in done_urls:
                 continue
+            if d["k"] == "release" and not is_results_doc(d):
+                continue
             if d.get("doc_id") and d["doc_id"] in have_ids:
                 continue
             kinds = {x.get("doc_type") for x in have.get(d["s"], [])}
@@ -885,6 +912,31 @@ def trend(vals: list, up: float, down: float) -> dict:
 
 
 # ------------------------------------------------------------------ ledger
+RX_RESULTS_DOC = re.compile(r"financial results|(quarter|quarterly|half[- ]year|annual|interim|full[- ]year)\s+results|results\s+(for|of)\s+the|"
+                            r"(quarter|half[- ]year|year|period)\s+(and\s+\w+[- ]?\w*\s+)?ended|\b[1-4]q\s*(fy)?\s*'?\d{2}|\bq[1-4]\s*(fy|cy)?\s*'?\d{2}|"
+                            r"earnings release|trading (statement|update)|operational review|quarterly statement|interim report|"
+                            r"half[- ]year(ly)? (financial )?report|9m |nine months|six months", re.I)
+RX_NOT_RESULTS = re.compile(r"production and delivery|volumes \(provisional\)|business update|partners with|signs mou|launches|"
+                            r"collaborat|order win|bags|acquisition of|completion of|records? .{0,30}growth in", re.I)
+
+
+def is_results_doc(d: dict) -> bool:
+    if d["k"] == "results":
+        return True
+    if d["k"] != "release":
+        return False
+    if d["src"] == "SEC" and (d.get("t") or "").startswith("8-K"):
+        return True  # only item 2.02 EX-99 exhibits are kept as releases from 8-Ks
+    t = d.get("t") or ""
+    if d["src"] == "BSE":  # Indian press releases: only those about the quarter's financial results
+        return bool(re.search(r"financial results|results\s+(for|of)\s+the|(quarter|half[- ]year|year)\s+(and\s+\w+[- ]?\w*\s+)?ended|"
+                              r"performance (for|of) the (quarter|half)|earnings (release|update)", t, re.I)) and not RX_NOT_RESULTS.search(t)
+    if d["src"] in ("IR", "manual", "FMP"):
+        return not RX_NOT_RESULTS.search(t)  # picked from a results page by its link wording already
+    return bool(RX_RESULTS_DOC.search(t) or (d["src"] == "SEC" and RX_RESULTS_TITLE.search(t))
+                or (d["src"] == "SEC" and t.endswith(("6-K", "EX-99.1", "EX-99.2", "EX-99.3")))) and not RX_NOT_RESULTS.search(t)
+
+
 def doc_rank(d: dict):
     """Best document first: results-worded titles, then main exhibits, then the earliest."""
     t = d.get("t") or ""
@@ -907,7 +959,7 @@ def slots_for(L: dict, key: str, state: dict, t0: dt.date, ever: dict) -> dict:
         return {k: {"st": "none", "note": "No reporting this quarter (half-yearly reporter)"} for k in ("results", "call", "deck")}
     pick = lambda ks: sorted([d for d in docs if d["k"] in ks], key=doc_rank)
     # results
-    r = pick(("results", "release"))
+    r = [d for d in pick(("results", "release")) if is_results_doc(d)]
     if r:
         out["results"] = {"st": "ok", "u": r[0]["u"], "d": r[0]["d"] or (ev or {}).get("d"), "src": r[0]["src"], "t": r[0]["t"]}
     elif ev and ev["d"] <= t0.isoformat() and ev.get("src") != "calendar":
@@ -936,11 +988,11 @@ def slots_for(L: dict, key: str, state: dict, t0: dt.date, ever: dict) -> dict:
         if aud:
             out["call"] = {"st": "held", "d": aud[0]["d"], "u": aud[0]["u"], "src": aud[0]["src"], "note": "Call held (audio filed); transcript not out yet"}
         elif it or cal:
-            dd = (cal or {}).get("d") or it[0]["d"]
-            past = dd and dd <= t0.isoformat()
+            dd = (cal or {}).get("d") if (cal or {}).get("scheduled") else None  # a notice's filing date is not the call date
+            past = (dd and dd <= t0.isoformat()) or (not dd and reported)
             out["call"] = {"st": "held" if past and not late else "awaited" if not past else "missing", "d": dd,
                            "u": (cal or {}).get("u") or (it[0]["u"] if it else None), "src": "BSE",
-                           "note": "Call scheduled" if not past else ("Call held; transcript due within 5 working days" if not late else "Call held but no transcript filed")}
+                           "note": ("Call scheduled" + ("" if dd else ", date in the notice")) if not past else ("Call held; transcript due within 5 working days" if not late else "Call held but no transcript filed")}
         elif not reported:
             out["call"] = {"st": "awaited", "d": out["results"].get("d")}
         elif not ever.get("call"):
