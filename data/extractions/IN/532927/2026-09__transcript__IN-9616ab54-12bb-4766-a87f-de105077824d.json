@@ -1,0 +1,487 @@
+{
+ "doc_id": "IN-9616ab54-12bb-4766-a87f-de105077824d",
+ "market": "IN",
+ "company_id": "532927",
+ "name": "eClerx Services Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-03",
+ "period": "2026-09",
+ "title": "eClerx Services Ltd - 532927 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Revenue growth and margin guide intact at 24-28% EBITDA, but ACV down about 10% YoY in H1 with deal wins falling; management concedes FY27 ACV goal will be difficult and H2 capex is flat, not doubled.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Customer stickiness",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 74.9,
+   "quote": "Utilization declined slightly to 74.9%, while attrition rose to 23.4%."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "No. I'm saying H2 CapEx will be same as H1 roughly."
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "ACV down ~10% YoY in H1",
+    "quote": "it's around INR 72 million against H1 of the prior year, which was INR 78 million, so about 10% decline Y-o-Y",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Deal wins fell to USD 31m",
+    "quote": "New deal wins were USD 31 million compared with USD 41 million last quarter.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Utilisation 75.5% → 74.9%",
+    "quote": "Utilization in Q2 is 74.9% compared with 75.5% in Q1.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "BFSI recovery pushed to Q4",
+    "quote": "Earlier, I had thought that we may be able to do it in Q3. I'm now saying we should be able to recover in Q4.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Headcount +3.5% vs revenue +1.5% QoQ",
+    "quote": "Headcount increased 3.4% compared with revenue growth of 1.5%.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "24% to 28%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we remain confident of remaining in the 24% to 28% range for the full year."
+   },
+   {
+    "metric": "H2 CapEx",
+    "value": "roughly INR 90 crores per quarter, same as H1",
+    "change": "new",
+    "horizon": "H2 FY27",
+    "quote": "INR 90 crores plus INR 90 crores, yes."
+   },
+   {
+    "metric": "ETR",
+    "value": "about 25%",
+    "change": "new",
+    "horizon": "FY27-FY28",
+    "quote": "Yes, about 25% should be okay."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 EBITDA margin",
+    "outcome": "met",
+    "quote": "we remain confident of remaining in the 24% to 28% range for the full year."
+   },
+   {
+    "metric": "FY27 revenue growth",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "CLX revenue growth",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Capex",
+    "outcome": "not_discussed",
+    "quote": "No. I'm saying H2 CapEx will be same as H1 roughly."
+   },
+   {
+    "metric": "ACV",
+    "outcome": "missed",
+    "quote": "Will it be difficult? The answer is absolutely yes, because of the delayed decision timeline."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Anthropic",
+    "relation": "peer"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "peer"
+   },
+   {
+    "name": "GCCs",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Customer stickiness",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "ACV down ~10% YoY, deal wins falling",
+    "quote": "it's around INR 72 million against H1 of the prior year, which was INR 78 million, so about 10% decline Y-o-Y"
+   },
+   {
+    "label": "BFSI volume pressure; recovery pushed out",
+    "quote": "Easing financial crime compliance regulation in the U.S. has reduced refresh volumes at existing clients."
+   },
+   {
+    "label": "Bench built ahead of deal conversion",
+    "quote": "we've added headcount maybe a little in advance expecting some work, which has not yet materialized"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 8,
+   "margin": 3,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "AI tools cost per seat vs delivery cost",
+    "quote": "we are providing productivity tools like AI, et cetera, to our employees."
+   },
+   {
+    "topic": "AI-led renewal share of portfolio",
+    "quote": "I really think it's a hard question to answer"
+   },
+   {
+    "topic": "AI pass-through deflation to top-10 clients",
+    "quote": "we'll have to look at the number and come back to you"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "eClerx Q2 FY27 operating revenue rose 10.6% YoY to USD 127.7M, but deal wins fell to USD 31M and ACV dropped about 10% YoY in H1.",
+  "overview": "Q2 FY27 operating revenue was USD 127.7M (up 10.6% YoY, 12.9% in constant currency, up 1.5% QoQ), marking the 13th straight quarter of sequential growth. Operating EBITDA margin rose 90 bps QoQ to 23.9%, which management attributed almost entirely to INR depreciation (FX), while H1 margin ran about 190 bps below last year as the company invests in new locations and AI. New deal wins were USD 31M versus USD 41M in Q1, and management said clients are delaying decisions and starting with smaller AI-led pilots. Management reiterated a 24% to 28% full-year EBITDA margin range but conceded that restoring full-year ACV to FY26 levels will be difficult.",
+  "financial_highlights": [
+   {
+    "metric": "Operating revenue",
+    "value": "USD 127.7M",
+    "change": "+10.6% YoY, +12.9% CC YoY, +1.5% QoQ"
+   },
+   {
+    "metric": "INR operating revenue",
+    "value": "INR 11,887M (implied FX INR 93.1/USD)",
+    "change": "+18% YoY"
+   },
+   {
+    "metric": "Operating EBITDA",
+    "value": "INR 2,839M, margin 23.9%",
+    "change": "+90 bps QoQ; H1 margin 23.5%, about 190 bps below last year"
+   },
+   {
+    "metric": "EBITDA incl. other income",
+    "value": "25.4% margin",
+    "change": "+120 bps QoQ"
+   },
+   {
+    "metric": "PAT",
+    "value": "INR 1,804M, margin 14.9%",
+    "change": "+9.8% QoQ"
+   },
+   {
+    "metric": "Net operating cash flow",
+    "value": "INR 2,694M, OCF/EBITDA 87.5%",
+    "change": "vs 38% in Q1"
+   },
+   {
+    "metric": "New deal wins (TCV)",
+    "value": "USD 31M",
+    "change": "vs USD 41M in Q1; H1 USD 72M vs USD 78M a year ago"
+   },
+   {
+    "metric": "ACV (H1)",
+    "value": "About INR 72M",
+    "change": "about 10% decline YoY vs INR 78M"
+   },
+   {
+    "metric": "CapEx",
+    "value": "INR 585M in Q2; INR 919M in H1",
+    "change": ""
+   },
+   {
+    "metric": "Depreciation incl. Ind AS 116 rent",
+    "value": "INR 558M, 4.7% of operating revenue",
+    "change": "from 4.3% in Q1"
+   },
+   {
+    "metric": "EPS / ROE",
+    "value": "INR 19.6 / 24.7%",
+    "change": ""
+   },
+   {
+    "metric": "Cash and equivalents",
+    "value": "INR 14,318M",
+    "change": ""
+   },
+   {
+    "metric": "DSO",
+    "value": "79 days",
+    "change": "unchanged"
+   },
+   {
+    "metric": "Utilization",
+    "value": "74.9%",
+    "change": "vs 75.5% in Q1"
+   },
+   {
+    "metric": "Attrition",
+    "value": "23.4%",
+    "change": "marginally up QoQ"
+   },
+   {
+    "metric": "Headcount",
+    "value": "up 3.5% QoQ; 724 offshore additions",
+    "change": "vs revenue growth of 1.5%"
+   },
+   {
+    "metric": "Top 10 client concentration",
+    "value": "60%",
+    "change": "unchanged"
+   },
+   {
+    "metric": "Clients above USD 3M",
+    "value": "25",
+    "change": "from 20 a year ago"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Analytics and Automation",
+    "commentary": "Grew 5% QoQ and 27% YoY, about twice company growth; annual run rate about USD 109M, roughly 20% of revenue. Technology team of 2,300 people."
+   },
+   {
+    "name": "Emerging business",
+    "commentary": "Now 12.6% of revenue, up from 11.7%; growth led by finance and accounting (FinOps) and mix of advertising, logistics and shipping clients."
+   },
+   {
+    "name": "Communication, Media and Telecom",
+    "commentary": "Broadly flat QoQ; Cairo and Manila growing, new voice programs ramping, QA 360 deployed at a large client."
+   },
+   {
+    "name": "BFSI",
+    "commentary": "Grew about 3% QoQ on short-term engagements; US easing of financial crime compliance rules cut refresh volumes at existing clients; new AML/KYC work with a payments company."
+   },
+   {
+    "name": "Hi-tech and Manufacturing & Distribution",
+    "commentary": "Traction in Hi-tech from agentic AI and transformation services; Fashion, luxury and retail flat YoY, with Q2 seasonally weak due to Italy August holidays and weak China and Europe luxury demand."
+   }
+  ],
+  "guidance_outlook": [
+   "Full-year operating EBITDA margin expected within the 24% to 28% range; management said it remains confident of this range.",
+   "H2 margin headwind of about 20 bps from the revised statutory PF wage ceiling (INR 15,000 to INR 25,000 per month, effective September 17, 2026).",
+   "D&A including Ind AS 116 rent expected to rise about 20 bps in H2 as Mumbai and Pune facilities come live in Q3 and Q4.",
+   "H2 CapEx expected roughly equal to H1 (about INR 90 crore per half), not double.",
+   "Next year CapEx expected to be lower as seat additions slow to about 800 to 1,000 over the next couple of quarters, subject to budgeting.",
+   "Full-year ETR guided at about 25%.",
+   "Management aims to match FY26 ACV for the full year but said it will be difficult; BFSI recovery now expected in Q4 rather than Q3."
+  ],
+  "capex_capacity": [
+   "H1 CapEx INR 919M; Q2 INR 585M. H2 CapEx guided roughly equal to H1.",
+   "India seat count up about 1,400 to 16,824 as Mohali and Chandigarh capacity went live.",
+   "Additional seats coming in Mumbai and Pune in H2; new facilities driving higher depreciation.",
+   "Next year seat additions expected to be lower, about 800 to 1,000 over the next couple of quarters."
+  ],
+  "demand_pricing": [
+   "Deal wins USD 31M in Q2 vs USD 41M in Q1; H1 USD 72M vs USD 78M prior year.",
+   "H1 ACV about INR 72M, down about 10% YoY; management says clients are delaying decisions and starting with smaller AI pilots, not because of competitive pressure.",
+   "Management said there is a shift-right in deals and Q2 bench was higher than usual because of it; headcount was added ahead of expected work.",
+   "Roll-off in Q1 and Q2 at about 15% to 20% of revenue, in line with the usual range.",
+   "Management denied losing BFSI market share and cited US regulatory easing and AI adoption in FCC work as the causes of softness."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Are deal sizes and decision timelines shrinking, and how is ACV trending?",
+    "answer": "H1 ACV about INR 72M, about 10% below prior year. Clients are taking longer and starting with smaller AI pilots; management still aims to match FY26 ACV but said it will be difficult."
+   },
+   {
+    "question": "How will EBITDA margin trend for the full year, and is nearshore mix a drag?",
+    "answer": "Margin depends on revenue growth. Nearshore centres (Philippines, Egypt, etc.) carry lower margins than India, which dilutes the mix, but each centre is improving; the 24% to 28% full-year range is maintained."
+   },
+   {
+    "question": "What is the CapEx outlook?",
+    "answer": "H2 CapEx roughly equal to H1 at about INR 90 crore per half, not double. Next year's CapEx expected to be lower as seat additions slow."
+   },
+   {
+    "question": "Is BFSI losing share, and when does recovery come?",
+    "answer": "No share loss per management. Recovery now expected in Q4 rather than Q3, helped by adjacent areas such as payments KYC/AML and mortgages."
+   },
+   {
+    "question": "Is the company going to pursue acquisitions to accelerate growth?",
+    "answer": "Capital is not the constraint. Target assets must be synergistic and culturally aligned; healthcare is an area under review as valuations have eased. Management has not yet closed a deal."
+   },
+   {
+    "question": "Why is headcount up 3.5% QoQ when ACV is weak?",
+    "answer": "Headcount was added in advance of work that has not yet materialized because of the shift-right, which lowered utilization to 74.9%."
+   }
+  ],
+  "risks_watch": [
+   "Deal wins and ACV continue to decline; Q3 and Q4 need about USD 49M to 50M per quarter just to hold flat ACV.",
+   "Utilization at 74.9% and attrition at 23.4% with headcount outpacing revenue.",
+   "BFSI volume pressure from easing US financial crime compliance rules; recovery now pushed to Q4.",
+   "AI-led client budget cuts and deflation pass-through, especially in top 10 clients (growth in mid-single digits).",
+   "Margin pressure from nearshore mix, PF wage ceiling change (20 bps) and higher D&A (about 20 bps more in H2).",
+   "Subcontracting costs rising, mainly technology."
+  ],
+  "management_tone": "Confident on long-term AI and domain strategy and on margin delivery, but cautious and candid on the short term: management repeatedly said decisions are slower, ACV is down and FY26 ACV matching will be difficult. Some answers on AI deal economics and renewal exposure were non-specific and deferred to later follow-up.",
+  "key_quotes": [
+   "Clients are taking longer in making decisions. And the reason for that is because there's a lot of money that's getting invested in AI.",
+   "So, I think, Sandeep, I would be naive to say that it won't be difficult given what the H1 number is",
+   "I think we are very proud of it.",
+   "So, I'm cautiously optimistic for medium to long term. Short term, there would be volatility"
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "India seats added in Mohali and Chandigarh (seat count up about 1,400 to 16,824), already live",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Mumbai and Pune facilities with additional seats coming live",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Next-year seat additions of about 800 to 1,000 over the next couple of quarters, subject to budgeting",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "planned",
+    "mat": "minor"
+   }
+  ],
+  "util": 74.9,
+  "expansion": true,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains"
+  ],
+  "clarity": "none",
+  "qRev": 10.6,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "Management reiterated only a 24% to 28% full-year EBITDA margin range (not revenue growth guidance), said FY ACV matching FY26 will be difficult, and deal wins fell to USD 31M from USD 41M in Q1 with H1 ACV down about 10% YoY; Q2 revenue grew 10.6% YoY but backing is partial (Mumbai/Pune seats coming, no revenue target).",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Full-year EBITDA margin held at 24% to 28% and Q2 rose 90 bps QoQ to 23.9%, but H1 ran about 190 bps below last year, H2 faces a 20 bps PF wage headwind and about 20 bps more D&A, and nearshore mix dilutes."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "Q3 to Q4 FY27",
+    "why": "Mumbai and Pune facilities come live in Q3 and Q4 with additional seats, and next-year seat additions of about 800 to 1,000 are planned, though utilisation fell to 74.9%."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Deal wins fell to USD 31M in Q2 from USD 41M in Q1 and H1 ACV is down about 10% YoY, with Q3 and Q4 needing USD 49M to 50M per quarter just to hold flat ACV."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Utilisation is 74.9%, below the 80%+ threshold, and H2 CapEx is guided flat at about INR 90 crore per half while next-year CapEx is expected to be lower."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Management gave only a margin range (24% to 28%) with no revenue growth guide, and conceded that matching FY26 ACV will be difficult."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Deal wins and ACV keep falling (ACV about 10% down YoY in H1), BFSI recovery pushed to Q4, and utilisation at 74.9% with headcount up 3.5% against revenue growth of 1.5%."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "no_signal",
+    "when": "",
+    "why": ""
+   },
+   {
+    "k": "order_book",
+    "label": "Deal wins and ACV recovery to FY26 levels",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "H1 ACV about INR 72M, down about 10% YoY, and deal wins of USD 31M in Q2 versus USD 41M in Q1; clients are delaying decisions and starting with smaller AI pilots."
+   },
+   {
+    "k": "turnaround",
+    "label": "BFSI recovery in Q4",
+    "call": "possible",
+    "when": "Q4 FY27",
+    "why": "BFSI recovery now pushed to Q4 from Q3, after US easing of financial crime compliance rules cut refresh volumes, with BFSI growing only about 3% QoQ."
+   },
+   {
+    "k": "corporate_action",
+    "label": "Acquisition in healthcare",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Capital is not the constraint and healthcare is under review as valuations have eased, but management has not yet closed a deal."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on the 24% to 28% margin range, AI strategy and the Analytics segment (up 27% YoY), but candid that deal wins and ACV are down, shift-right is delaying decisions and FY26 ACV matching will be difficult; analysts pressed on deal economics and ACV trend."
+  }
+ }
+}

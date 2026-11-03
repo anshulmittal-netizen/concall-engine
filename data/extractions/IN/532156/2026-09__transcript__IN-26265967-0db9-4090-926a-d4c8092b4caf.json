@@ -1,0 +1,436 @@
+{
+ "doc_id": "IN-26265967-0db9-4090-926a-d4c8092b4caf",
+ "market": "IN",
+ "company_id": "532156",
+ "name": "Vaibhav Global Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-03",
+ "period": "2026-09",
+ "title": "Vaibhav Global Ltd - 532156 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Q2 FY27 revenue +7% to INR938 cr with gross margin up 197 bps to 65.5%, but EBITDA margin fell to 8.1% and FY27 revenue guidance was cut to 7-9% from 9-11% due to Shopify and UK transition; no capacity or supply signal.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 revenue guide cut 9-11% → 7-9%",
+    "quote": "We now expect revenue growth of 7% to 9% in FY27 compared with our earlier guidance of 9% to 11%.",
+    "direction": -1,
+    "confidence": 0.9
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 EBITDA margin expansion dropped",
+    "quote": "We expect FY27 EBITDA margin to be broadly in line with FY26 compared with our earlier expectation of 50 to 100 basis points of expansion.",
+    "direction": -1,
+    "confidence": 0.9
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory build ~INR100 cr YoY",
+    "quote": "We have roughly around INR100 crores inventory buildup compared to the last year same time",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "US constant-currency revenue -4.1%",
+    "quote": "declined 4.1% in constant currency",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin +197 bps to 65.5%",
+    "quote": "Gross margin expanded by approximately 197 basis points to 65.5%.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "7% to 9%",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "We now expect revenue growth of 7% to 9% in FY27 compared with our earlier guidance of 9% to 11%."
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "broadly in line with FY26",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "We expect FY27 EBITDA margin to be broadly in line with FY26 compared with our earlier expectation of 50 to 100 basis points of expansion."
+   },
+   {
+    "metric": "FY28 revenue growth",
+    "value": "9% to 11%",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "we remain confident in our ability to return to 9% to 11% revenue growth in FY28"
+   },
+   {
+    "metric": "Digital share of B2C by Q4 FY27",
+    "value": "50%",
+    "change": "held",
+    "horizon": "Q4 FY27",
+    "quote": "we continue to work towards our target of digital share at 50% of B2C revenue by Q4 FY27"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 revenue growth",
+    "outcome": "missed",
+    "quote": "We now expect revenue growth of 7% to 9% in FY27 compared with our earlier guidance of 9% to 11%."
+   },
+   {
+    "metric": "FY27 EBITDA margin expansion",
+    "outcome": "dropped",
+    "quote": "We expect FY27 EBITDA margin to be broadly in line with FY26 compared with our earlier expectation of 50 to 100 basis points of expansion."
+   },
+   {
+    "metric": "FY30 revenue",
+    "outcome": "not_discussed",
+    "quote": "we've not taken into account a new geography, not at this time."
+   },
+   {
+    "metric": "Digital share of B2C",
+    "outcome": "not_discussed",
+    "quote": "we continue to work towards our target of digital share at 50% of B2C revenue by Q4 FY27"
+   },
+   {
+    "metric": "Germany contribution",
+    "outcome": "met",
+    "quote": "the Germany remain on track to continue positively to the group profitability in FY27."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Shopify",
+    "relation": "partner"
+   },
+   {
+    "name": "revolve.com",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle",
+   "Consumer durables"
+  ],
+  "red_flags": [
+   {
+    "label": "Guidance cut on FY27 revenue and EBITDA margin",
+    "quote": "We now expect revenue growth of 7% to 9% in FY27 compared with our earlier guidance of 9% to 11%."
+   },
+   {
+    "label": "Inventory build ~INR100 cr YoY; net cash down to INR186 cr",
+    "quote": "We have roughly around INR100 crores inventory buildup compared to the last year same time"
+   },
+   {
+    "label": "US constant-currency revenue declined 4.1%",
+    "quote": "declined 4.1% in constant currency"
+   },
+   {
+    "label": "Digital revenue flat-ish due to migration",
+    "quote": "declined marginally YoY because of the Shopify migration"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 2,
+   "balance_sheet": 2,
+   "capex": 1,
+   "other": 9
+  },
+  "evasions": [
+   {
+    "topic": "Digital growth path to 9-11% in FY28",
+    "quote": "Yes, fair comment. Our digital platform gives us the ability to, first of all, test new products very quickly."
+   },
+   {
+    "topic": "Buyback request",
+    "quote": "Board has decided to continue our tradition of the dividend paying company."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Vaibhav Global Q2 FY27 revenue rose 7% to INR938.4 crores, but EBITDA fell 13.5% to INR76.2 crores as Shopify and U.K. migrations hit sales; FY27 growth guidance cut to 7-9%.",
+  "overview": "Q2 FY27 was a transition quarter in which the company completed its migration of all retail websites to Shopify Enterprise and consolidated four U.K. warehouses and two studios into one site. Management attributed about USD2.8 million (about 2.8 percentage points of growth) of revenue loss to the platform migration, and EBITDA margin fell to 8.1% from 10.0% a year earlier despite a 197 bps gross margin gain to 65.5%. FY27 revenue growth guidance was cut to 7-9% from 9-11%, and the FY27 EBITDA margin is now expected broadly flat versus FY26 instead of 50-100 bps expansion. Management reiterated a return to 9-11% revenue growth in FY28.",
+  "segments": [
+   {
+    "name": "U.S.",
+    "commentary": "Revenue INR500 crores, +4.3% in rupee terms but -4.1% in constant currency; units +4.8%, ASP -8.4%. EBITDA margin 5.7% in Q2 due to deleverage from connected TV/OTT/app investment. H1 U.S. EBITDA INR86.6 crores, +24.9%, margin 8.4% (+102 bps)."
+   },
+   {
+    "name": "U.K.",
+    "commentary": "Revenue INR257.2 crores, +2.3% in rupee terms but -7% in constant currency, the weakest quarter; drivers were platform migration, temporary stock unavailability during warehouse consolidation and weak consumer sentiment (U.K. inflation 3.5% in September, consumer confidence sharpest monthly fall since 2020 in October)."
+   },
+   {
+    "name": "Europe ex-U.K.",
+    "commentary": "Revenue INR110 crores, +18.3% in rupee terms and +8% constant currency, led by 11.5% unit growth; ShopLC Germany +5.8%, Mindful +12.7%. H1 loss narrowed to INR0.7 crores from INR6.6 crores."
+   },
+   {
+    "name": "B2B",
+    "commentary": "Revenue INR70.9 crores, +32.4% YoY, described as another strong quarter."
+   },
+   {
+    "name": "Digital (B2C)",
+    "commentary": "Digital revenue INR367 crores, +5.6% YoY in rupee terms and marginally down YoY due to Shopify migration; digital share of B2C revenue fell about 3 percentage points versus Q1, and 44% of U.S. revenue."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue growth guided at 7-9%, cut from 9-11%, citing the Shopify transition, U.K. warehouse consolidation, weaker U.K. consumer and U.S. midterm election risk.",
+   "FY27 EBITDA margin now expected broadly in line with FY26, versus earlier guidance of 50-100 bps expansion.",
+   "Management remains confident of returning to 9-11% revenue growth in FY28.",
+   "Digital share target of 50% of B2C revenue by Q4 FY27 retained, with digital expected to return to its earlier growth trajectory post-transition.",
+   "Sustainable effective tax rate of 18-20% over the next 2-3 years, with German losses set off in coming periods and absorption extending beyond FY28.",
+   "Target of INR5,000-5,500 crores by FY30 excludes any new country launch such as India; mostly organic with possible small digital acquisition.",
+   "Second interim dividend of INR1.5 per share declared, following INR1.5 in Q1 FY27."
+  ],
+  "capex_capacity": [
+   "Capex of about INR63 crores cited in Q2 call, of which about INR36 crores relates to U.K. warehouse consolidation into a single premises; the rest is tech improvement and Shopify migration.",
+   "Inventory build of roughly INR100 crores year-on-year for festive readiness; inventory days expected to moderate to the 200-220 day range by Q3 and Q4.",
+   "U.K. warehouse consolidation still in progress per management, with all stock moved into one warehouse.",
+   "Germany to reach robust profitability before any new country entry; India launch 'on the cards' but not in the FY30 target."
+  ],
+  "demand_pricing": [
+   "Retail volumes grew about 2% overall, driven by lower price point items; consumers seeking value.",
+   "Gross margin expansion attributed to vertical integration, in-house brands and lab-grown diamond (LGD) mix; management says it can hold around 64-65% gross margin despite precious metal price moves.",
+   "LGD share rose to 12% of total retail revenue from about 10% a year earlier; in-house brands 57% of B2C revenue; lifestyle about 40% of B2C; budget about 35% of retail revenue.",
+   "Customer metrics (trailing 12 months): 127 million households reached, 687,000 unique customers, 360,000 new customers, 38% retention, 23 pieces bought per customer per year.",
+   "Management cited peer growth (revolve.com double-digit) to argue digital growth of 17-20% is achievable; current digital growth has been below 20% in constant currency for 2-3 years per analyst."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Quantify revenue lost from the Shopify migration.",
+    "answer": "Management said about USD2.8 million, or roughly 2.8% of growth, in Q2."
+   },
+   {
+    "question": "Why is capex around INR63 crores and what is it for?",
+    "answer": "Nitin Panwad said about INR36 crores is for U.K. warehouse consolidation into one premises; the rest is tech improvement and Shopify migration."
+   },
+   {
+    "question": "Why did working capital rise?",
+    "answer": "Inventory build of roughly INR100 crores year-on-year for festive season readiness and global uncertainty; inventory days expected to return to 200-220 by Q3-Q4."
+   },
+   {
+    "question": "Will the company buy back shares given ongoing dividends?",
+    "answer": "The Board kept the dividend tradition; management said it wants to build cash for acquisitions or strategic moves and will deploy surplus cash into a buyback afterwards."
+   },
+   {
+    "question": "Why was U.K. so much weaker than U.S. and Germany?",
+    "answer": "Management cited two disruptions (Shopify and warehouse consolidation) plus a weaker U.K. economy and cost-of-living pressure, while Germany is a newer business with a larger customer base."
+   },
+   {
+    "question": "How will digital reach the growth required for 9-11%?",
+    "answer": "Management pointed to faster product testing, AI-personalised creatives and six brands on the new platform, and said the numbers were modelled in detail; it did not give a specific digital growth figure."
+   }
+  ],
+  "risks_watch": [
+   "Shopify stabilisation and customer acquisition cost: management targets payback within 6 months but says it is not yet at the 3-month goal.",
+   "U.K. consumer weakness and consolidation execution; U.K. revenue fell 7% in constant currency.",
+   "Digital growth must re-accelerate sharply (management did not quantify; analyst estimated 17-20%+) to meet FY28 9-11% target.",
+   "Inventory of about INR100 crores higher year-on-year and net cash down to INR186 crores from INR279 crores.",
+   "Shareholder pressure for buybacks versus continued dividends; stock price weakness raised by an individual shareholder.",
+   "U.S. midterm election potentially diverting TV viewership; TV home attrition noted."
+  ],
+  "management_tone": "Confident on long-term strategy but cautious and transparent on near-term numbers: management openly cut FY27 guidance and attributed the Q2 hit to transition costs it called transitional. Answers on buybacks and India expansion were deferential and non-committal, and detail on digital growth targets was thin.",
+  "key_quotes": [
+   "Q2 was a quarter of transition and an important one.",
+   "We see these pressures as transitional.",
+   "We believe this is the right call, and it does not change our medium-term view.",
+   "Shopify is a strategic step towards achieving this objective, positioning us to accelerate digital growth and drive sustainable profitable growth over the medium term."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (Q2 FY27)",
+    "value": "INR938.4 crores",
+    "change": "+7% YoY"
+   },
+   {
+    "metric": "Retail revenue (Q2)",
+    "value": "INR867.5 crores",
+    "change": "+5.3% YoY"
+   },
+   {
+    "metric": "B2B revenue (Q2)",
+    "value": "INR70.9 crores",
+    "change": "+32% YoY"
+   },
+   {
+    "metric": "Gross margin (Q2)",
+    "value": "65.5%",
+    "change": "+197 bps YoY from 63.5%"
+   },
+   {
+    "metric": "EBITDA (Q2)",
+    "value": "INR76.2 crores, margin 8.1%",
+    "change": "-13.5% YoY; margin down 193 bps from 10%"
+   },
+   {
+    "metric": "Revenue (H1 FY27)",
+    "value": "INR1,855.4 crores",
+    "change": "+9.7% YoY"
+   },
+   {
+    "metric": "EBITDA (H1 FY27)",
+    "value": "INR178.3 crores, margin 9.6%",
+    "change": "+9.6% YoY"
+   },
+   {
+    "metric": "Profit after tax (H1 FY27)",
+    "value": "INR98.1 crores",
+    "change": "+15.2% YoY"
+   },
+   {
+    "metric": "Net cash (30 Sep 2026)",
+    "value": "INR186 crores",
+    "change": "Down from INR279 crores at March 2026"
+   },
+   {
+    "metric": "ROCE / ROE",
+    "value": "22% / 18%",
+    "change": ""
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Consolidation of four U.K. warehouses and two studios into one U.K. warehouse premises (consolidation, not net new capacity)",
+    "size_pct": null,
+    "capex_cr": 36.0,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": false,
+  "growth": 8.0,
+  "gs": -2,
+  "turnaround": false,
+  "backing": [
+   "demand_or_share_gains",
+   "new_products_or_markets",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 7.0,
+  "qEbitda": -13.5,
+  "outlook": 0,
+  "why": "FY27 revenue growth guidance cut to 7-9% from 9-11% and FY27 EBITDA margin now flat vs FY26; backing is partial, with the digital share target and FY28 9-11% recovery reiterated but no specific capacity or order numbers given, and the U.K. warehouse consolidation is a cost/efficiency move rather than added capacity.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "unlikely",
+    "when": "FY27",
+    "why": "FY27 EBITDA margin now guided broadly flat vs FY26 (previously 50-100 bps expansion), and Q2 EBITDA margin fell to 8.1% from 10.0% despite a 197 bps gross margin gain to 65.5%."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "unlikely",
+    "when": "",
+    "why": "The only physical change is consolidating four U.K. warehouses and two studios into one premises (about INR36 crores capex), which is efficiency rather than net new capacity; no new plants or lines were guided."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Retail volumes grew about 2% and U.S. units +4.8%, but U.K. revenue fell 7% in constant currency and digital was marginally down YoY, so volume recovery depends on the Shopify and U.K. consolidation stabilising."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "no_signal",
+    "when": "",
+    "why": "Capex of about INR63 crores is already in progress, with no new capacity program or utilisation figure discussed to suggest a fresh capex announcement."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "FY27 revenue growth guidance was cut to 7-9% from 9-11% and the margin guide was lowered, so near-term upgrade is not in the call's direction."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "H1 revenue growth is +9.7% but the FY27 range of 7-9% implies a slower H2, and U.K. was -7% constant currency with consumer sentiment weakening and U.S. midterm risk flagged."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Six brands moved to the new platform and faster product testing with AI-personalised creatives was cited, but no specific product or brand launch date was given; LGD mix rose to 12% of retail revenue."
+   },
+   {
+    "k": "working_capital",
+    "label": "Inventory days back to 200-220 by Q3-Q4",
+    "call": "likely",
+    "when": "Q3-Q4 FY27",
+    "why": "Inventory build of about INR100 crores YoY for festive readiness, with management guiding inventory days to moderate to 200-220 by Q3 and Q4; net cash already fell to INR186 crores from INR279 crores."
+   },
+   {
+    "k": "corporate_action",
+    "label": "Buyback after cash build for acquisitions",
+    "call": "possible",
+    "when": "after acquisition plans, timing unspecified",
+    "why": "Management said it wants to build cash for acquisitions or strategic moves and would deploy surplus into a buyback afterwards, with net cash at INR186 crores; no date or size given."
+   },
+   {
+    "k": "order_book",
+    "label": "Digital share 50% of B2C by Q4 FY27",
+    "call": "possible",
+    "when": "Q4 FY27",
+    "why": "Target retained, but digital share fell about 3 points vs Q1 and digital was marginally down YoY in Q2 (INR367 crores, +5.6%), so reaching 50% requires a sharp re-acceleration that was not quantified."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on the FY28 9-11% recovery and digital share target but openly cut FY27 guidance and called the Q2 hit transitional; analysts pressed on digital growth figures, U.K. weakness and buybacks, and management gave thin, deferential answers on those."
+  }
+ }
+}

@@ -1,0 +1,450 @@
+{
+ "doc_id": "IN-89267bd0-9d13-495a-a803-0a5aeff751dd",
+ "market": "IN",
+ "company_id": "500410",
+ "name": "ACC Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-03",
+ "period": "2026-09",
+ "title": "ACC Ltd - 500410 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.9,
+ "read": {
+  "subsector": "Cement",
+  "thesis": "Management is expanding capacity by ~30 Mt (INR14,500 crore) to reach 149 Mt by FY29 while Q2 utilisation was only 61-62%, though cost guidance of INR4,250/t was reaffirmed.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capital cycle",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": -2,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 1,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 61.5,
+   "quote": "In Q2, it has been a little low around, say, 61%, 62%."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Analyst noted peers are also adding similar capacity in East and West regions; management said 'there is a market for everyone'.",
+   "quote": "closer to INR14,500 crores will be what we require for this 30 million tons"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex ~INR14,500 cr for 30 Mt expansion",
+    "quote": "closer to INR14,500 crores will be what we require for this 30 million tons",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "util",
+    "label": "Utilisation 61-62% in Q2",
+    "quote": "In Q2, it has been a little low around, say, 61%, 62%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "INR10/bag price hike realised in October",
+    "quote": "we already have realized INR10 per bag",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 cost target INR4,250/t reaffirmed",
+    "quote": "we are on track to achieve our FY27 cost target of INR4,250 per metric ton",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q2 trade volume +8.6% YoY; overall flattish",
+    "quote": "trade volumes increased by 8.6% Y-on-Y",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 net cost per tonne",
+    "value": "INR4,250/t",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "we are on track to achieve our FY27 cost target of INR4,250 per metric ton"
+   },
+   {
+    "metric": "Capacity by FY29 / FY30",
+    "value": "149 Mt by FY29, 155 Mt by FY30",
+    "horizon": "FY29-FY30",
+    "change": "new",
+    "quote": "by FY '29, 149 million metric tons and by FY '30, 155 million metric tons"
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "INR6,000-7,000 crore (INR3,000-3,500 crore in H2)",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "balance INR3,000 crores to INR3,500 crores will be coming in the second half"
+   },
+   {
+    "metric": "Green power share",
+    "value": "61% (company level)",
+    "horizon": "FY27",
+    "change": "raised",
+    "quote": "Green power share stood at 61%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Full-year FY27 net cost per tonne",
+    "outcome": "met",
+    "quote": "we are on track to achieve our FY27 cost target of INR4,250 per metric ton"
+   },
+   {
+    "metric": "Capacity by end FY27",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "FY27 capex",
+    "outcome": "met",
+    "quote": "balance INR3,000 crores to INR3,500 crores will be coming in the second half"
+   },
+   {
+    "metric": "Green power share",
+    "outcome": "met",
+    "quote": "Green power share stood at 61%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Orient Cement",
+    "relation": "peer"
+   },
+   {
+    "name": "Adani",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Premiumisation in consumption",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Capex expansion while utilisation ~61%",
+    "quote": "In Q2, it has been a little low around, say, 61%, 62%."
+   },
+   {
+    "label": "H1 volume growth negative; guidance reset",
+    "quote": "our volume growth has been for the first half negative"
+   },
+   {
+    "label": "Q2 tax rate unusually low, merger-driven",
+    "quote": "you have the tax shield of Penna and all"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "capex": 6,
+   "margin": 4,
+   "balance_sheet": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Capex rationale vs weak demand and utilisation",
+    "quote": "this quarterly performance is not influencing our decisions of capex, first of all"
+   },
+   {
+    "topic": "Contractor and Chinese supplier execution",
+    "quote": "No, Satyadeep, I would not specifically highlight any particular name."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Ambuja Cements Q2 FY27: consol EBITDA INR1,271 crore (~14% margin, INR770/t) on 16.5 MT volume; 14-project, ~30 MTPA expansion announced.",
+  "overview": "Ambuja Cements (consolidated, including ACC) reported Q2 FY27 cement volume of 16.5 MT, revenue of INR9,197 crore, EBITDA of INR1,271 crore and PAT of INR236 crore, with the company stating it remains debt-free. Trade volumes grew 8.6% YoY and trade share rose to 74%, while B2B volumes were still negative, leaving overall volume roughly flat. Management announced 14 expansion projects adding ~30 MTPA cement and 10.3 MTPA clinker, costing about INR14,500 crore, and guided H2 volume growth above industry at a higher single digit. Cost per tonne was INR4,410 (INR4,182 normalised), with an FY27 target of INR4,250/t. The proposed merger of ACC and Orient Cement into Ambuja is now going to NCLT, with completion targeted within FY27.",
+  "financial_highlights": [
+   {
+    "metric": "Cement sales volume (consol)",
+    "value": "16.5 MT",
+    "change": ""
+   },
+   {
+    "metric": "Revenue from operations (consol)",
+    "value": "INR9,197 crore",
+    "change": ""
+   },
+   {
+    "metric": "Operating EBITDA (consol)",
+    "value": "INR1,271 crore; margin ~14%",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA per tonne",
+    "value": "INR770/t",
+    "change": ""
+   },
+   {
+    "metric": "PAT (consol)",
+    "value": "INR236 crore",
+    "change": "Tax rate low in quarter, attributed to Penna/Sanghi tax shield linked to merger"
+   },
+   {
+    "metric": "Net worth",
+    "value": "INR72,238 crore",
+    "change": ""
+   },
+   {
+    "metric": "Cash and cash equivalents",
+    "value": "INR1,070 crore",
+    "change": "Company stated debt-free; AAA long-term, A1+ short-term"
+   },
+   {
+    "metric": "Total cost per tonne",
+    "value": "INR4,410/t (INR4,182/t normalised ex-geopolitical impact)",
+    "change": "Q1 FY27 fuel cost INR1.66/kcal; Q2 FY26 INR1.60/kcal; Q2 FY27 INR1.87/kcal"
+   },
+   {
+    "metric": "Trade volume",
+    "value": "+8.6% YoY",
+    "change": "Trade share 74% (+6pp)"
+   },
+   {
+    "metric": "Realisation",
+    "value": "INR255/bag, sustained; INR10/bag hike realised in October",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "Trade / Institutional (B2B)",
+    "commentary": "Trade volumes up 8.6% YoY with trade share 74%; premium products 37% of trade sales (35% last year). B2B volumes still negative YoY in Q2 but expected to turn positive in Q3 and Q4."
+   },
+   {
+    "name": "Regions",
+    "commentary": "North trade volume +13% YoY with the led EBITDA growth; West trade +14% with the most resilient EBITDA; Central trade +9% with second-highest regional EBITDA; South trade +13%; East trade broadly flat."
+   },
+   {
+    "name": "Ready-mix concrete (RMC)",
+    "commentary": "Quarterly volume 1.07 million cubic metres, up 19% YoY from a network of ~125 plants; management expects growth to accelerate and RMC EBITDA margin at about 7%."
+   },
+   {
+    "name": "Blended cement and green power",
+    "commentary": "Blended cement share rose to 82% (from 77%); green power share 61% of company-level consumption plus sales; green power sales revenue ~INR136 crore on ~352 million kWh in Q2."
+   }
+  ],
+  "guidance_outlook": [
+   "H2 FY27 volume growth expected to be higher single digit, above industry, with Q3 and Q4 both positive; management said upside beyond that is possible.",
+   "FY27 cost target INR4,250/t retained; management cited roughly INR160/t improvement through H2.",
+   "Capacity utilisation exit FY27 expected at ~75%, versus ~61-62% in Q2.",
+   "Capacity path: 113.5 MTPA today to ~149 MTPA by FY29 and ~155 MTPA by FY30; total expansion capex ~INR14,500 crore (~INR7,500 crore per year for next two years).",
+   "FY27 capex guidance of INR6,500-7,000 crore, with ~INR3,500 crore already spent in H1 and INR3,000-3,500 crore in H2.",
+   "Merger of ACC and Orient Cement into Ambuja expected to complete within FY27 subject to NCLT and regulatory approvals; management expects it to be EPS accretive.",
+   "Management guided price realisation gains of ~INR40/t from trade focus within 2-3 quarters, rising to ~INR150/t by June."
+  ],
+  "capex_capacity": [
+   "14 expansion projects: ~30 MTPA grinding (West 15.2 MT, East 11.6 MT, North 2.9 MT) and 10.3 MTPA clinker (Maratha 4 MT, Umrangso 4 MT, Mundra 2.25 MT), with Dadri Line-2 2.9 MT.",
+   "Q2 commissioning of 4.6 MT at Dahej, Salai Banwa and Kalamboli; 3.2 MT at Bathinda and Penna Jodhpur stabilised, ramping in H2; 2.4 MT Warisaliganj to commission in H2 FY27 (management referred to Q3).",
+   "Execution timelines: ~14 months for grinding units and ~18 months for integrated units; equipment already ordered and PMC appointed.",
+   "Penna and Sanghi utilisation ~50% ballpark; clinker capacity 69 MT with clinker factor ~66%.",
+   "Debottlenecking projects (~4 sites with Loesche) expected to complete in 4-5 months."
+  ],
+  "demand_pricing": [
+   "Management expects industry demand growth of ~6-7% in FY27 per presentation; H1 volume growth was ~8% per analyst, but the company's own H1 volume was roughly flat/negative in June quarter.",
+   "Pricing held at INR255/bag in a weak monsoon quarter; INR10/bag hike realised in October with more hikes expected as industry passes on fuel costs.",
+   "Monsoon deficits and drought declarations in key states (Maharashtra, Karnataka, Andhra, Rajasthan) cited as an emerging headwind with a lag into Q3-Q4.",
+   "Competition: management claims brand premium and independent surveys support realisation delta; competitive intensity in East and West acknowledged but not quantified."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What changed to justify the new capex now, given weak H1 volumes?",
+    "answer": "Management said the decision is not driven by the quarter; the first capex wave is nearly complete and the new plan is a defined path to 149 MT by FY29 and 155 MT by FY30, with ~INR14,500 crore required for 30 MT."
+   },
+   {
+    "question": "How will the capex be funded and how will leverage evolve?",
+    "answer": "Management described the programme as largely self-sustaining from cash flows over three years, with the balance sheet able to handle any interim funding need."
+   },
+   {
+    "question": "Expected fuel cost trajectory and spot coal prices?",
+    "answer": "Blended fuel cost was INR1.87/kcal in Q2; imported spot now about INR2.80-2.85/kcal versus roughly INR2.2 at Q2 time. Imported fuel is under 40% of mix, with pet coke ~10-12%."
+   },
+   {
+    "question": "Confidence in executing 20 MTPA bunched for March-May 2028?",
+    "answer": "Management cited lessons from the first phase, including contractor issues, and a tighter scheduling plan with 14-18 month execution timelines and equipment already ordered."
+   },
+   {
+    "question": "Why was the tax rate low in the quarter?",
+    "answer": "Management linked it to tax shield from Penna and Sanghi, which comes through the merger and is one component of EPS accretion."
+   },
+   {
+    "question": "What is the realisation outlook from the trade shift?",
+    "answer": "Management expects ~INR40/t extra from the trade shift now, rising to ~INR150/t by June as trade value gains build."
+   }
+  ],
+  "risks_watch": [
+   "Execution risk: ~20 MTPA of capacity bunched between March and May 2028, with prior delays and contractor issues acknowledged.",
+   "Cost and fuel: fuel prices rising sharply (spot ~INR2.85/kcal vs blend INR1.87/kcal); FY27 INR4,250/t target depends on further cost cuts and no further escalation.",
+   "Demand: drought and weak monsoon in key states may moderate construction activity with a lag into Q3-Q4.",
+   "Utilisation: Penna and Sanghi at ~50%, and company-level utilisation of ~61-62% in Q2 that must rise to ~75% exit.",
+   "Merger completion: NCLT approval timing and synergy realisation; ACC inter-corporate deposits at 8% to be sorted via merger.",
+   "Trade-B2B mix: B2B volumes still negative in Q2; need to turn positive in Q3-Q4 to deliver guided volume growth."
+  ],
+  "management_tone": "Confident on the capacity and cost roadmap, but defensive about the timing and scale of the capex shift, with several answers (realisation, spot fuel cost) reframed or left vague. Management tended to qualify volume and pricing expectations as ambitious rather than firm.",
+  "key_quotes": [
+   "So this is nothing as per any sense of change. We are now following our defined pathway, which we had guided before.",
+   "Closer to INR14,500 crores will be what we require for this 30 million tons, which has a combination of IUs and GUs.",
+   "So we are looking at almost sort of like 14 months for GU and about 18 months for IU on a completion basis, for example.",
+   "So this is actually going to help me in terms of having optimized cost because this will all be coming at very efficient manufacturing cost."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "~30 MTPA grinding across 14 projects (West 15.2 MT, East 11.6 MT, North 2.9 MT) plus 10.3 MTPA clinker (Maratha 4 MT, Umrangso 4 MT, Mundra 2.25 MT)",
+    "size_pct": 26.5,
+    "capex_cr": 14500.0,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "2.4 MT Warisaliganj grinding unit",
+    "size_pct": 2.1,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "3.2 MT Bathinda and Penna Jodhpur, stabilised and ramping in H2",
+    "size_pct": 2.8,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "4.6 MT Dahej, Salai Banwa and Kalamboli commissioned in Q2",
+    "size_pct": 4.1,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "moderate"
+   }
+  ],
+  "util": 61.5,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management guides H2 FY27 volume growth at higher single digit, above industry, with Q3 and Q4 positive; backing is partial, citing 4.6 MT commissioned in Q2, 3.2 MT ramping, 2.4 MT Warisaliganj in H2, ~INR40/t trade price gains and a cost target of INR4,250/t, while utilisation sits at ~61.5% with the company stating B2B volumes remain negative.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Cost per tonne INR4,410 (INR4,182 normalised) vs FY27 target INR4,250/t, with ~INR160/t improvement guided through H2 and ~INR40/t trade price gain rising to ~INR150/t by June, though fuel rose to INR1.87/kcal and imported spot is ~INR2.80-2.85/kcal."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q3 FY27 to Q4 FY28",
+    "why": "4.6 MT already commissioned in Q2 at Dahej, Salai Banwa and Kalamboli, 3.2 MT Bathinda and Penna Jodhpur ramping in H2, 2.4 MT Warisaliganj due H2 FY27, and ~30 MTPA grinding plus 10.3 MTPA clinker under construction with 14-18 month timelines, with ~20 MTPA bunched for Mar-May 2028."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "Management guides H2 volume growth at higher single digit, above industry's ~6-7%, with Q3 and Q4 positive, but Q2 volume was roughly flat, B2B volumes were still negative, and utilisation sits at ~61.5%."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "surely",
+    "when": "already announced",
+    "why": "14-project expansion (~30 MTPA grinding, 10.3 MTPA clinker) costing ~INR14,500 crore was announced this quarter, with utilisation at ~61.5% and FY27 capex of INR6,500-7,000 crore already in motion, so no further major announcement is needed in the window."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Management called H2 volume and pricing expectations ambitious rather than firm, said upside beyond higher single digit is only possible, and volumes were flat in Q2 with B2B still negative."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "Q3-Q4 FY27",
+    "why": "Monsoon deficits and drought in Maharashtra, Karnataka, Andhra and Rajasthan may hit construction with a lag into Q3-Q4, fuel spot is ~INR2.85/kcal vs INR1.87 blend, and the INR4,250/t target depends on further cost cuts."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "no_signal",
+    "when": "",
+    "why": ""
+   },
+   {
+    "k": "corporate_action",
+    "label": "ACC and Orient merger into Ambuja (NCLT)",
+    "call": "likely",
+    "when": "within FY27",
+    "why": "Merger expected to complete within FY27 subject to NCLT and regulatory approvals, management calls it EPS accretive, with Penna/Sanghi tax shield lowering the Q2 tax rate."
+   },
+   {
+    "k": "pricing",
+    "label": "Trade-mix realisation uplift",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Management expects ~INR40/t gain now rising to ~INR150/t by June from trade share at 74% (+6pp) and a INR10/bag hike realised in October, though realisation was held at INR255/bag in a weak monsoon quarter."
+   },
+   {
+    "k": "working_capital",
+    "label": "Debt-free balance sheet funds capex",
+    "call": "likely",
+    "when": "over three years",
+    "why": "Company is debt-free with INR1,070 crore cash and net worth INR72,238 crore, and management says the ~INR14,500 crore programme is largely self-funded from cash flows."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on the capacity and cost roadmap (INR4,250/t target, 14-18 month build timelines), but defensive on capex timing and volume/pricing expectations; analysts pushed on why capex was raised with weak H1 volumes, fuel costs and execution risk for ~20 MTPA bunched in Mar-May 2028."
+  }
+ }
+}

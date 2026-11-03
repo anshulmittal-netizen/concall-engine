@@ -1,0 +1,413 @@
+{
+ "doc_id": "IN-7336cb73-7299-48e3-8728-2b33623fc913",
+ "market": "IN",
+ "company_id": "505872",
+ "name": "WPIL Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-03",
+ "period": "2026-09",
+ "title": "WPIL Ltd - 505872 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Consolidated Q2 revenue fell 17% YoY to INR354 crores and H1 EBITDA margin was 14.33%, below the 15-20% band; management reiterates 17-18% target without quantified H2 numbers, while domestic projects are stalled on unpaid West Bengal JJM funds.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q2 consolidated revenue down 17% YoY",
+    "quote": "revenue from operations for the quarter under review stood at INR354 crores, a decline of 17% Y-o-Y",
+    "highlight": "a decline of 17% Y-o-Y",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Domestic project H1 INR100cr vs INR206cr",
+    "quote": "Revenue for the first half was INR100 crores versus INR206 crores in the corresponding period",
+    "highlight": "INR100 crores versus INR206 crores",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "West Bengal JJM funds unpaid two years",
+    "quote": "we have not received payments for the last 2 years",
+    "highlight": "we have not received payments for the last 2 years",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Margin target 17-18% reiterated, no numbers",
+    "quote": "I think 17%, 18% is our target",
+    "highlight": "17%, 18% is our target",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin",
+    "value": "15-20% band; 17-18% target",
+    "change": "held",
+    "quote": "We are consistently in our 15% to 20%. If you see the first half itself, we are at 14% on a consolidated basis.",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "Domestic product dispatches",
+    "value": "H2 pickup to exceed last year's domestic product numbers",
+    "change": "new",
+    "quote": "our domestic product dispatches should pick up in the second half, which should help us to exceed our last year's domestic product business numbers",
+    "horizon": "H2 FY27"
+   },
+   {
+    "metric": "West Bengal JJM funds",
+    "value": "Expected to start arriving the week after the call",
+    "change": "new",
+    "quote": "We expect funds starting next week itself.",
+    "horizon": "Near term"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Consolidated EBITDA margin",
+    "outcome": "met",
+    "quote": "EBITDA margin stood at 14.33%, while PAT from continuing operation was at INR93 crores"
+   },
+   {
+    "metric": "JJM receivables realisation",
+    "outcome": "missed",
+    "quote": "West Bengal, once we have more clarity post receiving payments"
+   },
+   {
+    "metric": "Minority buyout",
+    "outcome": "met",
+    "quote": "in PCI Africa, we have a 3-year period after which we will be moving from 55% to 100%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Kuwait Water Supply",
+    "relation": "customer"
+   },
+   {
+    "name": "Gruppo Aturia",
+    "relation": "partner"
+   },
+   {
+    "name": "Riverton Water Works",
+    "relation": "customer"
+   },
+   {
+    "name": "Valorem Advisors",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Water & wastewater",
+   "Railway capex",
+   "Consolidation / competitor exits",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "West Bengal JJM receivables stuck ~2 years",
+    "quote": "we have not received payments for the last 2 years"
+   },
+   {
+    "label": "Product dispatches deferred, no quantification",
+    "quote": "I don't want to quantify. It will even out."
+   },
+   {
+    "label": "Q2 product margin fell to ~16%",
+    "quote": "I think I don't want to quantify. It will even out."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 5,
+   "balance_sheet": 3,
+   "capex": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Quantifying product dispatch deferment",
+    "quote": "The product business, I think I don't want to quantify. It will even out."
+   },
+   {
+    "topic": "Order inflow number",
+    "quote": "No, it's not readily available with us."
+   },
+   {
+    "topic": "H2 revenue growth ballpark",
+    "quote": "We need to -- we see a good strong second half building traction."
+   },
+   {
+    "topic": "O&M contribution H1",
+    "quote": "It's not significant."
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "WPIL Q2 FY27 consolidated revenue fell 17% YoY to INR354 crores as domestic project and product dispatches slipped, while H1 revenue rose 6% to INR855 crores.",
+  "overview": "Consolidated Q2 FY27 revenue was INR354 crores, down 17% YoY, and standalone revenue was INR118 crores, down 33% YoY. H1 consolidated revenue rose 6% to INR855 crores, EBITDA fell 5% to INR123 crores, and EBITDA margin was 14.33%. Management attributed the weakness to deferred product dispatches (monsoon-hit site acceptance), slow domestic project execution tied to unpaid West Bengal JJM funds, and lumpy South African project revenue, and guided to a stronger H2. Management did not quantify the deferred dispatches or give an FY27 revenue guidance number.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue from operations (Q2)",
+    "value": "INR354 crores",
+    "change": "-17% YoY"
+   },
+   {
+    "metric": "Standalone revenue (Q2)",
+    "value": "INR118 crores",
+    "change": "-33% YoY"
+   },
+   {
+    "metric": "Consolidated revenue (H1)",
+    "value": "INR855 crores",
+    "change": "+6% YoY"
+   },
+   {
+    "metric": "EBITDA (H1)",
+    "value": "INR123 crores",
+    "change": "-5% YoY"
+   },
+   {
+    "metric": "EBITDA margin (H1)",
+    "value": "14.33%",
+    "change": ""
+   },
+   {
+    "metric": "PAT from continuing operations (H1)",
+    "value": "INR93 crores",
+    "change": "+20% YoY"
+   },
+   {
+    "metric": "PAT margin (H1)",
+    "value": "10.83%",
+    "change": ""
+   },
+   {
+    "metric": "Product division revenue (Q2)",
+    "value": "approx. INR62 crores",
+    "change": "vs INR86 crores in Q2 FY26"
+   },
+   {
+    "metric": "Domestic project division revenue (Q2)",
+    "value": "approx. INR57 crores",
+    "change": "vs approx. INR90 crores in Q2 FY26"
+   },
+   {
+    "metric": "International revenue (H1)",
+    "value": "INR626 crores",
+    "change": "+38% YoY vs INR458 crores"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Product division",
+    "commentary": "Q2 revenue approx. INR62 crores (vs INR86 crores YoY) and H1 INR133 crores (vs INR151 crores). Product order backlog approx. INR1,000 crores at H1 end, of which about 52% is international; management cited Q2 segment margin dip, which it linked to revenue timing rather than gross margin."
+   },
+   {
+    "name": "Domestic project division",
+    "commentary": "Q2 revenue approx. INR57 crores (vs approx. INR90 crores) and H1 INR100 crores (vs INR206 crores). Domestic order book INR2,423 crores; about INR550 crores of this is O&M, and roughly 50-60% of the project backlog is said to be West Bengal JJM work awaiting state payments."
+   },
+   {
+    "name": "International project division",
+    "commentary": "Project backlog approx. INR4,079 crores at H1 end, about 53% international. South Africa (PCI Africa) backlog cited at approx. INR2,400 crores (product and project combined), on 48-month projects with peak revenue expected in the second year; Italy (MISA) approx. INR350 crores and Australia approx. INR80-90 crores."
+   },
+   {
+    "name": "Associates and JVs",
+    "commentary": "Share of profit from associates and JVs fell from about INR11 crores in Q1 to about INR3.6 crores in Q2. Management said the line is mainly Thailand (49% JV stake through an international subsidiary), plus an Indian JV in Delhi."
+   }
+  ],
+  "guidance_outlook": [
+   "Management expects a stronger H2 FY27, driven by domestic product dispatches, domestic project execution once West Bengal funds are received, and South African ramp-up.",
+   "EBITDA margin expected to return to the 15-20% range, with a 17-18% target; management confirmed this for the full year when asked.",
+   "No FY27 or FY28 revenue number given; management said results should be viewed on an annualised basis given lumpy international projects.",
+   "Product order backlog cited at INR500 crores in one answer and approx. INR1,000 crores (product division total) in others; management aims for H2 domestic product dispatches to exceed last year's levels.",
+   "Next call expected to give a clearer picture of domestic project execution pacing and O&M visibility."
+  ],
+  "capex_capacity": [
+   "No capex or capacity-expansion figures were discussed on the call.",
+   "West Bengal JJM: management said funds for smaller vendors were released last month and funds to WPIL were expected the following week; about INR300 crores plus said to be stuck with the West Bengal government.",
+   "O&M: a recent order of about INR25-27 crores for one project moving to O&M; total O&M backlog about INR545-550 crores, with execution spread over 2 to 10 years.",
+   "Thailand JV (49%) is not consolidated and is said to be growing strongly; Thai financial year starts September.",
+   "Management is exploring acquisitions (US and Europe-related pump opportunities), with no success yet in the US."
+  ],
+  "demand_pricing": [
+   "Domestic product demand described as strong with a large pipeline of thermal power orders, but government funding constraints are postponing public infrastructure spending in India and the Middle East.",
+   "Q2 product dispatches were deferred because heavy September monsoon meant project sites did not accept goods; management declined to quantify the deferral.",
+   "Middle East geopolitical uncertainty is affecting new contract finalisation and dispatches to the region; Kuwait Water Supply order via Gruppo Aturia expected but size not disclosed.",
+   "Management said all projects are cost pass-through with cost variation clauses, and product price increases are not a material concern given the product mix.",
+   "Management said Q2 gross margins improved and the decline was in revenue, not gross margin."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why did South African project execution drop in Q2 versus the usual seasonal Q3 strength?",
+    "answer": "Management said the Q2 spike came from the start of large PCI projects; PCI projects run 48 months, year one is about 15% traction, and the peak is in year two (CY27). It added that South Africa's largest quarter is January to March."
+   },
+   {
+    "question": "How much product dispatch was deferred in Q2 and what is the margin outlook?",
+    "answer": "Management declined to quantify the deferment and said it will even out in Q3 and H2. It guided product EBITDA margin back to 15-20%, with a 17-18% target."
+   },
+   {
+    "question": "What is the timeline for executing the domestic JJM backlog and the West Bengal exposure?",
+    "answer": "Management said West Bengal payments have been outstanding for about 2 years and drove the timeline slippage. About 50-60% of the domestic project backlog is West Bengal exposure. Management expects funds to arrive the following week and will give a clearer picture next quarter."
+   },
+   {
+    "question": "What is the O&M book and its contribution to H1?",
+    "answer": "O&M backlog is about INR545-550 crores. H1 O&M contribution was described as not significant, with a pickup expected in H2 and clearer visibility from next year."
+   },
+   {
+    "question": "Why did the share of JV and associate profit fall from about INR11 crores to INR3.6 crores?",
+    "answer": "Management said the line is mainly Thailand, plus an Indian JV in Delhi, and promised more disclosure in future presentations."
+   },
+   {
+    "question": "Is there any plan to increase stake in South African subsidiaries or buy out the Singapore promoter minority?",
+    "answer": "Management said it is exploring options to raise its holding in South African subsidiaries to meet Black empowerment requirements, with PCI Africa moving from 55% to 100% over 3 years. It said the Singapore JV buyout is not a current priority given high valuations and M&A focus."
+   }
+  ],
+  "risks_watch": [
+   "West Bengal JJM payments remain unconfirmed; domestic project execution (about INR1,400 crores backlog) depends on it.",
+   "Deferred product dispatches in Q2 are unquantified; H2 product recovery depends on them clearing.",
+   "South African revenue is lumpy and back-ended; CY27 ramp-up is not yet visible in numbers.",
+   "Middle East geopolitical disruption is affecting contract finalisation and dispatches from MENA, which is a major product market.",
+   "Receivables and cash: operating cash flow was strong in H1, but management said the Indian business still carries cash-flow challenges.",
+   "Pending Rutschi tax refund claim (about EUR 6.87 million), with first feedback expected this quarter and a process of at least 2 years."
+  ],
+  "management_tone": "Confident on the medium term and H2 recovery, but cautious and sometimes evasive on specifics: management declined to quantify deferred dispatches, the O&M split, South African revenue timing, and order inflow. Its answers rely on conditional statements such as West Bengal funds arriving next week.",
+  "key_quotes": [
+   "The domestic business continued to face near-term execution challenges, particularly in the project division.",
+   "I think our bidding aggression will pick up once traction on the existing contracts is improved.",
+   "All our projects are margin -- cost pass-through. So there are cost variation clauses in every contract.",
+   "The revenue is the challenge. There has been a slight dip in the revenue, which is -- but it's not the gross margin."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [],
+  "util": null,
+  "expansion": false,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "demand_or_share_gains"
+  ],
+  "clarity": "none",
+  "qRev": -17.0,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "No FY27 revenue number guided; management expects a stronger H2 backed by a INR2,423 crore domestic order book, INR1,000 crore product backlog and INR4,079 crore international project backlog, but West Bengal JJM funds (~INR300 crore+) are still unpaid and no capacity additions or capex were discussed.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "Management guided EBITDA margin back to 15-20% with a 17-18% target against H1 consolidated margin of 14.33%, though Q2 gross margin improved and the dip was revenue-driven."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "no_signal",
+    "when": "",
+    "why": "No new plants, lines or capacity additions were discussed on the call."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "Management expects H2 domestic product dispatches to exceed last year's levels, backed by a ~INR1,000 crore product backlog (about 52% international), though Q2 product revenue fell to ~INR62 crore from INR86 crore and the deferral was not quantified."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "no_signal",
+    "when": "",
+    "why": "No capex figures or plans were discussed; utilisation was not disclosed, so no capex call can be drawn."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "No FY27 revenue number was guided, H1 consolidated revenue is up 6% but Q2 fell 17% and standalone fell 33%, and West Bengal payments remain unconfirmed, so there is no basis for a raise."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "No FY27 revenue guide exists to cut, but H2 recovery depends on unpaid West Bengal JJM funds (~INR300 crore+, 50-60% of domestic project backlog), Middle East disruption and unquantified deferred dispatches."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "no_signal",
+    "when": "",
+    "why": "No new product, brand or molecule launches were discussed."
+   },
+   {
+    "k": "order_book",
+    "label": "South Africa PCI ramp-up to peak in CY27",
+    "call": "likely",
+    "when": "CY27 (year two of 48-month projects)",
+    "why": "PCI Africa backlog is ~INR2,400 crore on 48-month projects with year-one traction ~15% and peak revenue in year two; the largest South African quarter is Jan-Mar."
+   },
+   {
+    "k": "corporate_action",
+    "label": "PCI Africa stake rise from 55% to 100% over 3 years",
+    "call": "possible",
+    "when": "next 3 years",
+    "why": "Management is exploring options to raise its South African holding to meet Black empowerment requirements, but no firm transaction was announced; the Singapore JV buyout is not a current priority."
+   },
+   {
+    "k": "working_capital",
+    "label": "West Bengal JJM receivables release",
+    "call": "likely",
+    "when": "Next 1-2 quarters",
+    "why": "Management expects funds to reach WPIL the week after the call, after roughly 2 years of outstanding payments; about INR300 crore+ is stuck with the state government."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on the medium-term margin band and H2 recovery but cautious and evasive on specifics such as the size of deferred dispatches, the O&M split and South African revenue timing; analysts pressed on these points."
+  }
+ }
+}

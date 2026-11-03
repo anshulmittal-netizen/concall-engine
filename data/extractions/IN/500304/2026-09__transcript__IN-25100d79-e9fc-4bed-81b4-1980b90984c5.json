@@ -1,0 +1,409 @@
+{
+ "doc_id": "IN-25100d79-e9fc-4bed-81b4-1980b90984c5",
+ "market": "IN",
+ "company_id": "500304",
+ "name": "NIIT Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-03",
+ "period": "2026-09",
+ "title": "NIIT Ltd - 500304 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Q2 FY27 revenue fell 6% YoY to INR982m on GSI consumption compression; FY27 revenue now guided broadly flat and H1 missed plan, though EBITDA turned positive at 2.7% on cost cuts.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Customer stickiness",
+   "Operating leverage",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": -1,
+   "demand": -2,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Capex was INR44 million for the quarter versus INR69 million in Q 2 last year."
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Revenue down 6% YoY",
+    "quote": "Revenue in quarter 2 of FY27 was INR982 million, which was down 6% Y -o-Y, but up 3% Q -o-Q.",
+    "direction": -1,
+    "confidence": 0.9
+   },
+   {
+    "type": "guidance",
+    "label": "FY revenue now broadly flat",
+    "quote": "assuming that the revenue is likely to be broadly flat.",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "demand",
+    "label": "GSI spend down INR100m YoY",
+    "quote": "consumption from 4 of our largest clients, GSI clients, alone was down by as high as INR100 million Y -o-Y in quarter 2.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Receivable days 53 → 63",
+    "quote": "BR days is 63 days in Q2 FY27, which is up from 53 days in Q1.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Headcount down 50 QoQ",
+    "quote": "Employee count at the end of Q2 was 816. This is down by 50 on Q-o-Q basis",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "broadly flat",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "assuming that the revenue is likely to be broadly flat."
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "low single-digit",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we expect a low single -digit EBITDA margin to continue for the year."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q2 FY27 revenue growth",
+    "outcome": "missed",
+    "quote": "This is lower than the projections that we had shared with you."
+   },
+   {
+    "metric": "Q2 FY27 EBITDA margin",
+    "outcome": "met",
+    "quote": "we were able to achieve an EBITDA ahead of our breakeven guidance."
+   },
+   {
+    "metric": "FY27 revenue growth and margin",
+    "outcome": "missed",
+    "quote": "we are, at this point of time, looking at the rest of the year and going by the experience of this quarter, assuming that the revenue is likely to be broadly flat."
+   }
+  ],
+  "entities": [
+   {
+    "name": "GSIs",
+    "relation": "customer"
+   },
+   {
+    "name": "RPS Consulting",
+    "relation": "partner"
+   },
+   {
+    "name": "StackRoute",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)",
+   "Agentic AI in IT services",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "GSI spend compression, insourcing",
+    "quote": "they felt that it may be easier to in -source than to spend this extra money outside."
+   },
+   {
+    "label": "Receivable days up to 63",
+    "quote": "That is driven by a delay in certain collections, which have been subsequently collected in October."
+   },
+   {
+    "label": "Treasury income down on rate MTM",
+    "quote": "Treasury income is down from INR175 million, which we reported in Q1, and that's due to the mark -to-market impact of the rise in interest rates."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 2,
+   "margin": 1,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "GSI volume recovery timing",
+    "quote": "I don't see an impact of that coming up in the next 2 quarters in a significant manner."
+   },
+   {
+    "topic": "Enrollment count",
+    "quote": "200,000 -- how much?"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "NIIT Q2 FY27 revenue fell 6% YoY to INR982 million on GSI consumption pullback; EBITDA turned positive at INR27 million (2.7% margin).",
+  "overview": "Q2 FY27 revenue was INR982 million, down 6% YoY but up 3% QoQ, and H1 revenue of INR1,939 million grew 3% YoY, below management's earlier projections. The shortfall was driven by a sharp QoQ compression in GSI consumption, with four of the largest GSI clients down as much as INR100 million YoY. Cost cuts (operating expenses down 8% YoY) lifted EBITDA to INR27 million, but a net loss of INR22 million was recorded after lower treasury income and an exceptional legal cost. Management now assumes FY27 revenue will be broadly flat and expects a low single-digit EBITDA margin for the year.",
+  "segments": [
+   {
+    "name": "Enterprise",
+    "commentary": "Revenue INR625 million, down 11% YoY, with GSI weakness; enterprise share of mix 64:36 versus 67:33 a year ago."
+   },
+   {
+    "name": "Enterprise BIPS (BFSI and Industry Performance Programs)",
+    "commentary": "Record revenue of INR200 million, up 17% YoY and 66% QoQ; BIPS segment revenue overall INR321 million, up 11% YoY."
+   },
+   {
+    "name": "Consumer",
+    "commentary": "Revenue INR357 million, up 3% YoY, with uniform growth across technology and BFSI portfolios."
+   },
+   {
+    "name": "Technology programs",
+    "commentary": "Revenue INR661 million, down 13% YoY, reflecting GSI compression."
+   },
+   {
+    "name": "AI-led revenue",
+    "commentary": "Share of revenue directly attributable to AI rose to 12.4% from 9% in the prior quarter; AI coaches are sold on subscription on top of training fees."
+   }
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Revenue",
+    "value": "INR982 million",
+    "change": "down 6% YoY; up 3% QoQ"
+   },
+   {
+    "metric": "H1 FY27 revenue",
+    "value": "INR1,939 million",
+    "change": "up 3% YoY"
+   },
+   {
+    "metric": "Operating expenses",
+    "value": "down 8% YoY",
+    "change": "-8% YoY"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR27 million (2.7% margin)",
+    "change": "up from INR13.5 million in Q2 FY26; Q1 FY27 was negative INR14 million"
+   },
+   {
+    "metric": "H1 EBITDA",
+    "value": "INR12.5 million",
+    "change": "vs negative INR49 million in H1 FY26"
+   },
+   {
+    "metric": "Treasury income",
+    "value": "INR41 million",
+    "change": "down from INR175 million in Q1 FY27 on mark-to-market impact of rising rates"
+   },
+   {
+    "metric": "Net profit (loss)",
+    "value": "Net loss INR22 million; EPS negative INR0.16",
+    "change": "vs PAT INR14 million and EPS INR0.10 in Q2 FY26; H1 PAT INR59 million, EPS INR0.43"
+   },
+   {
+    "metric": "Cash and cash equivalents",
+    "value": "INR6,889 million",
+    "change": "reduced to a small extent"
+   },
+   {
+    "metric": "Capex",
+    "value": "INR44 million",
+    "change": "vs INR69 million in Q2 FY26"
+   },
+   {
+    "metric": "Receivable days (BR days)",
+    "value": "63 days",
+    "change": "up from 53 days in Q1 FY27"
+   },
+   {
+    "metric": "Employee count",
+    "value": "816",
+    "change": "down 50 QoQ and 124 YoY"
+   }
+  ],
+  "guidance_outlook": [
+   "Revenue for the rest of FY27 assumed broadly flat, based on Q2 experience; to be revisited next quarter.",
+   "Low single-digit EBITDA margin expected to continue for the full year.",
+   "GSI volumes expected to remain under pressure for the next two quarters; no significant recovery expected in that window.",
+   "Capex expected to stay moderated in coming quarters unless a large initiative emerges.",
+   "New CEO Anish Sarkar to review portfolio, go-to-market, and cost structure over the next 60 to 90 days as part of the FY planning cycle."
+  ],
+  "capex_capacity": [
+   "Capex INR44 million in Q2 FY27, down from INR69 million a year ago; management says many earlier AI and digital projects are now being capitalised.",
+   "Investment in sales team and AI offerings to continue, with inorganic opportunities evaluated for capabilities, channels or IP.",
+   "RPS Consulting, NIIT StackRoute and NIIT Enterprise Solutions being integrated into a single Enterprise Technology Learning Solutions (ETLS) unit; benefits on fixed cost expected over the next few quarters."
+  ],
+  "demand_pricing": [
+   "GSI consumption fell QoQ in a quarter that is traditionally strong; four largest GSI clients were down as much as INR100 million YoY, reflecting in-sourcing and cost pressure.",
+   "Order intake INR1,301 million; 10 new logos added (three technology, three higher education, four BIPS).",
+   "Selected as learning transformation partner by a top Indian bank; revenue impact expected in future quarters.",
+   "Two large banks engaged to set up wealth and sales academies using AI simulations and AI coaches.",
+   "Enterprise technology versus BFSI/industry mix about 67:33; management expects it to remain around two-thirds technology.",
+   "Enrollment around 220,000 in the quarter (per management on call)."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Is the headcount reduction driven by demand weakness or by AI productivity gains?",
+    "answer": "Management said it is both: AI efficiencies (development productivity up 50%+), lower sales and back-office costs, and lower volumes. Headcount reduction is not expected to continue at this pace, but trimming will happen as needed."
+   },
+   {
+    "question": "Where will the technology versus BFSI mix settle?",
+    "answer": "Management expects roughly two-thirds technology and one-third BFSI and other industries, give or take a few points. Enterprise BFSI and industry demand is seen as growing as AI adoption rises."
+   },
+   {
+    "question": "Are investments largely complete, and can margins improve?",
+    "answer": "Capex is moderated and many projects are now capitalised. Management said AI remains a moving target and investment will continue, but at lower levels unless a large initiative arises."
+   },
+   {
+    "question": "What is the benefit of integrating RPS Consulting, StackRoute and NIIT Enterprise Solutions?",
+    "answer": "Combining sales teams has given focused coverage and a broader solution set. Fixed-cost benefits are expected over the next few quarters, as integration costs take time to settle."
+   },
+   {
+    "question": "Can new sectors such as manufacturing or EV offset the slowdown?",
+    "answer": "Manufacturing and EV are work-in-progress initiatives with a team in place. Management said revenue would be disclosed once it becomes significant, and that capital-intensive clients face rate and energy pressure, so results will take time."
+   }
+  ],
+  "risks_watch": [
+   "Further GSI consumption cuts or in-sourcing by large GSI clients; recovery not expected for two quarters.",
+   "Revenue guidance of broadly flat for FY27 leaves limited room for growth; next quarter's revision is pending.",
+   "Treasury income volatility from interest-rate mark-to-market, which swung profit between quarters (INR175 million in Q1 to INR41 million in Q2).",
+   "Receivable days rose to 63 from 53, linked to delayed collections that management says were received in October.",
+   "Leadership transition and the integration of the RPS, StackRoute and Enterprise Solutions businesses may affect execution."
+  ],
+  "management_tone": "Candid about the Q2 miss and cautious on the next two quarters, but confident on the BIPS, AI and cost-control story. Management was less specific on GSI recovery timing and on new-sector revenue.",
+  "key_quotes": [
+   "This compression in spend in a certain sense, was secular across some of these large clients, and there are many theories to it, but one of them could be that they had lower numbers of onboarding",
+   "Enterprise BIPS achieved an all -time high revenue of INR200 million and a strong growth of 17% Y-o-Y with 66% quarter-on-quarter.",
+   "we are, at this point of time, looking at the rest of the year and going by the experience of this quarter, assuming that the revenue is likely to be broadly flat."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [],
+  "util": null,
+  "expansion": false,
+  "growth": 0.0,
+  "gs": -1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "new_products_or_markets",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": -6.0,
+  "qEbitda": 100.0,
+  "outlook": -1,
+  "why": "Management now assumes FY27 revenue broadly flat (cut from earlier projections), with low single-digit EBITDA margin held; backing is partial: order intake INR1,301m, 10 new logos, a bank learning partnership and cost actions, but no specific capacity, and GSI volumes are guided to stay under pressure for two more quarters.",
+  "mgmt": {
+   "roles": [
+    "New CEO Anish Sarkar"
+   ],
+   "note": "New CEO Anish Sarkar will review portfolio, go-to-market and cost structure over the next 60 to 90 days as part of the FY planning cycle; no specific growth targets stated yet.",
+   "push": 0,
+   "initiatives": []
+  }
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Q2 EBITDA margin was 2.7% (INR27m) after Q1 was negative INR14m, and opex fell 8% YoY, but management guides only a low single-digit EBITDA margin for FY27 and integration benefits are 'over the next few quarters'."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "unlikely",
+    "when": "",
+    "why": "No new plants, lines or branches discussed; capex was cut to INR44m from INR69m YoY and management says capex will stay moderated unless a large initiative emerges."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "unlikely",
+    "when": "next 2 quarters",
+    "why": "Enterprise revenue fell 11% YoY and technology programs fell 13% YoY on GSI pullback; management expects GSI volumes to stay under pressure for two quarters, though BIPS grew 17% YoY and 10 new logos were added."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "unlikely",
+    "when": "",
+    "why": "Capex is moderated at INR44m a quarter and many AI and digital projects are now capitalised, so a new capex announcement is not signalled, and utilisation was not disclosed."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next quarter",
+    "why": "FY27 revenue guidance was cut to broadly flat from earlier projections and H1 revenue grew only 3% YoY, with the guidance to be revisited next quarter."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 1-2 quarters",
+    "why": "Management already cut FY27 revenue to broadly flat, GSI recovery is not expected for two quarters, and receivable days rose to 63 from 53, so further cuts are possible if GSI pressure persists."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "AI-led revenue rose to 12.4% of revenue from 9% and AI coaches are sold on subscription, but no specific new product launch date was given; manufacturing and EV initiatives are still work-in-progress with revenue undisclosed."
+   },
+   {
+    "k": "order_book",
+    "label": "Bank learning partnership and wealth/sales academies",
+    "call": "likely",
+    "when": "revenue in future quarters",
+    "why": "Order intake was INR1,301m with a top Indian bank selected as learning transformation partner and two large banks engaged for AI-simulation academies, though the revenue timing was not quantified."
+   },
+   {
+    "k": "cost_actions",
+    "label": "Headcount and fixed-cost integration (ETLS)",
+    "call": "likely",
+    "when": "next few quarters",
+    "why": "Headcount fell 50 QoQ and 124 YoY to 816, and merging RPS, StackRoute and Enterprise Solutions is expected to bring fixed-cost benefits over the next few quarters, though management said the headcount pace will not continue."
+   },
+   {
+    "k": "turnaround",
+    "label": "New CEO portfolio and cost review",
+    "call": "likely",
+    "when": "next 60-90 days",
+    "why": "CEO Anish Sarkar is reviewing portfolio, go-to-market and cost structure within 60-90 days, which could reset guidance and cost base next quarter."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was candid about the Q2 miss and cautious on GSI recovery, which it sees taking two quarters, but confident on BIPS, AI and cost control. Analysts pressed on the GSI decline, the flat FY27 revenue assumption and the timing of new-sector revenue."
+  }
+ }
+}

@@ -1,0 +1,466 @@
+{
+ "doc_id": "IN-d337212b-0a4c-4170-a7a2-073eee1de66b",
+ "market": "IN",
+ "company_id": "526797",
+ "name": "Greenply Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-03",
+ "period": "2026-09",
+ "title": "Greenply Industries Ltd - 526797 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Plywood & laminates",
+  "thesis": "Greenply's plywood utilisation exceeds 100% with new Sandila capacity 4–5 quarters out; MDF guidance cut to ~20% volume growth while margin guidance of 15–16% is held amid sector overcapacity.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply exit",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "the plant utilization was more than 100%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Action TESA started plant in south; Elixrr starting up soon; new entrants and smaller unorganised players may shut",
+   "quote": "The proposed new capacity will be 15 million square meters with a budgeted capex of INR125 crores"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Plywood plant utilisation above 100%",
+    "quote": "the plant utilization was more than 100%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Sandila 15 MSM plywood capacity, Q4 FY28",
+    "quote": "The proposed new capacity will be 15 million square meters with a budgeted capex of INR125 crores",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "MDF FY27 volume growth cut to ~20%",
+    "quote": "we revisited our earlier whole year guidance and we expect to achieve full year volume growth of approximately 20%",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "structure",
+    "label": "MDF new entrants: TESA, Elixrr",
+    "quote": "Action TESA has started their plant in south. There's a new player called Elixrr which is starting up very soon.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "MDF price hikes rolled back; realisation down QoQ",
+    "quote": "The realisations declined to INR31,816 per CBM due to rollback of the price hikes taken earlier",
+    "direction": -1,
+    "confidence": 0.8
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "MDF full-year volume growth",
+    "value": "~20%",
+    "horizon": "FY27",
+    "change": "cut",
+    "quote": "we expect to achieve full year volume growth of approximately 20%"
+   },
+   {
+    "metric": "MDF core EBITDA margin",
+    "value": "15% to 16%",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "while maintaining core EBITDA margins in the range of 15% to 16%"
+   },
+   {
+    "metric": "Plywood volume growth",
+    "value": "10% plus annually",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "we are very confident that annually we will do more than 10% volume growth still in the Plywood segment"
+   },
+   {
+    "metric": "Plywood capacity commissioning",
+    "value": "Sandila Q4 FY28; plywood Q4 FY27 per call",
+    "horizon": "FY28",
+    "change": "new",
+    "quote": "expected to commence commercial production in Q4 FY28"
+   },
+   {
+    "metric": "Debt to equity",
+    "value": "0.7x to 0.75x guided range cited",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "This remains well within our guided range of 0.7 x to 0.75 x"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Plywood full-year volume growth",
+    "outcome": "not_discussed",
+    "quote": "we intend to maintain our existing guidance for the plywood segment and remain confident on achieving it"
+   },
+   {
+    "metric": "MDF full-year volume growth",
+    "outcome": "dropped",
+    "quote": "we revisited our earlier whole year guidance and we expect to achieve full year volume growth of approximately 20%"
+   },
+   {
+    "metric": "Plywood EBITDA margin",
+    "outcome": "not_discussed",
+    "quote": "if the sales goes up around the INR600 crores -- crosses INR600 crores, we will maintain the double-digit EBITDA margin"
+   },
+   {
+    "metric": "Peak debt / D/E",
+    "outcome": "not_discussed",
+    "quote": "debt-to-equity ratio of 0.5 6x"
+   },
+   {
+    "metric": "Hardware losses to zero",
+    "outcome": "met",
+    "quote": "Greenply stopped funding these losses from quarter one"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Action TESA",
+    "relation": "competitor"
+   },
+   {
+    "name": "Elixrr",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Capacity bottleneck",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "MDF price rollback and volume miss",
+    "quote": "The reason for not achieving the targeted growth in the quarter was mainly due to some challenges faced due to monsoons and annual maintenance"
+   },
+   {
+    "label": "Management expects 'next 12 months will be further bad' for MDF",
+    "quote": "I think next 12 months will be further bad."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 6,
+   "margin": 6,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "MDF EBITDA per CBM",
+    "quote": "I have not calculated on absolute value"
+   },
+   {
+    "topic": "Share of value-added MDF products",
+    "quote": "but exact percentage I don't have right now"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Greenply Q2 FY27 consolidated revenue rose 16.1% YoY to INR799.7 crores, with core EBITDA margin up 300 bps to 11.2%; MDF volumes missed on production disruptions.",
+  "overview": "Consolidated revenue for Q2 FY27 was INR799.7 crores (+16.1% YoY) and core EBITDA was INR89.2 crores at an 11.2% margin, up 300 bps YoY. Plywood value grew 15.5% on 6.1% volume growth, helped by premium mix and a realisation of INR264 per sq m. MDF revenue grew 18.4% in value but volume and realisation fell QoQ after price-hike rollbacks and monsoon and maintenance disruptions. Management kept plywood guidance, cut MDF full-year volume guidance to about 20% growth while holding a 15-16% margin, and announced a 15 million sq m Sandila plywood expansion at INR125 crores capex.",
+  "segments": [
+   {
+    "name": "Plywood",
+    "commentary": "Q2 revenue INR625.7 crores, volume +6.1% YoY, realisation INR264 per sq m, core EBITDA margin 10.05%. Management attributes the margin gain to premium and Green product mix and says plant utilisation exceeded 100%."
+   },
+   {
+    "name": "MDF",
+    "commentary": "Q2 revenue INR173.9 crores, volume 54,605 CBM, realisation INR31,816 per CBM (down QoQ after price-hike rollback), EBITDA margin 15.2%. Production was about 53,000 CBM against about 54,000 CBM sold, so the volume shortfall was supply-side."
+   },
+   {
+    "name": "SAMET furniture fittings JV",
+    "commentary": "Q2 sales INR14.08 crores with a JV PAT loss of INR12.6 crores (Greenply share INR6.3 crores). Greenply says it stopped funding losses from Q1 and will dilute its stake to 19% by a January 5 end date."
+   },
+   {
+    "name": "HDF flooring",
+    "commentary": "Commercial production started in July 2026. Management expects contribution from H2 FY27 and targets INR2-3 crores a month to begin with."
+   }
+  ],
+  "guidance_outlook": [
+   "Plywood: existing guidance maintained. H2 plywood EBITDA margin expected at 10%+, provided sales cross about INR600 crores a quarter. Management expects more than 10% plywood volume growth annually.",
+   "MDF: full-year volume growth cut to about 20% (from earlier guidance), with 63,000 CBM targeted in each of Q3 and Q4. Core EBITDA margin guided at 15-16%; management says it can sustain above INR5,000 per CBM.",
+   "Sandila plywood expansion: 15 million sq m, INR125 crores capex, funded by debt and equity, commercial production in Q4 FY28; revenue potential INR320-340 crores at full utilisation. Total plywood capacity becomes 81.3 million sq m from Q4 FY28.",
+   "Odisha greenfield plywood facility expected in about two quarters; Vadodara MDF expansion expected in Q2 FY28 (the transcript says Plywood in Q4 FY27 and MDF in Q2 FY28, which conflicts with the Odisha and Sandila timing given elsewhere).",
+   "SAMET: dilution to 19% targeted by January 5 (head of terms signed). Greenply expects brand-charge income and zero further drag thereafter.",
+   "Chipboard: multi-day press line of about INR100 crores capex per line, 250-300 CBM output per line, asset turn about 1:2; first line planned next year or the year after."
+  ],
+  "capex_capacity": [
+   "Sandila (Lucknow) plywood: 15 million sq m new capacity, INR125 crores capex, commercial production Q4 FY28; total plywood capacity 81.3 million sq m from Q4 FY28.",
+   "MDF Vadodara expansion: management says Q2 FY28 start; the new MDF line is running ahead of schedule per management. Current line produces about 60,000 CBM per quarter.",
+   "Odisha greenfield plant: about two quarters to start for Odisha, and about four to five quarters for Sandila, per management's Q&A remarks.",
+   "Pre-lam plywood for furniture makers: trials done, full-scale commercial production expected from November 2026.",
+   "Agroforestry carbon program: first phase covers over 2,300 hectares across Gujarat and Nagaland; second stage targets 12,000 hectares; 2,56,688 carbon credits allotted. Management says 50-60% of Vadodara timber sourcing and 100% of Nagaland sourcing now come through the program."
+  ],
+  "demand_pricing": [
+   "Plywood: management says competition in pricing is very high, and the Q1 price increase of about 15.5% has been almost fully passed back. Raw-material chemical costs are up about 7-8% permanently, while other inputs are stable. Management attributes the margin hold to mix, Pre-lam and plain-board growth, energy-cost savings and operating efficiencies.",
+   "MDF: new capacity from Action TESA (south) has started, and Elixir is starting up soon. Management expects unorganised players to exit within 6-12 months and sees the next 12 months as weak. It describes imports as a limited threat because of freight and geopolitics.",
+   "Timber prices are stable, and management assumes no further increase. Any decline would be a margin windfall.",
+   "Carbon credits: a sample credit sold at USD15; management estimates INR25-30 crores of revenue at that price, with Greenply's share at 10-20%.",
+   "Management targets ROCE of about 18%+ over 3-5 years for MDF, and says the short-term return is low."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why did plywood growth slow to 6% this quarter after 10%+ in prior quarters? Any strategy change?",
+    "answer": "Management said there is no strategy shift. Plant utilisation was above 100%, so capacity was prioritised for premium products and margin, with the TermiVax campaign helping. Management does not expect this constraint after Odisha starts."
+   },
+   {
+    "question": "Why did MDF volume fall QoQ and what drives the volume and price trends?",
+    "answer": "The shortfall was production-driven: monsoon disruption and an OEM annual maintenance that ran four days against one planned. Sales slightly exceeded production (about 54,000 vs 53,000 CBM). Management expects to recover in Q3 and Q4 and still guides 20% full-year volume growth."
+   },
+   {
+    "question": "Can MDF EBITDA per CBM be guided, given the INR4,700 in Q2?",
+    "answer": "Management confirmed it can sustain above INR5,000 per CBM, with margin guided at 15-16%. Value-added mix and flooring and insulation are expected to lift it further."
+   },
+   {
+    "question": "How is 15% MDF margin held despite raw-material inflation, and what new capacity is coming?",
+    "answer": "Management cited better product mix, Pre-lam volume growth, the replacement of plain interior-grade sales, energy-cost savings and operational efficiencies. It sees Action TESA and Elixir as new competitors and says the third and fourth lines are where challenges begin."
+   },
+   {
+    "question": "What is the rationale for reducing the SAMET stake, and is further capex needed?",
+    "answer": "Management said the JV partner plans about INR400 crores of capex and Greenply's balance sheet cannot fund that. The stake will drop to 19%, Greenply will earn brand charges, and the partner's listing could benefit Greenply. No further capex is planned."
+   },
+   {
+    "question": "What is the Sandila plywood revenue assumption (INR220 per sq m implied), and is more Ecotec capacity planned?",
+    "answer": "Management called the INR220 blended realisation conservative. It covers PVC, premium, cheap and industrial grades, and future growth is mainly Ecotec. Some capacity is planned to shift from outsourced to in-house manufacturing."
+   }
+  ],
+  "risks_watch": [
+   "MDF: Q2 volume was below plan and realisations fell QoQ. The 20% full-year volume target now needs about 63,000 CBM per quarter in H2, above the roughly 60,000 CBM run-rate cited by management.",
+   "Competitive intensity in MDF is rising with new capacity from Action TESA and Elixir. Management expects margins to stay weak for the next 12 months.",
+   "Plywood H2 margin of 10%+ depends on sales crossing about INR600 crores a quarter, and volume growth needs outsourcing.",
+   "SAMET JV: the January 5 dilution deadline and the INR105 crores invested. Management says no further provision is needed.",
+   "Carbon credit monetisation and the timing of Odisha and Sandila commissioning. Management's timelines for Odisha and Sandila were not consistent across the call."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue (Q2 FY27)",
+    "value": "INR799.7 crores",
+    "change": "+16.1% YoY"
+   },
+   {
+    "metric": "Consolidated core EBITDA (Q2 FY27)",
+    "value": "INR89.2 crores, margin 11.2%",
+    "change": "margin +300 bps YoY"
+   },
+   {
+    "metric": "Consolidated revenue (H1 FY27)",
+    "value": "INR1,524.6 crores",
+    "change": "+18.2% YoY"
+   },
+   {
+    "metric": "Consolidated core EBITDA (H1 FY27)",
+    "value": "INR167.5 crores, margin 11%",
+    "change": "margin +180 bps YoY"
+   },
+   {
+    "metric": "Plywood revenue (Q2 FY27)",
+    "value": "INR625.7 crores; realisation INR264 per sq m; core EBITDA margin 10.05%",
+    "change": "value +15.5% YoY, volume +6.1% YoY, margin +180 bps YoY and +160 bps QoQ"
+   },
+   {
+    "metric": "MDF revenue (Q2 FY27)",
+    "value": "INR173.9 crores; volume 54,605 CBM; realisation INR31,816 per CBM; EBITDA margin 15.2%",
+    "change": "value +18.4% YoY, volume +16.1% YoY"
+   },
+   {
+    "metric": "MDF revenue (H1 FY27)",
+    "value": "INR369.6 crores; volume 1,12,411 CBM; realisation INR32,694 per CBM; margin 16.3%",
+    "change": "revenue +25.6% YoY, volume +20.4% YoY, margin +350 bps YoY"
+   },
+   {
+    "metric": "Plywood (H1 FY27)",
+    "value": "Revenue INR1,152.3 crores; realisation INR264 per sq m; core EBITDA margin 9.31%",
+    "change": "value +15.7% YoY, volume +9.2% YoY, margin +120 bps YoY"
+   },
+   {
+    "metric": "Net debt (consolidated)",
+    "value": "INR544 crores; debt-to-equity 0.56x",
+    "change": "guided range 0.7x-0.75x"
+   },
+   {
+    "metric": "SAMET furniture fittings JV (Q2 FY27)",
+    "value": "Sales INR14.08 crores; JV PAT loss INR12.6 crores; Greenply share INR6.3 crores",
+    "change": "H1: sales INR27.70 crores, JV loss INR24.2 crores, Greenply share INR12.1 crores"
+   }
+  ],
+  "key_quotes": [
+   "So, at this point I don't think Greenply's balance sheet is not ready for that.",
+   "I think next 12 months will be further bad.",
+   "So, I think every box is getting ticked.",
+   "I think we have inventory in hand."
+  ],
+  "management_tone": "Confident on the MDF margin floor (15-16%) and the plywood H2 margin of 10%+, and dismissive of MDF competitive and SAMET risks. Cautious on MDF near-term, conceding the next 12 months will be weak, and evasive on the Odisha and Sandila timelines and the MDF volume recovery path.",
+  "_completed": 1
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "15 million sq m Sandila (Lucknow) plywood plant",
+    "size_pct": null,
+    "capex_cr": 125.0,
+    "q": 6,
+    "status": "approved",
+    "mat": "major"
+   },
+   {
+    "what": "Odisha greenfield plywood facility",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Vadodara MDF line expansion (current line about 60,000 CBM per quarter)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 3,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "HDF flooring line, commercial production started July 2026, INR2-3 crore/month initially",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Pre-lam plywood for furniture makers, full-scale production from November 2026",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "trial_runs",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 20.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": 16.1,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management kept plywood volume growth above 10% annually and cut FY27 MDF volume growth to about 20% (63,000 CBM targeted in each of Q3 and Q4), with the Sandila 15 MSM plywood expansion (INR125 crore capex) now targeted for Q4 FY28 and Odisha in about two quarters; backing is partly specific (capex, timelines, 63k CBM target) but the 10%+ plywood growth claim rests largely on demand and mix.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Plywood core EBITDA margin 10.05% in Q2 (+180 bps YoY) and management guides H2 plywood margin at 10%+ if sales cross about INR600 crores a quarter; MDF margin guided at 15-16% with 15.2% in Q2, though competition from Action TESA and Elixir is a headwind."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q2 FY28 to Q4 FY28",
+    "why": "Sandila 15 MSM plywood (INR125 crore capex) is approved for commercial production in Q4 FY28, Vadodara MDF expansion is under construction for Q2 FY28, and Odisha plywood is about two quarters out; plywood utilisation above 100% makes these needed."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Management guides full-year MDF volume growth of about 20% with 63,000 CBM targeted in each of Q3 and Q4 versus roughly 60,000 CBM run-rate, and plywood volume growth above 10% annually, though the MDF H2 target is a stretch and plywood Q2 volume grew only 6.1%."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Plywood utilisation is above 100% and chipboard multi-day press lines (about INR100 crores per line) are planned for next year or the year after, so further capex announcements are probable."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-4 quarters",
+    "why": "MDF full-year volume guidance was cut to about 20% and management says the next 12 months will be weak in MDF, so a raise in guidance looks unlikely."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "MDF needs about 63,000 CBM per quarter in H2 against a roughly 60,000 CBM run-rate, and Q2 volume was below plan due to production disruption, so a further cut is a real risk."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "Nov 2026 to Q2 FY28",
+    "why": "Pre-lam plywood for furniture makers is set for full-scale commercial production from November 2026 after trials, and HDF flooring started commercial production in July 2026 with contribution expected from H2 FY27 at INR2-3 crores a month."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Debt-to-equity held within 0.7x-0.75x guided range",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Net debt is INR544 crores with debt-to-equity at 0.56x, and the Sandila INR125 crore capex is funded by debt and equity, so leverage could rise toward the guided range."
+   },
+   {
+    "k": "corporate_action",
+    "label": "SAMET JV stake dilution to 19%",
+    "call": "surely",
+    "when": "by January 5 (2027)",
+    "why": "Head of terms is signed and Greenply has stopped funding JV losses since Q1, with the JV's Q2 loss at INR12.6 crores (Greenply share INR6.3 crores), so the drag should end and brand-charge income begins."
+   },
+   {
+    "k": "new_markets",
+    "label": "Carbon credit monetisation",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "A sample credit sold at USD15 implies INR25-30 crores revenue with Greenply's share at 10-20%, and 2,56,688 credits are allotted, but timing and volumes were not firmed up."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on the MDF 15-16% margin floor, the plywood H2 margin of 10%+ and the SAMET exit, and cautious on MDF volume recovery and the next 12 months' weak MDF pricing. Analysts pressed on why plywood growth slowed to 6%, the MDF volume shortfall, and the inconsistent Odisha and Sand"
+  }
+ }
+}
