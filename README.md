@@ -98,3 +98,32 @@ GitHub Pages would make the research public, so it is not set up.
 - FMP response fields for transcript dates and latest transcripts: vendors change shapes, and
   `sources_us.py` reads them defensively.
 - Scanned-image PDFs come out as `too_short` in the manifest. Add OCR if there are many.
+
+## Sector leaders
+
+`leaders.yaml` maps 32 sectors to two Indian and two global bellwethers each (128 companies).
+`python run.py leaders` (scheduled twice a day by `.github/workflows/leaders.yml`) tracks every result,
+earnings call and investor deck they put out over the last four reporting seasons, and builds
+`data/leaders.json` for the **Sector leaders** and **Event ledger** views.
+
+| Source | What it gives |
+|---|---|
+| BSE per-company announcement sweep | Indian results, call notices, call audio, transcripts, decks |
+| BSE XBRL | Indian quarterly figures (eight quarters, like for like) |
+| SEC EDGAR 8-K / 6-K exhibits | Global results releases and decks of SEC filers, foreign ones included |
+| SEC company facts | US quarterly figures with year-on-year history |
+| Company results pages (`ir:` in leaders.yaml) | Releases, decks and transcripts for 14 non-SEC global leaders |
+| Yahoo Finance | Report dates and recent quarterly figures for everyone |
+| FMP (`FMP_API_KEY`, optional) | Global earnings-call transcripts |
+| `leaders_manual.yaml` | Anything added by hand |
+
+**Indicator.** Each season scores −100…+100: management tone (40%: the tone block, hedging and the net direction
+of the change signals in the structured read), guidance (30%: raised / new / held / cut, and prior guidance met or
+missed) and numbers (30%: revenue growth and operating-margin change year on year). A leader is *Improving* or
+*Deteriorating* when its latest season is 10+ points above or below the average of the earlier ones; a sector rolls
+up its leaders, with India and global shown separately and a *Diverging* flag when they move in opposite directions.
+Weights and thresholds are in `settings.yaml → leaders`.
+
+**Completeness.** Every expected event gets a status in the ledger: linked, held (on record, document pending),
+awaited, missing (overdue, no trace), needs a link (no automatic source for that company), or not done by the
+company. Nothing drops out silently. Set `SEC_USER_AGENT` as a repository secret so SEC knows who is asking.

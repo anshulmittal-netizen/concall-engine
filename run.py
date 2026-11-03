@@ -8,6 +8,7 @@
   python run.py results --market IN        # results calendar + numbers of results as they are posted
   python run.py analyze --market IN        # rebuild site/data/in.json from stored extractions only
   python run.py all --market IN --interviews   # also scan interview channels (local machine)
+  python run.py leaders                    # sector leaders: every result, call and deck of 2 Indian + 2 global leaders per sector
   python run.py serve                      # open the dashboard at http://localhost:8000
 """
 from __future__ import annotations
@@ -254,6 +255,11 @@ def cmd_participants(a):
     participants.run(a.market, get_text, log, a.limit)
 
 
+def cmd_leaders(a):
+    import leaders
+    leaders.build(log, limit=a.limit)
+
+
 def cmd_analyze(a):
     analyze.build(a.market, log)
 
@@ -298,16 +304,16 @@ def cmd_all(a):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "outlook", "about", "mgmt", "history", "participants", "analyze", "all", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "outlook", "about", "mgmt", "history", "participants", "analyze", "all", "leaders", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
     p.add_argument("--days", type=int, help="mgmt: how many days of filings to read")
     p.add_argument("--interviews", action="store_true", help="include interview channels (local machine only)")
     a = p.parse_args(argv)
-    if a.command != "serve" and not a.market:
+    if a.command not in ("serve", "leaders") and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "outlook": cmd_outlook, "about": cmd_about, "mgmt": cmd_mgmt, "history": cmd_history, "participants": cmd_participants, "analyze": cmd_analyze, "all": cmd_all, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "outlook": cmd_outlook, "about": cmd_about, "mgmt": cmd_mgmt, "history": cmd_history, "participants": cmd_participants, "analyze": cmd_analyze, "all": cmd_all, "leaders": cmd_leaders, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":

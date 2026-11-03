@@ -48,3 +48,9 @@ analysis:
   first_mover_count: 5
   hidden_supplier_min_mentions: 2
   credibility_upgrade_min: 70
+
+leaders:                      # sector leaders tracker (leaders.yaml, python run.py leaders)
+  max_reads_per_run: 150      # leader calls / releases / decks read per run, newest season first
+  weights: {tone: 0.4, guid: 0.3, num: 0.3}   # management tone, guidance, reported numbers
+  improve_pts: 10             # latest score vs the average of the earlier seasons, in points (−100..100)
+  deteriorate_pts: 10

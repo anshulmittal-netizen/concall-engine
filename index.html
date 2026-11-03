@@ -721,6 +721,37 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
   html{scroll-behavior:auto}
   .spark-up{stroke-dashoffset:0}
 }
+
+/* sector leaders */
+.ld-pill{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:600;color:var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);border:1px solid color-mix(in srgb,var(--c) 30%,transparent);white-space:nowrap}
+.ld-pill.sm{font-size:11px;padding:2px 7px}
+.ld-sum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:6px 0 14px}
+.ld-k{display:flex;flex-direction:column;gap:2px;text-align:left;padding:14px 16px;cursor:pointer;font:inherit;color:inherit}
+.ld-k b{font-family:var(--display);font-size:30px;line-height:1.1}
+.ld-k[aria-pressed="true"]{outline:2px solid var(--accent)}
+.ld-rows .r{display:grid;grid-template-columns:minmax(180px,1.6fr) 130px 110px 110px 140px minmax(160px,1.6fr);gap:12px;align-items:center}
+.ld-r{cursor:pointer}.ld-r.on{background:var(--accentsoft)}
+.ld-sp{width:132px;height:36px;display:block}
+.ld-nmini{display:inline-block;margin:0 8px 2px 0;padding-left:10px;position:relative}
+.ld-nmini::before{content:"";position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--c)}
+.ld-open{grid-column:1/-1;cursor:default;display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:12px;padding:12px 0 18px}
+.ld-co{padding:14px 16px}.ld-co h4{margin:2px 0;font-family:var(--display);font-size:17px}
+.ld-co-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}
+.ld-grid{display:grid;grid-template-columns:62px repeat(var(--n),minmax(0,1fr));gap:4px 6px;align-items:center;font-size:12px}
+.ld-h{font-size:9.5px;line-height:1.3}.ld-rl{font-size:11px;color:var(--muted);font-weight:600}
+.ld-slot{display:flex;align-items:center;gap:5px;padding:4px 6px;border-radius:7px;background:var(--panel2);text-decoration:none;color:inherit;min-width:0}
+a.ld-slot:hover{outline:1px solid var(--accent)}
+.ld-ic{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;font-size:10px;font-weight:700;color:var(--c);border:1.5px solid var(--c);flex:none}
+.ld-sl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ld-src{margin-left:auto;font-size:9.5px;color:var(--faint)}
+.ld-sc{display:flex;flex-direction:column}.ld-nm{line-height:1.3}
+.ld-tr{margin:6px 0 0;padding-left:0;list-style:none;font-size:12.5px;display:grid;gap:2px}
+.ld-gap .r{display:grid;grid-template-columns:minmax(160px,1.2fr) 90px 70px minmax(200px,2fr);gap:12px;align-items:center}
+.linkish{background:none;border:0;padding:0;color:var(--accent);text-decoration:underline;font:inherit;cursor:pointer}
+@media (max-width:760px){.ld-sum{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ld-rows .r{grid-template-columns:1fr auto;row-gap:6px}.ld-rows .r.hd{display:none}.ld-rows .r>span:nth-child(3),.ld-rows .r>span:nth-child(4){display:none}
+  .ld-rows .r>span:nth-child(5),.ld-rows .r>span:nth-child(6){grid-column:1/-1}
+  .ld-open{grid-template-columns:1fr}.ld-grid{grid-template-columns:52px repeat(var(--n),minmax(0,1fr));font-size:11px}.ld-src{display:none}
+  .ld-gap .r{grid-template-columns:1fr auto}.ld-gap .r.hd{display:none}.ld-gap .r>span:last-child{grid-column:1/-1}}
 </style>
 
 <div class="app">
@@ -1048,6 +1079,7 @@ const VIEWS = [
   {group: 'Start', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['ask', 'Ask the calls'], ['help', 'How to use']]},
   {group: 'Calls', items: [['calls', 'All calls'], ['people', 'Who’s asking'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Results', items: [['pead', 'Results to watch (PEAD)'], ['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
+  {group: 'Sector leaders', items: [['leaders', 'Leaders dashboard'], ['ledger', 'Event ledger']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
   {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes']]}
 ];
@@ -3028,7 +3060,110 @@ $('#xl').addEventListener('click', e => { e.stopPropagation(); if (e.target.clos
 document.addEventListener('click', e => { if (!e.target.closest('#xl')) { const m = $('#xl-menu'); if (m && !m.hidden) xlToggle(false); } });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#xl-menu').hidden) { xlToggle(false); $('#xl-btn').focus(); } });
 
-const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+/* ---------- Sector leaders: 2 Indian + 2 global bellwethers per sector, every result / call / deck of the last four
+   seasons, and whether tone, guidance and numbers are improving. Reads data/leaders.json (python run.py leaders). */
+const LD = {data: null, p: null};
+const loadLd = () => LD.data ? Promise.resolve(LD.data) : (LD.p = LD.p || fetch('data/leaders.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(j => (LD.data = j || {})));
+const ldS = () => (S.ld = S.ld || {open: new Set(), f: '', m: '', lead: ''});
+const LD_COL = {1: 'var(--up)', 0: 'var(--v3)', '-1': 'var(--down)'};
+const ldPill = (t, small) => { if (!t || t.label === 'No data') return `<span class="ld-pill" style="--c:var(--faint)">No data</span>`;
+  const ar = t.dir > 0 ? '▲' : t.dir < 0 ? '▼' : t.label === 'New' ? '•' : '▶';
+  return `<span class="ld-pill${small ? ' sm' : ''}" style="--c:${LD_COL[t.dir] || 'var(--v3)'}" title="Latest score vs the average of earlier seasons: ${t.delta == null ? 'n/a' : (t.delta > 0 ? '+' : '') + t.delta} pts">${ar} ${esc(t.label)}${t.delta != null && !small ? ` <b class="num">${t.delta > 0 ? '+' : ''}${t.delta}</b>` : ''}</span>`; };
+const ldArrow = d => d > 0 ? '<b style="color:var(--up)">▲</b>' : d < 0 ? '<b style="color:var(--down)">▼</b>' : '<b style="color:var(--faint)">▶</b>';
+const ldScore = v => v == null ? '<span class="muted">–</span>' : `<b class="num" style="color:${v >= 15 ? 'var(--up)' : v <= -15 ? 'var(--down)' : 'var(--fg)'}">${v > 0 ? '+' : ''}${v}</b>`;
+function ldSpark(vals, labels = []) {
+  const pts = vals.map((v, i) => [i, v]).filter(p => p[1] != null);
+  const W = 132, H = 36, X = i => 6 + i * (W - 12) / Math.max(1, vals.length - 1), Y = v => H / 2 - (v / 100) * (H / 2 - 4);
+  const d = pts.map((p, k) => `${k ? 'L' : 'M'}${X(p[0]).toFixed(1)} ${Y(p[1]).toFixed(1)}`).join('');
+  const last = pts.at(-1);
+  return `<svg class="ld-sp" viewBox="0 0 ${W} ${H}" role="img" aria-label="Score by season: ${vals.map((v, i) => (labels[i] || '') + ' ' + (v ?? 'n/a')).join(', ')}">
+    <line x1="2" x2="${W - 2}" y1="${H / 2}" y2="${H / 2}" stroke="var(--line2)" stroke-dasharray="2 3"/>
+    ${pts.length > 1 ? `<path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>` : ''}
+    ${pts.map(p => `<circle cx="${X(p[0]).toFixed(1)}" cy="${Y(p[1]).toFixed(1)}" r="${p === last ? 3.6 : 2.2}" fill="${p === last ? 'var(--saffron)' : 'var(--accent)'}"><title>${esc(labels[p[0]] || '')}: ${p[1]}</title></circle>`).join('')}</svg>`;
+}
+const LD_ST = {ok: ['✓', 'var(--up)', 'Linked'], held: ['●', 'var(--accent)', 'Held · document not linked yet'], awaited: ['…', 'var(--faint)', 'Not due yet'],
+  missing: ['!', 'var(--down)', 'Missing: overdue, nothing found'], unsourced: ['?', 'var(--warn)', 'No automatic source: add the link'], none: ['–', 'var(--faint)', 'Not done by this company'], sweep: ['↻', 'var(--v5)', 'Waiting for the first full BSE sweep']};
+function ldSlot(s, what) {
+  const [ic, col, nm] = LD_ST[s.st] || ['?', 'var(--faint)', s.st];
+  const tip = `${what}: ${nm}${s.d ? ' · ' + fdate(s.d) : ''}${s.src ? ' · ' + s.src : ''}${s.note ? '\n' + s.note : ''}`;
+  const short = {ok: 'Open', held: 'Held', awaited: 'Due', missing: 'Missing', unsourced: 'Add link', none: '—', sweep: 'To sweep'}[s.st] || s.st;
+  const inner = `<span class="ld-ic" style="--c:${col}">${ic}</span><span class="ld-sl">${s.d ? esc(sdate(s.d)) : esc(short)}</span>`;
+  return s.u ? `<a class="ld-slot" href="${esc(s.u)}" target="_blank" rel="noopener" title="${esc(tip)}">${inner}</a>`
+    : `<span class="ld-slot" title="${esc(tip)}">${inner}</span>`;
+}
+const ldNum = n => { if (!n) return '<span class="muted small">no figures</span>';
+  const g = v => v == null ? '–' : `<span style="color:${v >= 0 ? 'var(--up)' : 'var(--down)'}">${v > 0 ? '+' : ''}${v}%</span>`;
+  const m = n.opm != null && n.opm_prev != null ? Math.round((n.opm - n.opm_prev) * 10) / 10 : null;
+  return `<span class="small num" title="${esc(n.src || '')}${n.unit ? ' · ' + esc(n.unit) : ''}">${esc(n.revLabel || 'Rev')} ${g(n.rev_yoy)} YoY${n.opm != null ? ` · ${esc(n.opLabel === 'EBITDA' ? 'EBITDA' : 'Op.')} margin ${n.opm}%${m != null ? ` (${m > 0 ? '+' : ''}${m} pp)` : ''}` : ''}${n.pat_yoy != null ? ` · PAT ${g(n.pat_yoy)}` : ''}</span>`; };
+function ldLeader(L, seas) {
+  const last = [...L.seasons].reverse().find(s => s.thesis) || {};
+  return `<article class="card ld-co"><div class="ld-co-top"><div style="min-width:0"><span class="eyebrow">${L.mkt === 'IN' ? 'India' : esc(L.country || 'Global')} · ${esc(L.ticker || L.id)}${L.cadence !== 'quarterly' ? ' · ' + esc(L.cadence === 'half' ? 'half-yearly' : 'half-yearly + updates') : ''}</span>
+      <h4>${esc(L.name)}</h4><span class="small muted">Tone ${ldArrow(L.parts.tone)} · Guidance ${ldArrow(L.parts.guid)} · Numbers ${ldArrow(L.parts.num)}${L.next ? ` · next ${esc(fdate(L.next))}` : ''}</span></div>
+    <div style="text-align:right">${ldPill(L.trend)}<div class="small muted" style="margin-top:4px">Score ${ldScore(L.score)}</div></div></div>
+    <div class="ld-grid" style="--n:${seas.length}"><span></span>${seas.map(s => `<span class="eyebrow ld-h">${esc(L.mkt === 'IN' ? s.in : s.gl)}<br><span class="muted">${esc(s.label)}</span></span>`).join('')}
+      ${[['results', 'Results'], ['call', 'Call'], ['deck', 'Deck']].map(([k, n]) => `<span class="ld-rl">${n}</span>${L.seasons.map(s => ldSlot(s.slots[k] || {st: 'none'}, n)).join('')}`).join('')}
+      <span class="ld-rl">Score</span>${L.seasons.map(s => `<span class="ld-sc" title="Tone ${s.tone ?? '–'} · Guidance ${s.guid ?? '–'} · Numbers ${s.numScore ?? '–'}${s.readFrom ? '\nRead from the ' + s.readFrom : '\nNo document read yet'}">${ldScore(s.score)}<span class="small muted">${s.tone == null ? '' : 'T' + s.tone} ${s.guid == null ? '' : 'G' + s.guid} ${s.numScore == null ? '' : 'N' + s.numScore}</span></span>`).join('')}
+      <span class="ld-rl">Numbers</span>${L.seasons.map(s => `<span class="ld-nm">${ldNum(s.num)}</span>`).join('')}</div>
+    ${last.thesis ? `<p class="small" style="margin:8px 0 0"><b>${esc(seas.find(x => x.key === last.key)?.[L.mkt === 'IN' ? 'in' : 'gl'] || '')}:</b> ${esc(last.thesis)}</p>` : '<p class="small muted" style="margin:8px 0 0">No call, release or deck read yet for this company.</p>'}
+    ${(last.triggers || []).length ? `<ul class="ld-tr">${last.triggers.map(t => `<li title="${esc(t.q)}">${t.dir > 0 ? '<b style="color:var(--up)">▲</b>' : '<b style="color:var(--down)">▼</b>'} ${esc(t.label)}</li>`).join('')}</ul>` : ''}
+    ${(last.guidance || []).length ? `<p class="small muted" style="margin:6px 0 0">Guidance: ${last.guidance.map(g => `${esc(g.m)} ${esc(g.v)}${g.c && g.c !== 'held' ? ` (${esc(g.c)})` : ''}`).join(' · ')}</p>` : ''}
+  </article>`;
+}
+function vLeaders() {
+  const d = LD.data; if (!d) { loadLd().then(() => { if (S.view === 'leaders' || S.view === 'ledger') render(); renderNav(); }); return '<div class="empty">Loading sector leaders…</div>'; }
+  if (!d.sectors) return head('Sector leaders', 'Bellwethers per sector, India and global.', '') + '<div class="empty">No leader data yet. Run <code>python run.py leaders</code>.</div>';
+  const f = ldS(), seas = d.seasons, labs = seas.map(s => s.label);
+  const side = s => f.m === 'IN' ? s.in : f.m === 'GL' ? s.gl : s.all;
+  let rows = d.sectors.filter(s => !f.f || (f.f === 'div' ? s.divergence : f.f === 'up' ? side(s).dir > 0 : side(s).dir < 0));
+  rows = rows.slice().sort((a, b) => (side(b).delta ?? -999) - (side(a).delta ?? -999));
+  const cnt = k => d.sectors.filter(s => side(s).dir === k).length, cv = d.coverage || {};
+  return head('Sector leaders', 'Two Indian and two global leaders per sector, with every result, call and investor deck of the last four seasons, and whether each sector is getting better or worse.', `
+    <ul><li>Each season gets a <b>score from −100 to +100</b>: management tone on the call (40%), guidance raised, held or cut against what was promised (30%), and the reported numbers, revenue growth and margin change year on year (30%). Missing parts are left out, not counted as zero.</li>
+    <li><b>Improving / Deteriorating</b> compares the latest season with the average of the earlier ones: ${d.thresholds?.up || 10} points or more either way. Arrows show which part moved.</li>
+    <li><b>Divergence</b> marks sectors where the Indian and global leaders are moving in opposite directions.</li>
+    <li>Every expected result, call and deck is listed in the <button class="linkish" data-v="ledger">event ledger</button>, so a missed one shows up as a gap rather than disappearing.</li></ul>`,
+    `<span class="badge">${cv.expected ? `${cv.confirmedPct}% of ${fmt(cv.expected)} events confirmed · ${cv.linkedPct}% linked` : ''}</span>`) + `
+  <section class="ld-sum">
+    <button class="card ld-k" data-ldf="up" aria-pressed="${f.f === 'up'}"><span class="eyebrow">Improving</span><b style="color:var(--up)">${cnt(1)}</b><span class="small muted">sectors</span></button>
+    <button class="card ld-k" data-ldf="down" aria-pressed="${f.f === 'down'}"><span class="eyebrow">Deteriorating</span><b style="color:var(--down)">${cnt(-1)}</b><span class="small muted">sectors</span></button>
+    <button class="card ld-k" data-ldf="div" aria-pressed="${f.f === 'div'}"><span class="eyebrow">India vs global diverge</span><b>${d.sectors.filter(s => s.divergence).length}</b><span class="small muted">sectors</span></button>
+    <button class="card ld-k" data-v="ledger"><span class="eyebrow">Gaps to check</span><b style="color:${(cv.missing || 0) ? 'var(--down)' : 'var(--fg)'}">${fmt((cv.missing || 0) + (cv.unsourced || 0))}</b><span class="small muted">${fmt(cv.missing || 0)} missing · ${fmt(cv.unsourced || 0)} need a link</span></button>
+  </section>
+  ${(d.upcoming || []).length ? `<p class="small" style="margin:4px 0 14px"><b>Coming up:</b> ${d.upcoming.slice(0, 12).map(u => `${esc(sdate(u.date))} ${esc(u.name)}${u.what === 'call' ? ' (call)' : ''}`).join(' · ')}</p>` : ''}
+  <div class="toolbar">${[['', 'Both markets'], ['IN', 'India leaders'], ['GL', 'Global leaders']].map(([k, n]) => `<button class="chip" data-ldm="${k}" aria-pressed="${f.m === k}">${n}</button>`).join('')}
+    ${f.f ? `<button class="chip" data-ldf="${f.f}" aria-pressed="true">${{up: 'Improving', down: 'Deteriorating', div: 'Divergence'}[f.f]} ✕</button>` : ''}<span class="small muted">${rows.length} of ${d.sectors.length} sectors · ${esc(labs[0])} to ${esc(labs.at(-1))}</span></div>
+  <div class="rows ld-rows"><div class="r hd"><span>Sector</span><span>Overall</span><span>India</span><span>Global</span><span>Last 4 seasons</span><span>Leaders</span></div>
+  ${rows.map(s => { const open = f.open.has(s.name);
+    return `<div class="r ld-r${open ? ' on' : ''}" role="button" tabindex="0" data-lds="${esc(s.name)}" aria-expanded="${open}">
+      <span style="min-width:0"><span class="nm">${esc(s.name)}</span>${s.divergence ? ' <span class="ld-pill sm" style="--c:var(--violet)">Diverging</span>' : ''}<span class="sub" style="display:block">${esc(s.watch)}</span></span>
+      <span>${ldPill(s.all)}</span><span>${ldPill(s.in, true)}</span><span>${ldPill(s.gl, true)}</span>
+      <span>${ldSpark(s.series, labs)}</span>
+      <span class="small" style="min-width:0">${s.leaders.map(L => `<span class="ld-nmini" style="--c:${LD_COL[L.trend.dir] || 'var(--faint)'}" title="${esc(L.trend.label)}">${esc(L.name)}</span>`).join('')}</span>
+      ${open ? `<div class="ld-open">${s.leaders.filter(L => !f.m || L.mkt === f.m).map(L => ldLeader(L, seas)).join('')}</div>` : ''}</div>`; }).join('') || '<div class="empty">No sector matches.</div>'}</div>
+  <p class="small muted" style="margin-top:14px">Updated ${esc(fdate(d.generated))} ${esc((d.generated || '').slice(11, 16))} UTC. Sources: BSE filings${d.bseLive ? '' : ' (nightly run so far; full sweep pending)'}, SEC EDGAR, company results pages, Yahoo Finance. ✓ linked · ● held, document pending · … not due · ! missing · ? needs a manual link · – not done by the company · ↻ waiting for the first full BSE sweep.</p>`;
+}
+function vLedger() {
+  const d = LD.data; if (!d) { loadLd().then(() => { if (S.view === 'ledger') render(); }); return '<div class="empty">Loading…</div>'; }
+  const cv = d.coverage || {}, f = ldS(), seasL = Object.fromEntries((d.seasons || []).map(s => [s.key, s]));
+  const gaps = (d.gaps || []).filter(g => !f.lead || g.st === f.lead);
+  return head('Event ledger', 'Every result, earnings call and investor deck expected from the sector leaders over the last four seasons, and what has been found for each.', `
+    <ul><li><b>Confirmed</b> means the event is on record: the document is linked, or the results date, call notice or call audio is on file.</li>
+    <li><b>Missing</b> is overdue with no trace anywhere: open the company’s filings and add the link to <code>leaders_manual.yaml</code> if it exists.</li>
+    <li><b>Needs a link</b> means no automatic source can see that kind of document for the company (its website blocks automated reads, or it files nowhere we can reach).</li></ul>`) + `
+  <section class="ld-sum">
+    <div class="card ld-k"><span class="eyebrow">Expected so far</span><b>${fmt(cv.expected || 0)}</b><span class="small muted">results, calls, decks</span></div>
+    <div class="card ld-k"><span class="eyebrow">Confirmed</span><b style="color:var(--up)">${cv.confirmedPct ?? '–'}%</b><span class="small muted">${fmt(cv.ok || 0)} linked · ${fmt(cv.held || 0)} on record</span></div>
+    <button class="card ld-k" data-ldg="missing" aria-pressed="${f.lead === 'missing'}"><span class="eyebrow">Missing</span><b style="color:var(--down)">${fmt(cv.missing || 0)}</b><span class="small muted">overdue, nothing found</span></button>
+    <button class="card ld-k" data-ldg="unsourced" aria-pressed="${f.lead === 'unsourced'}"><span class="eyebrow">Needs a link</span><b style="color:var(--warn)">${fmt(cv.unsourced || 0)}</b><span class="small muted">no automatic source</span></button>
+  </section>
+  ${cv.sweep ? `<p class="small" style="margin:0 0 12px"><b style="color:var(--v5)">↻ ${fmt(cv.sweep)} Indian events</b> from older seasons have not been checked yet: the first scheduled run sweeps each Indian leader’s full BSE filing history and fills them in.</p>` : ''}
+  <div class="rows ld-gap"><div class="r hd"><span>Company</span><span>Season</span><span>Event</span><span>Status</span></div>
+  ${gaps.slice(0, 400).map(g => `<div class="r"><span style="min-width:0"><span class="nm">${esc(g.name)}</span><span class="sub" style="display:block">${esc(g.sector)} · ${g.mkt === 'IN' ? 'India' : 'Global'}</span></span>
+    <span class="small">${esc(g.mkt === 'IN' ? seasL[g.season]?.in : seasL[g.season]?.gl)}</span><span class="small">${esc({results: 'Results', call: 'Call', deck: 'Deck'}[g.kind])}</span>
+    <span class="small"><b style="color:${g.st === 'missing' ? 'var(--down)' : 'var(--warn)'}">${g.st === 'missing' ? 'Missing' : 'Needs a link'}</b> · ${esc(g.note)}</span></div>`).join('') || '<div class="empty">No gaps. Every expected event is on record.</div>'}</div>`;
+}
+
+const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -3369,6 +3504,10 @@ document.addEventListener('click', e => {
   const wt = t.closest('[data-wt]'); if (wt) { e.preventDefault(); e.stopPropagation(); wlToggle(wt.dataset.wt); render(); if (S.drawer) drawDrawer(); renderNav(); return; }
   const tipB = t.closest('[data-tip]'); if (tipB) { e.preventDefault(); e.stopPropagation(); showTip(tipB); return; }
   if (!t.closest('#pop')) hideTip();
+  const lds = t.closest('[data-lds]'); if (lds && !t.closest('.ld-open')) { const o = ldS().open, k = lds.dataset.lds; o.has(k) ? o.delete(k) : o.add(k); render(); return; }
+  const ldf = t.closest('[data-ldf]'); if (ldf) { const f = ldS(); f.f = f.f === ldf.dataset.ldf ? '' : ldf.dataset.ldf; render(); return; }
+  const ldm = t.closest('[data-ldm]'); if (ldm) { ldS().m = ldm.dataset.ldm; render(); return; }
+  const ldg = t.closest('[data-ldg]'); if (ldg) { const f = ldS(); f.lead = f.lead === ldg.dataset.ldg ? '' : ldg.dataset.ldg; render(); return; }
   if (!t.closest('.find')) $('#findres').hidden = true;
   const op = t.closest('[data-open]');
   if (op) { const k = op.dataset.k; if (op.closest('.find-res')) { $('#find').value = ''; $('#findres').hidden = true; } openCo(op.dataset.open, k || undefined); return; }
