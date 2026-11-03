@@ -747,7 +747,7 @@ div.ld-k{cursor:default}.ld-k b{font-family:var(--display);font-size:30px;line-h
 .ld-t{width:100%;border-collapse:collapse;font-size:12.5px;min-width:860px}
 .ld-t th,.ld-t td{padding:7px 8px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
 .ld-t thead th{border-top:0;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.ld-t .r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ld-t .ld-n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .ld-se{white-space:nowrap;font-weight:600}.ld-sub{display:block;font-size:10.5px;color:var(--faint);font-weight:400}
 .ld-th{min-width:260px;max-width:420px;line-height:1.45}
 .ld-slot{display:inline-flex;align-items:center;gap:5px;padding:3px 7px;border-radius:7px;background:var(--panel2);text-decoration:none;color:inherit;white-space:nowrap}
@@ -3123,11 +3123,11 @@ function ldCompany(L, seas) {
     <header class="ld-co-h"><div style="min-width:0"><h4>${esc(L.name)}</h4>
       <span class="small muted">${esc(L.mkt === 'IN' ? 'India' : (L.country || 'Global'))} · ${esc(L.ticker || L.id)}${L.cadence !== 'quarterly' ? ' · ' + (L.cadence === 'half' ? 'reports half-yearly' : 'full results half-yearly, updates in between') : ''}${L.next ? ' · next results ' + esc(fdate(L.next)) : ''}</span></div>
       <div class="ld-co-r">${ldPill(L.trend)}<span class="small muted">${ldArrow(L.parts.tone, 'Tone')} ${ldArrow(L.parts.guid, 'Guidance')} ${ldArrow(L.parts.num, 'Numbers')}</span></div></header>
-    <div class="ld-tw"><table class="ld-t"><thead><tr><th>Season</th><th>Results</th><th>Call</th><th>Deck</th><th class="r">Revenue YoY</th><th class="r">Op. margin</th><th class="r">Score</th><th>What management said</th></tr></thead><tbody>
+    <div class="ld-tw"><table class="ld-t"><thead><tr><th>Season</th><th>Results</th><th>Call</th><th>Deck</th><th class="ld-n">Revenue YoY</th><th class="ld-n">Op. margin</th><th class="ld-n">Score</th><th>What management said</th></tr></thead><tbody>
     ${rows.map(({x, s}) => `<tr><th scope="row" class="ld-se">${ldSeasonLab(s, L.mkt)}</th>
       <td>${ldSlot(x.slots.results, 'Results')}</td><td>${ldSlot(x.slots.call, 'Call')}</td><td>${ldSlot(x.slots.deck, 'Deck')}</td>
-      <td class="r" title="${esc(x.num?.src || '')}">${ldPct(x.num?.rev_yoy)}</td><td class="r">${ldMargin(x.num)}</td>
-      <td class="r" title="Tone ${x.tone ?? '–'} · Guidance ${x.guid ?? '–'} · Numbers ${x.numScore ?? '–'}">${ldScore(x.score)}<span class="ld-sub">${[x.tone != null ? 'T ' + x.tone : '', x.guid != null ? 'G ' + x.guid : '', x.numScore != null ? 'N ' + x.numScore : ''].filter(Boolean).join(' · ')}</span></td>
+      <td class="ld-n" title="${esc(x.num?.src || '')}">${ldPct(x.num?.rev_yoy)}</td><td class="ld-n">${ldMargin(x.num)}</td>
+      <td class="ld-n" title="Tone ${x.tone ?? '–'} · Guidance ${x.guid ?? '–'} · Numbers ${x.numScore ?? '–'}">${ldScore(x.score)}<span class="ld-sub">${[x.tone != null ? 'T ' + x.tone : '', x.guid != null ? 'G ' + x.guid : '', x.numScore != null ? 'N ' + x.numScore : ''].filter(Boolean).join(' · ')}</span></td>
       <td class="ld-th">${x.thesis ? esc(x.thesis) : `<span class="muted">${x.slots.call?.st === 'ok' || x.slots.results?.st === 'ok' ? 'Not read yet' : '–'}</span>`}</td></tr>`).join('')}
     </tbody></table></div>
     ${last && (last.triggers || []).length ? `<div class="ld-sig"><span class="eyebrow">Latest signals</span><ul>${last.triggers.map(t => `<li title="${esc(t.q)}"><b style="color:${t.dir > 0 ? 'var(--up)' : 'var(--down)'}">${t.dir > 0 ? '▲' : '▼'}</b> ${esc(t.label)}${t.q ? `<span class="ld-q">“${esc(t.q)}”</span>` : ''}</li>`).join('')}</ul>

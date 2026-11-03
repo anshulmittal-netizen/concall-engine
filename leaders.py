@@ -30,7 +30,7 @@ import hashlib
 import re
 from pathlib import Path
 
-from common import CACHE, DATA, Http, load_yaml, period_key, read_json, reported_quarter_end, settings, today, write_json
+from common import CACHE, DATA, Http, load_yaml, slug, period_key, read_json, reported_quarter_end, settings, today, write_json
 
 N_SEASONS = 4
 STATE_FILE = DATA / "leaders_state.json"
@@ -372,6 +372,12 @@ def yahoo(L: dict, state: dict, keys: list[str], log=log_):
         get = lambda name: (None if name not in q.index or q.loc[name, c] != q.loc[name, c] else float(q.loc[name, c]))
         rows[end] = {"rev": get("Total Revenue"), "op": get("Operating Income") if "Operating Income" in q.index else get("EBIT"),
                      "pat": get("Net Income")}
+    if L["mkt"] == "GL" and lid not in state.setdefault("irsite", {}):
+        try:
+            info = t.info
+            state["irsite"][lid] = info.get("irWebsite") or info.get("website") or ""
+        except Exception:
+            pass
     cur = state.setdefault("ccy", {}).get(lid)
     if not cur:
         try:
@@ -647,6 +653,74 @@ def fool(leaders: list[dict], state: dict, keys: list[str], log=log_):
             if key in keys:
                 n += add_doc(state, L["id"], {"k": "call", "d": d, "s": key, "u": u, "t": f"Earnings call transcript, {per} {yr}", "src": "Fool"})
     log(f"leaders: {n} new call transcripts linked from the Motley Fool")
+    probe_fool(leaders, state, keys, by, log)
+
+
+def _qstep(q: int, y: int, n: int) -> tuple[int, int]:
+    """Move a fiscal quarter label n quarters (negative = back)."""
+    k = y * 4 + (q - 1) + n
+    return k % 4 + 1, k // 4
+
+
+def probe_fool(leaders: list[dict], state: dict, keys: list[str], by: dict, log=log_):
+    """The sitemaps miss many older transcripts. For each reported season with no call transcript, build the
+    transcript's address from the company's known address stem, the results date and the fiscal quarter label, and
+    keep it only if the page exists. Misses are remembered so they are not asked again."""
+    http = Http(UA, 0.35)
+    tried = state.setdefault("fool_tried", {})
+    found = 0
+    for L in leaders:
+        tk = (L.get("adr") or L.get("sec") or "").upper()
+        if not tk:
+            continue
+        known = sorted(by.get(tk, []))  # (date, url, Q, year)
+        stems = []
+        for d, u, per, yr in known:
+            stem = RX_FOOL.match(u).group(4)
+            if stem not in stems:
+                stems.append(stem)
+        base = slug(re.sub(r"\b(inc|corp|corporation|holdings?|group|company|co|ltd|plc|the|n\.?v|s\.?a|ag|se)\b\.?", "", L["name"].lower())).strip("-")
+        for c in (slug(L["name"]), base):
+            if c and c not in stems:
+                stems.append(c)
+        ref = next(((d, per, yr) for d, u, per, yr in reversed(known) if per.startswith("Q")), None)
+        have = {d.get("s") for d in (state.get("docs") or {}).get(L["id"], []) if d["k"] == "call"}
+        events = (state.get("events") or {}).get(L["id"], {})
+        for key in keys:
+            ev = events.get(key)
+            if key in have or not ev or not ev.get("d") or ev["d"] > today().isoformat() or kind_for(L, key) == "skip":
+                continue
+            labels = []
+            if ref:
+                n = keys.index(key) - keys.index(season_for(state, L["id"], ref[0])) if season_for(state, L["id"], ref[0]) in keys else None
+                if n is None:
+                    rk = season_for(state, L["id"], ref[0])
+                    n = ((int(key[:4]) * 12 + int(key[5:])) - (int(rk[:4]) * 12 + int(rk[5:]))) // 3
+                labels.append(_qstep(int(ref[1][1]), int(ref[2]), n))
+            else:  # calendar-year default
+                labels.append(((int(key[5:]) // 3), int(key[:4])))
+            ed = dt.date.fromisoformat(ev["d"])
+            hit = None
+            for q, yr in labels:
+                for stem in stems[:3]:
+                    for off in (0, 1, 2, 3, -1):  # transcripts are often posted a few days after the call
+                        dd = ed + dt.timedelta(days=off)
+                        url = f"https://www.fool.com/earnings/call-transcripts/{dd.year}/{dd.month:02d}/{dd.day:02d}/{stem}-{tk.lower()}-q{q}-{yr}-earnings-call-transcript/"
+                        if url in tried:
+                            continue
+                        r = http.get(url, timeout=30, allow_redirects=False)
+                        tried[url] = r.status_code
+                        if r.status_code == 200:
+                            hit = (url, dd.isoformat(), q, yr)
+                            break
+                    if hit:
+                        break
+                if hit:
+                    break
+            if hit:
+                found += add_doc(state, L["id"], {"k": "call", "d": hit[1], "s": key, "u": hit[0],
+                                                 "t": f"Earnings call transcript, Q{hit[2]} {hit[3]}", "src": "Fool"})
+    log(f"leaders: {found} more call transcripts found by address")
 
 
 # ------------------------------------------------------------------ company results pages
@@ -923,11 +997,11 @@ def numbers_of(n: dict | None):
         return None
     parts = []
     if n.get("rev_yoy") is not None:
-        parts.append(clip(n["rev_yoy"] / 20))
+        parts.append(clip(n["rev_yoy"] / 25))  # +25% revenue growth = full marks
     if n.get("opm") is not None and n.get("opm_prev") is not None:
-        parts.append(clip((n["opm"] - n["opm_prev"]) / 3))
+        parts.append(clip((n["opm"] - n["opm_prev"]) / 4))  # ±4 pp margin change
     elif n.get("pat_yoy") is not None:
-        parts.append(clip(n["pat_yoy"] / 30))
+        parts.append(clip(n["pat_yoy"] / 40))  # lenders and others without an operating line
     return sum(parts) / len(parts) if parts else None
 
 
@@ -1036,9 +1110,9 @@ def slots_for(L: dict, key: str, state: dict, t0: dt.date, ever: dict) -> dict:
                            "note": ("Call scheduled" + ("" if dd else ", date in the notice")) if not past else ("Call held; transcript due within 5 working days" if not late else "Call held but no transcript filed")}
         elif not reported:
             out["call"] = {"st": "awaited", "d": out["results"].get("d")}
-        elif L.get("events") and reported:
-            out["call"] = {"st": "site", "u": L["events"], "d": None, "src": "company site",
-                           "note": "No free transcript: the results call webcast and replay are on the company's site"}
+        elif L["mkt"] == "GL" and reported and (L.get("events") or (state.get("irsite") or {}).get(lid)):
+            out["call"] = {"st": "site", "u": L.get("events") or state["irsite"][lid], "d": None, "src": "company site",
+                           "note": "No free transcript found: the results call webcast and replay are on the company's investor site"}
         elif not ever.get("call"):
             sourced = L["mkt"] == "IN" or L.get("ir") or os.environ.get("FMP_API_KEY")
             out["call"] = {"st": "none" if L["mkt"] == "IN" else "unsourced",
