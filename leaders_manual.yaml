@@ -1,0 +1,9 @@
+# Documents the sector-leaders tracker cannot find on its own (company websites that block automated reads,
+# HKEX-only filers, transcripts behind a vendor). Add one entry per document; the next run links it, reads it,
+# and clears the gap in the event ledger.
+#
+# id:     BSE code for Indian leaders, Yahoo ticker for global ones (as in leaders.yaml)
+# kind:   results | call | deck
+# season: quarter end the event reports on (YYYY-MM), or give `date` and it is worked out
+#
+# - {id: NESN.SW, kind: results, season: "2026-09", date: "2026-10-22", url: "https://www.nestle.com/...pdf", title: "9M 2026 sales"}

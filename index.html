@@ -721,6 +721,63 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
   html{scroll-behavior:auto}
   .spark-up{stroke-dashoffset:0}
 }
+
+/* sector leaders */
+.ld-pill{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;color:var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);border:1px solid color-mix(in srgb,var(--c) 32%,transparent);white-space:nowrap}
+.ld-tabs{display:flex;gap:4px;padding:4px;margin:4px 0 16px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;width:max-content;max-width:100%;overflow-x:auto}
+.ld-tabs button{font:inherit;font-weight:600;font-size:13.5px;padding:8px 16px;border:0;border-radius:9px;background:none;color:var(--muted);cursor:pointer;white-space:nowrap}
+.ld-tabs button[aria-selected="true"]{background:var(--panel);color:var(--fg);box-shadow:var(--shadow)}
+.ld-tabs button:focus-visible,.ld-r:focus-visible,.ld-k:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ld-sum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 14px}
+.ld-k{display:flex;flex-direction:column;gap:2px;text-align:left;padding:14px 16px;cursor:pointer;font:inherit;color:inherit}
+div.ld-k{cursor:default}.ld-k b{font-family:var(--display);font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums}
+.ld-k[aria-pressed="true"]{outline:2px solid var(--accent)}
+.ld-rows .r{display:grid;grid-template-columns:minmax(200px,1.7fr) 170px 80px 140px minmax(180px,1.7fr) 90px;gap:12px;align-items:center}
+.ld-r{cursor:pointer}.ld-r.on{background:var(--accentsoft)}
+.ld-sp{width:132px;height:38px;display:block}
+.ld-nmini{display:inline-block;margin:0 10px 3px 0;padding-left:11px;position:relative}
+.ld-nmini::before{content:"";position:absolute;left:0;top:.42em;width:7px;height:7px;border-radius:50%;background:var(--c)}
+.ld-open{grid-column:1/-1;cursor:default;display:grid;gap:14px;padding:6px 0 16px}
+.ld-co{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:grid;gap:10px;min-width:0}
+.ld-co-h{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.ld-co-h h4{margin:0;font-family:var(--display);font-size:18px}
+.ld-co-r{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.ld-ar{color:var(--c);font-weight:600;margin-left:6px;white-space:nowrap}
+.ld-tw{overflow-x:auto;min-width:0}
+.ld-t{width:100%;border-collapse:collapse;font-size:12.5px;min-width:860px}
+.ld-t th,.ld-t td{padding:7px 8px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+.ld-t thead th{border-top:0;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ld-t .ld-n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ld-se{white-space:nowrap;font-weight:600}.ld-sub{display:block;font-size:10.5px;color:var(--faint);font-weight:400}
+.ld-th{min-width:260px;max-width:420px;line-height:1.45}
+.ld-slot{display:inline-flex;align-items:center;gap:5px;padding:3px 7px;border-radius:7px;background:var(--panel2);text-decoration:none;color:inherit;white-space:nowrap}
+a.ld-slot:hover{outline:1px solid var(--accent)}.ld-go{font-size:10px;color:var(--accent)}
+.ld-ic{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:50%;font-size:10px;font-weight:700;color:var(--c);border:1.5px solid var(--c);flex:none}
+.ld-sig ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:4px;font-size:13px}
+.ld-sig p{margin:6px 0 0}.ld-q{display:block;color:var(--muted);font-size:12px;margin-left:16px}
+.ld-cmp .r{display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(170px,1fr) minmax(170px,1fr) minmax(190px,1.3fr);gap:12px;align-items:center}
+.ld-jump{text-decoration:none}
+.ld-gap .r{display:grid;grid-template-columns:minmax(170px,1fr) minmax(220px,2.6fr);gap:12px;align-items:center}
+.ld-gapi{display:inline-block;margin:0 14px 3px 0}
+.linkish{background:none;border:0;padding:0;color:var(--accent);text-decoration:underline;font:inherit;cursor:pointer}
+@media (max-width:760px){.ld-sum{grid-template-columns:repeat(2,minmax(0,1fr))}.ld-k b{font-size:24px}
+  .ld-rows .r{grid-template-columns:1fr auto;row-gap:6px}.ld-rows .r.hd,.ld-cmp .r.hd,.ld-gap .r.hd{display:none}
+  .ld-rows .r>span:nth-child(3),.ld-rows .r>span:nth-child(6){display:none}.ld-rows .r>span:nth-child(4),.ld-rows .r>span:nth-child(5){grid-column:1/-1}
+  .ld-cmp .r{grid-template-columns:1fr 1fr}.ld-cmp .r>span:first-child,.ld-cmp .r>span:last-child{grid-column:1/-1}
+  .ld-gap .r{grid-template-columns:1fr}.ld-co-r{align-items:flex-start}}
+
+.wt-mk{margin:20px 0}.wt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.wt-th{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:var(--r);padding:14px 16px;display:grid;gap:8px;align-content:start;min-width:0}
+.wt-th header{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.wt-th h4{margin:0;font-family:var(--display);font-size:16px}
+.wt-th p{margin:0}.wt-why{font-size:13.5px;line-height:1.5}.wt-in{color:var(--muted)}
+.wt-ev>div{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.wt-chip{font:inherit;font-size:12px;padding:3px 9px;border-radius:999px;border:1px solid color-mix(in srgb,var(--c) 35%,transparent);background:color-mix(in srgb,var(--c) 10%,transparent);color:var(--fg);cursor:pointer}
+.wt-src{display:flex;flex-wrap:wrap;gap:4px 12px}.wt-src a{color:var(--accent)}
+.wt-climb{background:var(--panel2);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:8px}
+.wt-cl2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.wt-cl2>div{display:grid;gap:6px;align-content:start;min-width:0}
+.wt-cl{display:grid;grid-template-columns:minmax(0,1fr) 132px 44px;gap:10px;align-items:center;font:inherit;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 10px;color:inherit;cursor:pointer}
+.wt-cl:hover{border-color:var(--accent)}
+@media (max-width:760px){.wt-cl2{grid-template-columns:1fr}.wt-grid{grid-template-columns:1fr}.wt-cl{grid-template-columns:minmax(0,1fr) 44px}.wt-cl .ld-sp{display:none}}
 </style>
 
 <div class="app">
@@ -1048,6 +1105,7 @@ const VIEWS = [
   {group: 'Start', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['ask', 'Ask the calls'], ['help', 'How to use']]},
   {group: 'Calls', items: [['calls', 'All calls'], ['people', 'Who’s asking'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
   {group: 'Results', items: [['pead', 'Results to watch (PEAD)'], ['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
+  {group: 'Sector leaders', items: [['leaders', 'Leaders dashboard'], ['ledger', 'Event ledger']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
   {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes']]}
 ];
@@ -3028,7 +3086,189 @@ $('#xl').addEventListener('click', e => { e.stopPropagation(); if (e.target.clos
 document.addEventListener('click', e => { if (!e.target.closest('#xl')) { const m = $('#xl-menu'); if (m && !m.hidden) xlToggle(false); } });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#xl-menu').hidden) { xlToggle(false); $('#xl-btn').focus(); } });
 
-const RENDER = {home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+/* ---------- Sector leaders: 2 Indian + 4 global bellwethers per sector. Three tabs (India, Global, India vs Global),
+   each sector opening into a season-by-season table per company: results, call and deck links, numbers, score and
+   what management said. Reads data/leaders.json (python run.py leaders). */
+const LD = {data: null, p: null};
+const loadLd = () => LD.data ? Promise.resolve(LD.data) : (LD.p = LD.p || fetch('data/leaders.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(j => (LD.data = j || {})));
+const ldS = () => (S.ld = S.ld || {tab: 'IN', open: new Set(), f: '', lead: '', lm: ''});
+const LD_COL = {1: 'var(--up)', 0: 'var(--v3)', '-1': 'var(--down)'};
+const LD_MK = {IN: 'India', GL: 'Global'};
+function ldPill(t, opt = {}) {
+  if (!t || t.label === 'No data') return '<span class="ld-pill" style="--c:var(--faint)">No data yet</span>';
+  const ar = t.dir > 0 ? '▲' : t.dir < 0 ? '▼' : t.label === 'New' ? '●' : '■';
+  const d = t.delta;
+  return `<span class="ld-pill" style="--c:${LD_COL[t.dir] ?? 'var(--v3)'}" title="Latest season vs the average of the earlier ones: ${d == null ? 'not enough seasons yet' : (d > 0 ? '+' : '') + d + ' points'}">${ar} ${esc(t.label === 'New' ? 'One season so far' : t.label)}${d != null && !opt.bare ? ` <b class="num">${d > 0 ? '+' : ''}${d}</b>` : ''}</span>`;
+}
+const ldArrow = (d, n) => `<span class="ld-ar" style="--c:${LD_COL[d] ?? 'var(--faint)'}">${d > 0 ? '▲' : d < 0 ? '▼' : '■'} ${n}</span>`;
+const ldScore = v => v == null ? '<span class="muted">–</span>' : `<b class="num" style="color:${v >= 15 ? 'var(--up)' : v <= -15 ? 'var(--down)' : 'var(--fg)'}">${v > 0 ? '+' : ''}${v}</b>`;
+const ldPct = (v, unit = '%') => v == null ? '<span class="muted">–</span>' : `<span class="num" style="color:${v >= 0 ? 'var(--up)' : 'var(--down)'}">${v > 0 ? '+' : ''}${v}${unit}</span>`;
+function ldSpark(vals, labels = []) {
+  const pts = vals.map((v, i) => [i, v]).filter(p => p[1] != null);
+  if (!pts.length) return '<span class="small muted">no score yet</span>';
+  const W = 132, H = 38, X = i => 8 + i * (W - 16) / Math.max(1, vals.length - 1), Y = v => H / 2 - (Math.max(-100, Math.min(100, v)) / 100) * (H / 2 - 5);
+  const d = pts.map((p, k) => `${k ? 'L' : 'M'}${X(p[0]).toFixed(1)} ${Y(p[1]).toFixed(1)}`).join('');
+  const last = pts.at(-1);
+  return `<svg class="ld-sp" viewBox="0 0 ${W} ${H}" role="img" aria-label="Score by season: ${vals.map((v, i) => (labels[i] || '') + ' ' + (v ?? 'none')).join(', ')}">
+    <line x1="2" x2="${W - 2}" y1="${H / 2}" y2="${H / 2}" stroke="var(--line2)" stroke-dasharray="2 3"/>
+    ${pts.length > 1 ? `<path d="${d}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>` : ''}
+    ${pts.map(p => `<circle cx="${X(p[0]).toFixed(1)}" cy="${Y(p[1]).toFixed(1)}" r="${p === last ? 3.8 : 2.4}" fill="${p === last ? 'var(--saffron)' : 'var(--accent)'}"><title>${esc(labels[p[0]] || '')}: ${p[1]}</title></circle>`).join('')}</svg>`;
+}
+const LD_ST = {ok: ['✓', 'var(--up)', 'Open'], held: ['●', 'var(--accent)', 'Held'], site: ['↗', 'var(--teal)', 'IR site'],
+  awaited: ['…', 'var(--faint)', 'Due'], missing: ['!', 'var(--down)', 'Missing'], unsourced: ['?', 'var(--warn)', 'Add link'],
+  none: ['–', 'var(--faint)', 'None'], sweep: ['↻', 'var(--v5)', 'To check']};
+const LD_STN = {ok: 'Linked', held: 'Happened; document not linked yet', site: 'On the company’s investor site (no free copy elsewhere)',
+  awaited: 'Not due yet', missing: 'Overdue and not found', unsourced: 'No automatic source; add the link', none: 'Company does not do this', sweep: 'Not checked yet'};
+function ldSlot(s, what) {
+  s = s || {st: 'none'};
+  const [ic, col, short] = LD_ST[s.st] || ['?', 'var(--faint)', s.st];
+  const tip = `${what}: ${LD_STN[s.st] || s.st}${s.d ? ' · ' + fdate(s.d) : ''}${s.src ? ' · ' + s.src : ''}${s.note ? '\n' + s.note : ''}${s.t ? '\n' + s.t : ''}`;
+  const lab = s.st === 'ok' || s.st === 'held' ? (s.d ? sdate(s.d) : short) : s.st === 'awaited' && s.d ? 'Due ' + sdate(s.d) : short;
+  const inner = `<span class="ld-ic" style="--c:${col}">${ic}</span><span>${esc(lab)}</span>`;
+  return s.u ? `<a class="ld-slot" href="${esc(s.u)}" target="_blank" rel="noopener" title="${esc(tip)}">${inner}<span class="ld-go">↗</span></a>` : `<span class="ld-slot" title="${esc(tip)}">${inner}</span>`;
+}
+const ldMargin = n => n && n.opm != null ? `<span class="num">${n.opm}%</span>${n.opm_prev != null ? ` <span class="small">${ldPct(Math.round((n.opm - n.opm_prev) * 10) / 10, ' pp')}</span>` : ''}` : '<span class="muted">–</span>';
+const ldSeasonLab = (s, mkt) => mkt === 'IN' ? `${s.in}<span class="ld-sub">${s.label}</span>` : `${s.gl}<span class="ld-sub">${s.label}</span>`;
+function ldCompany(L, seas) {
+  const rows = L.seasons.map((x, i) => ({x, s: seas[i]})).reverse();
+  const last = rows.find(r => r.x.thesis)?.x;
+  return `<section class="ld-co">
+    <header class="ld-co-h"><div style="min-width:0"><h4>${esc(L.name)}</h4>
+      <span class="small muted">${esc(L.mkt === 'IN' ? 'India' : (L.country || 'Global'))} · ${esc(L.ticker || L.id)}${L.cadence !== 'quarterly' ? ' · ' + (L.cadence === 'half' ? 'reports half-yearly' : 'full results half-yearly, updates in between') : ''}${L.next ? ' · next results ' + esc(fdate(L.next)) : ''}</span></div>
+      <div class="ld-co-r">${ldPill(L.trend)}<span class="small muted">${ldArrow(L.parts.tone, 'Tone')} ${ldArrow(L.parts.guid, 'Guidance')} ${ldArrow(L.parts.num, 'Numbers')}</span></div></header>
+    <div class="ld-tw"><table class="ld-t"><thead><tr><th>Season</th><th>Results</th><th>Call</th><th>Deck</th><th class="ld-n">Revenue YoY</th><th class="ld-n">Op. margin</th><th class="ld-n">Score</th><th>What management said</th></tr></thead><tbody>
+    ${rows.map(({x, s}) => `<tr><th scope="row" class="ld-se">${ldSeasonLab(s, L.mkt)}</th>
+      <td>${ldSlot(x.slots.results, 'Results')}</td><td>${ldSlot(x.slots.call, 'Call')}</td><td>${ldSlot(x.slots.deck, 'Deck')}</td>
+      <td class="ld-n" title="${esc(x.num?.src || '')}">${ldPct(x.num?.rev_yoy)}</td><td class="ld-n">${ldMargin(x.num)}</td>
+      <td class="ld-n" title="Tone ${x.tone ?? '–'} · Guidance ${x.guid ?? '–'} · Numbers ${x.numScore ?? '–'}">${ldScore(x.score)}<span class="ld-sub">${[x.tone != null ? 'T ' + x.tone : '', x.guid != null ? 'G ' + x.guid : '', x.numScore != null ? 'N ' + x.numScore : ''].filter(Boolean).join(' · ')}</span></td>
+      <td class="ld-th">${x.thesis ? esc(x.thesis) : `<span class="muted">${x.slots.call?.st === 'ok' || x.slots.results?.st === 'ok' ? 'Not read yet' : '–'}</span>`}</td></tr>`).join('')}
+    </tbody></table></div>
+    ${last && (last.triggers || []).length ? `<div class="ld-sig"><span class="eyebrow">Latest signals</span><ul>${last.triggers.map(t => `<li title="${esc(t.q)}"><b style="color:${t.dir > 0 ? 'var(--up)' : 'var(--down)'}">${t.dir > 0 ? '▲' : '▼'}</b> ${esc(t.label)}${t.q ? `<span class="ld-q">“${esc(t.q)}”</span>` : ''}</li>`).join('')}</ul>
+      ${(last.guidance || []).length ? `<p class="small"><b>Guidance:</b> ${last.guidance.map(g => `${esc(g.m)} ${esc(g.v)}${g.c && g.c !== 'held' ? ` <i>(${esc(g.c)})</i>` : ''}`).join(' · ')}</p>` : ''}</div>` : ''}
+  </section>`;
+}
+function ldMarketRows(d, mkt) {
+  return d.sectors.map(s => {
+    const Ls = s.leaders.filter(L => L.mkt === mkt), agg = mkt === 'IN' ? s.in : s.gl;
+    const series = d.seasons.map((_, i) => { const v = Ls.map(L => L.scores[i]).filter(x => x != null); return v.length ? Math.round(v.reduce((a, b) => a + b, 0) / v.length) : null; });
+    let calls = 0, linked = 0;
+    Ls.forEach(L => L.seasons.forEach(x => { const c = x.slots.call; if (c && c.st !== 'none' && c.st !== 'awaited') { calls++; if (c.st === 'ok') linked++; } }));
+    return {s, Ls, agg, series, calls, linked};
+  });
+}
+function ldTable(d, mkt) {
+  const f = ldS(), labs = d.seasons.map(s => mkt === 'IN' ? s.in : s.gl);
+  let rows = ldMarketRows(d, mkt).filter(r => !f.f || (f.f === 'up' ? r.agg.dir > 0 : f.f === 'down' ? r.agg.dir < 0 : r.agg.dir === 0));
+  rows.sort((a, b) => (b.agg.delta ?? -999) - (a.agg.delta ?? -999));
+  return `<div class="rows ld-rows"><div class="r hd"><span>Sector</span><span>Trend</span><span>Score now</span><span>Last 4 seasons</span><span>Leaders</span><span>Calls linked</span></div>
+  ${rows.map(({s, Ls, agg, series, calls, linked}) => { const k = mkt + '|' + s.name, open = f.open.has(k);
+    return `<div class="r ld-r${open ? ' on' : ''}" role="button" tabindex="0" data-lds="${esc(k)}" aria-expanded="${open}">
+      <span style="min-width:0"><span class="nm">${open ? '▾' : '▸'} ${esc(s.name)}</span><span class="sub" style="display:block">${esc(s.watch)}</span></span>
+      <span>${ldPill(agg)}</span><span>${ldScore(agg.score)}</span><span>${ldSpark(series, labs)}</span>
+      <span class="small" style="min-width:0">${Ls.map(L => `<span class="ld-nmini" style="--c:${LD_COL[L.trend.dir] ?? 'var(--faint)'}" title="${esc(L.name)}: ${esc(L.trend.label)}">${esc(L.name)}</span>`).join('')}</span>
+      <span class="small num">${calls ? `${linked} of ${calls}` : '–'}</span>
+      ${open ? `<div class="ld-open"><p class="small muted" style="margin:0">What to watch: ${esc(s.watch)}. Tap a link to open the filing; hover or long-press a cell for its source.</p>${Ls.map(L => ldCompany(L, d.seasons)).join('')}</div>` : ''}</div>`; }).join('') || '<div class="empty">No sector matches this filter.</div>'}</div>`;
+}
+function ldCompare(d) {
+  const rows = d.sectors.map(s => ({s, i: s.in, g: s.gl})).sort((a, b) => (b.s.divergence - a.s.divergence) || ((b.i.delta ?? 0) + (b.g.delta ?? 0)) - ((a.i.delta ?? 0) + (a.g.delta ?? 0)));
+  const read = (i, g) => {
+    if (!i.dir && !g.dir) return 'Both steady';
+    if (i.dir === g.dir) return i.dir > 0 ? 'Both improving: a broad upturn' : 'Both deteriorating: a broad downturn';
+    if (i.dir && g.dir) return i.dir > 0 ? 'India improving while global weakens: local drivers' : 'Global improving while India weakens: India lagging';
+    return i.dir ? `India ${i.dir > 0 ? 'improving' : 'weakening'}, global steady` : `Global ${g.dir > 0 ? 'improving' : 'weakening'}, India steady`;
+  };
+  return `<div class="rows ld-cmp"><div class="r hd"><span>Sector</span><span>India (2 leaders)</span><span>Global (4 leaders)</span><span>What it says</span></div>
+  ${rows.map(({s, i, g}) => `<div class="r"><span style="min-width:0"><span class="nm">${esc(s.name)}</span>${s.divergence ? ' <span class="ld-pill" style="--c:var(--violet)">Diverging</span>' : ''}</span>
+    <span><button class="linkish ld-jump" data-ldj="IN|${esc(s.name)}">${ldPill(i)}</button><span class="ld-sub">${esc(s.leaders.filter(L => L.mkt === 'IN').map(L => L.name).join(', '))}</span></span>
+    <span><button class="linkish ld-jump" data-ldj="GL|${esc(s.name)}">${ldPill(g)}</button><span class="ld-sub">${esc(s.leaders.filter(L => L.mkt === 'GL').map(L => L.name).join(', '))}</span></span>
+    <span class="small">${esc(read(i, g))}</span></div>`).join('')}</div>`;
+}
+/* World themes: per market, what is leading, picking up or fading and why (global_themes.yaml), with live evidence
+   from the leaders data, and the sectors / companies whose scores are climbing steadily. */
+const WT_ST = {leading: ['Leading', 'var(--up)'], picking_up: ['Picking up', 'var(--saffron)'], fading: ['Fading', 'var(--down)']};
+const wtConfirm = (c, st) => (c = c == null ? c : st === 'fading' ? -c : c, c == null) ? '<span class="small muted">Our data: not enough seasons yet</span>'
+  : `<span class="small" style="color:${c > .25 ? 'var(--up)' : c < -.25 ? 'var(--down)' : 'var(--muted)'}">Our data ${c > .25 ? 'agrees' : c < -.25 ? 'disagrees' : 'is mixed'}</span>`;
+function wtTheme(t) {
+  const [lab, col] = WT_ST[t.status] || [t.status, 'var(--faint)'];
+  return `<article class="wt-th" style="--c:${col}">
+    <header><h4>${esc(t.theme)}</h4><span class="ld-pill" style="--c:${col}">${lab}</span></header>
+    <p class="wt-why">${esc(t.why)}</p>
+    ${t.evidence ? `<p class="small"><b>Evidence:</b> ${esc(t.evidence)}</p>` : ''}
+    ${(t.leaders || []).length ? `<div class="wt-ev"><span class="eyebrow">Leaders we track</span> ${wtConfirm(t.confirm, t.status)}<div>${t.leaders.map(L => `<button class="wt-chip ld-jump" data-ldj="${L.mkt}|${esc(L.sector)}" style="--c:${LD_COL[L.trend.dir] ?? 'var(--faint)'}" title="${esc(L.sector)} · ${esc(L.trend.label)}${L.score != null ? ' · score ' + L.score : ''}">${L.trend.dir > 0 ? '▲' : L.trend.dir < 0 ? '▼' : '■'} ${esc(L.name)}</button>`).join('')}</div></div>` : ''}
+    ${t.india ? `<p class="small wt-in"><b>India read-across:</b> ${esc(t.india)}</p>` : ''}
+    <p class="small wt-src">${(t.sources || []).map(s => s.u.startsWith('#') ? `<span>${esc(s.t)}</span>` : `<a href="${esc(s.u)}" target="_blank" rel="noopener">${esc(s.t)} ↗</a>`).join('')}</p>
+  </article>`;
+}
+function ldWorld(d) {
+  const W = d.world; if (!W) return '<div class="empty">No world themes yet. Run <code>python run.py leaders</code>.</div>';
+  const f = ldS(), wm = f.wm || '', mk = W.markets.filter(m => !wm || m === wm);
+  const cnt = st => W.themes.filter(t => t.status === st && (!wm || t.market === wm)).length;
+  const cl = W.climbers || {sectors: [], companies: []}, labs = d.seasons.map(s => s.label);
+  const inMk = x => !wm || (wm === 'India' ? x.mkt === 'IN' : wm === 'Commodities' ? false : x.mkt === 'GL' && (wm === 'US' ? x.country === 'US' : wm === 'Europe' ? ['UK', 'DE', 'FR', 'CH', 'ES', 'IT', 'DK', 'NL', 'IE', 'LU'].includes(x.country) : wm === 'Japan' ? x.country === 'JP' : wm === 'Korea' ? x.country === 'KR' : wm === 'Taiwan' ? x.country === 'TW' : wm === 'China' ? ['CN', 'HK'].includes(x.country) : true));
+  return `<p class="small muted" style="margin:0 0 12px">Themes researched as of ${esc(fdate(W.asOf))}; the leader chips and the steady-climber lists update with every run.</p>
+  <div class="toolbar">${[''].concat(W.markets).map(m => `<button class="chip" data-wm="${esc(m)}" aria-pressed="${wm === m}">${m || 'All markets'}</button>`).join('')}</div>
+  <section class="ld-sum">
+    <div class="card ld-k"><span class="eyebrow">Leading</span><b style="color:var(--up)">${cnt('leading')}</b><span class="small muted">themes</span></div>
+    <div class="card ld-k"><span class="eyebrow">Picking up</span><b style="color:var(--saffron)">${cnt('picking_up')}</b><span class="small muted">themes</span></div>
+    <div class="card ld-k"><span class="eyebrow">Fading</span><b style="color:var(--down)">${cnt('fading')}</b><span class="small muted">themes</span></div>
+    <div class="card ld-k"><span class="eyebrow">Steady climbers</span><b>${cl.sectors.length + cl.companies.length}</b><span class="small muted">${cl.sectors.length} sectors · ${cl.companies.length} companies</span></div>
+  </section>
+  <section class="wt-climb"><div class="list-head"><h3>Picking up gradually: what our data shows</h3><span class="small muted">Score up three seasons in a row, by 8–60 points in total, with no single jump above 35</span></div>
+    <div class="wt-cl2">
+      <div><span class="eyebrow">Sectors</span>${cl.sectors.filter(inMk).map(x => `<button class="wt-cl ld-jump" data-ldj="${x.mkt}|${esc(x.name)}"><span><b>${esc(x.name)}</b><span class="ld-sub">${x.mkt === 'IN' ? 'India leaders' : 'Global leaders'} · ${x.from > 0 ? '+' : ''}${x.from} → ${x.to > 0 ? '+' : ''}${x.to}</span></span>${ldSpark(x.series, labs)}<b class="num" style="color:var(--up)">+${x.rise}</b></button>`).join('') || '<p class="small muted">None in this market yet.</p>'}</div>
+      <div><span class="eyebrow">Companies</span>${cl.companies.filter(inMk).slice(0, 20).map(x => `<button class="wt-cl ld-jump" data-ldj="${x.mkt}|${esc(x.sector)}"><span><b>${esc(x.name)}</b><span class="ld-sub">${esc(x.country || '')} · ${esc(x.sector)} · ${x.from > 0 ? '+' : ''}${x.from} → ${x.to > 0 ? '+' : ''}${x.to}</span></span>${ldSpark(x.series, labs)}<b class="num" style="color:var(--up)">+${x.rise}</b></button>`).join('') || '<p class="small muted">None in this market yet.</p>'}</div>
+    </div></section>
+  ${mk.map(m => { const ts = W.themes.filter(t => t.market === m); if (!ts.length) return '';
+    return `<section class="wt-mk"><div class="list-head"><h3>${esc(m)}</h3><span class="small muted">${['leading', 'picking_up', 'fading'].map(s => `${ts.filter(t => t.status === s).length} ${WT_ST[s][0].toLowerCase()}`).join(' · ')}</span></div>
+      <div class="wt-grid">${['leading', 'picking_up', 'fading'].flatMap(s => ts.filter(t => t.status === s)).map(wtTheme).join('')}</div></section>`; }).join('')}
+  <p class="small muted">Our data agrees / disagrees compares each theme with the current trend of the leaders we track for it. This is research to inform your own view, not investment advice.</p>`;
+}
+function vLeaders() {
+  const d = LD.data; if (!d) { loadLd().then(() => { if (S.view === 'leaders' || S.view === 'ledger') render(); renderNav(); }); return '<div class="empty">Loading sector leaders…</div>'; }
+  if (!d.sectors) return head('Sector leaders', '', '') + '<div class="empty">No leader data yet. Run <code>python run.py leaders</code>.</div>';
+  const f = ldS(), tab = f.tab, cvb = d.coverageBy || {}, nIN = d.sectors.reduce((n, s) => n + s.leaders.filter(L => L.mkt === 'IN').length, 0), nGL = d.sectors.reduce((n, s) => n + s.leaders.filter(L => L.mkt === 'GL').length, 0);
+  const mrows = tab === 'VS' || tab === 'WT' ? null : ldMarketRows(d, tab), cnt = k => mrows.filter(r => r.agg.dir === k).length, cv = cvb[tab] || {};
+  const tabs = [['IN', `India · ${nIN} leaders`], ['GL', `Global · ${nGL} leaders`], ['VS', 'India vs Global'], ['WT', 'World themes']];
+  return head('Sector leaders', `Each sector’s bellwethers: 2 Indian and 4 global leaders, with every result, earnings call and investor deck of the last four seasons, and whether the sector is getting better or worse.`, `
+    <ul><li>Pick <b>India</b> or <b>Global</b> to see one market at a time, <b>India vs Global</b> to compare them sector by sector, or <b>World themes</b> for what is leading, picking up and fading in each country, and why.</li>
+    <li>Each season scores <b>−100 to +100</b>: management tone on the call (40%), guidance raised or cut against what was promised (30%), and reported numbers, revenue growth and margin change year on year (30%). Parts not read yet are left out, not counted as zero.</li>
+    <li><b>Improving / Deteriorating</b>: the latest season is ${d.thresholds?.up || 10}+ points above or below the average of the earlier ones. <b>One season so far</b> means there is nothing earlier to compare with yet.</li>
+    <li>Tap a sector to open each company’s season-by-season table. ✓ opens the document, ↗ IR site opens the company’s investor page where that webcast or deck sits, ● happened but the document is not linked yet, ! overdue and not found.</li></ul>`,
+    `<span class="badge">Updated ${esc(fdate(d.generated))}</span>`) + `
+  <div class="ld-tabs" role="tablist">${tabs.map(([k, n]) => `<button role="tab" aria-selected="${tab === k}" data-ldt="${k}">${n}</button>`).join('')}</div>
+  ${tab === 'WT' ? ldWorld(d) : tab === 'VS' ? ldCompare(d) : `
+  <section class="ld-sum">
+    <button class="card ld-k" data-ldf="up" aria-pressed="${f.f === 'up'}"><span class="eyebrow">Improving</span><b style="color:var(--up)">${cnt(1)}</b><span class="small muted">of ${mrows.length} sectors</span></button>
+    <button class="card ld-k" data-ldf="down" aria-pressed="${f.f === 'down'}"><span class="eyebrow">Deteriorating</span><b style="color:var(--down)">${cnt(-1)}</b><span class="small muted">of ${mrows.length} sectors</span></button>
+    <button class="card ld-k" data-ldf="flat" aria-pressed="${f.f === 'flat'}"><span class="eyebrow">Steady or too early</span><b>${mrows.length - cnt(1) - cnt(-1)}</b><span class="small muted">sectors</span></button>
+    <button class="card ld-k" data-v="ledger" data-lm="${tab}"><span class="eyebrow">Calls linked</span><b>${cv.calls ? Math.round(100 * cv.callsLinked / cv.calls) : '–'}%</b><span class="small muted">${fmt(cv.callsLinked || 0)} of ${fmt(cv.calls || 0)} held calls · ${fmt(cv.missing || 0)} events missing</span></button>
+  </section>
+  ${f.f ? `<div class="toolbar"><button class="chip" data-ldf="${f.f}" aria-pressed="true">${{up: 'Improving', down: 'Deteriorating', flat: 'Steady or too early'}[f.f]} ✕</button></div>` : ''}
+  ${ldTable(d, tab)}`}
+  ${tab !== 'WT' && (d.upcoming || []).filter(u => tab === 'VS' || u.mkt === tab).length ? `<p class="small" style="margin-top:14px"><b>Results coming up:</b> ${d.upcoming.filter(u => tab === 'VS' || u.mkt === tab).slice(0, 14).map(u => `${esc(sdate(u.date))} ${esc(u.name)}${u.what === 'call' ? ' (call)' : ''}`).join(' · ')}</p>` : ''}
+  <p class="small muted">Sources: BSE filings and XBRL (India); SEC filings, Motley Fool call transcripts, company results pages and Yahoo Finance (global).</p>`;
+}
+function vLedger() {
+  const d = LD.data; if (!d) { loadLd().then(() => { if (S.view === 'ledger') render(); }); return '<div class="empty">Loading…</div>'; }
+  const f = ldS(), lm = f.lm || '', cv = lm ? (d.coverageBy || {})[lm] || {} : d.coverage || {}, seasL = Object.fromEntries((d.seasons || []).map(s => [s.key, s]));
+  const gaps = (d.gaps || []).filter(g => (!f.lead || g.st === f.lead) && (!lm || g.mkt === lm));
+  const by = {}; gaps.forEach(g => (by[g.name] = by[g.name] || {g, items: []}).items.push(g));
+  return head('Event ledger', 'Every result, earnings call and investor deck expected from the sector leaders over the last four seasons, and which ones are still missing a document.', `
+    <ul><li><b>Missing</b>: overdue with no trace. Check the company’s filings; if it exists, add the link to <code>leaders_manual.yaml</code>.</li>
+    <li><b>Needs a link</b>: no automatic source can see that document for the company.</li></ul>`) + `
+  <div class="ld-tabs" role="tablist">${[['', 'All'], ['IN', 'India'], ['GL', 'Global']].map(([k, n]) => `<button role="tab" aria-selected="${lm === k}" data-ldlm="${k}">${n}</button>`).join('')}</div>
+  <section class="ld-sum">
+    <div class="card ld-k"><span class="eyebrow">Expected so far</span><b>${fmt(cv.expected || 0)}</b><span class="small muted">results, calls, decks</span></div>
+    <div class="card ld-k"><span class="eyebrow">On record</span><b style="color:var(--up)">${cv.expected ? Math.round(100 * ((cv.ok || 0) + (cv.held || 0) + (cv.site || 0)) / cv.expected) : '–'}%</b><span class="small muted">${fmt(cv.ok || 0)} linked · ${fmt((cv.held || 0) + (cv.site || 0))} held</span></div>
+    <button class="card ld-k" data-ldg="missing" aria-pressed="${f.lead === 'missing'}"><span class="eyebrow">Missing</span><b style="color:var(--down)">${fmt(cv.missing || 0)}</b><span class="small muted">overdue, nothing found</span></button>
+    <button class="card ld-k" data-ldg="unsourced" aria-pressed="${f.lead === 'unsourced'}"><span class="eyebrow">Needs a link</span><b style="color:var(--warn)">${fmt(cv.unsourced || 0)}</b><span class="small muted">no automatic source</span></button>
+  </section>
+  <div class="rows ld-gap"><div class="r hd"><span>Company</span><span>What is missing</span></div>
+  ${Object.values(by).map(({g, items}) => `<div class="r"><span style="min-width:0"><span class="nm">${esc(g.name)}</span><span class="sub" style="display:block">${esc(g.sector)} · ${LD_MK[g.mkt]}</span></span>
+    <span class="small" style="min-width:0">${items.map(x => `<span class="ld-gapi"><b style="color:${x.st === 'missing' ? 'var(--down)' : 'var(--warn)'}">${esc({results: 'Results', call: 'Call', deck: 'Deck'}[x.kind])} ${esc(x.mkt === 'IN' ? seasL[x.season]?.in : seasL[x.season]?.gl)}</b> ${esc(x.st === 'missing' ? 'missing' : 'needs a link')}</span>`).join('')}</span></div>`).join('') || '<div class="empty">Nothing missing. Every expected event is on record.</div>'}</div>`;
+}
+
+const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -3369,11 +3609,19 @@ document.addEventListener('click', e => {
   const wt = t.closest('[data-wt]'); if (wt) { e.preventDefault(); e.stopPropagation(); wlToggle(wt.dataset.wt); render(); if (S.drawer) drawDrawer(); renderNav(); return; }
   const tipB = t.closest('[data-tip]'); if (tipB) { e.preventDefault(); e.stopPropagation(); showTip(tipB); return; }
   if (!t.closest('#pop')) hideTip();
+  const lds = t.closest('[data-lds]'); if (lds && !t.closest('.ld-open')) { const o = ldS().open, k = lds.dataset.lds; o.has(k) ? o.delete(k) : o.add(k); render(); return; }
+  const ldt = t.closest('[data-ldt]'); if (ldt) { const f = ldS(); f.tab = ldt.dataset.ldt; f.f = ''; render(); return; }
+  const ldj = t.closest('[data-ldj]'); if (ldj) { const f = ldS(), [m, n] = ldj.dataset.ldj.split('|'); f.tab = m; f.f = ''; f.open.add(m + '|' + n); render(); setTimeout(() => document.querySelector(`[data-lds="${CSS.escape(m + '|' + n)}"]`)?.scrollIntoView({block: 'start'}), 50); return; }
+  const ldf = t.closest('[data-ldf]'); if (ldf) { const f = ldS(); f.f = f.f === ldf.dataset.ldf ? '' : ldf.dataset.ldf; render(); return; }
+  const wmb = t.closest('[data-wm]'); if (wmb) { ldS().wm = wmb.dataset.wm; render(); return; }
+  const ldlm = t.closest('[data-ldlm]'); if (ldlm) { ldS().lm = ldlm.dataset.ldlm; render(); return; }
+  const ldg = t.closest('[data-ldg]'); if (ldg) { const f = ldS(); f.lead = f.lead === ldg.dataset.ldg ? '' : ldg.dataset.ldg; render(); return; }
   if (!t.closest('.find')) $('#findres').hidden = true;
   const op = t.closest('[data-open]');
   if (op) { const k = op.dataset.k; if (op.closest('.find-res')) { $('#find').value = ''; $('#findres').hidden = true; } openCo(op.dataset.open, k || undefined); return; }
   if (t.closest('[data-close]')) { closeCo(); return; }
   const v = t.closest('[data-v]');
+  if (v && v.dataset.lm !== undefined) ldS().lm = v.dataset.lm;
   if (v) { if (v.dataset.sort) { S.calls.sort = v.dataset.sort; S.calls.limit = 50; } if (S.drawer) closeCo(); go(v.dataset.v); return; }
   const fm = t.closest('[data-firm]'); if (fm && !fm.disabled) { if (S.drawer) closeCo(); S.ppl = {...(S.ppl || {type: '', search: ''}), open: fm.dataset.firm}; if (S.view !== 'people') go('people'); else render(); if (fm.dataset.firm) setTimeout(() => $('.ppl-open')?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'}), 60); return; }
   const pt = t.closest('[data-pt]'); if (pt) { S.ppl = {...(S.ppl || {search: '', open: ''}), type: pt.dataset.pt}; render(); return; }

@@ -1,0 +1,348 @@
+# World themes: what is leading, what is picking up and what is fading in each market, and why.
+# Curated from the sources listed with each theme (refresh by asking Claude, or edit by hand). The dashboard
+# adds live evidence from the sector-leaders data: each theme's `leaders` (ids as in leaders.yaml) show their
+# current trend, and "Picking up gradually" is computed from the season scores on every run.
+#
+# status: leading | picking_up | fading
+as_of: "2026-11-03"
+markets: [US, Europe, Japan, Korea, Taiwan, China, India, Commodities]
+themes:
+
+# ---------------------------------------------------------------- United States
+- market: US
+  theme: Big pharma and healthcare
+  status: leading
+  why: >-
+    Money leaving crowded AI trades went to large, diversified drugmakers. Earnings are strong (Lilly Q1 sales
+    +56% on GLP-1s, AbbVie's new Skyrizi data), the April 2026 tariff on patented drugs exempts companies that signed
+    White House pricing deals, and 2026 healthcare M&A is on course for its highest since 2019.
+  evidence: AbbVie closed at a record in mid-October; hedge-fund healthcare exposure near a 5-year high
+  leaders: [LLY, NVO, TMO, CRL, HCA, UHS]
+  india: >-
+    CDMO / CRDMO gains most: cash-rich big pharma outsources more, and the BIOSECURE provisions push work away from
+    Chinese CDMOs. Generics do not share in it; the US tariff on generics rises to 100% from August 2028.
+  sources:
+    - {t: "Dow Jones via Tiger: Big pharma near all-time highs (16 Oct 2026)", u: "https://www.itiger.com/news/2675342515"}
+    - {t: "InvestorLens: Healthcare the new crowded trade (Aug 2026)", u: "https://www.investorlens.capital/blog/2026-08-15-healthcare-new-crowded-trade-q2-13f"}
+    - {t: "Mayer Brown: Section 232 tariffs on patented drugs (Apr 2026)", u: "https://www.mayerbrown.com/en/insights/publications/2026/04/trump-administration-implements-tariffs-on-imported-patented-medication-and-pharmaceutical-ingredients-under-section-232-of-the-trade-expansion-act-of-1962"}
+
+- market: US
+  theme: AI's physical build-out (power, cooling, automation)
+  status: leading
+  why: >-
+    AI's constraints are now physical: data centres need power equipment, cooling, transformers and automation.
+    Industrials that sell into them beat and raised (Grainger, Rockwell), and rental demand pushed United Rentals
+    to an all-time high in July.
+  evidence: Rockwell raised FY26 growth guidance to 5-9%; Powell backlog $1.8bn
+  leaders: [ETN, VRT, GEV, PWR, EMR, CAT, CARR, TT]
+  india: Electrical equipment, switchgear, transformers, cables and precision components for US OEMs.
+  sources:
+    - {t: "Nasdaq / MarketBeat: 3 industrial stocks crushed earnings (May 2026)", u: "https://www.nasdaq.com/articles/3-industrial-stocks-just-crushed-earnings"}
+    - {t: "SentiSense: United Rentals all-time high (Jul 2026)", u: "https://app.sentisense.ai/stories/united-rentals-beats-estimates-raises-full-year-outlook-and-stock-hits-all-time-07232026"}
+
+- market: US
+  theme: Quality compounders and staples
+  status: leading
+  why: >-
+    Predictable cash generators are being paid for again as AI spending is questioned. Coca-Cola raised 2026
+    guidance to about 5% organic growth and 9-10% EPS growth.
+  evidence: Coca-Cola raised full-year guidance in July
+  leaders: [PG, CL, COST, WMT]
+  india: Supports premium staples' valuations, but Indian FMCG volumes, not US flows, decide the trend here.
+  sources:
+    - {t: "RTTNews: Coca-Cola boosts FY26 outlook (Jul 2026)", u: "https://www.rttnews.com/3671316/coca-cola-boosts-fy26-outlook-update.aspx?type=alleco"}
+
+- market: US
+  theme: AI-related tech after the spending scare
+  status: fading
+  why: >-
+    In mid-October investors sold AI-related stocks on worries about the payback from AI spending and moved into
+    drugmakers, staples and bonds. Leadership has broadened away from the AI trade rather than reversed it.
+  evidence: AI selloff and rotation in the week to 16 Oct 2026
+  leaders: [NVDA, GOOGL, AMZN]
+  india: Indian IT services remain weak; AI is also changing how they are paid.
+  sources:
+    - {t: "Dow Jones via Tiger (16 Oct 2026)", u: "https://www.itiger.com/news/2675342515"}
+
+- market: US
+  theme: Reshoring factory construction
+  status: fading
+  why: >-
+    Despite tariffs, US factory construction keeps falling: reshoring is showing up in orders for equipment and
+    automation, not yet in new plants.
+  evidence: Factory construction spending still declining
+  leaders: []
+  india: Do not price Indian exporters for a US plant-building boom yet.
+  sources:
+    - {t: "MarketScale: The reshoring boom that wasn't", u: "https://www.marketscale.com/industries/engineering-and-construction/the-reshoring-boom-that-wasnt-us-factory-construction-keeps-falling-despite-tariff-push.md"}
+
+# ---------------------------------------------------------------- Europe
+- market: Europe
+  theme: Banks
+  status: leading
+  why: >-
+    Earnings estimates keep rising, credit growth is improving and bad loans show no broad deterioration. UBS no
+    longer calls banks contrarian and wants them at index weight while revisions stay positive.
+  evidence: UBS STOXX 600 target 690 (2026) and 760 (2027)
+  leaders: [HSBA.L, UBSG.SW]
+  india: Same credit-cycle backdrop; our Indian private-bank leaders are improving too.
+  sources:
+    - {t: "Milano Finanza: UBS on Europe (Jul 2026)", u: "https://www.milanofinanza.it/news/ubs-punta-sull-europa-indice-stoxx-600-verso-690-punti-nel-2026-i-titoli-difensivi-ritrovano-appeal-202607091317567958"}
+
+- market: Europe
+  theme: AI enablers and electrification industrials
+  status: leading
+  why: >-
+    UBS puts AI enablers and some industrials, with banks, in the 40-50% of the index with the strongest
+    earnings-estimate momentum.
+  evidence: Strongest estimate revisions in Europe per UBS
+  leaders: [SIE.DE, SU.PA, ASML, PRY.MI]
+  india: Same electrification demand that lifts Indian T&D and cable makers.
+  sources:
+    - {t: "Milano Finanza: UBS on Europe (Jul 2026)", u: "https://www.milanofinanza.it/news/ubs-punta-sull-europa-indice-stoxx-600-verso-690-punti-nel-2026-i-titoli-difensivi-ritrovano-appeal-202607091317567958"}
+
+- market: Europe
+  theme: Staples, pharma, medtech and luxury
+  status: picking_up
+  why: >-
+    Earnings expectations have stopped falling and valuations sit below long-run averages; a weaker euro helps.
+    UBS sees luxury closest to a turning point.
+  evidence: UBS calls these laggards investable again
+  leaders: [NESN.SW, ULVR.L, NVO, LONN.SW]
+  india: Watch Indian suppliers to European staples and pharma (packaging, APIs, ingredients).
+  sources:
+    - {t: "Milano Finanza: UBS on Europe (Jul 2026)", u: "https://www.milanofinanza.it/news/ubs-punta-sull-europa-indice-stoxx-600-verso-690-punti-nel-2026-i-titoli-difensivi-ritrovano-appeal-202607091317567958"}
+
+- market: Europe
+  theme: Defence
+  status: fading
+  why: >-
+    After a near-200% run, orders have come slower than hoped (contract delays in France and the UK), valuations are
+    stretched and crowded positions are being cut. The long-run spending case stands; the stocks have become
+    stock-specific.
+  evidence: Sector index -1.2% YTD by June vs STOXX 600 +4.8%; Rheinmetall ~25% off its peak
+  leaders: [RHM.DE]
+  india: Indian defence leaders are still improving on orders at home; export hopes into Europe may take longer.
+  sources:
+    - {t: "European Business Magazine: Defence rally reverses (Jun 2026)", u: "https://europeanbusinessmagazine.com/european-defence-stocks-rally-reverse-2026/"}
+
+- market: Europe
+  theme: Autos
+  status: fading
+  why: Price pressure, China exposure, competition from Chinese carmakers and restructuring make autos Europe's weakest area.
+  evidence: UBS's weakest sector call
+  leaders: [7203.T, HMC, 1211.HK]
+  india: Auto-component exporters to Europe face a slower customer base.
+  sources:
+    - {t: "Milano Finanza: UBS on Europe (Jul 2026)", u: "https://www.milanofinanza.it/news/ubs-punta-sull-europa-indice-stoxx-600-verso-690-punti-nel-2026-i-titoli-difensivi-ritrovano-appeal-202607091317567958"}
+
+# ---------------------------------------------------------------- Japan
+- market: Japan
+  theme: Megabanks on rising rates
+  status: leading
+  why: >-
+    The Bank of Japan has lifted rates to about 1%. MUFG says every 0.25-point rise adds about ¥180bn to profit, and
+    it overtook Toyota as Japan's most valuable company, the first bank at the top since 1993.
+  evidence: MUFG market value above ¥42 trillion (Jul 2026)
+  leaders: [MUFG]
+  india: Japanese banks have more to lend and invest abroad; supportive for Japanese FDI and lending into India.
+  sources:
+    - {t: "Nippon.com: MUFG becomes Japan's most valuable firm (Jul 2026)", u: "https://www.nippon.com/en/news/yjj2026071300380/"}
+
+- market: Japan
+  theme: Chip and AI hardware stocks
+  status: leading
+  why: Japanese semiconductor and equipment stocks track the US AI build-out; they carried the Nikkei above 71,000 in June.
+  evidence: Nikkei record above 71,000 (Jun 2026)
+  leaders: []
+  india: Indian semiconductor and EMS supply chains are the link; still early.
+  sources:
+    - {t: "Adnkronos: Nikkei tops 71,000 (Jun 2026)", u: "https://english.adnkronos.com/2026/06/18/nikkei-rises-over-1400-points-to-top-71000-for-1st-time/"}
+
+# ---------------------------------------------------------------- Korea
+- market: Korea
+  theme: Memory chips
+  status: leading
+  why: >-
+    Surging memory demand from AI lifts Samsung and SK Hynix. Korea's market is mostly hardware, so it gains from AI
+    spending without the software-disruption risk; a law forcing treasury-share cancellation adds a governance tailwind.
+  evidence: KOSPI record 6,084, +44% in 2026
+  leaders: []
+  india: Memory price rises are a cost headwind for Indian electronics assemblers.
+  sources:
+    - {t: "Yahoo Finance: Memory boom drives Korean stocks past 6,000", u: "https://finance.yahoo.com/news/memory-boom-drives-korean-stocks-003733577.html"}
+
+- market: Korea
+  theme: Shipbuilding
+  status: leading
+  why: >-
+    Yards are booked through 2028 (about 3.5 years of work), newbuild prices are rising, Korean yards expect to win 72
+    of 77 LNG carriers ordered in 2026, and US naval work is a longer-term option.
+  evidence: LNG carrier prices seen above $260m within a year
+  leaders: []
+  india: Indian shipbuilders and marine-equipment makers sit on the same cycle, with policy support at home.
+  sources:
+    - {t: "Hellenic Shipping News: Korean yards' 3.5-year backlog (Jan 2026)", u: "https://www.hellenicshippingnews.com/?p=1118298"}
+
+# ---------------------------------------------------------------- Taiwan
+- market: Taiwan
+  theme: AI servers and foundry
+  status: leading
+  why: >-
+    Taiwan sits at the centre of the AI chip and server supply chain. Export orders topped $100bn for the first time
+    in August, up 71% year on year, the 19th straight monthly rise.
+  evidence: August export orders $103bn, +71.4%; full year could reach $1.1 trillion
+  leaders: [2330.TW, JBL]
+  india: Indian EMS and component makers are the second-source option; our Indian EMS leaders are not yet improving.
+  sources:
+    - {t: "The Star: Taiwan export orders hit record (Sep 2026)", u: "https://www.thestar.com.my/business/business-news/2026/09/22/taiwan-august-export-orders-hit-record-high-value-strong-ai-demand-leads"}
+
+# ---------------------------------------------------------------- China / Hong Kong
+- market: China
+  theme: Semiconductor localisation and AI
+  status: leading
+  why: >-
+    AI adoption and Beijing's push to make its own chips carried the Shanghai Composite to an 11-year high in May;
+    UBS raised its 2026 A-share profit forecast to 11%.
+  evidence: Shanghai Composite 4,225 (May 2026)
+  leaders: []
+  india: Less direct; China's own chip push means more competition for Indian electronics exporters in third markets.
+  sources:
+    - {t: "China Daily via SSE: Mainland market hits 11-year high (May 2026)", u: "https://english.sse.com.cn/news/newsrelease/voice/c/c_20260512_10818226.shtml"}
+
+- market: China
+  theme: Exporters, power equipment and machinery
+  status: picking_up
+  why: Analysts expect strong exports and industrial output to lift export-oriented cyclicals, power equipment and machinery next.
+  evidence: Exports and industrial output beat in spring 2026
+  leaders: [1211.HK]
+  india: Direct competition for Indian capital-goods and power-equipment exporters.
+  sources:
+    - {t: "China Daily via SSE (May 2026)", u: "https://english.sse.com.cn/news/newsrelease/voice/c/c_20260512_10818226.shtml"}
+
+# ---------------------------------------------------------------- India
+- market: India
+  theme: Electrical equipment and T&D
+  status: leading
+  why: >-
+    Grid and data-centre demand against limited transformer and switchgear capacity; the clearest signal on our own
+    dashboard, improving in both India and global leaders.
+  evidence: Sector leaders trend in India and global (see live chips)
+  leaders: ["500002", "500093", ETN, SU.PA]
+  india: This is the Indian side of the global electrification theme.
+  sources:
+    - {t: "Sector leaders dashboard (this desk)", u: "#leaders"}
+
+- market: India
+  theme: Mid-sized private banks and insurers
+  status: leading
+  why: >-
+    Non-food credit grew 18.3% in June; HSBC expects FY27 earnings growth to come from financials, industrials and
+    discretionary, and BofA prefers mid-sized private banks to large private and state banks.
+  evidence: 73% of Q1 FY27 results met or beat estimates (HSBC)
+  leaders: ["500180", "532174", "540719", "540716"]
+  india: Domestic theme.
+  sources:
+    - {t: "Outlook Business: HSBC on Q1 FY27 (Aug 2026)", u: "https://www.outlookbusiness.com/corporate/73-of-india-inc-q1-results-beat-or-meet-estimates-says-hsbc"}
+    - {t: "Outlook Business: BofA raises FY27 estimates (Aug 2026)", u: "https://www.outlookbusiness.com/markets/bofa-raises-fy27-earnings-estimates-turns-positive-on-autos-cement-and-power"}
+
+- market: India
+  theme: Power utilities
+  status: leading
+  why: BofA favours regulated utilities for stronger project execution and valuations; our Indian utility leaders are improving.
+  evidence: BofA overweight (Aug 2026)
+  leaders: ["532555", "500400"]
+  india: Domestic theme.
+  sources:
+    - {t: "Outlook Business: BofA raises FY27 estimates (Aug 2026)", u: "https://www.outlookbusiness.com/markets/bofa-raises-fy27-earnings-estimates-turns-positive-on-autos-cement-and-power"}
+
+- market: India
+  theme: Autos
+  status: picking_up
+  why: BofA upgraded autos on 15-20% volume growth, lean dealer stock and expected margin recovery; our two leaders still need to confirm it.
+  evidence: Industry volumes up 15-20% year to date
+  leaders: ["532500", "500520"]
+  india: Domestic theme.
+  sources:
+    - {t: "Outlook Business: BofA raises FY27 estimates (Aug 2026)", u: "https://www.outlookbusiness.com/markets/bofa-raises-fy27-earnings-estimates-turns-positive-on-autos-cement-and-power"}
+
+- market: India
+  theme: CDMO / CRDMO
+  status: picking_up
+  why: >-
+    Global CDMO leaders are improving while Indian ones are flat: the gap is the opportunity if order books follow.
+    Jefferies sees the quickest wins in GLP-1 intermediates and peptides.
+  evidence: Global CDMO leaders improving; India flat (live chips)
+  leaders: ["532488", "539268", TMO, LONN.SW]
+  india: Indian side of the US big-pharma theme.
+  sources:
+    - {t: "Pharma Manufacturing: India's CRDMOs and BIOSECURE (Dec 2025)", u: "https://www.pharmamanufacturing.com/sector/contract-manufacturing/article/55338256/indias-crdmos-poised-for-growth-with-passage-of-biosecure-act-in-the-offing"}
+
+- market: India
+  theme: Capital markets, AMCs, power exchange, tobacco
+  status: fading
+  why: >-
+    Regulation is the drag: F&O curbs and the April 2026 STT rise (options volumes -51% in FY26), new mutual-fund cost
+    rules and brokerage caps from April 2026, market coupling at the power exchange, and a new excise on cigarettes from
+    February 2026.
+  evidence: See sources
+  leaders: ["541729", "542772", "500875"]
+  india: Domestic theme.
+  sources:
+    - {t: "Multibagg: F&O curbs and STT hike (Oct 2026)", u: "https://www.multibagg.ai/market-pulse/articles/sebi-fo-curbs-stt-hike-cmuwnaody00042tmr8ed57qn9"}
+    - {t: "Moneylife: SEBI mutual fund overhaul (from Apr 2026)", u: "https://moneylife.in/article/sebi-announces-major-overhaul-of-mutual-fund-rules-effective-april-2026/79422.html"}
+    - {t: "Rupeezy: IEX and market coupling", u: "https://rupeezy.in/blog/iex-shares-crash-20-percent-after-cerc-market-coupling-january-2026"}
+    - {t: "Angel One: ITC after the cigarette excise (Feb 2026)", u: "https://oga-prod.angelone.in/news/stocks/itc-share-price-in-focus-as-new-cigarette-tax-kicks-in-stock-sees-worst-january-ever"}
+
+- market: India
+  theme: Generic pharma exporters
+  status: fading
+  why: US generics stay duty-free until August 2028, then face 100% and later 200% unless made in the US; India supplies about 40% of US generics by volume.
+  evidence: Indian pharma leaders deteriorating (live chips)
+  leaders: ["524715", "500124", TEVA, VTRS]
+  india: Domestic theme.
+  sources:
+    - {t: "Kotak Neo: Generic drug tariff roadmap (Jul 2026)", u: "https://www.kotakneo.com/news/global-markets/trump-generic-drug-tariff-india-pharma-exports/"}
+
+- market: India
+  theme: IT services
+  status: fading
+  why: Our Indian IT leaders are the weakest sector on the dashboard while global IT improves; BofA only moved IT to neutral after the fall.
+  evidence: Indian IT leaders deteriorating (live chips)
+  leaders: ["532540", "500209", ACN, CTSH]
+  india: Domestic theme.
+  sources:
+    - {t: "Outlook Business: BofA raises FY27 estimates (Aug 2026)", u: "https://www.outlookbusiness.com/markets/bofa-raises-fy27-earnings-estimates-turns-positive-on-autos-cement-and-power"}
+
+# ---------------------------------------------------------------- Commodities
+- market: Commodities
+  theme: Copper
+  status: leading
+  why: >-
+    AI data centres use about 27-33 tonnes of copper per megawatt, grids need more, and supply is short after the
+    Grasberg disruption. New mines need prices above about $20,000/t, so supply cannot respond quickly.
+  evidence: LME record above $14,500/t (Jan 2026); JPMorgan sees a 2026 deficit
+  leaders: [FCX, BHP.AX, RIO.L, AA, "500440", "500295"]
+  india: Positive for Hindalco / Vedanta; a cost headwind for cable makers unless passed through.
+  sources:
+    - {t: "Startup Fortune: Copper records and AI data centres (Jun 2026)", u: "https://startupfortune.com/copper-has-broken-records-this-year-and-ai-data-centers-are-the-reason-the-rally-isnt-done/"}
+
+- market: Commodities
+  theme: Gold
+  status: leading
+  why: Central-bank buying and uncertainty took gold through $5,300/oz in January.
+  evidence: Record above $5,300/oz (Jan 2026)
+  leaders: []
+  india: Gold-loan NBFCs and jewellers benefit from higher collateral values.
+  sources:
+    - {t: "Engineering News: Gold breaches $5,300 (Jan 2026)", u: "https://www.engineeringnews.co.za/article/gold-breaches-5-300ounce-to-record-high-2026-01-28"}
+
+- market: Commodities
+  theme: Diversified miners (after gold)
+  status: picking_up
+  why: SBG Securities expects copper-led industrial demand to start a rotation from gold into general miners.
+  evidence: Analyst view, early 2026
+  leaders: [BHP.AX, RIO.L, FCX]
+  india: Non-ferrous metals and mining in India.
+  sources:
+    - {t: "Shyft: From gold to copper (Jan 2026)", u: "https://www.shyft.co.za/en-ZA/gold-to-copper-commodity-rotation"}
