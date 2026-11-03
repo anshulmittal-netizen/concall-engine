@@ -207,6 +207,7 @@ def india_live(leaders: list[dict], state: dict, keys: list[str], log=log_) -> b
         w0 = d0
         while w0 <= d1:  # BSE allows at most 12 months per query
           w1 = min(d1, w0 + dt.timedelta(days=180))
+          seen = set()
           for p in range(1, 40):
             r = http.get(BSE_ANN.format(p=p, code=code, d0=w0.strftime("%Y%m%d"), d1=w1.strftime("%Y%m%d")))
             if r.status_code != 200:
@@ -218,8 +219,10 @@ def india_live(leaders: list[dict], state: dict, keys: list[str], log=log_) -> b
                 ok = False
                 break
             table = j.get("Table") or []
-            if not table:
-                break
+            ids = {str(it.get("NEWSID")) for it in table}
+            if not table or ids <= seen:
+                break  # past the last page (BSE repeats the final page rather than returning nothing)
+            seen |= ids
             for it in table:
                 k = _bse_kind(it)
                 att = (it.get("ATTACHMENTNAME") or "").strip()
