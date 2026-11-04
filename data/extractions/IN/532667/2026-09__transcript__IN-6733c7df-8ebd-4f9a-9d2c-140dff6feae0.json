@@ -1,0 +1,459 @@
+{
+ "doc_id": "IN-6733c7df-8ebd-4f9a-9d2c-140dff6feae0",
+ "market": "IN",
+ "company_id": "532667",
+ "name": "Suzlon Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-04",
+ "period": "2026-09",
+ "title": "Suzlon Energy Ltd - 532667 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q2 FY27 EBITDA margin fell to 14.8% (H1 15.1%) against prior 17-18% FY27 guide; management now says 15%+ with 1% upside, while order book 6 GW and 1,300 MW erected stock support H2 volume ramp of 1.5-1.65x H1.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 margin guide cut to ~15%",
+    "quote": "You can say 15% plus upside of 1%.",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "pricing",
+    "label": "WTG contribution margin 26.9% → 21.2%",
+    "quote": "declined WTG contribution margins from 26.9% to 21.2%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Receivable days up; H1 WC stretched",
+    "quote": "Receivables are up.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q2 commissioning 454 MW, up ~69% QoQ",
+    "quote": "Suzlon installations grew more than 69% from 269 megawatts to 454 megawatts in Q2 FY27.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "H1 FY27 orders 1.5 GW; order book 6 GW",
+    "quote": "In H1 '27, we have already secured 1.5 gigawatts of orders",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "15.1% H1, 15%+ with 1% upside",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "You can say 15% plus upside of 1%."
+   },
+   {
+    "metric": "WTG contribution margin FY27",
+    "value": "22%-23%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "WTG contribution margins are expected to remain in that 22%, 23% range for FY27"
+   },
+   {
+    "metric": "Annual installations",
+    "value": "more than 10 GW near term, 15 GW by FY31",
+    "change": "held",
+    "horizon": "FY31",
+    "quote": "annual installations expected to cross 10 gigawatts in the near term and reach 15 gigawatts by FY31"
+   },
+   {
+    "metric": "DevCo investment",
+    "value": "about INR500 crores total allocation; net INR125-130 crores",
+    "change": "held",
+    "horizon": "ongoing",
+    "quote": "we are looking at about INR500 crores total allocation"
+   },
+   {
+    "metric": "Order book exit FY31",
+    "value": "15 GW",
+    "change": "held",
+    "horizon": "FY31",
+    "quote": "we are looking at our order book from current 6 gigawatts to 15 gigawatts as an exit of FY31"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA margin",
+    "outcome": "missed",
+    "quote": "You can say 15% plus upside of 1%."
+   },
+   {
+    "metric": "Growth (Suzlon 2.0)",
+    "outcome": "held",
+    "quote": "We have also given a trajectory of 25% CAGR."
+   },
+   {
+    "metric": "Capex",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Annual installations",
+    "outcome": "held",
+    "quote": "annual installations expected to cross 10 gigawatts in the near term and reach 15 gigawatts by FY31"
+   },
+   {
+    "metric": "DevCo investment",
+    "outcome": "held",
+    "quote": "we are looking at about INR500 crores total allocation"
+   }
+  ],
+  "endities": [],
+  "entities": [
+   {
+    "name": "Adani",
+    "relation": "competitor"
+   },
+   {
+    "name": "JSW",
+    "relation": "competitor"
+   },
+   {
+    "name": "Aditya Birla Renewables",
+    "relation": "customer"
+   },
+   {
+    "name": "NTPC",
+    "relation": "customer"
+   },
+   {
+    "name": "Tata",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Anti-dumping protection",
+   "Capex cycle revival (private)",
+   "Electronics manufacturing (EMS/PLI)",
+   "Tariffs & trade policy",
+   "Customer stickiness"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin guide cut; working capital stretched",
+    "quote": "we have only reported 14.8% margins, which is much below than what we would have anticipated."
+   },
+   {
+    "label": "Cash encumbrance unclear",
+    "quote": "the number of encumbrance remains at about 40%, 50% only, but we'll have to drill into it"
+   },
+   {
+    "label": "DTA recognition moved to annual",
+    "quote": "this is an annual exercise that has to be done"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 5,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Net cash and encumbrance",
+    "quote": "I think the number on the encumbered piece is something that I will have to dig more detail into and then come back to you."
+   },
+   {
+    "topic": "Working capital sustainable level",
+    "quote": "So no single number, but yes, we are working on various levers"
+   },
+   {
+    "topic": "Renom acquisition returns",
+    "quote": "Renom is a long-term business."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Suzlon Q2 FY27 revenue rose 27% QoQ to INR4,869 crores, but WTG contribution margin fell to 21.2% and FY27 EBITDA margin guidance was cut to about 15%.",
+  "overview": "Q2 FY27 delivered sequential growth: revenue INR4,869 crores (up 27% QoQ), EBITDA INR720 crores (up 21% QoQ) and PAT INR394 crores (up 29% QoQ). Year-on-year, EBITDA margin fell to 14.8% from 18.8%, driven by customer/scope mix, commodity and FX volatility linked to the West Asia crisis, and non-recurring Suzlon 2.0 opex. Management reset the FY27 EBITDA margin view to about 15.1% plus up to 1% from H2 operating leverage, down from the earlier roughly 17% expectation. Commissioning rose 69% QoQ to 454 MW, and net worth crossed INR10,000 crores with net cash of about INR2,048-2,300 crores (figures quoted differently in the call).",
+  "financial_highlights": [
+   {
+    "metric": "Revenue",
+    "value": "INR4,869 crores",
+    "change": "+27% QoQ from INR3,819 crores in Q1 FY27"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR720 crores (EBITDA margin 14.8%)",
+    "change": "+21% QoQ; margin down from 18.8% in Q2 FY26"
+   },
+   {
+    "metric": "PAT",
+    "value": "INR394 crores",
+    "change": "+29% QoQ; PAT affected by non-cash DTA reversals, PBT preferred for comparison"
+   },
+   {
+    "metric": "WTG contribution margin",
+    "value": "21.2%",
+    "change": "Down from 26.9% a year ago"
+   },
+   {
+    "metric": "H1 FY27 revenue",
+    "value": "INR8,688 crores",
+    "change": "+24% YoY"
+   },
+   {
+    "metric": "H1 FY27 EBITDA / PAT",
+    "value": "INR1,315 crores / INR699 crores",
+    "change": "H1 EBITDA margin about 15.1% per management"
+   },
+   {
+    "metric": "Net worth",
+    "value": "INR10,277 crores (consolidated, Sept 2026)",
+    "change": ""
+   },
+   {
+    "metric": "Net cash",
+    "value": "INR2,048 crores (Q&A cites about INR2,300 crores)",
+    "change": "Management did not reconcile the two figures"
+   },
+   {
+    "metric": "Q2 ASP",
+    "value": "About INR5.9 crores per MW",
+    "change": "vs INR5.7 crores in Q2 FY26; management says no price cut"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Wind turbine generators (WTG)",
+    "commentary": "Contribution margin 21.2% vs 26.9% a year ago; management guides 22-23% for FY27, subject to commodity/FX normalisation. Q2 deliveries 710 MW, up 40% QoQ, a record second quarter for India deliveries."
+   },
+   {
+    "name": "RE AMS (service)",
+    "commentary": "Installed base above 16.5 GW with EBITDA margins maintained above 40%; higher-margin service mix is shrinking as WTG revenue grows (about 50 bps impact)."
+   },
+   {
+    "name": "Foundry and forging",
+    "commentary": "Q2 revenue INR167 crores and EBITDA INR50 crores, with growth from domestic demand and exports."
+   },
+   {
+    "name": "Renom (acquired ISP business)",
+    "commentary": "About 178 MW added in H1 FY27 and close to 200 MW of orders won in the last quarter; management frames it as a long-term scale-up opportunity. A shareholder questioned the roughly INR700-800 crore acquisition cost against small annual profit."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 EBITDA margin: about 15.1% for H1 plus 1% H2 leverage (H2 expected at 1.5x-1.65x H1 volumes); management said 17% possible if commodity/FX eases.",
+   "WTG contribution margin expected at 22-23% for FY27, subject to West Asia-linked commodity and FX normalisation.",
+   "Non-recurring Suzlon 2.0 opex of about INR50 crores in Q2 (about 1% margin impact) expected to phase down.",
+   "Suzlon 2.0 targets: India market share 40% by FY31 (currently about 28-29% in order terms), order book from 6 GW to 15 GW by FY31, 25% CAGR, exports 3 GW order book and 1 GW sales by FY31.",
+   "Deferred tax asset recognition to be assessed annually, next in March 2027."
+  ],
+  "capex_capacity": [
+   "Installed manufacturing capacity 4.5 GW, fully operational, using 3.3 MW turbine; blade capacity to be expanded via new blade plants for higher-MW turbines.",
+   "Commissioning 454 MW in Q2 (up from 269 MW) and 723 MW in H1 FY27 (up 168% YoY); about 1.25 GW erected and awaiting commissioning; about 3.9 GW pending installation, of which about 1.3 GW erected.",
+   "Capital allocated to DevCo about INR500 crores in total; net deployed about INR125-130 crores after some assets were sold. No capex yet on solar/BESS, which is planned as asset-light, with capex starting after next couple of quarters.",
+   "Three AI-enabled smart blade factories being set up; S175 5.X MW prototype commissioned, first order of 21 turbines (105 MW)."
+  ],
+  "demand_pricing": [
+   "Order book 6 GW, covering about 18 months; 1.5 GW of new orders in H1 FY27; about 900 MW booked via DevCo in H1; about 78% of the order book is C&I and PSU/utility.",
+   "Industry: about 8-9 GW of wind RTC/FDRE/wind-dominated tenders awarded in H1 FY27; India at 59 GW installed wind capacity, with 15 GW annual installations targeted by FY31.",
+   "Market share: about 28-29% in order terms in H1; about 23% in deliveries in H1.",
+   "Pricing: management said there were no price cuts; ASP dip attributed to business mix (EPC vs supply-only, project stage).",
+   "Competition: Adani, JSW and others expanding; management says large part of their output is captive. Existing customers such as NTPC, Aditya Birla Renewables and Purvah are said to remain customers.",
+   "Exports: INR12,000 crore wind equipment exports from India in FY26 (industry figure); Blue Sky 5 MW and 6.3 MW certification in progress; 2.1 MW small turbine interest; first repowering order in India with Tata; export orders expected to be reported next year."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why did the WTG contribution margin fall to 21.2%, and when will fixed-cost pressure and operating leverage show?",
+    "answer": "Management attributed the margin decline to customer/scope mix (150-180 bps), segment mix (about 50 bps), non-recurring Suzlon 2.0 opex (about 100 bps) and commodity plus FX (about 50 bps). Operating leverage from H2 volumes is expected to add about 100 bps."
+   },
+   {
+    "question": "Is the working capital stretch linked to DevCo, and why are receivable days up QoQ?",
+    "answer": "Rahul Jain said DevCo is not the driver. Inventory is being built for H2, and receivables are higher due to commissioning-linked holds (5-10% of revenue per customer), which should convert to cash as commissioning rises."
+   },
+   {
+    "question": "Why is the finance cost running above the INR300 crore guidance, with H1 above INR250 crores?",
+    "answer": "Management said H1 is not a simple multiple to project because volumes and revenue are up. It said like-for-like interest costs are falling, and levers are being used to manage working capital."
+   },
+   {
+    "question": "Why are installations lagging deliveries and what is stopping faster ramp-up with 4.5 GW capacity?",
+    "answer": "Ajay Kapur said capacity is not the constraint; project pull is. He expects about 18 months for sharper commissioning after regional chief project officers were appointed. He expects 25% CAGR and 10 GW annual sales by FY31."
+   },
+   {
+    "question": "What is the update on localisation/ALMM and its effect on competition?",
+    "answer": "Management said ALMM covers six components (nacelle, blade, tower, generator, gearbox, special bearings), with grandfathering extended to 31 Jan 2028 for yaw/pitch bearings and 31 Jan 2029 for main bearings. Suzlon already has 80%+ local content."
+   }
+  ],
+  "risks_watch": [
+   "Margin recovery depends on West Asia-linked commodity and FX normalisation; management said most commodities other than steel are not passed through.",
+   "Working capital and finance cost: H1 finance cost already above INR250 crores vs INR300 crore full-year expectation; receivable days rising.",
+   "Execution: about 3.9 GW pending installation; installation lags deliveries and management expects the turnaround over about 12-18 months.",
+   "Competitive pressure from Adani and JSW; Suzlon's market share is 28-29% in orders and about 23% in deliveries.",
+   "Renom returns: acquisition cost questioned by analysts; profitability not yet demonstrated. Net cash figure (INR2,048 crores vs about INR2,300 crores cited) and encumbrance (40-50%) not clearly reconciled.",
+   "DTA recognition moved to annual (March 2027) from half-yearly, reducing visibility on PAT."
+  ],
+  "management_tone": "Confident on demand, order book and long-term targets, but candid and defensive on the margin miss, repeatedly attributing it to West Asia-linked commodity/FX volatility and one-off Suzlon 2.0 costs. Management was evasive on encumbered cash, the exact FX impact and finance cost guidance, and declined to restore the granular installation-stage disclosure.",
+  "key_quotes": [
+   "Our focus remains on closing quality orders at regular intervals rather than achieving quarterly run rate.",
+   "Suzlon delivered 710 megawatts in Q2 with 40% jump quarter-on-quarter, making our ever highest second quarter India deliveries.",
+   "I have given my guidance that by FY31, I want to hit 40%.",
+   "I think capacity will not be a deciding factor. It's basically the pull from the projects."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Installed manufacturing capacity 4.5 GW (3.3 MW turbine), fully operational; new blade plants and three AI-enabled smart blade factories being set up (no capex ",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "S175 5.X MW prototype commissioned; first order of 21 turbines (105 MW)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Solar/BESS asset-light DevCo platform; about INR500 crore total allocation, net INR125-130 crore deployed; no capex yet, starting after next couple of quarters",
+    "size_pct": null,
+    "capex_cr": 125.0,
+    "q": 2,
+    "status": "planned",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 24.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": 21.0,
+  "outlook": 1,
+  "why": "Revenue guided up 24% YoY for H1 FY27 (INR8,688 crore) with a 6 GW order book (about 18 months cover), 1.5 GW of H1 orders, and commissioning up 69% QoQ to 454 MW; FY27 EBITDA margin guide cut to about 15% (+1% upside) and WTG contribution margin guided at 22-23%, but the margin plan depends on commodity/FX normalisation and H2 volumes at 1.5-1.65x H1, with no capacity addition quantified.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "FY27 EBITDA margin guided at about 15.1% for H1 plus 1% from H2 operating leverage (H2 volumes 1.5x-1.65x H1), with WTG contribution margin guided at 22-23% (vs 21.2% in Q2) and about 100 bps from operating leverage, though it depends on commodity/FX normalisation."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "possible",
+    "when": "H2 FY27 to FY28",
+    "why": "Management says 4.5 GW manufacturing capacity is fully operational and capacity is not the constraint; new blade plants and three smart blade factories are under construction with no capex figure given, so new capacity timing is unquantified."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "surely",
+    "when": "next 2-4 quarters",
+    "why": "Q2 deliveries 710 MW (up 40% QoQ), commissioning 454 MW (up 69% QoQ), 6 GW order book (about 18 months cover), and H2 volumes guided at 1.5-1.65x H1; annual installations to cross 10 GW near term."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Solar/BESS DevCo capex is planned to start after the next couple of quarters (net INR125-130 crore deployed out of about INR500 crore allocation) and blade factories are being set up, but no new manufacturing capex amount is named; utilisation not disclosed."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Management said 17% EBITDA margin is possible if commodity/FX eases (vs 15.1% base plus 1% upside), so upside depends on input cost normalisation."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Finance cost already above INR250 crore in H1 vs INR300 crore full-year expectation, installations lag deliveries with 3.9 GW pending installation, and the margin plan rests on West Asia-linked commodity/FX normalisation."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "next 2-4 quarters",
+    "why": "S175 5.X MW prototype is commissioned with a first order of 21 turbines (105 MW), and Blue Sky 5 MW and 6.3 MW certifications plus a 2.1 MW small turbine are in progress."
+   },
+   {
+    "k": "order_book",
+    "label": "Order book to 15 GW by FY31",
+    "call": "likely",
+    "when": "FY31",
+    "why": "Order book 6 GW (about 18 months cover) with 1.5 GW of H1 orders and about 900 MW via DevCo; target 15 GW by FY31 at 25% CAGR, with 8-9 GW of industry tenders awarded in H1."
+   },
+   {
+    "k": "working_capital",
+    "label": "Receivables and inventory build reverses",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Receivables rose on commissioning-linked holds (5-10% of revenue per customer) that management expects to convert to cash as commissioning rises; inventory is being built for H2."
+   },
+   {
+    "k": "regulatory",
+    "label": "ALMM grandfathering to 2028-2029",
+    "call": "unlikely",
+    "when": "FY28-FY29",
+    "why": "Grandfathering extended to 31 Jan 2028 for yaw/pitch bearings and 31 Jan 2029 for main bearings, while Suzlon already has 80%+ local content, so the rule is a mild tailwind against imports rather than a near-term catalyst."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on demand, the 6 GW order book and long-term targets, but defensive on the margin miss, blaming West Asia commodity/FX and one-off Suzlon 2.0 costs; analysts pressed on Renom returns, encumbered cash, finance cost and the net cash figure (INR2,048 crore vs about INR2,300 cro"
+  }
+ }
+}
