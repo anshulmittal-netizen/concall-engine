@@ -2723,7 +2723,7 @@ function vPead() {
   const gcl = v => v > 0 ? 'gp' : v < 0 ? 'gn' : '';
   const prow = x => { const r = x.r, c = x.c, px = x.px, h = x.h, sp = PD_ST[h.st];
     const dots = h.chk.map(k => `<i class="pd-ck ${k.ok == null ? 'na' : k.ok ? 'ok' : 'bad'}" title="${esc(k.lab)}: ${k.v == null ? 'not known' : k.ok ? 'yes' : 'no'}${k.v == null ? '' : ' (' + (k.lab === 'Margin held' ? vm(k.v) + ' pts' : pctS(k.v)) + ')'}"></i>`).join('');
-    return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(SIZE_SHORT[x.size] || '')} · ${esc(c.mcap || '')} · filed ${esc(sdate(r.filed))} · ${x.call.score} on the ${esc(Q.lab)} call</span>
+    return `<div class="r${isW(c.id) ? ' wrow' : ''}"><span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(SIZE_SHORT[x.size] || '')} · ${esc(c.mcap || '')} · filed ${esc(sdate(r.filed))} · ${x.call.score} on the ${esc(Q.lab)} call</span>${aboutP(c.id)}
         <span class="sub pd-why">${esc(h.why.join(' · '))}${h.next ? ` · next call ${esc(callWhen(h.next))}` : ''}</span>
         <span class="m-pd">Profit ${pctS(r.pat_yoy)} · Day 1 ${px.reactDate ? pctS(px.react) : '–'} · vs market ${vm(px.xMove)} pts · run-up ${vm(px.xPre)} pts</span></span>
       <span class="num">${pctS(r.pat_yoy)}</span>
@@ -2741,7 +2741,7 @@ function vPead() {
       <li><b>After results:</b> a beat here means profit up ${PEAD_BEAT}%+ on last year. <b>Beat · up on day 1</b> is the pattern that post-results drift studies look at. Strong numbers alone are not enough: the market may already expect them.</li>
       <li><b>Hold / Watch / Exit</b> ${tip('pdstatus')} is a fixed rule applied after results: a beat that the numbers confirm (revenue, margin, profit on last quarter) is a Hold even if it falls on day 1; a miss, two failed checks, a guidance cut or a 10+ point drop in score on the next call, or trailing the Nifty 500 by 10+ points after 20 sessions is an Exit. <b>Run-up</b> ${tip('runup')} shows how much was priced in before results.</li>
       <li><b>Track record</b> is recomputed on every refresh from the ${esc(Q.rlab)} results already posted, so you can see whether the shortlist is working this season.</li>
-      <li>There are no consensus estimates or pre-results price run-ups here. Check those, and the transcript, before you trade.</li></ol>`,
+      <li>There are no consensus estimates here. Check those, and the transcript, before you trade.</li></ol>`,
       `<span class="badge">${RES.data?.checked ? 'BSE checked ' + esc(RES.data.checked.replace('T', ' ')) + ' UTC' : ''}</span>`) + `
     <div class="board">
       <section class="w span4 kpi"><span class="l">Strong candidates reporting ${f.days >= 60 ? 'on any announced date' : `in the next ${f.days} days`}</span><span class="v" style="color:var(--accent)">${cnt('strong')}</span><span class="l">${cnt('watch')} more to watch · ${cnt('skip')} high scores to treat with care</span></section>
