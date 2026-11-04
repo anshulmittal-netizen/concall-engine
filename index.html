@@ -448,7 +448,7 @@ button.pd-go{border:0;cursor:pointer;font-family:inherit}button.pd-go:hover{filt
 .pda-stat{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1px 8px;border-top:1px solid var(--line);padding-top:8px;font-size:10.5px;color:var(--muted)}
 .pda-stat b{font-size:13px;color:var(--fg)}.pda-stat b.gp{color:var(--up)}.pda-stat b.gn{color:var(--down)}
 .pda-stat .muted{grid-column:1/-1}
-.pda-cols,.pda-r{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1.5fr) 74px 66px 78px 14px;gap:4px 14px;align-items:center}
+.pda-cols,.pda-r{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.3fr) 62px 62px 62px 70px 58px 64px 12px;gap:4px 10px;align-items:center}
 .pda-cols{padding:0 14px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .pda-cols span:nth-child(n+3){text-align:right}
 .pda-g{display:grid;gap:6px}
@@ -459,8 +459,21 @@ button.pd-go{border:0;cursor:pointer;font-family:inherit}button.pd-go:hover{filt
 .pda-g[open]>summary .small{display:none}
 .pda-g[open]>summary{border-style:solid}
 .pda-list{display:grid;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);overflow:hidden;box-shadow:var(--shadow)}
-.pda-r{width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:10px 14px;transition:background .15s}
-.pda-r:first-child{border-top:0}
+.pda-item{border-top:1px solid var(--line)}.pda-item:first-child{border-top:0}
+.pda-item.open{background:color-mix(in srgb,var(--panel2) 55%,var(--panel))}
+.pda-r{width:100%;text-align:left;background:none;border:0;padding:10px 14px;transition:background .15s;color:inherit}
+.pda-item.open .pda-go{transform:rotate(90deg);color:var(--accent)}
+.pda-n small{display:block;font-size:9.5px}
+.pda-d{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1.1fr);gap:18px;padding:4px 14px 16px;animation:enter .25s var(--ease) both}
+.pda-d section{display:grid;gap:6px;align-content:start;min-width:0}
+.pda-d h4{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-family:var(--body);font-weight:600;display:flex;align-items:center;gap:4px}
+.pda-dt{border-collapse:collapse;width:100%;font-size:11.5px}
+.pda-dt th,.pda-dt td{padding:5px 6px;border-top:1px solid var(--line);text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pda-dt thead th{border-top:0;font-family:var(--body);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.pda-dt th[scope=row]{text-align:left;font-family:var(--body);font-weight:500;padding-left:0}
+.pda-dt .g{font-size:11px}.pda-dt .gp{color:var(--up)}.pda-dt .gn{color:var(--down)}
+.pda-acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+@media (max-width:1100px){.pda-d{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.pda-d section:last-child{grid-column:1/-1}}
 .pda-r:hover{background:var(--panel2)}
 .pda-r:hover .pda-go{color:var(--accent);transform:translateX(2px)}
 .pda-co{display:grid;gap:1px;min-width:0}
@@ -488,8 +501,9 @@ button.pd-go{border:0;cursor:pointer;font-family:inherit}button.pd-go:hover{filt
 .pda-sep td{border-top:2px solid var(--line2);padding:0}
 @media (max-width:900px){.pda-tiles{grid-template-columns:minmax(0,1fr)}.pda-tile{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:760px){.pda-cols{display:none}
-  .pda-r{grid-template-columns:repeat(3,minmax(0,1fr)) 14px;gap:6px 10px}
-  .pda-co{grid-column:1/4}.pda-go{grid-column:4;grid-row:1}
+  .pda-r{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 10px;position:relative;padding-right:30px}
+  .pda-co{grid-column:1/-1}.pda-go{position:absolute;right:12px;top:12px}
+  .pda-d{grid-template-columns:minmax(0,1fr)}.pda-d section:last-child{grid-column:auto}
   .pda-tags{grid-column:1/-1}
   .pda-n{text-align:left;display:grid}.pda-n i{display:block;font-size:9px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}}
 .pd-tabs{align-self:start;justify-self:start}.pd-tabs button{padding:8px 14px;font-size:12px}
@@ -935,7 +949,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before'}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -2800,15 +2814,41 @@ function vPead() {
     </article>`; };
   const vm = v => v == null ? '–' : `${v > 0 ? '+' : ''}${v.toFixed(1)}`;
   const gcl = v => v > 0 ? 'gp' : v < 0 ? 'gn' : '';
-  const prow = x => { const r = x.r, c = x.c, px = x.px, h = x.h;
+  const prow = x => { const r = x.r, c = x.c, px = x.px, h = x.h, k = r.id + r.filed, open = f.exp.has(k);
     const since = px.xMove != null ? `<b class="${gcl(px.xMove)}">${vm(px.xMove)}</b>` : px.reactDate ? `<span class="muted" title="Absolute move; the market comparison arrives with the next price check">${pctS(px.move)}</span>` : '–';
-    return `<button class="pda-r${isW(c.id) ? ' wrow' : ''}" data-open="${esc(c.id)}">
+    const mg = r.opm != null && r.opm_prev_yoy != null ? r.opm - r.opm_prev_yoy : null;
+    const g = v => `<span class="${gcl(v)}">${pctS(v)}</span>`;
+    return `<div class="pda-item${open ? ' open' : ''}${isW(c.id) ? ' wrow' : ''}"><button class="pda-r" data-pdx="${esc(k)}" aria-expanded="${open}">
       <span class="pda-co"><span class="nm">${isW(c.id) ? '<span class="wstar">★</span> ' : ''}${esc(c.name)}</span><span class="sub">${esc(SIZE_SHORT[x.size] || '')} · filed ${esc(sdate(r.filed))} · score ${x.call.score}${h.next ? ` · call ${esc(callWhen(h.next))}` : ''}</span></span>
       <span class="pda-tags">${h.tags.slice(0, 4).map(t => `<span class="pda-t ${t.k}">${esc(t.t)}</span>`).join('')}</span>
-      <span class="num pda-n"><i>Profit</i>${pctS(r.pat_yoy)}</span>
+      <span class="num pda-n"><i>Revenue</i>${g(r.rev_yoy)}</span>
+      <span class="num pda-n"><i>${esc(r.opLabel || 'Op. profit')}</i>${g(r.op_yoy)}</span>
+      <span class="num pda-n"><i>Profit</i>${g(r.pat_yoy)}</span>
+      <span class="num pda-n"><i>Margin</i>${r.opm == null ? '–' : `${r.opm.toFixed(1)}%<small class="${gcl(mg)}">${mg == null ? '' : (mg >= 0 ? '+' : '−') + Math.round(Math.abs(mg) * 100) + ' bp'}</small>`}</span>
       <span class="num pda-n ${gcl(px.react)}"><i>Day 1</i>${px.reactDate ? pctS(px.react) : '–'}</span>
       <span class="num pda-n"><i>vs market</i>${since}</span>
-      <span class="pda-go" aria-hidden="true">›</span></button>`; };
+      <span class="pda-go" aria-hidden="true">›</span></button>${open ? pdDetail(x) : ''}</div>`; };
+  const pdDetail = x => { const r = x.r, c = x.c, px = x.px, h = x.h, nc = h.nc;
+    const line = (lab, now, yoy, qoq) => `<tr><th scope="row">${esc(lab)}</th><td>${now}</td><td>${gTag(yoy)}</td><td>${gTag(qoq)}</td></tr>`;
+    const pl = (lab, a, xv) => `<tr><th scope="row">${esc(lab)}</th><td class="${gcl(a)}">${a == null ? '–' : pctS(a)}</td><td class="${gcl(xv)}">${xv == null ? '–' : vm(xv) + ' pts'}</td></tr>`;
+    const mg = r.opm != null && r.opm_prev_yoy != null ? r.opm - r.opm_prev_yoy : null;
+    return `<div class="pda-d">
+      <section><h4>${esc(r.label)} results <span class="basis" title="${esc(r.basis)}">${r.basis === 'Consolidated' ? 'C' : 'S'}</span></h4>
+        <table class="pda-dt"><thead><tr><th></th><th>₹ Cr</th><th>YoY</th><th>QoQ</th></tr></thead><tbody>
+        ${line(r.revLabel || 'Revenue', crF(r.rev), r.rev_yoy, r.rev_qoq)}${line(r.opLabel || 'Op. profit', crF(r.op), r.op_yoy, r.op_qoq)}${line('Profit (PAT)', crF(r.pat), r.pat_yoy, r.pat_qoq)}${line('EPS (₹)', r.eps == null ? '–' : r.eps.toFixed(2), r.eps_yoy, r.eps_qoq)}
+        <tr><th scope="row">Margin</th><td>${r.opm == null ? '–' : r.opm.toFixed(1) + '%'}</td><td colspan="2"><span class="g ${gcl(mg)}">${mg == null ? '–' : `${mg >= 0 ? '+' : '−'}${Math.round(Math.abs(mg) * 100)} bp`}</span> <span class="muted">${r.opm_prev_yoy == null ? '' : 'from ' + r.opm_prev_yoy.toFixed(1) + '%'}</span></td></tr></tbody></table></section>
+      <section><h4>Share price ${tip('vsmkt')}</h4>
+        <table class="pda-dt"><thead><tr><th></th><th>Stock</th><th>vs Nifty 500</th></tr></thead><tbody>
+        ${pl('20 sessions before', px.pre, px.xPre)}${pl('Day 1', px.reactDate ? px.react : null, px.xReact)}${pl('5 sessions', px.d5, px.xD5)}${pl('10 sessions', px.d10, px.xD10)}${pl('20 sessions', px.d20, px.xD20)}${pl('Since results', px.reactDate ? px.move : null, px.xMove)}</tbody></table>
+        <p class="small muted">${px.ref ? `Before results ${pxF(px.ref)} (${esc(sdate(px.refDate))}) · now ${pxF(px.now)} (${esc(sdate(px.nowDate))})` : 'No price yet.'}</p></section>
+      <section><h4>The call behind it</h4>
+        <p class="small"><b>${esc(Q.lab)} call · score ${x.call.score}</b>${x.call.gRaised > 0 ? ' · guidance raised' : x.call.g > 0 ? ' · guidance positive' : x.call.gCut > 0 ? ' · guidance cut' : ''}</p>
+        <p class="small muted">${esc(x.call.gLine || x.call.thesis || c.thesis || '')}</p>
+        ${nc ? `<p class="small"><b>${esc(Q.rlab)} call · score ${nc.score}</b>${nc.gRaised > 0 ? ' · guidance raised' : nc.g > 0 ? ' · guidance positive' : nc.gCut > 0 ? ' · guidance cut' : ''}</p><p class="small muted">${esc(nc.gLine || nc.thesis || '')}</p>`
+          : h.next ? `<p class="small muted">${esc(Q.rlab)} call ${esc(callWhen(h.next))}: the status is checked again after it.</p>` : `<p class="small muted">No ${esc(Q.rlab)} call read yet.</p>`}
+        <div class="pda-acts"><button class="btn primary" data-open="${esc(c.id)}">Open calls</button><a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Filing ↗</a></div>
+        ${rsDocs(r, {compact: true})}</section>
+    </div>`; };
   const bk = g => `<tr><th scope="row">${esc(g.n)} <span class="muted">${g.k}</span></th><td>${pctS(g.d1)}</td><td class="${gcl(g.x5)}">${vm(g.x5)}<small>${g.n5 || ''}</small></td><td class="${gcl(g.x10)}">${vm(g.x10)}<small>${g.n10 || ''}</small></td><td class="${gcl(g.xm)}">${vm(g.xm)}</td><td>${g.beatMkt == null ? '–' : g.beatMkt + '%'}</td></tr>`;
   const skips = pre.filter(x => x.tier === 'skip').sort((a, b) => b.p - a.p);
   const afterHtml = f.tab === 'after' ? afterBlock() : '';
@@ -2856,7 +2896,7 @@ function vPead() {
         <select id="pd-post" aria-label="Filed within">${[[3, 'Last 3 days'], [7, 'Last 7 days'], [14, 'Last 14 days'], [60, 'This season']].map(([d, n]) => `<option value="${d}" ${f.post === d ? 'selected' : ''}>${n}</option>`).join('')}</select></span>
       </div>
       <div class="pda-tiles">${['hold', 'watch', 'exit'].map(tile).join('')}</div>
-      ${post.length ? `<div class="pda-cols" aria-hidden="true"><span>Company</span><span>Why</span><span>Profit YoY</span><span>Day 1</span><span>vs market</span><span></span></div>${groups}`
+      ${post.length ? `<div class="pda-cols" aria-hidden="true"><span>Company</span><span>Why</span><span>Revenue</span><span>Op. profit</span><span>Profit</span><span>Margin</span><span>Day 1</span><span>vs market</span><span></span></div>${groups}`
         : '<div class="empty">No company in this group has reported in this window yet.</div>'}
       <details class="pda-more"><summary>Track record by window and run-up ${tip('runup')}</summary>
         <div class="pda-tw"><table class="pda-tb"><thead><tr><th></th><th>Day 1</th><th>5 sessions</th><th>10 sessions</th><th>Since results</th><th>Beat market</th></tr></thead>
@@ -3570,6 +3610,7 @@ document.addEventListener('click', e => {
   const tha = t.closest('[data-thask]'); if (tha) { S.ask.q = `What are companies saying about ${tha.dataset.thask}, and is it showing up in their numbers?`; go('ask'); setTimeout(() => { const q = $('#ask-q'); if (q) q.value = S.ask.q; askRun(ASK.sample === null ? 'keyword' : 'ai'); }, 60); return; }
   const pdz = t.closest('[data-pdz]'); if (pdz) { S.pd.size = S.pd.size === pdz.dataset.pdz ? '' : pdz.dataset.pdz; render(); return; }
   const pdt = t.closest('[data-pdt]'); if (pdt) { S.pd.tier = pdt.dataset.pdt; render(); return; }
+  const pdx = t.closest('[data-pdx]'); if (pdx) { const k = pdx.dataset.pdx; S.pd.exp.has(k) ? S.pd.exp.delete(k) : S.pd.exp.add(k); render(); return; }
   const pdtab = t.closest('[data-pdtab]'); if (pdtab) { S.pd.tab = pdtab.dataset.pdtab; render(); return; }
   const pdgo = t.closest('[data-pdgo]'); if (pdgo) { e.preventDefault(); e.stopPropagation(); const h = pdStatusOf(pdgo.dataset.pdgo); S.pd.tab = 'after'; S.pd.post = 60; S.pd.st = ''; S.pd.size = ''; S.pd.scope = h && h.x.call.score >= 70 ? 'score70' : 'pick'; go('pead'); return; }
   const pds = t.closest('[data-pds]'); if (pds) { S.pd.scope = pds.dataset.pds; render(); return; }
