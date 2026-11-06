@@ -1,0 +1,492 @@
+{
+ "doc_id": "IN-a03b2d21-e575-48f4-971b-311650935bb2",
+ "market": "IN",
+ "company_id": "544004",
+ "name": "IRM Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-05",
+ "period": "2026-09",
+ "title": "IRM Energy Ltd - 544004 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Gems & jewellery",
+  "thesis": "IRM Energy H1 FY27 EBITDA up 108% to INR 109 crore, but management withdrew per-SCM and margin guidance, citing HPHT allocation shock and Q3 gas-cost pressure.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "INR 250-260 crores to be spent in this financial year"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "No per-SCM or margin guide for Q3",
+    "quote": "we would not like to provide an exact guidance in rupee-per-SCM terms or specify a particular margin percentage",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "HPHT allocation cut hits gas cost",
+    "quote": "the revised HPHT allocation methodology by the Government of India introduced in September resulted in a temporary reduction in gas availability",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA/SCM 7.73 vs 4.89 YoY",
+    "quote": "with EBITDA per S CM increased to 7.73 from 4.89 in Q2 FY26",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Volume growth may moderate slightly",
+    "quote": "There may be some slight moderation in the volume, but profit side, it will be a good contribution",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin H2 FY27",
+    "value": "around 15%",
+    "change": "new",
+    "horizon": "H2 FY27",
+    "quote": "we remain confident of maintaining an EBITDA margin of around 15% for H2"
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "INR 250-260 crore",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "overall company has taken up INR 250-260 crores to be spent in this financial year"
+   },
+   {
+    "metric": "Volume growth FY27",
+    "value": "slight moderation possible from ~12%",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "There may be some slight moderation in the volume"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA per SCM (next three quarters)",
+    "outcome": "dropped",
+    "quote": "we would not like to provide an exact guidance in rupee-per-SCM terms"
+   },
+   {
+    "metric": "Revenue growth FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Volume growth FY27",
+    "outcome": "missed",
+    "quote": "There may be some slight moderation in the volume"
+   },
+   {
+    "metric": "Namakkal & Trichy volume FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Capex FY27",
+    "outcome": "met",
+    "quote": "INR 250-260 crores to be spent in this financial year"
+   },
+   {
+    "metric": "Revenue CAGR next five years",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "GAIL",
+    "relation": "supplier"
+   },
+   {
+    "name": "Indian Oil Corporation",
+    "relation": "supplier"
+   },
+   {
+    "name": "Shell India",
+    "relation": "supplier"
+   },
+   {
+    "name": "GSPC",
+    "relation": "supplier"
+   },
+   {
+    "name": "BPCL",
+    "relation": "customer"
+   },
+   {
+    "name": "Tamil Nadu State Transport Corporation",
+    "relation": "customer"
+   },
+   {
+    "name": "IGL",
+    "relation": "competitor"
+   },
+   {
+    "name": "GGL",
+    "relation": "competitor"
+   },
+   {
+    "name": "ONGC",
+    "relation": "supplier"
+   },
+   {
+    "name": "Reliance",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Renewables & storage",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Royalty paid to promoters continues",
+    "quote": "So, as of now, the royalty will continue till the settlement."
+   },
+   {
+    "label": "Q3 gas cost hit and guidance withdrawn",
+    "quote": "Q3 will not be as good as you can expect the sequential performance to go.."
+   },
+   {
+    "label": "Capex and interest cost questions unresolved",
+    "quote": "The one is the INR 45 crore interest cost, which is around 7-8%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 3,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Per-SCM and margin guidance for Q3/H2",
+    "quote": "Given this volatility, it is difficult for us to provide a precise outlook for Q3 or the subsequent quarters."
+   },
+   {
+    "topic": "Buyback",
+    "quote": "we can say as of now, there is no such thing to happen"
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "Q2 FY27 volume hit record 61.23 MMSCM (+12% YoY) and standalone EBITDA rose 77% to INR 47 crore, but management declined to guide Q3 margins.",
+  "overview": "Q2 FY27 standalone revenue net of excise rose 29% YoY to INR 334 crore, with PAT more than doubling to INR 26 crore and PAT margin at 7.7%. EBITDA moderated sequentially from INR 62 crore in Q1 to INR 47 crore in Q2 because of higher gas sourcing costs and currency movement. A September HPHT allocation change by MoPNG temporarily cut gas availability for about a fortnight at the start of Q3, and management expects Q3 to be impacted, while still targeting roughly 15% EBITDA margin for H2. The company remains net debt-free with INR 45 crore of debt against INR 253 crore of cash and mutual funds.",
+  "segments": [
+   {
+    "name": "CNG",
+    "commentary": "CNG volume grew 23% in H1 FY27 and now accounts for about 66% of total volume value. CNG stations rose 34% YoY to 156 and dispensing points 36% to 576."
+   },
+   {
+    "name": "Commercial PNG",
+    "commentary": "Commercial PNG volume grew 61% in H1 FY27; commercial connections rose 48% YoY."
+   },
+   {
+    "name": "Industrial PNG",
+    "commentary": "Industrial volumes remained weak on relative fuel economics versus alternate fuels, with sequential recovery in Q2. Industrial connections rose 8% YoY."
+   },
+   {
+    "name": "Domestic PNG",
+    "commentary": "Domestic PNG connections rose 14% YoY. Networks: MDPE pipeline up 20% to 7,313 km; steel pipeline up 17% to 3,441 inch-km."
+   },
+   {
+    "name": "Geographic mix (H1 FY27 volume)",
+    "commentary": "Banaskantha about 47%, Fatehgarh Sahib 33%, Namakkal and Trichy 11% (up from about 6% in FY26), Diu and Gir Somnath 9%."
+   }
+  ],
+  "guidance_outlook": [
+   "H2 FY27 EBITDA margin expected at around 15%, per management in Q&A.",
+   "Q3 FY27 expected to be impacted by the temporary gas supply disruption and higher sourcing costs; Q4 expected to recover. Management declined to give rupee-per-SCM or margin guidance for Q3.",
+   "Capex for FY27 guided at INR 250-260 crore; INR 111 crore spent in H1 (INR 54 crore in Q1, INR 57 crore in Q2), with bills in line and possible overrun.",
+   "Volume growth: management said it may revise the earlier ~12% FY27 volume plan by 50-100 bps to protect margins; no expectation of exceeding prior guidance, with some moderation possible.",
+   "Sourcing tied up through 2030 via Shell India, GSPC, IOC and GAIL; management plans further long-term contracts once geopolitical volatility eases, in about six months."
+  ],
+  "capex_capacity": [
+   "FY27 capex plan of INR 250-260 crore; INR 111 crore spent in H1 FY27 with bills pending.",
+   "CNG network at 156 stations and 576 dispensing points; MDPE network 7,313 km; steel pipeline 3,441 inch-km.",
+   "IPO proceeds: INR 496 crore received; INR 358.68 crore utilised by 30 Sep 2026 (INR 170.18 crore CGD network in NT area, INR 135 crore debt repayment, INR 53.50 crore general corporate purposes); about INR 137.08 crore remains for Namakkal and Tiruchirappalli network.",
+   "Namakkal and Trichy: TNSTC MoU; 83 buses converted, taking CNG fleet to 183 buses in Namakkal and 55 in Tiruchirappalli. Connectivity work started under IOC (NT) and GTN (Diu & Gir Somnath) hookup arrangements.",
+   "Two GAs (Diu & Gir Somnath, Namakkal) still in formative stage; LCNG stations and compression services provided to BPCL at Namakkal and Trichy."
+  ],
+  "demand_pricing": [
+   "Q2 FY27 volume an all-time high of 61.23 MMSCM, +12% YoY; H1 FY27 volume 120.16 MMSCM, +10% YoY.",
+   "Gas sourcing mix in Q2 (portfolio basis): APM about 21%, new well gas about 13%, HPHT about 33%, LNG about 30%, spot 1-2% (management cited about 0.5% spot in prepared remarks). Average cost about USD 9.5/MMBtu.",
+   "Per-source cost: APM capped at USD 7/MMBtu; new well gas about USD 10.2; HPHT about USD 8.9; RLNG USD 11-12/MMBtu.",
+   "Spot gas volatile: management cited spikes to USD 29-32/MMBtu and drops to USD 19-24/MMBtu. Spot purchases to cover shortfalls raised sourcing cost.",
+   "Raw material cost rose about INR 1.2 per SCM QoQ, attributed to HPHT allocation changes, Brent-linked pricing and dollar rate movement. Price hikes passed through to consumers, with CNG kept below petrol price."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Is there a rethink on royalty paid to promoters?",
+    "answer": "Management said it is comfortable with the current arrangement; royalty (2% of revenue from operations, booked in other expenses) continues until settlement, as per the IPO prospectus."
+   },
+   {
+    "question": "What is the sourcing mix and cost per MMBtu by source?",
+    "answer": "Q2 mix: APM about 21%, NWG about 13%, HPHT about 33%, LNG about 30%, spot 1-2%. Average about USD 9.5/MMBtu; APM capped at USD 7, NWG about USD 10.2, HPHT about USD 8.9, RLNG USD 11-12."
+   },
+   {
+    "question": "Why did Q3 raw material cost rise and what is the HPHT impact?",
+    "answer": "The 3 September MoPNG HPHT methodology change favoured large players and hurt smaller ones. About 80% of the correction is done after the 19 October relaxation; the transition impact lasted about 20 days to one month. Brent and dollar movements added to costs."
+   },
+   {
+    "question": "Why will Q3 not be as strong sequentially?",
+    "answer": "Brent-linked billing with GAIL, Shell and IOC uses averaged pricing that spills into later quarters; Namakkal and Trichy depend on higher-cost IOC and BPCL/GAIL short-term allocations because GAIL pipeline projects are delayed."
+   },
+   {
+    "question": "Will the company guide on Q3 margins and H2 trajectory?",
+    "answer": "Management declined rupee-per-SCM or margin guidance for Q3 given volatility, but said it remains confident of around 15% EBITDA margin for H2."
+   },
+   {
+    "question": "Why did IRM not do a buyback given valuation below gross block?",
+    "answer": "Management said a buyback or promoter stake increase is not ruled out in future, but there is no such decision now; capital is focused on Namakkal and Trichy and on diversification into cleaner fuels and alternate energy."
+   }
+  ],
+  "risks_watch": [
+   "Q3 FY27 margin and volume impact from HPHT allocation change and spot/short-term gas purchases; management says about 80% of the correction is done.",
+   "Brent and USD/INR movement feeding into sourcing cost; Brent-linked contracts carry averaging lags.",
+   "Industrial demand: steel rolling plants may switch back to coal or alternate fuels; NGT order implementation by Punjab Pollution Control Board pending since 26 February.",
+   "Rising other expenses (new GA start-up opex in Namakkal and Trichy) and higher depreciation as new assets are capitalised.",
+   "Capex execution against INR 250-260 crore FY27 plan; INR 137 crore of IPO proceeds still to be deployed in Namakkal and Trichy.",
+   "Net finance cost: management cited about 7-8% interest on INR 45 crore debt plus 0.5-0.6% bank guarantee charges, with H1 finance cost about INR 6 crore."
+  ],
+  "management_tone": "Confident on H1 delivery and balance sheet, but cautious and non-committal on Q3 and FY27 outlook, citing gas allocation volatility, Brent, and geopolitical uncertainty. Management declined specific Q3 margin and rupee-per-SCM guidance, instead reiterating about 15% H2 EBITDA margin and a commitment to profitable, sustainable growth.",
+  "financial_highlights": [
+   {
+    "metric": "Standalone revenue from operations (net of excise), Q2 FY27",
+    "value": "INR 334 crore",
+    "change": "+29% YoY"
+   },
+   {
+    "metric": "EBITDA excl. other income, Q2 FY27",
+    "value": "INR 47 crore",
+    "change": "+77% YoY; down from INR 62 crore in Q1 FY27"
+   },
+   {
+    "metric": "EBITDA margin, Q2 FY27",
+    "value": "14.2%",
+    "change": "+388 bps YoY"
+   },
+   {
+    "metric": "PAT, Q2 FY27",
+    "value": "INR 26 crore; PAT margin 7.7%",
+    "change": "more than doubled YoY"
+   },
+   {
+    "metric": "Revenue from operations, H1 FY27",
+    "value": "INR 660 crore",
+    "change": "+26% YoY"
+   },
+   {
+    "metric": "EBITDA, H1 FY27",
+    "value": "INR 109 crore; margin 16.5%",
+    "change": "+108% YoY; margin +646 bps (CEO) / +648 bps (CFO)"
+   },
+   {
+    "metric": "PAT, H1 FY27",
+    "value": "INR 59 crore (CEO) / INR 60 crore (CFO); PAT margin 9%",
+    "change": "+124% (CEO) / +111% (CFO) YoY"
+   },
+   {
+    "metric": "EBITDA per SCM, Q2 FY27",
+    "value": "INR 7.73",
+    "change": "vs INR 4.89 in Q2 FY26"
+   },
+   {
+    "metric": "Total debt, 30 Sep 2026",
+    "value": "approx. INR 45 crore",
+    "change": "company stated net debt-free position"
+   },
+   {
+    "metric": "Cash and mutual fund balances, 30 Sep 2026",
+    "value": "INR 253 crore",
+    "change": ""
+   },
+   {
+    "metric": "Net worth",
+    "value": "approx. INR 1,050 crore",
+    "change": "increased"
+   },
+   {
+    "metric": "Income tax paid, H1 FY27",
+    "value": "INR 12.5 crore gross; INR 4.5 crore net of refunds in Q2 cash flow",
+    "change": ""
+   },
+   {
+    "metric": "Depreciation and amortisation, Q2 FY27",
+    "value": "INR 13.8 crore",
+    "change": "vs INR 16.4 crore in Q1 FY27 (Q1 included catch-up charge on unrecorded assets)"
+   }
+  ],
+  "key_quotes": [
+   "This is one of the best H1 we have had in our history.",
+   "So, what you see we are currently taking higher growth plans at lower margin, is not an optimized cost benefit currently.",
+   "Therefore, at this stage, we would not like to provide an exact guidance in rupee-per-SCM terms or specify a particular margin percentage.",
+   "Having said that, we remain confident of maintaining an EBITDA margin of around 15% for H2.",
+   "Yes, we are comfortable with the current arrangement.",
+   "Currently, we are already tied up upto 2030."
+  ],
+  "_completed": 1
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "CNG stations to 156 (up 34% YoY) and 576 dispensing points",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Namakkal and Trichy: 83 buses converted, taking CNG fleet to 183 in Namakkal and 55 in Tiruchirappalli",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Diu & Gir Somnath and Namakkal GAs in formative stage; connectivity work started under IOC (NT) and GTN hookup arrangements",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "IPO-funded Namakkal and Tiruchirappalli CGD network (about INR 137 crore remaining)",
+    "size_pct": null,
+    "capex_cr": 137.08,
+    "q": null,
+    "status": "under_construction",
+    "mat": "moderate"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "cost_actions"
+  ],
+  "clarity": "none",
+  "qRev": 29.0,
+  "qEbitda": 77.0,
+  "outlook": 1,
+  "why": "Q2 FY27 revenue +29% and EBITDA +77% YoY on record 61.23 MMSCM volume, with FY27 capex of INR 250-260 crore (INR 111 crore spent in H1) and 183/55 CNG buses and Namakkal/Trichy network build-out backing growth; however management now sees FY27 volume growth moderating from ~12% by 50-100 bps, Q3 gas disruption, and H2 EBITDA margin guided at only around 15%, with no Q3 margin guidance.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "H2 FY27",
+    "why": "Management reiterates around 15% EBITDA margin for H2 vs 14.2% in Q2 and 16.5% in H1, but declined Q3 margin guidance and flagged Q3 gas disruption and Rs 1.2/SCM QoQ raw material cost increase."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q3-Q4 FY27",
+    "why": "INR 137 crore of IPO proceeds remains for Namakkal and Tiruchirappalli CGD build-out, and INR 250-260 crore FY27 capex plan is firmly committed with INR 111 crore spent in H1 and bills pending."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "Q2 volume hit a record 61.23 MMSCM (+12% YoY), but management may cut the ~12% FY27 volume plan by 50-100 bps and Q3 is hit by a fortnight of HPHT gas disruption."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Utilisation was not disclosed, and the FY27 capex plan is already set at INR 250-260 crore, so a new capex announcement depends on Namakkal/Trichy progress and the capital allocation to cleaner fuels and alternate energy, which management did not size."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "Management said there is no expectation of exceeding prior guidance and volume may moderate, with Q3 margin guidance withheld."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "Q3 FY27",
+    "why": "Q3 faces the HPHT allocation disruption and Brent-linked averaging lags, and management withheld Q3 margin guidance and flagged a possible 50-100 bps volume cut."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "Management cited diversification into cleaner fuels and alternate energy as a capital priority, but gave no product or date; Namakkal/Trichy stations and bus conversions (183 and 55 CNG buses) are expansion of existing CNG, not new products."
+   },
+   {
+    "k": "order_book",
+    "label": "Namakkal and Trichy network ramp (TNSTC MoU, bus conversions)",
+    "call": "likely",
+    "when": "next 2-4 quarters",
+    "why": "83 buses converted with CNG fleet at 183 in Namakkal and 55 in Trichy, and about INR 137 crore of IPO money remaining for the network; Namakkal and Trichy share rose to 11% of H1 volume from about 6% in FY26."
+   },
+   {
+    "k": "cost_actions",
+    "label": "Gas sourcing tied up through 2030 and further long-term contracts",
+    "call": "likely",
+    "when": "in about six months",
+    "why": "Sourcing is contracted through 2030 via Shell, GSPC, IOC and GAIL; management plans more long-term contracts once geopolitical volatility eases, which would reduce spot exposure (1-2% in Q2) and its USD 19-32/MMBtu swings."
+   },
+   {
+    "k": "regulatory",
+    "label": "HPHT allocation correction and 19 October relaxation",
+    "call": "likely",
+    "when": "Q3 FY27",
+    "why": "About 80% of the HPHT correction is done after the 19 October relaxation, with transition impact lasting about 20 days to one month, so the Q3 hit should fade into Q4."
+   }
+  ],
+  "tone": {
+   "mgmt": "cautious",
+   "analysts": "probing",
+   "note": "Management was confident on H1 delivery (volume +10%, EBITDA +108%) and the net debt-free balance sheet, but cautious on Q3 and FY27, declining Q3 margin or rupee-per-SCM guidance and flagging gas allocation volatility and Brent; analysts pressed on Q3 sequential weakness, royalty to promoters and t"
+  }
+ }
+}

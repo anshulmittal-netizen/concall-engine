@@ -1,0 +1,468 @@
+{
+ "doc_id": "IN-b02be05a-828f-4f24-85bc-78b38937f0a3",
+ "market": "IN",
+ "company_id": "500117",
+ "name": "DCW Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-05",
+ "period": "2026-09",
+ "title": "DCW Ltd - 500117 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q2 EBITDA Rs55 cr (8.2% margin) with Basic Chem back to Rs20 cr, but Specialty fell 33% YoY on CPVC spread squeeze; management declined to reaffirm Rs300 cr FY27 EBITDA, now targets double-digit margin only from H2.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 85,
+   "quote": "We would be operating at around 80%, 85% because SIOP, we operate in three colors."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "We have now initiated work on the Rs. 250 crores investment program announced last quarter"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Rs300 cr EBITDA guide not reaffirmed",
+    "quote": "it is very difficult to give a guideline on the EBITDA number",
+    "highlight": "very difficult to give a guideline on the EBITDA number",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "CPVC-PVC spread squeezed, ~Rs12-13 cr hit",
+    "quote": "we see an impact on the PVC-CPVC spread which has impacted our profitability roughly to the tune of Rs. 12 crores, Rs. 13 crores",
+    "highlight": "impact on the PVC-CPVC spread",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "CPVC volumes 500-600 t short in Q2",
+    "quote": "this quarter has been 500 tons, 600 tons short for certain reasons, for internal reason s",
+    "highlight": "500 tons, 600 tons short",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "pricing",
+    "label": "PVC-VCM spread ~$120 vs <$50 in Q1",
+    "quote": "the spread has somewhat further improved to close to $120. Still, it is not at $130, $135",
+    "highlight": "close to $120",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Double-digit margin confidence from H2",
+    "quote": "From second half of the year, we are confident of getting a double-digit number.",
+    "highlight": "confident of getting a double-digit number",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "H2 EBITDA margin",
+    "value": "double-digit",
+    "horizon": "H2 FY27",
+    "change": "new",
+    "quote": "From second half of the year, we are confident of getting a double-digit number."
+   },
+   {
+    "metric": "Finance cost reduction",
+    "value": "9%-10% lower interest cost in FY27",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "The company expects to conclude this fiscal year with a 9%-10% reduction in interest cost."
+   },
+   {
+    "metric": "Steady-state PVC-CPVC spread",
+    "value": "Rs 25-30 per ton",
+    "horizon": "steady state",
+    "change": "new",
+    "quote": "we should get back to the PVC-CPVC spread which was available in Quarter 1, which is around Rs. 25-Rs. 30 per ton"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Basic Chemicals breakeven",
+    "outcome": "met",
+    "quote": "EBITDA swung back into the positive territory at Rs. 20 crores"
+   },
+   {
+    "metric": "Steady-state EBITDA",
+    "outcome": "dropped",
+    "quote": "it is very difficult to give a guideline on the EBITDA number"
+   },
+   {
+    "metric": "FY27 performance",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Legacy debt",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "SIOP Phase 1 commissioning",
+    "outcome": "held",
+    "quote": "we expect the capacity to be on board on Q4 of next financial year"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Chemplast",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Specialty chem destocking end",
+   "Water & wastewater",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Rs300 cr EBITDA guide dropped",
+    "quote": "it is very difficult to give a guideline on the EBITDA number"
+   },
+   {
+    "label": "Buyback only Rs40 cr vs 25% net worth cap",
+    "quote": "we have chosen to take 50-day operations of Rs. 80 lakh which comes to Rs. 40 crores"
+   },
+   {
+    "label": "Net debt position thin, legacy debt target unaddressed",
+    "quote": "gross leverage stood at Rs. 323 crores, resulting in net debt of Rs. 26 crores"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 3,
+   "margin": 6,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Steady-state EBITDA guidance",
+    "quote": "it is very difficult to give a guideline on the EBITDA number"
+   },
+   {
+    "topic": "Ilmenite / titanium expansion",
+    "quote": "on the project side, the management has not made any announcement as yet"
+   },
+   {
+    "topic": "Segment volume/price disclosure",
+    "quote": "I think if you have certain specific questions, you can send us."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "DCW Q2 FY27 revenue rose 23% YoY to Rs.663 crore, but EBITDA (incl. other income) fell 13% YoY to Rs.55 crore on CPVC and export-freight pressures.",
+  "overview": "Q2 revenue from operations grew 23% YoY to Rs.663 crore and 22% QoQ, led by Basic Chemicals recovery (EBITDA back to Rs.20 crore from a Rs.14 crore loss in Q1). Specialty Chemicals EBITDA fell 33% YoY as the PVC-to-CPVC spread compressed on locked monthly prices, and North America export freight added cost. H1 EBITDA was Rs.96 crore, down 20% YoY. Management declined to guide to the Rs.300 crore annual EBITDA it had given earlier, though it said it is confident of a double-digit EBITDA margin from H2 FY27. A buyback of up to Rs.40 crore was approved, and a Rs.250 crore capex programme has started.",
+  "segments": [
+   {
+    "name": "Specialty Chemicals (CPVC, SIOP)",
+    "commentary": "Q2 revenue +32% YoY, +4% QoQ on CPVC volumes from the 40 KT to 50 KT expansion and SIOP volume gains. EBITDA fell 33% YoY as PVC prices rose faster than CPVC selling prices, and export freight to North America added Rs.7-8 crore of one-off cost."
+   },
+   {
+    "name": "Basic Chemicals (PVC, Caustic Soda, Soda Ash, Synthetic Rutile)",
+    "commentary": "Q2 revenue +20% YoY and +31% QoQ; EBITDA Rs.20 crore, up from a Rs.14 crore loss in Q1, as the VCM-PVC spread recovered to about $100-120/t. Soda Ash volumes fell after a flood stopped the Dhrangadhra plant for about 10 days."
+   }
+  ],
+  "guidance_outlook": [
+   "Management did not reaffirm the Rs.300 crore annual EBITDA guidance given at the start of the year, citing the Q1 West Asia hit, the Q2 Dhrangadhra flood, PVC volatility and the CPVC spread squeeze.",
+   "Management said it is confident of a double-digit EBITDA margin from H2 FY27.",
+   "Management expects H2 FY27 to be significantly stronger than H1, on current visibility.",
+   "PVC-to-CPVC spread expected to return to Q1 levels (about Rs.25-30/t, per management) in Q3 as the pricing lag corrects.",
+   "Full-year finance costs expected to be 9-10% lower than last year.",
+   "SIOP 8 KT expansion (to 45 KT) expected on board in Q4 FY28; ramp-up to 90-100% utilisation expected in about 6 months.",
+   "Synthetic Rutile sales mix shifts toward Japanese customers from Q3 FY27, which management expects to lift spreads."
+  ],
+  "capex_capacity": [
+   "Rs.250 crore programme (announced last quarter) has started: iron oxide (SIOP) expansion and captive co-generation power optimisation; both are at an early stage with timelines intact.",
+   "SIOP rated capacity about 30,000 t; utilisation about 80-85% (read as roughly 100% given three-colour changeovers). Next phase adds 8 KT to reach 45 KT.",
+   "CPVC capacity expanded from 10 KT to 50 KT in three tranches; the last 10 KT came in Q1 FY27, and Q2 output was 500-600 t short for internal reasons.",
+   "Soda Ash utilisation about 90% in the last two quarters, held back by an imported equipment failure and the Q2 flood; PVC and Caustic Soda have run near 100%.",
+   "Solar renewables (44 MW, commissioned April 2025) cover about 25% of power; management says it will defer further renewable expansion until a Tamil Nadu court case is resolved.",
+   "Borrowing of about Rs.150 crore planned for SIOP capex: Rs.50 crore drawn into mutual funds and Rs.50-60 crore as working capital demand loan at about 9-9.25%."
+  ],
+  "demand_pricing": [
+   "PVC-VCM spread: below $50/t in Q1, about $100+/t in Q2 and about $120/t in late October; management expects $130-135/t in coming months. FY26 spread was about $125-150/t.",
+   "Imported PVC landed price is $940-960/t. Management attributed the rise to higher ocean freight and Chinese cost increases.",
+   "DGTR recommended countervailing duty on Chinese PVC imports on 26 October 2026; Ministry of Finance approval is pending and may take a couple of months.",
+   "CPVC realisation was quoted at above Rs.125/kg. Monthly price locks and a monsoon-weak Q2 squeezed pass-through.",
+   "SIOP realisation is about $900-950/t; management says SIOP margins are around 40%. Export freight to North America rose sharply.",
+   "Management expects steady demand for CPVC from water-infrastructure schemes such as Jal Jeevan, with the eastern region picking up."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What is the PVC-VCM spread now versus Q2 and Q1?",
+    "answer": "Q2 was above $100/t, about $120/t currently, and under $50/t in Q1. Management expects $130-135/t in coming months."
+   },
+   {
+    "question": "Why is CPVC pass-through lagging, and how much revenue is on short-term contracts?",
+    "answer": "Contracts are mostly monthly with prices locked in the last week or start of the month, while PVC moved 3-4 times in a month. Monsoon-weak demand in Q2 added to the squeeze."
+   },
+   {
+    "question": "Why was the buyback only Rs.40 crore, and is the Rs.300 crore EBITDA guidance intact?",
+    "answer": "SEBI limits open-market buybacks to 25% of the 10-day average volume (about Rs.80 lakh/day over 50 days). Management declined to reaffirm Rs.300 crore EBITDA and cited market conditions, the Q1 VCM event, the Q2 flood and the CPVC spread."
+   },
+   {
+    "question": "What is the tax rate outlook and power cost trend?",
+    "answer": "Effective tax rate is 25.17% under the new regime. Power cost rose because coal and lignite prices increased. Solar is worth Rs.25-30 crore a year in savings versus the prior coal cost."
+   },
+   {
+    "question": "Will the Ilmenite and synthetic rutile business scale up, and will the company disclose more product data?",
+    "answer": "Management has no new Ilmenite or titanium project announced. Synthetic Rutile is reported within Basic Chemicals (historically part of Caustic), and more growth announcements in SIOP and CPVC may come."
+   },
+   {
+    "question": "Can the company reach double-digit EBITDA margins?",
+    "answer": "Management said it is confident of a double-digit margin from H2 FY27, citing specialty growth and stable earnings from the specialty segment."
+   },
+   {
+    "question": "What is the peak revenue potential at current prices?",
+    "answer": "Management estimated about Rs.2,500 crore at current prices, possibly higher, after diverting about 30% of PVC output to CPVC."
+   }
+  ],
+  "risks_watch": [
+   "Margin volatility from PVC prices, the VCM-PVC spread and import duty decisions. The CVD recommendation awaits Finance Ministry approval.",
+   "CPVC pricing lag: whether the PVC-to-CPVC spread recovers to the Rs.25-30/t Q1 level in Q3 as management expects.",
+   "Freight costs to North America and their effect on SIOP export margins.",
+   "Whether Rs.300 crore EBITDA guidance is missed, and whether the double-digit margin target for H2 FY27 is met.",
+   "Coal price increases lifting power costs; Soda Ash equipment reliability; SIOP ramp-up to 45 KT and utilisation.",
+   "Buyback execution (up to Rs.40 crore, about 3% of equity) and the timing of the next capital allocation announcement."
+  ],
+  "management_tone": "Defensive on margins: management attributed the shortfall to events outside its control (West Asia, floods, freight, PVC volatility) and avoided firm EBITDA guidance. It was more confident on H2 (double-digit margin, stronger second half) and on the SIOP and CPVC growth plans. It was evasive on Ilmenite, product-level disclosure and the buyback size.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (Q2)",
+    "value": "Rs.663 crore",
+    "change": "+23% YoY; +22% QoQ"
+   },
+   {
+    "metric": "Specialty Chemicals revenue growth (Q2)",
+    "value": "+32% YoY; +4% QoQ",
+    "change": "CPVC volumes after capacity expansion"
+   },
+   {
+    "metric": "Basic Chemicals revenue growth (Q2)",
+    "value": "+20% YoY; +31% QoQ",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA incl. other income (Q2)",
+    "value": "Rs.55 crore; margin 8.2%",
+    "change": "-13% YoY; +32% QoQ"
+   },
+   {
+    "metric": "Basic Chemicals EBITDA (Q2)",
+    "value": "Rs.20 crore",
+    "change": "from loss of Rs.14 crore in Q1; +43% YoY"
+   },
+   {
+    "metric": "Specialty Chemicals EBITDA (Q2)",
+    "value": "not disclosed",
+    "change": "-33% YoY"
+   },
+   {
+    "metric": "H1 FY27 revenue from operations",
+    "value": "Rs.1,205 crore",
+    "change": "+19% YoY; Specialty +35%, Basic +13%"
+   },
+   {
+    "metric": "H1 FY27 EBITDA incl. other income",
+    "value": "Rs.96 crore",
+    "change": "-20% YoY"
+   },
+   {
+    "metric": "Finance cost (Q2)",
+    "value": "Rs.13.6 crore",
+    "change": "-8% QoQ; -12.5% YoY"
+   },
+   {
+    "metric": "Finance cost (H1)",
+    "value": "Rs.28.4 crore",
+    "change": "-7.2% YoY"
+   },
+   {
+    "metric": "Cash and equivalents incl. FD and MF (30 Sep 2026)",
+    "value": "Rs.297 crore",
+    "change": ""
+   },
+   {
+    "metric": "Gross debt",
+    "value": "Rs.323 crore",
+    "change": ""
+   },
+   {
+    "metric": "Net debt",
+    "value": "Rs.26 crore",
+    "change": "Net debt/TTM EBITDA 0.12x; gross debt/TTM EBITDA 1.5x"
+   },
+   {
+    "metric": "Effective tax rate",
+    "value": "25.17%",
+    "change": "shifted to new regime from 1 April 2026; excludes Rs.34 crore deferred tax one-off in Q1"
+   },
+   {
+    "metric": "Current ratio (Sep 2026)",
+    "value": "1.17x",
+    "change": ""
+   },
+   {
+    "metric": "Asset turnover (H1 annualised)",
+    "value": "1.83x",
+    "change": "vs 1.62x in FY26"
+   }
+  ],
+  "key_quotes": [
+   "We expect the Second Half of FY27 to be significantly stronger than the first.",
+   "Net debt to EBITDA is now just 0.12 x, and finance costs have declined by around 8% sequentially.",
+   "From second half of the year, we are confident of getting a double-digit number.",
+   "On a steady state, on whatever is today, we should get back to the PVC-CPVC spread which was available in Quarter 1, which is around Rs. 25-Rs. 30 per ton.",
+   "We have chosen to take 50-day operations of Rs. 80 lakh which comes to Rs. 40 crores."
+  ],
+  "_completed": 1
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "CPVC capacity expansion 40 KT to 50 KT (last 10 KT came in Q1 FY27)",
+    "size_pct": 25.0,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "moderate"
+   },
+   {
+    "what": "SIOP 8 KT expansion to 45 KT (from ~30 KT rated), on board Q4 FY28",
+    "size_pct": 27.0,
+    "capex_cr": null,
+    "q": 6,
+    "status": "planned",
+    "mat": "minor"
+   }
+  ],
+  "util": 85.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "cost_actions"
+  ],
+  "clarity": "none",
+  "qRev": 23.0,
+  "qEbitda": -13.0,
+  "outlook": 0,
+  "why": "Management withdrew reaffirmation of the Rs.300 crore annual EBITDA guide and gave no revenue growth number; it only says H2 FY27 will be significantly stronger than H1 with a double-digit EBITDA margin, backed partly by the CPVC expansion (now commissioned), a PVC-CPVC spread recovery to Rs.25-30/t in Q3, and an SIOP 8 KT addition due Q4 FY28.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "Management is confident of a double-digit EBITDA margin from H2 FY27 (Q2 EBITDA margin 8.2%), helped by PVC-VCM spread recovery from under $50/t in Q1 to about $120/t now and a CPVC spread return to Rs.25-30/t in Q3."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q4 FY28 for SIOP; CPVC done",
+    "why": "CPVC already expanded from 40 KT to 50 KT with last 10 KT commissioned in Q1 FY27; SIOP 8 KT addition (to 45 KT) is planned for Q4 FY28 with a Rs.250 crore programme already started."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Specialty revenue grew 32% YoY in Q2 on CPVC volumes, SIOP utilisation is 80-85% (near 100% given colour changeovers), and PVC and Caustic run near 100%; Soda Ash recovery from the flood is pending."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "Utilisation is about 85% and the Rs.250 crore programme is already under way, but management deferred further renewable expansion and gave no new project; a fresh capex is more likely once SIOP ramps to 90-100%."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Management withdrew reaffirmation of the Rs.300 crore annual EBITDA guide; H1 EBITDA was Rs.96 crore down 20% YoY, so an upgrade is not signalled."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "likely",
+    "when": "Q3 FY27 (next 2-3 quarters)",
+    "why": "The Rs.300 crore annual EBITDA guide was not reaffirmed; H1 was Rs.96 crore, so reaching Rs.300 crore needs about Rs.204 crore in H2 against Rs.55 crore in Q2, which is a stretch."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "no_signal",
+    "when": "",
+    "why": ""
+   },
+   {
+    "k": "pricing",
+    "label": "PVC-CPVC spread recovery to Rs.25-30/t in Q3 FY27",
+    "call": "possible",
+    "when": "Q3 FY27",
+    "why": "Management expects the spread to return to Q1 levels as the pricing lag corrects, but monthly price locks and weak monsoon demand add risk; CPVC realisation is above Rs.125/kg."
+   },
+   {
+    "k": "regulatory",
+    "label": "Countervailing duty on Chinese PVC imports",
+    "call": "possible",
+    "when": "next couple of months",
+    "why": "DGTR recommended CVD on 26 Oct 2026; Finance Ministry approval is pending and may take a couple of months, with imported PVC landed at $940-960/t."
+   },
+   {
+    "k": "cost_actions",
+    "label": "Finance cost down 9-10% in FY27",
+    "call": "likely",
+    "when": "FY27",
+    "why": "H1 finance cost was Rs.28.4 crore (down 7.2% YoY) and management expects a 9-10% full-year reduction; net debt is only Rs.26 crore (0.12x TTM EBITDA)."
+   }
+  ],
+  "tone": {
+   "mgmt": "defensive",
+   "analysts": "probing",
+   "note": "Management was defensive on margins, blaming West Asia, the Dhrangadhra flood, freight and PVC volatility, and declined to reaffirm the Rs.300 crore EBITDA guide; it was more confident on H2 double-digit margins and the SIOP and CPVC growth. Analysts probed the PVC-VCM spread, CPVC pass-through lag,"
+  }
+ }
+}
