@@ -157,7 +157,9 @@ def transcribe(entry: dict, url: str, budget: AudioBudget, log=print) -> str | N
         log(f"    audio: nothing downloaded from {url[:90]} (not a recording, or longer than {max_min} min)")
         return None
     try:
-        segs, _ = _model().transcribe(str(audio), language="en", vad_filter=True, beam_size=1)
+        # naming the company and the usual jargon up front fixes most mishearings ("Aveda" for EBITDA, garbled names)
+        hint = f"{entry['name']} earnings conference call. Revenue, EBITDA, margin, crore, capex, FY27, quarter, Q&A."
+        segs, _ = _model().transcribe(str(audio), language="en", vad_filter=True, beam_size=1, initial_prompt=hint)
         text = "\n".join(s.text.strip() for s in segs)
     except Exception as ex:
         log(f"    audio: transcription failed for {entry['name']} ({str(ex)[:120]})")
