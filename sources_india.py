@@ -18,11 +18,18 @@ RX_AGM = re.compile(r"annual general meet|\bagm\b|\begm\b|extra.?ordinary genera
 RX_SKIP = re.compile(r"audio|video|recording|intimation|schedule|newspaper", re.I)
 
 
+RX_RECORDING = re.compile(r"audio|video|recording|webcast", re.I)
+RX_CALLISH = re.compile(r"call|con[\s.-]?call|earnings|analyst|investor|institutional", re.I)
+
+
 def classify(item: dict) -> str | None:
     sub = str(item.get("SUBCATNAME") or "")
     text = " ".join(str(item.get(k) or "") for k in ("SUBCATNAME", "NEWSSUB", "HEADLINE"))
+    head = " ".join(str(item.get(k) or "") for k in ("NEWSSUB", "HEADLINE"))
     if RX_AGM.search(text):
         return None  # AGM transcripts are shareholder meetings, not earnings calls
+    if RX_RECORDING.search(head) and not RX_TRANSCRIPT.search(head) and RX_CALLISH.search(text):
+        return "recording"  # link to the call's audio/video, filed within a day; the transcript comes days later
     if sub == "Earnings Call Transcript" or (RX_TRANSCRIPT.search(text) and "AGM" not in sub):
         return "transcript"
     if sub == "Investor Presentation" or (RX_PRESENT.search(text) and not RX_SKIP.search(text)
@@ -63,6 +70,11 @@ def fetch(universe: dict, since: dt.date, until: dt.date, log=print) -> list[dic
                     code = str(it.get("SCRIP_CD", "")).strip()
                     kind = classify(it)
                     att = (it.get("ATTACHMENTNAME") or "").strip()
+                    via = None
+                    if kind == "recording":
+                        if not settings()["run"].get("audio_recordings") or "transcript" not in allowed:
+                            continue
+                        kind, via = "transcript", "recording"  # read as a transcript once transcribed
                     if code not in comps or not kind or kind not in allowed or not att:
                         continue
                     doc_id = f"IN-{it.get('NEWSID') or att}"
@@ -73,6 +85,8 @@ def fetch(universe: dict, since: dt.date, until: dt.date, log=print) -> list[dic
                              "doc_type": kind, "date": when.isoformat(),
                              "period": period_key(reported_quarter_end(when)),
                              "title": it.get("NEWSSUB") or it.get("HEADLINE"), "status": "listed", "attachment": att}
+                    if via:
+                        entry["via"] = via
                     manifest[doc_id] = entry
                     new.append(entry)
                 p += 1

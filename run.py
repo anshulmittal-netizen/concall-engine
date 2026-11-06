@@ -134,6 +134,20 @@ def cmd_extract(a):
             e["status"] = "listed"; e.pop("error", None); continue
         if e["status"] == "error" and e.get("attempts", 1) < 2:
             e["status"] = "listed"; e["attempts"] = e.get("attempts", 1) + 1
+    cfg = settings()["run"]
+    rescue_on = a.market == "IN" and cfg.get("rescue_unreadable", False)
+    if rescue_on:  # scanned PDFs and cover letters from recent quarters get one more try with OCR and link-following
+        recent = (today() - dt.timedelta(days=cfg.get("rescue_days", 120))).isoformat()
+        for e in manifest.values():
+            if e["status"] in ("too_short", "not_a_transcript") and not e.get("rescue_tried") and e.get("date", "") >= recent:
+                e["status"] = "listed"; e["rescue_tried"] = True
+    import rescue
+    if rescue_on:
+        textify.OCR_SECONDS_LEFT = cfg.get("max_ocr_minutes_per_run", 60) * 60
+    budget = rescue.AudioBudget(cfg.get("max_audio_minutes_per_run", 0) if cfg.get("audio_recordings") else 0)
+    have_written = {(e["company_id"], e["period"]) for e in manifest.values()
+                    if e["doc_type"] == "transcript" and e.get("via") != "recording" and not e.get("audio")
+                    and e["status"] in ("listed", "extracted")}
     todo = [e for e in manifest.values() if e["status"] == "listed" and e["doc_type"] in allowed]
     # Priority: (1) companies that already have the latest quarter AND an earlier one, so deltas work;
     # (2) the latest quarter for everyone else; (3) older quarters. Newest first inside each group.
@@ -148,9 +162,11 @@ def cmd_extract(a):
         return (0 if paired else 1 if e["period"] == latest else 2, "".join(chr(255 - ord(c)) for c in e.get("date", "")))
     todo.sort(key=rank)
     limit = a.limit or settings()["run"]["max_docs_per_run"]
-    done = fail = 0
+    done = fail = waiting = 0
     for e in todo[:limit]:
         try:
+            if e.get("via") == "recording" and not e.get("raw") and (e["company_id"], e["period"]) in have_written:
+                e["status"] = "has_transcript"; continue  # the written transcript is already here: no need for audio
             if e["doc_type"] == "interview":
                 import interviews
                 raw = interviews.transcribe(e)
@@ -164,7 +180,20 @@ def cmd_extract(a):
                 raw = sources_us.download(e)
             if not raw:
                 e["status"] = "download_failed"; fail += 1; continue
-            text = textify.to_text(raw)
+            text = textify.to_text(raw, ocr=rescue_on)
+            if textify.OCR_SKIPPED:
+                waiting += 1; continue  # scanned PDF, but this run's OCR time is used up: next run
+            if textify.LAST_OCR and not e.get("raw") and looks_like_call(text):
+                e.update(via="ocr", raw=rescue.save_text(e, text))  # keep it: summary passes never redo the OCR
+            if (rescue_on and e["doc_type"] == "transcript" and not e.get("raw")
+                    and (e.get("via") == "recording" or not looks_like_call(text))):
+                try:
+                    got = rescue.recover(e, raw, text, looks_like_call, budget, textify, log)
+                except rescue.BudgetSpent:
+                    waiting += 1; continue  # audio budget used up: stays in the backlog for the next run
+                if got:
+                    text = got
+                    log(f"  ↺ {e['name']}: read via {e['via']}")
             if len(text) < 1500:
                 e["status"] = "too_short"; fail += 1; continue  # scanned PDF or empty deck
             if e["doc_type"] == "transcript" and not looks_like_call(text):
@@ -178,6 +207,8 @@ def cmd_extract(a):
                 e["firstCue"] = cue  # transcript says this is the company's first / maiden call
             x = extract.extract(e, text)
             e["status"] = "extracted"; e["model"] = x["model"]; done += 1
+            if rescue_on and e["doc_type"] == "transcript" and not e.get("audio"):
+                rescue.supersede(manifest, e, log)
             log(f"  ✓ {e['name']} · {e['doc_type']} · {e['date']} · verified {x['verified_share']:.0%}")
         except Exception as ex:  # keep going; record the failure
             if _billing(str(ex)):  # out of API credit: every later read would fail the same way
@@ -191,7 +222,8 @@ def cmd_extract(a):
                 write_json(man_path, manifest)
     write_json(man_path, manifest)
     left = len(todo) - min(limit, len(todo))
-    log(f"{a.market}: extracted {done}, failed {fail}, backlog {left}")
+    log(f"{a.market}: extracted {done}, failed {fail}, backlog {left}"
+        + (f", {waiting} waiting for OCR / audio time" if waiting else ""))
 
 
 def get_text(entry):

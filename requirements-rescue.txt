@@ -1,0 +1,7 @@
+# India engine only: OCR of scanned transcripts and transcription of filed concall recordings
+# (kept out of requirements.txt so the 30-minute results/management watch stays light)
+pytesseract>=0.3.10
+pdf2image>=1.17
+yt-dlp>=2025.1.1
+faster-whisper>=1.0
+av>=11,<17  # faster-whisper 1.2 passes an argument PyAV 17+ no longer accepts

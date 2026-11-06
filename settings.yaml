@@ -38,6 +38,13 @@ run:
   max_about_per_run: 2000     # one-line 'what the business does' per company, written once (small: summary in)
   about_refresh_days: 365      # rewrite a company's line from a newer call after this many days
   max_completions_per_run: 700 # summaries missing sections get one targeted follow-up call, this many per night
+  rescue_unreadable: true      # India: OCR scanned transcripts and follow cover-letter links to the company website
+  max_ocr_minutes_per_run: 60  # wall-clock time for OCR per run (a few seconds a page); the rest wait for the next run
+  rescue_days: 120             # filings this recent that failed before get one more try with the above
+  audio_recordings: true       # India: transcribe filed concall recordings (needs rescue_unreadable) so calls score before the transcript is filed
+  max_audio_minutes_per_run: 120 # wall-clock time for transcription per run; the rest wait for the next run
+  max_recording_minutes: 150   # skip recordings longer than this
+  whisper_model: small         # faster-whisper model on the CPU runner (tiny/base are faster, medium is more accurate)
   backfill_days: 200           # current + previous quarter
   lookback_days: 10
 
