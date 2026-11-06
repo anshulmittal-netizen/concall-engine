@@ -3,6 +3,7 @@ name: India concalls
 on:
   schedule:
     - cron: "25 14 * * *"   # 19:55 IST daily
+    - cron: "0 2 7-30 11 *" # 07:30 IST, 7-30 Nov only: extra morning run for the Q2 FY27 results peak (remove after the season)
   workflow_dispatch:
     inputs:
       since:
@@ -25,7 +26,7 @@ concurrency: { group: engine-data, cancel-in-progress: false }
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 355   # GitHub's ceiling is 360; audio + OCR budgets in settings.yaml are sized to fit
     permissions: { contents: write }
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
