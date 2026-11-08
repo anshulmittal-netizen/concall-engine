@@ -1,0 +1,402 @@
+{
+ "doc_id": "IN-ddf5e810-2048-4286-9cb3-cd3b27b72ec6",
+ "market": "IN",
+ "company_id": "532867",
+ "name": "V2 Retail Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-06",
+ "period": "2026-09",
+ "title": "V2 Retail Ltd - 532867 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Q2 revenue +28% and gross margin 31.1% (+310bps) on lower discounting, but SSSG -14.9% reported and H2 store adds cut to 60-70 with FY27 SSSG guide effectively trimmed to 5-7% and debt rising to INR528 crores.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Working-capital stress",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -2,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "SSSG -14.9% in Q2 reported",
+    "quote": "The FY27 SSSG showed minus 14.9%, but normal SSSG was plus 0.5%",
+    "highlight": "minus 14.9%",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "H2 store adds cut to 60-70",
+    "quote": "We plan to open only 60 to 70 stores in the second half of the year",
+    "highlight": "only 60 to 70 stores",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "FY28 openings could fall to 100",
+    "quote": "if this trend continues to the third quarter, then next year we'll only open 100 stores",
+    "highlight": "we'll only open 100 stores",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Net working capital 88 days vs 81",
+    "quote": "The net working capital increased to 88 days versus 81 days in FY26",
+    "highlight": "increased to 88 days",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin 31.1% vs 28.0%",
+    "quote": "Gross margin improved to 31.1% versus 28.0% last year",
+    "highlight": "Gross margin improved to 31.1%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Store openings FY27",
+    "value": "170 to 200 stores (106 H1 + 60-70 H2, implies ~166-176)",
+    "change": "held",
+    "quote": "we are going to open 60 to 70 more"
+   },
+   {
+    "metric": "Revenue growth FY27",
+    "value": "more than 50%",
+    "change": "held",
+    "quote": "I think we should still surpass the 50% guidance that we had for the whole year"
+   },
+   {
+    "metric": "Gross margin FY27",
+    "value": "29% to 30%",
+    "change": "held",
+    "quote": "we aim to sustain around 29% to 30% gross margin"
+   },
+   {
+    "metric": "SSSG FY27",
+    "value": "5% to 7% full-year implied by H2 target of 7-9% for old stores",
+    "change": "cut",
+    "quote": "then the whole year SSSG would be 5% to 7%"
+   },
+   {
+    "metric": "Inventory days / NWC FY27",
+    "value": "NWC 75 to 80 days by March 2027",
+    "change": "held",
+    "quote": "net working capital should come back to around 75 to 80 days by March 2027"
+   },
+   {
+    "metric": "Pre-Ind AS EBITDA margin FY27",
+    "value": "7% to 8% (more than 7.5%)",
+    "change": "new",
+    "quote": "we would be targeting a pre-Ind AS EBITDA margin of 7% to 8% for the whole year"
+   },
+   {
+    "metric": "FY28 store openings",
+    "value": "120 to 150 stores",
+    "change": "new",
+    "quote": "our current guidance would be anywhere between 120 to 150 stores"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Store openings FY27",
+    "outcome": "met",
+    "quote": "we are going to open 60 to 70 more"
+   },
+   {
+    "metric": "Revenue growth",
+    "outcome": "met",
+    "quote": "I think we should still surpass the 50% guidance that we had for the whole year"
+   },
+   {
+    "metric": "Gross margin",
+    "outcome": "met",
+    "quote": "With gross margin now at 30%, we aim to sustain around 29% to 30% gross margin"
+   },
+   {
+    "metric": "SSSG",
+    "outcome": "missed",
+    "quote": "then the whole year SSSG would be 5% to 7%"
+   },
+   {
+    "metric": "Inventory days",
+    "outcome": "missed",
+    "quote": "The net working capital increased to 88 days versus 81 days in FY26"
+   }
+  ],
+  "entities": [
+   {
+    "name": "V-Mart",
+    "relation": "competitor"
+   },
+   {
+    "name": "Style Baazar",
+    "relation": "competitor"
+   },
+   {
+    "name": "Citykart",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Housing & real-estate cycle",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "SSSG negative, demand slowdown in last 3 months",
+    "quote": "But in the last 3 months, definitely we saw some sort of a demand slowdown."
+   },
+   {
+    "label": "Borrowings up to INR528 crore from INR253 crore",
+    "quote": "Borrowings stood at INR528 crores, of which INR45.6 crores is non-current and INR483 crores is current versus INR253 crores in March 2026."
+   },
+   {
+    "label": "Vendor payment days shortened to 45-65",
+    "quote": "it should be between, I would say, about 45 to 65 days, the credit days"
+   },
+   {
+    "label": "Management cannot explain SSSG decline",
+    "quote": "So it's hard to put a particular factor to that, because nothing stands out from the data."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 7,
+   "margin": 3,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Mature store SSSG H1",
+    "quote": "We don't give that breakup out, but maybe from next time we will start giving that out also."
+   },
+   {
+    "topic": "Creditor-benefit quantification",
+    "quote": "it's not a very simple answer because when we are becoming the best paymaster"
+   },
+   {
+    "topic": "Core team names",
+    "quote": "we keep a probation of at least 6 months whenever a senior key managerial person joins"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "V2 Retail Q2 FY27 revenue rose 28% to INR905.6 crores on volume growth, but SSSG was -14.9% reported and mgmt cut FY27 SSSG view to 5-7%.",
+  "overview": "Q2 FY27 revenue grew 28% YoY to INR905.6 crores, driven by 31% volume growth, with gross margin up 310 bps to 31.1% and pre-Ind AS EBITDA up 20% to INR53.4 crores. Reported SSSG was -14.9%, which management attributes mainly to the Durga Puja and wedding season shifting from Q2 to Q3; underlying SSSG was stated as +0.5%, and H1 calendar SSSG was -3.7%. Management opened 49 stores in Q2 (106 in H1, a record), and sales per square foot fell to INR700 per month from INR933. Management said it will open only 60-70 stores in H2, will open a total of 170-190 stores in FY27 (with some H2 sites slipping to April), and flagged that FY28 openings could fall to around 100 if Q3 trends stay weak.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (Q2)",
+    "value": "INR905.6 crores",
+    "change": "+28% YoY vs INR708.6 crores"
+   },
+   {
+    "metric": "Gross profit (Q2)",
+    "value": "INR281.3 crores",
+    "change": "+42% YoY vs INR198.2 crores"
+   },
+   {
+    "metric": "Gross margin (Q2)",
+    "value": "31.1%",
+    "change": "+310 bps YoY vs 28.0%"
+   },
+   {
+    "metric": "EBITDA post-Ind AS (Q2)",
+    "value": "INR120.3 crores, 13.3% margin",
+    "change": "+41% YoY vs INR85.4 crores (12.1%)"
+   },
+   {
+    "metric": "EBITDA pre-Ind AS (Q2)",
+    "value": "INR53.4 crores, 5.9% margin",
+    "change": "+20% YoY vs INR44.4 crores"
+   },
+   {
+    "metric": "PAT (Q2)",
+    "value": "INR18.2 crores, 2% margin",
+    "change": "+6% YoY vs INR17.2 crores"
+   },
+   {
+    "metric": "Revenue from operations (H1 FY27)",
+    "value": "INR1,902.8 crores",
+    "change": "+42% YoY vs INR1,340.9 crores"
+   },
+   {
+    "metric": "EBITDA post-Ind AS (H1)",
+    "value": "INR259.7 crores",
+    "change": "+50% YoY vs INR172.7 crores"
+   },
+   {
+    "metric": "EBITDA pre-Ind AS (H1)",
+    "value": "INR132.8 crores, about 7% margin",
+    "change": "+37% YoY vs INR96.9 crores"
+   },
+   {
+    "metric": "PAT (H1)",
+    "value": "INR60.1 crores",
+    "change": "+43% YoY vs INR41.9 crores"
+   },
+   {
+    "metric": "Depreciation (Q2)",
+    "value": "INR68 crores",
+    "change": "vs INR37 crores; mainly right-of-use assets for 106 new stores"
+   },
+   {
+    "metric": "Net working capital",
+    "value": "88 days",
+    "change": "vs 81 days in FY26"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Category mix",
+    "commentary": "Men's wear about 40%, ladies 29%, kids 22%, lifestyle 9%; mix described as unchanged. Full-price sales 91% in Q2 and H1 vs 92% last year."
+   },
+   {
+    "name": "Store network",
+    "commentary": "427 stores across 27 states and 340+ cities as of 30 Sep 2026, about 4.6 million sq ft; 49 opened and 3 closed in Q2, 106 opened and 4 closed in H1. About 60% of new stores are in core states (UP, Bihar, MP, Odisha, Assam)."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue growth guidance of 50%+ maintained; management said H2 revenue growth would need to be around 60%, with 7-9% SSSG from old stores and the rest from new stores.",
+   "FY27 SSSG guidance cut to 5-7% (from 8-10% for the rest of the year after H1 SSSG of -3.7%); Q3 SSSG target 5-7% on a period-to-period basis.",
+   "Full-year FY27 gross margin guided at 29-30%; post-Ind AS EBITDA margin 13.5-14.5% (management says it guides on pre-Ind AS); pre-Ind AS EBITDA margin guided at more than 7.5% for the full year, with H2 at least 8%.",
+   "Store openings: 60-70 in H2 FY27, taking FY27 total to 170-190; FY28 current guidance 120-150 stores, but could drop to about 100 if Q3 weak, with FY28 revenue growth then 35-40% vs about 50%. Decision point is end of Q3.",
+   "Net working capital expected to normalise to 75-80 days by March 2027; creditor days expected at 45-65 vs 65-70 average.",
+   "Q3 FY27 described as the company's best quarter ever in revenue and profitability."
+  ],
+  "capex_capacity": [
+   "Opened 106 stores in H1 FY27, which management called its highest-ever H1 addition; plans 60-70 more in H2 and says back end (design, sourcing, warehousing, talent) can support 150+ stores per year.",
+   "About 18 of the H2 pipeline already opened; remainder to shift to April 2027 due to site project delays.",
+   "Closing retail space up about 1 million sq ft since March 2026; inventory rose to INR1,447.8 crores from INR1,141 crores at March 2026.",
+   "Long-term vision of 2,500 stores.",
+   "V2Kart e-commerce piloted in 2 states; operational issues with fulfilling single-piece orders from about 35,000 pieces of stock per store; expansion to more states pending."
+  ],
+  "demand_pricing": [
+   "Reported SSSG -14.9% in Q2; underlying +0.5% after festive shift; H1 calendar SSSG -3.7%. Sales per sq ft per month INR700 in Q2 (vs INR933) and INR785 in H1 (vs INR948).",
+   "Mature stores (over 2 years) at INR1,000+ PSF; new stores at about INR720-730 on a last-12-month basis, 35-40% below mature stores. Management said Q2 PSF is typically 40-45% below year average.",
+   "October: calendar basis double-digit SSSG growth; period-to-period (Dussehra-to-Dussehra) flat. Winter fill rate about 20% better than last year.",
+   "Average bill value INR917 in H1 (vs INR900); ABV down about 1% and footfall down about 3% in Q2 per management. ASP about INR307 vs INR309; ASP down 3% in H1 as product mix shifted to value and economy.",
+   "Price increases: input costs up 3-7%; MRP raised 5-10% to protect gross margin. Shift to blended fabrics. Management said it will take further hikes only if raw material prices rise again.",
+   "Competitors named: unorganised mom-and-pop stores and organised players such as V-Mart, Style Baazar, Citykart, Baazar Kolkata and M Baazar. Management said its PSF is at least 30% above its closest competitor in most locations.",
+   "Repeat customers in mature stores rose from 55% to about 70%; repeat frequency fell from 5-5.5 months to 4.4-4.5 months; marketing cost under 0.5% of revenue; loyal customer spend INR2,200-2,500 a year."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Break-up of Q2 negative LFL by festival-dependent states vs other states, and October/November trends?",
+    "answer": "Management did not have the state split; about 260 stores are Puja-impacted. October calendar growth was more than double-digit but flat period-to-period; management will update around mid-December."
+   },
+   {
+    "question": "Is the store addition slowing to H2 and does the 50% growth guidance still hold?",
+    "answer": "About 18 of the H2 pipeline is already open, with 60-70 more planned and the rest shifting to April on project delays. Management said it has not changed the 50%+ revenue growth guidance."
+   },
+   {
+    "question": "Is there an underlying demand problem beyond the festive shift?",
+    "answer": "Management said no single factor stands out: ABV, ASP, state-wise and cohort-wise SSSG all showed the same slowdown, and competitor benchmarking showed similar results. Demand softened in the last three months."
+   },
+   {
+    "question": "Will the company cut store additions if SSSG stays weak?",
+    "answer": "Yes, if the trend continues through Q3, FY28 openings would be about 100 instead of 150-200, with revenue growth falling to 35-40%. The decision will be taken at end-Q3."
+   },
+   {
+    "question": "Why did new-store PSF fall to about INR700 from the INR938 level last quarter?",
+    "answer": "PSF is a last-12-month average; new stores are about INR720-730 on that basis, and Q2 is seasonally 40-45% lower. Management said the 12-month average for new stores is still above INR730-740."
+   },
+   {
+    "question": "Gross margin up 300 bps despite lower full-price share; what drove it, and what is the full-year view?",
+    "answer": "Average discount depth fell to about 30% from 50%, a bill-buster promotion moved from Q2 last year to Q3 this year, and Q1 margin was 1% lower due to earlier discounting for Adhik Maas. Full-year gross margin guided at 29-30%."
+   },
+   {
+    "question": "Debt has risen to about INR500 crores; what level is comfortable?",
+    "answer": "Borrowings were INR528 crores (INR483 crores current). Management said debt-to-equity below 0.5 is healthy if EBITDA covers interest, and expects borrowings to ease as store additions slow."
+   },
+   {
+    "question": "Will Q3 be the best quarter ever and what is the margin path?",
+    "answer": "Management confirmed Q3 will be the best quarter ever in revenue and profitability. Full-year pre-Ind AS EBITDA margin should be above 7.5%, with H2 at least 8% versus about 7% in H1."
+   }
+  ],
+  "risks_watch": [
+   "Reported SSSG of -14.9% in Q2 and H1 calendar SSSG of -3.7%; demand slowed in the last three months per management, with no single cause identified.",
+   "Working capital: inventory of INR1,447.8 crores, net working capital 88 days vs 81 days, and borrowings up to INR528 crores; normalisation targeted for March 2027 (75-80 days).",
+   "Store productivity: new stores at about 35-40% lower PSF than mature stores; management has stretched the maturity period for FY25 cohorts to 2.5-3.5 years.",
+   "Q3 festive and winter season is the test: October flat period-to-period; management will reassess store openings at end-Q3.",
+   "Depreciation rising sharply (INR68 crores vs INR37 crores) and expected to keep rising in Q3 and Q4 as store base grows.",
+   "Creditor days to fall to 45-65 days from 65-70 as cash is used for early vendor payments.",
+   "Input cost inflation of 3-7%; further price increases possible if raw material costs rise; V2Kart e-commerce still at pilot stage in 2 states.",
+   "Governance/disclosure: an analyst raised repeatedly the non-disclosure of the core senior team (6-7 people) and mature-store SSSG for H1; management committed to share in a future presentation."
+  ],
+  "key_quotes": [
+   "So we checke d the data and nothing stands out in particular.",
+   "But in the last 3 months, definitely we saw some sort of a demand slowdown.",
+   "Yes, correct. So if this trend continues to the third quarter, then next year we'll only open 100 stores, which initially the target was 150 to 200.",
+   "Yes, I think we are not changing our guidance in terms of revenue growth.",
+   "Yes, Q3 will be V2 Retail's best quarter ever. In terms of revenue, in terms of profitability, correct."
+  ],
+  "management_tone": "Confident on long-term store roll-out, back-end readiness and Q3 recovery, but cautious and somewhat defensive on near-term demand: he attributed Q2 SSSG mainly to the festive shift, said the last three months showed a demand slowdown with no single cause identified, and repeatedly declined to give mature-store H1 SSSG or the core team names on the call.",
+  "_completed": 1
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "60-70 new V2 Retail stores in H2 FY27 (about 18 of H2 pipeline already opened; remainder slipping to April 2027)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "FY28 store openings 120-150 (could fall to ~100 if Q3 trends weak; decision end of Q3)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 50.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 28.0,
+  "qEbitda": 41.0,
+  "outlook": 1,
+  "why": "FY27 revenue growth guided at more than 50% (held), requiring ~60% H2 growth, backed by 106 H1 store openings and 60-70 H2 openings (170-190 FY27 total) plus 7-9% old-store SSSG, but FY27 SSSG was cut to 5-7% and Q2 reported SSSG was -14.9%, so backing is only partial.",
+  "mgmt": null
+ }
+}

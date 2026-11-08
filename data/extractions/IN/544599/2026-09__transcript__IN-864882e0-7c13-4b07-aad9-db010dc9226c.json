@@ -1,0 +1,405 @@
+{
+ "doc_id": "IN-864882e0-7c13-4b07-aad9-db010dc9226c",
+ "market": "IN",
+ "company_id": "544599",
+ "name": "Studds Accessories Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-07",
+ "period": "2026-09",
+ "title": "Studds Accessories Ltd - 544599 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q2 EBITDA margin fell to 12.4% (from 14-15% guided) on styrene costs, though capacity rose to 11 million units and utilisation is 83-85%; price increases net ~9% and another hike depends on Q4 styrenics.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 85,
+   "quote": "Capacity utilization for 2-wheeler helmet and boxes, EPS and water decals stood at about 85%, 88% and 64%, respectively, for Q2 FY27."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "our capex spend for FY27 is going to be INR 58.22 crores for the new plant and including the regular capex , the total capex is going to be INR 84.7 crores."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation ~83% at Sep-26",
+    "quote": "operating at a relatively high utilization level of approximately 83% as of September 30, 2026",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Net price increase ~9% in place",
+    "quote": "the price increase net is about 9%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex FY27 INR 84.7 cr vs INR 31 cr FY28 plan",
+    "quote": "the total capex is going to be INR 84.7 crores",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q2 margin 12.4% vs 14-15% guided",
+    "quote": "EBITDA margin stood at 12.4% in Q2 FY27",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Volume flat in Q2; 8-10% held",
+    "quote": "In Q2, however, volumes have stayed flat.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Volume growth FY27",
+    "value": "8% to 10%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we still remain in line with the volume growth that we had given the guidance on earlier, which is about 8% to 10%"
+   },
+   {
+    "metric": "Revenue growth FY27",
+    "value": "15% to 19%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "anywhere between 15% to 19%. So we are in line."
+   },
+   {
+    "metric": "Export growth short term",
+    "value": "30% to 35%",
+    "change": "raised",
+    "horizon": "short term",
+    "quote": "short-term growth, we had given a guidance of about 30% to 35%. We're doing slightly better there."
+   },
+   {
+    "metric": "Medium-term revenue",
+    "value": "INR1,000 crores with exports 25% to 30%",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "Our medium-term aspiration is to scale our overall revenue to INR1,000 crores with exports contributing approximately 25% to 30%."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA margin Q2 FY27",
+    "outcome": "missed",
+    "quote": "EBITDA margin stood at 12.4% in Q2 FY27"
+   },
+   {
+    "metric": "EBITDA margin run-rate",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Volume growth FY27",
+    "outcome": "not_discussed",
+    "quote": "we still remain in line with the volume growth that we had given the guidance on earlier, which is about 8% to 10%"
+   },
+   {
+    "metric": "Revenue growth FY28 (standalone)",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Italy subsidiary losses",
+    "outcome": "not_discussed",
+    "quote": "the subsidiaries might make a slight loss"
+   },
+   {
+    "metric": "Capex FY28",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Export mix",
+    "outcome": "not_discussed",
+    "quote": "exports contributing approximately 25% to 30%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "SMK",
+    "relation": "peer"
+   },
+   {
+    "name": "Studds",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Anti-dumping protection",
+   "Rural demand recovery",
+   "Nearshoring / reshoring (US)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q2 margin miss vs guidance",
+    "quote": "EBITDA margin stood at 12.4% in Q2 FY27"
+   },
+   {
+    "label": "Italy subsidiary losses ramp, mgmt says fixed costs Q2-Q3",
+    "quote": "These costs will be spent mainly in Q2 and Q3."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 5,
+   "margin": 4,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Peer capacity / competitor pricing",
+    "quote": "I think you will see that pick up in H2 this year because of the capacity increase."
+   },
+   {
+    "topic": "Accessories capacity and CAGR",
+    "quote": "I cannot give you a club number on the accessory capacity."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Studds Q2 FY27 consolidated revenue rose 18.6% YoY to INR 183.1 crore, but EBITDA fell 23.7% to INR 22.8 crore on raw material inflation.",
+  "overview": "Q2 FY27 revenue grew 18.6% YoY to INR 183.1 crore, while EBITDA declined 23.7% to INR 22.8 crore and margin compressed to 12.4%. PAT fell about 28% to INR 14.7 crore (8.1% margin). Management attributed the margin squeeze mainly to styrene-based raw material inflation plus wage increases from April, with a cumulative net price increase of about 9% now in the system. Capacity was expanded with a new plant commencing commercial production on 30 October 2026, and export growth remained strong at about 50% in H1.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue (Q2 FY27)",
+    "value": "INR 183.1 crore",
+    "change": "+18.6% YoY"
+   },
+   {
+    "metric": "EBITDA (Q2 FY27)",
+    "value": "INR 22.8 crore",
+    "change": "-23.7% YoY"
+   },
+   {
+    "metric": "EBITDA margin (Q2 FY27)",
+    "value": "12.4%",
+    "change": ""
+   },
+   {
+    "metric": "PAT (Q2 FY27)",
+    "value": "INR 14.7 crore",
+    "change": "-28% YoY"
+   },
+   {
+    "metric": "PAT margin (Q2 FY27)",
+    "value": "8.1%",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated revenue (H1 FY27)",
+    "value": "INR 352.8 crore",
+    "change": "+16.2% YoY"
+   },
+   {
+    "metric": "EBITDA (H1 FY27)",
+    "value": "INR 42.3 crore",
+    "change": "-29.6% YoY"
+   },
+   {
+    "metric": "EBITDA margin (H1 FY27)",
+    "value": "12%",
+    "change": ""
+   },
+   {
+    "metric": "PAT (H1 FY27)",
+    "value": "INR 27 crore",
+    "change": "-33.8% YoY"
+   },
+   {
+    "metric": "PAT margin (H1 FY27)",
+    "value": "7.7%",
+    "change": ""
+   },
+   {
+    "metric": "Export revenue (H1 FY27)",
+    "value": "INR 79.4 crore",
+    "change": "nearly +50% YoY"
+   },
+   {
+    "metric": "SMK share of sales",
+    "value": "approximately 20% in Q2 FY27",
+    "change": "from approx. 13% in Q2 FY26"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Studds helmets and boxes (2-wheeler)",
+    "commentary": "Q2 FY27 volume of 2.04 million units; H1 FY27 volume of 3.99 million units. Management said Q2 volumes were flat, with Q2 domestic volume about 3.5 million and export about 0.4 million units in H1 per the call (figures were disputed/clarified as H1)."
+   },
+   {
+    "name": "SMK brand (premium)",
+    "commentary": "SMK share of sales rose to about 20% in Q2 FY27 from about 13% in Q2 FY26. Management said SMK gross margins are about 70% to 80% higher than Studds, though both brands' margins are currently down on raw material costs."
+   },
+   {
+    "name": "Exports",
+    "commentary": "Export revenue was INR 79.4 crore in H1 FY27, up nearly 50% YoY; US is about 10% of business. Growth reported across US, Europe and rest of world; long-term export growth guided at about 20-25%, short-term 30-35%."
+   },
+   {
+    "name": "Accessories (riding jackets, Bluetooth, luggage, locks, gloves, goggles, rainwear)",
+    "commentary": "Riding jackets under SMK commenced production in September 2026 (target 10,000 units by March 2027, 40,000 units next fiscal), with first-year revenue target of INR 15-20 crore. Bluetooth communication system launch planned November 2026 with capacity above 2 lakh units a year."
+   },
+   {
+    "name": "Water decals / EPS",
+    "commentary": "Capacity utilisation of 64% for water decals and 88% for EPS in Q2 FY27 per the call."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 volume growth guidance of 8% to 10% reiterated; management expects Q4 to be the strongest quarter given new plant ramp-up, with November and December volumes lower as ramp-up continues.",
+   "FY27 revenue growth guidance of high teens, 15% to 19%, unchanged; Q2 growth was about 18-19%, H1 16%.",
+   "FY27 total capex planned at INR 84.7 crore, including INR 58.22 crore for the new plant.",
+   "Medium-term aspiration to scale overall revenue to INR 1,000 crore with exports at about 25% to 30% of revenue.",
+   "Margin recovery expected to depend on styrene/raw material prices softening; another price hike to be decided in Q4 FY27 if prices do not soften. Management expects the cycle to be slightly smaller than the prior one (about 2 years)."
+  ],
+  "capex_capacity": [
+   "New plant commenced commercial production on 30 October 2026, adding 1.5 million units per annum of helmet and box capacity; total installed capacity stated at about 11 million units (transcript said 11.5 million, later corrected to 11 million).",
+   "Additional 1.5 million units of capacity planned over the next 18 to 24 months, taking planned installed capacity to about 12.5 million units.",
+   "Capacity utilisation for 2-wheeler helmets and boxes was about 83% as of 30 September 2026 (H1), and about 85% in Q2 FY27.",
+   "Total FY27 capex planned at INR 84.7 crore, of which INR 58.22 crore for the new plant.",
+   "Riding jacket production started September 2026 in-house; Bluetooth system launching November 2026 with more than 2 lakh units/year capacity; 3 new products, 1 fully built in-house and 2 assembled in-house. About 70-75% of accessories are manufactured in-house."
+  ],
+  "demand_pricing": [
+   "Management stated there is no demand issue and that current demand is good; the main cost pressure is styrene-based raw material prices.",
+   "Price increases totalling about 9% net have been implemented: about 6.5% to 7% in Q1 and the balance in Q2, with some older export orders committed at old prices.",
+   "Styrenics prices eased somewhat in Q2 versus Q1 but remained elevated into Q3; management had expected softening in Q3 but it has not occurred.",
+   "Wage costs rose about 30% to 35% from April, which also pressured margins.",
+   "Mass market (entry-level) sees deep discounting when prices soften; premium and mid segments see no change in pricing behaviour, per management.",
+   "Management said accessories margins are largely in line with the brand margins on helmets (jackets in line with SMK, Bluetooth in line with own brand margins)."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What is the total capex for FY27?",
+    "answer": "INR 58.22 crore for the new plant; total capex including regular capex is INR 84.7 crore."
+   },
+   {
+    "question": "What revenue potential do the new products have, and will they be sold domestically or exported?",
+    "answer": "First-year revenue target for jackets is INR 15-20 crore based on 40,000 units. Bluetooth will sell in both domestic and export markets; apparel is focused on India for now. Margins for new products are expected in line with helmets."
+   },
+   {
+    "question": "Is SMK margin higher than Studds, and by how much?",
+    "answer": "Yes. SMK margins are about 70% to 80% higher than Studds depending on product, though both brands' margins are slightly down due to raw material pressure."
+   },
+   {
+    "question": "Why has export growth not translated into sharp margin improvement?",
+    "answer": "Management attributed it to raw material inflation hitting both brands plus wage increases; price increases have not fully offset raw material costs yet. Management views it as cyclical."
+   },
+   {
+    "question": "What is the price hike taken and is more needed?",
+    "answer": "About 9% net price increase now in the system (6.5-7% in Q1, rest in Q2). Another hike will be decided in Q4 if raw material prices do not soften."
+   },
+   {
+    "question": "Why were Q2 volumes flat and what is the outlook?",
+    "answer": "Management reiterated 8-10% FY27 volume growth guidance, expecting pick-up in H2 with Q4 the strongest given new capacity; November-December will be lower during ramp-up."
+   },
+   {
+    "question": "Is there an inorganic growth plan?",
+    "answer": "No plans for inorganic acquisitions in the helmet space; management would consider a historic legendary brand if available, and will look at associated spaces without current plans."
+   },
+   {
+    "question": "What is the sustainable export growth rate?",
+    "answer": "Short-term guidance of 30-35% (slightly ahead currently); medium-term about 30%; long-term about 20-25% over around 5 years. 50% growth is not sustainable over the long term."
+   },
+   {
+    "question": "What are the biggest execution risks in export markets?",
+    "answer": "Ramp-up speed, since fixed costs in foreign markets are high and subsidiaries may post slight losses until sales scale. Italian subsidiary start-up costs are expected mainly in Q2 and Q3, with profitability from next year."
+   }
+  ],
+  "risks_watch": [
+   "Styrene-based raw material prices remain elevated; margin recovery depends on them softening, and Q3 softening expected by management has not yet occurred.",
+   "EBITDA margin compression (12.4% in Q2) and PAT decline of about 28% if raw material costs and wage increases persist.",
+   "Ramp-up speed of new 1.5 million unit plant and Italian subsidiary, given high fixed costs and possible near-term subsidiary losses.",
+   "Q4 FY27 volume jump needed to meet 8-10% volume guidance; November-December volumes expected to be softer.",
+   "Possible deep discounting in the mass/entry-level segment if prices soften; premium/mid segments expected to hold.",
+   "Whether new accessories (jackets 40,000 units target, Bluetooth) scale as planned; category-wise accessories capacity not disclosed."
+  ],
+  "management_tone": "Confident on demand, export growth and long-term strategy, but cautious on margins: management repeatedly called raw material pressure cyclical and said margin recovery depends on styrene prices softening. Some answers were evasive or deferred offline, including accessory capacity by category, CAGR for accessories, and the Q2 export volume breakdown.",
+  "key_quotes": [
+   "This is a raw material -led cost challenge and does not change the underlying fundamentals of our business or our long -term growth strategy.",
+   "I firmly believe that this is cyclical.",
+   "So we have not reduced our price ever.",
+   "I think the biggest risk on execution on the foreign markets is the speed at which we actually ramp up operations."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "New helmet and box plant, 1.5 million units per annum (commercial production started 30 Oct 2026)",
+    "size_pct": 13.6,
+    "capex_cr": 58.22,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "major"
+   },
+   {
+    "what": "Additional 1.5 million units of helmet/box capacity over next 18-24 months (planned installed capacity ~12.5 million)",
+    "size_pct": 13.6,
+    "capex_cr": null,
+    "q": 6,
+    "status": "planned",
+    "mat": "major"
+   },
+   {
+    "what": "Riding jacket production under SMK (10,000 units target by Mar 2027, 40,000 next FY)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Bluetooth communication system, capacity above 2 lakh units/yr (launch Nov 2026)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "minor"
+   }
+  ],
+  "util": 85.0,
+  "expansion": true,
+  "growth": 17.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "new_products_or_markets",
+   "demand_or_share_gains"
+  ],
+  "clarity": "none",
+  "qRev": 18.6,
+  "qEbitda": -23.7,
+  "outlook": 1,
+  "why": "FY27 revenue guided at 15-19% (held; H1 +16%, Q2 +18.6%), backed by a new 1.5 mn unit plant live from 30 Oct 2026 (INR 58.22 cr capex), ~9% net price increases, SMK mix rising to ~20% of sales and exports growing ~50%; however, Q2 volumes were flat, Nov-Dec volumes expected lower during ramp-up, and EBITDA fell 23.7% on styrene and wage inflation.",
+  "mgmt": null
+ }
+}

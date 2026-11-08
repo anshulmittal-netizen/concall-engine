@@ -1,0 +1,355 @@
+{
+ "doc_id": "IN-990a34e9-f51c-4ead-990e-b2df73b45efe",
+ "market": "IN",
+ "company_id": "532514",
+ "name": "Indraprastha Gas Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-06",
+ "period": "2026-09",
+ "title": "Indraprastha Gas Ltd - 532514 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "IGL posted negative EBITDA of INR31 crores in Q2 as spot LNG rose to about 15% of supply and management says it is not slowing capex, leaning on volume growth over margin protection.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "So we are not at all slowing down on the capex. We have similar plans."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Negative EBITDA INR31 crores in Q2",
+    "quote": "IGL recorded a negative EBITDA of INR31 crores, PBT of INR9.5 crores and PAT of around INR24 crores.",
+    "highlight": "negative EBITDA of INR31 crores",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Spot LNG 0.3 → 1.5 MMSCMD",
+    "quote": "0.3 MMSCMD has grown to 1.5 MMSCMD.",
+    "highlight": "0.3 MMSCMD has grown to 1.5 MMSCMD",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Price hike deferred to protect volume",
+    "quote": "the price increase, we have to be very, very mindful in increasing the prices",
+    "highlight": "we have to be very, very mindful",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex held at INR1,700-1,800 crores",
+    "quote": "we will be spending almost INR1,700 crores to INR1,800 crores capex this year",
+    "highlight": "INR1,700 crores to INR1,800 crores",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "CNG volume growth ~9%, PNG 8%",
+    "quote": "CNG volumes growing at around 9% and PNG volumes growing by 8%",
+    "highlight": "CNG volumes growing at around 9%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Volume growth aspiration",
+    "value": "double digit, 10%+",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "our aspiration is double digit, 10%, we have plans for 10%."
+   },
+   {
+    "metric": "EBITDA per SCM guidance",
+    "value": "INR6-7 per SCM maintained",
+    "change": "held",
+    "horizon": "FY28",
+    "quote": "we still maintain the guidance on similar around six to seven maybe particularly"
+   },
+   {
+    "metric": "Capex",
+    "value": "INR1,700-1,800 crores FY27",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we will be spending almost INR1,700 crores to INR1,800 crores capex this year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "MNGL",
+    "relation": "peer"
+   },
+   {
+    "name": "CUGL",
+    "relation": "peer"
+   },
+   {
+    "name": "ExxonMobil",
+    "relation": "supplier"
+   },
+   {
+    "name": "Chevron",
+    "relation": "supplier"
+   },
+   {
+    "name": "DTC",
+    "relation": "customer"
+   },
+   {
+    "name": "DIMTS",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Tariffs & trade policy",
+   "Renewables & storage",
+   "Auto EV transition",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Negative EBITDA in Q2 on spot LNG cost",
+    "quote": "IGL recorded a negative EBITDA of INR31 crores, PBT of INR9.5 crores and PAT of around INR24 crores."
+   },
+   {
+    "label": "Term LNG shortfall ~1.4 MMSCMD",
+    "quote": "That is 1.4 MMSCMD."
+   },
+   {
+    "label": "Mandated CNG vehicle phase-out by 2030",
+    "quote": "by 2030, almost, I think, 2 lakh kgs per day of volume will be going off in a phased manner"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 3,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "CNG price hike needed to break even",
+    "quote": "That being a very commercial subject, we might not be answering in this forum on this question, please."
+   },
+   {
+    "topic": "Q3 margin outlook",
+    "quote": "But Q2 versus Q1, exactly it's only the additional spot RLNG, which are currently quite tight and highly priced."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "IGL posted negative EBITDA of INR31 crore in Q2 FY27 as spot LNG share rose to 15%, even as average daily gas sales crossed 10 million SCMD.",
+  "overview": "Volumes grew about 8% YoY with CNG and PNG both up, and average daily gas sales hit 10.06 million SCMD, a first for the company. Gross turnover was about INR5,600 crore (up roughly 26% QoQ as stated), but input gas costs rose sharply as term LNG was curtailed under force majeure and spot RLNG filled the gap. The company recorded EBITDA of negative INR31 crore, PBT of INR9.5 crore and PAT of about INR24 crore. Management said pricing is a lever but is being held back to protect CNG volume growth, and capex is being maintained at about INR1,700-1,800 crore for FY27.",
+  "financial_highlights": [
+   {
+    "metric": "Average daily gas sales",
+    "value": "10.06 million SCMD",
+    "change": "vs 9.31 million SCMD in Q2 FY26"
+   },
+   {
+    "metric": "Overall volume growth",
+    "value": "approx. 8% YoY",
+    "change": "CNG approx. 9-10%, PNG approx. 8%"
+   },
+   {
+    "metric": "Domestic PNG volume growth",
+    "value": "16% YoY",
+    "change": ""
+   },
+   {
+    "metric": "Gross turnover",
+    "value": "INR5,600 crore",
+    "change": "approx. 26% higher vs same quarter of previous year as stated by management"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "negative INR31 crore",
+    "change": ""
+   },
+   {
+    "metric": "PBT",
+    "value": "INR9.5 crore",
+    "change": ""
+   },
+   {
+    "metric": "PAT",
+    "value": "approx. INR24 crore",
+    "change": ""
+   },
+   {
+    "metric": "Capex H1 FY27",
+    "value": "approx. INR712 crore",
+    "change": "H2 planned at similar levels"
+   },
+   {
+    "metric": "Peak single-day CNG sales",
+    "value": "59 lakh kg",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "CNG",
+    "commentary": "Volumes up about 9-10% YoY excluding DTC and DIMTS; newer geographies grew about 34%, and Delhi NCR CNG ex-DTC/DIMTS grew about 10.2%. CNG vehicle additions and conversions averaged about 27,000 per month over the last six months."
+   },
+   {
+    "name": "PNG",
+    "commentary": "Volumes up about 8% YoY with domestic PNG up 16%; 1 lakh domestic PNG customers and about 1.32 lakh new connections added in the quarter."
+   },
+   {
+    "name": "Industrial and commercial",
+    "commentary": "Management said pass-through was largely back-to-back, with margins of about INR7-8 per SCM; 537 new I&C customers added."
+   },
+   {
+    "name": "DIMTS buses",
+    "commentary": "Average about 1.34 lakh kg per day in H1 FY27 vs 1.47 lakh kg per day in FY26, so declining; about 1,700 vehicles in system. DTC volumes are now effectively nil (about 50 kg per day in September)."
+   },
+   {
+    "name": "Subsidiaries (MNGL, CUGL)",
+    "commentary": "MNGL volume about 2.3 MMSCMD growing about 22% with EBITDA about INR8-9 per SCM; CUGL about 0.37 MMSCMD growing about 11% with EBITDA about INR5-6 per SCM (as stated for last quarter)."
+   }
+  ],
+  "guidance_outlook": [
+   "Management aspires to double-digit volume growth (about 10%+), currently at about 9% in the quarter; FY28 volume and EBITDA per SCM guidance maintained at similar levels (stated as around 6-7 per SCM).",
+   "HPHT gas allocation shifts to consumption-based: 25% from November, 50% next quarter, 75% after that, and 100% by September next year; about 0.2-0.25 MMSCMD incremental HPHT expected in Oct-Dec, with spot share expected to fall from 15% to about 10-12%.",
+   "Management expects some additional term LNG volumes in Q3 and more in Q4 from renegotiations with suppliers; calendar-year graded volume provisions expected to add volume from CY2027.",
+   "Pricing increases are under consideration as 'appropriate pricing measures' but were not confirmed; management said the lever is available.",
+   "Trading of natural gas is being put up for approval and is expected to start soon; RLNG sourcing options and indexation (Brent vs HH) under review.",
+   "CAQM/Delhi EV policy expected to remove about 2 lakh kg per day of CNG volume by 2030 in phased manner (three-wheelers, school buses, N1 vehicles)."
+  ],
+  "capex_capacity": [
+   "Capex of about INR1,700-1,800 crore planned for FY27, with INR712 crore spent in H1 and similar spend in H2.",
+   "Steel pipeline expanded by about 21 km and MDP network by about 827 km in the quarter.",
+   "CNG station count at 1,031 as of 30 September; about seven new CNG stations added in the quarter.",
+   "Government has reduced pipeline laying charges and permission charges and shortened clearance windows, which management cited as supporting faster build-out.",
+   "Target of PNG Drive 2 and 3 infrastructure support; management said infrastructure build is needed to sustain volume growth."
+  ],
+  "demand_pricing": [
+   "Gas mix in Q2: domestic gas (APM, new gas and HPHT) about 48-50%; RLNG about 52%, of which spot was about 15% (up from about 3% in Q1). Spot RLNG was around $22/MMBtu earlier and recently above $30/MMBtu.",
+   "Term LNG shortfall about 1.4-1.5 MMSCMD versus contracted volumes, due to force majeure and pooled gas cuts; Qatar volume historically about 0.6 MMSCMD.",
+   "Government HPHT allocation priced at about $9.8/MMBtu, per management.",
+   "Management prioritised volume growth and said price increases must be weighed against CNG's fuel-cost advantage versus petrol and diesel.",
+   "CNG vehicle mix broadly unchanged: cars about 50%, taxis about 14%, buses about 12%, commercial about 19%, three-wheelers about 8% (per analyst recap, management said mostly the same).",
+   "Management expects EV policy to phase out CNG three-wheelers from new registrations starting January, with about 5,000-6,000 per year retiring."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Will Q3 be as tough on margins as Q2 if no price increase is taken, with spot near $30?",
+    "answer": "Management said short-term pain is expected; pricing will be used carefully to protect CNG growth and the delta versus petrol and diesel, and other levers are available. Government HPHT allocation at about $9.8/MMBtu offers partial relief."
+   },
+   {
+    "question": "Will capex slow given weak cash flows?",
+    "answer": "No. Management said capex is not slowing, with INR1,700-1,800 crore planned for FY27 and similar H2 pace to H1 (INR712 crore), citing the transition window and reduced permission charges."
+   },
+   {
+    "question": "What is the term LNG volume shortfall and how is it being replaced?",
+    "answer": "Management said long-term LNG shortfall is about 1.4-1.5 MMSCMD, replaced by spot. Measures include extra HPHT (about 0.2-0.25 MMSCMD incremental in Oct-Dec), additional volumes from existing suppliers and graded calendar-year contracts. Total contracted volume is above 1.5 MMSCMD."
+   },
+   {
+    "question": "How much CNG volume is at risk from EV policy and CAQM rules?",
+    "answer": "Management estimated about 2 lakh kg per day of CNG volume going off by 2030 in a phased manner, with growth from cars expected to keep double-digit growth achievable."
+   },
+   {
+    "question": "Is there a plan to change long-term LNG mix or start trading gas?",
+    "answer": "Management said it is evaluating alternate sourcing, including full cargoes and talks with global suppliers, with molecule availability post 2029-30. A gas trading proposal has been put up and trading is expected to start soon."
+   },
+   {
+    "question": "What is the CNG price hike needed to break even?",
+    "answer": "Management declined to answer, calling it a commercial subject."
+   }
+  ],
+  "risks_watch": [
+   "Spot RLNG prices above $30/MMBtu and continued force majeure on term LNG; Q3 margin trajectory depends on spot share falling toward 10-12%.",
+   "Pricing decision: management has not committed to a CNG or industrial tariff increase despite negative EBITDA.",
+   "Phased HPHT allocation (25% to 100% by September next year) and its actual volume delivery.",
+   "CAQM/Delhi EV policy phase-out of CNG three-wheelers and school buses, about 2 lakh kg per day by 2030; DIMTS bus volumes declining.",
+   "Capex of INR1,700-1,800 crore sustained during weak cash flow; funding and returns.",
+   "Gas mix and indexation (Brent vs HH) decisions; move toward trading and direct sourcing.",
+   "Management tone on Q3 margins remained non-committal, with uncertainty over West Asia and Hormuz shipping."
+  ],
+  "management_tone": "Confident on volume and long-term demand, but cautious and non-committal on near-term margins; management repeatedly said Q3 is 'very difficult to say' and avoided giving a breakeven price or firm pricing timeline.",
+  "key_quotes": [
+   "So this is the first time the average daily sales of a quarter has crossed 10 million SMD.",
+   "Profitability, however, was impacted due to higher gas costs during the quarter.",
+   "So we are not at all slowing down on the capex.",
+   "That is a temporary thing."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Steel pipeline expanded by about 21 km and MDP network by about 827 km in the quarter",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "About seven new CNG stations added in the quarter (station count 1,031 as of 30 Sep)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Capex of about INR1,700-1,800 crore planned for FY27 (INR712 crore spent in H1, similar in H2)",
+    "size_pct": null,
+    "capex_cr": 1750.0,
+    "q": null,
+    "status": "under_construction",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 26.0,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management aspires to 10%+ volume growth (currently ~9%) with FY28 EBITDA of INR6-7/SCM maintained and FY27 capex of INR1,700-1,800 crore held; backing is partial (station/pipeline additions and HPHT allocation of 0.2-0.25 MMSCMD, but no firm pricing decision and the quarter's EBITDA was negative at INR-31 crore).",
+  "mgmt": null
+ }
+}

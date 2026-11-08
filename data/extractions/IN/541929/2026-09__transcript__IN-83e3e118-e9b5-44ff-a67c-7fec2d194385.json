@@ -1,0 +1,366 @@
+{
+ "doc_id": "IN-83e3e118-e9b5-44ff-a67c-7fec2d194385",
+ "market": "IN",
+ "company_id": "541929",
+ "name": "Synergy Green Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-06",
+ "period": "2026-09",
+ "title": "Synergy Green Industries Ltd - 541929 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Capacity utilisation 75% in H1 with 80% FY27 target and 85% H2 implied; FY27 revenue 33% growth reiterated, but H1 PBDIT margin 8.9% vs ~16% guided due to input cost inflation, so margin guidance is at risk.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 75,
+   "quote": "we currently, in the first half of the year, stand at about 75% of capacity utilization. For the full year FY26-27, we're projecting to reach about 80%"
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "Management said it is not aggressively investing; greenfield pushed to FY29 pending stabilisation.",
+   "quote": "We cannot go aggressively on the investment without stabilizing what we had done yesterday"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 75% H1 → 80% FY27",
+    "quote": "we currently, in the first half of the year, stand at about 75% of capacity utilization",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Customer price pass-through ~5% Q3",
+    "quote": "the current quarter, we are almost getting a weighted average of 5% price for the Q3",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Unshipped inventory build-up",
+    "quote": "there is an increase in inventory, because some of the castings were not able to move to the port",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "33% (500 crore)",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "we continue to estimate the revenue growth of 33% for FY27"
+   },
+   {
+    "metric": "FY27 PBDIT margin",
+    "value": "+100 bp YoY",
+    "horizon": "FY27",
+    "change": "cut",
+    "quote": "FY27 margins are expected to increase by around 100 basis points year on year"
+   },
+   {
+    "metric": "FY27 utilisation",
+    "value": "80%",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "For the full year FY26-27, we're projecting to reach about 80% of our total established capacity"
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "17-18% in H2",
+    "horizon": "H2 FY27",
+    "change": "new",
+    "quote": "probably 17-18% EBITDA what we are estimating inside for the H2"
+   },
+   {
+    "metric": "FY28 revenue",
+    "value": "25-30% growth",
+    "horizon": "FY28",
+    "change": "new",
+    "quote": "Next year, also, I believe we should be growing 25-30%, actually"
+   },
+   {
+    "metric": "Greenfield capacity",
+    "value": "15-18 months build time",
+    "horizon": "FY29",
+    "change": "new",
+    "quote": "we are expecting around, 15 to 18 months is a timeline required for the greenfield"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 revenue",
+    "outcome": "met",
+    "quote": "we continue to estimate the revenue growth of 33% for FY27"
+   },
+   {
+    "metric": "FY27 PBDIT margin",
+    "outcome": "missed",
+    "quote": "FY27 margins are expected to increase by around 100 basis points year on year"
+   },
+   {
+    "metric": "Capacity utilisation of new 45,000 t",
+    "outcome": "not_discussed",
+    "quote": "For the full year FY26-27, we're projecting to reach about 80% of our total established capacity"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Vestas",
+    "relation": "customer"
+   },
+   {
+    "name": "Nordex",
+    "relation": "customer"
+   },
+   {
+    "name": "Siemens Gamesa",
+    "relation": "customer"
+   },
+   {
+    "name": "Envision",
+    "relation": "customer"
+   },
+   {
+    "name": "Adani",
+    "relation": "customer"
+   },
+   {
+    "name": "Suzlon",
+    "relation": "customer"
+   },
+   {
+    "name": "Flender",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Wind capex cycle",
+   "US tariff and non-China sourcing",
+   "Input cost pass-through",
+   "Logistics disruption",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory build-up, unshipped exports",
+    "quote": "some of the castings were not able to move to the port, because of non-availability of ships"
+   },
+   {
+    "label": "PAT loss two quarters running",
+    "quote": "for the last two quarters, we've been seeing that despite the revenue growth, the PAT is negative"
+   },
+   {
+    "label": "Margin guidance slipping",
+    "quote": "the first half of the year, because of this war, commodity inflation, we had almost 8% kind of cost impact"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 3,
+   "growth": 5,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Margin guidance (18% EBITDA vs 16% implied)",
+    "quote": "Maybe 50 basis point here and there, but I don't see any deviation from the guidance what we have given."
+   },
+   {
+    "topic": "Greenfield timing and funding",
+    "quote": "we need to see. I see a continuous pressure in the demand."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Synergy Green H1 FY27 PBDIT margin fell to 8.9% from 15.6% on input-cost inflation, while management reaffirmed 33% FY27 revenue growth and ~100 bp margin expansion.",
+  "overview": "Management said H1 FY27 production rose 25.8% YoY and revenue rose 20.2%, but PBDIT margin compressed to 8.9% (Q2 at 10.2% vs 15.7% a year earlier) due to commodity and consumable inflation, logistics costs and under-absorbed ramp-up costs. Export shipments were delayed by ship and logistics constraints, building inventory that is carried at cost and not in revenue. Management reaffirmed FY27 revenue growth of 33% (about Rs 500 crore), exports up over 50% to about 30% of revenue, and FY27 margin up about 100 bp, implying 17-18% H2 EBITDA margin. Demand was described as strong, mainly from US wind OEMs, with greenfield expansion deferred until current capacity is stabilised.",
+  "financial_highlights": [
+   {
+    "metric": "Total income, H1 FY27",
+    "value": "Rs 192 crore",
+    "change": "vs Rs 159.76 crore in H1 FY26 (as stated on call)"
+   },
+   {
+    "metric": "PBDIT, H1 FY27",
+    "value": "Rs 17.13 crore",
+    "change": ""
+   },
+   {
+    "metric": "PBDIT margin, H1 FY27",
+    "value": "8.9%",
+    "change": "vs 15.6% in H1 FY26"
+   },
+   {
+    "metric": "PBDIT margin, Q2 FY27",
+    "value": "10.2%",
+    "change": "vs 15.7% in Q2 FY26"
+   },
+   {
+    "metric": "Production, H1 FY27",
+    "value": "+25.8% YoY",
+    "change": ""
+   },
+   {
+    "metric": "Revenue, H1 FY27",
+    "value": "+20.2% YoY",
+    "change": ""
+   },
+   {
+    "metric": "Long-term borrowings",
+    "value": "Rs 176.21 crore",
+    "change": ""
+   },
+   {
+    "metric": "Electricity one-off (retrospective charges, H1)",
+    "value": "About Rs 1.3 crore to Rs 3 crore (management cited both figures)",
+    "change": "Roughly 1.5% of EBITDA per management"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Wind castings (domestic and export)",
+    "commentary": "Wind castings are about 70% of the portfolio; wind domestic revenue grew strongly in H1 YoY. OEM exports were in line with last year, with growth expected in H2."
+   },
+   {
+    "name": "Gearbox castings",
+    "commentary": "Gearbox castings for wind are about 15% of the portfolio, with Flender and ZF among customers."
+   },
+   {
+    "name": "Non-wind (cone crushers, coal pulverisers, mining, pumps)",
+    "commentary": "Remaining portion of the portfolio. Management is de-prioritising non-wind to focus capacity on wind, citing complexity and margin focus; machine-tool demand (e.g. Mahindra) could not be served."
+   },
+   {
+    "name": "Machine shop",
+    "commentary": "Utilisation at 45-50% of machining capacity (20,000 tpa in-house); seven or eight products developed; management expects a good contribution in about 5-6 months."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue growth of about 33% reaffirmed; management says the top line is not a constraint and Rs 500 crore turnover is achievable.",
+   "Exports expected to grow over 50% in FY27 and contribute about 30% of revenue (about 25% last year).",
+   "FY27 PBDIT/EBITDA margin expected to rise about 100 bp YoY; implies about 17-18% EBITDA margin in H2 versus 8.9% in H1.",
+   "Management guides EBITDA growth of about 50% and cash profit growth above 50% for FY27, with most of it in H2; net profit targeted to turn positive by year-end (described as roughly break-even).",
+   "Capacity utilisation expected at about 75% in H1, about 85% in H2, and about 80% for FY27 on 45,000 tpa.",
+   "Revenue potential from current 45,000 tpa capacity revised to Rs 600-650 crore (previously Rs 550-600 crore), citing inflation pass-through.",
+   "Management expects FY28 growth of about 25-30% and aims for about 25% CAGR; greenfield expansion is planned for FY29 and further debottlenecking of about 10-15% capacity is being explored."
+  ],
+  "capex_capacity": [
+   "Installed capacity 45,000 tpa foundry (raised from 30,000 tpa in March 2026), plus about 20,000 tpa in-house machining and surface treatment; 10 MW captive solar.",
+   "Utilisation about 75% in H1 FY27, targeted at about 85% in H2 and about 80% for FY27.",
+   "Greenfield project needs about 15-18 months to build; to be phased, with stabilisation of current capacity first (about two quarters). Suzlon has approached the company to localise components.",
+   "Management said a further 10-15% capacity addition on the existing 45,000 tpa is being evaluated; no greenfield capex amount was given.",
+   "Captive solar and wind open-access power covers about 60% of electricity needs; captive solar yields about Rs 7-8/unit savings versus grid."
+  ],
+  "demand_pricing": [
+   "Management reports no demand slowdown; US wind OEMs (Vestas, Nordex, and newer entrants) describe orders as open-book, with customers asking for more capacity. Demand is said to exceed 60,000 tpa against 45,000 tpa capacity.",
+   "Pricing: annual contracts are fixed for 12 months, with quarterly indexation on pig iron, CRC and furan. Pass-through is about 8-10% of cost increase, with a one-quarter lag; Q3 weighted average price increase about 5%. Management notes 100-150 bp margin impact in high-inflation periods.",
+   "Cost pressures: furan resin up 50%+ in Q1; commodities rising in Q2; logistics costs roughly threefold; Maharashtra power tariff up over 20% from April.",
+   "Export logistics: ODC shipments are constrained by ship availability; customers pay about 50-60% of component cost in freight for US shipments; October shipments reportedly 60-70% moving.",
+   "Competition: management is not concerned about a competitor's planned capacity addition (said to be about 3x), arguing Indian demand exceeds supply and OEMs will not single-source. Chinese castings face US tariffs, favouring Indian suppliers; RMB appreciation is expected to narrow the cost gap.",
+   "Customer base: works with 6 of the top 15 global wind OEMs (Vestas, Envision, Siemens Gamesa, Nordex, Adani, among others) and Flender and ZF in gearboxes. Nordex export order book above Rs 200 crore confirmed for the next 12 months; Envision still being onboarded."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How will the 33% FY27 growth shape up in H2, and is the 18% EBITDA guidance still intact?",
+    "answer": "Management said H2 capacity is sufficient, with 150 crore+ per quarter run-rate and over 300 crore in H2. It expects 17-18% EBITDA margin in H2 and about 100 bp expansion for FY27, with the H1 margin at about 8.9%."
+   },
+   {
+    "question": "Are elevated production costs expected to normalise, and what is the status of the long-term customer deal?",
+    "answer": "Costs are pass-through with a one-quarter lag, and annual contracts are reset annually. A Nordex export deal of over Rs 200 crore is confirmed, with the US order book fully booked for 12 months; Vestas demand is described as very strong."
+   },
+   {
+    "question": "Will rising capacity from competitors and the non-wind push pressure the business?",
+    "answer": "Management said it is not concerned about competitors adding capacity, given demand above supply. Non-wind is being scaled back to concentrate on wind, and machine-tool demand is being declined for now."
+   },
+   {
+    "question": "How long until the company is net profit positive?",
+    "answer": "Management said investors should focus on EBITDA and cash profit, which should grow over 50% in FY27. It aims to close the year in the green, with trailing four-quarter profit expected to be positive."
+   },
+   {
+    "question": "Why is value revenue growth (about 20-23%) lagging volume growth (about 25%)?",
+    "answer": "Management said the gap is inventory build-up from export shipment delays, which is held at cost and not recognised as revenue. Production growth of 25.8% is not the same as sales volume."
+   },
+   {
+    "question": "What one-offs were in H1 electricity costs?",
+    "answer": "A High Court ruling on solar banking went in MSEDCL's favour, and retrospective charges were levied over two years. Management said about Rs 1.3-1.5 crore of retrospective cost is one-off, and tariff increases are permanent; wind open access is being used to offset them."
+   },
+   {
+    "question": "Why not expand capacity aggressively given strong demand and the cyclical upturn?",
+    "answer": "Management said execution, skilled people and financing at fair valuations are the constraints, not demand. It wants to build demand before capacity and avoid overleveraging. Its target is 25% CAGR, and greenfield is planned for FY29."
+   }
+  ],
+  "risks_watch": [
+   "Raw material inflation (furan, pig iron, CRC) and logistics costs may hold H2 margins below the 17-18% EBITDA target.",
+   "Export shipment constraints could keep inventory elevated and push revenue below the 500 crore run-rate, especially with 50% export growth dependent on US shipping.",
+   "Only 100-150 bp of inflation pass-through is typical; the one-quarter pricing lag could compress margins if costs rise faster.",
+   "Execution risk: the 45,000 tpa plant has ramped only recently (from 30,000 tpa), and machine-shop utilisation is 45-50%.",
+   "Greenfield timing (15-18 months build, FY29 target) and funding plans remain unclear; management prefers raising capital at better valuations.",
+   "Net profit remains negative in the last two quarters; depreciation and interest weigh on PAT.",
+   "Power tariff hikes (Maharashtra over 20%) are a structural cost headwind."
+  ],
+  "management_tone": "Confident on demand and the revenue outlook, but cautious and somewhat defensive on margins and profitability, which management attributes to commodity, logistics and power costs outside its control. Management was evasive on the greenfield timing and capex quantum, and on the exact H2 margin path.",
+  "key_quotes": [
+   "So, as of now, I'm not seeing any, slowdown in, momentum.",
+   "So, you should look at a EBITDA value. than a profitability value.",
+   "Synergy always built market first, then added the capacity. It's not the other way around."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Greenfield foundry expansion (size not given) on top of 45,000 tpa; build 15-18 months, planned for FY29",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 8,
+    "status": "planned",
+    "mat": "major"
+   },
+   {
+    "what": "Further debottlenecking of 10-15% on existing 45,000 tpa capacity being evaluated",
+    "size_pct": 12.5,
+    "capex_cr": null,
+    "q": null,
+    "status": "planned",
+    "mat": "moderate"
+   }
+  ],
+  "util": 75.0,
+  "expansion": true,
+  "growth": 33.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "FY27 revenue growth of 33% (about Rs 500 crore) reaffirmed, backed by 45,000 tpa capacity at ~75% H1 utilisation rising to ~80% for FY27, a Nordex export order book above Rs 200 crore for 12 months and demand above 60,000 tpa; H2 margin recovery to 17-18% rests on pass-through pricing and delayed export shipments, with greenfield deferred to FY29.",
+  "mgmt": null
+ }
+}

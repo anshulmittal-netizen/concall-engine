@@ -1,0 +1,382 @@
+{
+ "doc_id": "IN-1a896486-4783-4a11-af55-c18654b93250",
+ "market": "IN",
+ "company_id": "535322",
+ "name": "Repco Home Finance Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-06",
+ "period": "2026-09",
+ "title": "Repco Home Finance Ltd - 535322 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Housing finance",
+  "thesis": "Q2 FY27 disbursements hit Rs1,205 Cr (vs Rs1,200-1,250 Cr guide) and GNPA fell to 2.4%, but management now guides spread down to 3.25-3.3% as cost of funds rises and FY27 PAT guide is Rs490 Cr.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Spread guided down to 3.25-3.3%",
+    "quote": "my spread will stable at in and around 3.25 to 3.3%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Q3 disbursement Rs1,300-1,350 Cr",
+    "quote": "Our guidance for current time in Q3 disbursements is about 1300 to 1350 crores.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Cost of funds up 10-15bp",
+    "quote": "I'm expecting cost of fund may go up by at least 10 to 15 15 basis points.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "GNPA 2.4% to below 2% target",
+    "quote": "Our target is to bring it down to below 2% by year",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q3 FY27 disbursements",
+    "value": "Rs1,300-1,350 Cr",
+    "horizon": "Q3 FY27",
+    "change": "new",
+    "quote": "Our guidance for current time in Q3 disbursements is about 1300 to 1350 crores."
+   },
+   {
+    "metric": "Q4 FY27 disbursements",
+    "value": "Rs1,650-1,700 Cr",
+    "horizon": "Q4 FY27",
+    "change": "new",
+    "quote": "For Q4, it is about 1650 to 1700 crores."
+   },
+   {
+    "metric": "FY27 disbursements",
+    "value": "Rs3,000-3,050 Cr",
+    "horizon": "FY2027",
+    "change": "cut",
+    "quote": "For this current year, we want to achieve a disbursement number of approximately 3000 to 3050 crores."
+   },
+   {
+    "metric": "GNPA",
+    "value": "below 2% by year end",
+    "horizon": "FY2027",
+    "change": "new",
+    "quote": "Guidance for NPS to bring it down below 2% by year end."
+   },
+   {
+    "metric": "Spread",
+    "value": "3.25-3.3% stable",
+    "horizon": "next 1-2 quarters",
+    "change": "cut",
+    "quote": "My spread will stable at in and around 3.25 to 3.3%"
+   },
+   {
+    "metric": "FY27 PAT",
+    "value": "Rs490 Cr",
+    "horizon": "FY2027",
+    "change": "new",
+    "quote": "I am expecting profit for current financial year in and around 490 crores."
+   },
+   {
+    "metric": "Credit cost provisioning",
+    "value": "Rs526 Cr charge over Q3 and Q4",
+    "horizon": "Q3-Q4 FY27",
+    "change": "new",
+    "quote": "I am expecting charging to the provision to the extent of 526 crores and P&L."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 disbursements",
+    "outcome": "dropped",
+    "quote": "For this current year, we want to achieve a disbursement number of approximately 3000 to 3050 crores."
+   },
+   {
+    "metric": "FY27 AUM growth",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "FY27 GNPA reduction",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Q2 disbursements",
+    "outcome": "met",
+    "quote": "We have done a disbursement of 1205 crores in September 20, 27."
+   },
+   {
+    "metric": "Spread",
+    "outcome": "missed",
+    "quote": "My spread will stable at in and around 3.25 to 3.3%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "National Housing Bank",
+    "relation": "partner"
+   },
+   {
+    "name": "Repco Bank",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Rate cycle pass-through",
+   "Asset quality recovery",
+   "Sales channel build-out",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Spread compression guided despite prior guide",
+    "quote": "My spread will stable at in and around 3.25 to 3.3%"
+   },
+   {
+    "label": "Q1 disbursement miss vs internal target",
+    "quote": "we have done about high 1043 crores"
+   },
+   {
+    "label": "Rising cost of funds with lag pass-through",
+    "quote": "I'm expecting cost of fund may go up by at least 10 to 15 15 basis points."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 4,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Dividend payout ratio",
+    "quote": "I am very clear right now we don't have any numbers in our mind."
+   },
+   {
+    "topic": "Repco Bank deputation and promoter influence",
+    "quote": "No specific reason for the drawing deputation of Mr. Why they did this is administrative"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Repco Home Finance Q2 FY27: disbursements rose to ₹1,205 crore (from ₹1,069 crore), gross NPA fell to 2.4%, and FY27 profit guided to about ₹490 crore.",
+  "overview": "Management reported a September 2026 quarter with disbursements of ₹1,205 crore, up from ₹1,069 crore a year earlier, and net profit of about ₹116 crore versus ₹114 crore in the prior quarter. Gross NPA fell to ₹396 crore (2.4%) from ₹474 crore a year earlier, and stage 2 assets declined to ₹1,154 crore from ₹1,324 crore. AUM grew about 9.2% year on year to ₹16,425 crore. Management guided to a sharper growth push, with a sub-2% gross NPA target by year end and a softer spread outlook as cost of funds rises.",
+  "financial_highlights": [
+   {
+    "metric": "Disbursements (Q2 FY27)",
+    "value": "₹1,205 crore",
+    "change": "vs ₹1,069 crore in corresponding period last year"
+   },
+   {
+    "metric": "Sanctions (Q2 FY27)",
+    "value": "₹1,359 crore",
+    "change": "vs ₹1,205 crore a year earlier"
+   },
+   {
+    "metric": "Net profit (Q2 FY27)",
+    "value": "₹116 crore",
+    "change": "vs ₹114 crore in previous quarter; ~₹106 crore a year earlier"
+   },
+   {
+    "metric": "AUM (end Sept 2026)",
+    "value": "₹16,425 crore",
+    "change": "~9.2% YoY"
+   },
+   {
+    "metric": "Gross NPA",
+    "value": "₹396 crore (2.4%)",
+    "change": "vs ₹474 crore a year earlier; ₹398 crore/₹426 crore quoted for June-end in different places"
+   },
+   {
+    "metric": "Stage 2 assets",
+    "value": "₹1,154 crore",
+    "change": "vs ₹1,324 crore a year earlier"
+   },
+   {
+    "metric": "Provision coverage ratio",
+    "value": "66%",
+    "change": ""
+   },
+   {
+    "metric": "Cost of funds",
+    "value": "8.35%",
+    "change": ""
+   },
+   {
+    "metric": "Yield on assets",
+    "value": "11.83%",
+    "change": ""
+   },
+   {
+    "metric": "Spread",
+    "value": "~3.4% (3.47% cited in Q&A)",
+    "change": "up ~30 bps per analyst"
+   },
+   {
+    "metric": "NIM",
+    "value": "5.44%",
+    "change": ""
+   },
+   {
+    "metric": "Credit cost",
+    "value": "0.1%",
+    "change": "vs negative in previous year"
+   },
+   {
+    "metric": "Capital adequacy ratio",
+    "value": "~37%",
+    "change": ""
+   },
+   {
+    "metric": "Cost-to-income ratio",
+    "value": "~12.5%",
+    "change": "OE ~2.9% of assets, stable QoQ"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Home loans",
+    "commentary": "About 71% of AUM; yield ~11.07%. Salaried customers yield ~11.25% and non-salaried ~12.07% (as stated)."
+   },
+   {
+    "name": "Non-housing loans",
+    "commentary": "About 29% of AUM; yield ~13.32%. No builder loan exposure."
+   },
+   {
+    "name": "Geography",
+    "commentary": "About 57% of book in Tamil Nadu; management is expanding non-TN, with most of 12-14 new branches planned outside TN."
+   }
+  ],
+  "guidance_outlook": [
+   "Disbursements: Q3 FY27 ₹1,300-1,350 crore; Q4 FY27 ₹1,650-1,700 crore; FY27 about ₹3,000-3,050 crore.",
+   "Q2 disbursement guidance of ₹1,200 crore was met (₹1,205 crore); Q3 guided at ₹1,300-1,350 crore.",
+   "Gross NPA target below 2% by year end (currently 2.4%).",
+   "FY27 profit guided at about ₹490 crore (₹230 crore cited for H1).",
+   "Credit cost: management expects provision charge of about ₹5-26 crore in P&L over the current and next quarter (transcript figure unclear).",
+   "Cost of funds expected to rise 10-15 bps; pass-through to borrowers with about one-quarter lag. Spread expected to settle at about 3.2-3.3% in one to two quarters.",
+   "Interim dividend of ₹5 per share declared; final dividend to be decided at year-end. Dividend payout ratio not yet defined.",
+   "Branch network 242 (incl. SAC centre); plan to add 12-14 branches this year, mainly outside TN."
+  ],
+  "capex_capacity": [
+   "Branch network at 242 including SAC centre; about 50 branches opened over the last two to three years.",
+   "Plans to open 12-14 more branches this year, majority outside Tamil Nadu.",
+   "Digitalisation in two phases: core application and mobile app implemented; phase two (supporting applications) in progress; integration with CERSAI-type/credit bureau systems mentioned as 'CSI'.",
+   "Verticalisation: separate verticals for sales, recovery, collections, operations, credit and legal/surfaces management.",
+   "Recruited DST (direct sales team), DSH and connector-model channels; a mobile app for sourcing executives is being rolled out."
+  ],
+  "demand_pricing": [
+   "Disbursements crossed ₹1,000 crore in each quarter since Sept 2025 except June 2026 (~₹1,043 crore), which was hit by staff transfers and promotions.",
+   "Average ticket size ~₹23-25 lakh for incremental loans; overall book average ~₹14 lakh.",
+   "Management says no stress in South, including Karnataka; Karnataka disbursements were below normal in Q1 and improved in Q2.",
+   "Pricing: minimum lending rate ~9.9%; management is deliberately sacrificing some spread to retain good borrowers and curb balance-transfer outflows.",
+   "Borrowing mix: about 86% from banks (19-20 lenders); NHB refinance 7.2% (₹600 crore sanctioned FY27, ₹106 crore taken in Q1 and ₹125 crore in Q2); NCDs/PTCs ~0.7%; Repco Bank ~1%; CP of ₹75 crore raised at 7.6%; PTC of ~₹74 crore at ~7.9%. Entire liability book floating except special NHB scheme."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What are Q3 and Q4 disbursement guidance and October trends?",
+    "answer": "Q3 FY27 guided at ₹1,300-1,350 crore, Q4 at ₹1,650-1,700 crore, FY27 at ~₹3,000-3,050 crore. October disbursements described as in line with expectations; management is confident of the Q3 number."
+   },
+   {
+    "question": "Why did OPEX rise QoQ, and why is Q3 now expected above Q2 when past trend was otherwise?",
+    "answer": "Higher cost reflects incentive payout for June (June target ~₹1,000 crore missed at ₹1,043 crore), annual increments of 5-10% based on performance, actuarial true-up of gratuity and leave encashment, and recruitment of sales and recovery staff. Management attributes stronger 3Q to independent sales and credit channels with no overlap."
+   },
+   {
+    "question": "What is the rate-hike sensitivity, fixed vs floating mix and margin impact?",
+    "answer": "Liabilities are almost fully floating; assets reprice quarterly with ~3-month lag. Cost of funds may rise 10-15 bps, to be passed on with about one-quarter lag. Spread to settle at ~3.25-3.3% after retaining borrowers."
+   },
+   {
+    "question": "Is there any stress in the South, Karnataka or drought-affected areas?",
+    "answer": "Management reported no stress in South or Karnataka; majority of branches in urban/peri-urban metro tier 1-2 areas; cheque bounce ratio stable."
+   },
+   {
+    "question": "What drove the sharp asset quality improvement and the outlook for NPA and dividends?",
+    "answer": "Verticalised recovery team, separate soft and hard NPA handling, property sale push. NPA reduced from ~₹425 crore in June to ₹397 crore; target below 2% by year end. Interim dividend ₹5/share; no payout ratio defined yet."
+   },
+   {
+    "question": "Spread trajectory and cost of funds given rate rises?",
+    "answer": "Spread ~3.4% currently; management expects ~3.25-3.3% over the next one to two quarters as cost increases are passed on and good borrowers are rewarded to reduce balance-transfer outflow."
+   },
+   {
+    "question": "Shareholding/promoter influence and Repco Bank deputation?",
+    "answer": "Management says the company is professionally run with no day-to-day interference from the promoter; board-level decisions only. Deputation change at Repco Bank described as administrative."
+   }
+  ],
+  "risks_watch": [
+   "Cost of funds rising 10-15 bps amid RBI rate hikes; spread compression toward ~3.25% if pass-through lags.",
+   "Provision charge and credit cost: credit cost of 0.1% currently, with management guiding to some P&L charge; sustainability of recoveries.",
+   "Operating cost pressure from incentives, increments and recruitment, with cost-to-income around 12.5%.",
+   "Delivery against Q3 (₹1,300-1,350 crore) and Q4 (₹1,650-1,700 crore) disbursement guidance; June quarter slippage shows execution risk.",
+   "Achieving gross NPA below 2% by year end, and stage 2 asset trend.",
+   "Whether refinance from NHB and rating upgrade can lower funding costs; NHB special scheme terms.",
+   "Figures in transcript are inconsistent in places (June NPA of ₹398/₹426/₹427 crore, spread 3.4% vs 3.47%, credit provision ₹526 crore); verify against the investor presentation."
+  ],
+  "management_tone": "Confident and growth-focused on disbursements and asset quality, with specific numeric guidance. More cautious on margins, acknowledging spread compression from rising funding costs and the need to retain borrowers. Some answers on dividend policy and provisioning were vague.",
+  "key_quotes": [
+   "Our gross NPA as end of September 20, 26 stood at 396 crores.",
+   "For this current year, we want to achieve a disbursement number of approximately 3000 to 3050 crores.",
+   "Our target is to bring it down to below 2% by year and see if I look at NPA history.",
+   "So maintaining a 3.4 spread it's really very difficult but immediately it will not come down drastically."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "12-14 new branches planned this year, majority outside Tamil Nadu (on top of 242 branches incl. SAC centre)",
+    "size_pct": 5.4,
+    "capex_cr": null,
+    "q": 2,
+    "status": "planned",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "none",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management guides FY27 disbursements of ₹3,000-3,050 crore (Q3 ₹1,300-1,350 crore, Q4 ₹1,650-1,700 crore) and FY27 PAT of about ₹490 crore, backed by 12-14 planned branches mainly outside Tamil Nadu and a ~9.2% YoY AUM growth, but no order book or capacity figures quantify the ramp.",
+  "mgmt": null
+ }
+}

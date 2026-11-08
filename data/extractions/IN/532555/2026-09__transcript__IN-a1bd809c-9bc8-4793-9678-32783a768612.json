@@ -1,0 +1,418 @@
+{
+ "doc_id": "IN-a1bd809c-9bc8-4793-9678-32783a768612",
+ "market": "IN",
+ "company_id": "532555",
+ "name": "NTPC Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-06",
+ "period": "2026-09",
+ "title": "NTPC Ltd - 532555 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "NTPC cut FY27 group RE additions from about 9.5 GW to about 8 GW on transmission delays, while H1 added only 2,398 MW and 17.32 GW of thermal remains under construction with 4.8 GW more to tender.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 75.11,
+   "quote": "NTPC coal stations achieved a PLF of 75.11% against rest of India's average of 68.35%."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said the 4.8 GW thermal tender pipeline is an addition; no peer capacity comments made.",
+   "quote": "we have plans for tendering out close to 4.8 gigawatts further"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Group RE FY27 target cut ~9.5 → ~8 GW",
+    "quote": "the earlier expectation was 9.5 gigawatts, which we are scaling it down, based on the dispensation on the renewable side. So it would be now close to 8 gigawatts.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "util",
+    "label": "Coal PLF NTPC 75.11% vs ROI 68.35%",
+    "quote": "NTPC coal stations achieved a PLF of 75.11% against rest of India's average of 68.35%.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Fresh thermal tender ~4.8 GW, INR67,000 cr",
+    "quote": "we have plans for tendering out close to 4.8 gigawatts further",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Power demand growth ~15% in H1",
+    "quote": "in power demand during the first half of the current fiscal year",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Coal stock 7 days at stations",
+    "quote": "sufficient for 7 days of coal requirement",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Group RE capacity addition FY27",
+    "value": "close to 8 GW (from 9.5 GW)",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "the earlier expectation was 9.5 gigawatts, which we are scaling it down"
+   },
+   {
+    "metric": "NGEL capacity FY27 (on-ground)",
+    "value": "around 6.35 GW",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "the on-ground capacity that we would have erected would be around 6.35 gigaw atts"
+   },
+   {
+    "metric": "FY28 capacity addition",
+    "value": "9.6 GW group",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "we are targeting a total of close to 9.6 gigawatts"
+   },
+   {
+    "metric": "FY29 capacity addition",
+    "value": "10.9 GW group",
+    "change": "new",
+    "horizon": "FY29",
+    "quote": "the target is 10,877 megawatts"
+   },
+   {
+    "metric": "BESS commissioning",
+    "value": "by April",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are pretty hopeful that by April we will get all the units, all the battery commissioned"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Renewable capacity addition FY27",
+    "outcome": "missed",
+    "quote": "the earlier expectation was 9.5 gigawatts, which we are scaling it down"
+   },
+   {
+    "metric": "Portfolio capacity",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Renewable portfolio",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Dividend payout ratio",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Pump storage commissioning",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Nuvama Wealth Management",
+    "relation": "peer"
+   },
+   {
+    "name": "NTPC Green Energy",
+    "relation": "partner"
+   },
+   {
+    "name": "CIL",
+    "relation": "supplier"
+   },
+   {
+    "name": "Singareni Collieries Company Limited",
+    "relation": "supplier"
+   },
+   {
+    "name": "NLC",
+    "relation": "supplier"
+   },
+   {
+    "name": "Orissa Power Generation Company",
+    "relation": "supplier"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "RE capacity addition shortfall on transmission",
+    "quote": "we may have some little shortfall compared to what was the initial projection"
+   },
+   {
+    "label": "Only 7 days coal stock at stations",
+    "quote": "sufficient for 7 days of coal requirement"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 3,
+   "capex": 4,
+   "balance_sheet": 1,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Revenue loss quantification from curtailment",
+    "quote": "we don't see this as a complete revenue loss. It gets shifted."
+   },
+   {
+    "topic": "Regulated equity breakup of subsidiaries",
+    "quote": "We can -- we don't have it right now, but we will give you the breakup, share with you."
+   }
+  ],
+  "hedge_index": 0.4,
+  "themes": []
+ },
+ "summary": {
+  "headline": "NTPC standalone Q2 FY27 revenue rose 17% to INR 45,752 crore and PAT 14% to INR 5,320 crore; NGEL revenue up 53%.",
+  "overview": "NTPC posted strong Q2 FY27 standalone growth, with revenue from operations up 17% YoY to INR 45,752 crore and PAT up 14% to INR 5,320 crore, helped by O&M gains and lower fixed-cost disincentives. Group PAT for H1 rose 26% to INR 14,247 crore. NGEL's revenue and EBITDA grew about 53-57% in Q2, but renewable capacity addition is behind plan due to transmission delays, with FY27 group target cut from about 9.5 GW to about 8 GW. Management flagged coal supply tightness (5.2 MMT stock, about 7 days) and is sourcing 13 MMT from alternative sources for H2. A first interim dividend of INR 3 per share was recommended.",
+  "segments": [
+   {
+    "name": "NTPC standalone (conventional)",
+    "commentary": "Q2 revenue INR 45,752 crore and PAT INR 5,320 crore; other income fell INR 432 crore on lower dividends from subsidiaries/JVs (down INR 481 crore) and LPS down 28%. Coal fixed-cost disincentive fell to INR 332 crore from INR 625 crore a year ago."
+   },
+   {
+    "name": "NTPC Group generation and coal",
+    "commentary": "H1 group generation 236 BU vs 214 BU (+10.4%); NTPC coal stations PLF 75.11% vs rest-of-India 68.35%. Captive coal dispatch 26.13 MMT vs 21.63 MMT (+21%)."
+   },
+   {
+    "name": "NTPC Green Energy (NGEL)",
+    "commentary": "H1 generation 10.88 BU vs 6.76 BU (+60%); Q2 revenue INR 938.16 crore and EBITDA INR 829.69 crore (about 88% margin). Curtailment from transmission constraints is ongoing."
+   },
+   {
+    "name": "NVVN (trading)",
+    "commentary": "H1 power traded 31 BU vs 24.8 BU (+25%); commissioned 250 MW / 500 MWh BESS as an implementing agency."
+   },
+   {
+    "name": "THDC and BRBCL",
+    "commentary": "THDC profit up on 500 MW PSP and 660 MW Khurja (full-year effect this year); INR 221 crore uplift cited. BRBCL Q2 profit up INR 64 crore on lower finance cost after refinancing."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 group capacity addition revised to about 8 GW from earlier 9.5 GW, all renewable; NGEL on-ground capacity expected about 6.35 GW by year-end, with a 1.5 GW shortfall attributed to transmission.",
+   "FY28 target about 9.6 GW for the group (thermal 1,460 MW, hydro 444 MW, renewable 7,735 MW); FY29 target about 10.9 GW (thermal 3,070 MW, renewable 7,807 MW).",
+   "Transmission constraints for NGEL expected to be resolved by mid-July 2027.",
+   "Group capacity under construction: 37 GW, including 17.32 GW coal, about 3.6 GW hydro and about 16 GW renewables.",
+   "Plan to tender about 4.8 GW of new thermal in Q1-Q2 FY28 with estimated capex INR 67,000 crore; pithead and non-pithead split equally.",
+   "Sinnar turnaround targeted by December 2026 or January 2027.",
+   "Battery storage: about 1,350 MW of NGEL BESS expected by mid-FY27; full-scale BESS largely in FY29; contractor issues being addressed, with BESS targeted by April."
+  ],
+  "capex_capacity": [
+   "H1 FY27 group capex INR 23,932 crore (vs INR 23,115 crore); standalone capex INR 14,398 crore (vs INR 14,149 crore).",
+   "Group gross PP&E INR 4,85,444 crore at 30 Sep 2026, up 11% YoY. Installed group capacity 91,506 MW; H1 additions 2,398 MW (NGEL 1,136 MW).",
+   "Lara Stage 3 (1,600 MW) awarded and limited notice to proceed issued pending environmental clearance.",
+   "Green Energy Corridor Phase 3 approved 30 Sep 2026: outlay INR 1,86,405 crore, central support INR 54,082 crore, targeted for FY32-33.",
+   "Storage plan: about 47 GWh overall, of which 5 GWh at thermal co-location; NGEL targeting about 41-42 GWh, with 40 GWh tender via ICB for direct Chinese procurement.",
+   "Pumped storage: first DPR (Maharashtra) due December, Amba DPR by March; award after DPR and TEC."
+  ],
+  "demand_pricing": [
+   "Power demand grew about 15% and generation about 11% in H1 FY27; October demand up 21%. Peak demand met 271 GW.",
+   "Coal PLF across India rose to 70.37% in H1 FY27 from 66.02%; CIL and SCCL supply constrained, stocks critical.",
+   "Ratnagiri gas plant running on imported LNG at $16-32/MMBtu, average below $28-29; fuel cost about INR 26/kWh.",
+   "Ratnagiri profit growth driven by generation in a demand-led market, sold via market operations as PPA issues persist.",
+   "Regulatory deferral: INR 862 crore reversal of excess depreciation for Bongaigaon, nil PAT impact.",
+   "Curtailment: NGEL losses partly shifted via PPA extensions; T-GNA revenue covers O&M and interest but not depreciation. Revenue loss not quantified."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Is government pushing for more thermal capacity, and what new thermal is planned?",
+    "answer": "Management plans to tender about 4.8 GW of thermal in Q1-Q2 FY28 (Jhabua 2, Talcher 4, Talcher Kaniha 3, Bhilai, BRBCL 2), with 3-4 GW more under feasibility study."
+   },
+   {
+    "question": "Is NGEL's curtailment easing and how much revenue was lost?",
+    "answer": "Connectivity constraints expected to clear by mid-July 2027; revenue loss not quantified, with lost generation shifted into extended PPA terms."
+   },
+   {
+    "question": "Will the RE addition target be revised?",
+    "answer": "Original NGEL estimate was about 8 GW; now expected about 6.5 GW built, with about 1.5 GW held up by transmission and carried into next year."
+   },
+   {
+    "question": "Why did consolidated PAT grow faster than regulated equity?",
+    "answer": "Management cited O&M gains and operational efficiency; expects profit growth to keep significantly exceeding regulated equity growth."
+   },
+   {
+    "question": "What is the C&I strategy and is thermal included?",
+    "answer": "An EOI for C&I partners covering power and heat closes end-November 2026, open to renewable, hydro or thermal supply."
+   },
+   {
+    "question": "Why does BESS take 12-18 months and is there a merchant plan?",
+    "answer": "Utility-scale batteries and DC/AC integration need the time; management is replacing underperforming contractors and targets BESS commissioning by April 2027. No merchant BESS was confirmed."
+   }
+  ],
+  "risks_watch": [
+   "Transmission delays in Khavda and other RE corridors continue to hold back NGEL CODs; connectivity expected by mid-July 2027.",
+   "Coal supply: 5.2 MMT stock (about 7 days); 13 MMT tender for H2 FY27 and 4 MMT additional domestic coal award pending.",
+   "Renewable target slippage: FY27 group target cut from about 9.5 GW to about 8 GW.",
+   "Other income under pressure from lower dividends from subsidiaries and JVs (down INR 481 crore) and lower LPS.",
+   "BESS execution depends on contractor performance and the upcoming 40 GWh ICB tender.",
+   "Pumped storage: DPRs due December 2026 and March 2027 before awards."
+  ],
+  "management_tone": "Confident on demand, operating performance and profit growth, but cautious and somewhat hedged on renewable capacity and transmission timelines, with several answers deferred to later data.",
+  "key_quotes": [
+   "Rising demand during both peak and non-peak hours creates growth opportunities.",
+   "So, more specific to NGEL, our transmission constraint or the connectivity issue which we are facing will all be surmounted by next year, mid-July.",
+   "Profit is a different thing than a dividend payout. So, profitability has come out of better efficiency."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Standalone revenue from operations (Q2 FY27)",
+    "value": "INR 45,752 crore",
+    "change": "+17% YoY vs INR 39,167 crore"
+   },
+   {
+    "metric": "Standalone PAT (Q2 FY27)",
+    "value": "INR 5,320 crore",
+    "change": "+14% YoY vs INR 4,653 crore"
+   },
+   {
+    "metric": "Standalone PAT (H1 FY27)",
+    "value": "INR 10,662 crore",
+    "change": "+13% YoY vs INR 9,428 crore"
+   },
+   {
+    "metric": "Standalone adjusted PAT (H1 FY27)",
+    "value": "INR 10,469 crore",
+    "change": "+17% YoY vs INR 8,932 crore"
+   },
+   {
+    "metric": "Standalone revenue from operations (H1 FY27)",
+    "value": "INR 89,584 crore",
+    "change": "+10% YoY vs INR 81,736 crore"
+   },
+   {
+    "metric": "Group total income (H1 FY27)",
+    "value": "INR 1,05,857 crore",
+    "change": "+14% YoY vs INR 93,083 crore"
+   },
+   {
+    "metric": "Group PAT (H1 FY27)",
+    "value": "INR 14,247 crore",
+    "change": "+26% YoY vs INR 11,334 crore"
+   },
+   {
+    "metric": "Group adjusted PAT (Q2 FY27)",
+    "value": "INR 7,152 crore",
+    "change": "+43% YoY vs about INR 5,000 crore"
+   },
+   {
+    "metric": "Group adjusted PAT (H1 FY27)",
+    "value": "INR 13,917 crore",
+    "change": "+29% YoY vs INR 10,809 crore"
+   },
+   {
+    "metric": "NGEL consolidated revenue from operations (Q2 FY27)",
+    "value": "INR 938.16 crore",
+    "change": "+53.22% YoY vs INR 612.29 crore"
+   },
+   {
+    "metric": "NGEL operating EBITDA (Q2 FY27)",
+    "value": "INR 829.69 crore",
+    "change": "+56.67% YoY vs INR 529.6 crore"
+   },
+   {
+    "metric": "NGEL consolidated revenue (H1 FY27)",
+    "value": "INR 2,045 crore",
+    "change": "+58% YoY"
+   },
+   {
+    "metric": "Weighted average interest rate on borrowings (H1 FY27)",
+    "value": "5.72%",
+    "change": "vs 5.98% in FY26"
+   },
+   {
+    "metric": "Interim dividend recommended (FY27)",
+    "value": "INR 3 per share",
+    "change": ""
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "NGEL renewable capacity, on-ground ~6.35 GW by FY27 year-end (transmission-constrained, 1.5 GW shortfall)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "Group FY27 RE addition ~8 GW (cut from 9.5 GW)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "Group FY28 target ~9.6 GW (thermal 1,460 MW, hydro 444 MW, RE 7,735 MW)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "planned",
+    "mat": "major"
+   },
+   {
+    "what": "Fresh ~4.8 GW thermal tender in Q1-Q2 FY28, capex ~INR 67,000 cr",
+    "size_pct": null,
+    "capex_cr": 67000.0,
+    "q": 4,
+    "status": "planned",
+    "mat": "major"
+   },
+   {
+    "what": "Lara Stage 3 1,600 MW thermal awarded, limited notice to proceed pending environmental clearance",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 6,
+    "status": "approved",
+    "mat": "moderate"
+   }
+  ],
+  "util": 75.11,
+  "expansion": true,
+  "growth": 10.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 17.0,
+  "qEbitda": 14.0,
+  "outlook": 1,
+  "why": "Standalone Q2 revenue +17% and H1 revenue +10%, with NGEL H1 revenue +58% and H1 generation +10.4%, but FY27 RE addition was cut from 9.5 GW to ~8 GW (NGEL ~6.35 GW) on transmission delays; FY28 9.6 GW and a 4.8 GW thermal tender (INR 67,000 cr) give a partly backed growth path, with 37 GW under construction.",
+  "mgmt": null
+ }
+}

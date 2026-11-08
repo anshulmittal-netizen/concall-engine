@@ -1,0 +1,374 @@
+{
+ "doc_id": "IN-28a43453-3da2-4dcb-96d8-ca82b13c845e",
+ "market": "IN",
+ "company_id": "532482",
+ "name": "Granules India Ltd-$",
+ "doc_type": "transcript",
+ "date": "2026-11-06",
+ "period": "2026-09",
+ "title": "Granules India Ltd-$ - 532482 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma CDMO",
+  "thesis": "Q2 FY27 revenue INR15,600m (+20% YoY) but EBITDA margin fell to 21.6% on West Asia costs, operating cash flow collapsed to INR650m, and Gagillapur got a Form 483 with 11 observations; Genome Valley still ~25% utilised.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 25,
+   "quote": "So Genome Valley is under 25% or roughly 25% as of now, which we are expecting by Q4, it will cross 50%."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "This INR2,000 crores growth capex over the next 3 - 4 years will be largely into one , expansion of infrastructure and capacity for peptide CDMO both in Zurich as well as India."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Operating cash flow INR650m vs INR3,874m",
+    "quote": "Cash flow from operation was INR650 million compared with INR3,874 million in Q1 FY27",
+    "highlight": "Cash flow from operation was INR650 million",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "util",
+    "label": "Genome Valley utilisation ~25%",
+    "quote": "So Genome Valley is under 25% or roughly 25% as of now, which we are expecting by Q4, it will cross 50%.",
+    "highlight": "Genome Valley is under 25%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Gagillapur Form 483 with 11 observations",
+    "quote": "The inspection concluded with a Form 483 containing eleven observations.",
+    "highlight": "Form 483 containing eleven observations",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Zero US launches in H1 vs 9 target",
+    "quote": "First half, we haven't done any launches.",
+    "highlight": "we haven't done any launches",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA margin 21.6%, down 131bps QoQ",
+    "quote": "EBITDA margin stood at 21.6%, up 19 basis points year -on-year and down 131 basis points quarter-on-quarter.",
+    "highlight": "down 131 basis points quarter-on-quarter",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth",
+    "value": "current rate of growth will continue",
+    "change": "held",
+    "quote": "all I can tell you is our current rate of growth and the current progress we are making will continue."
+   },
+   {
+    "metric": "Peptide CDMO FY27 target",
+    "value": "EBITDA/PAT neutrality, near stated ambition",
+    "change": "held",
+    "quote": "we are absolutely hopeful of meeting our target that we have set ourselves at the beginning of the year."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Rest-of-year capex",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "EBITDA margin",
+    "outcome": "missed",
+    "quote": "EBITDA margin stood at 21.6%"
+   },
+   {
+    "metric": "Genome Valley utilisation",
+    "outcome": "not_discussed",
+    "quote": "which we are expecting by Q4, it will cross 50%."
+   },
+   {
+    "metric": "US launches",
+    "outcome": "missed",
+    "quote": "First half, we haven't done any launches."
+   },
+   {
+    "metric": "R&D spend",
+    "outcome": "met",
+    "quote": "R&D expenses were INR885 million about 5.7% of sales"
+   },
+   {
+    "metric": "Peptide CDMO revenue run-rate",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Working capital to sales",
+    "outcome": "missed",
+    "quote": "Net working capital to sales was 30% compared with 29% in Q1 FY27"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Senn Tides India",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "FDA Form 483, 11 observations at Gagillapur",
+    "quote": "The inspection concluded with a Form 483 containing eleven observations."
+   },
+   {
+    "label": "Operating cash flow collapse",
+    "quote": "Cash flow from operation was INR650 million compared with INR3,874 million in Q1 FY27"
+   },
+   {
+    "label": "Management declines to quantify margin path",
+    "quote": "It's very dynamic. It is difficult for me to give some number."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 4,
+   "margin": 4,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Peptide CDMO customer wins",
+    "quote": "I cannot comment on the first part where you spoke about a few customers and a few hundred million."
+   },
+   {
+    "topic": "Revenue guidance",
+    "quote": "As you know, we don't give guidance"
+   },
+   {
+    "topic": "Long-term EBITDA margin",
+    "quote": "It's very dynamic. It is difficult for me to give some number."
+   },
+   {
+    "topic": "Launch timing",
+    "quote": "See all these are litigation -based products. I cannot guide on any of them."
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "Granules Q2 FY27 revenue rose 20% YoY to INR15,600 million, but gross margin fell to 64.4% on West Asia input and freight costs.",
+  "overview": "Q2 FY27 revenue was INR15,600 million, up 20% YoY and 6% QoQ, the first quarter above INR15,000 million and the eighth straight quarter of sequential growth. EBITDA was INR3,376 million (21.6% margin, down 131 bps QoQ) and PAT rose 39% YoY to INR1,818 million. Margins were squeezed by West Asia conflict-driven input and freight costs, with price pass-through lagging. The company moved to a net cash position of INR8,280 million after warrant proceeds, while operating cash flow fell sharply to INR650 million on planned working capital build. An FDA cGMP inspection at Gagillapur (October 19-30) ended with a Form 483 containing eleven observations, and no launches were made in H1.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue",
+    "value": "INR15,600 million",
+    "change": "+20% YoY, +6% QoQ"
+   },
+   {
+    "metric": "Gross margin (value)",
+    "value": "INR10,039 million",
+    "change": "+18% YoY, +4% QoQ"
+   },
+   {
+    "metric": "Gross margin (%)",
+    "value": "64.4%",
+    "change": "-134 bps YoY, -126 bps QoQ"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR3,376 million",
+    "change": "+21% YoY, stable QoQ"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "21.6%",
+    "change": "+19 bps YoY, -131 bps QoQ"
+   },
+   {
+    "metric": "R&D expense",
+    "value": "INR885 million (5.7% of sales)",
+    "change": "+26% YoY, +1% QoQ"
+   },
+   {
+    "metric": "PBT",
+    "value": "INR2,434 million (15.6% margin)",
+    "change": "+38% YoY, +1% QoQ"
+   },
+   {
+    "metric": "PAT",
+    "value": "INR1,818 million",
+    "change": "+39% YoY"
+   },
+   {
+    "metric": "Net cash",
+    "value": "INR8,280 million",
+    "change": "vs net debt of INR1,012 million in Q1 FY27"
+   },
+   {
+    "metric": "Operating cash flow",
+    "value": "INR650 million",
+    "change": "vs INR3,874 million in Q1 FY27 and INR1,937 million in Q2 FY26"
+   },
+   {
+    "metric": "Capex",
+    "value": "INR1,304 million",
+    "change": "vs INR890 million in Q1 FY27 and INR2,112 million in Q2 FY26"
+   },
+   {
+    "metric": "ROCE",
+    "value": "17.6%",
+    "change": "+138 bps YoY, broadly stable QoQ"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Formulations - complex generics",
+    "commentary": "Complex generics grew 38% YoY per analyst, but share of formulations fell to 47% from 50% in Q1 FY27. Management says the medium-term target of 50% is ahead of plan."
+   },
+   {
+    "name": "Formulations - integrated generics",
+    "commentary": "Share of formulations rose to 48% from 46% in Q1 FY27. North America, the largest market, grew led by controlled substances."
+   },
+   {
+    "name": "API and PFI",
+    "commentary": "Growth was strong in Q2 and H1, mainly volume with better pricing as cost increases were recovered. Most output is still captive; LATAM PFI sales are growing."
+   },
+   {
+    "name": "Peptide CDMO (Senn Tides)",
+    "commentary": "H1 peptide revenue was about INR109 crore with cumulative EBITDA loss of about INR28 crore per analyst. Management is targeting EBITDA and PAT neutrality for FY27, dependent on a heavier H2 and product mix."
+   }
+  ],
+  "guidance_outlook": [
+   "No formal revenue or EBITDA guidance; management said current growth rate and progress will continue.",
+   "Management expects the company to keep growing profit in absolute terms in FY27, with margin % recovering once West Asia costs settle.",
+   "Remediation expenses expected to moderate significantly from Q4 FY27; Q3 similar to Q2.",
+   "Five US launches planned over the next two quarters (Q3-Q4), of which 2 are controlled substances and all extended-release; no FTF launch expected before 2.5-3 years.",
+   "Genome Valley utilisation expected to cross 50% by Q4 FY27 from about 25% now.",
+   "INR2,000 crore growth capex over the next 3-4 years, mainly peptide CDMO in Zurich and India, US platform, oncology and API.",
+   "Management expects FTF-driven margin upside in the medium term, but gave no quantified EBITDA margin trajectory."
+  ],
+  "capex_capacity": [
+   "Gagillapur (GGP) utilisation is about 75%, with room to improve through product mix and utilisation; about 8 pending launches are being transferred to various sites.",
+   "Genome Valley (GLS) utilisation is about 25%, expected to exceed 50% by Q4 FY27.",
+   "Capex in Q2 was INR1,304 million; INR2,000 crore growth capex planned over 3-4 years.",
+   "Vizag integrated peptide manufacturing facility is in planning and design; the India project team is in place and the investment is not contingent on customer tie-ups.",
+   "Zurich (Senn Chemical) passed Swiss GMP inspection with no critical findings; Zurich capacity expansion is also planned."
+  ],
+  "demand_pricing": [
+   "Revenue growth was broad-based across businesses and markets, supported by steady demand and growth in complex generics.",
+   "Input and freight costs rose due to the West Asia conflict; price increases are being passed to customers with a time lag, and management says the cost increase is largely recovered in API/PFI prices.",
+   "Gross margin decline partly offset by lower-cost safety inventory in the US.",
+   "Peptide CDMO: strong inflow of RFPs and RFQs in recent months; theranostics project revived after about 2 years; renewed supply talks with 2 large CDMO partners; second-year campaign talks with another CDMO partner. No customer wins were quantified.",
+   "Management says 26 ANDAs are awaiting approval, with 8 pending launches at GGP in the next 6 months."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Is the FDA inspection an impact on Gagillapur CDMO relationships and launches?",
+    "answer": "Management said the 483 had eleven observations, none on data integrity, cross-contamination or upkeep, and the response is due within 15 business days, with about 90-100 days needed for full response. There is no impact on existing manufacturing or distribution."
+   },
+   {
+    "question": "Are the Q4 remediation costs and other expenses going to moderate?",
+    "answer": "CFO said the increase in other expenses was freight cost due to West Asia. Remediation costs will moderate significantly from Q4 FY27, and Q3 will be similar to Q2."
+   },
+   {
+    "question": "Will the cost pressure hurt gross margin going forward?",
+    "answer": "CFO said cost pressures continue and mix (complex versus legacy) will help offset them; management expects profit as planned but gave no margin number."
+   },
+   {
+    "question": "Why did operating cash flow fall to INR65 crore?",
+    "answer": "CFO said H1 should be viewed together, with some H2 outflows in Q2, and that working capital rose from 29% to 30% of sales, including US safety stock for controlled and complex products."
+   },
+   {
+    "question": "Will the net cash allow growth capex without debt or dilution?",
+    "answer": "CFO said net cash is intended for organic growth (capex and working capital) and inorganic opportunities."
+   }
+  ],
+  "risks_watch": [
+   "Form 483 response due within 15 business days; the warning letter remains in place and new product approvals are gated by Gagillapur status.",
+   "Gross margin compression from West Asia input and freight costs, with a time lag in price pass-through.",
+   "Peptide CDMO remains loss-making in H1 and needs a heavy H2 to reach EBITDA/PAT neutrality for FY27.",
+   "Operating cash flow weakness (INR650 million in Q2) and cash conversion cycle of 231 days versus 229 days in Q1.",
+   "Five US launches, with timing dependent on approvals and litigation; first-to-file products expected in about 2.5-3 years.",
+   "Consolidated ROCE (17.6%) is below the core business ROCE, while Genome Valley runs at about 25% utilisation."
+  ],
+  "management_tone": "Confident on growth and strategy, but evasive on quantified targets: no guidance was given on revenue, margins, or peptide customer wins, and litigation-linked launch timings were not disclosed. Management was defensive on the Gagillapur FDA inspection, saying the observations are addressable without giving a timeline for resolution.",
+  "key_quotes": [
+   "There is no impact on manufacturing or distribution of products from this site.",
+   "Revenue grew 20% year-on-year to INR15,600 million, crossing INR15,000 million in quarterly revenue for the first time in our history.",
+   "We are absolutely going ahead with our investment in India facility at Vizag operations.",
+   "This is just the beginning. That's all I'll say."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Genome Valley (GLS) utilisation rising from ~25% to above 50% by Q4 FY27 (existing plant, not new capacity)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Vizag integrated peptide manufacturing facility, in planning and design (no commissioning timeline given)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Zurich (Senn Chemical) capacity expansion, planned with no timeline or size given",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "planned",
+    "mat": "minor"
+   }
+  ],
+  "util": 75.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "new_products_or_markets",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 20.0,
+  "qEbitda": 21.0,
+  "outlook": 1,
+  "why": "No formal revenue guidance; management says the current growth rate will continue and expects absolute profit growth in FY27, backed partly by five US launches in Q3-Q4, Genome Valley utilisation rising to over 50% by Q4 FY27 and INR2,000 crore growth capex over 3-4 years, though the capex lacks timing and sizing detail.",
+  "mgmt": null
+ }
+}
