@@ -1,0 +1,446 @@
+{
+ "doc_id": "IN-72740ba7-c340-40b8-b801-6720593c645e",
+ "market": "IN",
+ "company_id": "544664",
+ "name": "KSH International Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-09",
+ "period": "2026-09",
+ "title": "KSH International Ltd - 544664 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q2 EBITDA/ton ~Rs101,400 (Q1 ~93,000) and volumes +26% YoY, but management guides long-term ~Rs85,000/t and Phase-3 (~Rs185cr) adds capacity to ~72,200 MT by Q1 FY29; utilisation 76%, specialized >80%.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 76,
+   "quote": "an increase in consolidated utilization rates to 76% in Q2 of FY '27 versus 73% in Q1 of FY '27"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "The board has approved a new Phase -3 expansion to add specialized Magnet Winding Wires manufacturing capacity"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Phase-3 capacity to 72,200 MT",
+    "quote": "expected to increase the company's total installed capacity to approximately 72,200 metric tons by Q1 of FY 2029",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Specialized utilisation above 80%",
+    "quote": "our Q2 utilization has exceeded 80%, which as we have previously mentioned is also an important threshold",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Debt cut Rs481cr → Rs341cr",
+    "quote": "reduction in total outstanding debt to Rs. 341 crores down from Rs. 481 crores in Q1 FY '27",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Long-term EBITDA/t reset to Rs85,000",
+    "quote": "we believe post Phase-3 expansion, a long-term EBITDA per ton of approximately Rs. 85,000 per ton should be sustainable",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Export share target ~40% pushed to multi-year",
+    "quote": "We said that our objective over the next few years is to return exports to its historical average of around 40% of total revenue",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA per ton long-term",
+    "value": "~Rs 85,000 per ton post Phase-3",
+    "change": "cut",
+    "horizon": "long-term",
+    "quote": "a long-term EBITDA per ton of approximately Rs. 85,000 per ton should be sustainable"
+   },
+   {
+    "metric": "Installed capacity",
+    "value": "~72,200 MT by Q1 FY29",
+    "change": "new",
+    "horizon": "Q1 FY29",
+    "quote": "expected to increase the company's total installed capacity to approximately 72,200 metric tons by Q1 of FY 2029"
+   },
+   {
+    "metric": "Volume growth FY27",
+    "value": "25-26% YoY",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we believe that 26% volume growth for this year continues to be sustainable"
+   },
+   {
+    "metric": "Leverage",
+    "value": "not to rise much beyond existing levels",
+    "change": "held",
+    "horizon": "multi-year",
+    "quote": "our target is not be very high as compared to where we are today"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA per ton FY27",
+    "outcome": "dropped",
+    "quote": "we are not in a position to give specifics around second half or any specific year"
+   },
+   {
+    "metric": "Installed capacity by year end",
+    "outcome": "missed",
+    "quote": "Period end capacity stood at 57,845 metric tons and is now available for H2 of FY ' 27."
+   },
+   {
+    "metric": "Working capital days",
+    "outcome": "met",
+    "quote": "Working capital days calculated on average balances improved to 52 days from 60 days in Q1"
+   },
+   {
+    "metric": "Export share of revenue",
+    "outcome": "held",
+    "quote": "Going forward, we will try to inch it up to over the next, say, 1 or 2 years, bring it back to the historical 40%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Hitachi",
+    "relation": "customer"
+   },
+   {
+    "name": "BHEL",
+    "relation": "competitor"
+   },
+   {
+    "name": "Siemens",
+    "relation": "competitor"
+   },
+   {
+    "name": "Power Grid",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "China+1 enquiries → orders",
+   "Capacity bottleneck",
+   "Auto EV transition",
+   "Renewables & storage",
+   "Railway capex"
+  ],
+  "red_flags": [
+   {
+    "label": "Finance costs up despite lower debt (supplier credit)",
+    "quote": "the finance cost includes costs charged by the bank as well as finance cost charged by the suppliers"
+   },
+   {
+    "label": "Working-capital days lowered; cash flow only Rs43cr in H1",
+    "quote": "we were able to deliver roughly Rs. 43 crores of positive operating cash flow during H1"
+   },
+   {
+    "label": "Management reluctant on FY27 EBITDA/t guidance",
+    "quote": "we are not in a position to give specifics around second half or any specific year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 5,
+   "margin": 5,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "EBITDA/t sustainability and H2 outlook",
+    "quote": "beyond that, we are not in a position to give specifics around second half or any specific year"
+   },
+   {
+    "topic": "Long-term agreement volumes and pricing",
+    "quote": "we would be able to really, maybe in the next 2 quarters, we would be able to give you an answer"
+   }
+  ],
+  "hedge_index": 0.35,
+  "novelty": 0
+ },
+ "summary": {
+  "headline": "KSH International Q2 FY27 revenue rose 85% YoY to Rs 1,320 crore, with record PAT of Rs 48 crore and EBITDA per ton of about Rs 1,01,400.",
+  "overview": "Q2 FY27 showed strong growth: revenue from operations of Rs 1,320 crore (up 85% YoY), EBITDA of Rs 90 crore (vs Rs 46 crore a year ago and Rs 74 crore in Q1), and a quarterly record PAT of Rs 48 crore. Sales volume reached 8,842 MT (up 26% YoY, 11% QoQ) and utilisation rose to 76% from 73% in Q1. Phase-2 Supa expansion is 96% complete, about six months ahead of schedule, and the board approved a Phase-3 expansion taking installed capacity to about 72,200 MT by Q1 FY29. Debt fell to Rs 341 crore from Rs 481 crore in Q1, with H1 operating cash flow of Rs 43 crore and working capital days down to 52.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations",
+    "value": "Rs 1,320 crore",
+    "change": "+85% YoY"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "Rs 90 crore",
+    "change": "vs Rs 46 crore YoY and Rs 74 crore QoQ"
+   },
+   {
+    "metric": "EBITDA per ton (consolidated)",
+    "value": "Rs 1,01,400/MT (approx.)",
+    "change": "vs Rs 65,500 YoY and Rs 93,000 QoQ"
+   },
+   {
+    "metric": "PAT",
+    "value": "Rs 48 crore (quarterly record)",
+    "change": "+62% YoY, vs Rs 42 crore QoQ"
+   },
+   {
+    "metric": "Sales volume",
+    "value": "8,842 MT",
+    "change": "+26% YoY, +11% QoQ"
+   },
+   {
+    "metric": "Export revenue share",
+    "value": "~32% of revenue",
+    "change": "vs 26% in Q1; export revenue +108% YoY, +44% QoQ"
+   },
+   {
+    "metric": "Total debt",
+    "value": "Rs 341 crore",
+    "change": "down from Rs 481 crore in Q1"
+   },
+   {
+    "metric": "Operating cash flow (H1 FY27)",
+    "value": "Rs 43 crore positive",
+    "change": "first positive H1 operating cash flow per management"
+   },
+   {
+    "metric": "Working capital days",
+    "value": "52 days (average balances)",
+    "change": "vs 60 days in Q1 and ~70 days last year"
+   },
+   {
+    "metric": "Leverage",
+    "value": "0.38x",
+    "change": "vs 0.51x last quarter"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Specialized Magnet Winding Wires (incl. CTC)",
+    "commentary": "Revenue grew 87% YoY in Q2, driven largely by exports; about 75% of total revenue comes from specialized wires for T&D, renewables, railways and data centres. CTC share stayed elevated in Q2."
+   },
+   {
+    "name": "Standard Winding Wires",
+    "commentary": "Revenue grew 119% YoY in Q2 off a much smaller base; newly commissioned standard wire capacity is ramping up, mainly for EVs, ACs, compressors, motors and alternators. Revenue split is 75:25 specialized to standard."
+   },
+   {
+    "name": "Exports",
+    "commentary": "Revenue grew 108% YoY; about 32% of revenue in Q2 vs about 40% historically. Management says exports earn 3-5% higher profitability than domestic sales."
+   },
+   {
+    "name": "Geography",
+    "commentary": "Management stated India about 73% of revenue, Middle East about 10-11%, and Europe plus Americas under 10%; US under 10% of revenue."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 volume growth of about 25-26% YoY expected to be sustainable; H2 FY27 volumes expected to exceed H1 with Supa capacity coming online.",
+   "Long-term sustainable EBITDA per ton of about Rs 85,000 after Phase-3 at optimum utilisation; management clarified this is not a quarterly or annual guidance and quarters may exceed it.",
+   "Phase-3 capex up to Rs 185 crore over about 18 months (includes 10 acres of land in Supa), funded by internal accruals and long-term debt; majority in FY28, smaller upfront spend in H2 FY27.",
+   "Installed capacity to reach about 72,200 MT by Q1 FY29; 85% optimum utilisation expected between FY30 and FY31.",
+   "Export share targeted back to historical ~40% of revenue over 1-2 years or multi-year; ROCE target about 20% moving towards 25%; leverage not to rise much above current levels at full utilisation.",
+   "Long-term framework agreements (e.g., 5-year with Hitachi) under discussion; update expected in about 2 quarters."
+  ],
+  "capex_capacity": [
+   "Installed capacity 57,845 MT as on Sep 30, 2026, including 96% of Supa Phase-1 and Phase-2 expansion, completed around Sep 9, 2026, about six months early.",
+   "Specialized wire utilisation exceeded 80% in Q2; management treats 80% as the threshold for adding capacity. Consolidated utilisation 76% in Q2 vs 73% in Q1.",
+   "Phase-3 adds specialized winding wire capacity, taking total to about 72,200 MT by Q1 FY29; the 10-acre purchase adds about 20,000 MT of further potential capacity.",
+   "Power Grid approved the Supa facility for magnet winding wires up to 765 kV transformers and reactors.",
+   "PEEK wire for EVs: trials done and samples made; meaningful volume expected only after FY29."
+  ],
+  "demand_pricing": [
+   "Management sees CTC demand in India of about 120,000-130,000 tons by FY30, excluding exports; HVDC and 765 kV add incremental demand.",
+   "Trial order for two HVDC transformers from a European customer received in Q1; delivery expected within FY27. Management says it could open future HVDC orders.",
+   "Management said pricing is kept measured and long-term; EBITDA gains are driven by mix, exports and currency, not like-for-like price increases.",
+   "Middle East business not significantly down, though transit times and transport costs have risen. Management does not expect a material change in the AI data-centre business, which is a small share of revenue.",
+   "Standard wire volumes expected to ramp; management expects the mix to move closer to historical levels in H2 FY27 and FY28, while the absolute specialized volume is not expected to fall."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What drove the strong EBITDA per ton and is the mix expected to correct in H2?",
+    "answer": "Management cited elevated CTC share, higher exports (about 3-4% more value added), a weaker rupee, utilisation of 76%, and recycling and rooftop solar benefits. Mix is expected to moderate as standard wire volumes pick up."
+   },
+   {
+    "question": "Why did finance costs rise despite lower debt?",
+    "answer": "CFO confirmed that finance costs include supplier finance charges (LC/supplier credit) as well as bank charges, so the rise is partly from supplier credit."
+   },
+   {
+    "question": "Is conversion pricing rising on contract renewals?",
+    "answer": "Management said conversion-rate increases were not a significant part of the EBITDA per ton gain. Pricing is measured and long-term, and mix is the main driver."
+   },
+   {
+    "question": "What utilisation is expected after Phase-3 in FY29?",
+    "answer": "Management expects about 85% optimum utilisation on the 72,200 MT capacity between FY30 and FY31."
+   },
+   {
+    "question": "What is the outlook for US AI data-centre demand and the Hitachi agreement?",
+    "answer": "Management has not seen any slowdown from US customers, which are under 10% of revenue. A 5-year framework with Hitachi is still being finalised, and the general trend is toward longer agreements."
+   },
+   {
+    "question": "Will H2 volumes exceed H1 and does the Phase-3 EBITDA guidance change?",
+    "answer": "CFO said FY27 volume growth of about 25-26% implies H2 above H1. Management said Rs 75,000-85,000/MT is a long-term range, not quarterly guidance."
+   }
+  ],
+  "risks_watch": [
+   "Mix normalisation toward standard wires (lower EBITDA per ton) as standard capacity ramps; H2 EBITDA per ton could moderate from about Rs 1,01,000.",
+   "Rising finance costs from supplier credit even as bank debt falls; watch interest cost and working capital days.",
+   "Export share at about 32% versus the 40% target; currency tailwind may reverse.",
+   "Phase-3 execution: Rs 185 crore capex, debt funding, and the 85% utilisation assumption for FY30-31.",
+   "US AI data-centre capex slowdown risk and Middle East logistics disruption (transit times, transport costs).",
+   "Timing of the Hitachi 5-year framework and other long-term agreements; to be updated in about 2 quarters."
+  ],
+  "management_tone": "Confident and upbeat on volumes, exports, and the Supa expansion, with management frequently quoting the Rs 85,000/MT long-term EBITDA per ton. The tone turned more cautious and non-committal on quarterly EBITDA per ton, the long-term agreements and the HVDC order book, which management said it could not quantify.",
+  "key_quotes": [
+   "we believe post Phase-3 expansion, a long-term EBITDA per ton of approximately Rs. 85,000 per ton should be sustainable.",
+   "Having said that, it is possible that individual quarters may exceed this level depending on the product mix, exports and currency impact.",
+   "We do not anticipate any material changes to our existing leverage ratios as a result of this expansion at optimum utilization levels",
+   "And of course, a lot of our customers have order books up to 2032 or beyond also."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Supa Phase-1 and Phase-2 expansion, bringing installed capacity to 57,845 MT (96% complete, done ~Sep 9, 2026)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "major"
+   },
+   {
+    "what": "Phase-3 specialized magnet winding wire expansion taking installed capacity to ~72,200 MT by Q1 FY29 (~14,355 MT added, includes 10 acres in Supa)",
+    "size_pct": 24.8,
+    "capex_cr": 185.0,
+    "q": 6,
+    "status": "approved",
+    "mat": "major"
+   }
+  ],
+  "util": 76.0,
+  "expansion": true,
+  "growth": 25.5,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix",
+   "order_book"
+  ],
+  "clarity": "partial",
+  "qRev": 85.0,
+  "qEbitda": 95.7,
+  "outlook": 2,
+  "why": "Management expects ~25-26% FY27 volume growth to be sustainable, backed by Supa Phase-2 capacity (96% complete, ~6 months early) and H2 volumes above H1, with Phase-3 (Rs 185 cr, ~72,200 MT by Q1 FY29) approved; the volume guide is supported by specific capacity but Phase-3 timing and HVDC/framework orders remain partly unquantified.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Q2 EBITDA per ton of about Rs 1,01,400 (vs Rs 93,000 QoQ and Rs 65,500 YoY) was driven by CTC mix, exports and currency, but management expects mix to moderate as standard wire ramps and sees long-term Rs 85,000/MT, below the current level."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q2 FY27 (done); Q1 FY29 (Phase-3)",
+    "why": "Supa Phase-1 and Phase-2 completed around Sep 9, 2026 taking installed capacity to 57,845 MT, and Phase-3 (Rs 185 cr, ~14,355 MT added) is approved to reach ~72,200 MT by Q1 FY29."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "H2 FY27 and FY27",
+    "why": "Management calls ~25-26% FY27 volume growth sustainable and expects H2 above H1, backed by Supa capacity commissioned and utilisation up to 76% from 73%."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "surely",
+    "when": "Already approved; spend H2 FY27 onward",
+    "why": "Board approved Phase-3 capex of up to Rs 185 cr over ~18 months, with specialized wire utilisation above 80% in Q2, the company's stated threshold for adding capacity."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Volume guidance of 25-26% for FY27 is framed as sustainable, and Q2 volumes were 8,842 MT (+26% YoY), but management has not raised formal guidance."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Management flagged H2 EBITDA per ton could moderate from about Rs 1,01,000 as standard mix rises, and finance costs are rising from supplier credit even as debt fell from Rs 481 cr to Rs 341 cr."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "unlikely",
+    "when": "FY29 or later",
+    "why": "PEEK wire for EVs has completed trials and samples, but management says meaningful volume is only expected after FY29; no near-term launch was named."
+   },
+   {
+    "k": "order_book",
+    "label": "Hitachi 5-year framework and HVDC orders",
+    "call": "possible",
+    "when": "update in about 2 quarters",
+    "why": "A 5-year Hitachi framework is still being finalised and a trial order for two HVDC transformers (delivery within FY27) was received, but management could not quantify the order book."
+   },
+   {
+    "k": "new_markets",
+    "label": "Export share recovery toward ~40%",
+    "call": "possible",
+    "when": "1-2 years",
+    "why": "Exports were about 32% of Q2 revenue (up from 26% in Q1) against a historical ~40%, and management earns 3-5% higher profitability on exports, but the currency tailwind may reverse."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Debt reduction from Rs 481 cr to Rs 341 cr",
+    "call": "surely",
+    "when": "Q2 FY27 (done)",
+    "why": "Total debt fell Rs 140 cr QoQ and leverage dropped to 0.38x from 0.51x, though management says leverage will not rise much above current levels at full utilisation."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on volumes, exports and Supa completion, but cautious on quarterly EBITDA per ton, the Hitachi framework and HVDC order book; analysts pressed on finance costs from supplier credit and the mix normalisation."
+  }
+ }
+}
