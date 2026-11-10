@@ -15,7 +15,7 @@ import datetime as dt
 import os
 import re
 
-from common import DATA, Http, read_json, today, write_json
+from common import DATA, Http, read_json, read_site, today, write_json
 from universe import BSE_HEADERS, watchlist
 
 API = "https://api.bseindia.com/BseIndiaAPI/api/"
@@ -321,7 +321,7 @@ def _call_for(code: str, t0: dt.date) -> dict | None:
 
 
 def _last_call(code: str) -> dict | None:
-    site = read_json(DATA / "in.json", {}) or {}
+    site = read_site("IN")
     return next((c for c in site.get("companies") or [] if c.get("id") == code), None)
 
 

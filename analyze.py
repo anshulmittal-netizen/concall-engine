@@ -10,7 +10,7 @@ import re
 import statistics as st
 from collections import Counter, defaultdict
 
-from common import DATA, SITE, as_list, fmt_date, label_from_key, load_yaml, plausible_period, read_json, settings, today, write_json
+from common import DATA, SITE, SITE_SPLIT_KEYS, as_list, fmt_date, label_from_key, load_yaml, plausible_period, read_json, settings, today, write_json
 from extract import BLOCK_KEYS
 import history
 import mgmt
@@ -53,6 +53,46 @@ def write_summary_parts(market: str, summaries: dict) -> None:
             stale.unlink()
     first = [min(part) if part else "" for part in parts]
     write_json(out / f"summaries_{m}.json", {"parts": names, "first": first, "count": len(summaries)})
+
+
+SITE_PART_BYTES = 4_000_000  # each part of the page's main file stays well under the 16 MB per-file publish limit
+
+
+def write_site(market: str, data: dict) -> None:
+    """Write the page's main file data/<m>.json. The big lists (SITE_SPLIT_KEYS: companies, calls) go to
+    data/<m>_<key>_1.json, _2, ... of at most SITE_PART_BYTES each, in order; the main file keeps an empty list for each
+    and names the parts under "parts" ({key: [paths]}), and the dashboard (and common.read_site) joins them back up."""
+    import json
+    m = market.lower()
+    out = SITE / "data"
+    main, split = dict(data), {}
+    for key in SITE_SPLIT_KEYS:
+        items = main.get(key)
+        if not isinstance(items, list):
+            continue
+        parts, cur, size = [], [], 2
+        for it in items:
+            n = len(json.dumps(it, ensure_ascii=False, separators=(",", ":"), default=str).encode()) + 1
+            if cur and size + n > SITE_PART_BYTES:
+                parts.append(cur)
+                cur, size = [], 2
+            cur.append(it)
+            size += n
+        if cur or not parts:
+            parts.append(cur)
+        names = []
+        for i, part in enumerate(parts, 1):
+            name = f"{m}_{key}_{i}.json"
+            write_json(out / name, part, compact=True)
+            names.append(f"data/{name}")
+        split[key] = names
+        main[key] = []
+    keep = {p for names in split.values() for p in names}
+    for stale in out.glob(f"{m}_*_*.json"):
+        if f"data/{stale.name}" not in keep and re.fullmatch(rf"{m}_(?:{'|'.join(SITE_SPLIT_KEYS)})_\d+\.json", stale.name):
+            stale.unlink()
+    main["parts"] = split
+    write_json(out / f"{m}.json", main, compact=True)
 
 
 def clip(x, lo=-1.0, hi=1.0):
@@ -703,7 +743,7 @@ def build(market: str, log=print) -> dict:
         # results calendar + posted results as of this build; the page prefers data/results_in.json when newer
         "results": read_json(DATA / "results_in.json", None) if market == "IN" else None,
     }
-    write_json(SITE / "data" / f"{market.lower()}.json", data, compact=True)  # the page's main file: kept small
+    write_site(market, data)  # the page's main file plus its split parts, each under the per-file size limit
     log(f"{market}: wrote {len(out_cos)} companies, {len(sectors)} sectors, {len(themes)} themes, {len(ideas)} ideas")
     return data
 

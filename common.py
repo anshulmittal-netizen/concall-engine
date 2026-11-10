@@ -46,6 +46,23 @@ def write_json(path: Path, obj, compact: bool = False) -> None:
     tmp.replace(path)
 
 
+SITE_SPLIT_KEYS = ("companies", "calls")  # the big lists of the page's main file, written to separate part files
+
+
+def read_site(market: str) -> dict:
+    """Read the page's main file (data/<m>.json) with its split lists put back together.
+    analyze.write_site moves the big lists into data/<m>_<key>_<n>.json and lists them under "parts"."""
+    m = market.lower()
+    site = read_json(SITE / "data" / f"{m}.json", {}) or {}
+    for key, paths in (site.pop("parts", None) or {}).items():
+        items = []
+        for p in paths:
+            if re.fullmatch(rf"data/{m}_[a-z]+_\d+\.json", p):
+                items.extend(read_json(SITE / p, []) or [])
+        site[key] = items
+    return site
+
+
 def slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:60]
 

@@ -12,7 +12,7 @@ import datetime as dt
 import warnings
 from concurrent.futures import ThreadPoolExecutor
 
-from common import DATA, SITE, read_json, write_json
+from common import DATA, SITE, read_json, read_site, write_json
 
 OUT = DATA / "valuation_in.json"
 MIN_CALLS = 2       # calls read in the last three quarters to be in the pool
@@ -65,7 +65,7 @@ def run(log=print, force: bool = False) -> int:
                 return 0
         except ValueError:
             pass
-    d = read_json(SITE / "data" / "in.json", {}) or {}
+    d = read_site("IN")  # in.json with its split parts joined back up
     pool = [c for c in d.get("companies", []) if len(c.get("hist") or []) >= MIN_CALLS and not c.get("veto")]
     rows = dict(old.get("rows") or {})
     got = 0

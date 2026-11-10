@@ -4057,10 +4057,22 @@ applyTheme(store.get('theme', 'auto'));
 $('#themesel').addEventListener('click', e => { const b = e.target.closest('[data-theme-set]'); if (!b) return; e.stopPropagation(); store.set('theme', b.dataset.themeSet); applyTheme(b.dataset.themeSet); });
 
 /* ---------- boot ---------- */
+/* in.json keeps its big lists (companies, calls) in part files, each under the per-file size limit, and names them in
+   "parts" ({key: [paths]}). Fetch them all in parallel and put each list back together in order. An old in.json without
+   "parts" loads as is. Returns false if any part is missing, so the page never shows a partial list. */
+async function joinParts(j) {
+  const parts = j.parts || {};
+  const keys = Object.keys(parts).filter(k => Array.isArray(parts[k]) && parts[k].every(p => /^data\/in_[a-z]+_\d+\.json$/.test(p)));
+  if (keys.length !== Object.keys(parts).length) return false;
+  const got = await Promise.all(keys.map(k => Promise.all(parts[k].map(p => fetch(p, {cache: 'no-store'}).then(r => r.ok ? r.json() : null).catch(() => null)))));
+  for (let i = 0; i < keys.length; i++) { if (got[i].some(a => !Array.isArray(a))) return false; j[keys[i]] = got[i].flat(); }
+  delete j.parts;
+  return true;
+}
 (async function boot() {
   renderNav();
   let ok = false;
-  try { const r = await fetch('data/in.json', {cache: 'no-store'}); if (r.ok) { const j = await r.json(); if (j && Array.isArray(j.companies)) { D = j; ok = true; } } } catch (e) {}
+  try { const r = await fetch('data/in.json', {cache: 'no-store'}); if (r.ok) { const j = await r.json(); if (j && Array.isArray(j.companies) && await joinParts(j)) { D = j; ok = true; } } } catch (e) {}
   if (!ok) { $('#view').innerHTML = '<div class="empty">The latest data could not be loaded. Reload the page to try again.</div>'; return; }
   D.companies.forEach(c => { byId[c.id] = c; });
   const h = location.hash.slice(1);
