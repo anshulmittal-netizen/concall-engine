@@ -1,0 +1,115 @@
+{
+ "doc_id": "GL-L-c50c229332af",
+ "market": "GL",
+ "company_id": "IBM",
+ "name": "IBM",
+ "doc_type": "release",
+ "date": "2026-07-14",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Q2 CY26 prelim miss: Infrastructure down 7% and Software up 5% on mainframe-cycle shortfall and deal slippage, though Distributed Infrastructure rose 37% with a ~$500M backlog; GAAP EPS $2.27 down 2%.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Infrastructure revenue down 7%",
+    "quote": "Infrastructure revenue down 7 percent",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Mainframe shortfall vs April expectations",
+    "quote": "What played out was worse than our expectations, driven by a shortfall in our Z performance and the associated software stack",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Client capex shifted to servers, storage, memory",
+    "quote": "clients shift their quarterly capex spend toward servers, storage, and memory purchases to secure supply-constrained infrastructure ahead of expected price increases",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Distributed Infrastructure up 37%, backlog ~$500M",
+    "quote": "Distributed Infrastructure had its best performance in reported history, up 37 percent",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Full-year outlook deferred to July 22 call",
+    "quote": "We will hold our regularly scheduled conference call with you all on July 22, 2026, at 5PM ET to go into deeper detail and discuss our full-year expectations.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year Infrastructure revenue",
+    "value": "decline low-single digits (prior expectation, not reiterated)",
+    "change": "cut",
+    "quote": "we expected Infrastructure revenue to decline low-single digits for the year, beginning this quarter"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Infrastructure revenue decline low-single digits for the year",
+    "outcome": "missed",
+    "quote": "What played out was worse than our expectations, driven by a shortfall in our Z performance"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Large deals failed to close on expected timelines",
+    "quote": "numerous large deals failed to close on the timelines we expected, driving the majority of our shortfall"
+   },
+   {
+    "label": "Execution shortfall acknowledged by management",
+    "quote": "this quarter we faltered"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

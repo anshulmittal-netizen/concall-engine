@@ -1,0 +1,189 @@
+{
+ "doc_id": "GL-L-c51e6b1f4e24",
+ "market": "GL",
+ "company_id": "DE",
+ "name": "Deere",
+ "doc_type": "transcript",
+ "date": "2026-08-21",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Deere says 2026 is the ag cycle bottom with channel inventory lean: high-HP tractor inventory down nearly 40% YoY, PPA sales guided down ~10% but margin 11-12%, C&F up ~20% with backlogs into FY27.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply discipline",
+   "Capital cycle",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 2,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "we have proactively adjusted production levels and are modestly underproducing retail demand in the region"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "PPA and C&F underproducing retail",
+    "quote": "modest under production this year. Call it a couple percentage points for each of these segments",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "High-HP tractor inventory down ~40% YoY",
+    "quote": "model year 2023 and 2024 high horsepower tractors are down nearly 40% from a year ago",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "guidance",
+    "label": "Net income guide raised to $4.75-5.0B",
+    "quote": "we improved our net income outlook raising it to a range of 4.75 to 5 billion",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "C&F price realization +8 pts in Q3",
+    "quote": "Price realization was positive by 8 points",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Planter and sprayer EOP up mid-single digits",
+    "quote": "results are up mid single digits compared to the completion of last year's program",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "structure",
+    "label": "Net tariff cost steps up to ~$1B in FY27",
+    "quote": "Going into next year, we would expect a run rate that is going to be closer to, or right around 1 billion for the year",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net income FY26",
+    "value": "$4.75B-$5.00B",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "we improved our net income outlook raising it to a range of 4.75 to 5 billion"
+   },
+   {
+    "metric": "Equipment operations cash flow FY26",
+    "value": "$5B-$5.5B",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "cash flow expectations from the equipment operation have also improved. To now be in the range of 5 to 5.5 billion"
+   },
+   {
+    "metric": "PPA net sales FY26",
+    "value": "down ~10%",
+    "change": "cut",
+    "horizon": "FY26",
+    "quote": "now expect net sales to be down approximately 10% for the year"
+   },
+   {
+    "metric": "PPA operating margin FY26",
+    "value": "11%-12%",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "Our full year forecast for the segment's operating margin has been narrowed, and is now between 11-12%"
+   },
+   {
+    "metric": "SAT operating margin FY26",
+    "value": "14.5%-15.5%",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "The segment's operating margin guide has been increased to between 14.5-15.5%"
+   },
+   {
+    "metric": "C&F net sales FY26",
+    "value": "up ~20%",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "The 2026 net sales forecast remained steady at up approximately 20% for the full year."
+   },
+   {
+    "metric": "Direct tariff expense FY26",
+    "value": "~$1.1B",
+    "change": "cut",
+    "horizon": "FY26",
+    "quote": "we now expect direct tariff expense of approximately 1.1 billion for the fiscal year"
+   },
+   {
+    "metric": "Financial services net income FY26",
+    "value": "$870M",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "For fiscal year 26, our full year outlook has increased to $870 million."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Truist Securities",
+    "relation": "peer"
+   },
+   {
+    "name": "Morgan Stanley",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Data-centre power & cooling",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)",
+   "Housing & real-estate cycle",
+   "Precision ag adoption"
+  ],
+  "red_flags": [
+   {
+    "label": "Net tariff exposure rises to ~$1B in FY27",
+    "quote": "Going into next year, we would expect a run rate that is going to be closer to, or right around 1 billion for the year"
+   },
+   {
+    "label": "C&F order bank 4-5 months, above preferred 2-3",
+    "quote": "We have about 4 to 5 months of orders on hand, which is, quite frankly, a little more than we would want to have"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 3,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 7
+  },
+  "evasions": [
+   {
+    "topic": "Mix benefit in 2027",
+    "quote": "I think it is too early to tell. As you know, specifically in South America, things can turn quickly."
+   },
+   {
+    "topic": "2027 pricing quantification",
+    "quote": "nothing outsized there from a pricing perspective"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

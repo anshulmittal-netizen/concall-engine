@@ -1,0 +1,98 @@
+{
+ "doc_id": "GL-L-c418d21c5355",
+ "market": "GL",
+ "company_id": "CAT",
+ "name": "Caterpillar",
+ "doc_type": "release",
+ "date": "2026-08-04",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Q2 CY26 sales up 24% to $20.5B with volume +$3.1B and price +$595M; adjusted margin 21.9% vs 17.6%, but P&E and RI cite higher period manufacturing costs and no capacity figures were disclosed.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Operating leverage",
+   "Pricing power",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Sales up 24% to $20.5B",
+    "quote": "Second-quarter 2026 sales and revenues increased 24% to $20.5 billion",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Price realization +$595M",
+    "quote": "favorable price realization of $595 million",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Dealer inventory build aided N. America",
+    "quote": "Higher sales volume was mainly driven by higher sales of equipment to end users",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Cat Financial",
+    "relation": "partner"
+   },
+   {
+    "name": "Insurance Services",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Tariffs & trade policy",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Period manufacturing cost headwind in P&E and RI",
+    "quote": "Unfavorable manufacturing costs largely reflected increased period manufacturing costs."
+   },
+   {
+    "label": "Tariff recovery one-off flatters Q2 profit",
+    "quote": "Operating profit in the second quarter of 2026 included $392 million of expected International Emergency Economic Power Act (IEEPA) tariff recoveries."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

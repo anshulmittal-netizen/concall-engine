@@ -1,0 +1,84 @@
+{
+ "doc_id": "GL-L-e758a9103649",
+ "market": "GL",
+ "company_id": "MET",
+ "name": "MetLife",
+ "doc_type": "release",
+ "date": "2026-08-05",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Adjusted EPS up 20% to $2.43 on underwriting and volume, adjusted ROE 17.0%, but this is a life insurer with no capacity or pricing discipline signal; supply-side evidence is absent.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Group Benefits adj. earnings up 25%",
+    "quote": "Group Benefits adjusted earnings up 25% to $503 million",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Adj. ROE 17% top of range",
+    "quote": "Adjusted return on equity of 17% for the second straight quarter, at the top of our range.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "PineBridge Investments",
+    "relation": "partner"
+   },
+   {
+    "name": "Brighthouse Financial",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Capital allocation shift"
+  ],
+  "red_flags": [
+   {
+    "label": "Adj. PFOs incl. PRT growth vs. reported headline; PRT lumpy",
+    "quote": "Adjusted PFOs, excluding pension risk transfers (PRT), 5% to $13.0 billion"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

@@ -1,0 +1,155 @@
+{
+ "doc_id": "GL-L-1ed292b1a3e9",
+ "market": "GL",
+ "company_id": "MET",
+ "name": "MetLife",
+ "doc_type": "transcript",
+ "date": "2026-08-13",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Insurance",
+  "thesis": "Clean quarter with adjusted EPS up 20% and ROE at 17%, but supply-side read is neutral for an insurer; spread (97bp vs 100-120 guide) and PE returns (0.8%) were the soft spots, and PRT stays lumpy.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Total spread 97bp, below 100-120bp guide",
+    "quote": "Total investment spread was 97 basis points in the second quarter, below our guidance range of 100 to 120 basis points",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Group Life mortality ratio 79%",
+    "quote": "The Group Life mortality ratio was 79%, reflecting continued improvement in mortality among the working age population.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Latin America record quarterly earnings $268M",
+    "quote": "adjusted earnings of $268 million represented a quarterly record",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Asia sales +17% constant currency",
+    "quote": "Sales advanced 17% on a constant currency basis",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Retained liability exposure growth (RIS)",
+    "value": "3% to 5% full year",
+    "change": "held",
+    "quote": "we're pretty confident that we're going to be within our retained balance growth of 3% to 5% for the full year"
+   },
+   {
+    "metric": "MIM adjusted earnings 2026",
+    "value": "$240M to $280M, toward low end",
+    "change": "held",
+    "quote": "though likely toward the low end"
+   },
+   {
+    "metric": "Direct expense ratio 2026",
+    "value": "12.1% target, expected to beat",
+    "change": "held",
+    "quote": "we remain confident in our ability to beat our 2026 target of 12.1%"
+   },
+   {
+    "metric": "Total investment spread (RIS)",
+    "value": "Core spread 95 to 100bp baseline; Q3 near midpoint",
+    "change": "held",
+    "quote": "we still think the 95 to 100 even with the rate environment"
+   },
+   {
+    "metric": "Japan ESR (FY to Mar-2026)",
+    "value": "Top end of 170% to 190%",
+    "change": "raised",
+    "quote": "we now expect our initial economic solvency ratio or ESR to be at the top end of a 170% to 190% range"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Total investment spread",
+    "outcome": "missed",
+    "quote": "Total investment spread was 97 basis points in the second quarter, below our guidance range of 100 to 120 basis points"
+   },
+   {
+    "metric": "Direct expense ratio 2026 target 12.1%",
+    "outcome": "met",
+    "quote": "we remain confident in our ability to beat our 2026 target of 12.1%"
+   },
+   {
+    "metric": "Retained liability growth 3-5%",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "PineBridge Investments",
+    "relation": "partner"
+   },
+   {
+    "name": "Ramy Tadros",
+    "relation": "partner"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Spread miss vs guidance; PE returns 0.8%",
+    "quote": "driven by weaker private equity returns within VII"
+   },
+   {
+    "label": "Group Life favourability partly one-off (~2 pts)",
+    "quote": "about 2 points of favorability that came from a combination of prior period development"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 4,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Japan ESR and rate repositioning",
+    "quote": "there's no quick change that would ever occur"
+   },
+   {
+    "topic": "M&A targets in EM",
+    "quote": "We don't comment on market speculation, and we're not going to start now."
+   }
+  ],
+  "hedge_index": 0.3,
+  "themes": []
+ }
+}

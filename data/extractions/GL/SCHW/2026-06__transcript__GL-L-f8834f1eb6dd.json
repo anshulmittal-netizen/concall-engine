@@ -1,0 +1,150 @@
+{
+ "doc_id": "GL-L-f8834f1eb6dd",
+ "market": "GL",
+ "company_id": "SCHW",
+ "name": "Charles Schwab",
+ "doc_type": "transcript",
+ "date": "2026-07-21",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Schwab's record Q2 (revenue $7.1B, up 21%; adjusted EPS $1.62, up 42%) is demand-driven with no supply-side signal; lending and long-short drive NIM and the FY26 revenue guide rises to 17.5–18.5%.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 revenue growth 17.5%–18.5%",
+    "quote": "we would expect total revenue growth of 17.5%-18.5% in 2026",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Record June NNA $62.7B",
+    "quote": "including a record $62.7 billion in June which reflected an annualized organic growth rate of 5.8%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Expense growth raised to 9.5%–10.5%",
+    "quote": "we now anticipate annual expense growth to range from 9.5%-10.5%",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 total revenue growth",
+    "value": "17.5%-18.5%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we would expect total revenue growth of 17.5%-18.5% in 2026"
+   },
+   {
+    "metric": "FY2026 expense growth",
+    "value": "9.5%-10.5%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now anticipate annual expense growth to range from 9.5%-10.5%"
+   },
+   {
+    "metric": "FY2026 daily average trades",
+    "value": "10.6 million",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we have taken full-year daily average trades up to 10.6 million"
+   },
+   {
+    "metric": "Q4 2026 average NIM",
+    "value": "3.25%-3.30%",
+    "change": "held",
+    "horizon": "Q4 2026",
+    "quote": "an average 4Q 2026 net interest margin expected to finish in the 3.25%-330% range"
+   },
+   {
+    "metric": "Organic growth rate 2026",
+    "value": "5%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Our asset gathering momentum reinforces our confidence in the 5% organic growth rate we outlined for 2026."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY2026 organic growth 5%",
+    "outcome": "met",
+    "quote": "Our asset gathering momentum reinforces our confidence in the 5% organic growth rate we outlined for 2026."
+   },
+   {
+    "metric": "Underlying expense growth 5.5%-6.5%",
+    "outcome": "met",
+    "quote": "underlying expenses still remain in line with the 5.5%-6.5% range we shared at the January winter business update"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Cboe",
+    "relation": "partner"
+   },
+   {
+    "name": "Paxos",
+    "relation": "partner"
+   },
+   {
+    "name": "Forge",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Record trading may not sustain",
+    "quote": "indicating that second quarter record volumes may not be sustained in the near term"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 2,
+   "margin": 3,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Securities lending and hard-to-borrow outlook",
+    "quote": "That activity has been somewhat subdued this year. For our outlook, we assume that it will remain somewhat subdued."
+   },
+   {
+    "topic": "M&A appetite",
+    "quote": "we'll always look at our capabilities. We look at scale, we never rule anything out."
+   }
+  ],
+  "hedge_index": 0.2,
+  "themes": []
+ }
+}

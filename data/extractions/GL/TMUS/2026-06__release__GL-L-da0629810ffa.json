@@ -1,0 +1,149 @@
+{
+ "doc_id": "GL-L-da0629810ffa",
+ "market": "GL",
+ "company_id": "TMUS",
+ "name": "T-Mobile US",
+ "doc_type": "release",
+ "date": "2026-07-23",
+ "period": "2026-06",
+ "title": "8-K · TMUS EXHIBIT 99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Account growth and ARPA carry service revenue up 9%, but postpaid net adds fell 13% to 277k and capex is guided flat at about $10.0B, so supply discipline is steady rather than a new signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "Cash purchases of property and equipment, including capitalized interest, are expected to be approximately $10.0 billion.",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Cash flow guide raised by $200M",
+    "quote": "Adjusted Free Cash Flow, including net payments for UScellular merger-related costs, is now expected to be between $18.4 billion and $18.8 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Postpaid net adds down 13% YoY",
+    "quote": "Postpaid net account additions of 277 thousand decreased 41 thousand, or 13%, year-over-year.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Postpaid net account additions (thousands)",
+    "value": "950 to 1,050",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Postpaid net account additions are expected to be between 950 thousand and 1.05 million."
+   },
+   {
+    "metric": "Core Adjusted EBITDA ($B)",
+    "value": "37.1 to 37.5",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Core Adjusted EBITDA, which is Adjusted EBITDA less lease revenues, is expected to be between $37.1 billion and $37.5 billion."
+   },
+   {
+    "metric": "Net cash from operations ($B)",
+    "value": "28.4 to 28.8",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "is now expected to be between $28.4 billion and $28.8 billion, an increase from prior guidance of $28.1 billion to $28.7 billion."
+   },
+   {
+    "metric": "Capex ($B)",
+    "value": "~10.0",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Cash purchases of property and equipment, including capitalized interest, are expected to be approximately $10.0 billion."
+   },
+   {
+    "metric": "Adjusted Free Cash Flow ($B)",
+    "value": "18.4 to 18.8",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Adjusted Free Cash Flow, including net payments for UScellular merger-related costs, is now expected to be between $18.4 billion and $18.8 billion"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Postpaid net account additions",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Core Adjusted EBITDA",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Capex",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "UScellular",
+    "relation": "partner"
+   },
+   {
+    "name": "Metronet",
+    "relation": "partner"
+   },
+   {
+    "name": "Lumos",
+    "relation": "partner"
+   },
+   {
+    "name": "Deutsche Telekom",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Postpaid net adds down 13% YoY",
+    "quote": "Postpaid net account additions of 277 thousand decreased 41 thousand, or 13%, year-over-year."
+   },
+   {
+    "label": "Net income flat on merger costs",
+    "quote": "included the impact of UScellular merger-related costs, including accelerated depreciation, net of tax, of $146 million"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

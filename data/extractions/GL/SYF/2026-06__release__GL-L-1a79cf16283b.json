@@ -1,0 +1,105 @@
+{
+ "doc_id": "GL-L-1a79cf16283b",
+ "market": "GL",
+ "company_id": "SYF",
+ "name": "Synchrony Financial",
+ "doc_type": "release",
+ "date": "2026-07-21",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Consumer lender Synchrony posted record purchase volume (+8% to $49.8B) and credit below target, but NII-driven earnings fell 8% and CET1 dropped to 13.2% amid $950M of capital returns; no supply-side read applies.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital allocation shift",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Purchase volume +8% to $49.8B",
+    "quote": "Purchase volume increased 8% to $49.8 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "CET1 13.2% vs 14.2% prior year",
+    "quote": "The estimated Common Equity Tier 1 ratio was 13.2% compared to 14.2%",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Net charge-offs 5.43% vs 5.70%",
+    "quote": "Net charge-offs as a percentage of total average loan receivables were 5.43% compared to 5.70% in the prior year",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Suzuki Motor",
+    "relation": "partner"
+   },
+   {
+    "name": "AmeriVet",
+    "relation": "partner"
+   },
+   {
+    "name": "Roto-Rooter",
+    "relation": "partner"
+   },
+   {
+    "name": "Lowe's",
+    "relation": "partner"
+   },
+   {
+    "name": "DICK'S Sporting Goods",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consumer credit",
+   "Partner renewals",
+   "Capital returns"
+  ],
+  "red_flags": [
+   {
+    "label": "Earnings down 8% with CET1 down 100bp",
+    "quote": "Net earnings decreased $82 million, or 8%, to $885 million."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

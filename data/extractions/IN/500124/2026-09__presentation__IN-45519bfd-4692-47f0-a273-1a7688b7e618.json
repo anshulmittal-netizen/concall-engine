@@ -1,0 +1,121 @@
+{
+ "doc_id": "IN-45519bfd-4692-47f0-a273-1a7688b7e618",
+ "market": "IN",
+ "company_id": "500124",
+ "name": "Dr Reddy's",
+ "doc_type": "presentation",
+ "date": "2026-10-23",
+ "period": "2026-09",
+ "title": "Copy of Investor Presentation",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma & biotech",
+  "thesis": "Reported revenue up only 1.5% YoY to ₹8,671 Cr on lenalidomide decline, but base business grew double digits and EBITDA margin rebounded to 20.6%; PSAI API volumes weak at 9.5% gross margin.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "North America price erosion stable",
+    "quote": "PRICE EROSION STABLE",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Base business double-digit growth ex-lenalidomide",
+    "quote": "Double-digit underlying base business^ YoY growth",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Lower API volume offtake, PSAI gross margin 9.5%",
+    "quote": "Lower API volume offtake impacting growth",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Semaglutide pens supply FY27",
+    "value": "not repeated in this document",
+    "change": "held"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Semaglutide pens supply FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Targeted 20%+ EBITDA margin",
+    "outcome": "met",
+    "quote": "Reported EBITDA @20.6%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Takeda",
+    "relation": "partner"
+   },
+   {
+    "name": "Gilead Sciences",
+    "relation": "partner"
+   },
+   {
+    "name": "Novartis India",
+    "relation": "partner"
+   },
+   {
+    "name": "Aurigene Pharmaceutical Services",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Biosimilars",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Semaglutide API batches out of specification; ₹240 Cr provision in Q1",
+    "quote": "certain batches were found to be out of specification"
+   },
+   {
+    "label": "Multiple Form 483 / 2953 observations at several sites",
+    "quote": "Received a Form 483 with 2 & 3 observations respectively"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

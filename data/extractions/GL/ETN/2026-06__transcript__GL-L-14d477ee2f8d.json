@@ -1,0 +1,178 @@
+{
+ "doc_id": "GL-L-14d477ee2f8d",
+ "market": "GL",
+ "company_id": "ETN",
+ "name": "Eaton",
+ "doc_type": "transcript",
+ "date": "2026-08-07",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Eaton's Electrical Americas book-to-bill of 1.3 and a $1 billion capacity build support growth, but margin recovery depends on price/cost that is still temporarily negative and a 65% data-center surge that is only partly converting to 2028-and-beyond deliveries.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Backlog conversion",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are investing more than $1 billion in capacity expansion and bringing online 2 dozen projects across Electrical Americas"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Electrical Americas orders up 41%",
+    "quote": "record orders up 41% on a rolling 12-month basis and a book-to-bill increasing to 1.3",
+    "highlight": "record orders up 41%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "$1B capacity build, 24 projects",
+    "quote": "we are investing more than $1 billion in capacity expansion and bringing online 2 dozen projects across Electrical Americas",
+    "highlight": "investing more than $1 billion in capacity expansion",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Price/cost temporarily negative in Americas",
+    "quote": "the majority of the margin decline was driven by temporary negative price/cost",
+    "highlight": "temporary negative price/cost",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 organic growth raised to 11-13%",
+    "quote": "we now expect total organic growth to be between 11% and 13%, up 200 basis points at the midpoint",
+    "highlight": "up 200 basis points at the midpoint",
+    "direction": 1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 organic growth",
+    "value": "11% to 13%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect total organic growth to be between 11% and 13%, up 200 basis points at the midpoint"
+   },
+   {
+    "metric": "FY26 adjusted EPS",
+    "value": "$13.40 to $13.60",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect full year EPS to be between $13.40 and $13.60, $13.50 at the midpoint"
+   },
+   {
+    "metric": "Q3 adjusted EPS",
+    "value": "$3.46 to $3.56",
+    "change": "new",
+    "horizon": "Q3 2026"
+   },
+   {
+    "metric": "Q3 segment operating margin",
+    "value": "24.6% to 25.0%",
+    "change": "new",
+    "horizon": "Q3 2026"
+   },
+   {
+    "metric": "Electrical Americas 2H margin uplift",
+    "value": "H1 to H2 up 450 to 500 basis points",
+    "change": "new",
+    "horizon": "2H 2026",
+    "quote": "If you look at H1 versus H2, some of you like to look at it that way. We'll be up 450 to 500 basis points."
+   },
+   {
+    "metric": "2030 Electrical Americas margin",
+    "value": "32%",
+    "change": "held",
+    "horizon": "2030",
+    "quote": "we're still committed to our 32% margin by 2030"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 organic growth",
+    "outcome": "met",
+    "quote": "This strong first half of the year give us confidence to raise our guidance again"
+   },
+   {
+    "metric": "Electrical Americas margin ramp",
+    "outcome": "met",
+    "quote": "Margins improved 190 basis points quarter-over-quarter"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Boyd Thermal",
+    "relation": "peer"
+   },
+   {
+    "name": "Fibrebond",
+    "relation": "peer"
+   },
+   {
+    "name": "Resilient Power",
+    "relation": "peer"
+   },
+   {
+    "name": "Ultra PCS",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Capacity bottleneck",
+   "Pricing power",
+   "Defence indigenisation"
+  ],
+  "red_flags": [
+   {
+    "label": "Americas margin down YoY on temporary negative price/cost",
+    "quote": "the majority of the margin decline was driven by temporary negative price/cost"
+   },
+   {
+    "label": "Data-center backlog conversion mostly 2028+",
+    "quote": "The majority will translate to 2028 and beyond deliveries"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Electrical Americas revenue vs margin bridge",
+    "quote": "Perhaps you're still just being a little bit cautious on the ramp in terms of what you gave us here today."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

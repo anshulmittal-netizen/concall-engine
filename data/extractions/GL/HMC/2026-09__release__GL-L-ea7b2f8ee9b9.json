@@ -1,0 +1,96 @@
+{
+ "doc_id": "GL-L-ea7b2f8ee9b9",
+ "market": "GL",
+ "company_id": "HMC",
+ "name": "Honda Motor",
+ "doc_type": "release",
+ "date": "2026-11-09",
+ "period": "2026-09",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Honda adds a $3B Ohio plant (240,000 units, production 2029) and raises US hybrid system capacity 250%, a capacity-expansion move with no quantified near-term financial impact.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "invest $3 billion to build a new auto plant in Central Ohio, creating more than 2,000 new American jobs and increasing its U.S. auto production capacity to approximately 1.3 million vehicles a year"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "US capacity to 1.3M vehicles",
+    "quote": "increasing its U.S. auto production capacity to approximately 1.3 million vehicles a year",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Hybrid system capacity +250%",
+    "quote": "increasing production capacity of hybrid systems by 250 percent in the coming years",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Financial impact of North America investments",
+    "value": "not anticipated to have a material impact on FY ending March 2027 consolidated results",
+    "change": "new",
+    "quote": "This transaction is not anticipated to have a material impact on Honda’s consolidated financial results for the fiscal year ending March 31, 2027."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "L-H Battery Company",
+    "relation": "partner"
+   },
+   {
+    "name": "Acura",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Nearshoring / reshoring (US)",
+   "Tariffs & trade policy",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Capacity expansion ahead of demand evidence",
+    "quote": "to meet growing customer demand for hybrid vehicles in North America"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

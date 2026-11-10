@@ -1,0 +1,166 @@
+{
+ "doc_id": "IN-a2a0af76-6ff0-42a5-8666-2f7e0d95a79a",
+ "market": "IN",
+ "company_id": "543220",
+ "name": "Max Healthcare",
+ "doc_type": "transcript",
+ "date": "2026-11-09",
+ "period": "2026-09",
+ "title": "Transcript of Earnings Call held on November 3, 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Q2 revenue +20% YoY and EBITDA margin flat at 26.8% despite 14% more beds; occupancy steady at 77%, with oncology drag lapping from Q3 and greenfield drag guided at INR 40-50 crore.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 77,
+   "quote": "occupancy holding steady at 77% , despite a 14% year-on-year increase in operational bed capacity"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "One competitor recently commissioned a new Gurugram hospital; management did not comment on its capacity beyond that.",
+   "quote": "the Board has approved an investment of INR 415 crore towards addition of 209 brownfield beds"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Board approves INR 415 cr brownfield expansion",
+    "quote": "the Board has approved an investment of INR 415 crore towards addition of 209 brownfield beds",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Occupancy flat at 77% on 14% more beds",
+    "quote": "occupancy holding steady at 77% , despite a 14% year-on-year increase in operational bed capacity",
+    "direction": 0,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "IP ARPP +8% YoY to INR 2.31 lakh",
+    "quote": "Average revenue per patient (IP ARPP) for the quarter stood at INR 2.31 lakhs, growing by 8% year-on-year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "De-empanelment of BLK from CGHS and Railways",
+    "quote": "we de-empanelled BLK in May for CGHS and then the Railways, etc., because they were not paying us",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "Oncology drag to lap from Q3",
+    "quote": "Yes, that should be the case because you are coming off a lower base.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Oncology normalisation",
+    "value": "Revenue growth expected to accelerate into Q3 and Q4 on lower base",
+    "change": "held",
+    "quote": "Yes, that should be the case because you are coming off a lower base."
+   },
+   {
+    "metric": "Greenfield Gurugram Sector-56 EBITDA loss",
+    "value": "peak loss INR 40-50 crore; breakeven about one year",
+    "change": "new",
+    "quote": "If I was to draw a line in the sand, it would be around INR 40-50 crore."
+   },
+   {
+    "metric": "Remaining Max Smart beds",
+    "value": "140 beds commissioned after Diwali puja",
+    "change": "new",
+    "quote": "We expect to commission the remaining 140 beds after Diwali puja."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Oncology normalisation",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "CGHS super specialty rates",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Nanavati and Max Smart EBITDA ramp",
+    "outcome": "met",
+    "quote": "Mohali was the first to open, and we broke even in the first quarter, and then it ramped up. Similar was the experience at Nanavati-Max in Mumbai."
+   },
+   {
+    "metric": "Net debt to EBITDA",
+    "outcome": "met",
+    "quote": "the net debt-to-EBITDA ratio continued to remain below 1"
+   }
+  ],
+  "entities": [
+   {
+    "name": "CGHS",
+    "relation": "customer"
+   },
+   {
+    "name": "ECHS",
+    "relation": "customer"
+   },
+   {
+    "name": "Kalinga Hospital Limited",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Trade margin cap on non-scheduled drugs, impact not quantified",
+    "quote": "We are still working it out."
+   },
+   {
+    "label": "Payor mix shift: CGHS/institutional revenue share falling, de-empanelments",
+    "quote": "we de-empanelled BLK in May for CGHS and then the Railways, etc., because they were not paying us"
+   }
+  ],
+  "analyst_mix": {
+   "margin": 3,
+   "growth": 4,
+   "capex": 3,
+   "balance_sheet": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Trade margin cap impact on pharmacy/oncology",
+    "quote": "We are still working it out."
+   },
+   {
+    "topic": "Pharmacy share of revenue",
+    "quote": "We would not be able to tell you. We know the overall pharmacy numbers"
+   },
+   {
+    "topic": "Hospital-level occupancy (Noida)",
+    "quote": "We do not share specific hospital level occupancy numbers."
+   }
+  ],
+  "hedge_index": 0.4,
+  "themes": []
+ }
+}

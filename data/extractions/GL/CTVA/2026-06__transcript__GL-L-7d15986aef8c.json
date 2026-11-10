@@ -1,0 +1,158 @@
+{
+ "doc_id": "GL-L-7d15986aef8c",
+ "market": "GL",
+ "company_id": "CTVA",
+ "name": "Corteva",
+ "doc_type": "transcript",
+ "date": "2026-08-07",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "Corteva raised FY26 operating EBITDA to $4.1-4.3B and EPS to $3.60-3.80, but crop protection pricing is falling mid-single digits in H2 on Brazil competition and Brazil credit is tight, with no supply-side capacity signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Customer stickiness",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "CP H2 pricing cut to mid-single digits down",
+    "quote": "we did move pricing for the second half to from low single digits down to mid-single digits down",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 EBITDA raised to $4.1-4.3B",
+    "quote": "We now expect operating EBITDA of $4.1 billion to $4.3 billion and operating EPS of $3.60 to $3.80 per share",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Brazil credit tight for growers",
+    "quote": "Credit's tight for the Brazilian farmer right now",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Generic pressure from off-patent AIs",
+    "quote": "we have, in our portfolio and others, certain AIs that are coming off patent",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 operating EBITDA",
+    "value": "$4.1B to $4.3B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We now expect operating EBITDA of $4.1 billion to $4.3 billion"
+   },
+   {
+    "metric": "FY26 operating EPS",
+    "value": "$3.60 to $3.80",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "operating EPS of $3.60 to $3.80 per share"
+   },
+   {
+    "metric": "FY26 operating EBITDA margin",
+    "value": "22.5% to 23.5%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We are also increasing our operating EBITDA margin outlook to a range of 22.5% to 23.5%"
+   },
+   {
+    "metric": "CP pricing H2 2026",
+    "value": "down mid-single digits",
+    "change": "cut",
+    "horizon": "H2 2026",
+    "quote": "we did move pricing for the second half to from low single digits down to mid-single digits down"
+   },
+   {
+    "metric": "2027 EBITDA target",
+    "value": "$4.4B",
+    "change": "held",
+    "horizon": "2027",
+    "quote": "We feel really strong about the 4.4."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "CP pricing H2 2026",
+    "outcome": "missed",
+    "quote": "we did move pricing for the second half to from low single digits down to mid-single digits down"
+   },
+   {
+    "metric": "2027 EBITDA target",
+    "outcome": "met",
+    "quote": "We feel really strong about the 4.4."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Vylor",
+    "relation": "peer"
+   },
+   {
+    "name": "Bayer",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Brazil credit stress delaying farmer orders",
+    "quote": "Credit's tight for the Brazilian farmer right now"
+   },
+   {
+    "label": "CP pricing cut in H2 on Brazil competition",
+    "quote": "pricing is anticipated to decline in the low to mid single digits"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "margin": 4,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Brazil H2 volume and order book",
+    "quote": "we feel like we are in a very strong competitive position"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

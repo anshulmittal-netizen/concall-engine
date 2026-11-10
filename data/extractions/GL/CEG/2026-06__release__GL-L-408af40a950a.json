@@ -1,0 +1,116 @@
+{
+ "doc_id": "GL-L-408af40a950a",
+ "market": "GL",
+ "company_id": "CEG",
+ "name": "Constellation Energy",
+ "doc_type": "release",
+ "date": "2026-08-06",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.88,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "Q2 adjusted EPS $2.55 vs $1.91 on Calpine addition and better market conditions; nuclear output down to 44,160 GWh and FY guidance raised to $11.50–$12.50, with no supply-side capacity discipline discussed.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Consolidation",
+   "Capacity bottleneck",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 93.0,
+   "quote": "Excluding Salem and STP, our nuclear plants at ownership achieved a 93.0% capacity factor for the second quarter of 2026, compared with 94.8% for the second quarter of 2025."
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 adj. EPS guidance raised to $11.50–$12.50",
+    "quote": "Raising full-year Adjusted (non-GAAP) Operating Earnings guidance range to $11.50 – $12.50 per share",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Crane restart progressing, targeted 2027",
+    "quote": "a major milestone moving us closer to restarting operations in 2027",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Nuclear capacity factor 94.8% → 93.0%",
+    "quote": "Excluding Salem and STP, our nuclear plants at ownership achieved a 93.0% capacity factor for the second quarter of 2026, compared with 94.8%",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Brazos gas plant divestiture, $860M",
+    "quote": "to divest the Brazos Valley Energy Center (f/k/a Jack A. Fusco Energy Center), a 606 MW natural gas-fired plant in ERCOT for $860 million",
+    "direction": 1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 Adjusted Operating EPS",
+    "value": "$11.50 – $12.50 per share",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Raising full-year Adjusted (non-GAAP) Operating Earnings guidance range to $11.50 – $12.50 per share"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Calpine",
+    "relation": "peer"
+   },
+   {
+    "name": "LS Power",
+    "relation": "customer"
+   },
+   {
+    "name": "Walmart",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Data-centre power & cooling",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "GAAP EPS well below adjusted",
+    "quote": "GAAP Net Income of $1.42 per share and Adjusted (non-GAAP) Operating Earnings of $2.55 per share"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

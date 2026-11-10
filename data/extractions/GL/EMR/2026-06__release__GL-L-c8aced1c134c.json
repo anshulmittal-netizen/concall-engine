@@ -1,0 +1,118 @@
+{
+ "doc_id": "GL-L-c8aced1c134c",
+ "market": "GL",
+ "company_id": "EMR",
+ "name": "Emerson Electric",
+ "doc_type": "release",
+ "date": "2026-08-04",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Emerson's fiscal Q3 beat and FY26 raise rest on 7% underlying orders and 28.5% adjusted segment EBITA margin, but the release gives no capacity or utilisation signal, so supply-side evidence is absent.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 adjusted EPS raised to ~$6.55",
+    "quote": "We are raising our full year guidance, reflecting our strong third quarter performance and healthy demand.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Underlying orders up 7%",
+    "quote": "Demand was robust, with underlying orders up 7%, led by Software & Systems and broad-based growth in North America and Asia.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Inventories up to $2,513M",
+    "quote": "Inventories 2,213 2,513",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Underlying sales growth FY26 Q4",
+    "value": "~5%",
+    "change": "new",
+    "horizon": "Q4 FY26",
+    "quote": "Underlying Sales Growth ~5% ~3.5%"
+   },
+   {
+    "metric": "Adjusted EPS FY26",
+    "value": "~$6.55",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "Adjusted Earnings Per Share ~$1.85 ~$6.55"
+   },
+   {
+    "metric": "Free cash flow FY26",
+    "value": "~$3.6B",
+    "change": "new",
+    "horizon": "FY26",
+    "quote": "Free Cash Flow ~$3.6B"
+   },
+   {
+    "metric": "Share repurchases FY26",
+    "value": "~$1B",
+    "change": "new",
+    "horizon": "FY26",
+    "quote": "returning ~$2.2B through ~$1B share repurchases and ~$1.2B of dividends"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "AspenTech",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory up ~14% while sales up 7%",
+    "quote": "Inventories 2,213 2,513"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3,
+  "red_flags_note": "n/a"
+ }
+}

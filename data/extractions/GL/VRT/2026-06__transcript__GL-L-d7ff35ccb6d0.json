@@ -1,0 +1,198 @@
+{
+ "doc_id": "GL-L-d7ff35ccb6d0",
+ "market": "GL",
+ "company_id": "VRT",
+ "name": "Vertiv",
+ "doc_type": "transcript",
+ "date": "2026-08-07",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Vertiv raised FY26 sales guidance to $14B (+$250M) and Q3 sales to $3.75B midpoint, but Q2 revenue slipped on project timing and supply-chain congestion, with EMEA organic down 2%.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Backlog conversion",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we now expect to be at the high end of our range 4% of 2026 sales, As we further expand the global capabilities and capacity going into 2027."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex at high end of 4% of sales",
+    "quote": "we now expect to be at the high end of our range 4% of 2026 sales, As we further expand the global capabilities and capacity going into 2027.",
+    "highlight": "high end of our range 4% of 2026 sales",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 sales raised by $250M to $14B",
+    "quote": "For net sales, we now expect $14 billion at the midpoint. that is up $3.77 billion or 37% versus 2025. This represents an increase of $250 million versus our prior guidance.",
+    "highlight": "This represents an increase of $250 million versus our prior guidance",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Q2 revenue timing shifts from execution",
+    "quote": "We experienced some minor timing shifts in Q2 revenue, primarily driven by multiphase project execution and temporary supply chain dynamics.",
+    "highlight": "minor timing shifts in Q2 revenue",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Positive price-cost expected in 2026",
+    "quote": "We expect positive price cost in 2026, including the current impact of tariffs and countermeasures.",
+    "highlight": "We expect positive price cost in 2026",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory up 73% to $2.52B",
+    "quote": "Inventory -- $2.523 billion, an increase from $1.457 billion at year-end 2025 to support the projected second-half production ramp.",
+    "highlight": "to support the projected second-half production ramp",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 net sales",
+    "value": "$14B midpoint (+37% y/y)",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect $14 billion at the midpoint. that is up $3.77 billion or 37% versus 2025."
+   },
+   {
+    "metric": "FY26 adjusted EPS",
+    "value": "$6.70 midpoint ($6.65-$6.75)",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "The updated range is now at $6.65 to $6.75. This is an increase of $0.35 at the midpoint versus prior guidance."
+   },
+   {
+    "metric": "FY26 adjusted operating profit",
+    "value": "$3.325B midpoint",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect $3.325 billion at the midpoint, that is up approximately $1.235 billion or 59% versus 2025."
+   },
+   {
+    "metric": "FY26 adjusted free cash flow",
+    "value": "$2.5B midpoint",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "adjusted free cash flow is expected to be $2.5 billion at the midpoint."
+   },
+   {
+    "metric": "Q3 26 net sales",
+    "value": "$3.75B midpoint (+40% y/y)",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "we expect $3.75 billion at the midpoint that is up $1.074 billion or 40% versus prior year."
+   },
+   {
+    "metric": "Q3 26 adjusted EPS",
+    "value": "$1.80 midpoint",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "we are projecting adjusted diluted EPS of $1.80 at the midpoint that represents 45% growth versus prior year."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "VisionBay AI",
+    "relation": "customer"
+   },
+   {
+    "name": "Foxconn",
+    "relation": "partner"
+   },
+   {
+    "name": "Dataforce",
+    "relation": "customer"
+   },
+   {
+    "name": "Thermo King",
+    "relation": "peer"
+   },
+   {
+    "name": "PurgeRite",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "800V DC architecture",
+   "Grid capex & transformers",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q2 revenue pushed out; supply-chain congestion assumed to persist",
+    "quote": "We have also assumed some of that congestion continues as we normally would"
+   },
+   {
+    "label": "Inventory up 73% since year-end",
+    "quote": "Inventory -- $2.523 billion, an increase from $1.457 billion at year-end 2025 to support the projected second-half production ramp."
+   },
+   {
+    "label": "Management declined to quantify Q2 revenue slip",
+    "quote": "When it comes to the Vertiv side and the exact amount, well, that will not be too specific."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 4,
+   "margin": 1,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Size of Q2 revenue pushed out",
+    "quote": "When it comes to the Vertiv side and the exact amount, well, that will not be too specific."
+   },
+   {
+    "topic": "Solid state transformer readiness",
+    "quote": "the solid state is currently a matter of project development for us."
+   },
+   {
+    "topic": "Rumoured 800V customer push-out",
+    "quote": "So I would not comment on rumors in the market."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

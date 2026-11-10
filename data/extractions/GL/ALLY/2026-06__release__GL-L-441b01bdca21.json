@@ -1,0 +1,81 @@
+{
+ "doc_id": "GL-L-441b01bdca21",
+ "market": "GL",
+ "company_id": "ALLY",
+ "name": "Ally Financial",
+ "doc_type": "release",
+ "date": "2026-07-21",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Ally Q2 CY26 earnings rose on auto originations of $13.3B (up 21% YoY) and Corporate Finance ROE of 32%, but provision rose 12% YoY to $430M on asset growth and no numeric guidance was given.",
+  "archetype": "None",
+  "mental_models": [
+   "Customer stickiness",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Originations up 21% YoY to $13.3B",
+    "quote": "Our scale and market position drove record application volume supporting more than $13 billion in originations, up 21% year-over-year.",
+    "highlight": "record application volume",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Retail auto yield 9.09% on originations",
+    "quote": "Estimated retail auto originated yield was 9.09% in the quarter with 47% of originations in our highest credit quality tier.",
+    "highlight": "9.09% in the quarter",
+    "direction": 1,
+    "confidence": 0.35
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Provision up 12% YoY on asset growth",
+    "quote": "Provision for credit losses increased $46 million year over year to $430 million, as continued improvement in credit was offset by CECL reserve build associated with asset growth during the quarter."
+   },
+   {
+    "label": "Retail deposits down $2.6B QoQ",
+    "quote": "Retail deposits of $143.6 billion were up $408 million year over year, and down $2.6 billion quarter over quarter."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "doc_id": "GL-L-8acdd8e93dcb",
+ "market": "GL",
+ "company_id": "ACN",
+ "name": "Accenture",
+ "doc_type": "release",
+ "date": "2026-06-18",
+ "period": "2026-06",
+ "title": "8-K · NEWS RELEASE OF ACCENTURE, DATED JUNE 18, 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Q3 FY26 revenue +3% LC with bookings down 3% LC and FY26 LC growth guide trimmed to 3-4% from 3-5%; supply-side signals are soft, not disciplined, and margins held by cost cuts.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Backlog conversion",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Property & Equipment Additions $0.7B"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "LC growth guide cut to 3-4%",
+    "quote": "Company now expects full-year revenue growth to be 3% to 4% in local currency",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Bookings down 3% LC in Q3",
+    "quote": "a decrease of 2% in U.S. dollars and 3% in local currency compared to the third quarter of fiscal 2025",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "novelty",
+    "label": "OT security acquisitions (Dragos, runZero, NetRise)",
+    "quote": "Our agreement to acquire a majority stake in Dragos and all of runZero and NetRise",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 revenue growth (LC)",
+    "value": "3% to 4% (4% to 5% ex US federal ~1% impact)",
+    "change": "cut",
+    "horizon": "FY26",
+    "quote": "Company now expects full-year revenue growth to be 3% to 4% in local currency"
+   },
+   {
+    "metric": "FY26 GAAP diluted EPS",
+    "value": "$13.38 to $13.50",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "Now expects full-year GAAP diluted earnings per share to be in the range of $13.38 to $13.50"
+   },
+   {
+    "metric": "FY26 adjusted EPS",
+    "value": "$13.78 to $13.90",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "now expects full-year adjusted earnings per share to be in the range of $13.78 to $13.90"
+   },
+   {
+    "metric": "FY26 free cash flow",
+    "value": "$10.8B to $11.5B",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "Continues to expect free cash flow to be in the range of $10.8 billion to $11.5 billion"
+   },
+   {
+    "metric": "Q4 FY26 revenue (LC growth)",
+    "value": "1% to 5%; $17.75B to $18.4B",
+    "change": "new",
+    "horizon": "Q4 FY26",
+    "quote": "Fourth Quarter Fiscal 2026 Outlook $17.75B – $18.4B"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revenue growth (LC)",
+    "outcome": "missed",
+    "quote": "Company now expects full-year revenue growth to be 3% to 4% in local currency"
+   },
+   {
+    "metric": "FY26 free cash flow",
+    "outcome": "met",
+    "quote": "Continues to expect free cash flow to be in the range of $10.8 billion to $11.5 billion"
+   },
+   {
+    "metric": "FY26 GAAP operating margin",
+    "outcome": "met",
+    "quote": "GAAP Operating Margin * 15.3% 60 bps expansion over FY25"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Dragos",
+    "relation": "partner"
+   },
+   {
+    "name": "runZero",
+    "relation": "partner"
+   },
+   {
+    "name": "NetRise",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Agentic AI in IT services",
+   "Cybersecurity spend",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Bookings down 3% LC; FY26 LC growth guide cut",
+    "quote": "a decrease of 2% in U.S. dollars and 3% in local currency compared to the third quarter of fiscal 2025"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

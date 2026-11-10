@@ -1,0 +1,167 @@
+{
+ "doc_id": "GL-L-e1bb90bf2478",
+ "market": "GL",
+ "company_id": "LLY",
+ "name": "Eli Lilly",
+ "doc_type": "transcript",
+ "date": "2026-08-12",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Revenue up 48% to $23.0B with FY26 guidance raised to $85-87B, but management flagged one-time rebate benefits and underlying U.S. price down 9%, so the beat is partly price-quality noise.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Pricing power",
+   "Capacity bottleneck",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Committed an additional $4.5 billion to Indiana manufacturing sites and opened a dedicated genetic medicine facility in Lebanon, Indiana."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Underlying U.S. price -9%",
+    "quote": "Excluding these adjustments, U.S. price declined by 9%.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Revenue +48% to $23.0B",
+    "quote": "Revenue -- $23.0 billion, a 48% increase reflecting higher volume from Zepbound and Mounjaro.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 revenue guide raised to $85-87B",
+    "quote": "We now expect full-year revenue to be between $85 billion and $87 billion.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Extra $4.5B Indiana manufacturing",
+    "quote": "Committed an additional $4.5 billion to Indiana manufacturing sites",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 revenue",
+    "value": "$85B to $87B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We now expect full-year revenue to be between $85 billion and $87 billion."
+   },
+   {
+    "metric": "Non-GAAP performance margin",
+    "value": "49% to 50.5%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect our non-GAAP performance margin to be between 49% and 50.5%"
+   },
+   {
+    "metric": "Non-GAAP EPS",
+    "value": "$35.50 to $36.50",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We now expect non-GAAP earnings per share of $35.50 to $36.50"
+   },
+   {
+    "metric": "Retatrutide US BLA submission",
+    "value": "Q1 2027",
+    "change": "new",
+    "horizon": "Q1 2027",
+    "quote": "plan to submit in the U.S. in quarter 1 2027 under the BLA pathway."
+   },
+   {
+    "metric": "Foundayo global rollout in major markets",
+    "value": "2027",
+    "change": "held",
+    "horizon": "2027",
+    "quote": "we expect a global rollout in all major markets in 2027."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Novo Nordisk",
+    "relation": "competitor"
+   },
+   {
+    "name": "CVS",
+    "relation": "customer"
+   },
+   {
+    "name": "Almirall",
+    "relation": "partner"
+   },
+   {
+    "name": "Centessa",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "GLP-1 supply chain",
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "One-time rebate benefit flatters price",
+    "quote": "In Q2, U.S. price benefited from a change to estimates for rebates and discounts."
+   },
+   {
+    "label": "Foundayo launch slower than expected",
+    "quote": "In the U.S., the launch curve has been somewhat slower than anticipated."
+   },
+   {
+    "label": "Generic semaglutide competition ex-US",
+    "quote": "we continue to see TRx growth for Mounjaro even after the launch of generic semaglutide."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 7,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Foundayo US launch slowness",
+    "quote": "We'll stick with the same view here."
+   },
+   {
+    "topic": "Retatrutide filing status",
+    "quote": "we do need to gather a little bit more on the CMC side."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

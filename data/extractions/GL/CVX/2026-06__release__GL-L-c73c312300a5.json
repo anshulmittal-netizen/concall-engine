@@ -1,0 +1,121 @@
+{
+ "doc_id": "GL-L-c73c312300a5",
+ "market": "GL",
+ "company_id": "CVX",
+ "name": "Chevron",
+ "doc_type": "release",
+ "date": "2026-07-31",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.89,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Q2 CY26 earnings of $12.1B and ROCE of 21.4% came on record US output and 97% refinery crude utilisation, but capex rose to $4.5B with Hess spend and this is an earnings release, not a call.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 97,
+   "quote": "reliable crude unit capacity utilization of more than 97 percent"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Capex in the second quarter of 2026 was higher than last year largely due to spend on legacy Hess assets"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Refinery crude utilisation 97%",
+    "quote": "reliable crude unit capacity utilization of more than 97 percent",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex $4.5B, up from $3.7B",
+    "quote": "Capital Expenditures (Capex) $ B $ 4.5 $ 4.1 $ 3.7",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "novelty",
+    "label": "Microsoft 2.67 GW power PPA",
+    "quote": "Signed a 20-year power purchase agreement with Microsoft to provide 2.67 gigawatts of behind-the-meter power",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Structural cost reduction",
+    "value": "$3-4 billion by end of 2026; $3 billion achieved",
+    "change": "held",
+    "horizon": "end-2026",
+    "quote": "as part of a program that aims to reduce structural costs by $3-4 billion by the end of 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Microsoft",
+    "relation": "customer"
+   },
+   {
+    "name": "Hess Corporation",
+    "relation": "partner"
+   },
+   {
+    "name": "Tengizchevroil LLP",
+    "relation": "partner"
+   },
+   {
+    "name": "Chevron Phillips Chemical Company LLC",
+    "relation": "partner"
+   },
+   {
+    "name": "Government of Iraq",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Earnings helped by $1.4B favourable timing effects",
+    "quote": "This includes $1.4 billion in favorable timing effects"
+   },
+   {
+    "label": "Intl refinery inputs down 10% on Middle East disruption",
+    "quote": "Refinery crude unit inputs decreased 10 percent from the year-ago period due to supply disruptions from the Middle East conflict."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

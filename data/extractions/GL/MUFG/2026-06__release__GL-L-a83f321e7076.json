@@ -1,0 +1,89 @@
+{
+ "doc_id": "GL-L-a83f321e7076",
+ "market": "GL",
+ "company_id": "MUFG",
+ "name": "Mitsubishi UFJ Financial",
+ "doc_type": "release",
+ "date": "2026-08-03",
+ "period": "2026-06",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Q1 FY26 profit to owners of parent up 48.2% to ¥809.4bn on higher net interest income and equity-method gains; no supply-side capacity signals apply to a bank, and the ¥2.7tn full-year target was unchanged.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Profit target held at ¥2.7tn",
+    "quote": "There is no change to our earnings target released on May 15, 2026.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Domestic deposit average rate 0.30% vs 0.17%",
+    "quote": "Average interest rate on deposits and NCD",
+    "direction": 1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Profits attributable to owners of parent FY ending Mar 2027",
+    "value": "¥2,700.0bn",
+    "change": "held",
+    "quote": "There is no change to our earnings target released on May 15, 2026."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Profits attributable to owners of parent FY ending Mar 2027",
+    "outcome": "met",
+    "quote": "There is no change to our earnings target released on May 15, 2026."
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Interest-rate relief",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Credit costs up; geopolitical overlay",
+    "quote": "significant additional provision for credit losses may be recognized"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

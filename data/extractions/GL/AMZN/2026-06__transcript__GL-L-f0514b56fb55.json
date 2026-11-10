@@ -1,0 +1,182 @@
+{
+ "doc_id": "GL-L-f0514b56fb55",
+ "market": "GL",
+ "company_id": "AMZN",
+ "name": "Amazon",
+ "doc_type": "transcript",
+ "date": "2026-08-07",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "AWS grew 36.7% to $42.2B with a $496B backlog and cash capex raised to ~$220B from ~$200B, while management says capacity still falls short of 2026 demand.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We now believe we will spend approximately $220 billion in cash CapEx in 2026. The higher cost of memory pushing this number up from our prior estimate of about $200 billion."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Cash capex $200B → $220B",
+    "quote": "We now believe we will spend approximately $220 billion in cash CapEx in 2026.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "AWS backlog $496B, triple-digit growth",
+    "quote": "Our backlog stands at $496 billion, growing triple digits year-over-year.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "AWS revenue +36.7% YoY",
+    "quote": "Revenue growth of 36.7% year-over-year, accelerating for the fifth straight quarter",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "pricing",
+    "label": "AWS operating margin 39.4%",
+    "quote": "AWS operating margin of 39.4% reflecting disciplined efficiency gains and server capacity optimization.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q3 operating income $22.5–26.5B",
+    "quote": "Q3 operating income is expected to be between $22.5 billion and $26.5 billion.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Cash capex 2026",
+    "value": "~$220B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We now believe we will spend approximately $220 billion in cash CapEx in 2026."
+   },
+   {
+    "metric": "Q3 net sales",
+    "value": "$197B–$202B",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "Q3 net sales are expected to be between $197 billion and $202 billion."
+   },
+   {
+    "metric": "Q3 operating income",
+    "value": "$22.5B–$26.5B",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "Q3 operating income is expected to be between $22.5 billion and $26.5 billion."
+   },
+   {
+    "metric": "Robotic arm fleet",
+    "value": "more than double in 2026",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we expect to more than double our fleet of robotic arms, like Cardinal and Sparrow, in 2026."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Cash capex 2026",
+    "outcome": "missed",
+    "quote": "Earlier this year, we said we plan to invest approximately $200 billion in cash CapEx in 2026"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Anthropic",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Nvidia",
+    "relation": "partner"
+   },
+   {
+    "name": "Procter & Gamble",
+    "relation": "customer"
+   },
+   {
+    "name": "Profitero",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Pharma CDMO / outsourcing",
+   "Cybersecurity spend",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Free cash flow headwinds from capex",
+    "quote": "we'll spend a lot of CapEx and encounter free cash flow headwinds until these data centers come online"
+   },
+   {
+    "label": "Non-operating gain inflates EPS",
+    "quote": "primarily reflecting a $53.4 billion non-operating pre-tax gain from the valuation of the company's investment in Anthropic."
+   },
+   {
+    "label": "Capacity short of 2026 demand",
+    "quote": "we will still not have enough capacity to meet all the demand we have in 2026"
+   },
+   {
+    "label": "Shipping cost inflation",
+    "quote": "we face heightened transportation costs driven by fuel inflation from the conflict in the Middle East"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 3,
+   "margin": 2,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Sources of capital for buildout",
+    "quote": "We'll continue to look at all the options and make the appropriate decision at the right time, but nothing to share today."
+   },
+   {
+    "topic": "2027 capex slowdown",
+    "quote": "Well, on the first question, Brian, we have so much demand right now."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

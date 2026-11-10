@@ -1,0 +1,171 @@
+{
+ "doc_id": "GL-L-ae54d74364ca",
+ "market": "GL",
+ "company_id": "RIO.L",
+ "name": "Rio Tinto",
+ "doc_type": "release",
+ "date": "2026-10-14",
+ "period": "2026-09",
+ "title": "6-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q3 production release shows strong Oyu Tolgoi and Pilbara volumes, copper flat YoY and copper guidance unchanged; supply growth is ramping (Simandou, Oyu Tolgoi) while the capital-release program adds a discipline angle.",
+  "archetype": "None",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Our major projects remain on schedule and budget, underwriting our growth profile to 2030."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Simandou ~10 Mtpa run-rate in Q3",
+    "quote": "The Simandou iron ore mine hit an annualised production run-rate of ~10 Mtpa (100% basis) in the quarter",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Yarwun alumina output cut 40% in Q4",
+    "quote": "Yarwun production is expected to reduce by 40% in Q4 2026, as announced in November 2025, due to tailings constraints.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Lithium guidance at low end",
+    "quote": "full year production expected at the low end of the guidance range, primarily reflecting the slower ramp-up at Sal de Vida.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Kennecott furnace breach cut Q3 cathode",
+    "quote": "The outage drove lower cathode production in Q3.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Copper production (consolidated) 2026",
+    "value": "800-870 kt",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Production/sales guidance is maintained"
+   },
+   {
+    "metric": "Global iron ore sales (100%) 2026",
+    "value": "343-366 Mt",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Production/sales guidance is maintained"
+   },
+   {
+    "metric": "Lithium carbonate equivalent 2026",
+    "value": "61-64 kt, low end",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "full year production expected at the low end of the guidance range"
+   },
+   {
+    "metric": "Pilbara unit cash costs 2026",
+    "value": "US$23.5-25.0/wmt",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Unit cost guidance is maintained"
+   },
+   {
+    "metric": "Capital release program",
+    "value": "$5-10bn, ~$5bn initial",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "as part of the $5 to 10 billion capital release program"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Copper production 2026",
+    "outcome": "met",
+    "quote": "Production/sales guidance is maintained"
+   },
+   {
+    "metric": "Global iron ore sales 2026",
+    "outcome": "met",
+    "quote": "Production/sales guidance is maintained"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Yindjibarndi WaterCo",
+    "relation": "partner"
+   },
+   {
+    "name": "LNG Canada",
+    "relation": "customer"
+   },
+   {
+    "name": "Codelco",
+    "relation": "partner"
+   },
+   {
+    "name": "ENAMI",
+    "relation": "partner"
+   },
+   {
+    "name": "SimFer",
+    "relation": "partner"
+   },
+   {
+    "name": "Chinalco",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Simandou ramp-up",
+   "Capital release / portfolio optimisation",
+   "Lithium ramp-up",
+   "Tariffs & trade policy",
+   "Copper supply constraints"
+  ],
+  "red_flags": [
+   {
+    "label": "Kennecott geotechnical and seismic issues",
+    "quote": "A seismic event occurred on 10 September. The mine plan sequence and potential impacts are being assessed"
+   },
+   {
+    "label": "Lithium Sal de Vida ramp slower than planned",
+    "quote": "ramp-up is progressing slower than anticipated due to available uptime of key equipment."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

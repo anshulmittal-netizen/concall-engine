@@ -1,0 +1,173 @@
+{
+ "doc_id": "GL-L-82ee05280ae2",
+ "market": "GL",
+ "company_id": "VTRS",
+ "name": "Viatris",
+ "doc_type": "transcript",
+ "date": "2026-08-13",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma & generics",
+  "thesis": "Viatris raised 2026 guidance midpoints on Greater China (+16%) and cost savings, but Nashik supply disruption cuts H2 revenue by $100-150M and China hospital policy is a looming H2 headwind.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Supply exit",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "2026 midpoints raised on revenue, EBITDA, EPS",
+    "quote": "we're raising the midpoint of our 2026 financial guidance ranges across all key financial metrics.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Nashik H2 revenue hit $100-150M",
+    "quote": "We currently anticipate the impact of supply disruptions to be between $100 million and $150 million to total revenues in the second half of 2026.",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "demand",
+    "label": "Estradiol patch demand; ~70% orders filled",
+    "quote": "We're currently, as a data point, being able to fulfill about 70% of orders.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "China hospital procurement policy headwind",
+    "quote": "Moderation in Greater China growth due to the implementation of a procurement policy change expected to negatively impact volumes in our hospital channel",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 total revenue",
+    "value": "$14.55B to $14.95B (midpoint $14.75B)",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "2026 Revenue Guidance -- $14.55 billion to $14.95 billion, with the midpoint raised to $14.75 billion"
+   },
+   {
+    "metric": "2026 adjusted EBITDA",
+    "value": "$4.3B to $4.5B (~5% operational growth at midpoint)",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we're raising the midpoint of our 2026 financial guidance ranges across all key financial metrics."
+   },
+   {
+    "metric": "2026 adjusted EPS",
+    "value": "$2.45 to $2.59 (midpoint $2.52)",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "$2.45 to $2.59, with the midpoint raised to $2.52"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "$2.05B to $2.35B excl. transaction and restructuring costs",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Free Cash Flow Guidance -- $2.05 billion to $2.35 billion, excluding transaction and restructuring costs"
+   },
+   {
+    "metric": "New product revenue",
+    "value": "$450M to $550M",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "management maintaining a full-year target of $450 million to $550 million"
+   },
+   {
+    "metric": "Nashik H2 revenue impact",
+    "value": "-$100M to -$150M",
+    "change": "new",
+    "horizon": "H2 2026",
+    "quote": "We currently anticipate the impact of supply disruptions to be between $100 million and $150 million to total revenues in the second half of 2026."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "New product revenue $450-550M",
+    "outcome": "met",
+    "quote": "management maintaining a full-year target of $450 million to $550 million"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Harrow, Inc.",
+    "relation": "partner"
+   },
+   {
+    "name": "Biocon Limited",
+    "relation": "peer"
+   },
+   {
+    "name": "Breyna",
+    "relation": "competitor"
+   },
+   {
+    "name": "Wixela",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "China+1 enquiries → orders",
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Nashik FDA inspection and fire disrupting supply",
+    "quote": "Supply disruptions following a fire and FDA inspection are expected to reduce second-half revenues by $100 million to $150 million."
+   },
+   {
+    "label": "China hospital procurement policy risk in H2",
+    "quote": "we expect some decline in the hospital channel growth as a result of the implementation of the policy"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 1,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "China policy durability into 2027",
+    "quote": "We will be in a position, I think, in November to really talk about the policy"
+   },
+   {
+    "topic": "Meloxicam peak sales and guidance contribution",
+    "quote": "I'm not getting into specific numbers at this point in time."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

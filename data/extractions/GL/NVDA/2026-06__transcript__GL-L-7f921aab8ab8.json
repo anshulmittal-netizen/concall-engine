@@ -1,0 +1,207 @@
+{
+ "doc_id": "GL-L-7f921aab8ab8",
+ "market": "GL",
+ "company_id": "NVDA",
+ "name": "Nvidia",
+ "doc_type": "transcript",
+ "date": "2026-08-31",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2027",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Supply-constrained: FY28 revenue guided ~70% growth with supply, not demand, the binding limit, while Q4 gross margin resets to 71–72% on memory costs and DSO rises to 60 days.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "NVIDIA compute is fully utilized across every cloud we serve"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Q4 gross margin bottoms at 71–72%",
+    "quote": "We expect margins to bottom in Q4 in the 71% to 72% range before settling at 72% to 73% in fiscal year '28",
+    "highlight": "margins to bottom in Q4 in the 71% to 72% range",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "DSO up to 60 days",
+    "quote": "Days of sales outstanding increased to 60 days, reflecting extended payment terms for large purchases by certain investment-grade customers",
+    "highlight": "Days of sales outstanding increased to 60 days",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Supply bottleneck through FY28",
+    "quote": "we expect supply to remain a bottleneck, at least through the end of fiscal year '28",
+    "highlight": "supply to remain a bottleneck",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY28 revenue growth ~70%",
+    "quote": "our preliminary expectation is for fiscal year '28 revenue to grow approximately 70% year-over-year",
+    "highlight": "fiscal year '28 revenue to grow approximately 70%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Vendor financing and guarantees to AI labs",
+    "quote": "For another frontier AI lab, we will provide selective credit enhancement for nearly 2 gigawatts of compute",
+    "highlight": "selective credit enhancement for nearly 2 gigawatts",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q3 FY27 revenue",
+    "value": "$108.0 billion plus or minus 2%",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "Total revenue is expected to be $108 billion, plus or minus 2%."
+   },
+   {
+    "metric": "FY28 revenue growth",
+    "value": "approximately 70%",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "we expect to grow revenue by approximately 70% in fiscal 2028"
+   },
+   {
+    "metric": "Q3 gross margin",
+    "value": "74% plus or minus 50 basis points",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "we expect GAAP and non-GAAP gross margins to be 74% plus or minus 50 basis points"
+   },
+   {
+    "metric": "Q4 gross margin",
+    "value": "71% to 72%",
+    "change": "cut",
+    "horizon": "Q4 FY27",
+    "quote": "We expect margins to bottom in Q4 in the 71% to 72% range"
+   },
+   {
+    "metric": "Q3 non-GAAP OpEx",
+    "value": "$9.0 billion",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "GAAP and non-GAAP operating expenses are expected to be approximately $9.2 billion and $9.0 billion, respectively."
+   },
+   {
+    "metric": "FY27 OpEx growth",
+    "value": "low 50s percent",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "For the full year, we now expect OpEx to grow in the low 50s"
+   },
+   {
+    "metric": "FY27 tax rate",
+    "value": "16% to 18%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we continue to expect GAAP and non-GAAP taxes to be between 16% and 18%"
+   },
+   {
+    "metric": "Data center CPU revenue FY28",
+    "value": "more than double",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "our preliminary expectation is for CPU revenue to more than double in fiscal '28"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "AWS",
+    "relation": "customer"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "customer"
+   },
+   {
+    "name": "CoreWeave",
+    "relation": "customer"
+   },
+   {
+    "name": "Nebius",
+    "relation": "customer"
+   },
+   {
+    "name": "Groq",
+    "relation": "partner"
+   },
+   {
+    "name": "SoftBank Energy",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Capacity bottleneck",
+   "Sovereign AI",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Circular financing / vendor credit support to AI labs",
+    "quote": "we will provide selective credit enhancement for nearly 2 gigawatts of compute"
+   },
+   {
+    "label": "Receivables stretched: DSO up to 60 days",
+    "quote": "Days of sales outstanding increased to 60 days, reflecting extended payment terms"
+   },
+   {
+    "label": "Inventory build ahead of launch",
+    "quote": "inventory increased to $32 billion as we prepared for the Vera Rubin launch"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 4,
+   "margin": 1,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Unconstrained demand size and growth bridge",
+    "quote": "The unconstrained would be a lot higher. It's -- we grew 100% year-over-year this year."
+   },
+   {
+    "topic": "Ranking of supply constraints",
+    "quote": "There's something funny I could say, but I'm going to just not."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,175 @@
+{
+ "doc_id": "GL-L-36a2d7c5ce4f",
+ "market": "GL",
+ "company_id": "PKX",
+ "name": "POSCO Holdings",
+ "doc_type": "transcript",
+ "date": "2026-08-07",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "POSCO Holdings Q2 2026 OP KRW 819bn (+16% QoQ); steel OP KRW 274bn at 2.9% margin with carbon steel ASP up to KRW 962,000/t, but Argentina lithium and Pilbara spread remain fragile and Q3 lithium output dips.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Capital cycle",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "we are targeting crude steel production of approximately 9 million tonnes, which would represent our maximum production level"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "CapEx of KRW 2 trillion was administered this quarter, totaling KRW 3.7 trillion of CapEx for the first half."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Crude steel target ~9mt, maximum level",
+    "quote": "we are targeting crude steel production of approximately 9 million tonnes, which would represent our maximum production level",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Carbon steel ASP KRW 920k → 962k/t",
+    "quote": "the average selling price of carbon steel products increased from KRW 920,000 per tonne in the first quarter to KRW 962,000 per tonne in the second quarter",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Chinese steel subsidiaries divested",
+    "quote": "The divestment of PZSS and Chinese subsidiaries are now complete",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Pilbara spread unfavourable in H2",
+    "quote": "Currently, the price spread is not in our favor, so we face profit pressures in the second half.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Argentina Q3 output dips for repairs",
+    "quote": "a temporary drop in production volume seems inevitable",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Steel profitability Q3 vs Q2",
+    "value": "maintain QoQ improvement",
+    "change": "held",
+    "quote": "we expect POSCO's profitability to maintain its quarter-over-quarter improvement in the third quarter"
+   },
+   {
+    "metric": "Crude steel production Q3",
+    "value": "~9 million tonnes",
+    "change": "new",
+    "quote": "we are targeting crude steel production of approximately 9 million tonnes"
+   },
+   {
+    "metric": "Restructuring cash by 2028",
+    "value": "KRW 3.5 trillion",
+    "change": "new",
+    "quote": "By '28, we expect to generate KRW 3.5 trillion of STS resulting from these projects."
+   },
+   {
+    "metric": "Argentina Q4 full operation",
+    "value": "full operation in Q4 with certified product sales",
+    "change": "new",
+    "quote": "Starting in the fourth quarter, however, the plant will run at full operation."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "POSCO Argentina",
+    "relation": "peer"
+   },
+   {
+    "name": "POSCO Pilbara Lithium Solutions",
+    "relation": "partner"
+   },
+   {
+    "name": "ReElement Technologies",
+    "relation": "partner"
+   },
+   {
+    "name": "Mineral Resources",
+    "relation": "partner"
+   },
+   {
+    "name": "Anson Resources",
+    "relation": "partner"
+   },
+   {
+    "name": "POSCO E&C",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Renewables & storage",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Fatality at POSCO E&C affiliate",
+    "quote": "In June, we suffered another fatality at POSCO E&C, our construction affiliate."
+   },
+   {
+    "label": "Dividend cut risk from affiliate sales",
+    "quote": "this can lead to perhaps a decrease in dividend payment as well."
+   },
+   {
+    "label": "Pilbara spread squeeze",
+    "quote": "at this price, no company can be profitable"
+   },
+   {
+    "label": "EU quota cuts and US/EU AD duties",
+    "quote": "On coated products AD that was announced on July 24"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Equity divestment decision and Board approval timing",
+    "quote": "at the moment, we are not able to give you a definitive answer"
+   },
+   {
+    "topic": "Hard rock lithium expansion approval",
+    "quote": "Though the decision will be made at the end of next year, we will be responding flexibly."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,183 @@
+{
+ "doc_id": "GL-L-64fb5be9c10a",
+ "market": "GL",
+ "company_id": "LULU",
+ "name": "Lululemon Athletica",
+ "doc_type": "transcript",
+ "date": "2026-09-09",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Lululemon cut FY26 revenue to $10.35–10.5B (down 5–7%) and EPS to $9.48–9.73, with Q3 operating margin near 6.5%; demand weakness is traffic-driven, not supply-side discipline.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness",
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -2,
+   "guidance": -2,
+   "novelty": -1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Expected to be between $680 million and $700 million for the full year"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 EPS cut to $9.48–9.73",
+    "quote": "we now expect diluted earnings per share in the range of $9.48 to $9.73 versus EPS of $13.26 in 2025",
+    "direction": -1,
+    "confidence": 0.9
+   },
+   {
+    "type": "demand",
+    "label": "Leggings down ~20% in Q2",
+    "quote": "sales declining approximately 20% in Q2",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "guidance",
+    "label": "Q3 operating margin ~6.5% vs 17%",
+    "quote": "we expect it to be approximately 6.5% versus 17% in Q3 2025",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Store openings cut 40 → 35",
+    "quote": "We're now planning approximately 35 net new store openings this year, down from our guidance of approximately 40 last quarter",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Units down 7%, dollars down 1%",
+    "quote": "On a unit basis, inventory decreased approximately 7%",
+    "direction": 1,
+    "confidence": 0.45
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 revenue",
+    "value": "$10.35B–$10.5B, down 5–7%",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "We now expect revenue to be in the range of $10.35 billion to $10.5 billion, down 5% to 7% relative to 2025."
+   },
+   {
+    "metric": "FY26 diluted EPS",
+    "value": "$9.48–$9.73",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "we now expect diluted earnings per share in the range of $9.48 to $9.73 versus EPS of $13.26 in 2025"
+   },
+   {
+    "metric": "Net new store openings",
+    "value": "~35",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "We're now planning approximately 35 net new store openings this year, down from our guidance of approximately 40 last quarter."
+   },
+   {
+    "metric": "Q3 revenue",
+    "value": "$2.29B–$2.32B, down 10–11%",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "For Q3, we expect revenue in the range of $2.29 billion to $2.32 billion, representing a decline of 10% to 11%."
+   },
+   {
+    "metric": "FY26 capex",
+    "value": "$680M–$700M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we now expect capital expenditures to be approximately $680 million to $700 million"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Net new store openings (~40)",
+    "outcome": "missed",
+    "quote": "down from our guidance of approximately 40 last quarter"
+   },
+   {
+    "metric": "North America revenue",
+    "outcome": "met",
+    "quote": "North America finished down 8% for Q2, slightly ahead of our guidance."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Tmall",
+    "relation": "partner"
+   },
+   {
+    "name": "Zalando",
+    "relation": "partner"
+   },
+   {
+    "name": "Heidi O'Neill",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Premiumisation in consumption",
+   "Customer stickiness"
+  ],
+  "red_flags": [
+   {
+    "label": "Comparable sales down 10%; Americas comp down 12%",
+    "quote": "Total Comparable Sales -- Decreased 10% on a constant dollar basis, driven by a 12% decline in the Americas segment."
+   },
+   {
+    "label": "Q3 margin collapse and EPS $0.93–0.98",
+    "quote": "We expect earnings per share in the third quarter to be in the range of $0.93 to $0.98 versus EPS of $2.59 a year ago."
+   },
+   {
+    "label": "Incoming CEO reviewing strategy",
+    "quote": "We're excited our incoming CEO, Heidi O'Neill, joins us next week."
+   },
+   {
+    "label": "Tariff refund receivable excluded from guidance",
+    "quote": "We have not reflected the remaining $105 million in our forward guidance."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 5,
+   "margin": 4,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Cost structure timing",
+    "quote": "I think too early to share beyond the guidance that we shared for '26"
+   },
+   {
+    "topic": "Store fleet rationalisation",
+    "quote": "we will share more about how we see square footage growth for '27 when we give guidance in March"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

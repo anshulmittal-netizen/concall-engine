@@ -1,0 +1,94 @@
+{
+ "doc_id": "IN-L-a7569e012c78",
+ "market": "IN",
+ "company_id": "540376",
+ "name": "Avenue Supermarts",
+ "doc_type": "release",
+ "date": "2026-10-10",
+ "period": "2026-09",
+ "title": "Press Release on financial results of the Company for the quarter and half year ended 30th September, 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Q2 FY27 revenue up 18.4% with 15 stores added and 2-year-old-plus SSSG accelerating to 9.5%, but EBITDA margin fell to 7.3% from 7.6% on entry-level wage inflation, and PAT grew only 7.6%.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "2-yr-old SSSG 6.8% → 9.5%",
+    "quote": "Two years and older DMart stores grew by 9.5% during Q2 FY27 as compared to 6.8% in Q2 FY26.",
+    "highlight": "grew by 9.5% during Q2 FY27",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA margin 7.6% → 7.3%",
+    "quote": "Wage inflation at entry-level has led to a marginal increase in operating expenses.",
+    "highlight": "Wage inflation at entry-level has led to a marginal increase in operating expenses",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [
+   {
+    "metric": "Store additions",
+    "outcome": "met",
+    "quote": "We opened 15 new stores during the quarter taking our total store count to 518."
+   },
+   {
+    "metric": "Same-store sales growth",
+    "outcome": "met",
+    "quote": "Two years and older DMart stores grew by 9.5% during Q2 FY27 as compared to 6.8% in Q2 FY26."
+   },
+   {
+    "metric": "Net margin North Star",
+    "outcome": "not_discussed",
+    "quote": ""
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Premiumisation in consumption",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "PAT growth lags revenue (7.6% vs 18.4%)",
+    "quote": "Profit after tax (PAT) grew by 7.6% over the previous year."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

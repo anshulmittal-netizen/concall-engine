@@ -1,0 +1,143 @@
+{
+ "doc_id": "GL-L-fb60e3aa45e1",
+ "market": "GL",
+ "company_id": "PWR",
+ "name": "Quanta Services",
+ "doc_type": "release",
+ "date": "2026-07-30",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical contracting",
+  "thesis": "Quanta raised FY26 guidance across all metrics (adj. EPS $16.45–$16.95, revenue $39.3–39.7B) on Q2 revenue of $9.56B, up 41%, with backlog at a record $53.4B; but growth leans on acquisitions and capex is held at about $0.9B net.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Operating leverage",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Adj. EPS guide raised to $16.45–$16.95",
+    "quote": "Quanta now expects diluted earnings per share attributable to common stock to range between $11.41 and $11.92 and adjusted diluted earnings per share attributable to common stock to range between $16.45 and $16.95.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Total backlog record $53.4B",
+    "quote": "Remaining Performance Obligations (RPO) of $33.6 Billion* and Total Backlog of $53.4 Billion*",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables up to $8.5B from $6.8B",
+    "quote": "Accounts receivable, net 8,532,311 6,847,091",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Acquisitions add $1.2–1.4B revenue",
+    "quote": "Quanta expects these acquisitions to contribute approximately $1.2 billion - $1.4 billion of revenues and approximately $120 million to $140 million of adjusted EBITDA.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue FY26",
+    "value": "$39.3B–$39.7B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Quanta now expects revenues to range between $39.3 billion and $39.7 billion"
+   },
+   {
+    "metric": "Adjusted diluted EPS FY26",
+    "value": "$16.45–$16.95",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "adjusted diluted earnings per share attributable to common stock to range between $16.45 and $16.95"
+   },
+   {
+    "metric": "Adjusted EBITDA FY26",
+    "value": "$4.09B–$4.21B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "adjusted EBITDA to range between $4.09 billion and $4.21 billion"
+   },
+   {
+    "metric": "Free cash flow FY26",
+    "value": "$2.00B–$2.50B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "free cash flow (a financial measure) to range between $2.00 billion and $2.50 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Hyosung HICO",
+    "relation": "partner"
+   },
+   {
+    "name": "Phalcon",
+    "relation": "peer"
+   },
+   {
+    "name": "Enerfab",
+    "relation": "peer"
+   },
+   {
+    "name": "Percheron",
+    "relation": "peer"
+   },
+   {
+    "name": "PSD Global",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables and contract liabilities rising",
+    "quote": "Accounts receivable, net 8,532,311 6,847,091"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

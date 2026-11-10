@@ -1,0 +1,180 @@
+{
+ "doc_id": "GL-L-c83c7eabb93f",
+ "market": "GL",
+ "company_id": "TSLA",
+ "name": "Tesla",
+ "doc_type": "transcript",
+ "date": "2026-08-05",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Tesla's Q2 2026 call shows auto margin down to 16.3% ex-credits and FCF negative $1.1B as capex more than doubled, with management guiding capex above $25B and debt capacity up to $30B.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": -2,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Samsung and TSMC are building fabs and Panasonic has invested many billions in battery cell production, per management.",
+   "quote": "We continue to expect that CapEx for this year will be more than $25 billion."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex >$25B, rising 2-3 years",
+    "quote": "CapEx will grow for the next two to three years as we expand our robotaxi fleet",
+    "highlight": "CapEx will grow for the next two to three years",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Free cash flow -$1.1B in Q2",
+    "quote": "Most of the reason for the -- it going negative is because CapEx more than doubled sequentially",
+    "highlight": "CapEx more than doubled sequentially",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Auto GM ex-credits 19.2% → 16.3%",
+    "quote": "Automotive margins, excluding regulatory credits, declined sequentially from 19.2% to 16.3%.",
+    "highlight": "declined sequentially from 19.2% to 16.3%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Energy GM 39.5% → 20.4%",
+    "quote": "Despite this growth, energy gross margins declined from 39.5% to 20.4%.",
+    "highlight": "energy gross margins declined from 39.5% to 20.4%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Storage ASPs falling on competition",
+    "quote": "we had previously guided that ASPs for industrial storage is coming down amidst growing competition",
+    "highlight": "ASPs for industrial storage is coming down amidst growing competition",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Order backlog largest since 2023",
+    "quote": "We exited Q2 with our largest order backlog since 2023.",
+    "highlight": "largest order backlog since 2023",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year capex",
+    "value": ">$25 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We continue to expect that CapEx for this year will be more than $25 billion."
+   },
+   {
+    "metric": "Energy storage gross margin",
+    "value": "mid- to low 20% range (long term)",
+    "change": "new",
+    "horizon": "long term",
+    "quote": "Long term, we believe the energy business should normalize at a gross margin rate in the mid- to low 20% range."
+   },
+   {
+    "metric": "Robotaxi fleet ramp",
+    "value": "accelerate through the year, new US markets",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect the ramp of the fleet to accelerate throughout the year, along with the expansion into new U.S. markets."
+   },
+   {
+    "metric": "Debt borrowing capacity",
+    "value": "up to $30 billion",
+    "change": "new",
+    "horizon": "near term",
+    "quote": "we are being opportunistic in securing certain debt facilities that will give us the capacity to borrow up to $30 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "SpaceX",
+    "relation": "partner"
+   },
+   {
+    "name": "Samsung",
+    "relation": "supplier"
+   },
+   {
+    "name": "TSMC",
+    "relation": "supplier"
+   },
+   {
+    "name": "Panasonic",
+    "relation": "supplier"
+   },
+   {
+    "name": "Micron",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Auto EV transition",
+   "Semiconductors & OSAT",
+   "Capex cycle revival (private)",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "FCF negative, capex doubling, $30B debt facilities",
+    "quote": "we are being opportunistic in securing certain debt facilities that will give us the capacity to borrow up to $30 billion"
+   },
+   {
+    "label": "Energy margin halved on warranty and ASP pressure",
+    "quote": "there was a warranty true-up in the quarter of about $240 million related to certain vendor cell issues"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 3,
+   "margin": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Combination with SpaceX",
+    "quote": "we can't talk about combining companies and that kind of thing on an earnings call."
+   },
+   {
+    "topic": "Optimus supplier investment and capacity",
+    "quote": "Sorry, yes, our suppliers have been great, and they've made -- they have made and are making tremendous investments"
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

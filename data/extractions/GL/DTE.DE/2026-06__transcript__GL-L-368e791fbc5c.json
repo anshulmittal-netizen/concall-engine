@@ -1,0 +1,170 @@
+{
+ "doc_id": "GL-L-368e791fbc5c",
+ "market": "GL",
+ "company_id": "DTE.DE",
+ "name": "Deutsche Telekom",
+ "doc_type": "transcript",
+ "date": "2026-06-30",
+ "period": "2026-06",
+ "title": "Download (PDF, 230 KB)",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Deutsche Telekom adds a EUR3bn buyback on top of the EUR2bn programme, lifting 2026 shareholder remuneration to almost EUR10bn; group FCF guidance raised to around EUR20bn while German fiber build is held at 2.5m homes.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital allocation shift",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "We cannot accelerate at that point in time the fiber expansion."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Group FCF guidance raised to ~EUR20bn",
+    "quote": "As a result, our group free cash flow guidance increased to around EUR20 billion.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Germany back-book +EUR2/month",
+    "quote": "we have increased our price by EUR2 per month on the customer base.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Broadband subs down 20k in Q2",
+    "quote": "you see that we basically lost 20,000 customers this quarter.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Eins & Eins cuts tariffs below EUR6.99",
+    "quote": "The lowest price is this $6.99, you're correct. Effectively, let's say this is removing some tariffs below this price point.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Group free cash flow",
+    "value": "around EUR20 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "As a result, our group free cash flow guidance increased to around EUR20 billion."
+   },
+   {
+    "metric": "Constant currency group EBITDA growth",
+    "value": "around 6% to EUR47.5 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We continue to guide for constant currency group EBITDA growth of around 6% to EUR47.5 billion in 2026."
+   },
+   {
+    "metric": "DT ex US EBITDA",
+    "value": "EUR15.4 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We reiterate our DT ex US EBITDA guidance of EUR15.4 billion."
+   },
+   {
+    "metric": "Germany full-year EBITDA",
+    "value": "EUR11 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "So the guidance, the full-year guidance of EUR11 billion EBITDA is fully intact."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "T-Mobile US",
+    "relation": "peer"
+   },
+   {
+    "name": "SpaceX",
+    "relation": "competitor"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "supplier"
+   },
+   {
+    "name": "Eins & Eins",
+    "relation": "competitor"
+   },
+   {
+    "name": "Cellnex",
+    "relation": "peer"
+   },
+   {
+    "name": "Globalstar",
+    "relation": "peer"
+   },
+   {
+    "name": "Orange",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Satellite D2D competition",
+   "Data-centre power & cooling",
+   "Capital allocation shift"
+  ],
+  "red_flags": [
+   {
+    "label": "Broadband net losses in Germany",
+    "quote": "The broadband market, however, is more challenging, and we lost some subscriber this quarter."
+   },
+   {
+    "label": "Germany fiber build held despite low take-up",
+    "quote": "We cannot accelerate at that point in time the fiber expansion."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 3,
+   "margin": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Cellnex / GD Towers M&A",
+    "quote": "we are not commenting on any M&A speculations here."
+   },
+   {
+    "topic": "Buyback for 2027 and spectrum headroom",
+    "quote": "we are not quantifying the researcher headroom from the 15 billion"
+   },
+   {
+    "topic": "Germany government participation in buyback",
+    "quote": "we don't know, but if you ask me and my personal gut feeling here on this one."
+   }
+  ],
+  "hedge_index": 0.35
+ }
+}

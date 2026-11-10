@@ -1,0 +1,161 @@
+{
+ "doc_id": "GL-L-63201c103490",
+ "market": "GL",
+ "company_id": "RPM",
+ "name": "RPM International",
+ "doc_type": "transcript",
+ "date": "2026-07-22",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q4 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Record Q4 with adjusted EBIT $338.6M and FY27 guide of 3-7% sales and 5-10% adj. EBITDA, but Q1-Q2 raw material inflation of 5-8% squeezes gross margin; supply discipline shows via plant consolidation and SG&A savings, not capacity cuts.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Operating leverage",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "We anticipate capital expenditures to be roughly in line with what you saw in fiscal 2026 and 2025, probably in that $220 million+ to $240 million range."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Q4 price up ~2%, Q1 inflation 5-6%",
+    "quote": "In the quarter, price was up about 2%.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Plant consolidation drag halves in FY27",
+    "quote": "we think that, with some of the plant startups, it'll be about half of that will be a P&L headwind as we go through FY 2027.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Consumer volume down 2-3%, possible bottoming",
+    "quote": "it does feel like after two years of a pretty steady single-digit negative declines in consumer takeaway and volume impact, that we're hitting bottom.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital structurally improving",
+    "quote": "we're going to continue to make progress on working capital like we have.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 net sales growth",
+    "value": "3% to 7%",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "Overall, we expect sales for the full year to increase 3%-7%."
+   },
+   {
+    "metric": "FY27 adjusted EBITDA growth",
+    "value": "5% to 10%",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "Adjusted EBITDA is expected to increase 5%-10%."
+   },
+   {
+    "metric": "Q1 FY27 sales and adj. EBITDA",
+    "value": "mid-single-digit growth",
+    "change": "new",
+    "horizon": "Q1 FY2027",
+    "quote": "all segments expected to grow in the mid-single-digit range."
+   },
+   {
+    "metric": "MAP 3.0 SG&A savings FY27",
+    "value": "$75 million",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "SG&A-focused optimization actions are expected to generate around $75 million in benefits during the year."
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "$220M to $240M",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "probably in that $220 million+ to $240 million range."
+   },
+   {
+    "metric": "Raw material inflation Q2 FY27",
+    "value": "6% to 8%",
+    "change": "new",
+    "horizon": "Q2 FY2027",
+    "quote": "For the second quarter, we expect inflation could be as high as 6%-8%."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Euclid Chemical",
+    "relation": "peer"
+   },
+   {
+    "name": "Kalzip",
+    "relation": "partner"
+   },
+   {
+    "name": "Nudura",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Supplier fire tightens PO/MDI raw materials",
+    "quote": "a fire at a supplier's plant has caused some tightness in propylene oxide-derived raw materials in North America."
+   },
+   {
+    "label": "Consumer impairment $9.7M on Color Group",
+    "quote": "Adjusted EBIT excludes a $9.7 million non-cash impairment charge related to the Color Group."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "H2 FY27 raw material trajectory",
+    "quote": "This is not the answer maybe you're looking for. I would call it a swag."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "doc_id": "GL-L-a384520e6e76",
+ "market": "GL",
+ "company_id": "CB",
+ "name": "Chubb",
+ "doc_type": "release",
+ "date": "2026-07-21",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Insurance",
+  "thesis": "Chubb's Q2 P&C combined ratio of 83.8% and 18.8% underwriting income growth mask soft property and casualty pricing; NA Commercial premiums fell 2.3% as property underwriting actions cut growth.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Supply discipline",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Soft property and casualty conditions",
+    "quote": "overly soft underwriting conditions persist in certain areas of property insurance globally, particularly large account and E&S related",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Softness spreading to casualty",
+    "quote": "soft market conditions are spreading to certain areas of casualty while financial lines also remain soft",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "NA Commercial NPW down 2.3%",
+    "quote": "North America Commercial was down 2.3%",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Growth penalty from property underwriting actions; soft casualty and financial lines",
+    "quote": "The growth penalty we are paying in property will dissipate going forward."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

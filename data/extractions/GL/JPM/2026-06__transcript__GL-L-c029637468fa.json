@@ -1,0 +1,186 @@
+{
+ "doc_id": "GL-L-c029637468fa",
+ "market": "GL",
+ "company_id": "JPM",
+ "name": "JPMorgan Chase",
+ "doc_type": "transcript",
+ "date": "2026-07-22",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Record markets and IB quarter with equities up 86%, but management flagged pull-forward and said the equity spike is hard to repeat; FY NII ex-Markets raised to $96.5B and expense to $107.5B.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Equities revenue up 86% YoY",
+    "quote": "The equities business delivered an exceptionally strong quarter, with revenue up 86% year-on-year",
+    "highlight": "exceptionally strong quarter",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "NII ex-Markets raised to $96.5B",
+    "quote": "we now expect NII ex-Markets to be about $96.5 billion",
+    "highlight": "$96.5 billion",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Pull-forward in IB and equities",
+    "quote": "I think clearly there was some pull forward, and clearly the large deals contributed meaningfully to this quarter of results.",
+    "highlight": "there was some pull forward",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Peers loosening underwriting",
+    "quote": "Some weaker covenants, some people taking more rollover risk.",
+    "highlight": "Some weaker covenants",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "NII ex-Markets FY2026",
+    "value": "about $96.5 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect NII ex-Markets to be about $96.5 billion"
+   },
+   {
+    "metric": "Total NII FY2026",
+    "value": "approximately $105.5 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "total NII to be approximately $105.5 billion"
+   },
+   {
+    "metric": "Markets NII FY2026",
+    "value": "about $9 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "markets NII increasing to about $9 billion"
+   },
+   {
+    "metric": "Adjusted expense FY2026",
+    "value": "about $107.5 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "The new adjusted expense outlook is about $107.5 billion"
+   },
+   {
+    "metric": "Card net charge-off rate FY2026",
+    "value": "approximately 3.2%",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "we now expect card net charge-off rate to be approximately 3.2%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "NII ex-Markets FY2026",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Bank of America",
+    "relation": "peer"
+   },
+   {
+    "name": "Goldman Sachs",
+    "relation": "competitor"
+   },
+   {
+    "name": "Stripe",
+    "relation": "competitor"
+   },
+   {
+    "name": "PayPal",
+    "relation": "competitor"
+   },
+   {
+    "name": "Block",
+    "relation": "competitor"
+   },
+   {
+    "name": "Revolut",
+    "relation": "competitor"
+   },
+   {
+    "name": "Fiserv",
+    "relation": "partner"
+   },
+   {
+    "name": "FIS",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Pricing power",
+   "Rural demand recovery",
+   "Tariffs & trade policy",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Underwriting standards softening at peers",
+    "quote": "Some weaker covenants, some people taking more rollover risk."
+   },
+   {
+    "label": "Negative convexity in deposits",
+    "quote": "Obviously that wouldn't be true if you had to do a massive repurchase of the deposit franchise in order to protect it"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 3,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Succession timing",
+    "quote": "Several years, you can use a few years, you can use plus or minus, or obviously, it's totally up to the board, not up to me."
+   },
+   {
+    "topic": "Operating leverage / long-term expense trajectory",
+    "quote": "We're not going to have false gods."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,117 @@
+{
+ "doc_id": "GL-L-d46571ae572d",
+ "market": "GL",
+ "company_id": "HSBA.L",
+ "name": "HSBC Holdings",
+ "doc_type": "transcript",
+ "date": "2026-11-06",
+ "period": "2026-09",
+ "title": "3Q Results 2026 Equity Analysts Meeting - Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Q3 call is deposit-cost defensive: HK time-deposit mix drifting up toward 40% and UK LCR falling, while management says deposits stay accretive and buybacks depend on loan growth; no numeric guidance change.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "HK time-deposit mix ~38% → ~40%",
+    "quote": "The time deposit ratio was at around 38% at the end of September. In October, it's nudged a little more",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Deposit margin pressure in HK",
+    "quote": "The key thing is not just that shift, it's deposit margin pressure, but overall we stay in the positive space",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "UK LCR being run down",
+    "quote": "I don't think 150% is a sensible number. People have talked in terms of peers , who want to be in the 120s or 130s.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 cost of risk guidance unchanged",
+    "quote": "In terms of Q4, we are not changing our guidance as of now",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Cost of risk / targets",
+    "value": "Within 30-40 bps through-the-cycle; targets unchanged",
+    "change": "held",
+    "quote": "Over the years we have tracked through the cycle between 30 basis points to 40 basis points."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Hang Seng Bank",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Rate sensitivity & deposit beta",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "HK deposit margin pressure from time-deposit migration",
+    "quote": "The key thing is not just that shift, it's deposit margin pressure"
+   },
+   {
+    "label": "Loan growth consuming capital; buybacks residual",
+    "quote": "lending growth, which consumes RWAs, and can take away a good chunk of the organic capital generation"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 6,
+   "capex": 0,
+   "growth": 3,
+   "margin": 6,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Time-deposit pain threshold",
+    "quote": "there's no specific number which says, 40% is a good , or 41%, or 39%, or whatever."
+   },
+   {
+    "topic": "2027 NII base",
+    "quote": "I'm not giving any guidance for 2027, just the building blocks."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

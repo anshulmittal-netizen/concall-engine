@@ -1,0 +1,110 @@
+{
+ "doc_id": "IN-00f126da-1f2b-448e-82e4-f1b068341480",
+ "market": "IN",
+ "company_id": "500875",
+ "name": "ITC",
+ "doc_type": "presentation",
+ "date": "2026-11-02",
+ "period": "2026-09",
+ "title": "Media Statement and Presentation",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "FMCG",
+  "thesis": "Q2 FY27 standalone net revenue +3% and EBITDA -17% on cigarette tax shock (Cigarette segment PBIT -27%), while non-cigarette segments grew 18% revenue and 23% EBITDA; paper pricing recovering with segment PBIT margin up 320 bps LTL.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Pricing power",
+   "Mix shift",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Paper: pricing offsets input inflation",
+    "quote": "Improving demand scenario; Pricing actions mitigate severe inflation in input costs",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "MIP on virgin paperboard extended to Mar-27",
+    "quote": "Minimum Import Price on Virgin Multi -layered Pap erboard extended till 31 st March 2027",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Cigarette legal volumes under pressure",
+    "quote": "Legal industry volumes remain under pressure due to unprecedented increase in tax",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "novelty",
+    "label": "CPP paper acquisition completed 1-Aug-26",
+    "quote": "Acquisition of Century Pulp & Paper undertaking at Lalkuan, Uttarakhand was successfully completed on 1st August 2026.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Century Pulp and Paper",
+    "relation": "partner"
+   },
+   {
+    "name": "ITC IndiVision Limited",
+    "relation": "peer"
+   },
+   {
+    "name": "ITC Infotech",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Anti-dumping protection",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Cigarette net revenue -21%, segment PBIT -27%",
+    "quote": "Cigarettes: Net Revenue ↓21% YoY"
+   },
+   {
+    "label": "Illicit trade / smuggling rise",
+    "quote": "Sharp increase in seizures of smuggled cigarette consignments by enforcement agencies across the country"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

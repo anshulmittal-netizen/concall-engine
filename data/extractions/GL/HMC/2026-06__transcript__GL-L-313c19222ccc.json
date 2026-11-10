@@ -1,0 +1,183 @@
+{
+ "doc_id": "GL-L-313c19222ccc",
+ "market": "GL",
+ "company_id": "HMC",
+ "name": "Honda Motor",
+ "doc_type": "transcript",
+ "date": "2026-08-12",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q1 2027",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Honda's Q1 record operating profit (JPY 530.7bn) was driven by FX and tariffs, not capacity discipline; China retail fell ~50% and EV-related supplier compensation remains unbooked, so the FY guidance raise carries open-ended losses.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capital cycle",
+   "Supply discipline",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "China ICE/hybrid capacity cut to 700-plus k",
+    "quote": "we had a capacity of a little less than 1.5 million cars. And then ICE and Hybrid, we now have 700-plus capacity today.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "China retail units down ~50% YoY",
+    "quote": "the retail unit is slightly more than 80,000. So it's about 50% less than last fiscal year first quarter.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY OP guidance raised JPY 150bn to 650bn",
+    "quote": "Operating profit has been revised upward by JPY 150 billion to JPY 650 billion.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "EV supplier compensation not yet booked",
+    "quote": "we cannot say at this point in time how much compensation will be required.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Raw material cost headwind JPY 313bn FY",
+    "quote": "Price and cost impact will be negative by JPY 313 billion due to the impact of soaring material costs",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Operating profit (FY Mar-2027)",
+    "value": "JPY 650bn",
+    "change": "raised",
+    "quote": "Operating profit has been revised upward by JPY 150 billion to JPY 650 billion."
+   },
+   {
+    "metric": "Adjusted operating profit ex-EV losses",
+    "value": "JPY 1.17tn",
+    "change": "raised",
+    "quote": "Adjusted operating profit will be JPY 1.170 trillion, up by JPY 170 billion."
+   },
+   {
+    "metric": "Profit attributable to owners",
+    "value": "JPY 400bn",
+    "change": "raised",
+    "quote": "the profit for the year attributable to owners of the parent will be JPY 400 billion, up by JPY 140 billion."
+   },
+   {
+    "metric": "EV-related losses",
+    "value": "JPY 520bn",
+    "change": "raised",
+    "quote": "EV-related losses have also been revised to reflect the updated currency assumptions."
+   },
+   {
+    "metric": "Annual dividend",
+    "value": "JPY 70 per share",
+    "change": "held",
+    "quote": "annual dividends for FYE March 2027 will be no different from the previous guidance, keeping JPY 70 per share."
+   },
+   {
+    "metric": "Unit sales volumes",
+    "value": "Motorcycles 22.8m, Autos 3.39m, Power Products 3.65m",
+    "change": "held",
+    "quote": "We will keep the unit sales of the group same as the previous forecast"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Unit sales volumes",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Annual dividend",
+    "outcome": "met"
+   },
+   {
+    "metric": "EV-related losses",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "GAC",
+    "relation": "partner"
+   },
+   {
+    "name": "Nissan",
+    "relation": "partner"
+   },
+   {
+    "name": "LG Energy Solutions",
+    "relation": "partner"
+   },
+   {
+    "name": "Astemo",
+    "relation": "supplier"
+   },
+   {
+    "name": "BYD",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "China+1 enquiries → orders",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Auto EV transition",
+   "Semiconductors & OSAT"
+  ],
+  "red_flags": [
+   {
+    "label": "Unbooked EV supplier compensation",
+    "quote": "we cannot say at this point in time how much compensation will be required."
+   },
+   {
+    "label": "Earthquake impact on unit sales unknown",
+    "quote": "To be very honest, we don't know how much impact it will have on our unit sales at this point in time."
+   }
+  ],
+  "evasions": [
+   {
+    "topic": "Kumamoto earthquake unit sales impact",
+    "quote": "we don't know how much impact it will have on our unit sales at this point in time."
+   },
+   {
+    "topic": "EV-related losses timing",
+    "quote": "we cannot say at this point in time how much compensation will be required."
+   },
+   {
+    "topic": "Alternative sourcing for damper supply",
+    "quote": "we cannot say that it will be necessary to source from alternative sources or not."
+   }
+  ],
+  "hedge_index": 0.6,
+  "analyst_mix": {}
+ }
+}

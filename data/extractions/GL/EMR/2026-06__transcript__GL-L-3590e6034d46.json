@@ -1,0 +1,175 @@
+{
+ "doc_id": "GL-L-3590e6034d46",
+ "market": "GL",
+ "company_id": "EMR",
+ "name": "Emerson Electric",
+ "doc_type": "transcript",
+ "date": "2026-08-11",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Emerson raised FY26 adjusted EPS guide to about $6.55 on 7% underlying orders and 28.5% segment margin, but supply-side evidence is thin: no capacity additions cited, and Ovation lead times now run into 2027–2028.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Lead times for the Ovation control system have extended into the period of 2027 to 2028"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 adj EPS raised to ~$6.55",
+    "quote": "we are raising our adjusted EPS guide to $6.55",
+    "highlight": "raising our adjusted EPS guide to $6.55",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Ovation orders up 31%",
+    "quote": "orders in our Ovation business up 31%",
+    "highlight": "orders in our Ovation business up 31%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Price contributed 3 points to growth",
+    "quote": "Price contributed 3 points to growth and MRO was 65% of sales",
+    "highlight": "Price contributed 3 points",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Middle East drag ~$25M per quarter",
+    "quote": "the impact in Q3 was about a $25 million headwind compared to our February guidance",
+    "highlight": "$25 million headwind",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 adjusted EPS",
+    "value": "approximately $6.55",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We are guiding 2026 adjusted EPS of approximately $6.55"
+   },
+   {
+    "metric": "FY26 underlying sales growth",
+    "value": "3.5%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "For the full year, we expect 5% GAAP sales growth and 3.5% underlying sales growth"
+   },
+   {
+    "metric": "FY26 adjusted segment EBITDA margin",
+    "value": "approximately 28%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We still expect adjusted segment EBITDA margin of 28%"
+   },
+   {
+    "metric": "FY26 free cash flow",
+    "value": "approximately $3.6 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "free cash flow of approximately $3.6 billion"
+   },
+   {
+    "metric": "Shareholder returns",
+    "value": "approximately $2.2 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "There are no changes to our planned return of approximately $2.2 billion to shareholders"
+   },
+   {
+    "metric": "Q4 FY26 adjusted EPS",
+    "value": "approximately $1.85",
+    "change": "new",
+    "horizon": "Q4 FY2026",
+    "quote": "We expect adjusted segment EBITDA margin of 28.5% and adjusted EPS of approximately $1.85"
+   },
+   {
+    "metric": "ACV growth",
+    "value": "10%-plus",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we still expect ACV growth of 10%-plus in 2026"
+   }
+  ],
+  "entities": [
+   {
+    "name": "CFE",
+    "relation": "customer"
+   },
+   {
+    "name": "China Nuclear Power Engineering Company",
+    "relation": "customer"
+   },
+   {
+    "name": "AspenTech",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Semiconductors & OSAT",
+   "Cybersecurity spend",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q3 FCF boosted by tariff refunds and tax timing",
+    "quote": "Cash exceeded expectations due to good operational performance, along with the impact of tariff refunds and the timing of tax payments"
+   },
+   {
+    "label": "Software margin down on renewal timing",
+    "quote": "Software & Systems margin of 31.8% decreased 30 basis points year-over-year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 6,
+   "margin": 2,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Semiconductor 2027 growth",
+    "quote": "we're not going to obviously guide into '27"
+   },
+   {
+    "topic": "Software 2027 growth",
+    "quote": "Obviously, it's a little early to comment yet on 2027."
+   }
+  ],
+  "hedge_index": 0.3,
+  "prior_guidance_check": []
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "doc_id": "GL-L-b096a3c90302",
+ "market": "GL",
+ "company_id": "BHP.AX",
+ "name": "BHP Group",
+ "doc_type": "release",
+ "date": "2026-10-21",
+ "period": "2026-09",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Mining",
+  "thesis": "Copper output fell 19% q/q to 401 kt on lower Escondida grades and disruptions, yet FY27 copper guidance of 1,650–1,800 kt is held and realised copper rose 53% y/y to US$7.01/lb.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Capacity bottleneck",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "decreased due to lower concentrate production, reflecting planned lower feed grade of 0.81% (Q1 FY26: 0.94%)"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "US$0.8 bn (100% basis) of pre-commitment funding was approved to enable execution readiness for the Escondida New Concentrator"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Copper realised price +53% y/y",
+    "quote": "Average realised price US$7.01/lb",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Escondida concentrator grade 0.94% → 0.81%",
+    "quote": "reflecting planned lower feed grade of 0.81% (Q1 FY26: 0.94%)",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "US$0.8bn Escondida New Concentrator pre-commitment",
+    "quote": "US$0.8 bn (100% basis) of pre-commitment funding was approved to enable execution readiness for the Escondida New Concentrator",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 copper guidance held",
+    "quote": "Copper production guidance for FY27 remains unchanged at between 1,650 and 1,800 kt.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Copper production FY27 (kt)",
+    "value": "1,650 – 1,800",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Copper production guidance for FY27 remains unchanged at between 1,650 and 1,800 kt."
+   },
+   {
+    "metric": "Escondida production FY27 (kt)",
+    "value": "1,000 – 1,100",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Production guidance for FY27 remains unchanged at between 1,000 and 1,100 kt."
+   },
+   {
+    "metric": "Iron ore production FY27 (Mt)",
+    "value": "260 – 272",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Production guidance for FY27 remains unchanged at between 260 and 272 Mt."
+   },
+   {
+    "metric": "Jansen Stage 1 first production",
+    "value": "mid-CY27",
+    "change": "held",
+    "horizon": "CY27",
+    "quote": "on track for first production in mid-2027"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "KGHM Polska Miedź",
+    "relation": "partner"
+   },
+   {
+    "name": "Amazon Web Services",
+    "relation": "customer"
+   },
+   {
+    "name": "Faraday",
+    "relation": "partner"
+   },
+   {
+    "name": "Antamina",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Pricing power",
+   "Copper supply growth",
+   "Potash (Jansen)",
+   "Data-centre power & cooling"
+  ],
+  "red_flags": [
+   {
+    "label": "Fatalities at Escondida and Peak Downs",
+    "quote": "The deaths of two colleagues at Escondida and Peak Downs are a profound loss."
+   },
+   {
+    "label": "Copper output down 19% q/q",
+    "quote": "Total copper production decreased 19% to 401 kt."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

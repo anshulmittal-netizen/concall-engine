@@ -1,0 +1,107 @@
+{
+ "doc_id": "IN-a73ed781-aabf-4244-bf6c-c44c2668e94f",
+ "market": "IN",
+ "company_id": "500510",
+ "name": "Larsen & Toubro",
+ "doc_type": "presentation",
+ "date": "2026-10-27",
+ "period": "2026-09",
+ "title": "Analyst Presentation - Q2 / H1 FY27",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Record Q2 order inflow of ₹1477bn (+28% YoY) and order book ₹8535bn (+28%), but EBITDA margin fell to 8.7% from 10.0% as the low-margin PP&M mix rose; NWC cut to 1.7%.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Mix shift",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Order inflow +28% YoY to ₹1477bn",
+    "quote": "ORDER INFLOW ₹ 1477 bn 28% YoY Growth New quarterly record",
+    "highlight": "New quarterly record",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "NWC 10.2% → 1.7% of revenue",
+    "quote": "Net Working Capital 10.2% 1.7%",
+    "highlight": "Net Working Capital 10.2% 1.7%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA margin 10.0% → 8.7%",
+    "quote": "Primarily impacted due to lower margin across portfolio and change in revenue mix (higher share of PP&M)",
+    "highlight": "lower margin across portfolio",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Energy-Green inflows down on solar deferrals",
+    "quote": "Decline in order inflows mainly due to deferrals in the Solar business",
+    "highlight": "deferrals in the Solar business",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "North Oil Company",
+    "relation": "customer"
+   },
+   {
+    "name": "Patna Medical College and Hospital",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Renewables & storage",
+   "Defence indigenisation",
+   "Data-centre power & cooling",
+   "Electronics manufacturing (EMS/PLI)"
+  ],
+  "red_flags": [
+   {
+    "label": "Gross debt/equity rising to 1.02 from 0.95",
+    "quote": "Gross Debt / Equity Ratio 0.95 1.02"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

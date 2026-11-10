@@ -1,0 +1,86 @@
+{
+ "doc_id": "GL-L-1727282e1ee9",
+ "market": "GL",
+ "company_id": "DUK",
+ "name": "Duke Energy",
+ "doc_type": "release",
+ "date": "2026-08-04",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Duke Q2 adjusted EPS $1.43 vs $1.25 a year ago; 2026 guidance $6.55–6.80 reaffirmed, but this is a regulated utility with rate-base growth, not a supply-cycle name, so the read is steady earnings, no capacity signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital cycle",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "2026 adjusted EPS guidance reaffirmed",
+    "quote": "The company is reaffirming its 2026 adjusted EPS guidance of $6.55 to $6.80",
+    "highlight": "reaffirming its 2026 adjusted EPS guidance of $6.55 to $6.80",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 adjusted EPS",
+    "value": "$6.55 to $6.80",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "The company is reaffirming its 2026 adjusted EPS guidance of $6.55 to $6.80"
+   },
+   {
+    "metric": "Long-term adjusted EPS growth 2025–2030",
+    "value": "5% to 7%",
+    "change": "held",
+    "horizon": "through 2030",
+    "quote": "long-term adjusted EPS growth rate of 5% to 7% through 2030 off the 2025 midpoint of $6.30"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Piedmont Natural Gas",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

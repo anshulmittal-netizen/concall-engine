@@ -1,0 +1,164 @@
+{
+ "doc_id": "GL-L-20159fff3845",
+ "market": "GL",
+ "company_id": "CAT",
+ "name": "Caterpillar",
+ "doc_type": "transcript",
+ "date": "2026-08-11",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Record $20.5B quarter and $72B backlog (up 92% y/y) with 1.5 GW recip restart and Wamego repurposing; supply is expanding but gated by production, with P&E lead times into late 2028.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Our CapEx spend for 2026 is anticipated to be approximately $3.5 billion similar to our previous expectations."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 sales growth raised to mid-to-high teens",
+    "quote": "We are increasing our full year 2026 sales and revenues expectations to mid- to high teens growth",
+    "highlight": "increasing our full year 2026 sales and revenues expectations",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Power gen STU up 72%",
+    "quote": "Power generation grew 72%, driven by very strong demand for large gensets and turbines used in data center applications.",
+    "highlight": "Power generation grew 72%",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Restarting 1.5 GW recip line",
+    "quote": "We plan to bring about 1.5 gigawatts of capacity back online, and shipments are expected to begin in the fourth quarter.",
+    "highlight": "bring about 1.5 gigawatts of capacity back online",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "CI dealer inventory up $400M",
+    "quote": "Dealer inventory increased by $400 million in Construction Industries compared to a decrease in the second quarter of 2025.",
+    "highlight": "Dealer inventory increased by $400 million",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 sales and revenues growth",
+    "value": "mid-to-high teens",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We are increasing our full year 2026 sales and revenues expectations to mid- to high teens growth"
+   },
+   {
+    "metric": "FY26 MP&E free cash flow",
+    "value": "top half of $6B-$15B range",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect MP&E free cash flow to be in the top half of our annual target range of $6 billion to $15 billion"
+   },
+   {
+    "metric": "FY26 capex",
+    "value": "approximately $3.5 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Our CapEx spend for 2026 is anticipated to be approximately $3.5 billion similar to our previous expectations."
+   },
+   {
+    "metric": "FY26 tariff costs (ex-IEEPA)",
+    "value": "around $2.2 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we now expect full year 2026 tariff costs of around $2.2 billion or at the low end of the range we previously provided"
+   },
+   {
+    "metric": "Q3 tariff costs",
+    "value": "around $600 million",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "We anticipate tariff costs of around $600 million, which is similar to what we incurred in the third quarter of 2025."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 capex",
+    "outcome": "met",
+    "quote": "Our CapEx spend for 2026 is anticipated to be approximately $3.5 billion similar to our previous expectations."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Major Projects",
+    "relation": "partner"
+   },
+   {
+    "name": "Skycatch",
+    "relation": "peer"
+   },
+   {
+    "name": "RPMGlobal",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Power generation backlog",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Dealer inventory build of $400M in CI",
+    "quote": "Dealer inventory increased by $400 million in Construction Industries compared to a decrease in the second quarter of 2025."
+   },
+   {
+    "label": "Q2 margin helped by $392M IEEPA tariff recovery",
+    "quote": "we recognized $392 million in expected IEEPA tariff recoveries"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 6,
+   "margin": 2,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Visibility on 2027-28 sold-out status",
+    "quote": "I'm not sure if you're willing to say whether you are sold out for 2027 and '28."
+   }
+  ],
+  "hedge_index": 0.25
+ }
+}

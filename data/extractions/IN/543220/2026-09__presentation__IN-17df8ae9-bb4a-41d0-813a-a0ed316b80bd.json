@@ -1,0 +1,132 @@
+{
+ "doc_id": "IN-17df8ae9-bb4a-41d0-813a-a0ed316b80bd",
+ "market": "IN",
+ "company_id": "543220",
+ "name": "Max Healthcare",
+ "doc_type": "presentation",
+ "date": "2026-10-30",
+ "period": "2026-09",
+ "title": "Presentation of earnings update for the quarter and half year ended September 30, 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Network revenue +20% YoY with occupancy flat at 77% and 758 beds added; ARPP +8% and PAT +10% YoY, with net debt down to ₹2,369 Cr from ₹2,384 Cr; capacity growth is outpacing occupancy gains.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 77,
+   "quote": "Bed occupancy for the quarter was at 77%, with Occupied Bed Days (OBDs) up by 13% YoY"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "The Board has approved capital expenditure of ₹ 415 Cr for addition of 209 brownfield beds across existing hospitals."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Occupancy flat at 77% YoY",
+    "quote": "Average occupancy was 77% in both Q2 FY27 and Q2 FY26, compared to 75% in Q1 FY27",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Fresh ₹415 Cr brownfield capex for 209 beds",
+    "quote": "The Board has approved capital expenditure of ₹ 415 Cr for addition of 209 brownfield beds across existing hospitals.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Ex-oncology revenue +25% YoY",
+    "quote": "Excluding Oncology services, the Gross Revenue grew by +25% YoY",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Receivable days up to 93",
+    "quote": "Represents DSO of 93 days at the end of Sep’26 vs 87 days at the end of Mar’26",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net debt to EBITDA",
+    "value": "Net debt ₹2,369 Cr at Sep-26 vs ₹2,384 Cr at Jun-26",
+    "change": "held",
+    "quote": "Net Debt at end of Sep ‘26 stood at ₹ 2,369 Cr compared to ₹ 2,384 Cr at end of Jun ‘26"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Oncology normalisation",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "CGHS super specialty rates",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Nanavati and Max Smart EBITDA ramp",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Net debt to EBITDA",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Kalinga Hospital Limited",
+    "relation": "partner"
+   },
+   {
+    "name": "Yerawada Properties Pvt. Ltd.",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Medical value travel"
+  ],
+  "red_flags": [
+   {
+    "label": "Institutional bed share down to 29.3% from 34.0%; oncology drug discontinuation",
+    "quote": "Discontinuation of select chemotherapy drugs for institutional patients led to a drop in share of Oncology in IPD revenues to 21% from 26% in Q2 FY26"
+   },
+   {
+    "label": "Receivable days rising to 93 from 87",
+    "quote": "Represents DSO of 93 days at the end of Sep’26 vs 87 days at the end of Mar’26"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

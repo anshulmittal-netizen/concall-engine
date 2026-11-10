@@ -1,0 +1,161 @@
+{
+ "doc_id": "GL-L-9d25dc7b7103",
+ "market": "GL",
+ "company_id": "CEG",
+ "name": "Constellation Energy",
+ "doc_type": "transcript",
+ "date": "2026-08-13",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Constellation raised FY26 adjusted EPS guidance to $11.50–$12.50 and contracted about 30% of clean baseload output, but supply-side evidence is thin: no new build capex, and no capacity addition beyond uprates and Crane restart.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Supply discipline",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 93.0,
+   "quote": "Our nuclear fleet delivered a 93% capacity factor"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "Dominguez said PJM's Connect and Manage program needs improvement and the bilateral process is confidential; no peer capacity commentary."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 EPS guide midpoint up $0.50",
+    "quote": "we are increasing our operational earnings guidance range by $0.50 to $11.50 to $12.50 per share",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Nuclear PPAs signed, 920 MW at 18.5 yrs",
+    "quote": "we have signed approximately 920 megawatts of long-term nuclear deals",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Brazos sold at ~$1,420/kW",
+    "quote": "for $860 million or about $1,420 per kilowatt",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Crane restart target 2H 2027",
+    "quote": "returning the facility to service in the second half of 2027",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 adjusted operating EPS",
+    "value": "$11.50–$12.50",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we are increasing our operational earnings guidance range by $0.50 to $11.50 to $12.50 per share"
+   },
+   {
+    "metric": "2029 capital allocation sensitivity floor",
+    "value": "$0.20/share floor, upside >$0.75",
+    "change": "new",
+    "horizon": "2029",
+    "quote": "The updated range now includes a floor of $0.20 per share with potential upside of greater than $0.75 per share."
+   },
+   {
+    "metric": "Crane restart",
+    "value": "2H 2027",
+    "change": "held",
+    "horizon": "2027",
+    "quote": "Second half of 2027 remains the target for returning the facility to service"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 adjusted operating EPS",
+    "outcome": "met",
+    "quote": "we are increasing our operational earnings guidance range by $0.50"
+   },
+   {
+    "metric": "Crane restart 2H 2027",
+    "outcome": "met",
+    "quote": "Second half of 2027 remains the target"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Walmart",
+    "relation": "customer"
+   },
+   {
+    "name": "LS Power",
+    "relation": "customer"
+   },
+   {
+    "name": "Calpine",
+    "relation": "peer"
+   },
+   {
+    "name": "PJM",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Co-location rule clarity slipping to 1H/2Q 2027",
+    "quote": "we think that we're going to see rule clarity in the first to second quarter of '27 in terms of co-location"
+   },
+   {
+    "label": "Illinois ZEC revenue down to $85M from $200M",
+    "quote": "This quarter, we recognized $85 million of bank credits compared with $200 million last year."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 3,
+   "margin": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Contract pricing",
+    "quote": "to protect customer sensitivity around the exact pricing, we're going to keep that range as it is"
+   },
+   {
+    "topic": "Customer identity",
+    "quote": "we're not really going to pinpoint the origin"
+   },
+   {
+    "topic": "New nuclear build",
+    "quote": "there's nothing right now that I would describe as imminently on the horizon for investment in new nuclear"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

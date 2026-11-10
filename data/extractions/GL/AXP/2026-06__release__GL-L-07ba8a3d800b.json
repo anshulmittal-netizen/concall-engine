@@ -1,0 +1,120 @@
+{
+ "doc_id": "GL-L-07ba8a3d800b",
+ "market": "GL",
+ "company_id": "AXP",
+ "name": "American Express",
+ "doc_type": "release",
+ "date": "2026-07-24",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Amex raised FY26 revenue growth guidance to 10% on 9% FX-adjusted billed business growth, the strongest in three years, while holding EPS at $17.30–$17.90; supply-side metrics are not applicable to a card network.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Spend growth 9%, highest in three years",
+    "quote": "Card Member spending growth of 9 percent, the highest rate we've seen in three years on an FX-adjusted basis",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 revenue growth raised to 10%",
+    "quote": "we are raising our full-year revenue growth guidance to 10 percent",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Reinvesting outperformance into growth",
+    "quote": "plan to reinvest this outperformance in growth initiatives given the significant opportunities we see ahead",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 revenue growth",
+    "value": "10%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we are raising our full-year revenue growth guidance to 10 percent"
+   },
+   {
+    "metric": "FY2026 EPS",
+    "value": "$17.30 to $17.90",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We continue to expect full-year EPS of $17.30 to $17.90."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "TheFork",
+    "relation": "partner"
+   },
+   {
+    "name": "ALL Accor",
+    "relation": "partner"
+   },
+   {
+    "name": "Fanatics",
+    "relation": "partner"
+   },
+   {
+    "name": "Delta",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Travel & hospitality upcycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Provisions reserve release flatters Q2 earnings",
+    "quote": "The decrease reflected a reserve release during the quarter compared to a reserve build in the prior year"
+   },
+   {
+    "label": "Expense growth outpacing revenue",
+    "quote": "Consolidated expenses were $14.5 billion, up 12 percent year-over-year."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

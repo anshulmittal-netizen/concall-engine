@@ -1,0 +1,179 @@
+{
+ "doc_id": "GL-L-dfccc2d8b79a",
+ "market": "GL",
+ "company_id": "CF",
+ "name": "CF Industries",
+ "doc_type": "transcript",
+ "date": "2026-08-12",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Fertilisers",
+  "thesis": "Mid-cycle EBITDA lifted to $2.9B on higher capital costs, with incentive urea at $385/t and 98% ammonia utilisation; tight nitrogen supply through 2027 and no new capacity sanctioned yet.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capital cycle",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 98,
+   "quote": "We operated our available ammonia capacity at nearly 98%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said the gap between US and rest-of-world construction costs has closed, raising the price needed for new capacity.",
+   "quote": "construction costs, the gap between the U.S. and the rest of the world has closed."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Incentive urea $355 → $385/t NOLA",
+    "quote": "we've moved from $355 NOLA urea on a short ton to $385",
+    "highlight": "$355 NOLA urea on a short ton to $385",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Mid-cycle EBITDA baseline $2.9B",
+    "quote": "this supports a baseline mid-cycle EBITDA for CF Industries of approximately $2.9 billion",
+    "highlight": "baseline mid-cycle EBITDA for CF Industries of approximately $2.9 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "India import demand 9–10 Mt",
+    "quote": "We anticipate India to be an import demand of 9 million to 10 million tons",
+    "highlight": "9 million to 10 million tons",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Blue Point ~1 Mt demand; peers cancelling",
+    "quote": "the ones that have given up are participants that were not necessarily in the market to begin with",
+    "highlight": "not necessarily in the market to begin with",
+    "direction": 1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Mid-cycle adjusted EBITDA",
+    "value": "~$2.9B baseline; ~$3.3B by 2030",
+    "change": "raised",
+    "horizon": "2030",
+    "quote": "By 2030, we expect these strategic initiatives that are in flight to raise our mid-cycle EBITDA to approximately $3.3 billion."
+   },
+   {
+    "metric": "Mid-cycle free cash flow",
+    "value": "~$1.7B",
+    "change": "new",
+    "horizon": "mid-cycle",
+    "quote": "free cash flow of $1.7 billion"
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "~$1.3B total; ~$950M CF share",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "we continue to project approximately $1.3 billion of capital expenditures in 2026"
+   },
+   {
+    "metric": "Yazoo City restart",
+    "value": "First half 2027",
+    "change": "cut",
+    "horizon": "1H 2027",
+    "quote": "we expect our Yazoo City Complex to resume operations in the first half of 2027"
+   },
+   {
+    "metric": "Gross ammonia production",
+    "value": "9.5 Mt 2026",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "Gross Ammonia Production -- 9.5 million tons projected for 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Yara",
+    "relation": "competitor"
+   },
+   {
+    "name": "Linde",
+    "relation": "partner"
+   },
+   {
+    "name": "JERA",
+    "relation": "partner"
+   },
+   {
+    "name": "Mitsui",
+    "relation": "partner"
+   },
+   {
+    "name": "Exxon",
+    "relation": "supplier"
+   },
+   {
+    "name": "Trinidad",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Data-centre power & cooling",
+   "Pharma CDMO / outsourcing",
+   "Nearshoring / reshoring (US)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q2 inventory built; UAN volume shifted to urea",
+    "quote": "We're going to work on our inventory levels, which built up during Q2."
+   },
+   {
+    "label": "Yazoo City restart delayed late 2026 to 1H27",
+    "quote": "we've moved it into the first half of next year from a timing standpoint"
+   },
+   {
+    "label": "Q2 fixed cost absorption and purchased ammonia COGS up",
+    "quote": "our fixed costs were up about $75 million"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 4,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Share of mid-cycle lift from geopolitics vs capex",
+    "quote": "Yes. And maybe let me add a little color -- Ben, this is Andrew as well."
+   },
+   {
+    "topic": "Yazoo City insurance and capital timing",
+    "quote": "we are not included in our capital guidance and assumption for Yazoo City"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

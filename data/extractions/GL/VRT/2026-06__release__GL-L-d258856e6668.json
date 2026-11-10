@@ -1,0 +1,116 @@
+{
+ "doc_id": "GL-L-d258856e6668",
+ "market": "GL",
+ "company_id": "VRT",
+ "name": "Vertiv",
+ "doc_type": "release",
+ "date": "2026-07-29",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.69,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q2 organic growth 18% with adjusted op margin 22.6% (+410bp) and FY26 guidance raised; but sales timing shifts and inventory/deferred revenue build show demand strength more than supply discipline.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Capital expenditures for full year 2026 are expected to be approximately 4.0% of revenue, at the high end of the range."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex ~4.0% of revenue, high end",
+    "quote": "Capital expenditures for full year 2026 are expected to be approximately 4.0% of revenue, at the high end of the range.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Adj. op margin 22.6%, up 410bp",
+    "quote": "Adjusted operating margin was 22.6%, up 410 basis points compared to second quarter 2025, driven by operational execution",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 sales guide raised to $14.0bn",
+    "quote": "Expects full year 2026 net sales of $14,000 million and organic sales growth of 31%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory up $1.07bn YTD; deferred revenue up",
+    "quote": "Second quarter revenue reflected minor timing shifts, primarily due to temporary supply chain congestion",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 net sales",
+    "value": "$13,800M - $14,200M (midpoint $14,000M)",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Expects full year 2026 net sales of $14,000 million and organic sales growth of 31%"
+   },
+   {
+    "metric": "FY26 adjusted diluted EPS",
+    "value": "$6.65 - $6.75",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "adjusted diluted EPS of $6.65 to $6.75"
+   },
+   {
+    "metric": "Q3 26 net sales",
+    "value": "$3,650M - $3,850M",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "Third Quarter 2026 Guidance $3,650M - $3,850M"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)",
+   "Pricing power"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital build: inventory and receivables up",
+    "quote": "Inventories (663.8) (8.9)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

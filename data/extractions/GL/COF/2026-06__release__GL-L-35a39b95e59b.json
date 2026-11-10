@@ -1,0 +1,79 @@
+{
+ "doc_id": "GL-L-35a39b95e59b",
+ "market": "GL",
+ "company_id": "COF",
+ "name": "Capital One",
+ "doc_type": "release",
+ "date": "2026-07-21",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Credit-card-heavy bank with a $662M reserve release and NIM up 14bp to 8.01%, but marketing up 11% q/q and no capacity or pricing read; supply-side lens does not apply to this release.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Reserve release $662M in quarter",
+    "quote": "$662 million loan reserve release.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Credit card loans up 2% q/q",
+    "quote": "Credit Card period-end loans increased $4.9 billion, or 2 percent, to $275.4 billion.",
+    "direction": 1,
+    "confidence": 0.35
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Discover",
+    "relation": "partner"
+   },
+   {
+    "name": "Brex",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.5
+ }
+}

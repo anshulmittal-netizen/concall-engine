@@ -1,0 +1,200 @@
+{
+ "doc_id": "GL-L-bbf2260df7ec",
+ "market": "GL",
+ "company_id": "APTV",
+ "name": "Aptiv",
+ "doc_type": "transcript",
+ "date": "2026-08-11",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Aptiv cut FY26 revenue guidance by $300M at midpoint to $12.6–12.8B on China domestic weakness (retail sales down 20%), while non-auto grew 12% and bookings reached $10B YTD; no supply-side discipline signal.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Customer stickiness",
+   "Backlog conversion",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -2,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 revenue cut $300M at midpoint",
+    "quote": "We are reducing full year revenue guidance at the midpoint by $300 million",
+    "direction": -1,
+    "confidence": 0.9
+   },
+   {
+    "type": "demand",
+    "label": "China domestic retail sales down 20%",
+    "quote": "with domestic retail sales down 20%",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY EBITDA and EPS lowered",
+    "quote": "We now expect adjusted earnings per share in the range of $5.60 to $5.80.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "novelty",
+    "label": "Drone award $500M lifetime revenue",
+    "quote": "total lifetime revenues of over $500 million over a 5-year program",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 revenue",
+    "value": "$12.6B to $12.8B",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "we now expect revenue in the range of $12.6 billion to $12.8 billion"
+   },
+   {
+    "metric": "FY26 adjusted EBITDA",
+    "value": "$2.31B to $2.37B",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "We expect adjusted EBITDA in the range of $2.31 billion to $2.37 billion"
+   },
+   {
+    "metric": "FY26 adjusted EPS",
+    "value": "$5.60 to $5.80",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "We now expect adjusted earnings per share in the range of $5.60 to $5.80."
+   },
+   {
+    "metric": "FY26 free cash flow",
+    "value": "$625M to $725M",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "free cash flow is expected to be in the range of $625 million to $725 million"
+   },
+   {
+    "metric": "Robotics and drone annual revenue",
+    "value": "about $300M over next few years",
+    "change": "new",
+    "horizon": "multi-year",
+    "quote": "We have a high degree of confidence in achieving annual revenues from the robotics and drone markets of about $300 million over the next few years."
+   },
+   {
+    "metric": "Q3 2026 revenue",
+    "value": "$3.12B to $3.22B",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "revenue of $3.12 billion to $3.22 billion with Adjusted EBITDA margins projected at 17.7%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Full-year revenue growth framework (prior 4% to 7%)",
+    "outcome": "dropped",
+    "quote": "the prior 4% to 7% growth framework into 2027 and beyond"
+   },
+   {
+    "metric": "Non-auto growth 8% to 10% framework",
+    "outcome": "met",
+    "quote": "in line with our 8% to 10% sort of framework that we've provided previously"
+   },
+   {
+    "metric": "150bps H2 growth improvement from lapping supplier fire",
+    "outcome": "met",
+    "quote": "the 150 basis points improvement in growth from lapping of previously identified headwinds"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Versigent",
+    "relation": "peer"
+   },
+   {
+    "name": "BYD",
+    "relation": "customer"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "Volvo Cars",
+    "relation": "customer"
+   },
+   {
+    "name": "Robust.AI",
+    "relation": "customer"
+   },
+   {
+    "name": "Kyndryl",
+    "relation": "partner"
+   },
+   {
+    "name": "IHS",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "China+1 enquiries → orders",
+   "Consolidation / competitor exits",
+   "Robotics",
+   "Data-centre power & cooling",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Repeated under-conservatism on China and launch assumptions",
+    "quote": "we were not conservative enough in certain assumptions, particularly around launches and ramps"
+   },
+   {
+    "label": "Stranded costs post-spin and high decremental",
+    "quote": "offset stranded costs from the Versigent spinoff"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 3,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Portfolio changes / EDS or further separation",
+    "quote": "I don't have any specific comments I would make at this point in time."
+   },
+   {
+    "topic": "2027 growth framework",
+    "quote": "I won't get in specifically into 2027 at this point in time."
+   },
+   {
+    "topic": "Export-platform revenue vs bookings mismatch",
+    "quote": "But right now, our revenues don't match the bookings mix over the last 2 years."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

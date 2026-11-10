@@ -1,0 +1,141 @@
+{
+ "doc_id": "GL-L-6b1127afa48b",
+ "market": "GL",
+ "company_id": "FSLR",
+ "name": "First Solar",
+ "doc_type": "release",
+ "date": "2026-07-30",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Q2 net sales fell 4% to $1.06B on customer contract terminations, yet guidance was reaffirmed and backlog stands at 45.1 GW; underutilisation costs of $14.6M and inventory build of $1.09B point to soft volume.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventories up to $1.09B from $737M",
+    "quote": "Inventories 1,088,115 736,734",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "2026 guidance reaffirmed, not raised",
+    "quote": "Our 2026 guidance remains unchanged",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Volume sold",
+    "value": "17.0GW to 18.2GW",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Our 2026 guidance remains unchanged and is summarized below"
+   },
+   {
+    "metric": "Net sales",
+    "value": "$4.9B to $5.2B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Net Sales $4.9B to $5.2B"
+   },
+   {
+    "metric": "Adjusted EBITDA",
+    "value": "$2.6B to $2.8B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Adjusted EBITDA (3) $2.6B to $2.8B"
+   },
+   {
+    "metric": "Capital expenditures",
+    "value": "$0.8B to $1.0B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Capital Expenditures $0.8B to $1.0B"
+   },
+   {
+    "metric": "Net cash balance",
+    "value": "$1.7B to $2.3B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Net Cash Balance (4) $1.7B to $2.3B"
+   },
+   {
+    "metric": "Q3 module sales",
+    "value": "3.9 GW to 4.5 GW",
+    "change": "new",
+    "horizon": "Q3 CY26",
+    "quote": "we anticipate our module sales to be between 3.9 GW and 4.5 GW"
+   },
+   {
+    "metric": "Q3 Adjusted EBITDA",
+    "value": "$625M to $775M",
+    "change": "new",
+    "horizon": "Q3 CY26",
+    "quote": "forecasted third quarter Adjusted EBITDA between $625 million and $775 million"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2026 guidance (volume, net sales, EBITDA, capex, net cash)",
+    "outcome": "met",
+    "quote": "Our 2026 guidance remains unchanged"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Backlog conversion",
+   "Tariffs & trade policy",
+   "Nearshoring / reshoring (US)"
+  ],
+  "red_flags": [
+   {
+    "label": "Net cash down to $1.7B from $2.4B",
+    "quote": "Net cash balance decreased to $1.7 billion as of June 30, 2026 from $2.4 billion as of December 31, 2025"
+   },
+   {
+    "label": "Government grants receivable up to $1.26B",
+    "quote": "Government grants receivable 978,788 125,607"
+   },
+   {
+    "label": "Sales down on contract terminations",
+    "quote": "driven primarily by lower revenue associated with customer contract terminations"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

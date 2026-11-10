@@ -1,0 +1,178 @@
+{
+ "doc_id": "GL-L-a3db1dd92bb0",
+ "market": "GL",
+ "company_id": "NVDA",
+ "name": "Nvidia",
+ "doc_type": "release",
+ "date": "2026-08-26",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Revenue $96.2B (+106% Y/Y) with Q3 guide $108.0B ±2%, but inventory build (receivables +$22.3B in quarter) and capex only $2.7B signal demand strength more than supply discipline.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q3 revenue guide $108.0B",
+    "quote": "Revenue is expected to be $108.0 billion, plus or minus 2%.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables up $22.3B in quarter",
+    "quote": "Accounts receivable (22,346) (5,675)",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin steady at 75%",
+    "quote": "GAAP and non-GAAP gross margins were both 75.0%.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q3 FY27 revenue",
+    "value": "$108.0B ±2%",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "Revenue is expected to be $108.0 billion, plus or minus 2%."
+   },
+   {
+    "metric": "Q3 FY27 GAAP and non-GAAP gross margin",
+    "value": "74.0% ±50bp",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "GAAP and non-GAAP gross margins are expected to be 74.0%, plus or minus 50 basis points."
+   },
+   {
+    "metric": "Q3 FY27 non-GAAP operating expenses",
+    "value": "$9.0B",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "GAAP and non-GAAP operating expenses are expected to be approximately $9.2 billion and $9.0 billion, respectively."
+   },
+   {
+    "metric": "FY27 tax rate",
+    "value": "16.0% to 18.0%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "NVIDIA expects GAAP and non-GAAP tax rates to be between 16.0% and 18.0%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "CoreWeave",
+    "relation": "customer"
+   },
+   {
+    "name": "Google Cloud",
+    "relation": "customer"
+   },
+   {
+    "name": "Microsoft Azure",
+    "relation": "customer"
+   },
+   {
+    "name": "Oracle Cloud Infrastructure",
+    "relation": "customer"
+   },
+   {
+    "name": "Nebius",
+    "relation": "customer"
+   },
+   {
+    "name": "SK hynix",
+    "relation": "partner"
+   },
+   {
+    "name": "SK Telecom",
+    "relation": "partner"
+   },
+   {
+    "name": "Apollo",
+    "relation": "partner"
+   },
+   {
+    "name": "BlackRock",
+    "relation": "partner"
+   },
+   {
+    "name": "Blackstone",
+    "relation": "partner"
+   },
+   {
+    "name": "Brookfield",
+    "relation": "partner"
+   },
+   {
+    "name": "Goldman Sachs",
+    "relation": "partner"
+   },
+   {
+    "name": "KKR",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)",
+   "China+1 enquiries → orders",
+   "Tariffs & trade policy",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables up $22.3B in quarter",
+    "quote": "Accounts receivable (22,346) (5,675)"
+   },
+   {
+    "label": "Inventory build $5.8B in quarter",
+    "quote": "Inventories (5,784) (3,622)"
+   },
+   {
+    "label": "Long-term debt up to $32.4B from $7.5B",
+    "quote": "Long-term debt 32,366 7,469"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

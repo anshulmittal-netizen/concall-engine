@@ -1,0 +1,100 @@
+{
+ "doc_id": "GL-L-aab1f1ffca0c",
+ "market": "GL",
+ "company_id": "PKX",
+ "name": "POSCO Holdings",
+ "doc_type": "release",
+ "date": "2026-11-02",
+ "period": "2026-09",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.71,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Consolidated OP rose 48% YoY to KRW 0.94tn on steel margin recovery, but net profit attributable fell 65% QoQ to KRW 0.24tn after one-offs; no capacity discipline or guidance disclosed.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 90.9,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "Q3 cumulative CAPEX administered : (Consolidated) KRW 5.4 tril., (Separate) KRW 0.2 tril."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Carbon steel price KRW 962K → 982K/t",
+    "quote": "KRW 962K/t → ’26.3Q) KRW 982K/t (+20K/t)",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Lithium capacity to 100Ktpa by 2033",
+    "quote": "Establishing a clear roadmap to reach 100Ktpa capa. by 2033",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Samsung SDI",
+    "relation": "customer"
+   },
+   {
+    "name": "SK On",
+    "relation": "customer"
+   },
+   {
+    "name": "Chord",
+    "relation": "partner"
+   },
+   {
+    "name": "POSCO Argentina",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Net profit to controlling interest down 65% QoQ",
+    "quote": "Profit Attributable to Owners of the Controlling Company 0.24 0.68 -64.7%"
+   },
+   {
+    "label": "Impairments KRW 272bn and 2FINEX closure",
+    "quote": "Impairment losses of KRW 272 bil. on high-purity nickel business, Myanmar hotel, and others."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

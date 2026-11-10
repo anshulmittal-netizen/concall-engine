@@ -1,0 +1,130 @@
+{
+ "doc_id": "GL-L-2b60463927f5",
+ "market": "GL",
+ "company_id": "RTX",
+ "name": "RTX",
+ "doc_type": "release",
+ "date": "2026-07-23",
+ "period": "2026-06",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Defence & aerospace",
+  "thesis": "Q2 organic sales up 16% with backlog $289B (up 22%) and FY26 adjusted sales and EPS guidance raised; commercial aftermarket and defence growth carry the quarter while OE is down 8% at P&W.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 adj EPS raised to $7.10-7.25",
+    "quote": "Adjusted EPS* of $7.10 - $7.25, up from $6.70 - $6.90",
+    "highlight": "Adjusted EPS* of $7.10 - $7.25",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Backlog up 22% to $289B",
+    "quote": "our backlog is up 22 percent year over year",
+    "highlight": "backlog is up 22 percent",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "guidance",
+    "label": "Organic growth guide 8-9% from 5-6%",
+    "quote": "Organic sales growth* of 8 to 9 percent, up from 5 to 6 percent",
+    "highlight": "Organic sales growth* of 8 to 9 percent",
+    "direction": 1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Adjusted sales",
+    "value": "$95.0-96.0B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Adjusted sales* of $95.0 - $96.0 billion, up from $92.5 - $93.5 billion"
+   },
+   {
+    "metric": "Organic sales growth",
+    "value": "8-9%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Organic sales growth* of 8 to 9 percent, up from 5 to 6 percent"
+   },
+   {
+    "metric": "Adjusted EPS",
+    "value": "$7.10-7.25",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Adjusted EPS* of $7.10 - $7.25, up from $6.70 - $6.90"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "$8.50-8.75B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Free cash flow* of $8.50 - $8.75 billion, up from $8.25 - $8.75 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Pratt & Whitney",
+    "relation": "peer"
+   },
+   {
+    "name": "Raytheon",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Premiumisation in consumption",
+   "Backlog conversion"
+  ],
+  "red_flags": [
+   {
+    "label": "P&W commercial OE down 8%",
+    "quote": "partially offset by an 8 percent decrease in commercial OE"
+   },
+   {
+    "label": "Working capital: contract assets up",
+    "quote": "Contract assets            (963)            (484)            (1,942)            (1,190)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.1
+ }
+}

@@ -1,0 +1,144 @@
+{
+ "doc_id": "GL-L-e9ce53cefbbe",
+ "market": "GL",
+ "company_id": "NXT",
+ "name": "Nextracker",
+ "doc_type": "release",
+ "date": "2026-07-30",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Record Q1 FY27 revenue $935M and backlog above $5.5B, but a 45X credit of $99M lifted gross margin and FY27 outlook was raised mainly on the new power-conversion push and acquisitions.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "novelty",
+    "label": "Acquisitions and power conversion entry",
+    "quote": "Expanded Nextpower’s clean power technology platform through acquisition of the Prevalon energy storage business as well as Apex Power",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue guide raised to $4.1-4.4B",
+    "quote": "Revenue $4.1 to $4.4 billion $4.0 to $4.4 billion",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "45X credit $99M inside gross profit",
+    "quote": "include approximately $99 million, $47 million, and $82 million, respectively, of IRA 45X advanced manufacturing tax credit vendor rebates and tariffs, net",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Backlog above $5.5B",
+    "quote": "Grew backlog to more than $5.5 billion, reflecting strong customer demand and bookings momentum",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue FY27",
+    "value": "$4.1 to $4.4 billion",
+    "change": "raised",
+    "horizon": "FY2027"
+   },
+   {
+    "metric": "GAAP Diluted EPS FY27",
+    "value": "$3.42 to $3.64",
+    "change": "raised",
+    "horizon": "FY2027"
+   },
+   {
+    "metric": "Adjusted EBITDA FY27",
+    "value": "$870 to $930 million",
+    "change": "raised",
+    "horizon": "FY2027"
+   },
+   {
+    "metric": "Adjusted Diluted EPS FY27",
+    "value": "$4.42 to $4.73",
+    "change": "raised",
+    "horizon": "FY2027"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Prevalon",
+    "relation": "partner"
+   },
+   {
+    "name": "Apex Power",
+    "relation": "partner"
+   },
+   {
+    "name": "Zigor Corporation",
+    "relation": "supplier"
+   },
+   {
+    "name": "Zimmermann PV-Steel Group",
+    "relation": "partner"
+   },
+   {
+    "name": "Wood Mackenzie",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Grid capex & transformers",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin lifted by 45X credit and rebates",
+    "quote": "include approximately $99 million, $47 million, and $82 million, respectively, of IRA 45X advanced manufacturing tax credit vendor rebates and tariffs, net"
+   },
+   {
+    "label": "Operating cash flow weaker on working capital",
+    "quote": "Changes in working capital and other, net (53,062) (81,648)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

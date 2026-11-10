@@ -1,0 +1,121 @@
+{
+ "doc_id": "GL-L-2381ed1780ae",
+ "market": "GL",
+ "company_id": "SHEL.L",
+ "name": "Shell",
+ "doc_type": "release",
+ "date": "2026-07-07",
+ "period": "2026-06",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Shell's Q2 update is a guidance-cut event: upstream production guided to 610–650 kboe/d (from 580–640 in the prior QPR range, which for the Qatar-hit segment was 580–640 and now 610–650), while chemicals margin is compressed versus IRM, with working capital a sharp (11.2) outflow.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 85,
+   "quote": "Chemicals utilisation 85% 80% - 84%"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Chemicals margin $139/t vs ~$240 guide",
+    "quote": "Indicative chemicals margin $139/tonne ~$240/tonne*",
+    "highlight": "Indicative chemicals margin $139/tonne",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital (11.2) outflow",
+    "quote": "Working capital (11.2) 1 - 6 Reflects impact of unprecedented volatility in commodity prices.",
+    "highlight": "Reflects impact of unprecedented volatility in commodity prices",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Refinery utilisation 99% vs ~100% guide",
+    "quote": "Refinery utilisation 99% ~100%",
+    "highlight": "Refinery utilisation 99%",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Production (kboe/d) Q2 upstream",
+    "value": "610 - 650",
+    "change": "raised",
+    "horizon": "Q2 CY26",
+    "quote": "Reflects the impact of the Middle East conflict on Qatari volumes."
+   },
+   {
+    "metric": "Indicative chemicals margin",
+    "value": "~$240/tonne",
+    "change": "held",
+    "horizon": "Q2 CY26",
+    "quote": "Indicative chemicals margin $139/tonne ~$240/tonne*"
+   },
+   {
+    "metric": "Chemicals utilisation",
+    "value": "80% - 84%",
+    "change": "held",
+    "horizon": "Q2 CY26",
+    "quote": "Chemicals utilisation 85% 80% - 84%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Production (kboe/d) Q2 upstream",
+    "outcome": "met"
+   },
+   {
+    "metric": "Chemicals utilisation",
+    "outcome": "missed"
+   },
+   {
+    "metric": "Refinery utilisation",
+    "outcome": "met"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Middle East conflict supply disruption"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital outflow (11.2)",
+    "quote": "Working capital (11.2) 1 - 6 Reflects impact of unprecedented volatility in commodity prices."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

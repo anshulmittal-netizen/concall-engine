@@ -1,0 +1,121 @@
+{
+ "doc_id": "GL-L-2853b604e0cc",
+ "market": "GL",
+ "company_id": "XOM",
+ "name": "ExxonMobil",
+ "doc_type": "release",
+ "date": "2026-07-31",
+ "period": "2026-06",
+ "title": "8-K · NEWS RELEASE",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Q2 CY26 earnings of $14.5B ($3.48/sh) with record Permian output above 1.8 Mboe/d and structural savings of $16.3B; the release frames integration and cost, not supply discipline, as the driver.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "record Permian production of more than 1.8 Moebd"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "2026 planned investments are 20% higher than nearest IOC",
+   "quote": "2026 planned investments are 20% higher than nearest IOC"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Permian record above 1.8 Moebd",
+    "quote": "record Permian production of more than 1.8 Moebd",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "2026 capex 20% above nearest IOC",
+    "quote": "2026 planned investments are 20% higher than nearest IOC",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "novelty",
+    "label": "Proxxima blending expansion FID, 120KTA",
+    "quote": "Reached final investment decision for 120KTA Proxxima",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Guyana Fifth FPSO production startup",
+    "value": "4Q26, adds 250 Kbd capacity",
+    "change": "new",
+    "quote": "production startup on plan for 4Q26, increasing capacity by 250 Kbd"
+   },
+   {
+    "metric": "Permian production CAGR through 2030",
+    "value": "9%",
+    "change": "held",
+    "quote": "consistent with planned 9% CAGR through 2030"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Rystad Energy",
+    "relation": "peer"
+   },
+   {
+    "name": "Chevron",
+    "relation": "peer"
+   },
+   {
+    "name": "Shell",
+    "relation": "peer"
+   },
+   {
+    "name": "TotalEnergies",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Additions to financial reserves $1,365M in Q2",
+    "quote": "2Q26 Other Identified Items includes $1,365 million in additions to financial reserves"
+   },
+   {
+    "label": "Upstream depreciation rising",
+    "quote": "partly offset by higher \ndepreciation"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4,
+  "hedge_index_note": "Press release only; no Q&A."
+ }
+}

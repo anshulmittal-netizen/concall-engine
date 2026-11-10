@@ -1,0 +1,86 @@
+{
+ "doc_id": "IN-L-77fa3021e293",
+ "market": "IN",
+ "company_id": "532500",
+ "name": "Maruti Suzuki",
+ "doc_type": "presentation",
+ "date": "2026-10-27",
+ "period": "2026-09",
+ "title": "Investor Presentation on the financial results for the quarter ended on 30th September 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Volume up 26.5% YoY to 696,654 units but Op. EBITDA margin fell 330 bps to 9.4% on material cost up 420 bps; PAT down 26.9%, a margin-led not demand-led miss.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Material cost 75.7% → 79.9% of sales",
+    "quote": "Material Cost 79.9 75.7 420",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Volume +26.5% YoY to 696,654",
+    "quote": "Sales Volume 696,654 550,874 26.5%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Improved realization cited",
+    "quote": "Improved realization",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin compression from commodity and FX",
+    "quote": "Adverse commodity prices in the context of West Asia conflict"
+   },
+   {
+    "label": "Non-operating income falling on MTM losses",
+    "quote": "Lower non-operating income due to mark-to-market losses on invested surplus"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}
