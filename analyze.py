@@ -703,6 +703,9 @@ def build(market: str, log=print) -> dict:
         # results calendar + posted results as of this build; the page prefers data/results_in.json when newer
         "results": read_json(DATA / "results_in.json", None) if market == "IN" else None,
     }
+    # Collector's shelf: durable businesses in a tailwind over the last three quarters, with a rough valuation
+    import shelf
+    data["shelf"] = shelf.build(calls, recs, all_periods, (data["results"] or {}).get("results"), cfg.get("shelf"))
     write_json(SITE / "data" / f"{market.lower()}.json", data, compact=True)  # the page's main file: kept small
     log(f"{market}: wrote {len(out_cos)} companies, {len(sectors)} sectors, {len(themes)} themes, {len(ideas)} ideas")
     return data

@@ -383,6 +383,10 @@ svg text{font-family:var(--mono)}
 .idea .foot{display:flex;justify-content:space-between;align-items:center;gap:7px;flex-wrap:wrap}
 .tag{font-size:10.5px;padding:2.5px 8.5px;border-radius:99px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);text-decoration:none}
 .first .r{grid-template-columns:minmax(0,1.3fr) 100px 110px 70px minmax(0,1fr) minmax(0,2fr)}
+.shelf .r{grid-template-columns:minmax(0,1.3fr) 128px minmax(0,1fr) 92px 78px minmax(0,2fr)}
+.shelf .sq{display:inline-flex;gap:4px;align-items:baseline}.shelf .sq b{font-size:12.5px}.shelf .sq i{font-style:normal;font-size:9px;color:var(--faint);display:block}
+.shelf .pe{font-weight:700;font-size:14px}.sh-g{margin:14px 0 6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.shelf .tags{display:flex;flex-wrap:wrap;gap:4px;align-content:center}.shelf .tags .tag{white-space:nowrap}
 .up-day{display:grid;gap:8.5px}
 .up-day h3{font-size:14px;font-weight:600;display:flex;gap:8.5px;align-items:baseline}
 .up-day h3 .num{font-size:10.5px;color:var(--muted);font-weight:400}
@@ -786,6 +790,10 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
   .rc .r .up-actions{grid-column:1/-1;justify-content:flex-start}
   .first .r>:nth-child(n+3){grid-column:1/-1}
   .first .r>:nth-child(3),.first .r>:nth-child(4){display:none}
+  .shelf .r{grid-template-columns:minmax(0,1fr) auto}
+  .shelf .r>:nth-child(4){grid-column:2;grid-row:1;text-align:right}
+  .shelf .r>:nth-child(2),.shelf .r>:nth-child(3),.shelf .r>:nth-child(6){grid-column:1/-1}
+  .shelf .r>:nth-child(5){display:none}
   .vguide div,dl.gl div{grid-template-columns:1fr;gap:2px}
   .weights .w{grid-template-columns:120px minmax(0,1fr) 34px}
   .verdict{grid-template-columns:1fr}
@@ -965,6 +973,8 @@ const GL = {
   models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
   pead:['Results to watch (PEAD)','Post-earnings announcement drift: shares of companies that beat tend to keep rising for weeks after the results, not just on day 1. This page lists small, mid and micro caps (below ₹50,000 Cr) reporting soon whose last concall points to a strong quarter, ranked on the Concall Signal Score plus 6 points for positive guidance, 6 for raised guidance and minus 8 for a cut. After results it shows which of them beat (profit up 20%+ on last year) and rose on day 1, the usual trigger for a drift trade.'],
+  shelf:['Collector’s shelf','Companies whose last three quarters of calls all read as a durable business in a tailwind: demand positive on every call, no guidance cut, no veto, a steady score, and a moat signal (pricing power, customer stickiness, regulatory moat, hidden supplier, import substitution, supply exit or consolidation named on two or more calls, or industry structure easing). The moat signal is a proxy read from the calls, not proof that a business is unusual.'],
+  rrpe:['Run-rate P/E','Market cap divided by the profit of the latest two reported quarters, annualised. It uses results already on the desk and the market cap from the weekly universe refresh, so it can lag the share price by up to a week. Annualising two quarters misreads seasonal businesses, and a standalone result (marked S) understates a group. It is a rough guide and is not part of any score.'],
   nearterm:['Near-term strength','Companies scoring 60+ whose latest call shows at least three strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a score of 0.75+ on the guidance-backed growth & capacity part. There is no separate score.'],
   quarter:['Quarter switch','Pick the results season you want to look at. Every call-based view follows it: Today, All calls, First-time callers, Sector tracker, Guidance leaders, Sector turns, Themes, Who’s asking, Near-term strength and Inflection watch show only that quarter’s calls. A season still in progress is compared with the quarter before it. Near-term strength and Inflection watch list companies whose latest call is from that quarter. “All” shows each company’s latest call, and the sector boards use the latest full quarter. Coming up, the results pages and Management changes go by date, not quarter.']
 };
@@ -1006,7 +1016,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, shelf: {grp: '', small: false}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -1189,7 +1199,7 @@ const VIEWS = [
   {group: 'Results', items: [['pead', 'Results to watch (PEAD)'], ['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
   {group: 'Sector leaders', items: [['leaders', 'Leaders dashboard'], ['ledger', 'Event ledger']]},
   {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
-  {group: 'Ideas', items: [['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes']]}
+  {group: 'Ideas', items: [['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes']]}
 ];
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
 function navCounts() {
@@ -1202,7 +1212,7 @@ function navCounts() {
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: cyData('sub').rows.filter(r => r.ph === 'turn' && !r.thin).length || '',
-    themes: themesQ().length, nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
+    themes: themesQ().length, shelf: shRows().filter(r => r.group === 'fair').length || '', nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
 function renderNav() {
@@ -2023,6 +2033,35 @@ function vFirst() {
         <span class="why" style="min-width:0">${esc(r.thesis || '')}<br><span style="color:var(--faint)">${esc(r.evidence)}</span></span></button>`).join('')}</div>`
       : '<div class="empty">No first-time callers in this view yet.</div>'}
     <p class="count-line">${fmt(D.historyChecked || 0)} companies checked against their BSE filing history so far. New companies are checked every night.</p>`;
+}
+
+/* Collector's shelf: durable businesses in a tailwind over the last three quarters of calls, with a rough valuation (shelf.py) */
+const SH_G = {fair: ['Fair price', 'st-confirming'], payup: ['Paying up', 'st-crowded'], none: ['No valuation yet', 'st-neutral']};
+function shRows() { return ((D && D.shelf && D.shelf.rows) || []).filter(r => !S.shelf.small || (r.mcapCr || 0) < 50000); }
+function vShelf() {
+  const sh = D.shelf || {rows: [], window: [], rules: {}}, all = shRows(), fair = sh.rules.fair_pe || 30;
+  const rows = all.filter(r => !S.shelf.grp || r.group === S.shelf.grp);
+  const n = g => all.filter(r => r.group === g).length;
+  const pct = v => v == null ? '' : `${v > 0 ? '+' : ''}${Math.round(v)}%`;
+  const row = r => `<button class="r" data-open="${esc(r.id)}" data-k="${esc(r.key)}">
+      <span style="min-width:0"><span class="nm" style="display:block">${star(r.id)}${esc(r.name)}</span><span class="sub">${esc(r.mcap || '')}${r.mcap ? ' · ' : ''}${esc(r.sector || '')}</span></span>
+      <span class="sq">${r.q.map(q => `<span><b class="num" style="color:${vcol(q.s)}">${q.s}</b><i>${esc(q.p)}</i></span>`).join('')}</span>
+      <span class="tags" style="min-width:0">${r.moat.map(m => `<span class="tag">${esc(m)}</span>`).join('') || '<span class="tag">Industry structure easing</span>'}${r.raised ? `<span class="tag" style="color:var(--up)">Guidance raised ×${r.raised}</span>` : ''}</span>
+      <span>${r.pe != null ? `<b class="num pe" style="color:${r.pe <= fair ? 'var(--up)' : 'var(--warn)'}">${r.pe.toFixed(1)}×</b><span class="sub" style="display:block">${esc(r.resLabel || '')}${r.basis === 'Standalone' ? ' · S' : ''}</span>` : `<span class="sub" title="${esc(r.peNote)}">—<br>${esc(r.peNote)}</span>`}</span>
+      <span class="sub num">${r.patYoy != null ? `<b style="color:${r.patYoy >= 0 ? 'var(--up)' : 'var(--down)'}">${pct(r.patYoy)}</b><br>profit YoY` : ''}</span>
+      <span class="why" style="min-width:0">${esc(r.why || '')}</span></button>`;
+  const hd = `<div class="r hd"><span>Company</span><span>Score, last calls</span><span>Moat signal</span><span>Run-rate P/E ${tip('rrpe')}</span><span>Profit</span><span>What the latest call said</span></div>`;
+  const block = g => { const xs = rows.filter(r => r.group === g); return xs.length ? `<div class="sh-g"><span class="pill ${SH_G[g][1]}">${SH_G[g][0]}</span><span class="sub">${xs.length} ${xs.length === 1 ? 'company' : 'companies'}${g === 'fair' ? ` · run-rate P/E ${fair}× or lower` : g === 'payup' ? ` · above ${fair}×` : ' · result not on the desk yet, or a loss'}</span></div><div class="rows shelf">${hd}${xs.map(row).join('')}</div>` : ''; };
+  return head('Collector’s shelf', 'Durable businesses with the wind behind them across the last three quarters of calls, with a rough valuation beside each one.', `
+      <ul><li><b>Who is listed</b> ${tip('shelf')}: demand read positive on every call in ${esc((sh.window || []).join(', '))}, no guidance cut, no veto, an average score of ${sh.rules.min_avg_score || 60} or more, and a moat signal that repeats.</li>
+      <li><b>Run-rate P/E</b> ${tip('rrpe')} is the only number on the desk that looks at price. It is rough: use it to sort, then check the real valuation yourself.</li>
+      <li><b>The moat signal is a proxy.</b> The calls can show pricing power or sticky customers; whether the business is truly one of a kind is your call.</li>
+      <li>Best fit first within each shelf. Click a company to read its calls. Nothing here is a recommendation.</li></ul>`,
+      `<span class="badge">${esc((sh.window || []).join(' · '))}</span>`) + `
+    <div class="toolbar">${[['', `All ${all.length}`], ['fair', `Fair price ${n('fair')}`], ['payup', `Paying up ${n('payup')}`], ['none', `No valuation yet ${n('none')}`]].map(([k, l]) => `<button class="chip" data-sg="${k}" aria-pressed="${S.shelf.grp === k}">${l}</button>`).join('')}
+      <button class="chip" data-ss="1" aria-pressed="${S.shelf.small}">Below ₹50,000 Cr only</button></div>
+    ${rows.length ? ['fair', 'payup', 'none'].map(block).join('') : '<div class="empty">No company meets the shelf rules in this view yet.</div>'}
+    <p class="count-line">Rebuilt with every site build. Market cap is from the weekly universe refresh; profit is the latest two quarters posted on BSE.</p>`;
 }
 
 /* Sector tracker */
@@ -2972,7 +3011,7 @@ function vHelp() {
   <div class="help"><article>
     <section id="h-disclaimer"><h3>Disclaimer</h3>
       <p><b>Nothing on Concall Signal Desk is investment advice or a recommendation</b> to buy, sell or hold any security, and nothing here takes into account your objectives, finances or risk appetite.</p>
-      <ul><li>Scores, verdicts, red flags, themes and every list (including Near-term strength, Inflection watch and Results to watch) are generated automatically from public company filings, results and earnings-call transcripts. They can be incomplete, out of date or wrong.</li>
+      <ul><li>Scores, verdicts, red flags, themes and every list (including Collector’s shelf, Near-term strength, Inflection watch and Results to watch) are generated automatically from public company filings, results and earnings-call transcripts. They can be incomplete, out of date or wrong.</li>
         <li>Summaries and quotes are machine-made readings of what management said. Always check the original filing or transcript before relying on them.</li>
         <li>Past results and past price moves do not indicate future performance.</li>
         <li>Do your own research, and speak with your SEBI-registered investment adviser before making any investment decision.</li>
@@ -3000,6 +3039,7 @@ function vHelp() {
       <div><b>Sector turns</b><span>Where each sector and sub-sector sits in the capital cycle, read from its companies’ calls: is industry supply being held back or added, are pricing and utilisation improving, and is demand talk strong yet. Stages run Turning up (early), Upswing (confirmed), Overbuilding (late) and Downswing. A cycle map and the results of each stage come first; click a sector for its signals against last quarter, its sub-sectors and every company with what it said on supply and pricing.</span></div>
       <div><b>Themes</b><span>The big ideas managements raise on their calls. A map shows which themes are spreading and whether the stronger companies are the ones talking about them; the table adds guidance and how those companies did in the results that followed. Click a theme for its trend, sectors, size mix, related themes, the companies discussing it with the line each one said, and who reports next.</span></div>
       <div><b>Results to watch (PEAD)</b><span>Small, mid and micro caps reporting in the days ahead whose last concall points to a strong quarter, with the reasons for and against, and a list of names that look good on score but where last quarter may not repeat. After results it shows which shortlisted names beat and rose on day 1 (the usual entry signal for a post-results drift trade), and a live track record of how the shortlist has done this season.</span></div>
+      <div><b>Collector’s shelf</b><span>Durable businesses in a tailwind across the last three quarters of calls (demand positive every call, no guidance cut, a repeating moat signal), grouped by a rough run-rate P/E. The one view that looks at price; the P/E is a guide for sorting, not part of the score.</span></div>
       <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the reasons and the lines from the call that say so. Uses the same Concall Signal Score as every other page. Filter to names whose next results are still to come.</span></div>
       <div><b>Inflection watch</b><span>Companies whose latest call points to a sharp turn up or down, read from the triggers management gave. Each card shows what marks the turn, the trigger quotes behind it and any counter-signals. Switch between Upside and Downside, or keep only the Sharp ones.</span></div>
       <div><b>Management changes</b><span>Every top-management change filed on BSE (checked every 30 minutes, with a GitHub alert for each top-level change), and companies whose new management is pushing growth.</span></div>
@@ -3467,7 +3507,7 @@ function vLedger() {
     <span class="small" style="min-width:0">${items.map(x => `<span class="ld-gapi"><b style="color:${x.st === 'missing' ? 'var(--down)' : 'var(--warn)'}">${esc({results: 'Results', call: 'Call', deck: 'Deck'}[x.kind])} ${esc(x.mkt === 'IN' ? seasL[x.season]?.in : seasL[x.season]?.gl)}</b> ${esc(x.st === 'missing' ? 'missing' : 'needs a link')}</span>`).join('')}</span></div>`).join('') || '<div class="empty">Nothing missing. Every expected event is on record.</div>'}</div>`;
 }
 
-const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, shelf: vShelf, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -3832,6 +3872,8 @@ document.addEventListener('click', e => {
   if (t.closest('#c-clear')) { Object.assign(S.calls, {search: '', big: '', sub: '', size: '', limit: 50}); S.calls.chips.clear(); render(); return; }
   if (t.closest('#c-more')) { S.calls.limit += 50; fillCalls(); return; }
   const fs = t.closest('[data-fs]'); if (fs) { S.first.status = fs.dataset.fs; render(); return; }
+  const sg = t.closest('[data-sg]'); if (sg) { S.shelf.grp = sg.dataset.sg; render(); return; }
+  if (t.closest('[data-ss]')) { S.shelf.small = !S.shelf.small; render(); return; }
   const upc = t.closest('[data-up]'); if (upc) { const k = upc.dataset.up; S.up[k] = !S.up[k]; render(); return; }
   const rcc = t.closest('[data-rc]'); if (rcc) { const k = rcc.dataset.rc; S.rc[k] = !S.rc[k]; render(); return; }
   const rsc = t.closest('[data-rsc]'); if (rsc) { const k = rsc.dataset.rsc; S.rs.chips.has(k) ? S.rs.chips.delete(k) : S.rs.chips.add(k); S.rs.limit = 100; render(); return; }

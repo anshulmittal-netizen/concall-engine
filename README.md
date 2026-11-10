@@ -91,6 +91,10 @@ GitHub Pages would make the research public, so it is not set up.
 - `themes.yaml` — theme dictionary. Promote names from `theme_candidates` in the output.
 - `subsectors.yaml` — industry → sub-sector map. Align it with Sector Radar.
 - `settings.yaml` — models, cut-offs, run limits, analysis thresholds
+- `shelf.py` — the Collector's shelf: companies whose last three quarters of calls read as a durable business in a
+  tailwind (demand positive every call, no guidance cut, a repeating moat signal), with a rough run-rate P/E from the
+  results and market caps already on the desk. Thresholds are under `analysis.shelf` in `settings.yaml`. The P/E is the
+  one place the desk looks at price, and it is not part of any score.
 - `interview_channels.yaml` — interview sources
 
 ## Check on the first live run

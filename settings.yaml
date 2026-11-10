@@ -55,3 +55,10 @@ analysis:
   first_mover_count: 5
   hidden_supplier_min_mentions: 2
   credibility_upgrade_min: 70
+  shelf:                       # Collector's shelf (shelf.py): durable businesses in a tailwind, with a rough valuation
+    quarters: 3                # look back this many quarters of calls
+    min_calls: 2               # calls needed in that window (one in the latest two quarters)
+    min_avg_score: 60          # average Concall Signal Score across those calls
+    min_score: 55              # no call below this
+    min_structure: 0.5         # or: industry structure read as easing on average, when no moat model repeats
+    fair_pe: 30                # run-rate P/E at or below this sits on the "Fair price" shelf
