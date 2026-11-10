@@ -288,6 +288,12 @@ def cmd_participants(a):
 
 def cmd_analyze(a):
     analyze.build(a.market, log)
+    if a.market == "IN":
+        try:  # P/E and market cap for the Collector's shelf; never let it stop the run
+            import valuation_in
+            valuation_in.run(log)
+        except Exception as ex:
+            log(f"valuation skipped: {ex}")
 
 
 def cmd_serve(a):
