@@ -78,6 +78,10 @@ a{color:var(--accent)}
 .nav button[aria-current="page"]>span:first-child::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--saffron),var(--accent));margin-right:7.5px;vertical-align:1px}
 .nav .ct{font-family:var(--mono);font-size:9px;font-weight:500;color:var(--muted);background:var(--rail);border-radius:99px;padding:1px 7px;white-space:nowrap}
 .nav button[aria-current="page"] .ct{background:var(--accentsoft);color:var(--accent)}
+.subtabs{justify-self:start}.subtabs button{padding:7px 13px;font-size:12px}
+.nav .nav-help{display:none}
+.rf-help{justify-self:start;margin-top:4px;font-size:11px}
+.rail-foot .rf-help[aria-current]{text-decoration:underline}
 .rail-foot{margin-top:auto;font-size:10.5px;color:var(--muted);display:grid;gap:5px;border-top:1px solid var(--line);padding-top:13.5px}
 .live{display:inline-flex;align-items:center;gap:7px;color:var(--fg);font-weight:600}
 .live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--up);box-shadow:0 0 0 0 var(--up);animation:ping 2.4s infinite}
@@ -764,6 +768,7 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
   .app{grid-template-columns:1fr;gap:0}
   .rail{position:static;height:auto;padding-block:15.5px 5px;gap:12px}
   .rail-foot{display:none}
+  .nav .nav-help{display:flex}
   .nav{display:flex;gap:5px;overflow-x:auto;padding-bottom:7px;mask-image:linear-gradient(90deg,#000 92%,transparent);scrollbar-width:none}
   .nav::-webkit-scrollbar{display:none}
   .nav-group{display:contents}
@@ -1198,14 +1203,23 @@ function animateWidgets(root) {
 })();
 
 /* ---------- views ---------- */
-const VIEWS = [
-  {group: 'Start', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['ask', 'Ask the calls'], ['help', 'How to use']]},
-  {group: 'Calls', items: [['calls', 'All calls'], ['people', 'Who’s asking'], ['upcoming', 'Coming up'], ['first', 'First-time callers']]},
-  {group: 'Results', items: [['pead', 'Results to watch (PEAD)'], ['watch', 'My watchlist'], ['rescal', 'Results calendar'], ['results', 'Results posted']]},
-  {group: 'Sector leaders', items: [['leaders', 'Leaders dashboard'], ['ledger', 'Event ledger']]},
-  {group: 'Sectors', items: [['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'], ['turns', 'Sector turns'], ['themes', 'Themes']]},
-  {group: 'Ideas', items: [['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'], ['mgmt', 'Management changes']]}
+/* Navigation: a short rail of tabs. A tab that holds several closely related views shows them as sub-tabs at the top of
+   the page (e.g. Calendar = earnings calls + results board meetings). Every view keeps its own key, so links and #hash
+   addresses still work; the rail highlights the tab whose views include the current one. */
+const TABS = [
+  {group: 'Start', items: [['home', 'Today', ['home']], ['mine', 'My stocks', ['watch', 'portfolio'], 'watch'], ['ask', 'Ask the calls', ['ask']]]},
+  {group: 'Research', items: [['calls', 'Calls', ['calls', 'first', 'people'], 'calls'], ['cal', 'Calendar', ['upcoming', 'rescal'], ''],
+    ['res', 'Results', ['results', 'pead'], 'results'], ['mgmt', 'Management changes', ['mgmt']]]},
+  {group: 'Sectors & ideas', items: [['sec', 'Sectors', ['tracker', 'guidance', 'turns'], 'tracker'], ['themes', 'Themes', ['themes']],
+    ['ideas', 'Idea lists', ['shelf', 'nearterm', 'inflect'], ''], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]}
 ];
+/* each view's own name: shown on its sub-tab, in the Excel export and in the help */
+const VIEWS = [{group: '', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['help', 'How to use'],
+  ['calls', 'All calls'], ['first', 'First-time callers'], ['people', 'Who’s asking'], ['upcoming', 'Calls coming up'], ['rescal', 'Results calendar'],
+  ['results', 'Results posted'], ['pead', 'Results to watch'], ['mgmt', 'Management changes'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
+  ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'],
+  ['leaders', 'Leaders dashboard'], ['ledger', 'Event ledger']]}];
+const tabOf = v => TABS.flatMap(g => g.items).find(t => t[2].includes(v));
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
 function navCounts() {
   const t = trackerQ(), cq = callsQ();
@@ -1221,10 +1235,20 @@ function navCounts() {
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
 function renderNav() {
-  const ct = D ? navCounts() : {};
-  $('#nav').innerHTML = VIEWS.map(g => `<div class="nav-group"><span class="eyebrow">${g.group}</span>${g.items.map(([k, n]) =>
-    `<button data-v="${k}" ${S.view === k ? 'aria-current="page"' : ''}><span>${n}</span>${ct[k] !== undefined && ct[k] !== '' ? `<span class="ct">${esc(ct[k])}</span>` : ''}</button>`).join('')}</div>`).join('');
-  if (D) $('#railfoot').innerHTML = `<span class="live">Live BSE filings</span><span>Data updated ${esc(fdate(D.generated))}, ${esc((D.generated || '').slice(11, 16))} IST</span><span>${fmt(D.universe)} companies tracked</span>`;
+  const ct = D ? navCounts() : {}, cur = tabOf(S.view);
+  /* a tab of several views shows the count of the one view named 4th (none if ''): new or soon items, not a mixed total */
+  const tct = t => (x => x === undefined || x === '' ? undefined : x)(ct[t.length > 3 ? t[3] : t[2][0]]);
+  $('#nav').innerHTML = TABS.map(g => `<div class="nav-group"><span class="eyebrow">${g.group}</span>${g.items.map(t => (c =>
+    `<button data-v="${t[2].includes(S.view) ? S.view : store.get('tab-' + t[0], t[2][0])}" ${cur === t ? 'aria-current="page"' : ''}><span>${t[1]}</span>${c !== undefined ? `<span class="ct">${esc(c)}</span>` : ''}</button>`)(tct(t))).join('')}</div>`).join('') +
+    `<button class="nav-help" data-v="help" ${S.view === 'help' ? 'aria-current="page"' : ''}><span>How to use</span></button>`;  /* phones: the rail footer is hidden there */
+  if (D) $('#railfoot').innerHTML = `<span class="live">Live BSE filings</span><span>Data updated ${esc(fdate(D.generated))}, ${esc((D.generated || '').slice(11, 16))} IST</span><span>${fmt(D.universe)} companies tracked</span><button class="link rf-help" data-v="help"${S.view === 'help' ? ' aria-current="page"' : ''}>How to use the desk →</button>`;
+}
+/* the sub-tabs of the current tab, when it holds more than one view */
+function subTabs() {
+  const t = tabOf(S.view);
+  if (!t || t[2].length < 2) return '';
+  const ct = navCounts();
+  return `<nav class="seg subtabs" aria-label="${esc(t[1])}">${t[2].map(k => `<button data-v="${k}" aria-pressed="${k === S.view}">${esc(VNAME[k])}${ct[k] !== undefined && ct[k] !== '' ? ` <span class="num">${esc(ct[k])}</span>` : ''}</button>`).join('')}</nav>`;
 }
 function renderQbar() {
   const qs = quarters(), cur = curQ();
@@ -1706,7 +1730,7 @@ function vResCal() {
       <span class="up-actions">${co ? `<button class="btn" data-open="${esc(r.id)}">Last call</button>` : ''}<a class="btn" href="https://www.bseindia.com/stock-share-price/x/x/${esc(r.id)}/" target="_blank" rel="noopener">BSE ↗</a></span></div>`; };
   return head('Results calendar', 'When each company’s board meets to approve its quarterly results, day by day. Results are usually on BSE the same evening and appear under Results posted.', `
       <ul><li>Dates come from BSE’s forthcoming-results list ${tip('rescal')}, checked every 30 minutes through the day.</li>
-      <li><b>Earnings call</b> shows the call the company has announced, if any, from the Coming up page.</li>
+      <li><b>Earnings call</b> shows the call the company has announced, if any, from the Calls coming up tab.</li>
       <li><b>Last read</b> is the score of the company’s previous concall. Use <b>Last call</b> to see what management guided before the numbers land.</li></ul>`,
       `<span class="badge">${RES.data?.checked ? 'BSE checked ' + esc(RES.data.checked.replace('T', ' ')) + ' UTC' : 'Not checked yet'}</span>`) + (wait || `
     <div class="toolbar">
@@ -3096,11 +3120,16 @@ function vHelp() {
       <li><b>Open a company</b> that looks interesting. Read the call summary first, then the <b>Signals behind the score</b> tab to see why it scored the way it did.</li>
       <li><b>Sector tracker:</b> check who in that sector has reported and whether guidance is improving.</li>
       <li><b>Share:</b> the <b>Copy link</b> button in a company panel gives a link that opens straight to that company.</li></ol></section>
-    <section id="h-views"><h3>What each view is for</h3><div class="vguide">
+    <section id="h-views"><h3>What each view is for</h3>
+      <p>The menu on the left has eleven tabs. Tabs that hold closely related views show them as sub-tabs at the top of the page:
+        <b>My stocks</b> (My watchlist, My portfolio), <b>Calls</b> (All calls, First-time callers, Who’s asking), <b>Calendar</b> (Calls coming up, Results calendar),
+        <b>Results</b> (Results posted, Results to watch), <b>Sectors</b> (Sector tracker, Guidance leaders, Sector turns), <b>Idea lists</b> (Collector’s shelf,
+        Near-term strength, Inflection watch) and <b>Global leaders</b> (Leaders dashboard, Event ledger). A tab reopens on the sub-tab you last used.</p>
+      <div class="vguide">
       <div><b>Ask the calls</b><span>Ask a question in plain words (for example, which companies said crude is not hurting margins). Claude searches every call summary, Q&A, quote and trigger for the words calls actually use, reads the best matches and sorts them into “says it”, “partly” and “says the opposite”, with the passages behind each. Keyword search works without Claude.</span></div>
       <div><b>Today</b><span>The day’s headline, season progress, the best call, the strongest guidance, the top idea and the newest calls.</span></div>
       <div><b>All calls</b><span>Every call for the quarter in one ranked list. Sort best to worst or by newest, and filter by sector, sub-sector, guidance or red flags.</span></div>
-      <div><b>Coming up</b><span>Earnings calls announced on BSE for the days ahead, with the time, the score of each company’s last call and a link to the filing with dial-in details. Also lists calls already held whose transcript has not been filed yet.</span></div>
+      <div><b>Calls coming up</b><span>Earnings calls announced on BSE for the days ahead, with the time, the score of each company’s last call and a link to the filing with dial-in details. Also lists calls already held whose transcript has not been filed yet.</span></div>
       <div><b>My watchlist</b><span>Your own list of companies, whatever their size: whose results are in the next few days (with the earnings call and what management said last time), dates announced further out, numbers already posted, and who has not announced a date yet. Watchlist companies are starred and highlighted on the results and calls pages, and a GitHub alert goes out when one is three days or less from its results.</span></div>
       <div><b>Results calendar</b><span>The days each company’s board meets to approve its quarterly results, with its announced earnings call and the score of its last concall.</span></div>
       <div><b>Results posted</b><span>A sortable table of quarterly results as they are filed: revenue, operating profit, margin, profit and EPS, each with growth on last year and last quarter.</span></div>
@@ -3583,7 +3612,7 @@ function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
   const el = $('#view');
-  el.innerHTML = RENDER[S.view]();
+  el.innerHTML = subTabs() + RENDER[S.view]();
   el.style.animation = 'none'; void el.offsetWidth; el.style.animation = '';
   if (S.view === 'calls') fillCalls();
   countUp(el); animateWidgets(el);
@@ -3592,6 +3621,7 @@ function render(scrollTop = false) {
 function go(v, opts = {}) {
   if (!RENDER[v]) v = 'home';
   S.view = v; store.set('view', v);
+  (t => t && store.set('tab-' + t[0], v))(tabOf(v));  /* reopen a tab on the sub-tab last used */
   setHash(S.drawer ? 'co-' + S.drawer.id : v);
   render(true);
 }
