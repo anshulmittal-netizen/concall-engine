@@ -1,0 +1,365 @@
+# Sector leaders: 2 Indian + 2 global bellwethers per sector, whose results, calls and decks are tracked
+# event by event (python run.py leaders). Indian leaders are keyed by BSE code. Global leaders by Yahoo ticker,
+# with `sec` set when the company files with the SEC (8-K, or 6-K for foreign issuers), which gives free,
+# complete filing coverage.
+#
+# cadence:  quarterly     full results every quarter (default)
+#           half+updates  full results each half; Q1/Q3 are trading or sales updates
+#           half          half-yearly reporting only
+# call:     false when the company holds no analyst call for that kind of event (e.g. operational reviews)
+# fy_end:   last month of the fiscal year (default 12); fy_label: 'end' (FY2027 = year ending in 2027) or 'start'
+# events:   the company's results / webcast page, linked as the call when no free transcript exists
+# ir:       the company's results page, scanned for presentation / transcript PDFs (filled from a checked list)
+# Add or swap names freely; the dashboard and the completeness ledger follow this file.
+
+- sector: Private Banks
+  watch: Credit growth vs deposit growth, NIM, slippages and credit cost
+  india:
+    - {code: "500180", name: HDFC Bank}
+    - {code: "532174", name: ICICI Bank}
+  global:
+    - {yf: JPM, sec: JPM, name: JPMorgan Chase, country: US}
+    - {yf: HSBA.L, sec: HSBC, name: HSBC Holdings, country: UK, ir: "https://www.hsbc.com/investors/results-and-announcements/all-reporting"}
+    - {yf: BAC, sec: BAC, name: Bank of America, country: US}
+    - {yf: MUFG, sec: MUFG, name: Mitsubishi UFJ Financial, country: JP}
+
+- sector: NBFC & Consumer Lending
+  watch: AUM growth, cost of funds, consumer credit stress, collection efficiency
+  india:
+    - {code: "500034", name: Bajaj Finance}
+    - {code: "511218", name: Shriram Finance}
+  global:
+    - {yf: AXP, sec: AXP, name: American Express, country: US}
+    - {yf: COF, sec: COF, name: Capital One, country: US}
+    - {yf: SYF, sec: SYF, name: Synchrony Financial, country: US}
+    - {yf: ALLY, sec: ALLY, name: Ally Financial, country: US}
+
+- sector: Insurance
+  watch: New business margin (VNB), persistency, combined ratio, pricing cycle
+  india:
+    - {code: "540719", name: SBI Life Insurance}
+    - {code: "540716", name: ICICI Lombard}
+  global:
+    - {yf: CB, sec: CB, name: Chubb, country: US}
+    - {yf: 1299.HK, name: AIA Group, country: HK, cadence: half+updates, ir: "https://www.aia.com/en/investor-relations/overview/results-presentations", events: "https://www.aia.com/en/investor-relations/overview/results-presentations"}
+    - {yf: PGR, sec: PGR, name: Progressive, country: US}
+    - {yf: MET, sec: MET, name: MetLife, country: US}
+
+- sector: Asset & Wealth Management
+  watch: Net flows, yields, market-linked AUM, retail participation
+  india:
+    - {code: "541729", name: HDFC AMC}
+    - {code: "542772", name: 360 ONE WAM}
+  global:
+    - {yf: BLK, sec: BLK, name: BlackRock, country: US}
+    - {yf: UBSG.SW, sec: UBS, name: UBS Group, country: CH}
+    - {yf: MS, sec: MS, name: Morgan Stanley, country: US}
+    - {yf: SCHW, sec: SCHW, name: Charles Schwab, country: US}
+
+- sector: IT Services
+  watch: Deal wins / TCV, discretionary spend, AI deflation, pricing, headcount
+  india:
+    - {code: "532540", name: TCS}
+    - {code: "500209", name: Infosys}
+  global:
+    - {yf: ACN, sec: ACN, name: Accenture, country: US}
+    - {yf: CTSH, sec: CTSH, name: Cognizant, country: US}
+    - {yf: IBM, sec: IBM, name: IBM, country: US}
+    - {yf: EPAM, sec: EPAM, name: EPAM Systems, country: US}
+
+- sector: Semiconductors & EMS
+  watch: AI demand, capacity adds, utilisation, component pricing, PLI ramp
+  india:
+    - {code: "540699", name: Dixon Technologies}
+    - {code: "543664", name: Kaynes Technology}
+  global:
+    - {yf: 2330.TW, sec: TSM, name: TSMC, country: TW}
+    - {yf: NVDA, sec: NVDA, name: Nvidia, country: US}
+    - {yf: ASML, sec: ASML, name: ASML Holding, country: NL}
+    - {yf: JBL, sec: JBL, name: Jabil, country: US}
+
+- sector: Telecom & Towers
+  watch: ARPU and tariff action, subscriber adds, capex intensity
+  india:
+    - {code: "532454", name: Bharti Airtel}
+    - {code: "534816", name: Indus Towers}
+  global:
+    - {yf: TMUS, sec: TMUS, name: T-Mobile US, country: US}
+    - {yf: DTE.DE, name: Deutsche Telekom, country: DE, ir: "https://www.telekom.com/en/investor-relations/publications/financial-results", events: "https://www.telekom.com/en/investor-relations/publications/financial-results"}
+    - {yf: VZ, sec: VZ, name: Verizon, country: US}
+    - {yf: AMX, sec: AMX, name: America Movil, country: MX}
+
+- sector: Oil, Gas & Refining
+  watch: Refining (GRM) and chemical spreads, upstream realisations, capex discipline
+  india:
+    - {code: "500325", name: Reliance Industries}
+    - {code: "530965", name: Indian Oil}
+  global:
+    - {yf: XOM, sec: XOM, name: ExxonMobil, country: US}
+    - {yf: SHEL.L, sec: SHEL, name: Shell, country: UK}
+    - {yf: CVX, sec: CVX, name: Chevron, country: US}
+    - {yf: TTE, sec: TTE, name: TotalEnergies, country: FR}
+
+- sector: Power Utilities
+  watch: Power demand, PLF, capacity pipeline, renewable mix, tariffs
+  india:
+    - {code: "532555", name: NTPC}
+    - {code: "500400", name: Tata Power}
+  global:
+    - {yf: NEE, sec: NEE, name: NextEra Energy, country: US}
+    - {yf: IBE.MC, name: Iberdrola, country: ES, events: "https://www.iberdrola.com/shareholders-investors/investors/results"}
+    - {yf: DUK, sec: DUK, name: Duke Energy, country: US}
+    - {yf: CEG, sec: CEG, name: Constellation Energy, country: US}
+
+- sector: Renewable Equipment
+  watch: Module / turbine pricing, order book, capacity additions, import duties
+  india:
+    - {code: "544277", name: Waaree Energies}
+    - {code: "532667", name: Suzlon Energy}
+  global:
+    - {yf: FSLR, sec: FSLR, name: First Solar, country: US}
+    - {yf: VWS.CO, name: Vestas Wind Systems, country: DK, ir: "https://www.vestas.com/en/investor/reports-and-presentations/presentations", events: "https://www.vestas.com/en/investor/reports-and-presentations/financial"}
+    - {yf: NXT, sec: NXT, name: Nextracker, country: US}
+    - {yf: CSIQ, sec: CSIQ, name: Canadian Solar, country: CA}
+
+- sector: Capital Goods & EPC
+  watch: Order inflow, order book, execution, margins, private capex
+  india:
+    - {code: "500510", name: Larsen & Toubro}
+    - {code: "500103", name: BHEL}
+  global:
+    - {yf: SIE.DE, name: Siemens, country: DE, ir: "https://www.siemens.com/en-us/company/investor-relations/financial-results/", fy_end: 9, events: "https://www.siemens.com/en-us/company/investor-relations/financial-results/"}
+    - {yf: CAT, sec: CAT, name: Caterpillar, country: US}
+    - {yf: PWR, sec: PWR, name: Quanta Services, country: US}
+    - {yf: EMR, sec: EMR, name: Emerson Electric, country: US}
+
+- sector: Electrical Equipment & T&D
+  watch: Grid / data-centre orders, transformer lead times, pricing, capacity adds
+  india:
+    - {code: "500002", name: ABB India}
+    - {code: "500093", name: CG Power}
+  global:
+    - {yf: SU.PA, name: Schneider Electric, country: FR, cadence: half+updates, events: "https://www.se.com/ww/en/about-us/investor-relations/financial-results"}
+    - {yf: GEV, sec: GEV, name: GE Vernova, country: US}
+    - {yf: ETN, sec: ETN, name: Eaton, country: US}
+    - {yf: VRT, sec: VRT, name: Vertiv, country: US}
+
+- sector: Defence & Aerospace
+  watch: Order inflow, indigenisation, budgets, export orders, execution
+  india:
+    - {code: "541154", name: HAL}
+    - {code: "500049", name: Bharat Electronics}
+  global:
+    - {yf: LMT, sec: LMT, name: Lockheed Martin, country: US}
+    - {yf: RHM.DE, name: Rheinmetall, country: DE, events: "https://www.rheinmetall.com/en/investor-relations/publications/financial-publications-and-presentations"}
+    - {yf: RTX, sec: RTX, name: RTX, country: US}
+    - {yf: GD, sec: GD, name: General Dynamics, country: US}
+
+- sector: Automobiles
+  watch: Volumes, inventory at dealers, discounts, EV mix, rural vs urban demand
+  india:
+    - {code: "532500", name: Maruti Suzuki}
+    - {code: "500520", name: Mahindra & Mahindra}
+  global:
+    - {yf: 7203.T, sec: TM, name: Toyota Motor, country: JP, ir: "https://global.toyota/en/ir/financial-results/", fy_end: 3}
+    - {yf: 1211.HK, name: BYD, country: CN, events: "https://www.bydglobal.com/cn/en/BYD_ENInvestor/InvestorNotice_mob.html"}
+    - {yf: TSLA, sec: TSLA, name: Tesla, country: US}
+    - {yf: HMC, sec: HMC, name: Honda Motor, country: JP}
+
+- sector: Auto Components
+  watch: OEM production schedules, EV content, export demand, commodity pass-through
+  india:
+    - {code: "500530", name: Bosch}
+    - {code: "517334", name: Samvardhana Motherson}
+  global:
+    - {yf: 6902.T, name: Denso, country: JP, fy_end: 3, events: "https://www.denso.com/global/en/investors/settlement"}
+    - {yf: APTV, sec: APTV, name: Aptiv, country: US}
+    - {yf: BWA, sec: BWA, name: BorgWarner, country: US}
+    - {yf: MGA, sec: MGA, name: Magna International, country: CA}
+
+- sector: Pharmaceuticals
+  watch: US generics price erosion, launches, GLP-1, branded growth
+  india:
+    - {code: "524715", name: Sun Pharma}
+    - {code: "500124", name: Dr Reddy's}
+  global:
+    - {yf: LLY, sec: LLY, name: Eli Lilly, country: US}
+    - {yf: TEVA, sec: TEVA, name: Teva Pharmaceutical, country: IL}
+    - {yf: NVO, sec: NVO, name: Novo Nordisk, country: DK}
+    - {yf: VTRS, sec: VTRS, name: Viatris, country: US}
+
+- sector: CDMO / CRDMO
+  watch: Biotech funding, RFQs, Biosecure-driven shifts, capacity utilisation
+  india:
+    - {code: "532488", name: Divi's Laboratories}
+    - {code: "539268", name: Syngene International}
+  global:
+    - {yf: LONN.SW, name: Lonza Group, country: CH, cadence: half+updates, events: "https://www.lonza.com/investor-relations/agenda-and-events"}
+    - {yf: 2359.HK, name: WuXi AppTec, country: CN, events: "https://www.wuxiapptec.com/investors/events"}
+    - {yf: TMO, sec: TMO, name: Thermo Fisher Scientific, country: US}
+    - {yf: CRL, sec: CRL, name: Charles River Laboratories, country: US}
+
+- sector: Hospitals
+  watch: Occupancy, ARPOB, bed additions, payer mix
+  india:
+    - {code: "508869", name: Apollo Hospitals}
+    - {code: "543220", name: Max Healthcare}
+  global:
+    - {yf: HCA, sec: HCA, name: HCA Healthcare, country: US}
+    - {yf: 5225.KL, name: IHH Healthcare, country: MY, events: "https://www.ihhhealthcare.com/investors/reports-presentation/results-webcasts"}
+    - {yf: UHS, sec: UHS, name: Universal Health Services, country: US}
+    - {yf: THC, sec: THC, name: Tenet Healthcare, country: US}
+
+- sector: FMCG / Staples
+  watch: Volume growth, rural vs urban, input inflation, pricing, premiumisation
+  india:
+    - {code: "500696", name: Hindustan Unilever}
+    - {code: "500875", name: ITC}
+  global:
+    - {yf: NESN.SW, name: Nestle, country: CH, cadence: half+updates, events: "https://www.nestle.com/investors/presentations/presentations"}
+    - {yf: ULVR.L, sec: UL, name: Unilever, country: UK, cadence: half+updates}
+    - {yf: PG, sec: PG, name: Procter & Gamble, country: US}
+    - {yf: CL, sec: CL, name: Colgate-Palmolive, country: US}
+
+- sector: Retail
+  watch: Same-store growth, footfall, store additions, discretionary demand
+  india:
+    - {code: "500251", name: Trent}
+    - {code: "540376", name: Avenue Supermarts}
+  global:
+    - {yf: WMT, sec: WMT, name: Walmart, country: US}
+    - {yf: ITX.MC, name: Inditex, country: ES, ir: "https://www.inditex.com/itxcomweb/us/en/investors/finance", events: "https://www.inditex.com/itxcomweb/us/en/investors/finance"}
+    - {yf: COST, sec: COST, name: Costco, country: US}
+    - {yf: TJX, sec: TJX, name: TJX Companies, country: US}
+
+- sector: Cement
+  watch: Volumes, realisations, fuel cost, capacity additions and consolidation
+  india:
+    - {code: "532538", name: UltraTech Cement}
+    - {code: "500425", name: Ambuja Cements}
+  global:
+    - {yf: HOLN.SW, name: Holcim, country: CH, cadence: half+updates, ir: "https://www.holcim.com/investors", events: "https://www.holcim.com/investors/publications"}
+    - {yf: HEI.DE, name: Heidelberg Materials, country: DE, ir: "https://www.heidelbergmaterials.com/en/investor-relations/reports-and-presentations", events: "https://www.heidelbergmaterials.com/en/investor-relations/reports-and-presentations"}
+    - {yf: CRH, sec: CRH, name: CRH, country: IE}
+    - {yf: MLM, sec: MLM, name: Martin Marietta Materials, country: US}
+
+- sector: Paints & Building Materials
+  watch: Decorative volume vs value, competitive intensity, raw-material deflation
+  india:
+    - {code: "500820", name: Asian Paints}
+    - {code: "500331", name: Pidilite Industries}
+  global:
+    - {yf: SHW, sec: SHW, name: Sherwin-Williams, country: US}
+    - {yf: SGO.PA, name: Saint-Gobain, country: FR, cadence: half+updates, events: "https://www.saint-gobain.com/en/finance/financial-events"}
+    - {yf: PPG, sec: PPG, name: PPG Industries, country: US}
+    - {yf: RPM, sec: RPM, name: RPM International, country: US}
+
+- sector: Steel
+  watch: Spreads, China exports, safeguard duties, capacity additions
+  india:
+    - {code: "500470", name: Tata Steel}
+    - {code: "500228", name: JSW Steel}
+  global:
+    - {yf: MT.AS, sec: MT, name: ArcelorMittal, country: LU}
+    - {yf: NUE, sec: NUE, name: Nucor, country: US}
+    - {yf: PKX, sec: PKX, name: POSCO Holdings, country: KR}
+    - {yf: STLD, sec: STLD, name: Steel Dynamics, country: US}
+
+- sector: Non-ferrous Metals & Mining
+  watch: Aluminium / copper / zinc prices, cost curve, supply discipline
+  india:
+    - {code: "500440", name: Hindalco Industries}
+    - {code: "500295", name: Vedanta}
+  global:
+    - {yf: BHP.AX, sec: BHP, name: BHP Group, country: AU, cadence: half+updates, call_on_updates: false}
+    - {yf: RIO.L, sec: RIO, name: Rio Tinto, country: UK, cadence: half+updates, call_on_updates: false}
+    - {yf: FCX, sec: FCX, name: Freeport-McMoRan, country: US}
+    - {yf: AA, sec: AA, name: Alcoa, country: US}
+
+- sector: Specialty & Agro Chemicals
+  watch: Destocking, China pricing, CDMO/CSM order flow, end-market demand
+  india:
+    - {code: "503806", name: SRF}
+    - {code: "523642", name: PI Industries}
+  global:
+    - {yf: BAS.DE, name: BASF, country: DE, ir: "https://www.basf.com/global/en/investors/calendar-and-publications/presentations", events: "https://www.basf.com/global/en/investors/calendar-and-publications/reporting"}
+    - {yf: DOW, sec: DOW, name: Dow, country: US}
+    - {yf: CTVA, sec: CTVA, name: Corteva, country: US}
+    - {yf: LYB, sec: LYB, name: LyondellBasell, country: NL}
+
+- sector: Fertilisers & Agri Inputs
+  watch: Monsoon, subsidy, raw-material (ammonia, phosphoric acid) costs, farm income
+  india:
+    - {code: "506395", name: Coromandel International}
+    - {code: "500085", name: Chambal Fertilisers}
+  global:
+    - {yf: NTR, sec: NTR, name: Nutrien, country: CA}
+    - {yf: DE, sec: DE, name: Deere, country: US}
+    - {yf: CF, sec: CF, name: CF Industries, country: US}
+    - {yf: MOS, sec: MOS, name: Mosaic, country: US}
+
+- sector: Real Estate
+  watch: Pre-sales, launches, collections, inventory months, pricing
+  india:
+    - {code: "532868", name: DLF}
+    - {code: "533150", name: Godrej Properties}
+  global:
+    - {yf: DHI, sec: DHI, name: D.R. Horton, country: US}
+    - {yf: 8801.T, name: Mitsui Fudosan, country: JP, ir: "https://www.mitsuifudosan.co.jp/english/corporate/ir/library/", fy_end: 3, events: "https://www.mitsuifudosan.co.jp/english/corporate/ir/library/"}
+    - {yf: LEN, sec: LEN, name: Lennar, country: US}
+    - {yf: PLD, sec: PLD, name: Prologis, country: US}
+
+- sector: Ports & Logistics
+  watch: Cargo volumes, freight rates, Red Sea / trade routes, EXIM trends
+  india:
+    - {code: "532921", name: Adani Ports & SEZ}
+    - {code: "531344", name: Container Corporation}
+  global:
+    - {yf: MAERSK-B.CO, name: A.P. Moller-Maersk, country: DK, events: "https://investor.maersk.com/financials/presentations"}
+    - {yf: UPS, sec: UPS, name: UPS, country: US}
+    - {yf: FDX, sec: FDX, name: FedEx, country: US}
+    - {yf: ZIM, sec: ZIM, name: ZIM Integrated Shipping, country: IL}
+
+- sector: Consumer Electricals & Cables
+  watch: Cooling demand, wire & cable volumes, copper pass-through, data-centre cables
+  india:
+    - {code: "517354", name: Havells India}
+    - {code: "542652", name: Polycab India}
+  global:
+    - {yf: 6367.T, name: Daikin Industries, country: JP, ir: "https://www.daikin.com/investor/library/results_materials", fy_end: 3, fy_label: start, events: "https://www.daikin.com/investor/library/results_materials"}
+    - {yf: PRY.MI, name: Prysmian, country: IT, ir: "https://www.prysmian.com/en/investors", events: "https://www.prysmian.com/en/investors/results-centre"}
+    - {yf: CARR, sec: CARR, name: Carrier Global, country: US}
+    - {yf: TT, sec: TT, name: Trane Technologies, country: US}
+
+- sector: Internet Platforms
+  watch: Order growth, take rates, quick-commerce intensity, ad spend, profitability
+  india:
+    - {code: "543320", name: Eternal}
+    - {code: "532777", name: Info Edge}
+  global:
+    - {yf: AMZN, sec: AMZN, name: Amazon, country: US}
+    - {yf: 3690.HK, name: Meituan, country: CN, ir: "https://www.meituan.com/en-US/investor-relations", events: "https://www.meituan.com/en-US/investor/results"}
+    - {yf: GOOGL, sec: GOOGL, name: Alphabet, country: US}
+    - {yf: BABA, sec: BABA, name: Alibaba Group, country: CN}
+
+- sector: Travel & Hospitality
+  watch: RevPAR, occupancy, ADR, airline yields and capacity, travel demand
+  india:
+    - {code: "500850", name: Indian Hotels}
+    - {code: "539448", name: InterGlobe Aviation}
+  global:
+    - {yf: MAR, sec: MAR, name: Marriott International, country: US}
+    - {yf: BKNG, sec: BKNG, name: Booking Holdings, country: US}
+    - {yf: HLT, sec: HLT, name: Hilton Worldwide, country: US}
+    - {yf: DAL, sec: DAL, name: Delta Air Lines, country: US}
+
+- sector: Textiles & Apparel
+  watch: Brand order books, inventory, China+1 sourcing, cotton prices, tariffs
+  india:
+    - {code: "532827", name: Page Industries}
+    - {code: "532889", name: K.P.R. Mill}
+  global:
+    - {yf: NKE, sec: NKE, name: Nike, country: US}
+    - {yf: 2313.HK, name: Shenzhou International, country: CN, cadence: half, events: "https://www.shenzhouintl.com/"}
+    - {yf: LULU, sec: LULU, name: Lululemon Athletica, country: US}
+    - {yf: GIL, sec: GIL, name: Gildan Activewear, country: CA}
