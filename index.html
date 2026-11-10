@@ -2600,8 +2600,7 @@ function vNear() {
    Valuation is trailing P/E from Yahoo (data/valuation_in.json, refreshed each night), falling back to a run-rate P/E
    (latest price ÷ 4 × the latest quarter's EPS from results posted). There is no separate score. */
 const VAL = {data: null, p: null};
-/* in.json carries a copy ("valuation"); a separate data/valuation_in.json is used when newer */
-const loadVal = () => VAL.data ? Promise.resolve(VAL.data) : (VAL.p = VAL.p || getJson('data/valuation_in.json').then(j => { const a = j || {}, b = (D && D.valuation) || {}; return (VAL.data = (b.checked || '') >= (a.checked || '') ? b : a); }));
+const loadVal = () => VAL.data ? Promise.resolve(VAL.data) : (VAL.p = VAL.p || getJson('data/valuation_in.json').then(j => (VAL.data = j || {})));
 const SH_EDGE = {'Pricing power': 'Pricing power', 'Customer stickiness': 'Sticky customers', 'Regulatory moat': 'Regulatory moat', 'Hidden supplier': 'Hidden supplier',
   'Import substitution': 'Import substitution', 'Supply discipline': 'Disciplined industry', 'Consolidation': 'Consolidating industry', 'Supply exit': 'Rivals exiting', 'Mix shift': 'Better mix', 'Capacity bottleneck': 'Capacity bottleneck'};
 const SH_ARCH = {'Supply-side dominance': 'Supply-side dominance', 'Secular premiumisation': 'Secular premiumisation', 'Value migration': 'Value migration'};

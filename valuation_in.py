@@ -1,7 +1,7 @@
 """Valuation for the Collector's shelf (India): trailing and forward P/E, P/B, ROE and market cap from Yahoo.
 
 Runs after each nightly analyze. It reads data/in.json, picks every company with at least two calls read in the
-last three quarters (the shelf's pool), writes data/valuation_in.json and copies it into data/in.json ("valuation"):
+last three quarters (the shelf's pool), and writes data/valuation_in.json:
   {"checked": "YYYY-MM-DDTHH:MM" (UTC), "n": count, "rows": {bse_code: {pe, fpe, pb, roe, mcapCr, px, sym}}}
 NSE symbol first, BSE code as a fallback. A company Yahoo has nothing for keeps its last good row.
 Run on its own with:  python valuation_in.py
@@ -62,7 +62,6 @@ def run(log=print, force: bool = False) -> int:
             age = _now() - dt.datetime.strptime(old["checked"], "%Y-%m-%dT%H:%M")
             if age < dt.timedelta(hours=FRESH_HOURS):
                 log(f"  valuation: fresh ({old['checked']} UTC), skipped")
-                embed(old)
                 return 0
         except ValueError:
             pass
@@ -77,20 +76,9 @@ def run(log=print, force: bool = False) -> int:
                 got += 1
     keep = {c["id"] for c in d.get("companies", [])}
     rows = {k: v for k, v in rows.items() if k in keep}
-    val = {"checked": _now().strftime("%Y-%m-%dT%H:%M"), "n": len(rows), "rows": rows}
-    write_json(OUT, val)
-    embed(val)
+    write_json(OUT, {"checked": _now().strftime("%Y-%m-%dT%H:%M"), "n": len(rows), "rows": rows})
     log(f"  valuation: {got} of {len(pool)} priced from Yahoo")
     return got
-
-
-def embed(val: dict) -> None:
-    """Carry the valuation inside data/in.json too, so the page gets it wherever in.json is published."""
-    path = SITE / "data" / "in.json"
-    d = read_json(path, None)
-    if isinstance(d, dict) and d.get("companies") and val.get("rows"):
-        d["valuation"] = val
-        write_json(path, d, compact=True)
 
 
 if __name__ == "__main__":
