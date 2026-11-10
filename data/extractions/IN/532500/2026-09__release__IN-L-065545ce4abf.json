@@ -1,0 +1,93 @@
+{
+ "doc_id": "IN-L-065545ce4abf",
+ "market": "IN",
+ "company_id": "532500",
+ "name": "Maruti Suzuki",
+ "doc_type": "release",
+ "date": "2026-10-27",
+ "period": "2026-09",
+ "title": "Maruti Suzuki India Limited Financial Results Q2 and H1 FY 2026-27",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Record Q2 volume of 696,654 units (+26.5%) with network inventory at about 17 days and ~200,000 pending bookings, but EBIT fell to INR 28,037 mn from INR 33,820 mn on commodity costs.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 2,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Recent capacity additions have enabled the Company to serve the strong demand."
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Network inventory about 17 days",
+    "quote": "resulting in a low network inventory of about 17 days and pending bookings of about 200,000 units",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Pending bookings about 200,000 units",
+    "quote": "pending bookings of about 200,000 units at the end of the quarter",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Recent capacity additions to serve demand",
+    "quote": "Recent capacity additions have enabled the Company to serve the strong demand.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "EBIT down on commodity costs",
+    "quote": "owing to West- Asia conflict linked commodity increases",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Non-operating MTM losses on surplus investments",
+    "quote": "non-operating income declined sharply in Q2 owing to mark -to-market losses on invested surplus"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

@@ -1,0 +1,162 @@
+{
+ "doc_id": "GL-L-bbc90577e645",
+ "market": "GL",
+ "company_id": "CARR",
+ "name": "Carrier Global",
+ "doc_type": "transcript",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "HVAC & cooling",
+  "thesis": "Data centre orders up 300% with $8.5B record backlog and a $3B+ hyperscaler deal, but CSA price realisation lagged input-cost inflation and the segment margin guide was cut to about 19%.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "just not enough to keep up with all the demand"
+  },
+  "capex": {
+   "direction": "raised",
+   "quote": "We plan to begin customer deliveries from this site in the late summer of next year.",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Data center orders up 300%",
+    "quote": "Data center orders increased 300%, and year-to-date, data center orders have exceeded $3 billion",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Resi price realisation low single-digit vs mid-single-digit expected",
+    "quote": "We had last quarter expected mid-single digit pricing. We ended up realizing low single-digits.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "CSA margin guide cut to ~19%",
+    "quote": "The most notable change here is in CSA, where we now expect full-year operating margin of about 19%.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Fort Worth capacity doubles Americas commercial",
+    "quote": "It's going to effectively more than double our capacity in the Americas, which we need.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year sales",
+    "value": "nearly $24 billion, organic growth about 10%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We now expect full-year sales to be nearly $24 billion, with organic growth of about 10%"
+   },
+   {
+    "metric": "Adjusted EPS",
+    "value": "$2.85-$2.90",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "This takes us to our adjusted EPS outlook of $2.85-$2.90 for the full year."
+   },
+   {
+    "metric": "CSA operating margin",
+    "value": "about 19%",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "The most notable change here is in CSA, where we now expect full-year operating margin of about 19%."
+   },
+   {
+    "metric": "Data center sales",
+    "value": "$2 billion full-year",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we remain on track to deliver our full year commitment of $2 billion"
+   },
+   {
+    "metric": "EPS growth 2027",
+    "value": "double-digit",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "we expect to deliver double-digit EPS growth this year"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Adjusted operating profit, free cash flow, share repurchases",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Midea",
+    "relation": "partner"
+   },
+   {
+    "name": "Toshiba",
+    "relation": "partner"
+   },
+   {
+    "name": "Viessmann",
+    "relation": "partner"
+   },
+   {
+    "name": "Hillwood",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)",
+   "Pricing & input-cost inflation",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "$3.1B goodwill impairment in Climate Solutions Europe",
+    "quote": "I am obviously disappointed with the impairment"
+   },
+   {
+    "label": "Price realisation lagging input costs; $550-600M incremental headwind",
+    "quote": "The combination of positive but lower than expected price realization, increased input costs, and supply chain challenges put pressure on margins"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 4,
+   "capex": 2,
+   "balance_sheet": 0,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "2027 margin outlook",
+    "quote": "we are not ready on this call to talk about margins for next year"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

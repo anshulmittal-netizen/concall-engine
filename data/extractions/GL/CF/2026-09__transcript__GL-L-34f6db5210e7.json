@@ -1,0 +1,155 @@
+{
+ "doc_id": "GL-L-34f6db5210e7",
+ "market": "GL",
+ "company_id": "CF",
+ "name": "CF Industries",
+ "doc_type": "transcript",
+ "date": "2026-11-05",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Fertilisers",
+  "thesis": "Nitrogen supply tightening as ~9 Mt urea lost since February and >35% of European ammonia curtailed; CF runs 97% utilisation and sees mid-cycle EBITDA rising to $3.3B by 2030.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Supply exit",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 2,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 97,
+   "quote": "we have operated our available ammonia capacity at 97% utilization"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said modular US ammonia announcements (50,000-150,000 tons) are too small to move the balance; European capacity is curtailed rather than added.",
+   "quote": "our 2026 consolidated capital expenditure outlook remains approximately $1.3 billion"
+  },
+  "triggers": [
+   {
+    "type": "structure",
+    "label": "European ammonia >35% curtailed",
+    "quote": "We believe more than 35% of ammonia capacity in the region is curtailed.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Global urea supply lost ~9 Mt",
+    "quote": "we estimate that the global market has lost approximately nine million metric tons of urea supply",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "NOLA ammonia ~$430/st for Q4",
+    "quote": "today trading at $430 for Q4 for a short. That's on a short ton for NOLA.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Mid-cycle EBITDA $2.9B to $3.3B by 2030",
+    "quote": "We expect these projects to add $400 million to our mid-cycle EBITDA estimate by 2030, bringing it to $3.3 billion.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "European shutdowns may accelerate 12-18 months",
+    "quote": "it is going to accelerate from what we thought was a 2030 timeframe with some of those European shutdowns to occur",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Mid-cycle adjusted EBITDA (by 2030)",
+    "value": "$3.3 billion (from $2.9B)",
+    "change": "raised",
+    "horizon": "2030",
+    "quote": "We expect these projects to add $400 million to our mid-cycle EBITDA estimate by 2030, bringing it to $3.3 billion."
+   },
+   {
+    "metric": "2026 consolidated capex",
+    "value": "~$1.3 billion (CF share ~$950 million)",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "our 2026 consolidated capital expenditure outlook remains approximately $1.3 billion"
+   },
+   {
+    "metric": "Nitrogen per share growth by 2030",
+    "value": "+15%",
+    "change": "new",
+    "horizon": "2030",
+    "quote": "our current growth projects, combined with our existing share repurchase authorization, are expected to increase nitrogen per share by 15% by 2030."
+   },
+   {
+    "metric": "Blue Point One start",
+    "value": "Ammonia production 2029, cost $3.7B",
+    "change": "held",
+    "horizon": "2029",
+    "quote": "The projected total cost remains $3.7 billion, with ammonia production expected to commence in 2029."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Yazoo City",
+    "relation": "partner"
+   },
+   {
+    "name": "China",
+    "relation": "competitor"
+   },
+   {
+    "name": "India",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Renewables & storage",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Brazil urea imports down ~1 Mt on credit constraints",
+    "quote": "Brazil has been slower to purchase, in part because of credit constraints."
+   },
+   {
+    "label": "Chinese export quotas on ammonium sulfate",
+    "quote": "they are starting to put quotas on ammonium sulfate exports"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Quarter-over-quarter insurance and Yazoo cash timing",
+    "quote": "We're not trying to give guidance on what it's going to look like quarter over quarter"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

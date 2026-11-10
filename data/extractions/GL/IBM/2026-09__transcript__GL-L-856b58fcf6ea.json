@@ -1,0 +1,208 @@
+{
+ "doc_id": "GL-L-856b58fcf6ea",
+ "market": "GL",
+ "company_id": "IBM",
+ "name": "IBM",
+ "doc_type": "transcript",
+ "date": "2026-10-21",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Software re-accelerated to 9% with about a quarter from slipped deals; TP rebounded to 10%, but management now calls double-digit TP non-recurring and guides TP flat for the year, so the beat is partly timing.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Customer stickiness",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Software growth 5% → 9%",
+    "quote": "Software revenue growth accelerated four points sequentially to 9% this quarter, including over four points of organic growth.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Slip deals ~$250M+ of growth",
+    "quote": "We closed two-thirds of those. That's $250-plus million. That is the 25% of the contribution of the growth that we've had of 4 points.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Software FY guide raised to ~7-8%",
+    "quote": "We now expect full-year software growth of approximately 7%-8%, with about 7% as the revised base case.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "TP moderating from 3Q",
+    "quote": "I do not expect double-digit performance in TP to keep going, but I would expect to see now more normalized performance",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year revenue growth (constant currency)",
+    "value": "4%-5%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We continue to expect revenue growth for 2026 in the range of 4%-5%"
+   },
+   {
+    "metric": "Full-year free cash flow growth",
+    "value": "more than $1 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we are raising our expectation for free cash flow growth to more than $1 billion"
+   },
+   {
+    "metric": "Full-year software growth",
+    "value": "approximately 7%-8%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We now expect full-year software growth of approximately 7%-8%, with about 7% as the revised base case."
+   },
+   {
+    "metric": "Transaction processing growth",
+    "value": "flat",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "For transaction processing, we are raising our expectations for the full year, with growth expected to be flat."
+   },
+   {
+    "metric": "Infrastructure growth",
+    "value": "low double-digit",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we continue to expect low double-digit infrastructure revenue growth for the full year"
+   },
+   {
+    "metric": "Consulting growth",
+    "value": "low to mid-single digit",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "backlog quality and momentum in GenAI continue to support a modest acceleration to low to mid-single digit revenue growth for the year."
+   },
+   {
+    "metric": "Operating pre-tax margin expansion",
+    "value": "100 basis points",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We continue to expect 100 basis points of operating pre-tax margin expansion for the full year"
+   },
+   {
+    "metric": "Red Hat Q4 growth",
+    "value": "double-digit",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we are comfortable about double-digit growth in the fourth quarter of this year"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Full-year revenue growth 4%-5%",
+    "outcome": "met",
+    "quote": "We continue to expect revenue growth for 2026 in the range of 4%-5%"
+   },
+   {
+    "metric": "Transaction processing down low to mid-single digits in 2H",
+    "outcome": "missed",
+    "quote": "Last quarter, you were thinking that TP might be down low to mid-single digits for the second half, and you called it a 27 growth vector. It grew 10% instead."
+   },
+   {
+    "metric": "Operating pre-tax margin expansion 100bp",
+    "outcome": "met",
+    "quote": "We continue to expect 100 basis points of operating pre-tax margin expansion for the full year"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Confluent",
+    "relation": "partner"
+   },
+   {
+    "name": "HashiCorp",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Google Cloud",
+    "relation": "partner"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "AT&T",
+    "relation": "customer"
+   },
+   {
+    "name": "General Motors",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "TP growth driven by slipped deals and timing",
+    "quote": "I would be candid and tell you, I do not expect double-digit performance in TP to keep going"
+   },
+   {
+    "label": "Consulting margin declined",
+    "quote": "Consulting segment profit margin declined modestly as we reinvested productivity gains into digital assets"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 6,
+   "margin": 1,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "2027 software growth target",
+    "quote": "Right now, we do not really want to comment on 2027 growth"
+   },
+   {
+    "topic": "Long-term double-digit software target and M&A role",
+    "quote": "We'll quantify that in January, but that gives you a little bit of perspective of our early thinking about 2027"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

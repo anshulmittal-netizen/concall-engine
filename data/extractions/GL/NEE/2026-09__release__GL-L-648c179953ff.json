@@ -1,0 +1,120 @@
+{
+ "doc_id": "GL-L-648c179953ff",
+ "market": "GL",
+ "company_id": "NEE",
+ "name": "NextEra Energy",
+ "doc_type": "release",
+ "date": "2026-10-21",
+ "period": "2026-09",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "Q3 adjusted EPS $1.24 (+9.7%) with FPL capex ~$12B for 2026 and NEER backlog 36.7 GW; 2026 guidance $3.92–$4.02 held, targeting high end.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital cycle",
+   "Backlog conversion",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "full-year capital investments are expected to be approximately $12 billion"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Backlog 36.7 GW after 3.7 GW added",
+    "quote": "adding 3.7 gigawatts of renewables and storage to its backlog, which now stands at approximately 36.7 gigawatts",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2026 EPS targeting high end",
+    "quote": "continues to expect 2026 adjusted earnings per share to be in the range of $3.92 to $4.02 and is targeting the high end of that range",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Regulated capital employed +9.2% YoY",
+    "quote": "Regulatory capital employed increased by approximately 9.2%, compared to the prior-year comparable quarter.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 adjusted EPS",
+    "value": "$3.92 to $4.02, targeting high end",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "continues to expect 2026 adjusted earnings per share to be in the range of $3.92 to $4.02 and is targeting the high end of that range"
+   },
+   {
+    "metric": "Adjusted EPS CAGR",
+    "value": "8%+ through 2032; same 2032-2035 off 2025 base",
+    "change": "held",
+    "horizon": "2032-2035",
+    "quote": "expect a compound annual growth rate in adjusted earnings per share of 8%+ annually through 2032"
+   },
+   {
+    "metric": "Dividend growth",
+    "value": "6% per year from year-end 2026 through 2028",
+    "change": "held",
+    "horizon": "2026-2028",
+    "quote": "6% per year from year-end 2026 through 2028"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Dominion Energy",
+    "relation": "partner"
+   },
+   {
+    "name": "Chesapeake Utilities Corporation",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Grid capex & transformers",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Pending Dominion merger; state approvals still open",
+    "quote": "The companies continue to expect the combination to close in the second half of 2027."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

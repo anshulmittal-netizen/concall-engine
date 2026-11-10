@@ -1,0 +1,130 @@
+{
+ "doc_id": "GL-L-af721fe49cae",
+ "market": "GL",
+ "company_id": "ASML",
+ "name": "ASML Holding",
+ "doc_type": "release",
+ "date": "2026-10-14",
+ "period": "2026-09",
+ "title": "6-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Supply-side tightening: ASML now says planned 2027–28 supply will not meet demand and is weighing more 2028 capacity beyond the 30% step-up, with Q3 sales €11.7bn and FY26 guide €44–45bn.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are investigating ways to increase capacity for 2028 beyond the 30% increase we previously communicated"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2028 capacity above prior 30% step-up",
+    "quote": "we are investigating ways to increase capacity for 2028 beyond the 30% increase we previously communicated",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Supply short of demand for 2027–28",
+    "quote": "our supply as currently planned for both 2027 and 2028 will not fully meet the demand of our customers",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 sales guide €14.2–15.2bn",
+    "quote": "We expect fourth-quarter 2026 total net sales between €14.2 billion and €15.2 billion, with a gross margin around 57%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Customers asking for 2029–30 orders",
+    "quote": "some customers are expressing an interest in placing orders with us for 2029 and even 2030",
+    "direction": 1,
+    "confidence": 0.55
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q4 2026 total net sales",
+    "value": "€14.2–15.2bn",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "We expect fourth-quarter 2026 total net sales between €14.2 billion and €15.2 billion"
+   },
+   {
+    "metric": "Q4 2026 gross margin",
+    "value": "~57%",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "with a gross margin around 57%"
+   },
+   {
+    "metric": "FY2026 total net sales",
+    "value": "€44–45bn",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We expect total net sales for 2026 to be between €44 billion and €45 billion"
+   },
+   {
+    "metric": "FY2026 gross margin",
+    "value": "~56%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "with a gross margin around 56%"
+   },
+   {
+    "metric": "Q4 2026 R&D costs",
+    "value": "~€1.2bn",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "We expect R&D costs of around €1.2 billion and SG&A costs of around €0.4 billion"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2026 low NA EUV and DUV immersion capacity +30% in 2027",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Semiconductors & OSAT",
+   "Capacity bottleneck",
+   "AI capex"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

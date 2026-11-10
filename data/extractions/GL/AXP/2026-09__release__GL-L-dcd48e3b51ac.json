@@ -1,0 +1,124 @@
+{
+ "doc_id": "GL-L-dcd48e3b51ac",
+ "market": "GL",
+ "company_id": "AXP",
+ "name": "American Express",
+ "doc_type": "release",
+ "date": "2026-10-23",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Consumer durables",
+  "thesis": "Amex beat and raised FY26 EPS to $18.30-$18.60 GAAP ($17.60-$17.90 adjusted) on 9% Q3 revenue growth, but the lift is mostly GBTG gain and a reserve release, not supply-side evidence.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 adj EPS guide raised to $17.60-$17.90",
+    "quote": "we are raising our full-year EPS guidance to between $18.30 and $18.60 ($17.60-$17.90 adjusted)",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Billed business up 8% FX-adjusted",
+    "quote": "Billed Business (Billions) FX-adjusted 2 $454.0 $421.0 $420.8 8%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Q3 provisions fell on reserve release",
+    "quote": "The decrease reflected a reserve release during the quarter compared to a reserve build in the prior year, partially offset by higher net write-offs.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 GAAP EPS",
+    "value": "$18.30-$18.60",
+    "change": "raised",
+    "quote": "we are raising our full-year EPS guidance to between $18.30 and $18.60 ($17.60-$17.90 adjusted)"
+   },
+   {
+    "metric": "FY26 adjusted EPS",
+    "value": "$17.60-$17.90",
+    "change": "raised",
+    "quote": "($17.60-$17.90 adjusted)"
+   },
+   {
+    "metric": "FY26 revenue growth",
+    "value": "10%",
+    "change": "held",
+    "quote": "we're on track to deliver another year of 10 percent revenue growth"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Marriott International",
+    "relation": "partner"
+   },
+   {
+    "name": "Airbnb",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Customer stickiness"
+  ],
+  "red_flags": [
+   {
+    "label": "Reported EPS flattered by one-off GBTG gain",
+    "quote": "which excludes the $982 million pre-tax gain ($751 million after-tax) from the previously-announced sale"
+   },
+   {
+    "label": "Legal reserves increase",
+    "quote": "partially offset by an increase in legal reserves for previously-disclosed matters"
+   },
+   {
+    "label": "Tax rate drop from discrete items",
+    "quote": "primarily reflecting discrete tax benefits in the current year related to the resolution of certain prior-period tax items"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

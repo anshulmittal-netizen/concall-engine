@@ -1,0 +1,162 @@
+{
+ "doc_id": "GL-L-dbbc95609f5c",
+ "market": "GL",
+ "company_id": "EMR",
+ "name": "Emerson Electric",
+ "doc_type": "transcript",
+ "date": "2026-11-04",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q4 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Emerson's Q4 orders rose 14% with backlog up 11% to $8.2B and a 1.01 book-to-bill, but China and Europe stay weak and 2027 sales guidance is held at about 5%.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Underlying orders +14% in Q4",
+    "quote": "Underlying orders grew 14%. With broad based demand across all business groups.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Backlog $8.2B, up 11% YoY",
+    "quote": "Backlog ended the quarter at $8.2 billion, up 11% year over year. And our book to bill was 1.01",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "2027 price assumed at 2%",
+    "quote": "we feel pretty good about 2% price in the plan. Normal level of pricing.",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "China orders negative",
+    "quote": "China orders remain negative as both chemical and refining continue to weigh on demand.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Backlog 12-month share 75% to 70%",
+    "quote": "That dropped to 70%. So it is a. Your point is a good 1",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 underlying sales growth",
+    "value": "approximately 5%",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "For the full year, we are guiding GAAP and underlying sales growth of approximately 5%."
+   },
+   {
+    "metric": "FY27 adjusted segment EBITDA margin",
+    "value": "29%",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "We expect adjusted segment EBITDA margin of 29%, up 80 basis points year over year."
+   },
+   {
+    "metric": "FY27 adjusted EPS",
+    "value": "$7.25",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "We are guiding 2027 adjusted earnings per share of $7.25 up 10%"
+   },
+   {
+    "metric": "FY27 free cash flow",
+    "value": "$3.8B to $3.9B",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "free cash flow of $3.8 billion to $3.9 billion"
+   },
+   {
+    "metric": "FY27 share repurchases and dividends",
+    "value": "$3.8B total ($2.5B buybacks, $1.3B dividends)",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "we plan to return approximately $3.8 billion to shareholders through $2.5 billion of share repurchase, and $1.3 billion in dividends"
+   },
+   {
+    "metric": "Q1 FY27 adjusted EPS",
+    "value": "$1.58 to $1.62",
+    "change": "new",
+    "horizon": "Q1 FY2027",
+    "quote": "adjusted earnings per share of $1.58 to $1.62"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "AspenTech",
+    "relation": "peer"
+   },
+   {
+    "name": "LNG Canada",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Electrification & grid",
+   "Middle East energy security",
+   "Semiconductors & OSAT",
+   "Consolidation / competitor exits",
+   "Pricing power"
+  ],
+  "red_flags": [
+   {
+    "label": "Corporate expense overrun $45M in Q4",
+    "quote": "we were about $45 million higher than we had expected to be."
+   },
+   {
+    "label": "China petrochemical exposure, no recovery modelled",
+    "quote": "We are not planning for a recovery in China due to the persistent headwinds in both chemical and refining."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 3,
+   "balance_sheet": 2,
+   "capex": 0,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Q1 top-line conservatism vs accelerating orders",
+    "quote": "that is where the conservatism really lies in."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

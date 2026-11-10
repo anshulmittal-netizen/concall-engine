@@ -1,0 +1,125 @@
+{
+ "doc_id": "GL-L-e0b31d493be1",
+ "market": "GL",
+ "company_id": "ACN",
+ "name": "Accenture",
+ "doc_type": "release",
+ "date": "2026-10-01",
+ "period": "2026-09",
+ "title": "8-K · NEWS RELEASE OF ACCENTURE, DATED OCTOBER 1, 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.92,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Accenture beat Q4 FY26 revenue guide (+7% LC, above 1-5% range) and guided FY27 LC growth 3-6% with margin expansion, but supply-side signals are thin: capex stays low and buybacks are funded partly with debt.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 revenue +7% LC above guide",
+    "quote": "Revenues for the fourth quarter of fiscal 2026 were $18.68 billion, an increase of 6% in U.S. dollars and 7% in local currency, and were above the company’s guided range",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 LC growth 3-6% guided",
+    "quote": "Company expects full-year revenue growth of 3% to 6% in local currency",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "DSO up to 50 days from 47",
+    "quote": "Days services outstanding, or DSOs, were 50 days at August 31, 2026, compared with 47 days at August 31, 2025.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth (LC)",
+    "value": "3% to 6%",
+    "change": "new",
+    "quote": "Company expects full-year revenue growth of 3% to 6% in local currency"
+   },
+   {
+    "metric": "FY27 GAAP diluted EPS",
+    "value": "$14.39 to $14.81",
+    "change": "new",
+    "quote": "Expects full-year GAAP diluted EPS of $14.39 to $14.81, a 6% to 9% increase"
+   },
+   {
+    "metric": "FY27 operating margin",
+    "value": "15.9% to 16.1%",
+    "change": "new",
+    "quote": "Operating Margin 15.9% – 16.1%"
+   },
+   {
+    "metric": "FY27 capital return",
+    "value": "at least $9.5B",
+    "change": "new",
+    "quote": "Company expects to return at least $9.5 billion in cash to shareholders in fiscal year 2027"
+   },
+   {
+    "metric": "FY27 property & equipment additions",
+    "value": "$900M",
+    "change": "new",
+    "quote": "Property & Equipment Additions $900M"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q4 FY26 revenue growth (LC) 1% to 5%",
+    "outcome": "met",
+    "quote": "above the company’s guided range of $17.75 billion to $18.40 billion, or 1% to 5% growth in local currency"
+   },
+   {
+    "metric": "FY26 revenue growth (LC) 3% to 4%",
+    "outcome": "met",
+    "quote": "above the company’s guided range of 3% to 4% growth in local currency"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Agentic AI in IT services",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "DSO rising 47 to 50 days",
+    "quote": "Days services outstanding, or DSOs, were 50 days at August 31, 2026, compared with 47 days at August 31, 2025."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,164 @@
+{
+ "doc_id": "GL-L-fabb7dcc7ca7",
+ "market": "GL",
+ "company_id": "PWR",
+ "name": "Quanta Services",
+ "doc_type": "transcript",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical contracting",
+  "thesis": "Quanta posted record Q3 with revenue up 57% to $12.01B and backlog at a record $63.7B, and raised FY26 revenue, EPS and FCF guidance, though management gave no capacity-discipline evidence and flagged copper and OEM supply risk.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Backlog conversion",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "$500 million to $700 million in manufacturing-related capital expenditures planned over the next several years to mitigate supply chain constraints."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 revenue guide raised ~$1.9B at midpoint",
+    "quote": "We now expect revenue to range between $41.3 billion and $41.6 billion, up approximately $1.9 billion at the midpoint from our prior outlook.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Backlog record $63.7B, +$10B QoQ",
+    "quote": "As of September 30, we had record backlog of approximately $64 billion, a $10 billion sequential increase from June 30",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Manufacturing capex $500-700M for supply chain",
+    "quote": "$500 million to $700 million in manufacturing-related capital expenditures planned over the next several years to mitigate supply chain constraints.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Copper and OEM supply constraints flagged",
+    "quote": "I'm worried about copper, I'm worried about other things",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 revenue",
+    "value": "$41.3B to $41.6B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We now expect revenue to range between $41.3 billion and $41.6 billion, up approximately $1.9 billion at the midpoint from our prior outlook."
+   },
+   {
+    "metric": "FY26 adjusted EPS",
+    "value": "$17.90 to $18.30",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "adjusted EPS to range between $17.90 and $18.30."
+   },
+   {
+    "metric": "FY26 adjusted EBITDA",
+    "value": "$4.40B to $4.49B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We expect adjusted EBITDA to range between $4.4 billion and $4.49 billion"
+   },
+   {
+    "metric": "FY26 free cash flow",
+    "value": "$2.5B to $3.0B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect free cash flow to range between $2.5 billion to $3 billion"
+   },
+   {
+    "metric": "2027 adjusted EPS growth",
+    "value": "strong double-digit",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "We see the opportunity to deliver strong double-digit adjusted EPS growth again in 2027"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Manufacturing capex $500-700M",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "FCF conversion 55-60% of adjusted EBITDA",
+    "outcome": "met",
+    "quote": "55% to 60% is still the right way to think about it, Justin."
+   }
+  ],
+  "entities": [
+   {
+    "name": "AEP",
+    "relation": "partner"
+   },
+   {
+    "name": "NiSource",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Backlog timing lumpy; some work booked outside backlog",
+    "quote": "some of that, kind of, $1 billion beat over the last 2 quarters is because it's book-to-bill, we're moving building to building or job to job without ever hitting backlog."
+   },
+   {
+    "label": "Data center slowdown risk dismissed on questioning",
+    "quote": "You may get some learning centers that slow a little bit. It's very little of our work today."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 6,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Data-centre project slowdown risk",
+    "quote": "I'm not as concerned as the market may perceive it at this point."
+   },
+   {
+    "topic": "Timing of 765 kV transmission backlog",
+    "quote": "I'm not rushing them to get them signed."
+   }
+  ],
+  "hedge_index": 0.35
+ }
+}

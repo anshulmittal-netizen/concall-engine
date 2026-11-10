@@ -1,0 +1,162 @@
+{
+ "doc_id": "GL-L-9469dee5b0ee",
+ "market": "GL",
+ "company_id": "LMT",
+ "name": "Lockheed Martin",
+ "doc_type": "release",
+ "date": "2026-10-22",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Defence & aerospace",
+  "thesis": "Record $292B backlog including $52.5B PAC-3 MSE award and guidance raised for a second quarter, but MFC margin fell to 9.0% and Lot 20 F-35 costs now exceed contract funding.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "raised",
+   "quote": "Capital expenditures (439) (381) (1,268) (1,186)",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Sales guidance raised to $80.0-82.0B",
+    "quote": "The sustained financial momentum across our portfolio gives us confidence to increase our outlook for sales, earnings per share and free cash flow",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Backlog $292.0B record",
+    "quote": "Record backlog of $292.0 billion, including $52.5 billion associated with the multi-year award to produce PAC-3",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Lot 20 F-35 costs exceed funding",
+    "quote": "costs incurred began to exceed the current contractual authorization and funding on the Lot 20 advance acquisition contract",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "pricing",
+    "label": "MFC margin 9.0% vs 9.4%",
+    "quote": "Third quarter 2026 operating profit increased $61 million, or 9%",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Sales",
+    "value": "~$80,000 - $82,000M",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "~$80,000 - $82,000"
+   },
+   {
+    "metric": "Business segment operating profit",
+    "value": "~$8,575 - $8,675M",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "~$8,575 - $8,675"
+   },
+   {
+    "metric": "Diluted EPS",
+    "value": "~$30.35 - $30.75",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "~$30.35 - $30.75"
+   },
+   {
+    "metric": "Cash from operations",
+    "value": "~$10,000 - $10,200M",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "~$10,000 - $10,200"
+   },
+   {
+    "metric": "Capital expenditures",
+    "value": "~$2,100 - $2,300M",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "~$2,100 - $2,300"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "~$7,800 - $8,000M",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "~$7,800 - $8,000"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Sales",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Business segment operating profit",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Diluted EPS",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Free cash flow",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "United Launch Alliance",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "F-35 Lot 20 costs exceed contract funding",
+    "quote": "Without additional contractual authorization and funding from the U.S. Government, the company's results of operations, cash flows, and financial condition will be negatively impacted"
+   },
+   {
+    "label": "Receivables down, contract assets up sharply",
+    "quote": "Contract assets (3,898) (1,231)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,169 @@
+{
+ "doc_id": "GL-L-204e11b08b4a",
+ "market": "GL",
+ "company_id": "UHS",
+ "name": "Universal Health Services",
+ "doc_type": "transcript",
+ "date": "2026-10-28",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Acute volumes up 4.9% but EBITDA below internal plan on de novo ramp and surgical mix; FY26 now toward low end, with 2027 Medicaid headwind of $175-200M and capex easing to ~$800M.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "we expect CapEx to moderate towards $800 million beyond 2026"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 guidance now low end",
+    "quote": "we currently expect results to be towards the lower end of these ranges",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Acute rev/admission -1.7% reported",
+    "quote": "acute care same-facility revenue per adjusted admission decreased by 1.7% during the third quarter of 2026 on a reported basis",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Same-facility surgeries -0.7%",
+    "quote": "same-facility surgeries decreased 0.7% compared with the third quarter of 2025",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex to ~$800M from ~$1B",
+    "quote": "we expect CapEx to moderate towards $800 million beyond 2026",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "2027 Medicaid headwind $175-200M",
+    "quote": "we estimate the 2027 headwind will be approximately $175 million-$200 million",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 financial and operating forecast ranges",
+    "value": "reiterated; results towards lower end",
+    "change": "cut",
+    "quote": "we currently expect results to be towards the lower end of these ranges"
+   },
+   {
+    "metric": "FY26 capex",
+    "value": "slightly below $1 billion",
+    "change": "held",
+    "quote": "we anticipate capital expenditures to be slightly below $1 billion for the full-year of 2026"
+   },
+   {
+    "metric": "Cedar Hill operational break-even",
+    "value": "1H 2027",
+    "change": "cut",
+    "quote": "we now expect the hospital to reach operational break even in the first half of 2027"
+   },
+   {
+    "metric": "Laurel Ridge + de novo 2026 operating losses",
+    "value": "$80M-$100M",
+    "change": "new",
+    "quote": "Cumulatively, these facilities are expected to contribute operating losses of $80 million-$100 million in 2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 financial and operating forecast ranges",
+    "outcome": "missed",
+    "quote": "we currently expect results to be towards the lower end of these ranges"
+   },
+   {
+    "metric": "Cedar Hill break-even by Q4 2026",
+    "outcome": "missed",
+    "quote": "compared with our prior expectations of the fourth quarter of 2026"
+   },
+   {
+    "metric": "Acute care growth algorithm (adj admissions 1.5%-2.5%, pricing 2%-3%)",
+    "outcome": "met",
+    "quote": "we are averaging slightly above that, I think 2.6% for the year"
+   },
+   {
+    "metric": "Behavioral growth algorithm (patient days 1%-2%)",
+    "outcome": "met",
+    "quote": "we are running for the year in the 1.7% range"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Laurel Ridge Treatment Center",
+    "relation": "peer"
+   },
+   {
+    "name": "Talkspace",
+    "relation": "partner"
+   },
+   {
+    "name": "Cedar Hill Regional Medical Center",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "De novo ramps lagging, guidance cut to low end",
+    "quote": "adjusted EBITDA less NCI was below our internal expectations"
+   },
+   {
+    "label": "Surgical mix shift out of hospital",
+    "quote": "an acceleration of existing trends"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 4,
+   "balance_sheet": 1,
+   "capex": 1,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Medicaid work requirements impact",
+    "quote": "it's difficult to provide an estimate on the potential impact"
+   },
+   {
+    "topic": "Cumberland / $10M Q4 2027 SDP headwind detail",
+    "quote": "I don't have that detail in front of me, but happy to discuss that offline at some point"
+   }
+  ],
+  "hedge_index": 0.4,
+  "themes": []
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "doc_id": "GL-L-41afb9845d87",
+ "market": "GL",
+ "company_id": "JPM",
+ "name": "JPMorgan Chase",
+ "doc_type": "release",
+ "date": "2026-10-13",
+ "period": "2026-09",
+ "title": "8-K · JPMORGAN CHASE & CO. EARNINGS RELEASE - THIRD QUARTER 2026 RESULTS",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Earnings release shows net income $15.3B (EPS $5.57), $15.8B ex a $658M securities loss; CET1 13.9% and ROTCE 20% signal strong capital, but no supply-side or capacity signal applies to a bank.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Buybacks reduced this quarter",
+    "quote": "In line with our hierarchy, we reduced share repurchases this quarter.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Client asset net inflows $263B",
+    "quote": "flows were very strong with $263 billion of client asset net inflows.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Capital allocation shift",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Net investment securities loss $658M",
+    "quote": "$658 million of net investment securities losses in Corporate"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

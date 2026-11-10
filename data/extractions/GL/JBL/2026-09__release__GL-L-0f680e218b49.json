@@ -1,0 +1,127 @@
+{
+ "doc_id": "GL-L-0f680e218b49",
+ "market": "GL",
+ "company_id": "JBL",
+ "name": "Jabil",
+ "doc_type": "release",
+ "date": "2026-09-30",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Jabil's Q4 FY26 release shows revenue up 29% to $10.6B and core margin 6.4%, with FY27 guide of $44.5B (+24%) and 6.1% core margin, but inventory and payables rose sharply, and the release gives no capacity or utilisation data.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Working-capital stress",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventories up 58% to $7.4B",
+    "quote": "Inventories, net 7,413 4,681",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue guided to $44.5B, up 24%",
+    "quote": "We expect revenue of $44.5 billion, up 24%, core operating margin expansion of 30 basis points to 6.1%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Core operating margin up 40bps FY26",
+    "quote": "expanded core operating margin 40 basis points",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q1 FY27 net revenue",
+    "value": "$10.6B to $11.4B",
+    "change": "new",
+    "horizon": "Q1 FY27"
+   },
+   {
+    "metric": "Q1 FY27 core diluted EPS",
+    "value": "$3.80 to $4.20",
+    "change": "new",
+    "horizon": "Q1 FY27"
+   },
+   {
+    "metric": "FY27 net revenue",
+    "value": "$44.5 billion",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY27 core operating margin",
+    "value": "6.1%",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY27 core diluted EPS",
+    "value": "$17.55",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY27 adjusted free cash flow",
+    "value": "~$1.6 billion",
+    "change": "new",
+    "horizon": "FY27"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Data-centre power & cooling",
+   "Electronics manufacturing (EMS/PLI)",
+   "Defence indigenisation",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Payables and inventory build; FCF swing",
+    "quote": "Accounts payable 14,444 7,937"
+   },
+   {
+    "label": "Prepaid expenses up 127%",
+    "quote": "Prepaid expenses and other current assets 4,559 2,010"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

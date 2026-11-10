@@ -1,0 +1,203 @@
+{
+ "doc_id": "GL-L-16bba6a1bd35",
+ "market": "GL",
+ "company_id": "TT",
+ "name": "Trane Technologies",
+ "doc_type": "transcript",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Building materials",
+  "thesis": "Record $12.5B backlog and 20% organic bookings signal strong demand, but price realisation cut to ~1 point and leverage lowered to low 20s on supply-chain and inflation headwinds.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "We now expect CapEx of approximately 2% of revenue in 2026, which will further bolster our strong free cash flow and balance sheet position.",
+   "peers_comment": "Management noted supply partners for fans, coils and heat exchangers are expanding capacity under strain; no explicit peer capacity commentary."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Price realisation cut 1.5 → ~1 point",
+    "quote": "updating our full year price realization expectation from 1.5 points to approximately 1 point",
+    "highlight": "from 1.5 points to approximately 1 point",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Organic leverage cut 25%+ → low 20s",
+    "quote": "We now expect organic leverage to land in the low 20s, an adjustment from our prior expectation at 25%+",
+    "highlight": "low 20s",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Organic bookings +20%, backlog $12.5B",
+    "quote": "Enterprise organic bookings grew 20%, fueled by robust growth across all segments.",
+    "highlight": "Enterprise organic bookings grew 20%",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Cancoil acquisition secures coil supply",
+    "quote": "A prime example is our recent acquisition of Cancoil, one of our key suppliers, which strengthens our supply chain",
+    "highlight": "strengthens our supply chain",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Backlog for 2027+ over $8B",
+    "quote": "of the $12.5 billion of backlog at the end of September, over $8 billion would be for 2027 and beyond.",
+    "highlight": "over $8 billion would be for 2027 and beyond",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year organic revenue growth",
+    "value": "approximately 11%",
+    "change": "raised",
+    "quote": "we are raising our full year revenue guidance"
+   },
+   {
+    "metric": "Adjusted EPS",
+    "value": "$15.20 to $15.30",
+    "change": "held",
+    "quote": "reaffirming our adjusted EPS guidance range of $15.20 to 15.30"
+   },
+   {
+    "metric": "Organic leverage",
+    "value": "low 20s",
+    "change": "cut",
+    "quote": "We now expect organic leverage to land in the low 20s, an adjustment from our prior expectation at 25%+"
+   },
+   {
+    "metric": "Price realization",
+    "value": "approximately 1 point",
+    "change": "cut",
+    "quote": "updating our full year price realization expectation from 1.5 points to approximately 1 point"
+   },
+   {
+    "metric": "Capex",
+    "value": "approximately 2% of revenue",
+    "change": "new",
+    "quote": "We now expect CapEx of approximately 2% of revenue in 2026"
+   },
+   {
+    "metric": "Q4 organic revenue growth",
+    "value": "mid-teens",
+    "change": "new",
+    "quote": "For the fourth quarter, we expect organic revenue growth in the mid-teens"
+   },
+   {
+    "metric": "Q4 adjusted EPS",
+    "value": "$3.40 to 3.50",
+    "change": "new",
+    "quote": "adjusted EPS of approximately $3.40 to 3.50"
+   },
+   {
+    "metric": "Capital deployment 2026",
+    "value": "more than $3.4 billion",
+    "change": "raised",
+    "quote": "We now expect to deploy more than $3.4 billion in 2026, exceeding the high end of our prior range."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Organic leverage 25%+",
+    "outcome": "missed",
+    "quote": "We now expect organic leverage to land in the low 20s, an adjustment from our prior expectation at 25%+"
+   },
+   {
+    "metric": "Price realization 1.5 points",
+    "outcome": "missed",
+    "quote": "updating our full year price realization expectation from 1.5 points to approximately 1 point"
+   },
+   {
+    "metric": "Adjusted EPS guidance",
+    "outcome": "held",
+    "quote": "reaffirming our adjusted EPS guidance range of $15.20 to 15.30"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Cancoil",
+    "relation": "supplier"
+   },
+   {
+    "name": "Mitsubishi Electric Trane",
+    "relation": "partner"
+   },
+   {
+    "name": "LiquidStack",
+    "relation": "partner"
+   },
+   {
+    "name": "ACT",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Pricing power",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Railway capex"
+  ],
+  "red_flags": [
+   {
+    "label": "UFLPA-driven component outage and rework",
+    "quote": "caused us to have a couple of weeks where we didn't have supply"
+   },
+   {
+    "label": "Price below plan; inflation exceeds pricing",
+    "quote": "We've described price versus inflation this year as being a headwind."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "margin": 4,
+   "balance_sheet": 0,
+   "capex": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Americas order slowdown",
+    "quote": "they are lumpy. I think you know that."
+   },
+   {
+    "topic": "Q2 vs Q3 order decline",
+    "quote": "No, I would say it is lumpiness."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

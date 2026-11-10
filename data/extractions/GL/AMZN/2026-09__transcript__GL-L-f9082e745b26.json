@@ -1,0 +1,155 @@
+{
+ "doc_id": "GL-L-f9082e745b26",
+ "market": "GL",
+ "company_id": "AMZN",
+ "name": "Amazon",
+ "doc_type": "transcript",
+ "date": "2026-10-30",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "AWS grew 39.3% to a $184B run rate with $578B backlog and 38.7% margin, but Q3 capex of $75.9B and a 2026 capex of about $220B with more in 2027 keep the capital cycle expanding.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Overall demand for AWS capacity remains exceptionally strong."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We still expect 2026 cash CapEx of approximately $220 billion, the majority for AWS, and expect to spend meaningfully more in 2027"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "AWS growth 39.3%, backlog $578B",
+    "quote": "AWS grew 39.3% year-over-year, accelerating for the sixth straight quarter, our fastest growth in nearly five years. Backlog is $578 billion",
+    "highlight": "Backlog is $578 billion",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "2027 capex to rise meaningfully",
+    "quote": "expect to spend meaningfully more in 2027 with a clear line of sight to attractive financial returns",
+    "highlight": "spend meaningfully more in 2027",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 operating income $28.5-33.5B",
+    "quote": "Q4 operating income is expected to be between $28.5 billion and $33.5 billion.",
+    "highlight": "between $28.5 billion and $33.5 billion",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "AWS revenue growth 2027 and 2028",
+    "value": "north of 40% each year",
+    "change": "new",
+    "horizon": "2027-2028",
+    "quote": "AWS can grow north of 40% in each of 2027 and in 2028"
+   },
+   {
+    "metric": "2026 cash capex",
+    "value": "approximately $220 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We still expect 2026 cash CapEx of approximately $220 billion"
+   },
+   {
+    "metric": "Q4 net sales",
+    "value": "$240B to $247B",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "Q4 net sales are expected to be between $240 billion and $247 billion."
+   },
+   {
+    "metric": "Q4 operating income",
+    "value": "$28.5B to $33.5B",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "Q4 operating income is expected to be between $28.5 billion and $33.5 billion."
+   },
+   {
+    "metric": "Advertising growth Q4",
+    "value": "return to high teens",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "We expect year-over-year growth will return to the high teens in Q4."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Anthropic",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Nvidia",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Cybersecurity spend",
+   "Agentic AI in IT services",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating margin hit by AI mix and component costs",
+    "quote": "the outsized growth of AI puts margin pressure on the business as a whole because the margins are lower there"
+   },
+   {
+    "label": "Fuel and line-haul cost inflation rising into Q4",
+    "quote": "it is higher in Q4 than it was in Q3"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 2,
+   "margin": 1,
+   "capex": 2,
+   "balance_sheet": 0,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "AWS margin outlook",
+    "quote": "We are not guiding at all on our margin for AWS"
+   },
+   {
+    "topic": "Q/Q AWS growth slowdown and Q4 capacity adds",
+    "quote": "The amount that we add every quarter is not equal."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "doc_id": "GL-L-bab0a92763ba",
+ "market": "GL",
+ "company_id": "LLY",
+ "name": "Eli Lilly",
+ "doc_type": "transcript",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma & biotech",
+  "thesis": "Revenue up 39% to $24.4B with FY26 guidance raised to $91-92B, but U.S. price down 10% ex one-time adjustment and capacity is expanding via $11.5B of new U.S. plants.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Operating leverage",
+   "Capital cycle",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "raised",
+   "quote": "Broke ground on $11.5 billion in new U.S. facilities, including a $6.5 billion site in Houston and a $5 billion site in Richmond.",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "U.S. price down 10% ex-adjustment",
+    "quote": "Excluding this adjustment, U.S. price declined 10%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 revenue guide raised to $91-92B",
+    "quote": "we now expect full year revenue to be between $91 and $92 billion",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "2027 faces ~$2B one-time headwind",
+    "quote": "the 2026 revenue benefited from approximately $2 billion of 1-time items",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 revenue",
+    "value": "$91-92B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect full year revenue to be between $91 and $92 billion"
+   },
+   {
+    "metric": "FY2026 non-GAAP EPS",
+    "value": "$35-36",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We expect non GAAP earnings per share of $35 to $36"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Boehringer Ingelheim",
+    "relation": "partner"
+   },
+   {
+    "name": "Novo Nordisk",
+    "relation": "competitor"
+   },
+   {
+    "name": "Wegovy",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Pharma CDMO / outsourcing",
+   "GLP-1 supply chain",
+   "Medicare coverage expansion",
+   "Pricing pressure in obesity"
+  ],
+  "red_flags": [
+   {
+    "label": "Q3 revenue boosted ~$900M one-offs",
+    "quote": "Q3 revenue was positively impacted by approximately $900 million of previously mentioned items"
+   },
+   {
+    "label": "Net price erosion in U.S.",
+    "quote": "Partially offset by a 7% decline in price."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 6,
+   "margin": 1,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Guidance conservatism",
+    "quote": "we continue to guide to what we forecast in our internal bottom up approach"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

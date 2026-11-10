@@ -1,0 +1,118 @@
+{
+ "doc_id": "GL-L-5c2ad99760d3",
+ "market": "GL",
+ "company_id": "SHEL.L",
+ "name": "Shell",
+ "doc_type": "release",
+ "date": "2026-10-07",
+ "period": "2026-09",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Shell's Q3 CY26 update guides Chemicals utilisation to 81%–85% and refinery runs to 93%–97% against a 102% Q2 print, with Q3 indicative refining margin falling to $24/bbl from $42/bbl.",
+  "archetype": "None",
+  "mental_models": [
+   "Supply discipline",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 95,
+   "quote": "Refinery utilisation 102% 93% - 97%"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Refining margin $42 → $24/bbl",
+    "quote": "Indicative refining margin $24/bbl $42/bbl",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Refinery utilisation 102% → 93–97%",
+    "quote": "Low Rhine water levels impacting Rheinland refinery utilisation.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Integrated Gas production (kboe/d)",
+    "value": "740-780",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "Upstream production (kboe/d)",
+    "value": "1,735-1,835",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "Chemicals utilisation",
+    "value": "81%-85%",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "Refinery utilisation",
+    "value": "93%-97%",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "Adjusted Earnings Chemicals and Products",
+    "value": "0.0-0.4 $bn",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "Shell Group Adjusted Earnings Corporate",
+    "value": "(0.8)-(0.6) $bn",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "ARC Resources",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital outflow ~$2.5bn BEHG emissions payment",
+    "quote": "CFFO excluding working capital is expected to include an ~$2.5 billion outflow related to timing of payments of emissions certificates"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

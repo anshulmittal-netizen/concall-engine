@@ -1,0 +1,163 @@
+{
+ "doc_id": "GL-L-532ec328b23a",
+ "market": "GL",
+ "company_id": "BLK",
+ "name": "BlackRock",
+ "doc_type": "transcript",
+ "date": "2026-10-14",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Record Q3 with $205B net inflows, 11% organic base fee growth and 47.8% operating margin; supply-side lens is limited since this is an asset manager, with the AI-financing and private-markets pipeline the key growth claim.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Organic base fee growth 11%",
+    "quote": "Organic base fee growth of 11% marks our ninth consecutive quarter at or above 5%.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Effective fee rate flat QoQ",
+    "quote": "On an equivalent day count basis, our annualized effective fee rate was approximately flat compared to the second quarter.",
+    "direction": 0,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Evergreen private markets turning",
+    "quote": "We still have redemptions in the queue.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "novelty",
+    "label": "Meta $14B Texas data-centre financing",
+    "quote": "We partnered with Meta on the financing of its planned $14 billion data center in Texas",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q4 share repurchases",
+    "value": "at least $550 million",
+    "change": "held",
+    "quote": "we anticipate repurchasing at least $550 million worth of shares in the fourth quarter"
+   },
+   {
+    "metric": "Full-year G&A growth",
+    "value": "mid-single-digit percentage increase",
+    "change": "held",
+    "quote": "we continue to expect a mid-single-digit percentage increase in full-year G&A"
+   },
+   {
+    "metric": "Q4 tax run rate",
+    "value": "25%",
+    "change": "held",
+    "quote": "We continue to estimate that 25% is a reasonable projected tax run rate for the fourth quarter of 2026."
+   },
+   {
+    "metric": "Long-term ACV growth",
+    "value": "low- to mid-teens",
+    "change": "held",
+    "quote": "We remain committed to low- to mid-teens ACV growth over the long term."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Share repurchases",
+    "outcome": "met",
+    "quote": "In the third quarter, we repurchased $550 million worth of shares."
+   },
+   {
+    "metric": "Full-year G&A growth",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Meta",
+    "relation": "customer"
+   },
+   {
+    "name": "Circle",
+    "relation": "partner"
+   },
+   {
+    "name": "Securitize",
+    "relation": "partner"
+   },
+   {
+    "name": "Aligned Data Centers",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Private credit & alternatives",
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Pharma CDMO / outsourcing",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Evergreen private-markets redemptions queued",
+    "quote": "We still have redemptions in the queue."
+   },
+   {
+    "label": "Custodian tightening on long-short tax-aware flows",
+    "quote": "They have actually been tightening inflows recently."
+   },
+   {
+    "label": "Institutional index outflows",
+    "quote": "Institutional index net outflows of $27 billion were concentrated in low-fee index equities."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 2,
+   "margin": 1,
+   "balance_sheet": 0,
+   "capex": 1,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Margin outlook for 2027",
+    "quote": "Appreciating you do not like to bake in beta into your outlook"
+   },
+   {
+    "topic": "Syndication revenue economics",
+    "quote": "If and when there's appropriate syndication and distribution revenues to secure, we will do so."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

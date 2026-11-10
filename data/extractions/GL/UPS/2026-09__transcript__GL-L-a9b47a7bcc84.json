@@ -1,0 +1,195 @@
+{
+ "doc_id": "GL-L-a9b47a7bcc84",
+ "market": "GL",
+ "company_id": "UPS",
+ "name": "UPS",
+ "doc_type": "transcript",
+ "date": "2026-10-27",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.91,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "UPS beat Q3 and raised FY26 revenue to ~$92.6B and operating profit to ~$8.75B, with U.S. Domestic margin up 60bp to 7.0% as Amazon volume exits and RPP outpaces CPP.",
+  "archetype": "Value migration",
+  "mental_models": [
+   "Mix shift",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "Capital expenditures are still expected to be about $3 billion."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "RPP beats CPP by 60bp",
+    "quote": "the growth in revenue per piece was 60 basis points higher than the growth in cost per piece",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 revenue and op profit raised",
+    "quote": "we now expect consolidated revenue of approximately $92.6 billion and consolidated operating profit of approximately $8.75 billion",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "demand",
+    "label": "Core volume ex-Amazon up ~2%",
+    "quote": "our core volume, so the volume outside of Amazon, grew nearly 2%",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "demand",
+    "label": "International ADV down 8.7%",
+    "quote": "total international average daily volume declined 8.7% compared to the third quarter of last year, primarily due to geopolitical tensions",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 consolidated revenue",
+    "value": "~$92.6B",
+    "change": "raised",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "FY26 consolidated operating profit",
+    "value": "~$8.75B",
+    "change": "raised",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "FY26 adjusted diluted EPS",
+    "value": "~$7.28",
+    "change": "new",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Q4 consolidated revenue",
+    "value": "~$25.7B, up ~5% YoY",
+    "change": "raised",
+    "horizon": "Q4 2026"
+   },
+   {
+    "metric": "Q4 consolidated operating profit",
+    "value": "~$3.3B",
+    "change": "raised",
+    "horizon": "Q4 2026"
+   },
+   {
+    "metric": "FY26 free cash flow",
+    "value": "~$6.1B",
+    "change": "raised",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "FY26 capex",
+    "value": "~$3B",
+    "change": "held",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "FY26 dividends",
+    "value": "~$5.4B",
+    "change": "held",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Q4 U.S. Domestic operating margin",
+    "value": "~10.5%",
+    "change": "new",
+    "horizon": "Q4 2026"
+   },
+   {
+    "metric": "Q4 International operating margin",
+    "value": "~20%",
+    "change": "new",
+    "horizon": "Q4 2026"
+   },
+   {
+    "metric": "Q4 SCS operating margin",
+    "value": "~12.2%",
+    "change": "new",
+    "horizon": "Q4 2026"
+   },
+   {
+    "metric": "Driver Choice / cost savings objective",
+    "value": "$3B total cost savings target, $1.8B achieved through September",
+    "change": "held",
+    "horizon": "FY2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Amazon",
+    "relation": "customer"
+   },
+   {
+    "name": "Teamsters",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Data-centre power & cooling",
+   "Tariffs & trade policy",
+   "Customer stickiness",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Core U.S. volume still down; total ADV -3.3%",
+    "quote": "Looking at total ADV in the U.S., it was down 3.3% versus the third quarter of last year"
+   },
+   {
+    "label": "International volume down 8.7%",
+    "quote": "total international average daily volume declined 8.7% compared to the third quarter of last year"
+   },
+   {
+    "label": "Goodwill impairment in SCS",
+    "quote": "a $182 million charge associated with a goodwill impairment in Supply Chain Solutions"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 3,
+   "balance_sheet": 2,
+   "capex": 0,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "2027 growth algorithm",
+    "quote": "We are not going to give guidance today. We are going to do that at the end of the fourth quarter like we always do."
+   },
+   {
+    "topic": "Amazon competitive impact",
+    "quote": "As it relates to Amazon itself, first of all, we have a really interesting relationship with Amazon"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

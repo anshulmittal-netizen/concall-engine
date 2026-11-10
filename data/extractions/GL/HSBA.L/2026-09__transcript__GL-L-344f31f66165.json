@@ -1,0 +1,164 @@
+{
+ "doc_id": "GL-L-344f31f66165",
+ "market": "GL",
+ "company_id": "HSBA.L",
+ "name": "HSBC Holdings",
+ "doc_type": "transcript",
+ "date": "2026-10-27",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Q3 revenue $18.7B (+5% cc) and RoTE 18.8% YTD, but the read is cautious on deposit mix: Hong Kong time-deposit migration (38% vs 40% peak) is compressing margins while costs held near 1% growth.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "HK time-deposit margin pressure",
+    "quote": "In Hong Kong, we saw increased time deposit margin pressure this quarter.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Banking NII at least $46B held",
+    "quote": "We reiterate our full year banking NII guidance of at least $46 billion.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Simplification savings $1.9B of $2B",
+    "quote": "taking us to $1.9 billion of the $2 billion we set out at the half year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "novelty",
+    "label": "Basel 3.1 benefit 40-50bp CET1",
+    "quote": "this benefit should be 40 to 50 basis points",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year banking NII",
+    "value": "at least $46 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We reiterate our full year banking NII guidance of at least $46 billion."
+   },
+   {
+    "metric": "Full-year ECL charge",
+    "value": "around 45 basis points",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We maintain our full year 2026 credit guidance of around 45 basis points."
+   },
+   {
+    "metric": "Cost growth (target basis)",
+    "value": "around 1% in 2026 vs 2025",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We are on track to achieve our target of around 1% cost growth in 2026 compared to 2025 on a target basis."
+   },
+   {
+    "metric": "Basel 3.1 day-1 CET1 benefit",
+    "value": "40 to 50 basis points from 1 Jan 2027",
+    "change": "new",
+    "horizon": "2027",
+    "quote": "Based on our latest modeling, this benefit should be 40 to 50 basis points."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Full-year banking NII",
+    "outcome": "met",
+    "quote": "We reiterate our full year banking NII guidance of at least $46 billion."
+   },
+   {
+    "metric": "Full-year ECL charge",
+    "outcome": "held",
+    "quote": "We maintain our full year 2026 credit guidance of around 45 basis points."
+   },
+   {
+    "metric": "Cost growth 1%",
+    "outcome": "not_discussed",
+    "quote": "We are on track to achieve our target of around 1% cost growth in 2026"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Hang Seng Bank",
+    "relation": "peer"
+   },
+   {
+    "name": "Reserve Bank of India",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "HK deposit mix shift to time deposits",
+    "quote": "we saw increased time deposit margin pressure this quarter"
+   },
+   {
+    "label": "Cost consensus implies ~7% underlying 2027 growth",
+    "quote": "we are not giving any guidance on costs for next year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 5,
+   "margin": 6,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Hong Kong HIBOR sensitivity and mix",
+    "quote": "Now in terms of HIBOR sensitivity, yes, we have reduced it."
+   },
+   {
+    "topic": "2027 cost guidance",
+    "quote": "we are not giving any guidance on costs for next year"
+   },
+   {
+    "topic": "2027 cost of risk",
+    "quote": "So we are not making any comment on impairments for 2027."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

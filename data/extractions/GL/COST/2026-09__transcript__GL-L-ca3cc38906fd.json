@@ -1,0 +1,147 @@
+{
+ "doc_id": "GL-L-ca3cc38906fd",
+ "market": "GL",
+ "company_id": "COST",
+ "name": "Costco",
+ "doc_type": "transcript",
+ "date": "2026-09-29",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q4 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Comparable sales ex-gas and FX held near 6.7% with core-on-core margin up 18bp ex-tariff items, but capex stepped up to ~$7.5B for FY27 as warehouse openings rise to a 30-a-year run rate.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "For fiscal year 2027, we are planning approximately $7.5 billion in capital expenditure."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "FY27 capex ~$7.5B vs $6.4B",
+    "quote": "For fiscal year 2027, we are planning approximately $7.5 billion in capital expenditure.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "33 openings FY27, 30 net a year",
+    "quote": "Our current plan is to open another 33 warehouses in fiscal year 2027, of which 5 are relocations",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Tariff refunds reinvested in price",
+    "quote": "we reinvested some of these dollars to give value back to our members",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "LIFO charge $152M vs $43M",
+    "quote": "We had a $152 million LIFO charge in Q4 this year compared to a $43 million charge in Q4 last year.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Warehouse openings FY27",
+    "value": "33 planned, incl. 5 relocations",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Our current plan is to open another 33 warehouses in fiscal year 2027, of which 5 are relocations"
+   },
+   {
+    "metric": "Capital expenditure FY27",
+    "value": "approximately $7.5 billion",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "For fiscal year 2027, we are planning approximately $7.5 billion in capital expenditure."
+   },
+   {
+    "metric": "Tariff refund reinvestment",
+    "value": "majority of refunds reinvested in member value",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we intend to continue reinvesting the majority of the dollars we receive in increased member values"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Instacart",
+    "relation": "partner"
+   },
+   {
+    "name": "Uber Eats",
+    "relation": "partner"
+   },
+   {
+    "name": "DoorDash",
+    "relation": "partner"
+   },
+   {
+    "name": "SCAN Health Systems",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Rural demand recovery",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Membership growth decelerating 8 quarters",
+    "quote": "with kind of 8 quarters in a row where the membership growth has slowed"
+   },
+   {
+    "label": "Gross margin down 11bp; LIFO charge up sharply",
+    "quote": "We had a $152 million LIFO charge in Q4 this year compared to a $43 million charge in Q4 last year."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 5,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Membership growth outlook",
+    "quote": "obviously, we don't give guidance as we think about particular metrics."
+   },
+   {
+    "topic": "Inflation outlook next 6-12 months",
+    "quote": "it's difficult to predict what's going to happen with inflation."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,200 @@
+{
+ "doc_id": "GL-L-91a1f04aee4e",
+ "market": "GL",
+ "company_id": "VTRS",
+ "name": "Viatris",
+ "doc_type": "transcript",
+ "date": "2026-11-05",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma & generics",
+  "thesis": "Viatris raised FY26 guidance midpoints on China and North America strength, but Nashik OAI suspension cuts about $100M from Q4 revenue, and supply is the binding constraint.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply exit",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "quote": "We've moved from 24/5 to 24/7 utilization of that plant."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we expect to continue to make additional capital investments across our manufacturing and packaging operations for future expansion"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Nashik suspended; $100M Q4 hit",
+    "quote": "total revenues by approximately $100 million in the fourth quarter",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Estradiol patch volume ~2x YoY",
+    "quote": "volumes approximately double compared to the prior year period",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 EPS guide raised to $2.56-2.63",
+    "quote": "we are raising our 2026 financial guidance across all key metrics",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin 58%, above plan",
+    "quote": "Adjusted gross margins came in above our expectations at 58%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Total revenues FY26",
+    "value": "$14.7B-$14.9B",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "we are narrowing our financial guidance ranges and once again raising the midpoint for all key financial metrics"
+   },
+   {
+    "metric": "Adjusted EBITDA FY26",
+    "value": "$4.45B-$4.55B",
+    "change": "raised",
+    "horizon": "FY26"
+   },
+   {
+    "metric": "Adjusted EPS FY26",
+    "value": "$2.56-$2.63",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "we are raising our 2026 financial guidance across all key metrics"
+   },
+   {
+    "metric": "Free cash flow FY26 (ex transaction costs)",
+    "value": "$2.225B-$2.375B",
+    "change": "new",
+    "horizon": "FY26"
+   },
+   {
+    "metric": "Synergies from Pacira",
+    "value": "$50M annual by end-2028",
+    "change": "new",
+    "horizon": "2028",
+    "quote": "we currently expect to realize more than $50 million in annual cost synergies by the end of 2028"
+   },
+   {
+    "metric": "Greater China growth Q4/FY",
+    "value": "below 10% in Q4, low double-digit FY",
+    "change": "cut",
+    "horizon": "Q4 FY26",
+    "quote": "the growth will continue to come down, I believe, below the 10% that we had in Q3"
+   },
+   {
+    "metric": "China growth 2027",
+    "value": "low to mid-single-digit",
+    "change": "new",
+    "horizon": "2027",
+    "quote": "more in the low to mid-single-digit range"
+   },
+   {
+    "metric": "US innovative medicines revenue",
+    "value": ">$1B in 2027",
+    "change": "new",
+    "horizon": "2027",
+    "quote": "we expect our U.S. innovative medicines business to generate more than $1 billion in total revenue in 2027"
+   },
+   {
+    "metric": "New product revenue FY26",
+    "value": "~$450M",
+    "change": "raised",
+    "horizon": "FY26"
+   },
+   {
+    "metric": "Strategic review net savings FY26",
+    "value": "$120M",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "We remain on track to achieve $120 million of net savings from the strategic review this year."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Greater China growth moderation",
+    "outcome": "met",
+    "quote": "the policy changes we discussed last quarter began to moderate our growth"
+   },
+   {
+    "metric": "Full year revenue growth ~3% operational (original)",
+    "outcome": "missed",
+    "quote": "we had guided to about a 3% increase on an operational basis"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Pacira BioSciences",
+    "relation": "partner"
+   },
+   {
+    "name": "Fresenius",
+    "relation": "competitor"
+   },
+   {
+    "name": "Wegovy",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Capacity bottleneck",
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "FDA OAI at Nashik plant, manufacturing suspended",
+    "quote": "we suspended manufacturing at the facility while remediation activities are ongoing"
+   },
+   {
+    "label": "Europe/EM supply constraints",
+    "quote": "supply constraints primarily related to remediation activities at our Nashik facility"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 3,
+   "margin": 1,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "FY27 EBITDA target",
+    "quote": "we're not going to guide '27 here at all"
+   },
+   {
+    "topic": "Greater China policy impact magnitude",
+    "quote": "We currently are seeing some variability in the level of readiness and enforcement of the policy across provinces"
+   }
+  ],
+  "hedge_index": 0.35
+ }
+}

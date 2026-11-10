@@ -1,0 +1,167 @@
+{
+ "doc_id": "GL-L-1fea9cabb4e8",
+ "market": "GL",
+ "company_id": "DHI",
+ "name": "D.R. Horton",
+ "doc_type": "transcript",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q4 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Homebuilder cutting starts 45% QoQ and guiding FY27 closings flat to down, but Q1 home-sales gross margin falls to 18-18.5% as incentives stay elevated; supply discipline is real but pricing is not yet clearing.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply discipline",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -2,
+   "structure": 1,
+   "inventory": 1,
+   "demand": -2,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "We started 13.1 thousand homes in the September quarter. Down 45% sequentially and 10% from the prior year quarter to align with the current sales environment."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Starts down 45% QoQ to 13.1K",
+    "quote": "We started 13.1 thousand homes in the September quarter. Down 45% sequentially and 10% from the prior year quarter",
+    "highlight": "Down 45% sequentially",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Q1 GM guide 18%-18.5%",
+    "quote": "We expect our home sales gross margin for the first quarter to be in the range of 18% to 18.5%",
+    "highlight": "18% to 18.5%",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Net orders down 7%, cancellations 23%",
+    "quote": "Net sales orders in the fourth quarter decreased 7% from the prior year quarter to 18.6 thousand homes.",
+    "highlight": "decreased 7% from the prior year quarter",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue $30-32B, closings 79-84K",
+    "quote": "we currently expect to generate consolidated revenues of approximately 30 to $32 billion",
+    "highlight": "approximately 30 to $32 billion",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 consolidated revenues",
+    "value": "$30-32B",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "we currently expect to generate consolidated revenues of approximately 30 to $32 billion"
+   },
+   {
+    "metric": "FY27 homes closed",
+    "value": "79,000-84,000",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "homes closed by our homebuilding operations to be in the range of 79 thousand to 84 thousand homes"
+   },
+   {
+    "metric": "FY27 cash from operations",
+    "value": "~$3.5B",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "We expect to generate approximately $3.5 billion of cash flow from operations in fiscal 2027"
+   },
+   {
+    "metric": "FY27 share repurchases",
+    "value": "~$3B",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "we currently plan to repurchase approximately $3 billion of our common stock"
+   },
+   {
+    "metric": "Q1 FY27 home sales gross margin",
+    "value": "18%-18.5%",
+    "change": "new",
+    "horizon": "Q1 FY2027",
+    "quote": "We expect our home sales gross margin for the first quarter to be in the range of 18% to 18.5%"
+   },
+   {
+    "metric": "Q1 FY27 homes closed",
+    "value": "15,500-16,500",
+    "change": "new",
+    "horizon": "Q1 FY2027",
+    "quote": "homes closed for our homebuilding operations to be in the range of 15.5 thousand to 16.5 thousand homes"
+   },
+   {
+    "metric": "Q1 FY27 consolidated pretax margin",
+    "value": "7%-8%",
+    "change": "new",
+    "horizon": "Q1 FY2027",
+    "quote": "our consolidated pre tax profit margin to be in the range of 7% to 8%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Forestar",
+    "relation": "partner"
+   },
+   {
+    "name": "LaborSource",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Housing & real-estate cycle",
+   "Interest-rate relief",
+   "Rural demand recovery",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Cancellations rising to 23%",
+    "quote": "Our cancellation rate for the quarter was 23%, compared to 20% sequentially and year over year."
+   },
+   {
+    "label": "Q4 litigation costs above normal",
+    "quote": "We had to increase our reserves for 2 cases that we now believe are gonna come in at higher settlements"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 4,
+   "margin": 6,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Mortgage rate outlook",
+    "quote": "I think that anticipating it to go down is not prudent at all."
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

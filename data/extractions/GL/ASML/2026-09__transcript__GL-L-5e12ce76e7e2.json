@@ -1,0 +1,167 @@
+{
+ "doc_id": "GL-L-5e12ce76e7e2",
+ "market": "GL",
+ "company_id": "ASML",
+ "name": "ASML Holding",
+ "doc_type": "transcript",
+ "date": "2026-10-14",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Supply-side tightening: ASML is looking to lift 2028 capacity above the 30% target, with FY26 sales guided to €44-45B (+36%) and pricing up for critical products from 2027.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we now anticipate that our current planned levels of output in 2027 and 2028 will not fully meet the demand of our customers"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Price increases on critical products",
+    "quote": "we have pricing increases for what we call the most critical products",
+    "highlight": "pricing increases for what we call the most critical products",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Low-NA EUV output ~65 systems 2026",
+    "quote": "anticipate output of roughly 65 systems for 2026, which is nearly 50% more than the 44 systems",
+    "highlight": "roughly 65 systems for 2026",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 sales €44-45B (+36%)",
+    "quote": "we expect our full year 2026 total net sales to be between €44 billion and €45 billion",
+    "highlight": "between €44 billion and €45 billion",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Demand exceeds supply through 2028",
+    "quote": "demand for their product will outpace supply through at least 2028",
+    "highlight": "demand for their product will outpace supply through at least 2028",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 total net sales",
+    "value": "€44-45B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we expect our full year 2026 total net sales to be between €44 billion and €45 billion"
+   },
+   {
+    "metric": "Q4 2026 total net sales",
+    "value": "€14.2-15.2B",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "We expect Q4 total net sales to be between €14.2 billion and €15.2 billion with a gross margin of around 57%"
+   },
+   {
+    "metric": "FY2026 gross margin",
+    "value": "~56%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we expect our full year 2026 total net sales to be between €44 billion and €45 billion with a gross margin of around 56%"
+   },
+   {
+    "metric": "China share of 2026 net sales",
+    "value": "~20%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We expect the China region to account for around 20% of our total net sales this year."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2027 capacity growth 30% (low-NA EUV and DUV immersion)",
+    "outcome": "held",
+    "quote": "we shared our intent last quarter to increase our capacity in 2027 by 30% for both low-NA EUV and DUV immersion systems"
+   }
+  ],
+  "entities": [
+   {
+    "name": "TSMC",
+    "relation": "partner"
+   },
+   {
+    "name": "Intel",
+    "relation": "peer"
+   },
+   {
+    "name": "Samsung",
+    "relation": "peer"
+   },
+   {
+    "name": "Zeiss",
+    "relation": "supplier"
+   },
+   {
+    "name": "Mistral AI",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Semiconductors & OSAT",
+   "Consolidation / competitor exits",
+   "China+1 enquiries → orders"
+  ],
+  "red_flags": [
+   {
+    "label": "Ramp costs compress Q4 gross margin",
+    "quote": "the extra cost that we incur in the ramp as we see it now in Q4"
+   },
+   {
+    "label": "Customer cleanroom execution risk 2027-2028",
+    "quote": "our customers have to manage the execution of all the construction in 2027-2028 very diligently"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 3,
+   "growth": 3,
+   "margin": 3,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Capacity numbers for 2027/2028",
+    "quote": "I will not give new numbers for 2027 or 2028 because it is far too early to give those number."
+   },
+   {
+    "topic": "Early order acceptance for 2029-2030",
+    "quote": "the only hesitation we have at this stage is that we really want to do our homework"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

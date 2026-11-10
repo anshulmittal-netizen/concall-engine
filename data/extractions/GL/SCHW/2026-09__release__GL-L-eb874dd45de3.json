@@ -1,0 +1,90 @@
+{
+ "doc_id": "GL-L-eb874dd45de3",
+ "market": "GL",
+ "company_id": "SCHW",
+ "name": "Charles Schwab",
+ "doc_type": "release",
+ "date": "2026-10-15",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Record Q3 net revenue of $7.2B (+17%) and core net new assets of $190.4B (+38%), but growth is driven by margin lending and trading volumes rather than supply-side capacity signals; capex and expense growth stay in line with peers' normal cadence.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Core net new assets $190.4B, up 38%",
+    "quote": "Record Quarterly Core Net New Assets of $190.4 Billion, Up 38% Year-Over-Year",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Margin loans $187.9B, up 93% YoY",
+    "quote": "Margin loan balances increased 14% quarter-over-quarter to $187.9 billion at quarter-end, including $60.7 billion related to long/short strategies",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "pricing",
+    "label": "Revenue per trade $1.69, down 20% YoY",
+    "quote": "Revenue Per Trade",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Anthropic",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin loans up 93% YoY; long/short strategy leverage concentration ($60.7B)",
+    "quote": "including $60.7 billion related to long/short strategies"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

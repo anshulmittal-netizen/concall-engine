@@ -1,0 +1,119 @@
+{
+ "doc_id": "GL-L-c2f4b340cff2",
+ "market": "GL",
+ "company_id": "MS",
+ "name": "Morgan Stanley",
+ "doc_type": "transcript",
+ "date": "2026-10-14",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Morgan Stanley's Q3 2026 showed record wealth NNA of $232.4B and equities revenue up 41% to $5.8B, but no supply-side signal; capex and capacity were not discussed and the tone was cautious on rates and geopolitics.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Wealth NNA record $232.4B",
+    "quote": "net new assets, of $232 billion and fee-based flows of $80 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "NII modest increase expected Q4",
+    "quote": "Looking ahead, we expect a modest increase in the fourth quarter. Subject to rates and client behavior.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Equities revenue +41% YoY",
+    "quote": "Turning to equity. Revenues were $5.8 billion increasing 41% versus the prior year.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q4 net interest income",
+    "value": "modest increase",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "Looking ahead, we expect a modest increase in the fourth quarter. Subject to rates and client behavior."
+   },
+   {
+    "metric": "Full-year tax rate guidance",
+    "value": "unchanged; Q4 tax rate slightly above Q3's 23.3%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "For the fourth quarter, we expect our tax rate to be slightly above the third quarter's tax rate, and our full year guidance remains unchanged."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "MUFG",
+    "relation": "partner"
+   },
+   {
+    "name": "EquityZen",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Management flags geopolitical, rate and policy risks into 2027",
+    "quote": "uncertain electoral and policy responses in both The US and globally are reasons to be more cautious"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 5,
+   "margin": 1,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Sponsor backlog timing",
+    "quote": "it is a little frustrating. There are some sponsors in the universe that are stuck on marks."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

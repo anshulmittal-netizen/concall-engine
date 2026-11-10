@@ -1,0 +1,94 @@
+{
+ "doc_id": "GL-L-cf3d8dd717e1",
+ "market": "GL",
+ "company_id": "CAT",
+ "name": "Caterpillar",
+ "doc_type": "release",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Q3 sales up 17% to $20.7B and adjusted EPS $7.20 vs $4.95, driven by volume and price, but the release gives no capacity or capex guidance and no numeric outlook, so supply discipline cannot be read.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Operating leverage",
+   "Pricing power",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Price realization +$663M in Q3",
+    "quote": "favorable price realization of $663 million",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Record backlog, strong orders",
+    "quote": "strong order rates and a record backlog",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Dealer inventory build in volume",
+    "quote": "Higher sales volume was primarily driven by the impact from changes in dealer inventories.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Cat Financial",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Dealer inventory build lifting volume",
+    "quote": "Higher sales volume was mainly driven by the impact from changes in dealer inventories."
+   },
+   {
+    "label": "Cash deployment exceeds operating cash flow in 9M",
+    "quote": "Payments to purchase common stock"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

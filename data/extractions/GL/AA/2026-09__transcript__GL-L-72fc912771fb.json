@@ -1,0 +1,143 @@
+{
+ "doc_id": "GL-L-72fc912771fb",
+ "market": "GL",
+ "company_id": "AA",
+ "name": "Alcoa",
+ "doc_type": "transcript",
+ "date": "2026-10-16",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "Alumina market tightening outside China (API ~$370/t) and aluminium inventories at 42 days support pricing, but Western Australia mine approvals slip into 2027 and AliGroup adds $3.1B cash consideration with leverage targeted at 1.5x.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Supply discipline",
+   "Capacity bottleneck",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "Alumina Production -- 2.5 million metric tons, an 11% sequential increase resulting from improved stability at the Pinjarra refinery in Australia."
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "Management said Indonesia will add 1.5 million metric tons of smelting capacity in 2027 and the market should absorb it.",
+   "quote": "we are thinking that we are going to see probably 1.5 million metric tons of smelting capacity come online in Indonesia next year"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Indonesia adds 1.5Mt smelting in 2027",
+    "quote": "we are thinking that we are going to see probably 1.5 million metric tons of smelting capacity come online in Indonesia next year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Alumina API ~$370/t, tightening ex-China",
+    "quote": "the API increasing sequentially to approximately $370 per metric ton",
+    "direction": 1,
+    "confidence": 0.65
+   },
+   {
+    "type": "inventory",
+    "label": "Aluminium inventories 42 days, historically low",
+    "quote": "Global aluminum inventories remain historically low at approximately 42 days of consumption",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "WA mine approvals slip into 2027",
+    "quote": "we now expect the process to extend into 2027",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Alumina shipments FY",
+    "value": "11.5-11.6 Mt",
+    "change": "new",
+    "quote": "11.5 million to 11.6 million metric tons for the full year"
+   },
+   {
+    "metric": "Aluminum shipments FY",
+    "value": "2.6-2.8 Mt",
+    "change": "new",
+    "quote": "2.6 million to 2.8 million metric tons for the full year"
+   },
+   {
+    "metric": "Interest expense FY",
+    "value": "$185 million",
+    "change": "raised",
+    "quote": "Interest Expense Guidance -- $185 million for the full year, an increase from previous projections"
+   },
+   {
+    "metric": "Q4 operational tax expense",
+    "value": "$65-75 million",
+    "change": "new",
+    "quote": "Operational Tax Expense Guidance -- $65 million to $75 million for the fourth quarter"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "South32",
+    "relation": "partner"
+   },
+   {
+    "name": "Ma'aden",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Mine approvals delayed into 2027",
+    "quote": "The mining approvals are taking longer than expected."
+   },
+   {
+    "label": "Fatality at Alumar smelter",
+    "quote": "tragic fatality that occurred on September 16 at our Alumar smelter in Brazil"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 2,
+   "margin": 2,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Share repurchases",
+    "quote": "at this point, the target is delevering."
+   },
+   {
+    "topic": "Canada aluminium tariff carve-out",
+    "quote": "But at this point, it's just speculation."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

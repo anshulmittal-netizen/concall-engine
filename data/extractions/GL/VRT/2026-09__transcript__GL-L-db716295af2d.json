@@ -1,0 +1,223 @@
+{
+ "doc_id": "GL-L-db716295af2d",
+ "market": "GL",
+ "company_id": "VRT",
+ "name": "Vertiv",
+ "doc_type": "transcript",
+ "date": "2026-10-28",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Vertiv's Q3 organic sales rose 55% with organic orders up over 100% and FY26 sales guidance raised to $14.7B, but management stopped disclosing orders and is ramping capacity into a Q2 revenue-recognition catch-up.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Backlog conversion",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "A little bit of that capacity does drive, you know, some of the margin things that we have talked about, but definitely put the capacity in place."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "approximately 4.0% of revenue for the full year 2026, focused on global capacity investments"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q3 organic orders up over 100%",
+    "quote": "our Q3 orders were more than 100% up year on year. Organically.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 sales guide +$650M to $14.7B",
+    "quote": "Net sales expected at $14.7 billion, $650 million up on July guidance",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory ramp >100% YoY",
+    "quote": "it is definitely the ramp to support the growth that we have",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Americas capacity ramp causes inefficiency",
+    "quote": "the large ramp in capacity in the Americas segment led to temporary inefficiencies",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Capacity expansion: chiller capacity to double",
+    "quote": "on track to double by year-end to meet increasing thermal management demand",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 net sales",
+    "value": "$14.7B midpoint",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect $14.7 billion at the midpoint, that is up approximately $4.4 billion or 43% versus 2025"
+   },
+   {
+    "metric": "FY26 adjusted diluted EPS",
+    "value": "$7.15 midpoint",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect $7.15 at the midpoint"
+   },
+   {
+    "metric": "FY26 adjusted operating profit",
+    "value": "~$3.5B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect approximately $3.5 billion at the midpoint"
+   },
+   {
+    "metric": "FY26 adjusted operating margin",
+    "value": "24%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Adjusted operating margin is expected to be 24% at the midpoint"
+   },
+   {
+    "metric": "FY26 adjusted FCF",
+    "value": "$2.7B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "adjusted free cash flow is expected to be $2.7 billion at the midpoint"
+   },
+   {
+    "metric": "Q4 26 net sales",
+    "value": "$4.4B midpoint",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we expect approximately $4.4 billion at the midpoint"
+   },
+   {
+    "metric": "Q4 26 adjusted operating margin",
+    "value": "25.8% midpoint",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "Adjusted operating margin rate is expected to be 25.8% at the midpoint"
+   },
+   {
+    "metric": "Incremental margin framework",
+    "value": "30% to 35%",
+    "change": "held",
+    "horizon": "Long term",
+    "quote": "the 30% to 35% that we put out there is the right way to think about it"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 net sales (July guide)",
+    "outcome": "met",
+    "quote": "an increase of $650 million from previous July guidance"
+   },
+   {
+    "metric": "Q3 revenue guidance",
+    "outcome": "met",
+    "quote": "All regions were above the Q3 revenue guidance."
+   },
+   {
+    "metric": "800-volt DC product timing (2H26 launch talk)",
+    "outcome": "not_discussed",
+    "quote": "validation phase expected in 2027 with market deployment planned for 2028"
+   }
+  ],
+  "entities": [
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "Utility Innovation Group",
+    "relation": "peer"
+   },
+   {
+    "name": "King Environmental Services",
+    "relation": "peer"
+   },
+   {
+    "name": "EdgeConnect",
+    "relation": "customer"
+   },
+   {
+    "name": "KT Cloud",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "800-volt DC transition",
+   "Time-to-first-token",
+   "Grid capex & transformers",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Management stopped disclosing orders",
+    "quote": "we are not planning to share orders data going forward"
+   },
+   {
+    "label": "Product quality questions unanswered",
+    "quote": "We are not perfect."
+   },
+   {
+    "label": "Execution 'not always orderly'",
+    "quote": "Growing at this pace, is a lot of work, and not always orderly."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Order catch-up vs underlying demand",
+    "quote": "Is it catch up? And they are not talking about catch up here."
+   },
+   {
+    "topic": "2027 CapEx percentage",
+    "quote": "we will not highlight, you know, 2027 now from a an outlook on what our percentage of CapEx would be."
+   },
+   {
+    "topic": "Product quality / compressor and UPS issues",
+    "quote": "We are not perfect."
+   },
+   {
+    "topic": "Liquid cooling mix and margin",
+    "quote": "We will not be specific."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

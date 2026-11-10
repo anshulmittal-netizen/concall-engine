@@ -1,0 +1,177 @@
+{
+ "doc_id": "GL-L-0270832c4491",
+ "market": "GL",
+ "company_id": "2330.TW",
+ "name": "TSMC",
+ "doc_type": "transcript",
+ "date": "2026-10-15",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Q3 revenue $46.7B (+16.2% QoQ) beat guidance; FY26 growth raised to ~44% USD and 2026-28 capex flagged well above the past three years, with N3 capacity added despite stated no-add policy.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we continue to expect our CapEx investment from 2026 to 2028 to be even more significantly higher than the past three years"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "N3 capacity added despite no-add policy",
+    "quote": "historically, we do not add additional capacity to a node once it reaches its targeted capacity.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "2026-28 capex well above past three years",
+    "quote": "our CapEx investment from 2026 to 2028 to be even more significantly higher than the past three years",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 USD growth raised to ~44%",
+    "quote": "we now expect our full year 2026 revenue growth to be around 44% year-over-year in U.S. dollar term",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Overseas GM dilution widens to 3-4%",
+    "quote": "we expect the dilution from our overseas fabs to widen to 3%-4% in the next few years",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Consumer segments challenged",
+    "quote": "consumer and price-sensitive end market segment are being challenged due to the impact of rising component prices",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 revenue growth (USD)",
+    "value": "~44% YoY",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect our full year 2026 revenue growth to be around 44% year-over-year in U.S. dollar term"
+   },
+   {
+    "metric": "Q4 2026 revenue (USD)",
+    "value": "$52.3B-$54.3B",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we expect our fourth quarter revenue to be between $52.3 billion and $54.3 billion"
+   },
+   {
+    "metric": "Q4 2026 gross margin",
+    "value": "65%-67%",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "gross margin is expected to be between 65% and 67%, operating margin between 56.5% and 58.5%"
+   },
+   {
+    "metric": "2026 capex (USD)",
+    "value": "$60B-$64B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we reiterate our full year 2026 capital budget to be between $60 billion and $64 billion"
+   },
+   {
+    "metric": "Overseas fab GM dilution",
+    "value": "3%-4% in later part of five-year period",
+    "change": "new",
+    "horizon": "2027-2030",
+    "quote": "we expect the dilution from our overseas fabs to widen to 3%-4% in the next few years"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "GlobalFoundries",
+    "relation": "partner"
+   },
+   {
+    "name": "ASML",
+    "relation": "supplier"
+   },
+   {
+    "name": "Intel",
+    "relation": "competitor"
+   },
+   {
+    "name": "Terafab",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Pharma CDMO / outsourcing",
+   "Nearshoring / reshoring (US)",
+   "Tariffs & trade policy",
+   "Semiconductors & OSAT"
+  ],
+  "red_flags": [
+   {
+    "label": "Overseas margin dilution widening to 3-4%",
+    "quote": "we expect the dilution from our overseas fabs to widen to 3%-4% in the next few years"
+   },
+   {
+    "label": "Consumer end-market weakness",
+    "quote": "consumer and price-sensitive end market segment are being challenged due to the impact of rising component prices"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Capacity growth percentage",
+    "quote": "I cannot answer this question right now because of my customer continue to increase their demand."
+   },
+   {
+    "topic": "Customer-specific IDM outsourcing",
+    "quote": "I don't comment on a specific customer, but let me guarantee you that we take everything into consideration."
+   },
+   {
+    "topic": "Backup role for competitor packaging",
+    "quote": "I try to avoid to answer it directly, but let me say that, yes, we will be."
+   },
+   {
+    "topic": "Pricing by contract",
+    "quote": "It also depends on the market segment, depends on the location, and depends on the technology and something."
+   }
+  ],
+  "hedge_index": 0.35
+ }
+}

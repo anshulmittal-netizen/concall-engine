@@ -1,0 +1,98 @@
+{
+ "doc_id": "GL-L-51beaccaf33f",
+ "market": "GL",
+ "company_id": "CB",
+ "name": "Chubb",
+ "doc_type": "release",
+ "date": "2026-10-20",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Insurance",
+  "thesis": "Chubb's Q3 core income fell 2.2% on heavier CATs, but P&C NPW rose 1.9% and North America Commercial shrank 2.7% as it pulled back on inadequate pricing; the 9M record is the stronger read.",
+  "archetype": "None",
+  "mental_models": [
+   "Supply discipline",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "NA Commercial NPW down 2.7%",
+    "quote": "the substantial majority of our underwriting businesses grew in the quarter, with the balance flat or purposely shrinking due to inadequate pricing or terms",
+    "highlight": "purposely shrinking due to inadequate pricing or terms",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Market more competitive in commercial P&C",
+    "quote": "the market continues to grow more competitive in commercial P&C across the board, particularly in the U.S. and London",
+    "highlight": "grow more competitive in commercial P&C across the board",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "NA Commercial combined ratio up 4.8pts",
+    "quote": "The combined ratio increased 4.8 percentage points, including a 3.1 percentage point increase from higher CATs",
+    "highlight": "combined ratio increased 4.8 percentage points",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "KKR",
+    "relation": "partner"
+   },
+   {
+    "name": "Aon",
+    "relation": "partner"
+   },
+   {
+    "name": "USI Insurance Services",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Q3 core income down 2.2%",
+    "quote": "core operating income was $2.98 billion, down 2.2%"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 0,
+   "margin": 0,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "doc_id": "GL-L-80cb11f98d88",
+ "market": "GL",
+ "company_id": "DTE.DE",
+ "name": "Deutsche Telekom",
+ "doc_type": "transcript",
+ "date": "2026-11-05",
+ "period": "2026-09",
+ "title": "Download (PDF, 242 KB)",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Deutsche Telekom raised FY26 EBITDA to ~EUR47.6bn and FCF to ~EUR20.1bn, passing through T-Mobile's upgrade; German broadband turned positive at +11% on churn and fiber, with no supply-side capex cut and a flat EUR2bn FY27 buyback.",
+  "archetype": "None",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Competitors are slowing fiber rollout; DT keeps pace and expanded fiber investment envelope.",
+   "quote": "we are accelerating the fiber connections while our competition is significantly slowing down"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Competitors slowing fiber rollout",
+    "quote": "we are accelerating the fiber connections while our competition is significantly slowing down",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Broadband revenue growth 2.8%",
+    "quote": "Broadband revenue growth accelerated to 2.8%, supported, a, by the stabilization of the customer base",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 EBITDA raised to EUR47.6bn",
+    "quote": "our '26, group EBITDA will be around EUR47.6 billion, and our group free cash flow guidance will increase to around EUR20.1",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Rivals not following price rises",
+    "quote": "Now I cannot say that AT&T and Verizon are following us.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Group EBITDA FY26",
+    "value": "around EUR47.6bn",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "our '26, group EBITDA will be around EUR47.6 billion"
+   },
+   {
+    "metric": "Group free cash flow FY26",
+    "value": "around EUR20.1bn",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "our group free cash flow guidance will increase to around EUR20.1"
+   },
+   {
+    "metric": "Adjusted EPS FY26",
+    "value": "EUR2.20",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "Our guidance for adjusted EPS will be at the EUR2.20."
+   },
+   {
+    "metric": "Germany EBITDA growth FY26",
+    "value": "lower end of 2.5% to 3%",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "we are still in reach to reach the lower end of the guidance of 2.5% to 3% for the year '26"
+   },
+   {
+    "metric": "Share buyback FY27",
+    "value": "up to EUR2bn",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "in '27, we want to buy back up to EUR2 billion of our stock"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "T-Mobile US",
+    "relation": "partner"
+   },
+   {
+    "name": "SpaceX",
+    "relation": "competitor"
+   },
+   {
+    "name": "Starlink",
+    "relation": "competitor"
+   },
+   {
+    "name": "Vodafone",
+    "relation": "competitor"
+   },
+   {
+    "name": "Telefonica",
+    "relation": "competitor"
+   },
+   {
+    "name": "AT&T",
+    "relation": "competitor"
+   },
+   {
+    "name": "Verizon",
+    "relation": "competitor"
+   },
+   {
+    "name": "Tesla",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Satellite / Starlink disruption",
+   "Fiber rollout & MDU access",
+   "Consolidation / competitor exits",
+   "Pricing discipline in German mobile",
+   "Spectrum auctions (US C-band)",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Mobile price competition from MVNOs and Vodafone",
+    "quote": "we have seen some price competition, especially here with Vodafone. So therefore, the growth hasn't been that strong."
+   },
+   {
+    "label": "Component price inflation in fiber and CPE",
+    "quote": "Obviously, we're facing component price inflation."
+   },
+   {
+    "label": "Buyback shortfall FY26",
+    "quote": "probably the total volume which we're going to buy back is somewhere in the vicinity of EUR3 billion to EUR3.5 billion. So we're going to be short"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 4,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Germany Q4 EBITDA absolute level and IT project revenue",
+    "quote": "we don't give you a driver analysis on how we get there and what kind of measures basically dragged or brought the EBITDA in Q3 down."
+   },
+   {
+    "topic": "MDU penetration levels",
+    "quote": "I don't have the number for the MDU with me, and we have to take a look whether we can send you that number."
+   },
+   {
+    "topic": "Starlink MVNO and Tesla deal",
+    "quote": "there are no current discussions as needed at my level here and to my knowledge with Tesla."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

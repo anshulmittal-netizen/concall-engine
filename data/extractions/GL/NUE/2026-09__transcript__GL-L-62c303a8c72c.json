@@ -1,0 +1,171 @@
+{
+ "doc_id": "GL-L-62c303a8c72c",
+ "market": "GL",
+ "company_id": "NUE",
+ "name": "Nucor",
+ "doc_type": "transcript",
+ "date": "2026-10-27",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Record 7.2Mt shipments and EBITDA ~$2.28B with capex moderating to ~$2.5B and FCF $1.6B in Q3; Q4 guided flat-to-modestly-up earnings despite seasonal volume drop and West Virginia startup costs.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Capex cycle",
+   "Operating leverage",
+   "Import substitution"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 89,
+   "quote": "Steel mill utilization -- 89%, compared to 91% in the second quarter of 2026."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "For the full year, we expect our capital expenditures to finish at or slightly below our original $2.5 billion estimate."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex moderating; 2027 lower again",
+    "quote": "Looking ahead, we expect our CapEx to decline further in 2027, extending the step down from peak spending in 2024 and 2025.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Downstream pricing catching up to inputs",
+    "quote": "realized pricing in our downstream businesses is catching up with the higher steel input costs that compressed margins earlier this year",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Import surge from South Korea",
+    "quote": "import volumes have been increasing in recent months, including a massive surge from South Korea, despite the Section 232 tariffs",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Mill utilisation 91% → 89%",
+    "quote": "Steel mill utilization -- 89%, compared to 91% in the second quarter of 2026.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 earnings flat to modestly up",
+    "quote": "we expect consolidated earnings to be in line with or modestly higher than the third quarter results",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q4 2026 consolidated earnings",
+    "value": "in line with or modestly higher than Q3",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we expect consolidated earnings to be in line with or modestly higher than the third quarter results"
+   },
+   {
+    "metric": "2026 steel mill shipments growth",
+    "value": "closer to high end of 5%-10%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Nucor continues to expect steel mill shipments growth to finish closer to the higher end of our 5%-10% range for 2026"
+   },
+   {
+    "metric": "2026 capex",
+    "value": "at or slightly below $2.5B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we expect our capital expenditures to finish at or slightly below our original $2.5 billion estimate"
+   },
+   {
+    "metric": "Towers and structures long-term EBITDA",
+    "value": "~$200M annually",
+    "change": "raised",
+    "horizon": "long-term",
+    "quote": "we now expect our long-term annual EBITDA contribution from our towers and structures business to reach approximately $200 million, up from the $150 million previously forecast"
+   },
+   {
+    "metric": "West Virginia sheet mill utilisation",
+    "value": "50% by end of 2027",
+    "change": "new",
+    "horizon": "end 2027",
+    "quote": "West Virginia sheet mill utilization target -- 50% by the end of 2027"
+   },
+   {
+    "metric": "Shareholder returns",
+    "value": "at least 40% of net earnings annually",
+    "change": "held",
+    "horizon": "annual",
+    "quote": "We remain committed to returning at least 40% of net earnings to shareholders on an annual basis."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "South Korea",
+    "relation": "competitor"
+   },
+   {
+    "name": "ExxonMobil",
+    "relation": "partner"
+   },
+   {
+    "name": "General Motors",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Anti-dumping protection",
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Capex cycle revival (private)",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Import surge despite Section 232 tariffs",
+    "quote": "import volumes have been increasing in recent months, including a massive surge from South Korea, despite the Section 232 tariffs"
+   },
+   {
+    "label": "Conversion cost creep and Q4 startup costs",
+    "quote": "The cost increase reflects lower fixed cost absorption and higher start-up spending at West Virginia"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 2,
+   "margin": 2,
+   "capex": 1,
+   "balance_sheet": 0,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Rebar displacement by merchant bar",
+    "quote": "Okay. Look, I'm going to ask Randy Spicer to jump in on this."
+   }
+  ],
+  "hedge_index": 0.2
+ }
+}

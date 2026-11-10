@@ -1,0 +1,127 @@
+{
+ "doc_id": "GL-L-3fc2d2dd4a2d",
+ "market": "GL",
+ "company_id": "VRT",
+ "name": "Vertiv",
+ "doc_type": "release",
+ "date": "2026-10-28",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.92,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q3 sales up 61% to $4,313M with organic orders up over 100%; FY26 sales guide raised $650M to $14.65B midpoint, but capacity expansion and working-capital build (inventory +$767M in quarter) are rising alongside.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 0,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Capital expenditures for full year 2026 are still anticipated at approximately 4.0% of revenue, reflecting the continued investment Vertiv is making to capture increasing demand across its pipelines."
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Organic orders growth over 100%",
+    "quote": "Our more than 100% organic orders growth year over year and our overall performance are clear testaments to that.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 net sales guide raised $650M",
+    "quote": "give Vertiv the confidence to raise full year net sales guidance by $650 million",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory build $767M in Q3",
+    "quote": "Inventories (766.9)",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Capex ~4.0% of revenue held",
+    "quote": "Capital expenditures for full year 2026 are still anticipated at approximately 4.0% of revenue",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 net sales",
+    "value": "$14,450M - $14,850M (midpoint $14,650M)",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "raise full year net sales guidance by $650 million"
+   },
+   {
+    "metric": "FY26 organic sales growth",
+    "value": "37% - 39%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Expects full year 2026 net sales of $14,650 million and organic sales growth of 38%"
+   },
+   {
+    "metric": "FY26 adjusted free cash flow",
+    "value": "$2,600M - $2,800M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted free cash flow (2) $2,600M - $2,800M"
+   },
+   {
+    "metric": "Q4 26 net sales",
+    "value": "$4,313M - $4,513M",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "Expects fourth quarter 2026 net sales of $4,413 million"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital build; inventory up $767M in Q3",
+    "quote": "Third quarter adjusted free cash flow was driven by higher adjusted operating profit partially offset by increased working capital and higher capital expenditures to support growth."
+   },
+   {
+    "label": "Q3 CFO benefit from deferred revenue; quarterly working capital outflow",
+    "quote": "Changes in operating working capital (138.3)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.1
+ }
+}

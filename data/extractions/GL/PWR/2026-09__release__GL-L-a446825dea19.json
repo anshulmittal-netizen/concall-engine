@@ -1,0 +1,130 @@
+{
+ "doc_id": "GL-L-a446825dea19",
+ "market": "GL",
+ "company_id": "PWR",
+ "name": "Quanta Services",
+ "doc_type": "release",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical contracting",
+  "thesis": "Quanta raised FY26 guidance again (adj EPS $17.90–18.30) with Q3 backlog at a record $63.7B, up 45% y/y, and Electric margin expanding to 12.6%; no capacity-discipline evidence either way.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "raised",
+   "quote": "Capital expenditures",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 adj EPS raised to $17.90–18.30",
+    "quote": "Quanta also now expects diluted earnings per share attributable to common stock to range between $12.57 and $12.97 and adjusted diluted earnings per share attributable to common stock to range between $17.90 and $18.30.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Total backlog record $63.7B",
+    "quote": "total backlog reached a record $63.7 billion",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "pricing",
+    "label": "Electric op margin 11.4% → 12.6%",
+    "quote": "Electric (a) $ 1,238,137 12.6 %",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables + contract assets up sharply",
+    "quote": "Accounts receivable, net 10,144,064 6,847,091",
+    "direction": -1,
+    "confidence": 0.35
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 revenue",
+    "value": "$41.3B–$41.6B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "revenues to range between $41.3 billion and $41.6 billion"
+   },
+   {
+    "metric": "FY26 adjusted diluted EPS",
+    "value": "$17.90–$18.30",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "adjusted diluted earnings per share attributable to common stock to range between $17.90 and $18.30"
+   },
+   {
+    "metric": "FY26 adjusted EBITDA",
+    "value": "$4.40B–$4.49B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "adjusted EBITDA to range between $4.40 billion and $4.49 billion"
+   },
+   {
+    "metric": "FY26 free cash flow",
+    "value": "$2.50B–$3.00B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "free cash flow (a financial measure) to range between $2.50 billion and $3.00 billion"
+   },
+   {
+    "metric": "2027 adjusted EPS",
+    "value": "strong double-digit growth",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "We believe there is opportunity to deliver strong double-digit adjusted EPS growth in 2027"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital build: AR up ~48% vs contract liabilities up ~70%",
+    "quote": "Accounts receivable, net 10,144,064 6,847,091"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

@@ -1,0 +1,118 @@
+{
+ "doc_id": "GL-L-b744bdbf26e5",
+ "market": "GL",
+ "company_id": "CEG",
+ "name": "Constellation Energy",
+ "doc_type": "release",
+ "date": "2026-11-09",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.89,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Constellation's Q3 adjusted EPS of $5.06 (vs $3.04) rests on Calpine and merchant pricing, not supply discipline; it is a power producer with no capacity-discipline evidence, and capex rose to $3.46bn in nine months.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Consolidation",
+   "Pricing power",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 97.2,
+   "quote": "Excluding Salem and STP, our nuclear plants at ownership achieved a 97.2% capacity factor for the third quarter of 2026"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Capital expenditures (3,461) (1,963)"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "PJM EMAAC capacity $269.92 → $329.17",
+    "quote": "PJM - Eastern Mid-Atlantic Area Council $329.17 $269.92",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Guidance midpoint raised again",
+    "quote": "Raising midpoint and narrowing full-year Adjusted (non-GAAP) Operating Earnings guidance range to $12.50 - $12.80 per share",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "1,000+ MW new nuclear via uprates",
+    "quote": "These agreements add more than 1,000 megawatts of new, emissions-free generation to the grid",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year Adjusted Operating Earnings per share",
+    "value": "$12.50 - $12.80",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Raising midpoint and narrowing full-year Adjusted (non-GAAP) Operating Earnings guidance range to $12.50 - $12.80 per share"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Google",
+    "relation": "customer"
+   },
+   {
+    "name": "Amazon",
+    "relation": "customer"
+   },
+   {
+    "name": "Calpine",
+    "relation": "peer"
+   },
+   {
+    "name": "Shell Energy North America",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Nuclear uprates",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Debt and short-term borrowings sharply higher",
+    "quote": "Long-term debt 19,039 7,250"
+   },
+   {
+    "label": "Share count up ~13% via Calpine; buybacks $3.0bn",
+    "quote": "Repurchases of common stock (3,001) (400)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

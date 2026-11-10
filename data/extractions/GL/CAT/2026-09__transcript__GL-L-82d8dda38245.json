@@ -1,0 +1,176 @@
+{
+ "doc_id": "GL-L-82d8dda38245",
+ "market": "GL",
+ "company_id": "CAT",
+ "name": "Caterpillar",
+ "doc_type": "transcript",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Record $78B backlog (+96% y/y) and Power Gen retail +75%, but capacity is the pacing factor; capex trimmed to $3.3B from $3.5B while large-engine output is set to nearly triple by 2030.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Backlog conversion",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "bringing additional capacity online is still the top pacing factor for growth in Power and Energy"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Our CapEx spend for 2026 is now anticipated to be about $3.3 billion, which is slightly below our prior expectations of $3.5 billion."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2026 capex $3.5B → $3.3B",
+    "quote": "Our CapEx spend for 2026 is now anticipated to be about $3.3 billion, which is slightly below our prior expectations of $3.5 billion.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Power gen retail sales +75%",
+    "quote": "Power generation grew 75%, driven by continued very strong demand for turbines and large reciprocating engines used in data center applications.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Large-engine capacity ~3x 2024 by 2030",
+    "quote": "The initiative directly supports previously announced plans to increase large reciprocating engine capacity to nearly 3x to the '24 level by 2030.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Q4 dealer destock ~$1.6B",
+    "quote": "we anticipate the typical seasonal dealer inventory reduction to be roughly $1.6 billion",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Margin near bottom of target range",
+    "quote": "Excluding IEEPA tariff recoveries, our full year adjusted operating profit margin is expected to be near the bottom of our target range.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 sales and revenues growth",
+    "value": "mid- to high teens",
+    "change": "held",
+    "quote": "we continue to expect full year 2026 sales and revenues to grow in the mid- to high teens"
+   },
+   {
+    "metric": "FY26 adjusted operating margin (ex-IEEPA)",
+    "value": "near bottom of target range",
+    "change": "held",
+    "quote": "Excluding IEEPA tariff recoveries, our full year adjusted operating profit margin is expected to be near the bottom of our target range."
+   },
+   {
+    "metric": "FY26 capex",
+    "value": "about $3.3B",
+    "change": "cut",
+    "quote": "Our CapEx spend for 2026 is now anticipated to be about $3.3 billion, which is slightly below our prior expectations of $3.5 billion."
+   },
+   {
+    "metric": "FY26 restructuring costs",
+    "value": "about $300M",
+    "change": "held",
+    "quote": "We now expect restructuring costs of about $300 million in 2026, which is on the low end of our prior range."
+   },
+   {
+    "metric": "FY26 MP&E free cash flow",
+    "value": "top half of $6B-$15B range",
+    "change": "held",
+    "quote": "We also continue to expect MP&E free cash flow to be in the top half of our annual target range of $6 billion to $15 billion."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 sales growth mid-to-high teens",
+    "outcome": "met",
+    "quote": "we continue to expect full year 2026 sales and revenues to grow in the mid- to high teens"
+   },
+   {
+    "metric": "FY26 capex",
+    "outcome": "missed",
+    "quote": "slightly below our prior expectations of $3.5 billion"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Luck Stone",
+    "relation": "customer"
+   },
+   {
+    "name": "Major Projects",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Power generation prime power",
+   "Capex cycle revival (private)",
+   "Renewables & storage",
+   "Tariffs & trade policy",
+   "Autonomous mining"
+  ],
+  "red_flags": [
+   {
+    "label": "Capacity-limited, hand-to-mouth production",
+    "quote": "there's no slack in the system"
+   },
+   {
+    "label": "Mining delivery delays; RI ramp inefficiencies",
+    "quote": "lower in mining due to delays in shipping and commissioning"
+   },
+   {
+    "label": "Cost inflation headwind",
+    "quote": "we are aware of potential headwinds presented by higher cost inflation, which we continue to monitor closely"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 5,
+   "margin": 2,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Backlog step-down / book-to-bill",
+    "quote": "you can't just look at 1 metric like backlog growth in a quarter or book-to-bill in a quarter"
+   },
+   {
+    "topic": "Hyperscaler share of slots",
+    "quote": "I don't think we would quantify hyperscalers versus colos versus others or IPPs"
+   },
+   {
+    "topic": "2027 revenue and capacity dollars",
+    "quote": "we'll talk to you guys more about '27 in January"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

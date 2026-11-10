@@ -1,0 +1,93 @@
+{
+ "doc_id": "GL-L-c9d2f02999fc",
+ "market": "GL",
+ "company_id": "DTE.DE",
+ "name": "Deutsche Telekom",
+ "doc_type": "release",
+ "date": "2026-09-30",
+ "period": "2026-09",
+ "title": "Download (PDF, 314 KB)",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Q3 2026 IR backup shows group EBITDA AL up 13.3% and T-Mobile US EBITDA AL up 13.1%, while group cash capex fell 20.4% y/y to EUR 4.283bn with US capex down 37.7%; a numbers-only backup with no management commentary.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "CASH CAPEX Germany 1.035 1.574 4.870 832 940 1.192 15,2 3.297 2.964 (10,1)"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "US cash capex -37.7% y/y",
+    "quote": "United States 3.655 2.177 11.060 2.272 2.744 2.276 (37,7)",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "US EBITDA AL +13.1% y/y",
+    "quote": "United States 7.195 7.135 29.252 7.738 7.969 8.135 13,1",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Group net debt down 3.0% q/q",
+    "quote": "NET DEBT 132.779 132.518 133.772 138.387 134.208 (3,0) 1,1",
+    "direction": 1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "T-Mobile US",
+    "relation": "peer"
+   },
+   {
+    "name": "T-Systems",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Q3 Group HQ EBITDA AL loss persists",
+    "quote": "Group Headquarters & Group Services (159) (287) (768) (185) (164) (142) 11,0 (482) (490) (1,8)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.5
+ }
+}

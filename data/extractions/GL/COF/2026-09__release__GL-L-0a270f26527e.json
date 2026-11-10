@@ -1,0 +1,78 @@
+{
+ "doc_id": "GL-L-0a270f26527e",
+ "market": "GL",
+ "company_id": "COF",
+ "name": "Capital One",
+ "doc_type": "release",
+ "date": "2026-10-20",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Q3 CY26 earnings release shows NII margin up 40bp to 8.41% and pre-provision earnings up 10% to $7.5bn, but deposits fell 1% and there is no capacity or supply-side commentary, so the read is mostly financial rather than capital-cycle.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "NIM up 40bp to 8.41%",
+    "quote": "Net interest margin of 8.41 percent, an increase of 40 basis points.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Period-end deposits down 1%",
+    "quote": "Period-end total deposits decreased $3.6 billion, or 1 percent, to $480.7 billion",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Discover",
+    "relation": "partner"
+   },
+   {
+    "name": "Brex",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

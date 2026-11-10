@@ -1,0 +1,178 @@
+{
+ "doc_id": "GL-L-770629bc7f35",
+ "market": "GL",
+ "company_id": "XOM",
+ "name": "ExxonMobil",
+ "doc_type": "transcript",
+ "date": "2026-10-30",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Record refining utilisation and Stabroek growth drove $15.4B GAAP earnings, but the read is mostly about supply disruption and cost-advantaged capacity rather than a discipline-driven capex cut; $20B 2027 buyback reaffirmed.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital allocation shift",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 84,
+   "quote": "running our refineries at record utilization levels of around 84%"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said the industry needs continued investment, including in the Middle East.",
+   "quote": "Meeting that demand reliably will require continued investment across the industry, including in the Middle East."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Refining utilisation ~84%, record ex-Mideast",
+    "quote": "Global utilization of our fuels manufacturing facilities, excluding Middle East impacts, is at its highest level on record.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Gulf Coast distillate yield +100 kbd",
+    "quote": "Our U.S. Gulf Coast asset reconfiguration projects are expected to increase distillate yield by about 100,000 barrels per day",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Russia ~half refining offline",
+    "quote": "approximately half of Russia's refining capacity has been taken offline due to hostilities",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2027 buyback held at $20B",
+    "quote": "plans to maintain share repurchases at $20 billion in 2027",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Mideast 350 kbd volume impact held in Q4",
+    "quote": "You guided to a 350 kbd impact unchanged in 4Q.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Share repurchases 2027",
+    "value": "$20 billion",
+    "change": "held",
+    "horizon": "2027",
+    "quote": "plans to maintain share repurchases at $20 billion in 2027"
+   },
+   {
+    "metric": "Quarterly dividend",
+    "value": "$1.07 per share, +4%",
+    "change": "raised",
+    "horizon": "current",
+    "quote": "Today, we announced a 4% increase in our dividend per share"
+   },
+   {
+    "metric": "Structural cost savings",
+    "value": "$20 billion annual by 2030",
+    "change": "held",
+    "horizon": "2030",
+    "quote": "well on our way to $20 billion of cumulative savings by 2030"
+   },
+   {
+    "metric": "Uaru start-up",
+    "value": "Q4 2026",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "We expect our fifth development, Uaru, to start up in the fourth quarter."
+   },
+   {
+    "metric": "Golden Pass Train 3 mechanical completion",
+    "value": "mid-2027",
+    "change": "new",
+    "horizon": "mid-2027",
+    "quote": "expect to achieve mechanical completion on Train 3 in mid-2027"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Nucor",
+    "relation": "customer"
+   },
+   {
+    "name": "Eni",
+    "relation": "partner"
+   },
+   {
+    "name": "QatarEnergy",
+    "relation": "partner"
+   },
+   {
+    "name": "Pioneer",
+    "relation": "peer"
+   },
+   {
+    "name": "Denbury",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Renewables & storage",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Mideast volumes deferred; UAE sales lag production",
+    "quote": "the realization of that production is delayed simply as a function of the logistics and the ability to move the barrels out."
+   },
+   {
+    "label": "Leaning on balance sheet to hold distributions",
+    "quote": "we were actually leaning into the balance sheet a little bit to keep those distributions consistent"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 5,
+   "margin": 1,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Refining cracks normalisation timing",
+    "quote": "it's a hard one because there are a lot of variables impacting that"
+   },
+   {
+    "topic": "Post-2030 growth quantification",
+    "quote": "we are very clearly focused as an organization in all the businesses"
+   },
+   {
+    "topic": "Venezuela entry timing",
+    "quote": "we're not in a rush. We think that opportunities are going to be there for a while."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

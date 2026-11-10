@@ -1,0 +1,161 @@
+{
+ "doc_id": "GL-L-0e9c8a2e1415",
+ "market": "GL",
+ "company_id": "TMUS",
+ "name": "T-Mobile US",
+ "doc_type": "release",
+ "date": "2026-10-28",
+ "period": "2026-09",
+ "title": "8-K · TMUS EXHIBIT 99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Account and ARPA growth drive 9% postpaid service revenue growth and 11% adjusted EBITDA growth; capex down 14% and FY26 capex held at about $10.0B while cash flow guidance raised.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Cash purchases of property and equipment, including capitalized interest are expected to be approximately $10.0 billion."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Adj. FCF guide raised to $18.7-18.8B",
+    "quote": "Adjusted Free Cash Flow, including net payments for UScellular merger-related costs, is now expected to be between $18.7 billion and $18.8 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Postpaid ARPA up 4% to $155.73",
+    "quote": "Postpaid ARPA of $155.73 grew 4% year-over-year",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "supply",
+    "label": "Q3 capex down 14% YoY",
+    "quote": "Cash purchases of property and equipment, including capitalized interest, decreased 14% year-over-year to $2.3 billion.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Postpaid net account additions (thousands)",
+    "value": "~1,000",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Postpaid net account additions are expected to be approximately 1.0 million, at the midpoint of the previous guide of 950 thousand to 1.05 million."
+   },
+   {
+    "metric": "Core Adjusted EBITDA ($B)",
+    "value": "37.35-37.45",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Core Adjusted EBITDA, which is Adjusted EBITDA less lease revenues, is expected to be between $37.35 billion and $37.45 billion"
+   },
+   {
+    "metric": "Net cash from operating activities ($B)",
+    "value": "28.7-28.8",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "is now expected to be between $28.7 billion and $28.8 billion, an increase at the midpoint"
+   },
+   {
+    "metric": "Capex ($B)",
+    "value": "~10.0",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Cash purchases of property and equipment, including capitalized interest, are expected to be approximately $10.0 billion."
+   },
+   {
+    "metric": "Adjusted Free Cash Flow ($B)",
+    "value": "18.7-18.8",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Adjusted Free Cash Flow, including net payments for UScellular merger-related costs, is now expected to be between $18.7 billion and $18.8 billion"
+   },
+   {
+    "metric": "Effective tax rate",
+    "value": "24%-25%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Effective tax rate is now expected to be between 24% and 25%, a decrease from prior guidance of between 25% and 26%."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Postpaid net account additions",
+    "outcome": "met",
+    "quote": "Postpaid net account additions of 274 thousand"
+   },
+   {
+    "metric": "Core Adjusted EBITDA",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Capex",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "UScellular",
+    "relation": "peer"
+   },
+   {
+    "name": "Metronet",
+    "relation": "peer"
+   },
+   {
+    "name": "Lumos",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Pricing power"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow down 2% YoY",
+    "quote": "Net cash provided by operating activities of $7.3 billion decreased 2% year-over-year"
+   },
+   {
+    "label": "Special items rising in Other, net",
+    "quote": "Other, net for the three months ended September 30, 2026 and June 30, 2026, includes $50 million and $108 million"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

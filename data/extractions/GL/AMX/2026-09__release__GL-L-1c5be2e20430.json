@@ -1,0 +1,88 @@
+{
+ "doc_id": "GL-L-1c5be2e20430",
+ "market": "GL",
+ "company_id": "AMX",
+ "name": "America Movil",
+ "doc_type": "release",
+ "date": "2026-10-22",
+ "period": "2026-09",
+ "title": "6-K · 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Telecom quarter with steady mobile service growth of 6.3% and EBITDA up 8.9% to 102bn pesos, but capex is falling and net debt cut to 1.21x; no supply-side capacity signal and no numeric guidance given.",
+  "archetype": "None",
+  "mental_models": [
+   "Deleveraging",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Mobile service revenue +6.3% YoY",
+    "quote": "Mobile service revenue increased 6.3% year-on-year, maintaining the pace observed in the prior quarter.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "9M capex 75.9bn vs 84.9bn",
+    "quote": "In the nine months to September our capital expenditures totaled 76 billion pesos.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "Net debt/EBITDAaL 1.52x → 1.21x",
+    "quote": "It was equivalent to 1.21x net debt to EBITDAal, down from 1.52x at the end of 2025.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Verizon",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Comprehensive financing cost +75% on FX loss",
+    "quote": "our comprehensive financing cost increased 75% as a result of foreign exchange losses of 3.6 billion pesos in the period"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

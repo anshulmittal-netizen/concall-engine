@@ -1,0 +1,101 @@
+{
+ "doc_id": "GL-L-2874f01eaf12",
+ "market": "GL",
+ "company_id": "DUK",
+ "name": "Duke Energy",
+ "doc_type": "release",
+ "date": "2026-11-05",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Regulated utility with 5.9% Q3 electric sales growth and rate-base-driven earnings; narrowed 2026 adjusted EPS to $6.70-6.80, but no supply-side discipline or pricing signal is discussed, so the read is steady rather than cyclical.",
+  "archetype": "None",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Executing record generation build to add 16 gigawatts of capacity by 2031, supporting customer value, economic growth and reliable service"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "2026 EPS range narrowed to $6.70-6.80",
+    "quote": "The company is narrowing its 2026 adjusted EPS guidance range to $6.70 to $6.80",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q3 electric sales +5.9%",
+    "quote": "Total Consolidated Electric Sales – Electric Utilities and Infrastructure 77,147 72,880 5.9%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 adjusted EPS",
+    "value": "$6.70 to $6.80",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "narrows 2026 adjusted EPS guidance range to $6.70 to $6.80"
+   },
+   {
+    "metric": "Long-term adjusted EPS growth",
+    "value": "5% to 7% through 2030 off 2025 midpoint of $6.30",
+    "change": "held",
+    "horizon": "2026-2030",
+    "quote": "reaffirming its long-term adjusted EPS growth rate of 5% to 7% through 2030"
+   },
+   {
+    "metric": "Capacity additions",
+    "value": "16 GW by 2031",
+    "change": "new",
+    "horizon": "2031",
+    "quote": "add 16 gigawatts of capacity by 2031"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Minority interest drag on EPS",
+    "quote": "impacts from minority interest investments, higher interest expense, and a higher effective tax rate"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

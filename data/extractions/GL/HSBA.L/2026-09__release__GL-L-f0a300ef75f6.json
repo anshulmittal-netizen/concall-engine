@@ -1,0 +1,162 @@
+{
+ "doc_id": "GL-L-f0a300ef75f6",
+ "market": "GL",
+ "company_id": "HSBA.L",
+ "name": "HSBC Holdings",
+ "doc_type": "release",
+ "date": "2026-09-30",
+ "period": "2026-09",
+ "title": "3Q 2026 Earnings Release",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Clean 3Q26 print: RoTE ex-notables 18.2% and banking NII $11.7bn up 5%, but CET1 slipped to 13.9% and HTC&S unrealised losses widened to $5.0bn; no supply-side signal since HSBC is a bank.",
+  "archetype": "None",
+  "mental_models": [
+   "Deleveraging",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Banking NII ≥$46bn held for 2026",
+    "quote": "We continue to expect banking NII of at least $46bn in 2026.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "NIM 1.57% stable YoY",
+    "quote": "NIM for 3Q26 of 1.57% was stable compared with 3Q25.",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "CET1 13.9% down from 14.1%",
+    "quote": "At 30 September 2026, our CET1 capital ratio decreased to 13.9% from 14.1% at 30 June 2026",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "HTC&S unrealised loss $5.0bn",
+    "quote": "we recognised a pre-tax cumulative unrealised loss reserve through other comprehensive income of $5.0bn",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "RoTE excluding notable items",
+    "value": "17% or better for 2026, 2027 and 2028",
+    "change": "held",
+    "horizon": "2026-2028",
+    "quote": "including a RoTE of 17% or better for 2026, 2027 and 2028, excluding notable items."
+   },
+   {
+    "metric": "Banking NII 2026",
+    "value": "at least $46bn",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "We continue to expect banking NII of at least $46bn in 2026."
+   },
+   {
+    "metric": "ECL charge as % of average gross loans 2026",
+    "value": "around 45bps",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "We continue to expect an ECL charge as a percentage of average gross customer loans of around 45bps"
+   },
+   {
+    "metric": "Target basis operating expense growth 2026",
+    "value": "approximately 1%",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "on track to deliver year-on-year growth in operating expenses of approximately 1% in 2026 on a target basis."
+   },
+   {
+    "metric": "CET1 ratio operating range",
+    "value": "14% to 14.5%",
+    "change": "held",
+    "horizon": "medium term",
+    "quote": "We intend to continue to manage our CET1 capital ratio within our medium-term target operating range of 14% to 14.5%."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Banking NII 2026 at least $46bn",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Bank of Communications",
+    "relation": "partner"
+   },
+   {
+    "name": "Saudi Awwal Bank",
+    "relation": "partner"
+   },
+   {
+    "name": "Blackstone",
+    "relation": "customer"
+   },
+   {
+    "name": "Allianz",
+    "relation": "customer"
+   },
+   {
+    "name": "Emirates NBD",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Hong Kong CRE",
+   "Transaction banking growth"
+  ],
+  "red_flags": [
+   {
+    "label": "HK CRE credit-impaired $5.6bn",
+    "quote": "Hong Kong CRE 'credit-impaired' portfolio (excluding exposure to Chinese mainland borrowers) recorded further ECL allowances in the third quarter of 2026"
+   },
+   {
+    "label": "Single $0.5bn fraud-related UK exposure",
+    "quote": "including a $0.5bn fraud-related, secondary, securitisation exposure with a financial sponsor in the UK in our CIB business"
+   },
+   {
+    "label": "Unrealised HTC&S loss widened to $5.0bn",
+    "quote": "we recognised a pre-tax cumulative unrealised loss reserve through other comprehensive income of $5.0bn"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

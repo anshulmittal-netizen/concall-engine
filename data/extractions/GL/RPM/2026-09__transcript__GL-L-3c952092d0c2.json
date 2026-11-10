@@ -1,0 +1,164 @@
+{
+ "doc_id": "GL-L-3c952092d0c2",
+ "market": "GL",
+ "company_id": "RPM",
+ "name": "RPM International",
+ "doc_type": "transcript",
+ "date": "2026-10-07",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q1 2027",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.94,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Record Q1 sales and EBITDA with CPG organically down 1.7% on polyol shortages and school/healthcare slowdown; FY27 sales and EBITDA guidance narrowed lower to mid-single-digit growth as raw material inflation rises to 9–11% in Q2.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 sales guide cut to mid-single digit",
+    "quote": "We are narrowing our fiscal 27 sales growth to mid single digit growth from our previous outlook of 3% to 7%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Q2 inflation 9–11% vs 6–8% prior",
+    "quote": "we now expect second quarter inflation will be in the 9% to 11% range up from our previous estimate of 6% to 8%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Q2 price increases 2.5–3.5%",
+    "quote": "I would expect price in Q2 to be somewhere in the 2.5% to 3.5% range.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Polyol shortage now resolved in production",
+    "quote": "The shortage issue is now behind us in terms of production, but we are catching up on inventory in Q2.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 consolidated sales growth",
+    "value": "mid single digit",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "We are narrowing our fiscal 27 sales growth to mid single digit growth from our previous outlook of 3% to 7%."
+   },
+   {
+    "metric": "FY27 adjusted EBITDA growth",
+    "value": "mid single digit",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "Adjusted EBITDA is now expected to grow mid single digits compared to a previous outlook of up 5% to 10%."
+   },
+   {
+    "metric": "Q2 consolidated sales",
+    "value": "low to mid single digit growth",
+    "change": "new",
+    "horizon": "Q2 FY27",
+    "quote": "We expect consolidated sales to increase in the low to mid single digit range"
+   },
+   {
+    "metric": "Q2 raw material inflation",
+    "value": "9% to 11%",
+    "change": "raised",
+    "horizon": "Q2 FY27",
+    "quote": "we now expect second quarter inflation will be in the 9% to 11% range up from our previous estimate of 6% to 8%."
+   },
+   {
+    "metric": "Q3 raw material inflation",
+    "value": "7% to 9%",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "For the third quarter, we anticipate inflation will be 7% to 9%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 sales growth 3% to 7%",
+    "outcome": "dropped",
+    "quote": "We are narrowing our fiscal 27 sales growth to mid single digit growth from our previous outlook of 3% to 7%."
+   },
+   {
+    "metric": "FY27 adjusted EBITDA growth 5% to 10%",
+    "outcome": "dropped",
+    "quote": "Adjusted EBITDA is now expected to grow mid single digits compared to a previous outlook of up 5% to 10%."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Tremco",
+    "relation": "peer"
+   },
+   {
+    "name": "Weatherproofing Technologies Inc.",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Rural demand recovery",
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Housing & real-estate cycle",
+   "Data-centre power & cooling"
+  ],
+  "red_flags": [
+   {
+    "label": "Gross margin down 100 bps, guidance cut",
+    "quote": "gross margins declined 100 basis points as the rate of raw material inflation outpaced pricing MAP benefits in the quarter."
+   },
+   {
+    "label": "CPG bad debt and warranty charges",
+    "quote": "CPG Bad Debt Expense -- $4.4 million, related to a customer bankruptcy during the period."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 5,
+   "balance_sheet": 2,
+   "capex": 0,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Duration of Middle East / oil inflation",
+    "quote": "Not at this point in time."
+   },
+   {
+    "topic": "CPG pricing vs volume gap",
+    "quote": "Some of that is absorption in plants"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

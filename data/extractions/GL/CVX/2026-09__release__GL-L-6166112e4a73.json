@@ -1,0 +1,100 @@
+{
+ "doc_id": "GL-L-6166112e4a73",
+ "market": "GL",
+ "company_id": "CVX",
+ "name": "Chevron",
+ "doc_type": "release",
+ "date": "2026-10-30",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Chevron Q3 2026 earnings $9.9B and adjusted $10.4B, with record refinery throughput at 98% utilisation and US production up 27% over two years, while capex fell to $4.0B and net debt dropped $7.8B.",
+  "archetype": "None",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital allocation shift",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {},
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Refinery utilisation near 98%",
+    "quote": "reflecting reliable crude unit capacity utilization of nearly 98 percent",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex $4.0B vs $4.4B year ago",
+    "quote": "Capex in the third quarter of 2026 was lower than last year largely due to lower spend in the Permian Basin.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Net debt down $7.8B in quarter",
+    "quote": "net debt was down $7.8 billion in the quarter, further strengthening Chevron’s balance sheet.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Hess Corporation",
+    "relation": "partner"
+   },
+   {
+    "name": "Tengizchevroil LLP",
+    "relation": "partner"
+   },
+   {
+    "name": "Bunge Chevron Ag Renewables LLC",
+    "relation": "partner"
+   },
+   {
+    "name": "Hess Midstream LP",
+    "relation": "partner"
+   },
+   {
+    "name": "Libya's National Oil Corporation",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Venezuela re-entry"
+  ],
+  "red_flags": [
+   {
+    "label": "Production down 109 kboe/d in international upstream",
+    "quote": "Net oil-equivalent production during the quarter was down 109,000 barrels per day from the year-ago period"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3,
+  "capex": {}
+ }
+}

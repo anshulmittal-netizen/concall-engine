@@ -1,0 +1,189 @@
+{
+ "doc_id": "GL-L-3bc87fc72d7a",
+ "market": "GL",
+ "company_id": "MT.AS",
+ "name": "ArcelorMittal",
+ "doc_type": "transcript",
+ "date": "2026-11-05",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Supply discipline is returning in Europe: TRQ cut flat imports ~50% YoY and all EU blast furnaces restarted, with Q4 flat shipments guided up double digits; Ukraine idled, $1.1B charges.",
+  "archetype": "Value migration",
+  "mental_models": [
+   "Supply exit",
+   "Import substitution",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 1,
+   "structure": 2,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "quote": "all of our European blast furnaces are now running"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "the $4.5 billion-$5 billion remains a good reference for the CapEx envelope for the group going forward."
+  },
+  "triggers": [
+   {
+    "type": "structure",
+    "label": "EU flat imports ~50% lower YoY",
+    "quote": "imports of flat steel products were approximately 50% lower than a year ago",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "All EU blast furnaces restarted",
+    "quote": "all of our European blast furnaces are now running",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 EU flat shipments up double digits YoY",
+    "quote": "we expect shipments growth to accelerate in the fourth quarter and show a double-digit year-on-year improvement",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Kryvyi Rih idled, $1.1B charges",
+    "quote": "unable to safely and sustainably operate ArcelorMittal Kryvyi Rih (Ukraine) following multiple missile strikes",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Energy costs being recovered",
+    "quote": "Of course, we were hit by higher energy costs. We are in the process of recovering that.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EU flat shipments Q4 YoY",
+    "value": "double-digit growth",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we expect shipments growth to accelerate in the fourth quarter and show a double-digit year-on-year improvement"
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "$4.5bn-$5.0bn incl. $1.7-1.9bn strategic growth",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "the $4.5 billion-$5 billion remains a good reference for the CapEx envelope for the group going forward."
+   },
+   {
+    "metric": "Liberia shipments 2026",
+    "value": "~16 Mt (from 18 Mt)",
+    "change": "cut",
+    "horizon": "FY 2026",
+    "quote": "we are guiding now for 16"
+   },
+   {
+    "metric": "Strategic projects 2026 EBITDA",
+    "value": "$0.5bn (of $1.8bn run-rate)",
+    "change": "cut",
+    "horizon": "2026",
+    "quote": "with the 2026 contribution now estimated at $0.5 billion"
+   },
+   {
+    "metric": "Others segment cost",
+    "value": "~$50m per quarter negative",
+    "change": "held",
+    "horizon": "Q4 2026",
+    "quote": "it should be about $50 million or so negative"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EU flat volume growth in Q3 (per Q2 guide)",
+    "outcome": "met",
+    "quote": "As we were guiding at the time of quarter two, we see higher shipments and flat despite the seasonality"
+   },
+   {
+    "metric": "Liberia 18 Mt target",
+    "outcome": "missed",
+    "quote": "revised to approximately 16 million tonnes for the full year, a reduction from the previous 18 million metric tonnes target"
+   }
+  ],
+  "evasions": [
+   {
+    "topic": "Slab imports into Europe / volume sizing",
+    "quote": "Where prices finally settle in south, I mean, historically"
+   },
+   {
+    "topic": "2027 apparent consumption and shipment run-rate",
+    "quote": "We are not yet providing guidance in terms of apparent consumption for 2027"
+   },
+   {
+    "topic": "Q4 energy cost impact",
+    "quote": "It is difficult to be specific there on the guidance"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Energy cost headwind in Europe unquantified",
+    "quote": "energy prices have continued to evolve through the quarter"
+   },
+   {
+    "label": "Calvert ramp slower than expected",
+    "quote": "it's moving a little bit slower than what we were expecting"
+   },
+   {
+    "label": "Net debt up to $10.3bn while buybacks continue",
+    "quote": "Net Debt -- $10.3 billion as of Sept. 30, 2026, increased from $9.5 billion"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "hedge_index": 0.3,
+  "entities": [
+   {
+    "name": "Nippon Steel",
+    "relation": "partner"
+   },
+   {
+    "name": "Cliffs",
+    "relation": "customer"
+   },
+   {
+    "name": "US Steel",
+    "relation": "customer"
+   },
+   {
+    "name": "Tubarão",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Anti-dumping protection",
+   "Import substitution",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy",
+   "Renewables & storage"
+  ]
+ }
+}

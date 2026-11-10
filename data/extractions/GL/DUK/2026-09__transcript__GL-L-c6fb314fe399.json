@@ -1,0 +1,154 @@
+{
+ "doc_id": "GL-L-c6fb314fe399",
+ "market": "GL",
+ "company_id": "DUK",
+ "name": "Duke Energy",
+ "doc_type": "transcript",
+ "date": "2026-11-05",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "Duke narrowed 2026 EPS to $6.70–6.80 with top-end lean, reaffirmed 5–7% growth, and is funding a $103B plan with $10B equity; supply build is large but the 15.4 GW pipeline is not yet signed.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we're investing about $1.5 billion a month right now, and that's going to step up to about $2 billion a month with a beginning as we get into 2027"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q3 load growth 2%, strongest since 2022",
+    "quote": "Third quarter demand increased 2%, our strongest quarterly growth since 2022.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Capex run-rate $1.5B → $2B per month",
+    "quote": "that's going to step up to about $2 billion a month with a beginning as we get into 2027",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Florida tariff refiling delays large-load path",
+    "quote": "We're making adjustments to our tariff and plan on refiling that.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2026 EPS narrowed to $6.70–6.80",
+    "quote": "we are narrowing our 2026 guidance range to $6.70 to $6.80 and expect to finish the year near the top end.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 adjusted EPS",
+    "value": "$6.70 to $6.80, near top end",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we are narrowing our 2026 guidance range to $6.70 to $6.80 and expect to finish the year near the top end."
+   },
+   {
+    "metric": "Long-term EPS growth",
+    "value": "5% to 7% through 2030, top half from 2028",
+    "change": "held",
+    "horizon": "2026-2030",
+    "quote": "We're also reaffirming our long-term earnings per share growth rate of 5% to 7% through 2030"
+   },
+   {
+    "metric": "FFO-to-debt 2026",
+    "value": "14.5%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We remain on track to achieve our 14.5% FFO-to-debt target for 2026."
+   },
+   {
+    "metric": "Load growth outlook",
+    "value": "3% to 4% over remainder of 5-year plan",
+    "change": "held",
+    "horizon": "2026-2030",
+    "quote": "These trends reinforce confidence in our 3% to 4% load growth projection over the remainder of the 5-year plan"
+   },
+   {
+    "metric": "Late-stage pipeline conversion to ESAs",
+    "value": "15.4 GW by 1H 2027",
+    "change": "held",
+    "horizon": "1H 2027",
+    "quote": "We remain confident in converting the full 15.4 gigawatt late-stage pipeline to ESAs by the first half of 2027."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Brookfield",
+    "relation": "partner"
+   },
+   {
+    "name": "Westinghouse",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Interest-rate relief",
+   "Consolidation / competitor exits",
+   "Nuclear restart / SMR"
+  ],
+  "red_flags": [
+   {
+    "label": "NC Smith CPCN denied",
+    "quote": "Yes, so our Smith CPCN that we filed was denied by the commission."
+   },
+   {
+    "label": "Pipeline conversion slipping",
+    "quote": "it's taking longer because of the complexities."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 3,
+   "growth": 2,
+   "margin": 0,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Pipeline gating items for remaining 7.6 GW",
+    "quote": "we're not counting anything until it hits the ESA level"
+   },
+   {
+    "topic": "O&M reinvestment of weather benefit",
+    "quote": "Anthony, we're not going to disclose that amount."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

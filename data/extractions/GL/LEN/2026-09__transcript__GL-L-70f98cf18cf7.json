@@ -1,0 +1,184 @@
+{
+ "doc_id": "GL-L-70f98cf18cf7",
+ "market": "GL",
+ "company_id": "LEN",
+ "name": "Lennar",
+ "doc_type": "transcript",
+ "date": "2026-09-17",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Lennar traded volume for margin: Q3 gross margin 15.8% on 12% incentives, FY deliveries cut to 80,000-81,000, and Q4 margin guided 15.5-16.0% as land basis still washes through.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": 1,
+   "demand": -2,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY deliveries cut to 80,000-81,000",
+    "quote": "Revised Full-Year Deliveries Guidance -- 80,000 to 81,000 units, lowered from the previous target of 82,000 to 83,000 units",
+    "highlight": "lowered from the previous target of 82,000 to 83,000 units",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Incentives ~12% of ASP",
+    "quote": "Average Sales Price -- $372,000, reflecting approximately 12% in sales incentives to maintain volume",
+    "highlight": "approximately 12% in sales incentives",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Orders down 9% YoY",
+    "quote": "20,840 deliveries and 20,879 new orders, reflecting 3% and 9% decreases, respectively",
+    "highlight": "9% decreases",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Finished inventory 2.1 → 1.8 per community",
+    "quote": "completed unsold inventory came down again to 1.8 homes per community from 2.1 last quarter",
+    "highlight": "came down again to 1.8 homes per community",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Cycle time 116 days, record low",
+    "quote": "Construction Cycle Time -- 116 days, marking a record low",
+    "highlight": "116 days, marking a record low",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 deliveries",
+    "value": "80,000 to 81,000",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "Revised Full-Year Deliveries Guidance -- 80,000 to 81,000 units, lowered from the previous target of 82,000 to 83,000 units"
+   },
+   {
+    "metric": "Q4 deliveries",
+    "value": "22,000 to 23,000",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we expect to generate new orders of approximately 19,500 to 20,500 and to deliver 22,000 to 23,000 homes"
+   },
+   {
+    "metric": "Q4 gross margin",
+    "value": "15.5% to 16.0%",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "Our gross margins should be in the range of 15.5% to 16%"
+   },
+   {
+    "metric": "Q4 EPS",
+    "value": "$1.30 to $1.65",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "these estimates should produce an EPS range of approximately $1.30 to $1.65 for the fourth quarter"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY2026 deliveries 82,000-83,000",
+    "outcome": "dropped",
+    "quote": "lowered from the previous target of 82,000 to 83,000 units"
+   },
+   {
+    "metric": "Q3 gross margin ~16%",
+    "outcome": "missed",
+    "quote": "Gross margin was 15.8%, up from 15.6% last quarter and just below the approximately 16% we guided to."
+   },
+   {
+    "metric": "Q3 SG&A 8.8%-9%",
+    "outcome": "missed",
+    "quote": "SG&A was 9.2%, above our expected range of 8.8% to 9%."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Lennar Other",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Housing & real-estate cycle",
+   "Rural demand recovery",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin sacrificed for volume",
+    "quote": "That means we are compromising margin in order to maintain volume."
+   },
+   {
+    "label": "Land basis drag persists",
+    "quote": "The land headwind is still in front of us for a while, but it is finite, it is visible"
+   },
+   {
+    "label": "Option maintenance fees rising from paused takedowns",
+    "quote": "our option maintenance fees are accumulating for longer periods of time because we have moderated our growth"
+   },
+   {
+    "label": "Q3 orders and SG&A missed guidance",
+    "quote": "We missed this quarter. It didn't feel good."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 2,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Buyback and cash use",
+    "quote": "I really don't want to make a prediction at this point given the volatility of the market."
+   },
+   {
+    "topic": "Buydown cost quantification",
+    "quote": "it is a hard question to answer, and I'll tell you why."
+   },
+   {
+    "topic": "Land bank pause percentage",
+    "quote": "So I don't have an answer on the percentage where we have paused."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

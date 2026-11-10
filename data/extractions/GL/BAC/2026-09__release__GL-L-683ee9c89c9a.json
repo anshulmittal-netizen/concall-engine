@@ -1,0 +1,99 @@
+{
+ "doc_id": "GL-L-683ee9c89c9a",
+ "market": "GL",
+ "company_id": "BAC",
+ "name": "Bank of America",
+ "doc_type": "release",
+ "date": "2026-10-14",
+ "period": "2026-09",
+ "title": "8-K · THE PRESS RELEASE",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Bank of America 3Q26 adjusted EPS $1.08 on 8% NII growth and 6% loan growth, but reported EPS $0.91 after a $1.2B regulatory charge; credit improving, capital returns steady, no supply-side capacity signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Customer stickiness",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Net interest yield up 15 bps",
+    "quote": "Net interest yield (FTE) of 2.16% increased 15 bps",
+    "highlight": "Net interest yield (FTE) of 2.16% increased 15 bps",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Credit card charge-off rate falls to 3.22%",
+    "quote": "Credit card charge-off rate of 3.22% vs. 3.46% in 3Q25 and 3.55% in 2Q26",
+    "highlight": "Credit card charge-off rate of 3.22%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Investment banking fees down 11%",
+    "quote": "Total Corporation investment banking fees (excl. self-led) of $1.8 billion, down 11%",
+    "highlight": "investment banking fees (excl. self-led) of $1.8 billion, down 11%",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Visa",
+    "relation": "peer"
+   },
+   {
+    "name": "Mastercard",
+    "relation": "peer"
+   },
+   {
+    "name": "FinCEN",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Interest-rate relief",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Regulatory settlement charge $1.2B (BSA/AML consent orders)",
+    "quote": "the Corporation recorded non-tax-deductible noninterest expense of $1.2B to accrue for the civil money penalties"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

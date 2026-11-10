@@ -1,0 +1,175 @@
+{
+ "doc_id": "GL-L-5bd632f4e08f",
+ "market": "GL",
+ "company_id": "TSLA",
+ "name": "Tesla",
+ "doc_type": "transcript",
+ "date": "2026-10-22",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Tesla says demand exceeds production and deliveries are production-constrained, with capex revised to about $20B and new financing up to $30B, but auto margins ex-credits rose only to 18.1% and Optimus volume is a year away.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "our factories are operating at record rates this quarter"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "We're revising our CapEx guidance to be approximately $20 billion for the current year"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Factories at record rates",
+    "quote": "our factories are operating at record rates this quarter",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Highest backlog in 4 years",
+    "quote": "we exited the quarter with our highest backlog in 4 years, with deliveries constrained primarily by production",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Auto margin ex-credits 16.3% → 18.1%",
+    "quote": "excluding credits, increased sequentially from 16.3% to 18.1%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Energy margin 20.4% → 33.1% (one-offs)",
+    "quote": "Energy gross margins improved from 20.4% to 33.1%",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "Capex revised to ~$20B",
+    "quote": "We're revising our CapEx guidance to be approximately $20 billion for the current year",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year capex",
+    "value": "~$20 billion",
+    "change": "cut",
+    "horizon": "CY2026",
+    "quote": "We're revising our CapEx guidance to be approximately $20 billion for the current year"
+   },
+   {
+    "metric": "Optimus production rate",
+    "value": "20,000 units per week within approximately one year",
+    "change": "new",
+    "horizon": "~late 2027",
+    "quote": "I would expect that it takes us probably at least a year, maybe a little longer to get to that annualized rate to get to 20,000 units a week"
+   },
+   {
+    "metric": "Vehicle production",
+    "value": "5 million vehicles annually by approximately 2030",
+    "change": "new",
+    "horizon": "2030",
+    "quote": "We're, I think, aiming for 5 million vehicles a year by approximately 2030"
+   },
+   {
+    "metric": "Robotaxi cost per paid mile",
+    "value": "$0.30 target",
+    "change": "held",
+    "horizon": "not dated",
+    "quote": "are we at our goal of $0.30 today? No."
+   },
+   {
+    "metric": "Cybercab to customers",
+    "value": "by end of 2026",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "we're trying to get Cybercabs to customers by the end of this year, 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "SpaceX",
+    "relation": "partner"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "competitor"
+   },
+   {
+    "name": "Qualcomm",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Robotaxi & autonomy",
+   "Optimus humanoid robots",
+   "Data-centre power & cooling",
+   "Terafab semiconductors",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Optimus ramp admitted slow and bumpy",
+    "quote": "the initial part of the S-curve is -- has a shallow slope and is somewhat bumpy"
+   },
+   {
+    "label": "Opex rising with no end date",
+    "quote": "This trend of growing OpEx would continue till we commercialize these new products."
+   },
+   {
+    "label": "Energy margin inflated by one-offs",
+    "quote": "tariff refunds recognized in the quarter and warranty true-downs"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 5,
+   "margin": 1,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Robotaxi unit economics / profitability",
+    "quote": "I wouldn't say it's not like going to move the needle this quarter."
+   },
+   {
+    "topic": "FSD subscriber churn and ARR disclosure",
+    "quote": "we will share more metrics around churn rates and whatnot"
+   },
+   {
+    "topic": "SpaceX merger",
+    "quote": "tap-dancing through a minefield there"
+   }
+  ],
+  "hedge_index": 0.5
+ }
+}

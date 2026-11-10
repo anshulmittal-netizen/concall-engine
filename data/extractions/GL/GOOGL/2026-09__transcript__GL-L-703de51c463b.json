@@ -1,0 +1,172 @@
+{
+ "doc_id": "GL-L-703de51c463b",
+ "market": "GL",
+ "company_id": "GOOGL",
+ "name": "Alphabet",
+ "doc_type": "transcript",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "Alphabet Q3 CY26: Cloud revenue +103% to $30.7B with margin 36.2%, but capex $51.4B, FCF -$9.1B and $561B backlog; supply is tight, with third-party capacity bridging and TPU system sales adding inventory.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "we could obviously serve a lot more demand with capacity, but we are managing all of these parameters and growth carefully."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Our full year 2026 CapEx guidance range of $195 billion to $205 billion remain unchanged."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex guide held at $195-205B; 2027 to rise",
+    "quote": "We continue to expect our CapEx to increase significantly in 2027",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory $2.4B → $13.3B for TPU builds",
+    "quote": "Inventory Balance -- $13.3 billion, up from $2.4 billion at year-end 2025 due to the buildup for TPU system sales.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Cloud backlog $561B; ~55% in 24 months",
+    "quote": "Google Cloud's backlog was $561 billion in the third quarter",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Cloud margin 23.7% → 36.2%",
+    "quote": "Operating margin increased from 23.7% in the third quarter last year to 36.2%.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Cloud margin headwind from 3P compute",
+    "quote": "We expect margin headwinds in the near term as we utilize this capacity.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year 2026 CapEx",
+    "value": "$195B to $205B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Our full year 2026 CapEx guidance range of $195 billion to $205 billion remain unchanged."
+   },
+   {
+    "metric": "Search growth in Q4",
+    "value": "Pressured by lapping ~3 pts of acceleration plus FX",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we expect to see that continue in Q4, a couple of points of lapping that growth acceleration"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Oracle",
+    "relation": "partner"
+   },
+   {
+    "name": "Crux AI",
+    "relation": "partner"
+   },
+   {
+    "name": "Anthropic",
+    "relation": "customer"
+   },
+   {
+    "name": "Apple",
+    "relation": "customer"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "supplier"
+   },
+   {
+    "name": "Broadcom",
+    "relation": "partner"
+   },
+   {
+    "name": "Meta",
+    "relation": "partner"
+   },
+   {
+    "name": "Amazon",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Agentic AI in IT services",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "FCF negative $9.1B in quarter",
+    "quote": "We had negative free cash flow of $9.1 billion in the third quarter"
+   },
+   {
+    "label": "Future purchase commitments $924B",
+    "quote": "we had future purchase commitments of $924 billion"
+   },
+   {
+    "label": "Search decel with AI Mode monetisation lag",
+    "quote": "the strong growth in AI Mode queries had an impact because of the lower monetization we were seeing in AI Mode"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 5,
+   "margin": 1,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "TPU system margins",
+    "quote": "we don't break out margins for individual products or infrastructure components."
+   },
+   {
+    "topic": "Cloud growth ex-TPU sales",
+    "quote": "Cloud revenue growth, excluding the impact of TPU system sales was again very, very strong."
+   },
+   {
+    "topic": "Compute allocation between internal and external",
+    "quote": "I would broadly think of all of this as a long-range planning process, not a short-term allocation exercise."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

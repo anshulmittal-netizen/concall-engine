@@ -1,0 +1,153 @@
+{
+ "doc_id": "GL-L-3872f17f183f",
+ "market": "GL",
+ "company_id": "LYB",
+ "name": "LyondellBasell",
+ "doc_type": "transcript",
+ "date": "2026-10-30",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Record I&D EBITDA of $795M and 100% FCF conversion offset weaker O&P; Q4 guided lower on Europe (60% rates) and I&D (75%), with no new capacity signalled and capex held near $303M.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Supply exit",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 85,
+   "quote": "the fourth quarter operating rates across the segment are projected to be approximately 85% of nameplate capacity"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Our capital expenditures in our operations were $303 million."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "US PE up $0.25/lb YTD",
+    "quote": "Year-to-date pricing up $0.25 per pound due to stronger domestic and export demand.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Global inventories below pre-conflict",
+    "quote": "global inventories remain below pre-conflict levels",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "guidance",
+    "label": "Europe O&P rates 65% to 60%",
+    "quote": "targeting operating rates of approximately 60% in the fourth quarter, slightly below the approximate 65% in the third quarter",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "I&D rates 85% to 75% in Q4",
+    "quote": "we are targeting operating rates of approximately 75% in the fourth quarter compared with approximately 85% in the third quarter",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "O&P Americas operating rate Q4",
+    "value": "~85%",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "the fourth quarter operating rates across the segment are projected to be approximately 85% of nameplate capacity"
+   },
+   {
+    "metric": "O&P EAI operating rate Q4",
+    "value": "~60%",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "targeting operating rates of approximately 60% in the fourth quarter"
+   },
+   {
+    "metric": "I&D operating rate Q4",
+    "value": "~75%",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we are targeting operating rates of approximately 75% in the fourth quarter"
+   },
+   {
+    "metric": "Houston refinery sale cash flow uplift",
+    "value": "$50-100M annually",
+    "change": "new",
+    "horizon": "post-close",
+    "quote": "improving our cash flow by approximately $50 million to $100 million annually"
+   },
+   {
+    "metric": "APS full-year EBITDA",
+    "value": "meaningful improvement vs 2025",
+    "change": "new",
+    "horizon": "FY 2026",
+    "quote": "we expect to see a meaningful improvement in full year EBITDA compared to 2025"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Valero",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Interest-rate relief",
+   "Tariffs & trade policy",
+   "Pharma CDMO / outsourcing",
+   "Grid capex & transformers",
+   "Data-centre power & cooling"
+  ],
+  "red_flags": [
+   {
+    "label": "Europe margins compressing, rates cut",
+    "quote": "significantly greater pressure across European markets"
+   },
+   {
+    "label": "Q1 2027 working capital outflow",
+    "quote": "Q1 is the quarter where traditionally we consume most of our working capital"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 2,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Dividend vs buyback allocation",
+    "quote": "Investment grade, very important, making sure net leverage comes down"
+   },
+   {
+    "topic": "MoReTec-2 timing",
+    "quote": "we currently are more assuming that MoReTec-2"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

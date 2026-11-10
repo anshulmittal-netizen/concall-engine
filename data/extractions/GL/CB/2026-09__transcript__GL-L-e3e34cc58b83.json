@@ -1,0 +1,129 @@
+{
+ "doc_id": "GL-L-e3e34cc58b83",
+ "market": "GL",
+ "company_id": "CB",
+ "name": "Chubb",
+ "doc_type": "transcript",
+ "date": "2026-10-21",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Insurance",
+  "thesis": "Chubb's P&C ex-CAT combined ratio held at 81.8% with record investment income, but North America Commercial premiums fell 2.7% as management non-renewed underpriced property and financial lines and warned of \"hungry and extremely naive capacity\" in casualty.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Supply discipline",
+   "Competitive capex",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": -2,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "NA property pricing down 4.2%",
+    "quote": "Gross premium pricing in North America for commercial property was down 4.2%.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "structure",
+    "label": "Alternative capital flooding casualty",
+    "quote": "There is a lot of hungry and extremely naive capacity available.",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "supply",
+    "label": "Non-renewals of underpriced property and financial lines",
+    "quote": "In the quarter, we again shed more property and financial lines exposure, which affected growth.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Shared/layered property pricing down 11%",
+    "quote": "property pricing was down 11% in shared and layered major and specialty",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Core operating effective tax rate FY",
+    "value": "19.5%-20%",
+    "change": "held",
+    "quote": "We continue to expect our core operating effective tax rate for the full year to be in the range of 19.5%-20%."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "KKR",
+    "relation": "partner"
+   },
+   {
+    "name": "Aon",
+    "relation": "partner"
+   },
+   {
+    "name": "USI Insurance Services",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Interest-rate relief",
+   "Data-centre power & cooling"
+  ],
+  "red_flags": [
+   {
+    "label": "Casualty pricing lagging loss cost",
+    "quote": "pricing in numerous areas is failing to keep pace with loss costs, which while steady, continue to well outpace general inflation."
+   },
+   {
+    "label": "Management refuses to quantify NA Commercial glide path",
+    "quote": "Nice try, Tracy. I gave as much as I am going to give on that."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "NA Commercial glide path / underwriting finish line",
+    "quote": "Nice try, Tracy. I gave as much as I am going to give on that."
+   },
+   {
+    "topic": "NA Commercial margin trajectory",
+    "quote": "I do not give guidance on margins."
+   },
+   {
+    "topic": "Adjusted NII outlook",
+    "quote": "we're not providing specific guidance."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

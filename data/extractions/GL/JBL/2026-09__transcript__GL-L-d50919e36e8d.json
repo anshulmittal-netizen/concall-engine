@@ -1,0 +1,171 @@
+{
+ "doc_id": "GL-L-d50919e36e8d",
+ "market": "GL",
+ "company_id": "JBL",
+ "name": "Jabil",
+ "doc_type": "transcript",
+ "date": "2026-10-01",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q4 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electronics manufacturing (EMS)",
+  "thesis": "Jabil guides FY27 revenue to $44.5B (+24%) and core EPS to $17.55 (+34%) on AI revenue of $22.1B, with net capex held at 1.5-2% of revenue and net inventory days still above target at 64.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "we're beginning to see our capacity investments drive growth",
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we continue to expect net capital expenditures of 1.5% to 2% of revenue"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 core EPS $17.55 (+34%)",
+    "quote": "core diluted earnings per share of $17.55, up about 34%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "AI revenue $14.4B → $22.1B",
+    "quote": "we expect that to grow to approximately $22.1 billion, up 54%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Net inventory days 64, above 55-60 target",
+    "quote": "reducing net inventory days by approximately 4 days sequentially to 64",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Capacity +4M sq ft tied to booked orders",
+    "quote": "the capacity we're adding is tied to programs already booked",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 total revenue",
+    "value": "$44.5B (+24%)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect fiscal 2027 revenue of approximately $44.5 billion, up about 24%"
+   },
+   {
+    "metric": "FY27 core EPS",
+    "value": "$17.55 (+34%)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "core diluted earnings per share of $17.55, up about 34%"
+   },
+   {
+    "metric": "FY27 core operating margin",
+    "value": "6.1%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect core operating margin of 6.1%, an improvement of 30 basis points"
+   },
+   {
+    "metric": "FY27 AI-related revenue",
+    "value": "$22.1B (+54%)",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "In fiscal 2027, we expect that to grow to approximately $22.1 billion, up 54%"
+   },
+   {
+    "metric": "FY27 adjusted FCF",
+    "value": "~$1.6B",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we expect that earnings growth to support another year of strong adjusted free cash flow generation of approximately $1.6 billion"
+   },
+   {
+    "metric": "Q1 FY27 core EPS",
+    "value": "$3.80-$4.20",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "Core diluted earnings per share is estimated to be in the range of $3.80 to $4.20."
+   },
+   {
+    "metric": "Net capex",
+    "value": "1.5%-2% of revenue",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we continue to expect net capital expenditures of 1.5% to 2% of revenue"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Symbotic",
+    "relation": "customer"
+   },
+   {
+    "name": "Adani Group",
+    "relation": "partner"
+   },
+   {
+    "name": "Hanley Energy",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Semiconductors & OSAT",
+   "Defence indigenisation",
+   "Capex cycle revival (private)",
+   "Nearshoring / reshoring (US)",
+   "Pharma CDMO / outsourcing",
+   "Electronics manufacturing (EMS/PLI)"
+  ],
+  "red_flags": [
+   {
+    "label": "Net inventory days above target range",
+    "quote": "While net inventory days remain above our target range of 55 to 60 days"
+   },
+   {
+    "label": "Memory supply tightening",
+    "quote": "tightening supply across many of the diversified end markets that we serve"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 3,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Physical AI revenue contribution",
+    "quote": "at this stage, for FY '27, we haven't built in that much from a physical AI perspective"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

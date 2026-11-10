@@ -1,0 +1,80 @@
+{
+ "doc_id": "GL-L-93cbe3bf137a",
+ "market": "GL",
+ "company_id": "ALLY",
+ "name": "Ally Financial",
+ "doc_type": "release",
+ "date": "2026-10-20",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Ally's Q3 CY26 earnings rose on auto originations up 10% to $12.9B and NIM ex-OID of 3.66%, but provisions jumped 27% to $529M on asset growth, and no capacity or supply discipline was discussed.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Auto originations up 10% YoY",
+    "quote": "$12.9 billion of consumer auto originations, up 10% year over year | Record 4.8 million consumer auto applications, up 20% year over year",
+    "highlight": "Record 4.8 million consumer auto applications",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Retail auto NCO 189 bps, +1 bp YoY",
+    "quote": "Retail auto net charge-offs of 189 bps were up 1 bps year over year",
+    "highlight": "Retail auto net charge-offs of 189 bps",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Provision up 27% YoY on asset growth",
+    "quote": "Provision for credit losses increased $114 million year over year to $529 million, primarily due to CECL reserve builds associated with asset growth during the quarter."
+   },
+   {
+    "label": "Adjusted TBVPS down 3% QoQ",
+    "quote": "Adjusted Tangible Book Value per Share $41.00 $42.12 $39.19 (3)% 5%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

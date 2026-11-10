@@ -1,0 +1,190 @@
+{
+ "doc_id": "GL-L-0864d56a6805",
+ "market": "GL",
+ "company_id": "APTV",
+ "name": "Aptiv",
+ "doc_type": "transcript",
+ "date": "2026-11-03",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Aptiv's Q3 revenue grew 2% with nonauto up 11-16%, but 2027 is framed as flat ex-recoveries, with a $700M memory-driven recovery that dilutes margin and ~$500M inventory drag on 2026 FCF.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "2027 semiconductor inflation ~$700M",
+    "quote": "Currently, we are estimating approximately $700 million in inflation related to semiconductor prices primarily memory",
+    "highlight": "approximately $700 million in inflation",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "2026 FCF inventory drag raised to $500M",
+    "quote": "The initial $450 million drag on free cash flow associated with spin related costs and supply chain resilience is now $500 million.",
+    "highlight": "now $500 million",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "2027 auto growth flat or down, 2 German OEMs",
+    "quote": "Third party forecasts as of September are calling for flat vehicle production globally",
+    "highlight": "calling for flat vehicle production globally",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "novelty",
+    "label": "Portfolio review; update in Q1 27",
+    "quote": "we are evaluating the composition of our business and product portfolio, and we will provide an update in the first quarter 27.",
+    "highlight": "evaluating the composition of our business and product portfolio",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 revenue",
+    "value": "$12.65B-$12.75B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "narrowing the range while maintaining the midpoint of the previous outlook"
+   },
+   {
+    "metric": "FY26 adjusted EPS",
+    "value": "$5.60-$5.80",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "And for the full year, we are maintaining our income statement guidance from last quarter."
+   },
+   {
+    "metric": "FY26 FCF midpoint",
+    "value": "$650M",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "lowering the midpoint by $25 million to $650 million"
+   },
+   {
+    "metric": "Share repurchase",
+    "value": "at least $650M by year end",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "plan to repurchase at least $650 million by year end"
+   },
+   {
+    "metric": "Q4 revenue",
+    "value": "$3.2B midpoint, 3% adjusted growth",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we forecast revenue of $3.2 billion at the midpoint representing adjusted growth of 3%"
+   },
+   {
+    "metric": "Q4 adjusted EBITDA margin",
+    "value": "19.4% midpoint",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "We expect adjusted EBITDA of $612 million and margin of 19.4% at the midpoint."
+   },
+   {
+    "metric": "2027 outlook",
+    "value": "flat to slightly positive ex-recoveries; ~$700M semiconductor recovery; intelligent systems headwind $200-300M",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "we expect it will be a flat to slightly positive year driven by the combined impact of revenues ex recoveries"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 revenue",
+    "outcome": "met",
+    "quote": "narrowing the range while maintaining the midpoint of the previous outlook"
+   },
+   {
+    "metric": "FY26 adjusted EPS",
+    "outcome": "met",
+    "quote": "we are maintaining our income statement guidance from last quarter"
+   },
+   {
+    "metric": "FY26 FCF",
+    "outcome": "missed",
+    "quote": "lowering the midpoint by $25 million to $650 million"
+   }
+  ],
+  "entities": [
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "Samsung",
+    "relation": "partner"
+   },
+   {
+    "name": "StradVision",
+    "relation": "supplier"
+   },
+   {
+    "name": "Wind River",
+    "relation": "partner"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "FCF guide cut; $500M inventory build",
+    "quote": "The initial $450 million drag on free cash flow associated with spin related costs and supply chain resilience is now $500 million."
+   },
+   {
+    "label": "Adj EBITDA margin down 140bp YoY",
+    "quote": "adjusted EBITDA margin decreased 140 basis points due to product mix, including lower software revenues"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 4,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "2027 growth bridge and China export revenue",
+    "quote": "So I would say at this point in time, we are not that precise."
+   },
+   {
+    "topic": "2027 working capital and CapEx",
+    "quote": "Will not be giving a cash number here"
+   }
+  ],
+  "hedge_index": 0.5,
+  "themes": []
+ }
+}

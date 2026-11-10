@@ -1,0 +1,194 @@
+{
+ "doc_id": "GL-L-abbacbb9f83a",
+ "market": "GL",
+ "company_id": "VZ",
+ "name": "Verizon",
+ "doc_type": "transcript",
+ "date": "2026-10-26",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Verizon's Q3 beat rests on subsidy cuts and cost-out, not supply discipline: postpaid phone net adds of 406,000 and a record 40.2% EBITDA margin, with FY net-add guidance raised to 1.1–1.2 million.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "We are on track to meet our full-year guide of $16 billion-$16.5 billion, inclusive of success-based capital related to AI Connect."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Postpaid phone net adds guide raised",
+    "quote": "we are raising our annual guidance for postpaid phone net adds, adjusted EPS, and free cash flow",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Mobility & broadband service rev growth 2.9% → ~4% Q4",
+    "quote": "we expect that Q4 mobility and broadband service revenue growth will accelerate to approximately 4%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Cost of acquisition down 41% YoY",
+    "quote": "our cost of acquisition in the third quarter declined 41% year-over-year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Equipment revenue down 9%, upgrades down 20%+",
+    "quote": "mobile device upgrade volumes declined more than 20% in the period",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Postpaid phone net adds (FY26)",
+    "value": "1.1M-1.2M",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We now expect our postpaid phone net adds for 2026 to be 1.1 million-1.2 million"
+   },
+   {
+    "metric": "Adjusted EPS growth (FY26)",
+    "value": "7%-7.5%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect our 2026 full-year adjusted EPS growth to be 7%-7.5%, up from our previous range of 6%-7%"
+   },
+   {
+    "metric": "Free cash flow growth (FY26)",
+    "value": "approaching 12%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we are raising our full-year guidance for free cash flow growth to approach 12%, up from our previous guidance of 9%-10%"
+   },
+   {
+    "metric": "Capex (FY26)",
+    "value": "$16.0B-$16.5B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We are on track to meet our full-year guide of $16 billion-$16.5 billion"
+   },
+   {
+    "metric": "Mobility & broadband service revenue growth",
+    "value": "upper half of 2.5%-3%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect mobility and broadband service revenue growth to be in the upper half of our 2.5%-3% range"
+   },
+   {
+    "metric": "Fiber passings",
+    "value": "over 32 million by YE26",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we continue to expect to end the year with over 32 million fiber passings"
+   },
+   {
+    "metric": "Share repurchases (FY26)",
+    "value": "up to $4.5B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We continue to expect to repurchase up to $4.5 billion for the full year."
+   },
+   {
+    "metric": "Frontier run-rate opex synergies",
+    "value": "over $1B by 2028",
+    "change": "held",
+    "horizon": "2028",
+    "quote": "on track to deliver over $1 billion in run rate operating cost synergies by 2028"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Fiber passings",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Mobility & broadband service revenue growth",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Amazon Web Services",
+    "relation": "customer"
+   },
+   {
+    "name": "Google",
+    "relation": "customer"
+   },
+   {
+    "name": "Corning",
+    "relation": "supplier"
+   },
+   {
+    "name": "SpaceX",
+    "relation": "competitor"
+   },
+   {
+    "name": "Starlink",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "AI infrastructure fiber",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Equipment revenue down 9%; upgrade volumes down 20%+",
+    "quote": "mobile device upgrade volumes declined more than 20% in the period"
+   },
+   {
+    "label": "Net debt/EBITDA still 2.3x; target reached only in 2027",
+    "quote": "We remain on track to reach our target leverage range during the 2027 timeframe."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 3,
+   "margin": 0,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Pricing power / price increases",
+    "quote": "there's potentially room for us to adjust that price-to-value equation by increasing pricing as well"
+   },
+   {
+    "topic": "AI Connect deal economics and margins",
+    "quote": "the deals are very customer specific, so no two deals are alike"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

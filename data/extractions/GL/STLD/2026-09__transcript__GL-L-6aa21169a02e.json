@@ -1,0 +1,152 @@
+{
+ "doc_id": "GL-L-6aa21169a02e",
+ "market": "GL",
+ "company_id": "STLD",
+ "name": "Steel Dynamics",
+ "doc_type": "transcript",
+ "date": "2026-10-20",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Record 3.8Mt steel shipments at 92% utilisation vs 80% industry, realized price up $102/t and flat-rolled spreads above $230/t; aluminum mill ramp slipped, with H2 EBIT-positive now \"not likely\".",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply discipline",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 2,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 92,
+   "quote": "our steel mills operated at 92%"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Capital investment -- $150 million in the third quarter, with an additional $150 million estimated for the fourth quarter."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Mill utilisation 92% vs industry 80%",
+    "quote": "our steel mills operated at 92%",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Realised steel price up $102/t",
+    "quote": "average selling prices per ton increased $102",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Supply chain inventories very lean",
+    "quote": "inventory levels throughout the supply chain remain very lean and order lead times are elevated",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Q4 outages remove 1-1.2Mt",
+    "quote": "Q4 outages probably is going to take 1 million, 1.2 million tons out of the marketplace",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Aluminum H2 EBIT positive 'not likely'",
+    "quote": "for the second half of the year, in totality, given the experience that we had in the third quarter, I don't think it's likely",
+    "direction": -1,
+    "confidence": 0.8
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Aluminum hot strip mill utilisation",
+    "value": "90% by end of year",
+    "change": "held",
+    "quote": "we still believe we can achieve 90% by the end of the year"
+   },
+   {
+    "metric": "Aluminum through-cycle EBITDA",
+    "value": "$650 million to $700 million",
+    "change": "held",
+    "quote": "through-cycle EBITDA expectation for past-normalized market conditions remains at $650 million to $700 million"
+   },
+   {
+    "metric": "CAPEX next year",
+    "value": "600-plus million",
+    "change": "new",
+    "quote": "Right now, for CapEx next year, it might be in the range of $600-plus million, but that needs to be refined."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Aluminum EBIT positive in H2",
+    "outcome": "missed",
+    "quote": "For the second half of the year, in totality, given the experience that we had in the third quarter, I don't think it's likely"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Essar",
+    "relation": "competitor"
+   },
+   {
+    "name": "Novelis",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Defence indigenisation",
+   "Nearshoring / reshoring (US)",
+   "Data-centre power & cooling",
+   "Anti-dumping protection",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Aluminum ramp slipped; Q3 yield losses and H2 EBIT target missed",
+    "quote": "for the second half of the year, in totality, given the experience that we had in the third quarter, I don't think it's likely"
+   },
+   {
+    "label": "Management dismissive of Essar new-mill reports",
+    "quote": "I think it's an incredulous almost fantasy"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 4,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Fabrication backlog pricing quantification",
+    "quote": "It would be possible, Katja, but then the commercial team would fire me. So I can't."
+   },
+   {
+    "topic": "Analyst estimates for aluminum",
+    "quote": "we won't comment on where analyst estimates are for any segment or for the company as a whole"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

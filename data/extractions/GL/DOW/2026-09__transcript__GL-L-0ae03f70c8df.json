@@ -1,0 +1,178 @@
+{
+ "doc_id": "GL-L-0ae03f70c8df",
+ "market": "GL",
+ "company_id": "DOW",
+ "name": "Dow",
+ "doc_type": "transcript",
+ "date": "2026-10-22",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Dow's Q3 EBITDA of $1.553B and Q4 guide of about $1.5B rest on PE price hikes (7c Oct, 5c Nov) and self-help, while Europe closures and Middle East constraints remain; Q4 margin uplift is only 2c/lb.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply exit",
+   "Pricing power",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "operating rates today are in the low eighties"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "Management said about 10% of industry ethylene capacity needs to exit to return to mid-cycle; 5-6% already announced, including Dow's Europe cracker; around 8% more speculated, mostly high-cost regions.",
+   "quote": "you needed about 10% of capacity to come out in order to materially get back to mid cycle operating rates"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Industry capacity exits 5-6% announced",
+    "quote": "5 to 6% of that has already been announced, and that includes our cracker in Europe",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "PE operating rates low eighties",
+    "quote": "operating rates today are in the low eighties",
+    "direction": 0,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "PE hikes 7c Oct, 5c Nov",
+    "quote": "7 cents per pound in October and then another 5 cents in November",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "US PE inventory down over 400M lbs",
+    "quote": "Inventory declined by over 400 million pounds",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 EBITDA ~ $1.5B, flat sequentially",
+    "quote": "For the fourth quarter, we expect EBITDA of approximately $1.5 billion",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q4 2026 operating EBITDA",
+    "value": "approximately $1.5 billion",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "For the fourth quarter, we expect EBITDA of approximately $1.5 billion"
+   },
+   {
+    "metric": "Transform to Outperform benefits 2026",
+    "value": "approximately $700 million",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we expect to deliver approximately $700 million this year which is higher than our initial projections"
+   },
+   {
+    "metric": "Self-help net benefits 2027",
+    "value": "$1.3 billion",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "our expectation is that our tailwind purely on self help deliver about $1.3 billion in 2027"
+   },
+   {
+    "metric": "Working capital release H2 2026",
+    "value": "more than $500 million",
+    "change": "held",
+    "horizon": "H2 2026",
+    "quote": "a more than $500 million cash release in the second half of this year"
+   },
+   {
+    "metric": "Cash conversion 2027",
+    "value": "70% to 80%",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "gonna give us a cash conversion rate that is gonna be in the range of anywhere from, let's say, 70% to 80%"
+   },
+   {
+    "metric": "Debt retirement 2026",
+    "value": "approximately $1.4 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "expected to retire approximately $1.4 billion of debt"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Aramco",
+    "relation": "partner"
+   },
+   {
+    "name": "Equate",
+    "relation": "partner"
+   },
+   {
+    "name": "Sadara",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pricing power",
+   "Data-centre power & cooling",
+   "Auto EV transition",
+   "Housing & real-estate cycle",
+   "Middle East supply disruption"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 guide relies on price hikes and China recovery",
+    "quote": "Spot prices are also on the rise. So we expect that we are gonna end the fourth quarter with momentum going into 2027."
+   },
+   {
+    "label": "Sadara funding and Aramco negotiation unresolved",
+    "quote": "we have established a financial boundary around Sadara. And we are working diligently to identify the best long term solution."
+   },
+   {
+    "label": "Europe energy costs and Rhine disruption",
+    "quote": "In Europe, persistently high energy costs continue to challenge industry economics."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 3,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "2027 EBITDA quantification",
+    "quote": "And so, you know, I am not going to call a 2027 number here."
+   },
+   {
+    "topic": "Segment split of 2027 self-help benefit",
+    "quote": "As we get into the early part of next year, we will have more details to share around the breakdown of that"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

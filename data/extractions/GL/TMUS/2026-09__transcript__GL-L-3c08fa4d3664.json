@@ -1,0 +1,200 @@
+{
+ "doc_id": "GL-L-3c08fa4d3664",
+ "market": "GL",
+ "company_id": "TMUS",
+ "name": "T-Mobile US",
+ "doc_type": "transcript",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Postpaid account growth and ARPA raised, with FY26 core EBITDA $37.35–37.45B and FCF $18.7–18.8B; but Q4 churn seasonality and Q3 inventory slippage flag near-term noise, and capex held at ~$10B.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Customer stickiness",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Our expectation for full year 2026 cash CapEx remains unchanged at approximately $10 billion."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Postpaid ARPA growth 2.5–3% → ~3.5%",
+    "quote": "we now expect full year postpaid ARPA growth of approximately 3.5%, up from our previous expectation of 2.5% to 3%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Core EBITDA up $100M at midpoint",
+    "quote": "Core adjusted EBITDA is now expected to be between $37.35 billion and $37.45 billion for the full year, up $100 million at the midpoint",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Q3 inventory constraints shift EBITDA to Q4",
+    "quote": "there's frankly also been some Q3 inventory constraints as well that have shifted some things from Q3 into Q4",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q4 churn seasonally higher",
+    "quote": "Q4 tends to be a higher churn quarter than Q3 because of the holiday season",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Postpaid net account additions FY26",
+    "value": "~1.0 million",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we now expect approximately 1 million account net additions for the year once again"
+   },
+   {
+    "metric": "Service revenue FY26",
+    "value": "~$76.8B (8% growth)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we now expect full year service revenues of approximately $76.8 billion, representing 8% growth"
+   },
+   {
+    "metric": "Postpaid ARPA growth FY26",
+    "value": "~3.5%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect full year postpaid ARPA growth of approximately 3.5%, up from our previous expectation of 2.5% to 3%"
+   },
+   {
+    "metric": "Core adjusted EBITDA FY26",
+    "value": "$37.35B–$37.45B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Core adjusted EBITDA is now expected to be between $37.35 billion and $37.45 billion for the full year"
+   },
+   {
+    "metric": "Adjusted FCF FY26",
+    "value": "$18.7B–$18.8B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect adjusted free cash flow to be between $18.7 billion and $18.8 billion"
+   },
+   {
+    "metric": "Cash capex FY26",
+    "value": "~$10.0B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Our expectation for full year 2026 cash CapEx remains unchanged at approximately $10 billion."
+   },
+   {
+    "metric": "Q4 postpaid organic service revenue growth",
+    "value": "~7% YoY",
+    "change": "new",
+    "horizon": "Q4 FY26",
+    "quote": "Q4 postpaid organic service revenue growth now expected to be approximately 7% year-over-year"
+   },
+   {
+    "metric": "Effective tax rate FY26",
+    "value": "24%–25%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Effective Tax Rate Guidance -- 24% to 25%, decreased from the prior guidance of 25% to 26%."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "AWS",
+    "relation": "partner"
+   },
+   {
+    "name": "Ericsson",
+    "relation": "partner"
+   },
+   {
+    "name": "Nokia",
+    "relation": "partner"
+   },
+   {
+    "name": "SpaceX",
+    "relation": "peer"
+   },
+   {
+    "name": "Verizon",
+    "relation": "competitor"
+   },
+   {
+    "name": "AT&T",
+    "relation": "competitor"
+   },
+   {
+    "name": "Boost",
+    "relation": "competitor"
+   },
+   {
+    "name": "EchoStar",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pricing power",
+   "Capex cycle revival (private)",
+   "Spectrum auctions",
+   "Premiumisation in consumption",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 churn seasonality and rate-plan churn drag",
+    "quote": "we do anticipate a little bit of impact in Q4"
+   },
+   {
+    "label": "Management avoids postpaid phone churn disclosure",
+    "quote": "we didn't give a postpaid phone churn number"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 4,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Postpaid phone churn",
+    "quote": "we didn't give a postpaid phone churn number"
+   },
+   {
+    "topic": "2027 guidance",
+    "quote": "we're going to update 2027 guidance when we get to the Q4 call"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

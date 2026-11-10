@@ -1,0 +1,154 @@
+{
+ "doc_id": "GL-L-27765c6c5614",
+ "market": "GL",
+ "company_id": "HCA",
+ "name": "HCA Healthcare",
+ "doc_type": "transcript",
+ "date": "2026-10-27",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Volumes grew 3% same-facility equivalent admissions (22nd straight quarter), but exchange-to-uninsured shift cost about $400M EBITDA; 2027 EBITDA guided roughly flat on a $550–650M Medicaid supplemental payment headwind.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 75,
+   "quote": "We are running the company at an all time high when it comes to occupancy levels, pushing 75% on our inpatient platform."
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "quote": "Capital expenditures totaled approximately $1.36 billion in the quarter."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Inpatient occupancy near 75%",
+    "quote": "pushing 75% on our inpatient platform",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2027 EBITDA roughly flat vs 2026",
+    "quote": "we anticipate our earnings in 2027 will be generally consistent with 2026",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Exchange admissions down 19% YoY",
+    "quote": "Exchange equivalent admissions declined approximately 19%.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Uninsured share 10.5% vs 8.5%",
+    "quote": "Our uninsured volume in third quarter 26 represented approximately 10.5% of total equivalent admissions",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 revenue",
+    "value": "upper half of $77B-$79.5B",
+    "change": "held",
+    "quote": "expected to be in the upper half of the $77 billion to $79.5 billion range"
+   },
+   {
+    "metric": "FY2026 adjusted EBITDA",
+    "value": "upper half of $15.4B-$16.1B",
+    "change": "held",
+    "quote": "anticipated in the upper half of the $15.4 billion to $16.1 billion range"
+   },
+   {
+    "metric": "FY2026 Medicaid supplemental payment net benefit",
+    "value": "$600M-$800M",
+    "change": "raised",
+    "quote": "We now expect the incremental net benefit from Medicaid supplemental payment programs to be between $600 million and $800 million. For the full year 2026."
+   },
+   {
+    "metric": "2027 volume growth",
+    "value": "2%-3%",
+    "change": "new",
+    "quote": "we expect demand for services to remain strong with volume growth forecasted to be 2% to 3%"
+   },
+   {
+    "metric": "2027 adjusted EBITDA",
+    "value": "generally consistent with 2026",
+    "change": "new",
+    "quote": "we anticipate our earnings in 2027 will be generally consistent with 2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY2026 adjusted EBITDA range",
+    "outcome": "met",
+    "quote": "we are reaffirming our estimated guidance ranges for 2026"
+   },
+   {
+    "metric": "Exchange volume decline",
+    "outcome": "missed",
+    "quote": "The third quarter would be 15% to 16% decline. Ended up at about 19% decline"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Parallon",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Medicaid supplemental payments",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Exchange-to-uninsured shift; uninsured 10.5% of admissions",
+    "quote": "Our uninsured volume in third quarter 26 represented approximately 10.5% of total equivalent admissions"
+   },
+   {
+    "label": "Surgical volumes declining",
+    "quote": "1.4% decline in same facility inpatient surgeries and 3.7% decline in same facility outpatient surgeries"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 5,
+   "margin": 4,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "2027 exchange headwind magnitude",
+    "quote": "we are not quite ready to size it in terms of earnings impact"
+   },
+   {
+    "topic": "340B benefit sizing",
+    "quote": "We are not sizing that publicly at this point."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "doc_id": "GL-L-067157e10b48",
+ "market": "GL",
+ "company_id": "FSLR",
+ "name": "First Solar",
+ "doc_type": "release",
+ "date": "2026-10-29",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.67,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Q3 sales fell 23% on lower module volume, yet Adjusted EBITDA rose 11% to $744M and FY26 volume guidance was cut to 16.0–17.0 GW from 17.0–18.2 GW, with capex trimmed to $0.6–0.8B.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Supply discipline",
+   "Capital allocation shift",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Volume guidance cut to 16.0–17.0 GW",
+    "quote": "Volume Sold 17.0GW to 18.2GW 16.0GW to 17.0GW",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Net sales guidance cut to $4.6–4.9B",
+    "quote": "Net Sales $4.9B to $5.2B $4.6B to $4.9B",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Volume sold",
+    "value": "16.0GW to 17.0GW",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "Volume Sold 17.0GW to 18.2GW 16.0GW to 17.0GW"
+   },
+   {
+    "metric": "Net sales",
+    "value": "$4.6B to $4.9B",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "Net Sales $4.9B to $5.2B $4.6B to $4.9B"
+   },
+   {
+    "metric": "Net cash balance",
+    "value": "$1.7B to $2.3B",
+    "change": "held",
+    "horizon": "Dec 31 2026",
+    "quote": "Net Cash Balance (4) $1.7B to $2.3B Unchanged"
+   },
+   {
+    "metric": "Gross profit",
+    "value": "$2.4B to $2.6B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Gross Profit (1) $2.4B to $2.6B Unchanged"
+   },
+   {
+    "metric": "Q4 module sales",
+    "value": "4.3 GW to 5.3 GW",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we anticipate our module sales to be between 4.3 GW and 5.3 GW"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Volume sold",
+    "outcome": "missed",
+    "quote": "Volume Sold 17.0GW to 18.2GW 16.0GW to 17.0GW"
+   },
+   {
+    "metric": "Net sales",
+    "outcome": "missed",
+    "quote": "Net Sales $4.9B to $5.2B $4.6B to $4.9B"
+   },
+   {
+    "metric": "Net cash balance",
+    "outcome": "met",
+    "quote": "Net Cash Balance (4) $1.7B to $2.3B Unchanged"
+   },
+   {
+    "metric": "Gross profit",
+    "outcome": "met",
+    "quote": "Gross Profit (1) $2.4B to $2.6B Unchanged"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Tariffs & trade policy",
+   "Renewables & storage",
+   "Nearshoring / reshoring (US)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Net cash down $2.4B to $1.5B; operating cash flow negative $403M YTD",
+    "quote": "Net cash balance decreased to $1.5 billion as of September 30, 2026 from $2.4 billion as of December 31, 2025"
+   },
+   {
+    "label": "Government grants receivable up to $1.59B LT from $0.13B",
+    "quote": "Government grants receivable 1,587,950 125,607"
+   },
+   {
+    "label": "Adjusted EBITDA excludes 45X credits and underutilization; EBITDA reliant on 45X",
+    "quote": "Assumes $2.07 billion to $2.19 billion of Section 45X tax credits"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

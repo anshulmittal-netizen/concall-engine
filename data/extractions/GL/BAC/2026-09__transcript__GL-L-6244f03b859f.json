@@ -1,0 +1,137 @@
+{
+ "doc_id": "GL-L-6244f03b859f",
+ "market": "GL",
+ "company_id": "BAC",
+ "name": "Bank of America",
+ "doc_type": "transcript",
+ "date": "2026-10-14",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Core banking franchise grew: NII $16.6B (+8% YoY) with yield 2.16% and 2026 NII guided ~8%, 2027 8%+; markets and IB soft, $1.2B AML settlement charge, CET1 10.9%.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Deleveraging",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "2027 NII growth 8% or more",
+    "quote": "For 2027, we currently expect full-year growth of NII to be 8% or more, higher than 2026",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "NIM 2.16%, up 15bp YoY",
+    "quote": "Net interest yield of 2.16% improved 15 basis points year-over-year",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Commercial loans up 8% YoY",
+    "quote": "Commercial loans increased 8% year-over-year, with growth across every line of business",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "FICC revenue down 17%",
+    "quote": "FICC revenue was $2.5 billion, down 17%.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 NII growth",
+    "value": "~8%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We still expect to hit that full-year revised NII growth guidance of approximately 8%."
+   },
+   {
+    "metric": "2027 NII growth",
+    "value": "8% or more",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "For 2027, we currently expect full-year growth of NII to be 8% or more"
+   },
+   {
+    "metric": "Operating leverage 2027",
+    "value": "200-300bp",
+    "change": "held",
+    "horizon": "2027 / medium term",
+    "quote": "it's not going to change from the 200-300 basis points"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2026 NII growth",
+    "outcome": "met"
+   },
+   {
+    "metric": "Operating leverage 200-300bp",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "JPMorgan",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "$1.2B non-tax-deductible AML/sanctions regulatory settlement charge",
+    "quote": "a non-tax-deductible regulatory settlement charge of $1.2 billion"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 5,
+   "capex": 0,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Core NII ex-markets split",
+    "quote": "we do not guide the two differently and independently for a variety of different reasons"
+   },
+   {
+    "topic": "Buyback and TCE constraint",
+    "quote": "We need to wait for the final rules."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

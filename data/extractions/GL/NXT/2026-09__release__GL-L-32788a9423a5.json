@@ -1,0 +1,134 @@
+{
+ "doc_id": "GL-L-32788a9423a5",
+ "market": "GL",
+ "company_id": "NXT",
+ "name": "Nextracker",
+ "doc_type": "release",
+ "date": "2026-10-28",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Record Q2 FY27 revenue of $1.109B and backlog above $6B, with FY27 revenue guide raised to $4.2–4.45B; but GAAP gross margin fell to 31.1% from 35.9% and ~$99M of each quarter's results rests on 45X credits and tariffs.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 revenue guide raised to $4.2–4.45B",
+    "quote": "Revenue $4.2 to $4.45 billion $4.1 to $4.4 billion",
+    "highlight": "Revenue $4.2 to $4.45 billion",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Backlog above $6B, record bookings",
+    "quote": "Record Bookings Increase Backlog to over $6 Billion",
+    "highlight": "Backlog to over $6 Billion",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "GAAP gross margin 35.9% → 31.1%",
+    "quote": "GAAP Gross Margin 31.1 % 35.9 % 32.4 %",
+    "highlight": "31.1",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Q2 gross profit leans on 45X credits",
+    "quote": "include approximately $99 million, $99 million, and $67 million, respectively, of IRA 45X advanced manufacturing tax credit vendor rebates and tariffs, net.",
+    "highlight": "IRA 45X advanced manufacturing tax credit vendor rebates and tariffs, net",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "$4.2–4.45B",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "Revenue $4.2 to $4.45 billion $4.1 to $4.4 billion"
+   },
+   {
+    "metric": "FY27 adjusted EBITDA",
+    "value": "$890–940M",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "Adjusted EBITDA $890 to $940 million $870 to $930 million"
+   },
+   {
+    "metric": "FY27 adjusted diluted EPS",
+    "value": "$4.61–4.87",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "Adjusted Diluted EPS $4.61 to $4.87 $4.42 to $4.73"
+   },
+   {
+    "metric": "Q3 FY27 revenue growth",
+    "value": "~10% YoY",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "Updated outlook includes Q3 FY27 revenue at approximately 10% year over year growth"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Zimmermann PV-Steel Group",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Gross margin down ~4.8pts QoQ with 45X/tariff reliance",
+    "quote": "GAAP Gross Margin 31.1 % 35.9 % 32.4 %"
+   },
+   {
+    "label": "Receivables and contract assets up sharply",
+    "quote": "Accounts receivable, net of allowance of $2,273 and $2,078, respectively 584,299 417,043"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

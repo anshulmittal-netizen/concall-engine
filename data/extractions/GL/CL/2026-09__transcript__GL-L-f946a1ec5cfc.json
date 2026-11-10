@@ -1,0 +1,133 @@
+{
+ "doc_id": "GL-L-f946a1ec5cfc",
+ "market": "GL",
+ "company_id": "CL",
+ "name": "Colgate-Palmolive",
+ "doc_type": "transcript",
+ "date": "2026-10-30",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "FMCG",
+  "thesis": "Colgate's Q3 organic sales rose 3.6% with 300bp material inflation offset by 290bp productivity; FY gross margin guide raised to up, but management flags headwinds from resins and logistics into 2027.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Supply discipline",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Pricing ~200bp in Q3",
+    "quote": "we generated 220 basis points of pricing, 160 in the second quarter, and 200 more or less in the third quarter",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY gross margin now up",
+    "quote": "we guided for margin to be up on a year-on-year basis, up from roughly flat previously",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Cost inflation ~$300m held",
+    "quote": "I would say roughly, it is still in the same original range of $300± million",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "North America volumes -3.7%",
+    "quote": "North America Organic Sales -- 1.6% decline, as a 2.2% price increase was insufficient to offset a 3.7% decline in volumes.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year net sales growth",
+    "value": "4% to 5%",
+    "change": "new",
+    "quote": "Full-Year Net Sales Guidance -- 4% to 5% growth, representing a narrowing of the previous range of 2% to 6%."
+   },
+   {
+    "metric": "Full-year base business EPS growth",
+    "value": "5% to 7%",
+    "change": "raised",
+    "quote": "Full-Year Base Business EPS Guidance -- 5% to 7% growth, raised from the company's previous mid-single-digit growth expectations."
+   },
+   {
+    "metric": "Full-year gross profit margin",
+    "value": "up year on year",
+    "change": "raised",
+    "quote": "we guided for margin to be up on a year-on-year basis, up from roughly flat previously"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Hill's",
+    "relation": "peer"
+   },
+   {
+    "name": "Hawley & Hazel",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "North America volume decline 3.7%",
+    "quote": "a 2.2% price increase was insufficient to offset a 3.7% decline in volumes"
+   },
+   {
+    "label": "Advertising up to 14.4% of sales",
+    "quote": "$775 million, representing 14.4% of net sales compared to 13.1% in the prior year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 6,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "2027 cost and pricing outlook",
+    "quote": "we won't be sharing guidance on 2027 until the first quarter of next year"
+   },
+   {
+    "topic": "Developed market pricing timing",
+    "quote": "we are not going to necessarily guide to where we are in 2027 with regards to pricing"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

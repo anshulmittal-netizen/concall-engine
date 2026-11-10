@@ -1,0 +1,162 @@
+{
+ "doc_id": "GL-L-4a0fc562e578",
+ "market": "GL",
+ "company_id": "SYF",
+ "name": "Synchrony Financial",
+ "doc_type": "transcript",
+ "date": "2026-10-20",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Synchrony's Q3 shows record purchase volume ($49.7B, +8%) and charge-offs at 4.8%, but FY26 EPS at ~$9.50 high end rests on lower reserve build, with NIM and deposit-beta pressure ahead.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 EPS ~$9.50, high end",
+    "quote": "now expect to deliver approximately $9.50 in diluted earnings per share for the full year the high end of our original expectations.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Deposit betas to exceed past cycle",
+    "quote": "betas will be higher than the pass rate hiking cycle given the competitive dynamics in the fight over deposits you are seeing today",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Operational losses tail through year",
+    "quote": "you do have a tail which has played through the entire year",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Purchase volume +8% to $49.7B",
+    "quote": "purchase volume grew 8% versus last year and reached almost $50 billion.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 diluted EPS",
+    "value": "approximately $9.50",
+    "change": "raised",
+    "quote": "now expect to deliver approximately $9.50 in diluted earnings per share for the full year the high end of our original expectations."
+   },
+   {
+    "metric": "Year-end loan receivables growth",
+    "value": "mid single digits",
+    "change": "held",
+    "horizon": "FY26"
+   },
+   {
+    "metric": "Net charge-offs",
+    "value": "less than 5.5%",
+    "change": "held",
+    "horizon": "FY26"
+   },
+   {
+    "metric": "RSA % of average receivables",
+    "value": "within 4% to 4.5% long-term range",
+    "change": "held",
+    "horizon": "FY26"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 EPS range $9.10-$9.50",
+    "outcome": "met",
+    "quote": "we began the year with the range of $9.10 to $9.50, right"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Walmart",
+    "relation": "partner"
+   },
+   {
+    "name": "Stripe",
+    "relation": "partner"
+   },
+   {
+    "name": "Venmo",
+    "relation": "partner"
+   },
+   {
+    "name": "PayPal",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Amazon",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Interest-rate relief",
+   "Consumer confidence vs spending",
+   "Agentic commerce"
+  ],
+  "red_flags": [
+   {
+    "label": "Deposit beta pressure ahead",
+    "quote": "betas will be higher than the pass rate hiking cycle given the competitive dynamics in the fight over deposits you are seeing today"
+   },
+   {
+    "label": "CET1 down 140 bps YoY",
+    "quote": "Synchrony ended the quarter with a CET1 ratio of 12.9% reflecting a 140 basis point reduction versus last year."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 4,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "2027 guidance",
+    "quote": "we are not going to get into 2027 guidance on this call, Ryan"
+   },
+   {
+    "topic": "Deposit beta quantification",
+    "quote": "Right now, here we are going through our 2027 plan and formulating what we think the betas will be"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,150 @@
+{
+ "doc_id": "GL-L-d2b25667d307",
+ "market": "GL",
+ "company_id": "NVO",
+ "name": "Novo Nordisk",
+ "doc_type": "transcript",
+ "date": "2026-11-04",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Biotech",
+  "thesis": "Novo raised 2026 guidance to -2% to +2% CER sales and operating profit with Q3 sales +4%, but US sales only +1% and Q4 implied growth looks weak on gross-to-net and LOE; no supply-side capacity data disclosed.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Customer stickiness",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -2,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Wegovy US price erosion 30-35%",
+    "quote": "we've again seen 30%, 35% in the quarter, again, with the variability",
+    "highlight": "30%, 35% in the quarter",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Ozempic price erosion 10-15% annually",
+    "quote": "suggested the 10%-15% price erosion on an annual basis is the way to think about it",
+    "highlight": "10%-15% price erosion on an annual basis",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Wegovy pill volume +20% QoQ",
+    "quote": "In Q3, Wegovy pill volumes grew around 20% versus Q2",
+    "highlight": "Wegovy pill volumes grew around 20%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Sales guide raised, midpoint 0%",
+    "quote": "we now expect adjusted sales growth of -2% to +2% and adjusted operating profit growth of -2% to +2%, both at CER",
+    "highlight": "-2% to +2%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "China LOE and Canada price cuts",
+    "quote": "performance in Canada was negatively impacted by lower realized prices following the loss of exclusivity for semaglutide",
+    "highlight": "lower realized prices following the loss of exclusivity",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Adjusted sales growth CER 2026",
+    "value": "-2% to +2%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect adjusted sales growth of -2% to +2% and adjusted operating profit growth of -2% to +2%, both at CER"
+   },
+   {
+    "metric": "Adjusted operating profit growth CER 2026",
+    "value": "-2% to +2%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Adjusted operating profit growth is now expected to be from - 2% to + 2% at constant exchange rates"
+   },
+   {
+    "metric": "Free cash flow 2026",
+    "value": "DKK 60-70 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "the improved free cash flow outlook, now expected between DKK 60 billion and DKK 70 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Tirzepatide",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Rural demand recovery",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "US price erosion accelerating into 2027",
+    "quote": "Price keeps coming down, net prices. Competition's working in that sense."
+   },
+   {
+    "label": "Q4 implied growth weak; gross-to-net tough comp",
+    "quote": "we do have a tough comparator in the fourth quarter due to U.S. gross-to-net last year of DKK 3 billion in the fourth quarter"
+   },
+   {
+    "label": "CFO departure",
+    "quote": "our CFO, Karsten, is leaving Novo after 27 years with the company"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 7,
+   "margin": 1,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "2027 revenue growth",
+    "quote": "We're not going to guide but let me go out of my way and provide even more building blocks for next year"
+   },
+   {
+    "topic": "Bridge contribution to growth",
+    "quote": "Yeah. Without the Bridge contribution, there is less growth than the 20% sequential growth that we talked about."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

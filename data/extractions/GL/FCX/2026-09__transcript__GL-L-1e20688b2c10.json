@@ -1,0 +1,170 @@
+{
+ "doc_id": "GL-L-1e20688b2c10",
+ "market": "GL",
+ "company_id": "FCX",
+ "name": "Freeport-McMoRan",
+ "doc_type": "transcript",
+ "date": "2026-10-27",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "Copper volumes guided up to 3.7 Bn lb in 2027 (+20%) and over 4.0 Bn lb in 2028 on Grasberg ramp, but 2026 volumes trimmed ~2% and 2027 ~2.5%, with 2027 capex up $400M to $5.2 Bn on inflation and equipment.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 67,
+   "quote": "We operated at 67% of mine capacity during the third quarter"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said the industry has arguably been under-invested and that capital cost inflation trends above CPI; no specific peer capacity commentary.",
+   "quote": "we are seeing capital cost inflation. You see it in operating costs, but we also are seeing it in capital costs."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2027 capex up $400M to $5.2Bn",
+    "quote": "$5.2 billion for 2027, an increase of approximately $400 million above the July estimate",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "2026 copper sales trimmed ~2%",
+    "quote": "We have trimmed our 2026 copper sales by about 2%, taking into account slightly lower production in the U.S. and Chile",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Realised copper $6.54/lb, +40% YoY",
+    "quote": "Average Realized Copper Price -- $6.54 per pound, reflecting a 40% increase from $4.68 per pound",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Grasberg block cave at 67% of capacity",
+    "quote": "We operated at 67% of mine capacity during the third quarter",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 copper sales",
+    "value": "3.0 billion lb (trimmed ~2%)",
+    "change": "cut",
+    "quote": "We have trimmed our 2026 copper sales by about 2%"
+   },
+   {
+    "metric": "2028 copper sales",
+    "value": "over 4.0 billion lb",
+    "change": "held",
+    "quote": "Copper sales in 2028 are consistent with previous estimates"
+   },
+   {
+    "metric": "2026 unit net cash costs",
+    "value": "$1.90/lb",
+    "change": "held",
+    "quote": "we are maintaining our full year guidance for 2026 of $1.90 per pound"
+   },
+   {
+    "metric": "2026 capex",
+    "value": "about $4.4 billion",
+    "change": "raised",
+    "quote": "Our 2026 capital expenditure is currently estimated to approximate $4.4 billion, a 2% increase from the prior estimate"
+   },
+   {
+    "metric": "2027 capex",
+    "value": "$5.2 billion",
+    "change": "raised",
+    "quote": "$5.2 billion for 2027, an increase of approximately $400 million above the July estimate"
+   },
+   {
+    "metric": "Bagdad FID",
+    "value": "$4.5 billion, decision in Q4 2026",
+    "change": "new",
+    "quote": "We expect to make an investment decision on the Bagdad expansion in the fourth quarter."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q3 copper sales vs July estimate",
+    "outcome": "met",
+    "quote": "749 million pounds, meeting the company's July 2026 estimate of 750 million pounds"
+   },
+   {
+    "metric": "Q3 gold sales vs July estimate",
+    "outcome": "missed",
+    "quote": "105,000 ounces, falling below the July 2026 estimate of 160,000 ounces"
+   },
+   {
+    "metric": "Q3 unit net cash costs vs July estimate",
+    "outcome": "missed",
+    "quote": "$2.07 per pound of copper, which was 4% above the July 2026 estimate of $2.00 per pound"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Morenci",
+    "relation": "peer"
+   },
+   {
+    "name": "Cerro Verde",
+    "relation": "peer"
+   },
+   {
+    "name": "El Abra",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Capex inflation and scope creep",
+    "quote": "increasingly mindful of escalating inflationary pressures affecting capital costs for major projects"
+   },
+   {
+    "label": "Q3 gold miss and unit cost overrun",
+    "quote": "$2.07 per pound of copper, which was 4% above the July 2026 estimate of $2.00 per pound"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 4,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Leach additive upside to 800M lb by 2030",
+    "quote": "we're not at a point where we can give guidance"
+   },
+   {
+    "topic": "Bagdad capex and FID",
+    "quote": "We do not know what the future inflation will be, but in current dollars, we are drawing a circle around $4.5 billion"
+   }
+  ],
+  "hedge_index": 0.4,
+  "themes": []
+ }
+}

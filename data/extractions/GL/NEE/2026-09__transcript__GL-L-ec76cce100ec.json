@@ -1,0 +1,166 @@
+{
+ "doc_id": "GL-L-ec76cce100ec",
+ "market": "GL",
+ "company_id": "NEE",
+ "name": "NextEra Energy",
+ "doc_type": "transcript",
+ "date": "2026-10-21",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical utilities",
+  "thesis": "NextEra grew adjusted EPS 9.7% to $1.24 with a 36.7 GW renewables and storage backlog and 2026 EPS guidance of $3.92–$4.02 held, targeting the high end; federal hubs are capital-light.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Wind resource for the third quarter of 2026 was approximately 101% of the long-term average versus only 90% in the third quarter of 2025."
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "we expect FPL's full year capital investments to be approximately $12 billion."
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Large load target raised to 8 GW",
+    "quote": "It's why we raised our large load expectations from 6 gigawatts to 8 gigawatts by 2032",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Recontracting at ~$20/MWh premium",
+    "quote": "priced on average at a roughly $20 per megawatt hour premium above recent realized pricing",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "2026 EPS held, targeting high end",
+    "quote": "Our 2026 adjusted earnings per share expectations range of $3.92 to $4.02 remains unchanged, and we are targeting the high end of that range.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Renewables backlog 36.7 GW",
+    "quote": "our backlog now totals nearly 36.7 gigawatts",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 adjusted EPS",
+    "value": "$3.92 to $4.02, targeting high end",
+    "change": "held",
+    "quote": "Our 2026 adjusted earnings per share expectations range of $3.92 to $4.02 remains unchanged, and we are targeting the high end of that range."
+   },
+   {
+    "metric": "Long-term adjusted EPS CAGR",
+    "value": "8%+ through 2032 and 2032-2035",
+    "change": "held",
+    "quote": "We expect to grow adjusted earnings per share at a compound annual growth rate of 8%+ through 2032"
+   },
+   {
+    "metric": "FPL full-year capex",
+    "value": "approximately $12 billion",
+    "change": "held",
+    "quote": "we expect FPL's full year capital investments to be approximately $12 billion."
+   },
+   {
+    "metric": "FPL large load target",
+    "value": "8 GW by 2032",
+    "change": "raised",
+    "quote": "It's why we raised our large load expectations from 6 gigawatts to 8 gigawatts by 2032"
+   },
+   {
+    "metric": "Equity needs through 2032",
+    "value": "$12B-$17B",
+    "change": "held",
+    "quote": "we remain consistent in the range that we have provided of roughly $12 billion-$17 billion of total equity needs through 2032."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2026 adjusted EPS guidance",
+    "outcome": "met",
+    "quote": "Our 2026 adjusted earnings per share expectations range of $3.92 to $4.02 remains unchanged"
+   },
+   {
+    "metric": "FPL large load expectation 6 GW",
+    "outcome": "missed",
+    "quote": "raised our large load expectations from 6 gigawatts to 8 gigawatts by 2032"
+   }
+  ],
+  "evasions": [
+   {
+    "topic": "Data center deal timing and sizing",
+    "quote": "Nick, we're not going to comment on that. Obviously, we'll announce that at the time a deal is announced."
+   },
+   {
+    "topic": "Virginia settlement path",
+    "quote": "there's always opportunities for compromise on certain specific issues. But again, I stand behind the strength of the filing"
+   }
+  ],
+  "hedge_index": 0.3,
+  "red_flags": [
+   {
+    "label": "Data center deal unannounced; 'before end of year' promise",
+    "quote": "we remain confident in our ability to announce a large load transaction by the end of the year"
+   },
+   {
+    "label": "Virginia merger regulatory opposition from governor's office",
+    "quote": "the governor's office proposal seems to have a lot of pretty onerous conditions"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 4,
+   "margin": 1,
+   "other": 3
+  },
+  "entities": [
+   {
+    "name": "Dominion Energy",
+    "relation": "partner"
+   },
+   {
+    "name": "We Energies",
+    "relation": "customer"
+   },
+   {
+    "name": "Chesapeake Utilities Corporation",
+    "relation": "partner"
+   },
+   {
+    "name": "Lone Star Transmission",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Grid capex & transformers",
+   "Consolidation / competitor exits"
+  ]
+ }
+}

@@ -1,0 +1,185 @@
+{
+ "doc_id": "GL-L-bc3f879098db",
+ "market": "GL",
+ "company_id": "ETN",
+ "name": "Eaton",
+ "doc_type": "transcript",
+ "date": "2026-11-03",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Eaton's Q3 beat and third guidance raise: Electrical Americas margin hit 29.8% (+230bp QoQ) as 18 of 25 capacity projects finished, with electrical backlog above $20bn, up 46%.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Backlog conversion",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "New capacity is turning into output, and output into earnings."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Expansion projects 18 of 25 complete",
+    "quote": "18 of our 25 expansion projects are complete, with the steepest part of the ramp behind us.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Organic growth guide raised to 13-15%",
+    "quote": "we now expect total company organic growth to be between 13% and 15%, up 200 basis points at the midpoint",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Electrical backlog +46% to >$20bn",
+    "quote": "Our total electrical backlog reached another record of more than $20 billion, up 46% from last year.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "General price increases effective Jan 2027",
+    "quote": "we would have general price increases in EA, EMEA, and GIS effective January 2nd.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Aerospace supplier constraints on backlog",
+    "quote": "we face some specific supplier issues in some commodities. There are punctual problems.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Total organic growth 2026",
+    "value": "13% to 15%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect total company organic growth to be between 13% and 15%, up 200 basis points at the midpoint"
+   },
+   {
+    "metric": "Adjusted EPS 2026",
+    "value": "$13.70 to $13.80",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect full-year EPS to be between $13.70 and $13.80, $13.75 at the midpoint"
+   },
+   {
+    "metric": "Segment margin 2026",
+    "value": "24.1%-24.5%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We are maintaining our total segment guidance range of 24.1%-24.5%."
+   },
+   {
+    "metric": "Boyd Thermal revenue 2026",
+    "value": "$1.9 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "raising Boyd's full-year revenue to $1.9 billion, of which $1.6 billion will be in Eaton's books"
+   },
+   {
+    "metric": "Boyd Thermal revenue 2027",
+    "value": "at least $2.7 billion",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "we see at least a $2.7 billion business for next year, which is roughly 50% growth"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Boyd Thermal revenue 2026",
+    "outcome": "met",
+    "quote": "raising Boyd's full-year revenue to $1.9 billion"
+   },
+   {
+    "metric": "Total organic growth 2026",
+    "outcome": "met",
+    "quote": "Organic growth was 19%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Dana Incorporated",
+    "relation": "partner"
+   },
+   {
+    "name": "COL Group",
+    "relation": "peer"
+   },
+   {
+    "name": "NordicEPOD",
+    "relation": "partner"
+   },
+   {
+    "name": "Fibrebond",
+    "relation": "peer"
+   },
+   {
+    "name": "Boyd Thermal",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Electrification",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Aerospace supplier constraints delaying backlog conversion",
+    "quote": "we face some specific supplier issues in some commodities. There are punctual problems."
+   },
+   {
+    "label": "Electrical Americas margin decline from commodity costs",
+    "quote": "the majority of the margin decline was driven by temporary commodity cost headwinds"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 5,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "2027 guidance",
+    "quote": "We are not ready to share the 2027 guidance yet"
+   },
+   {
+    "topic": "Solid-state transformer commercial timing",
+    "quote": "the timing of that transition is not under our control"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

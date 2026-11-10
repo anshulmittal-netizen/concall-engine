@@ -1,0 +1,178 @@
+{
+ "doc_id": "GL-L-d9cd76b0099e",
+ "market": "GL",
+ "company_id": "MOS",
+ "name": "Mosaic",
+ "doc_type": "transcript",
+ "date": "2026-11-04",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.89,
+ "read": {
+  "subsector": "Fertilisers",
+  "thesis": "Mosaic cut 2026 capex to $1.2B and targets under $1B in 2027 while idling phosphate on sulfur costs; Q4 flagged as EBITDA trough, with phosphate supply still constrained by sulfur.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Supply discipline",
+   "Capital cycle",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "Florida footprint generally is in the low- to mid-60%"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "Some producers in Asia have begun exploring nontraditional sources of sulfur including reclamation from gyp stacks and the restart of long dormant sulfur mines.",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2026 capex cut $1.5B → $1.2B",
+    "quote": "The 2026 spend was cut to $1.2 billion from $1.5 billion",
+    "highlight": "cut to $1.2 billion from $1.5 billion",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Phosphate idled on sulfur costs",
+    "quote": "we are focused on meeting our customers' needs as best we can while optimizing netbacks and managing inventory",
+    "highlight": "managing inventory",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "North America fall demand stronger",
+    "quote": "the fall demand for phosphate in North America has been, coming much stronger than, many of us anticipated",
+    "highlight": "much stronger than, many of us anticipated",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 DAP guided $820–840/t",
+    "quote": "DAP Price Guidance -- $820 to $840 per tonne for the fourth quarter",
+    "highlight": "$820 to $840 per tonne",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Q3 phosphate volume 1.6 → 1.4Mt",
+    "quote": "production curtailments implemented to align with affordable sulfur availability",
+    "highlight": "production curtailments",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 capex",
+    "value": "about $1.2B",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "The 2026 spend was cut to $1.2 billion from $1.5 billion"
+   },
+   {
+    "metric": "2027 SG&A",
+    "value": "below $500M",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "we expect 2027 SG&A to be below $500 million"
+   },
+   {
+    "metric": "Q4 realized sulfur cost",
+    "value": "$800-850/t",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we expect realized prices in cost of goods sold to be in the range of $800 to $850 per ton"
+   },
+   {
+    "metric": "Q4 ammonia cost",
+    "value": "$590-610/t",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "For ammonia, we expect cost to be in the range of $590 to $610 per ton"
+   },
+   {
+    "metric": "Q4 stripping margin",
+    "value": "mid-$300s/t",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "this will result in realized stripping margins in the mid-$300s per ton"
+   },
+   {
+    "metric": "Q4 potash sales volume",
+    "value": "2.3-2.6Mt",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "Potash Sales Volume Guidance -- 2.3 million to 2.6 million tonnes for the fourth quarter"
+   },
+   {
+    "metric": "Biosciences net sales",
+    "value": "$135M in 2026",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we remain on track to generate nearly $135 million in 2026"
+   },
+   {
+    "metric": "Positive FCF",
+    "value": "positive in 2H26",
+    "change": "new",
+    "horizon": "2H 2026",
+    "quote": "we expect to generate positive free cash flow in the second half of this year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "US Gulf Coast refiners",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 EBITDA trough flagged",
+    "quote": "Q4 is gonna be a trough in terms of EBITDA especially in the phosphate segment"
+   },
+   {
+    "label": "Customer credit constrained",
+    "quote": "Customer credit remains constrained and we continue to be selective in extending credit."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 3,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Phosphate restart timing",
+    "quote": "Well, I wish I knew, but I know you have thrown some hypotheticals"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

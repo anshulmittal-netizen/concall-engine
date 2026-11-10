@@ -1,0 +1,88 @@
+{
+ "doc_id": "GL-L-7e5130155557",
+ "market": "GL",
+ "company_id": "MET",
+ "name": "MetLife",
+ "doc_type": "release",
+ "date": "2026-11-04",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Record adjusted EPS of $2.85 ex-notables (+22%) on higher variable investment income and volume growth, but a life insurer with no capacity or pricing read; GAAP net income lifted by derivative gains.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Adjusted EPS ex-notables up 22%",
+    "quote": "Adjusted earnings per share up 22% to $2.85, excluding total notable items — highest-ever quarter for MetLife.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Adjusted PFOs ex-PRT up 8%",
+    "quote": "Adjusted PFOs, excluding pension risk transfers (PRT), 8% to $13.5 billion — with growth in all six business segments.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Free cash flow ratio and direct expense ratio",
+    "value": "On track for year",
+    "change": "held",
+    "quote": "On track to deliver against free cash flow ratio and direct expense ratio targets for the year."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "PineBridge Investments",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Interest-rate relief",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "GAAP EPS flattered by derivative gains",
+    "quote": "Net derivative gains amounted to $551 million after tax, driven by gains on embedded derivatives associated with ceded reinsurance"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

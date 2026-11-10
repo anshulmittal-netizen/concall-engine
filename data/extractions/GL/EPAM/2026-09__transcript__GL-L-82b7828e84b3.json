@@ -1,0 +1,202 @@
+{
+ "doc_id": "GL-L-82b7828e84b3",
+ "market": "GL",
+ "company_id": "EPAM",
+ "name": "EPAM Systems",
+ "doc_type": "transcript",
+ "date": "2026-11-05",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Q3 beat with AI-native revenue $185M (~13%) and FY26 AI-native floor raised to $650M, but North America still declining and 2027 margin guided flat to lower; utilisation fell to 76.5% from 78.3% in Q2.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Backlog conversion",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 76.5,
+   "quote": "Utilization was 76.5%, unchanged from Q3 of last year, compared to 78.3% in Q2 of 2026."
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 78.3% → 76.5% QoQ",
+    "quote": "Utilization was 76.5%, unchanged from Q3 of last year, compared to 78.3% in Q2 of 2026.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Three large deals signed, ramp 1H27",
+    "quote": "I am happy to report that three of these deals have been signed so far",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "AI-native FY26 floor $600M → $650M",
+    "quote": "EPAM now expects to deliver at least $650 million in AI-native revenues in the year, an increase from our earlier guidance of $600 million.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "2027 gross margin flat to lower",
+    "quote": "we are not expecting a further increase in gross margin in the coming year, and we may operate at modestly lower levels of gross margin in 2027.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Software & high-tech revenue down 6.1%",
+    "quote": "Software and high tech declined 6.1% year-over-year due to lower spend from certain technology clients, as discussed last quarter.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 AI-native revenue",
+    "value": "at least $650M",
+    "change": "raised",
+    "quote": "EPAM now expects to deliver at least $650 million in AI-native revenues in the year, an increase from our earlier guidance of $600 million."
+   },
+   {
+    "metric": "FY26 organic cc revenue growth",
+    "value": "2.5%-2.7%",
+    "change": "held",
+    "quote": "the company expects to deliver organic constant currency revenue growth of 2.5%-2.7%, at or just above the midpoint of the most recent guidance range."
+   },
+   {
+    "metric": "FY26 non-GAAP EPS",
+    "value": "$13.23-$13.31",
+    "change": "held",
+    "quote": "non-GAAP diluted EPS will now be in the range of $13.23-$13.31 for the full year."
+   },
+   {
+    "metric": "Q4 26 revenue",
+    "value": "$1.405B-$1.420B",
+    "change": "new",
+    "quote": "we expect revenue to be in the range of $1.405 billion-$1.420 billion"
+   },
+   {
+    "metric": "2027 non-GAAP operating margin",
+    "value": "15%-16%",
+    "change": "new",
+    "quote": "we are currently expecting to operate in the 15%-16% range for non-GAAP income from operations."
+   },
+   {
+    "metric": "Capital return 2027-2029",
+    "value": "at least 50% of FCF annually",
+    "change": "new",
+    "quote": "we are committing to returning at least 50% of free cash flow to shareholders annually over each of the next three years, 2027, 2028, and 2029."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 AI-native revenue $600M",
+    "outcome": "met",
+    "quote": "EPAM now expects to deliver at least $650 million in AI-native revenues in the year, an increase from our earlier guidance of $600 million."
+   },
+   {
+    "metric": "FY26 organic cc growth outlook",
+    "outcome": "held",
+    "quote": "organic constant currency growth is now expected to be in the range of 2.5%-2.7%."
+   },
+   {
+    "metric": "Double-digit growth trajectory (analyst day)",
+    "outcome": "dropped",
+    "quote": "at a very high level, FB, do you see the company returning to the double-digit growth trajectory"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Anthropic",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Google",
+    "relation": "partner"
+   },
+   {
+    "name": "Microsoft",
+    "relation": "partner"
+   },
+   {
+    "name": "AWS",
+    "relation": "partner"
+   },
+   {
+    "name": "Wiz",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "AI-native services",
+   "Consolidation / competitor exits",
+   "Cybersecurity spend",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)",
+   "Nearshoring / reshoring (US)"
+  ],
+  "red_flags": [
+   {
+    "label": "Non-AI revenue declining; software & high-tech down 6.1%",
+    "quote": "Software and high tech declined 6.1% year-over-year due to lower spend from certain technology clients, as discussed last quarter."
+   },
+   {
+    "label": "Q4 organic growth decelerates to 0.5-1.6%",
+    "quote": "organic constant currency growth is expected to be positive and in the range of 0.5%-1.6%."
+   },
+   {
+    "label": "Poland R&D benefit halves in 2027",
+    "quote": "the benefit is going to go from about $40 million in 2026 to about $20 million in 2027."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 5,
+   "margin": 2,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Double-digit growth return timing",
+    "quote": "at a very high level, definitely not in 2027. I do foresee that we can actually get to double-digit growth."
+   },
+   {
+    "topic": "Large deal win ratio and pipeline sizing",
+    "quote": "we are still not sure about our win ratio, because eventually, I don't think it's going to be significantly higher than EPAM average"
+   },
+   {
+    "topic": "2027 large project ramp-downs",
+    "quote": "right now, at this point of time, we are safe as we see it, right?"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,163 @@
+{
+ "doc_id": "GL-L-6e83ddd29527",
+ "market": "GL",
+ "company_id": "SHEL.L",
+ "name": "Shell",
+ "doc_type": "transcript",
+ "date": "2026-10-30",
+ "period": "2026-09",
+ "title": "Earnings call transcript, Q3 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Shell Q3 2026 beat on refining and trading cash, cash capex cut ~$1bn to $23–25bn, net debt down to $39.7bn, and a $5bn buyback topped up from $3bn, with no supply-side read on industry capacity.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capital allocation shift",
+   "Capital cycle",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 96,
+   "quote": "Refinery Utilization -- 96%, impacted by low water levels on the Rhine river affecting the Rheinland refinery."
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "we brought it down by roughly $1 billion. A large part of that is really timing and phasing with a few efficiencies built in."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Cash capex cut ~$1bn to $23–25bn",
+    "quote": "we brought it down by roughly $1 billion. A large part of that is really timing and phasing",
+    "highlight": "brought it down by roughly $1 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Spot freight costs pushing down margins",
+    "quote": "cost on anything which is spot is definitely going up and beginning to push down on margins",
+    "highlight": "beginning to push down on margins",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 refining realisations seen lower",
+    "quote": "We do believe we could see lower realized numbers coming through this quarter given the freight rates",
+    "highlight": "lower realized numbers coming through this quarter",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Chemicals sale/combination in deep talks",
+    "quote": "We are in deep discussions. I won't comment on who and what at this stage",
+    "highlight": "We are in deep discussions",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Cash capex 2026",
+    "value": "$23bn to $25bn",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "Our cash CapEx range for 2026 is now between $23 billion and $25 billion, which includes some $4 billion for the acquisition of ARC Resources."
+   },
+   {
+    "metric": "Shareholder distributions",
+    "value": "40% to 50% of CFFO through the cycle",
+    "change": "held",
+    "horizon": "through cycle",
+    "quote": "Our policy of shareholder distributions of 40% to 50% of CFFO through the cycle remains sacrosanct"
+   },
+   {
+    "metric": "Buyback",
+    "value": "$5bn, complete by Q4 results",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "we have announced a further $5 billion share buyback program, which we expect to complete by the time of our Q4 results announcement"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Cash capex 2026",
+    "outcome": "met",
+    "quote": "Our cash CapEx range for 2026 is now between $23 billion and $25 billion"
+   }
+  ],
+  "entities": [
+   {
+    "name": "ARC Resources",
+    "relation": "partner"
+   },
+   {
+    "name": "Tri Star Energy",
+    "relation": "peer"
+   },
+   {
+    "name": "Infineum",
+    "relation": "peer"
+   },
+   {
+    "name": "Equinor",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Interest-rate relief",
+   "Capex cycle revival (private)",
+   "Specialty chem destocking end"
+  ],
+  "red_flags": [
+   {
+    "label": "Pearl GTL second train delayed by Hormuz",
+    "quote": "The second train that was impacted is continuing to be on track to be ready for start-up, of course, subject to the Strait of Hormuz opening"
+   },
+   {
+    "label": "Spot freight cost pressure on margins",
+    "quote": "cost on anything which is spot is definitely going up and beginning to push down on margins"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 1,
+   "growth": 4,
+   "margin": 3,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Buyback vs. share price / procyclicality",
+    "quote": "We're not trying to predict what our share price is."
+   },
+   {
+    "topic": "Use of chemicals divestment proceeds",
+    "quote": "When it comes to what do we do with the proceeds, I won't speculate at this stage."
+   },
+   {
+    "topic": "Lease accounting and freight forward curve",
+    "quote": "Martijn, I could go on a very long rant about accounting and how we have to handle it around IFRS."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}
