@@ -1,0 +1,132 @@
+{
+ "doc_id": "GL-L-66e73f67fbf6",
+ "market": "GL",
+ "company_id": "JPM",
+ "name": "JPMorgan Chase",
+ "doc_type": "transcript",
+ "date": "2026-04-21",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Strong Q1 with revenue up 10% and ROTCE 23%, but CET1 fell 30bp to 14.3% as RWA rose $60bn; management says Basel III and G-SIB reproposals add about $20bn of G-SIB capital by 2028.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Capital allocation shift",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "G-SIB surcharge 4.5% → 5.2% by 2028",
+    "quote": "The net result is that we need to plan for 5.2% in 2028, a 70 basis point increase from the current 4.5% requirement",
+    "highlight": "5.2% in 2028, a 70 basis point increase",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "RWA up $60bn in quarter",
+    "quote": "This quarter's standardized RWA is up $60 billion, primarily driven by the Markets business",
+    "highlight": "RWA is up $60 billion",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2026 NII and expense guidance held",
+    "quote": "The adjusted expense outlook continues to be about $105 billion",
+    "highlight": "continues to be about $105 billion",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "NII ex Markets 2026",
+    "value": "about $95 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we continue to expect NII ex Markets to be about $95 billion"
+   },
+   {
+    "metric": "Total NII 2026",
+    "value": "approximately $103 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We now expect total NII to be approximately $103 billion"
+   },
+   {
+    "metric": "Adjusted expense 2026",
+    "value": "about $105 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "The adjusted expense outlook continues to be about $105 billion"
+   },
+   {
+    "metric": "Card net charge-off rate 2026",
+    "value": "approximately 3.4%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "the Card net charge-off rate continues to be approximately 3.4%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Fed",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Interest-rate relief",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Cyber risk called largest risk, AI making it worse",
+    "quote": "AI has made it worse, it's made it harder"
+   },
+   {
+    "label": "Credit cycle expected worse than scenario",
+    "quote": "if there's a credit cycle, I do expect it will be worse than people think relative to the scenario"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Expense trajectory vs $105bn guide",
+    "quote": "I would somewhat discourage you from like annualizing quarterly expense run rate"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

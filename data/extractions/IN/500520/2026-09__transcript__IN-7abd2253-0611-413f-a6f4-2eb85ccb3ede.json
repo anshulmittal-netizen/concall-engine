@@ -1,0 +1,165 @@
+{
+ "doc_id": "IN-7abd2253-0611-413f-a6f4-2eb85ccb3ede",
+ "market": "IN",
+ "company_id": "500520",
+ "name": "Mahindra & Mahindra",
+ "doc_type": "transcript",
+ "date": "2026-11-11",
+ "period": "2026-09",
+ "title": "Please refer enclosed file.",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.94,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Auto capacity is the binding constraint: ICE+EV output rose to 82k/month by year-end from 66k with 92k next year, while core tractor guidance cut from +5% to flattish for FY27.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "operating at the full capacity that we've set up"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are effectively doubling capacity from where we stand right now"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capacity 66k → 82k → 92k/month",
+    "quote": "capacity being outlined here starting this year at 64.5, ending this year at 82, 92 for next year",
+    "highlight": "ending this year at 82, 92 for next year",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Auto price hikes 5%, Farm 4%",
+    "quote": "We have increased prices in Auto by 5%, in Farm by 4%.",
+    "highlight": "increased prices in Auto by 5%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Tractor industry +5% cut to flattish",
+    "quote": "It's a full year instead of 5, we're reducing it to flattish.",
+    "highlight": "we're reducing it to flattish",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "inventory",
+    "label": "Dealer stock very low",
+    "quote": "Physical stocks of everything at dealers are at very, very low levels.",
+    "highlight": "very, very low levels",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Tractor industry volume FY27",
+    "value": "flattish (from +5%)",
+    "horizon": "FY27",
+    "change": "cut",
+    "quote": "It's a full year instead of 5, we're reducing it to flattish."
+   },
+   {
+    "metric": "SUV Mahindra outlook",
+    "value": "mid to high teens",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "For SUVs, Mahindra outlook, mid to high teens, we maintain that."
+   },
+   {
+    "metric": "LCV industry growth",
+    "value": "double digit",
+    "horizon": "FY27",
+    "change": "raised",
+    "quote": "we are increasing it slightly to double digit for the industry"
+   },
+   {
+    "metric": "Auto capacity year-end",
+    "value": "82k/month FY27, 92k FY28, 132k by FY31",
+    "horizon": "FY31",
+    "change": "new",
+    "quote": "ending this year at 82, 92 for next year. And then as our new plant comes upstream, 132 by F31."
+   },
+   {
+    "metric": "ROE target",
+    "value": "18% (may go slightly up or down)",
+    "horizon": "",
+    "change": "held",
+    "quote": "18% is still our target. We may go slightly up, we may go slightly down, but we will stay with 18 as a target."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Auto operating margin Q2 vs Q1",
+    "outcome": "met",
+    "quote": "you can see we've improved from 8.9 to 9.8 and consolidated as well from 7.7 to 8.8"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Tractor cut amid global sub stress",
+    "quote": "three of our global subs are seeing a big industry slowdown"
+   },
+   {
+    "label": "Commodity inflation outsized",
+    "quote": "Steel is up 17% year-over-year, copper is up 42%, rubber is up 40%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 5,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Order book quantification",
+    "quote": "we were sharing order position every quarter, but then you have to get into net orders"
+   },
+   {
+    "topic": "Product-specific capacity for Lifestyler",
+    "quote": "I don't think we will want to share product specific capacities at this stage."
+   }
+  ],
+  "hedge_index": 0.3,
+  "entities": [
+   {
+    "name": "Airbus",
+    "relation": "customer"
+   },
+   {
+    "name": "Brazil",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Auto EV transition",
+   "Capacity bottleneck",
+   "Defence & aerospace",
+   "Rural demand recovery",
+   "Consolidation / competitor exits"
+  ]
+ }
+}

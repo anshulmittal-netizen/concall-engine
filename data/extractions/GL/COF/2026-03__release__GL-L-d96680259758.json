@@ -1,0 +1,82 @@
+{
+ "doc_id": "GL-L-d96680259758",
+ "market": "GL",
+ "company_id": "COF",
+ "name": "Capital One",
+ "doc_type": "release",
+ "date": "2026-04-21",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Q1 CY26 earnings release shows solid credit and pre-provision earnings up 8% to $6.8B, but card loans shrank 3% and NIM fell 39bp; no supply-side or capacity signals, read is neutral-to-soft.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Card loans down 3% q/q",
+    "quote": "Credit Card period-end loans decreased $9.0 billion, or 3 percent, to $270.6 billion.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "NIM down 39bp to 7.87%",
+    "quote": "Net interest margin of 7.87 percent, a decrease of 39 basis points.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Pre-provision earnings up 8%",
+    "quote": "Pre-provision earnings increased 8 percent to $6.8 billion.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Discover",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

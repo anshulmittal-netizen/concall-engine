@@ -1,0 +1,146 @@
+{
+ "doc_id": "GL-L-b667e41a8323",
+ "market": "GL",
+ "company_id": "CL",
+ "name": "Colgate-Palmolive",
+ "doc_type": "transcript",
+ "date": "2026-05-01",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Colgate's Q1 volume and pricing were broad-based, but a ~$300M raw-material and logistics hit cut gross margin guidance to down year-on-year, with oil assumed at about $110 per barrel.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Gross margin guide cut; $300M cost hit",
+    "quote": "Since the fourth quarter call, we've seen an additional raw materials and logistics impact for the year of roughly $300 million.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Oil byproduct spend up >20% YoY",
+    "quote": "we now expect that spending in those areas to be up more than 20% year-on-year for the full year.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Organic growth accelerated; Hill's up 4.8%",
+    "quote": "Organic sales growth accelerated from the fourth quarter, driven by improved volume performance, particularly in Asia Pacific.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "SGPP savings $200–300M, ends 2028",
+    "quote": "we now expect that we'll be able to generate $200 million to $300 million of savings over the term of the program.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Organic sales growth",
+    "value": "1% to 4%",
+    "change": "held",
+    "quote": "we've maintained our organic sales growth guidance in the 1% to 4%"
+   },
+   {
+    "metric": "Gross margin",
+    "value": "down year-on-year",
+    "change": "cut",
+    "quote": "I would suggest you reflect the lower gross margin in your algorithm."
+   },
+   {
+    "metric": "EPS growth",
+    "value": "low to mid-single digits",
+    "change": "held",
+    "quote": "we feel very comfortable with our current range of low to mid-single digits."
+   },
+   {
+    "metric": "SGPP savings",
+    "value": "$200M to $300M annualized",
+    "change": "new",
+    "quote": "we now expect that we'll be able to generate $200 million to $300 million of savings over the term of the program."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Gross margin",
+    "outcome": "dropped",
+    "quote": "we've built into our guidance to reduce our expectations for gross margin for the year"
+   },
+   {
+    "metric": "Organic sales growth",
+    "outcome": "met",
+    "quote": "Organic sales growth accelerated to the 1%-4% guidance range"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Hawley & Hazel",
+    "relation": "peer"
+   },
+   {
+    "name": "Hill's Pet Nutrition",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Gross margin cut on $300M oil/logistics inflation",
+    "quote": "significant increases in raw material and packaging costs"
+   },
+   {
+    "label": "North America margin pressure from tariffs",
+    "quote": "So their margins obviously are significantly pressured by tariffs on a year-on-year basis."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "margin": 4,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "EPS placement within range",
+    "quote": "we feel very comfortable with our current range of low to mid-single digits."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

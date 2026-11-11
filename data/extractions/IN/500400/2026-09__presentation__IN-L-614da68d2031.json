@@ -1,0 +1,153 @@
+{
+ "doc_id": "IN-L-614da68d2031",
+ "market": "IN",
+ "company_id": "500400",
+ "name": "Tata Power",
+ "doc_type": "presentation",
+ "date": "2026-11-11",
+ "period": "2026-09",
+ "title": "Investor Presentation",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q2 FY27 consolidated EBITDA up 5% to ₹4,245 cr (12.8% ex one-off); RE capacity added 539 MW in quarter, 765 MW H1, against FY27 guide of 2,500-2,700 MW, with H1 capex ~₹10,000 cr and net debt up to ₹62,681 cr.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "Mundra Plant continues to run under Section 11, reported availability of 89%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Record half yearly capital expenditure of ₹ ~10,000 cr in H1 FY27"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "H1 RE additions 765 MW vs 2,500-2,700 MW FY guide",
+    "quote": "Total 539 MW of generation capacity added in the quarter (765 MW in H1 FY27)",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "H1 capex ~₹10,000 cr, record",
+    "quote": "Record half yearly capital expenditure of ₹ ~10,000 cr in H1 FY27",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Solar manufacturing margin up on mix",
+    "quote": "Solar Manufacturing profitability increased due to better sales mix",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Rooftop billing 426 MWp, up 15% YoY",
+    "quote": "Rooftop business achieved billing of 426 MWp up 15% YoY",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "RE Genco curtailment in Rajasthan and Gujarat",
+    "quote": "Strong RE Genco performance was partly offset by curtailment of RE generation in the state of Rajasthan & Gujarat",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Renewable capacity addition FY27 (H1 progress)",
+    "value": "765 MW added in H1 FY27",
+    "change": "held",
+    "quote": "Total 539 MW of generation capacity added in the quarter (765 MW in H1 FY27)"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Renewable capacity addition FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Capex FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Rooftop revenue growth FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Cumulative rooftop revenue",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Pumped hydro Shirwata 1,800 MW start",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Druk Green Power Corporation",
+    "relation": "partner"
+   },
+   {
+    "name": "SECI",
+    "relation": "customer"
+   },
+   {
+    "name": "Prayagraj Power Generation Co",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Rooftop solar",
+   "Pumped hydro storage",
+   "Transmission capex",
+   "Solar cell & module manufacturing"
+  ],
+  "red_flags": [
+   {
+    "label": "Net debt up QoQ to ₹62,681 cr",
+    "quote": "Net Debt has increased Q-o-Q due to higher capex and WC requirements"
+   },
+   {
+    "label": "Renewable generation curtailment",
+    "quote": "Generation impacted due to load curtailment & transmission constraints"
+   },
+   {
+    "label": "Rooftop order book down QoQ",
+    "quote": "Order Book at Q2 FY27 stands at ₹ 501 crore"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

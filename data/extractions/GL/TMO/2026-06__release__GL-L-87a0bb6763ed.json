@@ -1,0 +1,80 @@
+{
+ "doc_id": "GL-L-87a0bb6763ed",
+ "market": "GL",
+ "company_id": "TMO",
+ "name": "Thermo Fisher Scientific",
+ "doc_type": "release",
+ "date": "2026-07-23",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q2 revenue up 10% but organic only 5% with acquisitions contributing 5 points; adjusted EPS up 13% on margin gains, and no numeric 2026 guidance in the release itself, deferred to the call.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Organic growth 5% in Q2",
+    "quote": "Organic revenue growth was 5%.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Adj. operating margin 22.8% vs 21.9%",
+    "quote": "Adjusted operating margin was 22.8%, compared with 21.9% in the second quarter of 2025.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Growth leaning on acquisitions; organic 5% vs reported 10%",
+    "quote": "Acquisitions\n5 \n%"
+   },
+   {
+    "label": "Net debt rising; long-term obligations up to 39,181 from 35,852",
+    "quote": "Long-term obligations\n39,181 \n35,852"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

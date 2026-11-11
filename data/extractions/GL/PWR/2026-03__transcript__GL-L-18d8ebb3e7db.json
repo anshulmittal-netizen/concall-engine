@@ -1,0 +1,165 @@
+{
+ "doc_id": "GL-L-18d8ebb3e7db",
+ "market": "GL",
+ "company_id": "PWR",
+ "name": "Quanta Services",
+ "doc_type": "transcript",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical contracting",
+  "thesis": "Quanta raised FY26 guidance (revenue $34.7-35.2B, adj. EBITDA $3.49-3.65B, adj. EPS $13.55-14.25) on record $48.5B backlog and a $500-700M transformer capacity doubling, though no supply-discipline or pricing data was given.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "CapEx went up, but it only went up by like $50 million at the midpoint"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Adj. EPS guide raised to $13.55-14.25",
+    "quote": "adjusted EPS to range between $13.55 and $14.25",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Transformer capacity to double, $500-700M",
+    "quote": "which will double our power transformer manufacturing capacity",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Record backlog $48.5B, book-to-bill 1.6x",
+    "quote": "record $48.5 billion of backlog",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "tone",
+    "label": "FCF upper-end confidence, 'just early'",
+    "quote": "it's just early",
+    "direction": 0,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue FY26",
+    "value": "$34.7-35.2B",
+    "change": "raised",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Adjusted EBITDA FY26",
+    "value": "$3.49-3.65B",
+    "change": "raised",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Adjusted EPS FY26",
+    "value": "$13.55-14.25",
+    "change": "raised",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Adjusted EPS growth target",
+    "value": "15%-20% annually; more than double earnings power by 2030",
+    "change": "held",
+    "horizon": "2030"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "$500 million range (unchanged), tracking toward higher end",
+    "change": "held",
+    "horizon": "FY2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Transformer capacity investment $500-700M",
+    "outcome": "met",
+    "quote": "Management reiterated an ongoing $500 million to $700 million multi-year capital program"
+   },
+   {
+    "metric": "Free cash flow range",
+    "outcome": "not_discussed",
+    "quote": "We gave a good range when we guided in the fourth quarter about our free cash flow"
+   }
+  ],
+  "entities": [
+   {
+    "name": "AEP",
+    "relation": "customer"
+   },
+   {
+    "name": "NiSource",
+    "relation": "customer"
+   },
+   {
+    "name": "Bloom",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Revenue/EPS guide raise smaller than Q1 beat",
+    "quote": "We took forward our beat in the first quarter"
+   },
+   {
+    "label": "Guidance conservatism asserted, not quantified",
+    "quote": "Our guidance is prudent. It has always been prudent."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 8,
+   "margin": 2,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "EPS guide raise vs Q1 beat math",
+    "quote": "I'm not following that math, Phil, I'll admit."
+   },
+   {
+    "topic": "Technology segment 70%-110% growth slide",
+    "quote": "that's directional. And if it was up to me, I wouldn't have that slide."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

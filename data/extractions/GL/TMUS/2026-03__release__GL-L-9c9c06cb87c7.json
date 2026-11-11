@@ -1,0 +1,128 @@
+{
+ "doc_id": "GL-L-9c9c06cb87c7",
+ "market": "GL",
+ "company_id": "TMUS",
+ "name": "T-Mobile US",
+ "doc_type": "release",
+ "date": "2026-04-28",
+ "period": "2026-03",
+ "title": "8-K · TMUS EXHIBIT 99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "placeholder",
+  "archetype": "None",
+  "mental_models": [
+   "Customer stickiness",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Continues to expect cash purchases of property and equipment, including capitalized interest, to be approximately $10.0 billion."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Postpaid net account adds guide raised 50k",
+    "quote": "Postpaid net account additions are expected to be between 950 thousand and 1.05 million, an increase from prior guidance of 900 thousand to 1.0 million.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Postpaid ARPA +3.9% y/y",
+    "quote": "Postpaid ARPA of $151.93 grew 3.9% year-over-year.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Net income -15% y/y on merger costs",
+    "quote": "Net income decreased 15% year-over-year to $2.5 billion and included the impact of UScellular merger-related costs",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Postpaid net account additions (thousands)",
+    "value": "950 to 1,050",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Postpaid net account additions are expected to be between 950 thousand and 1.05 million, an increase from prior guidance of 900 thousand to 1.0 million."
+   },
+   {
+    "metric": "Core Adjusted EBITDA ($bn)",
+    "value": "37.1 to 37.5",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Core Adjusted EBITDA, which is Adjusted EBITDA less lease revenues, is expected to be between $37.1 billion and $37.5 billion"
+   },
+   {
+    "metric": "Net cash from operations ($bn)",
+    "value": "28.1 to 28.7",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Net cash provided by operating activities, including net payments for UScellular merger-related costs, is expected to be between $28.1 billion and $28.7 billion"
+   },
+   {
+    "metric": "Capex ($bn)",
+    "value": "~10.0",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Continues to expect cash purchases of property and equipment, including capitalized interest, to be approximately $10.0 billion."
+   },
+   {
+    "metric": "Adjusted FCF ($bn)",
+    "value": "18.1 to 18.7",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Adjusted Free Cash Flow, including net payments for UScellular merger-related costs, is expected to be between $18.1 billion and $18.7 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "UScellular",
+    "relation": "peer"
+   },
+   {
+    "name": "Figure AI",
+    "relation": "partner"
+   },
+   {
+    "name": "Ookla",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pricing power"
+  ],
+  "red_flags": [
+   {
+    "label": "Net income down 15% y/y",
+    "quote": "Net income decreased 15% year-over-year to $2.5 billion"
+   }
+  ],
+  "evasions": [],
+  "hedge_index": 0.2,
+  "analyst_mix": {}
+ }
+}

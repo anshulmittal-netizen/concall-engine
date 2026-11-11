@@ -1,0 +1,109 @@
+{
+ "doc_id": "GL-L-37ff218e0db3",
+ "market": "GL",
+ "company_id": "ASML",
+ "name": "ASML Holding",
+ "doc_type": "release",
+ "date": "2026-04-15",
+ "period": "2026-03",
+ "title": "6-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Q1 sales €8.8bn, GM 53.0%, and 2026 sales guide €36–40bn with GM 51–53%; order intake called \"very strong\" with customers accelerating capacity expansion, but no capex or capacity figures were given.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Customers accelerating capacity expansion",
+    "quote": "our customers are accelerating their capacity expansion plans for 2026 and beyond",
+    "highlight": "customers are accelerating their capacity expansion plans",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "2026 sales guide €36–40bn",
+    "quote": "we now expect total net sales for 2026 to be between €36 billion and €40 billion",
+    "highlight": "we now expect total net sales for 2026 to be between €36 billion and €40 billion",
+    "direction": 1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 total net sales",
+    "value": "€36bn–€40bn",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect total net sales for 2026 to be between €36 billion and €40 billion"
+   },
+   {
+    "metric": "2026 gross margin",
+    "value": "51%–53%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "with a gross margin between 51% and 53%"
+   },
+   {
+    "metric": "Q2 2026 net sales",
+    "value": "€8.4bn–€9.0bn",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "We expect second-quarter 2026 total net sales between €8.4 billion and €9.0 billion"
+   },
+   {
+    "metric": "Q2 2026 gross margin",
+    "value": "51%–52%",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "with a gross margin between 51% and 52%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Export controls",
+   "Installed base upgrades"
+  ],
+  "red_flags": [
+   {
+    "label": "Export control uncertainty",
+    "quote": "We expect that the bandwidth in our 2026 guidance accommodates potential outcomes of ongoing discussions around export controls"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

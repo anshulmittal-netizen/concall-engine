@@ -1,0 +1,201 @@
+{
+ "doc_id": "GL-L-dcec7151ea78",
+ "market": "GL",
+ "company_id": "JBL",
+ "name": "Jabil",
+ "doc_type": "transcript",
+ "date": "2026-03-25",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Jabil raised FY26 revenue to about $34B and core EPS to $12.25 on AI-driven demand, but held core margin at 5.7%, citing conservatism; supply constraints in memory and PCBs are tightening.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 80,
+   "quote": "Today, we're coming in at 80%."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management referred to peers announcing significant capex increases but did not comment on their capacity.",
+   "quote": "we feel comfortable on how we're modeling 1.5% to 2% going forward on CapEx to revenue."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 75% → 80%",
+    "quote": "I think last year, we're at 75%. Today, we're coming in at 80%.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 revenue raised ~$1.6B to ~$34B",
+    "quote": "we now expect revenues of approximately $34 billion, an increase of approximately $1.6 billion from a prior outlook of $32.4 billion.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Core margin held at 5.7% despite upside",
+    "quote": "I feel really good about the 5% right now, the 5.7% for the year in FY '26.",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "Memory and PCB supply tightening",
+    "quote": "They're getting a little bit tighter.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "AI-related revenue up 46% to $13.1B",
+    "quote": "we now expect AI-related revenue to grow approximately 46% year-over-year to $13.1 billion in fiscal 2026.",
+    "direction": 1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 revenue",
+    "value": "~$34B",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "we now expect revenues of approximately $34 billion"
+   },
+   {
+    "metric": "FY26 core diluted EPS",
+    "value": "$12.25",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "We're also raising our full year diluted earnings per share outlook to $12.25, up from $11.55."
+   },
+   {
+    "metric": "FY26 core operating margin",
+    "value": "5.7%",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "For the full year, we continue to expect core operating margins of approximately 5.7%."
+   },
+   {
+    "metric": "FY26 adjusted free cash flow",
+    "value": ">$1.3B",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "we still expect adjusted free cash flow of more than $1.3 billion."
+   },
+   {
+    "metric": "FY26 AI-related revenue",
+    "value": "~$13.1B",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "we're further increasing our fiscal 2026 AI-related revenue outlook by approximately $1 billion compared to December"
+   },
+   {
+    "metric": "FY26 CapEx",
+    "value": "~1% of revenue",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "overall for the year, it will be around 1% of revenue."
+   },
+   {
+    "metric": "Q3 FY26 enterprise revenue",
+    "value": "$8.1B-$8.9B",
+    "change": "new",
+    "horizon": "Q3 FY26",
+    "quote": "total company revenue for Q3 is expected to be in the range of $8.1 billion to $8.9 billion."
+   },
+   {
+    "metric": "FY27 core operating margin",
+    "value": "6% and beyond",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I think we have a really high level of confidence in that 6% for FY '27."
+   },
+   {
+    "metric": "Hyperscaler third customer",
+    "value": "closure in weeks",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I expect some level of closure within the next few weeks, that will be a major contributor for FY '27 as well."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 core operating margin",
+    "outcome": "met",
+    "quote": "we did take margins up in December by 10 bps"
+   },
+   {
+    "metric": "FY26 adjusted free cash flow",
+    "outcome": "met",
+    "quote": "we still expect adjusted free cash flow of more than $1.3 billion."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Hanley",
+    "relation": "partner"
+   },
+   {
+    "name": "Intel",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Electronics manufacturing (EMS/PLI)",
+   "Renewables & storage",
+   "Auto EV transition",
+   "Robotics & physical AI",
+   "Semiconductors & OSAT",
+   "Railway capex"
+  ],
+  "red_flags": [
+   {
+    "label": "Core margin guide not raised despite revenue upside",
+    "quote": "we want to be a little bit more conservative given everything that's going on in the world with the geopolitics and the uncertainties out there."
+   },
+   {
+    "label": "Memory and PCB shortages tightening",
+    "quote": "supply chain constraints, they are definitely there. They're getting a little bit tighter."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "margin": 3,
+   "balance_sheet": 2,
+   "capex": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Core margin upside",
+    "quote": "Could it be higher? Sure. I just feel a little sort of -- we want to be a little bit more conservative"
+   }
+  ],
+  "hedge_index": 0.3,
+  "triggers_count_note": "none"
+ }
+}

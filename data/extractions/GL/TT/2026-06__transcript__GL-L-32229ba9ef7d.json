@@ -1,0 +1,181 @@
+{
+ "doc_id": "GL-L-32229ba9ef7d",
+ "market": "GL",
+ "company_id": "TT",
+ "name": "Trane Technologies",
+ "doc_type": "transcript",
+ "date": "2026-08-03",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "HVAC & cooling",
+  "thesis": "Record $12.1B backlog (up 70% YoY) and Americas commercial HVAC bookings up 50%; FY organic growth guided to about 9% and adjusted EPS raised to $15.20-$15.30, with capacity expanding alongside demand.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Backlog conversion",
+   "Competitive capex",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "expected CapEx of 2% to 3% of revenue in 2026"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Americas commercial HVAC bookings up 50%",
+    "quote": "bookings reached an all-time high up 50% year-over-year",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY adj EPS raised to $15.20-$15.30",
+    "quote": "our adjusted EPS guidance to a range of $15.20 to $15.30",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Applied capacity up 4x in 3 years",
+    "quote": "we've expanded our applied capacity 4x over the last 3 years",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Sell-in equals sell-through YTD",
+    "quote": "year-to-date sell-in is really approximately equal to sell-through",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "EMEA Middle East revenue down ~30%",
+    "quote": "the revenues we're anticipating to be down about 30%",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY organic revenue growth",
+    "value": "approximately 9%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We are increasing our full year organic revenue growth outlook to approximately 9%"
+   },
+   {
+    "metric": "FY adjusted EPS",
+    "value": "$15.20 to $15.30",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "our adjusted EPS guidance to a range of $15.20 to $15.30"
+   },
+   {
+    "metric": "Q3 organic revenue growth",
+    "value": "approximately 10%",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "For the third quarter, we expect organic revenue growth of approximately 10%"
+   },
+   {
+    "metric": "Q3 adjusted EPS",
+    "value": "approximately $4.70",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "with adjusted EPS of approximately $4.70"
+   },
+   {
+    "metric": "Stellar acquisition revenue",
+    "value": "$500 million",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we expect the stellar business to be $500 million in revenue this year, and nothing has changed there"
+   },
+   {
+    "metric": "CapEx",
+    "value": "2% to 3% of revenue",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "expected CapEx of 2% to 3% of revenue in 2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Stellar acquisition revenue",
+    "outcome": "met",
+    "quote": "we expect the stellar business to be $500 million in revenue this year, and nothing has changed there"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Stellar",
+    "relation": "partner"
+   },
+   {
+    "name": "Brainbox",
+    "relation": "partner"
+   },
+   {
+    "name": "Liquid stack",
+    "relation": "partner"
+   },
+   {
+    "name": "ACT",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)",
+   "Interest-rate relief",
+   "Railway capex"
+  ],
+  "red_flags": [
+   {
+    "label": "EMEA margin pressure from Middle East conflict",
+    "quote": "In EMEA, margins were impacted by the conflict in the Middle East."
+   },
+   {
+    "label": "Q2 incremental leverage below 25% target",
+    "quote": "We may have a quarter like the second quarter, we were below that, but that's okay"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 8,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "2027 exit-rate / growth base",
+    "quote": "let's get a few more quarters in before we dial in 2027"
+   },
+   {
+    "topic": "CDU business detail",
+    "quote": "I probably won't go into that level of detail"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

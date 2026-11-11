@@ -1,0 +1,114 @@
+{
+ "doc_id": "GL-L-dc69caba928b",
+ "market": "GL",
+ "company_id": "6367.T",
+ "name": "Daikin Industries",
+ "doc_type": "release",
+ "date": "2026-06-30",
+ "period": "2026-06",
+ "title": "FY2026 First Quarter （235KB）",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "HVAC & cooling",
+  "thesis": "Q1 FY27 sales up 17.5% to ¥1,426.8bn but operating profit up only 7.6% and net profit down 1.7%; FY guidance held at ¥436bn operating profit, with ¥350bn buyback and debt-funded working capital build.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital allocation shift",
+   "Working-capital stress",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables and payables swing with debt rise",
+    "quote": "Interest bearing debt ratio rose to 23.8% from 18.8% at the end of the previous fiscal year.",
+    "highlight": "Interest bearing debt ratio rose to 23.8%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 operating profit guide held at ¥436bn",
+    "quote": "The consolidated business forecast for the fiscal year ending March 31, 2027, remains unchanged from the previous forecast",
+    "highlight": "remains unchanged from the previous forecast",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Data-centre chiller sales growing",
+    "quote": "sales in the chiller and custom air handling unit businesses grew significantly, driven by the expansion of demand for data centers",
+    "highlight": "grew significantly, driven by the expansion of demand for data centers",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 net sales",
+    "value": "¥5,150,000m",
+    "change": "held",
+    "horizon": "FY ending Mar 2027",
+    "quote": "remains unchanged from the previous forecast announced on May 12, 2026"
+   },
+   {
+    "metric": "FY27 operating profit",
+    "value": "¥436,000m",
+    "change": "held",
+    "horizon": "FY ending Mar 2027",
+    "quote": "remains unchanged from the previous forecast announced on May 12, 2026"
+   },
+   {
+    "metric": "FY27 profit attributable to owners of parent",
+    "value": "¥278,000m",
+    "change": "held",
+    "horizon": "FY ending Mar 2027",
+    "quote": "remains unchanged from the previous forecast announced on May 12, 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Debt-funded buyback and short-term borrowing surge",
+    "quote": "Net assets decreased by ¥260,135 million from the end of the previous fiscal year to ¥3,056,403 million, primarily due to the purchase of treasury shares."
+   },
+   {
+    "label": "Operating profit growth lags sales by ~10pts",
+    "quote": "net sales increased by 17.5% year over year to ¥1,426,810 million"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

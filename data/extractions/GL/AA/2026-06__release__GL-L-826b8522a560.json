@@ -1,0 +1,165 @@
+{
+ "doc_id": "GL-L-826b8522a560",
+ "market": "GL",
+ "company_id": "AA",
+ "name": "Alcoa",
+ "doc_type": "release",
+ "date": "2026-07-16",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "Aluminum restarts (San Ciprián, Alumar, Lista, Portland) lifted output 5% to 636kt and realised price to $4,752/t, but Pinjarra alumina outage cut 2026 alumina guidance and $4.1bn AliGroup deal adds acquisition capital risk.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Supply exit",
+   "Capacity bottleneck",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "Set year-to-date production records at four aluminum smelters and at one alumina refinery"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Announced $65 million capital investment at the Mosjøen smelter in Norway"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Smelter restarts add capacity",
+    "quote": "completion of the San Ciprián, Spain smelter restart on April 7, 2026, continued progress on the Alumar, Brazil smelter restart",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Aluminum realised price $3,213 → $4,752/t",
+    "quote": "Average realized third-party price per metric ton of aluminum",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Alumina production guide cut 0.2–0.3Mt",
+    "quote": "The Company has decreased its 2026 projection for alumina production to range between 9.5 and 9.6 million metric tons",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Alumina cost/t rising $312 → $368",
+    "quote": "Adjusted operating cost per metric ton of produced alumina shipped",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 alumina production",
+    "value": "9.5-9.6 Mt",
+    "change": "cut",
+    "horizon": "2026",
+    "quote": "decreased its 2026 projection for alumina production to range between 9.5 and 9.6 million metric tons"
+   },
+   {
+    "metric": "2026 alumina shipments",
+    "value": "11.5-11.6 Mt",
+    "change": "cut",
+    "horizon": "2026",
+    "quote": "decreased its 2026 projection for alumina shipments to range between 11.5 and 11.6 million metric tons"
+   },
+   {
+    "metric": "2026 aluminum production",
+    "value": "2.4-2.6 Mt",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "remain unchanged from its prior projection, ranging between 2.4 and 2.6 million metric tons"
+   },
+   {
+    "metric": "2026 aluminum shipments",
+    "value": "2.6-2.8 Mt",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "between 2.6 and 2.8 million metric tons, respectively"
+   },
+   {
+    "metric": "3Q26 operational tax expense",
+    "value": "$80-90m",
+    "change": "new",
+    "horizon": "3Q26",
+    "quote": "Alcoa expects third quarter 2026 operational tax expense to approximate $80 million to $90 million"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2026 alumina production",
+    "outcome": "missed",
+    "quote": "lower production at the Pinjarra refinery as instability that began in late March was further exacerbated"
+   },
+   {
+    "metric": "2026 alumina shipments",
+    "outcome": "missed",
+    "quote": "decreased its 2026 projection for alumina shipments"
+   },
+   {
+    "metric": "2026 aluminum production",
+    "outcome": "met",
+    "quote": "remain unchanged from its prior projection"
+   },
+   {
+    "metric": "2026 aluminum shipments",
+    "outcome": "met",
+    "quote": "remain unchanged from its prior projection"
+   }
+  ],
+  "entities": [
+   {
+    "name": "South32",
+    "relation": "partner"
+   },
+   {
+    "name": "Ma'aden",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "$4.1bn AliGroup acquisition plus up to $750m CVR",
+    "quote": "upfront consideration of approximately $4.1 billion, plus a contingent value right of up to $750 million"
+   },
+   {
+    "label": "Alumina cost per tonne up 18% sequentially",
+    "quote": "Adjusted operating cost per metric ton of produced alumina shipped"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

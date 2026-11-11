@@ -1,0 +1,119 @@
+{
+ "doc_id": "GL-L-f4a3f2c993aa",
+ "market": "GL",
+ "company_id": "SHW",
+ "name": "Sherwin-Williams",
+ "doc_type": "release",
+ "date": "2026-07-28",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q2 sales +7.5% with PSG same-store +4.2%, but price-led growth and a moderate raw-material squeeze; management flags second-half demand softness and an 8% PSG price increase effective September 1.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "PSG 8% price increase effective Sept 1",
+    "quote": "including an announced 8% price increase in Paint Stores Group effective September 1.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Demand softness flagged for 2H",
+    "quote": "customer sentiment and the leading indicators we track point to continued demand softness in the second half",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables up ~15% vs inventory flat",
+    "quote": "Accounts receivable, net 3,571.2 3,111.9",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year adjusted diluted EPS",
+    "value": "$11.80 to $12.20",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Increasing full year 2026 adjusted diluted net income per share guidance in the range of $11.80 to $12.20 per share"
+   },
+   {
+    "metric": "Full-year consolidated net sales growth",
+    "value": "up mid to high-single digit %",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "consolidated Net sales expected to be up a mid to high-single digit percentage compared to full year 2025"
+   },
+   {
+    "metric": "Q3 consolidated net sales growth",
+    "value": "up mid to high-single digit %",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "we expect third quarter 2026 consolidated Net sales to be up a mid to high-single digit percentage"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Suvinil",
+    "relation": "partner"
+   },
+   {
+    "name": "Valspar",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Price-led growth amid demand softness",
+    "quote": "Net sales increased in all professional customer end markets"
+   },
+   {
+    "label": "Interest expense up 21%",
+    "quote": "additional interest expense attributable to an increase in short-term borrowings and long-term debt"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

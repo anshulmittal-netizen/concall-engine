@@ -1,0 +1,130 @@
+{
+ "doc_id": "GL-L-b8cd5e1ab50b",
+ "market": "GL",
+ "company_id": "MGA",
+ "name": "Magna International",
+ "doc_type": "transcript",
+ "date": "2026-05-04",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Magna Q1 CY26 margin rose 190bp to 5.4% and FY guidance was held, but North America and Europe production cuts of 100k and 200k units and a flat Q2 margin outlook temper the read.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "NA production cut 100k units",
+    "quote": "we reduced our North American production forecast by around 100,000 units to $14.9 million, and we reduced Europe by 200,000 units",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY guide held; sales range trimmed",
+    "quote": "We are reaffirming our prior outlook ranges for adjusted EBIT margin, adjusted EPS and free cash flow.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "tone",
+    "label": "Q2 margin guided flat y/y",
+    "quote": "adjusted EBIT margins expected to be relatively flat with the second quarter of last year",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Adjusted EBIT margin",
+    "value": "6%-6.6%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "adjusted EBIT margin between 6% and 6.6%"
+   },
+   {
+    "metric": "Adjusted EPS",
+    "value": "$6.25-$7.25",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Adjusted EPS between $6.25 and $7.25 per share"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "$1.6-$1.8 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "free cash flow between $1.6 billion and $1.8 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "GAC",
+    "relation": "customer"
+   },
+   {
+    "name": "XPENG",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "China+1 enquiries → orders",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Q1 FCF flattered by $450M+ balance-sheet EV recoveries",
+    "quote": "Operating cash flow in the current period includes over $450 million in balance sheet-related customer recoveries for certain EV programs in North America."
+   },
+   {
+    "label": "Memory chip pricing pressure",
+    "quote": "there's more of an issue around price, meaning you may have had some contracts and basically memory providers are coming back and asking for closer to spot"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 3,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Long-term margin path (7%+)",
+    "quote": "the best time to get through that without confusing anything is the November Investor Day"
+   },
+   {
+    "topic": "Chinese OEMs building in Canada",
+    "quote": "I would like to remain a businessman and a capital allocator and not a policy commentator"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

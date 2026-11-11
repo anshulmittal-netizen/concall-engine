@@ -1,0 +1,195 @@
+{
+ "doc_id": "GL-L-11a6ff17a785",
+ "market": "GL",
+ "company_id": "MOS",
+ "name": "Mosaic",
+ "doc_type": "transcript",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Fertilisers",
+  "thesis": "Mosaic is curtailing phosphate output (about half of Bartow and Louisiana) as sulfur hits $1,200/t marginal cost, while capex is cut $250M to $1.25B; Q2 stripping margins guided above $400/t on 60% committed book.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Supply discipline",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 80,
+   "quote": "Bartow, Riverview, and Four Corners had phosphoric acid operating rates at or above 80%, which is in line with our targets."
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "Management said other competitors have significantly curtailed production primarily due to sulfur availability.",
+   "quote": "we have lowered our 2026 CapEx guidance by $250 million to $1.25 billion"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex cut $250M to $1.25B",
+    "quote": "we have lowered our 2026 CapEx guidance by $250 million to $1.25 billion",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Partial curtailment Bartow and Louisiana",
+    "quote": "Louisiana partial curtailment is about half of its production capacity at roughly 1.4 million tons",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Q1 stripping margin near $400/t",
+    "quote": "allowed us to realize stripping margins near $400 per ton for the quarter",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Brazil fertilizer use to contract",
+    "quote": "2026 is likely going to be a contraction in fertilizer use in Brazil",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Phosphate and Brazil guidance withdrawn",
+    "quote": "that is why we pulled guidance—we do not feel comfortable being able to give you a forecast on that",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 capex",
+    "value": "$1.25 billion",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "we have lowered our 2026 CapEx guidance by $250 million to $1.25 billion"
+   },
+   {
+    "metric": "Working capital release",
+    "value": "$300M to $500M",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "the $300 million to $500 million pretty much continues to be our estimate for release"
+   },
+   {
+    "metric": "Q2 phosphate realized stripping margin",
+    "value": "above $400/t",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "second quarter realized stripping margins will be in excess of $400 per ton for our sales book"
+   },
+   {
+    "metric": "Phosphate conversion cost",
+    "value": "$105-110/t full year",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "full-year expectations shift to $105 per ton–$110 per ton"
+   },
+   {
+    "metric": "Mosaic Biosciences revenue",
+    "value": "double in 2026",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We expect Mosaic Biosciences revenues to double again in 2026"
+   },
+   {
+    "metric": "Annualized expense savings",
+    "value": "$50M new, $15M in 2026",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "expected to generate annualized expense savings of $50 million, of which $15 million will be realized this year"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Working capital release $300M-$500M",
+    "outcome": "met",
+    "quote": "We have been saying that $300 million to $500 million release of working capital."
+   },
+   {
+    "metric": "Phosphate finished product volume 1.8-2.0M tons/quarter",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Canpotex",
+    "relation": "partner"
+   },
+   {
+    "name": "Rainbow Rare Earths",
+    "relation": "partner"
+   },
+   {
+    "name": "International Minerals Carlsbad",
+    "relation": "customer"
+   },
+   {
+    "name": "China",
+    "relation": "competitor"
+   },
+   {
+    "name": "Faustina",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Specialty chem destocking end",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Rural demand recovery",
+   "China+1 enquiries → orders"
+  ],
+  "red_flags": [
+   {
+    "label": "Brazil fertilizer demand contraction and credit stress",
+    "quote": "2026 is likely going to be a contraction in fertilizer use in Brazil"
+   },
+   {
+    "label": "Marginal stripping margin below variable cost",
+    "quote": "the marginal stripping margin is below variable cost. So it does not even cover variable cost"
+   },
+   {
+    "label": "Guidance withdrawn for Brazil EBITDA and volumes",
+    "quote": "that is why we pulled guidance—we do not feel comfortable being able to give you a forecast on that"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 1,
+   "margin": 4,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Second-half phosphate volumes and Brazil guidance",
+    "quote": "Yes, Mike. Thanks. Really, that is why we pulled guidance—we do not feel comfortable being able to give you a forecast on that."
+   },
+   {
+    "topic": "Sulfur cargoes stuck behind Hormuz",
+    "quote": "I do not think there is good visibility into that, Jeff."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

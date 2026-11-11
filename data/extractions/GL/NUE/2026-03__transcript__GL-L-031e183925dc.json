@@ -1,0 +1,182 @@
+{
+ "doc_id": "GL-L-031e183925dc",
+ "market": "GL",
+ "company_id": "NUE",
+ "name": "Nucor",
+ "doc_type": "transcript",
+ "date": "2026-04-21",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Imports fell to 14% of US finished steel and 2026 capex steps down to about $2.5bn from $3.4bn, with pricing and backlogs rising; 2026 guided steel shipments up about 5%, but the pricing and volume outlook is not quantified.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Supply exit",
+   "Import substitution",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 2,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 83,
+   "quote": "somewhere in that 82%, 84% range is about the right utilization"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Our current estimate for 2026 CapEx is approximately $2.5 billion."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2026 capex ~$2.5bn vs $3.4bn in 2025",
+    "quote": "Our current estimate for 2026 CapEx is approximately $2.5 billion.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Finished steel imports 25% → 14%",
+    "quote": "Foreign import share of the U.S. finished steel market has dropped from approximately 25% at this time last year to 16% in October and an estimated 14% in November.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Steel mills backlog up ~40% y/y",
+    "quote": "we entered the year with historically strong backlogs, up nearly 40% year-over-year in the steel mills segment and 15% in steel products.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2026 steel mill shipments +~5%",
+    "quote": "we currently expect Nucor steel mill shipments to increase approximately 5% compared to 2025.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Maintenance capex raised to ~$800m/yr",
+    "quote": "I would guide you to a figure closer to $800 million a year now for that",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Steel mill shipments 2026",
+    "value": "+~5% vs 2025",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we currently expect Nucor steel mill shipments to increase approximately 5% compared to 2025"
+   },
+   {
+    "metric": "CapEx 2026",
+    "value": "~$2.5bn",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Our current estimate for 2026 CapEx is approximately $2.5 billion."
+   },
+   {
+    "metric": "Maintenance capex",
+    "value": "~$800m/yr plus projects",
+    "change": "raised",
+    "horizon": "beyond 2027",
+    "quote": "I'd guide you more toward an $800 million figure plus whatever projects are going on."
+   },
+   {
+    "metric": "Incremental EBITDA from completed projects plus Brandenburg",
+    "value": "~$500m y/y uplift in 2026",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "the delta in the EBITDA is about $500 million between just those 4 projects and progress at Brandenburg"
+   },
+   {
+    "metric": "Q1 2026 earnings",
+    "value": "higher consolidated earnings, all segments",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "We expect higher consolidated earnings with improved results across all 3 operating segments."
+   },
+   {
+    "metric": "Lexington and Kingman EBITDA positive",
+    "value": "by end Q1 2026, fully ramped by year-end",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "we would expect both also to be fully ramped by the end of the year."
+   },
+   {
+    "metric": "Shareholder returns",
+    "value": "at least 40% of net earnings",
+    "change": "held",
+    "horizon": "long term",
+    "quote": "We're committed to returning at least 40% of our net earnings back to our shareholders in dividends and share repurchases."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "U.S. Steel",
+    "relation": "competitor"
+   },
+   {
+    "name": "Nucor Data Systems",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Anti-dumping protection",
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Negative free cash flow in 2025",
+    "quote": "Last year, Nucor had negative free cash flow, something that is very rare in our company's history."
+   },
+   {
+    "label": "Start-up costs $496m in 2025, elevated in 2026",
+    "quote": "For 2025, pre-operating and start-up costs totaled $496 million."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 4,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Pricing outlook",
+    "quote": "And so, look, the forecasted [ touch on ] pricing, look, I'm not going to try to predict."
+   },
+   {
+    "topic": "2027 growth capex and EBITDA run rate",
+    "quote": "We'll update you more on the outlook in '27 as we get toward the end of '26."
+   },
+   {
+    "topic": "Upstream M&A",
+    "quote": "make no mistake, Nucor is a steel company at its heart"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

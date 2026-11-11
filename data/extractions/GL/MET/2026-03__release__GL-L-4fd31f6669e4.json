@@ -1,0 +1,99 @@
+{
+ "doc_id": "GL-L-4fd31f6669e4",
+ "market": "GL",
+ "company_id": "MET",
+ "name": "MetLife",
+ "doc_type": "release",
+ "date": "2026-05-06",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Strong Q1 with adjusted EPS up 23% to $2.42 and adjusted PFOs ex-PRT up 10%, but earnings lean on variable investment income (up 58% to $518M) and PRT volume fell sharply.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Adj PFOs ex-PRT up 10%",
+    "quote": "Adjusted PFOs, excluding pension risk transfers (PRT), 10% to $13.3 billion, with growth in all segments.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Variable investment income up 58%",
+    "quote": "Variable investment income up 58% to $518 million, driven by higher private equity returns.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Holding co cash at top of target",
+    "quote": "Holding company cash and liquid assets totaled $3.9 billion at quarter end, at top of target range.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "New Frontier financial targets",
+    "value": "Confidence in delivering ambitious targets",
+    "change": "held",
+    "quote": "We remain confident in delivering against the ambitious financial targets we laid out under New Frontier."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "PineBridge Investments",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Earnings boosted by variable investment income",
+    "quote": "Variable investment income up 58% to $518 million, driven by higher private equity returns."
+   },
+   {
+    "label": "PRT premiums down sharply",
+    "quote": "Less: PRT 843 1,476"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

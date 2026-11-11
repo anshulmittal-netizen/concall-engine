@@ -1,0 +1,145 @@
+{
+ "doc_id": "GL-L-5223b9cc7053",
+ "market": "GL",
+ "company_id": "HCA",
+ "name": "HCA Healthcare",
+ "doc_type": "release",
+ "date": "2026-07-14",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.94,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Q2 Adjusted EBITDA of $4.027bn beat prior year but payer-mix hit of ~$400m from exchange uninsured was offset by ~$400m Florida supplemental payment; FY26 EBITDA guide trimmed to $15.4–16.1bn from $15.55–16.45bn.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "The Company's 2026 estimate for capital expenditures of $5.0 billion to $5.5 billion, excluding acquisitions, remains unchanged.",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Medicaid supplemental $300–500m vs ($50)–($250)m",
+    "quote": "Medicaid Supplemental Payment Programs ($50) to ($250) million $300 to $500 million",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Surgical volumes declining",
+    "quote": "Same facility inpatient surgeries declined 2.3 percent, and same facility outpatient surgeries declined 3.4 percent",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenues",
+    "value": "$77.0–79.5bn",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "$77.000 to $79.500 billion"
+   },
+   {
+    "metric": "Net income attributable to HCA",
+    "value": "$6.3–6.7bn",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "$6.300 to $6.700 billion"
+   },
+   {
+    "metric": "Adjusted EBITDA",
+    "value": "$15.4–16.1bn",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "$15.400 to $16.100 billion"
+   },
+   {
+    "metric": "EPS (diluted)",
+    "value": "$28.70–30.50",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "$28.70 to $30.50 per diluted share"
+   },
+   {
+    "metric": "Capital expenditures",
+    "value": "$5.0–5.5bn",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "The Company's 2026 estimate for capital expenditures of $5.0 billion to $5.5 billion, excluding acquisitions, remains unchanged."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenues",
+    "outcome": "missed",
+    "quote": "$76.500 to $80.000 billion"
+   },
+   {
+    "metric": "Adjusted EBITDA",
+    "outcome": "missed",
+    "quote": "$15.550 to $16.450 billion"
+   },
+   {
+    "metric": "Net income attributable to HCA",
+    "outcome": "missed",
+    "quote": "$6.495 to $7.035 billion"
+   },
+   {
+    "metric": "Health insurance exchange estimate",
+    "outcome": "missed",
+    "quote": "($600) to ($900) million"
+   },
+   {
+    "metric": "Capital expenditures",
+    "outcome": "met",
+    "quote": "remains unchanged"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Exchange payer-mix hit grew; Q1 estimate raised $75m",
+    "quote": "This amount includes an increase of approximately $75 million related to the Company’s previous estimate of the first quarter health insurance exchange impact."
+   },
+   {
+    "label": "Q2 EBITDA lifted by one-off Florida supplemental benefit",
+    "quote": "the Company recognized approximately $400 million of incremental net benefit from Medicaid Supplemental Payment Programs, primarily related to the state of Florida"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

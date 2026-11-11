@@ -1,0 +1,154 @@
+{
+ "doc_id": "GL-L-37bcb733915c",
+ "market": "GL",
+ "company_id": "UHS",
+ "name": "Universal Health Services",
+ "doc_type": "transcript",
+ "date": "2026-04-21",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Q4 acute same-facility EBITDA margin rose 50bp to 14.8% on labor and supply control, but 2026 guidance embeds a ~$75m exchange headwind and ~$35m California staffing cost; volumes flat in Q4.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "We expect capital expenditures in 2026 to range between $950 million and $1.1 billion, reflecting the culmination of spending for several large inpatient projects that will come online during the first half of 2026."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Acute pricing guided 3%-4% for 2026",
+    "quote": "our guidance implies a 3% to 4% pricing increase. That's in line.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Operating cash flow fell to $1.9B from $2.1B",
+    "quote": "Cash generated from operating activities was $1.9 billion for the 12 months ended December 31, 2025, as compared to $2.1 billion during 2024.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Exchange volumes to fall 25%-30%",
+    "quote": "we assume that exchange volumes will decline by 25% to 30%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Behavioral volume growth 1.5% in Q4",
+    "quote": "a 1.5% increase in same-facility adjusted patient days",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue 2026",
+    "value": "$18.4B-$18.8B (6%-8% growth)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect revenue to range between $18.4 billion and $18.8 billion, representing growth of 6% to 8%."
+   },
+   {
+    "metric": "Adjusted EBITDA net of NCI 2026",
+    "value": "$2.64B-$2.79B (2%-8% growth)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect adjusted EBITDA net of NCI to range between $2.64 billion and $2.79 billion, representing growth of 2% to 8%."
+   },
+   {
+    "metric": "Adjusted EPS 2026",
+    "value": "$22.64-$24.52",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect adjusted net income attributable to UHS per diluted share to range between $22.64 and $24.52"
+   },
+   {
+    "metric": "Same-facility volume growth",
+    "value": "2%-3% both segments",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Our guidance assumes same-facility volume growth to be in a range of 2% to 3% for both segments for the full year 2026"
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "$950M-$1.1B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect capital expenditures in 2026 to range between $950 million and $1.1 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Hippocratic AI",
+    "relation": "partner"
+   },
+   {
+    "name": "Jefferson Health System",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Medicaid supplemental payments",
+   "Outpatient behavioral expansion",
+   "AI in healthcare operations",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Exchange premium non-payment bad debt risk",
+    "quote": "they don't pay -- they won't reimburse the charges at that point."
+   },
+   {
+    "label": "Operating cash flow down on receivables and Medicaid timing",
+    "quote": "$145 million related to the timing of payments for certain Medicaid supplemental programs."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 4,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "AI financial impact",
+    "quote": "it's impossible to precisely quantify -- even precisely quantify what we've been able to achieve"
+   },
+   {
+    "topic": "Medicaid work requirements impact",
+    "quote": "it's not an accident that none of the hospital companies have really attempted to quantify"
+   }
+  ],
+  "hedge_index": 0.35
+ }
+}

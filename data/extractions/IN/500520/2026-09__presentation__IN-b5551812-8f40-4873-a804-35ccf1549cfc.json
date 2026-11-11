@@ -1,0 +1,134 @@
+{
+ "doc_id": "IN-b5551812-8f40-4873-a804-35ccf1549cfc",
+ "market": "IN",
+ "company_id": "500520",
+ "name": "Mahindra & Mahindra",
+ "doc_type": "presentation",
+ "date": "2026-11-05",
+ "period": "2026-09",
+ "title": "Please refer enclosed file",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Q2 FY27 consolidated PAT up 25% to Rs 4,588 cr with Auto conso PBIT margin up 110 bps QoQ to 8.8%, but Farm PBIT fell 14% YoY and the deck guides tractor margin pressure into Q3 on drought and commodity costs.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "HCV capacity completely utilised to meet higher new Blazo demand; Capacity expansion being planned"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Creating additional NU_IQ capacity in Chakan of 10k p.m. (92k operational capacity by F28 exit)"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "HCV capacity fully utilised",
+    "quote": "HCV capacity completely utilised to meet higher new Blazo demand",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Auto price increase +5% Jan–Jul 26",
+    "quote": "Price increase Auto (Jan–Jul 26) +5% +",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Farm margin pressure into Q3",
+    "quote": "Core Tractor to see some pressure in Q3, Improvement in Q4, Normalcy in F28",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Tractor industry FY27",
+    "value": "Flattish",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "INDUSTRY OUTLOOK REDUCED TO FLATTISH IN F27"
+   },
+   {
+    "metric": "SUV volume growth FY27",
+    "value": "Mid to high teen growth",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Mid to high teen growth for M&M in FY27"
+   },
+   {
+    "metric": "LCV (<3.5T) industry FY27",
+    "value": "Double digit industry growth",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Double digit Industry growth expected for FY27"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Auto operating margin Q2 vs Q1",
+    "outcome": "met",
+    "quote": "AUTO CONSOLIDATED MARGIN UP 110 bps QoQ"
+   },
+   {
+    "metric": "ROE target",
+    "outcome": "met",
+    "quote": "Annualised RoE (H1) 2"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Mahindra Finance",
+    "relation": "peer"
+   },
+   {
+    "name": "Embraer",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Auto EV transition",
+   "Consolidation / competitor exits",
+   "Electronics manufacturing (EMS/PLI)"
+  ],
+  "red_flags": [
+   {
+    "label": "Farm PBIT down 14% YoY; monsoon deficit",
+    "quote": "Monsoon deficit widened and reservoir level deteriorated between July and Oct"
+   },
+   {
+    "label": "Core tractor margin pressure into Q3",
+    "quote": "Core Tractor to see some pressure in Q3, Improvement in Q4, Normalcy in F28"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

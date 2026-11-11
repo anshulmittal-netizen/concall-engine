@@ -1,0 +1,102 @@
+{
+ "doc_id": "GL-L-9447c8ab9d04",
+ "market": "GL",
+ "company_id": "IBM",
+ "name": "IBM",
+ "doc_type": "release",
+ "date": "2026-04-22",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Software and Infrastructure drove a 6% constant-currency revenue beat-type quarter; Consulting barely grew at 1% cc while Infrastructure (IBM Z +48% cc) carried the mix, and FY26 guidance was simply reaffirmed.",
+  "archetype": "None",
+  "mental_models": [
+   "Mix shift",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "IBM Z up 48% cc",
+    "quote": "IBM Z up 51 percent, up 48 percent at constant currency",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Consulting up 1% cc",
+    "quote": "Consulting revenue up 4 percent, up 1 percent at constant currency",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 guidance reaffirmed, not raised",
+    "quote": "The company continues to expect full-year constant currency revenue growth of more than 5 percent",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year constant currency revenue growth",
+    "value": "more than 5 percent",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "The company continues to expect full-year constant currency revenue growth of more than 5 percent"
+   },
+   {
+    "metric": "Full-year free cash flow increase",
+    "value": "about $1 billion year-over-year",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "The company continues to expect full-year free cash flow to increase by about $1 billion year-over-year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Red Hat",
+    "relation": "peer"
+   },
+   {
+    "name": "Confluent",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

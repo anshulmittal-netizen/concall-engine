@@ -1,0 +1,89 @@
+{
+ "doc_id": "GL-L-89f7e870cc0c",
+ "market": "GL",
+ "company_id": "SCHW",
+ "name": "Charles Schwab",
+ "doc_type": "release",
+ "date": "2026-04-16",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital markets",
+  "thesis": "Record Q1 revenue of $6.5B (+16%) and core net new assets of $140B (ex-deconversion $157.5B) show client engagement, but no supply-side or capacity signals; the read is demand-led growth at a 51% adjusted pre-tax margin.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "DATs up 34% YoY to 9.9M",
+    "quote": "Daily average trading volume reached a record 9.9 million – up 34% versus 1Q25",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Bank loans up 29% to $60.9B",
+    "quote": "Bank loan balances equaled $60.9 billion at March month-end, up 29% year-over-year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Revenue per trade down 12% YoY",
+    "quote": "Revenue Per Trade",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Forge Global",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Consolidation / competitor exits",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin loans up 52% YoY, long/short RIA strategies $21.3B",
+    "quote": "including $21.3 billion related to long/short strategies implemented by RIA clients"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

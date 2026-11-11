@@ -1,0 +1,175 @@
+{
+ "doc_id": "GL-L-ba25bf9a9f43",
+ "market": "GL",
+ "company_id": "LEN",
+ "name": "Lennar",
+ "doc_type": "transcript",
+ "date": "2026-03-13",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Lennar Q1 FY26 gross margin 15.2% with incentives 14.1%; management calls Q1 the low point, but guides Q2 margin only 15.5%-16% and holds 85,000 deliveries despite a soft market.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply discipline",
+   "Working-capital stress",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Incentives 14.1% vs 14.5% prior",
+    "quote": "Sales incentives on deliveries were 14.1%, roughly flat with Q4 of last year at 14.5%",
+    "highlight": "Sales incentives on deliveries were 14.1%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Homebuilding inventory cut to $10.5B",
+    "quote": "our total homebuilding inventory has been reduced from just under $20 billion 2 years ago to $10.5 billion today",
+    "highlight": "reduced from just under $20 billion 2 years ago to $10.5 billion today",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Direct costs down 7% YoY",
+    "quote": "In Q1, we achieved just over a 2.5% reduction in direct construction costs from Q4, which represents a 7% year-over-year reduction.",
+    "highlight": "7% year-over-year reduction",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Q1 margin 15.2% called low point",
+    "quote": "we believe our Q2 -- our Q1 margin of 15.2% should represent the low point for the year",
+    "highlight": "should represent the low point for the year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Institutional buyers sidelined",
+    "quote": "The institutional purchasers have been sidelined by political pressures and popular sentiment",
+    "highlight": "institutional purchasers have been sidelined",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q2 new orders",
+    "value": "21,000-22,000 homes",
+    "change": "new",
+    "horizon": "Q2 FY26",
+    "quote": "We expect Q2 new orders to be in the range of 21,000 to 22,000 homes"
+   },
+   {
+    "metric": "Q2 deliveries",
+    "value": "20,000-21,000 homes",
+    "change": "new",
+    "horizon": "Q2 FY26",
+    "quote": "We anticipate our Q2 deliveries to be in the range of 20,000 to 21,000"
+   },
+   {
+    "metric": "Q2 gross margin",
+    "value": "15.5%-16%",
+    "change": "new",
+    "horizon": "Q2 FY26",
+    "quote": "gross margin should be in the range of 15.5% to 16%"
+   },
+   {
+    "metric": "Q2 EPS",
+    "value": "$1.10-$1.40",
+    "change": "new",
+    "horizon": "Q2 FY26",
+    "quote": "these estimates should produce an EPS range of approximately $1.10 to $1.40 for the quarter"
+   },
+   {
+    "metric": "FY26 deliveries",
+    "value": "85,000 homes",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we continue to aim for a full year delivery target of 85,000 homes for the full year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Opendoor",
+    "relation": "partner"
+   },
+   {
+    "name": "No Rose",
+    "relation": "partner"
+   },
+   {
+    "name": "Angelo Gordon",
+    "relation": "partner"
+   },
+   {
+    "name": "Apollo",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Interest-rate relief",
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Gross margin 15.2% with 14.1% incentives",
+    "quote": "Sales incentives on deliveries were 14.1%, roughly flat with Q4 of last year at 14.5%"
+   },
+   {
+    "label": "Q1 cash use ~$1B from lower ASP",
+    "quote": "It probably relates most to average sales price coming down."
+   },
+   {
+    "label": "Overhead rising; SG&A above expectations",
+    "quote": "Our SG&A came in at 9.8%, slightly above expectations"
+   }
+  ],
+  "analyst_mix": {
+   "margin": 2,
+   "growth": 2,
+   "balance_sheet": 1,
+   "capex": 0,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Market share and volume cadence",
+    "quote": "This is an art, not a science. I can't predetermine today what we're going to do throughout the year."
+   },
+   {
+    "topic": "Rate buydown cost and margin impact",
+    "quote": "I think that we've tried to give as much guidance as we saw through the quarter and not do too much to update that thinking"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

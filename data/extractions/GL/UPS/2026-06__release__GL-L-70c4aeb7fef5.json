@@ -1,0 +1,156 @@
+{
+ "doc_id": "GL-L-70c4aeb7fef5",
+ "market": "GL",
+ "company_id": "UPS",
+ "name": "UPS",
+ "doc_type": "release",
+ "date": "2026-07-28",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1 PRESS RELEASE SECOND QUARTER EARNINGS",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "Q2 non-GAAP adj. operating margin rose to 9.2% from 8.8% and FY26 guidance was raised, but US Domestic volume fell 3.3% and GAAP operating margin collapsed to 4.1% on $891M after-tax transformation charges.",
+  "archetype": "Value migration",
+  "mental_models": [
+   "Operating leverage",
+   "Supply exit",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "The company also confirms expected capital expenditures of about $3.0 billion and dividend payments of around $5.4 billion, subject to board approval."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "US Domestic revenue per piece +9.3%",
+    "quote": "Revenue increased 6.0%, driven by a 9.3% increase in revenue per piece.",
+    "highlight": "9.3% increase in revenue per piece",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 adj. op profit raised to ~$8.65B",
+    "quote": "Raises Full-year 2026 Consolidated Revenue Outlook to Approximately $91.2B and Non-GAAP Adj. Operating Profit Target to Approximately $8.65B",
+    "highlight": "Non-GAAP Adj. Operating Profit Target to Approximately $8.65B",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Network reconfiguration headcount and facility cuts",
+    "quote": "has led, and will continue to lead, to further reductions in our facilities, vehicles, aircraft and workforce",
+    "highlight": "further reductions in our facilities, vehicles, aircraft and workforce",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "US Domestic avg daily volume 16,553K → 16,002K",
+    "quote": "Average Daily U.S. Domestic Package Volume (in thousands)",
+    "highlight": "Average Daily U.S. Domestic Package Volume",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated revenue FY26",
+    "value": "~$91.2B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "For the full year 2026, the company is raising its guidance for consolidated revenue to approximately $91.2 billion"
+   },
+   {
+    "metric": "Non-GAAP adj. operating profit FY26",
+    "value": "~$8.65B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "consolidated non-GAAP adjusted operating profit to approximately $8.65 billion"
+   },
+   {
+    "metric": "Non-GAAP adj. diluted EPS FY26",
+    "value": "~$7.22",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "non-GAAP adjusted diluted EPS to approximately $7.22"
+   },
+   {
+    "metric": "Capex FY26",
+    "value": "~$3.0B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "expected capital expenditures of about $3.0 billion"
+   },
+   {
+    "metric": "Network reconfiguration program benefits FY26",
+    "value": "~$3B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect to achieve approximately $3 billion in full year 2026 benefits from these initiatives."
+   },
+   {
+    "metric": "Non-GAAP excluded transformation costs FY26",
+    "value": "$1.3-1.5B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we expect non-GAAP adjusted operating expense to exclude between $1.3 and $1.5 billion in cost during the full year 2026"
+   },
+   {
+    "metric": "Effective tax rate FY26",
+    "value": "~23.0%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "The effective tax rate is still expected to be approximately 23.0%."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Amazon",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "GAAP operating margin 4.1% vs adj 9.2%; $891M after-tax charges",
+    "quote": "GAAP results included after-tax transformation charges of $891 million, or $1.05 per diluted share"
+   },
+   {
+    "label": "Recurring transformation charges through 2027",
+    "quote": "These initiatives are expected to conclude by 2027."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

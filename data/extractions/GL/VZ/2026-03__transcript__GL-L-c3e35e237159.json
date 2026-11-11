@@ -1,0 +1,148 @@
+{
+ "doc_id": "GL-L-c3e35e237159",
+ "market": "GL",
+ "company_id": "VZ",
+ "name": "Verizon",
+ "doc_type": "transcript",
+ "date": "2026-04-14",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q3 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Verizon's Q3 2025 call shows postpaid phone net losses of 7,000 and a CEO admission that price-led growth is unsustainable; the read is a customer-retention reset funded by cost cuts, not supply discipline.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Customer stickiness",
+   "Competitive capex",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "You can expect our capital envelope to support the completion of our C-band build-out and our long-term objectives for fiber expansion"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Postpaid phone net adds -7,000",
+    "quote": "resulted in postpaid phone net losses of 7,000 in the quarter",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Price-led growth called unsustainable",
+    "quote": "a strategic approach that relies too much on price without subscriber growth is not a sustainable strategy",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "2025 FCF guide reaffirmed $19.5-20.5B",
+    "quote": "we reiterated our guidance for the year at $19.5 billion to $20.5 billion for 2025",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "novelty",
+    "label": "Legacy business exits, 2026 guidance deferred",
+    "quote": "we will also aggressively sunset or exit legacy businesses where we don't see a clear path",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2025 adjusted EBITDA, adjusted EPS, free cash flow",
+    "value": "Reaffirmed; FCF $19.5-20.5B",
+    "change": "held",
+    "quote": "we reiterated our guidance for the year at $19.5 billion to $20.5 billion for 2025"
+   },
+   {
+    "metric": "Net unsecured debt to adjusted EBITDA leverage target",
+    "value": "2.0-2.25x long-term target",
+    "change": "held",
+    "quote": "We also remain committed to our long-term net unsecured leverage target range of 2.0 to 2.25x. This is not going to change."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "AT&T",
+    "relation": "competitor"
+   },
+   {
+    "name": "T-Mobile",
+    "relation": "competitor"
+   },
+   {
+    "name": "Frontier",
+    "relation": "partner"
+   },
+   {
+    "name": "Starry",
+    "relation": "peer"
+   },
+   {
+    "name": "Tillman",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Customer stickiness",
+   "Convergence",
+   "Fixed wireless access",
+   "Fiber expansion",
+   "Cost transformation",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Postpaid phone net losses",
+    "quote": "resulted in postpaid phone net losses of 7,000 in the quarter"
+   },
+   {
+    "label": "Promo amortization headwind to persist",
+    "quote": "we expect this headwind to continue"
+   },
+   {
+    "label": "Public sector disconnects",
+    "quote": "we continue to see disconnect pressure in the public sector"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 4,
+   "margin": 1,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Back-book repricing and consumer share plan",
+    "quote": "although I won't go into specifics on how we're thinking about this because it's still early days"
+   },
+   {
+    "topic": "2026 guidance and legacy business exits",
+    "quote": "we will talk about this in more detail in January"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

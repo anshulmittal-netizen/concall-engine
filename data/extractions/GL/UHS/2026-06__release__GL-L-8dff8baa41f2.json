@@ -1,0 +1,136 @@
+{
+ "doc_id": "GL-L-8dff8baa41f2",
+ "market": "GL",
+ "company_id": "UHS",
+ "name": "Universal Health Services",
+ "doc_type": "release",
+ "date": "2026-07-28",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Q2 adjusted EBITDA rose 5.4% to $677.9M on a $100M one-off Florida Medicaid catch-up, while the full-year Adjusted EBITDA midpoint was trimmed 1.9% and Adjusted EPS midpoint 2.6%; underlying acute same-facility margin was flat-to-down.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 62.1,
+   "quote": "Occupancy-licensed beds 62.1% 63.4%"
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "during the full year of 2026, we expect to spend approximately $950 million to $1.1 billion on capital expenditures",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Adj EBITDA midpoint down 1.9%",
+    "quote": "The midpoint of our revised 2026 forecasted Adjusted EBITDA net of NCI, represents a decrease of 1.9%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Acute occupancy 64.4% → 65.1% same-facility, H1 down",
+    "quote": "Occupancy-licensed beds 64.4% 65.7%",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "DSO 50 → 56 days",
+    "quote": "Days Sales Outstanding 56 50",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Behavioral rev/adj admission +7.1%",
+    "quote": "net revenue per adjusted admission increased by 7.1%",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net revenues FY26",
+    "value": "$18.501B-$18.762B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "$18.501 billion $18.762 billion"
+   },
+   {
+    "metric": "Adjusted EBITDA net of NCI FY26",
+    "value": "$2.610B-$2.717B",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "$2.610 billion $2.717 billion"
+   },
+   {
+    "metric": "Adjusted EPS diluted FY26",
+    "value": "$22.28-$23.65",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "$22.28 per share $23.65 per share"
+   },
+   {
+    "metric": "Capex FY26",
+    "value": "$950M-$1.1B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we expect to spend approximately $950 million to $1.1 billion on capital expenditures"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Talkspace, Inc.",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Q2 EBITDA lifted by $100M prior-period Medicaid catch-up",
+    "quote": "a favorable net pre-tax impact of $100 million (net of related provider taxes) recorded in connection with the Florida Medicaid managed care directed payment program"
+   },
+   {
+    "label": "Working capital drag: CFO down $64M; DSO 50→56",
+    "quote": "an unfavorable change of $207 million in other working capital accounts due primarily to the timing of accounts payable disbursements"
+   },
+   {
+    "label": "Cumberland Hospital litigation",
+    "quote": "the final resolution of these matters could have a material adverse effect on the Company"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

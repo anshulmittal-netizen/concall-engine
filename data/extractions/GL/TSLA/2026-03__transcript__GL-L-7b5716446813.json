@@ -1,0 +1,159 @@
+{
+ "doc_id": "GL-L-7b5716446813",
+ "market": "GL",
+ "company_id": "TSLA",
+ "name": "Tesla",
+ "doc_type": "transcript",
+ "date": "2026-04-22",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q3 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Tesla Q3 2024 call: record deliveries and $6.3B operating cash flow, but capex raised to over $11B on AI compute and management warned Q4 auto margins will be challenging; supply-side signals are mixed rather than discipline-led.",
+  "archetype": "None",
+  "mental_models": [
+   "Competitive capex",
+   "Pricing power",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We now expect our CapEx for the year to be in excess of $11 billion."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex guided above $11B for year",
+    "quote": "We now expect our CapEx for the year to be in excess of $11 billion.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "ASPs lower on financing incentives",
+    "quote": "we did experience reduction in ASPs, primarily due to the impact of financing incentives",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Vehicle growth 20%-30% next year",
+    "quote": "something like a 20% to 30% growth next year is my best guess",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 auto margins to be challenged",
+    "quote": "Sustaining these margins in Q4, however, will be challenging given the current economic environment.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Record Q3 deliveries; peers' EV orders down",
+    "quote": "Tesla at the same time has achieved record deliveries.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Vehicle volume growth FY2025",
+    "value": "20%-30%",
+    "change": "new",
+    "horizon": "next year",
+    "quote": "I think it's 20% to 30% vehicle growth next year."
+   },
+   {
+    "metric": "Cybercab volume production",
+    "value": "at least 2 million units a year",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "we're aiming for at least 2 million units a year of Cybercab."
+   },
+   {
+    "metric": "Full-year CapEx",
+    "value": "in excess of $11 billion",
+    "change": "new",
+    "horizon": "2024",
+    "quote": "We now expect our CapEx for the year to be in excess of $11 billion."
+   },
+   {
+    "metric": "Ride-hailing public launch",
+    "value": "Texas and California (subject to approval)",
+    "change": "new",
+    "horizon": "next year",
+    "quote": "we do expect to roll out ride-hailing in California, Texas next year to the public."
+   },
+   {
+    "metric": "Energy deployments",
+    "value": "more than doubled vs last year",
+    "change": "new",
+    "horizon": "end of year",
+    "quote": "we expect to grow our deployment sequentially in Q4 to end the year with more than doubled of last year."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Waymo",
+    "relation": "competitor"
+   },
+   {
+    "name": "xAI",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Auto EV transition",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Auto margin sustainability warning",
+    "quote": "Sustaining these margins in Q4, however, will be challenging given the current economic environment."
+   },
+   {
+    "label": "Lower ASPs from financing incentives",
+    "quote": "we did experience reduction in ASPs, primarily due to the impact of financing incentives"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Non-robotaxi $25k model timing",
+    "quote": "We're not breaking it on."
+   },
+   {
+    "topic": "California unsupervised FSD approval",
+    "quote": "it's just not something we totally control"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

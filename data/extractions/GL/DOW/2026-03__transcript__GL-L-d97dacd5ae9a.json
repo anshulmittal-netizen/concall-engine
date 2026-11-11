@@ -1,0 +1,171 @@
+{
+ "doc_id": "GL-L-d97dacd5ae9a",
+ "market": "GL",
+ "company_id": "DOW",
+ "name": "Dow",
+ "doc_type": "transcript",
+ "date": "2026-04-14",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q4 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Dow's Q4 2024 call shows capex cut by $300-500M to hold near current levels, $1B cost cuts and a European cracker idling, while Q1 EBITDA guided down to about $1B on feedstock squeeze.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Supply discipline",
+   "Supply exit",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "I'd say the operating rates in the Americas continue to be relatively strong. So you're talking about high 80s, low-90s percent types of operating rates."
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "we're going to... reducing our 2025 spending by $300 million to $500 million compared to our previously disclosed target of $3.5 billion."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "CapEx cut $300-500M vs $3.5B",
+    "quote": "reducing our 2025 spending by $300 million to $500 million compared to our previously disclosed target of $3.5 billion",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "European cracker idled from Q2",
+    "quote": "This decision will result in us idling this asset starting in second quarter until market dynamics improve.",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "pricing",
+    "label": "Q1 EBITDA guided to about $1B",
+    "quote": "We expect first quarter earnings to be approximately $1 billion, down $200 million quarter-over-quarter.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Local price down 3% YoY and QoQ",
+    "quote": "Local price was down 3% year-over-year and sequentially with declines across all our operating segments.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Industry oversupply, China siloxane capacity",
+    "quote": "we're continuing to see an overcapacity situation there",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q1 operating EBITDA",
+    "value": "approximately $1 billion",
+    "change": "new",
+    "horizon": "Q1 2025",
+    "quote": "We expect first quarter earnings to be approximately $1 billion, down $200 million quarter-over-quarter."
+   },
+   {
+    "metric": "Operational tax rate",
+    "value": "25%-29%",
+    "change": "new",
+    "horizon": "FY 2025",
+    "quote": "we anticipate our operational tax-rate to be in the range of 25% to 29%"
+   },
+   {
+    "metric": "Cost reduction run-rate",
+    "value": "$1 billion by 2026",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "We announced today that we will implement cost reductions of $1 billion on an annual run-rate basis by 2026."
+   },
+   {
+    "metric": "CapEx 2025",
+    "value": "$3.0-3.2B",
+    "change": "cut",
+    "horizon": "FY 2025",
+    "quote": "We just provided a guide on the CapEx now in the range of $3 billion to $3.2 billion."
+   },
+   {
+    "metric": "Path2Zero incremental EBITDA",
+    "value": "about $1 billion annually by 2030",
+    "change": "held",
+    "horizon": "2030",
+    "quote": "the project is expected to generate approximately $1 billion in incremental EBITDA annually by 2030."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Macquarie Asset Management",
+    "relation": "partner"
+   },
+   {
+    "name": "Repsol",
+    "relation": "partner"
+   },
+   {
+    "name": "CP Chem",
+    "relation": "competitor"
+   },
+   {
+    "name": "Arkema",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Cash conversion 67%, FCF $44M vs $2B dividend",
+    "quote": "Free Cash Flow -- $44 million, based on $811 million in cash flow from continuing operations and $767 million in total CapEx."
+   },
+   {
+    "label": "Margins unsustainable, price hikes at risk",
+    "quote": "Margins have reached a place that they are unsustainable."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 2,
+   "growth": 3,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Polyethylene pricing baked into guidance",
+    "quote": "I just want to reiterate that it is really important that we are going to stand firm on our price increases."
+   },
+   {
+    "topic": "Whether European closures offset new capacity",
+    "quote": "I don't want you to assume that's the answer to the European strategic review"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

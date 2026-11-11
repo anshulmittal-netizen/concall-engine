@@ -1,0 +1,147 @@
+{
+ "doc_id": "GL-L-a1ee451987d9",
+ "market": "GL",
+ "company_id": "LEN",
+ "name": "Lennar",
+ "doc_type": "release",
+ "date": "2026-06-11",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Lennar Q2 gross margin 15.6% and new orders down 4% with incentives at 12.9%; FY26 deliveries cut to 82,000–83,000 while owned inventory fell to $10.9B and cash dropped to $1.8B.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Pricing power",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": 1,
+   "demand": -1,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 deliveries cut to 82,000-83,000",
+    "quote": "we are moderating our target full-year 2026 deliveries to approximately 82,000 to 83,000 homes.",
+    "highlight": "moderating our target full-year 2026 deliveries",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Incentives 12.9% vs normalised 4-6%",
+    "quote": "the gap between our current incentive levels of 12.9% and normalized levels of 4% to 6%",
+    "highlight": "current incentive levels of 12.9%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "New orders down 4% YoY",
+    "quote": "New orders decreased 4% year over year to 21,749 homes",
+    "highlight": "New orders decreased 4% year over year",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Owned inventory down to 2.1 homes per community",
+    "quote": "We reduced our inventory to 2.1 homes per community from 3 homes per community last quarter",
+    "highlight": "We reduced our inventory to 2.1 homes per community",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q3 deliveries",
+    "value": "20,500 - 21,500",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "Q3 gross margin on home sales",
+    "value": "Approximately 16%",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "Q3 average sales price",
+    "value": "$375,000 - $380,000",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "Q3 SG&A as % of home sales",
+    "value": "8.8% - 9.0%",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "Q3 new orders",
+    "value": "21,000 - 22,000",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "Q3 financial services operating earnings",
+    "value": "$95 million - $100 million",
+    "change": "new",
+    "horizon": "Q3 CY26"
+   },
+   {
+    "metric": "FY26 deliveries",
+    "value": "82,000 - 83,000",
+    "change": "cut",
+    "horizon": "FY2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "FY26 delivery target cut",
+    "quote": "we are moderating our target full-year 2026 deliveries to approximately 82,000 to 83,000 homes."
+   },
+   {
+    "label": "Incentives 12.9% of price",
+    "quote": "reflecting approximately 12.9% in incentives, along with base price adjustments necessary to sustain volume"
+   },
+   {
+    "label": "Homebuilding debt to capital up to 15.8% from 11.0%",
+    "quote": "Homebuilding debt to total capital of 15.8%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

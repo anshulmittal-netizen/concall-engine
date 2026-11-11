@@ -1,0 +1,129 @@
+{
+ "doc_id": "GL-L-eb75848acce3",
+ "market": "GL",
+ "company_id": "STLD",
+ "name": "Steel Dynamics",
+ "doc_type": "release",
+ "date": "2026-07-21",
+ "period": "2026-06",
+ "title": "8-K · EXHIBIT 99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Steel pricing up to $1,298/ton with record 3.7Mt shipments and steel operating income $721M, but mill utilisation is high and aluminum start-up losses persist; supply discipline is not discussed.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Operating leverage",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 2,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "as domestic steel mills increased utilization"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Steel price $1,298/ton, up $105 QoQ",
+    "quote": "The second quarter 2026 average external product selling price for the company’s steel operations increased $105 sequentially to $1,298 per ton.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Customer inventories below norms",
+    "quote": "customer inventory levels declined, remaining lower than historical norms",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Fabrication backlog ~45% higher YoY",
+    "quote": "the order backlog now nearly 45 percent higher than a year ago and extending into the first quarter 2027",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Domestic trade actions support pricing",
+    "quote": "supported by domestic trade actions, manufacturing reshoring, infrastructure program funding",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Aluminum volumes and profitability",
+    "value": "increase sharply in 2H26 and FY27",
+    "change": "new",
+    "horizon": "2H26 / FY27",
+    "quote": "expects volumes and profitability from its aluminum operations to increase sharply in the second half 2026 and for full year 2027"
+   },
+   {
+    "metric": "Automotive aluminum sales",
+    "value": "commence before end of 2026",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "with expectations for automotive sales to commence before the end of 2026"
+   },
+   {
+    "metric": "Third aluminum cold mill commercial transition",
+    "value": "August 2026",
+    "change": "new",
+    "horizon": "Aug 2026",
+    "quote": "with expectations to begin transitioning to commercial operations in August"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Steel Dynamics",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital build; receivables up $760M YTD",
+    "quote": "Working capital, excluding income taxes increased $225 million in the second quarter"
+   },
+   {
+    "label": "Aluminum start-up losses and impairment",
+    "quote": "There was also an additional non-cash impairment charge of $16 million in the second quarter"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "hedge_index": 0.2,
+  "themes": [
+   "Anti-dumping protection",
+   "Nearshoring / reshoring (US)",
+   "Consolidation / competitor exits",
+   "Railway capex",
+   "Data-centre power & cooling",
+   "Import substitution"
+  ],
+  "evasions": []
+ }
+}

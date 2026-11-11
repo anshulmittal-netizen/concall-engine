@@ -1,0 +1,117 @@
+{
+ "doc_id": "GL-L-4c0e32da457f",
+ "market": "GL",
+ "company_id": "DOW",
+ "name": "Dow",
+ "doc_type": "release",
+ "date": "2026-07-23",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Dow's Q2 earnings jump on a 20% local price surge led by polyethylene, while volume fell 1%; the self-help uplift is real but price, not supply discipline, drove the quarter.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Self-help",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 2,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Local price +20% YoY",
+    "quote": "Local price increased 20% versus the year-ago period, led by gains in Packaging & Specialty Plastics, with higher polyethylene prices in all regions.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Transform to Outperform +$200M benefits",
+    "quote": "We now expect to generate approximately $200 million more in benefits from Transform to Outperform this year",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital build, receivables up",
+    "quote": "Cash provided by operating activities – continuing operations was $1.3 billion, primarily driven by higher earnings across all businesses, more than offsetting an expected working capital build",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Total in-year self-help benefits",
+    "value": "greater than $1.3 billion",
+    "change": "raised",
+    "quote": "increase the total in-year benefits from self-help to greater than $1.3 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "NOVA Chemicals",
+    "relation": "partner"
+   },
+   {
+    "name": "Sadara",
+    "relation": "partner"
+   },
+   {
+    "name": "DuPont",
+    "relation": "partner"
+   },
+   {
+    "name": "Corteva",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Volume down 1%; price-driven earnings",
+    "quote": "Volume decreased 1% year-over-year."
+   },
+   {
+    "label": "Working capital build; receivables up sharply",
+    "quote": "more than offsetting an expected working capital build, reflecting revenue growth"
+   },
+   {
+    "label": "Sadara guarantee liability charge",
+    "quote": "Sadara guarantee liability adjustment"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

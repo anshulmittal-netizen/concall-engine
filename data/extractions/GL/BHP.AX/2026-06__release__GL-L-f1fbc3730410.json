@@ -1,0 +1,149 @@
+{
+ "doc_id": "GL-L-f1fbc3730410",
+ "market": "GL",
+ "company_id": "BHP.AX",
+ "name": "BHP Group",
+ "doc_type": "release",
+ "date": "2026-07-17",
+ "period": "2026-06",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Mining",
+  "thesis": "BHP FY26 copper ~1,953 kt (-3%) with FY27 copper guided down to 1,650–1,800 kt on Escondida grade decline, while copper price rose 35% to US$5.74/lb and Jansen impairment ~US$2.3bn signals capital discipline strain.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Pricing power",
+   "Capital allocation shift",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "deferred",
+   "peers_comment": "",
+   "quote": "Jansen project impairment (pre and post-tax) ~2,300"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Copper realised US$5.74/lb, +35%",
+    "quote": "copper prices around 35 per cent higher than a year ago",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "FY27 copper guided down to 1,650–1,800 kt",
+    "quote": "Copper production for FY27 is expected to be between 1,650 and 1,800 kt predominately as a result of the forecast grade decline at Escondida.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Jansen impairment ~US$2.3bn",
+    "quote": "Jansen project impairment (pre and post-tax) ~2,300",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Spence capacity fix sanctioned, Copper SA doubling studied",
+    "quote": "The Spence Concentrator Upgrade Recovery project, which upgrades the flotation circuit to increase residence time and improve recoveries, was sanctioned in June 2026",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 copper production (kt)",
+    "value": "1,650 – 1,800",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Copper production for FY27 is expected to be between 1,650 and 1,800 kt predominately as a result of the forecast grade decline at Escondida."
+   },
+   {
+    "metric": "FY27 iron ore production (Mt)",
+    "value": "260 – 272",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Iron ore production for FY27 is expected to be between 260 and 272 Mt."
+   },
+   {
+    "metric": "FY26 unit cost WAIO",
+    "value": "18.25 – 19.75 US$/t, within range",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "within the range for WAIO and towards the top end for BMA"
+   },
+   {
+    "metric": "Net debt 30 June 2026",
+    "value": "~US$9 bn",
+    "change": "new",
+    "horizon": "FY26",
+    "quote": "The Group's net debt balance as at 30 June 2026 is expected to be ~US$9 bn"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Rio Tinto",
+    "relation": "partner"
+   },
+   {
+    "name": "Caterpillar",
+    "relation": "partner"
+   },
+   {
+    "name": "Sierra Gorda SCM",
+    "relation": "partner"
+   },
+   {
+    "name": "Faraday Copper Corp",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Copper growth options",
+   "Iron ore",
+   "Potash / Jansen",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Jansen impairment ~US$2.3bn and cost overrun pressure",
+    "quote": "Jansen project impairment (pre and post-tax) ~2,300"
+   },
+   {
+    "label": "Spence grade and processing decline",
+    "quote": "Spence production decreased due to ongoing challenges with processing complex ore at the concentrator"
+   },
+   {
+    "label": "Carrapateena conveyor failure, up to 8 weeks impact",
+    "quote": "The recovery and replacement process is expected to result in up to eight weeks of mine production impact."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

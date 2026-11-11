@@ -1,0 +1,145 @@
+{
+ "doc_id": "GL-L-839c7b7d841a",
+ "market": "GL",
+ "company_id": "FCX",
+ "name": "Freeport-McMoRan",
+ "doc_type": "release",
+ "date": "2026-07-23",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "Grasberg block cave restart gives FCX a volume-recovery story: Q2 copper sales 710Mlb vs 1,016Mlb a year ago, PTFI ramp to 65% in H2 and 80% by mid-2027, while unit costs fall to $1.90/lb for 2026.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply exit",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "PTFI's overall production rates are expected to approximate 65% in the second half of 2026, 80% by mid-2027 and approach full capacity by the end of 2027."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Capital expenditures are expected to approximate $4.3 billion for the year 2026, including $3.0 billion for major mining projects."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "PTFI rates 65% in H2 2026",
+    "quote": "PTFI's overall production rates are expected to approximate 65% in the second half of 2026, 80% by mid-2027",
+    "highlight": "approximate 65% in the second half of 2026",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Q2 realised copper $6.17/lb",
+    "quote": "Average realized prices were $6.17 per pound for copper",
+    "highlight": "$6.17 per pound for copper",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Bagdad expansion cost up ~30%",
+    "quote": "project capital cost increases of approximately 30% above the prior $3.5 billion estimate prepared in 2023",
+    "highlight": "project capital cost increases of approximately 30%",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "2026 copper sales 3.1Bn lb",
+    "quote": "Consolidated sales are expected to approximate 3.1 billion pounds of copper",
+    "highlight": "approximate 3.1 billion pounds of copper",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated copper sales 2026",
+    "value": "3.1 billion lb",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "Consolidated sales are expected to approximate 3.1 billion pounds of copper"
+   },
+   {
+    "metric": "Unit net cash costs copper 2026",
+    "value": "$1.90/lb",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "expected to average $1.90 per pound of copper for the year 2026"
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "$4.3bn incl $3.0bn major projects",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "Capital expenditures are expected to approximate $4.3 billion, including $3.0 billion for major mining projects"
+   },
+   {
+    "metric": "Leach initiatives run-rate",
+    "value": "300M lb by end-2026",
+    "change": "new",
+    "horizon": "end-2026",
+    "quote": "FCX is targeting reaching an annual run rate of 300 million pounds of copper from these initiatives by the end of 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "PT Smelting",
+    "relation": "partner"
+   },
+   {
+    "name": "Atlantic Copper",
+    "relation": "partner"
+   },
+   {
+    "name": "PT Mineral Industri Indonesia",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Bagdad capex overrun ~30%",
+    "quote": "project capital cost increases of approximately 30% above the prior $3.5 billion estimate prepared in 2023"
+   },
+   {
+    "label": "Idle facility costs $690M H1",
+    "quote": "Idle facility and restoration costs totaled $284 million in second-quarter 2026 and $690 million for the first half of 2026"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,191 @@
+{
+ "doc_id": "GL-L-eadc0d0f39d1",
+ "market": "GL",
+ "company_id": "DAL",
+ "name": "Delta Air Lines",
+ "doc_type": "release",
+ "date": "2026-07-10",
+ "period": "2026-06",
+ "title": "8-K · EXHIBIT 99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Delta's June quarter beat on revenue (adjusted TRASM +12.4% on ~1% capacity growth) but adjusted operating margin fell to 8.8% from 13.3% on a 75% jump in fuel price; September guide is 11–13% margin.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 84.8,
+   "quote": "Passenger load factor 84.8 % 85.5 % (1) pt"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Adjusted TRASM +12.4% YoY",
+    "quote": "Adjusted total unit revenue (TRASM) grew 12.4 percent over prior year.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Capacity growth ~1%, modest",
+    "quote": "June quarter total revenue increased 14 percent over the same period last year to a record $17.7 billion on approximately 1 percent capacity growth.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "3Q operating margin 11–13%",
+    "quote": "In the September quarter, we expect earnings per share to grow over prior year to $2.00 to $2.50 on an operating margin of 11 to 13 percent",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Adjusted margin 13.3% → 8.8%",
+    "quote": "Operating margin, adjusted 8.8 % 13.3 %",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Fuel price +75% YoY",
+    "quote": "Adjusted fuel price of $3.93 per gallon increased 75 percent year-over-year",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 adjusted EPS",
+    "value": "$6.50 - $7.50",
+    "change": "held",
+    "horizon": "FY 2026",
+    "quote": "Affirming full-year guidance for adjusted EPS of $6.50 to $7.50 and free cash flow of $3 to $4 billion"
+   },
+   {
+    "metric": "FY2026 free cash flow ($B)",
+    "value": "$3 - $4",
+    "change": "held",
+    "horizon": "FY 2026",
+    "quote": "Affirming full-year guidance for adjusted EPS of $6.50 to $7.50 and free cash flow of $3 to $4 billion"
+   },
+   {
+    "metric": "3Q26 total revenue YoY",
+    "value": "Up mid-teens",
+    "change": "new",
+    "horizon": "3Q26",
+    "quote": "For the September quarter, we expect revenue to grow mid-teens over prior year on modest capacity growth"
+   },
+   {
+    "metric": "3Q26 operating margin",
+    "value": "11% - 13%",
+    "change": "new",
+    "horizon": "3Q26",
+    "quote": "In the September quarter, we expect earnings per share to grow over prior year to $2.00 to $2.50 on an operating margin of 11 to 13 percent"
+   },
+   {
+    "metric": "3Q26 EPS",
+    "value": "$2.00 - $2.50",
+    "change": "new",
+    "horizon": "3Q26",
+    "quote": "Earnings Per Share $2.00 - $2.50"
+   },
+   {
+    "metric": "Gross leverage",
+    "value": "Approx. 2x",
+    "change": "held",
+    "horizon": "year-end 2026",
+    "quote": "we expect to reach gross leverage of approximately 2x by year-end"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "American Express",
+    "relation": "partner"
+   },
+   {
+    "name": "IndiGo",
+    "relation": "partner"
+   },
+   {
+    "name": "LATAM",
+    "relation": "partner"
+   },
+   {
+    "name": "T-Mobile",
+    "relation": "partner"
+   },
+   {
+    "name": "Airbnb",
+    "relation": "partner"
+   },
+   {
+    "name": "Wheels Up",
+    "relation": "partner"
+   },
+   {
+    "name": "Aeromexico",
+    "relation": "partner"
+   },
+   {
+    "name": "Air France-KLM",
+    "relation": "partner"
+   },
+   {
+    "name": "Korean Air",
+    "relation": "partner"
+   },
+   {
+    "name": "China Eastern",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Pricing power",
+   "Tariffs & trade policy",
+   "Loyalty and co-brand revenue"
+  ],
+  "red_flags": [
+   {
+    "label": "Free cash flow down 71% YoY to $209M",
+    "quote": "Free cash flow 209 733 (524) (71) %"
+   },
+   {
+    "label": "Non-fuel CASM up 6.8%",
+    "quote": "Non-fuel CASM was 14.09¢, an increase of 6.8 percent year-over-year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "doc_id": "GL-L-b1f80556ffcf",
+ "market": "GL",
+ "company_id": "BLK",
+ "name": "BlackRock",
+ "doc_type": "release",
+ "date": "2026-04-14",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital markets",
+  "thesis": "Q1 organic growth strong with $130B net inflows and 10% LTM organic base fee growth, but as-adjusted EPS of $12.53 is up only 11% and the release gives no supply-side or capacity signals.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q1 net inflows $130B",
+    "quote": "$130 billion of quarterly total net inflows",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Performance fees down $482M QoQ",
+    "quote": "Performance fees decreased $482 million from the fourth quarter of 2025, primarily reflecting a seasonally higher number of products",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "iShares record Q1 inflows $132B",
+    "quote": "iShares posted record first quarter net inflows of $132 billion",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Preqin",
+    "relation": "peer"
+   },
+   {
+    "name": "HPS",
+    "relation": "peer"
+   },
+   {
+    "name": "GIP",
+    "relation": "peer"
+   },
+   {
+    "name": "Circle Internet Group",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "GAAP vs as-adjusted EPS gap",
+    "quote": "impacted by noncash acquisition-related items, which have been excluded from as adjusted results"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

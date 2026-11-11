@@ -1,0 +1,135 @@
+{
+ "doc_id": "GL-L-5252c43448ec",
+ "market": "GL",
+ "company_id": "CAT",
+ "name": "Caterpillar",
+ "doc_type": "transcript",
+ "date": "2026-04-14",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q4 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Q4 2024 sales fell 5% to $16.2B with dealer machine destock of $1.6B, but E&T backlog rose to $30B and large recip engine capacity is being expanded 125% over 2023; 2025 guided to slightly lower sales, margins top half of range.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we expect growth in reciprocating engines for power generation in 2025"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Large recip engine capacity +125% over 2023",
+    "quote": "we are expanding capacity by about 125% over 2023 - that will happen over the next several years",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "2025 price realization about -1% of sales",
+    "quote": "price realization should account for about a 1% decrease in sales for the full year",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Machine dealer inventory down $1.6B in Q4",
+    "quote": "For machines, dealer inventory decreased by $1.6 billion.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Backlog up $1.3B to $30B",
+    "quote": "Since last quarter end, our backlog increased by $1.3 billion to $30 billion.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2025 sales and revenues",
+    "value": "slightly lower than 2024",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "we currently anticipate 2025 sales and revenues to be slightly lower compared to 2024"
+   },
+   {
+    "metric": "Adjusted operating margin",
+    "value": "top half of target range",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "Full year adjusted operating profit margin is expected to be lower than 2024, but it is anticipated to be in the top half of the target range"
+   },
+   {
+    "metric": "ME&T free cash flow",
+    "value": "top half of $5B-$10B",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "we expect ME&T free cash flow to be in the top half of our target range of $5 billion to $10 billion"
+   },
+   {
+    "metric": "CapEx",
+    "value": "about $2.5B",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "We anticipate CapEx of about $2.5 billion in 2025"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Data-centre power & cooling",
+   "Pricing power",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy",
+   "Railway capex"
+  ],
+  "red_flags": [
+   {
+    "label": "Price realization negative ~1% of sales in 2025",
+    "quote": "price realization should account for about a 1% decrease in sales for the full year"
+   },
+   {
+    "label": "Q1 2025 margin seasonality not expected",
+    "quote": "we do not expect this seasonal trend to occur in 2025"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 5,
+   "margin": 4,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Margin range upward revision",
+    "quote": "as we always do, a year from now we'll reassess and let you know what we think for 2026"
+   }
+  ],
+  "hedge_index": 0.3,
+  "hedge_index_note": "n/a"
+ }
+}

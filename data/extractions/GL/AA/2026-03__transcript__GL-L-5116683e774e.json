@@ -1,0 +1,153 @@
+{
+ "doc_id": "GL-L-5116683e774e",
+ "market": "GL",
+ "company_id": "AA",
+ "name": "Alcoa",
+ "doc_type": "transcript",
+ "date": "2026-04-16",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "Aluminium pricing and Middle East supply loss lift the smelter, but the refinery is still loss-making and 2026 smelter cash will not cover refinery FCF losses; no new capacity added.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Supply exit",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "quote": "additional production increases underway at Portland, São Luís, and Lista smelters"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "2.5 million tons of Middle East smelting capacity offline; no peer capacity addition discussed",
+   "quote": "We maintain our 2026 outlook for capital expenditures."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Middle East smelting capacity offline",
+    "quote": "more than 2.5 million tons of annual smelting capacity and nearly 2 million tons of refining capacity are offline year to date",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "LME above $3,600/t",
+    "quote": "recently exceeding $3,600 per metric ton, driven by tight inventories and supply disruptions",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Refinery FCF losses exceed smelter cash",
+    "quote": "within 2026, the smelter will not generate enough cash flow to cover the refinery’s free cash flow losses",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Aluminum segment +$55M; Alumina -$15M",
+    "quote": "Aluminum segment performance is expected to be favorable by $55 million",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Warrick fourth line restart considered",
+    "quote": "Capital required to restart the fourth line at Warrick smelter is approximately $100 million",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Aluminum segment performance 2026",
+    "value": "favorable by $55 million",
+    "change": "new",
+    "quote": "Aluminum segment performance is expected to be favorable by $55 million"
+   },
+   {
+    "metric": "Alumina segment performance 2026",
+    "value": "unfavorable by approximately $15 million",
+    "change": "new",
+    "quote": "Alumina segment performance is expected to be unfavorable by approximately $15 million"
+   },
+   {
+    "metric": "Interest expense 2026",
+    "value": "$135 million",
+    "change": "cut",
+    "quote": "Interest expense will decrease slightly to $135 million with the redemption of our 2028 notes in May"
+   },
+   {
+    "metric": "Environmental and ARO payments 2026",
+    "value": "approximately $360 million",
+    "change": "raised",
+    "quote": "our estimate for environmental and ARO payments has increased to approximately $360 million, up from $325 million"
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "outlook maintained",
+    "change": "held",
+    "quote": "We maintain our 2026 outlook for capital expenditures."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Ma'aden",
+    "relation": "partner"
+   },
+   {
+    "name": "Morgan Stanley",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Middle East supply disruption",
+   "Consolidation / competitor exits",
+   "Consolidation / competitor exits",
+   "Anti-dumping protection",
+   "Interest-rate relief",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Refinery losses; smelter cannot cover refinery FCF in 2026",
+    "quote": "within 2026, the smelter will not generate enough cash flow to cover the refinery’s free cash flow losses"
+   },
+   {
+    "label": "Negative FCF of $298M in Q1",
+    "quote": "Free cash flow was negative $298 million for the quarter"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 2,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Warrick restart economics",
+    "quote": "we are weighing availability of short-term and long-term electricity"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

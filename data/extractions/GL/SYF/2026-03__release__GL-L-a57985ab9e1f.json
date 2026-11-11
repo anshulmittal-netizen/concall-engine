@@ -1,0 +1,123 @@
+{
+ "doc_id": "GL-L-a57985ab9e1f",
+ "market": "GL",
+ "company_id": "SYF",
+ "name": "Synchrony Financial",
+ "doc_type": "release",
+ "date": "2026-04-21",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Synchrony's Q1 shows purchase volume up 6% to $43.0B and charge-offs down 96bp to 5.42%, but loans were flat at $100.1B and CET1 fell to 12.7% amid a $6.5B buyback.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital allocation shift",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "novelty",
+    "label": "New $6.5B buyback, no expiry",
+    "quote": "approved a new share repurchase program of up to $6.5 billion of the Company’s common stock, which commences in second quarter 2026",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Purchase volume up 6% to $43.0B",
+    "quote": "Purchase volume increased 6% to $43.0 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "NCO rate down 96bp to 5.42%",
+    "quote": "Net charge-offs as a percentage of total average loan receivables were 5.42% compared to 6.38% in the prior year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Loan receivables flat at $100.1B",
+    "quote": "Loan receivables were flat at $100.1 billion",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Quarterly dividend",
+    "value": "$0.34 per share from Q3 2026 (+13%)",
+    "change": "new",
+    "quote": "a planned 13% increase in the quarterly cash dividend to $0.34 per share of common stock beginning in third quarter 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Walmart",
+    "relation": "partner"
+   },
+   {
+    "name": "Sam's Club",
+    "relation": "partner"
+   },
+   {
+    "name": "Harbor Freight Tools",
+    "relation": "partner"
+   },
+   {
+    "name": "Miracle Ear",
+    "relation": "partner"
+   },
+   {
+    "name": "Indian Motorcycle",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Capital cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "CET1 down to 12.7% from 13.2%",
+    "quote": "The estimated Common Equity Tier 1 ratio was 12.7% compared to 13.2%"
+   },
+   {
+    "label": "Allowance ratio up vs Q4 and loans flat",
+    "quote": "The allowance for credit losses as a percentage of total period-end loan receivables was 10.42%, compared to 10.06% in the fourth quarter of 2025"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

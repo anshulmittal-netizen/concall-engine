@@ -1,0 +1,131 @@
+{
+ "doc_id": "GL-L-311ac16ec792",
+ "market": "GL",
+ "company_id": "EPAM",
+ "name": "EPAM Systems",
+ "doc_type": "release",
+ "date": "2026-05-07",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Q1 revenue +7.6% reported but only +3.7% organic constant currency; FY organic guide trimmed to 2.5–5.0% while EPS guide was raised on margin and buybacks, with headcount flat-to-down.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY organic cc growth cut to 2.5–5.0%",
+    "quote": "now expects the year-over-year revenue growth rate on an organic constant currency basis to be in the range of 2.5% to 5.0%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Q1 organic cc growth 3.7%",
+    "quote": "On an organic constant currency basis, revenues were up 3.7% compared to the first quarter of 2025",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Delivery headcount down 0.2% QoQ",
+    "quote": "approximately 56,500 delivery professionals, a decrease of 0.2% from December 31, 2025",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY revenue growth (reported)",
+    "value": "4.0% to 6.5%",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "now expects the year-over-year revenue growth rate to be in the range of 4.0% to 6.5%"
+   },
+   {
+    "metric": "FY organic cc revenue growth",
+    "value": "2.5% to 5.0%",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "now expects the year-over-year revenue growth rate on an organic constant currency basis to be in the range of 2.5% to 5.0%"
+   },
+   {
+    "metric": "FY non-GAAP EPS",
+    "value": "$12.98 to $13.28",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "non-GAAP diluted EPS to now be in the range of $12.98 to $13.28"
+   },
+   {
+    "metric": "FY non-GAAP operating margin",
+    "value": "15% to 16%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "non-GAAP income from operations to be in the range of 15% to 16% of revenues"
+   },
+   {
+    "metric": "Q2 revenue",
+    "value": "$1.400B to $1.415B",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "revenues will be in the range of $1.400 billion to $1.415 billion for the second quarter"
+   },
+   {
+    "metric": "Q2 non-GAAP operating margin",
+    "value": "15% to 16%",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "non-GAAP income from operations to be in the range of 15% to 16% of revenues"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Agentic AI in IT services",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow negative; cash down 19.9%",
+    "quote": "Cash used in operating activities was $36.4 million for the first three months of 2026"
+   },
+   {
+    "label": "Receivables up while cash fell",
+    "quote": "Trade receivables and contract assets, net of allowance of $5,060 and $6,350, respectively"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

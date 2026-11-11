@@ -1,0 +1,146 @@
+{
+ "doc_id": "GL-L-9298ad2ef242",
+ "market": "GL",
+ "company_id": "GIL",
+ "name": "Gildan Activewear",
+ "doc_type": "release",
+ "date": "2026-07-30",
+ "period": "2026-06",
+ "title": "6-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Gildan Q2 CY26 adj. operating margin 22.3% and adj. EPS $1.28 beat, but leverage is 3.2x with debt-funded Hanes and wholesale sell-in cut by inventory reduction; supply rationalisation (plant closures) is real.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Deleveraging",
+   "Consolidation",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "with the required capital investment expected to fit within the Company's current budget and plans"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Plant closures after Hanes integration",
+    "quote": "closures of manufacturing facilities, including a hosiery manufacturing facility, two textile manufacturing facilities, and a sewing facility",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Wholesale sell-in down 1.5% in Q2",
+    "quote": "Wholesale sales were $769 million compared to $781 million, down 1.5% versus the prior year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Adj. op margin 22.3% vs ~19.7% guide",
+    "quote": "Adjusted operating margin was 22.3% of net sales, down 40 basis points versus last year but 260 basis points ahead of guidance of around 19.7%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Leverage 3.2x vs 1.5-2.5x target",
+    "quote": "Gildan's net debt leverage ratio as at June 28, 2026 was 3.2 times",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q2 net sales",
+    "value": "approximately $1.6 billion",
+    "change": "held",
+    "quote": "in line with guidance of approximately $1.6 billion"
+   },
+   {
+    "metric": "Adjusted operating margin Q2",
+    "value": "around 19.7%",
+    "change": "new",
+    "quote": "ahead of guidance of around 19.7%"
+   },
+   {
+    "metric": "HAA sale close",
+    "value": "second half of 2026",
+    "change": "new",
+    "quote": "The transaction is expected to close in the second half of 2026"
+   },
+   {
+    "metric": "Bangladesh Phase 2 production start",
+    "value": "latter part of 2027",
+    "change": "new",
+    "quote": "Initial production at the facility is expected to start in the latter part of 2027"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q2 net sales approximately $1.6 billion",
+    "outcome": "met",
+    "quote": "in line with guidance of approximately $1.6 billion"
+   }
+  ],
+  "entities": [
+   {
+    "name": "HanesBrands",
+    "relation": "peer"
+   },
+   {
+    "name": "Fruit of the Loom",
+    "relation": "competitor"
+   },
+   {
+    "name": "Russell Corporation",
+    "relation": "competitor"
+   },
+   {
+    "name": "BBFIT Investments Pte Ltd",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Consumer durables"
+  ],
+  "red_flags": [
+   {
+    "label": "Repeated large non-cash write-offs and restructuring",
+    "quote": "write-off of equipment related to facility closures associated with the integration of Hanes (Q1 2026: $14.4 million and Q2 2026: $66.6 million)"
+   },
+   {
+    "label": "Leverage above target, buybacks paused",
+    "quote": "As a result of the closing of the Hanes acquisition, our net debt leverage ratio exceeds our stated target range"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

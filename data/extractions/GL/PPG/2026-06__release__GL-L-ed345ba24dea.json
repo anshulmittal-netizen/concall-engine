@@ -1,0 +1,118 @@
+{
+ "doc_id": "GL-L-ed345ba24dea",
+ "market": "GL",
+ "company_id": "PPG",
+ "name": "PPG Industries",
+ "doc_type": "release",
+ "date": "2026-07-28",
+ "period": "2026-06",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "PPG grew organic sales 4% on 2% price and 2% volume, with Industrial volumes up 5% on share gains, but Performance Coatings margin fell 300bp and FY adjusted EPS guidance of $7.70–$8.10 was merely reaffirmed.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Backlog conversion",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Cost inflation covered 90% in Q2",
+    "quote": "In the second quarter we covered about 90% of the cost of goods sold inflation and expect to cover 100% by the fourth quarter",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Packaging volumes up over 20% two-year",
+    "quote": "sales volumes were up over 20% on a two-year stacked basis, due to share gains",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Performance Coatings margin down 300bp",
+    "quote": "segment EBITDA margin declined 300 basis points, driven by lower automotive refinish coatings sales volumes",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Operating working capital up to 18.2% of sales",
+    "quote": "As a percent of quarter sales, annualized 18.2 %",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 adjusted EPS",
+    "value": "$7.70 to $8.10",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We are reaffirming our full-year earnings per share guidance range of $7.70 to $8.10."
+   },
+   {
+    "metric": "Q3 organic sales growth",
+    "value": "low single-digit to mid-single-digit percentage",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "The company expects third quarter organic sales growth in the range of a low single-digit to a mid-single-digit percentage"
+   },
+   {
+    "metric": "Q3 adjusted EBITDA margin",
+    "value": "flat to decline of 100 basis points",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "company adjusted EBITDA margin in the range of flat to a decline of 100 basis points year over year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Anti-dumping protection",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Performance Coatings margin down 300bp on refinish",
+    "quote": "Organic sales in automotive refinish coatings decreased by a double-digit percentage as sales volumes were lower"
+   },
+   {
+    "label": "Receivables up to $3.9bn vs $3.3bn",
+    "quote": "Receivables, net 3,912 3,336 3,891"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

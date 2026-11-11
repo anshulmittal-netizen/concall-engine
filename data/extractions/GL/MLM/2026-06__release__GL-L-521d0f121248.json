@@ -1,0 +1,113 @@
+{
+ "doc_id": "GL-L-521d0f121248",
+ "market": "GL",
+ "company_id": "MLM",
+ "name": "Martin Marietta Materials",
+ "doc_type": "release",
+ "date": "2026-07-30",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.88,
+ "read": {
+  "subsector": "Building materials",
+  "thesis": "Aggregates shipments up 17% to a record 61.6Mt but only 2.3% organic; ASP down 2% on acquisition mix, aggregates gross profit per ton fell 17%, and revenue guidance was raised with EBITDA held at $2.36-2.5B.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Through disciplined inventory management and reductions in capital spending, we have unlocked more than $200 million of cash year-to-date"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex reduced; $350M cash flow benefits",
+    "quote": "expected to generate approximately $350 million of annualized cash flow improvements as we optimize our evolving asset base, network footprint, and sustaining capital requirements",
+    "highlight": "$350 million of annualized cash flow improvements",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Organic mix-adjusted ASP +3.7%",
+    "quote": "organic mix-adjusted ASP increased 3.7 percent, reflecting continued strong organic shipment momentum in the Central and West Divisions",
+    "highlight": "organic mix-adjusted ASP increased 3.7 percent",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year revenue",
+    "value": "$7.2B to $7.4B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we are raising our full-year revenue guidance to a range of $7.2 billion to $7.4 billion"
+   },
+   {
+    "metric": "Full-year Adjusted EBITDA from continuing operations",
+    "value": "$2.36B to $2.5B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "reaffirming our full-year Adjusted EBITDA from continuing operations guidance of $2.36 billion to $2.5 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Lhoist North America (LNA)",
+    "relation": "partner"
+   },
+   {
+    "name": "QUIKRETE",
+    "relation": "partner"
+   },
+   {
+    "name": "New Frontier Materials (NFM)",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow down 44% H1",
+    "quote": "Cash provided by operating activities for the six months ended June 30, 2026, was $339 million, compared with $605 million"
+   },
+   {
+    "label": "Net debt rises with $13.5B LNA deal",
+    "quote": "transaction valued at approximately $13.5 billion, consisting of cash and shares of Martin Marietta common stock"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

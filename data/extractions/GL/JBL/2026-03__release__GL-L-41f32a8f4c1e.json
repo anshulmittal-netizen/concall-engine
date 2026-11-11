@@ -1,0 +1,117 @@
+{
+ "doc_id": "GL-L-41f32a8f4c1e",
+ "market": "GL",
+ "company_id": "JBL",
+ "name": "Jabil",
+ "doc_type": "release",
+ "date": "2026-03-18",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Jabil beat and raised FY26 revenue to $34B and core EPS to $12.25 on Intelligent Infrastructure demand; no capacity or capex commentary in the release, and the net cash outlay on acquisitions rose to $848M in six months.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Operating leverage",
+   "Backlog conversion",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 core EPS guidance raised to $12.25",
+    "quote": "we are raising our fiscal 2026 outlook for revenue and core EPS",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Intelligent Infrastructure demand robust",
+    "quote": "demand remains robust across cloud and data center infrastructure, networking and communications, and capital equipment",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "novelty",
+    "label": "Acquisition spend $848M in six months",
+    "quote": "Cash paid for business and intangible asset acquisitions, net of cash",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net revenue FY26",
+    "value": "$34 billion",
+    "change": "raised",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Core operating margin FY26",
+    "value": "5.7%",
+    "change": "new",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Core diluted EPS FY26",
+    "value": "$12.25",
+    "change": "raised",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Adjusted free cash flow FY26",
+    "value": "$1.3+ billion",
+    "change": "new",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Q3 FY26 net revenue",
+    "value": "$8.1 billion to $8.9 billion",
+    "change": "new",
+    "horizon": "Q3 FY2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Data-centre power & cooling",
+   "Electronics manufacturing (EMS/PLI)",
+   "Auto EV transition",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow weak vs core earnings",
+    "quote": "Change in operating assets and liabilities, exclusive of net assets acquired"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "doc_id": "GL-L-020d54fa8357",
+ "market": "GL",
+ "company_id": "NKE",
+ "name": "Nike",
+ "doc_type": "release",
+ "date": "2026-06-23",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "CFO transition announcement with Q4 FY26 update: results will include an unplanned tariff-refund benefit, otherwise Q4 said to be in line with guidance; no supply or pricing disclosure.",
+  "archetype": "None",
+  "mental_models": [
+   "Management change"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "One-time tariff refund benefit in Q4",
+    "quote": "These results will include a benefit from tariff refunds that was not contemplated in the company’s previously provided guidance.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q4 FY26 results excluding tariff refund",
+    "value": "generally in line with previously provided guidance",
+    "change": "held",
+    "quote": "Excluding this one-time benefit, fourth quarter results are expected to be generally in line with previously provided guidance."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Pfizer, Inc.",
+    "relation": "peer"
+   },
+   {
+    "name": "Lowe's Companies, Inc.",
+    "relation": "peer"
+   },
+   {
+    "name": "Honeywell Aerospace",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Management change"
+  ],
+  "red_flags": [
+   {
+    "label": "CFO departure ahead of Q4 results",
+    "quote": "Matthew Friend will step down as Executive Vice President and Chief Financial Officer at that time"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

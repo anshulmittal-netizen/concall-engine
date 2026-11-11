@@ -1,0 +1,167 @@
+{
+ "doc_id": "GL-L-1fec891a7d0c",
+ "market": "GL",
+ "company_id": "ETN",
+ "name": "Eaton",
+ "doc_type": "transcript",
+ "date": "2026-05-05",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Record $7.5B quarter and 1.2 book-to-bill, but Electrical Americas margin fell short on ramp costs and input inflation; organic growth guide raised to 9-11% while segment margin guide cut 50bp.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "we finalized the construction, and we are currently ramping up 12 factories as we speak to handle this growth"
+  },
+  "capex": {
+   "direction": "raised",
+   "quote": "The investments we are making over $1 billion in CapEx are at record scale for us, but well within our capability to navigate.",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "24 Americas facilities; 12 ramped",
+    "quote": "we announced the expansion of 24 facilities, and we are done with 12 of them",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "April 1 price increase in Americas",
+    "quote": "Announced and implemented April 1 price increases in Electrical Americas",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Electrical Americas orders up 42% rolling",
+    "quote": "Rolling 12-month orders up 42% in Electrical Americas",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Segment margin guide cut 50bp",
+    "quote": "our guidance range of 24.1% to 24.5% is 50 basis points lower than the prior guide",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Organic growth 2026",
+    "value": "9%-11% (midpoint 10%)",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we now expect total company organic growth to be between 9% to 11%, up 200 basis points at the midpoint"
+   },
+   {
+    "metric": "Adjusted EPS 2026",
+    "value": "$13.05-$13.50 (midpoint $13.28)",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Now we expect full year EPS to be between $13.05 and $13.50, $13.28 at the midpoint"
+   },
+   {
+    "metric": "Segment margin 2026",
+    "value": "24.1%-24.5%",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "our guidance range of 24.1% to 24.5% is 50 basis points lower than the prior guide"
+   },
+   {
+    "metric": "Electrical Americas exit margin",
+    "value": "north of 30%",
+    "change": "new",
+    "horizon": "Q4 2026",
+    "quote": "expect to exit the year with margins north of 30%"
+   },
+   {
+    "metric": "Free cash flow 2026",
+    "value": "reaffirmed",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We are reaffirming our cash flow expectations for the year"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Electrical Americas margin 10% growth / EA segment profit",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Full-year segment profit ~$4.4B",
+    "outcome": "held"
+   }
+  ],
+  "entities": [
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "Siemens Energy",
+    "relation": "partner"
+   },
+   {
+    "name": "Resilient Power Systems",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Pricing power",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Electrical Americas margin miss and cost overrun",
+    "quote": "we faced additional headwinds in the quarter from higher input costs than originally planned"
+   },
+   {
+    "label": "Margin guide cut while growth raised",
+    "quote": "primarily due to Electrical Americas Q1 performance"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "margin": 3,
+   "balance_sheet": 0,
+   "capex": 1,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Electrical Americas margin recovery path",
+    "quote": "I want to report the team is really focused and very supported by the whole corporation."
+   },
+   {
+    "topic": "Boyd upside to full-year cooling revenue",
+    "quote": "we thought it was premature to raise the full year forecast at this time"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

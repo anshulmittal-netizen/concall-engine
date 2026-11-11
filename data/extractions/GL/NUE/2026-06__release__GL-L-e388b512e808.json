@@ -1,0 +1,91 @@
+{
+ "doc_id": "GL-L-e388b512e808",
+ "market": "GL",
+ "company_id": "NUE",
+ "name": "Nucor",
+ "doc_type": "release",
+ "date": "2026-07-27",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.71,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Q2 CY26 record steel mill shipments (7.10Mt, utilisation 91% vs 86% in Q1) and external prices up 7% QoQ; Q3 guided higher earnings on higher steel mill pricing, though the $130M raw-material refund flatters Q2.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 91,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Steel mill external price +7% QoQ",
+    "quote": "External Average Sales Price per Ton $1,145 $1,074 7%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Q3 steel mills earnings up on pricing",
+    "quote": "we expect an increase in earnings due to higher realized pricing across all major product categories with stable volumes",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q3 CY26 consolidated reported earnings",
+    "value": "higher than Q2",
+    "change": "new",
+    "horizon": "Q3 CY26",
+    "quote": "We expect higher consolidated reported earnings in the third quarter of 2026."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Anti-dumping protection",
+   "Tariffs & trade policy",
+   "Nearshoring / reshoring (US)"
+  ],
+  "red_flags": [
+   {
+    "label": "$130M one-off raw-material refund boosts Q2 mill earnings",
+    "quote": "a reduction to cost of products sold in the amount of $130 million related to cash refunds associated with prior periods’ raw materials procurement costs"
+   },
+   {
+    "label": "Non-cash Helion gain inflates reported EPS",
+    "quote": "a non-cash, pre-tax benefit of $61 million, or $0.20 per diluted share"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

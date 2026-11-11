@@ -1,0 +1,161 @@
+{
+ "doc_id": "GL-L-0a974600cc48",
+ "market": "GL",
+ "company_id": "SCHW",
+ "name": "Charles Schwab",
+ "doc_type": "transcript",
+ "date": "2026-04-16",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Record Q1 with core NNA $158B, adj EPS $1.43 (+38%) and FY EPS tracking above $5.70-$5.80; the risk is client cash economics, not capacity or pricing discipline.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY EPS tracking above $5.70-$5.80",
+    "quote": "we are tracking higher than the $5.70 to $5.80 EPS range implied by the scenario",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Core NNA $158B, Q1 record",
+    "quote": "we attracted $158 billion in core net new assets, a first quarter record",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Revenue per trade falling on smaller trades",
+    "quote": "they're generating less revenue per trade",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Crypto priced at 75 bps per trade",
+    "quote": "Pricing will be competitive at 75 basis points on the dollar value of each trade",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 EPS",
+    "value": "tracking above $5.70-$5.80 range",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we are tracking higher than the $5.70 to $5.80 EPS range implied by the scenario"
+   },
+   {
+    "metric": "Full-year financial scenario update",
+    "value": "to be provided in July",
+    "change": "new",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "ETF monetization strategy",
+    "value": "in place and live by year-end",
+    "change": "new",
+    "horizon": "2026"
+   },
+   {
+    "metric": "Branches",
+    "value": "about a dozen new branches in 2026",
+    "change": "new",
+    "horizon": "2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY2026 EPS scenario $5.70-$5.80 (Jan winter update)",
+    "outcome": "met",
+    "quote": "we are tracking higher than the $5.70 to $5.80 EPS range implied by the scenario"
+   },
+   {
+    "metric": "Two rate cuts in scenario (June and September)",
+    "outcome": "dropped",
+    "quote": "perhaps the market is anticipating no cuts. So that is more favorable for us."
+   }
+  ],
+  "evasions": [
+   {
+    "topic": "Client cash economics / sweep pricing risk",
+    "quote": "before we get into how we would change our economics, we do not see this currently as a big risk"
+   },
+   {
+    "topic": "Prediction markets timing",
+    "quote": "In terms of a time line, I think this quarter was a quarter in which we accelerated our innovation"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Client cash and sweep economics under pressure",
+    "quote": "it may mean that, that cash was not put back into the market too quickly"
+   },
+   {
+    "label": "Revenue per trade compression",
+    "quote": "they're generating less revenue per trade"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 6,
+   "margin": 2,
+   "other": 3
+  },
+  "hedge_index": 0.2,
+  "entities": [
+   {
+    "name": "JPMorgan",
+    "relation": "competitor"
+   },
+   {
+    "name": "CBOE",
+    "relation": "peer"
+   },
+   {
+    "name": "Nasdaq",
+    "relation": "peer"
+   },
+   {
+    "name": "Forge",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Crypto offer launch",
+   "AI in client service",
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Premiumisation in consumption"
+  ]
+ }
+}

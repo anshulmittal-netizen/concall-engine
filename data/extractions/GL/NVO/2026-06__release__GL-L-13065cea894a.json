@@ -1,0 +1,84 @@
+{
+ "doc_id": "GL-L-13065cea894a",
+ "market": "GL",
+ "company_id": "NVO",
+ "name": "Novo Nordisk",
+ "doc_type": "release",
+ "date": "2026-07-31",
+ "period": "2026-06",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma & biotech",
+  "thesis": "ZEUS Phase 3 failed: ziltivekimab showed no MACE reduction (HR 0.99, CI 0.88–1.11); non-cash impairment in Q3 2026, but 2026 adjusted operating profit outlook unchanged.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": -1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "novelty",
+    "label": "ZEUS MACE trial missed",
+    "quote": "this did not translate into major adverse cardiovascular events (MACE) risk reduction versus placebo",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "2026 adj. operating profit outlook unchanged",
+    "quote": "The outcome of ZEUS will not impact Novo Nordisk’s previously communicated adjusted operating profit outlook for 2026",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Adjusted operating profit 2026",
+    "value": "unchanged (not quantified in document)",
+    "change": "held",
+    "quote": "will not impact Novo Nordisk’s previously communicated adjusted operating profit outlook for 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Cardiovascular pipeline readout"
+  ],
+  "red_flags": [
+   {
+    "label": "Phase 3 CV outcomes trial failure",
+    "quote": "this did not translate into major adverse cardiovascular events (MACE) risk reduction versus placebo in people with atherosclerotic cardiovascular disease"
+   },
+   {
+    "label": "Non-cash impairment Q3 2026",
+    "quote": "will result in a non-cash impairment charge in Q3 2026"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "doc_id": "GL-L-3f8f949c08f1",
+ "market": "GL",
+ "company_id": "CB",
+ "name": "Chubb",
+ "doc_type": "release",
+ "date": "2026-04-21",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Insurance",
+  "thesis": "Chubb's Q1 CY26 P&C combined ratio of 84.0% and core EPS of $6.82 look strong, but management cut Major Accounts and E&S property (large account property down 55%) as property and financial lines soften, so supply is shrinking while pricing softens.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply discipline",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Large account property down 55%",
+    "quote": "large account property, which was down 55.0% due to market conditions",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Property and financial lines softening",
+    "quote": "Both property and financial lines insurance market conditions are soft or softening, with portions of the property market softening at a rapid pace.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Q1 cat losses $500M vs $1.64B",
+    "quote": "Total pre-tax net catastrophe losses were $500 million compared with $1.64 billion last year",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Growth in operating earnings and EPS",
+    "value": "double-digit EPS growth; strong operating earnings growth",
+    "change": "held",
+    "quote": "we remain confident in our ability to continue generating strong growth in operating earnings, and double-digit growth in EPS and tangible book value."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Chubb Limited",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Consumer insurance growth",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Soft property and financial lines pricing",
+    "quote": "Given inadequate price levels, we moved during the quarter to reduce exposures"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

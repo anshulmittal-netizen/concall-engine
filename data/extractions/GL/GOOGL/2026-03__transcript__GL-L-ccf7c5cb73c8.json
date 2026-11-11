@@ -1,0 +1,175 @@
+{
+ "doc_id": "GL-L-ccf7c5cb73c8",
+ "market": "GL",
+ "company_id": "GOOGL",
+ "name": "Alphabet",
+ "doc_type": "transcript",
+ "date": "2026-04-29",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "Cloud revenue up 63% to $20B with margin 32.9% and backlog $462B, but capex guided up to $180-190B and 2027 capex to rise significantly, with management compute-constrained.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Capacity bottleneck",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "we are compute constrained in the near term. And as an example, our cloud revenue would have been higher if you were able to meet the demand."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "updating our full year 2026 CapEx guidance range to $180 billion to $190 billion, up from our previous estimate of $175 billion to $185 billion"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2026 capex raised to $180-190B",
+    "quote": "updating our full year 2026 CapEx guidance range to $180 billion to $190 billion, up from our previous estimate of $175 billion to $185 billion",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "2027 capex to significantly increase",
+    "quote": "we expect our 2027 CapEx to significantly increase compared to 2026",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Cloud backlog nearly doubled to $462B",
+    "quote": "Google Cloud's backlog nearly doubled sequentially, reaching $462 billion at the end of the first quarter",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Compute constrained; cloud revenue capped",
+    "quote": "our cloud revenue would have been higher if you were able to meet the demand",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 CapEx",
+    "value": "$180B-$190B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "updating our full year 2026 CapEx guidance range to $180 billion to $190 billion"
+   },
+   {
+    "metric": "2027 CapEx",
+    "value": "significantly increase vs 2026",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "we expect our 2027 CapEx to significantly increase compared to 2026"
+   },
+   {
+    "metric": "Q2 FX tailwind to revenue",
+    "value": "~1 percentage point",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "we would expect to see an FX tailwind of approximately 1 percentage point to our consolidated revenue in Q2"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Intersect",
+    "relation": "partner"
+   },
+   {
+    "name": "Wiz",
+    "relation": "partner"
+   },
+   {
+    "name": "Thinking Machines Lab",
+    "relation": "customer"
+   },
+   {
+    "name": "Hudson River Trading",
+    "relation": "customer"
+   },
+   {
+    "name": "Boston Dynamics",
+    "relation": "customer"
+   },
+   {
+    "name": "Amazon",
+    "relation": "peer"
+   },
+   {
+    "name": "Meta",
+    "relation": "peer"
+   },
+   {
+    "name": "Microsoft",
+    "relation": "peer"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Semiconductors & OSAT",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Capex up again; 2027 to rise significantly",
+    "quote": "we expect our 2027 CapEx to significantly increase compared to 2026"
+   },
+   {
+    "label": "FCF thin: $10.1B in Q1",
+    "quote": "Free cash flow was $10.1 billion in the first quarter and $64.4 billion for the trailing 12 months."
+   },
+   {
+    "label": "Depreciation pressure on P&L",
+    "quote": "the significant increase in our investment in technical infrastructure will continue to put pressure on the P&L in the form of higher depreciation expense"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 4,
+   "margin": 2,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Margins on large GenAI cloud deals",
+    "quote": "Look, I think nothing to comment on any specific contracts."
+   },
+   {
+    "topic": "Ad-free vs ad monetisation in Gemini app",
+    "quote": "at the right moment, we'll share any plans as we have said, but we're not rushing anything here."
+   },
+   {
+    "topic": "Compute allocation between internal and external",
+    "quote": "we are modeling these out and working to allocate across these areas"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

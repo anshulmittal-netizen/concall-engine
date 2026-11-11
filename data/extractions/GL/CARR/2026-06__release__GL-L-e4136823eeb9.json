@@ -1,0 +1,155 @@
+{
+ "doc_id": "GL-L-e4136823eeb9",
+ "market": "GL",
+ "company_id": "CARR",
+ "name": "Carrier Global",
+ "doc_type": "release",
+ "date": "2026-07-28",
+ "period": "2026-06",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "HVAC & cooling",
+  "thesis": "Carrier raised FY26 guidance to ~$23B sales, ~$3.5B adj. op. profit and ~$2.90 adj. EPS on ~40% total orders growth, though Q2 adj. operating margin fell 190 bps to 17.2%.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 sales guide ~$22B → ~$23B",
+    "quote": "Raises full year outlook to ~$23B sales, ~$3.5B adj. op. profit and ~$2.90 adj. EPS",
+    "highlight": "Raises full year outlook",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Total orders up ~40%",
+    "quote": "Total company orders 1 up ~40%; Commercial HVAC 1 up ~65%; data centers up >300%",
+    "highlight": "Total company orders",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "CSA margin down 260 bps on mix and input costs",
+    "quote": "Segment operating margin decreased 260 basis points as revenue growth mainly related to price which was more than offset by unfavorable mix and input costs.",
+    "highlight": "more than offset by unfavorable mix and input costs",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Inventories up $197M in Q2",
+    "quote": "Inventories, net",
+    "highlight": "Inventories, net",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Sales",
+    "value": "~$23 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Raises full year outlook to ~$23B sales"
+   },
+   {
+    "metric": "Adjusted operating profit",
+    "value": "~$3.5 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "~$3.5B adj. op. profit and ~$2.90 adj. EPS"
+   },
+   {
+    "metric": "Adjusted EPS",
+    "value": "~$2.90",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "now expect sales of about $23 billion and adjusted EPS of ~$2.90"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "~$2 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Free Cash Flow* ~$2 billion ~$2 billion"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Sales",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Adjusted operating profit",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Adjusted EPS",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Free cash flow",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "NORESCO",
+    "relation": "peer"
+   },
+   {
+    "name": "Riello",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Residential HVAC recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Adj. op. margin down 190 bps",
+    "quote": "Adjusted operating margin of 17.2% was down 190 basis points from last year"
+   },
+   {
+    "label": "Receivables build of $651M in six months",
+    "quote": "Accounts receivable, net (142) (340) (651) (702)"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 0,
+   "margin": 0,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "doc_id": "GL-L-7f7389084cc7",
+ "market": "GL",
+ "company_id": "BAC",
+ "name": "Bank of America",
+ "doc_type": "release",
+ "date": "2026-04-15",
+ "period": "2026-03",
+ "title": "8-K · THE PRESS RELEASE",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Clean 1Q26 beat with NII up 9% to $15.7B, efficiency ratio 61% and operating leverage 2.9%, but credit card charge-offs are seasonal and the balance sheet grew loans 9% with no supply-side signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "NII up 9% to $15.7B",
+    "quote": "Net Interest Income Grew 9% YoY to $15.7 Billion ($15.9 Billion FTE)",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Loans up 9% YoY to $1.19T",
+    "quote": "Average loans and leases of $1.19 trillion increased 9%, with growth across every business segment",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "util",
+    "label": "Net charge-off ratio 0.48% vs 0.54%",
+    "quote": "Net charge-off ratio2 of 0.48% decreased 6 bps vs. 1Q25 and increased 4 bps vs. 4Q25",
+    "direction": 1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Interest-rate relief",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

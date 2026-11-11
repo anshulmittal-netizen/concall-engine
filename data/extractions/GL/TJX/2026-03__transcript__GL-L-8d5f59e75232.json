@@ -1,0 +1,167 @@
+{
+ "doc_id": "GL-L-8d5f59e75232",
+ "market": "GL",
+ "company_id": "TJX",
+ "name": "TJX Companies",
+ "doc_type": "transcript",
+ "date": "2026-05-20",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2027",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.88,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Off-price retailer posted 6% comps with 170bp pretax margin gain and raised FY27 sales and EPS to $5.08-$5.15, though management held back the Q1 beat on fuel and disclosed no supply-side capacity signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Consolidation",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 EPS raised to $5.08-$5.15",
+    "quote": "we are increasing our full year diluted earnings per share to be in the range of $5.08 to $5.15",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Consolidated comp 6%",
+    "quote": "Overall comp sales were up an outstanding 6%.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory up 8% vs sales growth",
+    "quote": "Balance sheet inventory was up 8% and inventory on a per store basis was up 7%.",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "structure",
+    "label": "Vendors offering excess branded goods",
+    "quote": "we typically add thousands of new vendors each year. We work hard to be the first call for vendors when they have excess goods.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year comp sales",
+    "value": "3%-4%",
+    "change": "raised",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "Full-year consolidated sales",
+    "value": "$63.2B-$63.7B",
+    "change": "raised",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "Full-year pretax profit margin",
+    "value": "11.9%-12.0%",
+    "change": "raised",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "Full-year gross margin",
+    "value": "31.2%-31.3%",
+    "change": "raised",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "Full-year diluted EPS",
+    "value": "$5.08-$5.15",
+    "change": "raised",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "Q2 comp sales",
+    "value": "2%-3%",
+    "change": "new",
+    "horizon": "Q2 FY27"
+   },
+   {
+    "metric": "Q2 diluted EPS",
+    "value": "$1.15-$1.17",
+    "change": "new",
+    "horizon": "Q2 FY27"
+   },
+   {
+    "metric": "Full-year share buyback",
+    "value": "$2.75B-$3.0B",
+    "change": "raised",
+    "horizon": "FY27"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Axo",
+    "relation": "partner"
+   },
+   {
+    "name": "Promota",
+    "relation": "partner"
+   },
+   {
+    "name": "Brands 4 Less",
+    "relation": "partner"
+   },
+   {
+    "name": "Sierra",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Fuel cost headwind assumed flat for rest of year",
+    "quote": "we are now planning current fuel prices to remain in place for the rest of the year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 6,
+   "margin": 4,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Category trends",
+    "quote": "We actually do not give that information out. For understandable reasons, competitive reasons."
+   },
+   {
+    "topic": "Store count raise (7,000 target)",
+    "quote": "where I cannot be too specific here is these are things we are talking about internally."
+   }
+  ],
+  "hedge_index": 0.25
+ }
+}

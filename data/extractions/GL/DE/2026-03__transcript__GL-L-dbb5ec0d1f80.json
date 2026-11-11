@@ -1,0 +1,153 @@
+{
+ "doc_id": "GL-L-dbb5ec0d1f80",
+ "market": "GL",
+ "company_id": "DE",
+ "name": "Deere",
+ "doc_type": "transcript",
+ "date": "2026-05-21",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Large ag is below trough with North American new high-hp tractor inventory down over 50% from peak, while C&F order backlog up 60%+ since November; South America industry cut to down 15%, and net income guide held at $4.5-5B.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply discipline",
+   "Capital cycle",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 2,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "New high-hp inventory down >50% from peak",
+    "quote": "Inventories for both high horsepower tractors and combines are down more than 50% from their mid-2024 peak",
+    "highlight": "down more than 50% from their mid-2024 peak",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "C&F order backlog up 60%+ since Nov",
+    "quote": "order book continues to strengthen up more than 60% since November, now at its highest level since April of 2024",
+    "highlight": "up more than 60% since November",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "South America industry cut to -15%",
+    "quote": "industry sales of tractors and combines are now expected to decline about 15%",
+    "highlight": "now expected to decline about 15%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "PPA sales guide -5% to -10%, margin 11-13%",
+    "quote": "our net sales forecast is unchanged and remains down between 5% to 10% for the full year",
+    "highlight": "unchanged and remains down between 5% to 10%",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net income FY26",
+    "value": "$4.5B to $5B",
+    "change": "held",
+    "quote": "our net income forecast remains unchanged between $4.5 billion and $5 billion"
+   },
+   {
+    "metric": "Operating cash flow equipment ops",
+    "value": "$4.5B to $5.5B",
+    "change": "held",
+    "quote": "cash flow from the equipment operations remains projected between $4.5 billion and $5.5 billion"
+   },
+   {
+    "metric": "C&F net sales growth",
+    "value": "~20%",
+    "change": "raised",
+    "quote": "The 2026 net sales are now forecasted to be up approximately 20% for the full year."
+   },
+   {
+    "metric": "C&F operating margin",
+    "value": "10% to 12%",
+    "change": "raised",
+    "quote": "The segment's operating margin has also been increased and is now projected to be between 10% and 12%"
+   },
+   {
+    "metric": "Financial services net income",
+    "value": "$860M",
+    "change": "raised",
+    "quote": "we raised our full year outlook to $860 million"
+   },
+   {
+    "metric": "PPA net sales",
+    "value": "down 5% to 10%",
+    "change": "held",
+    "quote": "our net sales forecast is unchanged and remains down between 5% to 10% for the full year"
+   },
+   {
+    "metric": "SAT net sales",
+    "value": "up ~15%",
+    "change": "held",
+    "quote": "We continue to expect net sales to be up approximately 15% for the full year."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Net income FY26",
+    "outcome": "met",
+    "quote": "our net income forecast remains unchanged between $4.5 billion and $5 billion"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Starlink",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle",
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)",
+   "Rural demand recovery",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Brazil industry cut to -15%, large tractors and combines falling faster",
+    "quote": "large tractors and combines have declined more than the industry overall"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 3,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

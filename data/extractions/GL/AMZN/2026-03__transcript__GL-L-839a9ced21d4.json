@@ -1,0 +1,164 @@
+{
+ "doc_id": "GL-L-839a9ced21d4",
+ "market": "GL",
+ "company_id": "AMZN",
+ "name": "Amazon",
+ "doc_type": "transcript",
+ "date": "2026-04-29",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "AWS grew 28% to $37.6B with a $364B backlog excluding a >$100B Anthropic deal, but Q1 cash capex of $43.2B and rising memory costs weigh on near-term free cash flow.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Competitive capex",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "the faster AWS grows, the more short-term CapEx we will spend"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "AWS growth 28% YoY",
+    "quote": "growth accelerated 480 basis points to 28% year over year",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Backlog $364B ex-Anthropic",
+    "quote": "the backlog for Q1 is $364 billion. That does not include the recent deal that we announced with Anthropic for over $100 billion.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Cash capex $43.2B in Q1",
+    "quote": "Our cash CapEx is $43.2 billion in Q1.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Memory costs skyrocketed",
+    "quote": "the cost of components, particularly memory, has skyrocketed",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "novelty",
+    "label": "Trainium commitments >$225B",
+    "quote": "we now have over $225 billion in revenue commitments for Trainium",
+    "direction": 1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q2 net sales",
+    "value": "$194B to $199B",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "Q2 net sales are expected to be between $194 billion and $199 billion."
+   },
+   {
+    "metric": "Q2 operating income",
+    "value": "$20B to $24B",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "Q2 operating income is expected to be between $20 billion and $24 billion."
+   },
+   {
+    "metric": "Amazon LEO cost increase",
+    "value": "approx $1B YoY in Q2",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "we do expect a year-over-year cost increase of approximately $1 billion related to Amazon LEO"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Anthropic",
+    "relation": "customer"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Meta",
+    "relation": "customer"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "supplier"
+   },
+   {
+    "name": "Apple",
+    "relation": "customer"
+   },
+   {
+    "name": "Globalstar",
+    "relation": "peer"
+   },
+   {
+    "name": "Netflix",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Data-centre power & cooling",
+   "Semiconductors & OSAT",
+   "Consolidation / competitor exits",
+   "Cybersecurity spend",
+   "Agentic AI in IT services"
+  ],
+  "red_flags": [
+   {
+    "label": "Early-year FCF challenged by capex",
+    "quote": "the early years’ free cash flow is challenged until these initial tranches of capacity are being monetized"
+   },
+   {
+    "label": "Memory supply tightness",
+    "quote": "there is just not enough capacity for the amount of demand"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 3,
+   "margin": 0,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Capex plan and memory supply",
+    "quote": "So I do not have a new update on capital."
+   }
+  ],
+  "hedge_index": 0.2
+ }
+}

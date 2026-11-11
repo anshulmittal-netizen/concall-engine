@@ -1,0 +1,152 @@
+{
+ "doc_id": "GL-L-6a93735e0a52",
+ "market": "GL",
+ "company_id": "HSBA.L",
+ "name": "HSBC Holdings",
+ "doc_type": "release",
+ "date": "2026-03-31",
+ "period": "2026-03",
+ "title": "1Q 2026 Earnings Release",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "HSBC 1Q26 RoTE ex-notables 18.7% (up 0.3pt y/y) and banking NII guide raised to ~$46bn, but ECL guide lifted to ~45bps and CET1 down to 14.0%; a bank, so supply-side capital-cycle signals are limited.",
+  "archetype": "None",
+  "mental_models": [
+   "Deleveraging",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Banking NII guide raised to ~$46bn",
+    "quote": "We now expect banking NII of around $46bn in 2026, reflecting an improved interest rate outlook",
+    "highlight": "banking NII of around $46bn in 2026",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "ECL guide raised 40bps → 45bps",
+    "quote": "We now expect an ECL charge as a percentage of average gross loans to be around 45bps",
+    "highlight": "around 45bps",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Downside stress could cut RoTE below 17%",
+    "quote": "could bring RoTE excluding notable items below our 17% or better target in 2026",
+    "highlight": "below our 17% or better target in 2026",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Wealth NNM $39bn vs $23bn 1Q25",
+    "quote": "Within this we have attracted net new money (‘NNM’) in 1Q26 of $ 39bn",
+    "highlight": "net new money (‘NNM’) in 1Q26 of $ 39bn",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "RoTE excluding notable items 2026-2028",
+    "value": "17% or better",
+    "change": "held",
+    "horizon": "2026-2028",
+    "quote": "including a RoTE of 17% or better for 2026, 2027 and 2028, excluding notable items."
+   },
+   {
+    "metric": "Banking NII 2026",
+    "value": "around $46bn",
+    "change": "raised",
+    "horizon": "2026",
+    "quote": "We now expect banking NII of around $46bn in 2026"
+   },
+   {
+    "metric": "ECL as % of average gross loans 2026",
+    "value": "around 45bps",
+    "change": "cut",
+    "horizon": "2026",
+    "quote": "We now expect an ECL charge as a percentage of average gross loans to be around 45bps"
+   },
+   {
+    "metric": "Target basis operating expenses growth 2026",
+    "value": "approximately 1%",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "We continue to target growth in target basis operating expenses of approximately 1% compared with 2025."
+   },
+   {
+    "metric": "CET1 ratio range",
+    "value": "14%–14.5%",
+    "change": "held",
+    "horizon": "medium term",
+    "quote": "We intend to continue to manage the CET1 capital ratio within our medium-term target range of 14%–14.5%."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Banking NII 2026",
+    "outcome": "met",
+    "quote": "We had previously provided banking NII guidance of at least $45bn for 2026."
+   },
+   {
+    "metric": "ECL as % of average gross loans 2026",
+    "outcome": "missed",
+    "quote": "Our previous ECL guidance for 2026 was around 40bps of average gross loans"
+   },
+   {
+    "metric": "Target basis operating expenses growth 2026",
+    "outcome": "held",
+    "quote": "We continue to target growth in target basis operating expenses of approximately 1% compared with 2025."
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Interest-rate relief",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Fraud-related $0.4bn securitisation charge in CIB",
+    "quote": "a $0.4bn fraud-related, secondary, securitisation exposure with a financial sponsor in the UK in our Corporate and Institutional Banking"
+   },
+   {
+    "label": "CET1 down 0.9pt to 14.0%; buy-backs paused",
+    "quote": "A decision to recommence buy-backs will be subject to our normal buy-back considerations"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3,
+  "entities": []
+ }
+}

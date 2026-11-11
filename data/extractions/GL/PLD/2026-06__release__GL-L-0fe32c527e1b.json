@@ -1,0 +1,112 @@
+{
+ "doc_id": "GL-L-0fe32c527e1b",
+ "market": "GL",
+ "company_id": "PLD",
+ "name": "Prologis",
+ "doc_type": "release",
+ "date": "2026-07-16",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Real estate",
+  "thesis": "Supply discipline shows at Prologis: Q2 development starts of $1.56B TEI trail stabilizations of $0.72B only modestly, while same-store cash NOI accelerates to 8.5% and occupancy holds at 95.4%; 2026 guidance is held at a high ~$6.22–6.30 Core FFO.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital cycle",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 95.4,
+   "quote": "Period ending occupancy 95.4% 95.4% 95.8% 95.3% 95.4%"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Rent change (net effective) 44.2% → 30.4%",
+    "quote": "Rent change (net effective) 44.2 % 42.5 % 37.5 % 27.1 % 30.4 %",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Same store NOI cash 8.5%",
+    "quote": "Prologis Share of Same Store Property NOI - Cash (b)(c) $ 1,555,292 $ 1,434,014 8.5 %",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Development starts $1.56B TEI vs stabilizations $0.72B",
+    "quote": "Total Development Starts 5,689 29.2 $ 1,555,007 $ 1,342,430",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Core FFO per share 2026",
+    "value": "$6.22 - $6.30",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Core FFO attributable to common stockholders/unitholders*(B) $ 6.22 $ 6.30"
+   },
+   {
+    "metric": "Development starts 2026",
+    "value": "$4,500M - $5,500M (Prologis share)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Development starts $ 4,500 $ 5,500 $ 5,500 $ 6,500"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Amazon",
+    "relation": "customer"
+   },
+   {
+    "name": "Home Depot",
+    "relation": "customer"
+   },
+   {
+    "name": "FedEx",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Housing & real-estate cycle",
+   "Interest-rate relief"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2,
+  "hedge_index_note": "Supplemental pack, no call tone."
+ }
+}

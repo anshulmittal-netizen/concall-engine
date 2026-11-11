@@ -1,0 +1,154 @@
+{
+ "doc_id": "GL-L-1b97d79efec0",
+ "market": "GL",
+ "company_id": "THC",
+ "name": "Tenet Healthcare",
+ "doc_type": "transcript",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Tenet beat Q1 on hospital and USPI margins with cost flexing, reaffirmed FY26 EBITDA guide (+10% normalised) without raising it, and bought back $318M of stock; exchange volumes down ~10%, still tracking the ~20% full-year assumption.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 guide reaffirmed, not raised",
+    "quote": "we are not making any adjustments to our full-year 2026 outlook at this time",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capital deployed to USPI M&A: $125M Q1",
+    "quote": "investing $125 million in the first quarter to acquire seven ASCs",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Exchange admissions down ~10% in Q1",
+    "quote": "same-store exchange admissions down about 10% compared to first quarter 2025, but not yet at the level we assumed",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 adjusted EBITDA",
+    "value": "10% growth at midpoint (normalised)",
+    "change": "held",
+    "quote": "our 2026 adjusted EBITDA is expected to grow at 10% at the midpoint of our range"
+   },
+   {
+    "metric": "FY26 adjusted free cash flow after NCI",
+    "value": "$1.6B to $1.83B",
+    "change": "held",
+    "quote": "we continue to expect adjusted free cash flow after NCI in the range of $1.6 billion to $1.83 billion"
+   },
+   {
+    "metric": "Q2 adjusted EBITDA share of FY",
+    "value": "24% to 25% at midpoint",
+    "change": "new",
+    "quote": "For Q2, we expect consolidated adjusted EBITDA to be 24% to 25% of our full-year consolidated adjusted EBITDA at the midpoint"
+   },
+   {
+    "metric": "Exchange volume reduction and impact",
+    "value": "~20% volume reduction, $250M impact",
+    "change": "held",
+    "quote": "our guidance range of a 20% reduction and $250 million overall impact is still pretty consistent"
+   },
+   {
+    "metric": "USPI M&A spend",
+    "value": "$250M annual target",
+    "change": "held",
+    "quote": "our $250 million annual target for USPI M&A"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 adjusted EBITDA guidance",
+    "outcome": "met",
+    "quote": "we are reaffirming the full-year 2026 guidance that we initially provided in February"
+   },
+   {
+    "metric": "Expense initiatives from Q4 call",
+    "outcome": "met",
+    "quote": "We are executing on the expense initiatives that we discussed on our fourth quarter 2025 earnings call and are recognizing the benefits"
+   },
+   {
+    "metric": "Exchange volume impact ~20% / $250M",
+    "outcome": "met",
+    "quote": "our guidance range of a 20% reduction and $250 million overall impact is still pretty consistent"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Baylor",
+    "relation": "partner"
+   },
+   {
+    "name": "Memorial Hermann",
+    "relation": "partner"
+   },
+   {
+    "name": "Conifer",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Payer denials and disputes 'too high'",
+    "quote": "they are high, they have been too high, but we do not see a meaningful trend this quarter that is different"
+   },
+   {
+    "label": "Uncompensated care rising",
+    "quote": "We can only guess, obviously, with the slight increase in uncompensated care"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 3,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Hospital margin bridge for rest of year",
+    "quote": "I do not know that the algorithm is exactly like it would be in a normal year."
+   },
+   {
+    "topic": "Exchange uninsured trend and guidance fit",
+    "quote": "I think we should watch and wait."
+   }
+  ],
+  "hedge_index": 0.35,
+  "themes": []
+ }
+}

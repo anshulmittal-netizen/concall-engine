@@ -1,0 +1,129 @@
+{
+ "doc_id": "GL-L-cd299517370e",
+ "market": "GL",
+ "company_id": "CL",
+ "name": "Colgate-Palmolive",
+ "doc_type": "release",
+ "date": "2026-07-31",
+ "period": "2026-06",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oral, personal & home care",
+  "thesis": "Base Business EPS up 8% to $0.99 on 61.5% gross margin, but GAAP EPS fell 5% on $129M restructuring; organic sales only 2.4% with Hill's and North America pricing thin.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Gross margin guide raised to roughly flat",
+    "quote": "now expects gross profit margin to be roughly flat (versus down previously)",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin 61.5%, +140bp",
+    "quote": "Gross profit margin and Base Business Gross profit margin* increased 140 basis points to 61.5%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Organic volume up third straight quarter",
+    "quote": "worldwide organic volume growth improving sequentially for the third consecutive quarter",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables up to $1,962M",
+    "quote": "Receivables, net",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net sales growth FY26",
+    "value": "2% to 6%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "The Company still expects net sales to be up 2% to 6%"
+   },
+   {
+    "metric": "Organic sales growth FY26",
+    "value": "1% to 4%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "The Company still expects organic sales growth to be 1% to 4%."
+   },
+   {
+    "metric": "Base Business gross margin FY26",
+    "value": "roughly flat",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "now expects gross profit margin to be roughly flat (versus down previously)"
+   },
+   {
+    "metric": "Base Business EPS growth FY26",
+    "value": "mid-single-digit",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "it also now expects mid-single-digit earnings per share growth (versus low- to mid-single-digit growth previously)"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Hill's Pet Nutrition",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "GAAP EPS down 5% on $129M restructuring; other expense $150M",
+    "quote": "GAAP EPS decreased 5% to $0.86; Base Business EPS* increased 8% to $0.99"
+   },
+   {
+    "label": "Receivables up 17% vs Dec-25",
+    "quote": "Receivables, net"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3,
+  "novelty": []
+ }
+}

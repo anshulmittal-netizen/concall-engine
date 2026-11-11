@@ -1,0 +1,178 @@
+{
+ "doc_id": "GL-L-cb75a4a795cf",
+ "market": "GL",
+ "company_id": "EPAM",
+ "name": "EPAM Systems",
+ "doc_type": "transcript",
+ "date": "2026-05-07",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Revenue at high end of Q1 but FY organic cc growth cut to 2.5%-5% on North America delays; utilisation 77% and FCF -$54M, with H2 reliant on large deals not in base guide.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Backlog conversion",
+   "Working-capital stress",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 77,
+   "quote": "Utilization was 77% compared to 77.5% in Q1 of last year, and 75.4% in Q4 2025."
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY organic cc growth cut to 2.5%-5%",
+    "quote": "Revenue growth will now be in the range of 4% to 6.5%. Foreign exchange is expected to have a positive impact of approximately 1.5%.",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "util",
+    "label": "Utilisation 77% vs 77.5% LY",
+    "quote": "Utilization was 77% compared to 77.5% in Q1 of last year, and 75.4% in Q4 2025.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "FCF negative $54M; DSO 76 days",
+    "quote": "Free cash flow was negative $54 million, compared to free cash flow of $15 million in the same quarter last year.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "North America underperformance, delayed decisions",
+    "quote": "We are particularly seeing underperformance in North America, and this is contributing to lower visibility in the second half.",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "pricing",
+    "label": "Rate increases with some clients",
+    "quote": "We're quite successful for minority -- small minority of our clients to negotiate rate increases.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY revenue growth",
+    "value": "4%-6.5% (organic cc 2.5%-5%)",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "Revenue growth will now be in the range of 4% to 6.5%."
+   },
+   {
+    "metric": "FY GAAP diluted EPS",
+    "value": "$8.29-$8.59",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "GAAP diluted EPS will now be in the range of $8.29 to $8.59 for the full year"
+   },
+   {
+    "metric": "FY non-GAAP diluted EPS",
+    "value": "$12.98-$13.28",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "non-GAAP diluted EPS will now be in the range of $12.98 to $13.28 for the full year."
+   },
+   {
+    "metric": "AI native revenue",
+    "value": "$600M FY target",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "management targets $600 million for the full year"
+   },
+   {
+    "metric": "Q2 revenue",
+    "value": "$1.4B-$1.415B",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "We expect revenue to be in the range of $1.4 billion to $1.415 billion"
+   },
+   {
+    "metric": "Non-GAAP operating margin",
+    "value": "15%-16% FY and Q2",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "non-GAAP income from operations will continue to be in the range of 15% to 16%."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Ontic",
+    "relation": "partner"
+   },
+   {
+    "name": "Anthropic",
+    "relation": "partner"
+   },
+   {
+    "name": "Nelnet",
+    "relation": "customer"
+   },
+   {
+    "name": "AWS",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "AI native delivery",
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Nearshoring / reshoring (US)"
+  ],
+  "red_flags": [
+   {
+    "label": "FY growth guide cut; H2 reliant on unclosed large deals",
+    "quote": "we are lowering our full year revenue growth outlook"
+   },
+   {
+    "label": "Negative FCF in Q1",
+    "quote": "Free cash flow was negative $54 million, compared to free cash flow of $15 million in the same quarter last year."
+   },
+   {
+    "label": "North America underperformance",
+    "quote": "We are particularly seeing underperformance in North America"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 8,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Large-deal conversion and H2 visibility",
+    "quote": "We are currently not really sure yet how fast they're going to ramp, how fast they're going to close."
+   },
+   {
+    "topic": "Token cost economics / commercial model",
+    "quote": "It's a moving target. As we highlighted, the economics is -- continues to be a subject which we are exploring."
+   }
+  ],
+  "hedge_index": 0.4,
+  "prior_guidance_check": []
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "doc_id": "GL-L-ee9b34dd103a",
+ "market": "GL",
+ "company_id": "GOOGL",
+ "name": "Alphabet",
+ "doc_type": "release",
+ "date": "2026-07-22",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.86,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "Cloud revenue up 82% to $24.8B with operating income 3x to $8.8B, but capex jumped to $44.9B and Q2 FCF turned negative at -$5.9B, funded by $49.6B equity and $20.3B notes.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capital cycle",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": -2,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Purchases of property and equipment\n(22,446)\n(44,924)"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Q2 capex $44.9B, up from $22.4B",
+    "quote": "Purchases of property and equipment (22,446) (44,924)",
+    "highlight": "Purchases of property and equipment",
+    "direction": -1,
+    "confidence": 0.9
+   },
+   {
+    "type": "supply",
+    "label": "Q2 free cash flow negative $5.9B",
+    "quote": "Free cash flow $ 24,461 $ 24,551 $ 10,116 $ (5,855)",
+    "highlight": "Free cash flow",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "structure",
+    "label": "Equity raise $49.6B plus $20.3B notes",
+    "quote": "for aggregate net proceeds of $49.6 billion, to be used for general corporate purposes, including capital expenditures to scale AI infrastructure and global compute",
+    "highlight": "capital expenditures to scale AI infrastructure",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Data-centre power & cooling",
+   "Semiconductors & OSAT",
+   "Cybersecurity spend"
+  ],
+  "red_flags": [
+   {
+    "label": "Negative quarterly FCF funded by equity issuance",
+    "quote": "Free cash flow $ 24,461 $ 24,551 $ 10,116 $ (5,855)"
+   },
+   {
+    "label": "Gains on equity securities drive net income",
+    "quote": "Other income reflected a net gain of $98.0 billion, primarily the result of net unrealized gains on our equity securities."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

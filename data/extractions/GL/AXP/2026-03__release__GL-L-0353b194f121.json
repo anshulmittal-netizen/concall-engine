@@ -1,0 +1,116 @@
+{
+ "doc_id": "GL-L-0353b194f121",
+ "market": "GL",
+ "company_id": "AXP",
+ "name": "American Express",
+ "doc_type": "release",
+ "date": "2026-04-23",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q1 CY26 revenue up 11% (10% FX-adj) and EPS up 18% to $4.28 on 9% FX-adj spend growth, the fastest in three years; FY26 guidance reaffirmed, with marketing and tech spend raised.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Card Member spend growth 9% FX-adj",
+    "quote": "Card Member spending grew 9 percent FX-adjusted, the highest quarterly growth in three years",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 guidance reaffirmed, EPS $17.30-17.90",
+    "quote": "we're reaffirming our full-year 2026 guidance for 9 to 10 percent revenue growth and EPS of $17.30 to $17.90",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Net write-off rate 2.0% vs 2.1%",
+    "quote": "The first-quarter net write-off rate was 2.0 percent, compared to 2.1 percent a year ago.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 revenue growth",
+    "value": "9% to 10%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "reaffirming our full-year 2026 guidance for 9 to 10 percent revenue growth"
+   },
+   {
+    "metric": "FY2026 EPS",
+    "value": "$17.30 to $17.90",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "EPS of $17.30 to $17.90"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "NFL",
+    "relation": "partner"
+   },
+   {
+    "name": "NBA",
+    "relation": "partner"
+   },
+   {
+    "name": "WNBA",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Agentic AI in IT services",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Provisions up on lower reserve release",
+    "quote": "The increase reflected higher net write-offs and a lower reserve release compared to the prior year."
+   },
+   {
+    "label": "Opex growth from marketing and tech investment",
+    "quote": "decided to increase our investments in marketing and technology to capitalize on long-term growth opportunities"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

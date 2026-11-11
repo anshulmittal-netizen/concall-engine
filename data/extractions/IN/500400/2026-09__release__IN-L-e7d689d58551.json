@@ -1,0 +1,129 @@
+{
+ "doc_id": "IN-L-e7d689d58551",
+ "market": "IN",
+ "company_id": "500400",
+ "name": "Tata Power",
+ "doc_type": "release",
+ "date": "2026-11-11",
+ "period": "2026-09",
+ "title": "Press Release Titled \"Financial Results for quarter and half year ended September 30, 2026.\"",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "Record Q2 PAT of ₹1,652 crore (+33% YoY) but EBITDA up only 5% to ₹4,245 crore; capex ~₹10,000 crore in H1 with prior-guided renewable, rooftop and Shirwata items not restated in the release.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital cycle",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Capital Expenditure close to ₹10,000 Crore in H1 FY27 & on track to meet annual guidance"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "H1 capex ~₹10,000 crore",
+    "quote": "Capital expenditure of ~ ₹10,000 crore in H1 FY27 reflects accelerated execution across renewable energy",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "765 MW Clean & Green added in H1",
+    "quote": "Installed 765 MW of Clean & Green generation capacity in H1 FY27, taking the total installed Clean & Green capacity to 8.6 GW",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Shirwata capital commitment board-approved",
+    "quote": "Board approval secured for the capital commitment for the Shirwata project",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Capex FY27",
+    "value": "on track to meet annual guidance (no figure restated)",
+    "change": "held",
+    "quote": "on track to meet annual guidance"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Renewable capacity addition FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Capex FY27",
+    "outcome": "met",
+    "quote": "on track to meet annual guidance"
+   },
+   {
+    "metric": "Rooftop revenue growth FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Cumulative rooftop revenue",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Pumped hydro Shirwata 1,800 MW start",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Tata Steel",
+    "relation": "customer"
+   },
+   {
+    "name": "SECI",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Grid capex & transformers",
+   "Rooftop solar",
+   "Pumped storage"
+  ],
+  "red_flags": [
+   {
+    "label": "EBITDA growth lags PAT growth (5% vs 33%)",
+    "quote": "EBITDA increases 5% YoY to ₹ 4,245 crore during Q2 FY27"
+   },
+   {
+    "label": "Mundra under Section 11 directive till December end",
+    "quote": "runs currently under Section 11 till December end"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

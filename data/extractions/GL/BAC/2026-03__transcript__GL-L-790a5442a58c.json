@@ -1,0 +1,141 @@
+{
+ "doc_id": "GL-L-790a5442a58c",
+ "market": "GL",
+ "company_id": "BAC",
+ "name": "Bank of America",
+ "doc_type": "transcript",
+ "date": "2026-04-15",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Bank of America Q1 2026: EPS $1.11 (+25%), ROTCE 16%, NII guide raised to +6–8% for 2026, CET1 down 14bp to 11.2% as buybacks ran ahead of earnings; benign credit, steady expense growth.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital allocation shift",
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "NII growth guide raised to 6-8%",
+    "quote": "we're raising our full year NII growth guidance range for 2026 versus 2025 to be up 6% to 8%",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Operating leverage >200bp held",
+    "quote": "we continue to expect more than 200 basis points of positive operating leverage for the year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Deposit rate paid down 16bp to 1.47%",
+    "quote": "The total rate paid on our deposits declined 16 basis points to 1.47%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "CET1 down 14bp to 11.2% on buybacks",
+    "quote": "the CET1 capital ratio declined 14 basis points to 11.2%",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 NII growth vs 2025",
+    "value": "6% to 8%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we're raising our full year NII growth guidance range for 2026 versus 2025 to be up 6% to 8%"
+   },
+   {
+    "metric": "Positive operating leverage 2026",
+    "value": ">200 bp",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we continue to expect more than 200 basis points of positive operating leverage for the year"
+   },
+   {
+    "metric": "Noninterest expense growth",
+    "value": "~4% y/y (consistent with prior guide)",
+    "change": "held",
+    "horizon": "Q1 2026",
+    "quote": "That was up 4% and consistent with the guidance we provided on our Q4 earnings call."
+   },
+   {
+    "metric": "Full-year effective tax rate",
+    "value": "a little more than 20%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "for the full year 2026, we expect an effective tax rate of just a little more than 20%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Noninterest expense growth ~4%",
+    "outcome": "met",
+    "quote": "That was up 4% and consistent with the guidance we provided on our Q4 earnings call."
+   },
+   {
+    "metric": "Positive operating leverage 200bp+",
+    "outcome": "met",
+    "quote": "We generated 290 basis points of operating leverage"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Interest-rate relief",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "CET1 drift lower on buybacks",
+    "quote": "the CET1 capital ratio declined 14 basis points to 11.2%"
+   },
+   {
+    "label": "Private credit GM loan exposure",
+    "quote": "We acknowledge the potential for underwriting dispersion in the portion that's considered the private credit market"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 5,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Deposit competition / AI disintermediation",
+    "quote": "There's nothing new and different about the ability to move deposits that we can move them in our company instantaneously"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

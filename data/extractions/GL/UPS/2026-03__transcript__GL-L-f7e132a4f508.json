@@ -1,0 +1,173 @@
+{
+ "doc_id": "GL-L-f7e132a4f508",
+ "market": "GL",
+ "company_id": "UPS",
+ "name": "UPS",
+ "doc_type": "transcript",
+ "date": "2026-04-28",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "UPS Q1 CY26 beat internal plans with US margin at 4% and $350M one-off costs; capacity cut ahead of Amazon glidedown completion, but FY26 guide only reaffirmed (9.6% margin, $89.7B revenue) with fuel and demand risk unpriced.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply discipline",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Our hub productivity is the best has been in 20 years, just to put a point on it."
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "Capital expenditures are still expected to be about $3 billion"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Ops positions cut ~25,000 YoY",
+    "quote": "we reduced operational positions by nearly 25,000 compared to the first quarter of last year",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "US RPP up 6.5%",
+    "quote": "revenue per piece up 6.5% compared to the same period last year",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "US ADV down 8%",
+    "quote": "total U.S. average daily volume was down 8% versus the first quarter of last year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 guide reaffirmed, not raised",
+    "quote": "Today, we are reaffirming 2026 consolidated financial goals.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated revenue FY26",
+    "value": "approximately $89.7 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we expect to generate consolidated revenue of approximately $89.7 billion"
+   },
+   {
+    "metric": "Consolidated operating margin FY26",
+    "value": "approximately 9.6%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "a consolidated operating margin of approximately 9.6%"
+   },
+   {
+    "metric": "US domestic Q2 operating margin",
+    "value": "7.5% to 8.5%",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "we expect revenue to be up low single digits and operating margin to be between 7.5% and 8.5%"
+   },
+   {
+    "metric": "International Q2 operating margin",
+    "value": "13% to 14%",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "we expect low single-digit revenue growth and an operating margin between 13% and 14%"
+   },
+   {
+    "metric": "Free cash flow FY26",
+    "value": "approximately $5.5 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We expect free cash flow to be approximately $5.5 billion, including onetime payments"
+   },
+   {
+    "metric": "Cost-out savings FY26",
+    "value": "$3 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we are firmly on track to achieve our $3 billion cost-out target for the year"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "US domestic 1Q operating margin ~4-5% range",
+    "outcome": "met",
+    "quote": "operating margin was 4%, including a 250 basis point negative impact from the short-term cost pressures"
+   },
+   {
+    "metric": "Amazon volume reduction target 50% by June 2026",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Amazon",
+    "relation": "customer"
+   },
+   {
+    "name": "USPS",
+    "relation": "partner"
+   },
+   {
+    "name": "Andlauer",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Q1 CPP up 9.5% YoY",
+    "quote": "Cost per piece in the first quarter increased 9.5% year-over-year."
+   },
+   {
+    "label": "Consumer confidence at historic lows",
+    "quote": "U.S. consumer confidence, which is at historic lows"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 6,
+   "margin": 7,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Fuel impact on FY profit",
+    "quote": "it's not appropriate for us to update until we have further clarity on how long this will last."
+   },
+   {
+    "topic": "2027 margin path",
+    "quote": "at the end of the year, we'll give you a sense of what we think '27 will look like"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

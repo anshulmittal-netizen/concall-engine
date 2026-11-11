@@ -1,0 +1,107 @@
+{
+ "doc_id": "GL-L-dd09536be927",
+ "market": "GL",
+ "company_id": "FDX",
+ "name": "FedEx",
+ "doc_type": "release",
+ "date": "2026-06-23",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.78,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "FedEx Q4 adjusted operating margin 8.4% vs 9.1%, but Federal Express yields up 10% (US priority) and ADV only +3%; CY26 guide implies ~11% revenue growth with capex cut to 4.0% of revenue.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Pricing power",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Capital spending as a percentage of revenue declined to 4.0%, the lowest annual level in FedEx Corporation history."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex 4.0% of revenue, lowest ever",
+    "quote": "Capital spending as a percentage of revenue declined to 4.0%, the lowest annual level in FedEx Corporation history.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "CY26 adj EPS $16.90-$18.10 vs CY25 $15.00",
+    "quote": "Diluted earnings per share from continuing operations with adjustments (non-GAAP) $16.90 to $18.10",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "CY26 revenue growth",
+    "value": "~11% YoY",
+    "change": "new",
+    "horizon": "CY2026",
+    "quote": "Revenue Growth ~11% YoY"
+   },
+   {
+    "metric": "CY26 adjusted diluted EPS",
+    "value": "$16.90 to $18.10",
+    "change": "new",
+    "horizon": "CY2026",
+    "quote": "Adjusted Diluted EPS (Continuing Operations) $16.90 to $18.10"
+   },
+   {
+    "metric": "CY26 capital spending",
+    "value": "$3.9 billion",
+    "change": "new",
+    "horizon": "CY2026",
+    "quote": "Capital Spending $3.9 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "FedEx Freight",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Fuel cost +66% in Q4 and tariff refund/receivable exposure",
+    "quote": "loss or delay in the collection of accounts receivable, including those related to tariffs in light of recent judicial rulings"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

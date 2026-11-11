@@ -1,0 +1,126 @@
+{
+ "doc_id": "GL-L-b8304023803e",
+ "market": "GL",
+ "company_id": "BKNG",
+ "name": "Booking Holdings",
+ "doc_type": "release",
+ "date": "2026-08-04",
+ "period": "2026-06",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "Q2 gross bookings +9% (8% CC) and room nights +5% on steady demand; supply-side signals are muted since this is an online agent with no capacity, and Adjusted EPS +15% with Q3 guide cut to 4-6% EBITDA growth.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Room nights growth slows to 5%",
+    "quote": "Room nights grew 5% compared to the second quarter of 2025.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q3 EBITDA growth 4%-6%",
+    "quote": "Adjusted EBITDA Growth (2)(3)(4)(5) 4% - 6% High Single Digits",
+    "direction": -1,
+    "confidence": 0.45
+   },
+   {
+    "type": "novelty",
+    "label": "Transformation savings raised to $650M",
+    "quote": "Increased our expected annual run-rate savings through the Transformation Program(1) to approximately $650 million",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q3 2026 Room Nights growth",
+    "value": "3% - 5%",
+    "change": "new",
+    "horizon": "Q3 2026"
+   },
+   {
+    "metric": "Q3 2026 Gross Bookings growth (CC)",
+    "value": "5% - 7%",
+    "change": "new",
+    "horizon": "Q3 2026"
+   },
+   {
+    "metric": "Q3 2026 Adjusted EBITDA growth",
+    "value": "4% - 6%",
+    "change": "new",
+    "horizon": "Q3 2026"
+   },
+   {
+    "metric": "FY 2026 Adjusted EPS growth",
+    "value": "Low to Mid-Teens",
+    "change": "new",
+    "horizon": "FY 2026"
+   },
+   {
+    "metric": "FY 2026 Adjusted EBITDA growth",
+    "value": "High Single Digits",
+    "change": "new",
+    "horizon": "FY 2026"
+   },
+   {
+    "metric": "Transformation Program run-rate savings",
+    "value": "approximately $650 million by end of 2027",
+    "change": "raised",
+    "horizon": "end 2027"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Travel & hospitality upcycle",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Q3 room nights guide decelerates to 3-5%",
+    "quote": "Room Nights Growth 3% - 5%"
+   },
+   {
+    "label": "Flight tickets growth slows to 3.7%",
+    "quote": "Flight Tickets 11 13 14 16 16 17 18 21 17 Year/Year Growth 27.7 % 38.7 % 52.3 % 44.8 % 44.2 % 32.3 % 27.7 % 28.5 % 3.7 %"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.6
+ }
+}

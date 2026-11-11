@@ -1,0 +1,148 @@
+{
+ "doc_id": "GL-L-0fd66d2f42d2",
+ "market": "GL",
+ "company_id": "RIO.L",
+ "name": "Rio Tinto",
+ "doc_type": "release",
+ "date": "2026-07-15",
+ "period": "2026-06",
+ "title": "6-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Rio Tinto H1 2026 volumes up 3% CuEq, but guidance held and copper C1 cost cut to 30–50c/lb; Pilbara port capacity drag and ~$1.2bn working-capital build temper the quarter despite Q2 Pilbara sales up 7%.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capacity bottleneck",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Port outload capacity will reduce to below 360 Mtpa during some quarters in H2 2026, 2027 and 2028 with several scheduled major capital projects underway"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Copper C1 cost cut to 30–50c/lb",
+    "quote": "Guidance range reduced to US 30 - 50c/lb (from US 65 - 75c/lb) due to higher than expected gold prices and productivity improvements.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "~$1.2bn working capital outflow in H1",
+    "quote": "we saw a cash outflow of ~$1.2 billion from an increase in working capital. Drivers include higher inventories, primarily in iron ore",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Port outload capacity below 360 Mtpa",
+    "quote": "Port outload capacity will reduce to below 360 Mtpa during some quarters in H2 2026, 2027 and 2028",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "Q2 Pilbara sales up 7% YoY",
+    "quote": "Q2 sales: up 7% YoY and the highest since 2020 supported by strong system performance and healthy stock levels.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Copper C1 net unit cost",
+    "value": "US 30 - 50c/lb",
+    "change": "cut",
+    "quote": "Guidance range reduced to US 30 - 50c/lb (from US 65 - 75c/lb)",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Copper production (consolidated)",
+    "value": "800 - 870 kt",
+    "change": "held",
+    "quote": "Unchanged",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Global iron ore sales",
+    "value": "343 - 366 Mt",
+    "change": "held",
+    "quote": "Unchanged",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Pilbara unit cash costs",
+    "value": "US$23.5 - 25.0/wmt",
+    "change": "held",
+    "quote": "Pilbara iron ore unit cash costs unchanged",
+    "horizon": "FY2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Baowu",
+    "relation": "partner"
+   },
+   {
+    "name": "BHP",
+    "relation": "partner"
+   },
+   {
+    "name": "Codelco",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Simandou ramp-up",
+   "Oyu Tolgoi ramp-up",
+   "Lithium ramp-up",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Data-centre power & cooling"
+  ],
+  "red_flags": [
+   {
+    "label": "Kennecott smelter furnace breach, ~75-day rebuild",
+    "quote": "A flash converting furnace breach in June 2026 resulted in an unplanned outage at the smelter."
+   },
+   {
+    "label": "Mongolia tax assessment paid under reservation",
+    "quote": "Oyu Tolgoi paid this amount in full in March 2026 reserving its rights to dispute the payment."
+   },
+   {
+    "label": "Yarwun alumina output cut 40% from Oct 2026",
+    "quote": "production is set to reduce by 40% starting from October 2026 (~1.2 Mt impact per year)."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

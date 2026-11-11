@@ -1,0 +1,131 @@
+{
+ "doc_id": "GL-L-a32151b8d8ef",
+ "market": "GL",
+ "company_id": "COST",
+ "name": "Costco",
+ "doc_type": "transcript",
+ "date": "2026-03-05",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q2 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.91,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Costco Q2 net sales +9.1% to $68.24B with core-on-core margin +22bp and capex steady at ~$6.5B; no supply-side expansion surprise, but membership growth slowed to 4.8% and renewal dipped to 92.1%.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management noted competitors are opening warehouses but said it does not see a meaningful membership impact.",
+   "quote": "We estimate CapEx for the full year will be approximately $6,500,000,000"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Renewal rate US/Canada 92.1%, down 10bp",
+    "quote": "our US and Canada renewal rate was 92.1%, down 10 basis points from last quarter",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Core-on-core margin +22bp",
+    "quote": "our core-on-core margins were higher by 22 basis points",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "28 net new openings in FY26",
+    "quote": "We currently expect to have 28 net new openings in fiscal year 2026",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net new warehouse openings FY26",
+    "value": "28",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We currently expect to have 28 net new openings in fiscal year 2026"
+   },
+   {
+    "metric": "Full-year capex",
+    "value": "~$6.5B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We estimate CapEx for the full year will be approximately $6,500,000,000"
+   },
+   {
+    "metric": "Long-term warehouse openings",
+    "value": "30-plus per year",
+    "change": "held",
+    "horizon": "5-10 years",
+    "quote": "targeting 30-plus new openings per year in the coming years"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Instacart",
+    "relation": "partner"
+   },
+   {
+    "name": "Uber Eats",
+    "relation": "partner"
+   },
+   {
+    "name": "DoorDash",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Pharma CDMO / outsourcing",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Egg deflation headwind",
+    "quote": "egg price deflation is expected to continue to be a headwind to sales in food and sundries for the foreseeable future"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 2,
+   "balance_sheet": 2,
+   "capex": 1,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Special dividend timing",
+    "quote": "there are no plans that we could share at this time around a plan for special dividend"
+   },
+   {
+    "topic": "Retail media sizing",
+    "quote": "the reason we do not really size it is that it really comes back to my final point"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}
