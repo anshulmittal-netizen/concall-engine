@@ -1,0 +1,132 @@
+{
+ "doc_id": "GL-L-20d532a95471",
+ "market": "GL",
+ "company_id": "NEE",
+ "name": "NextEra Energy",
+ "doc_type": "release",
+ "date": "2026-01-27",
+ "period": "2025-12",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "NextEra's FY25 adjusted EPS rose 8.2% to $3.71 with 13.5 GW of new origination and a ~30 GW backlog, while the 2026 EPS guide of $3.92–$4.02 and 8%+ CAGR were reaffirmed unchanged.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Capex cycle revival (private)"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "FPL expects to invest between $90 billion and $100 billion through 2032 to support Florida’s continued growth"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Origination 13.5 GW in 2025",
+    "quote": "adding approximately 13.5 gigawatts to its backlog, including a record quarter of origination of approximately 3.6 GW",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "2026 EPS guide reaffirmed $3.92–$4.02",
+    "quote": "NextEra Energy continues to expect 2026 adjusted earnings per share to be in the range of $3.92 to $4.02",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 adjusted EPS",
+    "value": "$3.92 to $4.02",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "NextEra Energy continues to expect 2026 adjusted earnings per share to be in the range of $3.92 to $4.02"
+   },
+   {
+    "metric": "Adjusted EPS CAGR",
+    "value": "8%+ through 2032, same 2032–2035",
+    "change": "held",
+    "horizon": "2025–2035",
+    "quote": "We expect to grow adjusted earnings per share at a compound annual growth rate of 8%+ through 2032"
+   },
+   {
+    "metric": "FPL capital investment",
+    "value": "$90bn–$100bn through 2032",
+    "change": "new",
+    "horizon": "through 2032",
+    "quote": "FPL expects to invest between $90 billion and $100 billion through 2032"
+   },
+   {
+    "metric": "Dividend growth",
+    "value": "~10%/yr through 2026, 6%/yr 2026–2028",
+    "change": "held",
+    "horizon": "2026–2028",
+    "quote": "NextEra Energy also continues to expect to grow its dividends per share at a roughly 10% rate per year through 2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2026 adjusted EPS",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Adjusted EPS CAGR 8%+",
+    "outcome": "met",
+    "quote": "exceeding the top end of the range we communicated in December"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Google",
+    "relation": "customer"
+   },
+   {
+    "name": "Consolidated Edison",
+    "relation": "partner"
+   },
+   {
+    "name": "XPLR Infrastructure",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Grid capex & transformers",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "GAAP EPS well below adjusted ($3.30 vs $3.71)",
+    "quote": "net income attributable to NextEra Energy on a GAAP basis of $6.835 billion, or $3.30 per share"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.1
+ }
+}

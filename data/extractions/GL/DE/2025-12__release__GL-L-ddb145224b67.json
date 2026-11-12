@@ -1,0 +1,100 @@
+{
+ "doc_id": "GL-L-ddb145224b67",
+ "market": "GL",
+ "company_id": "DE",
+ "name": "Deere",
+ "doc_type": "release",
+ "date": "2026-02-19",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.55,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Deere Q1 FY26 net income fell 25% to $656M, but Construction & Forestry and Small Ag sales rose 34% and 24%; FY26 net income guide raised to $4.5-5.0B while large-ag US & Canada industry is guided down 15-20%.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capital cycle",
+   "Supply discipline",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 net income guide raised to $4.5-5.0B",
+    "quote": "Net income guidance range increased to $4.5 billion - $5.0 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Small Ag price realization positive",
+    "quote": "higher shipment volumes / sales mix and price realization, partially offset by higher tariffs",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 net income attributable to Deere",
+    "value": "$4.5B to $5.0B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Net income guidance range increased to $4.5 billion - $5.0 billion"
+   },
+   {
+    "metric": "Production & Precision Ag net sales",
+    "value": "Down 5 to 10%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Production & Precision Ag Down 5 to 10%"
+   },
+   {
+    "metric": "Construction & Forestry net sales",
+    "value": "Up ~15%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Construction & Forestry Up ~15%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Rural demand recovery",
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Production & Precision Ag margin 4.4% vs 11.0%",
+    "quote": "Operating profit decreased primarily due to higher tariffs, unfavorable sales mix, and higher warranty expenses."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

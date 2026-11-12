@@ -1,0 +1,143 @@
+{
+ "doc_id": "GL-L-0804623d837a",
+ "market": "GL",
+ "company_id": "LMT",
+ "name": "Lockheed Martin",
+ "doc_type": "release",
+ "date": "2026-01-29",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Defence & aerospace",
+  "thesis": "Record $194B backlog and 2026 segment profit guided up ~25% to $8.4–8.7B, but 2025 still carried $1.6B of reach-forward losses on classified and RMS programs, so margin recovery is unproven.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Backlog conversion",
+   "Pricing power",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we invested more than $3.5 billion during 2025 in production capacity and next-generation technologies throughout the year"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex guided up to $2.5–2.8B",
+    "quote": "Capital expenditures $2,500 - $2,800",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Record backlog $194B",
+    "quote": "Record backlog of $194 billion at end of 2025",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Reach-forward losses $1.6B in 2025",
+    "quote": "Reach-forward losses on select programs 1,615",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Segment profit guided up ~25%",
+    "quote": "reported segment operating profit growth of approximately 5% and 25% year-over-year",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Sales",
+    "value": "$77.5–80.0B",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "$77,500 - $80,000"
+   },
+   {
+    "metric": "Business segment operating profit",
+    "value": "$8,425–8,675M",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "Business segment operating profit 1 $8,425 - $8,675"
+   },
+   {
+    "metric": "Diluted EPS",
+    "value": "$29.35–30.25",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "Diluted earnings per share $29.35 - $30.25"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "$6.5–6.8B",
+    "change": "raised",
+    "horizon": "2026",
+    "quote": "free cash flow between $6.5 to $6.8 billion, an increase compared to our prior expectation"
+   },
+   {
+    "metric": "Capital expenditures",
+    "value": "$2.5–2.8B",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "Capital expenditures $2,500 - $2,800"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Department of War",
+    "relation": "customer"
+   },
+   {
+    "name": "United Launch Alliance",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Consolidation / competitor exits",
+   "Backlog conversion"
+  ],
+  "red_flags": [
+   {
+    "label": "Classified program reach-forward losses",
+    "quote": "reach-forward losses of $1.4 billion recognized in 2024 on a classified program"
+   },
+   {
+    "label": "Working-capital-driven cash flow",
+    "quote": "primarily timing of cash payments for accounts payable and contract liabilities at RMS"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "doc_id": "GL-L-cf80c4632360",
+ "market": "GL",
+ "company_id": "SHW",
+ "name": "Sherwin-Williams",
+ "doc_type": "release",
+ "date": "2026-01-29",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 adjusted EPS up 6.7% to $2.23 on Suvinil and price, but volume is down low-single digits in PSG and CBG and FY26 adjusted EPS guide of $11.50–$11.90 implies only ~2.4% growth at midpoint. No supply-side discipline signal.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Pricing power",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Capital expenditures 230.4 300.0 797.6 1,070.0"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex down 25% to $798M in FY25",
+    "quote": "Capital expenditures 230.4 300.0 797.6 1,070.0",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "PSG price up mid-single digit in Q4",
+    "quote": "selling price increases, which impacted Net sales by a mid-single digit percentage",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Softer-for-longer into 2H26",
+    "quote": "We expect these conditions to persist well into the second half of the year",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 adjusted diluted EPS",
+    "value": "$11.50 to $11.90",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Full year 2026 adjusted diluted net income per share guidance in the range of $11.50 to $11.90 per share"
+   },
+   {
+    "metric": "FY26 consolidated net sales",
+    "value": "up low to mid-single digit %",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we expect consolidated Net sales to be up by a low to mid-single digit percentage compared to 2025"
+   },
+   {
+    "metric": "Q1 26 consolidated net sales",
+    "value": "up mid-single digit %",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "we expect consolidated Net sales will be up a mid-single digit percentage compared to the first quarter of 2025"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Suvinil",
+    "relation": "partner"
+   },
+   {
+    "name": "Valspar",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Trademark impairment and restructuring charges",
+    "quote": "trademark impairment and other costs associated with targeted restructuring actions"
+   },
+   {
+    "label": "Receivables up faster than sales",
+    "quote": "Accounts receivable, net 2,791.2 2,388.8"
+   },
+   {
+    "label": "Net debt rising via acquisition",
+    "quote": "Long-term debt 9,320.7 8,176.8"
+   }
+  ],
+  "evasions": [],
+  "hedge_index": 0.3,
+  "analyst_mix": {}
+ }
+}

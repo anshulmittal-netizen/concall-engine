@@ -1,0 +1,153 @@
+{
+ "doc_id": "GL-L-d56847a5afd6",
+ "market": "GL",
+ "company_id": "PKX",
+ "name": "POSCO Holdings",
+ "doc_type": "release",
+ "date": "2026-01-29",
+ "period": "2025-12",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "FY25 consolidated OP fell 15.7% to KRW 1.83tn and net debt rose to KRW 12.9tn, with steel recovering but battery materials and E&C dragging; 2026 CAPEX rises on overseas steel and lithium buys.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Capital allocation shift",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Ramp-up utilization rate to 60% by Mar-end., 70% by Jul-end, and reach full operation from Q3"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "[2026] CAPEX will temporarily increase due to upstream Steel (overseas) investment"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2026 CAPEX temporarily increases",
+    "quote": "[2026] CAPEX will temporarily increase due to upstream Steel (overseas) investment",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Net debt KRW 8.1tn → 12.9tn",
+    "quote": "Net Debt to Equity 13.5% 18.2% 20.7% 2.5%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "P-Argentina utilisation ramp to 70%",
+    "quote": "Ramp-up utilization rate to 60% by Mar-end., 70% by Jul-end, and reach full operation from Q3",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "Portfolio: 73 projects, KRW1.8tn cash",
+    "quote": "73 projects completed (‘24-‘25), generating KRW1.8 tril. in cash with progress rate of 57%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 profits",
+    "value": "expected to grow with commercial-scale lithium production and non-profit asset sales",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "2026 profits expected to grow with commercial-scale lithium production and non-profit asset sales"
+   },
+   {
+    "metric": "Cost Innovation 2030 fixed-cost savings",
+    "value": "KRW 0.4 tril. in 2026",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "saving KRW 0.5 tril. in fixed costs in 2025, targeting KRW 0.4 tril. in 2026"
+   },
+   {
+    "metric": "Portfolio cash generation",
+    "value": "KRW1 tril. from 55 assets 2026-2028",
+    "change": "new",
+    "horizon": "2026-2028",
+    "quote": "Generate KRW1 tril. In cash by consolidating 55 assets from 2026 to 2028"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "JSW",
+    "relation": "partner"
+   },
+   {
+    "name": "Cleveland-Cliffs",
+    "relation": "partner"
+   },
+   {
+    "name": "Mineral Resources",
+    "relation": "partner"
+   },
+   {
+    "name": "Factorial Energy",
+    "relation": "partner"
+   },
+   {
+    "name": "PLS",
+    "relation": "peer"
+   },
+   {
+    "name": "POSCO International",
+    "relation": "partner"
+   },
+   {
+    "name": "POSCO E&C",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "China+1 enquiries → orders",
+   "Electronics manufacturing (EMS/PLI)",
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Auto EV transition",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Net debt up KRW 1.7tn YoY to KRW 12.9tn",
+    "quote": "Net Debt to Equity 13.5% 18.2% 20.7% 2.5%"
+   },
+   {
+    "label": "E&C one-off losses and bad debt",
+    "quote": "Large loss registered by one-off costs and bad debt write-offs"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

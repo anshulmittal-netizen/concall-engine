@@ -1,0 +1,135 @@
+{
+ "doc_id": "GL-L-682753a62c33",
+ "market": "GL",
+ "company_id": "ULVR.L",
+ "name": "Unilever",
+ "doc_type": "release",
+ "date": "2026-02-12",
+ "period": "2025-12",
+ "title": "6-K · 2025 FULL YEAR RESULTS",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Personal Care",
+  "thesis": "FY25 USG 3.5% with volume 1.5% and Q4 USG 4.2%, but 2026 guided to bottom of 4–6% range, with at least 2% volume and only a modest margin uplift from 20.0%.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "2026 USG at bottom of 4–6%",
+    "quote": "2026 growth is expected to be at the bottom end of the underlying sales growth range reflecting the slower market conditions.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 price growth accelerating",
+    "quote": "In the fourth quarter, underlying sales growth remained strong at 5.1%, with positive volumes and an acceleration in price growth.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Ice Cream demerger completed",
+    "quote": "On 6 December 2025, Unilever completed the demerger of its Ice Cream business",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Indonesia Q4 destocking base effect",
+    "quote": "Fourth quarter growth was 17% due to our operational improvements and significant de-stocking in the prior year, which will not benefit future periods.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Underlying sales growth FY2026",
+    "value": "Within 4% to 6% range, bottom end",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We expect underlying sales growth for full year 2026 to be within our multi-year guidance range of 4% to 6%, with at least 2% underlying volume growth."
+   },
+   {
+    "metric": "Underlying volume growth FY2026",
+    "value": "at least 2%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "with at least 2% underlying volume growth"
+   },
+   {
+    "metric": "Underlying operating margin FY2026",
+    "value": "modest improvement vs 20.0%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We anticipate a modest improvement in underlying operating margin for the full year versus 20.0% in 2025."
+   },
+   {
+    "metric": "Productivity savings",
+    "value": "remaining €130 million in 2026",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The remaining €130 million of savings will be delivered in 2026."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "The Magnum Ice Cream Company",
+    "relation": "peer"
+   },
+   {
+    "name": "Hindustan Unilever",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 growth moderating in developed markets",
+    "quote": "In the fourth quarter, underlying sales growth slowed to 1.7%, with 0.5% volume, reflecting slower market growth in both the US and Europe."
+   },
+   {
+    "label": "Latin America volume declines",
+    "quote": "Latin America: 0.5% underlying sales growth, as pricing was largely offset by volume declines in challenging markets."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

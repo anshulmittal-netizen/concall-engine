@@ -1,0 +1,122 @@
+{
+ "doc_id": "GL-L-04b0f121e4b9",
+ "market": "GL",
+ "company_id": "HSBA.L",
+ "name": "HSBC Holdings",
+ "doc_type": "transcript",
+ "date": "2026-09-08",
+ "period": "2026-06",
+ "title": "Follow up Interim Results 2026 Equity Analysts Meeting - Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Post-results HSBC call reaffirms costs on plan and fee-led growth, but structural hedge stated at $637bn versus prior $604bn, and no new ECL or cost quantification; supply-side metrics absent for a bank.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "novelty",
+    "label": "Structural hedge $604bn → $637bn",
+    "quote": "The structural hedge was around $637 billion, and the weighted average life has increased to 3.2 years.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Cost lines held; no 2027 cost outlook",
+    "quote": "For this year, our costs are in line with what we called out.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Trade GTS lending up 30% to $120bn",
+    "quote": "our GTS lending to customers and banks was also up 30% year-on-year to $120 billion.",
+    "direction": 1,
+    "confidence": 0.55
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Simplification savings",
+    "value": "original $1.5bn increased to $2bn",
+    "change": "raised",
+    "quote": "which we’ve increased from the original $1.5 billion to $2 billion"
+   },
+   {
+    "metric": "Cost growth FY26",
+    "value": "in line with what we called out",
+    "change": "held",
+    "quote": "For this year, our costs are in line with what we called out."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "ECL charge (full year)",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Gross cost growth / net cost growth",
+    "outcome": "met",
+    "quote": "For this year, our costs are in line with what we called out."
+   },
+   {
+    "metric": "Structural hedge",
+    "outcome": "dropped",
+    "quote": "The structural hedge was around $637 billion"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Interest-rate relief",
+   "Nearshoring / reshoring (US)",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Hong Kong deposit competition and ECL pockets",
+    "quote": "in the UK as with other geographies we are seeing some pockets of growth in ECLs"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 6,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "2027 cost outlook",
+    "quote": "We’re not giving an outlook on costs for 2027"
+   },
+   {
+    "topic": "Mortgage growth impact after rate increase",
+    "quote": "It’s hard to attribute the number of mortgages to the exact interest rate"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

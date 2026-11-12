@@ -1,0 +1,158 @@
+{
+ "doc_id": "GL-L-f7240af7847c",
+ "market": "GL",
+ "company_id": "AA",
+ "name": "Alcoa",
+ "doc_type": "release",
+ "date": "2026-01-22",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "Aluminum realised price rose to $3,749/t in 4Q25 from $3,374 in 3Q25 and Adjusted EBITDA reached $546M, but 2026 guidance is for production of 2.4–2.6Mt, up on smelter restarts, with Q1 EBITDA guided down $100M sequentially.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply exit",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "In the Aluminum segment, production increased 4 percent sequentially to 604,000 metric tons primarily due to progress on the San Ciprián, Spain smelter restart."
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Aluminum realised price $3,374 → $3,749/t",
+    "quote": "Average realized third-party price per metric ton of aluminum",
+    "highlight": "Average realized third-party price per metric ton of aluminum",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Smelter restarts lift 2026 output",
+    "quote": "Alcoa expects 2026 total Aluminum segment production to range between 2.4 and 2.6 million metric tons, an increase from 2025 due to smelter restarts.",
+    "highlight": "an increase from 2025 due to smelter restarts",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Kwinana refinery permanently closed",
+    "quote": "Announced permanent closure of the Kwinana refinery in Australia",
+    "highlight": "permanent closure of the Kwinana refinery",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Alumina production 2026",
+    "value": "9.7–9.9 Mt",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Alcoa expects 2026 total Alumina segment production to range between 9.7 and 9.9 million metric tons"
+   },
+   {
+    "metric": "Aluminum production 2026",
+    "value": "2.4–2.6 Mt",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Alcoa expects 2026 total Aluminum segment production to range between 2.4 and 2.6 million metric tons"
+   },
+   {
+    "metric": "Aluminum shipments 2026",
+    "value": "2.6–2.8 Mt",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "In 2026, aluminum shipments are expected to range between 2.6 and 2.8 million metric tons."
+   },
+   {
+    "metric": "Alumina shipments 2026",
+    "value": "11.8–12.0 Mt",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "In 2026, alumina shipments are expected to be between 11.8 and 12.0 million metric tons."
+   },
+   {
+    "metric": "1Q26 Alumina Adj. EBITDA sequential impact",
+    "value": "-$30M",
+    "change": "new",
+    "horizon": "1Q26",
+    "quote": "the Company expects sequential unfavorable impacts of $30 million due to the typical first quarter impacts"
+   },
+   {
+    "metric": "1Q26 Aluminum Adj. EBITDA sequential impact",
+    "value": "-$70M",
+    "change": "new",
+    "horizon": "1Q26",
+    "quote": "Alcoa expects sequential unfavorable impacts of $70 million due to the absence of Spain and Norway carbon dioxide compensation"
+   },
+   {
+    "metric": "1Q26 operational tax expense",
+    "value": "$65–75M",
+    "change": "new",
+    "horizon": "1Q26",
+    "quote": "Alcoa expects first quarter 2026 operational tax expense to approximate $65 million to $75 million"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Ma'aden",
+    "relation": "partner"
+   },
+   {
+    "name": "IGNIS Equity Holdings, SL",
+    "relation": "partner"
+   },
+   {
+    "name": "Rio Tinto",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 GAAP EPS hit by $337M Ma'aden mark-to-market loss and $144M goodwill impairment",
+    "quote": "Unfavorable mark-to-market change on the Ma’aden shares of $337 million;"
+   },
+   {
+    "label": "Q4 CO2 compensation flatters EBITDA; absent in 1Q26",
+    "quote": "the absence of Spain and Norway carbon dioxide compensation recognized in the fourth quarter 2025"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

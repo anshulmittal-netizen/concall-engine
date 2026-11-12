@@ -1,0 +1,171 @@
+{
+ "doc_id": "GL-L-c6acf8d1c98a",
+ "market": "GL",
+ "company_id": "VTRS",
+ "name": "Viatris",
+ "doc_type": "release",
+ "date": "2026-02-26",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma & generics",
+  "thesis": "Q4 divestiture-adjusted operational growth only 2% with generics flat and FY25 Adjusted EBITDA down 6%; 2026 guide ($4.15–4.45B) rests on $600–700M restructuring savings and a Nashik plant shut until April.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Operating leverage",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Capital Expenditures 196.5 $ 140.4 40%"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Nashik plant shut until April 2026",
+    "quote": "Manufacturing at the facility has been temporarily suspended and the Company currently expects to resume operations beginning in April 2026.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Restructuring: $700–850M charges, $600–700M savings",
+    "quote": "management believes the potential savings related to these committed restructuring activities will be between $600 million and $700 million once fully implemented",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Generics net sales flat in Q4",
+    "quote": "Generics net sales were impacted by expected competition on certain products in North America",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Japan government price regulation hit",
+    "quote": "negative impacts from government price regulations in Japan",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 Adj. EBITDA $4.15–4.45B vs FY25 $4.16B",
+    "quote": "Adjusted EBITDA \n(1)\n$4,150 - $4,450\n$4,300",
+    "direction": 0,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Total revenues",
+    "value": "$14,450M - $14,950M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Total Revenues\n$14,450 - $14,950\n$14,700"
+   },
+   {
+    "metric": "Adjusted EBITDA",
+    "value": "$4,150M - $4,450M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted EBITDA \n(1)\n$4,150 - $4,450\n$4,300"
+   },
+   {
+    "metric": "Adjusted EPS",
+    "value": "$2.33 - $2.47",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted EPS \n(1)\n$2.33 - $2.47\n$2.40"
+   },
+   {
+    "metric": "Operating cash flow",
+    "value": "$1.7B - $2.0B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "U.S. GAAP net cash provided by operating activities for 2026 is estimated to be between $1.7 billion and $2.0 billion"
+   },
+   {
+    "metric": "New product revenues",
+    "value": "$450M - $550M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The Company expects to deliver $450 million to $550 million in new product revenues in 2026."
+   },
+   {
+    "metric": "Restructuring total pre-tax charges",
+    "value": "$700M - $850M",
+    "change": "new",
+    "horizon": "over next 3 years",
+    "quote": "the Company expects to incur total pre-tax charges ranging between $700 million and $850 million"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY2025 Adjusted EBITDA / Adjusted EPS / revenue ranges (Nov 6, 2025)",
+    "outcome": "met",
+    "quote": "Meets or Exceeds 2025 Financial Guidance Across All Key Metrics"
+   },
+   {
+    "metric": "FY2025 operating cash flow $2.2B–$2.45B",
+    "outcome": "missed",
+    "quote": "U.S. GAAP net cash provided by operating activities for 2025 was $2.3 billion"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Biocon Biologics",
+    "relation": "partner"
+   },
+   {
+    "name": "Biocon Limited",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Nashik plant fire and shutdown until April 2026",
+    "quote": "a fire occurred in a service area at the Company's oral solid dose manufacturing facility in Nashik, India."
+   },
+   {
+    "label": "Q4 loss from plant remediation and contract terminations",
+    "quote": "driven by contractual termination costs, remediation costs, and incremental manufacturing variances at plants slated for sale or closure"
+   },
+   {
+    "label": "FY25 Adjusted EBITDA down 6%",
+    "quote": "Adjusted EBITDA \n(1)\n$4,160.0 \n$4,669.4 \n(6)%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.7
+ }
+}

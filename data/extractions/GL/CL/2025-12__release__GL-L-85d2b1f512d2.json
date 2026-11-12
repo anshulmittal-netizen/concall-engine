@@ -1,0 +1,119 @@
+{
+ "doc_id": "GL-L-85d2b1f512d2",
+ "market": "GL",
+ "company_id": "CL",
+ "name": "Colgate-Palmolive",
+ "doc_type": "release",
+ "date": "2026-01-30",
+ "period": "2025-12",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma CDMO / outsourcing",
+  "thesis": "Colgate's Q4 base business grew organic sales 2.2% with base operating margin down 50 bps, and FY26 guides organic growth of 1% to 4%, a deceleration signal with no supply-side capacity commentary.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 organic sales +2.2%",
+    "quote": "Organic Sales Growth +2.2%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 organic growth 1% to 4%",
+    "quote": "The Company expects organic sales growth to be 1% to 4%.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "novelty",
+    "label": "$794M skin health impairment",
+    "quote": "non-cash, after-tax charge of $794 million to adjust the carrying values of goodwill and intangible assets related to the skin health business",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Organic sales growth FY2026",
+    "value": "1% to 4%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The Company expects organic sales growth to be 1% to 4%."
+   },
+   {
+    "metric": "Net sales growth FY2026",
+    "value": "2% to 6%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The Company expects net sales to be up 2% to 6%"
+   },
+   {
+    "metric": "Base Business EPS growth FY2026",
+    "value": "low to mid-single-digit",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "low to mid-single-digit earnings per share growth"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Filorga",
+    "relation": "peer"
+   },
+   {
+    "name": "Hill's Pet Nutrition",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Skin health goodwill impairment $794M after tax",
+    "quote": "the Company has lowered its outlook for the skin health business, primarily Filorga"
+   },
+   {
+    "label": "Q4 GAAP operating margin 1.8%",
+    "quote": "Operating profit margin, GAAP 1.8 %"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

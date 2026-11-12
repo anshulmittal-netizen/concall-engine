@@ -1,0 +1,161 @@
+{
+ "doc_id": "GL-L-543e5e8e66c3",
+ "market": "GL",
+ "company_id": "MOS",
+ "name": "Mosaic",
+ "doc_type": "release",
+ "date": "2026-02-24",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1 2025 Q4 EARNINGS RELEASE",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Fertilisers",
+  "thesis": "Q4 adj. EBITDA fell to $505M on weak US phosphate demand and rising sulfur costs, with phosphate inventories built and 2026 phosphate volume guided at or above 7.0Mt against a tightening market led by China export curbs.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply exit",
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 2,
+   "inventory": -2,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Mosaic expects 2026 capital expenditures to be approximately $1.5 billion, reflecting higher spending for gypstack and clay settling areas."
+  },
+  "triggers": [
+   {
+    "type": "structure",
+    "label": "China phosphate exports absent",
+    "quote": "Phosphate markets have tightened as China exports remain largely absent following the announcement of extended phosphate export restrictions",
+    "highlight": "China exports remain largely absent",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Finished inventory build $428M",
+    "quote": "a $428 million increase in finished product inventories",
+    "highlight": "$428 million increase in finished product inventories",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "SSP curtailment ~30% of Brazil output",
+    "quote": "temporarily curtailed SSP production at the Fospar JV and Araxa site, which together account for approximately 30% of Mosaic's production in Brazil",
+    "highlight": "temporarily curtailed SSP production",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Q1 DAP guided $640-670/t",
+    "quote": "Mosaic expects first quarter sales volumes of 1.7 to 1.9 million tonnes with DAP prices averaging $640 to $670 per tonne on an FOB basis",
+    "highlight": "DAP prices averaging $640 to $670 per tonne",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Brazil credit constraints persist",
+    "quote": "Fourth-quarter sales volumes and distribution margin per tonne were impacted by intensified competition and tightening credit conditions.",
+    "highlight": "tightening credit conditions",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Phosphate production 2026",
+    "value": "at or above 7.0 Mt",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "2026 production volumes are expected to be at or above 7.0 million tonnes"
+   },
+   {
+    "metric": "Potash production 2026",
+    "value": "approximately 9 Mt",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "In 2026, Mosaic expects total potash production of approximately 9 million tonnes"
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "approximately $1.5 billion",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Mosaic expects 2026 capital expenditures to be approximately $1.5 billion"
+   },
+   {
+    "metric": "Q1 2026 Mosaic Fertilizantes adj. EBITDA",
+    "value": "below $50 million",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "first quarter segment adjusted EBITDA is expected to be below $50 million"
+   },
+   {
+    "metric": "Mosaic Biosciences net sales 2026",
+    "value": "approximately double 2025",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "targets net sales to approximately double compared with 2025"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Canpotex",
+    "relation": "partner"
+   },
+   {
+    "name": "Ma'aden",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Specialty chem destocking end",
+   "China+1 enquiries → orders",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory build and weak operating cash flow",
+    "quote": "Due to weak demand, the inventory build accelerated in the fourth quarter resulting in cash flow from operations of $(56) million."
+   },
+   {
+    "label": "Free cash flow negative for 2025",
+    "quote": "Free cash flow (1) was $(535) million in 2025, compared to $47 million in 2024"
+   },
+   {
+    "label": "Brazil credit stress and SSP margin squeeze",
+    "quote": "A sharp increase in sulfur prices late in the quarter, absent mitigating actions could materially impact production margins in 2026."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

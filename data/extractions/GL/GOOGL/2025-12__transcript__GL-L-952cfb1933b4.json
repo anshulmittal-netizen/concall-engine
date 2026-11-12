@@ -1,0 +1,140 @@
+{
+ "doc_id": "GL-L-952cfb1933b4",
+ "market": "GL",
+ "company_id": "GOOGL",
+ "name": "Alphabet",
+ "doc_type": "transcript",
+ "date": "2026-02-04",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "Alphabet's Q4 CY25 read is a capex-heavy AI build-out: 2026 capex guided to $175-185B versus $91.4B in 2025, with Cloud backlog at $240B and Cloud margin at 30.1%, but management says it stays supply constrained.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we expect CapEx to be in the range of $175 billion to $185 billion with investments ramping over the course of the year."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2026 capex $175-185B vs $91.4B in 2025",
+    "quote": "we expect CapEx to be in the range of $175 billion to $185 billion with investments ramping over the course of the year.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Cloud backlog $240B, up 55% QoQ",
+    "quote": "Google Cloud's backlog increased 55% sequentially and more than doubled year over year, reaching $240 billion at the end of the fourth quarter.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Cloud operating margin 17.5% → 30.1%",
+    "quote": "operating margin increased from 17.5% in the fourth quarter of last year to 30.1%.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Still supply constrained through 2026",
+    "quote": "I do to go through the year in a supply constrained way",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 CapEx",
+    "value": "$175B-$185B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we expect CapEx to be in the range of $175 billion to $185 billion"
+   },
+   {
+    "metric": "Depreciation growth",
+    "value": "accelerate in Q1, meaningfully increase for FY2026",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we expect the growth rate in 2026 depreciation to accelerate in Q1 and meaningfully increase for the full year."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "NVIDIA",
+    "relation": "supplier"
+   },
+   {
+    "name": "Apple",
+    "relation": "partner"
+   },
+   {
+    "name": "Reliance Jio",
+    "relation": "partner"
+   },
+   {
+    "name": "Waymo",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Data-centre power & cooling",
+   "Semiconductors & OSAT",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Depreciation up 38% and set to accelerate",
+    "quote": "depreciation increased by nearly billion dollars or 38% from $15.3 billion in 2024 to $21.1 billion in 2025."
+   },
+   {
+    "label": "Component supply and cash-timing variability in capex",
+    "quote": "the availability of supply, pricing of components, and timing of cash payments can cause some variability in the reported CapEx number."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 2,
+   "capex": 2,
+   "balance_sheet": 1,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Pathway to closing AI compute gap",
+    "quote": "how we close the gap this year is a function of what we have done in the prior years."
+   },
+   {
+    "topic": "Cannibalisation of Search by Gemini app",
+    "quote": "we haven't seen any evidence of cannibalization there."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

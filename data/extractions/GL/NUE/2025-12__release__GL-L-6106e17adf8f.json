@@ -1,0 +1,97 @@
+{
+ "doc_id": "GL-L-6106e17adf8f",
+ "market": "GL",
+ "company_id": "NUE",
+ "name": "Nucor",
+ "doc_type": "release",
+ "date": "2026-01-26",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.71,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Nucor Q4 CY25 EPS fell to $1.64 (adj $1.73) from $2.63 in Q3 as steel mill utilisation dropped to 82% and sheet margins compressed; Q1 2026 guided up on higher volumes and prices.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 82,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Steel mills ASP down 2% q/q",
+    "quote": "External Average Sales Price per Ton $1,019 $1,038 -2%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Q1 2026 earnings up in all segments",
+    "quote": "Earnings in the first quarter of 2026 are expected to increase across all three of our operating segments, with the largest increase in the steel mills segment.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Historically strong backlogs",
+    "quote": "historically strong backlogs, and federal policies that support a vibrant domestic steel industry",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q1 2026 earnings vs Q4 2025",
+    "value": "increase across all three segments",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "We expect earnings to increase in the first quarter of 2026."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Renewables & storage",
+   "Nearshoring / reshoring (US)",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 impairments and facility closures",
+    "quote": "charges of $21 million, or $0.08 per diluted share, related to the closure or repurposing of certain facilities"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

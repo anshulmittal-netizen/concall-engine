@@ -1,0 +1,151 @@
+{
+ "doc_id": "GL-L-a4632444ab1e",
+ "market": "GL",
+ "company_id": "WMT",
+ "name": "Walmart",
+ "doc_type": "transcript",
+ "date": "2026-02-19",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.92,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Walmart Q4 CY25 read: revenue +4.9% cc, adjusted OI +10.5% cc, inventory +2.6% at half sales growth; FY27 guide sales +3.5-4.5% and OI +6-8% cc, with capex ~3.5% of sales at peak automation spend.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 2,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "For f y '27, we expect capital expenditure levels to be approximately three and a half percent of sales.",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory +2.6% vs sales ~5%",
+    "quote": "We ended the quarter with inventory up 2.6% or about half the rate of sales growth.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 OI guide +6-8% cc",
+    "quote": "operating income is expected to grow between 68%.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Capex ~3.5% of sales, peaking",
+    "quote": "We're hitting the peak of annual spending levels on supply chain automation and store remodels.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated sales growth (constant currency)",
+    "value": "3.5%-4.5%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Full year constant currency sales are expected to grow between 3.54.5%."
+   },
+   {
+    "metric": "Operating income growth (constant currency)",
+    "value": "6%-8%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "And operating income is expected to grow between 68%."
+   },
+   {
+    "metric": "EPS",
+    "value": "$2.75-$2.85",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "With EPS in the range of $2.75 to $2.85."
+   },
+   {
+    "metric": "Q1 EPS",
+    "value": "$0.63-$0.65",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "With EPS of $0.63 to $0.65 Q1 operating income growth is expected to be lower than any other quarter in FY 'twenty seven."
+   },
+   {
+    "metric": "Capex",
+    "value": "~3.5% of sales",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "For f y '27, we expect capital expenditure levels to be approximately three and a half percent of sales."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Alphabet",
+    "relation": "partner"
+   },
+   {
+    "name": "Flipkart",
+    "relation": "peer"
+   },
+   {
+    "name": "Visio",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Lower-income consumer stress",
+    "quote": "For households earning below $50,000, we continue to see that wallets are stretched."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 6,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Marketplace profitability timing",
+    "quote": "We haven't talked about when we expect that by itself to achieve profitability."
+   },
+   {
+    "topic": "Tax refund spending impact",
+    "quote": "It remains to be seen."
+   }
+  ],
+  "hedge_index": 0.35
+ }
+}

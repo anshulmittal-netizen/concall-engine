@@ -1,0 +1,140 @@
+{
+ "doc_id": "GL-L-4318cdfd61d0",
+ "market": "GL",
+ "company_id": "AMZN",
+ "name": "Amazon",
+ "doc_type": "transcript",
+ "date": "2026-02-05",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "AWS grew 24% on a $142B run rate with backlog up 40% to $244B and 3.99GW added in twelve months, but capex is about $200B and AWS margin is 35%, so supply is expanding aggressively alongside peers.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "we are monetizing capacity as fast as we can install it"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said every provider would tell you they could grow faster with more supply, and Amazon is adding capacity as fast as it can.",
+   "quote": "We expect to invest about $200 billion in capital expenditures across Amazon.com, Inc., but predominantly in AWS"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex about $200B, mostly AWS",
+    "quote": "We expect to invest about $200 billion in capital expenditures across Amazon.com, Inc., but predominantly in AWS",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "AWS backlog $244B, up 40% YoY",
+    "quote": "our backlog is $244 billion. That's up 40% year over year",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "AWS growth 24%, fastest in 13 quarters",
+    "quote": "AWS growth continued to accelerate to 24%, the fastest we've seen in thirteen quarters",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Graviton up to 40% better price-performance",
+    "quote": "Graviton is up to 40% more price per than leading x86 processors",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q1 2026 net sales",
+    "value": "$173.5B to $178.5B",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "Q1 net sales are expected to be between $173.5 billion and $178.5 billion."
+   },
+   {
+    "metric": "Q1 2026 operating income",
+    "value": "$16.5B to $21.5B",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "Within the North America segment, we do expect a year over year cost increase of approximately $1 billion related to Amazon LEO."
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "about $200B",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "We expect to invest about $200 billion in capital expenditures across Amazon.com, Inc."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Anthropic",
+    "relation": "customer"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Microsoft",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)",
+   "Semiconductors & OSAT",
+   "Customer stickiness"
+  ],
+  "red_flags": [
+   {
+    "label": "Capex about $200B with AWS margin pressure",
+    "quote": "It certainly has a headwind from the investments in AI and the depreciation on that CapEx."
+   },
+   {
+    "label": "Q1 operating income guidance range wide",
+    "quote": "Q1 operating income is expected to be between $616.5 billion and $21.5 billion."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 3,
+   "margin": 1,
+   "other": 0
+  },
+  "evasions": [
+   {
+    "topic": "Return on invested capital timing and FCF floor",
+    "quote": "So we will see how that develops over time."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

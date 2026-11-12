@@ -1,0 +1,119 @@
+{
+ "doc_id": "GL-L-14be394001b8",
+ "market": "GL",
+ "company_id": "UHS",
+ "name": "Universal Health Services",
+ "doc_type": "release",
+ "date": "2026-02-26",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Q4 same-facility acute revenue per adjusted admission +5.4% with admissions flat, while 2026 guidance implies Adjusted EBITDA up only 4.8% at midpoint on 7.1% revenue growth; capex guided $950M–$1.1B vs $1.015B in 2025.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 64.4,
+   "quote": "Occupancy-available beds 64.4% 66.7% -3.4%"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "Capital expenditures $950 million $1.1 billion"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Acute occupancy 64.4% vs 66.7% (Q4)",
+    "quote": "Occupancy-available beds 64.4% 66.7% -3.4%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Acute revenue per adj. admission +5.4%",
+    "quote": "net revenue per adjusted admission increased by 5.4%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "DSO 55 days vs 50; receivables up $385M",
+    "quote": "an unfavorable change of $385 million in accounts receivable",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net revenues 2026",
+    "value": "$18.417B–$18.789B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "$18.417 billion $18.789 billion"
+   },
+   {
+    "metric": "Adjusted EBITDA net of NCI 2026",
+    "value": "$2.641B–$2.789B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted EBITDA net of NCI $2.641 billion $2.789 billion"
+   },
+   {
+    "metric": "Adjusted EPS-diluted 2026",
+    "value": "$22.64–$24.52",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "EPS-diluted $22.64 per share $24.52 per share"
+   },
+   {
+    "metric": "Capital expenditures 2026",
+    "value": "$950M–$1.1B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Capital expenditures $950 million $1.1 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Medicaid supplemental payments",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables up sharply; DSO 55 vs 50",
+    "quote": "Days Sales Outstanding 55 50"
+   },
+   {
+    "label": "Medicaid policy and supplemental payment exposure",
+    "quote": "Legislation adopted on July 4, 2025, attaches work and community service requirements to eligibility for Medicaid benefits"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

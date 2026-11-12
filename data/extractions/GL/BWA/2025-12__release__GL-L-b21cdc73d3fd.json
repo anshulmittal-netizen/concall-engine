@@ -1,0 +1,144 @@
+{
+ "doc_id": "GL-L-b21cdc73d3fd",
+ "market": "GL",
+ "company_id": "BWA",
+ "name": "BorgWarner",
+ "doc_type": "release",
+ "date": "2026-02-11",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "FY25 adjusted op margin rose to 10.7% on eProducts growth and cost control, but $624M impairments in PowerDrive and Battery & Charging flag capital misallocation; 2026 sales guided down on LV weakness and BCS decline.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Operating leverage",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Free cash flow increased to $1,208 million, up approximately 66% compared with 2024 due to strong operating income and capital expenditure management."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex $671M → $469M in 2025",
+    "quote": "Capital expenditures, including tooling outlays",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "2026 capex guided $600–700M",
+    "quote": "Capital expenditures, including tooling outlays",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "2026 organic sales down 3.5% to 1.5%",
+    "quote": "The Company's net sales guidance implies a year-over-year change in organic sales of down 3.5% to down 1.5%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "novelty",
+    "label": "Data-centre turbine: >$300M first year",
+    "quote": "Production is expected to begin in early 2027 with estimated sales of more than $300 million during the first year of production.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net sales 2026",
+    "value": "$14.0B to $14.3B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Net sales are expected to be in the range of $14.0 billion to $14.3 billion in 2026"
+   },
+   {
+    "metric": "Adjusted operating margin 2026",
+    "value": "10.7% to 10.9%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "adjusted operating margin is expected to be in the range of 10.7% to 10.9%"
+   },
+   {
+    "metric": "Adjusted EPS 2026",
+    "value": "$5.00 to $5.20",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "adjusted net earnings are expected to be within a range of $5.00 to $5.20 per diluted share"
+   },
+   {
+    "metric": "Free cash flow 2026",
+    "value": "$900M to $1,100M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "free cash flow is expected to be in the range of $900 million to $1,100 million"
+   },
+   {
+    "metric": "Operating cash flow 2026",
+    "value": "$1,600M to $1,700M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Full-year operating cash flow is expected to be in the range of $1,600 million to $1,700 million"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "TurboCell",
+    "relation": "customer"
+   },
+   {
+    "name": "Endeavour",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Auto EV transition",
+   "Capex cycle revival (private)",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "$624M impairments in PowerDrive and BCS",
+    "quote": "includes $624 million of goodwill, intangible asset and property, plant and equipment impairment charges"
+   },
+   {
+    "label": "Q4 GAAP operating loss on $582M impairment",
+    "quote": "U.S. GAAP operating loss of $(238) million, or (6.7)% of net sales."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

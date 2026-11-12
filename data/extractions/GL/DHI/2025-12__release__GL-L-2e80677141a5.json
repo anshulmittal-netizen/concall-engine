@@ -1,0 +1,108 @@
+{
+ "doc_id": "GL-L-2e80677141a5",
+ "market": "GL",
+ "company_id": "DHI",
+ "name": "D.R. Horton",
+ "doc_type": "release",
+ "date": "2026-01-20",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Orders up 3% to 18,300 with 18% cancellations flat, but closings down 7% and margins compressing; FY26 guidance reiterated with only 6% of incentives discussed as elevated, so supply discipline is the watch item.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply discipline",
+   "Working-capital stress",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Unsold homes 20,000; 900 completed >6 months",
+    "quote": "At quarter end, the Company had 30,400 homes in inventory, of which 20,000 were unsold. 7,300 of the Company's unsold homes were completed, including 900 that had been completed for greater than six months.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Incentives to stay elevated in FY26",
+    "quote": "We expect our sales incentives to remain elevated in fiscal 2026, the extent to which will depend on the strength of demand during the spring",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Net orders up 3% to 18,300",
+    "quote": "Net sales orders increased 3% to 18,300 homes with an order value of $6.7 billion",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated revenues",
+    "value": "$33.5B to $35.0B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Consolidated revenues in the range of $33.5 billion to $35.0 billion"
+   },
+   {
+    "metric": "Homes closed",
+    "value": "86,000 to 88,000",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Homes closed by homebuilding operations of 86,000 homes to 88,000 homes"
+   },
+   {
+    "metric": "Share repurchases",
+    "value": "approximately $2.5 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Share repurchases of approximately $2.5 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Forestar Group Inc.",
+    "relation": "partner"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow fell on 2 quarters of 1-to-1 cash and lot spend up",
+    "quote": "Increase in residential land and lots – developed, under development, held for development and held for sale (489.1)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4,
+  "themes": []
+ }
+}

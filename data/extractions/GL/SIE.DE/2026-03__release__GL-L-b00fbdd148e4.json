@@ -1,0 +1,109 @@
+{
+ "doc_id": "GL-L-b00fbdd148e4",
+ "market": "GL",
+ "company_id": "SIE.DE",
+ "name": "Siemens",
+ "doc_type": "release",
+ "date": "2026-03-31",
+ "period": "2026-03",
+ "title": "Q2",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Siemens Q2 orders up 18% to €24.1bn with Smart Infrastructure orders +35% on data-centre wins, but Industrial margin fell to 15.4% (16.9%) and Mobility margin slid to 6.9%; group FY26 outlook confirmed.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Smart Infrastructure orders +35%, record",
+    "quote": "Orders climbed 35 percent on a comparable basis to €7.5 billion (Q2 2025: €6.0 billion) and once again reached a quarterly record high",
+    "highlight": "Orders climbed 35 percent on a comparable basis",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Book-to-bill 1.22; backlog record €124bn",
+    "quote": "The book-to-bill ratio was an excellent 1.22. The order backlog reached a new record high of €124 billion",
+    "highlight": "The order backlog reached a new record high of €124 billion",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Industrial margin 15.4% vs 16.9%",
+    "quote": "the profit margin of the Industrial Business was 15.4 percent compared to 16.9 percent in Q2 2025",
+    "highlight": "15.4 percent compared to 16.9 percent",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Mobility margin 6.9% on tariffs, delayed call-offs",
+    "quote": "Development was burdened by the impact of U.S. tariffs and by delayed call-offs under framework agreements",
+    "highlight": "delayed call-offs under framework agreements",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 Group outlook",
+    "value": "confirmed; 'very well positioned to reach our full-year group targets'",
+    "change": "held",
+    "quote": "confirms its outlook for fiscal 2026 at Group level despite increased uncertainty in the economic environment"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Siemens Healthineers",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Tariffs & trade policy",
+   "Agentic AI in IT services"
+  ],
+  "red_flags": [
+   {
+    "label": "Mobility margin compression from US tariffs and delayed rail call-offs",
+    "quote": "Mobility’s profit margin was 6.9 percent (Q2 2025: 9.1 percent)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

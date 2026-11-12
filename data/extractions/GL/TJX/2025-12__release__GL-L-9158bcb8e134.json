@@ -1,0 +1,136 @@
+{
+ "doc_id": "GL-L-9158bcb8e134",
+ "market": "GL",
+ "company_id": "TJX",
+ "name": "TJX Companies",
+ "doc_type": "release",
+ "date": "2026-02-25",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Off-price retailer beat plan on Q4 comps (+5%) and margins, but reported EPS was flattered by a $221M litigation gain; FY27 guide is modest at 2-3% comps and $4.93-5.02 EPS.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory per store +8% cc",
+    "quote": "Consolidated inventories on a per-store basis as of January 31, 2026, including distribution centers, but excluding inventory in transit and the Company's e-commerce sites, were up 10% on a reported basis and up 8% on a constant currency basis",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 EPS $4.93-5.02 vs FY26 adj $4.73",
+    "quote": "diluted earnings per share to be in the range of $4.93 to $5.02",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q4 comps +5%, above plan",
+    "quote": "Q4 consolidated comparable sales increased 5%, well above the Company's plan",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q1 FY27 comparable sales",
+    "value": "+2% to +3%",
+    "change": "new",
+    "horizon": "Q1 FY27"
+   },
+   {
+    "metric": "Q1 FY27 pretax profit margin",
+    "value": "10.3% to 10.4%",
+    "change": "new",
+    "horizon": "Q1 FY27"
+   },
+   {
+    "metric": "Q1 FY27 diluted EPS",
+    "value": "$0.97 to $0.99",
+    "change": "new",
+    "horizon": "Q1 FY27"
+   },
+   {
+    "metric": "FY27 comparable sales",
+    "value": "+2% to +3%",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY27 pretax profit margin",
+    "value": "11.7% to 11.8%",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY27 diluted EPS",
+    "value": "$4.93 to $5.02",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "FY27 share repurchases",
+    "value": "$2.50 to $2.75 billion",
+    "change": "new",
+    "horizon": "FY27"
+   },
+   {
+    "metric": "Quarterly dividend",
+    "value": "$0.48 per share (13% increase)",
+    "change": "raised",
+    "horizon": "June 2026 payment"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Litigation gain flatters reported EPS",
+    "quote": "Excluding a net benefit of $.15 from the litigation settlement and related expenses, adjusted diluted earnings per share for the fourth quarter were $1.43, up 16% versus the prior year."
+   },
+   {
+    "label": "Inventory per store up 8% cc vs sales +7%",
+    "quote": "were up 10% on a reported basis and up 8% on a constant currency basis versus last year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

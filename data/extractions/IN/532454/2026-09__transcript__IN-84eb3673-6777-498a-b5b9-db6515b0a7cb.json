@@ -1,0 +1,147 @@
+{
+ "doc_id": "IN-84eb3673-6777-498a-b5b9-db6515b0a7cb",
+ "market": "IN",
+ "company_id": "532454",
+ "name": "Bharti Airtel",
+ "doc_type": "transcript",
+ "date": "2026-11-12",
+ "period": "2026-09",
+ "title": "Transcript of the Earnings Call dated November 6, 2026.",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Airtel India ARPU rose to Rs271 from Rs264 on a pricing reset and premiumisation, but capex discipline is only partly evidenced and home-broadband quality remains soft, with no supply-side tightening in the industry.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Pricing power",
+   "Mix shift",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "the radio capex has kind of moderated, and that will continue because a lot of the build -out has already happened"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "ARPU Rs264 → Rs271 sequentially",
+    "quote": "ARPU for the quarter came in at Rs.271, up from 264",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "New tower installs under 1000 this year",
+    "quote": "if you look at the new towers being installed, it is almost very little now it is less than 1000",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "Third player investing, churn up",
+    "quote": "this is happening at a time when the third player has started investing",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Home broadband net adds slowed to 670,000",
+    "quote": "In homes, we delivered net adds of 670,000.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Industry ARPU growth 4-5% a year over 5-7 years",
+    "value": "not repeated; management said structural pricing change needs industry to move",
+    "change": "dropped",
+    "quote": "that change of architecture will require, like, I think the industry to move more decisively"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Industry tariff architecture ARPU growth 4-5% a year over 5-7 years",
+    "outcome": "dropped",
+    "quote": "the architecture correction is a much broader correction that is required in the industry to charge for data in many ways"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Airtel Africa",
+    "relation": "peer"
+   },
+   {
+    "name": "Bharti Hexacom",
+    "relation": "peer"
+   },
+   {
+    "name": "Perplexity",
+    "relation": "partner"
+   },
+   {
+    "name": "Adobe",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Premiumisation in consumption",
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Home broadband EBIT margin deteriorating, low-ARPU acquisition",
+    "quote": "we had seen some issues in terms of quality of acquisition at low ARPUs"
+   },
+   {
+    "label": "Churn up, Q2 pricing intervention",
+    "quote": "there is always a temporary impact on customer continuity"
+   },
+   {
+    "label": "Capex vs CWIP reconciliation gap",
+    "quote": "Capex and WIP mismatch, well, this will continue to happen for large projects"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 3,
+   "growth": 5,
+   "margin": 1,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Hexacom reported vs cash capex",
+    "quote": "I do not have a ready answer for you, Aditya. Allow me to circle back to you on this one."
+   },
+   {
+    "topic": "Industry tariff hikes by peers",
+    "quote": "I would not speculate beyond a point on this."
+   },
+   {
+    "topic": "Postpaid pricing revenue impact",
+    "quote": "I would not comment beyond that."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

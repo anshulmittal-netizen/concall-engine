@@ -1,0 +1,128 @@
+{
+ "doc_id": "GL-L-a4bcfa7b6ccf",
+ "market": "GL",
+ "company_id": "LYB",
+ "name": "LyondellBasell",
+ "doc_type": "release",
+ "date": "2026-01-30",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 EBITDA ex-items $417M and FY $2.5B show deep trough; Q1 operating rates cut to ~85% Americas and ~75% EAI signal supply discipline, while $1.3B cash target and $1.2B 2026 capex trim capacity growth.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Supply discipline",
+   "Working-capital stress",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 85,
+   "quote": "plans to operate Olefins & Polyolefins Americas assets at approximately 85%, Olefins & Polyolefins EAI assets at approximately 75%, and Intermediates & Derivatives assets at approximately 85%"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "The company plans to invest $1.2 billion in capital expenditures for 2026 with a focus on maintaining safe and reliable operations while continuing construction of MoReTec-1."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Q1 O&P Americas run rate ~85%",
+    "quote": "plans to operate Olefins & Polyolefins Americas assets at approximately 85%, Olefins & Polyolefins EAI assets at approximately 75%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "2026 capex $1.2B, growth projects deferred",
+    "quote": "The company plans to invest $1.2 billion in capital expenditures for 2026 with a focus on maintaining safe and reliable operations",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Cash Improvement Plan target $1.1B → $1.3B",
+    "quote": "we are increasing our cumulative target from $1.1 billion to $1.3 billion by the end of 2026",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "NA polyethylene price increase initiatives",
+    "quote": "tight year-end inventories, reduced supply due to winter storm Fern and stronger seasonal demand are supportive for polyethylene price increase initiatives",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "structure",
+    "label": "Four European assets divestment Q2 2026",
+    "quote": "Divestment of four European assets on track for completion in the second quarter of 2026",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Cash Improvement Plan cumulative target",
+    "value": "$1.3 billion by end-2026",
+    "change": "raised",
+    "horizon": "YE2026",
+    "quote": "we are increasing our cumulative target from $1.1 billion to $1.3 billion by the end of 2026"
+   },
+   {
+    "metric": "2026 capital expenditures",
+    "value": "$1.2 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The company plans to invest $1.2 billion in capital expenditures for 2026"
+   },
+   {
+    "metric": "Q1 2026 operating rates",
+    "value": "O&P Americas ~85%, O&P EAI ~75%, I&D ~85%",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "plans to operate Olefins & Polyolefins Americas assets at approximately 85%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Net loss $(738)M; $3.2B asset write-downs in 2025 incl. $1,251M",
+    "quote": "Net income (loss): $(738) million, $563 million excluding identified items"
+   },
+   {
+    "label": "Working capital outflow: inventories $(945)M, receivables $(687)M",
+    "quote": "Inventories\n(945)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

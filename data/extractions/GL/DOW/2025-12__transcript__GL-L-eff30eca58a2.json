@@ -1,0 +1,162 @@
+{
+ "doc_id": "GL-L-eff30eca58a2",
+ "market": "GL",
+ "company_id": "DOW",
+ "name": "Dow",
+ "doc_type": "transcript",
+ "date": "2026-01-29",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Dow Q4'25 EBITDA $741M with Q1'26 guided to ~$750M; supply cuts (20% of North American PO capacity, three European assets) and a $2B Transform to Outperform plan lead, but margins are at bottom-of-cycle.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Supply exit",
+   "Capital cycle",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 1,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "we ran them hard. We set an ethylene production record even with a good cracker idled in Europe."
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "Management noted industry capacity rationalizations and the cutting of ethylene capacity, including European shutdowns.",
+   "quote": "we anticipate that Dow's CapEx spending will remain at or below D&A until we see mid-cycle earnings."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "PO capacity: 20% of NA removed",
+    "quote": "rationalizing approximately 20% of North American PO industry capacity",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Europe cracker/asset shutdowns: $200M EBITDA by 2029",
+    "quote": "expected to result in an annual EBITDA uplift of $200 million by 2029",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "NA PE inventory drawdown supports Q1 pricing",
+    "quote": "The drawdown in inventories at the end of the year in North America has really helped as we lean into the first quarter.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Q1'26 EBITDA ~ $750M",
+    "quote": "Our expectations for first quarter EBITDA is approximately $750 million.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Construction & durables weak",
+    "quote": "the building and construction end markets and durables just really offset that",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q1 2026 operating EBITDA",
+    "value": "~$750 million",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "Our expectations for first quarter EBITDA is approximately $750 million."
+   },
+   {
+    "metric": "Transform to Outperform EBITDA uplift",
+    "value": "at least $2 billion near-term, by 2028",
+    "change": "new",
+    "horizon": "through 2028",
+    "quote": "we anticipate at least $2 billion of near-term uplift from this work"
+   },
+   {
+    "metric": "2026 CapEx",
+    "value": "$2.5 billion",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "Our outlook for CapEx for this year is still $2.5 billion like we spent last year."
+   },
+   {
+    "metric": "Path to Zero phase one startup",
+    "value": "late 2029, returns at least 8%-10%",
+    "change": "raised",
+    "horizon": "2029",
+    "quote": "This moves phase one startup to late 2029"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Aramco",
+    "relation": "partner"
+   },
+   {
+    "name": "Macquarie",
+    "relation": "partner"
+   },
+   {
+    "name": "Sadara",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Anti-dumping protection",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Dividend cut 50%",
+    "quote": "We made the prudent decision to implement a 50% dividend reduction."
+   },
+   {
+    "label": "Cash flow from operations thin ex-divestitures",
+    "quote": "So excluding that, cash flow from operations is $300 million."
+   },
+   {
+    "label": "Severance and one-time costs $1.1-1.5B",
+    "quote": "we anticipate one-time costs of approximately $1.1 billion to $1.5 billion, including $600 to $800 million of severance"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 2,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Cash flow outlook 2026",
+    "quote": "Jeff, maybe I'll ask you to make some comments on the cash flow outlook."
+   },
+   {
+    "topic": "Sadara lender payments and strategic review",
+    "quote": "Most of it has been around the financial structure."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,130 @@
+{
+ "doc_id": "GL-L-cdf26624b5d3",
+ "market": "GL",
+ "company_id": "RPM",
+ "name": "RPM International",
+ "doc_type": "release",
+ "date": "2026-01-08",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "RPM's Q2 FY26 organic sales fell 0.5% and adjusted EBIT dropped 11.2% to $226.6M; supply-side signals are absent, with only SG&A cost cuts (~$100M annualised) as a response to slowing demand.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Organic sales -0.5%, growth turned negative",
+    "quote": "sales growth turned negative as the quarter progressed",
+    "highlight": "sales growth turned negative as the quarter progressed",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Adj. EBIT -11.2% in Q2",
+    "quote": "adjusted EBIT of $226.6 million, a decrease of 11.2% compared to the prior-year record",
+    "highlight": "a decrease of 11.2% compared to the prior-year record",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "novelty",
+    "label": "~$100M annual SG&A savings programme",
+    "quote": "SG&A-focused optimization actions that are expected to generate benefits of approximately $100 million annually",
+    "highlight": "benefits of approximately $100 million annually",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Consumer organic decline 4.7%",
+    "quote": "Sales included a 4.7% organic decline, 8.7% growth from acquisitions",
+    "highlight": "4.7% organic decline",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q3 FY26 consolidated sales",
+    "value": "mid-single-digit growth",
+    "change": "new",
+    "horizon": "Q3 FY26",
+    "quote": "Consolidated sales to increase in the mid-single-digit percentage range compared to prior-year results."
+   },
+   {
+    "metric": "Q3 FY26 consolidated adjusted EBIT",
+    "value": "mid- to high-single digit growth",
+    "change": "new",
+    "horizon": "Q3 FY26",
+    "quote": "Consolidated adjusted EBIT to increase in the mid- to high-single digit percentage range compared to prior-year results"
+   },
+   {
+    "metric": "Q4 FY26 consolidated sales",
+    "value": "mid-single-digit growth",
+    "change": "new",
+    "horizon": "Q4 FY26",
+    "quote": "Consolidated sales to increase in the mid-single-digit range compared to prior-year record results."
+   },
+   {
+    "metric": "Q4 FY26 consolidated adjusted EBIT",
+    "value": "low- to high-single-digit growth",
+    "change": "new",
+    "horizon": "Q4 FY26",
+    "quote": "Consolidated adjusted EBIT to be up low- to high-single-digits compared to prior-year record results."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Total liquidity fell to $1.10B from $1.50B; debt up $494M to $2.52B on acquisitions",
+    "quote": "Total liquidity, including cash and committed revolving credit facilities, was $1.10 billion, compared to $1.50 billion a year ago"
+   },
+   {
+    "label": "Growth-investment spend while volumes fall; margins under pressure",
+    "quote": "we were unable to fully leverage growth investments and overcome temporary margin headwinds from plant and warehouse facility consolidations"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

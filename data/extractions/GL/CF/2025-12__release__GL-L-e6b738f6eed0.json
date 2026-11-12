@@ -1,0 +1,157 @@
+{
+ "doc_id": "GL-L-e6b738f6eed0",
+ "market": "GL",
+ "company_id": "CF",
+ "name": "CF Industries",
+ "doc_type": "release",
+ "date": "2026-02-18",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Fertilisers",
+  "thesis": "Nitrogen pricing strong and CF's cost edge intact, but the Yazoo City outage cuts 2026 ammonia output to about 9.5M tons, with Q4 volumes down and capex stepping up to about $1.3B.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Supply exit",
+   "Capital cycle",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "The Company expects gross ammonia production in 2026 to be approximately 9.5 million tons due to the ongoing outage at the Yazoo City, Mississippi, Complex"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said new North American ammonia production is expected to reach commercial rates in 2026, increasing traded supply available globally.",
+   "quote": "management projects capital expenditures for full year 2026 will be approximately $1.3 billion"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2026 ammonia output 9.5Mt on Yazoo outage",
+    "quote": "The Company expects gross ammonia production in 2026 to be approximately 9.5 million tons due to the ongoing outage",
+    "highlight": "approximately 9.5 million tons",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 ammonia ASP and NA margin strong",
+    "quote": "Average selling prices were higher for all segments in the fourth quarter of 2025",
+    "highlight": "Average selling prices were higher for all segments",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "European curtailments ~20% ammonia, 25% urea",
+    "quote": "Approximately 20% of ammonia capacity and 25% of urea capacity in Europe was curtailed as of December 2025",
+    "highlight": "Approximately 20% of ammonia capacity and 25% of urea capacity",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Channel inventory below historical average",
+    "quote": "Management believes that nitrogen channel inventory remains lower than historical averages.",
+    "highlight": "nitrogen channel inventory remains lower than historical averages",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "New NA ammonia supply reaches commercial rates 2026",
+    "quote": "New North American ammonia production is expected to reach commercial rates in 2026, increasing traded supply available globally.",
+    "highlight": "increasing traded supply available globally",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Gross ammonia production 2026",
+    "value": "approximately 9.5 million tons",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "The Company expects gross ammonia production in 2026 to be approximately 9.5 million tons"
+   },
+   {
+    "metric": "Capital expenditures 2026 (total)",
+    "value": "approximately $1.3 billion",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "management projects capital expenditures for full year 2026 will be approximately $1.3 billion"
+   },
+   {
+    "metric": "CF capex excluding JV partner funding 2026",
+    "value": "approximately $950 million",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "For the full year, management projects capital expenditures for CF Industries, excluding the portion of capital expenditures funded by JERA and Mitsui, to be approximately $950 million."
+   },
+   {
+    "metric": "Yazoo City restart",
+    "value": "not before Q4 2026",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "Management does not expect production to resume at the Yazoo City Complex until the fourth quarter of 2026 at the earliest"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "JERA Co., Inc.",
+    "relation": "partner"
+   },
+   {
+    "name": "Mitsui & Co., Ltd.",
+    "relation": "partner"
+   },
+   {
+    "name": "CHS Inc.",
+    "relation": "partner"
+   },
+   {
+    "name": "ExxonMobil",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Yazoo City outage removes ~0.6Mt ammonia in 2026",
+    "quote": "due to the ongoing outage at the Yazoo City, Mississippi, Complex as a result of an incident that occurred in late 2025"
+   },
+   {
+    "label": "Q4 volumes down, customer advances fell",
+    "quote": "Sales volumes were lower in the fourth quarter of 2025 compared to the fourth quarter of 2024 due primarily to lower granular urea and ammonium nitrate (AN) sales."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

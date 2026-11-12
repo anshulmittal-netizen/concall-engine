@@ -1,0 +1,123 @@
+{
+ "doc_id": "GL-L-86ccf4fd1e4d",
+ "market": "GL",
+ "company_id": "MLM",
+ "name": "Martin Marietta Materials",
+ "doc_type": "release",
+ "date": "2026-02-11",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.8,
+ "read": {
+  "subsector": "Building materials",
+  "thesis": "Aggregates pricing carried Q4 record: ASP up 5.3% to $23.11/ton and gross profit/ton up 9%, while 2026 guides only 1-3% volume and 4-6% ASP with capex held at $550-600M.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Pricing power",
+   "Supply discipline",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Aggregates ASP +5.3% in Q4",
+    "quote": "Average selling price (ASP) increased 5.3 percent to $23.11 per ton.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Gross profit per ton +9% to $8.59",
+    "quote": "Aggregates gross profit per ton increased 9 percent to $8.59",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Single-family and nonres starts ~20% below peak",
+    "quote": "remaining approximately 20% below their post-COVID peaks",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Aggregates volume growth 2026",
+    "value": "1% to 3% (mid 2%)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Volume % growth 1.0 % 3.0 % 2.0 %"
+   },
+   {
+    "metric": "Aggregates ASP growth 2026",
+    "value": "4% to 6% (mid 5%)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "ASP % growth 4.0 % 6.0 % 5.0 %"
+   },
+   {
+    "metric": "Adjusted EBITDA from continuing ops 2026",
+    "value": "$2,160M to $2,310M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted EBITDA from continuing operations $ 2,160 $ 2,310 $ 2,235"
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "$550M to $600M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Capital expenditures $ 550 $ 600 $ 575"
+   },
+   {
+    "metric": "Specialties gross profit 2026",
+    "value": "$150M to $170M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Specialties Business Gross profit $ 150 $ 170 $ 160"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "QUIKRETE Holdings, Inc.",
+    "relation": "partner"
+   },
+   {
+    "name": "CRH",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3,
+  "themes": []
+ }
+}

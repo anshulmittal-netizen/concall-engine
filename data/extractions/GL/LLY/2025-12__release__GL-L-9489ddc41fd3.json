@@ -1,0 +1,158 @@
+{
+ "doc_id": "GL-L-9489ddc41fd3",
+ "market": "GL",
+ "company_id": "LLY",
+ "name": "Eli Lilly",
+ "doc_type": "release",
+ "date": "2026-02-04",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Biotech",
+  "thesis": "Q4 revenue up 43% to $19.3B on 46% volume growth; 2026 guide of $80–83B revenue and $33.50–35.00 EPS is well above 2025 run-rate, with capacity expansion cited but no capex numbers given.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 volume +46%, revenue +43%",
+    "quote": "driven by a 46% increase in volume, partially offset by a 5% decrease due to lower realized prices",
+    "highlight": "driven by a 46% increase in volume",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Realised prices down 5% in Q4",
+    "quote": "partially offset by a 5% decrease due to lower realized prices",
+    "highlight": "5% decrease due to lower realized prices",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "$6B API plant in Alabama",
+    "quote": "Lilly to build $6 billion facility to manufacture active pharmaceutical ingredients in Alabama",
+    "highlight": "$6 billion facility to manufacture active pharmaceutical ingredients",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "2026 revenue $80–83B",
+    "quote": "2026 guidance issued with revenue in the range of $80 billion to $83 billion",
+    "highlight": "revenue in the range of $80 billion to $83 billion",
+    "direction": 1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue",
+    "value": "$80B to $83B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "2026 guidance issued with revenue in the range of $80 billion to $83 billion"
+   },
+   {
+    "metric": "Non-GAAP EPS",
+    "value": "$33.50 to $35.00",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "non-GAAP EPS in the range of $33.50 to $35.00"
+   },
+   {
+    "metric": "Performance margin",
+    "value": "46.0% to 47.5%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Performance Margin (1)(2) 46.0% to 47.5%"
+   },
+   {
+    "metric": "Tax rate",
+    "value": "18% to 19%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Tax Rate (2)(3) 18% to 19%"
+   },
+   {
+    "metric": "Shares outstanding",
+    "value": "approx 894 million",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "2026 assumes shares outstanding of approximately 894 million"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Boehringer Ingelheim",
+    "relation": "partner"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "POINT BioPharma",
+    "relation": "peer"
+   },
+   {
+    "name": "Verve Therapeutics",
+    "relation": "peer"
+   },
+   {
+    "name": "Adverum",
+    "relation": "peer"
+   },
+   {
+    "name": "Ventyx Biosciences",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "GLP-1 supply chain",
+   "Pricing power",
+   "Pharma CDMO / outsourcing",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Realised prices falling (US -7%)",
+    "quote": "partially offset by a 7% decrease due to lower realized prices"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

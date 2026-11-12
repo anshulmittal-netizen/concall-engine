@@ -1,0 +1,141 @@
+{
+ "doc_id": "GL-L-327795ce3e81",
+ "market": "GL",
+ "company_id": "CTVA",
+ "name": "Corteva",
+ "doc_type": "release",
+ "date": "2026-11-12",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Fertilisers",
+  "thesis": "Corteva cut FY26 adjusted EBITDA to $1.1–1.125B (from $4.1–4.3B prior basis, different metric) as Brazil crop protection collapsed; Q3 Latin America organic sales fell 31% on 24% volume drop and channel inventory.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -2,
+   "structure": -1,
+   "inventory": -2,
+   "demand": -2,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Brazil channel inventory elevated, volumes -24%",
+    "quote": "Volumes decreased 24% due to elevated channel inventory and delayed purchasing given farmer liquidity constraints and high interest rates.",
+    "highlight": "elevated channel inventory",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 EBITDA guide cut to $1.1–1.125B",
+    "quote": "Adjusted Pro Forma Operating EBITDA is now expected to be between $1.1 billion and $1.125 billion",
+    "highlight": "now expected to be between $1.1 billion and $1.125 billion",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "pricing",
+    "label": "Q3 price down 7%, Brazil and acetochlor",
+    "quote": "Pricing declined 7%, driven by competitive pressure on molecules late in their lifecycle in Brazil and U.S. acetochlor.",
+    "highlight": "Pricing declined 7%",
+    "direction": -1,
+    "confidence": 0.75
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 adjusted pro forma operating EBITDA",
+    "value": "$1.1B to $1.125B",
+    "horizon": "FY2026",
+    "change": "cut",
+    "quote": "Adjusted Pro Forma Operating EBITDA is now expected to be between $1.1 billion and $1.125 billion"
+   },
+   {
+    "metric": "FY26 adjusted pro forma operating EPS",
+    "value": "$0.76 to $0.80",
+    "horizon": "FY2026",
+    "change": "cut",
+    "quote": "Adjusted Pro Forma Operating EPS1 is expected to be between $0.76 and $0.80 per share."
+   },
+   {
+    "metric": "FY26 restructuring charges",
+    "value": "$130M to $140M pre-tax",
+    "horizon": "FY2026",
+    "change": "new",
+    "quote": "The Company expects to record approximately $130 million to $140 million net pre-tax restructuring charges during 2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 operating EBITDA",
+    "outcome": "missed",
+    "quote": "Adjusted Pro Forma Operating EBITDA1 is now expected to be between $1.1 billion and $1.125 billion"
+   },
+   {
+    "metric": "FY26 operating EPS",
+    "outcome": "missed",
+    "quote": "Adjusted Pro Forma Operating EPS1 is expected to be between $0.76 and $0.80 per share."
+   },
+   {
+    "metric": "FY26 operating EBITDA margin",
+    "outcome": "dropped",
+    "quote": ""
+   },
+   {
+    "metric": "CP pricing H2 2026",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "2027 EBITDA target",
+    "outcome": "not_discussed",
+    "quote": ""
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Brazil channel inventory and farmer liquidity",
+    "quote": "farmer liquidity constraints, elevated financing costs, just-in-time purchasing and increased pricing pressure"
+   },
+   {
+    "label": "Guidance cut with EPS and EBITDA down",
+    "quote": "Full-year 2026 guidance updated reflecting weaker market conditions than previously anticipated in Brazil"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3,
+  "thesis_placeholder": "x"
+ }
+}

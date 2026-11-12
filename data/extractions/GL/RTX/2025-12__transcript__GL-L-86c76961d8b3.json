@@ -1,0 +1,191 @@
+{
+ "doc_id": "GL-L-86c76961d8b3",
+ "market": "GL",
+ "company_id": "RTX",
+ "name": "RTX",
+ "doc_type": "transcript",
+ "date": "2026-01-26",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q3 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Defence & aerospace",
+  "thesis": "RTX Q3 2024 call: record $221B backlog (book-to-bill 1.8) and raised 2024 sales/EPS guidance, but Collins commercial OE cut to flat on Boeing strike and GTF powder-metal payments slid to about $1B.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "This, combined with slightly lower CapEx is expected to offset the working capital impacts associated with the lower commercial OE volume at Collins."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Adj. sales guide raised to $79.25-79.75B",
+    "quote": "we're increasing our full year adjusted sales outlook to between $79.25 billion and $79.75 billion, up from our prior range",
+    "highlight": "increasing our full year adjusted sales outlook",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Collins OE cut to flat from mid-single digit",
+    "quote": "commercial OE is now expected to be flat for the year, and that's down from our prior expectation of mid-single digit growth.",
+    "highlight": "commercial OE is now expected to be flat",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Backlog $221B, book-to-bill 1.8",
+    "quote": "ended the quarter at a record $221 billion with a book-to-bill of 1.8",
+    "highlight": "record $221 billion with a book-to-bill of 1.8",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory build cut FCF in quarter",
+    "quote": "free cash flow was again strong at $2 billion as continued strength in collections helped offset some higher inventory",
+    "highlight": "helped offset some higher inventory",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Adjusted sales",
+    "value": "$79.25B-$79.75B",
+    "change": "raised",
+    "horizon": "FY2024",
+    "quote": "we're increasing our full year adjusted sales outlook to between $79.25 billion and $79.75 billion"
+   },
+   {
+    "metric": "Adjusted EPS",
+    "value": "$5.50-$5.58",
+    "change": "raised",
+    "horizon": "FY2024",
+    "quote": "putting the new range at $5.50 to $5.58, up from $5.35 to $5.45"
+   },
+   {
+    "metric": "Organic sales growth",
+    "value": "8%-9%",
+    "change": "held",
+    "horizon": "FY2024",
+    "quote": "we continue to expect approximately 8% to 9% organic sales growth for the full year"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "approximately $4.7B",
+    "change": "held",
+    "horizon": "FY2024",
+    "quote": "we remain on track to achieve our outlook of approximately $4.7 billion"
+   },
+   {
+    "metric": "Collins operating profit growth",
+    "value": "$575M-$650M",
+    "change": "cut",
+    "horizon": "FY2024",
+    "quote": "we are updating the outlook for operating profit to grow between $575 million and $650 million versus 2023"
+   },
+   {
+    "metric": "Pratt operating profit growth",
+    "value": "$475M-$525M",
+    "change": "raised",
+    "horizon": "FY2024",
+    "quote": "up from our prior range of between $400 million and $475 million"
+   },
+   {
+    "metric": "Raytheon operating profit growth",
+    "value": "$200M-$250M",
+    "change": "raised",
+    "horizon": "FY2024",
+    "quote": "we now expect Raytheon's operating profit to grow between $200 million and $250 million versus 2023"
+   },
+   {
+    "metric": "Powder metal outflows",
+    "value": "about $1B",
+    "change": "cut",
+    "horizon": "FY2024",
+    "quote": "we now expect powder metal outflows to be about $1 billion down $250 million from our prior expectation"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Organic sales growth",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Boeing",
+    "relation": "customer"
+   },
+   {
+    "name": "Airbus",
+    "relation": "customer"
+   },
+   {
+    "name": "FAA",
+    "relation": "customer"
+   },
+   {
+    "name": "Palantir",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Railway capex",
+   "Capex cycle revival (private)",
+   "Defence indigenisation"
+  ],
+  "red_flags": [
+   {
+    "label": "GTF powder metal payments continue into 2025-2026",
+    "quote": "payments will continue into 2025 and potentially 2026, subject to remaining aircraft on ground"
+   },
+   {
+    "label": "Collins 787 seating certification drag",
+    "quote": "we did have about $35 million of contract headwind in the quarter"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 5,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "GTF powder metal payment timing",
+    "quote": "I won't get into specifics around when we expect the ultimate payments to make place"
+   },
+   {
+    "topic": "Raytheon productivity return to pre-pandemic levels",
+    "quote": "Whether we get back to the same levels of the kind of productivity, I think, depends entirely on the mix and the environment"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

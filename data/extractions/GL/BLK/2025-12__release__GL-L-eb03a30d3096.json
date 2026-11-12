@@ -1,0 +1,119 @@
+{
+ "doc_id": "GL-L-eb03a30d3096",
+ "market": "GL",
+ "company_id": "BLK",
+ "name": "BlackRock",
+ "doc_type": "release",
+ "date": "2026-01-15",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Asset & wealth management",
+  "thesis": "Record $698B full-year net inflows and 12% Q4 annualised organic base fee growth, with Q4 as-adjusted operating margin of 45.0%; the release gives no supply or capacity signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 organic base fee growth 12%",
+    "quote": "12% annualized organic base fee growth in the fourth quarter",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Full-year net inflows $698B",
+    "quote": "record $698 billion of full year net inflows, including $342 billion in the fourth quarter",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Securities lending spreads lower in Q4",
+    "quote": "Securities lending revenue of $174 million decreased from $203 million in the third quarter of 2025, primarily reflecting lower spreads.",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Private markets fundraising goal",
+    "value": "$400 billion by 2030",
+    "change": "new",
+    "quote": "our goal of $400 billion in private markets fundraising by 2030"
+   },
+   {
+    "metric": "Quarterly dividend per share",
+    "value": "$5.73",
+    "change": "raised",
+    "quote": "10% increase in quarterly cash dividend to $5.73 per share"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "GIP",
+    "relation": "partner"
+   },
+   {
+    "name": "HPS",
+    "relation": "partner"
+   },
+   {
+    "name": "Preqin",
+    "relation": "partner"
+   },
+   {
+    "name": "Circle Internet Group",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Private markets fundraising",
+   "Tokenization & digital assets",
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Circle minority investment loss ~$116M noncash in Q4",
+    "quote": "non-operating noncash pre-tax loss in connection with the Company's minority investment in Circle of approximately $116 million"
+   },
+   {
+    "label": "GAAP operating income down 7% FY on acquisition charges",
+    "quote": "7% decrease in full year GAAP operating income and 16% decrease in GAAP diluted EPS"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

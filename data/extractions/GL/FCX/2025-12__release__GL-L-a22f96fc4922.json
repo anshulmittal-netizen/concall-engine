@@ -1,0 +1,144 @@
+{
+ "doc_id": "GL-L-a22f96fc4922",
+ "market": "GL",
+ "company_id": "FCX",
+ "name": "Freeport-McMoRan",
+ "doc_type": "release",
+ "date": "2026-01-22",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "Grasberg restart is phased from Q2 2026 with 2026 copper sales guided to 3.4bn lb versus 3.6bn lb in 2025, and unit costs guided to $1.75/lb, while capex is trimmed to $4.3bn and Bagdad expansion decision is deferred to 2026.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Supply exit",
+   "Capacity bottleneck",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "Fourth-quarter 2025 production of 640 million pounds was significantly below fourth-quarter 2024 production of 1.0 billion pounds"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "FCX is carefully managing costs and near-term capital expenditures in connection with revised operating plans at the Grasberg minerals district"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex 2026 $4.3bn, major projects $3.0bn",
+    "quote": "Capital expenditures are expected to approximate $4.3 billion for the year 2026, including $3.0 billion for major mining projects.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Q4 copper output 640Mlb vs 1,041Mlb",
+    "quote": "fourth-quarter 2025 production of 640 million pounds was significantly below fourth-quarter 2024 production of 1.0 billion pounds",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "2026 unit cost $1.75/lb, Q1 $2.60",
+    "quote": "Unit net cash costs are expected to average $1.75 per pound of copper for the year 2026",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 realised copper $5.33/lb",
+    "quote": "Average realized prices were $5.33 per pound for copper",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Bagdad expansion decision in 2026",
+    "quote": "is updating these studies in advance of a potential investment decision during 2026",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 copper sales",
+    "value": "3.4 billion lb",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Consolidated sales are expected to approximate 3.4 billion pounds of copper, 0.8 million ounces of gold and 90 million pounds of molybdenum for the year 2026"
+   },
+   {
+    "metric": "2026 unit net cash costs",
+    "value": "$1.75/lb",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Unit net cash costs are expected to average $1.75 per pound of copper for the year 2026"
+   },
+   {
+    "metric": "2026 capex",
+    "value": "$4.3bn incl. $3.0bn major projects",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Capital expenditures are expected to approximate $4.3 billion for the year 2026, including $3.0 billion for major mining projects."
+   },
+   {
+    "metric": "2026 operating cash flow",
+    "value": "~$8bn at $5.00/lb Cu",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Operating cash flows would approximate $8 billion, including $1 billion of working capital and other sources, for the year 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "PT Smelting",
+    "relation": "partner"
+   },
+   {
+    "name": "PT Mineral Industri Indonesia (MIND ID)",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Grasberg mud rush: PTFI Block Cave suspended since Sep 2025",
+    "quote": "the temporary suspension of operations at the Grasberg Block Cave underground mine since September 2025"
+   },
+   {
+    "label": "Net debt rising, insurance deductible $0.5bn",
+    "quote": "PTFI is seeking recovery of damages under its property and business interruption insurance policies, which cover up to $1.0 billion in losses"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

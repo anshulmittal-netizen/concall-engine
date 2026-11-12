@@ -1,0 +1,119 @@
+{
+ "doc_id": "GL-L-ccd2b7f52f12",
+ "market": "GL",
+ "company_id": "PPG",
+ "name": "PPG Industries",
+ "doc_type": "release",
+ "date": "2026-01-27",
+ "period": "2025-12",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "PPG's Q4 organic growth of 3% and 2026 guidance of flat to low-single-digit organic sales with mid-single-digit EPS growth rest on share gains and cost cuts, not capacity discipline; utilisation and capex were not disclosed.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Customer stickiness",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Operating working capital up to 17.6% of sales",
+    "quote": "As a percent of quarter sales, annualized 17.6 % 15.6 %",
+    "highlight": "17.6 %",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "2026 adjusted EPS $7.70-8.10, mid-single-digit growth",
+    "quote": "adjusted earnings per share for the full-year 2026 will be in the range of $7.70 to $8.10",
+    "highlight": "$7.70 to $8.10",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Performance Coatings Q4 pricing up 4%",
+    "quote": "Fourth quarter pricing improved 4% year over year",
+    "highlight": "Fourth quarter pricing improved 4%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year 2026 adjusted EPS",
+    "value": "$7.70 to $8.10 (mid-single-digit growth at midpoint)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "adjusted earnings per share for the full-year 2026 will be in the range of $7.70 to $8.10"
+   },
+   {
+    "metric": "Full-year 2026 organic sales",
+    "value": "flat to low single-digit percentage growth",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The company anticipates organic sales to be in the range of flat to low single-digit percentage growth for the full year"
+   },
+   {
+    "metric": "Incremental restructuring savings 2026",
+    "value": "$50 million",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we expect incremental restructuring savings of $50 million in 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Industrial Coatings pricing down on index contracts",
+    "quote": "The impact of lower selling prices from certain index-based customer contracts was more than offset by favorable foreign currency translation"
+   },
+   {
+    "label": "Net debt up ~$630M, $700M due Q1 2026",
+    "quote": "The company has a $700 million debt maturity due in the first-quarter 2026."
+   },
+   {
+    "label": "Q4 adjusted EPS down 6%",
+    "quote": "Adjusted EPS $1.51 $1.61 (6)%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3,
+  "red_flags_note": "n/a"
+ }
+}

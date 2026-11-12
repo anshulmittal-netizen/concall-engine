@@ -1,0 +1,105 @@
+{
+ "doc_id": "GL-L-a35fa74575aa",
+ "market": "GL",
+ "company_id": "STLD",
+ "name": "Steel Dynamics",
+ "doc_type": "release",
+ "date": "2026-01-27",
+ "period": "2025-12",
+ "title": "8-K · EXHIBIT 99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Q4 CY25 net income fell to $266M ($1.82 diluted) from $404M in Q3 as steel margins compressed, though management says flat-rolled pricing is improving and aluminum is ramping at a loss.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Successful production and qualifications of industrial, beverage can, and automotive quality flat rolled aluminum products"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Steel pricing has improved",
+    "quote": "Steel pricing has improved, and customer optimism remains solid across our businesses, as demand continues to be steady.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Imports declined from H1 levels",
+    "quote": "We also achieved record annual steel shipments as imports declined from the elevated levels experienced during the first half of the year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Flat-rolled realisations lagging contracts",
+    "quote": "Average realized flat rolled steel pricing declined in the quarter based on lagging priced contracts",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Aluminum ramp still loss-making",
+    "quote": "the team has strong momentum and achieved positive EBITDA in December",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Market outlook",
+    "value": "Improving conditions expected; no numeric guidance",
+    "change": "held",
+    "quote": "we believe a favorable market environment will follow"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Anti-dumping protection",
+   "Tariffs & trade policy",
+   "Nearshoring / reshoring (US)",
+   "Consolidation / competitor exits",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 operating income down 35% QoQ",
+    "quote": "operating income for the company's steel operations was $322 million, or 35 percent lower than sequential third quarter results"
+   },
+   {
+    "label": "Inventory build and debt rise",
+    "quote": "Inventories (338,329) (69,535)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

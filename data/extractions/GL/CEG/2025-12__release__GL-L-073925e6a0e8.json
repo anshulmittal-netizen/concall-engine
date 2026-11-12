@@ -1,0 +1,110 @@
+{
+ "doc_id": "GL-L-073925e6a0e8",
+ "market": "GL",
+ "company_id": "CEG",
+ "name": "Constellation Energy",
+ "doc_type": "release",
+ "date": "2026-02-24",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Constellation's Q4 adjusted EPS fell to $2.30 from $2.44 on unfavorable nuclear PTC results, with full-year adjusted EPS up to $9.39 and 2026 guidance deferred to March 31; no supply-side capacity signal in this release.",
+  "archetype": "None",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 94.7,
+   "quote": "94.7% and 94.6% for the twelve months ended December 31, 2025 and 2024, respectively"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "CyrusOne 380 MW Freestone contract added",
+    "quote": "Calpine LLC signed a new 380-megawatt (MW) agreement with Dallas-based CyrusOne",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Dividend to grow 10% in 2026",
+    "quote": "expect to grow the dividend per share by another 10% in 2026",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 unfavorable nuclear PTC results",
+    "quote": "Unfavorable nuclear PTC portfolio results partially offset by favorable market and portfolio conditions",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Dividend per share growth 2026",
+    "value": "+10%",
+    "change": "new",
+    "quote": "expect to grow the dividend per share by another 10% in 2026",
+    "horizon": "2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Microsoft",
+    "relation": "customer"
+   },
+   {
+    "name": "Meta",
+    "relation": "customer"
+   },
+   {
+    "name": "CyrusOne",
+    "relation": "customer"
+   },
+   {
+    "name": "Calpine",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 adjusted EPS down YoY; GAAP EPS nearly halved",
+    "quote": "GAAP Net Income of $1.38 per share and Adjusted (non-GAAP) Operating Earnings of $2.30 per share for the fourth quarter of 2025"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

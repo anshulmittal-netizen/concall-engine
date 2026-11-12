@@ -1,0 +1,164 @@
+{
+ "doc_id": "GL-L-0c04608bd744",
+ "market": "GL",
+ "company_id": "RIO.L",
+ "name": "Rio Tinto",
+ "doc_type": "release",
+ "date": "2026-01-21",
+ "period": "2025-12",
+ "title": "6-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Q4 CY25 production update shows broad volume strength (CuEq +8% in 2025, copper +11%, record Pilbara Q4 run rate) but supply additions are heavy, with Simandou ramp, Oyu Tolgoi and lithium growth, and Pilbara system capacity flagged at 345–360Mtpa.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "quote": "Record quarterly run rate of around 360 Mtpa driven by continued investment in mine health and productivity, and favourable weather."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Planned production ramp-up through 2026."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Simandou first shipment, 30-month ramp",
+    "quote": "once complete, around the end of Q1 2026, we expect a 30 month ramp-up to full capacity",
+    "highlight": "30 month ramp-up to full capacity",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Lithium carbonate price +55% in Q4",
+    "quote": "The lithium carbonate price increased 55% in Q4 fuelled by growing optimism for battery energy storage systems demand",
+    "highlight": "The lithium carbonate price increased 55% in Q4",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Yarwun alumina output cut 40% from Oct 2026",
+    "quote": "we will reduce production by 40% from October 2026, to extend the operation's life until 2035",
+    "highlight": "reduce production by 40% from October 2026",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "TiO2 feedstock supply curtailed ~5% YoY",
+    "quote": "some TiO2 feedstock supply was curtailed in 2025; supply is estimated to have declined ~5% year- on-year",
+    "highlight": "supply is estimated to have declined ~5% year- on-year",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "supply",
+    "label": "Iron & Titanium and Borates guidance dropped",
+    "quote": "we will no longer provide production guidance for Iron & Titanium, and Borates, while this process is underway",
+    "highlight": "we will no longer provide production guidance for Iron & Titanium, and Borates",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Copper production (consolidated)",
+    "value": "800 - 870 kt",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "2026 guidance1: unchanged from Capital Markets Day 2025 disclosures"
+   },
+   {
+    "metric": "Pilbara sales (100% basis)",
+    "value": "323 - 338 Mt",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "2026 guidance1: unchanged from Capital Markets Day 2025 disclosures"
+   },
+   {
+    "metric": "Lithium LCE production",
+    "value": "61 - 64 kt",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "2026 guidance1: unchanged from Capital Markets Day 2025 disclosures"
+   },
+   {
+    "metric": "Iron & Titanium and Borates production guidance",
+    "value": "withdrawn",
+    "change": "cut",
+    "horizon": "2026",
+    "quote": "we will no longer provide production guidance for Iron & Titanium, and Borates, while this process is underway"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2025 Copper production",
+    "outcome": "met",
+    "quote": "Copper: Annual production grew 11% YoY, exceeding the top end of our increased guidance range"
+   },
+   {
+    "metric": "2025 Pilbara iron ore shipments",
+    "outcome": "met",
+    "quote": "Pilbara iron ore shipments (100% basis) Mt 91.3 +7 % 326.2 -1 % 323 - 338 (at lower end)"
+   },
+   {
+    "metric": "2025 Aluminium",
+    "outcome": "met",
+    "quote": "Aluminium4 Mt 0.85 +2 % 3.38 +3 % 3.25 - 3.45 (at upper end)"
+   }
+  ],
+  "entities": [
+   {
+    "name": "BHP",
+    "relation": "partner"
+   },
+   {
+    "name": "Codelco",
+    "relation": "partner"
+   },
+   {
+    "name": "Hancock Prospecting",
+    "relation": "partner"
+   },
+   {
+    "name": "Glencore",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "IOC production down 14% YoY on pit health and equipment reliability",
+    "quote": "lower due to pit health and mine equipment reliability challenges which resulted in reduced ore feed to the concentrator"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2,
+  "themes": []
+ }
+}

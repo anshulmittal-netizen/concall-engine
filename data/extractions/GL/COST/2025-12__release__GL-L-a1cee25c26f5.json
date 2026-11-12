@@ -1,0 +1,74 @@
+{
+ "doc_id": "GL-L-a1cee25c26f5",
+ "market": "GL",
+ "company_id": "COST",
+ "name": "Costco",
+ "doc_type": "release",
+ "date": "2025-12-11",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q1 FY26 net sales +8.2% to $65.98B with comps +6.4% (US 5.9%), but merchandise inventories up 17% QoQ to $21.1B and payables up $3.7B, which flatters working capital; no guidance in release.",
+  "archetype": "None",
+  "mental_models": [
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory +17% QoQ to $21.1B",
+    "quote": "Merchandise inventories 21,141 18,116",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Comparable sales +6.4%, digital +20.5%",
+    "quote": "Total Company 6.4% 6.4% Digitally-Enabled 20.5%",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consumer demand"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory build ahead of payables",
+    "quote": "Merchandise inventories 21,141 18,116"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.5
+ }
+}

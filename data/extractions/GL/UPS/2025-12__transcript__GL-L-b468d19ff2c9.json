@@ -1,0 +1,177 @@
+{
+ "doc_id": "GL-L-b468d19ff2c9",
+ "market": "GL",
+ "company_id": "UPS",
+ "name": "UPS",
+ "doc_type": "transcript",
+ "date": "2026-01-26",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q1 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "UPS is deliberately shrinking low-margin Amazon volume (down 16% in Q1, ~30% in H2) and cutting $3.5B cost in 2025, but withheld full-year guidance and Q2 U.S. ADV is guided down 9%.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capital cycle",
+   "Supply discipline",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "64% of volume now processed through automated hubs, up 4.5% year over year"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "164 closures, 73 buildings by June",
+    "quote": "we will complete 164 operational closures, including 73 building closures by the end of June",
+    "highlight": "164 operational closures, including 73 building closures",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Revenue per piece up 4.5%",
+    "quote": "revenue per piece increased 4.5% year-over-year, which was the strongest revenue per piece growth rate we've seen in eight quarters",
+    "highlight": "strongest revenue per piece growth rate we've seen in eight quarters",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "U.S. ADV guided down about 9% in Q2",
+    "quote": "in the second quarter, we expect ADV to be down about 9% and revenue to be down low single digits",
+    "highlight": "ADV to be down about 9%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "No full-year outlook update",
+    "quote": "we are not providing any updates to our consolidated full year outlook at this time",
+    "highlight": "not providing any updates to our consolidated full year outlook",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Customers drawing down inventory",
+    "quote": "they're letting inventory levels sell-off, which will lead to lower shipping activity, at least for now",
+    "highlight": "letting inventory levels sell-off",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "U.S. Domestic ADV Q2",
+    "value": "down about 9%",
+    "change": "new",
+    "horizon": "Q2 2025",
+    "quote": "we expect ADV to be down about 9% and revenue to be down low single digits"
+   },
+   {
+    "metric": "U.S. Domestic operating margin change Q2",
+    "value": "expand ~30 bps",
+    "change": "new",
+    "horizon": "Q2 2025",
+    "quote": "We expect the U.S. Domestic operating margin to expand by approximately 30 basis points"
+   },
+   {
+    "metric": "International revenue Q2",
+    "value": "down ~2%, mid-teens margin",
+    "change": "new",
+    "horizon": "Q2 2025",
+    "quote": "we expect revenue to be down approximately 2% to last year and operating margin to be in the mid-teens"
+   },
+   {
+    "metric": "Cost reduction 2025",
+    "value": "$3.5 billion",
+    "change": "held",
+    "horizon": "FY2025",
+    "quote": "is expected to remove $3.5 billion in expense this year"
+   },
+   {
+    "metric": "Full-year consolidated outlook",
+    "value": "not updated",
+    "change": "held",
+    "horizon": "FY2025",
+    "quote": "we are not providing any updates to our consolidated full year outlook at this time"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Full-year 2025 outlook",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Amazon",
+    "relation": "customer"
+   },
+   {
+    "name": "Coyote",
+    "relation": "peer"
+   },
+   {
+    "name": "USPS",
+    "relation": "supplier"
+   },
+   {
+    "name": "Andlauer Healthcare Group",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "China+1 enquiries → orders",
+   "Tariffs & trade policy",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Withheld full-year guidance",
+    "quote": "we are not providing any updates to our consolidated full year outlook at this time"
+   },
+   {
+    "label": "Q2 chaos costs from closures",
+    "quote": "we have built in some chaos costs in order to manage the volume and maintain service"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 5,
+   "margin": 4,
+   "balance_sheet": 1,
+   "capex": 1,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Full-year outlook",
+    "quote": "given today's level of uncertainty, however, we are not providing any updates to our consolidated full year outlook"
+   },
+   {
+    "topic": "Cost savings vs Amazon revenue loss",
+    "quote": "we are making structural changes to the business to improve the margin"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

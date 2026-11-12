@@ -1,0 +1,134 @@
+{
+ "doc_id": "GL-L-a0ccd192c0dc",
+ "market": "GL",
+ "company_id": "LLY",
+ "name": "Eli Lilly",
+ "doc_type": "transcript",
+ "date": "2026-01-22",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q2 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Q2 2025 revenue up 38% with 2025 guidance raised to $60-62B, but US price down 8% and CVS formulary exclusion of Zepbound is a Q3 volume headwind; capacity is scaling at 1.6x salable doses.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "We produced more than 1.6x the amount of salable incretin doses during the first half of 2025 when compared to the first half of 2024."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We will continue to bring more capacity online in the second half of 2025 and expect our production capabilities to increase further."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Incretin salable doses 1.6x H1",
+    "quote": "We produced more than 1.6x the amount of salable incretin doses during the first half of 2025",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "2025 revenue guide raised to $60-62B",
+    "quote": "We now anticipate our revenue will be between $60 billion and $62 billion.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "US price down 8%",
+    "quote": "partially offset by an 8% decline in price",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "CVS excludes Zepbound; Q3 volume headwind",
+    "quote": "we expect it to be a headwind to the rate of volume growth in Q3.",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2025 revenue",
+    "value": "$60B-$62B",
+    "change": "raised",
+    "quote": "We now anticipate our revenue will be between $60 billion and $62 billion."
+   },
+   {
+    "metric": "Non-GAAP performance margin",
+    "value": "43%-45.5%",
+    "change": "new",
+    "quote": "we now expect non-GAAP performance margin to be between 43% and 45.5% as a percentage of revenue."
+   },
+   {
+    "metric": "Non-GAAP EPS",
+    "value": "$21.75-$23",
+    "change": "raised",
+    "quote": "expect EPS of $21.75 to $23."
+   },
+   {
+    "metric": "Salable incretin doses H2 2025 vs H2 2024",
+    "value": "at least 1.8x",
+    "change": "new",
+    "quote": "We expect to produce at least 1.8x the number of salable incretin doses in the second half of 2025"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "CVS",
+    "relation": "customer"
+   },
+   {
+    "name": "Novo Nordisk",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy",
+   "GLP-1 supply chain"
+  ],
+  "red_flags": [
+   {
+    "label": "US net price erosion and PBM formulary exclusion",
+    "quote": "U.S. pricing declined by 8%"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 1,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Orforglipron efficacy vs cross-trial comparison",
+    "quote": "I'm not sure I tracked exactly with your numbers."
+   }
+  ],
+  "hedge_index": 0.2
+ }
+}

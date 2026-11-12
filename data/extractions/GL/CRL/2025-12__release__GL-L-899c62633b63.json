@@ -1,0 +1,119 @@
+{
+ "doc_id": "GL-L-899c62633b63",
+ "market": "GL",
+ "company_id": "CRL",
+ "name": "Charles River Laboratories",
+ "doc_type": "release",
+ "date": "2026-02-18",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Q4 organic revenue fell 2.6% but DSA net bookings improved substantially, and 2026 guidance calls for organic revenue of (1.0)% to flat with a return to growth only in 2H26, non-GAAP EPS $10.70–$11.20.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Backlog conversion",
+   "Supply exit",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 DSA bookings substantially improved",
+    "quote": "substantial improvement in DSA net bookings in the fourth quarter",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Organic growth return pushed to 2H26",
+    "quote": "will result in a return to organic revenue growth in the second half of 2026",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "DSA organic revenue down 3.3% in Q4",
+    "quote": "Organic revenue decreased by 3.3%, driven primarily by lower sales volume for discovery services",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue organic growth 2026",
+    "value": "(1.0)% to At Least Flat",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Revenue growth/(decrease), organic (2) (1.0)% to At Least Flat"
+   },
+   {
+    "metric": "Non-GAAP EPS 2026",
+    "value": "$10.70 – $11.20",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Non-GAAP EPS estimate $10.70 – $11.20"
+   },
+   {
+    "metric": "GAAP EPS 2026",
+    "value": "$6.30 – $6.80",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "GAAP EPS estimate $6.30 – $6.80"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "K.F. (Cambodia) Ltd.",
+    "relation": "partner"
+   },
+   {
+    "name": "PathoQuest SAS",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Repeated goodwill and intangible impairments ($376M in Q4)",
+    "quote": "non-cash intangible asset impairments of $211.0 million, or $3.22 per share"
+   },
+   {
+    "label": "Q4 GAAP operating margin (28.5)%",
+    "quote": "the GAAP operating margin was (28.5)%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.5
+ }
+}

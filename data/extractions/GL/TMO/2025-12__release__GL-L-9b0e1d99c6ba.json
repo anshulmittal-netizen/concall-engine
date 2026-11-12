@@ -1,0 +1,101 @@
+{
+ "doc_id": "GL-L-9b0e1d99c6ba",
+ "market": "GL",
+ "company_id": "TMO",
+ "name": "Thermo Fisher Scientific",
+ "doc_type": "release",
+ "date": "2026-01-29",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Q4 organic growth only 3% and full-year 2% despite $16.5B deployed, with $13B to M&A; capacity additions via acquired sites, and no utilisation or pricing disclosure in the release.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital allocation shift",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "novelty",
+    "label": "Acquired US sterile fill-finish capacity",
+    "quote": "Sanofi’s Ridgefield, New Jersey, sterile fill-finish site, expanding our U.S. capacity for drug product manufacturing capacity",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Organic growth slowed to 2% FY",
+    "quote": "Organic revenue growth was 2%.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Solventum",
+    "relation": "partner"
+   },
+   {
+    "name": "Sanofi",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Clario",
+    "relation": "partner"
+   },
+   {
+    "name": "Bayer",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Adjusted operating margin down in Q4",
+    "quote": "Adjusted operating margin was 23.6%, compared with 23.9% in the fourth quarter of 2024."
+   },
+   {
+    "label": "Free cash flow down ~13% FY",
+    "quote": "Free cash flow (non-GAAP measure)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.5
+ }
+}

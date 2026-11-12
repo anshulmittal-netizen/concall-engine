@@ -1,0 +1,108 @@
+{
+ "doc_id": "GL-L-5a5d56e5c5ae",
+ "market": "GL",
+ "company_id": "DOW",
+ "name": "Dow",
+ "doc_type": "release",
+ "date": "2026-01-29",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Dow's Q4 Op. EBIT fell to $33M (vs $454M a year ago) on 8% local price declines and downtime, with no capacity cuts quantified; supply discipline is only partly evidenced by the cracker idling in EMEAI.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Supply exit",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "Op. EBIT was $33 million, down $421 million year-over-year. This was primarily driven by price declines and lower operating rates"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Capital expenditures (568) (767) (2,479) (2,940)"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "EMEAI cracker idled earlier in 2025",
+    "quote": "lower merchant olefins sales in Europe, the Middle East, Africa and India (EMEAI) following the idling of a cracker in the region earlier in the year",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Local price down 8% YoY",
+    "quote": "Local price was down 8% versus the year-ago period and down 3% sequentially.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "At least $2B additional near-term earnings target",
+    "quote": "We expect these efforts to provide at least $2 billion in additional near-term earnings",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Near-term earnings from Transform to Outperform",
+    "value": "at least $2 billion additional",
+    "change": "new",
+    "horizon": "near-term",
+    "quote": "We expect these efforts to provide at least $2 billion in additional near-term earnings"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Sadara",
+    "relation": "partner"
+   },
+   {
+    "name": "Kuwait joint ventures",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Goodwill impairment $690M on Polyurethanes & Construction Chemicals",
+    "quote": "impairment charges associated with the Polyurethanes & Construction Chemicals business and non-cash pension settlement charges"
+   },
+   {
+    "label": "Operating cash flow down 63% YoY; Q4 FCF negative",
+    "quote": "Cash provided by operating activities – continuing operations was $298 million, down $513 million year-over-year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

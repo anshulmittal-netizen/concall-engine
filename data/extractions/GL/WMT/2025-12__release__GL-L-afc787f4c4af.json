@@ -1,0 +1,146 @@
+{
+ "doc_id": "GL-L-afc787f4c4af",
+ "market": "GL",
+ "company_id": "WMT",
+ "name": "Walmart",
+ "doc_type": "release",
+ "date": "2026-02-19",
+ "period": "2025-12",
+ "title": "8-K · PRESS RELEASE",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Q4 cc net sales +4.9% with adjusted operating income +10.5% cc, but FY27 guide (sales +3.5–4.5%, adj. OI +6–8%) and capex at ~3.5% of sales point to continued heavy investment; supply-side signal is capex-led, not capacity discipline.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Competitive capex",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "an increase of $2.9 billion in capital expenditures to support our omnichannel growth strategy"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex up $2.9B; FY27 ~3.5% of sales",
+    "quote": "an increase of $2.9 billion in capital expenditures to support our omnichannel growth strategy",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Global inventory +2.6% cc vs sales +5.1% cc",
+    "quote": "Global inventory up 4.3%; up 2.6% (cc)",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 adj. EPS $2.75–2.85",
+    "quote": "Adjusted EPS is expected to be $2.75 to $2.85.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Walmart U.S. comp ex-fuel +4.5% FY",
+    "quote": "4.5%",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 net sales (cc)",
+    "value": "+3.5% to 4.5%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "net sales expected to grow 3.5% to 4.5%"
+   },
+   {
+    "metric": "FY27 adjusted operating income (cc)",
+    "value": "+6.0% to 8.0%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "adjusted operating income to grow 6.0% to 8.0%"
+   },
+   {
+    "metric": "FY27 adjusted EPS",
+    "value": "$2.75 to $2.85",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Adjusted EPS is expected to be $2.75 to $2.85."
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "~3.5% of net sales",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "Approximately 3.5% of net sales"
+   },
+   {
+    "metric": "Q1 FY27 adjusted EPS",
+    "value": "$0.63 to $0.65",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "$0.63 to $0.65"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Flipkart",
+    "relation": "peer"
+   },
+   {
+    "name": "VIZIO",
+    "relation": "partner"
+   },
+   {
+    "name": "PhonePe",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Adj. operating income growth below sales-ex-currency growth? No; but ROI down to 15.1% from 15.5% on capex",
+    "quote": "The decrease in ROI was primarily due to an increase in average invested capital due to higher purchases of property and equipment."
+   },
+   {
+    "label": "GAAP EPS down 18.5% in Q4 on equity investment losses",
+    "quote": "Other (gains) and losses 2,117 294"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

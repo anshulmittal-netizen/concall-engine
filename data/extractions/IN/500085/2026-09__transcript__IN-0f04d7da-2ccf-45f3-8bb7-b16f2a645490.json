@@ -1,0 +1,158 @@
+{
+ "doc_id": "IN-0f04d7da-2ccf-45f3-8bb7-b16f2a645490",
+ "market": "IN",
+ "company_id": "500085",
+ "name": "Chambal Fertilisers",
+ "doc_type": "transcript",
+ "date": "2026-11-12",
+ "period": "2026-09",
+ "title": "Please find attached transcript of Q2 FY 27 Earnings Call.",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Fertilisers",
+  "thesis": "Q2 FY27 revenue up 9% to INR 7,000 cr with EBITDA margin 12.87%, but subsidy receivables rose to INR 4,157 cr and power/fuel costs jumped; no new guidance on margins beyond Q3.",
+  "archetype": "None",
+  "mental_models": [
+   "Working-capital stress",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 83,
+   "quote": "it has already crossed 83%, 84% in terms of total capacity u ƟlizaƟon"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "TAN plant utilisation ~83-84%",
+    "quote": "it has already crossed 83%, 84% in terms of total capacity u ƟlizaƟon",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Gas cost $20.2 → ~$24.5/MMBtu NCV",
+    "quote": "currently it is about $24 plus on NCV basis",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Subsidy receivables INR 4,157 cr",
+    "quote": "subsidy receivables of INR 4,157 crores",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Margin held only for Q3; Q4 open",
+    "quote": "we will more or less maintain this for the 3rd Quarter. Going forward in the 4th Quarter, we will see",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin",
+    "value": "Maintain for Q3 FY27; Q4 uncertain",
+    "change": "held",
+    "horizon": "Q3 FY27",
+    "quote": "we will more or less maintain this for the 3rd Quarter. Going forward in the 4th Quarter, we will see"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "NPK tie-up volume",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Dividend",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Buyback",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Nutrien",
+    "relation": "partner"
+   },
+   {
+    "name": "TERI",
+    "relation": "partner"
+   },
+   {
+    "name": "IMACID",
+    "relation": "peer"
+   },
+   {
+    "name": "RCF",
+    "relation": "competitor"
+   },
+   {
+    "name": "GNFC",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Subsidy receivables 2.1x since March",
+    "quote": "subsidy receivables of INR 4,157 crores"
+   },
+   {
+    "label": "Gadepan-III subsidy policy expiring; EBITDA hit INR 700-1,000 cr estimate",
+    "quote": "Deﬁnitely, there will be an impact on EBITDA going forward."
+   },
+   {
+    "label": "Complex fertiliser volume down, DAP trading cut",
+    "quote": "we have soŌ-pedaled or dialed-down DAP sales by almost 1.5 lakh tons"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 3,
+   "margin": 5,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Gadepan-III subsidy impact quantum",
+    "quote": "I do not know. At this point of Ɵme, I cannot really second -guess what they are going to do."
+   },
+   {
+    "topic": "Buyback request",
+    "quote": "it is more for the major shareholders to take a call on this"
+   },
+   {
+    "topic": "EBITDA margin range FY28",
+    "quote": "I am not in the business of giving guidance"
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

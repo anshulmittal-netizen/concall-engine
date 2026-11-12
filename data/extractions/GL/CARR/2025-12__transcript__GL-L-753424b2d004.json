@@ -1,0 +1,145 @@
+{
+ "doc_id": "GL-L-753424b2d004",
+ "market": "GL",
+ "company_id": "CARR",
+ "name": "Carrier Global",
+ "doc_type": "transcript",
+ "date": "2026-02-05",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "HVAC & cooling",
+  "thesis": "Carrier's CSA resi channel destocking is complete with field inventory down ~32% to 2018 levels, but 2026 guidance is only flat to low-mid single digit organic growth, with resi sales down high single digits and Q1 organic down high single digits.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply exit",
+   "Working-capital stress",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 2,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "quote": "which had less than half the output compared to Q4 of last year"
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Field inventory down ~32% YoY",
+    "quote": "ending January down about 32% year over year, now at 2018 levels",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Resi plant output less than half of Q4 LY",
+    "quote": "significant under absorption in our resi manufacturing facilities, which had less than half the output compared to Q4 of last year",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Data center orders up 5x in Q4",
+    "quote": "CSA data center orders up more than five times",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2026 organic growth ~flat to LSD-MSD",
+    "quote": "We expect flat to low mid-single digit organic growth and reported sales of approximately $22 billion",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 organic sales growth",
+    "value": "flat to low mid-single digit",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect flat to low mid-single digit organic growth and reported sales of approximately $22 billion"
+   },
+   {
+    "metric": "2026 adjusted operating profit",
+    "value": "~$3.4 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Total company adjusted operating profit is expected to be about $3.4 billion."
+   },
+   {
+    "metric": "2026 adjusted EPS",
+    "value": "~$2.80",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect adjusted EPS of approximately $2.8 up high single digits versus 2025."
+   },
+   {
+    "metric": "2026 free cash flow",
+    "value": "~$2 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect free cash flow to be approximately $2 billion which will be second half weighted"
+   },
+   {
+    "metric": "2026 share repurchase",
+    "value": "~$1.5 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we intend to repurchase about $1.5 billion in shares"
+   },
+   {
+    "metric": "Data center revenue 2026",
+    "value": "$1.5 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "supporting data center revenue guidance of $1.5 billion for 2026"
+   },
+   {
+    "metric": "Q1 2026 organic revenue",
+    "value": "down high single digits",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "with organic revenue down high single digits, including CSA resi down over 20%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "Toshiba",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 decrementals 50% ex-FX, 2026 resi volume down high single digits",
+    "quote": "Our decrementals are 50%. Still really high."
+   },
+   {
+    "label": "Q4 inventory build from kept-running US resi plants",
+    "quote": "is a couple 100,000,000 more inventory on our books at the end of the year than we otherwise would"
+   }
+  ],
+  "analyst_mix": {},
+  "hedge_index": 0.25,
+  "evasions": [],
+  "themes": []
+ }
+}

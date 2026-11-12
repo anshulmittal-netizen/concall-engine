@@ -1,0 +1,163 @@
+{
+ "doc_id": "GL-L-0c534970abe8",
+ "market": "GL",
+ "company_id": "SYF",
+ "name": "Synchrony Financial",
+ "doc_type": "transcript",
+ "date": "2026-01-26",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q3 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Credit-card lender with net charge-offs of 6.06% (97bp above 2017-19 average) and rising delinquencies; management guides FY24 EPS $8.45-8.55 on assumed late-fee rule non-implementation, with no supply-side capacity signals.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": -2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Net charge-off rate 6.06% vs 4.60% prior year",
+    "quote": "our net charge-off rate was 6.06% in the third quarter versus 4.60% in the prior year",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Purchase volume down 3% to 7%",
+    "quote": "Platform purchase volume growth range between down 3% and down 7% year-over-year",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY24 EPS $8.45-8.55 after ~$0.80 lift",
+    "quote": "Synchrony expects to deliver fully diluted earnings per share between $8.45 and $8.55 for the full year 2024",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Late-fee rule uncertainty persists",
+    "quote": "there continues to be uncertainty regarding the timing and outcome of late fee related litigation",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2024 fully diluted EPS",
+    "value": "$8.45-$8.55",
+    "change": "raised",
+    "horizon": "FY2024",
+    "quote": "Synchrony expects to deliver fully diluted earnings per share between $8.45 and $8.55 for the full year 2024"
+   },
+   {
+    "metric": "Q4 purchase volume",
+    "value": "low single-digit decline",
+    "change": "new",
+    "horizon": "Q4 2024",
+    "quote": "should result in low single-digit decline in purchase volume for the fourth quarter"
+   },
+   {
+    "metric": "Year-end 2024 reserve rate",
+    "value": "generally in-line with year-end 2023",
+    "change": "held",
+    "horizon": "YE2024",
+    "quote": "we continue to expect our year-end 2024 reserve rate to be generally in-line with the year-end 2023 rate"
+   },
+   {
+    "metric": "2H24 net charge-off rate vs 1H24",
+    "value": "lower than first half",
+    "change": "held",
+    "horizon": "2H2024",
+    "quote": "We also continue to expect the second half 2024 net charge-off rate will be lower than the first half."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Dick's Sporting Goods",
+    "relation": "partner"
+   },
+   {
+    "name": "Gibson",
+    "relation": "partner"
+   },
+   {
+    "name": "Albertsons Companies",
+    "relation": "partner"
+   },
+   {
+    "name": "Sam's Club",
+    "relation": "partner"
+   },
+   {
+    "name": "Walgreens",
+    "relation": "partner"
+   },
+   {
+    "name": "Walmart",
+    "relation": "partner"
+   },
+   {
+    "name": "Pets Best",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Tariffs & trade policy",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Net charge-offs well above historical average",
+    "quote": "our net charge-off rate was 6.06% in the third quarter versus 4.60% in the prior year and 97 basis points above our historical average"
+   },
+   {
+    "label": "Late-stage collections worse than pre-pandemic",
+    "quote": "it is still performing worse than 2019 and 2020, the pre-pandemic period"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 3,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Late fee rule rollback and litigation timing",
+    "quote": "we are not in the prediction business today"
+   },
+   {
+    "topic": "PPPC benefit sizing",
+    "quote": "we are not going to break out the individual components of the PPPCs by line items"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

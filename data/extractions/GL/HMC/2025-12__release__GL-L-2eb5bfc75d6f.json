@@ -1,0 +1,139 @@
+{
+ "doc_id": "GL-L-2eb5bfc75d6f",
+ "market": "GL",
+ "company_id": "HMC",
+ "name": "Honda Motor",
+ "doc_type": "release",
+ "date": "2026-02-10",
+ "period": "2025-12",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.88,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Honda's nine-month operating profit fell 48.1% to JPY 591.5bn on EV write-downs and tariffs, and it cut its 2030 EV share target from 30% to 20%, a capital-cycle retreat from EV capacity.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capital allocation shift",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "Competitors' EV expansion noted only as intensifying local OEM competition in Asia; no capacity commentary.",
+   "quote": "Honda decided to cancel development of certain EV models, and discontinue and reduce manufacturing of EV models jointly developed under a certain alliance agreement."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2030 EV share target cut 30% → 20%",
+    "quote": "the Honda global EV sales ratio in 2030 is now expected to be 20%, lower than the previously announced target of 30%.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "EV model development cancelled",
+    "quote": "Honda decided to cancel development of certain EV models, and discontinue and reduce manufacturing of EV models jointly developed under a certain alliance agreement.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "EV incentives higher per unit",
+    "quote": "lower EV sales units and higher sales incentives per unit than initially expected",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year sales revenue (JPY mn)",
+    "value": "21,100,000 (-2.7%)",
+    "change": "new",
+    "horizon": "FY ending Mar 2026"
+   },
+   {
+    "metric": "Full-year operating profit (JPY mn)",
+    "value": "550,000 (-54.7%)",
+    "change": "new",
+    "horizon": "FY ending Mar 2026"
+   },
+   {
+    "metric": "Full-year profit attributable to owners (JPY mn)",
+    "value": "300,000 (-64.1%)",
+    "change": "new",
+    "horizon": "FY ending Mar 2026"
+   },
+   {
+    "metric": "Full-year EPS (yen)",
+    "value": "75.05",
+    "change": "new",
+    "horizon": "FY ending Mar 2026"
+   },
+   {
+    "metric": "2030 global EV sales ratio",
+    "value": "20%",
+    "change": "cut",
+    "horizon": "2030"
+   },
+   {
+    "metric": "FY dividend forecast (yen)",
+    "value": "70.00",
+    "change": "new",
+    "horizon": "FY ending Mar 2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2030 global EV sales ratio",
+    "outcome": "missed",
+    "quote": "the Honda global EV sales ratio in 2030 is now expected to be 20%, lower than the previously announced target of 30%."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Honda R&D Co., Ltd.",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Auto EV transition",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Airbag inflator recall provisions open-ended",
+    "quote": "it is not possible for Honda to reasonably estimate the amount and timing of potential future losses"
+   },
+   {
+    "label": "Unquantified alliance contingent liabilities",
+    "quote": "Honda is currently unable to estimate the potential exposure with sufficient reliability."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.6
+ }
+}

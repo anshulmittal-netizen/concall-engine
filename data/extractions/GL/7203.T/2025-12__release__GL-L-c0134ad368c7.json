@@ -1,0 +1,106 @@
+{
+ "doc_id": "GL-L-c0134ad368c7",
+ "market": "GL",
+ "company_id": "7203.T",
+ "name": "Toyota Motor",
+ "doc_type": "release",
+ "date": "2026-02-06",
+ "period": "2025-12",
+ "title": "6-K · FY2026 THIRD QUARTER FINANCIAL RESULTS",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Toyota 9M operating income fell 13% to ¥3,196.7bn on ¥1,450bn tariff hit; FY2026 OI guidance held at ¥3,800bn with volumes and sales revenue raised, but no capacity signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "9M vehicle sales up 4.3%",
+    "quote": "strong demand supported by product competitiveness has led to increased sales volumes",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY OI forecast held at ¥3,800bn",
+    "quote": "Operating income 3,800.0 billion yen (-995.5 billion yen YoY)",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Operating income FY2026",
+    "value": "3,800.0 billion yen",
+    "change": "held",
+    "horizon": "FY2026 (Apr 2025-Mar 2026)",
+    "quote": "Operating income 3,800.0 billion yen (-995.5 billion yen YoY)"
+   },
+   {
+    "metric": "Consolidated vehicle sales FY2026",
+    "value": "9,750 thousand units",
+    "change": "raised",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Net income attributable to Toyota",
+    "value": "3,570.0 billion yen",
+    "change": "raised",
+    "horizon": "FY2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Hino Motors",
+    "relation": "peer"
+   },
+   {
+    "name": "Daihatsu",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Electrified vehicles",
+   "Break-even volume reduction"
+  ],
+  "red_flags": [
+   {
+    "label": "US tariff hit ¥1,450bn FY2026",
+    "quote": "Despite the 1,450 billion yen negative impact of U.S. tariffs that newly arose this Forecast fiscal year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

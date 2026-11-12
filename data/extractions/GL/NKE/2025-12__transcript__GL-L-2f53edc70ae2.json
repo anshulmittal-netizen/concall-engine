@@ -1,0 +1,175 @@
+{
+ "doc_id": "GL-L-2f53edc70ae2",
+ "market": "GL",
+ "company_id": "NKE",
+ "name": "Nike",
+ "doc_type": "transcript",
+ "date": "2026-01-06",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q1 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Nike Q1 FY25 revenue fell 10% with full-year guidance withdrawn; Q2 revenue guided down 8-10% and gross margin down ~150bp, with inventory slightly elevated and no supply-side capacity cuts disclosed.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Management change",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": -1,
+   "inventory": -1,
+   "demand": -2,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Full-year guidance withdrawn",
+    "quote": "we are withdrawing our full year guidance. We intend to provide quarterly guidance for the balance of the fiscal year.",
+    "direction": -1,
+    "confidence": 0.9
+   },
+   {
+    "type": "inventory",
+    "label": "Marketplace inventory slightly elevated",
+    "quote": "we are seeing slightly elevated inventory as a result of the retail sales plans falling behind",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Spring '25 order books flat",
+    "quote": "our order books came in, on with our partners at flat versus the prior year. And it was a little light relative to what we expected.",
+    "direction": -1,
+    "confidence": 0.75
+   },
+   {
+    "type": "pricing",
+    "label": "Q2 gross margin down ~150bp",
+    "quote": "We expect Q2 gross margins to be down approximately 150 basis points, with higher promotions, channel mix headwinds",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "novelty",
+    "label": "New footwear revenue up strong double-digits",
+    "quote": "Q1 revenue from new footwear products was up strong double-digits versus the prior year.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Running footwear back to positive growth",
+    "quote": "men's and women's running footwear delivered positive growth in Q1, a meaningful improvement versus the prior quarter.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q2 revenue",
+    "value": "down 8% to 10%",
+    "change": "new",
+    "horizon": "Q2 FY25",
+    "quote": "We expect Q2 revenues to be down in the 8% to 10% range."
+   },
+   {
+    "metric": "Q2 gross margin",
+    "value": "down ~150 bp",
+    "change": "new",
+    "horizon": "Q2 FY25",
+    "quote": "We expect Q2 gross margins to be down approximately 150 basis points"
+   },
+   {
+    "metric": "Q2 SG&A",
+    "value": "roughly flat y/y",
+    "change": "new",
+    "horizon": "Q2 FY25",
+    "quote": "We expect SG&A to be roughly flat versus the prior year"
+   },
+   {
+    "metric": "Q2 other income and expense",
+    "value": "$30 million to $40 million",
+    "change": "new",
+    "horizon": "Q2 FY25",
+    "quote": "We expect other income and expense, including net interest income to be $30 million to $40 million"
+   },
+   {
+    "metric": "Q2 effective tax rate",
+    "value": "high-teens",
+    "change": "new",
+    "horizon": "Q2 FY25",
+    "quote": "we expect our effective tax rate to be in the high-teens range."
+   },
+   {
+    "metric": "Classic franchise revenue headwind",
+    "value": "mid-single digit headwind on revenue for balance of year",
+    "change": "new",
+    "horizon": "H2 FY25",
+    "quote": "a mid-single digit headwind on revenue for the balance of this year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "DICK'S Sporting Goods",
+    "relation": "partner"
+   },
+   {
+    "name": "Foot Locker",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "China+1 enquiries → orders"
+  ],
+  "red_flags": [
+   {
+    "label": "Full-year guidance withdrawn amid CEO transition",
+    "quote": "we are withdrawing our full year guidance"
+   },
+   {
+    "label": "Inventory elevated, promotions rising",
+    "quote": "we are seeing slightly elevated inventory as a result of the retail sales plans falling behind"
+   },
+   {
+    "label": "China traffic and sell-through weakening",
+    "quote": "This has resulted in elevated inventory in the marketplace in an already promotional environment."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 4,
+   "margin": 2,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Regional inventory breakdown",
+    "quote": "It doesn't specifically relate to just the classics."
+   },
+   {
+    "topic": "Running specialty peak-to-trough decline",
+    "quote": "we've acknowledged that we've lost market share in the Running specialty channel."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

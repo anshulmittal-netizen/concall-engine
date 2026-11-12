@@ -1,0 +1,205 @@
+{
+ "doc_id": "IN-f9f23f6d-e6b5-491e-86b2-ae4f2ab5f94f",
+ "market": "IN",
+ "company_id": "500440",
+ "name": "Hindalco Industries",
+ "doc_type": "transcript",
+ "date": "2026-11-12",
+ "period": "2026-09",
+ "title": "Transcript - Q2 FY27 Earnings Call",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Hindalco India aluminium EBITDA up 55% YoY to INR7,009 crore at $2,125/t, but coal-driven costs rise ~5% QoQ and copper EBITDA of INR1,673 crore includes ~INR350-400 crore non-recurring gains; Novelis guidance held.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said all competitors do pot relining; India capex ~INR12,000 crore this year, next year 'substantially higher'.",
+   "quote": "This year will be around INR12,000 crores. Next year will be substantially higher"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex FY27 ~INR12,000 cr; FY28 higher",
+    "quote": "Next year will be substantially higher, which I'll give you the number with our February results",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Aluminium cost up ~5% QoQ on coal",
+    "quote": "that led to a 5% increase in the cost of production of alumin ium Q1 to Q2",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Copper one-offs INR350-400 cr non-repeatable",
+    "quote": "roughly INR350-INR400 crores, what we think is not on a sustainable basis repeatable",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "India aluminium demand ~6% YoY",
+    "quote": "Aluminium demand in Q2 FY27 is estimated to be around 1.7 million tons, representing growth of approximately 6% year -on-year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Q3 MJP down >$100",
+    "quote": "In Q3, already the MJP is down by more than $100",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Novelis long-term EBITDA per ton",
+    "value": "$600",
+    "change": "held",
+    "horizon": "long-term",
+    "quote": "our long -term EBITDA per ton guidance of $600 remains unchanged"
+   },
+   {
+    "metric": "India aluminium cost QoQ",
+    "value": "~5% up Q2 to Q3",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "I think Q2 to Q3 will also be 5% up"
+   },
+   {
+    "metric": "Consol net debt/EBITDA",
+    "value": "around 2x",
+    "change": "held",
+    "horizon": "",
+    "quote": "we will keep the console at around 2x"
+   },
+   {
+    "metric": "Renewable capacity FY27 exit",
+    "value": "884 MW",
+    "change": "held",
+    "horizon": "FY27 exit",
+    "quote": "By FY27 exit, our renewable energy portfolio is set to reac h 884 megawatt"
+   },
+   {
+    "metric": "Novelis cost reduction",
+    "value": "USD350-400 million by FY28 exit",
+    "change": "not_discussed",
+    "horizon": "FY28",
+    "quote": ""
+   },
+   {
+    "metric": "Novelis net leverage",
+    "value": "~4x in Q4, 2.5-2.8x over two years",
+    "change": "new",
+    "horizon": "Q4 FY27 onward",
+    "quote": "Novelis in Q4, we have said, will reach about 4x, and then over the next two years, they're going to go through a deleveraging cycle, ending up between 2.5x to 2.8x is the plan"
+   },
+   {
+    "metric": "Copper underlying quarterly EBITDA",
+    "value": "INR1,200-1,300 crore",
+    "change": "new",
+    "horizon": "coming quarters",
+    "quote": "the underlying run rate on a going basis is around INR 1,200-1,300 crores"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Novelis long-term EBITDA per ton",
+    "outcome": "met",
+    "quote": "our long -term EBITDA per ton guidance of $600 remains unchanged"
+   },
+   {
+    "metric": "Novelis cost reduction",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "India cash cost",
+    "outcome": "met",
+    "quote": "Q2 costs were up roughly 5% above Q1"
+   },
+   {
+    "metric": "Net leverage consol",
+    "outcome": "met",
+    "quote": "consolidated net debt to EBITDA at 1.8 0 times as of September 2026"
+   },
+   {
+    "metric": "Renewable capacity end FY27",
+    "outcome": "held",
+    "quote": "By FY27 exit, our renewable energy portfolio is set to reac h 884 megawatt"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Novelis",
+    "relation": "peer"
+   },
+   {
+    "name": "Mozal",
+    "relation": "peer"
+   },
+   {
+    "name": "AluChem",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Aluminium deficit / LME outlook",
+   "Coal cost pressure",
+   "Copper TC/RC and sulfuric acid",
+   "Novelis deleveraging",
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Copper EBITDA inflated by one-offs",
+    "quote": "roughly INR350-INR400 crores, what we think is not on a sustainable basis repeatable"
+   },
+   {
+    "label": "Q4 Novelis tariff/supply headwinds",
+    "quote": "our customer supply chains not having normalized, which are putting some negative colour on shipments"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 4,
+   "growth": 4,
+   "margin": 6,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Copper EBITDA breakup",
+    "quote": "No, I don't think we want to give you a breakup there."
+   },
+   {
+    "topic": "Novelis margin guidance FY28",
+    "quote": "I do not know why you are saying there are so many moving parts"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

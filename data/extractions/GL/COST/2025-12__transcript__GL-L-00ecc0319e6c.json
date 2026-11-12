@@ -1,0 +1,149 @@
+{
+ "doc_id": "GL-L-00ecc0319e6c",
+ "market": "GL",
+ "company_id": "COST",
+ "name": "Costco",
+ "doc_type": "transcript",
+ "date": "2025-12-11",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Costco Q1 FY26 comps 6.4% (7.1% ex-gas/FX) with 3.1% traffic; capex held at ~$6.5B and FY26 openings trimmed to 28 on Spain delays, while renewal rate slipped 10bp.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital cycle",
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "We estimate capital expenditure for the full year will be approximately $6.5 billion."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 openings cut to 28",
+    "quote": "revising our planned net new openings for fiscal year 2026 down to 28",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Comp ex-gas/FX 7.1%",
+    "quote": "Excluding gas sales entirely and adjusting for the impact of foreign exchange, comparable sales were 7.1%.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "New warehouse productivity $192M",
+    "quote": "With fiscal year 2025 openings generating an annualized $192 million per warehouse of sales in the year of opening",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Core on core margin +30bp",
+    "quote": "In terms of core margins on their own sales, our core on core margins were higher by 30 basis points.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Renewal rate down 10bp, may fall further",
+    "quote": "we may still see a slight decline in the overall renewal rate over the next few quarters",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Fiscal 2026 net new warehouse openings",
+    "value": "28",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "revising our planned net new openings for fiscal year 2026 down to 28"
+   },
+   {
+    "metric": "Long-term net new warehouse openings",
+    "value": "30+ per year",
+    "change": "held",
+    "horizon": "future years",
+    "quote": "we continue to plan for 30 plus net openings per year in future years"
+   },
+   {
+    "metric": "Full-year capital expenditure",
+    "value": "approximately $6.5 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We estimate capital expenditure for the full year will be approximately $6.5 billion."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Instacart",
+    "relation": "partner"
+   },
+   {
+    "name": "Uber Eats",
+    "relation": "partner"
+   },
+   {
+    "name": "DoorDash",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Renewal rate declining, may fall further",
+    "quote": "we may still see a slight decline in the overall renewal rate over the next few quarters"
+   },
+   {
+    "label": "Healthcare costs outpacing sales",
+    "quote": "This was perhaps the first quarter where we've seen health care costs grow at faster pace than our sales."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 6,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Holiday/December comp cadence",
+    "quote": "we don't obviously get into talking about specifically our current quarter because we report our sales on a monthly basis"
+   },
+   {
+    "topic": "Nonfood gift card/gold cycling timing",
+    "quote": "we generally don't provide sort of comments on forward looking what we would expect"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

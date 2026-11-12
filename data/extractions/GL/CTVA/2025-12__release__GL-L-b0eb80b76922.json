@@ -1,0 +1,105 @@
+{
+ "doc_id": "GL-L-b0eb80b76922",
+ "market": "GL",
+ "company_id": "CTVA",
+ "name": "Corteva",
+ "doc_type": "release",
+ "date": "2026-02-03",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Agri & food processing",
+  "thesis": "Q4 sales fell 2% and Operating EBITDA 15% on shifted seed and crop protection deliveries, while FY26 guide of $4.0–4.2B EBITDA (+7% midpoint) rests on volume, with Latin America and Asia pricing still pressured.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Crop protection price down 1% in Q4",
+    "quote": "Crop Protection price was down 1% driven largely by competitive pricing dynamics in Latin America and partially offset by price/mix increases in North America.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 EBITDA $4.0–4.2B, +7% midpoint",
+    "quote": "For the full year 2026, Corteva expects operating EBITDA1 to be $4.0 billion to $4.2 billion, growth of 7% at the mid-point.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Bayer litigation resolved, royalty neutrality 2026",
+    "quote": "Agreement helps accelerate Corteva’s path to royalty neutrality to 2026, two years earlier than previously expected",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Operating EBITDA FY2026",
+    "value": "$4.0 to $4.2 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Corteva expects operating EBITDA1 to be $4.0 billion to $4.2 billion, growth of 7% at the mid-point."
+   },
+   {
+    "metric": "Operating EPS FY2026",
+    "value": "$3.45 to $3.70 per share",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Operating EPS1 is expected to be $3.45 to $3.70 per share, growth of 7% at the mid-point."
+   },
+   {
+    "metric": "Restructuring charges 2026",
+    "value": "$80 million to $90 million net pre-tax",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The company expects to record approximately $80 million to $90 million net pre-tax restructuring charges during 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Bayer",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 operating EBITDA down 15%, crop protection down 22%",
+    "quote": "Segment operating EBITDA was $360 million in the fourth quarter of 2025, down 22% from the fourth quarter of 2024."
+   }
+  ],
+  "evasions": [],
+  "hedge_index": 0.3,
+  "analyst_mix": {}
+ }
+}

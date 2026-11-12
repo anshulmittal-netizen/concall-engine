@@ -1,0 +1,93 @@
+{
+ "doc_id": "GL-L-90cae802312e",
+ "market": "GL",
+ "company_id": "THC",
+ "name": "Tenet Healthcare",
+ "doc_type": "release",
+ "date": "2026-02-02",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Hospitals & diagnostics",
+  "thesis": "Tenet resolves Conifer JV with CommonSpirit, receiving ~$1.9B over three years, and flags FY25 Adjusted EBITDA at upper end of $4.47–4.57B guidance; no supply signal, mainly a capital-structure event.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capital allocation shift",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY25 Adj EBITDA at upper end of range",
+    "quote": "the Company currently estimates that its Adjusted EBITDA for the year ended December 31, 2025, will be at the upper end of its current Adjusted EBITDA guidance range of $4.47 billion to $4.57 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "CommonSpirit exits Conifer JV",
+    "quote": "Payments totaling approximately $1.9 billion from CommonSpirit to Tenet in installments over the next three years",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Adjusted EBITDA FY2025",
+    "value": "upper end of $4.47B–$4.57B",
+    "change": "held",
+    "horizon": "FY2025",
+    "quote": "will be at the upper end of its current Adjusted EBITDA guidance range of $4.47 billion to $4.57 billion"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "CommonSpirit Health",
+    "relation": "customer"
+   },
+   {
+    "name": "Conifer Health Solutions",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Preliminary results may change",
+    "quote": "The Company's actual results for the year ended December 31, 2025 may differ from preliminary estimates"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

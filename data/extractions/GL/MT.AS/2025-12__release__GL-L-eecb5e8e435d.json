@@ -1,0 +1,142 @@
+{
+ "doc_id": "GL-L-eecb5e8e435d",
+ "market": "GL",
+ "company_id": "MT.AS",
+ "name": "ArcelorMittal",
+ "doc_type": "release",
+ "date": "2026-02-05",
+ "period": "2025-12",
+ "title": "6-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "Steel and mining major; 4Q25 EBITDA up 5.6% q/q to $1.6bn, but FY25 EBITDA fell 7.3% and net debt rose to $7.9bn after $1.9bn M&A, with EU trade protection (TRQ, CBAM) the key supply-side hope.",
+  "archetype": "Value migration",
+  "mental_models": [
+   "Supply exit",
+   "Trade protection"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "Crude steel production reached 1.8Mt in 4Q 2025, an 8.5% increase compared with 1.7Mt in 3Q 2025"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "The Company's capex in 2026 is projected to be within the range of $4.5-$5.0bn"
+  },
+  "triggers": [
+   {
+    "type": "structure",
+    "label": "EU TRQ cuts imports ~10Mt",
+    "quote": "It is estimated that this can reduce imports of flat and long products by ~10Mt, which would support higher domestic capacity utilization",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Europe ASP down q/q",
+    "quote": "Average steel selling price (US$/t)",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "inventory",
+    "label": "4Q working capital release $2.4bn",
+    "quote": "Net cash provided by operating activities during 4Q 2025 amounted to $3.0 billion and includes a $2.4 billion release of working capital.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "World ex-China apparent steel demand growth FY2026",
+    "value": "+2%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The Company expects world ex-China apparent steel demand to grow by +2% in FY 2026."
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "$4.5-$5.0bn",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The Company's capex in 2026 is projected to be within the range of $4.5-$5.0bn"
+   },
+   {
+    "metric": "Depreciation 2026",
+    "value": "~$3.0bn",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "12M 2026 depreciation is estimated at approximately $3.0 billion."
+   },
+   {
+    "metric": "Strategic project EBITDA uplift 2026",
+    "value": "$0.7bn",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "Recently completed and ongoing projects are expected to add a further $1.6bn of EBITDA potential ($0.7bn in 2026 and $0.9bn from 2027 onward)."
+   },
+   {
+    "metric": "Annual base dividend FY2026",
+    "value": "$0.60/sh",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "the Board proposes to increase the annual base dividend to shareholders to $0.60/sh in FY 2026 (from $0.55/sh in FY 2025)"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Nippon Steel",
+    "relation": "partner"
+   },
+   {
+    "name": "Votorantim",
+    "relation": "competitor"
+   },
+   {
+    "name": "Cliffs",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Tariffs & trade policy",
+   "Renewables & storage",
+   "Grid capex & transformers",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "FY25 FCF only $0.4bn; net debt up to $7.9bn",
+    "quote": "Following shareholder returns of $0.7 billion and M&A of $1.9 billion ($0.2 billion in cash plus debt consolidated), net debt increased to $7.9 billion"
+   },
+   {
+    "label": "Europe 4Q ASP and volume down",
+    "quote": "mainly reflecting a 6.1% decline in steel shipment volume"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

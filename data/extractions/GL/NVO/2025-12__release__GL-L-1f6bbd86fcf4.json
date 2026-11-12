@@ -1,0 +1,163 @@
+{
+ "doc_id": "GL-L-1f6bbd86fcf4",
+ "market": "GL",
+ "company_id": "NVO",
+ "name": "Novo Nordisk",
+ "doc_type": "release",
+ "date": "2026-02-03",
+ "period": "2025-12",
+ "title": "6-K · 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Pharma & biotech",
+  "thesis": "FY25 sales +10% CER to DKK 309bn but 2026 adjusted sales guided -5% to -13% CER on US price cuts (MFN), semaglutide LOE and competition; capex still ~DKK 55bn with Catalent-driven capacity build.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -2,
+   "structure": -2,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Capital expenditure is expected to be around DKK 55 billion in 2026 compared to DKK 60 billion in 2025, reflecting the expansion of the global supply chain."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "2026 adj. sales growth -5% to -13% CER",
+    "quote": "Adjusted sales growth for 2026, which excludes revenue from the reversal of 340B provisions, is expected to be -5 to -13% at CER.",
+    "highlight": "-5 to -13% at CER",
+    "direction": -1,
+    "confidence": 0.9
+   },
+   {
+    "type": "pricing",
+    "label": "Lower realised prices incl. MFN",
+    "quote": "The sales outlook is impacted by lower realised prices including impacts related to the \"Most Favoured Nations\" agreement in the US",
+    "highlight": "lower realised prices",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "structure",
+    "label": "Intensifying competition, semaglutide LOE",
+    "quote": "intensifying competition as well as negative impact from reduced obesity medication coverage in Medicaid",
+    "highlight": "intensifying competition",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Capex ~DKK 55bn in 2026, declining after",
+    "quote": "In the coming years, the capital expenditure investments are expected to decline.",
+    "highlight": "capital expenditure investments are expected to decline",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Wegovy pill ~50k weekly scripts",
+    "quote": "as of 23 January, total weekly prescriptions amounted to around 50,000",
+    "highlight": "around 50,000",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Adjusted sales growth (CER)",
+    "value": "-5% to -13%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted sales growth for 2026, which excludes revenue from the reversal of 340B provisions, is expected to be -5 to -13% at CER."
+   },
+   {
+    "metric": "Adjusted operating profit growth (CER)",
+    "value": "-5% to -13%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted operating profit growth is expected to be -5 to -13% at CER."
+   },
+   {
+    "metric": "Capital expenditure (PP&E)",
+    "value": "around DKK 55bn",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Capital expenditure is expected to be around DKK 55 billion in 2026"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "DKK 35-45bn",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The free cash flow is expected to be DKK 35-45 billion"
+   },
+   {
+    "metric": "Effective tax rate",
+    "value": "21-23%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The effective tax rate for 2026 is expected to be in the range of 21-23%."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Eli Lilly",
+    "relation": "competitor"
+   },
+   {
+    "name": "Zealand Pharma",
+    "relation": "partner"
+   },
+   {
+    "name": "GE Healthcare",
+    "relation": "partner"
+   },
+   {
+    "name": "Merck",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 US sales down 15% DKK; realised prices falling",
+    "quote": "Sales in US Operations decreased by 15% measured in Danish kroner and by 7% at CER."
+   },
+   {
+    "label": "Diabetes value share down 3.6pp",
+    "quote": "Diabetes value market share declined by 3.6 percentage points to 30.1% (MAT)"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

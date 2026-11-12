@@ -1,0 +1,85 @@
+{
+ "doc_id": "GL-L-60a43c345695",
+ "market": "GL",
+ "company_id": "GD",
+ "name": "General Dynamics",
+ "doc_type": "release",
+ "date": "2026-01-28",
+ "period": "2025-12",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Defence & aerospace",
+  "thesis": "Q4 book-to-bill 1.6x and FY backlog $118B (+30%) with capex up 27% to $1.2B and more planned; supply expansion is visible, but no pricing or utilisation data disclosed.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "investing nearly $1.2 billion in capital expenditures in 2025 – with even more investments planned in the year ahead."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex up 27% to $1.2B",
+    "quote": "$1.2 billion in capital expenditures for the year, up 27% from 2024",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Book-to-bill 1.6x in Q4",
+    "quote": "Book-to-bill of 1.6x in the quarter and 1.5x for the full year, ending the year with $118 billion in backlog",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Aerospace orders $5.1B vs $3.8B",
+    "quote": "Orders* $ 5,075 $ 3,814",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Defence indigenisation",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 Marine operating margin down to 7.2% from 5.1% comparison; Aerospace Q4 margin 12.7% vs 15.6%",
+    "quote": "Operating margin: 12.7% 15.6% 7.2% 5.1%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}
