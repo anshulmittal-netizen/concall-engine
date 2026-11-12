@@ -1,0 +1,142 @@
+{
+ "doc_id": "GL-L-07e00c4a0872",
+ "market": "GL",
+ "company_id": "NXT",
+ "name": "Nextracker",
+ "doc_type": "transcript",
+ "date": "2026-01-26",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q2 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Nextracker raised FY25 profit target by $20M to $645M on record $4.5B backlog, but Q2 margin was flattered by one-offs (~300bp) and management expects those not to repeat; supply-side signals are mostly neutral.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Pricing power",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY25 profit target raised $20M to $645M",
+    "quote": "we are raising our profit target for the full fiscal year by $20 million at the midpoint to $645 million",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Backlog record over $4.5B",
+    "quote": "Our backlog increased significantly quarter-over-quarter to a new record of over $4.5 billion",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Q2 margin uplift not to repeat",
+    "quote": "that will probably not repeat in Q3 and Q4. It might, but our plan is it will be more like 1% to 2%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 double-digit growth not restated",
+    "quote": "We'll provide a lot more color on the FY '26 revenue plan in subsequent earnings calls",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY25 profit target (midpoint)",
+    "value": "$645M",
+    "change": "raised",
+    "horizon": "FY25",
+    "quote": "we are raising our profit target for the full fiscal year by $20 million at the midpoint to $645 million"
+   },
+   {
+    "metric": "FY25 revenue growth",
+    "value": "double-digit",
+    "change": "held",
+    "horizon": "FY25",
+    "quote": "we remain focused on executing our plan to achieve double-digit revenue growth for the full year"
+   },
+   {
+    "metric": "Structural gross margin",
+    "value": "high 20s to low 30s",
+    "change": "held",
+    "horizon": "structural",
+    "quote": "structurally, it should be in the high 20s, maybe be low 30s"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "First Solar",
+    "relation": "peer"
+   },
+   {
+    "name": "Ojjo",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Data-centre power & cooling",
+   "Anti-dumping protection",
+   "Housing & real-estate cycle",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Q2 margin flattered by one-offs",
+    "quote": "that will probably not repeat in Q3 and Q4"
+   },
+   {
+    "label": "FY26 growth language softened",
+    "quote": "We'll provide a lot more color on the FY '26 revenue plan in subsequent earnings calls"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 5,
+   "margin": 5,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "FY26 revenue growth",
+    "quote": "We'll provide a lot more color on the FY '26 revenue plan in subsequent earnings calls"
+   },
+   {
+    "topic": "Next-year gross margin / EBITDA",
+    "quote": "it's too really right now to say what that's going to look like next year"
+   },
+   {
+    "topic": "100% US tracker share of next-year business",
+    "quote": "We're going to have to wait and see on that and speak to it later"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

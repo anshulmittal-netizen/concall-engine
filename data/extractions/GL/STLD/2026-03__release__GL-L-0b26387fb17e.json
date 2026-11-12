@@ -1,0 +1,116 @@
+{
+ "doc_id": "GL-L-0b26387fb17e",
+ "market": "GL",
+ "company_id": "STLD",
+ "name": "Steel Dynamics",
+ "doc_type": "release",
+ "date": "2026-04-21",
+ "period": "2026-03",
+ "title": "8-K · EXHIBIT 99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Steel pricing and record shipments drove steel operating income to $557M (up 73% QoQ), but aluminum losses widened to $65M and working capital absorbed $413M; supply discipline is not discussed.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Operating leverage",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "Steel Mill Production (Tons) 3,039,367"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "The company also invested $138 million in capital investments"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Steel price per ton $1,107 → $1,193",
+    "quote": "The first quarter 2026 average external product selling price for the company's steel operations increased $86 sequentially to $1,193 per ton.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Fabrication backlog over 38% higher YoY",
+    "quote": "the customer order backlog over 38 percent higher than a year ago and extending through the third quarter and into October 2026",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital up $413M",
+    "quote": "Working capital (excluding profit-sharing and income taxes) increased $413 million in the first quarter",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Flat rolled pricing rebounded from lows",
+    "quote": "Flat rolled steel pricing has rebounded from the recent lows experienced in the second half 2025, and steel producer lead times are at strong levels.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Aluminum shipments and earnings",
+    "value": "increase sharply in Q2 2026",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "the company believes both shipments and earnings will increase sharply in the second quarter 2026"
+   },
+   {
+    "metric": "Cold mill commissioning",
+    "value": "third cold mill commissions Q3 2026; second CASH line Q3 2026",
+    "change": "new",
+    "horizon": "Q3 2026",
+    "quote": "with the third cold mill scheduled to commission in the third quarter 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Anti-dumping protection",
+   "Nearshoring / reshoring (US)",
+   "Consolidation / competitor exits",
+   "Renewables & storage",
+   "Railway capex"
+  ],
+  "red_flags": [
+   {
+    "label": "Aluminum startup losses widened",
+    "quote": "First quarter 2026 operating losses associated with the continued construction and startup of the company's aluminum operations in the U.S. and Mexico were $65 million"
+   },
+   {
+    "label": "Working capital build absorbed cash",
+    "quote": "Working capital (excluding profit-sharing and income taxes) increased $413 million in the first quarter"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,177 @@
+{
+ "doc_id": "GL-L-47b6d28347c2",
+ "market": "GL",
+ "company_id": "VRT",
+ "name": "Vertiv",
+ "doc_type": "transcript",
+ "date": "2026-02-11",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Vertiv's Q4 orders rose 152% with book-to-bill 2.9x and $15B backlog, while capex steps up to 3-4% of sales and quarterly order disclosure is being dropped, so supply is expanding alongside demand.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Backlog conversion",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "we continue to design our capacity with that wiggle room that is 20-25%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we are stepping up to 3-4% of sales in 2026, from our historical 2-3%"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex 2-3% → 3-4% of sales",
+    "quote": "On capital, we are stepping up to 3-4% of sales in 2026, from our historical 2-3%.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "orders",
+    "label": "Q4 organic orders +152% YoY",
+    "quote": "Organically, fourth quarter orders were up 152% year over year and up 117% sequentially.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Backlog $15B, >2x prior year",
+    "quote": "Our backlog stands at $15 billion, more than double last year's.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Pricing exceeded inflation",
+    "quote": "2025 pricing exceeded inflation, and we expect the same in 2026.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2026 sales +28% organic, margin 22.5%",
+    "quote": "projecting $13.5 billion at the midpoint which represents 28% organic growth",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Quarterly orders/backlog disclosure dropped",
+    "quote": "the best approach is to no longer report actual orders, orders forecast, or backlog with quarterly earnings.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Organic sales growth 2026",
+    "value": "28% (midpoint $13.5B)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we are projecting $13.5 billion at the midpoint which represents 28% organic growth"
+   },
+   {
+    "metric": "Adjusted operating margin 2026",
+    "value": "22.5%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we expect adjusted operating profit of $3.04 billion and a 22.5% margin at the midpoint"
+   },
+   {
+    "metric": "Adjusted diluted EPS 2026",
+    "value": "$6.20 midpoint (~43% growth)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We are projecting adjusted diluted EPS of $6.20 representing 43% growth at the midpoint."
+   },
+   {
+    "metric": "Adjusted free cash flow 2026",
+    "value": "$2.2B (+17%)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "adjusted free cash flow is expected to be $2.2 billion representing 17% growth"
+   },
+   {
+    "metric": "Q1 2026 adjusted EPS",
+    "value": "$0.98",
+    "change": "new",
+    "horizon": "1Q2026",
+    "quote": "we are projecting adjusted diluted EPS of $0.98 which represents 53% growth at the midpoint"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Hut 8",
+    "relation": "partner"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   },
+   {
+    "name": "Eaton",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)",
+   "Grid capex & transformers",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Order disclosure dropped as orders get lumpier",
+    "quote": "It just seems to lead to excessive volatility that is not representative of the sustained performance of the company"
+   },
+   {
+    "label": "EMEA and APAC sales declining",
+    "quote": "APAC was down 9% and EMEA down 14%."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 5,
+   "margin": 2,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Orders guidance for 2026",
+    "quote": "I would not go all the way to guiding orders, which I would do if I were to answer in with many details."
+   },
+   {
+    "topic": "Content per megawatt",
+    "quote": "it would be a little premature at this stage"
+   },
+   {
+    "topic": "Incremental margin / 2027 capex",
+    "quote": "We would not really put a number out there for 2027 yet"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

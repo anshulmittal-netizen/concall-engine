@@ -1,0 +1,107 @@
+{
+ "doc_id": "GL-L-3947893936e5",
+ "market": "GL",
+ "company_id": "7203.T",
+ "name": "Toyota Motor",
+ "doc_type": "presentation",
+ "date": "2026-05-08",
+ "period": "2026-03",
+ "title": "6-K · FY2026 PRESENTATION DOCUMENTS AS FILED WITH THE TOKYO STOCK EXCHANGE",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "FY2026 operating income fell to ¥3.77tn (-21%) on ¥1.38tn US tariffs; FY2027 guided to ¥3.0tn (-20%) with ¥400bn Middle East hit, while dividend rises to ¥100 and volumes flat.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift",
+   "Tariffs"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 OI ¥3.0tn, -20% YoY",
+    "quote": "Operating income : 3.0 trillion yen (-0.8 trillion yen YoY) FY2027 - Decline in profit as likely unable to absorb newly added impact from the Middle East",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "FY27 volume flat at 10.5m retail",
+    "quote": "Total Retail Vehicle Sales 11,283 11,180 99.1%",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "Dividend up to ¥100 (+¥5)",
+    "quote": "Dividend FY2026 : Full-year 95 yen (+5 yen YoY) Return to FY2027 forecast : Full-year 100 yen (+5 yen YoY)",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Operating income FY2027",
+    "value": "¥3,000bn",
+    "change": "new",
+    "horizon": "FY2027 (Apr 2026–Mar 2027)",
+    "quote": "Operating income : 3.0 trillion yen (-0.8 trillion yen YoY)"
+   },
+   {
+    "metric": "Consolidated vehicle sales FY2027",
+    "value": "9,600k",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "9,600 10,000 9,595"
+   },
+   {
+    "metric": "Dividend per share FY2027",
+    "value": "¥100",
+    "change": "raised",
+    "horizon": "FY2027",
+    "quote": "Return to FY2027 forecast : Full-year 100 yen (+5 yen YoY)"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Tariffs & trade policy",
+   "Auto EV transition",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Middle East hit ¥400bn in FY27 guidance",
+    "quote": "Decline in profit as likely unable to absorb newly added impact from the Middle East"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.5
+ }
+}

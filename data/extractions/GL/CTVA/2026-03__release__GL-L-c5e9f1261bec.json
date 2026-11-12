@@ -1,0 +1,134 @@
+{
+ "doc_id": "GL-L-c5e9f1261bec",
+ "market": "GL",
+ "company_id": "CTVA",
+ "name": "Corteva",
+ "doc_type": "release",
+ "date": "2026-05-05",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q1 CY26 beat with Operating EPS $1.50 (+33%) and FY26 guidance reaffirmed at Operating EBITDA $4.0–4.2B, but Crop Protection price fell 2% on Latin American competition, and organic growth was only 7%.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Capital allocation shift",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Crop Protection price -2% in Q1",
+    "quote": "Price declined 2% due to competitive market dynamics in Latin America.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 guidance reaffirmed, not raised",
+    "quote": "The Company reaffirmed full-year 2026 guidance3 and expects Operating EBITDA1 to be in the range of $4.0 to $4.2 billion.",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "pricing",
+    "label": "Seed price/mix up 3%",
+    "quote": "Price/mix was up 3%, with gains in all regions, led by favorable product mix",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Crop Protection volume up 6%",
+    "quote": "Volume improved 6%, with gains in all regions, driven by demand for new products.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Operating EBITDA FY26",
+    "value": "$4.0 to $4.2 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "expects Operating EBITDA1 to be in the range of $4.0 to $4.2 billion."
+   },
+   {
+    "metric": "Operating EPS FY26",
+    "value": "$3.45 to $3.70 per share",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Operating EPS1 is expected to be $3.45 to $3.70 per share."
+   },
+   {
+    "metric": "Share repurchase H1 2026",
+    "value": "approximately $500 million",
+    "change": "held",
+    "horizon": "1H2026",
+    "quote": "The Company plans to repurchase approximately $500 million of shares during the first half of 2026."
+   },
+   {
+    "metric": "Restructuring charges 2026 (Crop Protection)",
+    "value": "$80 million to $90 million net pre-tax",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The Company expects to record approximately $80 million to $90 million net pre-tax restructuring charges during 2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Vylor",
+    "relation": "partner"
+   },
+   {
+    "name": "Dow",
+    "relation": "partner"
+   },
+   {
+    "name": "DuPont",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capital allocation shift",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Crop Protection price decline in Latin America",
+    "quote": "Price declined 2% due to competitive market dynamics in Latin America."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

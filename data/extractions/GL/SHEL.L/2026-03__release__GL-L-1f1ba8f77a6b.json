@@ -1,0 +1,146 @@
+{
+ "doc_id": "GL-L-1f1ba8f77a6b",
+ "market": "GL",
+ "company_id": "SHEL.L",
+ "name": "Shell",
+ "doc_type": "release",
+ "date": "2026-04-08",
+ "period": "2026-03",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Shell's Q1'26 update cuts upstream production to 880-920 kboe/d on Qatar LNG outages and lifts refining margin to $14-17/bbl, while working capital swings to a $(10)-(15)bn outflow on commodity volatility.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Working-capital stress",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 76,
+   "quote": "Chemicals utilisation 76% 81% - 85%"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Chemicals utilisation 76% vs 81-85% guide",
+    "quote": "Chemicals utilisation 76% 81% - 85%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital outflow $(10)-(15)bn",
+    "quote": "Reflects impact of unprecedented volatility in commodity prices on inventory and receivables.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Production cut to 880-920 kboe/d",
+    "quote": "Reflects the impact of the Middle East conflict on Qatari volumes.",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Production (kboe/d) - Integrated Gas",
+    "value": "880 - 920",
+    "change": "cut",
+    "quote": "Reflects the impact of the Middle East conflict on Qatari volumes.",
+    "horizon": "Q1 CY26"
+   },
+   {
+    "metric": "LNG liquefaction volumes (MT)",
+    "value": "7.6 - 8.0",
+    "change": "cut",
+    "quote": "Reflects the ramp-up of LNG Canada, offset by Australia weather constraints and Qatar LNG outages.",
+    "horizon": "Q1 CY26"
+   },
+   {
+    "metric": "Production (kboe/d) - Upstream",
+    "value": "1,760 - 1,860",
+    "change": "cut",
+    "quote": "Includes reduced production following the Adura JV incorporation.",
+    "horizon": "Q1 CY26"
+   },
+   {
+    "metric": "Indicative refining margin ($/bbl)",
+    "value": "$17/bbl",
+    "change": "raised",
+    "quote": "Indicative refining margin* $14/bbl $17/bbl",
+    "horizon": "Q1 CY26"
+   },
+   {
+    "metric": "Working capital (CFFO, $bn)",
+    "value": "(15) - (10)",
+    "change": "new",
+    "quote": "Working capital 1.3 (15) - (10)",
+    "horizon": "Q1 CY26"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Production (kboe/d) - Integrated Gas prior range 920-980",
+    "outcome": "missed",
+    "quote": "Reflects the impact of the Middle East conflict on Qatari volumes."
+   },
+   {
+    "metric": "Chemicals utilisation prior range 79%-87%",
+    "outcome": "missed",
+    "quote": "Chemicals utilisation 76% 81% - 85%"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Adura",
+    "relation": "partner"
+   },
+   {
+    "name": "Qatar LNG",
+    "relation": "supplier"
+   },
+   {
+    "name": "LNG Canada",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Interest-rate relief",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Working capital outflow from commodity volatility",
+    "quote": "Reflects impact of unprecedented volatility in commodity prices on inventory and receivables."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.6
+ }
+}

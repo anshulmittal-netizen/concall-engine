@@ -1,0 +1,152 @@
+{
+ "doc_id": "GL-L-229a7b2ac8e5",
+ "market": "GL",
+ "company_id": "CF",
+ "name": "CF Industries",
+ "doc_type": "release",
+ "date": "2026-05-06",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.92,
+ "read": {
+  "subsector": "Fertilisers",
+  "thesis": "Q1 CY26 adj. EBITDA $983M vs $644M as Middle East supply shock tightened nitrogen; but Yazoo City outage cuts 2026 ammonia output to 9.5Mt with no restart before late Q4, and 2026 capex held near $950M for CF.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Supply exit",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 2,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 99,
+   "quote": "which represents utilization of 99% of available gross ammonia capacity."
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "management projects capital expenditures for full year 2026 will be approximately $1.3 billion"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 99% of available ammonia capacity",
+    "quote": "which represents utilization of 99% of available gross ammonia capacity.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "structure",
+    "label": "Middle East 50-60% capacity curtailed in March",
+    "quote": "The Company estimates that 50-60% of ammonia and urea capacity in the Middle East was curtailed or offline in March due to the conflict with Iran.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Average selling prices higher across all segments",
+    "quote": "Average selling prices were higher for all segments in the first quarter of 2026 compared to the first quarter of 2025",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "supply",
+    "label": "Yazoo City outage; no restart before late Q4",
+    "quote": "Management does not expect production to resume at the Yazoo City Complex until late fourth quarter of 2026 at the earliest",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "North America channel inventory at average levels",
+    "quote": "Management believes nitrogen channel inventory in North America is at average levels",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year 2026 gross ammonia production",
+    "value": "approximately 9.5 million tons",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The Company expects gross ammonia production for the full year 2026 to be approximately 9.5 million tons"
+   },
+   {
+    "metric": "Full-year 2026 capex excluding JV-funded portion (CF)",
+    "value": "approximately $950 million",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "For the full year, management projects capital expenditures for CF Industries, excluding the portion of capital expenditures funded by JERA and Mitsui, to be approximately $950 million."
+   },
+   {
+    "metric": "India urea imports 2026",
+    "value": "10-12 million metric tons",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "potentially reaching 10-12 million metric tons for the year"
+   },
+   {
+    "metric": "China nitrogen export restart",
+    "value": "later in Q2 2026",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "Management believes that China will begin limited exports of nitrogen products later in the second quarter of 2026."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "PepsiCo",
+    "relation": "customer"
+   },
+   {
+    "name": "JERA Co., Inc.",
+    "relation": "partner"
+   },
+   {
+    "name": "Mitsui & Co., Ltd.",
+    "relation": "partner"
+   },
+   {
+    "name": "ExxonMobil",
+    "relation": "partner"
+   },
+   {
+    "name": "CHS Inc.",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Litigation gain flatters Q1 earnings",
+    "quote": "First quarter 2026 financial results reflect a gain of approximately $170 million from a litigation settlement"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

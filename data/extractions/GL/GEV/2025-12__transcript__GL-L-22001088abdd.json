@@ -1,0 +1,187 @@
+{
+ "doc_id": "GL-L-22001088abdd",
+ "market": "GL",
+ "company_id": "GEV",
+ "name": "GE Vernova",
+ "doc_type": "transcript",
+ "date": "2026-01-28",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Gas turbine slot reservations rose to 83 GW (from 62 GW) with pricing on new SRAs 10-20 points above backlog, while 2026 revenue guide was raised to $44-45B and FCF to $5-5.5B.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said smaller turbine applications are not seen as competition; no comment on peer capacity.",
+   "quote": "we remain on track to see a substantial step-up in gas turbine output in 3Q '26."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "New SRA pricing 10-20 pts above backlog",
+    "quote": "there's another 10 to 20 points of pricing strength in the SRAs today",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Gas SRAs + backlog 62→83 GW",
+    "quote": "gas power equipment backlog and slot reservations increased from 62 to 83 gigawatts sequentially",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "guidance",
+    "label": "2026 FCF guide raised to $5-5.5B",
+    "quote": "We're also increasing our free cash flow guidance to between $5 billion and $5.5 billion, up from $4.5 billion to $5 billion.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Wind EBITDA loss ~$600M vs $400M expected",
+    "quote": "Wind losses came in at approximately $600 million, higher than our expectations of approximately $400 million",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Wind 1H26 EBITDA loss $300-400M",
+    "quote": "we expect EBITDA losses to be between $300 million and $400 million",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Total revenue 2026",
+    "value": "$44-45B (from $41-42B, incl. Prolec)",
+    "change": "raised",
+    "quote": "we expect full year 2026 revenue to be in the range of $44 billion to $45 billion, up from $41 billion to $42 billion"
+   },
+   {
+    "metric": "Adjusted EBITDA margin 2026",
+    "value": "11%-13%",
+    "change": "held",
+    "quote": "We continue to expect adjusted EBITDA margins of 11% to 13%"
+   },
+   {
+    "metric": "Free cash flow 2026",
+    "value": "$5-5.5B (from $4.5-5B)",
+    "change": "raised",
+    "quote": "We're also increasing our free cash flow guidance to between $5 billion and $5.5 billion"
+   },
+   {
+    "metric": "Power EBITDA margin 2026",
+    "value": "16%-18%",
+    "change": "held",
+    "quote": "We anticipate Power EBITDA margins to be between 16% and 18%"
+   },
+   {
+    "metric": "Electrification revenue 2026",
+    "value": "$13.5-14B incl ~$3B Prolec",
+    "change": "raised",
+    "quote": "we now anticipate revenue to be between $13.5 billion and $14 billion"
+   },
+   {
+    "metric": "Wind EBITDA loss 2026",
+    "value": "~$400M",
+    "change": "held",
+    "quote": "we expect EBITDA losses to be approximately $400 million in 2026"
+   },
+   {
+    "metric": "2028 revenue",
+    "value": "at least $56B (from $52B)",
+    "change": "raised",
+    "quote": "We now project at least $56 billion of total revenue by 2028, up from $52 billion"
+   },
+   {
+    "metric": "Cumulative FCF 2025-28",
+    "value": "at least $24B",
+    "change": "raised",
+    "quote": "cumulative GE Vernova free cash flow generation from '25 to '28 by approximately $2 billion to at least $24 billion"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Gas SRAs/backlog ~60 GW expectation",
+    "outcome": "met",
+    "quote": "we were talking in the middle of last year at 60 gigawatts and landed at 83 gigawatts"
+   },
+   {
+    "metric": "Wind 2025 EBITDA losses ~$400M",
+    "outcome": "missed",
+    "quote": "Wind losses came in at approximately $600 million, higher than our expectations of approximately $400 million"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Vineyard Wind",
+    "relation": "customer"
+   },
+   {
+    "name": "Prolec GE",
+    "relation": "partner"
+   },
+   {
+    "name": "OPG",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Gas turbine capacity ramp",
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Nuclear SMR",
+   "Electrification",
+   "Wind offshore stop-work",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Offshore wind stop-work accrual",
+    "quote": "driven by the U.S. government's December 22 stop work order for offshore wind projects"
+   },
+   {
+    "label": "Tariff margin pressure on onshore wind 1H26",
+    "quote": "the volume we're shipping in the first half has fewer contractual protections for tariffs"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 6,
+   "margin": 3,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Electrification organic growth / Prolec margin accretion",
+    "quote": "we could have a little bit of a debate as to whether we wanted to change the margin guide"
+   }
+  ],
+  "hedge_index": 0.25
+ }
+}

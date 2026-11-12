@@ -1,0 +1,169 @@
+{
+ "doc_id": "GL-L-d9e45a504612",
+ "market": "GL",
+ "company_id": "NUE",
+ "name": "Nucor",
+ "doc_type": "transcript",
+ "date": "2026-04-28",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Record 7.0Mt shipments and steel mills backlog up 20% to 4.7Mt; imports cut to ~15% share from 22%, with pricing discipline and 2026 volume guide raised toward ~10%.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Import substitution",
+   "Supply discipline",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 2,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 87,
+   "quote": "Nucor's operating rate is about 87% right now, utilization across the board"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we remain on track with our $2.5 billion CapEx estimate for the full year"
+  },
+  "triggers": [
+   {
+    "type": "structure",
+    "label": "Import share 22% → ~15%",
+    "quote": "Import share of the U.S. finished steel market declined from over 22% in the first quarter of 2025 to approximately 15% this quarter.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Steel mills backlog 4.7Mt, +20% QoQ",
+    "quote": "our steel mills backlog was up to 4.7 million tons, a 20% increase from year-end",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Capex moderating; FCF improving",
+    "quote": "it is moderating compared to recent years. And as our CapEx is trending down, our cash from operations is moving up.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2026 shipments growth >5%, possibly ~10%",
+    "quote": "I think it's much more likely that it pushes closer to double digits.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Sheet pricing lagging market catch-up",
+    "quote": "where the pricing is catching up with catching up with the trends that you're seeing today in the marketplace",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 steel shipments growth",
+    "value": "more than 5%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "we expect shipments to grow by more than 5% in 2026"
+   },
+   {
+    "metric": "Full-year CapEx",
+    "value": "$2.5 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we remain on track with our $2.5 billion CapEx estimate for the full year"
+   },
+   {
+    "metric": "Shareholder returns",
+    "value": "at least 40% of net earnings annually",
+    "change": "held",
+    "horizon": "annual",
+    "quote": "we remain committed to returning at least 40% of net earnings to shareholders on an annual basis"
+   },
+   {
+    "metric": "West Virginia sheet mill utilization",
+    "value": "~50% by end of 2027",
+    "change": "new",
+    "horizon": "end-2027",
+    "quote": "we'll be operating somewhere near that 50% of capacity by the end of next year"
+   },
+   {
+    "metric": "Q2 2026 earnings",
+    "value": "higher consolidated earnings across all 3 segments",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "we expect higher consolidated earnings with improvement across all 3 operating segments"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "JPMorgan",
+    "relation": "peer"
+   },
+   {
+    "name": "Nippon Steel",
+    "relation": "competitor"
+   },
+   {
+    "name": "Hyundai",
+    "relation": "competitor"
+   },
+   {
+    "name": "Canadian government",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Anti-dumping protection",
+   "Tariffs & trade policy",
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)",
+   "Railway capex"
+  ],
+  "red_flags": [
+   {
+    "label": "Pre-operating costs rising ahead of WV ramp",
+    "quote": "we expect these costs to trend higher as we work our way further into 2026"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 2,
+   "capex": 2,
+   "balance_sheet": 1,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Special dividend / buyback choice",
+    "quote": "Not taking that entirely off the table. It's just our traditional practice has been through buybacks"
+   },
+   {
+    "topic": "Imports EO and new US steel capacity",
+    "quote": "we're still a wait-and-see approach on that EO"
+   }
+  ],
+  "hedge_index": 0.25,
+  "novelty": {}
+ }
+}

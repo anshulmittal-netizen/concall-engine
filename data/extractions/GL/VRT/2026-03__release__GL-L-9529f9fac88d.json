@@ -1,0 +1,132 @@
+{
+ "doc_id": "GL-L-9529f9fac88d",
+ "market": "GL",
+ "company_id": "VRT",
+ "name": "Vertiv",
+ "doc_type": "release",
+ "date": "2026-04-22",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1 Q1 2026 EARNINGS RELEASE",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q1 organic sales +23% and adjusted op margin 20.8% (+430bp) on Americas +44% organic; FY26 guide raised to $13.5-14.0bn, but inventory up $378M and deferred revenue up $647M since year-end.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Operating leverage",
+   "Capacity bottleneck",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Vertiv is further accelerating capacity expansion and strategic investments to be well positioned to meet this demand and capture market share."
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Americas organic sales +44%",
+    "quote": "The Americas region led the organic sales growth, expanding 44% on strong data center demand.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 sales guide $13.5-14.0bn",
+    "quote": "Expect net sales of $13,500 to $14,000 million, with organic sales growth of 29% to 31% compared to 2025",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "pricing",
+    "label": "Adj. op margin 20.8%, +430bp",
+    "quote": "Adjusted operating margin was 20.8%, up 430 basis points compared to first quarter 2025, driven by operational leverage on higher volume and positive price-cost",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Capex stepped up to $113M",
+    "quote": "Vertiv is further accelerating capacity expansion and strategic investments",
+    "direction": -1,
+    "confidence": 0.45
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 net sales",
+    "value": "$13,500M-$14,000M",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Expect net sales of $13,500 to $14,000 million, with organic sales growth of 29% to 31% compared to 2025"
+   },
+   {
+    "metric": "FY26 adjusted diluted EPS",
+    "value": "$6.30-$6.40",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Expect full year 2026 diluted EPS of $5.60 to $5.70 and adjusted diluted EPS of $6.30 to $6.40"
+   },
+   {
+    "metric": "Q2 26 organic net sales growth",
+    "value": "20%-24%",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "Organic net sales growth (2) 20% - 24%"
+   },
+   {
+    "metric": "FY26 adjusted free cash flow",
+    "value": "$2,100M-$2,300M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted free cash flow (2) $2,100M - $2,300M"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "S&P 500",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory up $378M in Q1 (balance sheet)",
+    "quote": "Inventories 1,834.6 1,456.5"
+   },
+   {
+    "label": "EMEA organic sales -29%",
+    "quote": "EMEA 321.4 403.5 (82.1) (20.3) % (29.4) %"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

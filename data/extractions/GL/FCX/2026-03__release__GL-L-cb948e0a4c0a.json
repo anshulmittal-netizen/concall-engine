@@ -1,0 +1,167 @@
+{
+ "doc_id": "GL-L-cb948e0a4c0a",
+ "market": "GL",
+ "company_id": "FCX",
+ "name": "Freeport-McMoRan",
+ "doc_type": "release",
+ "date": "2026-04-23",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "Grasberg Block Cave ramp cut: 2026 copper sales cut to 3.1bn lb from 3.4bn and PTFI output now ~65% of capacity in 2H26, while unit cash cost guide rose to $1.95/lb; supply stays impaired, not restored.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply exit",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 65,
+   "quote": "PTFI’s overall production rates, which were previously forecast to approximate 85% of capacity in the second half of 2026 and reach 100% of capacity by the end of 2027 are now expected to approximate 65% in the second half of 2026"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Capital expenditures are expected to approximate $4.3 billion, including $3.0 billion for major mining projects, for the year 2026."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "PTFI 2H26 rate 85% → 65%",
+    "quote": "are now expected to approximate 65% in the second half of 2026",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "guidance",
+    "label": "2026 copper sales 3.4bn → 3.1bn lb",
+    "quote": "Current sales estimates for the year 2026 are lower than January 2026 estimates of 3.4 billion pounds of copper",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "pricing",
+    "label": "Q1 realised copper $5.78/lb",
+    "quote": "Average realized prices were $5.78 per pound for copper",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Bagdad expansion decision 2H26",
+    "quote": "potential investment decision during the second half of 2026",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Copper sales 2026",
+    "value": "3.1 billion lb",
+    "change": "cut",
+    "horizon": "2026",
+    "quote": "Consolidated sales are expected to approximate 3.1 billion pounds of copper"
+   },
+   {
+    "metric": "Gold sales 2026",
+    "value": "650 thousand oz",
+    "change": "cut",
+    "horizon": "2026",
+    "quote": "650 thousand ounces of gold and 90 million pounds of molybdenum for the year 2026"
+   },
+   {
+    "metric": "Unit net cash cost copper 2026",
+    "value": "$1.95/lb",
+    "change": "raised",
+    "horizon": "2026",
+    "quote": "are expected to average $1.95 per pound of copper for the year 2026"
+   },
+   {
+    "metric": "Operating cash flow 2026",
+    "value": "$8.7bn",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "operating cash flows are expected to approximate $8.7 billion"
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "$4.3bn",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "Capital expenditures are expected to approximate $4.3 billion"
+   },
+   {
+    "metric": "Leaching copper output 2026",
+    "value": "300 million lb",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "FCX is targeting annual production of approximately 300 million pounds of copper from these initiatives in 2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Copper sales 2026 (Jan est. 3.4bn lb)",
+    "outcome": "missed",
+    "quote": "Current sales estimates for the year 2026 are lower than January 2026 estimates of 3.4 billion pounds of copper"
+   },
+   {
+    "metric": "PTFI ramp: 85% capacity 2H26, 100% by end-2027",
+    "outcome": "missed",
+    "quote": "are now expected to approximate 65% in the second half of 2026, 80% by mid-2027"
+   },
+   {
+    "metric": "Unit cost copper (Jan est. $2.60/lb Q1 reference)",
+    "outcome": "met",
+    "quote": "which were favorable to the January 2026 estimate of $2.60 per pound"
+   }
+  ],
+  "entities": [
+   {
+    "name": "PT Smelting",
+    "relation": "partner"
+   },
+   {
+    "name": "Morenci",
+    "relation": "partner"
+   },
+   {
+    "name": "Cerro Verde",
+    "relation": "partner"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Grasberg ramp slipped again",
+    "quote": "modifications to the chute system used to load ore into the automated trains will be required to operate at full capacity"
+   },
+   {
+    "label": "Energy/acid cost inflation from Middle East conflict",
+    "quote": "costs for certain petroleum-based energy products, sulfur and sulfuric acid, and other consumables have risen significantly"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.6,
+  "themes": []
+ }
+}

@@ -1,0 +1,159 @@
+{
+ "doc_id": "GL-L-edf176214b64",
+ "market": "GL",
+ "company_id": "FSLR",
+ "name": "First Solar",
+ "doc_type": "release",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q1 CY26 revenue up 24% to $1.04B with Adjusted EBITDA $520M and 47.9 GW backlog; guidance reaffirmed, not raised, with Q2 EBITDA guided $400-500M on 3.4-4.0 GW module sales.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Regulatory moat"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Capital Expenditures $0.8B to $1.0B"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventories up to $894M from $737M",
+    "quote": "Inventories 893,878 736,734",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "Guidance reaffirmed, not raised",
+    "quote": "Our 2026 guidance remains unchanged",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Backlog 47.9 GW at Mar 31",
+    "quote": "Contracted sales backlog of 47.9 GW as of March 31, 2026",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Volume sold",
+    "value": "17.0GW to 18.2GW",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Volume Sold 17.0GW to 18.2GW"
+   },
+   {
+    "metric": "Net sales",
+    "value": "$4.9B to $5.2B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Net Sales $4.9B to $5.2B"
+   },
+   {
+    "metric": "Gross profit",
+    "value": "$2.4B to $2.6B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Gross Profit (1) $2.4B to $2.6B"
+   },
+   {
+    "metric": "Operating expenses",
+    "value": "$610M to $635M",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Operating Expenses (2) $610M to $635M"
+   },
+   {
+    "metric": "Adjusted EBITDA",
+    "value": "$2.6B to $2.8B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Adjusted EBITDA (3) $2.6B to $2.8B"
+   },
+   {
+    "metric": "Capital expenditures",
+    "value": "$0.8B to $1.0B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Capital Expenditures $0.8B to $1.0B"
+   },
+   {
+    "metric": "Net cash balance",
+    "value": "$1.7B to $2.3B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Net Cash Balance (4) $1.7B to $2.3B"
+   },
+   {
+    "metric": "Q2 module sales",
+    "value": "3.4 GW to 4.0 GW",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "we anticipate our module sales to be between 3.4 GW and 4.0 GW"
+   },
+   {
+    "metric": "Q2 Adjusted EBITDA",
+    "value": "$400M to $500M",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "forecasted second quarter Adjusted EBITDA between $400 million and $500 million"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Full-year 2026 guidance (volume, sales, GP, opex, EBITDA, capex, net cash)",
+    "outcome": "met",
+    "quote": "Our 2026 guidance remains unchanged"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Tariffs & trade policy",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Net cash down to $2.0B; operating cash outflow $215M",
+    "quote": "Net cash used in operating activities (214,866)"
+   },
+   {
+    "label": "Government grants receivable up to $823M total",
+    "quote": "Government grants receivable, net 285,158"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

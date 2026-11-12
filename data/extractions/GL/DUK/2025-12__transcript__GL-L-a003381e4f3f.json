@@ -1,0 +1,165 @@
+{
+ "doc_id": "GL-L-a003381e4f3f",
+ "market": "GL",
+ "company_id": "DUK",
+ "name": "Duke Energy",
+ "doc_type": "transcript",
+ "date": "2026-02-10",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Regulated utility reports 2025 EPS of $6.31 and guides 2026 to $6.55–$6.80, with 4.5 GW of signed data-center ESAs and a $103B capex plan raised $6B; the growth case rests on load ramp from late 2027.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "our capital plan is increasing as we progress further into the generation build cycle"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Signed data-center ESAs 3.0 → 4.5 GW",
+    "quote": "now have approximately four and a half gigawatts of data center load secured under ESAs",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Capex plan up 18% to $103B",
+    "quote": "represents an increase of 18% versus our prior plan",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2026 EPS guide $6.55–$6.80",
+    "quote": "we set our adjusted EPS guidance range at $6.55 to $6.80 for 2026",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Equity need ~35% of capex, $10B 2027–30",
+    "quote": "Our financing plan includes $10 billion of equity in the 2027 to 2030 timeframe",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 adjusted EPS",
+    "value": "$6.55 to $6.80",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "we set our adjusted EPS guidance range at $6.55 to $6.80 for 2026"
+   },
+   {
+    "metric": "Long-term EPS CAGR",
+    "value": "5% to 7% through 2030",
+    "change": "held",
+    "horizon": "2030",
+    "quote": "extending our 5% to 7% long-term EPS growth rate through 2030"
+   },
+   {
+    "metric": "FFO to debt 2026",
+    "value": "approximately 14%",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "We are forecasting 2026 FFO to debt of approximately 14%"
+   },
+   {
+    "metric": "Retail sales growth 2026",
+    "value": "1.5% to 2%",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "our plan assumes normal weather and retail sales growth of 1.5% to 2% in 2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Tennessee and Florida transactions earnings neutral",
+    "outcome": "met",
+    "quote": "Consistent with prior guidance, we expect the Tennessee and Florida transactions to be earnings neutral"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Microsoft",
+    "relation": "customer"
+   },
+   {
+    "name": "Compass",
+    "relation": "customer"
+   },
+   {
+    "name": "GE Vernova",
+    "relation": "supplier"
+   },
+   {
+    "name": "Brookfield",
+    "relation": "partner"
+   },
+   {
+    "name": "Spire",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Rate case affordability pushback",
+    "quote": "a lot of stakeholders are kind of watching the case"
+   },
+   {
+    "label": "Equity dilution 35% of capex",
+    "quote": "This represents approximately 35% equity funding of the capital plan"
+   },
+   {
+    "label": "Rate base vs EPS gap (9.6% vs 5-7%)",
+    "quote": "The capital plan's 9.6% gross rate base CAGR would be 8.8% if minority interest in Florida is netted out"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 4,
+   "margin": 0,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Storm cost quantification",
+    "quote": "We are still compiling those costs"
+   }
+  ],
+  "hedge_index": 0.2
+ }
+}

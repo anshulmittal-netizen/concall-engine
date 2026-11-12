@@ -1,0 +1,161 @@
+{
+ "doc_id": "GL-L-707f8f6b8523",
+ "market": "GL",
+ "company_id": "WMT",
+ "name": "Walmart",
+ "doc_type": "release",
+ "date": "2026-05-21",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Walmart Q1 FY27 revenue +7.3% (5.9% cc) with eCommerce +26%, but adj. operating income only +5.1% cc and FCF negative $1.9B as capex rose $1.7B and inventory built 8.9%.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "an increase of $1.7 billion in capital expenditures to support our omnichannel growth strategy"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex up $1.7B, FCF -$1.9B",
+    "quote": "an increase of $1.7 billion in capital expenditures to support our omnichannel growth strategy",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Global inventory up 8.9%",
+    "quote": "Global inventory up 8.9%; up 7.8% (cc)",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Comp sales ex-fuel +4.1%",
+    "quote": "Walmart U.S. comp sales grew 4.1%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 guidance unchanged",
+    "quote": "The Company's outlook for fiscal 2027 remains unchanged from prior guidance.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q2 FY27 net sales (cc)",
+    "value": "+4.0% to 5.0%",
+    "change": "new",
+    "horizon": "Q2 FY27",
+    "quote": "net sales expected to grow 4% to 5% and adjusted operating income to grow 7% to 10%, both in constant currency"
+   },
+   {
+    "metric": "Q2 FY27 adjusted operating income (cc)",
+    "value": "+7.0% to 10.0%",
+    "change": "new",
+    "horizon": "Q2 FY27",
+    "quote": "adjusted operating income to grow 7% to 10%"
+   },
+   {
+    "metric": "Q2 FY27 adjusted EPS",
+    "value": "$0.72 to $0.74",
+    "change": "new",
+    "horizon": "Q2 FY27",
+    "quote": "Adjusted EPS is expected to be $0.72 to $0.74."
+   },
+   {
+    "metric": "FY27 adj. operating income (cc)",
+    "value": "+6.0% to 8.0%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "The Company's outlook for fiscal 2027 remains unchanged from prior guidance."
+   },
+   {
+    "metric": "FY27 net sales (cc)",
+    "value": "+3.5% to 4.5%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "The Company's outlook for fiscal 2027 remains unchanged from prior guidance."
+   },
+   {
+    "metric": "FY27 capital expenditures",
+    "value": "Approximately 3.5% of net sales",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Capital expenditures Approximately 3.5% of net sales"
+   },
+   {
+    "metric": "FY27 adjusted EPS",
+    "value": "$2.75 to $2.85",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "$2.75 to $2.85"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Flipkart",
+    "relation": "peer"
+   },
+   {
+    "name": "PhonePe",
+    "relation": "peer"
+   },
+   {
+    "name": "VIZIO",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "FCF negative $1.9B on capex and inventory build",
+    "quote": "Free cash flow of negative $1.9 billion, a decrease of $2.4 billion"
+   },
+   {
+    "label": "Operating cash flow down $0.7B on inventory",
+    "quote": "The decrease was primarily due to timing of inventory receipts"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

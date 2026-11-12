@@ -1,0 +1,222 @@
+{
+ "doc_id": "GL-L-8a393b7ffd11",
+ "market": "GL",
+ "company_id": "IBM",
+ "name": "IBM",
+ "doc_type": "transcript",
+ "date": "2026-01-28",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "IBM closed 2025 with 6% revenue growth, $14.7B free cash flow and software at 9%; 2026 guide of 5%+ revenue, software ~10% and FCF up ~$1B, with Confluent dilution of ~$600M.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Q4 revenue growth 9%, highest in 3+ years",
+    "quote": "Delivered total revenue growth of 9%, our highest level in over three years.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Consulting in 'very aggressive pricing environment'",
+    "quote": "we are operating in a very aggressive pricing environment. We'll continue monitoring that.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Infrastructure to decline low single digits in 2026",
+    "quote": "We expect infrastructure revenue to be down low single digits.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Red Hat growth decelerated to 8% in Q4",
+    "quote": "Red Hat decelerated to 8%, driven partially by the wrap on last year's elevated consumption-based services",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q4 ACV bookings single-digit growth",
+    "quote": "We only delivered single-digit ACV bookings in the fourth quarter because as we stated in prepared remarks, we were disrupted by the down of the federal government.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Constant currency revenue growth",
+    "value": "5%+",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we expect to sustain constant currency revenue growth of 5% plus in 2026"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "up about $1B (~$15.7B)",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "free cash flow to be up about $1 billion year over year"
+   },
+   {
+    "metric": "Software revenue growth",
+    "value": "~10%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Which we expect to grow 10% this year."
+   },
+   {
+    "metric": "Consulting revenue growth",
+    "value": "low to mid-single digits",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "support an acceleration in revenue growth to low to mid-single digits for the year"
+   },
+   {
+    "metric": "Infrastructure revenue",
+    "value": "down low single digits",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect infrastructure revenue to be down low single digits."
+   },
+   {
+    "metric": "Operating pretax margin",
+    "value": "expand ~1 point",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we expect IBM's operating pretax margin to expand by about a point."
+   },
+   {
+    "metric": "Productivity savings run rate",
+    "value": "$5.5B by end of 2026",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We continue to accelerate our productivity initiatives and now expect an incremental $1 billion of productivity savings this year."
+   },
+   {
+    "metric": "Confluent dilution",
+    "value": "~$600M in 2026",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We anticipate absorbing about $600 million of dilution from Confluent in 2026."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Constant currency revenue growth accelerating 5%+",
+    "outcome": "met",
+    "quote": "Delivering 6% revenue growth"
+   },
+   {
+    "metric": "Operating pretax margin expansion >0.5 point",
+    "outcome": "met",
+    "quote": "100 basis points of operating pretax margin expansion"
+   },
+   {
+    "metric": "Adjusted EBITDA double-digit growth",
+    "outcome": "met",
+    "quote": "17% adjusted EBITDA growth"
+   },
+   {
+    "metric": "Free cash flow about $13.5B",
+    "outcome": "met",
+    "quote": "$14.7 billion of free cash flow, growing 16% over last year"
+   }
+  ],
+  "entities": [
+   {
+    "name": "HashiCorp",
+    "relation": "partner"
+   },
+   {
+    "name": "Confluent",
+    "relation": "peer"
+   },
+   {
+    "name": "Red Hat",
+    "relation": "partner"
+   },
+   {
+    "name": "Anthropic",
+    "relation": "partner"
+   },
+   {
+    "name": "AMD",
+    "relation": "partner"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Cybersecurity spend",
+   "Agentic AI in IT services",
+   "Capex cycle revival (private)",
+   "Memory pricing / server refresh"
+  ],
+  "red_flags": [
+   {
+    "label": "Q4 federal ACV bookings single-digit",
+    "quote": "We only delivered single-digit ACV bookings in the fourth quarter because as we stated in prepared remarks, we were disrupted by the down of the federal government."
+   },
+   {
+    "label": "Aggressive consulting pricing",
+    "quote": "we are operating in a very aggressive pricing environment."
+   },
+   {
+    "label": "GenAI book metric discontinued",
+    "quote": "This will be the last quarter in which we report this metric separately."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 4,
+   "margin": 2,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Red Hat growth bridge to mid-teens",
+    "quote": "the word choices were being prudent. On Red Hat's guidance right now."
+   },
+   {
+    "topic": "Confluent dilution in FCF guide",
+    "quote": "dilution's part of our model."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "doc_id": "GL-L-56f901a8a0a8",
+ "market": "GL",
+ "company_id": "PKX",
+ "name": "POSCO Holdings",
+ "doc_type": "release",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Q1 2026 OP rose to KRW 0.71tn (from 0.01tn in Q4) on lithium price recovery and volume, but net debt rose 24% QoQ to KRW 15.4tn and steel OP was only KRW 0.21tn on higher raw-material costs.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Capital allocation shift",
+   "Deleveraging",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 89.8,
+   "quote": "Utilization Rate* (KRW bil., %) % of Premium Plus Products Sold** Income Revenue Operating Profit OP Margin 8,819 QoQ QoQ 8,651 8.148 88.1% 8,721 8,285 7,717 Crude Steel (Kt) 89.8%"
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Facility closure to shift to low-carbon production system and optimized operation"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2FINEX closure, EAF to 2.5Mtpa",
+    "quote": "Decision to restructure high-cost, low-efficiency facility to maximize profit and meet carbon rules",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Net debt up 24% QoQ to KRW 15.4tn",
+    "quote": "Net Debt +2,464 Net Debt Ratio +3.5%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Carbon steel price flat at KRW920K/t",
+    "quote": "Selling price (carbon steel) ‘25.Q4) KRW920K/t 26.Q1) KRW920K/t (-)",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "novelty",
+    "label": "JSW 50:50 India 6Mtpa integrated mill",
+    "quote": "JV agreement signed with JSW to build an integrated steel mill in India",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Shareholder return ratio 2026-2028",
+    "value": "35-40% of adjusted net profit attributable to controlling interest",
+    "change": "new",
+    "horizon": "2026-2028",
+    "quote": "For 2026-2028, shareholder return fund is set to 35-40% of adjusted net profit attributable to controlling interest"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "JSW Group",
+    "relation": "partner"
+   },
+   {
+    "name": "SK On",
+    "relation": "customer"
+   },
+   {
+    "name": "Mineral Resources",
+    "relation": "partner"
+   },
+   {
+    "name": "LIS",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Electronics manufacturing (EMS/PLI)",
+   "Capex cycle revival (private)",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Net debt up 24% QoQ, debt rising to KRW 30.3tn",
+    "quote": "(Total Interest-Bearing Debt) 27,191 28,492 30,261 +1,769"
+   },
+   {
+    "label": "Receivables up 9% QoQ",
+    "quote": "Accounts Receivable 11,139 11,198 12,265 +1,067"
+   },
+   {
+    "label": "Lithium OP reliant on spodumene price hikes",
+    "quote": "elevated spodume prices limit visibility for 2H"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

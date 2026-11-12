@@ -1,0 +1,152 @@
+{
+ "doc_id": "GL-L-a99053ffca6b",
+ "market": "GL",
+ "company_id": "BAC",
+ "name": "Bank of America",
+ "doc_type": "transcript",
+ "date": "2026-01-15",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Bank of America Q4 2025: net income $7.6B (+12%), EPS $0.98 (+18%), 2026 NII guided +5-7% and ~200bp operating leverage; supply-side signals are headcount discipline and buybacks, but no capacity or pricing data for a cyclical read.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "2026 NII guided +5-7%",
+    "quote": "we expect 5% to 7% growth in net interest income in 2026 compared to 2025",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Headcount flat; AI cut ~2,000 coder roles",
+    "quote": "we managed to hold our headcount flat for the year through good management",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "Q1 expenses ~4% higher YoY",
+    "quote": "we expect Q1 expenses to be about 4% higher than Q1 of 2025",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 net interest income growth",
+    "value": "5% to 7% vs 2025",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we expect 5% to 7% growth in net interest income in 2026 compared to 2025"
+   },
+   {
+    "metric": "Operating leverage",
+    "value": "about 200 basis points in 2026",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We expect to generate about 200 basis points of operating leverage in 2026."
+   },
+   {
+    "metric": "Q1 2026 expenses",
+    "value": "about 4% higher than Q1 2025",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "we expect Q1 expenses to be about 4% higher than Q1 of 2025"
+   },
+   {
+    "metric": "Loan growth",
+    "value": "mid-single-digit in 2026",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "embedded in our NII assumption is loan growth in the mid-single digits"
+   },
+   {
+    "metric": "Effective tax rate",
+    "value": "roughly 20% in 2026",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "For 2026, we expect an effective tax rate of roughly 20%."
+   },
+   {
+    "metric": "Through-cycle net charge-off ratio",
+    "value": "50% to 55%",
+    "change": "held",
+    "horizon": "Through cycle",
+    "quote": "maybe the 50% to 55% is the right number or through the cycle."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2026 NII growth 5-7% (Investor Day)",
+    "outcome": "met",
+    "quote": "that's still our belief today based on the latest interest rate curve"
+   },
+   {
+    "metric": "Operating leverage 200-300bp range",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Efficiency ratio 55%-59%",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Interest-rate relief",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Proposed credit card rate caps",
+    "quote": "if you bring the caps down, you're going to get strict credit, meaning less people will get credit cards"
+   },
+   {
+    "label": "Stablecoin deposit outflow risk",
+    "quote": "they say you can see upwards of $6 trillion in deposits flow off the liabilities of a banking system"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 4,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Efficiency ratio target adjustment for accounting recast",
+    "quote": "Well, I don't think -- so at this stage, Betsy, but similar to our comments at Investor Day"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

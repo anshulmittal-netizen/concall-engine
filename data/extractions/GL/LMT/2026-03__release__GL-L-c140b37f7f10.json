@@ -1,0 +1,131 @@
+{
+ "doc_id": "GL-L-c140b37f7f10",
+ "market": "GL",
+ "company_id": "LMT",
+ "name": "Lockheed Martin",
+ "doc_type": "release",
+ "date": "2026-04-23",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Defence & aerospace",
+  "thesis": "Q1 sales flat at $18.0B but segment profit down 13% and free cash flow negative $(291)M; munitions framework deals target 3-4x production rates while 2026 guidance was reaffirmed.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Our first quarter revenue of more than $18 billion, segment operating profit of $1.8 billion, and substantial backlog were a result of both strong customer demand"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": "",
+   "quote": "capital expenditures of $511 million"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Munitions capacity to 3-4x current rates",
+    "quote": "increase production rates of these critical systems by 3-4 times current rates",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Profit booking rate adjustments down $95M",
+    "quote": "a $95 million decrease in profit booking rate adjustments",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Contract assets up to $15.9B from $13.0B",
+    "quote": "higher working capital largely as a result of timing of billing activities",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Backlog $186.4B, down from $193.6B",
+    "quote": "Total backlog",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Sales growth 2026",
+    "value": "approximately 5% year-over-year",
+    "change": "held",
+    "quote": "anticipated sales and operating profit growth of approximately 5% and 25% year-over-year, respectively"
+   },
+   {
+    "metric": "Free cash flow 2026",
+    "value": "$6,500 - $6,800 million",
+    "change": "held",
+    "quote": "expected free cash flow between $6.5 and $6.8 billion"
+   },
+   {
+    "metric": "Business segment operating profit 2026",
+    "value": "$8,425 - $8,675 million",
+    "change": "held",
+    "quote": "Business segment operating profit"
+   },
+   {
+    "metric": "Diluted EPS 2026",
+    "value": "$29.35 - $30.25",
+    "change": "held",
+    "quote": "Diluted earnings per share"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Department of War",
+    "relation": "customer"
+   },
+   {
+    "name": "NASA",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Defence indigenisation",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Negative Q1 free cash flow",
+    "quote": "Free cash flow was $(291) million in the first quarter of 2026"
+   },
+   {
+    "label": "Backlog down $7.2B QoQ",
+    "quote": "Total backlog"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "doc_id": "GL-L-e59f50088862",
+ "market": "GL",
+ "company_id": "PG",
+ "name": "Procter & Gamble",
+ "doc_type": "presentation",
+ "date": "2026-04-24",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "FMCG",
+  "thesis": "Q3 FY26 organic sales +3% on volume +2% and pricing +1%, with core EPS +3% and guidance maintained at 0–4% organic growth; capex held at 4–5% of sales, no supply-side signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Organic volume +2%, 10 of 10 categories grew",
+    "quote": "10 of 10 product categories and 7 of 7 regions grew organic sales for the quarter.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "margin",
+    "label": "Core gross margin down 100 bps",
+    "quote": "Core gross margin (100)",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Organic sales growth",
+    "value": "+0% to +4%",
+    "change": "held",
+    "horizon": "FY26"
+   },
+   {
+    "metric": "Core EPS growth",
+    "value": "+0% to +4%",
+    "change": "held",
+    "horizon": "FY26"
+   },
+   {
+    "metric": "All-in EPS growth",
+    "value": "+1% to +6%",
+    "change": "held",
+    "horizon": "FY26"
+   },
+   {
+    "metric": "Adjusted free cash flow productivity",
+    "value": "85% to 90%",
+    "change": "held",
+    "horizon": "FY26"
+   },
+   {
+    "metric": "Capital spending, % of sales",
+    "value": "4% to 5%",
+    "change": "held",
+    "horizon": "FY26"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consumer volume recovery",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Core gross margin -100 bps on commodities and tariffs",
+    "quote": "Net Earnings: Sales growth and productivity savings partially offset by unfavorable product mix, increased commodities and higher tariff costs."
+   },
+   {
+    "label": "Skin Care and Hair Care share losses",
+    "quote": "Global Skin Care value share decreased 0.8 points, Global Hair Care value share decreased 0.5 points."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "doc_id": "GL-L-faa981c127aa",
+ "market": "GL",
+ "company_id": "LYB",
+ "name": "LyondellBasell",
+ "doc_type": "release",
+ "date": "2026-05-01",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Middle East war steepens global petchem cost curve; LYB guides sharp Q2 sequential improvement, raises European O&P rates to 80% and maximises North American rates, with Q1 EBITDA ex-items $615M versus $417M in Q4.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply exit",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 2,
+   "structure": 2,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 80,
+   "quote": "raising rates for European O&P assets to 80%"
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "maintaining discipline in capital spending",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Polyethylene prices accelerating on war supply gap",
+    "quote": "Tightening market conditions associated with the war in the Middle East supported higher polyethylene prices in both domestic and export markets.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Operating-rate cuts could accelerate capacity rationalisation",
+    "quote": "Reductions in operating rates and shutdowns associated with the war could accelerate capacity rationalizations to support a more constructive supply and demand balance",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Four European sites sold",
+    "quote": "LYB reached an important milestone in its portfolio transformation with the completion of the sale of four European assets.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "European O&P rates raised to 80%",
+    "quote": "raising rates for European O&P assets to 80%",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Operating cash use $269M on working capital build",
+    "quote": "LyondellBasell used $269 million in cash from operating activities during the first quarter.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q2 2026 market conditions",
+    "value": "significant sequential improvement across almost all businesses",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "market conditions are expected to support significant sequential improvement across almost all businesses"
+   },
+   {
+    "metric": "European O&P operating rate",
+    "value": "80%",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "raising rates for European O&P assets to 80%"
+   },
+   {
+    "metric": "I&D operating rate",
+    "value": "75%",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "the Intermediates & Derivatives segment is expected to keep rates at 75%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Bayport PO/TBA site",
+    "relation": "partner"
+   },
+   {
+    "name": "La Porte acetyls",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Specialty chem destocking end"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash outflow $269M in Q1",
+    "quote": "LyondellBasell used $269 million in cash from operating activities during the first quarter."
+   },
+   {
+    "label": "Bayport PO/TBA unplanned outage",
+    "quote": "an outage at the Bayport PO/TBA site that began in March"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,132 @@
+{
+ "doc_id": "GL-L-1eacbae7c3f3",
+ "market": "GL",
+ "company_id": "DTE.DE",
+ "name": "Deutsche Telekom",
+ "doc_type": "presentation",
+ "date": "2026-03-31",
+ "period": "2026-03",
+ "title": "Download (PDF, 1.07 MB)",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.9,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Q1 organic adj. EBITDA AL +7.5% led by T-Mobile US; DT ex US only +2.5% and FY26 group guidance raised to ~€47.5bn on TMUS, not on a supply-side change.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "quote": "Cash capex1 4,343 3,807 -12.3%",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Group Adj. EBITDA AL guidance ~€47.5bn",
+    "quote": "Group guidance for 2026 raised to reflect new TMUS guidance",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Q1 organic adj. EBITDA AL +7.5%",
+    "quote": "Market leading financial growth continues: Q1 organic service revenues +4.6%, adj. EBITDA AL +7.5%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Cash capex -12.3% yoy in Q1",
+    "quote": "Capex decrease driven by phasing.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FCF AL",
+    "value": ">19.8bn",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "FCF AL >19.8"
+   },
+   {
+    "metric": "Adj. EPS",
+    "value": "~2.20",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Adj. EPS in € ~2.20"
+   },
+   {
+    "metric": "Net debt/adj. EBITDA",
+    "value": "≤2.75x",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Net debt/adj. EBITDA 2.62x ≤2.75x ≤2.75x"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Adj. EBITDA AL Group",
+    "outcome": "met",
+    "quote": "On track for FY26 and CMD 2023–27 guidance"
+   },
+   {
+    "metric": "Adj. EPS",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "T-Mobile US",
+    "relation": "partner"
+   },
+   {
+    "name": "Starlink",
+    "relation": "partner"
+   },
+   {
+    "name": "USCellular",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Customer stickiness",
+   "Capex cycle revival (private)",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Net profit down 28.2% yoy on US restructuring",
+    "quote": "Driven by higher restructuring and integration expenses in the US."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

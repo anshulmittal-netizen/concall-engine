@@ -1,0 +1,116 @@
+{
+ "doc_id": "GL-L-949ecd9bb638",
+ "market": "GL",
+ "company_id": "NXT",
+ "name": "Nextracker",
+ "doc_type": "release",
+ "date": "2026-05-12",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "FY26 revenue record $3.56B (+20%) with backlog above $5.25B; Q4 revenue fell sequentially to $881M and adjusted EBITDA margin compressed to 22.9%, while FY27 revenue guide raised to $3.8-4.1B.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Backlog record above $5.25B",
+    "quote": "increased backlog to a record level of over $5.25 billion",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 revenue guide raised to $3.8-4.1B",
+    "quote": "Revenue $3.8 to $4.1 billion $3.6 to $3.8 billion",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "novelty",
+    "label": "Power conversion acquisition, Spanish FDI pending",
+    "quote": "Announced agreement to acquire key power conversion product lines and IP with a planned U.S. manufacturing footprint",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "$3.8 to $4.1 billion",
+    "change": "raised",
+    "horizon": "FY2027",
+    "quote": "Revenue $3.8 to $4.1 billion $3.6 to $3.8 billion"
+   },
+   {
+    "metric": "FY27 adjusted EBITDA",
+    "value": "$825 to $900 million",
+    "change": "raised",
+    "horizon": "FY2027",
+    "quote": "Adjusted EBITDA $825 to $900 million $800 to $900 million"
+   },
+   {
+    "metric": "FY27 adjusted diluted EPS",
+    "value": "$4.21 to $4.59",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "Adjusted Diluted EPS range of $4.21 to $4.59 excludes approximately $1.02"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Jinko Solar (U.S.) Industries Inc.",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Data-centre power & cooling",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Section 45X receivable up to $353M from $216M",
+    "quote": "Section 45X credit receivable 352,598 215,616"
+   },
+   {
+    "label": "Q4 margin dependent on 45X credits and tariffs",
+    "quote": "include approximately $47 million, $53 million, and $67 million, respectively, of IRA 45X advanced manufacturing tax credit vendor rebates and tariffs, net."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

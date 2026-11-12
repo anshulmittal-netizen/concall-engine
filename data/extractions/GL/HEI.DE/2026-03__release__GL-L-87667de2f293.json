@@ -1,0 +1,126 @@
+{
+ "doc_id": "GL-L-87667de2f293",
+ "market": "GL",
+ "company_id": "HEI.DE",
+ "name": "Heidelberg Materials",
+ "doc_type": "release",
+ "date": "2026-03-31",
+ "period": "2026-03",
+ "title": "Q1 2026 trading update 1.24 MB",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Building materials",
+  "thesis": "Q1 RCO fell 30% to €163m on weather-hit volumes and D&A, with Group EBITDA margin down 113 bps; FY26 RCO guide of €3.40–3.75bn confirmed, but no supply-side or capacity-cut evidence in the release.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "CapEx Net 1.2 to 1.3 €bn"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Positive price over cost",
+    "quote": "Positive price over cost mitigated by weather driven volume impact",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 RCO guide confirmed",
+    "quote": "2026 Outlook confirmed",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q1 volumes hit by weather",
+    "quote": "Quarter impacted by harsh weather in US and Europe",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "RCO",
+    "value": "3.40 to 3.75 €bn",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "RCO at 3.40 – 3.75 €bn"
+   },
+   {
+    "metric": "ROIC",
+    "value": "Above 10%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "ROIC above 10%"
+   },
+   {
+    "metric": "CO2 emissions",
+    "value": "Slight reduction (kg CO2/t cementitious material)",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "CO2 emissions: Slight reduction (kg CO2/t cementitious material)"
+   },
+   {
+    "metric": "Net CapEx",
+    "value": "1.2 to 1.3 €bn",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "CapEx Net 1.2 to 1.3 €bn"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "MAAS",
+    "relation": "peer"
+   },
+   {
+    "name": "AKCANSA",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Q1 RCO down 30%, margin -113 bps",
+    "quote": "Quarter impacted by harsh weather in US and Europe"
+   },
+   {
+    "label": "North America RCO negative in Q1",
+    "quote": "-18"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

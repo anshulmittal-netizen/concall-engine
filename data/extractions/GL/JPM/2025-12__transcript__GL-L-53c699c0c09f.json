@@ -1,0 +1,168 @@
+{
+ "doc_id": "GL-L-53c699c0c09f",
+ "market": "GL",
+ "company_id": "JPM",
+ "name": "JPMorgan Chase",
+ "doc_type": "transcript",
+ "date": "2026-01-15",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "JPMorgan's Q4 CY25 read is supply-neutral: no capacity to cut in a bank, but 2026 expenses rise to about $105B and the CET1 ratio fell to 14.5% on the Apple Card RWA, while card NCO guidance sits at about 3.4%.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we expect 2026 adjusted expense to be about $105 billion"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "2026 adjusted expense about $105B",
+    "quote": "we expect 2026 adjusted expense to be about $105 billion",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Card APR cap risk flagged",
+    "quote": "in a world where price controls make it no longer a good business, that would present a significant challenge",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Debit and credit sales volume up 7%",
+    "quote": "Cross income groups, debit and credit sales volume continued to perform well, up 7% year on year.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Total NII 2026",
+    "value": "about $103 billion",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "we expect total NII to be about $103 billion for the year"
+   },
+   {
+    "metric": "Markets NII 2026",
+    "value": "about $8 billion",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "markets NII increasing to about $8 billion due to lower funding costs from the rate cuts"
+   },
+   {
+    "metric": "NII ex markets 2026",
+    "value": "about $95 billion",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "We continue to expect NII in its markets to be about $95 billion."
+   },
+   {
+    "metric": "Adjusted expense 2026",
+    "value": "about $105 billion",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "we expect 2026 adjusted expense to be about $105 billion"
+   },
+   {
+    "metric": "Card net charge-off rate 2026",
+    "value": "about 3.4%",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "we expect the 2026 card net charge-off rate to be approximately 3.4%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "NII ex markets ~$95B",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Adjusted expense ~$105B",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Apple",
+    "relation": "partner"
+   },
+   {
+    "name": "Affirm",
+    "relation": "partner"
+   },
+   {
+    "name": "Coinbase",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Interest-rate relief",
+   "Capex cycle revival (private)",
+   "Consumer deposit competition"
+  ],
+  "red_flags": [
+   {
+    "label": "Card APR cap risk",
+    "quote": "in a world where price controls make it no longer a good business, that would present a significant challenge"
+   },
+   {
+    "label": "Wholesale downgrades exceed upgrades",
+    "quote": "it's more negative than positive, meaning downgrades are exceeding upgrades."
+   },
+   {
+    "label": "Consumer deposit growth lowered",
+    "quote": "that remains the case"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 0,
+   "growth": 3,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Credit card APR cap impact",
+    "quote": "I just don't have anything for you."
+   },
+   {
+    "topic": "Expense breakdown and tech spend",
+    "quote": "we're not going to give Mike, we owe you all as shareholders as much information we can give you?"
+   },
+   {
+    "topic": "Fee outlook 2026",
+    "quote": "I obviously don't wanna kind of break our tradition of not guiding on fees"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

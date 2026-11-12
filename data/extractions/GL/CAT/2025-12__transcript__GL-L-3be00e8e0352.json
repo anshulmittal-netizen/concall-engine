@@ -1,0 +1,158 @@
+{
+ "doc_id": "GL-L-3be00e8e0352",
+ "market": "GL",
+ "company_id": "CAT",
+ "name": "Caterpillar",
+ "doc_type": "transcript",
+ "date": "2026-01-29",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Record $51B backlog (+71% y/y) and Power and Energy capacity adds point to supply expansion, but 2026 tariff cost rises to $2.6B and margins guided near bottom of range.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "we are capacity constrained"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Capital expenditures are expected to be around $3.5 billion, driven primarily by our capacity expansion plans."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2026 capex ~$3.5B for capacity",
+    "quote": "Capital expenditures are expected to be around $3.5 billion, driven primarily by our capacity expansion plans.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Backlog $51B, up 71% y/y",
+    "quote": "Our backlog grew to a record level of $51 billion, an increase of $21 billion or 71% compared to last year.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "2026 price realization ~2%",
+    "quote": "We also expect all three segments to benefit from positive price realization, about 2% of total sales and revenues",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Incremental tariffs $2.6B in 2026",
+    "quote": "For the full year, incremental tariff costs are expected to be around $2.6 billion, which is $800 million higher than incurred in 2025.",
+    "direction": -1,
+    "confidence": 0.8
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Sales and revenues growth",
+    "value": "near top of 5%-7% CAGR",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we anticipate full-year sales and revenues to grow around the top of the 5% to 7% long-term compound annual growth rate target"
+   },
+   {
+    "metric": "Incremental tariff costs",
+    "value": "~$2.6B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "incremental tariff costs are expected to be around $2.6 billion"
+   },
+   {
+    "metric": "Capex",
+    "value": "~$3.5B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Capital expenditures are expected to be around $3.5 billion"
+   },
+   {
+    "metric": "MP&E free cash flow",
+    "value": "slightly lower than 2025 ($9.5B)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "MP and E free cash flow is expected to be slightly lower than 2025"
+   },
+   {
+    "metric": "Adjusted operating margin",
+    "value": "near bottom of target range incl. tariffs",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Including the impact of tariffs, we expect margin to be near the bottom of the target range."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "American Intelligence and Power Corporation",
+    "relation": "customer"
+   },
+   {
+    "name": "Vertiv",
+    "relation": "partner"
+   },
+   {
+    "name": "Sotrak",
+    "relation": "partner"
+   },
+   {
+    "name": "Vale",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin guided near bottom of range on tariffs",
+    "quote": "Including the impact of tariffs, we expect margin to be near the bottom of the target range."
+   },
+   {
+    "label": "Backlog stretching beyond 12 months",
+    "quote": "approximately 62% of our backlog is expected to deliver in the next twelve months, which is lower than our historical average."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 5,
+   "margin": 1,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Power gen capacity vs demand overbuild risk",
+    "quote": "there could be puts and takes, forecasts move around"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

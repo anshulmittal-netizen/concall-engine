@@ -1,0 +1,128 @@
+{
+ "doc_id": "GL-L-9897ed8159b3",
+ "market": "GL",
+ "company_id": "BWA",
+ "name": "BorgWarner",
+ "doc_type": "release",
+ "date": "2026-05-06",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Q1 organic sales fell 4.2% with Turbos & Thermal down 7.0%, yet adjusted margin rose 50bp to 10.5% on cost control; FY26 guidance held, with the sales range cut to $14.0–14.3B.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Organic sales -4.2% in Q1",
+    "quote": "organic net sales decreased approximately 4.2%, year-over-year compared with the first quarter of 2025",
+    "highlight": "organic net sales decreased approximately 4.2%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Turbos & Thermal organic -7.0%",
+    "quote": "Turbos & Thermal Technologies $ 1,454 $ 81 $ (102) $ 1,433 (7.0)%",
+    "highlight": "(7.0)%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Q1 FCF $13M vs $(35)M",
+    "quote": "Free cash flow of $13 million.",
+    "highlight": "Free cash flow of $13 million",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 sales guide held, range set",
+    "quote": "The Company maintained its 2026 full year guidance.",
+    "highlight": "maintained its 2026 full year guidance",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Net sales 2026",
+    "value": "$14.0B to $14.3B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Net sales are expected to be in the range of $14.0 billion to $14.3 billion in 2026"
+   },
+   {
+    "metric": "Adjusted operating margin 2026",
+    "value": "10.7% to 10.9%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "adjusted operating margin is expected to be in the range of 10.7% to 10.9%"
+   },
+   {
+    "metric": "Adjusted EPS 2026",
+    "value": "$5.00 to $5.20",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "adjusted net earnings are expected to increase and be in the range of $5.00 to $5.20 per diluted share"
+   },
+   {
+    "metric": "Free cash flow 2026",
+    "value": "$900M to $1,100M",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "free cash flow is expected to be in the range of $900 million to $1,100 million"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Battery storage and microgrid (data centre) expansion",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Q1 free cash flow only $13M",
+    "quote": "Free cash flow of $13 million."
+   },
+   {
+    "label": "Receivables up to $3,088M from $2,962M",
+    "quote": "Receivables, net 3,088 2,962"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

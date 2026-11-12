@@ -1,0 +1,111 @@
+{
+ "doc_id": "GL-L-02429c52b847",
+ "market": "GL",
+ "company_id": "BKNG",
+ "name": "Booking Holdings",
+ "doc_type": "release",
+ "date": "2026-04-28",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.89,
+ "read": {
+  "subsector": "Internet & platforms",
+  "thesis": "Q1 CY26 room nights +6% and CC gross bookings +8% with ~2pt Middle East drag, but Adjusted EBITDA +19% and Q2 guide of 4-6% EBITDA growth signals a demand-led slowdown, not supply-side change.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Room nights +6%, Middle East drag ~2pts",
+    "quote": "Room nights grew 6% compared to the first quarter of 2025. We estimate room night growth was negatively impacted by approximately 2 percentage points by the conflict in the Middle East.",
+    "highlight": "Room nights grew 6%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Q2 room nights guided 2%-4%",
+    "quote": "Room Nights Growth 2% - 4% Gross Bookings Growth 4% - 6%",
+    "highlight": "Room Nights Growth 2% - 4%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "CC ADRs up only ~1%",
+    "quote": "CC ADRs increased by about 1%(1)",
+    "highlight": "CC ADRs increased by about 1%",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q2 2026 Room Nights growth",
+    "value": "2% - 4%",
+    "change": "new",
+    "quote": "Room Nights Growth 2% - 4% Gross Bookings Growth 4% - 6%"
+   },
+   {
+    "metric": "Q2 2026 Gross Bookings growth",
+    "value": "4% - 6%",
+    "change": "new",
+    "quote": "Gross Bookings Growth 4% - 6%"
+   },
+   {
+    "metric": "FY 2026 Adjusted EBITDA growth",
+    "value": "4% - 6%",
+    "change": "new",
+    "quote": "Adjusted EBITDA Growth (2)(3)(4) 4% - 6% Slightly Faster than Revenue Growth"
+   },
+   {
+    "metric": "FY 2026 Adjusted EPS growth",
+    "value": "Low to Mid-teens",
+    "change": "new",
+    "quote": "Adjusted EPS Growth (2)(3)(5) Low to Mid-teens"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Q2 EBITDA guide 4-6% vs Q1 +19%",
+    "quote": "Adjusted EBITDA Growth (2)(3)(4) 4% - 6%"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

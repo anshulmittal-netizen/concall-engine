@@ -1,0 +1,135 @@
+{
+ "doc_id": "GL-L-9433a17c94a1",
+ "market": "GL",
+ "company_id": "HMC",
+ "name": "Honda Motor",
+ "doc_type": "release",
+ "date": "2026-05-14",
+ "period": "2026-03",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.92,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "FY26 operating loss of JPY 414.3bn on EV write-downs (about JPY 1.05trn in cost of sales), while FY27 guidance implies operating profit recovery to about JPY 500bn with no new capacity commentary.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Supply exit",
+   "Capital cycle",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "the Company decided during the year ended March 31, 2026 to cancel the launch and development of a certain EV model, and to discontinue production or reduce production volume for EV models"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "EV programmes cancelled, production cut",
+    "quote": "discontinue production or reduce production volume for EV models jointly developed under a certain alliance agreement",
+    "highlight": "discontinue production or reduce production volume",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Ontario EV value chain suspended indefinitely",
+    "quote": "Honda has decided to indefinitely suspend its plan to build a comprehensive EV value chain in Canada",
+    "highlight": "indefinitely suspend its plan",
+    "direction": 1,
+    "confidence": 0.85
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 operating profit guided to ~JPY 500bn",
+    "quote": "losses for the fiscal year ending March 31, 2027 - 500.0 ... Operating profit compared with the fiscal year ended March 31, 2026 + 914.3",
+    "highlight": "Operating profit compared with the fiscal year ended March 31, 2026",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Supplier payments for EV cancellations unquantified",
+    "quote": "Additional payments to suppliers may arise in the future as a result of this assessment and related negotiations with them.",
+    "highlight": "Additional payments to suppliers may arise",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year operating profit FY27 (implied bridge)",
+    "value": "+914.3bn vs FY26, FY27 EV losses 500bn",
+    "change": "new",
+    "horizon": "FY ending Mar 2027",
+    "quote": "Operating profit compared with the fiscal year ended March 31, 2026 + 914.3"
+   },
+   {
+    "metric": "Profit for year attributable to owners FY27",
+    "value": "JPY 335.0bn",
+    "change": "new",
+    "horizon": "FY ending Mar 2027",
+    "quote": "Profit for the year attributable to owners of the parent 335.0"
+   },
+   {
+    "metric": "Dividend FY27",
+    "value": "JPY 70 per share",
+    "change": "new",
+    "horizon": "FY ending Mar 2027",
+    "quote": "Fiscal year ending March 31, 2027 (forecast) ... 35.00 35.00 70.00"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 operating/net profit forecast range (Mar 12, 2026)",
+    "outcome": "met",
+    "quote": "Consolidated financial results for the fiscal year ended March 31, 2026, were near the upper end of the forecast range."
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Auto EV transition",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Unquantified supplier compensation for EV cancellations",
+    "quote": "the Company and its consolidated subsidiaries cannot estimate the financial effects of such expenditures"
+   },
+   {
+    "label": "Airbag inflator loss not estimable",
+    "quote": "it is not possible for Honda to reasonably estimate the amount and timing of potential future losses"
+   },
+   {
+    "label": "Equity fell 3.7% on buybacks and losses; debt rose",
+    "quote": "Total liabilities increased by JPY 3,213.1 billion, to JPY 21,361.2 billion"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

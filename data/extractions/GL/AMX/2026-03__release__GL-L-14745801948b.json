@@ -1,0 +1,90 @@
+{
+ "doc_id": "GL-L-14745801948b",
+ "market": "GL",
+ "company_id": "AMX",
+ "name": "America Movil",
+ "doc_type": "release",
+ "date": "2026-04-23",
+ "period": "2026-03",
+ "title": "6-K · 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Telecom",
+  "thesis": "Telecom incumbent with steady margins: EBITDA +8.0% at constant FX, margin 39.9%, capex down to MxP 21.6bn from 24.7bn, net debt/EBITDA 1.41x; no supply-side red flags, but no numeric guidance given.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Deleveraging",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Our cash flow covered 21.6 billion pesos in capital expenditures, 1.4 billion pesos in share buybacks and 1.5 billion pesos in labor obligations"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex MxP 24.7bn → 21.6bn YoY",
+    "quote": "Our cash flow covered 21.6 billion pesos in capital expenditures",
+    "highlight": "21.6 billion pesos in capital expenditures",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Mexico: Telcel EBITDA margin 42.3%",
+    "quote": "The EBITDA margin for the quarter stood at 42.3%, an increase of 40 basis points",
+    "highlight": "42.3%",
+    "direction": 1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Desktop S.A.",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Chile one-off legal income inflates EBITDA",
+    "quote": "Combined EBITDA reached CLP 118 billion, reflecting the impact of extraordinary income resulting from a favorable litigation outcome in Chile"
+   },
+   {
+    "label": "Mexico prepaid disconnections from ID registration",
+    "quote": "disconnected 482 thousand prepaid subs in the context of the process of the clients registration mandated by the Digital Transformation Agency"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

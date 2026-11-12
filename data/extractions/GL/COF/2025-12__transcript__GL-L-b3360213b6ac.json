@@ -1,0 +1,138 @@
+{
+ "doc_id": "GL-L-b3360213b6ac",
+ "market": "GL",
+ "company_id": "COF",
+ "name": "Capital One",
+ "doc_type": "transcript",
+ "date": "2026-01-22",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Capital One Q4 CY25: credit settling after a year of improvement (domestic card charge-off 4.93%, down 113bp YoY), but opex up 13% QoQ and near-term efficiency pressure from investments and the $5.15B Brex deal.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said the biggest players in premium cards are leaning even harder into it and investing, so Capital One is doing so as well.",
+   "quote": "it's very clear that the biggest players in that space are leaning even harder into that. And they're investing."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Opex up 13% QoQ",
+    "quote": "Noninterest expense rose 13% sequentially from Q3",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "NIM 8.26%, down 10bp QoQ",
+    "quote": "Our fourth quarter net interest margin was 8.26%, 10 basis points lower than the prior quarter.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Card delinquency 3.99%, seasonal",
+    "quote": "On a sequential quarter basis, both our charge-offs and delinquencies moved in line with normal seasonality.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Efficiency ratio up near term",
+    "quote": "The net effect will be some upward pressure on efficiency ratio in the near term.",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Long-term earnings power post Discover integration",
+    "value": "consistent with Discover deal expectations, inclusive of Brex",
+    "change": "held",
+    "horizon": "post Discover integration",
+    "quote": "we still expect our earnings power on the other side of the Discover integration to be consistent with what we expected"
+   },
+   {
+    "metric": "Efficiency ratio",
+    "value": "upward pressure in near term; no specific efficiency guidance",
+    "change": "held",
+    "horizon": "near term",
+    "quote": "some upward pressure on efficiency ratio in the near term"
+   },
+   {
+    "metric": "Share repurchases",
+    "value": "$14B remaining authorization; Brex not changing buyback pace",
+    "change": "held",
+    "horizon": "near term",
+    "quote": "We've got $14 billion of remaining authorization"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Discover",
+    "relation": "peer"
+   },
+   {
+    "name": "Brex",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Consumer credit normalisation",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Efficiency ratio pressure and Brex dilution",
+    "quote": "in isolation, Brex will result in earnings dilution initially."
+   },
+   {
+    "label": "Proposed credit card rate cap risk",
+    "quote": "would make credit much less available for consumers"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 4,
+   "margin": 2,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Brex financial metrics (tangible book dilution, accretion)",
+    "quote": "Given the relative size of Brex to Capital One Financial Corporation, we don't intend to provide additional metrics."
+   },
+   {
+    "topic": "Small business card and travel portal sizing",
+    "quote": "those just aren't metrics that we break out in our reporting"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,122 @@
+{
+ "doc_id": "GL-L-3833cb7e67b5",
+ "market": "GL",
+ "company_id": "DHI",
+ "name": "D.R. Horton",
+ "doc_type": "release",
+ "date": "2026-04-21",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Orders up 11% and unsold completed homes down 35% show disciplined supply, but pre-tax margin fell to 10.7% in homebuilding and incentives stay elevated, with FY26 guidance held.",
+  "archetype": "None",
+  "mental_models": [
+   "Supply discipline",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Unsold completed homes down 35%",
+    "quote": "reducing unsold completed homes by 35% from a year ago",
+    "highlight": "reducing unsold completed homes by 35%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Net sales orders up 11%",
+    "quote": "driving an 11% year‑over‑year increase in net sales orders",
+    "highlight": "11% year‑over‑year increase in net sales orders",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Incentives to stay elevated",
+    "quote": "We expect our sales incentives to remain elevated in fiscal 2026",
+    "highlight": "sales incentives to remain elevated",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated revenues",
+    "value": "$33.5B to $34.5B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Consolidated revenues in the range of $33.5 billion to $34.5 billion"
+   },
+   {
+    "metric": "Homes closed by homebuilding",
+    "value": "86,000 to 87,500 homes",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Homes closed by homebuilding operations of 86,000 homes to 87,500 homes"
+   },
+   {
+    "metric": "Cash flow from operations",
+    "value": "at least $3.0B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Consolidated cash flow provided by operations of at least $3.0 billion"
+   },
+   {
+    "metric": "Share repurchases",
+    "value": "approximately $2.5B",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Share repurchases of approximately $2.5 billion"
+   },
+   {
+    "metric": "Dividend payments",
+    "value": "approximately $500M",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Dividend payments of approximately $500 million"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Affordability & incentives",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin supported by litigation and warranty one-off",
+    "quote": "include a 40 basis point benefit from a favorable litigation outcome and lower warranty costs"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

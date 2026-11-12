@@ -1,0 +1,169 @@
+{
+ "doc_id": "GL-L-5b9dd41de80c",
+ "market": "GL",
+ "company_id": "FDX",
+ "name": "FedEx",
+ "doc_type": "release",
+ "date": "2026-03-19",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.89,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "Q3 FY26 adjusted operating margin 6.7% (vs 6.8%) on revenue +8%, with FedEx Freight margin collapsing to 0.4%; FY26 EPS guidance raised to $16.05–16.85 pre-MTM and capex cut to no more than $4.1B.",
+  "archetype": "Value migration",
+  "mental_models": [
+   "Capital cycle",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Capital spending of no more than $4.1 billion, with a priority on investments in network optimization and efficiency improvement"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex cut $4.5B → $4.1B",
+    "quote": "Capital spending of no more than $4.1 billion, with a priority on investments in network optimization and efficiency improvement",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Transformation savings >$1B permanent",
+    "quote": "Permanent cost reductions of more than $1 billion in transformation-related savings",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "FedEx Freight shipments down 6%",
+    "quote": "lower shipments, and higher wage rates, partially offset by increased yield",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY26",
+    "value": "6.0% to 6.5%",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "A 6.0% to 6.5% revenue growth rate year over year, compared to the prior forecast of 5% to 6% growth"
+   },
+   {
+    "metric": "Diluted EPS before MTM (non-GAAP)",
+    "value": "$16.05 to $16.85",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "Diluted earnings per share of $16.05 to $16.85 before the MTM retirement plans accounting adjustments"
+   },
+   {
+    "metric": "Diluted EPS adjusted (ex spin, optimisation)",
+    "value": "$19.30 to $20.10",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "$19.30 to $20.10 after also excluding costs related to the planned spin-off of FedEx Freight"
+   },
+   {
+    "metric": "Transformation savings",
+    "value": ">$1 billion",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "Permanent cost reductions of more than $1 billion in transformation-related savings"
+   },
+   {
+    "metric": "ETR",
+    "value": "approximately 24%",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "An ETR of approximately 24% prior to the MTM retirement plans accounting adjustments"
+   },
+   {
+    "metric": "Pension contributions",
+    "value": "$275 million",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "Pension contributions of $275 million, compared to the prior forecast of up to $275 million"
+   },
+   {
+    "metric": "Capex",
+    "value": "no more than $4.1 billion",
+    "change": "cut",
+    "horizon": "FY26",
+    "quote": "Capital spending of no more than $4.1 billion"
+   },
+   {
+    "metric": "FedEx Freight spin-off",
+    "value": "June 1, 2026",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "The planned spin-off of FedEx Freight into a new publicly traded company is on track for June 1, 2026."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Transformation savings",
+    "outcome": "met",
+    "quote": "Permanent cost reductions of more than $1 billion in transformation-related savings"
+   },
+   {
+    "metric": "Pension contributions",
+    "outcome": "met",
+    "quote": "Pension contributions of $275 million, compared to the prior forecast of up to $275 million"
+   }
+  ],
+  "entities": [
+   {
+    "name": "InPost",
+    "relation": "partner"
+   },
+   {
+    "name": "Advent International",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "FedEx Freight margin 0.4% vs 12.5%",
+    "quote": "Operating margin 0.4 % 12.5 % (1210) bp"
+   },
+   {
+    "label": "MD-11 groundings and trade policy drag",
+    "quote": "the financial impacts of global trade policy changes, increased purchased transportation rates, and the MD-11 groundings"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3,
+  "subsector_note": "n/a"
+ }
+}

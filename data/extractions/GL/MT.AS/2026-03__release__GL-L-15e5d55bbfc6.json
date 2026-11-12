@@ -1,0 +1,134 @@
+{
+ "doc_id": "GL-L-15e5d55bbfc6",
+ "market": "GL",
+ "company_id": "MT.AS",
+ "name": "ArcelorMittal",
+ "doc_type": "release",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "6-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Steel & pipes",
+  "thesis": "Europe supply-side reset via CBAM and TRQ from July 1 underpins restart of idled blast furnaces at Fos and Dabrowa; 1Q26 EBITDA/t rose to $131 but FCF was -$1.3bn on $1.5bn working-capital build.",
+  "archetype": "Value migration",
+  "mental_models": [
+   "Supply exit",
+   "Import substitution",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 2,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "Lower imports will lead to higher capacity utilization, restoring profitability and returns on capital to healthy, sustainable levels."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "2026 capex guidance remains unchanged at $4.5bn-$5.0bn and includes $1.7-$2.0bn of strategic capex on high return projects."
+  },
+  "triggers": [
+   {
+    "type": "structure",
+    "label": "TRQ and CBAM reset European imports",
+    "quote": "structurally resets the outlook for the European steel industry. Lower imports will lead to higher capacity utilization",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Preparatory work to restart two idled blast furnaces",
+    "quote": "preparatory work has begun to restart the two idled blast furnaces at Fos (France) and Dąbrowa Górnicza (Poland), subject to market conditions.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "EBITDA/t $131 up $15 year-on-year",
+    "quote": "1Q 2026 EBITDA per tonne of $131/t increasing by $15/t year-on-year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital outflow $1.5bn, FCF -$1.3bn",
+    "quote": "A typical seasonal working capital investment of $1.5bn during the quarter led to a free cash outflow of $1.3bn",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 capex",
+    "value": "$4.5bn-$5.0bn",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "2026 capex guidance remains unchanged at $4.5bn-$5.0bn"
+   },
+   {
+    "metric": "12M 2026 depreciation",
+    "value": "approximately $3.0 billion",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "12M 2026 depreciation guidance remains unchanged at approximately $3.0 billion."
+   },
+   {
+    "metric": "Liberia shipments",
+    "value": ">18Mt",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "Liberia shipment guidance remains unchanged at >18Mt in 2026."
+   },
+   {
+    "metric": "Incremental EBITDA from strategic capex",
+    "value": "$1.8bn",
+    "change": "raised",
+    "horizon": "long term",
+    "quote": "The potential incremental EBITDA impact of strategic capex projects (including completed M&A) is now $1.8bn"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "AM/NS India",
+    "relation": "partner"
+   },
+   {
+    "name": "NMDC",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Negative FCF and net debt up to $9.3bn",
+    "quote": "led to a free cash outflow of $1.3bn and an increase in net debt to $9.3bn"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

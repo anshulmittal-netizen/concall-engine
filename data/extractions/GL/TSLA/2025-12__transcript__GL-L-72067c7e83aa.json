@@ -1,0 +1,160 @@
+{
+ "doc_id": "GL-L-72067c7e83aa",
+ "market": "GL",
+ "company_id": "TSLA",
+ "name": "Tesla",
+ "doc_type": "transcript",
+ "date": "2026-01-28",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Capex guided above $20B for 2026 (six factories, AI compute) with no prior guidance to compare, while auto margins ex-credits rose to 17.9% on 16% lower deliveries and energy margin compression is flagged.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": -2,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 2,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "Our biggest constraint globally continues to be on the battery pack front."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "At the moment, we are expecting that CapEx would be in excess of $20 billion."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "2026 capex above $20B",
+    "quote": "At the moment, we are expecting that CapEx would be in excess of $20 billion.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Model S and X production ending",
+    "quote": "we expect to wind down S and X production next quarter and basically stop production of Model S and X next quarter.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Energy margin compression flagged",
+    "quote": "we expect margin compression from the increased low-cost competition impacts to market from policy uncertainty, and the cost of tariffs.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Auto margin ex-credits 15.4% → 17.9%",
+    "quote": "automotive margins, excluding credits, improved sequentially from 15.4% to 17.9%.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 capex",
+    "value": ">$20 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "At the moment, we are expecting that CapEx would be in excess of $20 billion."
+   },
+   {
+    "metric": "Robotaxi markets",
+    "value": "dozens of major cities by end of year",
+    "change": "new",
+    "horizon": "end 2026",
+    "quote": "we expect to be in dozens of major cities by the end of the year."
+   },
+   {
+    "metric": "CyberCab production start",
+    "value": "April 2026",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "We expect to start production in April."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Samsung",
+    "relation": "supplier"
+   },
+   {
+    "name": "TSMC",
+    "relation": "supplier"
+   },
+   {
+    "name": "Micron",
+    "relation": "supplier"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "supplier"
+   },
+   {
+    "name": "XAI",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Robotaxi & autonomy",
+   "Battery supply constraint",
+   "Semiconductors & OSAT",
+   "Energy storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Energy margin compression flagged",
+    "quote": "we expect margin compression from the increased low-cost competition impacts to market from policy uncertainty, and the cost of tariffs."
+   },
+   {
+    "label": "Services margin down 10.5% to 8.8%",
+    "quote": "Services and others margin declined from 10.5% to 8.8%"
+   },
+   {
+    "label": "Opex up $500M on stock comp and Maestro charges",
+    "quote": "operating expenses increased sequentially $500 million in Q4"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 3,
+   "margin": 1,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Standalone gross margin targets per model",
+    "quote": "I think we cannot keep applying the same framework from a car sales model to the future"
+   },
+   {
+    "topic": "Optimus units in production",
+    "quote": "It's not in usage in our factories in a material way."
+   },
+   {
+    "topic": "Infrastructure capex funding",
+    "quote": "On the infrastructure play side, we don't have a number yet."
+   }
+  ],
+  "hedge_index": 0.6
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "doc_id": "GL-L-a6283aa67bbe",
+ "market": "GL",
+ "company_id": "CARR",
+ "name": "Carrier Global",
+ "doc_type": "transcript",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cables & wires",
+  "thesis": "Carrier's Q1 beat was driven by CSA Resi and Light Commercial, with field inventories down 35% and total orders up 11%, but FY guide was only reaffirmed and the 2% extra pricing is largely tariff-driven.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply discipline",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 2,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "CSA field inventory down 35% YoY",
+    "quote": "field inventory levels are very, very healthy. They ended the quarter, as Patrick said, down 35%",
+    "highlight": "field inventory levels are very, very healthy",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Company orders up 11%, CHVAC up 35%",
+    "quote": "Company orders in 1Q were up 11% led by global CHVAC up 35%",
+    "highlight": "Company orders in 1Q were up 11%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Extra 2 pts global pricing, ~75% tariff-linked",
+    "quote": "Of the 2 points of price that we are realizing or expect to realize for the year to increase -- to offset increased input costs, think about 75% of that related to tariffs",
+    "highlight": "think about 75% of that related to tariffs",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "FY guide reaffirmed, EPS ~$2.80",
+    "quote": "we are reaffirming our full year guide",
+    "highlight": "reaffirming our full year guide",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "CSE margin 'disappointing' on promotions",
+    "quote": "Segment operating profit and margin performance was disappointing in the quarter",
+    "highlight": "margin performance was disappointing",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 sales",
+    "value": "approximately $22 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we are reaffirming our full year sales outlook of approximately $22 billion with organic growth of flat to low single digits"
+   },
+   {
+    "metric": "FY2026 adjusted EPS",
+    "value": "approximately $2.80",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We expect adjusted EPS of approximately $2.80, up high single digits versus 2025."
+   },
+   {
+    "metric": "CSAME segment margin",
+    "value": "decline ~50 bps",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "we now expect CSAME margins to decline approximately 50 basis points"
+   },
+   {
+    "metric": "Q2 adjusted EPS",
+    "value": "approximately $0.80",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "We expect operating margin of about 17%, a 24% tax rate and about $0.80 of adjusted EPS."
+   },
+   {
+    "metric": "Data center sales",
+    "value": "$1.5 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Our current data center backlog now fully covers our expected $1.5 billion of data center sales this year."
+   },
+   {
+    "metric": "Aftermarket growth",
+    "value": "double-digit, sixth straight year",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "expect to deliver a sixth consecutive year of double-digit aftermarket sales growth"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY2026 sales",
+    "outcome": "met",
+    "quote": "we are reaffirming our full year sales outlook of approximately $22 billion"
+   },
+   {
+    "metric": "FY2026 adjusted EPS",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Data center sales $1.5B",
+    "outcome": "held",
+    "quote": "we kept it at $1.5 billion because we have a lot of execution to do in the second half"
+   }
+  ],
+  "entities": [
+   {
+    "name": "ZutaCore",
+    "relation": "partner"
+   },
+   {
+    "name": "Viessmann",
+    "relation": "partner"
+   },
+   {
+    "name": "Riello",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Anti-dumping protection",
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle",
+   "Premiumisation in consumption",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "CSA movement down 12%, distributor-to-dealer units down 8%",
+    "quote": "Residential sales were down 12%, driven by movements that is the unit volume from distributors to dealers, which was down 8% in the quarter"
+   },
+   {
+    "label": "Pricing partly tariff-driven and may revert",
+    "quote": "if we get reprieved on the tariffs, the pricing will revert except for the pricing associated with things like the fuel surcharges"
+   },
+   {
+    "label": "Q1 free cash flow outflow of $15M",
+    "quote": "Free cash flow in the first quarter was a cash outflow of $15 million"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "margin": 4,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "China residential bottom",
+    "quote": "On the residential side, Scott, it's really hard to call a bottom."
+   },
+   {
+    "topic": "232 tariff outcome",
+    "quote": "What happens with 232, I would be lying if I said I knew. I don't know."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

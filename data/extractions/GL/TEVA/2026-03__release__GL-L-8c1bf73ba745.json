@@ -1,0 +1,148 @@
+{
+ "doc_id": "GL-L-8c1bf73ba745",
+ "market": "GL",
+ "company_id": "TEVA",
+ "name": "Teva Pharmaceutical",
+ "doc_type": "release",
+ "date": "2026-04-29",
+ "period": "2026-03",
+ "title": "8-K · PRESS RELEASE",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma & biotech",
+  "thesis": "Teva Q1 revenue flat in USD and down 3% LC on lenalidomide erosion, but innovative brands grew 41% LC to $838M; non-GAAP EPS $0.53 with guidance held (ex-Emalex) and FCF $188M.",
+  "archetype": "Value migration",
+  "mental_models": [
+   "Mix shift",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Innovative brands +41% LC to $838M",
+    "quote": "AUSTEDO, AJOVY, and UZEDY revenues collectively grew by 41% YoY in LC to $838 million",
+    "highlight": "grew by 41% YoY in LC to $838 million",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "US generic revenue down 28%",
+    "quote": "lower revenues from lenalidomide capsules (the generic version of Revlimid®) due to increased generic competition in the U.S.",
+    "highlight": "due to increased generic competition in the U.S.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Non-GAAP op margin 24.0% vs 24.3%",
+    "quote": "The decrease in non-GAAP operating margin in the first quarter of 2026 was due to higher S&M expenses as a percentage of revenues",
+    "highlight": "due to higher S&M expenses as a percentage of revenues",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenues (2026, ex-Emalex)",
+    "value": "$16.4 - $16.8 billion",
+    "change": "held",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Non-GAAP diluted EPS (stand-alone)",
+    "value": "$2.57 - $2.77",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "Non-GAAP diluted EPS of $1.91 – $2.11 ($2.57 - $2.77 stand-alone)"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "$2.0 - $2.4 billion",
+    "change": "held",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Non-GAAP tax rate (2026)",
+    "value": "20%-23% (16%-19% stand-alone)",
+    "change": "raised",
+    "horizon": "FY2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenues 2026",
+    "outcome": "met",
+    "quote": "Revenues of $16.4 - $16.8 billion"
+   },
+   {
+    "metric": "Free cash flow 2026",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Anda",
+    "relation": "peer"
+   },
+   {
+    "name": "Medis",
+    "relation": "partner"
+   },
+   {
+    "name": "Neurogen (Zhuhai) Pharmaceutical",
+    "relation": "partner"
+   },
+   {
+    "name": "Jiangsu Nhwa Hexin Pharmaceutical",
+    "relation": "partner"
+   },
+   {
+    "name": "Emalex Biosciences",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Premiumisation in consumption",
+   "Consolidation / competitor exits",
+   "Biosimilar ramp"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow negative",
+    "quote": "Cash flow used in operating activities of $40 million"
+   },
+   {
+    "label": "Leverage 67% and short-term debt rising to 16%",
+    "quote": "The portion of total debt classified as short-term as of March 31, 2026 was 16% compared to 11% as of December 31, 2025."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,105 @@
+{
+ "doc_id": "GL-L-685b63c0b78d",
+ "market": "GL",
+ "company_id": "CVX",
+ "name": "Chevron",
+ "doc_type": "release",
+ "date": "2026-05-01",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.86,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Chevron Q1 CY26 adjusted earnings fell to $2.8B from $3.8B as $2.9B of timing effects and higher DD&A offset Hess-driven production up 15%; supply signals are steady, with capex flat and no new capacity guidance.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "U.S. refinery crude unit throughput remains over 1 million barrels per day for the fifth consecutive quarter and achieved a record in March 2026."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "capital spending remains within guidance"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Working capital outflow $4.6B in Q1",
+    "quote": "higher working capital outflows largely resulting from the sharp increase in commodity prices in March 2026",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "US refinery inputs record in March",
+    "quote": "U.S. refineries operated at record crude throughput in March",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Tengizchevroil",
+    "relation": "partner"
+   },
+   {
+    "name": "Hess Corporation",
+    "relation": "partner"
+   },
+   {
+    "name": "Microsoft",
+    "relation": "partner"
+   },
+   {
+    "name": "Engine No. 1",
+    "relation": "partner"
+   },
+   {
+    "name": "Platts",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Data-centre power & cooling",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Working-capital outflow $4.6B, CFFO down to $2.5B",
+    "quote": "Cash flow from operations in the first quarter of 2026 was lower than a year ago primarily due to higher working capital outflows"
+   },
+   {
+    "label": "Legal reserve $360M after-tax in downstream",
+    "quote": "Included in the quarter was a net loss of $360 million related to a legal reserve."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

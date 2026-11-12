@@ -1,0 +1,180 @@
+{
+ "doc_id": "GL-L-f738f9de9911",
+ "market": "GL",
+ "company_id": "ETN",
+ "name": "Eaton",
+ "doc_type": "transcript",
+ "date": "2026-02-03",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Electrical Americas orders up 16% TTM with backlog up 31% to $13.2B, but a capacity ramp cuts segment margin 180bp to 29.8%, with about 130bp more ramp drag guided for 2026.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we've already announced investments around $1.5 billion to strategically expand capacity"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "ESA ramp drag 100bp → ~130bp in 2026",
+    "quote": "we see an impact of about 130 basis points in the full costs would be front-end loaded. 2026.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "ESA backlog up 31% to $13.2B",
+    "quote": "backlog grew 31% year over year to a record $13.2 billion",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Data center orders up ~200%",
+    "quote": "Our orders accelerated approximately 200%, and our sales were up above 40% versus Q4 2024.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Share buyback suspended for 2026",
+    "quote": "we do not plan to buy back shares in 2026, due to the pending Boyd deal",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Organic revenue growth 2026",
+    "value": "7%-9%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "we expect the total company to be between 7% to 9% in 2026"
+   },
+   {
+    "metric": "Segment margin 2026",
+    "value": "24.6%-25%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "our guidance range is 24.6% to 25%"
+   },
+   {
+    "metric": "Adjusted EPS 2026",
+    "value": "$13.00-$13.50",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "our adjusted EPS is expected to be between $13 and $13.50"
+   },
+   {
+    "metric": "Free cash flow 2026",
+    "value": "$3.9B-$4.3B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "For cash flow, our guidance is $3.9 billion to $4.3 billion"
+   },
+   {
+    "metric": "Q1 2026 organic growth",
+    "value": "5%-7%",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "including organic growth of 5% to 7% and operating margins of 22.2% to 20.6%"
+   },
+   {
+    "metric": "Q1 2026 operating margin",
+    "value": "20.6%-22.2%",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "operating margins of 22.2% to 20.6%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2025 adjusted EPS commitment",
+    "outcome": "met",
+    "quote": "we delivered on our 2025 adjusted earnings commitment"
+   },
+   {
+    "metric": "2030 segment margin 28%, EPS growth 12%+, 6-9% organic growth",
+    "outcome": "not_discussed",
+    "quote": "We committed to a growth between 6-9% top-line growth for the period."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Boyd Thermal",
+    "relation": "partner"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "customer"
+   },
+   {
+    "name": "UltraPCS",
+    "relation": "peer"
+   },
+   {
+    "name": "FiberBond",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Consolidation / competitor exits",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Electrical Americas margin down 180bp on ramp costs",
+    "quote": "Operating margin of 29.8% was down 180 basis points versus prior year, largely driven by capacity ramp cost."
+   },
+   {
+    "label": "Vehicle organic revenue down 13%",
+    "quote": "the business declined by 13% on an organic basis, primarily driven by weaknesses in the North America truck and light vehicle markets"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 2,
+   "growth": 2,
+   "margin": 3,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Capacity ramp timing and when it turns to tailwind",
+    "quote": "Expect progress in Q2, I would say expect momentum into Q3. Then a stronger pace of backlog liquidation in Q4"
+   },
+   {
+    "topic": "Data center mix by hyperscale vs colo",
+    "quote": "So I don't wanna give you a breakdown there"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

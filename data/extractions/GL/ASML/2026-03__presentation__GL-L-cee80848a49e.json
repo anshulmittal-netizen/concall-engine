@@ -1,0 +1,115 @@
+{
+ "doc_id": "GL-L-cee80848a49e",
+ "market": "GL",
+ "company_id": "ASML",
+ "name": "ASML Holding",
+ "doc_type": "presentation",
+ "date": "2026-04-15",
+ "period": "2026-03",
+ "title": "6-K · EX-99.2",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Q1 2026 sales €8.8bn with 53.0% gross margin and FY26 sales guided €36–40bn, but net system sales fell to €6.3bn from €7.6bn in Q4 and operating cash flow was −€2.2bn.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY26 sales €36–40bn, GM 51–53%",
+    "quote": "ASML now expects 2026 total net sales to be between €36 billion and €40 billion, with a gross margin between 51% and 53%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Net system sales €7.6bn → €6.3bn",
+    "quote": "Q1’26 Net system sales €6.3 billion Q4’25 Net system sales €7.6 billion",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Operating cash flow −€2.2bn in Q1",
+    "quote": "Net cash provided by (used in) operating activities (59) 748 559 11,410 (2,186)",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 total net sales",
+    "value": "€36bn–€40bn",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "ASML now expects 2026 total net sales to be between €36 billion and €40 billion"
+   },
+   {
+    "metric": "FY2026 gross margin",
+    "value": "51%–53%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Gross margin between 51% and 53% Annualized effective tax rate around 17%"
+   },
+   {
+    "metric": "Q2 2026 total net sales",
+    "value": "€8.4bn–€9.0bn",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "Total net sales between €8.4 billion and €9.0 billion of which Installed Base Management sales around €2.5 billion"
+   },
+   {
+    "metric": "Q2 2026 gross margin",
+    "value": "51%–52%",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "Gross margin between 51% and 52%"
+   },
+   {
+    "metric": "2030 annual revenue opportunity",
+    "value": "€44bn–€60bn, GM 56–60%",
+    "change": "held",
+    "horizon": "2030",
+    "quote": "we see an opportunity to achieve 2030 annual revenue between approximately €44 billion and €60 billion, with a gross margin between approximately 56% and 60%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Semiconductors & OSAT",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

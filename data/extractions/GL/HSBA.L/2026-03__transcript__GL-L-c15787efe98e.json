@@ -1,0 +1,144 @@
+{
+ "doc_id": "GL-L-c15787efe98e",
+ "market": "GL",
+ "company_id": "HSBA.L",
+ "name": "HSBC Holdings",
+ "doc_type": "transcript",
+ "date": "2026-03-31",
+ "period": "2026-03",
+ "title": "1Q26 Equity Analysts Meeting - Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "Bank read, not a capital-cycle story: Q1 ROTE 18.7% and Hong Kong deposit/wealth momentum, but ECL guidance raised to ~45bps on Middle East conflict and one concentrated fraud-linked private credit loss (~$0.4bn).",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Customer stickiness",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "We’re not targeting a NIM. There’s no secret NIM target that we haven’t told you about."
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "ECL guidance raised; ~45bps for year",
+    "quote": "the total amount of the ECL guidance has gone up.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "structure",
+    "label": "Private credit fraud-linked ~$0.4bn stage 3 hit",
+    "quote": "The learning in this case has been that, even though we’ve said quite clearly that private credit in itself is not something which contributes significantly to our growth",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Wealth net new money strong in Q1",
+    "quote": "Overall it’s been a strong quarter, and the growth that we’ve seen in our Wealth business is across all pillars.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Banking NII upgraded ~$1bn",
+    "quote": "Banking NII will be dependent on customer behaviours, but, so far, we see strength in deposits and the rest holding up.",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "ECL charge (full year)",
+    "value": "~45 bps",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "the total amount of the ECL guidance has gone up."
+   },
+   {
+    "metric": "Gross cost growth / net cost growth",
+    "value": "gross 3%, net 1% after 2% simplification savings",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "On costs, we said to you gross costs growth is 3%, but there will be savings from simplification of 2%, therefore the net is 1%."
+   },
+   {
+    "metric": "Structural hedge",
+    "value": "~$604bn, not seeking to increase except HKD",
+    "change": "held",
+    "horizon": "Q1 26",
+    "quote": "We’re not seeking to increase. One of the exceptions to that is Hong Kong dollar."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Banking NII",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Net cost growth ~1%",
+    "outcome": "met",
+    "quote": "we said to you gross costs growth is 3%, but there will be savings from simplification of 2%, therefore the net is 1%."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Bank of England",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Interest-rate relief",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Concentrated private credit fraud-linked stage 3 loss",
+    "quote": "the overall quantum was not that different, but it was more concentrated in one specific name."
+   },
+   {
+    "label": "Management says cannot rule out further losses in private credit",
+    "quote": "I cannot say that there will never be another loss in this space"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 5,
+   "capex": 0,
+   "growth": 7,
+   "margin": 4,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Structural hedge currency breakdown",
+    "quote": "we’re not going to give any more details."
+   },
+   {
+    "topic": "Private credit build-up / LTV",
+    "quote": "I’m very happy to take a question directly on where we were in terms of this particular exposure"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

@@ -1,0 +1,119 @@
+{
+ "doc_id": "GL-L-3edd5a17b15a",
+ "market": "GL",
+ "company_id": "VTRS",
+ "name": "Viatris",
+ "doc_type": "release",
+ "date": "2026-05-07",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.83,
+ "read": {
+  "subsector": "Pharma & generics",
+  "thesis": "Viatris Q1 CY26 revenue up 3% operationally with Greater China +18% and Adjusted EBITDA +10% operational; 2026 guidance reaffirmed, but no capacity or capex signals in the release.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Greater China +18% operational",
+    "quote": "Greater China 680.1 555.5 22% 18%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "ARV supply constraints in Emerging Markets",
+    "quote": "partially offset by supply constraints in our ARV business within Emerging Markets",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Total Revenues 2026",
+    "value": "$14,450 - $14,950 million",
+    "change": "held",
+    "quote": "Viatris is reaffirming its 2026 financial guidance ranges"
+   },
+   {
+    "metric": "Free Cash Flow excl. transaction and restructuring costs 2026",
+    "value": "$1,950 - $2,350 million",
+    "change": "held",
+    "quote": "Free Cash Flow Excluding Transaction-related and Restructuring-related Costs $1,950 - $2,350"
+   },
+   {
+    "metric": "New product revenues 2026",
+    "value": "$450 - $550 million",
+    "change": "held",
+    "quote": "continues to expect to deliver approximately $450 million to $550 million in new product revenues in 2026"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2026 financial guidance ranges",
+    "outcome": "met",
+    "quote": "Viatris is reaffirming its 2026 financial guidance ranges"
+   },
+   {
+    "metric": "New product revenues 2026",
+    "outcome": "not_discussed",
+    "quote": "generated approximately $71 million in new product revenues in the quarter"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Biocon Limited",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Greater China recovery",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Nashik plant fire write-off",
+    "quote": "including $71.9 million related to the write off inventory and fixed assets damaged in the fire at the Nashik manufacturing facility"
+   },
+   {
+    "label": "Operating cash flow down 27%",
+    "quote": "U.S. GAAP Net Cash Provided by Operating Activities $ 388.3 $ 535.5 (27)%"
+   },
+   {
+    "label": "Prepaid and other current assets jump",
+    "quote": "Prepaid expenses and other current assets 2,109.3 1,436.3"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

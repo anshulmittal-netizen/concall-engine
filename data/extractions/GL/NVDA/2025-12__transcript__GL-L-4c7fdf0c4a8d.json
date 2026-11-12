@@ -1,0 +1,221 @@
+{
+ "doc_id": "GL-L-4c7fdf0c4a8d",
+ "market": "GL",
+ "company_id": "NVDA",
+ "name": "Nvidia",
+ "doc_type": "transcript",
+ "date": "2026-02-25",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Data Center revenue $62B (+75% YoY, +22% QoQ) with Q1 guide $78B ±2%, but inventory up 8% and purchase commitments raised sharply to secure supply into 2027, so supply is being locked in rather than capped.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": -1,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Hyperscaler 2026 capex expectations up nearly $120B since start of year, approaching $700B.",
+   "quote": "purchase commitments also increased significantly as we have strategically secured inventory and capacity to meet demand beyond the next several quarters."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Purchase commitments raised significantly",
+    "quote": "purchase commitments also increased significantly as we have strategically secured inventory and capacity",
+    "highlight": "purchase commitments also increased significantly",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory up 8% QoQ",
+    "quote": "Inventory grew 8% quarter over quarter",
+    "highlight": "Inventory grew 8% quarter over quarter",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q1 revenue guide $78B ±2%",
+    "quote": "Total revenue is expected to be $78,000,000,000, plus or minus 2%.",
+    "highlight": "Total revenue is expected to be $78,000,000,000",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Non-GAAP GM 75.2%, guided 75%",
+    "quote": "non-GAAP gross margin was 75.2%, increasing sequentially as Blackwell continued to ramp.",
+    "highlight": "increasing sequentially as Blackwell continued to ramp",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Networking $11B, >3.5x YoY",
+    "quote": "generating $11,000,000,000 in revenue, up more than 3.5x year over year",
+    "highlight": "up more than 3.5x year over year",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Total revenue Q1 FY27",
+    "value": "$78B ±2%",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "Total revenue is expected to be $78,000,000,000, plus or minus 2%."
+   },
+   {
+    "metric": "GAAP / non-GAAP gross margin Q1",
+    "value": "74.9% / 75% ±50bps",
+    "change": "new",
+    "horizon": "Q1 FY27",
+    "quote": "GAAP and non-GAAP gross margins are expected to be 74.9% and 75%, respectively, plus or minus 50 basis points."
+   },
+   {
+    "metric": "Full-year gross margin",
+    "value": "mid-70s",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "For the full year, we continue to see gross margins in the mid-70s."
+   },
+   {
+    "metric": "Sequential revenue growth",
+    "value": "sequential growth throughout calendar 2026",
+    "change": "new",
+    "horizon": "CY2026",
+    "quote": "We expect sequential revenue growth throughout calendar 2026, exceeding what was included in the $500,000,000,000 Blackwell and Rubin revenue opportunity"
+   },
+   {
+    "metric": "Gaming supply constraint",
+    "value": "headwind in Q1 and beyond",
+    "change": "new",
+    "horizon": "Q1 FY27 onward",
+    "quote": "we expect supply constraints to be the headwind to Gaming in Q1 and beyond."
+   },
+   {
+    "metric": "Rubin production shipments",
+    "value": "second half of calendar 2026",
+    "change": "new",
+    "horizon": "2H CY26",
+    "quote": "we remain on track to commence production shipments in the second half of the year."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Anthropic",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Meta",
+    "relation": "customer"
+   },
+   {
+    "name": "Groq",
+    "relation": "partner"
+   },
+   {
+    "name": "AWS",
+    "relation": "partner"
+   },
+   {
+    "name": "Mercedes-Benz",
+    "relation": "customer"
+   },
+   {
+    "name": "Waymo",
+    "relation": "customer"
+   },
+   {
+    "name": "Tesla",
+    "relation": "customer"
+   },
+   {
+    "name": "Siemens",
+    "relation": "partner"
+   },
+   {
+    "name": "Dassault Systèmes",
+    "relation": "partner"
+   },
+   {
+    "name": "Synopsys",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Pharma CDMO / outsourcing",
+   "Agentic AI in IT services",
+   "Physical AI",
+   "Sovereign AI",
+   "China+1 enquiries → orders",
+   "Tariffs & trade policy",
+   "Cybersecurity spend",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Inventory and purchase commitments up sharply",
+    "quote": "Inventory grew 8% quarter over quarter while purchase commitments also increased significantly"
+   },
+   {
+    "label": "China revenue zero despite approvals",
+    "quote": "we have yet to generate any revenue, and we do not know whether any imports will be allowed into China."
+   },
+   {
+    "label": "Circular investments in customers",
+    "quote": "This quarter, we announced a partnership with Anthropic and a $10,000,000,000 investment in their company."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 2,
+   "margin": 1,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Customer CapEx growth into 2027",
+    "quote": "I am confident in their cash flow growing."
+   },
+   {
+    "topic": "Buyback size vs stock price",
+    "quote": "We look at our capital return very, very carefully."
+   },
+   {
+    "topic": "Fusion / OpenAI partnership agreement timing",
+    "quote": "We will get back to you as soon as we can."
+   }
+  ],
+  "hedge_index": 0.35
+ }
+}

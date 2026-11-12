@@ -1,0 +1,91 @@
+{
+ "doc_id": "GL-L-e508cc4a65cb",
+ "market": "GL",
+ "company_id": "DUK",
+ "name": "Duke Energy",
+ "doc_type": "release",
+ "date": "2026-05-05",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Duke Energy Q1 CY26 adjusted EPS $1.93 vs $1.76, with 2026 guidance reaffirmed at $6.55–$6.80; the read is a regulated utility growing rate base, with no supply-side or pricing signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "2026 adjusted EPS guidance reaffirmed",
+    "quote": "The company is reaffirming its 2026 adjusted EPS guidance of $6.55 to $6.80",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Electric sales +0.3% YoY",
+    "quote": "Total Consolidated Electric Sales – Electric Utilities and Infrastructure 65,454 65,242 0.3%",
+    "direction": 1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2026 adjusted EPS",
+    "value": "$6.55 to $6.80",
+    "change": "held",
+    "horizon": "2026",
+    "quote": "The company is reaffirming its 2026 adjusted EPS guidance of $6.55 to $6.80"
+   },
+   {
+    "metric": "Long-term adjusted EPS growth",
+    "value": "5% to 7% through 2030",
+    "change": "held",
+    "horizon": "through 2030",
+    "quote": "long-term adjusted EPS growth rate of 5% to 7% through 2030"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Grid capex & transformers",
+   "Interest-rate relief"
+  ],
+  "red_flags": [
+   {
+    "label": "Storm costs and higher O&M drag",
+    "quote": "partially offset by higher O&M expenses, including storm costs"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,139 @@
+{
+ "doc_id": "GL-L-d06a4aaa7977",
+ "market": "GL",
+ "company_id": "APTV",
+ "name": "Aptiv",
+ "doc_type": "release",
+ "date": "2026-05-05",
+ "period": "2026-03",
+ "title": "8-K · EXHIBIT 99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Post-EDS spin \"New Aptiv\" posted Q1 adjusted revenue growth of just 1% and adjusted EBITDA margin down to 14.8% from 15.7%, with negative FCF of $362M; guidance gives FY26 pro forma adjusted EBITDA margin 18.6%.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Consolidation",
+   "Capital allocation shift",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "novelty",
+    "label": "EDS spun off as Versigent",
+    "quote": "successful spin-off of our EDS business as Versigent on April 1",
+    "highlight": "successful spin-off of our EDS business as Versigent",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Adj. EBITDA margin 15.7% → 14.8%",
+    "quote": "Adjusted EBITDA margin was 14.8%, compared to 15.7% in the prior year period, primarily reflecting increased commodity costs and unfavorable impacts of foreign currency exchange",
+    "highlight": "increased commodity costs and unfavorable impacts of foreign currency exchange",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Free cash flow −$362M",
+    "quote": "The Company reported negative Free Cash Flow of $362 million in the first quarter, compared to $76 million generated in the prior year period.",
+    "highlight": "negative Free Cash Flow of $362 million",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Adj. revenue growth 1%",
+    "quote": "Revenue increased 1% adjusted for currency exchange and commodity movements",
+    "highlight": "Revenue increased 1% adjusted",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q2 2026 net sales (New Aptiv)",
+    "value": "$3,200 - $3,400M",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "Net sales $3,200 - $3,400"
+   },
+   {
+    "metric": "FY2026 net sales (pro forma)",
+    "value": "$12,800 - $13,200M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "$12,800 - $13,200"
+   },
+   {
+    "metric": "FY2026 adjusted EBITDA (pro forma)",
+    "value": "$2,360 - $2,480M; 18.6% margin",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted EBITDA margin\n17.6%\n18.6%"
+   },
+   {
+    "metric": "FY2026 adjusted EPS (pro forma)",
+    "value": "$5.70 - $6.10",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted net income per share\n$1.30 - $1.50\n$5.70 - $6.10"
+   },
+   {
+    "metric": "FY2026 free cash flow (pro forma)",
+    "value": "$650 - $850M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Free cash flow\n$650 - $850"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Versigent",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Negative operating cash flow Q1",
+    "quote": "Net cash flow used in operating activities totaled $143 million in the first quarter"
+   },
+   {
+    "label": "Long-term debt up to $9.2B",
+    "quote": "Long-term debt 9,248 7,470"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3,
+  "thesis_placeholder": "x",
+  "themes": []
+ }
+}

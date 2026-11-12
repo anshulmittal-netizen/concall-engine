@@ -1,0 +1,160 @@
+{
+ "doc_id": "GL-L-10346a2c9456",
+ "market": "GL",
+ "company_id": "BHP.AX",
+ "name": "BHP Group",
+ "doc_type": "release",
+ "date": "2026-04-22",
+ "period": "2026-03",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Non-ferrous metals",
+  "thesis": "BHP's nine-month operational review shows copper output down 3% YTD to 1,461 kt, but FY26 copper guidance moved to the upper half, with Escondida unit costs cut and Antamina raised; supply discipline shows in Spence cuts and project deferral signals.",
+  "archetype": "None",
+  "mental_models": [
+   "Supply discipline",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Copper FY26 guidance to upper half",
+    "quote": "FY26 Group copper production is now expected to be in the upper half of the guidance range",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Escondida unit cost cut to US$1.00–1.20/lb",
+    "quote": "Unit cost guidance for FY26 has been lowered to between US$1.00 and US$1.20/lb (from US$1.20 to US$1.50/lb previously)",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Spence FY26 guidance lowered 230–250 → 210–220 kt",
+    "quote": "Production guidance for FY26 has been lowered to between 210 and 220 kt (from between 230 and 250 kt previously).",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Escondida new concentrator FID pushed to CY27-28",
+    "quote": "Subject to environmental permit approval, the project will progress towards an expected final investment decision (FID) in CY27-28",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 Group copper production",
+    "value": "Upper half of 1,900–2,000 kt",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "FY26 Group copper production is now expected to be in the upper half of the guidance range"
+   },
+   {
+    "metric": "Escondida FY26 unit cost",
+    "value": "US$1.00–1.20/lb",
+    "change": "cut",
+    "horizon": "FY26",
+    "quote": "Unit cost guidance for FY26 has been lowered to between US$1.00 and US$1.20/lb (from US$1.20 to US$1.50/lb previously)"
+   },
+   {
+    "metric": "Spence FY26 copper production",
+    "value": "210–220 kt",
+    "change": "cut",
+    "horizon": "FY26",
+    "quote": "Production guidance for FY26 has been lowered to between 210 and 220 kt (from between 230 and 250 kt previously)."
+   },
+   {
+    "metric": "Antamina FY26 copper production",
+    "value": "150–160 kt",
+    "change": "raised",
+    "horizon": "FY26",
+    "quote": "We now expect Antamina’s copper production for FY26 to be between 150 and 160 kt (from 140 to 150 kt previously)."
+   },
+   {
+    "metric": "Iron ore FY26 WAIO",
+    "value": "251–262 Mt",
+    "change": "held",
+    "horizon": "FY26",
+    "quote": "Production guidance for FY26 remains unchanged at between 251 and 262 Mt"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY26 copper production 1,900–2,000 kt",
+    "outcome": "met",
+    "quote": "Copper production guidance for FY26 remains unchanged at between 1,900 and 2,000 kt and is now expected to be in the upper half of the range."
+   },
+   {
+    "metric": "Iron ore 258–269 Mt",
+    "outcome": "met",
+    "quote": "Iron ore production guidance for FY26 remains unchanged at between 258 and 269 Mt."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Wheaton Precious Metals",
+    "relation": "partner"
+   },
+   {
+    "name": "CoreX Holding",
+    "relation": "customer"
+   },
+   {
+    "name": "Rio Tinto",
+    "relation": "partner"
+   },
+   {
+    "name": "China Mineral Resources Group",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Spence copper down 19% YTD, guidance cut",
+    "quote": "Production decreased due to challenges with managing the ore complexity, variation and declining grades at both the concentrator and the cathode plant."
+   },
+   {
+    "label": "Energy cost pressure from Middle East conflict",
+    "quote": "industry wide pressure on the cost of energy and consumables as a result of the conflict in the Middle East"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

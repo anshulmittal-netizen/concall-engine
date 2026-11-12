@@ -1,0 +1,169 @@
+{
+ "doc_id": "GL-L-5f0118498fc5",
+ "market": "GL",
+ "company_id": "EPAM",
+ "name": "EPAM Systems",
+ "doc_type": "transcript",
+ "date": "2026-02-19",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "IT services",
+  "thesis": "Q4 organic growth 5.6% beat guidance, but 2026 organic CC guided 3-6% with a 1-point NEORIS client drag, utilisation down to 75.4% and lengthening AI-deal sales cycles.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Operating leverage",
+   "Pricing power",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 75.4,
+   "quote": "Utilization was 75.4% compared to 76.2% in Q4 of last year and 76.5% in Q3 2025."
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 76.5% → 75.4% QoQ",
+    "quote": "Utilization was 75.4% compared to 76.2% in Q4 of last year and 76.5% in Q3 2025.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Low-single-digit rate increases at clients",
+    "quote": "a quite significant number of clients in both Europe and North America are giving us at least low single-digit rate increases",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 organic CC guide 3-6%",
+    "quote": "the organic constant currency growth rate is expected to be in the range of 3% to 6%.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Sales cycles lengthening on AI programs",
+    "quote": "which is involved procurement which is naturally going to slow down the decision-making process itself",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 revenue growth reported",
+    "value": "4.5%-7.5%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Revenue growth will be in the range of 4.5% to 7.5%."
+   },
+   {
+    "metric": "FY26 organic constant currency growth",
+    "value": "3%-6%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "the organic constant currency growth rate is expected to be in the range of 3% to 6%."
+   },
+   {
+    "metric": "FY26 non-GAAP EPS",
+    "value": "$12.60-$12.90",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "non-GAAP diluted EPS will be in the range of $12.60 to $12.90 for the full year."
+   },
+   {
+    "metric": "Q1 26 revenue",
+    "value": "$1.35-$1.40B",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "we expect revenue to be in the range of $1.35 billion to $1.4 billion"
+   },
+   {
+    "metric": "AI native revenue 2026",
+    "value": ">$600M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we expect to scale this to over $600 million in 2026"
+   },
+   {
+    "metric": "Gross margin improvement",
+    "value": "improve 2025 to 2026",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "all those things give us confidence that we can improve our gross margin between 2025 and 2026."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2026 organic growth faster than 2025",
+    "outcome": "dropped",
+    "quote": "The midpoint of the range would produce 4.5%."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Microsoft",
+    "relation": "partner"
+   },
+   {
+    "name": "AWS",
+    "relation": "partner"
+   },
+   {
+    "name": "Google Cloud",
+    "relation": "partner"
+   },
+   {
+    "name": "Cursor",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Agentic AI in IT services",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Sales cycles lengthening",
+    "quote": "which is involved procurement which is naturally going to slow down the decision-making process itself"
+   },
+   {
+    "label": "Utilisation down YoY",
+    "quote": "Utilization was 75.4% compared to 76.2% in Q4 of last year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 5,
+   "margin": 2,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Revenue per head and pricing contribution",
+    "quote": "the revenue per head calculation is not one that we usually do internally because there's just an awful lot of noise."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

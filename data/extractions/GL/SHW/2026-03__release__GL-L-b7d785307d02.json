@@ -1,0 +1,151 @@
+{
+ "doc_id": "GL-L-b7d785307d02",
+ "market": "GL",
+ "company_id": "SHW",
+ "name": "Sherwin-Williams",
+ "doc_type": "release",
+ "date": "2026-04-28",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Sales up 6.8% but volume is only low-single digit and growth is price plus Suvinil and FX; management sees little to no end-market recovery and reaffirmed guidance, with no capacity discipline signal.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "quote": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Price/mix guided to high end",
+    "quote": "we expect consolidated price/mix for the year to move upward to the high end of our prior low-single digit range guidance",
+    "highlight": "price/mix for the year to move upward to the high end",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Little to no end-market recovery",
+    "quote": "We continue to expect little to no recovery in most end markets this year",
+    "highlight": "little to no recovery in most end markets",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables up 13.5% vs sales up 6.8%",
+    "quote": "Accounts receivable, net\n3,192.1\n \n2,813.1",
+    "highlight": "Accounts receivable, net",
+    "direction": -1,
+    "confidence": 0.4
+   },
+   {
+    "type": "guidance",
+    "label": "FY EPS guidance reaffirmed, not raised",
+    "quote": "For the full year 2026, we are reaffirming our previous guidance.",
+    "highlight": "reaffirming our previous guidance",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q2 consolidated net sales",
+    "value": "Up mid-single digit %",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "we expect consolidated Net sales will be up a mid-single digit percentage compared to the second quarter of 2025"
+   },
+   {
+    "metric": "FY consolidated net sales",
+    "value": "Up low to mid-single digit %",
+    "change": "held",
+    "horizon": "FY 2026",
+    "quote": "We expect consolidated Net sales to be up by a low to mid-single digit percentage compared to 2025"
+   },
+   {
+    "metric": "FY adjusted diluted EPS",
+    "value": "$11.50 to $11.90",
+    "change": "held",
+    "horizon": "FY 2026",
+    "quote": "we expect adjusted diluted net income per share to be in the range of $11.50 to $11.90 per share"
+   },
+   {
+    "metric": "FY diluted EPS",
+    "value": "$10.70 to $11.10",
+    "change": "held",
+    "horizon": "FY 2026",
+    "quote": "Reaffirming full year 2026 diluted net income per share guidance in the range of $10.70 to $11.10 per share"
+   },
+   {
+    "metric": "FY consolidated price/mix",
+    "value": "High end of prior low-single digit range",
+    "change": "raised",
+    "horizon": "FY 2026",
+    "quote": "we expect consolidated price/mix for the year to move upward to the high end of our prior low-single digit range guidance"
+   },
+   {
+    "metric": "FY effective tax rate",
+    "value": "Low twenty percent",
+    "change": "new",
+    "horizon": "FY 2026",
+    "quote": "Effective tax rate\nLow twenty percent"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Valspar",
+    "relation": "peer"
+   },
+   {
+    "name": "Suvinil",
+    "relation": "peer"
+   },
+   {
+    "name": "Cabot",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Pricing power",
+   "Consolidation / competitor exits",
+   "Consumer durables"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables up 13.5% vs sales up 6.8%",
+    "quote": "Accounts receivable, net\n3,192.1\n \n2,813.1"
+   },
+   {
+    "label": "Interest expense up 27% on higher debt",
+    "quote": "Interest expense\n131.6\n \n103.8"
+   }
+  ],
+  "evasions": [],
+  "hedge_index": 0.3,
+  "hedge_index_note": "Press release only; no Q&A.",
+  "analyst_mix": {}
+ }
+}

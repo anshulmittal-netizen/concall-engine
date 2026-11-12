@@ -1,0 +1,122 @@
+{
+ "doc_id": "GL-L-d5d3c88ca79a",
+ "market": "GL",
+ "company_id": "CRL",
+ "name": "Charles River Laboratories",
+ "doc_type": "release",
+ "date": "2026-05-07",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Medical devices",
+  "thesis": "Q1 organic revenue fell 1.5% with DSA and RMS both declining and non-GAAP margin down to 16.3% from 19.1%; guidance reaffirmed on organic and non-GAAP EPS, with no evidence yet of supply cuts or utilisation turning.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Operating leverage",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Organic revenue -1.5%, RMS -5.5%",
+    "quote": "Organic revenue decreased by 5.5%, due primarily to lower revenue for small research models in North America, as well as for large research models.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Non-GAAP DSA margin 23.9% → 21.0%",
+    "quote": "The non-GAAP operating margin decrease was primarily driven by higher study-related direct costs associated with large-model sourcing and study starts.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Non-GAAP EPS $10.80–$11.30 held",
+    "quote": "The Company is reaffirming its 2026 organic revenue and non-GAAP earnings per share guidance",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Organic revenue growth 2026",
+    "value": "(1.5)% - (0.5)%",
+    "change": "held",
+    "quote": "Revenue growth/(decrease), organic (2) (1.5)% - (0.5)% (1.5)% - (0.5)%"
+   },
+   {
+    "metric": "Non-GAAP EPS 2026",
+    "value": "$10.80 – $11.30",
+    "change": "held",
+    "quote": "Non-GAAP EPS estimate $10.80 – $11.30 $10.80 – $11.30"
+   },
+   {
+    "metric": "GAAP EPS 2026",
+    "value": "$5.35 – $5.85",
+    "change": "new",
+    "quote": "GAAP EPS estimate $5.35 – $5.85"
+   },
+   {
+    "metric": "Reported revenue growth 2026",
+    "value": "(5.5)% - (4.0)%",
+    "change": "cut",
+    "quote": "the Company is reducing its 2026 reported revenue outlook by approximately 50 basis points to reflect recent changes in assumptions for foreign exchange rates"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Organic revenue growth 2026",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Non-GAAP EPS 2026",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Non-GAAP margin down 280bps",
+    "quote": "On a non-GAAP basis, the first-quarter operating margin decreased to 16.3% from 19.1% in the first quarter of 2025"
+   },
+   {
+    "label": "Reported revenue guidance cut, CEO transition",
+    "quote": "higher stock-based compensation expense related largely to executive transition"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

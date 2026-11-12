@@ -1,0 +1,147 @@
+{
+ "doc_id": "GL-L-f2e731e45b27",
+ "market": "GL",
+ "company_id": "GEV",
+ "name": "GE Vernova",
+ "doc_type": "release",
+ "date": "2026-04-22",
+ "period": "2026-03",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Gas turbine backlog plus slot reservations rose from 83 to 100 GW with a 110 GW year-end target, and 2026 guidance was raised on revenue, margin and FCF, though capacity additions were not discussed.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Backlog conversion",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "Invested $0.4 billion in capital expenditures, including to increase production in Power and Electrification, as part of its commitment to invest $6 billion in capex from 2025 through 2028"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Gas backlog+slots 83→100 GW",
+    "quote": "Gas Power equipment backlog and slot reservation agreements grew from 83 to 100 GW; now anticipate reaching at least 110 GW by year-end 2026",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Gas Power price and volume drove margin",
+    "quote": "primarily driven by price and volume at Gas Power, partially offset by the impact of inflation",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FCF guide raised to $6.5-7.5B",
+    "quote": "free cash flow* of $6.5-$7.5 billion, up from $5.0-$5.5 billion",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Electrification orders +86% organic",
+    "quote": "$7.1 billion increased +86% organically, driving a book-to-bill ratio of approximately 2.5",
+    "direction": 1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue",
+    "value": "$44.5-$45.5B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "expects revenue of $44.5-$45.5 billion, up from $44-45 billion"
+   },
+   {
+    "metric": "Adjusted EBITDA margin",
+    "value": "12%-14%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "adjusted EBITDA margin* of 12%-14%, up from 11%-13%"
+   },
+   {
+    "metric": "Free cash flow",
+    "value": "$6.5-$7.5B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "free cash flow* of $6.5-$7.5 billion, up from $5.0-$5.5 billion"
+   },
+   {
+    "metric": "Gas turbine backlog plus slot reservations",
+    "value": "at least 110 GW by YE2026",
+    "change": "new",
+    "horizon": "YE2026",
+    "quote": "now anticipate reaching at least 110 GW by year-end 2026"
+   },
+   {
+    "metric": "Wind organic revenue",
+    "value": "down low-double digits; ~$400M segment EBITDA losses",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Organic revenue* down low-double digits and approximately $400 million of segment EBITDA losses."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Prolec GE",
+    "relation": "partner"
+   },
+   {
+    "name": "Xignux",
+    "relation": "partner"
+   },
+   {
+    "name": "China XD Electric",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Renewables & storage",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Net income inflated by $4.5B M&A gain",
+    "quote": "inclusive of $4.5 B pre-tax M&A net gains, primarily from Prolec GE"
+   },
+   {
+    "label": "Wind EBITDA loss widened",
+    "quote": "Segment EBITDA losses grew from lower Onshore Wind equipment volume and the impact of tariffs"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.1
+ }
+}

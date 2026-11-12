@@ -1,0 +1,131 @@
+{
+ "doc_id": "GL-L-8fa32bb1e8c6",
+ "market": "GL",
+ "company_id": "PG",
+ "name": "Procter & Gamble",
+ "doc_type": "release",
+ "date": "2026-04-24",
+ "period": "2026-03",
+ "title": "8-K · FY2526 Q3 JFM 8-K EXHIBIT 99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Organic sales +3% on volume +2% and price +1%, with core gross margin down 100bp and FY26 EPS now guided to the low end as P&G steps up reinvestment; supply discipline signals are absent.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Core EPS guidance skewed to low end",
+    "quote": "P&G now expects fiscal 2026 EPS results to be toward the lower-end of the guidance range.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Organic volume +2%, price +1%",
+    "quote": "Organic sales increased three percent driven by a two percent increase from volume and a one percent increase from higher pricing.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Core gross margin down 100bp on reinvestment",
+    "quote": "The decrease was driven by 180 basis points of unfavorable mix, 100 basis points of reinvestments",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY26 all-in net sales growth",
+    "value": "+1% to +5%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "P&G maintained its guidance range for fiscal 2026 all-in sales growth to be in the range of one to five percent"
+   },
+   {
+    "metric": "FY26 organic sales growth",
+    "value": "in-line to up 4%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "The Company also maintained its outlook for organic sales growth in the range of in-line to up four percent versus the prior year."
+   },
+   {
+    "metric": "FY26 core EPS growth",
+    "value": "in-line to up 4% (EPS $6.83-$7.09)",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "P&G also maintained its fiscal 2026 core earnings per share growth to be in the range of in-line to up four percent"
+   },
+   {
+    "metric": "FY26 EPS position",
+    "value": "toward lower end of range",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "P&G now expects fiscal 2026 EPS results to be toward the lower-end of the guidance range."
+   },
+   {
+    "metric": "FY26 capex",
+    "value": "4% to 5% of net sales",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Capital spending is estimated to be in the range of four to five percent of fiscal 2026 net sales."
+   },
+   {
+    "metric": "FY26 adjusted FCF productivity",
+    "value": "85% to 90%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "P&G continues to expect adjusted free cash flow productivity of 85% to 90%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Clorox",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Reinvestment squeezing margins, EPS to low end",
+    "quote": "The Company also noted it is increasing investments in innovation and demand creation to maintain positive momentum with consumers."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

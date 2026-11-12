@@ -1,0 +1,113 @@
+{
+ "doc_id": "GL-L-47c8a2c0ddf8",
+ "market": "GL",
+ "company_id": "LLY",
+ "name": "Eli Lilly",
+ "doc_type": "release",
+ "date": "2026-04-30",
+ "period": "2026-03",
+ "title": "8-K · EX-99",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.89,
+ "read": {
+  "subsector": "Biotech",
+  "thesis": "Q1 revenue up 56% to $19.8B on 65% volume growth despite 13% price decline; FY26 revenue guide raised to $82-85B and non-GAAP EPS to $35.50-37.00, with no capacity or capex signal in the release.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Pricing power",
+   "Operating leverage",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Realised prices down 13%",
+    "quote": "partially offset by a 13% decrease due to lower realized prices",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue guide raised $2B to $82-85B",
+    "quote": "Revenue guidance to be in the range of $82.0 billion to $85.0 billion",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Volume up 65%",
+    "quote": "driven by a 65% increase in volume",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Ex-US price down 25% on China NRDL",
+    "quote": "lower realized prices outside the U.S. were driven primarily by the addition of Mounjaro to the National Reimbursed Drug List (NRDL) in China",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue",
+    "value": "$82.0B to $85.0B",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Increased 2026 full-year revenue guidance to be in the range of $82.0 billion to $85.0 billion"
+   },
+   {
+    "metric": "Non-GAAP EPS",
+    "value": "$35.50 to $37.00",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "non-GAAP EPS guidance to be in the range of $35.50 to $37.00"
+   },
+   {
+    "metric": "Tax rate",
+    "value": "18% to 19%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Tax Rate (1)(3) 18% to 19% Unchanged"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Boehringer Ingelheim",
+    "relation": "partner"
+   },
+   {
+    "name": "Scorpion Therapeutics",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Price erosion: realised prices down 13%, ex-US down 25%",
+    "quote": "partially offset by a 13% decrease due to lower realized prices"
+   }
+  ],
+  "evasions": [],
+  "hedge_index": 0.2,
+  "analyst_mix": {},
+  "themes": []
+ }
+}

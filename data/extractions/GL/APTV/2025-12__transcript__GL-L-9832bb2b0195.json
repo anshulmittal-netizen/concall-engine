@@ -1,0 +1,155 @@
+{
+ "doc_id": "GL-L-9832bb2b0195",
+ "market": "GL",
+ "company_id": "APTV",
+ "name": "Aptiv",
+ "doc_type": "transcript",
+ "date": "2026-02-02",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Aptiv Q4 record revenue $5.2B but FY25 bookings $27B missed $31B target on award timing; 2026 NuAptiv guide +4% with margin held by FX/commodity/DRAM headwinds and spin costs.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Consolidation",
+   "Management change",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY25 bookings $27B vs $31B target",
+    "quote": "bringing full-year new business awards to $27 billion, short of our target of $31 billion",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Memory pricing low double digits 2026",
+    "quote": "Pricing or price increases for us in calendar 2026 are low double digits",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Semiconductor inventory build ~12 weeks",
+    "quote": "invested to build semiconductor inventory coverage to approximately twelve weeks",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q1 FY26 revenue $5.05B, ~1% adj growth",
+    "quote": "We expect first-quarter revenue for total Aptiv of $5.05 billion at the midpoint, reflecting adjusted growth of approximately 1%",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "NuAptiv revenue",
+    "value": "$12.8-13.2B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we forecast revenue in the range of $12.8 to $13.2 billion, up 4% at the midpoint"
+   },
+   {
+    "metric": "Versagen revenue",
+    "value": "$9.1-9.4B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We forecast revenue in the range of $9.1 to $9.4 billion, an increase of 2% at the midpoint"
+   },
+   {
+    "metric": "Total Aptiv bookings",
+    "value": "over $30B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "expect 2026 bookings for total Aptiv, including Versagen, to increase to over $30 billion"
+   },
+   {
+    "metric": "Free cash flow NuAptiv",
+    "value": "$750M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Free cash flow, measured as operating cash flow less capital expenditures, is estimated to be $750 million at the midpoint"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY25 new business bookings target $31B",
+    "outcome": "missed",
+    "quote": "bringing full-year new business awards to $27 billion, short of our target of $31 billion"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Versagen",
+    "relation": "peer"
+   },
+   {
+    "name": "Robust AI",
+    "relation": "partner"
+   },
+   {
+    "name": "Vecna Robotics",
+    "relation": "partner"
+   },
+   {
+    "name": "IHS",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Auto EV transition",
+   "Semiconductors & OSAT",
+   "Premiumisation in consumption",
+   "Electronics manufacturing (EMS/PLI)"
+  ],
+  "red_flags": [
+   {
+    "label": "Operating cash flow down on working capital and spin costs",
+    "quote": "The decrease versus the prior year was primarily owing to unfavorable net working capital with investments to build semiconductor inventory"
+   },
+   {
+    "label": "Intelligent Systems op income down 17%",
+    "quote": "Intelligent Systems operating income declined 17% reflecting three items"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 4,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Commercial recoveries from OEMs on cancelled EV programs",
+    "quote": "It tends to be how much. So, yes, they're in our outlook."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

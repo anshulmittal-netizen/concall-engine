@@ -1,0 +1,183 @@
+{
+ "doc_id": "GL-L-e1124c13ddda",
+ "market": "GL",
+ "company_id": "EMR",
+ "name": "Emerson Electric",
+ "doc_type": "transcript",
+ "date": "2026-02-03",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Orders up 9% with backlog $7.9B (book-to-bill 1.13) and FY sales guide held at 5.5%, but China now seen down low single digits and sales growth leans on H2 backlog conversion.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Orders up 9%, four quarters strong",
+    "quote": "Robust demand continued in the first quarter, with underlying orders growth of 9%.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Backlog $7.9B, up 9%",
+    "quote": "Our backlog ended the quarter at $7.9 billion, up 9% year over year, and our book-to-bill was 1.13.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Price contributed 3 points",
+    "quote": "Price contributed three points to growth as expected.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "China orders down high single digits",
+    "quote": "China was down high single digits in the quarter from an orders perspective.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "China outlook cut to low single-digit decline",
+    "quote": "We now believe that we'll be down low single digits for the year.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 sales growth",
+    "value": "5.5%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "We are reiterating our guidance of 5.5% sales growth, 4% underlying sales growth"
+   },
+   {
+    "metric": "FY2026 adjusted segment EBITDA margin",
+    "value": "approximately 28%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "an adjusted segment EBITDA margin of approximately 28%"
+   },
+   {
+    "metric": "FY2026 adjusted EPS",
+    "value": "$6.40-$6.55",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "We are raising the bottom and midpoint of our adjusted EPS guide and now expect $6.4 to $6.55 per share."
+   },
+   {
+    "metric": "FY2026 free cash flow growth",
+    "value": "approximately 10%, greater than 18% margin",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "positioning us well for our expected full-year growth of approximately 10% at greater than 18% margin"
+   },
+   {
+    "metric": "Q2 2026 adjusted EPS",
+    "value": "$1.50-$1.55",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "We are guiding our Q2 2026 adjusted EPS at $1.5 to $1.55."
+   },
+   {
+    "metric": "Q2 2026 adjusted segment EBITDA margin",
+    "value": "approximately 27%",
+    "change": "new",
+    "horizon": "Q2 2026",
+    "quote": "We expect adjusted segment EBITDA margin of approximately 27%"
+   },
+   {
+    "metric": "Shareholder returns 2026",
+    "value": "$2.2B ($1.2B dividends, $1B buybacks)",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "still expect to return approximately $2.2 billion to shareholders through $1.2 billion in dividends and $1 billion of share repurchase"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY2026 sales growth and margin guidance",
+    "outcome": "met",
+    "quote": "We are reiterating our guidance of 5.5% sales growth, 4% underlying sales growth"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Sempra Infrastructure",
+    "relation": "customer"
+   },
+   {
+    "name": "Chevron",
+    "relation": "customer"
+   },
+   {
+    "name": "Roche",
+    "relation": "partner"
+   },
+   {
+    "name": "Prevalon Energy",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Power generation & data-centre automation",
+   "LNG build-out",
+   "China+1 enquiries → orders",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "China orders down high single digits, outlook cut to low-single-digit decline",
+    "quote": "We now believe that we'll be down low single digits for the year."
+   },
+   {
+    "label": "Q2 margin guide ~27% and software renewal drag",
+    "quote": "The lower volume from renewals in the Total Energy Energies deal impacts Emerson Electric Co.'s adjusted segment EBITDA margin by approximately 150 basis points"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 5,
+   "margin": 2,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Intelligent Devices short-cycle pull-through",
+    "quote": "it will be another softer quarter in Q2, and that will be largely behind us."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

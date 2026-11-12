@@ -1,0 +1,131 @@
+{
+ "doc_id": "GL-L-d3e1e5769bca",
+ "market": "GL",
+ "company_id": "CEG",
+ "name": "Constellation Energy",
+ "doc_type": "release",
+ "date": "2026-05-11",
+ "period": "2026-03",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q1 adjusted EPS $2.74 vs $2.14 on Calpine addition and nuclear PTC; FY26 $11–12 guidance affirmed, but nuclear capacity factor fell to 92.3% and no supply-side capacity signal beyond new gas and solar additions.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Consolidation",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 92.3,
+   "quote": "Excluding Salem and STP, our nuclear plants at ownership achieved a 92.3% capacity factor for the first quarter of 2026, compared with 94.1%"
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "novelty",
+    "label": "Calpine acquisition adds 26,497 GWh gas output",
+    "quote": "Calpine 26,497 — Total Natural Gas, Oil, and Renewables 32,061 5,905",
+    "highlight": "Calpine",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "PJM West price $53.69 → $97.16",
+    "quote": "PJM - PJM West $97.16 $53.69",
+    "highlight": "$97.16",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "PJM capacity price $53.60 → $269.92",
+    "quote": "PJM - Eastern Mid-Atlantic Area Council $269.92 $53.60",
+    "highlight": "$269.92",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Nuclear CF 94.1% → 92.3%",
+    "quote": "Excluding Salem and STP, our nuclear plants at ownership achieved a 92.3% capacity factor for the first quarter of 2026, compared with 94.1%",
+    "highlight": "92.3% capacity factor",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Freestone 380 MW data centre deal",
+    "quote": "In February we signed a 380 MW agreement with Dallas-based CyrusOne",
+    "highlight": "380 MW agreement with Dallas-based CyrusOne",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2026 Adjusted Operating Earnings per share",
+    "value": "$11.00 - $12.00",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Affirming full year 2026 Adjusted Operating Earnings guidance of $11.00 - $12.00 per share"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "CyrusOne",
+    "relation": "customer"
+   },
+   {
+    "name": "Calpine",
+    "relation": "peer"
+   },
+   {
+    "name": "Pacific Gas and Electric Company",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Capacity bottleneck"
+  ],
+  "red_flags": [
+   {
+    "label": "Net debt and short-term borrowings jump",
+    "quote": "Short-term borrowings $5,102 $1,650"
+   },
+   {
+    "label": "Operating cash flow thin vs earnings",
+    "quote": "Net cash flows provided by (used in) operating activities 425 107"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

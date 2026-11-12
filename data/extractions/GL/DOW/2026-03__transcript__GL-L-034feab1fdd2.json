@@ -1,0 +1,166 @@
+{
+ "doc_id": "GL-L-034feab1fdd2",
+ "market": "GL",
+ "company_id": "DOW",
+ "name": "Dow",
+ "doc_type": "transcript",
+ "date": "2026-04-23",
+ "period": "2026-03",
+ "title": "Earnings call transcript, Q1 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Middle East supply shock has taken polyethylene to above mid-cycle margins; Q2 guide of ~$12B revenue and $2B EBITDA includes only April's $0.30/lb price move, with May's $0.20/lb as upside.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Supply exit",
+   "Capacity bottleneck",
+   "Pricing power",
+   "Capital cycle"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 97,
+   "quote": "Industry operating rates surged to 97% while DTI declined."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Management said anticipated potential delays or cancellations of planned industry capacity additions.",
+   "quote": "capital expenditures expected to be at or below depreciation and amortization across the cycle"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Industry rates 97%, DTI down",
+    "quote": "Industry operating rates surged to 97% while DTI declined.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "$0.26/lb PE margin uplift in Q2",
+    "quote": "there is $0.26 per pound of margin improvement globally that is baked into that",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "~3/4 of announced capacity impacted",
+    "quote": "roughly three quarters of announced global capacity additions would be either directly impacted by the conflict or dependent on supply chains that remain highly constrained",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Europe siloxanes capacity cut 25%",
+    "quote": "This capacity represents approximately 25% of European siloxane industry capacity.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Sadara losses ~$400M FY, GAAP suspended",
+    "quote": "On a full-year basis, we would estimate that to be in the approximately $400 million range",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q2 revenue",
+    "value": "~$12 billion",
+    "change": "new",
+    "horizon": "Q2 2026"
+   },
+   {
+    "metric": "Q2 operating EBITDA",
+    "value": "~$2 billion",
+    "change": "new",
+    "horizon": "Q2 2026"
+   },
+   {
+    "metric": "Polyethylene global margin improvement",
+    "value": "$0.26 per pound",
+    "change": "new",
+    "horizon": "Q2 2026"
+   },
+   {
+    "metric": "Self-help benefits 2026",
+    "value": "~$1.1 billion",
+    "change": "new",
+    "horizon": "FY2026"
+   },
+   {
+    "metric": "Sadara equity loss",
+    "value": "~$400 million FY",
+    "change": "new",
+    "horizon": "FY2026"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Equate",
+    "relation": "peer"
+   },
+   {
+    "name": "Sadara",
+    "relation": "partner"
+   },
+   {
+    "name": "Saudi Aramco",
+    "relation": "partner"
+   },
+   {
+    "name": "ACC",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Middle East supply shock",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy",
+   "Anti-dumping protection"
+  ],
+  "red_flags": [
+   {
+    "label": "Sadara losses and cash obligations",
+    "quote": "future annual cash commitments related to Sadara are projected at approximately $100 million per year through 2038"
+   },
+   {
+    "label": "Sadara GAAP equity loss recognition suspended",
+    "quote": "we are in a position to suspend further recognition of the Sadara equity losses"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 2,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Sustainability of 2027 margins and peak vs mid-cycle",
+    "quote": "we expect that this environment is going to continue in alignment with the duration of the recovery"
+   },
+   {
+    "topic": "Asian PE price disconnect",
+    "quote": "The export price is the indication of real demand, not local price"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}
