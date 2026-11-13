@@ -2,21 +2,20 @@
  "doc_id": "IN-84eb3673-6777-498a-b5b9-db6515b0a7cb",
  "market": "IN",
  "company_id": "532454",
- "name": "Bharti Airtel",
+ "name": "Bharti Airtel Ltd",
  "doc_type": "transcript",
  "date": "2026-11-12",
  "period": "2026-09",
- "title": "Transcript of the Earnings Call dated November 6, 2026.",
+ "title": "Bharti Airtel Ltd - 532454 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
  "model": "claude-haiku-5-5",
  "verified_share": 1.0,
  "read": {
   "subsector": "Telecom",
-  "thesis": "Airtel India ARPU rose to Rs271 from Rs264 on a pricing reset and premiumisation, but capex discipline is only partly evidenced and home-broadband quality remains soft, with no supply-side tightening in the industry.",
-  "archetype": "Secular premiumisation",
+  "thesis": "Airtel India ARPU rose to Rs271 from Rs264 on a prepaid tariff intervention and premiumisation, with Q2 churn and home-broadband softness; management says the industry pricing-architecture reset is still needed.",
+  "archetype": "Supply-side dominance",
   "mental_models": [
    "Pricing power",
-   "Mix shift",
-   "Capital allocation shift"
+   "Consolidation"
   ],
   "blocks": {
    "supply": 1,
@@ -26,7 +25,7 @@
    "demand": 0,
    "guidance": 0,
    "novelty": 1,
-   "tone": 0
+   "tone": 1
   },
   "utilisation": {
    "direction": 0,
@@ -40,55 +39,62 @@
   "triggers": [
    {
     "type": "pricing",
-    "label": "ARPU Rs264 → Rs271 sequentially",
+    "label": "India ARPU Rs264 → Rs271",
     "quote": "ARPU for the quarter came in at Rs.271, up from 264",
+    "highlight": "ARPU for the quarter came in at Rs.271, up from 264",
     "direction": 1,
     "confidence": 0.7
    },
    {
     "type": "supply",
-    "label": "New tower installs under 1000 this year",
+    "label": "Radio capex moderating; sub-1,000 new sites",
     "quote": "if you look at the new towers being installed, it is almost very little now it is less than 1000",
+    "highlight": "it is less than 1000",
     "direction": 1,
     "confidence": 0.5
    },
    {
     "type": "structure",
-    "label": "Third player investing, churn up",
-    "quote": "this is happening at a time when the third player has started investing",
+    "label": "Third operator investing; share gains claimed",
+    "quote": "the investment and the market aggression of three operators in, let us say, half the country",
+    "highlight": "the market aggression of three operators",
     "direction": -1,
     "confidence": 0.5
    },
    {
     "type": "demand",
-    "label": "Home broadband net adds slowed to 670,000",
-    "quote": "In homes, we delivered net adds of 670,000.",
+    "label": "Q2 churn and home-broadband ARPU softness",
+    "quote": "ARPU this quarter is just a pull-through of what we had spoken about in terms of acquisition at certain low ARPU commissions",
+    "highlight": "acquisition at certain low ARPU commissions",
     "direction": -1,
-    "confidence": 0.4
+    "confidence": 0.5
    }
   ],
   "guidance": [
    {
-    "metric": "Industry ARPU growth 4-5% a year over 5-7 years",
-    "value": "not repeated; management said structural pricing change needs industry to move",
+    "metric": "Industry tariff architecture",
+    "value": "No explicit ARPU number; management says architecture change needs industry to move more decisively",
     "change": "dropped",
-    "quote": "that change of architecture will require, like, I think the industry to move more decisively"
+    "quote": "the architecture correction is a much broader correction that is required in the industry to charge for data in many ways"
    }
   ],
   "prior_guidance_check": [
    {
-    "metric": "Industry tariff architecture ARPU growth 4-5% a year over 5-7 years",
-    "outcome": "dropped",
-    "quote": "the architecture correction is a much broader correction that is required in the industry to charge for data in many ways"
+    "metric": "Industry tariff architecture (ARPU growth 4-5% a year over 5-7 years)",
+    "outcome": "dropped"
    }
   ],
   "entities": [
    {
     "name": "Airtel Africa",
-    "relation": "peer"
+    "relation": "partner"
    },
    {
-    "name": "Bharti Hexacom",
+    "name": "Airtel Money",
+    "relation": "partner"
+   },
+   {
+    "name": "Nxtra",
     "relation": "peer"
    },
    {
@@ -101,31 +107,26 @@
    }
   ],
   "themes": [
-   "Tariffs & trade policy",
    "Premiumisation in consumption",
    "Data-centre power & cooling",
-   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
    "Capex cycle revival (private)"
   ],
   "red_flags": [
    {
-    "label": "Home broadband EBIT margin deteriorating, low-ARPU acquisition",
-    "quote": "we had seen some issues in terms of quality of acquisition at low ARPUs"
+    "label": "Home broadband EBIT softening; low-ARPU acquisition issues",
+    "quote": "we had seen some issues in terms of quality of acquisition at low ARPUs, etc., in the market for a couple of quarters"
    },
    {
-    "label": "Churn up, Q2 pricing intervention",
-    "quote": "there is always a temporary impact on customer continuity"
-   },
-   {
-    "label": "Capex vs CWIP reconciliation gap",
-    "quote": "Capex and WIP mismatch, well, this will continue to happen for large projects"
+    "label": "Capex vs CWIP mismatch explanation",
+    "quote": "Capex and WIP mismatch, well, this will continue to happen for large projects as we do more DCs"
    }
   ],
   "analyst_mix": {
    "balance_sheet": 3,
    "capex": 3,
    "growth": 5,
-   "margin": 1,
+   "margin": 2,
    "other": 3
   },
   "evasions": [
@@ -134,14 +135,295 @@
     "quote": "I do not have a ready answer for you, Aditya. Allow me to circle back to you on this one."
    },
    {
-    "topic": "Industry tariff hikes by peers",
+    "topic": "Sector tariff hikes",
     "quote": "I would not speculate beyond a point on this."
    },
    {
-    "topic": "Postpaid pricing revenue impact",
-    "quote": "I would not comment beyond that."
+    "topic": "Pricing revenue accretion",
+    "quote": "so I would not comment beyond that."
    }
   ],
   "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Airtel Q2 FY27 consolidated revenue about Rs 60,900 crore (+4% QoQ) and EBITDAaL about Rs 31,500 crore (51.7% margin), with India mobile ARPU at Rs 271.",
+  "overview": "Management reported another quarter of steady growth across India and Africa, with consolidated revenue up 4% sequentially and Africa constant-currency revenue up 6.7% QoQ. India EBITDAaL excluding passive infra grew 4% to over Rs 20,400 crore at a 52.7% margin, and India ARPU rose to Rs 271 from Rs 264, helped by one extra day and a pricing intervention on the prepaid ladder. Homes net adds were 670,000 and postpaid net adds a record 1.2 million, while DTH lost over 400,000 customers. Management flagged softer home broadband quality and a scaled-back FWA expansion, with fiber now the stated focus, and Q2 churn was attributed to seasonality and the pricing change.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue",
+    "value": "about Rs 60,900 crore",
+    "change": "+4% QoQ"
+   },
+   {
+    "metric": "Consolidated EBITDAaL",
+    "value": "about Rs 31,500 crore",
+    "change": "about +5.5%"
+   },
+   {
+    "metric": "Consolidated EBITDAaL margin",
+    "value": "51.7%",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated capex",
+    "value": "about Rs 12,500 crore",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated operating FCF (EBITDAaL minus capex)",
+    "value": "over Rs 19,000 crore",
+    "change": ""
+   },
+   {
+    "metric": "India EBITDAaL excl. passive infra",
+    "value": "over Rs 20,400 crore",
+    "change": "+4% YoY"
+   },
+   {
+    "metric": "India EBITDAaL margin excl. passive infra",
+    "value": "52.7%",
+    "change": "+0.4 pp"
+   },
+   {
+    "metric": "India capex",
+    "value": "Rs 7,430 crore",
+    "change": ""
+   },
+   {
+    "metric": "India ARPU",
+    "value": "Rs 271",
+    "change": "up from Rs 264 QoQ"
+   },
+   {
+    "metric": "Airtel business revenue",
+    "value": "about Rs 5,800 crore",
+    "change": "+3.8% QoQ, +11.4% YoY"
+   },
+   {
+    "metric": "Net debt to EBITDAaL (consolidated / India excl. passive)",
+    "value": "0.70 / 0.96",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "India mobile",
+    "commentary": "Added 0.7 million revenue-earning customers and 2.9 million smartphone data customers; postpaid net adds of 1.2 million (highest ever), with postpaid at 8.3% of base and nearly 30% of net adds over four quarters. Over 200 million 5G users."
+   },
+   {
+    "name": "Homes",
+    "commentary": "Net adds of 670,000, with momentum building QoQ; management is scaling back FWA-led expansion in favour of fiber and sharpening acquisition to top-1000 cities."
+   },
+   {
+    "name": "Digital TV (DTH)",
+    "commentary": "Lost over 400,000 customers in the quarter, led by DTH; IPTV adoption remains strong."
+   },
+   {
+    "name": "Airtel business (B2B)",
+    "commentary": "Revenue about Rs 5,800 crore, +3.8% QoQ and +11.4% YoY; digital portfolio grew about 4% QoQ with large deal wins in connectivity and digital."
+   },
+   {
+    "name": "Airtel Payments Bank",
+    "commentary": "Monthly transacting users over 125 million; annualised revenue run rate over Rs 3,500 crore (+9% YoY); deposits over Rs 4,400 crore (+10%)."
+   },
+   {
+    "name": "Airtel Finance (lending)",
+    "commentary": "Lending went live in Q2; monthly loan disbursement run rate about Rs 770 crore."
+   },
+   {
+    "name": "Nxtra (data centres)",
+    "commentary": "Strong revenue growth from capacity expansion; invested about Rs 2,900 crore in a land parcel for a 1 GW ambition; management said nothing is sold externally, the capacity is used internally. Management said 400-500 MW is possible on the land."
+   },
+   {
+    "name": "Africa",
+    "commentary": "About 30.5% of group revenue; constant-currency revenue +6.7% QoQ. Airtel Money listed in London in October at about $7 billion valuation."
+   }
+  ],
+  "guidance_outlook": [
+   "Management declined to give forward-looking guidance on Bharti Hexacom mobile growth relative to Airtel, but said there could be a Q3 tailwind from Northeast recovery.",
+   "Core capex to continue per guidance; radio capex moderating with fewer than 1,000 new towers this year (about 500-600 this quarter); incremental capex to go largely into data centres and cloud.",
+   "Tax: current run rates can be taken as going-forward run rates for tax provisions and payments.",
+   "Gross debt expected to decline directionally, opportunistically; dividend payouts to keep rising over time.",
+   "Postpaid ARPU uplift of about Rs 50 expected to flow through to Hexacom; Hexacom mobile net adds turned negative due to Northeast weather and pricing intervention; early signs of improvement, watch Q3."
+  ],
+  "capex_capacity": [
+   "Consolidated capex about Rs 12,500 crore in Q2; India capex Rs 7,430 crore; Rs 2,900 crore land purchase for one-GW data centre ambition.",
+   "Data centre land can hold at least 400-500 MW; Vizag build-out will bring lumpy capex over the next 12-18 months.",
+   "Solarisation live on about 50,000 sites; goal to eliminate diesel at Indus sites via solar and battery banks.",
+   "Per-MW data centre capex not guided; management said India is competitive vs developed markets.",
+   "Cash capex vs reported capitalised capex gap (about Rs 13,800 crore vs Rs 10,000 crore cited by analyst) attributed to large projects and CWIP timing; BAU capex said to converge; Hexacom gap not explained on the call."
+  ],
+  "demand_pricing": [
+   "Pricing intervention on the prepaid ladder in Q2 (including discontinuation of the Rs 299 plan) is described as played out; management says ARPU levers (upgrades, postpaid, roaming, top-ups) remain.",
+   "Q2 churn attributed to seasonality and the pricing change; management says competitive intensity is unchanged, with three operators in half the country and two in the other half.",
+   "Entry smartphone shipments slowed after price hikes, but refurbished phones are supporting upgrades; 92-93% of new smartphone shipments are 5G.",
+   "Group B2B: core connectivity grows modestly; commodity messaging under pressure from WhatsApp migration; digital businesses now accelerating, with B2B growth at 11.5%.",
+   "Home broadband ARPU fell on acquisitions at low ARPU and wrong sales practices, which management says were corrected and are a one-off."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How much of the sequential mobile ARPU gain came from the Rs 299 plan change vs premiumisation, and what residual Q3 impact?",
+    "answer": "Management said the prepaid pricing intervention has already played out and ARPU levers (upgrades, postpaid, roaming, top-ups) will drive steady growth; no split was given."
+   },
+   {
+    "question": "Will Airtel need to strengthen uplink capacity for AI traffic, with capex implications?",
+    "answer": "AI traffic on the network is very small today; the company is building capability and will invest as needed."
+   },
+   {
+    "question": "Is the FWA scale-back short-term, and is it driven by TAM or profit pool?",
+    "answer": "Management said fiber is the focus and not a stop-start strategy; FWA will be used only as an interim solution in fringe areas before fiberising."
+   },
+   {
+    "question": "Will capex grow slower than EBITDA over 2-3 years?",
+    "answer": "Core business capex stays per guidance; growth-bet capex in data centres and cloud could rise, with no quantified guidance."
+   },
+   {
+    "question": "Does data centre growth need equity?",
+    "answer": "About $800 million equity was raised in June-July; debt will fund much of the build-out, with a future equity raise left as a treasury call. Nothing is leased externally; internal chips are already owned."
+   },
+   {
+    "question": "Will Airtel buy out stakes in BT and OneWeb?",
+    "answer": "No intention to buy out these stakes."
+   },
+   {
+    "question": "Why is home broadband EBIT margin falling?",
+    "answer": "Management said the business is in an acquisition and investment phase (fiber and CPE capex), and low-ARPU acquisitions are being corrected."
+   },
+   {
+    "question": "Is B2B digital mix shift driving revenue acceleration?",
+    "answer": "Gopal Vittal said digital growth is offsetting managed decline in commodity messaging; B2B growth is 11.5% vs about 7% a few quarters ago."
+   }
+  ],
+  "risks_watch": [
+   "Home broadband quality: EBIT margin softer, net adds at 670,000 with management targeting acceleration; FWA scaled back.",
+   "Churn and net adds: Q2 churn elevated from pricing action and seasonality; Hexacom mobile subscriber additions negative after Northeast weather disruption.",
+   "Data centre funding: 1 GW ambition funded partly by debt; possible future equity raise.",
+   "Industry tariff architecture: depends on sector-wide consumption-based pricing, which management says needs the industry to move together.",
+   "Tax cash outflow now at current run-rate levels (Rs 4,300 crore cash tax cited by an analyst)."
+  ],
+  "management_tone": "Confident on operating performance and portfolio growth, but cautious and evasive on forward guidance (tariff, Hexacom mobile trajectory, per-MW capex); acknowledges softness in homes and DTH.",
+  "key_quotes": [
+   "We delivered another quarter of strong and consistent performance across India and Africa.",
+   "Overall, the intervention that we have taken on pricing on prepaid ladder in Q2 has already, kind of, played out and now we are looking at all the other levers forward.",
+   "Fiber remains the best experience for in-home connectivity.",
+   "Nothing is external capacity. We build data center for a living; it is our business."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Nxtra data centre land parcel (Rs 2,900 crore) for 1 GW ambition; 400-500 MW possible on land, capacity used internally",
+    "size_pct": null,
+    "capex_cr": 2900.0,
+    "q": null,
+    "status": "approved",
+    "mat": "minor"
+   },
+   {
+    "what": "Vizag data centre build-out, lumpy capex over next 12-18 months",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "planned",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "vague",
+  "qRev": 4.0,
+  "qEbitda": 5.5,
+  "outlook": 0,
+  "why": "No numeric forward revenue guidance; Q2 revenue +4% QoQ and EBITDAaL ~+5.5% with India ARPU up to Rs 271, but growth drivers are largely pricing and ARPU levers, while the Nxtra data-centre land purchase (Rs 2,900 crore, 400-500 MW possible) has no timeline beyond the 12-18 month Vizag build-out and no external sales.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "India EBITDAaL margin excl. passive infra rose 0.4 pp to 52.7% and the prepaid pricing intervention has played out, but no margin guidance was given and ARPU levers are the only stated driver."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "Q4 FY27",
+    "why": "Vizag data centre build-out is planned with lumpy capex over the next 12-18 months (Q4 FY27 onwards), and 400-500 MW is possible on the Rs 2,900 crore land parcel, though no per-MW capex or timeline beyond that was guided."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Postpaid net adds hit a record 1.2 million, 0.7 million revenue-earning customers were added, and homes net adds were 670,000 with momentum building QoQ, offset by DTH losing over 400,000 customers and Hexacom mobile net adds turning negative."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "Utilisation is not disclosed; radio capex is moderating (fewer than 1,000 new towers this year), and incremental growth capex is going to data centres and cloud with no quantified guidance, so a further data-centre capex announcement is conditional."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "no_signal",
+    "when": "",
+    "why": "Management declined forward guidance on Hexacom and per-MW capex and gave no numeric revenue or margin guidance to raise."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Hexacom mobile net adds turned negative and home broadband EBIT margin is softening, with the industry tariff correction dependent on sector-wide moves, so near-term targets are at risk."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "Airtel Finance lending went live in Q2 at about Rs 770 crore monthly disbursement run rate and fiber is the stated homes focus, but no specific new product launch dates were given."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Gross debt to decline directionally",
+    "call": "likely",
+    "when": "next 2-4 quarters",
+    "why": "Management said gross debt is expected to decline directionally and opportunistically, with consolidated net debt to EBITDAaL at 0.70x, though data-centre build-out is partly debt-funded."
+   },
+   {
+    "k": "new_markets",
+    "label": "Airtel Money London listing and Africa growth",
+    "call": "surely",
+    "when": "already done (Oct)",
+    "why": "Airtel Money listed in London in October at about $7 billion valuation, and Africa constant-currency revenue grew 6.7% QoQ on about 30.5% of group revenue."
+   },
+   {
+    "k": "pricing",
+    "label": "Industry tariff architecture correction",
+    "call": "unlikely",
+    "when": "next 2-4 quarters",
+    "why": "Management says the consumption-based pricing reset needs the whole industry to move together, and competitive intensity is unchanged with three operators in half the country and two in the other half, so no near-term tariff step-up is assured."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on postpaid growth, Africa, Payments Bank and B2B digital, but cautious and evasive on forward guidance for tariffs, Hexacom mobile and per-MW data-centre capex; analysts pushed on homes broadband margins, DTH losses, data-centre funding and the cash versus reported capex ga"
+  }
  }
 }

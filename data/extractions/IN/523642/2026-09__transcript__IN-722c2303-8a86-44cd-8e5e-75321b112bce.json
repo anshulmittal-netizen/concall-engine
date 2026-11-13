@@ -2,24 +2,24 @@
  "doc_id": "IN-722c2303-8a86-44cd-8e5e-75321b112bce",
  "market": "IN",
  "company_id": "523642",
- "name": "PI Industries",
+ "name": "PI Industries Ltd",
  "doc_type": "transcript",
  "date": "2026-11-12",
  "period": "2026-09",
- "title": "Transcript of the Earnings Conference Call pertaining to the Unaudited Financial Results for the quarter and half year ended September 30, 2026",
+ "title": "PI Industries Ltd - 523642 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
  "model": "claude-haiku-5-5",
  "verified_share": 1.0,
  "read": {
   "subsector": "Specialty chemicals",
-  "thesis": "Q2 revenue Rs 1,702 crore down 9% YoY with AgChem exports down 18% (about 13-14% price, 3-4% volume); management says capacity is saturated for 2-3 years and no FY27 guidance was re-stated beyond \"flattish\".",
+  "thesis": "Q2 consolidated revenue Rs 17,018 mn, down 9% YoY, with Agchem exports down 18% (about 13-14% price, 3-4% volume) and gross margin falling to 49%; management says the capacity build-out is largely done and capex shifts to new engines.",
   "archetype": "Capital-cycle warning",
   "mental_models": [
-   "Capital cycle",
+   "Supply discipline",
    "Pricing power",
-   "Competitive capex"
+   "Working-capital stress"
   ],
   "blocks": {
-   "supply": -1,
+   "supply": 1,
    "pricing": -2,
    "structure": -1,
    "inventory": 1,
@@ -30,91 +30,93 @@
   },
   "utilisation": {
    "direction": 0,
-   "level_pct": null
+   "quote": "we have enough capacity to address what we need because of which we have built as it is a cyclical play"
   },
   "capex": {
    "direction": "not_discussed",
    "peers_comment": "",
-   "quote": "I believe the investments have come to a saturation capacity to take care for the next 2-3 years in the ag chem sector."
+   "quote": "the investments have come to a saturation capacity to take care for the next 2-3 years in the ag chem sector"
   },
   "triggers": [
    {
-    "type": "supply",
-    "label": "AgChem capacity saturated 2-3 yrs",
-    "quote": "the investments have come to a saturation capacity to take care for the next 2-3 years in the ag chem sector",
-    "direction": 1,
-    "confidence": 0.6
-   },
-   {
     "type": "pricing",
-    "label": "AgChem exports price down ~13-14%",
+    "label": "Agchem exports -18%: price ~13-14%",
     "quote": "Volume is about a lower single digit, about 3% to 4% , the other is being price and cost.",
     "direction": -1,
     "confidence": 0.8
    },
    {
-    "type": "pricing",
-    "label": "Gross margin 47-48% now, 49% target",
-    "quote": "The gross margin as we said is about today at 47%-48%.",
-    "direction": -1,
+    "type": "supply",
+    "label": "Ag capacity saturated for 2-3 years",
+    "quote": "the investments have come to a saturation capacity to take care for the next 2-3 years in the ag chem sector",
+    "direction": 1,
     "confidence": 0.6
    },
    {
     "type": "guidance",
-    "label": "FY27 growth now 'flattish' vs LSD",
+    "label": "FY27 growth now 'flattish' vs lower single digit",
     "quote": "we have said we look at a flattish approach given the external dynamics",
     "direction": -1,
     "confidence": 0.6
    },
    {
     "type": "inventory",
-    "label": "NWC cut 18 days; Rs 298 cr released",
+    "label": "Net working capital cut by 18 days",
     "quote": "we reduce net working capital by 18 days, releasing Rs. 298 crores of cash as at quarter end",
     "direction": 1,
     "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Pricing pressure extends to patented molecules",
+    "quote": "that is what is called the pricing pressure on the product, even on innovation spaces",
+    "direction": -1,
+    "confidence": 0.6
    }
   ],
   "guidance": [
    {
     "metric": "Gross margin",
-    "value": "49% for next 2-3 quarters; 50-52% long-term",
+    "value": "49% near-term, 50%-52% longer term",
     "change": "held",
+    "horizon": "next 2-3 quarters",
     "quote": "keeping that and trying to improve that should be our objective in the next 2-3 quarters"
+   },
+   {
+    "metric": "FY27 revenue growth",
+    "value": "flattish",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "we have said we look at a flattish approach given the external dynamics"
    },
    {
     "metric": "Contract assets",
     "value": "around Rs 700 crore, same range",
-    "change": "new",
-    "quote": "we are currently around Rs. 700 odd crore, and we expect to be in the same range."
+    "change": "held",
+    "horizon": "next few quarters",
+    "quote": "we are currently around Rs. 700 odd crore, and we expect to be in the same range"
    },
    {
-    "metric": "Pharma CDMO",
+    "metric": "Pharma CDMO target",
     "value": "Rs 500-600 crore revenue and EBITDA breakeven in 2-3 years",
     "change": "held",
+    "horizon": "2-3 years",
     "quote": "Yes, that is our target. We still continue to work on that."
-   },
-   {
-    "metric": "Plant healthcare loss",
-    "value": "USD 10+ million loss for full year",
-    "change": "new",
-    "quote": "It is about $10 plus million that we have lost there."
    }
   ],
   "prior_guidance_check": [
    {
     "metric": "FY27 revenue growth",
-    "outcome": "missed",
+    "outcome": "dropped",
     "quote": "we have said we look at a flattish approach given the external dynamics"
    },
    {
     "metric": "Full-year capex",
-    "outcome": "not_discussed",
-    "quote": ""
+    "outcome": "not_discussed"
    },
    {
     "metric": "ETR",
-    "outcome": "not_discussed",
-    "quote": ""
+    "outcome": "not_discussed"
    },
    {
     "metric": "R&D spend",
@@ -122,49 +124,334 @@
     "quote": "we continue to invest 3% to 4% of our revenue in R &D, which are fully charged to the P&L"
    }
   ],
-  "entities": [],
-  "themes": [
-   "Consolidation / competitor exits",
-   "Pharma CDMO / outsourcing",
-   "Biologicals",
-   "Electronics manufacturing (EMS/PLI)",
-   "Tariffs & trade policy"
-  ],
   "red_flags": [
    {
-    "label": "Price cuts spread to patented molecules",
-    "quote": "is the price pressure is becoming challenging for our partners"
+    "label": "Pricing cuts reach patented and innovator molecules",
+    "quote": "that is what is called the pricing pressure on the product, even on innovation spaces"
    },
    {
-    "label": "Management avoids pricing and margin floor questions",
-    "quote": "It would be too much of competitive information to disclose."
+    "label": "Management says ~Rs 700 crore contract assets stay flat",
+    "quote": "we are currently around Rs. 700 odd crore, and we expect to be in the same range"
    },
    {
-    "label": "Gross margin falling; no price pass-through",
-    "quote": "cost escalation could not be passed through in this current market conditions"
+    "label": "Biologicals losses not yet at breakeven, $10m+ FY loss",
+    "quote": "It is about $10 plus million that we have lost there."
    }
   ],
   "analyst_mix": {
-   "growth": 4,
+   "growth": 3,
    "margin": 6,
    "balance_sheet": 2,
    "capex": 1,
-   "other": 6
+   "other": 9
   },
   "evasions": [
    {
-    "topic": "Market share and global pricing floor",
-    "quote": "It would be too much of competitive information to disclose."
+    "topic": "Market share and peak potential of new molecules",
+    "quote": "I would not be in a position to answer because that is more for our customer who is dealing with it"
    },
    {
     "topic": "Pioxaniliprole revenue scale",
-    "quote": "we will be taking up to get a better assessment as to how we want to scale"
+    "quote": "At that point, we are in a better position to answer what numbers and scales are we looking to achieve here."
    },
    {
-    "topic": "Peak potential of new molecules",
-    "quote": "I would not hold myself to that number"
+    "topic": "Order book price sensitivity",
+    "quote": "So precise number to the point delta would be very difficult to answer today."
    }
   ],
-  "hedge_index": 0.6
+  "hedge_index": 0.6,
+  "entities": [],
+  "themes": [
+   "Specialty chem destocking end",
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits",
+   "Rural demand recovery",
+   "Electronics manufacturing (EMS/PLI)"
+  ]
+ },
+ "summary": {
+  "headline": "PI Industries Q2 FY27 consolidated revenue fell 9% YoY to Rs 17,018 mn, with AgChem exports down 18% on ~13-14% price erosion and gross margin at 49%.",
+  "overview": "Consolidated Q2 FY27 revenue was Rs 17,018 million, down 9% YoY, with gross margin at 49% and EBITDA margin at 14%. AgChem exports fell 18%, with management attributing roughly 13-14 points to price and 3-4 points to volume amid genericization, weak monsoon and cautious channel buying. Domestic agri grew 19%, biologicals grew 45% domestically and more than 250% globally, and pharma grew 20%. Management said the first in-house NCE, Pioxazon (pioxaniliprole), was registered and launched in India, and reported working capital release of 18 days (Rs 298 crore) with a net cash position of about Rs 36 billion.",
+  "segments": [
+   {
+    "name": "AgChem exports (CSM)",
+    "commentary": "Exports down 18% YoY: volume down about 3-4%, price/cost down about 13-14%. Management is prioritising volume retention via price optimisation; cost increases could not be passed through."
+   },
+   {
+    "name": "Domestic agri",
+    "commentary": "Grew 19% YoY on crop reach and product portfolio. Biologicals grew 45% and form about 18% of domestic agri."
+   },
+   {
+    "name": "Global biologicals (PI AgSciences)",
+    "commentary": "Revenue about Rs 60 crore in Q2, up over 250% YoY. Distribution expanded in Brazil, Mexico, Spain and the US (3x distribution width). Plant healthcare loss expected at about USD 10+ million for FY27."
+   },
+   {
+    "name": "Pharma CRDMO",
+    "commentary": "Revenue about Rs 75 crore in Q2, up 20% YoY. Hyderabad discovery centre operational, Lodi QC lab commissioned, kilo lab due by year end. Target of Rs 500-600 crore revenue and EBITDA breakeven over 2-3 years reiterated."
+   },
+   {
+    "name": "Electronic and specialty chemicals",
+    "commentary": "Early commercial shoots; Udaipur kilo lab due to be operational by year end. Management targets about USD 100 million business in 3-4 years."
+   }
+  ],
+  "guidance_outlook": [
+   "Gross margin guided at 48-49% for the next 2-3 quarters; management sees the 52-53% prior level as an exception and 50-52% as the long-term range.",
+   "FY27 revenue planned as flattish, per management's reply on last call's low single-digit growth comment.",
+   "Pricing pressure expected for the next couple of quarters; green shoots and volume pickup expected by end of FY28 (next financial year).",
+   "Plant healthcare (biologicals) expected to reach inflection (EBITDA positive) in 2-3 years; new-business start-up costs expected to flatten over 2-3 years.",
+   "Pioxazon scale-up scaling decision expected by end of this year after first-season feedback; regulatory filings progressing in other geographies.",
+   "Rabi season planned cautiously given soil moisture and reservoir levels below last year in several rain-fed belts."
+  ],
+  "capex_capacity": [
+   "Management said agchem capacity is at saturation for the next 2-3 years, so capex will shift to new growth engines (pharma, biologicals, specialty chemicals).",
+   "Pharma Hyderabad discovery centre up; Lodi QC lab commissioned; kilo lab completing by end of year.",
+   "Udaipur electronic/specialty chemicals kilo lab to be operational by end of year.",
+   "Global biologicals footprint expansion in US, Brazil and Mexico is the largest current investment driver of overheads.",
+   "No specific capex quantum disclosed in the call."
+  ],
+  "demand_pricing": [
+   "AgChem export pricing pressure is across the portfolio, including patented and innovator products, and across domestic and global markets; management described it as an industry-wide phenomenon.",
+   "Commodity prices have firmed from lows; if sustained, this could improve farm economics next season.",
+   "Weakest monsoon in over a decade; kharif acreage flat; growers bought late, less and cheaper.",
+   "New CSM molecules contribute about 16-18% of AgChem export revenue on an annual basis; more than 20 molecules commercialised in the last 3-5 years.",
+   "Order book about USD 1.25 billion on contract value basis; management said it can change with realisations and discounting."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Split of the 18% AgChem export decline between volume and price?",
+    "answer": "Volume down about 3-4%; the rest (about 13-14%) is price and cost pressure."
+   },
+   {
+    "question": "Breakdown of the Rs 1,227 crore export revenue across agchem, pharma and biologicals?",
+    "answer": "Global biologicals about Rs 60 crore and pharma about Rs 75 crore within exports; the agchem split was not stated separately."
+   },
+   {
+    "question": "Normalised gross and EBITDA margin levels?",
+    "answer": "Gross margin currently 47-48% per management; the target held is 48-49%, with 50-52% as the historic guidance range."
+   },
+   {
+    "question": "Drivers of the 6% rise in new-business overheads and loss at plant healthcare?",
+    "answer": "Primarily pharma and biologicals, mainly biologicals expansion in the US, Brazil and Mexico. Plant healthcare loss about USD 10+ million for the full year."
+   },
+   {
+    "question": "Electronics ramp-up timing and size?",
+    "answer": "Early shoots visible; good ramp-up next year; target about USD 100 million business in 3-4 years."
+   },
+   {
+    "question": "Contract assets trend and guidance?",
+    "answer": "Around Rs 700 crore, expected to stay in the same range for the next few quarters; these are committed POs for patented products."
+   },
+   {
+    "question": "Pioxazon market size and revenue expectations?",
+    "answer": "No number committed; launch this month, scale decision by end of this year after one season of field feedback. Labels to expand beyond rice, corn and Bengal gram."
+   },
+   {
+    "question": "Peak potential of new CSM molecules?",
+    "answer": "Management declined to commit; said it could be in the USD 300-400 million range in 3-5 years but would not hold to that figure."
+   }
+  ],
+  "risks_watch": [
+   "Continued AgChem export price erosion from genericization of the largest molecule and industry-wide pricing pressure; the 13-14% price decline may persist for a couple of quarters.",
+   "Gross margin recovery depends on raw material and oil/dollar swings; management said margin benefits lag by a couple of quarters.",
+   "Start-up losses in biologicals and pharma keep overheads elevated (Rs 609 crore Q2) for 2-3 years.",
+   "Pharma CDMO target (Rs 500-600 crore and EBITDA breakeven in 2-3 years) depends on deals in the pipeline; a contract slippage flagged last quarter.",
+   "Weak Rabi outlook given below-normal soil moisture and reservoir levels in rain-fed belts."
+  ],
+  "management_tone": "Candid but defensive: management acknowledged a difficult cycle and pricing pressure, while repeatedly deferring hard numbers on molecule potential, pricing floors and Pioxazon sales. Confidence centred on long-term platforms, with several answers (market share, peak potential, electronics scale) left unquantified.",
+  "key_quotes": [
+   "This has been a difficult quarter in a difficult year for the industry.",
+   "The gross margin as we said is about today at 47%-48%.",
+   "Pioxaniliprole branded as Pioxazon, our first new chemical entity has received a registration in India and has been launched as Pioxazon",
+   "I would not hold myself to that number, as I said it is difficult to put that down."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue (Q2 FY27)",
+    "value": "Rs 17,018 million",
+    "change": "-9% YoY"
+   },
+   {
+    "metric": "Gross margin (Q2 FY27)",
+    "value": "49%",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA margin (Q2 FY27)",
+    "value": "14%",
+    "change": ""
+   },
+   {
+    "metric": "AgChem export revenue decline",
+    "value": "18%",
+    "change": "YoY; volume about -3% to -4%, price/cost about -13% to -14%"
+   },
+   {
+    "metric": "Domestic agri growth",
+    "value": "19%",
+    "change": "YoY"
+   },
+   {
+    "metric": "Domestic biologicals growth",
+    "value": "45%",
+    "change": "YoY; about 18% of domestic agri portfolio"
+   },
+   {
+    "metric": "Global biologicals revenue",
+    "value": "About Rs 60 crore in quarter",
+    "change": "250%+ YoY"
+   },
+   {
+    "metric": "Pharma revenue",
+    "value": "About Rs 75 crore in quarter",
+    "change": "20% YoY"
+   },
+   {
+    "metric": "Operating cash flow",
+    "value": "Rs 9.1 billion",
+    "change": "vs Rs 2.3 billion YoY"
+   },
+   {
+    "metric": "Net cash position",
+    "value": "Rs 36 billion",
+    "change": ""
+   },
+   {
+    "metric": "Net working capital reduction",
+    "value": "18 days, releasing Rs 298 crore",
+    "change": ""
+   },
+   {
+    "metric": "Total overheads (Q2)",
+    "value": "Rs 609 crore",
+    "change": "vs Rs 530 crore YoY (+Rs 70 crore); new businesses, energy and R&D cited"
+   },
+   {
+    "metric": "Order book",
+    "value": "About USD 1.25 billion",
+    "change": ""
+   },
+   {
+    "metric": "Contract assets",
+    "value": "About Rs 700 crore",
+    "change": "Expected to stay in same range"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Udaipur electronic/specialty chemicals kilo lab",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Pharma kilo lab (CRDMO)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 0.0,
+  "gs": -1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "pricing_or_mix",
+   "new_products_or_markets"
+  ],
+  "clarity": "partial",
+  "qRev": -9.0,
+  "qEbitda": null,
+  "outlook": -1,
+  "why": "FY27 revenue guided flattish (cut from low single-digit growth) amid AgChem export price erosion of ~13-14% and volume down 3-4%; backing is a ~USD 1.25 bn order book (value can change with realisations) plus new CSM molecules (16-18% of exports) and pharma/biologicals growth, with no specific new ag capacity since ag capacity is saturated for 2-3 years.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Gross margin guided at 48-49% for next 2-3 quarters (47-48% currently), well below the 50-52% long-term range, with margin benefits lagging raw material moves by a couple of quarters and 13-14% AgChem price erosion persisting."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "unlikely",
+    "when": "",
+    "why": "AgChem capacity is saturated for the next 2-3 years; new capacity is limited to pharma kilo lab (Hyderabad/Lodi) and Udaipur electronics kilo lab due by year end, which are minor in scale."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "possible",
+    "when": "H2 FY27 to FY28",
+    "why": "AgChem volume fell 3-4% in Q2 and management expects green shoots and volume pickup only by end of FY28; domestic agri up 19% and biologicals up 45% are the offsets, with ~USD 1.25 bn order book that can change with realisations."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "No capex quantum disclosed; AgChem capacity is saturated for 2-3 years so capex will shift to pharma, biologicals and specialty chemicals, with Pioxazon scale-up decision due by end of this year, but no firm number was given."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "FY27 revenue guidance was cut to flattish from low single-digit growth, with Q2 revenue down 9% YoY and pricing pressure expected for the next couple of quarters."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "FY27 already flattish after the cut; Rabi outlook cautious with below-normal soil moisture and reservoirs, and pharma CDMO target depends on a deal pipeline where slippage was flagged last quarter."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "Pioxazon scale-up decision by end of CY2026; labels expanding",
+    "why": "Pioxazon (first in-house NCE) registered and launched in India this month, with labels expanding beyond rice, corn and Bengal gram after one season of field feedback; no sales number committed."
+   },
+   {
+    "k": "pricing",
+    "label": "AgChem price erosion persists",
+    "call": "likely",
+    "when": "next 2 quarters",
+    "why": "Price/cost down about 13-14% YoY on AgChem exports from genericisation of the largest molecule, with management expecting pricing pressure for the next couple of quarters and cost increases not passed through."
+   },
+   {
+    "k": "cost_actions",
+    "label": "Biologicals and pharma start-up overheads",
+    "call": "likely",
+    "when": "2-3 years",
+    "why": "Total Q2 overheads Rs 609 crore vs Rs 530 crore YoY (+Rs 70 crore), with plant healthcare loss about USD 10+ million for FY27 and inflection to EBITDA-positive expected in 2-3 years."
+   },
+   {
+    "k": "working_capital",
+    "label": "Working capital release and net cash",
+    "call": "surely",
+    "when": "already achieved",
+    "why": "Net working capital cut by 18 days (Rs 298 crore) and operating cash flow rose to Rs 9.1 bn from Rs 2.3 bn YoY, leaving net cash of about Rs 36 bn."
+   }
+  ],
+  "tone": {
+   "mgmt": "cautious",
+   "analysts": "probing",
+   "note": "Management was confident on biologicals (up 45% domestic, 250%+ global), pharma kilo labs and the working-capital release, but was cautious on AgChem pricing, cut FY27 to flattish, and deferred numbers on molecule potential, Pioxazon sales and electronics scale; analysts pressed on price floors and "
+  }
  }
 }

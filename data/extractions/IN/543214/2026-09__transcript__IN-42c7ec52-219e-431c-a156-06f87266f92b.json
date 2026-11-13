@@ -1,0 +1,451 @@
+{
+ "doc_id": "IN-42c7ec52-219e-431c-a156-06f87266f92b",
+ "market": "IN",
+ "company_id": "543214",
+ "name": "NDR Auto Components Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-12",
+ "period": "2026-09",
+ "title": "NDR Auto Components Ltd - 543214 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q2 FY27 EBITDA margin 11.08% (Q2 call says ~9.7% for the quarter per analyst) with order book INR1,190 crore; management says H2 margins similar and no annual guidance, with capex only INR60 crore announced plus JV.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 90,
+   "quote": "Our capacity utilization should be approximately 90% across our plants."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We are going to put INR60 crore as the projects we have announced, the joint bench is going to be another INR60 crore"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation ~90% across plants",
+    "quote": "Our capacity utilization should be approximately 90% across our plants.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Raw material pass-through, no lag",
+    "quote": "We are mostly able to pass on the raw material prices to our customers.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Annual guidance withheld; no FY27 numbers",
+    "quote": "We do not give annual guidance.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Brownfield expansion plus DYA JV capacity",
+    "quote": "the Board of Directors has approved the Brownfield expansion of our Gujarat and Kharkhoda facilities",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "structure",
+    "label": "New seating entrant Forvia via Gabriel",
+    "quote": "Adding a new player, definitely makes it tougher to enter a new OEM.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Organic revenue",
+    "value": "INR2,000 crore organic before FY30 (order book INR1,150 crore plus current revenue)",
+    "change": "held",
+    "horizon": "FY30",
+    "quote": "So that takes us up to INR2,000 crore."
+   },
+   {
+    "metric": "JV order target",
+    "value": "INR800-1,000 crore executed in FY31",
+    "change": "new",
+    "horizon": "FY31",
+    "quote": "We would estimate something between INR800 crore and INR1,000 crore that is going to be executed in FY31."
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "similar level in H2; sustainable 11%+",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "In terms of margins, we should be at a similar level."
+   },
+   {
+    "metric": "Vision",
+    "value": "INR3,000 crore by FY30 (aspirational)",
+    "change": "held",
+    "horizon": "FY30",
+    "quote": "we are aspiration to achieve this INR3,000 crore in FY30."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA margin",
+    "outcome": "met",
+    "quote": "Our EBITDA margins remained healthy at 11.08%"
+   },
+   {
+    "metric": "Revenue target (organic)",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Bharat Seats revenue",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Hayashi JV break-even revenue",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Annual capex",
+    "outcome": "missed",
+    "quote": "We are going to put INR60 crore as the projects we have announced, the joint bench is going to be another INR60 crore"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Maruti Suzuki",
+    "relation": "customer"
+   },
+   {
+    "name": "Toyota",
+    "relation": "customer"
+   },
+   {
+    "name": "Hyundai",
+    "relation": "customer"
+   },
+   {
+    "name": "Kia",
+    "relation": "customer"
+   },
+   {
+    "name": "DYA",
+    "relation": "partner"
+   },
+   {
+    "name": "Forvia",
+    "relation": "competitor"
+   },
+   {
+    "name": "Gabriel India",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Auto EV transition",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Q2 EBITDA margin ~9.7% per analyst; mgmt cites Haryana wage hike",
+    "quote": "It is largely due to the minimum wage increase in Haryana, that has led to an increase in other expenses."
+   },
+   {
+    "label": "Evasion on SOP split and FY27/28 ballpark",
+    "quote": "Let us get back to you on that."
+   },
+   {
+    "label": "Associate PAT jump, called sustainable",
+    "quote": "Yes, I think that is a sustainable number."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 9,
+   "margin": 6,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "SOP / interim revenue split",
+    "quote": "Okay. Let us just get back to you on that."
+   },
+   {
+    "topic": "Price vs volume split",
+    "quote": "We do not have that off hand. We will share that with you."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "NDR Auto Q2 FY27 revenue INR247.86 crore with 11.08% EBITDA margin; consolidated order book up to INR1,190 crore.",
+  "overview": "Management reported Q2 FY27 revenue of INR247.86 crore, EBITDA of INR27.47 crore (11.08% margin) and PAT of INR19.78 crore. Consolidated order book rose to INR1,190 crore (INR1,150 crore standalone, INR40 crore NDR Hayashi JV), driven mainly by Maruti Suzuki, Suzuki two-wheeler and new Toyota business. A 51% JV with Korea's DYA was announced (INR62.96 crore investment) targeting Hyundai and Kia full seat assemblies with INR800-1,000 crore of business expected in FY31. Management reiterated an INR3,000 crore revenue ambition by FY30 but gave no annual guidance; EBITDA margin was pressured by Haryana minimum wage hikes.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue (Q2 FY27)",
+    "value": "INR247.86 crore",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA (Q2 FY27)",
+    "value": "INR27.47 crore",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA margin (Q2 FY27)",
+    "value": "11.08% (management statement); analyst cited ~9.7% for the quarter, not disputed",
+    "change": ""
+   },
+   {
+    "metric": "PAT (Q2 FY27)",
+    "value": "INR19.78 crore",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated order book (exit Q2)",
+    "value": "INR1,190 crore (standalone INR1,150 crore; NDR Hayashi JV INR40 crore)",
+    "change": ""
+   },
+   {
+    "metric": "Share of profit from associate (Q2)",
+    "value": "INR5.2 crore",
+    "change": "up ~2.5x QoQ per analyst; management says sustainable"
+   },
+   {
+    "metric": "Other expenses",
+    "value": "up ~INR5 crore QoQ (analyst cited ~41%)",
+    "change": "Haryana minimum wage hike ~INR2.5 crore; NDR South job work ~INR2.5 crore"
+   },
+   {
+    "metric": "Other income (consolidated)",
+    "value": "INR3.84 crore; includes ~INR2.7 crore from NDR South job work",
+    "change": ""
+   },
+   {
+    "metric": "CWIP (closing)",
+    "value": "INR39 crore",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "Seating (standalone)",
+    "commentary": "Predominant part of order book and revenue; seat covers and seat frames supplied to Maruti Suzuki, Kia and others. Management says seat frames and fabric supply continues in standalone entity."
+   },
+   {
+    "name": "Non-seating auto components",
+    "commentary": "Order wins include Toyota business and sunshades (OEM-fitted door heat-protection parts) still under discussion with more OEMs; some order wins from 2-wheeler segment."
+   },
+   {
+    "name": "NDR Hayashi JV",
+    "commentary": "Order book INR40 crore; orders from Toyota, with Maruti Suzuki models and other OEM presentations in progress."
+   },
+   {
+    "name": "DYA JV (51% NDR)",
+    "commentary": "Proposed full seat assemblies for Hyundai Kia; INR62.96 crore investment; to be fully consolidated; production targeted FY31 with INR800-1,000 crore business and 1-1.5 lakh volume, content per vehicle INR50,000-80,000."
+   }
+  ],
+  "guidance_outlook": [
+   "No annual guidance given; management said H2 margins should be similar to H1, with similar to slightly improved H1-on-H1 trajectory depending on model mix.",
+   "INR3,000 crore revenue ambition targeted by FY30: current top line INR900-1,000 crore plus INR1,150 crore standalone order book plus INR800-1,000 crore DYA JV in FY31; further initiatives under way.",
+   "Management expects EBITDA around 11% sustainable and hopes to return to ~11% from Q3; new capacity ramp expected to be slightly better next year.",
+   "New standalone seat-related ramp-ups: NDR South started, more models at end of year, seat belt reminder and seat programmes early next year.",
+   "Management said most of the INR1,150 crore order book will be executed by FY30, with FY29 and FY30 bigger years; no split by year provided yet."
+  ],
+  "capex_capacity": [
+   "Board approved brownfield expansion at Gujarat and Kharkhoda plants for seat frames, trim and other auto ancillaries; new capex announced is for Maruti only.",
+   "Projects announced worth ~INR60 crore; JV capex another ~INR60 crore plus yearly maintenance capex (INR120 crore total cited for INR1,000-3,000 crore step-up).",
+   "Capacity utilisation approximately 90% across plants.",
+   "CWIP INR39 crore including Latch seat belt reminder system project and other standalone capex; expansions expected around January 2027.",
+   "Land acquired at Aurangabad for NDR Hayashi JV plant; Toyota business at Aurangabad to be announced later."
+  ],
+  "demand_pricing": [
+   "Raw material price increases are mostly passed on to customers with no lag, per management.",
+   "Analyst-sought price vs volume split for Q2 not available on call; management to share later.",
+   "Competition: Gabriel India announced JV with Forvia; management said this makes it tougher to win new OEMs but it is confident of retaining Maruti Suzuki share and entering Kia and Hyundai.",
+   "Company currently sells only in India; no exports yet, though export initiatives are being worked on.",
+   "Associate Toyo Seats (TSIL) turned profitable; share of associate profit ~INR5.2 crore per quarter, described as sustainable; price increases from customers reduced losses at NHI."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Which customers make up the INR500 crore order book increase, and what size is expected from the DYA JV?",
+    "answer": "Mainly Maruti Suzuki and Suzuki two-wheeler, plus new Toyota business; DYA JV estimated at INR800-1,000 crore executed in FY31."
+   },
+   {
+    "question": "What caused the dip in consolidated profit versus standalone PBT, and what is the nature of other income?",
+    "answer": "Standalone includes BSL dividend which is eliminated on consolidation; other income of ~INR2.7 crore arises from NDR South job work (manpower/rent) with matching expenses of ~INR2.5 crore, netted off."
+   },
+   {
+    "question": "Is the Haryana minimum wage hike the reason for higher other expenses, and will margins return to 11-12%?",
+    "answer": "Yes, Haryana minimum wage hike drove the increase (about INR2.5 crore of the QoQ rise is NDR South, balance Haryana wages); management hopes for ~11% margin from Q3 with cost measures."
+   },
+   {
+    "question": "Is the INR60 crore capex sufficient for the INR1,150 crore order book?",
+    "answer": "Management said the capex supports the INR1,150 crore order book and uses some existing capacity, so it is not incremental to that book."
+   },
+   {
+    "question": "Will the DYA JV's INR800-1,000 crore include Hyundai and is it combined seat value?",
+    "answer": "Only Kia is counted in the INR800-1,000 crore (about INR50,000-80,000 content per vehicle); Hyundai to be estimated later. Figure is combined seat value including company-supplied frames and fabric."
+   },
+   {
+    "question": "Can management give FY27/FY28 guidance or an SOP split of the order book?",
+    "answer": "No annual guidance; management will revert on the order-book SOP split and ramp-up schedule for the next three years."
+   }
+  ],
+  "risks_watch": [
+   "Haryana minimum wage increase keeps other expenses elevated; watch whether EBITDA margin recovers to ~11% in Q3.",
+   "Order book ramp-up timing unknown; management has no year-wise split and said last-minute delays happen.",
+   "DYA JV execution (FY31 production target, Hyundai/Kia dependence) and JV profitability below standalone margins.",
+   "Increased competition from Gabriel-Forvia JV for OEM seating business.",
+   "Pending pass-through of manpower cost increases to OEMs, still under negotiation."
+  ],
+  "management_tone": "Confident on the long-term order book and the INR3,000 crore ambition, but cautious and often deferring on specifics: no annual guidance, several answers promised later (price/volume split, SOP schedule, FY27-28 ballpark).",
+  "key_quotes": [
+   "Our EBITDA margins remained healthy at 11.08% despite the environmental and supply chain challenges, which is a reflection of the efficiency of our operations.",
+   "We do not give annual guidance.",
+   "We are mostly able to pass on the raw material prices to our customers.",
+   "We will achieve the INR2,000 organic from it."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Brownfield expansion at Gujarat and Kharkhoda plants for seat frames, trim and auto ancillaries (Maruti-related capex)",
+    "size_pct": null,
+    "capex_cr": 60.0,
+    "q": 2,
+    "status": "approved",
+    "mat": "minor"
+   },
+   {
+    "what": "DYA JV full seat assembly plant for Hyundai/Kia (51% NDR, INR62.96 crore investment), production targeted FY31",
+    "size_pct": null,
+    "capex_cr": 62.96,
+    "q": 16,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": 90.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "new_products_or_markets",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "No annual guidance; management reiterates INR3,000 crore FY30 aspiration backed by INR1,150 crore standalone order book (executed mainly FY29-FY30) and INR800-1,000 crore DYA JV business in FY31, with ~90% utilisation and a ~INR60 crore announced capex plus ~INR60 crore JV capex, though no annual split or new-capacity timing beyond ~January 2027 was given.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "Q3 FY27",
+    "why": "Management hopes to return to ~11% EBITDA margin from Q3 and says H2 margins should be similar to H1 (Q2 at 11.08% per management, ~9.7% per analyst), but Haryana minimum wage hike (~INR2.5 crore) and NDR South job work costs (~INR2.5 crore) weigh on other expenses that rose ~INR5 crore QoQ."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "possible",
+    "when": "around Jan 2027 (Q4 FY27)",
+    "why": "Expansions in CWIP (INR39 crore) expected around January 2027 and new capacity ramp slightly better next year, but the INR60 crore announced capex is said to use some existing capacity; DYA JV plant production only targeted FY31."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "H2 FY27 to FY29",
+    "why": "Consolidated order book at INR1,190 crore (standalone INR1,150 crore) mainly from Maruti Suzuki, Suzuki two-wheeler and new Toyota business, with most of it executed by FY30 and FY29-FY30 bigger years; utilisation already ~90%."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Utilisation at ~90% across plants with the INR60 crore brownfield programme approved and a further ~INR60 crore JV capex, but management has not guided to a new standalone capex beyond the approved Gujarat/Kharkhoda expansion."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "No annual guidance was given and management deferred FY27/FY28 ballpark and SOP split to later, while margins are under pressure from wage costs; the INR3,000 crore FY30 figure is explicitly aspirational."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Analysts flagged margin pressure (~9.7% per analyst vs 11.08% claimed) and management admitted last-minute ramp delays happen, with no year-wise order book split yet."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "end of FY27 to early FY28",
+    "why": "Management flagged more models at NDR South by year-end, seat belt reminder and seat programmes early next year, plus sunshades and Toyota business still under discussion with more OEMs."
+   },
+   {
+    "k": "new_markets",
+    "label": "DYA JV full seat assemblies for Hyundai/Kia",
+    "call": "likely",
+    "when": "FY31",
+    "why": "51% JV with INR62.96 crore investment targets INR800-1,000 crore business (Kia counted) executed in FY31 with 1-1.5 lakh volume, though production is far beyond the 2-4 quarter window."
+   },
+   {
+    "k": "order_book",
+    "label": "Toyota and Suzuki two-wheeler order wins",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Consolidated order book rose by about INR500 crore QoQ to INR1,190 crore, mainly Maruti Suzuki, Suzuki two-wheeler and new Toyota business; Toyota Aurangabad business to be announced later."
+   },
+   {
+    "k": "pricing",
+    "label": "Pass-through of raw material and manpower cost increases",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Raw material increases are passed on with no lag per management, but manpower cost pass-through to OEMs is still under negotiation after the Haryana wage hike of ~INR2.5 crore."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on the INR1,190 crore order book, the INR3,000 crore FY30 aspiration and sustainable ~11% margin, but cautious and deferring on annual guidance, price/volume split and SOP schedule; analysts pressed on margin (~9.7% vs 11.08%), other expense jump and whether the DYA JV count"
+  }
+ }
+}

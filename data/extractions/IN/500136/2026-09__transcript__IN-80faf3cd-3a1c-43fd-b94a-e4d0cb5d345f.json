@@ -1,0 +1,440 @@
+{
+ "doc_id": "IN-80faf3cd-3a1c-43fd-b94a-e4d0cb5d345f",
+ "market": "IN",
+ "company_id": "500136",
+ "name": "Ester Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-12",
+ "period": "2026-09",
+ "title": "Ester Industries Ltd - 500136 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Plastics & polymers",
+  "thesis": "Film volumes +13.9% to 24,291 MT and film EBIT swung to INR 34.5 Cr, but specialty polymers revenue fell 49% and debt rose to INR 748.8 Cr on working capital; capex discipline is the positive.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress",
+   "Supply discipline"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 85.3,
+   "quote": "Capacity utilization during the first half improved to 85.3% compared with 78.4% in the corresponding period last year."
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "New capacity additions have been relatively moderate compared to the demand growth.",
+   "quote": "we are not planning any major capital expenditure."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "No major capex planned beyond maintenance",
+    "quote": "we are not planning any major capital expenditure",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "Ester Filmtech utilisation 78.4% → 85.3%",
+    "quote": "Capacity utilization during the first half improved to 85.3% compared with 78.4%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Specialty polymer revenue down 49% YoY",
+    "quote": "Revenue declined by 49% to INR 29.3 crores from INR 57.4 crores.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables up to INR 264.3 Cr from 184.9 Cr",
+    "quote": "Trade receivables increased to INR 264.3 crores as of September 26 from INR 184.9 crores as of March 26.",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Specialty Polymers growth",
+    "value": "approximately 25% CAGR over next three to five years, FY27 base",
+    "change": "held",
+    "horizon": "3-5 years",
+    "quote": "We continue to target approximately 25% CAGR in specialty polymer revenue over the next three to five years, taking FY27 as the base year."
+   },
+   {
+    "metric": "VAS share of specialty films",
+    "value": "approximately 35% by Q4 FY27; 50-60% over next two to three years",
+    "change": "held",
+    "horizon": "2-3 years",
+    "quote": "We are targeting to increase the share of value added in specialty films to approximately 35% by Q4 FY27 and further to around 50-60% over next two to three years."
+   },
+   {
+    "metric": "FY27 debt repayment",
+    "value": "approximately INR100 crores full year target",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we repaid term loans of INR 53.5 crores during H1 FY27 against our full year repayment target of approximately INR 100 crores."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Specialty Polymers growth",
+    "outcome": "missed",
+    "quote": "We acknowledge the near -term demand challenges in one of our key specialty products."
+   },
+   {
+    "metric": "FY27 debt repayment",
+    "outcome": "missed",
+    "quote": "But for increased requirement of working capital, we would have seen reduction in debt during H1 FY."
+   },
+   {
+    "metric": "VAS share of film volumes",
+    "outcome": "met",
+    "quote": "representing approximately 27% of total film volume compared with 10,107 metric ton in H1 FY26"
+   },
+   {
+    "metric": "rPET utilisation",
+    "outcome": "not_discussed",
+    "quote": ""
+   }
+  ],
+  "entities": [
+   {
+    "name": "Loop Industries",
+    "relation": "partner"
+   },
+   {
+    "name": "Nike",
+    "relation": "customer"
+   },
+   {
+    "name": "Reliance",
+    "relation": "supplier"
+   },
+   {
+    "name": "Toyo Engineering India",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Anti-dumping protection",
+   "Specialty chem destocking end",
+   "Premiumisation in consumption",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Net debt to EBITDA near 3x; debt up on working capital",
+    "quote": "Abhi hamara n et debt to EBITDA , agar envelize EBIDTA karenge to close to three aayega."
+   },
+   {
+    "label": "Loop Industries financial strain and funding dependence",
+    "quote": "They may not have the funds today, but they have fund commitment from the private equity partners."
+   },
+   {
+    "label": "Specialty polymer key product demand loss, customer technology switch",
+    "quote": "there has been a technology change, process change at the customer's end, and therefore, they have gone for a completely different chemistry."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 1,
+   "growth": 3,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Specialty polymer product recovery timing",
+    "quote": "we are expecting this sales and product to ramp up. Not only this, there is a very healthy pipeline"
+   },
+   {
+    "topic": "Loop Industries funding",
+    "quote": "They may not have the funds today, but they have fund commitment from the private equity partners."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Ester Industries Q2 FY27 consolidated PAT rose to INR 7.8 crore from a loss of INR 15.8 crore, with film EBIT at INR 34.5 crore and specialty polymer revenue down 49%.",
+  "overview": "Film segment recovered sharply on pass-through of higher PT and MEG feedstock costs, higher volumes (+13.9% YoY) and a rising value-added share (~26% of film volume). Consolidated EBITDA was INR 45.1 crore (10% margin), but down sequentially from INR 58.9 crore in Q1 FY27. Specialty Polymers was the weak spot, with revenue down 49% YoY on demand loss in its largest high-margin product, while Ester Filmtech (subsidiary) turned profitable. Working capital rose by INR 66.7 crore in H1, pushing gross borrowings to INR 748.8 crore, and management guided to net debt to EBITDA of 2 to 2.25x over time.",
+  "segments": [
+   {
+    "name": "Polyester film (BOPET, incl. rPET and chips)",
+    "commentary": "Q2 revenue INR 414.5 crore (+39.6% YoY) on volume of 24,291 MT (+13.9%); EBIT INR 34.5 crore (8.3% margin) vs EBIT loss of INR 6.2 crore in Q2 FY26, but down from INR 39.1 crore in Q1. H1 revenue INR 813.9 crore, EBIT INR 73.6 crore (9%)."
+   },
+   {
+    "name": "Value-added and specialty films",
+    "commentary": "Q2 volume 6,200 MT (~26% of film volume, vs 23% a year ago); H1 record 12,568 MT (~27%, +24.3%). Target ~35% by Q4 FY27 and 50-60% over 2-3 years."
+   },
+   {
+    "name": "rPET",
+    "commentary": "Q2 volume 1,437 MT (+37.4%), revenue INR 18.4 crore (+51%); H1 volume 2,831 MT, revenue INR 35.8 crore. Installed capacity 28,000 TPA at Sitarganj and Hyderabad, largely captive for recycled-content BOPET."
+   },
+   {
+    "name": "Specialty Polymers",
+    "commentary": "Q2 revenue INR 29.3 crore (-49% YoY) on volume 711 MT (vs 1,161 MT); EBIT INR 9.9 crore at 33.9% margin (Q2 FY26: 37%). H1 revenue INR 62 crore (-41%), EBIT INR 24.7 crore (39.9%). Specialty product volume fell to 418 MT from 1,059 MT; value-added product volume rose 187% to 293 MT."
+   },
+   {
+    "name": "Ester Filmtech (wholly owned subsidiary)",
+    "commentary": "Q2 total income INR 168.2 crore (+40.5%), EBITDA INR 16.9 crore (10% margin), PAT INR 2.2 crore vs loss INR 10.3 crore. H1 PAT INR 6.9 crore; capacity utilisation 85.3% vs 78.4%. Profitable in every quarter since Q4 FY26."
+   }
+  ],
+  "guidance_outlook": [
+   "Management expects H2 FY27 film results similar to or slightly better than H1 combined.",
+   "Specialty polymers expected to do slightly better in H2 than H1 as new products mature Jan-Mar 2027, but management conceded the prior-year H1 EBIT level (INR 36 crore) will be hard to reach this year.",
+   "Targeting ~25% CAGR in specialty polymer revenue over 3-5 years, using FY27 as base year.",
+   "Internal target of sustainable ~15% EBITDA margin in film, contingent on 50-60% specialty share.",
+   "Net debt to EBITDA target of 2-2.25x, timeline not fixed; working capital expected to ease as crude falls.",
+   "Elite JV (50:50 with Loop Industries): land acquisition by Q4 FY27 (later stated as Q1 calendar 2027), commercial operations targeted for last quarter of calendar 2028; term loan in-principle approval received, final sanction in 3-4 months.",
+   "Anti-dumping duty on Chinese BOPET imports recommended by DGTR in September; government notification expected by end-December 2026."
+  ],
+  "capex_capacity": [
+   "H1 FY27 capex INR 15.1 crore; beyond sustenance capex and marginal spend for a new specialty polymer product, no major capex planned.",
+   "Elite JV: 45,000 MT per annum recycled polyester chips in Gujarat using Loop's chemical recycling; capex outlay INR 1,200-1,400 crore; Toyo Engineering appointed for detailed engineering; INR 7.1 crore invested by Ester in H1 (INR 25 crore total from each partner so far). Any extra JV debt sits at JV level, not consolidated.",
+   "Film capacity utilisation for Ester Filmtech 85.3% in H1 FY27.",
+   "rPET installed capacity 28,000 TPA (Sitarganj and Hyderabad); management said captive recycling capacity of about 30,000 TPA is sufficient for internal needs, with expansion to be considered at Hyderabad if captive demand rises.",
+   "Specialty polymer new product requires marginal capex, expected to be completed in the current quarter."
+  ],
+  "demand_pricing": [
+   "Management cites Indian BOPET demand growing 8-10% YoY, about 900,000-950,000 TPA, with only 2-3 new lines expected over the next two years; it expects no overcapacity for 8-10 quarters.",
+   "Plastic waste rules mandating 10% post-consumer recycled content in flexible packaging are driving brand owners toward recycled-content polyester film.",
+   "Exports were ~37% of Q2 revenue; US exports revived after tariff disruption; West Asia disruption opened export opportunities.",
+   "Pass-through of PT and MEG cost increases has been achieved; management says EBITDA improved rather than fell as raw material prices rose.",
+   "Film-to-chip spread about INR 27-28/kg currently; specialty spreads vary by customer, quoted as INR 50-100/kg.",
+   "Specialty polymer demand loss at largest customer attributed to a technology and process change at the customer, which moved to a different chemistry; other customers still use the product.",
+   "Specialty polymers: 27 customers at various approval stages on 8-9 products; the two marquee products contribute ~50-55% of volume, with other products 40-45%."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How sustainable are film margins given raw material volatility and cyclicality?",
+    "answer": "Management said demand growth of 8-10% and limited capacity additions should keep supply tight for 8-10 quarters; raw material costs are passed through, so EBITDA has held up. Long-term resilience is expected from moving to 50-60% specialty share."
+   },
+   {
+    "question": "What are the challenges to lifting value-added share and what margin uplift follows?",
+    "answer": "The main challenge is customer approvals. Internal target is a sustainable 15% EBITDA margin, which management links to a 50-60% specialty share. No quantified margin uplift was given."
+   },
+   {
+    "question": "Elite project capex, funding, returns and consolidation impact?",
+    "answer": "Elite is a 50:50 JV, so only 50% of its bottom line is consolidated, with no line-by-line consolidation. Capex INR 1,200-1,400 crore; management guided to EBITDA margins of 40-45% with most volume pre-sold."
+   },
+   {
+    "question": "Is Loop Industries able to fund its equity commitment, and is there a plan B?",
+    "answer": "Management said Elite needs only equity, with Loop holding private equity commitments tied to milestones. A public sector bank has given in-principle term loan approval, with final sanction in 3-4 months. Management called the land timeline the main delay, now Q1 calendar 2027."
+   },
+   {
+    "question": "Why was the specialty product lost and will it return?",
+    "answer": "The product's demand eroded at the largest customer after a process change. The innovated version is treated as a new product needing a 1.5-2 year approval cycle, so commercial sales are expected over the next 6-8 quarters."
+   },
+   {
+    "question": "Why did standalone margin fall sequentially, and what is the ADD impact?",
+    "answer": "Management attributed the sequential drop mainly to lower specialty polymer profitability at Khatima. ADD on Chinese imports is expected to be notified by end-December, and logistics costs are high because of the war."
+   },
+   {
+    "question": "What is gross and net debt, and what is the leverage target?",
+    "answer": "Gross debt is about INR 750 crore (term INR 480 crore, working capital INR 270 crore). Net debt to EBITDA is about 3-3.25x now; target 2-2.25x, which management called prudent and reasonable."
+   },
+   {
+    "question": "What are H2 expectations for film and specialty polymers?",
+    "answer": "Film H2 should be similar to or slightly better than H1. Specialty polymers should do slightly better than H1, but reaching last year's H1 level of about INR 105 crore revenue will be tough."
+   }
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Consolidated total income Q2 FY27",
+    "value": "INR 449 crore",
+    "change": "+25.7% YoY vs INR 357.2 crore"
+   },
+   {
+    "metric": "Consolidated EBITDA Q2 FY27",
+    "value": "INR 45.1 crore (10% margin)",
+    "change": "+160% YoY; down from INR 58.9 crore in Q1 FY27"
+   },
+   {
+    "metric": "Consolidated PAT Q2 FY27",
+    "value": "INR 7.8 crore",
+    "change": "vs loss of INR 15.8 crore in Q2 FY26"
+   },
+   {
+    "metric": "Consolidated PAT H1 FY27",
+    "value": "INR 26.5 crore",
+    "change": "vs loss of INR 22.9 crore in H1 FY26"
+   },
+   {
+    "metric": "Consolidated EBITDA H1 FY27",
+    "value": "INR 104 crore (11.7% margin)",
+    "change": "+124.6% YoY"
+   },
+   {
+    "metric": "Standalone EBITDA Q2 FY27",
+    "value": "INR 28.6 crore (7.8% margin)",
+    "change": "more than doubled YoY; margin down from 11.5% in Q1 as stated on call"
+   },
+   {
+    "metric": "Standalone PAT Q2 FY27",
+    "value": "INR 6.1 crore",
+    "change": "vs loss of INR 4.8 crore in Q2 FY26"
+   },
+   {
+    "metric": "Consolidated EPS",
+    "value": "INR 0.75 (Q2), INR 2.57 (H1)",
+    "change": ""
+   },
+   {
+    "metric": "Total borrowings (consolidated)",
+    "value": "INR 748.8 crore (term debt ~INR 480 crore, working capital ~INR 270 crore)",
+    "change": "vs INR 729 crore at March 2026"
+   },
+   {
+    "metric": "Shareholders' equity",
+    "value": "INR 887.6 crore",
+    "change": "vs INR 782.7 crore at March 2026"
+   },
+   {
+    "metric": "Liquidity",
+    "value": "INR 228.3 crore (cash and bank INR 180.4 crore plus liquid investments INR 47.9 crore)",
+    "change": ""
+   }
+  ],
+  "risks_watch": [
+   "Specialty polymers: largest product lost to customer process change; innovated version needs a 1.5-2 year approval cycle, with commercial sales guided over the next 6-8 quarters; management concedes H1 FY26 EBIT level of about INR 36 crore will be hard to reach in FY27.",
+   "Working capital: receivables rose to INR 264.3 crore and inventory to INR 245.2 crore, adding INR 66.7 crore to net working capital in H1; short-term bank borrowings up INR 51.7 crore. Gross debt INR 748.8 crore, net debt to EBITDA about 3-3.25x against a 2-2.25x target with no fixed timeline.",
+   "Elite JV: land acquisition in Gujarat slipped from Sept/Oct 2025 target to Q1 calendar 2027; term loan sanction pending (3-4 months); Loop's equity depends on private equity commitments tied to milestones. Commercial operations targeted for last quarter of calendar 2028.",
+   "Anti-dumping duty on Chinese BOPET imports recommended by DGTR in September; notification expected by end-December 2026. Timing or scope change would affect film spreads.",
+   "Film spread about INR 27-28/kg; crude decline not yet reflected in PT and MEG prices, so spread and inventory-price effects in Q3 are uncertain. Film segment EBIT fell sequentially to INR 34.5 crore from INR 39.1 crore; standalone EBITDA margin fell to 7.8% from 11.5% in Q1."
+  ],
+  "key_quotes": [
+   "So, this is going to make it difficult to reach that level in this financial year.",
+   "We acknowledge the near -term demand challenges in one of our key specialty products.",
+   "We realize that it is marginally higher than the prudent level, but very soon, we are working very hard to see that it is brought under prudent limits.",
+   "So, in fact, our internal target is to bring it to a sustainable 15% EBITDA margin kind of profile."
+  ],
+  "management_tone": "Confident on the film industry outlook, demand growth and specialty strategy, but noticeably defensive on specialty polymers, where management conceded H1 FY26 levels will be hard to reach and gave no quantified recovery figure. On debt and Elite, management was candid that leverage is slightly above prudent levels and that the land timeline slipped, and it relied on qualitative assurances on Loop's funding.",
+  "_completed": 1
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Elite JV (50:50 with Loop Industries): 45,000 MT per annum recycled polyester chips in Gujarat; capex INR 1,200-1,400 crore",
+    "size_pct": null,
+    "capex_cr": 1300.0,
+    "q": 6,
+    "status": "planned",
+    "mat": "moderate"
+   }
+  ],
+  "util": 85.3,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "demand_or_share_gains",
+   "pricing_or_mix",
+   "capacity_coming"
+  ],
+  "clarity": "partial",
+  "qRev": 25.7,
+  "qEbitda": 160.0,
+  "outlook": 1,
+  "why": "Management guides H2 FY27 film results similar to or slightly better than H1 and targets ~25% CAGR in specialty polymers from FY27 base, but gives no new revenue growth number; backing rests on utilisation of 85.3%, VAS mix rising to ~35% by Q4 FY27, and a Elite JV (45,000 MT, 2028 start) with no major capex planned in the core business.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Consolidated EBITDA margin was 10% in Q2 (INR 45.1 crore, down from INR 58.9 crore in Q1) and film EBIT fell to INR 34.5 crore from INR 39.1 crore; management targets a sustainable ~15% film EBITDA margin only with 50-60% specialty share, versus ~26% VAS share today, and gave no quantified uplift."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "unlikely",
+    "when": "no new capacity in window",
+    "why": "Management said no major capex is planned, Ester Filmtech utilisation is 85.3%, and the only new capacity (Elite JV, 45,000 MT) is guided to commercial operations in the last quarter of calendar 2028, beyond the window."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Film volume grew 13.9% YoY to 24,291 MT in Q2 and H1 VAS volume rose 24.3%, with Indian BOPET demand growing 8-10% and no overcapacity expected for 8-10 quarters; specialty polymer volume fell to 711 MT from 1,161 MT, a drag."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "unlikely",
+    "when": "",
+    "why": "H1 FY27 capex was only INR 15.1 crore, management said 'we are not planning any major capital expenditure', and utilisation is 85.3%, but the call gives no board-level plan for new core capacity beyond the Elite JV already under way."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "Management guides H2 FY27 film results similar to or slightly better than H1, and says reaching last year's H1 specialty EBIT of about INR 36 crore will be hard, so no upgrade is signalled."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Specialty polymer H1 EBIT was INR 24.7 crore (down from about INR 36 crore a year ago), the largest product is lost, the ADD notification is pending, and crude-driven PT/MEG price moves are not yet reflected in spreads (INR 27-28/kg)."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "Q4 FY27 to 6-8 quarters",
+    "why": "Specialty polymer new product marginal capex completes in the current quarter, with commercial sales of the innovated version guided over the next 6-8 quarters after a 1.5-2 year approval cycle; 27 customers across 8-9 products are at approval stages."
+   },
+   {
+    "k": "regulatory",
+    "label": "Anti-dumping duty on Chinese BOPET imports",
+    "call": "likely",
+    "when": "by end-December 2026",
+    "why": "DGTR recommended the ADD in September and government notification is expected by end-December 2026, which would support film spreads on imports that are currently around INR 27-28/kg."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Net debt/EBITDA to 2-2.25x",
+    "call": "possible",
+    "when": "no fixed timeline",
+    "why": "Net debt/EBITDA is about 3-3.25x against a 2-2.25x target, gross debt is INR 748.8 crore, and working capital rose INR 66.7 crore in H1; management expects it to ease as crude falls, with FY27 term repayment target about INR 100 crore (INR 53.5 crore done in H1)."
+   },
+   {
+    "k": "new_markets",
+    "label": "Elite JV (Loop) Gujarat recycled chips",
+    "call": "possible",
+    "when": "land Q1 calendar 2027; ops last qtr CY2028",
+    "why": "Capex INR 1,200-1,400 crore for 45,000 MT with land slipped from Sept/Oct 2025 and term loan sanction pending in 3-4 months; Loop's equity depends on private equity milestones, so timing is at risk."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on film demand (8-10% growth, no overcapacity for 8-10 quarters) and VAS mix, but defensive on specialty polymers and candid that leverage is above prudent levels and the Elite land timeline slipped; analysts pushed on Loop's funding, the specialty product loss and the debt "
+  }
+ }
+}

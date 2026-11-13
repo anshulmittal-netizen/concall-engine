@@ -1,0 +1,407 @@
+{
+ "doc_id": "IN-4a7f77c2-3402-403e-8eb1-de703c0d27d3",
+ "market": "IN",
+ "company_id": "540293",
+ "name": "Pricol Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-10",
+ "period": "2026-09",
+ "title": "Pricol Ltd - 540293 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q2 EBITDA margin 11.82% on 35% revenue growth; management says input-cost headwinds (bare PCBs, memory, labour) persist for a few quarters, with 1-2% EBITDA hit and only partial recovery expected.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Pricing power",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": null,
+   "quote": "We are almost operating at 100% capacity."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "our CAPEX will be Rs.350 crores in that entity, P3L. And the asset turn will be around 3."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Input-cost hit 1-2% EBITDA",
+    "quote": "At least on an EBITDA level, it should be 1 % to 2% in my opinion.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Full recovery not expected",
+    "quote": "we expect that we would not be in a position to 100% recover from the customers",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Polymer plant near 100% utilised",
+    "quote": "We are almost operating at 100% capacity.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q2 revenue growth 35% YoY",
+    "quote": "We have overall, Hitesh, grown by 35%, okay?",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Polymer capacity and revenue ramp",
+    "value": "Real growth from FY28; ~12 months to build capacity",
+    "change": "held",
+    "horizon": "FY28 onwards",
+    "quote": "the real growth of the business will happen from FY'28 and thereupon."
+   },
+   {
+    "metric": "P3L capex",
+    "value": "Rs350 crore over next six quarters, asset turn 3 to 3.25",
+    "change": "held",
+    "horizon": "six quarters",
+    "quote": "our CAPEX will be Rs.350 crores in that entity, P3L. And the asset turn will be around 3."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Polymer turnover capacity",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "DICVS revenue",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Steady-state blended EBITDA margin",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "ACFMS growth vs market",
+    "outcome": "met",
+    "quote": "that is the reason why you find that we are above the market in terms of the growth."
+   },
+   {
+    "metric": "Polymer revenue multiple",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "TVS",
+    "relation": "customer"
+   },
+   {
+    "name": "Ather Energy",
+    "relation": "customer"
+   },
+   {
+    "name": "Royal Enfield",
+    "relation": "customer"
+   },
+   {
+    "name": "Autoliv",
+    "relation": "customer"
+   },
+   {
+    "name": "Honda Motorcycles",
+    "relation": "customer"
+   },
+   {
+    "name": "Bajaj",
+    "relation": "customer"
+   },
+   {
+    "name": "Caterpillar",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Auto EV transition",
+   "Semiconductors & OSAT",
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin squeeze from first-time input costs",
+    "quote": "It could have been better. If you recall in the previous earnings call, we have explained that we continue to face very strong headwinds"
+   },
+   {
+    "label": "Incomplete pass-through expected",
+    "quote": "we expect that we would not be in a position to 100% recover from the customers"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 3,
+   "margin": 5,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Pass-through timing and quantum",
+    "quote": "I cannot put A plus B is equal to C."
+   },
+   {
+    "topic": "Segment-wise growth",
+    "quote": "All our vertical has grown actually at the same rate"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Pricol Q2 FY27 revenue rose 35% YoY to Rs 1,334.02 crore, but EBITDA margin fell to 11.82% on input cost inflation.",
+  "overview": "Pricol reported Q2 FY27 revenue from operations of Rs 1,334.02 crore, with EBITDA margin at 11.82% and PAT of Rs 85.21 crore (6.39% margin). H1 FY27 revenue was Rs 2,417.60 crore, up 29.59% YoY, with H1 EBITDA margin at 11.64%. Management said margins were hit by first-time increases in bare PCB, memory, labour and power costs, plus rupee weakness, and that pass-through to customers is under negotiation and will not be fully recovered. Growth was attributed to strong two-wheeler demand and new product launches, with all three divisions growing at roughly the same rate.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (Q2 FY27)",
+    "value": "Rs 1,334.02 crore",
+    "change": "+35.03% QoQ as stated by management (Q2 vs previous quarter); +35% YoY per Q&A"
+   },
+   {
+    "metric": "EBITDA margin (Q2 FY27)",
+    "value": "11.82%",
+    "change": "EBITDA growth 27.87% (as stated, basis not specified)"
+   },
+   {
+    "metric": "PAT (Q2 FY27)",
+    "value": "Rs 85.21 crore; margin 6.39%",
+    "change": ""
+   },
+   {
+    "metric": "Revenue from operations (H1 FY27)",
+    "value": "Rs 2,417.60 crore",
+    "change": "+29.59% YoY"
+   },
+   {
+    "metric": "EBITDA margin (H1 FY27)",
+    "value": "11.64%",
+    "change": "EBITDA growth 24.95% YoY (H1)"
+   },
+   {
+    "metric": "PAT margin (H1 FY27)",
+    "value": "6.30%; EPS Rs 12.49",
+    "change": ""
+   },
+   {
+    "metric": "Gross margin",
+    "value": "Declined about 150 bps QoQ (analyst figure, not disputed by management)",
+    "change": "-150 bps QoQ"
+   },
+   {
+    "metric": "P3L (plastics) Q2 revenue and EBITDA",
+    "value": "Revenue Rs 312 crore; EBITDA margin 9.9%",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "DICVS (driver information and clusters)",
+    "commentary": "Grew in line with company average of about 35% YoY in Q2; new Bajaj Pulsar launch with next-generation TFT clusters added value. Honda electronic LCD cluster business is ongoing for about two years."
+   },
+   {
+    "name": "ACFMS (fuel and water pumps)",
+    "commentary": "Grew in line with company average of about 35% in Q2; driven by domestic two-wheeler fuel pumps and export large water pumps to US (Caterpillar cited as a large customer). Little major import content, but labour costs rose."
+   },
+   {
+    "name": "Plastics (P3L)",
+    "commentary": "Q2 revenue Rs 312 crore at 9.9% EBITDA margin. FY26 revenue was about Rs 950-1,000 crore; plant running at close to 100% capacity, with Rs 350 crore capex over the next six quarters and asset turn of about 3 to 3.25x."
+   }
+  ],
+  "guidance_outlook": [
+   "Management expects input cost headwinds (bare PCBs, memory, labour, power, forex) to persist for a few more quarters before normalising.",
+   "Management hopes to conclude price pass-through negotiations with customers in Q3 FY27, but does not expect full 100% recovery.",
+   "Management estimated first-time cost escalations at 1% to 2% of EBITDA as a rough figure, while declining to give a product-level breakup or a combined margin number.",
+   "Plastics real growth expected from FY28 onwards, after capacity creation over the next 12 months.",
+   "Demerger into DICVS and ACFMS: NCLT process expected to take a couple of quarters; full operational split of the two divisions planned from 1 April 2027."
+  ],
+  "capex_capacity": [
+   "P3L (plastics) capex of Rs 350 crore over the next six quarters, with asset turn of about 3 to 3.25x.",
+   "Plastics business operating at close to 100% capacity; next 12 months are for building new capacity before commissioning.",
+   "Internal divisionalisation of the company started from October 2026 (controls, people moved), with full operational split from 1 April 2027."
+  ],
+  "demand_pricing": [
+   "Two-wheeler segment grew about 35% in Q2, against industry production growth of about 20% per the analyst; management said this was the highest two-wheeler growth in history and Pricol is heavily weighted to two-wheelers.",
+   "Pricing: quarterly index-linked pass-through for raw material and forex works as usual, but first-time increases since Q1 (bare PCB, memory chips due to AI demand, casting and machining, labour cost from new wage rules in northern India) are under negotiation with customers.",
+   "Management said market share was not lost and some was gained from new Q2 launches in DIS, plastics and ACFMS.",
+   "Plastics customers named: TVS, Ather Energy, Royal Enfield, Autoliv; Honda Motorcycles to become a key plastics customer in FY28.",
+   "Honda relationship is not new; it started about a year ago on electronic LCD clusters."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How much of the gross margin decline (150 bps QoQ) is passed through, and what would EBITDA be without it?",
+    "answer": "Management said input costs rose from three factors (forex, bare PCBs, memory) and that EBITDA is lower than top-line growth as a result. Customer settlement is expected next quarter, but not full recovery."
+   },
+   {
+    "question": "What is the impact of the first-time cost increases on Q2 EBITDA, and what margin would result with full pass-through?",
+    "answer": "Management put the first-time cost escalation impact at roughly 1% to 2% of EBITDA. It declined to combine this with pass-through into a margin number, saying the impact varies by product."
+   },
+   {
+    "question": "What is the plastics FY26 revenue and FY28 outlook?",
+    "answer": "FY26 plastics revenue was close to Rs 950-1,000 crore. Management declined to give a closing-year value but said the pipeline is good and real growth starts in FY28."
+   },
+   {
+    "question": "What are the P3L Q2 revenue and EBITDA figures?",
+    "answer": "Q2 P3L revenue was Rs 312 crore with EBITDA of 9.9%."
+   },
+   {
+    "question": "What are the plastics capex and asset turn?",
+    "answer": "Capex of Rs 350 crore over the next six quarters, with asset turn of about 3 to 3.25x."
+   },
+   {
+    "question": "What drove growth above industry, and was there market share gain?",
+    "answer": "Two-wheeler growth of about 35%, value-added launches such as the Bajaj TFT cluster, and US export ACFMS pumps. Management said no share was lost and some was gained."
+   },
+   {
+    "question": "What is the status of the demerger?",
+    "answer": "Application submitted; final NCLT orders expected in a couple of quarters. Internal divisionalisation started in October, with full split from 1 April 2027."
+   }
+  ],
+  "risks_watch": [
+   "EBITDA margin pressure from bare PCB, memory, labour and power costs and rupee weakness; management expects this to last a few more quarters.",
+   "Pass-through recovery is uncertain: management does not expect full recovery, and customers may not pass costs on to end customers.",
+   "Plastics growth depends on Rs 350 crore capex being commissioned within about 12 months; current capacity is fully used.",
+   "Demerger approval from NCLT is pending and expected to take a couple of quarters.",
+   "Management did not quantify the gross-margin impact or give a clear view on Q3 margin direction; it said it was hard to predict."
+  ],
+  "management_tone": "Confident on demand and top-line growth, but cautious and somewhat evasive on margins: management repeatedly declined to quantify product-level cost impact or the combined pass-through margin, and said outcomes were uncertain.",
+  "key_quotes": [
+   "It could have been better. If you recall in the previous earnings call, we have explained that we continue to face very strong headwinds , primarily because of the rising input cost.",
+   "We expect these strong headwinds to continue for a few more quarters before everything gets settled down.",
+   "we expect that we would not be in a position to 100% recover from the customers, considering that everything the customer also cannot pass on to the end customer.",
+   "I cannot put A plus B is equal to C. That is why I am telling product to product it differs."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "P3L (plastics) capacity build, Rs 350 crore capex over next six quarters (asset turn ~3-3.25x)",
+    "size_pct": null,
+    "capex_cr": 350.0,
+    "q": 4,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": 100.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "none",
+  "qRev": 35.0,
+  "qEbitda": 27.87,
+  "outlook": 1,
+  "why": "Q2 revenue grew ~35% YoY with two-wheeler demand and new launches, but no explicit FY guidance number was given; plastics is at ~100% utilisation with Rs 350 crore capex over six quarters (live ~4 quarters out) and real growth guided from FY28, while price pass-through is still under negotiation.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Q2 EBITDA margin fell to 11.82% and H1 is 11.64%, with gross margin down about 150 bps QoQ; management expects input cost headwinds to persist for a few more quarters and only partial pass-through (first-time costs estimated at 1-2% of EBITDA)."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q4 FY27 to Q1 FY28",
+    "why": "Rs 350 crore P3L capex over the next six quarters is committed, with the plastics plant at close to 100% capacity and the next 12 months earmarked for building capacity before commissioning."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-4 quarters",
+    "why": "Q2 revenue grew about 35% YoY and H1 grew 29.59%, with two-wheeler demand running about 35% against industry growth of about 20%, and no share lost; no explicit FY volume number was given."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "surely",
+    "when": "next 6 quarters",
+    "why": "Rs 350 crore P3L capex is already firmly committed, with plastics utilisation near 100%, so the capex is already announced and no new announcement is needed in the window."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Management gave no explicit FY guidance number, and margin headwinds and uncertain pass-through argue against a raise, though the top line is running about 35% YoY."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Management said input costs will persist for a few quarters, pass-through will not fully recover, and Q3 margin direction is hard to predict, with the gross margin down about 150 bps QoQ."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "New product launches in Q2 (Bajaj Pulsar TFT clusters, DIS, plastics and ACFMS) added value, and Honda is set to become a key plastics customer in FY28; no specific new launch dates were given."
+   },
+   {
+    "k": "pricing",
+    "label": "Customer price pass-through settlement",
+    "call": "likely",
+    "when": "Q3 FY27",
+    "why": "Management hopes to conclude first-time cost pass-through talks in Q3 FY27, but does not expect full 100% recovery on bare PCB, memory, labour and power costs."
+   },
+   {
+    "k": "corporate_action",
+    "label": "Demerger into DICVS and ACFMS",
+    "call": "likely",
+    "when": "from 1 April 2027",
+    "why": "NCLT process expected to take a couple of quarters, with full operational split planned from 1 April 2027 after internal divisionalisation started in October 2026."
+   },
+   {
+    "k": "new_markets",
+    "label": "Honda plastics business ramp",
+    "call": "likely",
+    "when": "FY28",
+    "why": "Honda Motorcycles is to become a key plastics customer in FY28, adding to the existing Honda electronic LCD cluster business that started about a year ago."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on two-wheeler demand and top-line growth of about 35% and on the Rs 350 crore plastics capex, but cautious and evasive on margins, declining to quantify product-level cost impact or a combined pass-through margin; analysts pushed on margin impact and pass-through."
+  }
+ }
+}

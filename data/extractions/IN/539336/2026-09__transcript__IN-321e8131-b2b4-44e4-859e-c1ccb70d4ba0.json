@@ -1,0 +1,510 @@
+{
+ "doc_id": "IN-321e8131-b2b4-44e4-859e-c1ccb70d4ba0",
+ "market": "IN",
+ "company_id": "539336",
+ "name": "Gujarat Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-11",
+ "period": "2026-09",
+ "title": "Gujarat Energy Ltd - 539336 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "CGD volumes up 24% YoY to 10.7 MMSCMD but Morbi collapsed from ~8 to ~1 MMSCMD, gas trading margin fell to ~4% and CGD margin is now guided lower at INR5-6/scm versus INR5.5-6.5 prior.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Supply exit",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -2,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 24,
+   "quote": "Close to 24%."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "We reiterate our FY 27 capex guidance of approximately INR1,000 crores, with investments focused largely on strengthening our CGD infrastructure and supporting future volume growth."
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Morbi 8 → ~1 MMSCMD",
+    "quote": "Now we are at one.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "CGD margin cut to INR5-6/scm",
+    "quote": "Now it will be around INR5 to INR6.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Gas trading margin ~4% in Q2",
+    "quote": "in this quarter, we had around 4%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Trading margin guide now 5-6%",
+    "quote": "we stick by the guidance we have given, 5% to 6%",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "novelty",
+    "label": "0.8 MTPA Henry Hub LNG at $7-9 DES",
+    "quote": "aggregating to 0.8 MTPA for a tenure up to 10 years, with estimated pricing in the range of $7-$9 per MMBTU DES basis",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "CGD capex FY27",
+    "value": "approximately INR1,000 crores",
+    "change": "held",
+    "quote": "We reiterate our FY 27 capex guidance of approximately INR1,000 crores"
+   },
+   {
+    "metric": "CGD EBITDA margin",
+    "value": "INR5-6/scm",
+    "change": "cut",
+    "quote": "Now it will be around INR5 to INR6."
+   },
+   {
+    "metric": "Gas trading margin",
+    "value": "5-6% margin",
+    "change": "cut",
+    "quote": "we stick by the guidance we have given, 5% to 6%"
+   },
+   {
+    "metric": "Long-term LNG book",
+    "value": "4 MTPA total book",
+    "change": "new",
+    "quote": "We want to have a book of close to 4 million tons."
+   },
+   {
+    "metric": "CNG station additions",
+    "value": "75+ CNG stations in FY27",
+    "change": "held",
+    "quote": "We continue to target the addition of 75 plus CNG stations during FY 27"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Gas trading profit FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "CGD capex FY27",
+    "outcome": "met",
+    "quote": "We reiterate our FY 27 capex guidance of approximately INR1,000 crores"
+   },
+   {
+    "metric": "CGD EBITDA margin",
+    "outcome": "missed",
+    "quote": "Now it will be around INR5 to INR6."
+   },
+   {
+    "metric": "Gas trading margin",
+    "outcome": "missed",
+    "quote": "in this quarter, we had around 4%"
+   },
+   {
+    "metric": "Morbi minimum volume",
+    "outcome": "missed",
+    "quote": "Now we are at one."
+   },
+   {
+    "metric": "Long-term LNG contracts",
+    "outcome": "held",
+    "quote": "We want to have a book of close to 4 million tons."
+   },
+   {
+    "metric": "CNG stations additions",
+    "outcome": "held",
+    "quote": "We continue to target the addition of 75 plus CNG stations during FY 27"
+   },
+   {
+    "metric": "Non-Morbi industrial volume",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Qatar Energy",
+    "relation": "supplier"
+   },
+   {
+    "name": "Shell",
+    "relation": "supplier"
+   },
+   {
+    "name": "Uniper",
+    "relation": "supplier"
+   },
+   {
+    "name": "TotalEnergies",
+    "relation": "supplier"
+   },
+   {
+    "name": "GAIL",
+    "relation": "competitor"
+   },
+   {
+    "name": "GSFS",
+    "relation": "partner"
+   },
+   {
+    "name": "GSPC LNG",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Rural demand recovery",
+   "Consolidation / competitor exits",
+   "Renewables & storage",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Morbi volume collapse 8 to ~1 MMSCMD",
+    "quote": "Now we are at one."
+   },
+   {
+    "label": "Guidance cut on CGD margin and trading margin",
+    "quote": "Now it will be around INR5 to INR6."
+   },
+   {
+    "label": "Trading margin ~4% vs prior 5-6%+ target",
+    "quote": "in this quarter, we had around 4%"
+   },
+   {
+    "label": "Trading volume and LNG terminal utilisation low",
+    "quote": "Close to 24%."
+   },
+   {
+    "label": "Working capital swing: payables up to INR3,561 crores",
+    "quote": "Close to five cargoes were there on inventory."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 1,
+   "growth": 2,
+   "margin": 6,
+   "other": 9
+  },
+  "evasions": [
+   {
+    "topic": "Gas trading volume breakdown Q1/Q2 FY26",
+    "quote": "I think we will get back to you on that."
+   },
+   {
+    "topic": "BG/Shell contract volume and spot LNG split",
+    "quote": "Yes, we will get back to you on this."
+   },
+   {
+    "topic": "Deployment of net cash and investment plan",
+    "quote": "by the earnings call of Q3, we will come up with certain investment plans"
+   },
+   {
+    "topic": "CNG price cut",
+    "quote": "Yes, we will take a call at the appropriate time."
+   }
+  ],
+  "hedge_index": 0.6,
+  "thesis_placeholder": "x"
+ },
+ "summary": {
+  "headline": "Q2 FY27 revenue rose 59% YoY to INR9,826 crore and EBITDA 20% to INR1,019 crore, while Morbi demand fell from ~8 to ~3.8 MMSCMD.",
+  "overview": "Revenue from operations grew 59% YoY to INR9,826 crore in Q2 FY27, with EBITDA up 20% to INR1,019 crore and PAT up 22% to INR639 crore. H1 FY27 revenue was INR19,496 crore (+61%), EBITDA INR2,502 crore (+43%) and PAT INR1,637 crore (+51%). Gas trading margin fell to about 4% in Q2 from a higher Q1, attributed to force majeure disruption of Qatar LNG volumes requiring spot replacement. Management is securing 0.8 MTPA of long-term LNG (Henry Hub-linked, deliveries from 2028) to compete with propane for Morbi demand, which normalised sharply in Q2.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (Q2 FY27)",
+    "value": "INR9,826 crore",
+    "change": "+59% YoY"
+   },
+   {
+    "metric": "EBITDA (Q2 FY27)",
+    "value": "INR1,019 crore",
+    "change": "+20% YoY"
+   },
+   {
+    "metric": "PAT (Q2 FY27)",
+    "value": "INR639 crore",
+    "change": "+22% YoY"
+   },
+   {
+    "metric": "Revenue from operations (H1 FY27)",
+    "value": "INR19,496 crore",
+    "change": "+61% YoY"
+   },
+   {
+    "metric": "EBITDA (H1 FY27)",
+    "value": "INR2,502 crore",
+    "change": "+43% YoY"
+   },
+   {
+    "metric": "PAT (H1 FY27)",
+    "value": "INR1,637 crore",
+    "change": "+51% YoY"
+   },
+   {
+    "metric": "Gas trading revenue (Q2 FY27)",
+    "value": "INR7,615 crore",
+    "change": "+84% YoY"
+   },
+   {
+    "metric": "Gas trading EBITDA (Q2 FY27)",
+    "value": "INR329 crore",
+    "change": "+89% YoY"
+   },
+   {
+    "metric": "Capex (Q2 FY27 / H1 FY27)",
+    "value": "INR181 crore / INR308 crore",
+    "change": "FY27 guidance ~INR1,000 crore reiterated"
+   },
+   {
+    "metric": "CGD EBITDA per SCM (Q2 FY27)",
+    "value": "INR4.7 per SCM (Q1 about INR4.65)",
+    "change": "Marginal dip; FY guidance now INR5-6 per SCM (from INR5.5-6.5), excluding other income"
+   }
+  ],
+  "segments": [
+   {
+    "name": "City gas distribution (CGD)",
+    "commentary": "Total CGD volumes 10.7 MMSCMD in Q2 (+24% YoY) and 11.5 MMSCMD in H1 (+31% YoY). Industrial PNG volumes were about 6 MMSCMD in Q2 (+39% YoY in the quarter as stated), down from Q1 as Morbi normalised."
+   },
+   {
+    "name": "CNG",
+    "commentary": "Q2 CNG volumes 3.67 MMSCMD (+11% YoY); H1 at 3.72 MMSCMD. Gujarat +12%, outside Gujarat +19%. 18 stations added in H1, taking the total to 857; target 75+ additions in FY27."
+   },
+   {
+    "name": "Gas trading",
+    "commentary": "Revenue INR7,615 crore in Q2 (+84% YoY) and EBITDA INR329 crore (+89% YoY). Gross trading margin about 4% in Q2 vs higher in Q1; management reiterated 5-6% guidance for the rest of FY27. Trading sourced 12.31 MMSCMD, of which 4.67 MMSCMD sold externally and 7.63 MMSCMD to CGD."
+   },
+   {
+    "name": "Power and regasification subsidiaries",
+    "commentary": "Two power plants are running on energy shortage demand but are loss-making, driving the standalone-to-consolidated PAT gap of about INR149 crore; management plans a turnaround plan. GSPC LNG utilisation is about 24-25% and it is now cash-profitable."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 capex guidance of approximately INR1,000 crore reiterated; investments focused on CGD infrastructure.",
+   "CGD EBITDA guidance revised to INR5-6 per SCM (earlier INR5.5-6.5).",
+   "Gas trading margin guidance of 5-6% retained, citing geopolitical uncertainty.",
+   "Long-term LNG book target of about 4 MTPA total (including expiring contracts), with two more contracts targeted; 60-70% of sales to be covered by long-term contracts, split 40-60% between Brent and Henry Hub.",
+   "Investment plans for growth (CBG, LNG, etc.) to be announced by Q3 FY27 earnings call (early February 2027).",
+   "Expected income tax refund of close to INR900 crore before the end of FY27."
+  ],
+  "capex_capacity": [
+   "H1 FY27 capex INR308 crore; Q2 INR181 crore; FY27 guidance about INR1,000 crore.",
+   "CBG capex capped at about INR100 crore; EOI issued seeking partners for CBG plants.",
+   "Six LNG stations under exploration in GAs for long-haul transport.",
+   "Mundra LNG Terminal firm capacity booking approved; terminal utilisation about 24% in Q2.",
+   "Propane import and storage infrastructure still under evaluation; no location decided."
+  ],
+  "demand_pricing": [
+   "Morbi ceramic cluster volume: about 8 MMSCMD in Q1 FY27, about 3.8 MMSCMD in Q2 and about 1 MMSCMD currently; pre-war level was about 2.5 MMSCMD.",
+   "Morbi price differential vs propane: INR7-8 currently; INR10-12 in September 2026.",
+   "CGD industrial realisation about INR463 per SCM in Q2 vs INR465 in Q1; management said sourcing costs also rose.",
+   "Sourcing mix in Q2: about 55% imported gas, 29% other domestic and RLNG, 10% APM, 6% new well gas. Spot LNG about 50%.",
+   "CGD sourcing: APM about 1.61 MMSCMD, new well gas about 0.8 MMSCMD, HPHT about 1.3 MMSCMD, balance pooled from trading.",
+   "New LNG contracts: 0.8 MTPA Henry Hub-linked, up to 10 years, DES price $7-9/MMBtU assuming Henry Hub about $3-3.5; supply from 2028 onwards."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why did gas trading margin fall from Q1 to Q2, and what is the outlook?",
+    "answer": "Qatar long-term volumes were disrupted by force majeure, so the shortfall was replaced via spot. Q2 margin was about 4% versus about 7% H1 guidance context; the 5-6% full-year range is retained."
+   },
+   {
+    "question": "Current cash position and treasury policy, including GSFS deposits?",
+    "answer": "Cash of about INR7,000-7,500 crore managed under a board-approved investment policy. Deposits with GSFS are about INR3,300 crore; management said there is no linkage with GSPC LNG's loan from GSFS."
+   },
+   {
+    "question": "Is GEL liable for GSPC LNG's debt?",
+    "answer": "No. GEL has not given guarantees to any subsidiary for debt."
+   },
+   {
+    "question": "How is the 0.8 MTPA LNG contract to be used?",
+    "answer": "Primarily to regain Morbi customers lost to propane, offering stable long-term pricing competitive with propane from 2028."
+   },
+   {
+    "question": "Existing LNG contract breakup?",
+    "answer": "Qatar 0.3 MTPA (expires 2028); Shell 1 MTPA (to 2038, with price review); Qatar 1 MTPA (2026-2042); Uniper 0.4 MTPA (from Jan 2028); TotalEnergies 0.4 MTPA (from 2026). Volumes serve both trading and CGD on a portfolio basis."
+   },
+   {
+    "question": "CGD EBITDA per SCM and CNG pricing?",
+    "answer": "Q2 CGD margin 4.7 per SCM, guidance now INR5-6. CNG price cut to be decided at the appropriate time; management said oil and gas prices are currently elevated."
+   },
+   {
+    "question": "Standalone vs consolidated PAT gap and power business losses?",
+    "answer": "Losses from two power plants and regasification entities explain the gap; management is negotiating with utilities for a turnaround plan."
+   }
+  ],
+  "risks_watch": [
+   "Qatar LNG force majeure keeps trading margins volatile and forces spot replacement.",
+   "Morbi demand has fallen to about 1 MMSCMD; regaining volume depends on 2028 LNG deliveries.",
+   "Standalone-to-consolidated PAT drag from loss-making power and regasification subsidiaries.",
+   "Working capital swings: inventory about INR2,500 crore, trade receivables INR2,420 crore, trade payables INR3,561 crore (standalone), linked to about five cargoes received late September.",
+   "Unresolved items: tax refund of about INR900 crore timing; Hardik's query on Shell/BG volumes and trading volume breakdowns were deferred to the investor presentation or a later reply."
+  ],
+  "management_tone": "Confident on the integrated model and LNG sourcing, but cautious on near-term trading margins and Morbi, with guidance trimmed to a 5-6% trading margin and INR5-6 per SCM CGD EBITDA. Several bookkeeping questions were deferred to follow-up.",
+  "key_quotes": [
+   "Our Board has recently approved execution of long-term LNG sourcing agreements with pricing linked to Henry Hub, aggregating to 0.8 MTPA for a tenure up to 10 years.",
+   "There is no linkage between the two that we are parking funds with GSFS and they giving in loans to the extent of GSPC LNG.",
+   "We want to have a net book of 4 million tons, that's what I'm trying to say.",
+   "There are issues in the short term, but I think from 2028, we are confident of achieving good volumes in Morbi."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "75+ CNG stations targeted in FY27 (18 added in H1 FY27, total 857)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "0.8 MTPA long-term Henry Hub-linked LNG contract (supply from 2028)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 8,
+    "status": "approved",
+    "mat": "minor"
+   },
+   {
+    "what": "Mundra LNG Terminal firm capacity booking (approved)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "approved",
+    "mat": "minor"
+   },
+   {
+    "what": "CBG plants (capex capped ~INR100 crore; partners being sought via EOI)",
+    "size_pct": null,
+    "capex_cr": 100.0,
+    "q": null,
+    "status": "planned",
+    "mat": "minor"
+   }
+  ],
+  "util": 24.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "demand_or_share_gains"
+  ],
+  "clarity": "none",
+  "qRev": 59.0,
+  "qEbitda": 20.0,
+  "outlook": 0,
+  "why": "Q2 revenue +59% and EBITDA +20%, but no revenue growth guidance given; CGD EBITDA guidance cut to INR5-6/scm and gas trading margin 5-6% held, with 75+ CNG station additions and ~INR1,000 crore FY27 capex reiterated, while Morbi industrial demand fell from ~8 to ~1 MMSCMD.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "Q4 FY27 to Q1 FY28",
+    "why": "Gas trading margin fell to about 4% in Q2 vs a higher Q1, but management retains 5-6% guidance for the rest of FY27; CGD EBITDA cut to INR5-6/scm from INR5.5-6.5 with Q2 at INR4.7/scm, so margin recovery depends on Qatar LNG normalising and Morbi pricing (INR10-12 differential in Sept 2026 vs INR7-8 now)."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "75+ CNG stations targeted in FY27 with 18 added in H1 (total 857), and six LNG stations under exploration; Mundra LNG firm capacity booking approved but terminal utilisation is only about 24%, so physical CGD/CNG additions are more certain than new LNG capacity."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "CGD volumes 10.7 MMSCMD in Q2 (+24% YoY) and CNG 3.67 MMSCMD (+11% YoY) with 75+ station additions, but Morbi industrial demand fell from about 8 to about 1 MMSCMD and only recovers on 2028 LNG deliveries, so industrial volume growth is at risk near term."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "by Q3 FY27 call (Feb 2027)",
+    "why": "Management said investment plans for growth (CBG, LNG, etc.) will be announced by the Q3 FY27 call; FY27 capex guided at about INR1,000 crore with INR308 crore spent in H1, implying a heavy H2 run-rate, and utilisation of CGD/LNG assets is low at about 24%, so a large new capex may not be needed but a CBG/LNG plan is expected."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "CGD EBITDA guidance was cut to INR5-6/scm from INR5.5-6.5 and gas trading margin held at 5-6% despite Q2 at about 4%, with management citing geopolitical uncertainty."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Gas trading margin fell to about 4% in Q2 against a 5-6% guide, Qatar force majeure forces spot replacement, and CGD EBITDA already trimmed to INR5-6/scm; management retained the trading range but flagged volatility."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "possible",
+    "when": "2028 onwards for LNG; CBG via EOI",
+    "why": "0.8 MTPA Henry Hub-linked LNG contract (supply from 2028) and CBG plants (capex capped at about INR100 crore, partners sought via EOI) are planned, but no timeline for CBG commissioning was given and propane storage location is undecided."
+   },
+   {
+    "k": "order_book",
+    "label": "Long-term LNG book to about 4 MTPA",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Management targets a book of close to 4 MTPA with two more contracts targeted and 60-70% of sales to be covered by long-term contracts, after the 0.8 MTPA Henry Hub deal; current base includes 0.3 MTPA Qatar expiring 2028."
+   },
+   {
+    "k": "corporate_action",
+    "label": "Income tax refund of about INR900 crore",
+    "call": "likely",
+    "when": "before end of FY27",
+    "why": "Management expects a tax refund of close to INR900 crore before FY27 end, a cash inflow that could support the cash of about INR7,000-7,500 crore, though timing is not firm."
+   },
+   {
+    "k": "turnaround",
+    "label": "Power plant turnaround plan",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Two loss-making power plants drive the standalone-to-consolidated PAT gap of about INR149 crore; management is negotiating with utilities for a turnaround plan, with no timing or numbers given."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on the integrated model and LNG sourcing (0.8 MTPA Henry Hub deal, 75+ CNG stations) but cautious on near-term gas trading margin (about 4% in Q2) and Morbi demand (about 1 MMSCMD); analysts pressed on the margin cut, the GSFS deposits and GSPC LNG linkage, and the standalon"
+  }
+ }
+}

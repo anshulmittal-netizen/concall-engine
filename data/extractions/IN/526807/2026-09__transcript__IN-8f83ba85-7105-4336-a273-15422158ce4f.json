@@ -1,0 +1,450 @@
+{
+ "doc_id": "IN-8f83ba85-7105-4336-a273-15422158ce4f",
+ "market": "IN",
+ "company_id": "526807",
+ "name": "Seamec Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-10",
+ "period": "2026-09",
+ "title": "Seamec Ltd - 526807 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Seamec's Q2 FY27 consolidated revenue rose 103% to INR 198.1 crore on DSV additions and a new ONGC-linked charter for Anant, but capex is rising to ~$250m over 2 years and management guided 15% revenue growth with EBITDA margin around 40%.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management said a DSV takes 2 to 3 years to build and only one DSV is under production worldwide, so fleet tightness is expected for 2 to 3 years.",
+   "quote": "Over next 2 to 3 years, idea is that we should look at about $200 million to $250 million capex."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Fleet capex $200-250m over 2-3 yrs",
+    "quote": "Over next 2 to 3 years, idea is that we should look at about $200 million to $250 million capex.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "New-build DSV indicative charter ~$70-80k/day",
+    "quote": "the indicative rate of vessel will be somewhere around 70,000 to 80,000 or maybe more depending upon the charter.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Only one DSV under production worldwide",
+    "quote": "there is just only one diving support vessel under production, which is reported as of now.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue CAGR 15%, PAT 18-20% (reset from EBITDA)",
+    "quote": "the idea is that over the next 4 to 5 years, we should grow around 15% in revenue and around 18%, 20% in bottom line.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth",
+    "value": "around 15% over next 4 to 5 years",
+    "horizon": "4-5 years",
+    "change": "held",
+    "quote": "the idea is that over the next 4 to 5 years, we should grow around 15% in revenue"
+   },
+   {
+    "metric": "Bottom line growth",
+    "value": "around 18% to 20% over next 4 to 5 years (PAT)",
+    "horizon": "4-5 years",
+    "change": "new",
+    "quote": "around 18%, 20% in bottom line."
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "around 40% on stable state for next 3 to 4 years",
+    "horizon": "3-4 years",
+    "change": "held",
+    "quote": "We generally guide around 40% EBITDA margins on a stable state for next 3 to 4 years."
+   },
+   {
+    "metric": "ROCE/ROE",
+    "value": "18% to 20%",
+    "horizon": "not specified",
+    "change": "new",
+    "quote": "ROC, ROE, we target to be on the range of 18% to 20%"
+   },
+   {
+    "metric": "Depreciation",
+    "value": "INR 200 to 220 crore for full year",
+    "horizon": "FY27",
+    "change": "new",
+    "quote": "we are expecting depreciation could be somewhere around INR 200 crores to INR 220 crores"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue CAGR",
+    "outcome": "met",
+    "quote": "the idea is that over the next 4 to 5 years, we should grow around 15% in revenue"
+   },
+   {
+    "metric": "EBITDA margin",
+    "outcome": "met",
+    "quote": "We generally guide around 40% EBITDA margins on a stable state for next 3 to 4 years."
+   },
+   {
+    "metric": "ANANT acquisition and deployment",
+    "outcome": "met",
+    "quote": "Seamec Anant was formally taken over by the company on 14th October 2026 at Kakinada."
+   }
+  ],
+  "entities": [
+   {
+    "name": "ONGC",
+    "relation": "customer"
+   },
+   {
+    "name": "HAL Offshore",
+    "relation": "customer"
+   },
+   {
+    "name": "L&T",
+    "relation": "customer"
+   },
+   {
+    "name": "G R Infra",
+    "relation": "customer"
+   },
+   {
+    "name": "Saudi Aramco",
+    "relation": "customer"
+   },
+   {
+    "name": "Lamprell",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Defence indigenisation",
+   "Consolidation / competitor exits",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Repeated Swordfish breakdowns; 2-3 days off-hire reserve",
+    "quote": "we generally consider 2 to 3 days of off -hire for every vessel, which generally takes care of such unscheduled breakdown."
+   },
+   {
+    "label": "Debt rising to INR 450-470 crore; more debt-funded capex",
+    "quote": "So our debt profile as of now, somewhere close to around INR 450 crores to INR 470 crores."
+   },
+   {
+    "label": "Management avoided giving FY28 guidance and was vague on Q2 margin volatility",
+    "quote": "So, we don't give a year -to-year guidance"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 3,
+   "growth": 5,
+   "margin": 3,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "FY28 guidance",
+    "quote": "So, we don't give a year -to-year guidance"
+   },
+   {
+    "topic": "Charter rate outlook",
+    "quote": "So let's hope that this continues."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Seamec Q2 FY27 consolidated revenue rose 103% YoY to INR 198.1 crores; PAT turned to INR 50 crores from a loss of INR 25.7 crores.",
+  "overview": "Standalone Q2 FY27 revenue was INR 183.6 crores (up about 120% YoY) with EBITDA of INR 31.2 crores versus INR 0.2 crores a year earlier. Consolidated H1 FY27 revenue reached INR 495 crores (up about 61%) and consolidated H1 PAT INR 131.8 crores versus INR 50 crores. Growth was driven by two ONGC O&M contracts (Sevak, Prabha) not present last year, the addition of Agastya, and Seamec Anant, which was taken over on 14 October 2026 and chartered to HAL Offshore on 21 October 2026. Management pointed to monsoon volatility in quarterly margins and guided to longer-term growth targets.",
+  "segments": [
+   {
+    "name": "Offshore (consolidated)",
+    "commentary": "Management said the offshore EBIT jump was due to two ONGC contracts (Sevak, Prabha) not present last year and Agastya added in Q2 FY27, plus Swordfish operating more than last year."
+   },
+   {
+    "name": "Overseas (Swordfish)",
+    "commentary": "Overseas performance is driven by Swordfish, which operated less in last year's comparable period; it works on a Saudi Aramco construction role."
+   },
+   {
+    "name": "Seamec Anant (DSV)",
+    "commentary": "Taken over 14 October 2026 at Kakinada, acquired for about USD 70 million; on a long-term charter to HAL Offshore for ONGC IMR work for about 1,225 days at about USD 55 million excluding GST, operating from 21 October 2026."
+   }
+  ],
+  "guidance_outlook": [
+   "Over the next 4 to 5 years, management targets around 15% revenue growth and 18-20% PAT growth (PAT, not EBITDA, per the CFO clarification); no year-on-year guidance is given.",
+   "Long-term stable-state EBITDA margin guided at about 40% for the next 3 to 4 years, with monsoon-linked quarterly volatility.",
+   "ROCE and ROE target range of 18-20% over the coming period.",
+   "Depreciation expected at INR 200-220 crores for FY27 with Anant adding in H2; INR 200-250 crores expected over the next two years.",
+   "Capex plan of USD 200-250 million over the next 2-3 years (about USD 250 million over 2 to 2.5 years); fleet expansion via second-hand purchase or newbuild.",
+   "Seamec Princess expected to get an EPC/PRP-X contract with L&T, with charter rate in line with Seamec II at about USD 100,000 a day; announcement expected within about a week."
+  ],
+  "capex_capacity": [
+   "Seamec Anant acquisition cost about USD 70 million in H1 FY27, financed partly by about INR 350 crores of debt.",
+   "Seamec II contracted to G R Infra at about USD 100,000 a day through the working season to May 2027.",
+   "Seamec Princess returned from dry dock and is in talks for PRP-X work with L&T.",
+   "Swordfish scheduled for dry dock in FY27-28; remaining vessels to be dry docked during FY27.",
+   "Debt about INR 450-470 crores; planned investment of about INR 150 crores over 12-18 months, funded on a 60:40 or 70:30 debt-equity mix.",
+   "Management said a newbuild DSV costs upward of USD 110-120 million, rising to about USD 150 million with added capabilities; new DSV delivery takes 2-3 years."
+  ],
+  "demand_pricing": [
+   "Management sees tight DSV supply: about 65-70 DSVs worldwide and only one under construction; little new supply for 2-3 years, with some older tonnage expected to exit.",
+   "Indicative new-build charter rate for a DSV about USD 70,000-80,000 a day or more depending on contract structure.",
+   "Agastya charter (about USD 25,000 a day) runs to 2028-29 and is expected to be revised upward at renewal; Diamond (OSV, about USD 8,000-9,000 a day) contract ends March 2027, with an upward revision expected.",
+   "Four vessels are on spot season contracts (mid-November to mid-May); Sevak and Prabha 2-year contracts and Swordfish charter come up for renewal in FY28.",
+   "Anant on 1,225-day charter; management cites an open-market value of USD 80-90 million versus USD 70 million acquisition cost and a 5-6 year payback.",
+   "Fuel is supplied by charterers on long-term charters (Swordfish, Paladin, Agastya, Anant), so fuel cost impact is nil on those; lump-sum jobs are priced with fuel assumptions."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why was offshore EBIT so strong in Q2?",
+    "answer": "Sunil Gupta cited Sevak and Prabha O&M contracts not present last year, Agastya added in Q2 FY27, and higher overall vessel deployment."
+   },
+   {
+    "question": "Current order book and contracted visibility for next 12-18 months?",
+    "answer": "All vessels are on operation except one expected to start within 1-2 weeks; four vessels are on season-to-season spot contracts and the rest on long-term charters."
+   },
+   {
+    "question": "Capex and debt plans?",
+    "answer": "About USD 70 million spent in H1 on Anant; about USD 200-250 million capex over 2-3 years; debt about INR 450-470 crores."
+   },
+   {
+    "question": "Will the company reduce the Gallant, Asian Pearl or accommodation barge exposure?",
+    "answer": "Naveen Mohta said Gallant was sold on a good deal, there is no full exit plan, and focus is on DSV and IMR vessels."
+   },
+   {
+    "question": "Tejash asked about European subsidiaries.",
+    "answer": "Sunil Gupta said the company plans to liquidate some investment and bring money back to India over the next 12-15 months, with no major operating expense now."
+   },
+   {
+    "question": "Monsoon off-hire and breakdown costs?",
+    "answer": "Management said Sevak and Prabha work year-round; breakdown costs are borne by the company while scheduled dry dock is paid at day rate. Planning assumes 2-3 days of off-hire per vessel per year."
+   }
+  ],
+  "risks_watch": [
+   "Swordfish breakdowns (twice or thrice in the last quarter per analyst) under Saudi Aramco's stringent verification; cost of unplanned downtime borne by the company.",
+   "Charter renewals in FY28: Sevak, Prabha, Swordfish, Diamond (March 2027) and Agastya (2028-29); rate uplift is management's expectation, not contracted.",
+   "Rising new-build and second-hand vessel prices and a tight DSV market could affect acquisition economics and return on new fleet additions.",
+   "Depreciation rising with new vessels (INR 200-250 crores expected), pressuring margins; monsoon-related margin volatility.",
+   "Long development cycles for Indian offshore exploration; timing of new work depends on exploration outcomes and project approvals.",
+   "Management said it is not committing to a year-on-year guidance; the 4-5 year targets are indicative."
+  ],
+  "management_tone": "Confident on fleet additions, charter visibility and long-term growth targets, but cautious on quarterly margin volatility and on the timing of new contract wins, which management tied to exploration outcomes and project approvals.",
+  "key_quotes": [
+   "We will, therefore, continue to approach growth with a focus on execution, financial discipline and sustainable returns.",
+   "So we generally say that don't look Seamec on a quarterly basis because this monsoon volatility will be there.",
+   "The return profile is very good. A similar vessel available in open market would be nothing short of $80 million to $90 million."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Standalone revenue Q2 FY27",
+    "value": "INR 183.6 crores",
+    "change": "vs INR 82.4 crores in Q2 FY26, up about 120%"
+   },
+   {
+    "metric": "Standalone EBITDA Q2 FY27",
+    "value": "INR 31.2 crores",
+    "change": "vs INR 0.2 crores in Q2 FY26"
+   },
+   {
+    "metric": "Standalone PAT Q2 FY27",
+    "value": "INR 4.2 crores",
+    "change": "vs loss of INR 25.8 crores in Q2 FY26"
+   },
+   {
+    "metric": "Standalone revenue H1 FY27",
+    "value": "INR 467 crores",
+    "change": "up 65% vs INR 283.8 crores in H1 FY26"
+   },
+   {
+    "metric": "Standalone EBITDA H1 FY27",
+    "value": "INR 148 crores",
+    "change": "up 57% vs INR 94.3 crores in H1 FY26"
+   },
+   {
+    "metric": "Standalone PAT H1 FY27",
+    "value": "INR 85 crores",
+    "change": "up 59% vs INR 54 crores in H1 FY26"
+   },
+   {
+    "metric": "Consolidated revenue Q2 FY27",
+    "value": "INR 198.1 crores",
+    "change": "up 103% vs INR 97.4 crores in Q2 FY26"
+   },
+   {
+    "metric": "Consolidated EBITDA Q2 FY27",
+    "value": "INR 38.3 crores",
+    "change": "vs INR 7.8 crores in Q2 FY26"
+   },
+   {
+    "metric": "Consolidated PAT Q2 FY27",
+    "value": "INR 50 crores",
+    "change": "vs loss of INR 25.7 crores in Q2 FY26"
+   },
+   {
+    "metric": "Consolidated revenue H1 FY27",
+    "value": "INR 495 crores",
+    "change": "up about 61% vs INR 308.3 crores in H1 FY26"
+   },
+   {
+    "metric": "Consolidated EBITDA H1 FY27",
+    "value": "INR 162.2 crores",
+    "change": "up 55% vs INR 104 crores in H1 FY26"
+   },
+   {
+    "metric": "Consolidated PAT H1 FY27",
+    "value": "INR 131.8 crores",
+    "change": "vs INR 50 crores in H1 FY26"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Seamec Anant DSV acquired (Kakinada), taken over 14 Oct 2026, chartered to HAL Offshore from 21 Oct 2026",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Fleet expansion of USD 200-250m over 2-3 years via second-hand purchase or newbuild",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 15.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 103.0,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management targets ~15% revenue CAGR and 18-20% PAT growth over 4-5 years (no YoY guidance), backed partly by Seamec Anant (USD 70m, live now on a ~1,225-day charter at ~USD 55m), tight DSV supply, and a USD 200-250m fleet capex plan, though the capex has no specific vessel orders yet.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Management guides ~40% stable-state EBITDA margin over 3-4 years, but Q2 consolidated EBITDA margin was ~19% (38.3 on 198.1) and depreciation rising to INR 200-220 crores in FY27 pressures margins; monsoon volatility flagged."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q2 FY27 (done); Anant live from Oct 2026",
+    "why": "Seamec Anant (USD 70m) was taken over 14 Oct 2026 and chartered to HAL Offshore from 21 Oct 2026 for ~1,225 days, and Agastya is already added; Seamec Princess is expected to get an L&T contract within about a week."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Consolidated revenue up 103% YoY in Q2 to INR 198.1 crores, with Anant adding H2 volume, though one vessel is still to start within 1-2 weeks and four vessels are on spot season contracts."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Management plans USD 200-250m fleet capex over 2-3 years with no specific vessel orders yet; USD 70m already spent on Anant and debt is INR 450-470 crores, so a fleet purchase or newbuild announcement is likely."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Management gives no year-on-year guidance, but H1 consolidated PAT of INR 131.8 crores is well above INR 50 crores a year earlier and Agastya/Diamond/Anant charter rate uplifts are expected."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Swordfish breakdowns (two to three in the last quarter per an analyst), monsoon volatility and quarterly margin swings could hit margins, though no formal guide is given."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "no_signal",
+    "when": "",
+    "why": ""
+   },
+   {
+    "k": "order_book",
+    "label": "Seamec Princess L&T PRP-X contract",
+    "call": "likely",
+    "when": "next 1-2 quarters",
+    "why": "Expected EPC/PRP-X contract with L&T at about USD 100,000 a day, announcement expected within about a week, with Seamec II already contracted to G R Infra at about USD 100,000 a day through May 2027."
+   },
+   {
+    "k": "pricing",
+    "label": "Charter rate uplift at renewals (Diamond, Agastya, Sevak/Prabha)",
+    "call": "possible",
+    "when": "FY27-FY28",
+    "why": "Diamond (about USD 8,000-9,000 a day) ends March 2027 with an upward revision expected, and Sevak, Prabha and Swordfish come up for renewal in FY28, but the uplift is not contracted; tight DSV supply (65-70 vessels, one under construction) supports it."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Overseas subsidiary cash repatriation",
+    "call": "possible",
+    "when": "next 12-15 months",
+    "why": "Management plans to liquidate some European investments and bring money back to India, with debt at about INR 450-470 crores and planned investment of about INR 150 crores over 12-18 months."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on fleet additions, charter visibility and the 15% revenue and 18-20% PAT targets, but cautious on monsoon-driven quarterly margin volatility and on the timing of new contract wins; analysts probed Swordfish breakdowns, the Gallant and accommodation barge exposure and Europe"
+  }
+ }
+}

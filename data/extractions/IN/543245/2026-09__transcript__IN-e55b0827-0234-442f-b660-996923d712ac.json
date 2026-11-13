@@ -1,0 +1,472 @@
+{
+ "doc_id": "IN-e55b0827-0234-442f-b660-996923d712ac",
+ "market": "IN",
+ "company_id": "543245",
+ "name": "Gland Pharma Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-12",
+ "period": "2026-09",
+ "title": "Gland Pharma Ltd - 543245 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "API & CDMO",
+  "thesis": "Capacity is tight: management is adding ~INR 1,000 crore brownfield vial capacity and ~INR 3,000 crore total growth capex, with liquid vial utilisation at 92% heading to ~102%, though Cenexi losses and EBITDA guidance remain unresolved.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 2,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 92,
+   "quote": "We are already 92% capacity utilization for that, and next year, we are anticipating like close to 102%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "The total capex outlay is expected to be approximately INR 10,000 million, with commercial operations anticipated to commence from FY2030 onwards."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Liquid vial utilisation 92%, heading to ~102%",
+    "quote": "We are already 92% capacity utilization for that, and next year, we are anticipating like close to 102%",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Brownfield vial capex INR 1,000 crore added",
+    "quote": "The total capex outlay is expected to be approximately INR 10,000 million, with commercial operations anticipated to commence from FY2030 onwards.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "US revenue up 42% YoY in Q2",
+    "quote": "Revenues grew 42% year -on-year to INR 11,795 million.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Cenexi FY27 guidance kept, not re-confirmed numerically",
+    "quote": "As of now, we are working on the same guidance.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Constant-currency revenue growth FY27",
+    "value": "~15%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "our guidance for the full year growth remains same as 15% on constant currency basis"
+   },
+   {
+    "metric": "Cenexi FY27 revenue and margin",
+    "value": "~EUR200m revenue, high single-digit EBITDA margin",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "As of now, we are working on the same guidance."
+   },
+   {
+    "metric": "Capex programme",
+    "value": "INR2,000 crore program plus ~INR1,000 crore brownfield; ~INR3,000 crore total, Vizag greenfield TBD",
+    "change": "raised",
+    "horizon": "FY27-FY31",
+    "quote": "Additional INR 1,000 crores we are going to invest into this brownfield project where three additional lines will be installed"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Constant-currency revenue growth FY27",
+    "outcome": "met",
+    "quote": "our guidance for the full year growth remains same as 15% on constant currency basis"
+   },
+   {
+    "metric": "Revenue CAGR next 4 years",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Consolidated EBITDA margin near term",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Cenexi FY27 revenue and margin",
+    "outcome": "held",
+    "quote": "As of now, we are working on the same guidance."
+   },
+   {
+    "metric": "Capex programme",
+    "outcome": "met",
+    "quote": "We remain on track with the previously announced INR 2,000 crores capacity expansion program"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Cenexi",
+    "relation": "partner"
+   },
+   {
+    "name": "Fosun",
+    "relation": "partner"
+   },
+   {
+    "name": "NUPCO",
+    "relation": "customer"
+   },
+   {
+    "name": "Pfizer",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Capacity bottleneck",
+   "Pharma CDMO / outsourcing",
+   "China+1 enquiries → orders",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Cenexi EBITDA loss EUR 6m; FY27 guidance unchanged despite H2 ask of 18-20% margin",
+    "quote": "This quarter, lower number is already planned and considered in the estimate."
+   },
+   {
+    "label": "Reported EBITDA margin 26% vs adjusted 27%, R&D up to 6% of revenue"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 3,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Constant-currency growth quantification",
+    "quote": "it's exactly very difficult to quantify how much is the constant currency"
+   },
+   {
+    "topic": "Cenexi FY27 guidance under pressure",
+    "quote": "This quarter, lower number is already planned and considered in the estimate."
+   },
+   {
+    "topic": "GLP-1 revenue contribution",
+    "quote": "No, we are not giving guidance for GLP-1 products now."
+   }
+  ],
+  "hedge_index": 0.5
+ },
+ "summary": {
+  "headline": "Gland Pharma Q2 FY27 revenue rose 23% YoY to INR 18,336 million, with adjusted EBITDA margin at 27% and PAT up 58%.",
+  "overview": "Q2 FY27 revenue reached INR 18,336 million (+23% YoY), led by CDMO (+31% to INR 8,227 million) and US sales (+42% to INR 11,795 million). Reported EBITDA rose 53% to INR 4,804 million (26% margin), and adjusted EBITDA was INR 5,030 million (27%) after INR 226 million non-cash ESOP cost. PAT grew 58% to INR 2,908 million, with ROW revenue weak on delayed NUPCO tender results and Cenexi posting an EBITDA loss of EUR 6 million from its annual shutdown. Management kept full-year guidance at 15% constant-currency growth and announced a further INR 3,000 crore capacity programme.",
+  "segments": [
+   {
+    "name": "CDMO",
+    "commentary": "Q2 revenue INR 8,227 million (+31% YoY), about 45% of revenue; H1 INR 17,142 million (+25%), about 47% of revenue. Growth from commercial supply of earlier contracts, new launches and new development/manufacturing partnerships."
+   },
+   {
+    "name": "Critical injectables",
+    "commentary": "Q2 revenue INR 10,109 million (+18% YoY); H1 INR 19,197 million (+18%). Driven by existing portfolio, recent launches, new customers and higher volumes."
+   },
+   {
+    "name": "US",
+    "commentary": "Q2 revenue INR 11,795 million (+42% YoY); H1 INR 21,605 million (+37%). Four US launches in the quarter; management says growth excluding Cenexi is about the same as reported."
+   },
+   {
+    "name": "Europe and other regulated markets",
+    "commentary": "Q2 revenue INR 4,110 million (+23% YoY); H1 INR 8,598 million (+17%)."
+   },
+   {
+    "name": "Rest of world",
+    "commentary": "Q2 revenue INR 2,044 million, held back by market-specific supply and tender issues, notably the delayed NUPCO (Saudi Arabia) tender results. India revenue was INR 387 million."
+   },
+   {
+    "name": "Cenexi",
+    "commentary": "Q2 revenue EUR 41 million (vs EUR 40 million a year earlier) with EBITDA of about minus EUR 6 million, due to planned annual summer shutdowns. Management expects profitability from Q3 and is prioritising margin over top-line growth."
+   }
+  ],
+  "guidance_outlook": [
+   "Full-year FY27 revenue growth guidance unchanged at 15% on a constant-currency basis; management said currency impact is hard to predict.",
+   "US growth expected to sustain in H2, with no lumpiness, driven by new launches and CDMO business; ROW expected to improve once NUPCO tender results are announced.",
+   "Cenexi guidance from Q1 (about EUR 200 million revenue at high-single-digit margin for FY27) is still in place, per CFO, with the lower Q2 number already in the estimate.",
+   "Launch contribution from new products expected to add about 6-7% to growth; new US launches include methylprednisolone suspension (generic Medrol), with GLP-1 CDMO launches possible in Q1 or Q2 FY28.",
+   "Cenexi expected to restore profitability from Q3 FY27, which should normalise the effective tax rate.",
+   "R&D spend to rise slightly over time, while management aims to keep margins intact."
+  ],
+  "capex_capacity": [
+   "INR 2,000 crore programme (previously announced) for ophthalmic capacity, a new BFS line, and oncology/sterile capacity with isolator technology; additional bag manufacturing capacity awaiting US FDA inspection.",
+   "New brownfield project at Pashamylaram: about INR 1,000 crore for three isolator-based vial lines, approved in the call, with commercial operations from FY2030.",
+   "Greenfield project at Vizag SEZ: land acquired, project plan in progress, capex not yet quantified; Board approval expected next quarter, programme about four years.",
+   "Management said total capex of about INR 5,000 crore over four years including greenfield, with about INR 3,000 crore excluding it, adding about 300-400 million units of capacity. Current capacity is about 1.7 billion units.",
+   "Liquid vial utilisation at 92%, expected near 102% next year; some lines are fully occupied and planned shutdowns are being deferred for lack of capacity.",
+   "Cenexi: new vial and lyophilisation block at BLA and high-speed ampoule line at Fontenay on track."
+  ],
+  "demand_pricing": [
+   "Management said CDMO is growing faster than the regular business and will keep outgrowing it; the pipeline has grown in quality and scale.",
+   "Microsphere and respiratory CDMO contracts are at early tech-transfer stage (three projects signed), with royalty-based revenue expected from FY2029-30.",
+   "Management said CDMO margins are about 5-10% better than critical injectables, since the mix is more regulated-market weighted and includes Cenexi.",
+   "Saudi NUPCO tender: about 13 products bid, several won; the timing of the tender announcement remains uncertain.",
+   "Pricing and competitive commentary was limited; demand described as robust across ophthalmic, bags and liquid vials."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What is the full-year outlook for US and ROW revenue, and is US growth sustainable?",
+    "answer": "Full-year guidance stays at 15% constant-currency growth. US growth is driven by launches and CDMO, with no lumpiness, and ROW is expected to improve."
+   },
+   {
+    "question": "What is the total capex and capacity addition over the next four years?",
+    "answer": "Management confirmed about INR 5,000 crore including greenfield. Excluding greenfield, about INR 3,000 crore would add 300-400 million units."
+   },
+   {
+    "question": "Is the capex backed by take-or-pay contracts?",
+    "answer": "Management said some contracts are take-or-pay and some are not, but most are transfers from commercialised sites with forecasts in place. The policy was to add lines at about 20% idle capacity, and current utilisation is above that."
+   },
+   {
+    "question": "Will Cenexi's FY27 guidance of EUR 200 million revenue and high-single-digit margin still hold?",
+    "answer": "CFO said the lower Q2 number was already planned, and the earlier guidance is still in place, to be updated if changed."
+   },
+   {
+    "question": "Is the China in-licensing (CIO and BD hires) aimed at India or global markets?",
+    "answer": "Focus is on innovative products for India, plus global biologics acquisitions. The second in-licensed long-acting injectable is a $2 billion product under patent, with a three-year timeline; Gland will run clinicals and act as commercial partner, and manufacturing stays in China. The first, at $800 million, will be transferred to India."
+   },
+   {
+    "question": "What is the CDMO versus critical injectables split and margin difference?",
+    "answer": "CDMO covers third-party-owned IP and co-development, while critical injectables covers Gland-owned ANDAs and in-licensed products. Management said CDMO margins are 5-10% higher, and Cenexi is included in CDMO."
+   }
+  ],
+  "risks_watch": [
+   "Cenexi: Q2 EBITDA loss of EUR 6 million; the company must deliver about EUR 111 million revenue in H2 at an 18-20% margin to meet the FY27 guidance, per an analyst's arithmetic.",
+   "Capacity constraints: vial lines are near full utilisation and planned shutdowns are being deferred; a lag before the brownfield lines come online (FY2030) could cost growth.",
+   "Rest-of-world exposure, especially Saudi NUPCO tender timing, which is still pending.",
+   "FX: constant-currency growth is not disclosed for Q2 or H1, and about 80% of revenue is exports.",
+   "Cost of new US biologics acquisition and in-licensing pipeline; R&D intensity is set to rise.",
+   "Dundigal US FDA inspection concluded with four procedural observations (not data integrity or repeat); the bag line awaits FDA inspection before commercialisation.",
+   "Greenfield Vizag capex not yet quantified and Board approval pending next quarter.",
+   "Leadership transition: new CEO Deepak Sapra joins 16 November 2026; new Cenexi President Ajay Sahni joined this week."
+  ],
+  "management_tone": "Confident on demand, CDMO growth and US launches, with capacity expansion framed as urgent. Cautious on Cenexi, where the message is margin repair over top-line growth. Evasive on constant-currency growth, which was not quantified, and on the revenue impact of capacity limits, which was left unanswered when raised.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue (Q2 FY27)",
+    "value": "INR 18,336 million",
+    "change": "+23% YoY"
+   },
+   {
+    "metric": "Reported EBITDA (Q2 FY27)",
+    "value": "INR 4,804 million, 26% margin",
+    "change": "+53% YoY"
+   },
+   {
+    "metric": "Adjusted EBITDA (Q2 FY27)",
+    "value": "INR 5,030 million, 27% margin",
+    "change": "Adjusted for INR 226 million ESOP expense"
+   },
+   {
+    "metric": "PAT (Q2 FY27)",
+    "value": "INR 2,908 million, ~16% margin",
+    "change": "+58% YoY"
+   },
+   {
+    "metric": "Revenue (H1 FY27)",
+    "value": "INR 36,339 million",
+    "change": "+21% YoY vs INR 29,925 million"
+   },
+   {
+    "metric": "Adjusted EBITDA (H1 FY27)",
+    "value": "INR 10,132 million, 28% margin",
+    "change": "vs INR 7,092 million in H1 FY26"
+   },
+   {
+    "metric": "PAT (H1 FY27)",
+    "value": "INR 6,077 million, 17% margin",
+    "change": "+52% YoY vs INR 3,992 million"
+   },
+   {
+    "metric": "Gross margin",
+    "value": "63% in Q2; 64% in H1",
+    "change": "H1 flat YoY; Q2 down QoQ per analyst (65% to 63.5%), attributed to lower Cenexi revenue"
+   },
+   {
+    "metric": "R&D expenditure",
+    "value": "INR 1,077 million in Q2 (6% of revenue); INR 1,849 million in H1 (5%)",
+    "change": "Q2 vs INR 772 million in Q1"
+   },
+   {
+    "metric": "Other income",
+    "value": "INR 690 million in Q2; INR 1,302 million in H1",
+    "change": "Lower QoQ due to FX gain/loss change"
+   },
+   {
+    "metric": "Effective tax rate",
+    "value": "~33% in Q2; ~30% in H1",
+    "change": "Elevated by Cenexi losses not eligible for tax benefit"
+   },
+   {
+    "metric": "Cash and equivalents (30 Sep 2026)",
+    "value": "INR 34,412 million; net cash INR 32,216 million",
+    "change": ""
+   },
+   {
+    "metric": "Operating cash flow (H1 FY27)",
+    "value": "INR 6,027 million",
+    "change": ""
+   },
+   {
+    "metric": "Working capital days",
+    "value": "158 days",
+    "change": "Improved, driven by inventory optimisation"
+   }
+  ],
+  "key_quotes": [
+   "During Q2 FY2027, we delivered revenue of INR 18,336 million, representing a growth of 23% year-on-year, while EBITDA increased by 53% year-on-year to INR 4,804 million.",
+   "The total capex outlay is expected to be approximately INR 10,000 million, with commercial operations anticipated to commence from FY2030 onwards.",
+   "Generally, our policy has been if you reach a stage of, you know, 20% idle capacity, then we'll go for additional line.",
+   "Ravi Mitra: Abdul, it's exactly very difficult to quantify how much is the constant currency.",
+   "This quarter, lower number is already planned and considered in the estimate. We will, of course, go by the earlier estimate, which is on track.",
+   "Injectables basically all the products what we develop, either we out -license or we sell on our own in India and few other markets."
+  ],
+  "_completed": 1
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "INR 1,000 crore brownfield Pashamylaram project: three isolator-based vial lines",
+    "size_pct": null,
+    "capex_cr": 1000.0,
+    "q": 10,
+    "status": "approved",
+    "mat": "moderate"
+   },
+   {
+    "what": "INR 2,000 crore programme: ophthalmic capacity, new BFS line, oncology/sterile capacity with isolators (previously announced)",
+    "size_pct": null,
+    "capex_cr": 2000.0,
+    "q": 4,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Greenfield Vizag SEZ project: capex not yet quantified, Board approval expected next quarter, ~4-year programme",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 8,
+    "status": "planned",
+    "mat": "moderate"
+   }
+  ],
+  "util": 92.0,
+  "expansion": true,
+  "growth": 15.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "new_products_or_markets",
+   "demand_or_share_gains",
+   "order_book"
+  ],
+  "clarity": "partial",
+  "qRev": 23.0,
+  "qEbitda": 53.0,
+  "outlook": 1,
+  "why": "FY27 constant-currency revenue growth guidance held at ~15%, with 6-7% from launches, US growth sustained in H2, and Cenexi guidance (~EUR200m at high-single-digit margin) kept; capacity is being added via INR 2,000 crore and INR 1,000 crore programmes, with liquid vial utilisation at 92% heading to ~102%, though the Vizag greenfield capex is unquantified.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Adjusted EBITDA margin 27% in Q2 and 28% in H1 vs gross margin flat at 64%, with Cenexi expected to return to profit from Q3 FY27 after a Q2 EBITDA loss of EUR 6 million, but R&D rising (6% of Q2 revenue) and ESOP costs weigh on the margin."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "FY28-FY30",
+    "why": "Liquid vial utilisation at 92% heading to ~102% next year with some lines fully occupied and shutdowns deferred; INR 2,000 crore programme already under construction (Q4 timing) and INR 1,000 crore Pashamylaram brownfield approved with commercial operations from FY2030, though brownfield lines are a multi-year lag."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "US revenue +42% to INR 11,795 million in Q2 with four launches and CDMO +31% to INR 8,227 million, and management says US growth will be sustained in H2 with no lumpiness; ROW (INR 2,044 million) is held back by delayed NUPCO tender results, and vial capacity constrains volumes."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "surely",
+    "when": "Q2-Q4 FY27",
+    "why": "Capex already in motion: INR 2,000 crore programme under construction and INR 1,000 crore Pashamylaram brownfield approved, with Vizag greenfield Board approval expected next quarter and total capex of about INR 5,000 crore over four years; utilisation at 92% also argues for more."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "FY27 constant-currency growth guidance held at 15% despite H1 revenue +21% YoY, and currency impact not quantified, so there is no sign of a raise; H1 reported growth is above the 15% guide but management has not moved it."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Cenexi must deliver about EUR 111 million revenue in H2 at an 18-20% margin to meet the EUR 200 million guide after a Q2 EBITDA loss of EUR 6 million, and ROW depends on the timing of the Saudi NUPCO tender, which is still pending."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "Q4 FY27 - Q2 FY28",
+    "why": "Methylprednisolone suspension (generic Medrol) is in the US launch pipeline and launches add about 6-7% to growth; GLP-1 CDMO launches are possible in Q1 or Q2 FY28, and the microsphere and respiratory CDMO royalties come only from FY2029-30."
+   },
+   {
+    "k": "order_book",
+    "label": "Saudi NUPCO tender results",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "About 13 products were bid and several won, with ROW revenue at INR 2,044 million held back by the pending tender; the timing of the announcement is uncertain."
+   },
+   {
+    "k": "turnaround",
+    "label": "Cenexi return to profitability",
+    "call": "likely",
+    "when": "Q3 FY27",
+    "why": "Management expects profitability from Q3 after Q2 EBITDA of about minus EUR 6 million from planned annual shutdowns, and says the FY27 guide of EUR 200 million at high-single-digit margin still holds."
+   },
+   {
+    "k": "regulatory",
+    "label": "Dundigal bag line US FDA re-inspection",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "The inspection concluded with four procedural observations, not data integrity, and the bag manufacturing line awaits FDA inspection before commercialisation."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on CDMO growth, US launches and the capacity push, and cautious on Cenexi margin repair; analysts pressed on Cenexi H2 arithmetic and the revenue impact of capacity limits, which management left unanswered, and constant-currency growth was not quantified."
+  }
+ }
+}

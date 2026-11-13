@@ -1,0 +1,493 @@
+{
+ "doc_id": "IN-536c1f2c-6437-41ee-801c-03b18be961b4",
+ "market": "IN",
+ "company_id": "544526",
+ "name": "Saatvik Green Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-11",
+ "period": "2026-09",
+ "title": "Saatvik Green Energy Ltd - 544526 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Renewables",
+  "thesis": "Q2 FY27 volume rose to 640 MW sold with utilisation at 58.5%, but EBITDA margin fell to 7.7% and debt-to-equity jumped to 1.37x as Odisha capacity is commissioned; FY27 guidance was not reaffirmed on the call.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Working-capital stress",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 58.5,
+   "quote": "Effective capacity utilization was 58.5% in quarter 2 and 47.4% for first half."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we have done the groundbreaking over phase two cell manufacturing, which is 3.6 gigawatt."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Module utilisation 58.5% in Q2",
+    "quote": "Effective capacity utilization was 58.5% in quarter 2 and 47.4% for first half.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Capex: CWIP ₹3,841m → ₹8,842m",
+    "quote": "capital work in progress stood at INR8,842 million, up from INR3,841 million in March 2026.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory ₹7,016m → ₹9,074m",
+    "quote": "inventories were INR9,074 million compared with INR7,016 million in March 2026",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue/EBITDA guide ambiguous, FY27 vs FY28",
+    "quote": "it is in the range of about *INR6,000 crores with an EBITDA of about 12%. (*The guidance is for FY28.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Non-DCR module price ~₹12-13/Wp",
+    "quote": "For non-DCR, the prices are somewhere around INR13, INR12, INR12.5, INR13.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "about INR 6,000 crores (later clarified as FY28)",
+    "change": "held",
+    "quote": "it is in the range of about *INR6,000 crores with an EBITDA of about 12%. (*The guidance is for FY28."
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "about 12% (later clarified as FY28)",
+    "change": "held",
+    "quote": "with an EBITDA of about 12%."
+   },
+   {
+    "metric": "Cell ramp-up / utilisation",
+    "value": "above 90% cell utilisation targeted next year; module 80s next year",
+    "change": "new",
+    "quote": "For cell, obviously, there is huge demand for cell. We are looking at above 90% capacity utilization in cell"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 sales volume",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "FY27 revenue",
+    "outcome": "dropped",
+    "quote": "it is in the range of about *INR6,000 crores with an EBITDA of about 12%. (*The guidance is for FY28."
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "outcome": "dropped",
+    "quote": "with an EBITDA of about 12%."
+   },
+   {
+    "metric": "FY27 PAT margin",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Cell ramp-up / utilisation",
+    "outcome": "missed",
+    "quote": "The ramp-up to be at least established by the end of December."
+   },
+   {
+    "metric": "Non-module business share of revenue",
+    "outcome": "held",
+    "quote": "We are targeting in next two years to increase this share to about 15% of our revenue."
+   },
+   {
+    "metric": "Net debt peak",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Vikran Engineering",
+    "relation": "customer"
+   },
+   {
+    "name": "SECI",
+    "relation": "customer"
+   },
+   {
+    "name": "MSEDCL",
+    "relation": "customer"
+   },
+   {
+    "name": "Terawatt PV Research",
+    "relation": "peer"
+   },
+   {
+    "name": "Mercom India",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "ALMM List-II cell mandate",
+   "Backward integration into cells/wafers",
+   "Consolidation / competitor exits",
+   "Pricing realisation (DCR vs non-DCR)",
+   "Residential rooftop B2C push",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Guidance mislabelled FY27 vs FY28 on call",
+    "quote": "The guidance is for FY28. It was erroneously mentioned that the guidance was for FY27."
+   },
+   {
+    "label": "Debt-to-equity 0.44x → 1.37x in a year",
+    "quote": "our debt-to-equity ratio stood at 1.37 x as on 30th September 2026, compared with 0.99 x in June 2026"
+   },
+   {
+    "label": "Chinese technology export controls risk to cell capacity",
+    "quote": "there have been ways how the technology has actually moved outside China."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 3,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Module and cell utilisation FY28",
+    "quote": "It's really difficult to give, but Yes, I think it will be a forward-looking statement."
+   },
+   {
+    "topic": "Cell margin quantification",
+    "quote": "In terms of our margins, we cannot give a number, but it will be in line with our peers"
+   },
+   {
+    "topic": "DCR EBITDA per watt",
+    "quote": "it's going to be in line with what our peers are getting. So, should be around the same numbers."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Saatvik Q2 FY27 revenue rose 77% QoQ to INR9,026 million, with EBITDA margin at 7.7% and order book at 6.68 GW.",
+  "overview": "Q2 FY27 revenue from operations was INR9,026 million, up 77% sequentially from INR5,110 million, but down from INR7,680 million a year earlier. EBITDA was INR696 million (7.7% margin) versus 8.3% in Q1, and PAT rose to INR202 million from INR54 million in Q1 but fell from INR847 million a year ago. Odisha module commercial production began on 2 November 2026 (1.3 GW of phase one), while the 2.4 GW cell line is in trial run and targeted for ramp-up by December 2026. Leverage rose sharply, with debt-to-equity at 1.37x versus 0.99x in June 2026 and 0.44x a year ago.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (Q2 FY27)",
+    "value": "INR9,026 million",
+    "change": "+77% QoQ vs INR5,110 million; vs INR7,680 million in Q2 FY26"
+   },
+   {
+    "metric": "EBITDA (Q2 FY27)",
+    "value": "INR696 million, margin 7.7%",
+    "change": "vs INR425 million, 8.3% in Q1 FY27; INR1,263 million in Q2 FY26"
+   },
+   {
+    "metric": "Profit after tax (Q2 FY27)",
+    "value": "INR202 million",
+    "change": "vs INR54 million in Q1 FY27; INR847 million in Q2 FY26"
+   },
+   {
+    "metric": "Other income (Q2 FY27)",
+    "value": "INR253 million",
+    "change": ""
+   },
+   {
+    "metric": "H1 FY27 revenue from operations",
+    "value": "INR14,136 million",
+    "change": "vs INR16,838 million in H1 FY26"
+   },
+   {
+    "metric": "H1 FY27 EBITDA / margin / PAT",
+    "value": "INR1,121 million / 7.9% / INR256 million",
+    "change": ""
+   },
+   {
+    "metric": "Module sales volume (Q2 FY27)",
+    "value": "640 MW",
+    "change": "vs 334 MW in Q1 FY27; 538 MW in Q2 FY26"
+   },
+   {
+    "metric": "Average realisation",
+    "value": "INR13.49/Wp in Q2; INR13.89/Wp in H1",
+    "change": ""
+   },
+   {
+    "metric": "Debt-to-equity",
+    "value": "1.37x as on 30 Sep 2026",
+    "change": "vs 0.99x in June 2026 and 0.44x a year ago"
+   },
+   {
+    "metric": "Capex H1 FY27 / CWIP",
+    "value": "INR5,001 million capex; CWIP INR8,842 million",
+    "change": "CWIP up from INR3,841 million in March 2026"
+   },
+   {
+    "metric": "Working capital balances",
+    "value": "Inventories INR9,074 million; receivables INR4,855 million; trade payables INR4,705 million",
+    "change": "Inventories up from INR7,016 million in March 2026; receivables down from INR6,988 million"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Modules (domestic and export)",
+    "commentary": "Q2 production was 658 MW (Q1: 408 MW) and sales 640 MW; H1 production 1,066 MW and sales 973 MW. Modules were about 96% of H1 revenue, and domestic customers were 96.7% of Q2 revenue."
+   },
+   {
+    "name": "Other businesses (EPC, solar pumps, transformers, inverters, encapsulants, batteries)",
+    "commentary": "Contributed INR408 million of revenue in Q2 and INR634 million in H1. Management says the share of non-module revenue rose to about 4% from 2.5-3% a year earlier, with a target of about 15% within two years."
+   },
+   {
+    "name": "Revenue mix (per management, FY27 to date)",
+    "commentary": "C&I about 28%, utility about 52-55%, retail about 12%, exports about 3%, other about 4%."
+   }
+  ],
+  "guidance_outlook": [
+   "Management guided to revenue of about INR6,000 crore and EBITDA margin of about 12%. This was stated for FY28, after the speaker first said FY27 and then corrected it.",
+   "Odisha module capacity to reach 4 GW by December 2026, taking total module capacity to 8.8 GW (Ambala 4.8 GW plus Odisha).",
+   "Cell line of 2.4 GW to see production ramp-up by December 2026 and 97-98% yield in the last quarter of FY27. Management expects EBITDA to rise in the last four months of FY27 as cell output starts.",
+   "Benefit from cell backward integration expected to start partially in Q3 and to show more clearly in Q4 FY27, with margins said to be in line with cell-integrated peers.",
+   "Next year (FY28) module utilisation targeted in the 80s; cell utilisation targeted above 90%.",
+   "Phase two (27 acres) adds 3.6 GW cells for a total of 6 GW, targeted for FY28. Phase three adds 6 GW ingot and wafer, targeted for FY29."
+  ],
+  "capex_capacity": [
+   "Odisha phase one (57 acres): 1.3 GW module line commissioned with consent to operate received days before the call. Remaining 2.7 GW of modules targeted by December 2026, taking module capacity to 8.8 GW.",
+   "Cell capacity: 2.4 GW line in trial run and ramp-up. ALMM List-II inspection planned for November 2026 and expected by end-November. Ramp-up established by end-December.",
+   "Encapsulant capacity: 2 GW live, expanding by 3 GW to 5 GW by FY28.",
+   "Ingot and wafer: 6 GW planned for FY29, aligned with ALMM List-III from June 2028. Planning has started.",
+   "Module utilisation was 58.5% in Q2 and 47.4% in H1 (FY26 was about 85%). Effective capacity utilisation is expected to improve in H2 with Odisha coming on stream."
+  ],
+  "demand_pricing": [
+   "Confirmed order book was 6.68 GW at 30 Sep 2026, about 110% of 6.1 GW installed module capacity. Order book was about 60% DCR and about 40% non-DCR.",
+   "Q2 order inflow was 970 MW and H1 inflow was 1.76 GW. Q2 execution was 640 MW and H1 execution was 970 MW.",
+   "Recent wins: Vikran Engineering INR476 crore (Aug), domestic module orders about INR190 crore (Aug) and INR297.5 crore (Sep), SECI INR1,041 crore (Sep), MSEDCL INR100 crore (Oct).",
+   "Current prices cited: TOPCon around INR20-21/Wp in utility; non-DCR around INR12-13/Wp. Management said these are current prices, not FY28 delivery prices.",
+   "Market context: India added about 20.8 GW of solar in H1 FY27 after a record 44.6 GW in FY26. Annual demand is expected to rise from about 50 GW in FY27 to 85 GW by FY30. Domestic cell capacity is about 37 GW against more than 200 GW of module capacity.",
+   "Management said about 70-80 GW of non-DCR orders remain in the system. Open access is estimated at 20-25 GW of opportunity."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What are realisations by segment (DCR, non-DCR, utility, retail, C&I), and how do they compare with peers' INR20-21/Wp quotes?",
+    "answer": "Management said TOPCon prices are around INR20-21/Wp and non-DCR around INR12.5-13/Wp, describing these as current prices rather than FY28 deliveries."
+   },
+   {
+    "question": "What is the impact of China's technology-transfer export controls on cell and wafer capacity?",
+    "answer": "Management said the measures are being watched (expected around 15 November). Phase two cell groundbreaking is done, technology tie-ups are in place, and the company does not expect projects to be delayed."
+   },
+   {
+    "question": "What is the SuryaConnect solar kit's business model and competitive edge?",
+    "answer": "The kit is sold through distributors and online and installed by local IEC-registered players. The company has about 85-90 distributors/resellers and is adding more, targeting district and village coverage."
+   },
+   {
+    "question": "What is the strategy for EPC, pumps and BESS, and what revenue share is expected?",
+    "answer": "The aim is to raise the company's share of project cost from about 50-60% (modules) toward 70-80% by adding inverters and transformers. Non-module revenue is about 4% now, with a target of about 15% within two years."
+   },
+   {
+    "question": "What is FY28 revenue and EBITDA guidance, and does it refer to FY27 or FY28?",
+    "answer": "Management said about INR6,000 crore revenue and about 12% EBITDA margin. It was first described as FY27, then clarified as FY28. Management also said H2 FY27 EBITDA should rise as cell output starts."
+   },
+   {
+    "question": "What is the commissioning status and utilisation timeline for Odisha?",
+    "answer": "The 1.3 GW module line got consent to operate a few days earlier, with ALMM inspection in progress and revenue expected within 2-3 weeks. Cell ALMM inspection is expected by end-November, with the remaining modules in December. Management expects 97-98% cell yield in Q4 FY27."
+   },
+   {
+    "question": "Where are the wafers for Odisha cells sourced, and how will import dependence be managed?",
+    "answer": "Long-term wafer contracts are in place with tier-one Chinese suppliers, and small-volume cell production has started. A 6 GW ingot and wafer plant is planned in Odisha to meet ALMM List-III from June 2028."
+   },
+   {
+    "question": "What margin uplift is expected from cell backward integration, and when?",
+    "answer": "Management said benefits begin partially in Q3 FY27 and show clearly in Q4. Margins are expected to be in line with cell-integrated peers, and no specific number was given."
+   },
+   {
+    "question": "What is the DCR margin, and what utilisation is expected in FY28?",
+    "answer": "Management said DCR margins should be in line with peers, without giving a number. Module utilisation was about 58% in FY27 to date and is targeted in the 80s in FY28; cell utilisation is targeted above 90%."
+   }
+  ],
+  "risks_watch": [
+   "Leverage: debt-to-equity rose to 1.37x from 0.99x in June 2026. Management said it is conscious of leverage during the build phase.",
+   "Execution: Odisha module ramp to 4 GW by December, cell ALMM-II inspection and yield ramp to 97-98%. Any slippage would delay the margin uplift.",
+   "Policy: ALMM List-II (cells) effective 1 June 2026, with a timeline reportedly reversed in July, and a Jan 2027 start mentioned. ALMM List-III from June 2028 requires own ingot and wafer capacity.",
+   "Technology-transfer restrictions from China (announcement around 15 November) could affect cell and wafer equipment timing. Management views the impact as limited.",
+   "Pricing: non-DCR pricing near INR12.5-13/Wp and raw material and module price corrections, which management did not quantify as to how they will be managed.",
+   "Working capital: inventories rose to INR9,074 million and CWIP to INR8,842 million. Watch cash conversion as Odisha assets go live."
+  ],
+  "key_quotes": [
+   "I am pleased to share that commercial production at our 1.3 gigawatt module manufacturing facility in Gopalpur commenced successfully on 2nd November, 2026, and we expect the full 4 gigawatt capacity to be in place by December 2026.",
+   "I do not think it will be fair to give those numbers. This year is particularly a realignment year because ALMM List-I and ALMM List-II transition is happening.",
+   "We are conscious that leverage has risen during the build phase.",
+   "In terms of our margins, we cannot give a number, but it will be in line with our peers who are already in cell manufacturing."
+  ],
+  "management_tone": "Confident on the Odisha build-out, order book and policy direction, but cautious on leverage, FY28 utilisation and cell-linked margins. Management declined to give numbers on FY28 module and cell utilisation and on margin uplift, calling them forward-looking, and admitted FY27 is a \"realignment year\" with the ALMM transition reversed in July.",
+  "_completed": 1
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "1.3 GW Odisha module line (phase one) commissioned, commercial production from 2 Nov 2026",
+    "size_pct": 21.3,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "major"
+   },
+   {
+    "what": "Remaining 2.7 GW Odisha modules taking module capacity to 8.8 GW by Dec 2026",
+    "size_pct": 44.3,
+    "capex_cr": null,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "2.4 GW cell line in trial run, ramp-up targeted by Dec 2026",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "trial_runs",
+    "mat": "major"
+   },
+   {
+    "what": "Phase two cell capacity 3.6 GW (total 6 GW), groundbreaking done, targeted FY28",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "Ingot and wafer 6 GW, planned for FY29",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 8,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": 58.5,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "demand_or_share_gains"
+  ],
+  "clarity": "none",
+  "qRev": -17.6,
+  "qEbitda": -44.9,
+  "outlook": 1,
+  "why": "Guidance of about INR6,000 crore revenue and 12% EBITDA margin is for FY28, not FY27 as first stated; it is backed by Odisha capacity going to 8.8 GW by Dec 2026, a 6.68 GW order book and a 2.4 GW cell line in ramp-up, but module utilisation of 58.5% in Q2 and 47.4% in H1 shows current demand is well below capacity.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "Q3-Q4 FY27",
+    "why": "Management expects cell backward integration to start partially in Q3 and show clearly in Q4 FY27, with EBITDA rising in the last four months, though Q2 EBITDA margin was 7.7% vs 8.3% in Q1 and no uplift number was given."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q3 FY27",
+    "why": "Odisha 1.3 GW module line already commissioned (commercial production from 2 Nov 2026), remaining 2.7 GW targeted by Dec 2026 taking module capacity to 8.8 GW, and 2.4 GW cell line in trial run with ramp-up by Dec 2026."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "Q3-Q4 FY27",
+    "why": "Q2 execution was 640 MW and H1 1.76 GW inflow against a 6.68 GW order book (about 110% of 6.1 GW installed capacity), but module utilisation was only 58.5% in Q2, so volume growth depends on Odisha ramp and conversion of orders."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Phase two cell (3.6 GW, total 6 GW) groundbreaking is done and phase three 6 GW ingot/wafer is planned for FY29 with planning started, though utilisation is low (58.5%), which tempers the need for new capex announcements."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "The INR6,000 crore revenue and 12% EBITDA margin guidance is for FY28 and was already held, while H1 FY27 EBITDA margin was 7.9% and H1 revenue fell to INR14,136 million from INR16,838 million."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "Module utilisation was 47.4% in H1 vs about 85% in FY26, leverage rose to 1.37x D/E, and the ALMM policy timeline was reversed in July, so execution slippage on Odisha ramp or cell yield could cut the margin path."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "Q3-Q4 FY27",
+    "why": "Cell output from the 2.4 GW line is targeted to start in Q3 and ramp with 97-98% yield by Q4 FY27, and non-module offerings (EPC, pumps, inverters, transformers, batteries) are being built toward a 15% revenue share within two years."
+   },
+   {
+    "k": "order_book",
+    "label": "Order book of 6.68 GW at 30 Sep 2026",
+    "call": "surely",
+    "when": "next 2-3 quarters",
+    "why": "Confirmed order book of 6.68 GW is about 110% of 6.1 GW installed module capacity, with Q2 inflow 970 MW and recent wins including SECI INR1,041 crore and Vikran INR476 crore."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Leverage rising during build phase",
+    "call": "unlikely",
+    "when": "next 2-4 quarters",
+    "why": "Debt-to-equity rose to 1.37x from 0.99x in June 2026 and 0.44x a year ago, with CWIP at INR8,842 million, and management said it is conscious of leverage, so deleveraging is not signalled."
+   },
+   {
+    "k": "working_capital",
+    "label": "Inventory build and cash conversion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Inventories rose to INR9,074 million from INR7,016 million in March 2026 while receivables fell to INR4,855 million, so cash conversion as Odisha goes live is a watch item."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on the Odisha build-out, order book and policy direction but cautious on leverage, FY28 utilisation and cell-linked margins, declining to quantify them; analysts pushed on realisations versus peer quotes, the FY27 versus FY28 guidance mix-up, and cell margin uplift."
+  }
+ }
+}

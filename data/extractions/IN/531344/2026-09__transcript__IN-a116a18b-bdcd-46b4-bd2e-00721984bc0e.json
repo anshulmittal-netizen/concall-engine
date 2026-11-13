@@ -2,16 +2,16 @@
  "doc_id": "IN-a116a18b-bdcd-46b4-bd2e-00721984bc0e",
  "market": "IN",
  "company_id": "531344",
- "name": "Container Corporation",
+ "name": "Container Corporation of India Ltd",
  "doc_type": "transcript",
  "date": "2026-11-10",
  "period": "2026-09",
- "title": "Transcript of post results conference call held on 03.11.2026",
+ "title": "Container Corporation of India Ltd - 531344 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
  "model": "claude-haiku-5-5",
  "verified_share": 1.0,
  "read": {
-  "subsector": "Diversified",
-  "thesis": "CONCOR H1 FY27 handling up 4.48% with domestic only 4.22%, far below the 15% domestic FY27 guide, and management declined to reaffirm guidance until December; JNPT rail coefficient 12.88% is not comparable.",
+  "subsector": "Cables & wires",
+  "thesis": "CONCOR's Q2 FY27 volumes grew only in the mid-single digits in H1 (EXIM 4.57%, domestic 4.22%), so the domestic FY27 15% guidance is effectively unreconfirmed and management is deferring any guidance revision to December.",
   "archetype": "Red flag",
   "mental_models": [
    "Pricing power",
@@ -19,13 +19,13 @@
    "Capital cycle"
   ],
   "blocks": {
-   "supply": 0,
+   "supply": -1,
    "pricing": -2,
    "structure": -1,
    "inventory": 0,
    "demand": -1,
    "guidance": -2,
-   "novelty": 1,
+   "novelty": 0,
    "tone": -1
   },
   "utilisation": {
@@ -35,56 +35,56 @@
   "capex": {
    "direction": "held",
    "peers_comment": "",
-   "quote": "our MOU target is INR800 crores, but internal target is INR945 crores and in the first half, as I told you, we have done INR418 crores"
+   "quote": "The capex, our MOU target is INR800 crores, but internal target is INR945 crores and in the first half, as I told you, we have done INR418 crores."
   },
   "triggers": [
    {
     "type": "pricing",
-    "label": "Dadri/TKD tariffs cut 10-20%",
+    "label": "Dadri upper-deck rates cut 10-20%",
     "quote": "So 10% to 20% price reductions we have effected.",
     "direction": -1,
-    "confidence": 0.7
+    "confidence": 0.8
    },
    {
     "type": "guidance",
-    "label": "Guidance not reaffirmed; review in December",
+    "label": "Domestic guidance not reaffirmed; review in December",
     "quote": "So we'll review our guidance in the month of December. Right now, we are just keeping quiet as far as guidance is concerned",
     "direction": -1,
     "confidence": 0.8
    },
    {
     "type": "demand",
-    "label": "H1 handling up 4.48%; domestic 4.22%",
+    "label": "H1 handling growth 4.48% total",
     "quote": "Throughput in the H1 in the EXIM segment has increased by 4.57% and domestic segment, 4.22%, total 4.48%.",
     "direction": -1,
     "confidence": 0.7
    },
    {
     "type": "structure",
-    "label": "Domestic EBIT margin near 2%, competition",
+    "label": "Domestic EBIT margin ~2%, strong competition",
     "quote": "So there is a strong competition. We are not the lone participant in the market.",
     "direction": -1,
-    "confidence": 0.5
+    "confidence": 0.6
    }
   ],
   "guidance": [
    {
-    "metric": "Domestic volume growth FY27",
-    "value": "not given; reaffirmation deferred to December",
-    "change": "dropped",
-    "quote": "Right now, we are just keeping quiet as far as guidance is concerned"
-   },
-   {
-    "metric": "EXIM and overall volume growth FY27",
-    "value": "not reiterated",
-    "change": "dropped",
-    "quote": "So we'll review our guidance in the month of December."
-   },
-   {
-    "metric": "Capex FY27",
-    "value": "INR900-plus crores path; internal target INR945 crores",
+    "metric": "Capex FY27 internal target",
+    "value": "INR945 crores",
     "change": "new",
     "quote": "our MOU target is INR800 crores, but internal target is INR945 crores"
+   },
+   {
+    "metric": "Shipping revenue FY27",
+    "value": "about INR50 crores",
+    "change": "new",
+    "quote": "we will end the year with about INR50 crores of revenue from the shipping activities"
+   },
+   {
+    "metric": "JNPT modal share medium term",
+    "value": "18%, 19%",
+    "change": "new",
+    "quote": "The modal share in JNPT, we hope to achieve in medium term, 18%, 19%."
    }
   ],
   "prior_guidance_check": [
@@ -95,12 +95,11 @@
    {
     "metric": "Domestic volume growth FY27",
     "outcome": "dropped",
-    "quote": "Right now, we are just keeping quiet as far as guidance is concerned"
+    "quote": "we are not giving because it is not correct to give revised guidance so frequently"
    },
    {
     "metric": "Overall handling volume growth FY27",
-    "outcome": "dropped",
-    "quote": "So we'll review our guidance in the month of December."
+    "outcome": "not_discussed"
    },
    {
     "metric": "EBITDA margin",
@@ -108,12 +107,12 @@
    },
    {
     "metric": "Bulk cement in tank containers",
-    "outcome": "met",
-    "quote": "Total containers have increased to about 1,100 and the volume we have reported about 12,000 TEUs"
+    "outcome": "not_discussed"
    },
    {
     "metric": "JNPT rail coefficient",
-    "outcome": "not_discussed"
+    "outcome": "missed",
+    "quote": "the JNPT rail coefficient for the quarter was 12.88%"
    }
   ],
   "entities": [
@@ -122,56 +121,328 @@
     "relation": "partner"
    },
    {
-    "name": "Shipping Corporation",
-    "relation": "partner"
-   },
-   {
     "name": "GAIL",
     "relation": "customer"
    },
    {
-    "name": "Indian Railways",
-    "relation": "supplier"
+    "name": "Shipping Corporation",
+    "relation": "partner"
    }
   ],
   "themes": [
-   "Anti-dumping protection",
+   "Rail freight & DFC modal shift",
+   "Consolidation / competitor exits",
    "Railway capex",
-   "Rural demand recovery",
-   "Nearshoring / reshoring (US)",
-   "Tariffs & trade policy"
+   "Pricing power"
   ],
   "red_flags": [
    {
-    "label": "Guidance withdrawn pending December review",
-    "quote": "Right now, we are just keeping quiet as far as guidance is concerned because the situation is evolving."
+    "label": "Domestic EBIT margin ~2% and guidance deferred",
+    "quote": "we have to at places yields as far as our rates are concerned in some places"
    },
    {
-    "label": "Domestic price cuts 10-20%",
-    "quote": "So 10% to 20% price reductions we have effected."
-   },
-   {
-    "label": "Domestic EBIT margin compression",
-    "quote": "we had to at places yields as far as our rates are concerned in some places"
+    "label": "Operating expenses up INR210cr to INR240cr",
+    "quote": "So no single factor can be taken out, which has raised to the increase for these INR20 crores."
    }
   ],
   "analyst_mix": {
    "balance_sheet": 0,
    "capex": 1,
-   "growth": 5,
+   "growth": 6,
    "margin": 4,
-   "other": 8
+   "other": 5
   },
   "evasions": [
    {
     "topic": "Domestic FY27 volume guidance",
-    "quote": "So exact percentage, I'm not telling you because the situation and the media reports are suggesting is evolving"
+    "quote": "exact percentage, I'm not telling you because the situation and the media reports are suggesting is evolving"
    },
    {
     "topic": "Domestic margin decline one-offs",
     "quote": "No, because see when the volumes -- like volumes like tile volumes, it disappeared."
    }
   ],
-  "hedge_index": 0.7
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "CONCOR posted record Q2 FY27 handling of 1,448,379 TEUs and turnover of INR2,373 crore, with standalone PBT of INR462 crore despite West Asia disruption.",
+  "overview": "Management described Q2 FY27 as decent under difficult geopolitics, with the Strait of Hormuz container traffic practically closed and trade diverted to Khor Fakkan and Fujairah. Total handling volume, operating turnover and total income were all reported as record highs for any quarter, though revenue growth was only 0.93%. Domestic volumes were weak in H1 (tiles at Morbi, gunny bags in Bengal, food grains shifting to BCN wagons) and domestic EBIT margin fell to around 2% per an analyst, which management attributed to competitive pricing and rising costs. Management refused to revise FY27 guidance, deferring it to December, and tariffs at Dadri and TKD were cut 10-20% to win modal shift.",
+  "financial_highlights": [
+   {
+    "metric": "Total handling volume",
+    "value": "1,448,379 TEUs",
+    "change": "Highest ever in any quarter"
+   },
+   {
+    "metric": "Operating turnover",
+    "value": "INR2,373 crore",
+    "change": "Highest ever in any quarter"
+   },
+   {
+    "metric": "Total income",
+    "value": "INR2,466 crore",
+    "change": "Highest ever in any quarter; revenue growth 0.93%"
+   },
+   {
+    "metric": "Standalone profit before tax",
+    "value": "INR462 crore",
+    "change": "About INR154 crore per month"
+   },
+   {
+    "metric": "EBITDA margin (on total income)",
+    "value": "25.79%",
+    "change": ""
+   },
+   {
+    "metric": "Rail freight margin",
+    "value": "28.3%",
+    "change": "Almost at par with last year"
+   },
+   {
+    "metric": "Overall operating margin",
+    "value": "31.5%",
+    "change": ""
+   },
+   {
+    "metric": "Operating expenses (ex land licence fee)",
+    "value": "INR240 crore",
+    "change": "Up from INR210 crore"
+   },
+   {
+    "metric": "Dividend declared",
+    "value": "INR1.9 per share",
+    "change": "H1 total INR3.5 per share"
+   },
+   {
+    "metric": "Empty running cost",
+    "value": "INR98.82 crore (EXIM INR21.73 crore, domestic INR77.09 crore)",
+    "change": "EXIM down marginally, domestic up marginally"
+   },
+   {
+    "metric": "H1 throughput growth",
+    "value": "EXIM +4.57%, domestic +4.22%, total +4.48%",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "EXIM",
+    "commentary": "Q2 originating EXIM volume 575,401 TEUs; average lead 817 km overall, EXIM lead 722 km vs 686 km; reefer exports +18.48%, DPD exports +7.48%, laden exports +3.28%. JNPT market share 63.75% (+3.53% YoY), Mundra 34.65% (-1.8%), Pipavav 47.81% (-2%); all four ports about 50%."
+   },
+   {
+    "name": "Domestic",
+    "commentary": "Q2 originating domestic volume 143,014 TEUs. Tile traffic at Morbi collapsed in Q1 on gas shortages and recovered in Aug-Sep; gunny bale traffic was nil in July then recovered. Busy season surcharge on containers (not BCN wagons) diverted food grain traffic in Jul-Sep. Analyst put domestic EBIT margin near 2%; management cited fuel, staff and land cost increases plus price concessions."
+   },
+   {
+    "name": "Nepal and bulk cement",
+    "commentary": "Nepal rakes rose from 45 to 107 in the quarter (+138%). Tank container bulk cement volume about 12,000 TEUs in Q2 vs about 14,000 TEUs for all of last year; 195 tank containers added, fleet about 1,100, with 2,000 more in pipeline."
+   },
+   {
+    "name": "Shipping and FMLM",
+    "commentary": "Shipping turnover INR12 crore in April-September; full-year target about INR50 crore. Gulf shipping service disrupted since March; coastal shipping deferred for FY27. Bharat Container Shipping Line (30% stake) awaits government approval."
+   }
+  ],
+  "guidance_outlook": [
+   "No revision to FY27 volume guidance; management will review in December 2026 and said it would not give frequent revised guidance.",
+   "Management expects domestic guidance to hold at least for H2 FY27, conditional on West Asia situation normalising within about one month.",
+   "FY27 capex: MoU target INR800 crore, internal target INR945 crore; H1 capex INR418.05 crore, with management saying it is on track for INR900-plus crore.",
+   "Management expects strong recovery in domestic traffic from GAIL contract (traffic from end-November), food grains (from October), and bulk cement streams.",
+   "Modal share at JNPT (road-to-rail) currently 13-14%, medium-term target 18-19%; double stacking at JNPT about 30%."
+  ],
+  "capex_capacity": [
+   "Q2 capex INR299.75 crore; H1 capex INR418.05 crore.",
+   "Fleet additions in Q2: 13 new rakes (32 in H1, total 456 rakes), 414 containers, 7 reach stackers.",
+   "New terminals: Salawas near Jodhpur expected to be commissioned in the current month; Pathri Haridwar in FY27; work under way at Amritsar and Chharodi (Ahmedabad, DFC-linked). About INR200 crore of the roughly INR950 crore capex to go to terminals.",
+   "Double stack trains moved 1,661 in Q2; Assured Transit train started Whitefield to Tughlakabad on 14 August 2026."
+  ],
+  "demand_pricing": [
+   "Dadri upper-deck 40-ft EXIM rates cut 10-20%; management says Dadri revenue is rising after 2-3 months.",
+   "TKD export and import handling charges cut 10-20% about 15 days before the call; Tughlakabad EXIM rates also reduced.",
+   "Dadri: 8 trains loaded in one day, 7 double-stacked. JNPT to Northern India road-to-rail shift is the stated growth driver, with a new Ludhiana-JNPT direct service via Dadri.",
+   "Railway moved four commodities (bulk cement, fertilizer, fly ash, food grains) to GTKM-based slabs; bulk cement is benefiting, fertilizer and food grain not yet, fly ash still favours BOXN wagons.",
+   "Competition in domestic is strong; CONCOR gave some yield concessions to hold market share."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What is the originating throughput, and will FY27 domestic volume growth guidance be revised, given domestic EBIT margin near 2%?",
+    "answer": "Originating EXIM 575,401 and domestic 143,014 TEUs. Guidance revision deferred to December. Management attributed the margin drop to lost tile volumes, competitive yield cuts and higher fuel, staff and land costs, not one-offs."
+   },
+   {
+    "question": "What is the revenue impact of the Dadri and TKD tariff cuts?",
+    "answer": "Management said Dadri revenue is rising after 2-3 months of the cut, and the TKD cut was only 15 days old; it expects both volume and revenue to rise, with no quantified loss given."
+   },
+   {
+    "question": "What drove the operating expense rise from INR210 crore to INR240 crore?",
+    "answer": "Spread across staff costs, handling costs (fuel), and FMLM truck rates; no single item, described as normal inflation."
+   },
+   {
+    "question": "What are the port-wise rail coefficients?",
+    "answer": "JNPT 12.88%, Mundra 24.85%, Pipavav 64.81%; management said these are not like-for-like because transhipment volumes are included."
+   },
+   {
+    "question": "What is the outlook for modal shift from road to rail after the DFC, and is double stacking improving?",
+    "answer": "Double stacking about 30% at JNPT; full DFC benefit not yet seen because of erratic vessel schedules and empty container shortages. Management says October showed better volumes but monthly numbers are not released."
+   },
+   {
+    "question": "What is the FY27 capex estimate?",
+    "answer": "MoU target INR800 crore, internal target INR945 crore; H1 INR418 crore, with H2 typically heavier."
+   }
+  ],
+  "risks_watch": [
+   "West Asia / Strait of Hormuz closure: container traffic largely halted, ship schedules erratic, empty container release delayed at Fujairah and Khor Fakkan.",
+   "Domestic margin compression (analyst-cited EBIT near 2%) amid tariff cuts at Dadri and TKD; revenue impact not quantified.",
+   "JNPT rail coefficient of 12.88% is low; road-to-rail shift from DFC not yet visible in numbers.",
+   "Bharat Container Shipping Line (30% stake) still awaiting government approval; coastal shipping on hold.",
+   "Port yard efficiency and railway access at JNPT as a constraint on ICD-led modal shift."
+  ],
+  "management_tone": "Confident on resilience and operating records, but guarded on forward guidance, which management explicitly deferred to December citing an evolving West Asia situation. Answers on margins and tariff impact were qualitative and some were evasive, with no quantification of revenue loss.",
+  "key_quotes": [
+   "We have recorded highest ever physical performance in any quarter by posting total handling volume of 1,448,379 TEUs.",
+   "So we'll review our guidance in the month of December. Right now, we are just keeping quiet as far as guidance is concerned because the situation is evolving.",
+   "Whatever dip you are seeing in our margin, it is because of some marginal increase in expenses arising out of fuel price rise and the staff cost is increasing, the land and other issues.",
+   "We are seeing improvement in physical volumes in the month of October."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Salawas terminal near Jodhpur",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Pathri Haridwar terminal",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Amritsar and Chharodi (Ahmedabad) terminals under work",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 3,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Tank containers: 195 added in Q2, fleet ~1,100 with 2,000 more in pipeline",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "13 new rakes in Q2 (456 total)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix",
+   "order_book"
+  ],
+  "clarity": "partial",
+  "qRev": 0.93,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "Management refused to revise FY27 volume guidance (review in December), with H1 handling up 4.48% and Q2 revenue up only 0.93%; recovery is expected from GAIL contract, food grains and bulk cement, plus new terminals and fleet additions, but domestic volumes were weak and pricing was cut 10-20% at Dadri and TKD.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Domestic EBIT near 2% per an analyst, operating expenses rose from INR210 crore to INR240 crore, and Dadri and TKD tariffs were cut 10-20%, though overall operating margin was 31.5% and rail freight margin 28.3%."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q3 FY27",
+    "why": "Salawas terminal near Jodhpur commissioning this month, Pathri Haridwar in FY27, Amritsar and Chharodi under work; 13 rakes added in Q2 (456 total), 414 containers and 7 reach stackers, with about INR200 crore of the roughly INR950 crore capex going to terminals."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "Q3-Q4 FY27",
+    "why": "Management expects strong domestic recovery from GAIL contract (from end-November), food grains (from October) and bulk cement; H1 throughput grew 4.48% and Nepal rakes rose 138% to 107, though domestic volumes were weak and EXIM originating was 575,401 TEUs."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "H1 capex INR418 crore against an internal FY27 target of INR945 crore (MoU INR800 crore), with management saying it is on track for INR900-plus crore and H2 typically heavier."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "Q2 revenue grew only 0.93% and H1 throughput grew 4.48%; management held guidance and conditioned domestic guidance on West Asia normalising within about a month."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "Dec 2026 review",
+    "why": "Management refused to revise FY27 volume guidance until December, domestic EBIT margin is cited near 2%, and revenue growth was only 0.93% in Q2, with West Asia disruption ongoing."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "possible",
+    "when": "H2 FY27",
+    "why": "Assured Transit train already started Whitefield to Tughlakabad on 14 August 2026 and the Ludhiana-JNPT direct service via Dadri is new, but no further products were quantified; shipping target about INR50 crore for FY27 is small."
+   },
+   {
+    "k": "pricing",
+    "label": "Dadri and TKD tariff cuts of 10-20% to win modal shift",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Dadri revenue said to be rising after 2-3 months and TKD cut only 15 days old, but no revenue loss quantified; domestic yield concessions made to hold share."
+   },
+   {
+    "k": "turnaround",
+    "label": "Modal shift from DFC at JNPT (road-to-rail 13-14% toward 18-19%)",
+    "call": "possible",
+    "when": "medium term",
+    "why": "JNPT rail coefficient only 12.88% and double stacking about 30%; DFC benefit not yet visible in numbers due to erratic vessel schedules and empty container shortages, though October volumes reportedly better."
+   },
+   {
+    "k": "corporate_action",
+    "label": "Bharat Container Shipping Line approval",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "30% stake awaiting government approval; FY27 shipping turnover target about INR50 crore vs INR12 crore in April-September, with Gulf service disrupted since March."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on record volumes and operating resilience but cautious on guidance, deferring revisions to December; analysts pushed on the near-2% domestic EBIT margin and the unquantified revenue impact of Dadri and TKD tariff cuts."
+  }
  }
 }

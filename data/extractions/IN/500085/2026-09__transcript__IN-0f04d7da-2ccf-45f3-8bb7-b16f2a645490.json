@@ -2,28 +2,29 @@
  "doc_id": "IN-0f04d7da-2ccf-45f3-8bb7-b16f2a645490",
  "market": "IN",
  "company_id": "500085",
- "name": "Chambal Fertilisers",
+ "name": "Chambal Fertilisers & Chemicals Ltd",
  "doc_type": "transcript",
  "date": "2026-11-12",
  "period": "2026-09",
- "title": "Please find attached transcript of Q2 FY 27 Earnings Call.",
+ "title": "Chambal Fertilisers & Chemicals Ltd - 500085 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
  "model": "claude-haiku-5-5",
  "verified_share": 1.0,
  "read": {
   "subsector": "Fertilisers",
-  "thesis": "Q2 FY27 revenue up 9% to INR 7,000 cr with EBITDA margin 12.87%, but subsidy receivables rose to INR 4,157 cr and power/fuel costs jumped; no new guidance on margins beyond Q3.",
-  "archetype": "None",
+  "thesis": "Chambal's H1 FY27 margin held on urea efficiency while NPK/traded fertiliser margins were squeezed by gas at $24.5 NCV; subsidy receivables rose to INR 4,157 crores and Gadepan-III concession expiry is an open EBITDA risk.",
+  "archetype": "Cyclical bottoming",
   "mental_models": [
    "Working-capital stress",
-   "Capacity bottleneck"
+   "Capacity bottleneck",
+   "Capital cycle"
   ],
   "blocks": {
    "supply": 0,
-   "pricing": 0,
+   "pricing": -1,
    "structure": 0,
    "inventory": -1,
    "demand": -1,
-   "guidance": -1,
+   "guidance": 0,
    "novelty": 1,
    "tone": 0
   },
@@ -33,36 +34,38 @@
    "quote": "it has already crossed 83%, 84% in terms of total capacity u ƟlizaƟon"
   },
   "capex": {
-   "direction": "not_discussed",
-   "peers_comment": "",
-   "quote": ""
+   "direction": "not_discussed"
   },
   "triggers": [
    {
-    "type": "util",
-    "label": "TAN plant utilisation ~83-84%",
-    "quote": "it has already crossed 83%, 84% in terms of total capacity u ƟlizaƟon",
-    "direction": 1,
-    "confidence": 0.6
+    "type": "inventory",
+    "label": "Subsidy receivables INR 4,157 crores",
+    "quote": "subsidy receivables of INR 4,157 crores",
+    "highlight": "subsidy receivables of INR 4,157 crores",
+    "direction": -1,
+    "confidence": 0.7
    },
    {
     "type": "pricing",
-    "label": "Gas cost $20.2 → ~$24.5/MMBtu NCV",
+    "label": "Gas cost $20.2 → $24.5 NCV",
     "quote": "currently it is about $24 plus on NCV basis",
+    "highlight": "currently it is about $24 plus",
     "direction": -1,
     "confidence": 0.7
    },
    {
-    "type": "inventory",
-    "label": "Subsidy receivables INR 4,157 cr",
-    "quote": "subsidy receivables of INR 4,157 crores",
+    "type": "structure",
+    "label": "Gadepan-III concession expiring end-November",
+    "quote": "the policy expires by end of November, and 1st of December starts with the new policy",
+    "highlight": "policy expires by end of November",
     "direction": -1,
-    "confidence": 0.7
+    "confidence": 0.6
    },
    {
-    "type": "guidance",
-    "label": "Margin held only for Q3; Q4 open",
-    "quote": "we will more or less maintain this for the 3rd Quarter. Going forward in the 4th Quarter, we will see",
+    "type": "demand",
+    "label": "Complex fertiliser volume down, DAP cut ~1.5 lakh t",
+    "quote": "we have soŌ-pedaled or dialed-down DAP sales by almost 1.5 lakh tons",
+    "highlight": "dialed-down DAP sales by almost 1.5 lakh tons",
     "direction": -1,
     "confidence": 0.5
    }
@@ -70,10 +73,17 @@
   "guidance": [
    {
     "metric": "EBITDA margin",
-    "value": "Maintain for Q3 FY27; Q4 uncertain",
+    "value": "Maintain around current level in Q3 FY27; Q4 uncertain",
     "change": "held",
     "horizon": "Q3 FY27",
-    "quote": "we will more or less maintain this for the 3rd Quarter. Going forward in the 4th Quarter, we will see"
+    "quote": "we will more or less maintain this for the 3rd Quarter"
+   },
+   {
+    "metric": "TAN margin",
+    "value": "Expected to improve in coming quarters",
+    "change": "new",
+    "horizon": "Q3-Q4 FY27",
+    "quote": "We expect the margins to be improved in the coming quarters"
    }
   ],
   "prior_guidance_check": [
@@ -87,7 +97,8 @@
    },
    {
     "metric": "Buyback",
-    "outcome": "not_discussed"
+    "outcome": "dropped",
+    "quote": "it is more for the major shareholders to take a call on this"
    }
   ],
   "entities": [
@@ -113,46 +124,289 @@
    }
   ],
   "themes": [
-   "Consolidation / competitor exits",
-   "Tariffs & trade policy",
-   "Housing & real-estate cycle",
-   "Capex cycle revival (private)"
+   "Fertiliser subsidy & receivables",
+   "Gas cost pass-through",
+   "Urea capacity policy",
+   "Anti-dumping protection",
+   "Consolidation / competitor exits"
   ],
   "red_flags": [
    {
     "label": "Subsidy receivables 2.1x since March",
-    "quote": "subsidy receivables of INR 4,157 crores"
+    "quote": "Subsidy debtors are INR 4,157 crores, which is 2.1x since March"
    },
    {
-    "label": "Gadepan-III subsidy policy expiring; EBITDA hit INR 700-1,000 cr estimate",
-    "quote": "Deﬁnitely, there will be an impact on EBITDA going forward."
+    "label": "Other expenses up ~INR 500 crores on power and fuel",
+    "quote": "there is an increase of about INR 500 crores-plus in the power and fuel cost"
    },
    {
-    "label": "Complex fertiliser volume down, DAP trading cut",
-    "quote": "we have soŌ-pedaled or dialed-down DAP sales by almost 1.5 lakh tons"
+    "label": "Inventory cost below replacement cost",
+    "quote": "whatever inventory we charged to revenue, when it got replaced, it got replaced with higher cost"
    }
   ],
   "analyst_mix": {
    "balance_sheet": 2,
    "capex": 1,
-   "growth": 3,
-   "margin": 5,
+   "growth": 1,
+   "margin": 4,
    "other": 6
   },
   "evasions": [
    {
-    "topic": "Gadepan-III subsidy impact quantum",
+    "topic": "Q4 EBITDA margin / FY28 range",
+    "quote": "I am not in the business of giving guidance"
+   },
+   {
+    "topic": "Gadepan-III policy impact quantum",
     "quote": "I do not know. At this point of Ɵme, I cannot really second -guess what they are going to do."
    },
    {
-    "topic": "Buyback request",
+    "topic": "Buyback",
     "quote": "it is more for the major shareholders to take a call on this"
-   },
-   {
-    "topic": "EBITDA margin range FY28",
-    "quote": "I am not in the business of giving guidance"
    }
   ],
   "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Chambal Q2 FY27 standalone revenue rose 9% YoY to INR 7,000 crore; EBITDA INR 901 crore at 12.87% margin, PAT up 6% to INR 635 crore.",
+  "overview": "Q2 FY27 revenue from operations grew 9% YoY to INR 7,000 crore, with standalone EBITDA of INR 901 crore (12.87% margin) and PAT up 6% to INR 635 crore. H1 revenue was INR 12,027 crore, EBITDA up 9% to INR 1,752 crore, with margin expanding 133 bps. Urea segment carried results, while traded complex fertiliser volumes and margins fell as DAP sales were cut by about 1.5 lakh tons. Subsidy receivables rose to INR 4,157 crore, and management flagged elevated gas and power costs, with Gadepan-III's concessional policy expiring at end-November.",
+  "segments": [
+   {
+    "name": "Urea",
+    "commentary": "Revenue INR 4,629 crore vs INR 3,317 crore YoY; segment EBIT INR 668 crore at 14.44% margin. Q2 production 9.13 lakh t, sales 8.0 lakh t."
+   },
+   {
+    "name": "Complex fertilisers (traded NPK/DAP)",
+    "commentary": "Revenue INR 1,978 crore vs INR 2,721 crore YoY; EBIT INR 78 crore at 3.97% margin. Sales volume 3.04 lakh t; DAP sales cut by about 1.5 lakh t as a fixed-margin business."
+   },
+   {
+    "name": "Crop protection, specialty nutrients and seeds",
+    "commentary": "Revenue INR 325 crore vs INR 374 crore YoY; EBIT INR 87 crore at 26.76% margin. 13 of 14 planned FY27 products launched in H1."
+   },
+   {
+    "name": "Technical Ammonium Nitrate (TAN)",
+    "commentary": "Revenue INR 67 crore in first quarter of operation; EBIT INR 12 crore at 17.97% margin. ANS and HDAN running at about 80-85% of capacity."
+   }
+  ],
+  "guidance_outlook": [
+   "Management does not give formal guidance; expects Q3 FY27 EBITDA margin to be broadly maintained, with Q4 dependent on geopolitical developments.",
+   "Complex fertiliser margins expected to be similar, not the same, in Rabi season.",
+   "TAN margins expected to improve in coming quarters as pricing firms in Q3 and Q4 with rising demand.",
+   "Gadepan-III concessional subsidy policy expires end-November 2026; management expects an EBITDA impact, quantum unknown until new policy is announced from 1 December.",
+   "Gas cost about USD 20.2/MMBtu NCV in Q2, currently about USD 24.5; Gadepan-III operating at about USD 155/t. Depreciation for TAN plant estimated at about INR 70 crore a year (about INR 15-18 crore a quarter)."
+  ],
+  "capex_capacity": [
+   "TAN project (INR 1,500 crore cost, capitalised) began commercial production in Q2; WNA, ANS and HDAN now running, with ANS and HDAN at about 80-85% of capacity.",
+   "Gadepan-III capacity 12.7 lakh t; expected output of about 9 lakh t by end-November at current rate.",
+   "Q2 urea production by unit: Gadepan-I 2.89 lakh t, Gadepan-II 2.56 lakh t, Gadepan-III 3.68 lakh t; sales were 2.81, 2.60 and 3.49 lakh t respectively.",
+   "Preparatory work underway for a potential fourth urea plant under the National Investment Policy for Urea 2026, subject to government approval, project economics and board approval.",
+   "IMACID JV resumed production at lower capacity, affected by sulfur availability and pricing."
+  ],
+  "demand_pricing": [
+   "Kharif monsoon was 12-12.7% below normal for June-September, with delays of 15-30 days and uneven spatial distribution; volumes were not materially hit according to management.",
+   "Subsidy: Rabi NBS rates not yet announced; management said an announcement is expected shortly and that stocks are positioned for Rabi sales.",
+   "Management expects ammonium nitrate imports of about 4 lakh t to fall as domestic capacity grows; demand expected to grow about 6% a year, with pricing firming in Q3-Q4.",
+   "Inflation in traded NPK and DAP input costs was absorbed in margins; the traded fertiliser segment was the main pressure point.",
+   "E-token rollout is shifting farmer purchases to geo-fenced retail points; management is working to improve retail stocking."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Where did the margin pressure fall, and what is the EBITDA outlook?",
+    "answer": "Traded fertilisers (NPK, NBS) absorbed the pressure; urea held margins through capacity efficiency. Q3 margin broadly maintainable; Q4 uncertain given geopolitics."
+   },
+   {
+    "question": "Other expenses rose to about INR 1,650 crore from a run rate of INR 1,100-1,150 crore. Why?",
+    "answer": "Management attributed 85-90% of the increase to power and fuel, which is linked to gas prices; the increase is over INR 500 crore and is unlikely to normalise until gas prices ease."
+   },
+   {
+    "question": "Break-up of subsidy receivables of INR 4,157 crore?",
+    "answer": "Urea gas escalation about INR 1,150 crore; stocks pending POS clearance about INR 1,000 crore; P&K POS about INR 500 crore; DAP advantage/disadvantage formula about INR 350-360 crore. INR 1,300 crore was received in October."
+   },
+   {
+    "question": "Impact of Gadepan-III policy expiry?",
+    "answer": "Discussions are ongoing; there will be an EBITDA impact, quantum to be known once the new policy is announced, expected within days as the current policy expires end-November."
+   },
+   {
+    "question": "Expected impact of new urea investment policy on returns?",
+    "answer": "Policy assumes 12-16% returns; government will not cap returns ex post facto. Fixed charges are USD-linked for the first four years, then rupee-based. Management declined to quantify the Gadepan-III impact, with a range of INR 6,000-9,000 per tonne mentioned."
+   },
+   {
+    "question": "Is there a buyback or capital return plan?",
+    "answer": "Management said this is for major shareholders to decide and did not commit to a buyback."
+   }
+  ],
+  "risks_watch": [
+   "Subsidy receivables of INR 4,818 crore (INR 4,157 crore subsidy) and delayed Rabi NBS rate announcement; working capital pressure.",
+   "Gadepan-III concessional policy expiry end-November 2026; potential EBITDA hit, estimated by one analyst at INR 700-1,000 crore per year, which management did not confirm.",
+   "Gas prices at about USD 24.5/MMBtu vs USD 20.2 in Q2 raise power and fuel costs and subsidy pressure if prices stay elevated.",
+   "TAN margin sustainability after launch-phase pricing pressure; ramp-up of remaining 15-20% capacity.",
+   "Complex fertiliser inventory cost is above replacement cost; volumes fell about 30% YoY and segment assets rose 36% YoY.",
+   "Sulfur availability and pricing affecting IMACID JV; e-token rollout could disrupt retail sales."
+  ],
+  "management_tone": "Confident on urea operations and TAN ramp-up, but cautious and non-committal on Q4 margins, Gadepan-III policy impact and subsidy timing, repeatedly declining to quantify the post-expiry impact.",
+  "key_quotes": [
+   "I am not in the business of giving guidance, but I would say that we will more or less maintain this for the 3rd Quarter.",
+   "Deﬁnitely, there will be an impact on EBITDA going forward.",
+   "We have taken certain prudent decisions in terms of imports. We have stocks to sell in Rabi. We are well posiTioned for that.",
+   "I am happy to tell you that if you are talking about the project capitalization and the total cost, we have managed it pretty well within the numbers that we talked about."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (standalone, Q2 FY27)",
+    "value": "INR 7,000 crore",
+    "change": "+9% YoY from INR 6,413 crore"
+   },
+   {
+    "metric": "EBITDA (standalone, Q2 FY27)",
+    "value": "INR 901 crore; margin 12.87%",
+    "change": ""
+   },
+   {
+    "metric": "Profit after tax (Q2 FY27)",
+    "value": "INR 635 crore",
+    "change": "+6% YoY"
+   },
+   {
+    "metric": "Revenue from operations (H1 FY27)",
+    "value": "INR 12,027 crore",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA (H1 FY27)",
+    "value": "INR 1,752 crore; margin up 133 bps",
+    "change": "+9% YoY"
+   },
+   {
+    "metric": "Profit after tax (H1 FY27, standalone)",
+    "value": "INR 1,338 crore; PAT margin up 89 bps",
+    "change": "+8% YoY"
+   },
+   {
+    "metric": "Profit after tax (H1 FY27, consolidated)",
+    "value": "INR 1,156 crore",
+    "change": ""
+   },
+   {
+    "metric": "Total subsidy receivables (30 Sep 2026)",
+    "value": "INR 4,818 crore (market debtors INR 661 crore; subsidy INR 4,157 crore)",
+    "change": ""
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Gadepan-III urea capacity 12.7 lakh t (existing unit; output about 9 lakh t by end-November at current rate)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Potential fourth urea plant under National Investment Policy for Urea 2026 (preparatory work; subject to government approval, economics and board approval)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": 83.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix"
+  ],
+  "clarity": "vague",
+  "qRev": 9.0,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "No formal guidance; management expects Q3 FY27 EBITDA margin broadly maintained and TAN margins to improve as pricing firms, with Q2 revenue +9% YoY, but the fourth urea plant is only in preparatory stage and gas/power costs and a DAP volume cut weigh on outlook.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "Q3 FY27",
+    "why": "Management expects Q3 EBITDA margin broadly maintained from Q2's 12.87% and TAN margins (17.97%) to improve as pricing firms, but Q4 is uncertain and other expenses rose over INR 500 crore on gas-linked power and fuel costs, with gas at USD 24.5/MMBtu vs 20.2 in Q2."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "Q3 FY27 to Q4 FY27",
+    "why": "Gadepan-III output is expected to reach about 9 lakh t by end-November against 12.7 lakh t capacity, TAN ramp-up has 15-20% capacity left, and ANS/HDAN run at 80-85%; the fourth urea plant is only in preparatory stage with no date."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Demand is expected to grow about 6% a year and ammonium nitrate imports of about 4 lakh t should fall as domestic capacity grows, but DAP sales were cut by about 1.5 lakh t and complex fertiliser volumes fell about 30% YoY."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 2-4 quarters",
+    "why": "Capacity utilisation is 83-84%, preparatory work is under way for a fourth urea plant under the National Investment Policy for Urea 2026, subject to government and board approval."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "No formal guidance is given, and management held Q3 margins broadly flat while leaving Q4 open to geopolitical developments."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "Q4 FY27",
+    "why": "Gadepan-III concessional policy expires end-November with an EBITDA hit that management did not quantify (an analyst estimated INR 700-1,000 crore a year), and gas and power costs remain elevated."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "13 of 14 planned FY27 crop protection, specialty nutrient and seed products were launched in H1, so the one remaining launch is due in H2; no other new products were named."
+   },
+   {
+    "k": "pricing",
+    "label": "Subsidy receivables and Rabi NBS rate reset",
+    "call": "possible",
+    "when": "next 1-2 quarters",
+    "why": "Subsidy receivables are INR 4,157 crore (total INR 4,818 crore) and INR 1,300 crore was received in October; Rabi NBS rates are not yet announced, so collections depend on the announcement."
+   },
+   {
+    "k": "pricing",
+    "label": "TAN pricing firming",
+    "call": "likely",
+    "when": "Q3-Q4 FY27",
+    "why": "Management expects TAN margins to improve as pricing firms with rising demand, from the 17.97% EBIT margin on INR 67 crore revenue in the first quarter of operation."
+   },
+   {
+    "k": "regulatory",
+    "label": "New urea policy returns and Gadepan-III tariff reset",
+    "call": "possible",
+    "when": "from 1 Dec 2026",
+    "why": "The new policy assumes 12-16% returns and the Gadepan-III concessional policy ends end-November; management cited a possible INR 6,000-9,000 per tonne range but declined to confirm the impact."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on urea operations, TAN ramp-up and Rabi stock positioning, but cautious on Q4 margins, Gadepan-III post-expiry impact and subsidy timing, declining to quantify either; analysts pushed on the other-expenses jump and the subsidy receivables break-up."
+  }
  }
 }
