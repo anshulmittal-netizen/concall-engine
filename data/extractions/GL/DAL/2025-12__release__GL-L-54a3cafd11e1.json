@@ -1,0 +1,166 @@
+{
+ "doc_id": "GL-L-54a3cafd11e1",
+ "market": "GL",
+ "company_id": "DAL",
+ "name": "Delta Air Lines",
+ "doc_type": "release",
+ "date": "2026-01-13",
+ "period": "2025-12",
+ "title": "8-K · PRESS RELEASE DATED JANUARY 13, 2026",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Delta's December quarter CASM-Ex rose 4.0% and adjusted TRASM was flat, but management guides March-quarter revenue up 5-7% on 2026 EPS growth of 20% at midpoint; supply discipline is capacity growth of about 3%.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": 82,
+   "quote": "Passenger load factor 82 % 84 % (2) pts"
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Looking ahead to 2026, we expect another year of cost performance aligned to our long-term framework on capacity growth of approximately 3 percent"
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "March-qtr revenue +5-7% YoY",
+    "quote": "We expect March quarter revenue to grow 5 percent to 7 percent year-over-year, several points ahead of capacity growth.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "2026 EPS growth 20% at midpoint",
+    "quote": "For the full year, we expect to deliver margin expansion and earnings growth of 20 percent year-over-year.",
+    "direction": 1,
+    "confidence": 0.55
+   },
+   {
+    "type": "pricing",
+    "label": "Adj. TRASM flat in Q4 (-0.1%)",
+    "quote": "flat adjusted total unit revenue (TRASM)",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "util",
+    "label": "Load factor 82% vs 84%",
+    "quote": "Passenger load factor 82 % 84 % (2) pts",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Total revenue YoY (1Q26)",
+    "value": "Up 5% - 7%",
+    "change": "new",
+    "horizon": "1Q26",
+    "quote": "We expect March quarter revenue to grow 5 percent to 7 percent year-over-year"
+   },
+   {
+    "metric": "EPS YoY (FY26)",
+    "value": "20% at mid-point; EPS $6.50 - $7.50",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Earnings Per Share YoY 20% at mid-point"
+   },
+   {
+    "metric": "Free cash flow ($B)",
+    "value": "$3 - $4",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "outlook for free cash flow of $3 to $4 billion"
+   },
+   {
+    "metric": "1Q26 operating margin",
+    "value": "4.5% - 6%",
+    "change": "new",
+    "horizon": "1Q26",
+    "quote": "Operating Margin 4.5% - 6%"
+   },
+   {
+    "metric": "1Q26 EPS",
+    "value": "$0.50 - $0.90",
+    "change": "new",
+    "horizon": "1Q26",
+    "quote": "Earnings Per Share $0.50 - $0.90"
+   },
+   {
+    "metric": "Capacity growth (FY26)",
+    "value": "approximately 3%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "capacity growth of approximately 3 percent"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Boeing",
+    "relation": "supplier"
+   },
+   {
+    "name": "GE Aerospace",
+    "relation": "supplier"
+   },
+   {
+    "name": "American Express",
+    "relation": "partner"
+   },
+   {
+    "name": "Monroe Energy",
+    "relation": "partner"
+   },
+   {
+    "name": "Air France-KLM",
+    "relation": "partner"
+   },
+   {
+    "name": "Korean Air",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Corporate travel recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Non-fuel CASM-Ex up 4.0% in Q4 vs flat TRASM",
+    "quote": "Non-fuel CASM was 14.27¢, an increase of 4.0 percent year-over-year"
+   },
+   {
+    "label": "Q4 revenue hit ~2 pts by government shutdown",
+    "quote": "December quarter revenue growth was impacted by about 2 points from the government shutdown, largely in Domestic"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

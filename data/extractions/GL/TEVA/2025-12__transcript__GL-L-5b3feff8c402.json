@@ -1,0 +1,173 @@
+{
+ "doc_id": "GL-L-5b3feff8c402",
+ "market": "GL",
+ "company_id": "TEVA",
+ "name": "Teva Pharmaceutical",
+ "doc_type": "transcript",
+ "date": "2026-02-05",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q3 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Biotech",
+  "thesis": "Teva Q3 2024 revenue $4.3B up 15% LC with non-GAAP margin 53.7% and FY24 revenue guide raised to $16.1–16.5B, but US generic pricing is structurally falling and no capacity discipline was discussed.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Mix shift",
+   "Deleveraging"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "US generic prices pushed down",
+    "quote": "Our general point of view on this is prices will be pushed down.",
+    "highlight": "prices will be pushed down",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "FY24 revenue guide raised $100M",
+    "quote": "we're raising our 2024 full-year revenue guidance to $16.1 billion to $16.5 billion.",
+    "highlight": "raising our 2024 full-year revenue guidance",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "UZEDY FY24 revenue $80M → $100M",
+    "quote": "we are now expecting UZEDY revenue for the full year to be at $100 million, compared to our prior expectation of $80 million",
+    "highlight": "$100 million, compared to our prior expectation of $80 million",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY24 revenue",
+    "value": "$16.1B–$16.5B",
+    "change": "raised",
+    "horizon": "FY2024",
+    "quote": "we're raising our 2024 full-year revenue guidance to $16.1 billion to $16.5 billion."
+   },
+   {
+    "metric": "FY24 non-GAAP EPS",
+    "value": "$2.40–$2.50",
+    "change": "raised",
+    "horizon": "FY2024",
+    "quote": "our earnings per share guidance range by $0.10 to be between $2.40 and $2.50."
+   },
+   {
+    "metric": "FY24 free cash flow",
+    "value": "$1.7B–$2B",
+    "change": "held",
+    "horizon": "FY2024",
+    "quote": "free cashflows are expected to be between $1.7 billion to $2 billion for the full year."
+   },
+   {
+    "metric": "FY24 UZEDY revenue",
+    "value": "$100M",
+    "change": "raised",
+    "horizon": "FY2024",
+    "quote": "we are now expecting UZEDY revenue for the full year to be at $100 million"
+   },
+   {
+    "metric": "FY24 non-GAAP gross margin",
+    "value": "53%–54%",
+    "change": "held",
+    "horizon": "FY2024",
+    "quote": "We continue to expect our non-GAAP gross margin to be between 53% to 54% for the full year"
+   },
+   {
+    "metric": "FY24 opex % of revenue",
+    "value": "27%–27.5%",
+    "change": "held",
+    "horizon": "FY2024",
+    "quote": "operating expenses to be in the 27% to 27.5% range for the full year"
+   },
+   {
+    "metric": "2027 operating margin target",
+    "value": "30%",
+    "change": "held",
+    "horizon": "2027",
+    "quote": "operating income margin of 30%, net debt adjusted EBITDA of two times and cash to earnings of 80%"
+   },
+   {
+    "metric": "TAPI divestment",
+    "value": "complete H1 2025",
+    "change": "held",
+    "horizon": "H1 2025",
+    "quote": "we should be in a position to complete that divestment in H1 of 2025"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Sanofi",
+    "relation": "partner"
+   },
+   {
+    "name": "mAbxience",
+    "relation": "partner"
+   },
+   {
+    "name": "Revlimid",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Specialty chem destocking end",
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "GAAP net loss $437M on impairment and legal",
+    "quote": "GAAP net loss in Q3 2024 was $437 million"
+   },
+   {
+    "label": "EU Copaxone fine $350M provision, multi-year appeal",
+    "quote": "that will take many, many years, unfortunately"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 3,
+   "margin": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Pricing outlook for 2025 US generics",
+    "quote": "obviously we'll give guidance on that at the start of the year"
+   },
+   {
+    "topic": "Operating investment vs margin",
+    "quote": "I don't think we ever think that's there's one extreme or the other."
+   }
+  ],
+  "hedge_index": 0.3,
+  "triggers_note": "none"
+ }
+}

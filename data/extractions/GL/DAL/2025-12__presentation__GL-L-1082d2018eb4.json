@@ -1,0 +1,129 @@
+{
+ "doc_id": "GL-L-1082d2018eb4",
+ "market": "GL",
+ "company_id": "DAL",
+ "name": "Delta Air Lines",
+ "doc_type": "presentation",
+ "date": "2026-03-17",
+ "period": "2025-12",
+ "title": "8-K · INVESTOR PRESENTATION",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Airlines & travel",
+  "thesis": "Delta raised 1Q26 revenue guide to high-single-digit growth on March demand, but March-quarter non-fuel CASM-Ex is guided up 4-6% on lower capacity and fuel is a headwind; no capacity cut, supply stays flexible.",
+  "archetype": "None",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "1Q26 revenue guide raised to +HSD",
+    "quote": "Raising revenue guidance on demand momentum",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Domestic & intl unit revenue up MSD",
+    "quote": "Domestic & international unit revenue growing mid - single digits yr/yr",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capacity flexibility kept if fuel stays high",
+    "quote": "We are maintaining capacity flexibility if elevated fuel prices persist",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "1Q26 total revenue growth",
+    "value": "+HSD (raised from +5-7%)",
+    "change": "raised",
+    "horizon": "1Q26",
+    "quote": "1Q26 Updated Guide +HSD"
+   },
+   {
+    "metric": "1Q26 CASM-Ex growth",
+    "value": "+4-6% yr/yr",
+    "change": "new",
+    "horizon": "1Q26",
+    "quote": "March quarter non - fuel unit costs expected to be up mid - single digits yr/yr"
+   },
+   {
+    "metric": "1Q26 earnings",
+    "value": "Within initial guidance range",
+    "change": "held",
+    "horizon": "1Q26",
+    "quote": "Expect March Quarter Earnings Within Initial Guidance Range"
+   },
+   {
+    "metric": "Net leverage 2026E",
+    "value": "~1.5x",
+    "change": "new",
+    "horizon": "2026E",
+    "quote": "2026E Target"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "AAL",
+    "relation": "peer"
+   },
+   {
+    "name": "LUV",
+    "relation": "peer"
+   },
+   {
+    "name": "UAL",
+    "relation": "peer"
+   },
+   {
+    "name": "Monroe Energy",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Fuel price spike pressuring industry",
+    "quote": "Industry moving quickly to recapture higher fuel"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4
+ }
+}

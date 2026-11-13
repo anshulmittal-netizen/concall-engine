@@ -1,0 +1,107 @@
+{
+ "doc_id": "GL-L-50c851805e52",
+ "market": "GL",
+ "company_id": "SIE.DE",
+ "name": "Siemens",
+ "doc_type": "release",
+ "date": "2025-12-31",
+ "period": "2025-12",
+ "title": "Q1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Siemens Q1 FY26 orders up 10% comparable to €21.4bn, book-to-bill 1.12 and record €120bn backlog; Industrial margin 15.6%, FCF weak at €0.7bn on working capital; EPS pre-PPA guidance raised.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Backlog conversion",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 2
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "EPS pre-PPA guide raised",
+    "quote": "raises its outlook for basic EPS from net income before purchase price allocation accounting (EPS pre PPA) from a range of €10.40 to €11.00 to a range of €10.70 to €11.10",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Smart Infrastructure orders +22% record",
+    "quote": "orders rose 22 percent on a comparable basis to a record high of €7.2 billion",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Book-to-bill 1.12, backlog €120bn",
+    "quote": "The book-to-bill ratio was a strong 1.12. The order backlog reached a record high of €120 billion",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Industrial FCF €1.0bn vs €1.7bn",
+    "quote": "a build-up of working capital, including effects from the timing of payments in Mobility projects",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Basic EPS pre PPA FY2026",
+    "value": "€10.70 to €11.10",
+    "change": "raised",
+    "quote": "raises its outlook for basic EPS from net income before purchase price allocation accounting (EPS pre PPA) from a range of €10.40 to €11.00 to a range of €10.70 to €11.10"
+   },
+   {
+    "metric": "Other fiscal 2026 expectations",
+    "value": "confirmed",
+    "change": "held",
+    "quote": "Siemens confirms the remaining expectations for fiscal 2026."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [],
+  "themes": [
+   "Data-centre power & cooling",
+   "Grid capex & transformers",
+   "Electronics manufacturing (EMS/PLI)",
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "FCF down to €0.7bn on working capital build",
+    "quote": "Free cash flow all-in at Group level from continuing and discontinued operations reached €677 million"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.1
+ }
+}

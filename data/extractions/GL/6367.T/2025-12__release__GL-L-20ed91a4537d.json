@@ -1,0 +1,124 @@
+{
+ "doc_id": "GL-L-20ed91a4537d",
+ "market": "GL",
+ "company_id": "6367.T",
+ "name": "Daikin Industries",
+ "doc_type": "release",
+ "date": "2025-12-31",
+ "period": "2025-12",
+ "title": "FY2025 Third Quarter （536KB）",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "HVAC & cooling",
+  "thesis": "Nine-month sales up 2.0% to ¥3,666bn but operating profit down 3.4% to ¥307.9bn; full-year OP guidance cut 5.1% to ¥413bn as the recovery is slower than expected.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Supply discipline",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY OP guidance cut to ¥413bn",
+    "quote": "the recovery is expected to be slower than earlier anticipated",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Americas distributor inventory high",
+    "quote": "distribution inventories remaining high as a result of the last-minute demand",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Q3 slight demand recovery",
+    "quote": "our own business saw a slight recovery in demand during the third quarter",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY net sales",
+    "value": "¥4,920bn (+3.5%)",
+    "change": "raised",
+    "horizon": "FY ending Mar 2026",
+    "quote": "Revised forecasts (B) 4,920,000 413,000 398,000 268,000 915.29"
+   },
+   {
+    "metric": "FY operating profit",
+    "value": "¥413bn (+2.8%)",
+    "change": "cut",
+    "horizon": "FY ending Mar 2026",
+    "quote": "Increase/decrease (%) 1.7 -5.1 -4.1 -4.3"
+   },
+   {
+    "metric": "FY net profit",
+    "value": "¥268bn",
+    "change": "cut",
+    "horizon": "FY ending Mar 2026",
+    "quote": "Previous forecasts (A) 4,840,000 435,000 415,000 280,000 956.28"
+   },
+   {
+    "metric": "FY dividend",
+    "value": "¥330 per share",
+    "change": "held",
+    "horizon": "FY ending Mar 2026",
+    "quote": "Fiscal Year ending March 31, 2026 (forecast) 165.00 330.00"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY operating profit",
+    "outcome": "missed",
+    "quote": "Previous forecasts (A) 4,840,000 435,000 415,000 280,000 956.28"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Goodman Global Holdings, Inc.",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Pricing power",
+   "Semiconductor demand slump",
+   "Tariffs & trade policy",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Chemicals OP down 44.6% on semiconductor slump",
+    "quote": "Operating profit was significantly affected by the decline in semiconductor demand, decreasing by 44.6% year over year"
+   },
+   {
+    "label": "Operating cash flow down on payables",
+    "quote": "principally due to a decrease in trade payables"
+   }
+  ],
+  "evasions": [],
+  "hedge_index": 0.4,
+  "analyst_mix": {}
+ }
+}

@@ -1,0 +1,139 @@
+{
+ "doc_id": "GL-L-736b2cb9e236",
+ "market": "GL",
+ "company_id": "PPG",
+ "name": "PPG Industries",
+ "doc_type": "transcript",
+ "date": "2026-01-26",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q2 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q2 organic sales +2% with Performance Coatings +6% and EPS guide $7.75–$8.05 reiterated; Industrial H2 recovery rests entirely on share gains, not market demand, and Architectural Europe was cut.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Competitive capex",
+   "Customer stickiness",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We just announced a new aerospace factory in the United States this past quarter at about $380 million CapEx cost, and we continue to invest in debottlenecking."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "New US aerospace factory ~$380M capex",
+    "quote": "We just announced a new aerospace factory in the United States this past quarter at about $380 million CapEx cost",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Architectural Europe guide cut",
+    "quote": "We did adjust down our outlook, particularly for Europe.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Industrial H2 growth is share-gain only",
+    "quote": "that confidence that you're hearing from us for the second half is entirely share gain driven.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Q2 Industrial prices down 1%",
+    "quote": "Selling prices declined 1% due to carryover of certain index-based customer contracts.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year adjusted EPS",
+    "value": "$7.75 to $8.05",
+    "change": "held",
+    "horizon": "FY2025",
+    "quote": "We are reiterating our full year guidance per share range of $7.75 to $8.05, and we have a clear path to achieve it."
+   },
+   {
+    "metric": "H2 EPS growth",
+    "value": "high single digit; Q3 mid-single digit, Q4 low double digit",
+    "change": "new",
+    "horizon": "H2 2025",
+    "quote": "resulting in a mid-single-digit percentage increase in EPS for the third quarter and a low double-digit percentage increase for the fourth quarter."
+   },
+   {
+    "metric": "Restructuring savings",
+    "value": "$75M full year, ~$30M realised in H1",
+    "change": "held",
+    "horizon": "FY2025",
+    "quote": "We're about a $30 million clip through the first half."
+   },
+   {
+    "metric": "Industrial share gains",
+    "value": "$100M annualised",
+    "change": "held",
+    "horizon": "FY2025",
+    "quote": "We sized our annual share gains in the Industrial segment at $100 million, and we are tracking to that annualized figure."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Tikkurila",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Aerospace capacity",
+   "Consolidation / competitor exits",
+   "Auto EV transition",
+   "Housing & real-estate cycle",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Performance Coatings incrementals weak; opex diverted",
+    "quote": "we made a conscious decision to spend more on OpEx, growth-focused OpEx"
+   },
+   {
+    "label": "Refinish Q3 soft; recovery seen 2026",
+    "quote": "we're not expecting industry recovery of claim rates and body shop work likely until 2026."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 9,
+   "margin": 5,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Performance Coatings margin shortfall",
+    "quote": "I would have wanted the net margin for Performance Coatings to drop more EBIT, EBITDA and cash to the bottom line."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

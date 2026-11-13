@@ -1,0 +1,154 @@
+{
+ "doc_id": "GL-L-df1af61918aa",
+ "market": "GL",
+ "company_id": "FDX",
+ "name": "FedEx",
+ "doc_type": "release",
+ "date": "2025-12-18",
+ "period": "2025-12",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "Q2 FY26 adjusted operating margin 6.9% (vs 6.3%) on US yields and cost cuts; FY26 EPS guide raised to $14.80–16.00 pre-MTM, but FedEx Freight profit fell 71% and capex held at $4.5B.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Operating leverage",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "quote": "Capital spending of $4.5 billion, with a priority on investments in network optimization and efficiency improvement, including fleet and facility modernization and automation.",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "US domestic composite yield +5%",
+    "quote": "U.S. domestic composite",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY26 EPS floor raised to $14.80 from $14.20",
+    "quote": "Diluted earnings per share of $14.80 to $16.00 before the MTM retirement plans accounting adjustments compared to the prior forecast of $14.20 to $16.00",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Freight shipments down 4%, FedEx Freight profit -71%",
+    "quote": "FedEx Freight segment operating results decreased during the quarter due to lower shipments",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY26",
+    "value": "5% to 6%",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "A 5% to 6% revenue growth rate year over year, compared to the prior forecast of 4% to 6% revenue growth"
+   },
+   {
+    "metric": "Diluted EPS before MTM",
+    "value": "$14.80 to $16.00",
+    "change": "raised",
+    "horizon": "FY2026",
+    "quote": "Diluted earnings per share of $14.80 to $16.00 before the MTM retirement plans accounting adjustments"
+   },
+   {
+    "metric": "Pension contributions",
+    "value": "$275 million",
+    "change": "cut",
+    "horizon": "FY2026",
+    "quote": "Pension contributions of $275 million, compared to the prior forecast of up to $400 million."
+   },
+   {
+    "metric": "Permanent cost reductions",
+    "value": "$1 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Permanent cost reductions of $1 billion in transformation-related savings"
+   },
+   {
+    "metric": "ETR before MTM",
+    "value": "approximately 25%",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "An ETR of approximately 25% prior to the MTM retirement plans accounting adjustments"
+   },
+   {
+    "metric": "Capital spending",
+    "value": "$4.5 billion",
+    "change": "held",
+    "horizon": "FY2026",
+    "quote": "Capital spending of $4.5 billion"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue growth",
+    "outcome": "met",
+    "quote": "A 5% to 6% revenue growth rate year over year"
+   },
+   {
+    "metric": "Capital spending",
+    "outcome": "met",
+    "quote": "Capital spending of $4.5 billion"
+   },
+   {
+    "metric": "Permanent cost reductions",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "FedEx Freight",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Freight shipments and volume down; FedEx Freight profit down 71%",
+    "quote": "FedEx Freight segment operating results decreased during the quarter due to lower shipments"
+   },
+   {
+    "label": "GAAP EPS unforecastable due to pension MTM",
+    "quote": "FedEx is unable to provide a fiscal 2026 earnings per share (\"EPS\") or effective tax rate (\"ETR\") outlook on a GAAP basis"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

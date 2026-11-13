@@ -1,0 +1,212 @@
+{
+ "doc_id": "GL-L-41defa9521ff",
+ "market": "GL",
+ "company_id": "UPS",
+ "name": "UPS",
+ "doc_type": "transcript",
+ "date": "2026-01-26",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q2 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "UPS withdrew all forward revenue and profit guidance as US ADV fell 7.3% and Ground Saver costs overran; it is cutting capacity hard (74 buildings, ~9,500 positions, $3.5B cost-out) but the supply-side pivot is not yet showing in margins.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -2,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "We expect capital expenditures to be approximately $3.5 billion."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "74 buildings closed, 155 operations",
+    "quote": "74 buildings closed and 155 operations completed",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Revenue per piece +5.5% YoY",
+    "quote": "revenue per piece increased 5.5% year-over-year",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "All revenue and profit guidance withdrawn",
+    "quote": "we are not providing any forward-looking revenue or earnings guidance",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "demand",
+    "label": "US ADV down 7.3%",
+    "quote": "our overall U.S. average daily volume declined by 7.3%",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Attrition slower than modelled",
+    "quote": "our attrition rate was lower than we anticipated, which resulted in higher expense than we planned",
+    "direction": -1,
+    "confidence": 0.65
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue and operating profit guidance",
+    "value": "withdrawn for Q3 and full year",
+    "change": "cut",
+    "horizon": "Q3 2025",
+    "quote": "we are not providing any forward-looking revenue or earnings guidance"
+   },
+   {
+    "metric": "Expense reduction",
+    "value": "approximately $3.5 billion",
+    "change": "held",
+    "horizon": "2025",
+    "quote": "we remain on track to achieve our 2025 expense reduction target of about $3.5 billion"
+   },
+   {
+    "metric": "Capital expenditures",
+    "value": "approximately $3.5 billion",
+    "change": "held",
+    "horizon": "2025",
+    "quote": "We expect capital expenditures to be approximately $3.5 billion."
+   },
+   {
+    "metric": "Amazon ADV decline H2",
+    "value": "approximately 30% in Q3 and Q4",
+    "change": "new",
+    "horizon": "H2 2025",
+    "quote": "we expect to accelerate the pace of Amazon volume decline to approximately 30% year-over-year in each of the third and fourth quarters"
+   },
+   {
+    "metric": "Dividends",
+    "value": "around $5.5 billion",
+    "change": "held",
+    "horizon": "2025",
+    "quote": "We are planning to pay out around $5.5 billion in dividends, subject to Board approval"
+   },
+   {
+    "metric": "Tax rate",
+    "value": "approximately 23.5%",
+    "change": "held",
+    "horizon": "2025",
+    "quote": "we expect tax rate to be approximately 23.5% for the full year 2025"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue and operating profit guidance",
+    "outcome": "dropped",
+    "quote": "we are not providing any forward-looking revenue or earnings guidance"
+   },
+   {
+    "metric": "Expense reduction 3.5B",
+    "outcome": "met",
+    "quote": "we are on track to achieve our 2025 expense reduction target of about $3.5 billion"
+   },
+   {
+    "metric": "Amazon glide down",
+    "outcome": "met",
+    "quote": "our Amazon glide down efforts are, for the most part, proceeding as planned"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Amazon",
+    "relation": "customer"
+   },
+   {
+    "name": "USPS",
+    "relation": "partner"
+   },
+   {
+    "name": "Coyote",
+    "relation": "peer"
+   },
+   {
+    "name": "LaserShip",
+    "relation": "competitor"
+   },
+   {
+    "name": "SpeedX",
+    "relation": "competitor"
+   },
+   {
+    "name": "Estafeta",
+    "relation": "peer"
+   },
+   {
+    "name": "Andlauer Healthcare Group",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "China+1 enquiries → orders",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Ground Saver cost overrun $85M",
+    "quote": "it was about $85 million"
+   },
+   {
+    "label": "Guidance withdrawn",
+    "quote": "we are not providing any forward-looking revenue or earnings guidance"
+   },
+   {
+    "label": "Attrition below model",
+    "quote": "the attrition rate is not where we thought it would be"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 5,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Q3 margin shape",
+    "quote": "we're going to get clarity as we go through the quarter on this"
+   },
+   {
+    "topic": "Driver buyout savings",
+    "quote": "We don't know the takeout yet. We don't know then the cost associated with that takeout"
+   },
+   {
+    "topic": "Building closure count",
+    "quote": "we're evaluating a number of different options. There are several buildings that we're looking at"
+   }
+  ],
+  "hedge_index": 0.7
+ }
+}

@@ -1,0 +1,141 @@
+{
+ "doc_id": "GL-L-d398f52cc682",
+ "market": "GL",
+ "company_id": "LLY",
+ "name": "Eli Lilly",
+ "doc_type": "transcript",
+ "date": "2026-01-22",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q3 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Biotech",
+  "thesis": "Q3 2024 incretin supply now ramping (sellable doses up 50%+ in 2H24) while Q3 sales were hit by mid-single-digit channel destock; 2024 revenue guide narrowed to $45.4–46B with top end cut.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Supply discipline",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "we remain on-track to exceed the production target of at least 1.5 times the saleable doses of incretin medicines in the second half of this year compared to the second half of last year."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "In September, we invested nearly $2 billion to increase our manufacturing footprint in Ireland."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Manufacturing commitments >$20B since 2020",
+    "quote": "This brings the total commitments to build, upgrade and acquire manufacturing facilities announced since 2020 to more than $20 billion.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Channel destock hit Q3 sales",
+    "quote": "We estimate this inventory decrease impacted Q3 sales of Mounjaro and Zepbound by mid-single digits as a percentage of aggregate used sales of these products.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue guide top end lowered",
+    "quote": "This is the driver for lowering the top end of the range.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Rx volume +25% sequential",
+    "quote": "U.S. sequential quarter-over-quarter prescription volume growth was 25% in Q3.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2024 revenue",
+    "value": "$45.4B to $46B",
+    "change": "cut",
+    "horizon": "FY2024",
+    "quote": "We are updating our revenue guidance range to $45.4 billion to $46 billion."
+   },
+   {
+    "metric": "2H24 incretin saleable doses vs 2H23",
+    "value": "at least 1.5x (>50% increase)",
+    "change": "held",
+    "horizon": "2H2024",
+    "quote": "we remain on-track to exceed the production target of at least 1.5 times the saleable doses of incretin medicines in the second half of this year"
+   },
+   {
+    "metric": "FY2024 reported EPS",
+    "value": "$12.05 to $12.55",
+    "change": "new",
+    "horizon": "FY2024",
+    "quote": "EPS is now expected to be in the range of $12.05 to $12.55 on a reported basis"
+   },
+   {
+    "metric": "Effective tax rate",
+    "value": "approximately 17%",
+    "change": "new",
+    "horizon": "FY2024",
+    "quote": "We have updated our estimated effective tax rate to be approximately 17%"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Novo Nordisk",
+    "relation": "competitor"
+   },
+   {
+    "name": "Novartis",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "GLP-1 supply chain",
+   "Premiumisation in consumption",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Compounding eroding branded demand",
+    "quote": "thousands of people in the U.S. are getting medicine that is not approved by the FDA for quality, safety or efficacy purposes."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 1,
+   "other": 5
+  },
+  "evasions": [
+   {
+    "topic": "Capacity additions for 2025 (auto-injector)",
+    "quote": "we will have a chance to lay out that as we did this year in our guidance call in early February."
+   },
+   {
+    "topic": "Hypothetical Zepbound demand without DTC",
+    "quote": "I don't think we're going to speculate around a hypothetical demand curve"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

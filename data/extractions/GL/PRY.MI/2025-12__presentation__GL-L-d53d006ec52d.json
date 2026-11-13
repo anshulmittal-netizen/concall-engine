@@ -1,0 +1,128 @@
+{
+ "doc_id": "GL-L-d53d006ec52d",
+ "market": "GL",
+ "company_id": "PRY.MI",
+ "name": "Prysmian",
+ "doc_type": "presentation",
+ "date": "2026-02-15",
+ "period": "2025-12",
+ "title": "Download the presentation",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "FY25 adj. EBITDA up 24.5% to €2,398M with margin at standard metal 14.2%, but organic growth just 5.4% and 2026 guidance of €2.7bn is mostly acquisition and FX driven, with no supply-side capacity signals.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Operating leverage",
+   "Backlog conversion",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "2026 adj. EBITDA guided €2.7bn",
+    "quote": "2,700 Mid-point 2,625 2,775",
+    "highlight": "2,700",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Transmission backlog over €17bn",
+    "quote": "Backlog at over €17 bn (including EGL4). Approx. €2 bn of projects awarded not yet in the backlog",
+    "highlight": "Backlog at over €17 bn",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Q4 Transmission margin 20.2%",
+    "quote": "Q4 margin temporarily impacted by metal premium surge affecting Over Head Transmission Line (OHTL)",
+    "highlight": "Q4 margin temporarily impacted",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Adj. EBITDA 2026",
+    "value": "€2,700M (mid-point range 2,625-2,775)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "The 2026 guidance does not take into account any potential impact from US tariffs"
+   },
+   {
+    "metric": "FCF 2026",
+    "value": "€1,300-1,400M (CMD target 1,350)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "FCF OUTLOOK 2026"
+   },
+   {
+    "metric": "Adj. EBITDA 2028 ambition",
+    "value": "€2.95-3.15bn; FCF €1.5-1.7bn",
+    "change": "held",
+    "horizon": "2028",
+    "quote": "ON TRACK FOR 2028 TARGETS"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Channell",
+    "relation": "partner"
+   },
+   {
+    "name": "Encore Wire",
+    "relation": "partner"
+   },
+   {
+    "name": "YOFC",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Grid capex & transformers",
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Organic growth 5.4%, reported growth driven by M&A",
+    "quote": "ACCELERATING GROWTH A series of M&As to reshape and strengthen Prysmian’s leadership"
+   },
+   {
+    "label": "Specialties organic decline",
+    "quote": "Automotive, Elevators and O&G negatively impacting growth"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

@@ -1,0 +1,172 @@
+{
+ "doc_id": "GL-L-940da4de70f5",
+ "market": "GL",
+ "company_id": "GIL",
+ "name": "Gildan Activewear",
+ "doc_type": "release",
+ "date": "2026-02-26",
+ "period": "2025-12",
+ "title": "6-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Gildan's Q4 is HanesBrands-inflated; the real signal is a deliberate inventory cut and plant closures, with 2026 Q1 sales guided to ~$1.15B and adjusted margin to 12.9%. Supply discipline is improving, but guidance is soft in the near term.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Consolidation",
+   "Supply discipline",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "with the required capital expenditure expected to remain within our capex guidance"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Two HanesBrands textile plants closed early 2026",
+    "quote": "the Company is proceeding with the closure of HanesBrands' two textile manufacturing facilities in early 2026",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "guidance",
+    "label": "Synergy target raised to $250M",
+    "quote": "approximately $250 million (versus $200 million originally expected) of annual run-rate cost synergies",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Temporary channel inventory reduction",
+    "quote": "we are proactively undertaking a temporary reduction of inventory across our combined customer channels",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Q1 2026 sales ~$1.15B, margin 12.9%",
+    "quote": "For the first quarter of 2026, net sales from continuing operations are expected to be approximately $1.15 billion",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue from continuing operations 2026",
+    "value": "$6.0-6.2B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Revenue of $6.0 billion to $6.2 billion;"
+   },
+   {
+    "metric": "Adjusted operating margin 2026",
+    "value": "~20%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Full year adjusted operating margin of approximately 20%;"
+   },
+   {
+    "metric": "Adjusted diluted EPS 2026",
+    "value": "$4.20-4.40",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Adjusted diluted EPS in the range of $4.20 to $4.40"
+   },
+   {
+    "metric": "Free cash flow 2026",
+    "value": "above $850M",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Free cash flow to be above $850 million."
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "~3% of net sales",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Capex to come in at approximately 3% of net sales;"
+   },
+   {
+    "metric": "Q1 2026 net sales",
+    "value": "~$1.15B",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "net sales from continuing operations are expected to be approximately $1.15 billion"
+   },
+   {
+    "metric": "Q1 2026 adjusted operating margin",
+    "value": "~12.9%",
+    "change": "new",
+    "horizon": "Q1 2026",
+    "quote": "Adjusted operating margin is expected to be approximately 12.9%"
+   },
+   {
+    "metric": "Run-rate cost synergies",
+    "value": "~$250M by 2028",
+    "change": "raised",
+    "horizon": "2026-2028",
+    "quote": "approximately $250 million (versus $200 million originally expected) of annual run-rate cost synergies"
+   },
+   {
+    "metric": "Three-year objectives 2026-2028",
+    "value": "3-5% CAGR sales; low-20% adj EPS growth",
+    "change": "held",
+    "horizon": "2026-2028",
+    "quote": "Company maintains its three-year objectives for the 2026–2028 period"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Three-year objectives 2026-2028",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "HanesBrands",
+    "relation": "peer"
+   },
+   {
+    "name": "Champion",
+    "relation": "peer"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Net debt leverage 3.0x vs 1.5-2.5x target",
+    "quote": "We ended the year with net debt of $4,417 million and a leverage ratio of 3.0 times"
+   },
+   {
+    "label": "Inventory up to $2.37B from $1.11B",
+    "quote": "Inventories 2,370.2 1,110.6"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4,
+  "themes": []
+ }
+}
