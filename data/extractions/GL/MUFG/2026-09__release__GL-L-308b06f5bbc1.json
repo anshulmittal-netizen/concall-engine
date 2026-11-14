@@ -1,0 +1,95 @@
+{
+ "doc_id": "GL-L-308b06f5bbc1",
+ "market": "GL",
+ "company_id": "MUFG",
+ "name": "Mitsubishi UFJ Financial",
+ "doc_type": "release",
+ "date": "2026-11-13",
+ "period": "2026-09",
+ "title": "6-K · FORM 6-K",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Banks",
+  "thesis": "MUFG raised FY ending Mar-2027 profit target to ¥2,800.0bn from ¥2,700.0bn (+3.7%), and lifted year-end dividend to ¥100 from ¥96 annual, on customer segment progress and Morgan Stanley equity earnings.",
+  "archetype": "None",
+  "mental_models": [
+   "Operating leverage",
+   "Capital allocation shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 0,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "Profit target raised ¥100bn to ¥2,800bn",
+    "quote": "we have upwardly revised the earnings target for profits attributable to owners of parent by ¥100 billion, setting it at ¥2,800 billion.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Year-end dividend ¥48 → ¥52",
+    "quote": "MUFG has revised its year-end dividend forecast for the fiscal year ending March 31, 2027 from ¥48.00 to ¥52.00 per share.",
+    "direction": 1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Profits attributable to owners of parent FY ending Mar 2027",
+    "value": "¥2,800.0bn",
+    "horizon": "FY ending March 2027",
+    "change": "raised",
+    "quote": "Revised earnings target (B) ¥ 2,800.0bn"
+   },
+   {
+    "metric": "Annual dividend per share FY ending Mar 2027",
+    "value": "¥100.00",
+    "horizon": "FY ending March 2027",
+    "change": "raised",
+    "quote": "the annual dividend for the fiscal year ending March 31, 2027 is forecast to be ¥100.00 per share"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Profits attributable to owners of parent FY ending Mar 2027",
+    "outcome": "missed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Morgan Stanley",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

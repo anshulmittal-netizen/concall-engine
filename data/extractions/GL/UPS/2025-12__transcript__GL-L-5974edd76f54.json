@@ -1,0 +1,178 @@
+{
+ "doc_id": "GL-L-5974edd76f54",
+ "market": "GL",
+ "company_id": "UPS",
+ "name": "UPS",
+ "doc_type": "transcript",
+ "date": "2026-01-26",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q3 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "Q3 2024 returned UPS to revenue and profit growth: US ADV +6.5% and cost per piece -4.1%, with FY revenue raised to ~$91.1B and margin to ~9.6%, though peak volume outlook softened.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Operating leverage",
+   "Supply exit"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Capital expenditures are expected to be about $4 billion."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capacity out: 45 closures, ~1M ADV",
+    "quote": "45 operational closures, it's about 1 million ADV per day of capacity that we've taken out of the market",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "util",
+    "label": "Automated hub volume 63%, up 5 pts",
+    "quote": "we now processed 63% of the volume in our hubs in some sort of an automated way. That's up 5 percentage points from a year ago.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Base rates lift RPP 170 bps",
+    "quote": "base rates increased the revenue per piece growth rate by 170 basis points",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Mix/weight drag -300 bps on RPP",
+    "quote": "the combination of product mix, lighter weights and shorter zones decreased the revenue per piece growth rate by 300 basis points",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Peak forecasts tempered, 2% to 11%",
+    "quote": "forecasts are all over the board, candidly from a low of 2% to a high of 11%",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY revenue ~$91.1B, margin ~9.6%",
+    "quote": "we now expect consolidated revenue of approximately $91.1 billion for the year and are lifting our consolidated operating margin target to approximately 9.6%",
+    "direction": 1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated revenue FY2024",
+    "value": "~$91.1B",
+    "change": "raised",
+    "horizon": "FY2024",
+    "quote": "we now expect consolidated revenue of approximately $91.1 billion for the year"
+   },
+   {
+    "metric": "Consolidated operating margin FY2024",
+    "value": "~9.6%",
+    "change": "raised",
+    "horizon": "FY2024",
+    "quote": "lifting our consolidated operating margin target to approximately 9.6%"
+   },
+   {
+    "metric": "US Domestic Q4 operating margin",
+    "value": "~9.5%",
+    "change": "new",
+    "horizon": "Q4 2024",
+    "quote": "We expect to generate a fourth quarter operating margin of approximately 9.5%"
+   },
+   {
+    "metric": "Free cash flow FY2024",
+    "value": "~$5.1B",
+    "change": "new",
+    "horizon": "FY2024",
+    "quote": "we expect free cash flow to be around $5.1 billion after the $1.4 billion pension contribution"
+   },
+   {
+    "metric": "Capex FY2024",
+    "value": "~$4B",
+    "change": "held",
+    "horizon": "FY2024",
+    "quote": "Capital expenditures are expected to be about $4 billion."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Return to revenue and profit growth in Q3",
+    "outcome": "met",
+    "quote": "we said that the second quarter would not only be the bottom, but a turning point for our performance and that we would return to revenue and profit growth in the third quarter, which we did"
+   }
+  ],
+  "entities": [
+   {
+    "name": "USPS",
+    "relation": "customer"
+   },
+   {
+    "name": "Coyote Logistics",
+    "relation": "partner"
+   },
+   {
+    "name": "Frigo-Trans",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Peak volume forecasts tempered",
+    "quote": "recently, shippers have tempered their volume expectations"
+   },
+   {
+    "label": "Air volume down 6.3%, largest customer glide-down",
+    "quote": "100% of the decline in air volume was down about 6.5% that is attributable to the largest customer"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 4,
+   "margin": 6,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "USPS SurePost/Sunday contract economics",
+    "quote": "we're confident we can work through this"
+   },
+   {
+    "topic": "2025 margin path",
+    "quote": "let us get through the fourth quarter and then we'll give you our outlook for 2025"
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

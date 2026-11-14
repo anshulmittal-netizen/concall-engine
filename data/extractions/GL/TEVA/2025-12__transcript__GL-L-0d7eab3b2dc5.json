@@ -1,0 +1,189 @@
+{
+ "doc_id": "GL-L-0d7eab3b2dc5",
+ "market": "GL",
+ "company_id": "TEVA",
+ "name": "Teva Pharmaceutical",
+ "doc_type": "transcript",
+ "date": "2026-02-05",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma CDMO / outsourcing",
+  "thesis": "Teva's 2025 guide is revenue +2–5% and FCF down to $1.6–1.9B, with API held for sale and Revlimid cliff planned; supply discipline is mostly absent as R&D rises above 6% of revenue.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Supply exit",
+   "Consolidation",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FCF guide cut to $1.6–1.9B",
+    "quote": "We expect our 2024 free cash flow to be in the range of $1.6 billion to $1.9 billion. This represented a slight decrease compared to 2024",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "API business classified held for sale",
+    "quote": "on December 31st, we classified the API business as a held for sale",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "AUSTEDO US revenue up 34%",
+    "quote": "It's a 34% growth and we got strong TRx growth of 34% also.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Revlimid erosion planned as cliff",
+    "quote": "we planned for it being a cliff. So we haven't anticipated any soft landing.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue 2025",
+    "value": "$16.8B to $17.4B (+2% to 5%)",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "we expect 2025 revenue of $16.8 billion to $17.4 billion."
+   },
+   {
+    "metric": "Non-GAAP EPS 2025",
+    "value": "$2.35 to $2.65",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "This brings us the expected non-GAAP earnings per share in the range of $2.35 to $2.65."
+   },
+   {
+    "metric": "Free cash flow 2025",
+    "value": "$1.6B to $1.9B",
+    "change": "cut",
+    "horizon": "FY2025",
+    "quote": "We expect our 2024 free cash flow to be in the range of $1.6 billion to $1.9 billion."
+   },
+   {
+    "metric": "Gross margin 2025",
+    "value": "53% to 54%",
+    "change": "held",
+    "horizon": "FY2025",
+    "quote": "We expect gross margin in 2025 to be stable and consistent with 2024 level, approximately in the range of 53% to 54%."
+   },
+   {
+    "metric": "AUSTEDO 2025",
+    "value": "$1.9B to just over $2B",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "our outlook of $1.9 billion to just over $2 billion for 2025"
+   },
+   {
+    "metric": "UZEDY 2025",
+    "value": "$160M",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "we're planning to do $160 million in 2025."
+   },
+   {
+    "metric": "AJOVY 2025",
+    "value": "over $600M",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "we're giving guidance of $600 million for 2025."
+   },
+   {
+    "metric": "Operating margin 2027",
+    "value": "30%",
+    "change": "held",
+    "horizon": "FY2027",
+    "quote": "our view on 30% OP, it gives you kind of a range of 56% to 57%."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "UZEDY 2024 target",
+    "outcome": "met",
+    "quote": "We did $117 million for the full year, so we beat our guidance of $100 million"
+   },
+   {
+    "metric": "AUSTEDO 2027 target $2.5B",
+    "outcome": "held",
+    "quote": "we are on target to hit our $2.5 billion in 2027"
+   },
+   {
+    "metric": "Net debt to EBITDA 2x by 2027",
+    "outcome": "held",
+    "quote": "on track to our 2027 target of 2 times leverage."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Sanofi",
+    "relation": "partner"
+   },
+   {
+    "name": "CMS",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Pharma CDMO / outsourcing",
+   "Consolidation / competitor exits",
+   "Biosimilars",
+   "Revlimid generic erosion",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "FCF guide down on receivables securitisation and higher legal outflows",
+    "quote": "mainly due to” reduced account receivable securitization and “higher legal settlement outflows."
+   },
+   {
+    "label": "Operating margin compression 2025 with R&D above 6%",
+    "quote": "we expect our operating expenses to be approximately 27% to 28% of revenue for the full year"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 0,
+   "growth": 3,
+   "margin": 4,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "API business valuation",
+    "quote": "We're not providing any information related to valuation."
+   },
+   {
+    "topic": "CMS lawsuit timing",
+    "quote": "Unfortunately, I can't say too much about it because obviously, we're in litigation"
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

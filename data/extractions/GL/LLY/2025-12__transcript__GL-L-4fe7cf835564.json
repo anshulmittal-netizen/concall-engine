@@ -1,0 +1,161 @@
+{
+ "doc_id": "GL-L-4fe7cf835564",
+ "market": "GL",
+ "company_id": "LLY",
+ "name": "Eli Lilly",
+ "doc_type": "transcript",
+ "date": "2026-01-22",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma & biotech",
+  "thesis": "Q4 revenue up 45% on incretins; 2025 guide of $58-61B (about 32% growth at midpoint) assumes net prices fall mid-to-high single digits, while capacity is 1.6x H1 incretin doses.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": "The company met its production goal, delivering 1.5x the incretin salable doses in the second half of 2024 versus the same period in 2023."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management referenced the competitor's capacity build-out, and said it also gates injectable supply to match demand.",
+   "quote": "we're building facilities as fast as we can to match up those 2 things, what we can make and what we can sell"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Incretin doses 1.5x H2 2024 vs H2 2023",
+    "quote": "delivering on our production target to make 1.5x the salable doses of incretin medicines in the second half of '24 compared to the second half of '23",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Net prices down mid-to-high single digits in 2025",
+    "quote": "we forecast overall net prices to decline by mid- to high single digits in percentage terms, including U.S. Part D changes",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "2025 revenue $58-61B, ~32% growth at midpoint",
+    "quote": "we expect 2025 revenue to be between $58 million and $61 billion. The midpoint represents approximately 32% growth",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Zepbound leads anti-obesity new scripts",
+    "quote": "In Q4, Zepbound became the market leader in the anti-obesity market as measured by new prescriptions.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2025 revenue",
+    "value": "$58-61B",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "we expect 2025 revenue to be between $58 million and $61 billion."
+   },
+   {
+    "metric": "2025 non-GAAP EPS",
+    "value": "$22.50-$24",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "Earnings per share or EPS is expected to be $22.50 and $24 on a non-GAAP basis."
+   },
+   {
+    "metric": "Portfolio margin (GM less OpEx % revenue)",
+    "value": "41.5%-43.5%",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "Our expected ratio of gross margin less OpEx divided by revenue is expected to be between 41.5% and 43.5%."
+   },
+   {
+    "metric": "Net price change",
+    "value": "mid- to high single digit decline",
+    "change": "new",
+    "horizon": "FY2025",
+    "quote": "we forecast overall net prices to decline by mid- to high single digits in percentage terms, including U.S. Part D changes"
+   },
+   {
+    "metric": "H1 2025 incretin salable doses",
+    "value": "1.6x H1 2024",
+    "change": "new",
+    "horizon": "H1 2025",
+    "quote": "estimate to produce 1.6x the amount of incretin salable doses during the first half of 2025 compared to the first half of 2024"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Boehringer Ingelheim",
+    "relation": "partner"
+   },
+   {
+    "name": "OpenAI",
+    "relation": "partner"
+   },
+   {
+    "name": "Novo Nordisk",
+    "relation": "competitor"
+   },
+   {
+    "name": "Rowe",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Management admits 2024 shortfall vs projections",
+    "quote": "in the back half of that year -- last year, we fell short of that."
+   },
+   {
+    "label": "Compounding and unapproved product leakage",
+    "quote": "there's no reason to have non-approved kind of illegitimate product out there"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 2,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Market demand vs over-build concern",
+    "quote": "I know why you're asking it. And I think the perspective we have is that it's early days on a very, very large opportunity."
+   },
+   {
+    "topic": "Orforglipron tolerability and titration",
+    "quote": "As for specifics around tolerability and titration and discontinuations, those don't really factor into our thinking."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

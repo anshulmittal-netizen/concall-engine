@@ -1,0 +1,134 @@
+{
+ "doc_id": "GL-L-b09dc1dbcf26",
+ "market": "GL",
+ "company_id": "PPG",
+ "name": "PPG Industries",
+ "doc_type": "transcript",
+ "date": "2026-01-26",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q3 2024",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q3 2024 PPG: volumes softened on auto OEM downtime, but portfolio exits ($550m AR&C US/Canada at ~14x, $310m silicas) and $175m self-help savings are the change signals; no capacity cuts disclosed beyond exits.",
+  "archetype": "Value migration",
+  "mental_models": [
+   "Consolidation",
+   "Capital allocation shift",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "novelty",
+    "label": "AR&C US/Canada sold for $550m",
+    "quote": "we have reached a definitive agreement to sell 100% of this business for a transaction value of $550 million",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Restructuring: $175m savings, $250m charge",
+    "quote": "This program will deliver approximately $175 million once fully implemented, including savings of $60 million in 2025.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Auto OEM downtime hit volumes",
+    "quote": "the automotive OEM industry, particularly in the US and Europe, has taken unscheduled prolonged downtime that was not considered in our July financial guidance",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Index-linked auto pricing still falling",
+    "quote": "the vast majority of the negative price you see is index contracts. And those are on time lags of anywhere from 6 to 12 months",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "2025 restructuring savings",
+    "value": "$60m in 2025, ~$175m total",
+    "change": "new",
+    "quote": "This program will deliver approximately $175 million once fully implemented, including savings of $60 million in 2025."
+   },
+   {
+    "metric": "Aerospace Q4 sales",
+    "value": "high single-digit growth",
+    "change": "new",
+    "quote": "We're projecting for fourth quarter high single-digit growth and there could be upside for that."
+   },
+   {
+    "metric": "Raw material costs Q4",
+    "value": "flat year over year",
+    "change": "held",
+    "quote": "we expect this will continue in the fourth quarter"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "2024 raw material costs",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "American Industrial Partners",
+    "relation": "customer"
+   },
+   {
+    "name": "AAP",
+    "relation": "partner"
+   },
+   {
+    "name": "IHS",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Auto EV transition"
+  ],
+  "red_flags": [
+   {
+    "label": "Auto OEM downtime not in guidance",
+    "quote": "has taken unscheduled prolonged downtime that was not considered in our July financial guidance"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 6,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "2025 EPS growth framework",
+    "quote": "We're not going to give our '25 guidance."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}
