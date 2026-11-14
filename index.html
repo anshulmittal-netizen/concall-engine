@@ -546,8 +546,12 @@ button.pd-go{border:0;cursor:pointer;font-family:inherit}button.pd-go:hover{filt
 .pp-trig .pill{font-size:8.5px;padding:1px 6px;text-transform:uppercase}
 .gr .r{grid-template-columns:minmax(0,1.2fr) 150px minmax(0,2.4fr) 170px 170px;align-items:start}
 .gr .r.hd{align-items:center}
+.bn .r{grid-template-columns:minmax(0,1.1fr) 140px minmax(0,2.4fr) minmax(0,1fr) 190px;align-items:start}
+.bn .r.hd{align-items:center}
 .pp-why{display:block;font-size:10.5px;color:var(--muted);line-height:1.4}
 @media (max-width:1100px){.gr .r{grid-template-columns:minmax(0,1.2fr) minmax(0,2fr) 150px 150px}.gr .r>:nth-child(2){display:none}}
+@media (max-width:1100px){.bn .r{grid-template-columns:minmax(0,1.1fr) minmax(0,2fr) minmax(0,1fr)}.bn .r>:nth-child(2),.bn .r>:nth-child(5){display:none}}
+@media (max-width:760px){.bn .r{grid-template-columns:minmax(0,1fr)}.bn .r.hd{display:none}.bn .r>:nth-child(5){display:grid}}
 @media (max-width:760px){.gr .r{grid-template-columns:minmax(0,1fr)}.gr .r.hd{display:none}}
 @media (max-width:1100px){.pp .r{grid-template-columns:minmax(0,1.2fr) 100px minmax(0,2fr) 150px}.pp .r>:nth-child(3),.pp .r>:nth-child(6){display:none}}
 @media (max-width:760px){.pp-tiles{grid-template-columns:minmax(0,1fr)}.pp .r{grid-template-columns:minmax(0,1fr)}.pp .r.hd{display:none}.pp .r>:nth-child(3){display:block}}
@@ -1001,6 +1005,7 @@ const GL = {
   models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
   pead:['Results to watch (PEAD)','Post-earnings announcement drift: shares of companies that beat tend to keep rising for weeks after the results, not just on day 1. This page lists small, mid and micro caps (below ₹50,000 Cr) reporting soon whose last concall points to a strong quarter, ranked on the Concall Signal Score plus 6 points for positive guidance, 6 for raised guidance and minus 8 for a cut. After results it shows which of them beat (profit up 20%+ on last year) and rose on day 1, the usual trigger for a drift trade.'],
+  bottleneck:['Bottleneck arbitrage','Companies whose latest call shows industry supply is tight (plants shut, no new capacity, imports curbed, industry sold out) while prices or margins are rising. The window is when new industry supply is expected, from the call, or else how far ahead margin or price gains were guided. There is no separate score.'],
   nearterm:['Near-term strength','Companies scoring 60+ whose latest call shows at least three strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a score of 0.75+ on the guidance-backed growth & capacity part. There is no separate score.'],
   pipeline:['Catalyst pipeline','Forward triggers from each company’s latest call that management called surely (under way or committed with a date) or likely (guided with a plan), placed in the quarter they are most likely to land: this quarter and the next two. Act now: a firm catalyst this quarter, score 60+, no guidance cut flagged, latest results not weak. Research now: several catalysts over the three quarters and a score of 55+. There is no separate score.'],
   quarter:['Quarter switch','Pick the results season you want to look at. Every call-based view follows it: Today, All calls, First-time callers, Sector tracker, Guidance leaders, Sector turns, Themes, Who’s asking, Near-term strength and Inflection watch show only that quarter’s calls. A season still in progress is compared with the quarter before it. Near-term strength and Inflection watch list companies whose latest call is from that quarter. “All” shows each company’s latest call, and the sector boards use the latest full quarter. Coming up, the results pages and Management changes go by date, not quarter.']
@@ -1043,7 +1048,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, gr: {big: '', search: '', chips: new Set(), limit: 50}, pp: {q: '', act: 'focus', big: '', kind: '', proven: false, res: false, watch: false, limit: 40, exp: new Set()}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, sh: {val: 'decent', big: '', sort: 'avg', chips: new Set(), limit: 40}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, bn: {hz: '', big: '', chips: new Set(), exp: new Set()}, gr: {big: '', search: '', chips: new Set(), limit: 50}, pp: {q: '', act: 'focus', big: '', kind: '', proven: false, res: false, watch: false, limit: 40, exp: new Set()}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, sh: {val: 'decent', big: '', sort: 'avg', chips: new Set(), limit: 40}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -1228,13 +1233,13 @@ const TABS = [
   {group: 'Research', items: [['calls', 'Calls', ['calls', 'first', 'people'], 'calls'], ['cal', 'Calendar', ['upcoming', 'rescal'], ''],
     ['res', 'Results', ['results', 'pead'], 'results'], ['pipe', 'Catalyst pipeline', ['pipeline', 'graised'], 'pipeline'], ['mgmt', 'Management changes', ['mgmt']]]},
   {group: 'Sectors & ideas', items: [['sec', 'Sectors', ['tracker', 'guidance', 'turns'], 'tracker'], ['themes', 'Themes', ['themes']],
-    ['ideas', 'Idea lists', ['shelf', 'nearterm', 'inflect'], ''], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]}
+    ['ideas', 'Idea lists', ['shelf', 'nearterm', 'bottleneck', 'inflect'], ''], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]}
 ];
 /* each view's own name: shown on its sub-tab, in the Excel export and in the help */
 const VIEWS = [{group: '', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['help', 'How to use'],
   ['calls', 'All calls'], ['first', 'First-time callers'], ['people', 'Who’s asking'], ['upcoming', 'Calls coming up'], ['rescal', 'Results calendar'],
   ['results', 'Results posted'], ['pead', 'Results to watch'], ['pipeline', 'Catalyst pipeline'], ['graised', 'Guidance raised'], ['mgmt', 'Management changes'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
-  ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'],
+  ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['bottleneck', 'Bottleneck arbitrage'], ['inflect', 'Inflection watch'],
   ['leaders', 'Leaders dashboard'], ['ledger', 'Event ledger']]}];
 const tabOf = v => TABS.flatMap(g => g.items).find(t => t[2].includes(v));
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
@@ -1249,6 +1254,7 @@ function navCounts() {
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: cyData('sub').rows.filter(r => r.ph === 'turn' && !r.thin).length || '',
     themes: themesQ().length, shelf: shRows().filter(x => x.v.band === 'decent').length || '', nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
+    bottleneck: (r => r ? r.length : '')(bnRows()),
     graised: (D.calls || []).filter(c => c.gRaised > 0 && inQ(c)).length || '',
     pipeline: (r => r ? r.filter(x => x.act === 'trade').length + ' act now' : '')(ppRows()),
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
@@ -2831,6 +2837,103 @@ function vGraised() {
     ${rows.length > f.limit ? `<div style="text-align:center;margin-top:14px"><button class="btn" id="gr-more">Show more (${rows.length - f.limit} left)</button></div>` : ''}`;
 }
 
+/* Bottleneck arbitrage: companies selling into an industry short of capacity, with price doing the adjusting, grouped by how
+   long the window looks before new industry supply arrives. Read from each company's latest call. */
+const BN_TIGHT = /tight|shortage|short supply|constrain|deficit|no (?:new|major|significant|meaningful|fresh|large)[^.;]{0,30}(?:capacit|supply|addition|plant)|limited[^.;]{0,25}(?:capacit|supply|addition)|waiting (?:period|list)|sold out|allocation|shut(?:ting)? down|closures?|exit(?:ed|ing)?|bottleneck|scarce|scarcity|lead times? (?:has |have )?(?:stretched|extended|long)|full(?:y)? (?:booked|utili[sz]ed)|running (?:at )?full|import (?:curb|duty|restriction|ban)|anti-?dumping|supply (?:disruption|discipline)|no capacity (?:addition|coming)/i;
+const BN_SUP = /capacit|supply|plant|addition|import|peers?|competitor|industry|sector|china|global/i;
+const BN_TIME = /(?:next|over|for|until|till|by|within|before|from|in|around|another|at least)\s[^.;]{0,30}?(?:years?|yrs?|quarters?|months?|fy\s?'?\d{2}|20[2-3]\d|cy\s?\d{2})/i;
+const BN_IND = /industry|peers?|competitor|china|chinese|global|import|sector|market|shut|exit|closure|units|spindles|players|new capacit|capacity addition|no (?:new|major|significant|meaningful|fresh)/i;
+const BN_PAST = /since|recent|last|past|earlier|ago|was|were|had /i;
+const BN_MOD = {'Supply discipline': 2, 'Supply exit': 2, 'Consolidation': 1, 'Import substitution': 1, 'Regulatory moat': 1, 'Capacity bottleneck': 1};
+function bnRow(c, s, cq, T) {
+  if (!c || c.veto || c.archetype === 'Red flag') return null;
+  const b = c.blocks || {}, gr = c.growth || {};
+  if ((b.supply || 0) < 0) return null;
+  const why = [], ev = [];
+  let I = 0, P = 0, C = 0, neg = 0;
+  if (b.supply >= 1) { I += 2 * b.supply; why.push(b.supply >= 2 ? 'Industry supply very tight' : 'Industry supply tight'); }
+  (c.models || []).forEach(m => { if (BN_MOD[m]) { I += BN_MOD[m]; why.push(m); } });
+  if (c.archetype === 'Supply-side dominance') { I += 2; why.push('Supply-side dominance'); }
+  /* evidence: supply triggers and summary lines that say supply is tight / not coming */
+  const lines = [];
+  (c.triggers || []).filter(t => t.t === 'supply' || t.t === 'util' || t.t === 'pricing').forEach(t => lines.push({src: 'call', l: t.label, q: t.q}));
+  if (s) ['demand_pricing', 'capex_capacity', 'risks_watch', 'overview', 'guidance_outlook'].forEach(f => (Array.isArray(s[f]) ? s[f] : [s[f] || '']).forEach(x => String(x).split(/(?<=[.;])\s+/).forEach(t => lines.push({src: f, l: t}))));
+  const seen = new Set();
+  for (const x of lines) { const t = x.q ? x.l + ' — ' + x.q : x.l; if (!BN_TIGHT.test(t) || !BN_SUP.test(t)) continue;
+    if (/no (?:current )?capacity constraint|not (?:a )?constrain|constraint[s]? (?:has|have) eased|easing/i.test(t)) continue;
+    const k = t.slice(0, 60).toLowerCase(); if (seen.has(k)) continue; seen.add(k);
+    const ind = BN_IND.test(t), tm = ind ? t.match(BN_TIME) : null; ev.push({t: x.q ? `${x.l}: “${x.q}”` : x.l, tm: tm && !BN_PAST.test(tm[0]) ? tm[0] : '', src: x.src, ind}); }
+  const iev = ev.filter(e => e.ind);
+  if (iev.length) I += Math.min(3, iev.length);
+  ev.sort((a, b) => b.ind - a.ind || !!b.tm - !!a.tm);
+  if (b.pricing >= 1) { P += 2 * b.pricing; why.push(b.pricing >= 2 ? 'Pricing strong' : 'Pricing firming'); }
+  if ((c.models || []).includes('Pricing power')) { P += 1; why.push('Pricing power'); }
+  const ol = s?.outlook?.rows || [];
+  if (ol.some(r => (r.k === 'pricing' || r.k === 'margin_expansion') && (r.call === 'surely' || r.call === 'likely'))) { P += 1; why.push('Margin / price gains guided'); }
+  const adds = (gr.adds || []).filter(a => a.status !== 'deferred' && a.q != null && a.q <= 4 && a.mat !== 'minor');
+  if (gr.util >= 80 || (c.util || 0) > 0) { C += 1; why.push(gr.util ? `Running ~${Math.round(gr.util)}% full` : 'Utilisation rising'); }
+  if (adds.length) { C += 2; why.push('Own capacity coming in ≤4 quarters'); }
+  if ((c.models || []).includes('Competitive capex') || c.archetype === 'Capital-cycle warning') { neg += 2; why.push('!Industry adding capacity'); }
+  if ((b.demand || 0) < 0) { neg += 2; why.push('!Demand weak'); }
+  if (!(I >= 3 && P >= 1 && (I + P) >= 4) || !iev.length) return null;
+  /* window: when management or the call sees new industry supply arriving */
+  let win = null;
+  for (const e of iev) { if (!e.tm) continue; const w = ppWhen(e.tm, cq); if (w && w.e >= T) { if (!win || w.e > win.e) win = {e: w.e, txt: e.tm, ev: e}; } }
+  const mg = ol.filter(r => (r.k === 'pricing' || r.k === 'margin_expansion') && (r.call === 'surely' || r.call === 'likely')).map(r => ({r, w: ppWhen(r.when, cq)})).filter(x => x.w && x.w.e >= T).sort((a, b) => b.w.e - a.w.e)[0] || null;
+  const hzQ = win ? win.e : mg ? mg.w.e : null, left = hzQ == null ? null : hzQ - T;
+  const hz = left == null ? 'open' : left <= 4 ? 'short' : left <= 12 ? 'medium' : 'long';
+  const pts = I + P + C - neg;
+  return {c, I, P, C, neg, pts, why, ev: iev.concat(ev.filter(e => !e.ind)), win, left, hz, adds, mg};
+}
+const BN_HZ = {short: ['Short term', 'var(--warn)', 'within about a year'], medium: ['Medium term', 'var(--up)', '1 to 3 years'], long: ['Long runway', 'var(--v5)', 'beyond 3 years'], open: ['Window not stated', 'var(--muted)', 'no timing on the call']};
+const BN = {src: null};
+function bnRows() {
+  if (!SUMS.data) return null;
+  const T = PP_FYQ(istToday());
+  if (BN.src === SUMS.data && BN.T === T) return BN.rows;
+  BN.rows = (D.companies || []).map(c => bnRow(c, SUMS.data[c.id + '|' + c.periodKey], PP_FYQ(c.periodKey + '-01'), T)).filter(Boolean).sort((a, b) => b.pts - a.pts || b.c.score - a.c.score);
+  Object.assign(BN, {src: SUMS.data, T});
+  return BN.rows;
+}
+function vBottleneck() {
+  const f = S.bn, all = bnRows(), T = PP_FYQ(istToday());
+  if (!all) loadSums().then(() => { if (S.view === 'bottleneck') { render(); renderNav(); } });
+  if (!RES.data) loadRes().then(() => { if (S.view === 'bottleneck') render(); });
+  const top = head('Bottleneck arbitrage', 'Companies selling into an industry that is short of capacity: plants shut or exited, no new supply announced, imports curbed or the industry sold out, with prices or margins moving up. They earn above-normal spreads until new industry capacity arrives. Grouped by how long that window looks.',
+    `<ul><li>A company is listed when its <b>latest call</b> shows industry supply is tight (the call’s supply read, supply exit, discipline or consolidation, supply-side dominance, or a line saying plants have shut, capacity is not being added, imports are curbed or the industry is sold out) <b>and</b> price is doing the adjusting (pricing firm or strong, pricing power, or margin or price gains guided). Red-flag calls and calls where industry supply is loosening are left out.</li>
+      <li><b>Window</b> comes first from what the call says about when new industry supply arrives (“no new yarn capacity for 1-2 years”, “little new supply for 2-3 years”). Where the call gives no timing, it uses how far ahead management guided margin or price gains. <b>Short term</b>: within about a year, so the trade is now. <b>Medium term</b>: 1 to 3 years, time to research and build a position. Timing is read automatically from the call text, so check the quote.</li>
+      <li><b>Own position</b> shows whether the company can sell more into the shortage: utilisation, its own capacity coming within four quarters, and its latest results. A red note marks an industry that is already adding capacity (competitive capex), which shortens the window.</li>
+      <li>Ordered by the strength of the evidence (supply tightness, pricing, the company’s ability to supply), then the Concall Signal Score.</li></ul>`,
+    '<span class="badge">Latest call per company</span>');
+  if (!all) return top + '<div class="empty">Loading call summaries to read the supply evidence…</div>';
+  const bigs = [...new Set(all.map(x => x.c.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
+  const CH = {adds: ['Own capacity coming', x => x.adds.length > 0], full: ['Running 80%+ full', x => (x.c.growth?.util || 0) >= 80], clean: ['No industry capex warning', x => !x.neg],
+    res: ['Latest results good or strong', x => (r => r && ['strong', 'good'].includes(rsGrade(r)))(latestRes(x.c.id))], watch: ['★ My watchlist', x => isW(x.c.id)]};
+  const base = all.filter(x => (!f.big || x.c.bigSector === f.big) && [...f.chips].every(k => CH[k][1](x)));
+  const rows = base.filter(x => !f.hz || x.hz === f.hz);
+  const row = (x, i) => { const c = x.c, r = latestRes(c.id), gr = r ? gradeOf(rsGrade(r)) : null, h = BN_HZ[x.hz];
+    const winTxt = x.win ? `Industry supply: “${esc(x.win.txt)}” → until about ${esc(ppQLabel(x.win.e))}` : x.mg ? `No supply timing given; margin / price gains guided through ${esc(ppQLabel(x.mg.w.e))} (${esc(x.mg.r.when)})` : 'No timing given on the call';
+    return `<div class="r" role="button" tabindex="0" data-open="${esc(c.id)}" data-k="${esc(c.id + '|' + c.periodKey)}">
+      <span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.sector || '')}${c.mcap ? ' · ' + esc(c.mcap) : ''} · ${esc(c.period)} call ${esc(sdate(c.date))}</span></span>
+      <span>${scoreCell(c.score, c.veto, i)}<span class="sub">${dcell(c.delta)} vs last call</span></span>
+      <span style="min-width:0"><ul class="pp-trig">${x.ev.slice(0, f.exp.has(c.id) ? 6 : 2).map(e => `<li>${esc(e.t.length > 240 ? e.t.slice(0, 237) + '…' : e.t)}</li>`).join('')}</ul>${x.ev.length > 2 ? `<button class="link" data-bnx="${esc(c.id)}">${f.exp.has(c.id) ? 'Show less' : `+${x.ev.length - 2} more`}</button>` : ''}
+        <div class="sh-tags" style="margin-top:5px">${x.why.map(w => w[0] === '!' ? `<span style="color:var(--down)">${esc(w.slice(1))}</span>` : `<span>${esc(w)}</span>`).join('')}</div></span>
+      <span><span class="pill" style="--pc:${h[1]}">${h[0]}</span><span class="sub" style="display:block;margin-top:4px">${winTxt}</span></span>
+      <span style="display:grid;gap:2px">${x.adds.length ? `<span class="sub">Adding: ${esc(x.adds.slice(0, 2).map(a => a.what + (a.q === 0 ? ' (now)' : ` (~${a.q}Q)`)).join('; '))}</span>` : ''}
+        ${r ? `<span>${gr ? `<span class="pill" style="--pc:var(--${gr[2]})">${esc(gr[1])}</span>` : ''} <span class="sub">${esc(r.label || '')}</span></span><span class="sub num">Rev ${pctS(r.rev_yoy)} · PAT ${pctS(r.pat_yoy)}${r.px?.move != null ? ` · px ${pctS(r.px.move)}` : ''}</span>` : '<span class="sub">No results posted yet</span>'}</span>
+    </div>`; };
+  return top + `
+    <div class="toolbar">
+      <span class="seg">${[['', 'All'], ['short', 'Short term'], ['medium', 'Medium term'], ['long', 'Long runway'], ['open', 'Not stated']].map(([k, n]) => `<button data-bnh="${k}" aria-pressed="${f.hz === k}">${n} <span class="num">${k ? base.filter(x => x.hz === k).length : base.length}</span></button>`).join('')}</span>
+      <select id="bn-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
+      ${Object.entries(CH).map(([k, [n, fn]]) => `<button class="chip" data-bnc="${k}" aria-pressed="${f.chips.has(k)}">${esc(n)} <span class="num">${all.filter(fn).length}</span></button>`).join('')}
+    </div>
+    <p class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'}${f.hz ? ` · window ${esc(BN_HZ[f.hz][2])}` : ''}</p>
+    ${rows.length ? `<div class="rows bn">
+      <div class="r hd"><span>Company</span><span>Score</span><span>Bottleneck evidence</span><span>Window</span><span>Own position</span></div>
+      ${rows.map(row).join('')}</div>` : '<div class="empty">No companies match these filters.</div>'}`;
+}
+
 /* Collector's shelf: unique companies in tailwinds at a decent valuation, read across the last three quarters of calls.
    Valuation is trailing P/E from Yahoo (data/valuation_in.json, refreshed each night), falling back to a run-rate P/E
    (latest price ÷ 4 × the latest quarter's EPS from results posted). There is no separate score. */
@@ -3818,7 +3921,7 @@ function vLedger() {
     <span class="small" style="min-width:0">${items.map(x => `<span class="ld-gapi"><b style="color:${x.st === 'missing' ? 'var(--down)' : 'var(--warn)'}">${esc({results: 'Results', call: 'Call', deck: 'Deck'}[x.kind])} ${esc(x.mkt === 'IN' ? seasL[x.season]?.in : seasL[x.season]?.gl)}</b> ${esc(x.st === 'missing' ? 'missing' : 'needs a link')}</span>`).join('')}</span></div>`).join('') || '<div class="empty">Nothing missing. Every expected event is on record.</div>'}</div>`;
 }
 
-const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -4224,6 +4327,9 @@ document.addEventListener('click', e => {
   if (t.closest('#pp-more')) { S.pp.limit += 40; render(); return; }
   const grc = t.closest('[data-grc]'); if (grc) { const k = grc.dataset.grc; S.gr.chips.has(k) ? S.gr.chips.delete(k) : S.gr.chips.add(k); S.gr.limit = 50; render(); return; }
   if (t.closest('#gr-more')) { S.gr.limit += 50; render(); return; }
+  const bnh = t.closest('[data-bnh]'); if (bnh) { S.bn.hz = bnh.dataset.bnh; render(); return; }
+  const bnc = t.closest('[data-bnc]'); if (bnc) { const k = bnc.dataset.bnc; S.bn.chips.has(k) ? S.bn.chips.delete(k) : S.bn.chips.add(k); render(); return; }
+  const bnx = t.closest('[data-bnx]'); if (bnx) { e.stopPropagation(); const k = bnx.dataset.bnx; S.bn.exp.has(k) ? S.bn.exp.delete(k) : S.bn.exp.add(k); render(); return; }
   if (t.closest('#ask-go')) { askRun('ai'); return; }
   if (t.closest('#ask-kw')) { askRun('keyword'); return; }
   if (t.closest('#ask-stop')) { ASK.ctl?.abort(); return; }
@@ -4276,6 +4382,7 @@ document.addEventListener('change', e => {
   if (id === 'pd-post') { S.pd.post = +e.target.value; render(); }
   if (id === 'pd-scope') { S.pd.scope = e.target.value; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
+  if (id === 'bn-big') { S.bn.big = e.target.value; render(); }
   if (id === 'gr-big') { S.gr.big = e.target.value; S.gr.limit = 50; render(); }
   if (id === 'pp-big') { S.pp.big = e.target.value; S.pp.limit = 40; render(); }
   if (id === 'pp-kind') { S.pp.kind = e.target.value; S.pp.limit = 40; render(); }
