@@ -2636,7 +2636,6 @@ function vNear() {
 
 /* Catalyst pipeline: forward triggers from each company's latest call (summaries' "outlook"), placed in the quarter they are
    likely to land (this quarter and the next two), joined with the latest results. A research and trade queue, not a buy list. */
-/* Catalyst pipeline helpers (to be pasted into index.html) */
 const PP_FYQ = d => { const y = +d.slice(0, 4), m = +d.slice(5, 7); return ((m >= 4 ? y + 1 : y) % 100) * 4 + (m >= 4 ? Math.floor((m - 4) / 3) : 3); };
 const ppQLabel = i => `Q${i % 4 + 1} FY${String(Math.floor(i / 4)).padStart(2, '0')}`;
 const PP_MON = {jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12};
