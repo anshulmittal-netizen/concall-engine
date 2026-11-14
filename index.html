@@ -544,7 +544,11 @@ button.pd-go{border:0;cursor:pointer;font-family:inherit}button.pd-go:hover{filt
 .pp .r.hd{align-items:center}
 .pp-trig{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:11.5px}
 .pp-trig .pill{font-size:8.5px;padding:1px 6px;text-transform:uppercase}
+.gr .r{grid-template-columns:minmax(0,1.2fr) 150px minmax(0,2.4fr) 170px 170px;align-items:start}
+.gr .r.hd{align-items:center}
 .pp-why{display:block;font-size:10.5px;color:var(--muted);line-height:1.4}
+@media (max-width:1100px){.gr .r{grid-template-columns:minmax(0,1.2fr) minmax(0,2fr) 150px 150px}.gr .r>:nth-child(2){display:none}}
+@media (max-width:760px){.gr .r{grid-template-columns:minmax(0,1fr)}.gr .r.hd{display:none}}
 @media (max-width:1100px){.pp .r{grid-template-columns:minmax(0,1.2fr) 100px minmax(0,2fr) 150px}.pp .r>:nth-child(3),.pp .r>:nth-child(6){display:none}}
 @media (max-width:760px){.pp-tiles{grid-template-columns:minmax(0,1fr)}.pp .r{grid-template-columns:minmax(0,1fr)}.pp .r.hd{display:none}.pp .r>:nth-child(3){display:block}}
 .nt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,325.5px),1fr));gap:13.5px}
@@ -1039,7 +1043,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pp: {q: '', act: 'focus', big: '', kind: '', proven: false, res: false, watch: false, limit: 40, exp: new Set()}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, sh: {val: 'decent', big: '', sort: 'avg', chips: new Set(), limit: 40}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, gr: {big: '', search: '', chips: new Set(), limit: 50}, pp: {q: '', act: 'focus', big: '', kind: '', proven: false, res: false, watch: false, limit: 40, exp: new Set()}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, sh: {val: 'decent', big: '', sort: 'avg', chips: new Set(), limit: 40}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -1222,14 +1226,14 @@ function animateWidgets(root) {
 const TABS = [
   {group: 'Start', items: [['home', 'Today', ['home']], ['mine', 'My stocks', ['watch', 'portfolio'], 'watch'], ['ask', 'Ask the calls', ['ask']]]},
   {group: 'Research', items: [['calls', 'Calls', ['calls', 'first', 'people'], 'calls'], ['cal', 'Calendar', ['upcoming', 'rescal'], ''],
-    ['res', 'Results', ['results', 'pead'], 'results'], ['pipe', 'Catalyst pipeline', ['pipeline']], ['mgmt', 'Management changes', ['mgmt']]]},
+    ['res', 'Results', ['results', 'pead'], 'results'], ['pipe', 'Catalyst pipeline', ['pipeline', 'graised'], 'pipeline'], ['mgmt', 'Management changes', ['mgmt']]]},
   {group: 'Sectors & ideas', items: [['sec', 'Sectors', ['tracker', 'guidance', 'turns'], 'tracker'], ['themes', 'Themes', ['themes']],
     ['ideas', 'Idea lists', ['shelf', 'nearterm', 'inflect'], ''], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]}
 ];
 /* each view's own name: shown on its sub-tab, in the Excel export and in the help */
 const VIEWS = [{group: '', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['help', 'How to use'],
   ['calls', 'All calls'], ['first', 'First-time callers'], ['people', 'Who’s asking'], ['upcoming', 'Calls coming up'], ['rescal', 'Results calendar'],
-  ['results', 'Results posted'], ['pead', 'Results to watch'], ['pipeline', 'Catalyst pipeline'], ['mgmt', 'Management changes'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
+  ['results', 'Results posted'], ['pead', 'Results to watch'], ['pipeline', 'Catalyst pipeline'], ['graised', 'Guidance raised'], ['mgmt', 'Management changes'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
   ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'],
   ['leaders', 'Leaders dashboard'], ['ledger', 'Event ledger']]}];
 const tabOf = v => TABS.flatMap(g => g.items).find(t => t[2].includes(v));
@@ -1245,6 +1249,7 @@ function navCounts() {
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: cyData('sub').rows.filter(r => r.ph === 'turn' && !r.thin).length || '',
     themes: themesQ().length, shelf: shRows().filter(x => x.v.band === 'decent').length || '', nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
+    graised: (D.calls || []).filter(c => c.gRaised > 0 && inQ(c)).length || '',
     pipeline: (r => r ? r.filter(x => x.act === 'trade').length + ' act now' : '')(ppRows()),
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
@@ -2776,6 +2781,56 @@ function vPipeline() {
     ${rows.length > f.limit ? `<div style="text-align:center;margin-top:14px"><button class="btn" id="pp-more">Show more (${rows.length - f.limit} left)</button></div>` : ''}`;
 }
 
+/* Guidance raised: every call on which management raised a guidance line (revenue, margin, volume, capex…), from the call
+   read's guidance items marked "raised". Repeat raisers (2+ quarters) and what happened on later calls are shown. */
+const latestRes = id => { let b = null; (RES.data?.results || []).forEach(r => { if (r.id === id && (!b || r.filed > b.filed)) b = r; }); return b; };
+function grRows() {
+  const all = (D.calls || []).filter(c => c.gRaised > 0), q = curQ(), by = {}, last = {};
+  all.forEach(c => (by[c.id] = by[c.id] || []).push(c));
+  (D.calls || []).forEach(c => { if (!last[c.id] || c.periodKey > last[c.id].periodKey) last[c.id] = c; });
+  const pick = q === 'all' ? Object.values(by).map(cs => cs.reduce((a, b) => b.periodKey > a.periodKey ? b : a)) : all.filter(c => c.period === q);
+  const pp = Object.fromEntries((ppRows() || []).map(x => [x.c.id, x]));
+  return pick.map(c => { const qs = by[c.id].slice().sort((a, b) => a.periodKey.localeCompare(b.periodKey)), l = last[c.id];
+    const later = l && l.periodKey > c.periodKey ? l : null, res = latestRes(c.id);
+    return {c, qs, later, res, g: res ? rsGrade(res) : '', pp: pp[c.id], co: byId[c.id]}; })
+    .sort((a, b) => b.qs.length - a.qs.length || b.c.gRaised - a.c.gRaised || b.c.score - a.c.score);
+}
+function vGraised() {
+  const f = S.gr; if (!RES.data) loadRes().then(() => { if (S.view === 'graised') render(); });
+  if (!SUMS.data) loadSums().then(() => { if (S.view === 'graised') render(); });
+  const all = grRows(), bigs = [...new Set(all.map(x => x.c.bigSector).filter(b => b && b !== 'Unclassified'))].sort(), qq = f.search.trim().toLowerCase();
+  const CH = {rep: ['Raised in 2+ quarters', x => x.qs.length >= 2], clean: ['No cut on the same call', x => !x.c.gCut], proven: ['Proven management', x => x.c.credTested > 0 && x.c.cred >= 60],
+    res: ['Latest results good or strong', x => x.g === 'strong' || x.g === 'good'], pipe: ['In the pipeline (act now / research)', x => x.pp && x.pp.act !== 'watch'], watch: ['★ My watchlist', x => isW(x.c.id)]};
+  const rows = all.filter(x => (!f.big || x.c.bigSector === f.big) && [...f.chips].every(k => CH[k][1](x)) && (!qq || (x.c.name + ' ' + (x.c.sector || '') + ' ' + x.c.gUp?.map(g => g.m).join(' ')).toLowerCase().includes(qq)));
+  const item = g => `<li title="${esc(g.q ? '“' + g.q + '”' : '')}"><b>${esc(g.m)}</b>: ${esc(g.v)}${g.h && !g.m.includes(g.h) ? ` <span class="num muted">(${esc(g.h)})</span>` : ''}${g.q ? `<span class="pp-why">“${esc(g.q.length > 180 ? g.q.slice(0, 177) + '…' : g.q)}”</span>` : ''}</li>`;
+  const resCell = x => { const r = x.res; if (!r) return '<span class="sub">No results posted yet</span>'; const gr = gradeOf(x.g);
+    return `<span>${gr ? `<span class="pill" style="--pc:var(--${gr[2]})">${esc(gr[1])}</span>` : ''} <span class="sub">${esc(r.label || '')}</span></span><span class="sub num">Rev ${pctS(r.rev_yoy)} · PAT ${pctS(r.pat_yoy)}${r.px?.move != null ? ` · px ${pctS(r.px.move)}` : ''}</span>`; };
+  const row = (x, i) => { const c = x.c, items = c.gUp?.length ? c.gUp : c.gLine ? [{m: c.gLine, v: '', h: '', q: ''}] : [];
+    return `<div class="r" role="button" tabindex="0" data-open="${esc(c.id)}" data-k="${esc(c.key)}">
+      <span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.sector || '')}${c.mcap ? ' · ' + esc(c.mcap) : ''} · ${esc(c.period)} call ${esc(sdate(c.date))}</span></span>
+      <span>${scoreCell(c.score, c.veto, i)}<span class="sub">${dcell(c.delta)} vs last call${c.credTested > 0 ? ` · cred ${c.cred}` : ''}</span></span>
+      <span style="min-width:0"><ul class="pp-trig">${items.map(item).join('')}</ul>${c.gCut ? `<p class="small" style="color:var(--down);margin-top:3px">Also cut ${c.gCut} line${c.gCut > 1 ? 's' : ''} on this call</p>` : ''}</span>
+      <span><span class="num" style="font-weight:600">${x.qs.length}</span> <span class="sub">${x.qs.map(q => esc(q.period)).join(' · ')}</span>${x.later ? `<span class="sub" style="display:block;${x.later.gCut ? 'color:var(--down)' : ''}">Later call ${esc(x.later.period)}: ${x.later.gCut ? 'cut' : x.later.gRaised ? 'raised again' : x.later.g > 0 ? 'positive' : x.later.g < 0 ? 'negative' : 'held'}</span>` : ''}${x.pp ? `<span class="pill" style="--pc:${PP_ACT[x.pp.act][1]};margin-top:4px">${PP_ACT[x.pp.act][0]}</span>` : ''}</span>
+      <span style="display:grid;gap:2px">${resCell(x)}</span>
+    </div>`; };
+  const q = curQ();
+  return head('Guidance raised', `Every company whose management raised a guidance line on its earnings call: revenue, margins, volumes, order intake or capex. ${q === 'all' ? 'All quarters: each company’s latest raise.' : `${esc(q)} calls.`} Repeat raisers first.`,
+    `<ul><li>A raise is a guidance line the call read marks as <b>raised</b> against what management said before (for example “we are revising our full year growth guidance upwards to 15% to 17%”). Hover a line, or open the call, for the quote.</li>
+      <li><b>Raised in</b> counts the quarters on record (up to three) in which the company raised guidance; serial raisers are usually the strongest earnings-upgrade stories. <b>Later call</b> shows what happened on a later call, if any.</li>
+      <li>Use the quarter switch at the top for one season, or <b>All</b> for each company’s latest raise. The pill shows where the company sits in the Catalyst pipeline.</li></ul>`,
+    qBadge()) + `
+    <div class="toolbar">
+      <input type="search" id="gr-q" placeholder="Search company, sector or metric" value="${esc(f.search)}" aria-label="Search">
+      <select id="gr-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
+      ${Object.entries(CH).map(([k, [n, fn]]) => `<button class="chip" data-grc="${k}" aria-pressed="${f.chips.has(k)}">${esc(n)} <span class="num">${all.filter(fn).length}</span></button>`).join('')}
+    </div>
+    <p class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'} raised guidance</p>
+    ${rows.length ? `<div class="rows gr">
+      <div class="r hd"><span>Company</span><span>Score</span><span>What was raised</span><span>Raised in</span><span>Latest results</span></div>
+      ${rows.slice(0, f.limit).map(row).join('')}</div>` : '<div class="empty">No raised guidance matches these filters.</div>'}
+    ${rows.length > f.limit ? `<div style="text-align:center;margin-top:14px"><button class="btn" id="gr-more">Show more (${rows.length - f.limit} left)</button></div>` : ''}`;
+}
+
 /* Collector's shelf: unique companies in tailwinds at a decent valuation, read across the last three quarters of calls.
    Valuation is trailing P/E from Yahoo (data/valuation_in.json, refreshed each night), falling back to a run-rate P/E
    (latest price ÷ 4 × the latest quarter's EPS from results posted). There is no separate score. */
@@ -3763,7 +3818,7 @@ function vLedger() {
     <span class="small" style="min-width:0">${items.map(x => `<span class="ld-gapi"><b style="color:${x.st === 'missing' ? 'var(--down)' : 'var(--warn)'}">${esc({results: 'Results', call: 'Call', deck: 'Deck'}[x.kind])} ${esc(x.mkt === 'IN' ? seasL[x.season]?.in : seasL[x.season]?.gl)}</b> ${esc(x.st === 'missing' ? 'missing' : 'needs a link')}</span>`).join('')}</span></div>`).join('') || '<div class="empty">Nothing missing. Every expected event is on record.</div>'}</div>`;
 }
 
-const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -4167,6 +4222,8 @@ document.addEventListener('click', e => {
   const ppc = t.closest('[data-ppc]'); if (ppc) { const k = ppc.dataset.ppc; S.pp[k] = !S.pp[k]; S.pp.limit = 40; render(); return; }
   const ppx = t.closest('[data-ppx]'); if (ppx) { e.stopPropagation(); const k = ppx.dataset.ppx; S.pp.exp.has(k) ? S.pp.exp.delete(k) : S.pp.exp.add(k); render(); return; }
   if (t.closest('#pp-more')) { S.pp.limit += 40; render(); return; }
+  const grc = t.closest('[data-grc]'); if (grc) { const k = grc.dataset.grc; S.gr.chips.has(k) ? S.gr.chips.delete(k) : S.gr.chips.add(k); S.gr.limit = 50; render(); return; }
+  if (t.closest('#gr-more')) { S.gr.limit += 50; render(); return; }
   if (t.closest('#ask-go')) { askRun('ai'); return; }
   if (t.closest('#ask-kw')) { askRun('keyword'); return; }
   if (t.closest('#ask-stop')) { ASK.ctl?.abort(); return; }
@@ -4191,7 +4248,7 @@ $('#nav').addEventListener('click', e => { const b = e.target.closest('[data-v]'
 document.addEventListener('toggle', e => { const d = e.target; if (d.matches && d.matches('details[data-how]')) store.set('how-' + d.dataset.how, d.open); }, true);
 document.addEventListener('input', e => {
   if (e.target.id === 'ppl-search') { const pos = e.target.selectionStart; S.ppl = {...(S.ppl || {type: '', open: ''}), search: e.target.value}; render(); const i = $('#ppl-search'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
-  for (const [id, st] of [['rc-search', S.rc], ['rs-search', S.rs]]) if (e.target.id === id) { const pos = e.target.selectionStart; st.search = e.target.value; render(); const i = $('#' + id); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
+  for (const [id, st] of [['rc-search', S.rc], ['rs-search', S.rs], ['gr-q', S.gr]]) if (e.target.id === id) { const pos = e.target.selectionStart; st.search = e.target.value; render(); const i = $('#' + id); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   if (e.target.id === 'up-search') { const v = e.target.value, pos = e.target.selectionStart; S.up.search = v; render(); const i = $('#up-search'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos); } catch (er) {} } }
   if (e.target.id === 'c-search') { S.calls.search = e.target.value; S.calls.limit = 50; fillCalls(); }
   if (e.target.id === 'find') { findSel = 0; renderFind(); }
@@ -4219,6 +4276,7 @@ document.addEventListener('change', e => {
   if (id === 'pd-post') { S.pd.post = +e.target.value; render(); }
   if (id === 'pd-scope') { S.pd.scope = e.target.value; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
+  if (id === 'gr-big') { S.gr.big = e.target.value; S.gr.limit = 50; render(); }
   if (id === 'pp-big') { S.pp.big = e.target.value; S.pp.limit = 40; render(); }
   if (id === 'pp-kind') { S.pp.kind = e.target.value; S.pp.limit = 40; render(); }
   if (id === 'if-big') { S.inf.big = e.target.value; S.inf.limit = 30; render(); }

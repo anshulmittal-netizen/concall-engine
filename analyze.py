@@ -541,6 +541,9 @@ def build(market: str, log=print) -> dict:
                           "g": r["blocks"]["guidance"], "gRaised": sum(g.get("change") == "raised" for g in g_items),
                           "gCut": sum(g.get("change") == "cut" for g in g_items) + sum(ch.get("outcome") == "dropped" for ch in r["checks"]),
                           "gNew": sum(g.get("change") == "new" for g in g_items),
+                          # each guidance line raised on this call, for the page's Guidance raised list
+                          "gUp": [{"m": str(g.get("metric") or "")[:120], "v": str(g.get("value") or "")[:160], "h": str(g.get("horizon") or "")[:40],
+                                   "q": str(g.get("quote") or "")[:400]} for g in g_items if g.get("change") == "raised"][:6],
                           "gLine": (f"{g_best['metric']}: {g_best['value']}" + (f" ({g_best.get('horizon')})" if g_best.get('horizon') else "")) if g_best else "",
                           "period": label_from_key(p, market), "periodKey": p, "date": r["date"],
                           "score": r["score"], "delta": r["delta"], "veto": r["veto"], "archetype": r["archetype"],
