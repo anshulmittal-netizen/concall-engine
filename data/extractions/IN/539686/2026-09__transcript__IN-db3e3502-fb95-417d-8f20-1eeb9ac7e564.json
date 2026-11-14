@@ -1,0 +1,395 @@
+{
+ "doc_id": "IN-db3e3502-fb95-417d-8f20-1eeb9ac7e564",
+ "market": "IN",
+ "company_id": "539686",
+ "name": "K.P. Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-13",
+ "period": "2026-09",
+ "title": "K.P. Energy Ltd - 539686 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Engineering & R&D services",
+  "thesis": "Q2 FY27 revenue jumped ~78% YoY to ~540 crore but EBITDA margin fell to ~12% from ~20% and management guides margins to stay depressed for 2-4 quarters; no supply discipline signal, related-party share ~50%.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Working-capital stress",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": -2,
+   "novelty": 0,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Margin ~12% vs ~20% prior",
+    "quote": "we have to live with this for at least for next 2 to 4 quarters",
+    "highlight": "at least for next 2 to 4 quarters",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Margin guide reset, no numeric target",
+    "quote": "For now, safely it can be assumed that these margins will stay at this level",
+    "highlight": "these margins will stay at this level",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory down to 1067 from 1330 crore",
+    "quote": "inventory levels are 1067 now and which were earlier at 1330",
+    "highlight": "inventory levels are 1067 now",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Order book 1.64 GW, ~1,940 crore",
+    "quote": "order book as on 30th September 26th stands at approximately 1.64 gigawatts",
+    "highlight": "approximately 1.64 gigawatts",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin",
+    "value": "~12% sustained for next 2-4 quarters",
+    "change": "cut",
+    "horizon": "next 2-4 quarters",
+    "quote": "we have to live with this for at least for next 2 to 4 quarters"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 top-line growth",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "IPP capacity by end FY27",
+    "outcome": "missed",
+    "quote": "we have about 250 megawatts. 202."
+   }
+  ],
+  "entities": [
+   {
+    "name": "MSKC and Associates LLP",
+    "relation": "partner"
+   },
+   {
+    "name": "Mark and Associates",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Consolidation / competitor exits",
+   "Rural demand recovery"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin reset ~20% to ~12%, prior guidance of 18-20% withdrawn",
+    "quote": "the margin came from 20 percent to 12 percent"
+   },
+   {
+    "label": "Related-party (group) EPC share ~50%, was 80-85%",
+    "quote": "quarter two, this is 50-50"
+   },
+   {
+    "label": "Auditor change in quarter",
+    "quote": "MSKC and Associates LLP"
+   },
+   {
+    "label": "Results-call timing gap, investor complaint",
+    "quote": "you can do better in declaring the results just a bit before"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 0,
+   "growth": 2,
+   "margin": 7,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "Related-party share trajectory",
+    "quote": "So it depends upon a lot of factors, Ritesh. I wouldn't want to comment on it"
+   },
+   {
+    "topic": "Listing / subsidiary question",
+    "quote": "We cannot comment on this you will know as and when this happens."
+   },
+   {
+    "topic": "Strategic MoU with Saudi partner",
+    "quote": "as of now there is nothing much to inform"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "K.P. Energy Q2 FY27 total income rose about 78% YoY to Rs 540 crore, but margin compressed to about 12% and management guides it to persist for 2-4 quarters.",
+  "overview": "Consolidated total income for Q2 FY27 was about Rs 540 crore versus Rs 303 crore in Q2 FY26, with development (EPC) revenue at about Rs 527 crore. Profit after tax was Rs 26.92 crore, up slightly from Rs 26.08 crore in Q1 FY27, but H1 PAT fell to Rs 53.22 crore from Rs 61.37 crore. Management attributed margin pressure to labour cost and idling, right-of-way delays, crane availability, and raw material costs, and said margins would stay at current levels for 2 to 4 quarters. The order book stood at about 1.64 GW worth about Rs 1,940 crore as on 30 September 2026.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated total income (Q2 FY27)",
+    "value": "about Rs 540 crore",
+    "change": "vs Rs 303 crore in Q2 FY26, about +78% YoY"
+   },
+   {
+    "metric": "Development (EPC) revenue (Q2 FY27)",
+    "value": "about Rs 527 crore",
+    "change": "vs Rs 289 crore in Q2 FY26, about +82% YoY"
+   },
+   {
+    "metric": "Own business revenue (Q2 FY27)",
+    "value": "about Rs 3.2 crore",
+    "change": "vs Rs 1.72 crore in Q2 FY26"
+   },
+   {
+    "metric": "Sale of power (Q2 FY27)",
+    "value": "about Rs 8.41 crore",
+    "change": "vs Rs 10.01 crore in Q2 FY26, decline"
+   },
+   {
+    "metric": "Operating margin (Q2 FY27)",
+    "value": "about 12% per analyst Q&A; CFO cited about 19% growth margin in opening remarks",
+    "change": "consistent with Q1 FY27 per management"
+   },
+   {
+    "metric": "Profit before tax (Q2 FY27)",
+    "value": "Rs 38.86 crore",
+    "change": "vs Rs 37.44 crore in Q1 FY27"
+   },
+   {
+    "metric": "Profit after tax (Q2 FY27)",
+    "value": "Rs 26.92 crore",
+    "change": "vs Rs 26.08 crore in Q1 FY27"
+   },
+   {
+    "metric": "Total income (H1 FY27)",
+    "value": "Rs 1,062 crore",
+    "change": "vs Rs 524 crore in H1 FY26, about +103% YoY"
+   },
+   {
+    "metric": "Profit before tax (H1 FY27)",
+    "value": "Rs 76.3 crore",
+    "change": "vs Rs 88.72 crore in H1 FY26, decline"
+   },
+   {
+    "metric": "Profit after tax (H1 FY27)",
+    "value": "Rs 53.22 crore",
+    "change": "vs Rs 61.37 crore in H1 FY26, decline"
+   },
+   {
+    "metric": "Finance costs (Q2 FY27)",
+    "value": "Rs 17.11 crore",
+    "change": ""
+   },
+   {
+    "metric": "Inventory",
+    "value": "Rs 1,067 crore",
+    "change": "down from Rs 1,330 crore"
+   }
+  ],
+  "segments": [
+   {
+    "name": "EPC / development",
+    "commentary": "Revenue about Rs 527 crore in Q2 FY27 vs Rs 289 crore a year ago, about 82% growth, and now the main business. Order book about 1.64 GW worth about Rs 1,940 crore."
+   },
+   {
+    "name": "IPP (own generation)",
+    "commentary": "Operational capacity 48.5 MW with 202 MW under development. Q2 FY27 generation about 2.75 crore units; H1 about 5.92 crore units. Power sale revenue about Rs 8.41 crore, down from Rs 10.01 crore."
+   },
+   {
+    "name": "Own business",
+    "commentary": "Revenue about Rs 3.2 crore vs Rs 1.72 crore in Q2 FY26. No further detail given."
+   }
+  ],
+  "guidance_outlook": [
+   "Margins expected to stay around current levels (about 12% per analyst question, management did not dispute) for the next 2 to 4 quarters, citing ROW, labour, crane and raw material pressures.",
+   "Management said margin will not improve from 12% to 15% in the next four quarters; focus is on volume and turnover.",
+   "Around 1 GW of tenders under bidding; management assumed about 70% conversion (about 700 MW), valued at about Rs 7,000-8,000 crore, with results expected in 3 to 6 months.",
+   "No large new IPP capex planned beyond the 202 MW under development; company has guided that debt-to-equity will not exceed 2x.",
+   "Group-related BOP contracts to continue at arm's length, with the company moving to pure EPC scope going forward."
+  ],
+  "capex_capacity": [
+   "IPP operational capacity 48.5 MW; 202 MW under development.",
+   "No significant further IPP capex planned, per management; debt-to-equity cap of 2x stated.",
+   "Indian wind turbine manufacturing capacity about 24 GW with 70-80% localisation, per management's industry commentary."
+  ],
+  "demand_pricing": [
+   "Order book about 1.64 GW, about Rs 1,940 crore, as on 30 September 2026.",
+   "Management said margin compression reflects project mix, ROW rate increases, labour volatility, idle labour, crane availability and raw material costs; turbine supply carries a small markup.",
+   "Group-entity share of revenue about 50% in Q2 FY27, down from about 80-85% in Q1 FY27 per management.",
+   "India added about 3 GW of wind in H1 FY27; MNRE expects 7.5-8 GW in FY27. Management cites a 100 GW by 2030 target."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Why did profit decline YoY and what is the outlook? Are these one-off quarters?",
+    "answer": "Management said margins are now structurally lower as an EPC player, citing geopolitical conditions and market response; it expects margins to persist and points to about 1 GW of tenders under bidding."
+   },
+   {
+    "question": "Is 12% a new normal margin, or will it improve?",
+    "answer": "Management said margins should be assumed to stay at this level for now and that growth and scale will drive absolute profit."
+   },
+   {
+    "question": "What is driving margins down: turbine pass-through, group-company pricing, or cost overruns?",
+    "answer": "Management denied lower pricing on group work (at arm's length, in line with market), attributed the change to project scope mix, and said large scale brings lower margins; group share of revenue about 50% in Q2."
+   },
+   {
+    "question": "What are the specific cost drivers behind the margin drop?",
+    "answer": "Management cited labour volatility and idling, ROW delays across multiple locations, crane availability and raw material costs; no quantified cost split was given."
+   },
+   {
+    "question": "Why did margin guidance change from 18-20% (May) to about 12% (August) and now?",
+    "answer": "Management said FY26 average margin was about 21%, that the May guidance did not fully capture prolonged geopolitical effects, and that it will guide only on what it can see; it offered a one-on-one follow-up for the shareholder."
+   },
+   {
+    "question": "Status of the MoU with a Saudi-based group company and whether the deadline will be extended?",
+    "answer": "Management said talks are ongoing, it is taking longer, and there is nothing to disclose yet; it declined to comment on an extension."
+   }
+  ],
+  "risks_watch": [
+   "Margin compression to about 12% (from about 21% FY26 average) with management guiding persistence for 2-4 quarters.",
+   "Related-party dependence: group entities were about 50% of Q2 revenue (vs 80-85% in Q1), with arm's-length pricing asserted but not quantified.",
+   "Inventory of Rs 1,067 crore (down from Rs 1,330 crore) and working capital intensity.",
+   "Change of statutory auditor to MSKC & Associates LLP from Mark & Associates; first quarter under new auditor delayed results call timing, with the gap between results and call flagged as a governance concern.",
+   "Pipeline conversion risk: about 70% assumed on about 1 GW of tenders, not yet awarded.",
+   "Sale of power revenue fell YoY to Rs 8.41 crore; H1 PBT down YoY despite revenue doubling."
+  ],
+  "management_tone": "Confident on volume and industry demand, but defensive and cautious on margins; management attributed compression to external factors and gave a near-term margin outlook but declined to make firm forward profit commitments. Evasive on group-company share, Saudi MoU status and the timing of the next results.",
+  "key_quotes": [
+   "Our growth margins for the quarter approximately stood at 19% brought in line with the Q1 FY27.",
+   "For now, safely it can be assumed that these margins will stay at this level for KP energy.",
+   "So currently this is the situation including the challenges which Shavana mentioned about the ROW and labor and raw material.",
+   "We do not want to talk something which is going to be wrong and that is why we are giving a clear guidance that next four quarters are going to be here."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "IPP capacity 202 MW under development (no timeline given)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "under_construction",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": -1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 78.0,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management guided EBITDA margin to stay around 12% for 2-4 quarters (a cut), while revenue grew about 78% YoY in Q2 FY27 backed by a 1.64 GW (about Rs 1,940 crore) order book and around 1 GW of tenders under bidding with about 70% assumed conversion; no numeric revenue guidance was given.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "unlikely",
+    "when": "next 2-4 quarters",
+    "why": "Management says margin stays near 12% for 2-4 quarters vs about 21% FY26 average, and will not move from 12% to 15% in the next four quarters, citing ROW delays, labour idling, crane availability and raw material costs."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "possible",
+    "when": "H2 FY27 to FY28",
+    "why": "202 MW IPP under development with no timeline given, against 48.5 MW operational; no new EPC capacity was quantified, so timing is unclear."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-4 quarters",
+    "why": "Q2 FY27 EPC revenue about Rs 527 crore, up 82% YoY, backed by a 1.64 GW (about Rs 1,940 crore) order book; management is focused on volume and turnover."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "unlikely",
+    "when": "",
+    "why": "Management guides no significant further IPP capex beyond the 202 MW under development, with a debt-to-equity cap of 2x."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "Margin guidance was cut from 18-20% (May) to about 12% (August), and management declined firm forward profit commitments; H1 PAT fell to Rs 53.22 crore from Rs 61.37 crore."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "Margin is already guided down to about 12% from a 21% FY26 average, and H1 PBT fell to Rs 76.3 crore from Rs 88.72 crore despite revenue doubling; the outlook could still weaken on ROW, labour and crane issues."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "no_signal",
+    "when": "",
+    "why": "No new products, brands or models were discussed."
+   },
+   {
+    "k": "order_book",
+    "label": "Around 1 GW of tenders under bidding",
+    "call": "possible",
+    "when": "next 3-6 months",
+    "why": "Management assumes about 70% conversion (about 700 MW, valued at about Rs 7,000-8,000 crore), with results expected in 3 to 6 months; not yet awarded."
+   },
+   {
+    "k": "corporate_action",
+    "label": "Saudi group MoU status",
+    "call": "possible",
+    "when": "",
+    "why": "Talks are ongoing and taking longer, with nothing to disclose yet and no comment on an extension of the deadline."
+   },
+   {
+    "k": "working_capital",
+    "label": "Inventory reduction",
+    "call": "likely",
+    "when": "next 2-4 quarters",
+    "why": "Inventory fell to Rs 1,067 crore from Rs 1,330 crore, but working capital intensity remains a flagged risk."
+   }
+  ],
+  "tone": {
+   "mgmt": "defensive",
+   "analysts": "probing",
+   "note": "Management was confident on volume and industry demand (1.64 GW order book, about 1 GW of tenders) but defensive and cautious on margins, attributing the drop to external factors; analysts pressed on whether 12% is the new normal, group-company share (about 50% of Q2 revenue), the cut from 18-20% ma"
+  }
+ }
+}

@@ -1,0 +1,439 @@
+{
+ "doc_id": "IN-25a46976-ecdd-47af-ae0b-1b552ac2a392",
+ "market": "IN",
+ "company_id": "513517",
+ "name": "Steelcast Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-13",
+ "period": "2026-09",
+ "title": "Steelcast Ltd - 513517 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q2 FY27 volume up 28% YoY to 4,370 t but utilisation fell to 57% from 66% as inventory was liquidated; margins squeezed by pass-through timing, and capacity expanded to 40,750 t with FY28 commissioning slipping to 1 April 2028 and utilisation guidance cut to ~60%.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": 57,
+   "quote": "Capacity utilization on our existing 29,000 ton per annum capacity moderated from approximately 66% in Q1 FY27 to 57% in Q2 FY27."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "the board today further approved nearly 3,050 tons with an estimated investment of completion our total manufacturing capacity would increase by 11,750 tons from the existing 29,000 tons to 40,750 tons"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation 66% → 57% (Q1 to Q2)",
+    "quote": "Capacity utilization on our existing 29,000 ton per annum capacity moderated from approximately 66% in Q1 FY27 to 57% in Q2 FY27.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Capacity raised to 40,750 t; capex ₹151 cr",
+    "quote": "our total manufacturing capacity would increase by 11,750 tons from the existing 29,000 tons to 40,750 tons with a total investment of 151 crores.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Utilisation FY27 guided ~60% (vs 63%)",
+    "quote": "Management currently expects utilization of the existing capacity to be broadly around 60% during FY27.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Commissioning slips to 1 April 2028",
+    "quote": "Management is currently targeting commissioning of the new boundary around 1st April 2028",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Pass-through lag hits Q2 margin",
+    "quote": "EBITDA margin was 25% compared with 27% in H1 FY26.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Utilisation FY27",
+    "value": "~60% on existing capacity",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "Management currently expects utilization of the existing capacity to be broadly around 60% during FY27."
+   },
+   {
+    "metric": "Margin",
+    "value": "sustainable ~25% over 2-3 years; no quarter-specific assurance",
+    "change": "cut",
+    "horizon": "FY27-FY29",
+    "quote": "For margins, we have been saying, sustainable level is 25% and that term also."
+   },
+   {
+    "metric": "Greenfield capacity expansion total investment",
+    "value": "₹151 cr for 11,750 t",
+    "change": "raised",
+    "horizon": "FY28",
+    "quote": "with a total investment of 151 crores."
+   },
+   {
+    "metric": "Renewable capacity",
+    "value": "6 MW more needed for 80% captive; decision in 2-3 months",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "we need to invest 6 megawatt of renewable power."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 volume growth",
+    "outcome": "not_discussed",
+    "quote": "You are guided for a 25% of revenue growth in FI-27."
+   },
+   {
+    "metric": "Capacity utilisation",
+    "outcome": "missed",
+    "quote": "Management currently expects utilization of the existing capacity to be broadly around 60% during FY27."
+   },
+   {
+    "metric": "Growth CAGR",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "outcome": "missed",
+    "quote": "EBITDA margin was 25% compared with 27% in H1 FY26."
+   },
+   {
+    "metric": "Greenfield foundry commissioning",
+    "outcome": "missed",
+    "quote": "Management is currently targeting commissioning of the new boundary around 1st April 2028"
+   }
+  ],
+  "entities": [],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Pass-through pricing",
+   "Renewables & storage",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Commissioning slip to Apr 2028 and capex raised to ₹151 cr",
+    "quote": "Management is currently targeting commissioning of the new boundary around 1st April 2028"
+   },
+   {
+    "label": "Utilisation fell 66%→57% as inventory unwound",
+    "quote": "This inventory was subsequently liquidated during Q2."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 4,
+   "capex": 3,
+   "balance_sheet": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Volume vs revenue growth guidance",
+    "quote": "So, I want to ask that if 30% is a volume guidance or the revenue guidance."
+   },
+   {
+    "topic": "Q3 margin impact quantification",
+    "quote": "Extremely difficult because and or we have to give price."
+   },
+   {
+    "topic": "Order book visibility",
+    "quote": "you never get a purchase order for the next 2, 3, 4 years."
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "Steelcast Q2 FY27 revenue rose about 10.6% to Rs 138 crore, but EBITDA margin fell to 16.9% on pass-through timing and pre-expansion costs.",
+  "overview": "Q2 FY27 revenue was Rs 138 crore, up about 10.6% YoY, driven by higher dispatches and liquidation of inventory built in Q1. EBITDA margin was 16.9%, down sharply from 28.3% a year earlier, reflecting raw material pass-through timing, pre-expansion manpower hiring and product development spend. Profit after tax was Rs 23.4 crore, up about 0.6% YoY. Sales volume rose about 28% YoY to 4,370 tons, while capacity utilisation on the existing 29,000 tpa base fell to about 57% from 66% in Q1. The board approved a further capacity expansion, taking total capacity to 40,750 tpa at a revised investment of Rs 151 crore.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue (Q2 FY27)",
+    "value": "Rs 138 crore",
+    "change": "about 10.6% YoY"
+   },
+   {
+    "metric": "EBITDA margin (Q2 FY27)",
+    "value": "16.9%",
+    "change": "down from 28.3% in Q2 FY26 (about 1,140 bps); Q1 FY27 was 25.6%"
+   },
+   {
+    "metric": "Profit after tax (Q2 FY27)",
+    "value": "Rs 23.4 crore",
+    "change": "about 0.6% YoY vs Rs 23.2 crore"
+   },
+   {
+    "metric": "Revenue (H1 FY27)",
+    "value": "Rs 227 crore",
+    "change": "H1 FY26 comparison not stated in transcript"
+   },
+   {
+    "metric": "EBITDA margin (H1 FY27)",
+    "value": "25%",
+    "change": "vs 27% in H1 FY26"
+   },
+   {
+    "metric": "Profit after tax (H1 FY27)",
+    "value": "Rs 47.4 crore",
+    "change": "up 10.1% vs Rs 43.1 crore in H1 FY26"
+   },
+   {
+    "metric": "Return on capital employed (H1 FY27)",
+    "value": "28.8%",
+    "change": "vs 28.6% for FY26"
+   },
+   {
+    "metric": "Return on equity (H1 FY27)",
+    "value": "21.9%",
+    "change": "broadly stable"
+   },
+   {
+    "metric": "Sales volume (Q2 FY27)",
+    "value": "4,370 tons",
+    "change": "about 28% YoY vs 3,411 tons; about 8% QoQ"
+   },
+   {
+    "metric": "Sales volume (H1 FY27)",
+    "value": "8,406 tons",
+    "change": ""
+   },
+   {
+    "metric": "Capacity utilisation (existing 29,000 tpa)",
+    "value": "57% in Q2 FY27",
+    "change": "down from about 66% in Q1 FY27"
+   },
+   {
+    "metric": "Export share of revenue",
+    "value": "Q2 FY27: 52%; H1 FY27: 57%",
+    "change": "Q2 FY26 was 64%; H1 FY26 was 59%"
+   }
+  ],
+  "segments": [
+   {
+    "name": "End-market mix (H1 FY27 revenue)",
+    "commentary": "Earth moving 51%, mining 21%, construction 18%, locomotive 4%, railway 2%, others 4%; earth moving, mining and construction together about 90%."
+   },
+   {
+    "name": "Geography (revenue)",
+    "commentary": "Exports 57% and domestic 43% in H1 FY27, versus 59% and 41% in H1 FY26; Q2 FY27 exports were 52%."
+   }
+  ],
+  "guidance_outlook": [
+   "Management guided to FY27 revenue growth of about 25-30% YoY; the transcript is unclear on whether 30% refers to volume or revenue.",
+   "Management expects utilisation of the existing capacity to be broadly around 60% during FY27.",
+   "Q3 margins expected to be hit by the pass-through lag from the September input cost rise, with recovery expected in Q4; no quarter-specific margin assurance given.",
+   "Sustainable EBITDA margin over a 2-3 year horizon stated at about 25%.",
+   "FY29 target mix (volume basis per one analyst's reading): mining 35%, earth moving 36%, construction 12%, locomotive 5%, railway 5%, others about 6%, transportation about 1.5%.",
+   "Capex for the current year is about Rs 60 crore by 31 March 2027 (about Rs 19 crore in H1 and about Rs 40 crore in the next few months)."
+  ],
+  "capex_capacity": [
+   "Existing capacity is 29,000 tpa; the board approved about 11,750 tons of additional capacity, taking total capacity to 40,750 tpa at an investment of about Rs 151 crore (revised up from Rs 120 crore).",
+   "The new facility is meant to extend the piece-weight capability from 2.5 tons to about 3.5 tons, targeting construction, mining and earth moving, and will include an arc furnace in place of induction melting.",
+   "Commissioning of the new capacity is targeted around 1 April 2028, with efforts to finish earlier.",
+   "Executable order book is about Rs 145 crore, equivalent to about 3 months of sales.",
+   "CNC machine orders worth about Rs 35 crore placed in September, with deliveries January 2027 to January 2028; management says manpower can support 90% utilisation by FY29.",
+   "Renewable energy: 13.3 MW planned, of which 9.5 MW is commissioned and 2.4 MW hybrid plus 1.4 MW solar is due by 30 September 2026, with annual power cost savings of about Rs 4.5 crore. A further 6 MW is needed to reach 80% captive consumption; land acquisition is in progress and a decision is expected within 2-3 months."
+  ],
+  "demand_pricing": [
+   "Management cited sustained demand in mining, earth moving, construction and railways, and China-plus-one sourcing benefits; it expects demand to remain good over the next 2-3 years.",
+   "Customer relationships are rolling about 3-3.5 month order visibility with 12-month forward visibility; there are no multi-year purchase orders.",
+   "Product development: 111 new parts over a 3-year rollout; 32 developed to date, 15 commercialised in FY27, and 55 under development in sampling, tooling or qualification.",
+   "Pass-through mechanism is the same for domestic and export customers; input cost declined in July-August and rose again from early September, with the September rise absorbed.",
+   "Tariffs: management said the US tariffs applied since April 2025 are around 12-15%, with the expectation of reverting to pre-April 2025 levels; this was not confirmed on the call.",
+   "Europe: a recent certification is expected to help over the longer term, but no timeline was given for visible revenue."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Is there seasonality in the business, and is the 25-30% growth guidance for volume or revenue?",
+    "answer": "Management said seasonality is limited but H2 has historically been stronger. The guidance answer was unclear on volume versus revenue."
+   },
+   {
+    "question": "Can the Q2 and Q3 margin impact from the pass-through lag be quantified?",
+    "answer": "Management said quantification is difficult; it cited higher input prices and a Rs 2 crore higher cost base in the period."
+   },
+   {
+    "question": "What is driving the expansion, and is it backed by orders?",
+    "answer": "Management said there are no multi-year purchase orders; the expansion rests on customer commitment and loyalty and expected demand over 2-3 years."
+   },
+   {
+    "question": "Does the order book resemble the multi-year order books of peers?",
+    "answer": "Management said it has rolling 3-3.5 month orders with 12-month visibility, not long-term purchase orders. Mining and earth moving are expected to stay the key drivers."
+   },
+   {
+    "question": "Is the pass-through mechanism the same for domestic and export sales, and is the export mix expected to rise in H2?",
+    "answer": "The mechanism is the same. Exports have historically been higher in H2, and management is monitoring this."
+   },
+   {
+    "question": "How ready is the existing plant to reach high utilisation (manpower, machining, renewable power)?",
+    "answer": "Manpower is adequate to reach 90% utilisation by FY29. CNC orders are being placed, and 6 MW more renewable capacity is needed for 80% captive consumption."
+   }
+  ],
+  "risks_watch": [
+   "Pass-through lag: a September input cost rise (including natural gas and power) is absorbed in Q3, with recovery expected in Q4.",
+   "Utilisation fell to 57% in Q2 and is guided to about 60% for FY27 on the existing base, so the expansion depends on demand holding.",
+   "Capex execution: the Rs 151 crore expansion, CNC delivery schedules and land for 6 MW renewable capacity must be secured.",
+   "Europe contribution has no set timeline, and tariff status was not confirmed on the call.",
+   "Transcript quality is poor: several figures (order book, guidance, utilisation) are unclear and should be checked against the investor presentation."
+  ],
+  "management_tone": "Confident on demand, volumes and the expansion plan, but cautious on near-term margins, which management attributed to pass-through timing and pre-expansion costs. It declined to give quarter-specific margin guidance and gave vague answers on tariffs and Europe timing.",
+  "key_quotes": [
+   "Management currently expects utilization of the existing capacity to be broadly around 60% during FY27.",
+   "It is spent between input cost issues rather than the change in underlying commercial model."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "11,750 tpa new facility (total capacity to 40,750 tpa) at ~Rs 151 crore, piece-weight extension 2.5t to 3.5t, arc furnace",
+    "size_pct": 40.5,
+    "capex_cr": 151.0,
+    "q": 6,
+    "status": "approved",
+    "mat": "major"
+   },
+   {
+    "what": "CNC machines worth ~Rs 35 crore ordered in September, deliveries Jan 2027 to Jan 2028",
+    "size_pct": null,
+    "capex_cr": 35.0,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Renewable energy: 3.9 MW (2.4 MW hybrid + 1.4 MW solar) due by 30 Sep 2026; further 6 MW under decision",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "trial_runs",
+    "mat": "minor"
+   }
+  ],
+  "util": 57.0,
+  "expansion": true,
+  "growth": 27.5,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "demand_or_share_gains",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": 10.6,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "FY27 revenue growth guided at about 25-30% (unclear if volume or revenue), but H1 revenue growth was only ~10.6% in Q2 with existing-capacity utilisation falling to 57% and guided to ~60% for FY27; the 11,750 tpa expansion (Rs 151 cr) only commissions around 1 April 2028, and the order book is about Rs 145 crore (~3 months of sales) with no multi-year contracts, so backing is partial.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "Q4 FY27",
+    "why": "Q2 EBITDA margin fell to 16.9% (from 25.6% in Q1 and 28.3% a year ago) on a Rs 2 crore higher cost base and the Sept input cost pass-through lag; Q3 is guided to be hit and recovery is expected in Q4, but management gave no quarter-specific assurance and sees ~25% as sustainable over 2-3 years."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q1 FY28 (commissioning ~1 Apr 2028)",
+    "why": "Board approved 11,750 tpa (total 40,750 tpa) at Rs 151 crore, with commissioning targeted around 1 April 2028 and efforts to finish earlier; the 2-4 quarter window sees only construction and CNC deliveries (Jan 2027 to Jan 2028), not new output."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "unlikely",
+    "when": "next 2-4 quarters",
+    "why": "Existing-base utilisation fell from 66% in Q1 to 57% in Q2 and is guided to about 60% for FY27 on 29,000 tpa, with rolling 3-3.5 month orders and no multi-year contracts; Q2 volume was up 28% YoY, but the guided 25-30% FY27 growth is unclear on volume versus revenue."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "surely",
+    "when": "already announced; next 2-3 months",
+    "why": "The Rs 151 crore expansion was approved (revised up from Rs 120 crore) and a decision on 6 MW more renewable capacity is expected within 2-3 months, so further capex headlines are likely though the main one is already out."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-4 quarters",
+    "why": "Utilisation guide cut to about 60% on the existing base from 66% in Q1, Q3 margins flagged as hit by the pass-through lag, and the 25-30% FY27 growth guide is unclear on volume versus revenue, against H1 PAT growth of only 10.1%."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "Q3 FY27",
+    "why": "Q3 margins are expected to be hit by the September input cost rise, utilisation is guided to ~60% and FY27 growth guidance is ambiguous; H1 revenue was Rs 227 crore with EBITDA margin at 25% vs 27% in H1 FY26."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "next 2-4 quarters",
+    "why": "Product development has 111 new parts over 3 years, with 32 developed to date, 15 commercialised in FY27 and 55 in sampling, tooling or qualification, so further commercialisation is likely in the window."
+   },
+   {
+    "k": "cost_actions",
+    "label": "Renewable power savings from 3.9 MW",
+    "call": "likely",
+    "when": "Q3 FY27",
+    "why": "2.4 MW hybrid plus 1.4 MW solar due by 30 Sep 2026 is expected to save about Rs 4.5 crore a year in power costs, though 6 MW more is needed to reach 80% captive consumption."
+   },
+   {
+    "k": "new_markets",
+    "label": "Europe certification to drive revenue",
+    "call": "possible",
+    "when": "FY28 or later",
+    "why": "A recent European certification is expected to help over the longer term, but no timeline was given for visible revenue, and exports were 52% of Q2 revenue."
+   },
+   {
+    "k": "pricing",
+    "label": "US tariff reversion to pre-April 2025 levels",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "US tariffs of about 12-15% are expected to revert to pre-April 2025 levels, but management did not confirm this on the call and exports were 52% of Q2 revenue."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on demand in mining, earth moving and construction and on the expansion plan, but cautious on near-term margins from pass-through timing and declined quarter-specific guidance; analysts pressed on whether the 25-30% growth guide is volume or revenue, the lack of multi-year o"
+  }
+ }
+}

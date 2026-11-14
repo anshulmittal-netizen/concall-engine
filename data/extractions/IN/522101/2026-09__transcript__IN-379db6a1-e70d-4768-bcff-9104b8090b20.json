@@ -1,0 +1,448 @@
+{
+ "doc_id": "IN-379db6a1-e70d-4768-bcff-9104b8090b20",
+ "market": "IN",
+ "company_id": "522101",
+ "name": "Kilburn Engineering Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-13",
+ "period": "2026-09",
+ "title": "Kilburn Engineering Ltd - 522101 - Announcement under Regulation 30 (LODR)-Analyst / Investor Meet - Outcome",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Standalone revenue fell to INR69.5 crore (from 114.8) and PAT to 5.7 crore; group H1 revenue down 4.5% and management now guides FY27 revenue at INR600-650 crore, below the INR700 crore prior, with order intake of INR800 crore reliant on orders not yet signed.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -2,
+   "guidance": -2,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "Expansion at Tilburn's Raleigh plant and phase 2 of any energy is Pune plant are underway and expected to be completed by Q3 early Q4."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY27 revenue cut to INR600-650 crore",
+    "quote": "this year's revenue may hover around 600 to 650 crores",
+    "direction": -1,
+    "confidence": 0.85
+   },
+   {
+    "type": "demand",
+    "label": "Standalone revenue 69.5 vs 114.8 crore",
+    "quote": "The standalone revenue for Q2 was 69.5 crore against the 114.8 crores last year.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Order book 471 crore vs 485 crore",
+    "quote": "broadly in line with 485 crore at the start of the quarter even after executing 151 crores during the quarter.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables over 120 days, some over 180",
+    "quote": "There are some over 180 days.",
+    "direction": -1,
+    "confidence": 0.55
+   },
+   {
+    "type": "guidance",
+    "label": "Data-centre enclosures ramp to INR100 crore",
+    "quote": "we expect the enclosures business with work to generate approximately 100 crores in annual revenue in FY 27 28",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 consol revenue",
+    "value": "INR600-650 crore",
+    "horizon": "FY27",
+    "change": "cut",
+    "quote": "this year's revenue may hover around 600 to 650 crores"
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "value": "around 20% long-term average, no quarterly guidance",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "we stand by the 20% margin which we have mentioned in the past"
+   },
+   {
+    "metric": "Group order inflow FY27",
+    "value": "about INR800 crore (target)",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "we should get close to the targeted numbers at the end of the year"
+   },
+   {
+    "metric": "Revenue CAGR FY26-FY28",
+    "value": "20-25%",
+    "horizon": "medium term",
+    "change": "held",
+    "quote": "we are committing ourselves to a CAGR of 20 to 25%"
+   },
+   {
+    "metric": "Capacity to serve revenue",
+    "value": "over INR500 crore for the two subsidiaries; group above INR1,000 crore",
+    "horizon": "medium term",
+    "change": "new",
+    "quote": "the two subsidiaries can comfortably deliver over 500 crores subject to getting the orders in F528"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 consol revenue",
+    "outcome": "dropped",
+    "quote": "this year's revenue may hover around 600 to 650 crores"
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "outcome": "held",
+    "quote": "we stand by the 20% margin which we have mentioned in the past"
+   },
+   {
+    "metric": "Group order inflow FY27",
+    "outcome": "not_discussed",
+    "quote": "we should get close to the targeted numbers at the end of the year"
+   },
+   {
+    "metric": "Capacity to serve revenue",
+    "outcome": "met",
+    "quote": "we are building the group manufacturing infrastructure to support more than 1000 crores annual revenue capacity"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Monga Strafil",
+    "relation": "partner"
+   },
+   {
+    "name": "ME Energy",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Electronics manufacturing (EMS/PLI)"
+  ],
+  "red_flags": [
+   {
+    "label": "Standalone revenue down ~39% YoY",
+    "quote": "The standalone revenue for Q2 was 69.5 crore against the 114.8 crores last year."
+   },
+   {
+    "label": "Receivables beyond 180 days",
+    "quote": "There are some over 180 days."
+   },
+   {
+    "label": "Management declines to guide margin",
+    "quote": "It is not possible for the management to predict and tell you what would be the margin EBITDA margin"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 5,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Standalone FY27 revenue",
+    "quote": "We are not giving a guidance for the planning here."
+   },
+   {
+    "topic": "Quarterly margin",
+    "quote": "It is not possible for the management to predict and tell you what would be the margin EBITDA margin, PACT margin for one quarter or second quarter."
+   },
+   {
+    "topic": "Data-centre customers",
+    "quote": "We do not want to disclose further information on this it is a competitive market"
+   }
+  ],
+  "hedge_index": 0.75
+ },
+ "summary": {
+  "headline": "Kilburn Q2 FY27 console revenue flat YoY at ₹153.1 crore; standalone PAT fell to ₹5.7 crore on customer deferrals, subsidiaries carried the group.",
+  "overview": "Consolidated Q2 revenue was ₹153.1 crore, flat against ₹153.6 crore a year earlier and up 30.9% QoQ, with consolidated PAT of ₹16.5 crore. H1 consolidated revenue fell 4.5% to ₹270.1 crore, while subsidiaries (NGA Energy and Monga Strafil) roughly doubled revenue to ₹141.7 crore and now exceed half of group revenue. Standalone Q2 revenue dropped to ₹69.5 crore from ₹114.8 crore and PAT to ₹5.7 crore from ₹18 crore, which management attributes to customer deferrals linked to geopolitical uncertainty. Management cut FY27 group revenue expectations to ₹600-650 crore and is reiterating a 20-25% CAGR target from FY26 to FY28 and a ~20% margin.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue from operations, Q2",
+    "value": "₹153.1 crore",
+    "change": "Flat vs ₹153.6 crore YoY; +30.9% QoQ"
+   },
+   {
+    "metric": "Consolidated revenue, H1",
+    "value": "₹270.1 crore",
+    "change": "-4.5% vs ₹282.8 crore YoY"
+   },
+   {
+    "metric": "Consolidated PAT, Q2",
+    "value": "₹16.5 crore",
+    "change": "Not stated"
+   },
+   {
+    "metric": "Consolidated PAT, H1",
+    "value": "₹29.6 crore",
+    "change": "Not stated"
+   },
+   {
+    "metric": "Subsidiaries revenue, H1",
+    "value": "₹141.7 crore",
+    "change": "Roughly doubled from ₹73.4 crore in H1 FY26; contribution and profit contribution both up 21%"
+   },
+   {
+    "metric": "Standalone revenue, Q2",
+    "value": "₹69.5 crore",
+    "change": "vs ₹114.8 crore YoY; +18.1% QoQ"
+   },
+   {
+    "metric": "Standalone PAT, Q2",
+    "value": "₹5.7 crore",
+    "change": "vs ₹18 crore YoY"
+   },
+   {
+    "metric": "Consolidated EBITDA margin, Q2",
+    "value": "16.5%",
+    "change": "Management attributed decline to product mix and higher employee cost and value of raw materials consumed"
+   },
+   {
+    "metric": "Standalone order book",
+    "value": "₹471 crore as on 30 Sep 2026",
+    "change": "vs ₹485 crore at start of quarter, after executing ₹151 crore in Q2"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Standalone (Kilburn Engineering)",
+    "commentary": "Q2 revenue ₹69.5 crore (vs ₹114.8 crore) and PAT ₹5.7 crore (vs ₹18 crore). Management says decline is timing-related; customers in export and capital goods deferred finalisation and dispatch. Q2 new orders ₹136 crore, led by fertilisers, carbon black and AI data centres."
+   },
+   {
+    "name": "NGA Energy (subsidiary)",
+    "commentary": "Revenue acquired at about ₹70 crore; management targets capacity supporting over ₹300 crore theoretical capacity post Phase 2 in Pune, and says the two subsidiaries together can deliver over ₹500 crore subject to orders in FY28. Entering ferro alloy and steel WHR platforms and a cement WHR qualification."
+   },
+   {
+    "name": "Monga Strafil (subsidiary)",
+    "commentary": "Revenue base ~₹70-80 crore at acquisition; capacity to scale to over ₹200 crore from ₹100 crore base including RF业务. Data centre enclosures expected to reach ~₹100 crore revenue in FY28; ₹25 crore capex at Pune to add capacity over 6-9 months, with capacity additions from January."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 group revenue expected at ₹600-650 crore; management said Q4 could move this range materially depending on order finalisation timing.",
+   "Standalone FY27 revenue indicated around ₹700 crore in one response, later framed as indicative and subject to change.",
+   "Targeting 20-25% revenue CAGR over FY26-FY28 (FY28 revenue ₹900-2,000 crore cited in one answer; analyst derived ₹850-900 crore), with a blended EBITDA margin around 20% long term; no quarterly margin guidance.",
+   "Standalone order intake target around ₹800 crore for FY27; ₹300+ crore booked to date, with ~₹200-250 crore of opportunities expected to close in 45-60 days.",
+   "Group ambition to become a ₹1,000 crore company in a couple of years; group manufacturing infrastructure to support over ₹1,000 crore annual revenue.",
+   "Standalone capex of ~₹25 crore at Kilburn to be commissioned by December; data centre capex ₹25 crore to complete in 6-9 months.",
+   "Operating cash flow expected to remain negative for FY27, with reduction but year-end debtor build-up."
+  ],
+  "capex_capacity": [
+   "Brownfield expansion at Kilburn's Raleigh (Rajkot/unspecified) plant and NGA Energy Phase 2 in Pune due for completion by Q3 to early Q4 FY27; civil works largely complete per management and equipment being commissioned.",
+   "Board approved ₹25 crore investment mainly at Monga Strafil Pune facility for enclosures, cabinets and engineered assemblies for data centres, transformers and BESS; to be implemented over 6-9 months, with added capacity from January and full capacity in first half of FY28.",
+   "Kilburn standalone capex of about ₹25 crore to be commissioned by December 2026 (Umbarnath and Raleigh plants referenced).",
+   "Management said standalone could reach ₹750-800 crore with current plants if order book is strong, including bought-out components.",
+   "Management said order-book conversion is not constrained by factory capacity; NGA capacity could extend beyond ₹350-400 crore with more EPC orders."
+  ],
+  "demand_pricing": [
+   "Standalone order book ₹471 crore at 30 Sep 2026, versus ₹485 crore at start of quarter; Q2 execution ₹151 crore.",
+   "Q2 order wins ₹136 crore across fertilisers, carbon black and AI data centres; order book spread across fertilisers, carbon black, iron and steel and nuclear power.",
+   "Entry into global fertiliser ecosystem with multiple inquiries; ferro alloy entry via a Mutan order; cement WHR qualification.",
+   "Data centre enclosures: Vertiv (long-standing customer) indicated ~₹90 crore requirement in FY27; management says demand exceeds current supply and it supplies max-outs to all customers.",
+   "Management said contracts generally have no price escalation clause; raw materials are procured quickly after order award to protect margins.",
+   "Management said a portion of receivables exceed 120 days and some exceed 180 days, tied to customer commissioning."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What exactly are the data centre enclosures, who are the competitors, and does precision engineering extend beyond data centres?",
+    "answer": "Enclosures are customised metal cabinets housing servers and networking/power hardware for data centres; certifications are a barrier. Management is not aware of listed competitors. Current work is limited to power transformers and data centres; no aerospace mention."
+   },
+   {
+    "question": "Current order pipeline versus the ₹800 crore FY27 intake expectation?",
+    "answer": "₹300+ crore booked YTD; ₹800 crore is the FY27 order intake target, and closing order book should be higher than ₹471 crore by year end."
+   },
+   {
+    "question": "Expected standalone revenue and whether FY27 can match FY26 top line?",
+    "answer": "Management indicated ₹600-650 crore group revenue and around ₹700 crore standalone; subsidiaries expected to contribute more; FY26 base around ₹620 crore; range can change in Q4 on order timing."
+   },
+   {
+    "question": "Data centre order size, customer count and ramp timeline?",
+    "answer": "Management declined to name other customers or order sizes; said revenue from the segment should rise over the next 4-8 quarters after capex; precision engineering to cross ₹100 crore."
+   },
+   {
+    "question": "Group capacity and utilisation; operating leverage and margin path?",
+    "answer": "NGA Phase 2 theoretical capacity above ₹300 crore; Monga Strafil scaling to over ₹200 crore; together over ₹500 crore subject to orders in FY28. Margin guidance remains a blended ~20%; no quarterly margin guidance given."
+   },
+   {
+    "question": "Why did consolidated EBITDA margin fall to 16.5% and what drove costs?",
+    "answer": "Combination of product mix and higher employee cost, plus a higher share of raw material value consumed (not raw material price escalation)."
+   },
+   {
+    "question": "Operating cash flow and receivables ageing outlook?",
+    "answer": "Operating cash flow to stay negative for FY27 though lower; year-end billing builds debtors; some receivables over 120 days and some over 180 days."
+   }
+  ],
+  "risks_watch": [
+   "Standalone order conversion: ~₹200-250 crore of orders (Middle East via a newly formed JV, Far East, domestic nuclear) expected in 45-70 days; slippage would pressure FY27 revenue and FY28 ramp.",
+   "Guidance credibility: FY27 revenue guidance was cut to ₹600-650 crore from a prior ~₹775 crore per analyst; management says Q4 could move substantially.",
+   "Margin pressure: consolidated EBITDA margin 16.5% in Q2; H2 needs ~22-23% to reach ~20% full-year per analyst math; management declined to commit to a quarterly figure.",
+   "Negative operating cash flow with receivables over 120 and 180 days; no ageing percentage disclosed.",
+   "Data centre ramp dependent on a few customers (Vertiv named); capex ₹25 crore due in 6-9 months; ₹90 crore Vertiv requirement is indicative only.",
+   "Promoter pledge of about 5 lakh shares (less than 1% of promoter holding) created around Sep/Oct 2026 for an entity-level requirement; management said it will inform any change."
+  ],
+  "management_tone": "Confident on the group and long-term targets but defensive on near-term numbers: management repeatedly called the standalone weakness timing-related and declined to guide quarterly margins, while giving revenue ranges that were revised during the call.",
+  "key_quotes": [
+   "I would like to start saying that the standalone performance was more of a timing issue than a structural one.",
+   "There has been no structural change in our business.",
+   "But we believe that this year would now look more like a transition year, a year of consolidation and a lot of the work being put in by the management will refloat in FI 28."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Kilburn standalone brownfield expansion at Raleigh and Umbarnath plants (~₹25 crore capex)",
+    "size_pct": null,
+    "capex_cr": 25.0,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "NGA Energy Phase 2 in Pune (brownfield, capacity supporting over ₹300 crore theoretical capacity)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Monga Strafil Pune data-centre enclosures/cabinets capacity (₹25 crore capex; capacity from January, full in H1 FY28)",
+    "size_pct": null,
+    "capex_cr": 25.0,
+    "q": 2,
+    "status": "approved",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": -1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "new_products_or_markets",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 0.0,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "FY27 group revenue guidance cut to ₹600-650 crore from prior levels, with Q2 consolidated revenue flat YoY at ₹153.1 crore and standalone down to ₹69.5 crore from ₹114.8 crore; 20-25% FY26-28 CAGR reiterated, backed by ₹471 crore standalone order book, ₹800 crore order-intake target and capacity additions (Raleigh/Umbarnath ~₹25 crore, NGA Phase 2, Monga ₹25 crore) but timing of orders uncertain.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "H2 FY27",
+    "why": "Consolidated EBITDA margin fell to 16.5% in Q2 on product mix, employee cost and raw material share; H2 needs ~22-23% to reach ~20% full-year per analyst math, and management gave no quarterly margin guidance but reiterated ~20% long-term."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q3 to early Q4 FY27",
+    "why": "Kilburn Raleigh/Umbarnath brownfield (~₹25 crore, commissioning by December), NGA Energy Phase 2 in Pune (supports over ₹300 crore theoretical capacity) under construction and due Q3 to early Q4 FY27; Monga Strafil ₹25 crore Pune capacity adds from January."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "H2 FY27 into FY28",
+    "why": "Standalone order book ₹471 crore at 30 Sep vs ₹485 crore at start of quarter, with ₹300+ crore booked YTD against ₹800 crore FY27 intake target and ~₹200-250 crore expected to close in 45-60 days; but Q2 standalone revenue fell to ₹69.5 crore from ₹114.8 crore on customer deferrals."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "possible",
+    "when": "FY28",
+    "why": "Utilisation not disclosed; management says order conversion is not constrained by factory capacity and standalone could reach ₹750-800 crore with current plants, and the board has already approved ₹25 crore at Monga Strafil, so a further announcement depends on order intake."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-4 quarters",
+    "why": "FY27 group revenue guidance was just cut to ₹600-650 crore from a prior ~₹775 crore per analyst, and H1 consolidated revenue fell 4.5% to ₹270.1 crore."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "Q4 FY27",
+    "why": "Management said Q4 could move the ₹600-650 crore range materially on order finalisation timing, and standalone Q2 revenue fell to ₹69.5 crore from ₹114.8 crore, with ₹200-250 crore of orders dependent on 45-70 day closure."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Entering ferro alloy and steel WHR platforms (Mutan order), cement WHR qualification, and data centre enclosures expected to reach ~₹100 crore revenue in FY28; Vertiv indicated ~₹90 crore FY27 requirement."
+   },
+   {
+    "k": "order_book",
+    "label": "Conversion of ₹200-250 crore pipeline (Middle East JV, Far East, domestic nuclea",
+    "call": "possible",
+    "when": "next 45-70 days",
+    "why": "Around ₹200-250 crore of orders expected to close in 45-60 days, with slippage a risk to FY27 revenue and FY28 ramp; standalone Q2 order wins were ₹136 crore."
+   },
+   {
+    "k": "new_markets",
+    "label": "Global fertiliser ecosystem entry",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "Multiple inquiries in global fertiliser ecosystem after Q2 order wins of ₹136 crore led by fertilisers, carbon black and AI data centres, but no order value disclosed for this market."
+   },
+   {
+    "k": "working_capital",
+    "label": "Negative operating cash flow and debtor build-up",
+    "call": "likely",
+    "when": "FY27 year-end",
+    "why": "Operating cash flow expected to stay negative for FY27 though lower, with year-end billing building debtors and receivables over 120 and 180 days."
+   }
+  ],
+  "tone": {
+   "mgmt": "defensive",
+   "analysts": "probing",
+   "note": "Management was confident on long-term 20-25% CAGR, ~20% margin and ₹800 crore order-intake target, but defensive on the flat quarter and standalone drop (blamed on timing), and gave no quarterly margin guidance; analysts pushed on the FY27 revenue cut, margin path, receivables ageing and negative op"
+  }
+ }
+}

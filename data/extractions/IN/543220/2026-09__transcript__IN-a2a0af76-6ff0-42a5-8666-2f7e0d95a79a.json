@@ -2,16 +2,16 @@
  "doc_id": "IN-a2a0af76-6ff0-42a5-8666-2f7e0d95a79a",
  "market": "IN",
  "company_id": "543220",
- "name": "Max Healthcare",
+ "name": "Max Healthcare Institute Ltd",
  "doc_type": "transcript",
  "date": "2026-11-09",
  "period": "2026-09",
- "title": "Transcript of Earnings Call held on November 3, 2026",
+ "title": "Max Healthcare Institute Ltd - 543220 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
  "model": "claude-haiku-5-5",
  "verified_share": 1.0,
  "read": {
   "subsector": "Hospitals & diagnostics",
-  "thesis": "Q2 revenue +20% YoY and EBITDA margin flat at 26.8% despite 14% more beds; occupancy steady at 77%, with oncology drag lapping from Q3 and greenfield drag guided at INR 40-50 crore.",
+  "thesis": "Q2 revenue +20% and EBITDA +18% with occupancy flat at 77% despite 14% more beds; 2 of 4 prior guidance items not addressed and no numeric net-debt or oncology update, with supply still expanding (202 beds added, 2,000+ beds in pipeline).",
   "archetype": "Supply-side dominance",
   "mental_models": [
    "Capacity bottleneck",
@@ -19,29 +19,29 @@
    "Capital cycle"
   ],
   "blocks": {
-   "supply": 1,
+   "supply": -1,
    "pricing": 0,
-   "structure": -1,
+   "structure": 0,
    "inventory": 0,
    "demand": 1,
-   "guidance": 1,
+   "guidance": 0,
    "novelty": 1,
    "tone": 0
   },
   "utilisation": {
    "direction": 0,
    "level_pct": 77,
-   "quote": "occupancy holding steady at 77% , despite a 14% year-on-year increase in operational bed capacity"
+   "quote": "occupancy holding steady at 77%, despite a 14% year-on-year increase in operational bed capacity"
   },
   "capex": {
    "direction": "raised",
-   "peers_comment": "One competitor recently commissioned a new Gurugram hospital; management did not comment on its capacity beyond that.",
+   "peers_comment": "",
    "quote": "the Board has approved an investment of INR 415 crore towards addition of 209 brownfield beds"
   },
   "triggers": [
    {
     "type": "supply",
-    "label": "Board approves INR 415 cr brownfield expansion",
+    "label": "Board approves INR 415 crore brownfield capex",
     "quote": "the Board has approved an investment of INR 415 crore towards addition of 209 brownfield beds",
     "direction": -1,
     "confidence": 0.6
@@ -49,50 +49,39 @@
    {
     "type": "util",
     "label": "Occupancy flat at 77% on 14% more beds",
-    "quote": "occupancy holding steady at 77% , despite a 14% year-on-year increase in operational bed capacity",
+    "quote": "occupancy holding steady at 77%, despite a 14% year-on-year increase in operational bed capacity",
     "direction": 0,
-    "confidence": 0.6
+    "confidence": 0.5
    },
    {
     "type": "pricing",
-    "label": "IP ARPP +8% YoY to INR 2.31 lakh",
+    "label": "IP ARPP +8% YoY to INR 2.31 lakhs",
     "quote": "Average revenue per patient (IP ARPP) for the quarter stood at INR 2.31 lakhs, growing by 8% year-on-year",
     "direction": 1,
     "confidence": 0.5
    },
    {
-    "type": "structure",
-    "label": "De-empanelment of BLK from CGHS and Railways",
-    "quote": "we de-empanelled BLK in May for CGHS and then the Railways, etc., because they were not paying us",
+    "type": "pricing",
+    "label": "Trade margin cap on non-scheduled drugs unquantified",
+    "quote": "We are still working it out.",
     "direction": -1,
-    "confidence": 0.4
-   },
-   {
-    "type": "guidance",
-    "label": "Oncology drag to lap from Q3",
-    "quote": "Yes, that should be the case because you are coming off a lower base.",
-    "direction": 1,
     "confidence": 0.5
    }
   ],
   "guidance": [
    {
-    "metric": "Oncology normalisation",
-    "value": "Revenue growth expected to accelerate into Q3 and Q4 on lower base",
-    "change": "held",
-    "quote": "Yes, that should be the case because you are coming off a lower base."
+    "metric": "Greenfield EBITDA loss at Sector-56 Gurgaon",
+    "value": "INR 40-50 crore peak loss, not more than that",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "If I was to draw a line in the sand, it would be around INR 40-50 crore"
    },
    {
-    "metric": "Greenfield Gurugram Sector-56 EBITDA loss",
-    "value": "peak loss INR 40-50 crore; breakeven about one year",
+    "metric": "Zirakpur Mohali greenfield EBITDA loss",
+    "value": "around INR 30 crore",
     "change": "new",
-    "quote": "If I was to draw a line in the sand, it would be around INR 40-50 crore."
-   },
-   {
-    "metric": "Remaining Max Smart beds",
-    "value": "140 beds commissioned after Diwali puja",
-    "change": "new",
-    "quote": "We expect to commission the remaining 140 beds after Diwali puja."
+    "horizon": "FY29",
+    "quote": "Lower, much lower. Around INR 30 crore."
    }
   ],
   "prior_guidance_check": [
@@ -101,13 +90,13 @@
     "outcome": "not_discussed"
    },
    {
-    "metric": "CGHS super specialty rates",
+    "metric": "CGHS super specialty rates run-rate INR 140 crore",
     "outcome": "not_discussed"
    },
    {
-    "metric": "Nanavati and Max Smart EBITDA ramp",
+    "metric": "Nanavati and Max Smart EBITDA ramp by second or third quarter",
     "outcome": "met",
-    "quote": "Mohali was the first to open, and we broke even in the first quarter, and then it ramped up. Similar was the experience at Nanavati-Max in Mumbai."
+    "quote": "by next quarter, it comes back to normalcy"
    },
    {
     "metric": "Net debt to EBITDA",
@@ -126,6 +115,10 @@
    },
    {
     "name": "Kalinga Hospital Limited",
+    "relation": "partner"
+   },
+   {
+    "name": "BLK",
     "relation": "peer"
    }
   ],
@@ -135,194 +128,199 @@
     "quote": "We are still working it out."
    },
    {
-    "label": "Payor mix shift: CGHS/institutional revenue share falling, de-empanelments",
+    "label": "Pharmacy share of revenue not disclosed; oncology revenue share down to 21%",
+    "quote": "We would not be able to tell you."
+   },
+   {
+    "label": "Hospital de-empanelment from CGHS/ECHS/Railways over non-payment",
     "quote": "we de-empanelled BLK in May for CGHS and then the Railways, etc., because they were not paying us"
    }
   ],
   "analyst_mix": {
-   "margin": 3,
-   "growth": 4,
+   "balance_sheet": 0,
    "capex": 3,
-   "balance_sheet": 1,
-   "other": 6
+   "growth": 4,
+   "margin": 4,
+   "other": 5
   },
   "evasions": [
    {
-    "topic": "Trade margin cap impact on pharmacy/oncology",
+    "topic": "Trade margin cap impact on sales and EBITDA",
     "quote": "We are still working it out."
    },
    {
     "topic": "Pharmacy share of revenue",
-    "quote": "We would not be able to tell you. We know the overall pharmacy numbers"
+    "quote": "We would not be able to tell you."
    },
    {
-    "topic": "Hospital-level occupancy (Noida)",
-    "quote": "We do not share specific hospital level occupancy numbers."
+    "topic": "Ex-oncology EBITDA growth",
+    "quote": "we cannot impute a value which is not there in the P&L"
    }
   ],
   "hedge_index": 0.4,
   "themes": []
  },
  "summary": {
-  "headline": "Max Healthcare Q2 FY27 revenue rose 20% YoY to INR 3,219 crore and operating EBITDA 18% to INR 820 crore, with margin flat at 26.8%.",
-  "overview": "Network gross revenue grew 20% YoY to INR 3,219 crore and operating EBITDA grew 18% to INR 820 crore, with margin at 26.8%, similar to last year despite a 14% rise in operational beds. PAT rose 10% YoY to INR 448 crore, though the prior-year base was normalised for a INR 149 crore one-time tax gain. Oncology in-patient revenue share fell to 21% from 26% after CGHS rate revisions led to discontinuation of some high-value chemotherapy drugs. Management said the Max Smart Saket ramp-up drag on EBITDA is temporary, and it flagged uncertainty over the newly imposed trade margin cap on non-scheduled drugs, which it has not yet quantified.",
+  "headline": "Max Healthcare Q2 FY27 revenue rose 20% YoY to INR 3,219 crore, with operating EBITDA up 18% to INR 820 crore at a 26.8% margin.",
+  "overview": "Q2 FY27 revenue grew 20% YoY and 8% QoQ to INR 3,219 crore, while operating EBITDA rose 18% YoY to INR 820 crore and PAT rose 10% YoY to INR 448 crore. Occupancy held at 77% despite a 14% increase in operational beds, as 202 brownfield beds were added in the quarter. Management attributed the Saket complex EBITDA drag to ramp-up of the newly commissioned Max Smart beds, and said oncology revenue fell after CGHS-driven chemotherapy discontinuation. Management said it has not yet quantified the impact of the new trade margin cap on non-scheduled drugs.",
   "financial_highlights": [
    {
-    "metric": "Network gross revenue",
+    "metric": "Network gross revenue (Q2 FY27)",
     "value": "INR 3,219 crore",
     "change": "+20% YoY, +8% QoQ"
    },
    {
-    "metric": "Operating EBITDA",
+    "metric": "Operating EBITDA (Q2 FY27)",
     "value": "INR 820 crore",
     "change": "+18% YoY, +16% QoQ"
    },
    {
-    "metric": "Operating EBITDA margin",
+    "metric": "Operating EBITDA margin (Q2 FY27)",
     "value": "26.8%",
-    "change": "Similar YoY, ~200 bps QoQ improvement"
+    "change": "Similar YoY; ~200 bps QoQ improvement"
    },
    {
-    "metric": "Operating EBITDA per bed",
-    "value": "INR 77 lakhs per annum",
+    "metric": "Operating EBITDA per bed (annualised)",
+    "value": "INR 77 lakhs",
     "change": "+4% YoY"
    },
    {
-    "metric": "PAT",
+    "metric": "PAT (Q2 FY27)",
     "value": "INR 448 crore",
-    "change": "+10% YoY vs normalised INR 406 crore, +26% QoQ"
+    "change": "+10% YoY (vs normalised INR 406 crore), +26% QoQ"
    },
    {
-    "metric": "IP ARPP",
+    "metric": "IP ARPP (Q2 FY27)",
     "value": "INR 2.31 lakhs",
     "change": "+8% YoY"
    },
    {
-    "metric": "Occupancy",
-    "value": "77%",
-    "change": "Flat YoY despite 14% bed capacity increase"
+    "metric": "Occupied bed days",
+    "value": "Up 13% YoY, 7% QoQ",
+    "change": ""
    },
    {
-    "metric": "Free cash flow",
-    "value": "INR 500 crore in Q2",
-    "change": "INR 292 crore to expansion, INR 195 crore dividend"
-   },
-   {
-    "metric": "Net debt",
-    "value": "INR 2,369 crore",
-    "change": "vs INR 2,384 crore at June 2026; net debt/EBITDA below 1x"
-   },
-   {
-    "metric": "International patient revenue",
+    "metric": "International patient revenue (Q2 FY27)",
     "value": "INR 307 crore",
-    "change": "+33% YoY, 10% of hospital revenue"
+    "change": "+33% YoY; 10% of hospital healthcare revenue"
+   },
+   {
+    "metric": "Net debt (Network)",
+    "value": "INR 2,369 crore",
+    "change": "vs INR 2,384 crore at end-June 2026; net debt/EBITDA below 1x"
+   },
+   {
+    "metric": "Network free cash flow (Q2 FY27)",
+    "value": "INR 500 crore",
+    "change": "INR 292 crore to capex, INR 195 crore to dividend"
+   },
+   {
+    "metric": "H1 FY27 gross revenue",
+    "value": "INR 6,200 crore",
+    "change": "+18% YoY"
+   },
+   {
+    "metric": "H1 FY27 operating EBITDA",
+    "value": "INR 1,524 crore",
+    "change": "+17% YoY; margin 25.9%"
+   },
+   {
+    "metric": "H1 FY27 PAT",
+    "value": "INR 805 crore",
+    "change": "+7% YoY (vs normalised INR 750 crore)"
    }
   ],
   "segments": [
    {
     "name": "Hospital network",
-    "commentary": "Gross revenue INR 3,219 crore with occupancy at 77%; OBDs up 13% YoY, and in-patient volume up about 12% with ARPP up 8%. Excluding oncology, gross revenue grew 25% and ARPP 11%."
+    "commentary": "Occupancy 77% on ~14% higher operational beds; total bed capacity ~6,200 (+20% YoY). Oncology share of IP revenue fell to 21% from 26%; ex-oncology gross revenue grew 25% and ARPP grew 11% YoY."
    },
    {
     "name": "Max@Home",
-    "commentary": "Revenue INR 86 crore, up 37% YoY, across 16 service lines in 15 cities, with over 56% repeat transactions."
+    "commentary": "Revenue INR 86 crore, +37% YoY; 16 service lines across 15 cities; over 56% repeat transactions."
    },
    {
     "name": "Max Lab",
-    "commentary": "Revenue INR 66 crore, up 24% YoY, serving over 60 cities and more than 7 lakh patients in the quarter."
+    "commentary": "Revenue INR 66 crore, +24% YoY; services in over 60 cities; served over 7 lakh patients in the quarter."
    },
    {
     "name": "Max Bhubaneswar (Kalinga Hospital, 66% owned)",
-    "commentary": "Revenue INR 38 crore and EBITDA INR 4 crore in the quarter; renovation started, with first part rolling out by year end."
-   },
-   {
-    "name": "Digital and international",
-    "commentary": "Digital revenue INR 1,099 crore (about 34% of revenue); website traffic 1.14 crore sessions, up 44% YoY. International revenue INR 307 crore, up 33%."
+    "commentary": "Q2 revenue INR 38 crore and EBITDA INR 4 crore; renovation of ~80 beds under way, first part of the renovation delivered in about 3 months, and a 250-bed phased renovation over 12 to 15 months."
    }
   ],
   "guidance_outlook": [
-   "Remaining 140 beds at Max Smart (Saket) to be commissioned after Diwali puja; balance 205 beds at Max Nanavati and Max Smart also post Diwali.",
-   "Max Dwarka oncology block adds about 20 beds in Q3 FY27.",
-   "Management expects top-line growth to accelerate in Q3 and Q4 as the chemotherapy-discontinuation impact is lapped.",
-   "Gurugram Sector-56 (500 beds): phase commissioning to start by end FY27, likely opening 150-200 beds first; peak EBITDA loss estimated at INR 40-50 crore.",
-   "Zirakpur, Mohali (400 beds): commissioning by December 2027, with peak EBITDA loss around INR 30 crore; breakeven guided within about one year, and about six months as achieved at Dwarka.",
-   "INR 415 crore approved for 209 brownfield beds at Noida, Vaishali and BLK-Max, including an INR 85 crore MLCP at BLK; most capacity in 18-24 months."
+   "Max Smart (Saket) remaining 140 beds to be commissioned after Diwali; balance 205 beds at Max Nanavati and Max Smart to open post Diwali; management expects Saket EBITDA drag to normalise by the next quarter.",
+   "Overall oncology revenue impact from CGHS-linked chemotherapy discontinuation was roughly INR 100 crore a year, against a net gain of about INR 200 crore from CGHS price revisions; management said the revenue decline is now anniversarying from Q3 FY27, so top-line growth should accelerate in Q3 and Q4.",
+   "Gurugram Sector-56 (500 beds): phased commissioning to start by end of FY27; initial 150-200 beds; peak EBITDA loss estimated at INR 40-50 crore; breakeven targeted within about one year.",
+   "Zirakpur, Mohali (400 beds): commissioning by December 2027; peak EBITDA loss around INR 30 crore, a 'line in the sand' estimate.",
+   "Board approved INR 415 crore for 209 brownfield beds at Max Noida, Max Vaishali and BLK-Max, plus an MLCP tower at BLK (~INR 85 crore); most capacity expected over 18 to 24 months.",
+   "Trade margin cap on non-scheduled drugs: sales and EBITDA impact still being worked out; the matter is sub judice."
   ],
   "capex_capacity": [
-   "Total bed capacity about 6,200 in H1, up 20% YoY; 202 brownfield beds added in Q2 at Max Smart, Lucknow, Noida and Dwarka.",
-   "Upcoming: 100 beds at Max Lucknow over next 2 quarters; 85 beds Noida and 100 beds Nagpur by December 2027; 200 beds Pitampura and 400 beds Patparganj by FY29; 260 beds Dwarka, 271 beds Nanavati Phase 2, 450 beds Pune, 200 beds Vaishali Tower 3 and 400 beds Shaheed Path Lucknow Phase 1 by FY30.",
-   "Bhubaneswar: 250-bed phased renovation over 12-15 months, with a further 250-bed tower planned over 2-3 years.",
-   "H1 FY27 capex of INR 629 crore on expansion projects; INR 386 crore spent on acquisitions of Kalinga Hospital and Yerawada Properties (Pune).",
-   "Shaheed Path Lucknow awaits environmental clearance and building plans before construction starts."
+   "Q2 added 202 brownfield beds (Max Smart, Max Lucknow, Max Noida, Max Dwarka); Max Dwarka oncology block adds ~20 beds in Q3 FY27.",
+   "Max Smart's newly commissioned 260 beds reached EBITDA breakeven within 3 months; 140 beds remain to be commissioned after Diwali.",
+   "Pipeline: 100 beds at Max Lucknow over the next 2 quarters; 85 beds at Max Noida and 100 beds at Max Nagpur by December 2027; 200 beds at Pitampura in FY29; 400 beds at Patparganj by end-FY29; 260-bed Dwarka tower, 271-bed Nanavati Phase 2, 450-bed Pune, 200-bed Vaishali Tower 3 and 400-bed Shaheed Path Lucknow Phase 1 by FY30 (Shaheed Path awaiting environmental clearance and building plans).",
+   "Greenfield Greater Noida has land for 400 beds only; no operating hospital there. Noida campus: 500-bed complex with 400 active; residual 11 acres can host ~700 beds in a separate phase.",
+   "H1 FY27 capex: INR 629 crore on expansion projects and upgrades at new units; INR 386 crore on acquisitions of Kalinga Hospital (Bhubaneswar) and Yerawada Properties (Pune)."
   ],
   "demand_pricing": [
-   "Institutional bed share fell to 29% from 34% a year ago, and CGHS revenue share is about 18.5%, down 300 bps YoY.",
-   "Oncology share of in-patient revenue fell to 21% from 26%, as high-value chemotherapy drugs were discontinued for institutional patients after CGHS rate revisions; this is a roughly INR 100 crore annual headwind, offset by a net INR 200 crore gain from CGHS price revisions.",
-   "Trade margin cap on non-scheduled drugs: impact on sales and EBITDA still being assessed; the matter is sub judice.",
-   "De-empanelled BLK (CGHS and Railways) in May and ECHS at Shalimar Bagh; management will decide at individual hospital level as CGHS pressure builds, and will seek empanelment for the new Gurugram hospital.",
-   "Cardiology grew 16% YoY, per management; non-oncology segments grew about 20% industry-wide per management."
+   "Institutional bed share fell to 29% from 34% a year earlier, supporting ARPP; management said it is not reducing institutional exposure, and older hospitals are de-empanelling while newer ones empanel.",
+   "CGHS empanelment: BLK de-empanelled in May from CGHS and Railways for non-payment; ECHS Shalimar Bagh also de-empanelled. Empanelment is a 6-month evergreen contract with 1-month notice from either side; Gurugram new hospital to seek CGHS/ECHS empanelment.",
+   "International revenue INR 307 crore, +33% YoY.",
+   "Management said other specialties grew around 20% YoY and occupied bed days have not fallen by specialty.",
+   "Management said the sector's median net margin is about 9% and that hospital pricing has been product-based rather than service-based, implying a possible recalibration.",
+   "Pharmacy share of revenue was not disclosed; 20-30% of revenue is packaged, depending on payor."
   ],
   "qa_highlights": [
    {
-    "question": "What is the drag from the Max Smart Saket ramp-up, and will other brownfields see similar disruption?",
-    "answer": "Management said the Saket drag is a one-quarter preoperative cost; Mohali and Nanavati broke even in the first quarter. Excluding Saket, revenue grew 20% and EBITDA 25%."
+    "question": "How many hospitals were de-empanelled, and will more follow?",
+    "answer": "BLK was de-empanelled from CGHS and Railways in May for non-payment, and ECHS Shalimar Bagh was also de-empanelled. Further decisions will be taken hospital by hospital, with older hospitals reducing institutional mix."
    },
    {
-    "question": "What is the Gurugram greenfield EBITDA impact?",
-    "answer": "Management said it will open 150-200 beds first, and peak EBITDA loss should be INR 40-50 crore, based on a INR 30 crore loss at Dwarka with 300 beds."
+    "question": "How long will the Saket drag last, and will other brownfields see similar drags?",
+    "answer": "Management said brownfields break even within the first quarter, and the Saket drag is a one-quarter ramp-up effect that should normalise by next quarter. Mohali and Nanavati followed the same pattern."
    },
    {
-    "question": "Will the trade margin cap affect pharmacy revenue and EBITDA?",
-    "answer": "Management has not yet estimated the impact. Chemotherapy is about 30% of oncology revenue, and part of it may be exempt through ORC or monopoly drugs. Pharmacy share of total revenue was not disclosed."
+    "question": "Impact of the trade margin cap on sales and EBITDA?",
+    "answer": "Management said it is still working out the impact. It said chemotherapy is about 30% of oncology revenue, and some ORC and monopoly drugs are exempt. CGHS impact is already in the numbers."
    },
    {
-    "question": "Will the top-line growth accelerate in H2?",
-    "answer": "Yes; management said growth should accelerate in Q3 and Q4 on a lower base, aided by new brownfield and greenfield beds."
+    "question": "Gurugram greenfield ramp-up and EBITDA impact?",
+    "answer": "Management said it will open 150-200 beds first, and that peak EBITDA loss should be around INR 40-50 crore, based on Dwarka's INR 30 crore loss on 300 beds."
    },
    {
-    "question": "Could cardiology growth be slowing, and what is ex-oncology EBITDA growth?",
-    "answer": "Management said cardiology is seasonal and grew 16% YoY. It declined to quantify ex-oncology EBITDA growth, saying the P&L cannot be adjusted for lost drug revenue."
+    "question": "Will ex-oncology growth flow through to EBITDA?",
+    "answer": "Management declined to impute EBITDA ex-oncology. It said the chemotherapy drop cost roughly INR 100 crore a year, offset by a net CGHS gain of about INR 200 crore, and cardiology grew 16%."
+   },
+   {
+    "question": "Will Max Lab and Max@Home become larger contributors?",
+    "answer": "Management said both have grown around 20-25% CAGR over many years and that their revenue share remains stable while the core grows at about 20%."
    }
   ],
   "risks_watch": [
-   "Trade margin cap on non-scheduled drugs and the sub judice oncology pricing case: impact not quantified.",
-   "Further de-empanelment from CGHS or ECHS if capacity stays under pressure; institutional mix is falling as older hospitals shed it.",
-   "Gurugram Sector-56 and Zirakpur greenfield ramp-ups, with peak EBITDA losses of INR 40-50 crore and about INR 30 crore respectively.",
-   "Clinician attrition, estimated at about 1% per year, as new Gurugram capacity is staffed.",
-   "Occupancy at 77% despite 14% bed growth; watch whether ramp-ups keep pace with the 200+ beds coming online in the next few quarters."
+   "Trade margin cap on non-scheduled drugs and pending court matter; impact not yet quantified by management.",
+   "Clinician attrition and recruitment for new Gurugram and other greenfield hospitals; management says attrition is about 1% a year.",
+   "Greenfield and brownfield drag on EBITDA as new beds ramp up (Gurugram INR 40-50 crore peak loss; Zirakpur ~INR 30 crore).",
+   "Pace of oncology revenue recovery in Q3 and Q4 FY27 as the CGHS discontinuation anniversaries.",
+   "Bhubaneswar renovation timing and occupancy, and the Kalinga Hospital EBITDA contribution.",
+   "Shaheed Path Lucknow Phase 1 is awaiting environmental clearance and building plans, so FY30 timing is at risk."
   ],
-  "management_tone": "Confident on demand, ramp-ups and the growth outlook, with firm numbers on brownfield economics. Cautious and evasive on the trade margin cap, on pharmacy share of revenue and on hospital-level occupancy, saying the matter is sub judice or not disclosed.",
+  "management_tone": "Confident on operating metrics and ramp-up trajectories, but evasive on the trade margin cap, pharmacy mix and EBITDA impact of ex-oncology growth, citing the sub judice matter and bundled billing. Management stressed that brownfield breakeven is quick and that greenfield peak-loss figures are preliminary estimates.",
   "key_quotes": [
-   "Demand for quality healthcare remains strong across the hospital Network, with occupancy holding steady at 77%, despite a 14% year-on-year increase in operational bed capacity.",
-   "A brownfield breaks even within the first quarter itself.",
-   "We cannot have day one occupancy of 500 beds; it does not operate like that."
+   "We gained momentum in the second quarter, with revenue growing by 20%, operating EBITDA by 18% and PAT by 10%.",
+   "There is a hockey-stick growth curve.",
+   "We cannot impute a value which is not there in the P&L."
   ]
  },
  "growth": {
   "v": 3,
   "adds": [
    {
-    "what": "Remaining 140 beds at Max Smart Saket after Diwali puja",
+    "what": "140 Max Smart (Saket) beds to be commissioned after Diwali",
     "size_pct": null,
     "capex_cr": null,
     "q": 1,
     "status": "approved",
-    "mat": "minor"
-   },
-   {
-    "what": "205 beds at Max Nanavati and Max Smart post Diwali",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 1,
-    "status": "approved",
-    "mat": "minor"
-   },
-   {
-    "what": "Max Dwarka oncology block, about 20 beds",
-    "size_pct": null,
-    "capex_cr": null,
-    "q": 1,
-    "status": "under_construction",
     "mat": "minor"
    },
    {
@@ -334,19 +332,27 @@
     "mat": "minor"
    },
    {
-    "what": "Gurugram Sector-56 greenfield, 500 beds, phase commissioning 150-200 beds first by end FY27",
+    "what": "209 brownfield beds at Max Noida, Max Vaishali and BLK-Max (board approved INR 415 crore), most capacity over 18-24 months",
+    "size_pct": 3.5,
+    "capex_cr": 415.0,
+    "q": 4,
+    "status": "approved",
+    "mat": "moderate"
+   },
+   {
+    "what": "500-bed Gurugram Sector-56 greenfield, phased start with 150-200 beds by end FY27",
     "size_pct": null,
     "capex_cr": null,
     "q": 3,
-    "status": "under_construction",
+    "status": "approved",
     "mat": "major"
    },
    {
-    "what": "Zirakpur Mohali greenfield, 400 beds, commissioning by Dec 2027",
+    "what": "400-bed Zirakpur Mohali greenfield, commissioning by December 2027",
     "size_pct": null,
     "capex_cr": null,
     "q": 5,
-    "status": "planned",
+    "status": "approved",
     "mat": "major"
    }
   ],
@@ -364,7 +370,7 @@
   "qRev": 20.0,
   "qEbitda": 18.0,
   "outlook": 1,
-  "why": "Management expects top-line growth to accelerate in Q3 and Q4 as the oncology chemotherapy headwind is lapped, backed by about 225 beds due after Diwali and 20 beds at Dwarka in Q3, plus a 500-bed Gurugram greenfield starting by end FY27; no numeric revenue guide was given.",
+  "why": "No explicit revenue growth % guided; management says top-line growth should accelerate in Q3 and Q4 as the CGHS oncology decline anniversaries, backed by 140 Saket beds after Diwali, 100 Lucknow beds, and approved 209 brownfield beds (INR 415 crore), with occupancy steady at 77% on 14% more beds.",
   "mgmt": null
  },
  "outlook": {
@@ -375,76 +381,76 @@
     "label": "Margin expansion",
     "call": "possible",
     "when": "next 2-3 quarters",
-    "why": "Operating EBITDA margin held at 26.8% (similar YoY, up ~200 bps QoQ), but Gurugram Sector-56 and Zirakpur greenfield peak losses of INR 40-50 crore and about INR 30 crore, plus an unquantified trade margin cap, cut against expansion."
+    "why": "Operating EBITDA margin 26.8% in Q2 FY27 (up ~200 bps QoQ) and Saket drag expected to normalise next quarter, but greenfield peak losses of INR 40-50 crore (Gurugram) and INR 30 crore (Zirakpur) and unquantified trade margin cap weigh against expansion."
    },
    {
     "k": "capacity_expansion",
     "label": "Capacity expansion / commissioning",
     "call": "surely",
     "when": "Q3 FY27 to Q4 FY27",
-    "why": "About 225 beds come live after Diwali (140 at Max Smart Saket, 205 across Nanavati and Max Smart, overlapping) plus 20 Dwarka oncology beds in Q3, and 100 Lucknow beds over the next 2 quarters; Gurugram Sector-56 phase commissioning starts by end FY27 with 150-200 beds."
+    "why": "202 brownfield beds added in Q2, 140 Saket beds after Diwali (Q3 FY27), 20 Dwarka oncology beds in Q3, and Gurugram Sector-56 phased start (150-200 beds) by end FY27; operational beds up 14% YoY."
    },
    {
     "k": "volume_growth",
     "label": "Volume growth",
     "call": "likely",
     "when": "Q3 FY27 to Q4 FY27",
-    "why": "Management expects top-line growth to accelerate in Q3 and Q4 on a lower oncology base, with in-patient volume up about 12% and OBDs up 13% YoY in Q2, though occupancy is flat at 77% despite 14% more beds."
+    "why": "Occupied bed days up 13% YoY and 7% QoQ; management expects top-line growth to accelerate in Q3 and Q4 as the CGHS oncology decline (~INR 100 crore a year) anniversaries, with occupancy steady at 77%."
    },
    {
     "k": "capex_announcement",
     "label": "New capex announcement",
     "call": "likely",
     "when": "next 2-3 quarters",
-    "why": "Utilisation is 77% and not rising despite 14% bed growth, but the Board already approved INR 415 crore for 209 brownfield beds and 500-bed Gurugram and 400-bed Zirakpur greenfields are in the pipeline, so further announcements are probable as the pipeline runs into FY30."
+    "why": "Utilisation at 77% with 14% more beds, the Board has already approved INR 415 crore for 209 brownfield beds and a ~INR 85 crore MLCP, and a 250-bed Bhubaneswar renovation is under way, so further capex announcements are probable on the pipeline (Pitampura, Patparganj, Pune, Nanavati Phase 2)."
    },
    {
     "k": "guidance_upgrade",
     "label": "Guidance upgrade",
     "call": "possible",
-    "when": "Q3 FY27 to Q4 FY27",
-    "why": "Growth is expected to accelerate in Q3 and Q4 as the INR 100 crore oncology headwind is lapped, but no numeric revenue guide was given and Q2 revenue grew 20% YoY."
+    "when": "Q3 FY27 onward",
+    "why": "No explicit revenue guidance; ex-oncology gross revenue grew 25% YoY and H1 revenue rose 18%, so an acceleration in Q3-Q4 could support upgrades, but management gave no numeric guide."
    },
    {
     "k": "guidance_downgrade",
     "label": "Guidance downgrade",
     "call": "possible",
     "when": "next 2-3 quarters",
-    "why": "Trade margin cap on non-scheduled drugs is unquantified and sub judice, further CGHS or ECHS de-empanelment is possible, and the Gurugram ramp costs INR 40-50 crore at peak."
+    "why": "Trade margin cap on non-scheduled drugs is unquantified and sub judice, BLK and ECHS Shalimar Bagh de-empanelled, and Saket/greenfield ramp losses (Gurugram INR 40-50 crore peak) could weigh on EBITDA."
    },
    {
     "k": "new_product_launch",
     "label": "New product launch",
-    "call": "no_signal",
-    "when": "",
-    "why": ""
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Max@Home has 16 service lines and Max Lab serves 60+ cities; new service lines are plausible but no specific launch was named or dated on the call."
+   },
+   {
+    "k": "order_book",
+    "label": "CGHS anniversary lifts top-line growth",
+    "call": "likely",
+    "when": "Q3 FY27 onward",
+    "why": "CGHS chemotherapy discontinuation cost ~INR 100 crore a year against a net ~INR 200 crore CGHS price-revision gain, and the decline anniversaries from Q3 FY27, so growth should accelerate."
    },
    {
     "k": "regulatory",
     "label": "Trade margin cap on non-scheduled drugs",
     "call": "possible",
     "when": "next 2-3 quarters",
-    "why": "Impact on sales and EBITDA is not yet quantified and the matter is sub judice; chemotherapy is about 30% of oncology revenue and part may be exempt."
+    "why": "Sales and EBITDA impact not yet quantified by management; the matter is sub judice, so the outcome is a downside risk to margins and pharmacy revenue."
    },
    {
-    "k": "deleveraging",
-    "label": "Net debt/EBITDA below 1x with Q2 FCF of INR 500 crore",
-    "call": "surely",
-    "when": "current",
-    "why": "Net debt fell to INR 2,369 crore from INR 2,384 crore, and net debt/EBITDA is below 1x even after INR 292 crore of expansion spend and INR 195 crore of dividend in Q2."
-   },
-   {
-    "k": "turnaround",
-    "label": "Max Smart Saket ramp-up drag fading",
+    "k": "new_markets",
+    "label": "International patient revenue growth",
     "call": "likely",
-    "when": "Q3 FY27",
-    "why": "Management calls the Saket drag a one-quarter preoperative cost, and Mohali and Nanavati broke even in their first quarter; ex-Saket revenue grew 20% and EBITDA 25%."
+    "when": "next 2-3 quarters",
+    "why": "International revenue grew 33% YoY to INR 307 crore, 10% of hospital healthcare revenue, which supports mix and ARPP."
    }
   ],
   "tone": {
    "mgmt": "confident",
    "analysts": "probing",
-   "note": "Management was confident on brownfield ramp-ups, the H2 growth acceleration and Gurugram economics, but cautious and evasive on the unquantified trade margin cap, pharmacy revenue share and ex-oncology EBITDA growth; analysts probed those areas."
+   "note": "Management was confident on occupancy, brownfield breakeven and ramp-up, and on CGHS anniversary; it was evasive on the trade margin cap, pharmacy mix and ex-oncology EBITDA, while analysts probed de-empanelments, Saket drag and greenfield losses."
   }
  }
 }

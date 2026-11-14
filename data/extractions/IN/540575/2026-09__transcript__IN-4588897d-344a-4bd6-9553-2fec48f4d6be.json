@@ -1,0 +1,480 @@
+{
+ "doc_id": "IN-4588897d-344a-4bd6-9553-2fec48f4d6be",
+ "market": "IN",
+ "company_id": "540575",
+ "name": "Star Cement Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-13",
+ "period": "2026-09",
+ "title": "Star Cement Ltd - 540575 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Cement",
+  "thesis": "Q2 EBITDA/t fell to INR1,372 (from INR1,651) on subdued Northeast demand; management reiterates H2 volume growth of 12-13% and full-year EBITDA/t guidance, while Nimbol capex expands to 6 Mt.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "we have produced 11.56 lakh tons this quarter as against 10.83 lakh tons same quarter last year"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Ambuja and JK Lakshmi announced Northeast plants; Shree Cement pursuing",
+   "quote": "we have actually decided to put 6 million tons rather than 5 million tons in North"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Nimbol expanded to 6 Mt; capex up",
+    "quote": "we have actually decided to put 6 million tons rather than 5 million tons in North",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "structure",
+    "label": "Peer Northeast capacity announced",
+    "quote": "Northeast, they all have announced, and they will be putting up their plants",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Northeast price up INR10 in October",
+    "quote": "in Northeast, I think the price trend, the INR10 that we have taken is going to sustain",
+    "direction": 1,
+    "confidence": 0.45
+   },
+   {
+    "type": "util",
+    "label": "Clinker sales cut; price raised to limit oversupply",
+    "quote": "we have increased the prices of clinker so that we are only selling clinker selectively",
+    "direction": 1,
+    "confidence": 0.4
+   },
+   {
+    "type": "demand",
+    "label": "October volume growth above 12%",
+    "quote": "October was actually more than 12%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "H2 FY27 cement volume growth",
+    "value": "12%-13% YoY in Q3 and Q4",
+    "change": "held",
+    "quote": "I think there should be about 12%-13% growth in terms of volume in quarter three and quarter four"
+   },
+   {
+    "metric": "FY27 cement volume growth",
+    "value": "7%-8% (confirmed)",
+    "change": "held",
+    "quote": "Yes, I think so. Yes."
+   },
+   {
+    "metric": "EBITDA per ton FY27",
+    "value": "INR1,500-1,600 full year to be achieved by year-end",
+    "change": "held",
+    "quote": "whatever we have told regarding the EBITDA guidance, that we will see that by the year end, whatever we have told, that will be achieved"
+   },
+   {
+    "metric": "Fuel cost per kcal",
+    "value": "INR1.45 by end of March; INR1.5 maintained in Q3-Q4",
+    "change": "cut",
+    "quote": "In quarter three and quarter four, we will broadly be able to maintain at INR1.5"
+   },
+   {
+    "metric": "Non-cement revenue FY27",
+    "value": "around INR100 crores",
+    "change": "cut",
+    "quote": "It will be around INR100 crores for the whole year."
+   },
+   {
+    "metric": "Capex FY27 and FY28",
+    "value": "Broadly as Q1 presentation: FY27 ~INR560 crore, FY28 ~INR1,910 crore; FY28 flexible to FY29/FY30",
+    "change": "raised",
+    "quote": "you can broadly go with the guidance of Q1, but if there is any revision, then that will be put in the investor call"
+   },
+   {
+    "metric": "Net debt/EBITDA QIP trigger",
+    "value": "Not planned to cross 1.5x; no QIP for now",
+    "change": "held",
+    "quote": "that stand broadly remains for now"
+   },
+   {
+    "metric": "Subsidy income",
+    "value": "H2 INR65-70 crore accrual; full year around INR115-130 crore implied",
+    "change": "raised",
+    "quote": "H2 will be around INR65 crores to INR70 crores of subsidy we will accrue"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 cement volume growth",
+    "outcome": "met",
+    "quote": "Yes, I think so. Yes."
+   },
+   {
+    "metric": "EBITDA per ton",
+    "outcome": "met",
+    "quote": "whatever we have told regarding the EBITDA guidance, that we will see that by the year end, whatever we have told, that will be achieved"
+   },
+   {
+    "metric": "Fuel cost per kcal",
+    "outcome": "missed",
+    "quote": "This quarter it is INR1.52. It will gradually decrease."
+   },
+   {
+    "metric": "Subsidy income FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Non-cement revenue increase (Building Solutions)",
+    "outcome": "missed",
+    "quote": "It will be around INR100 crores for the whole year."
+   },
+   {
+    "metric": "Capex FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Capex FY28",
+    "outcome": "missed",
+    "quote": "we will upload a presentation in a week's time"
+   },
+   {
+    "metric": "Net debt/EBITDA for QIP trigger",
+    "outcome": "met",
+    "quote": "we will not cross 1.5x. That stand remains for the time being?"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Shree Cement",
+    "relation": "competitor"
+   },
+   {
+    "name": "Coal India",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Operating leverage"
+  ],
+  "red_flags": [
+   {
+    "label": "Q2 EBITDA/t down ~17% YoY",
+    "quote": "On the per-ton EBITDA front, it is INR1,372 during this quarter as against INR1,651 per ton same quarter last year"
+   },
+   {
+    "label": "Fuel cost not falling as guided",
+    "quote": "This quarter it is INR1.52. It will gradually decrease."
+   },
+   {
+    "label": "Capex estimates repeatedly revised",
+    "quote": "the number should only go down"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 4,
+   "growth": 3,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Power cost per unit",
+    "quote": "That is another takeout. I do not think we have it."
+   },
+   {
+    "topic": "Industry Northeast growth Q2 / RMC update",
+    "quote": "Just a minute. Just hold a minute. Some glitches is there. We have to resolve."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Star Cement Q2 FY27 EBITDA fell to INR164 crores (from INR194 crores) and PAT to INR39.58 crores, with management guiding 12-13% H2 volume growth.",
+  "overview": "Q2 FY27 cement volumes rose to 11.23 lakh tons from 10.72 lakh tons, but EBITDA fell about 15% YoY to INR164 crores and per-ton EBITDA dropped to INR1,372 from INR1,651. Q2 demand was hit by Assam floods, elections and Manipur unrest, while October sales were reportedly above 12% growth. Management kept the FY27 EBITDA guidance, reiterated a 7-8% full-year volume outlook, and said the Nimbol clinker and grinding project (ground-breaking from 1 December) and the Jhajjar grinding unit are on track. Capex phasing for FY28 was raised to about INR1,900 crores, with the timing flagged as flexible.",
+  "segments": [
+   {
+    "name": "Northeast cement",
+    "commentary": "Q2 sales were 7.96 lakh tons vs 7.84 lakh tons last year. Management said Assam and Nagaland flooding and Manipur unrest drove a roughly 25% decline in those markets. Trade share was 77%."
+   },
+   {
+    "name": "Outside Northeast cement",
+    "commentary": "Q2 sales were 3.27 lakh tons vs 2.88 lakh tons last year, with West Bengal growth in the higher teens expected for H2. Blend was about 18% OPC and the rest PPC."
+   },
+   {
+    "name": "Clinker sales",
+    "commentary": "Q2 clinker sales were 0.74 lakh tons vs 1.01 lakh tons last year, and H1 clinker sales were about 1.26 lakh tons. Management said clinker tonnage will fall from Q3 as prices are raised to sell selectively."
+   }
+  ],
+  "guidance_outlook": [
+   "Management expects double-digit H2 volume growth, with about 12-13% YoY company volume growth in Q3 and Q4 and October above 12%.",
+   "Full-year 7-8% cement volume growth target is said to remain intact.",
+   "FY27 EBITDA guidance is reaffirmed, though the specific figure was not restated on the call; an analyst cited INR1,500-1,600 crores.",
+   "Assam Norway (incentive) subsidy accrual is expected at about INR65-70 crores in H2 after the scheme change; H1 subsidy booked was about INR60 crores.",
+   "Fuel cost is guided to about INR1.5 per kcal through Q3 and Q4, with management targeting INR1.45 by end-March.",
+   "Target of about 20 million tons capacity by 2030-31, with about 18 million tons expected in roughly two years."
+  ],
+  "capex_capacity": [
+   "Nimbol (Rajasthan) expansion is now 6 million tons (up from 5 million): 3.3 million tons clinker rated (about 3.6 million tons at full capacity) and 3 million tons cement grinding. EC is expected within a week or two, and ground-breaking starts 1 December 2026, with commissioning around July-August 2028.",
+   "Jhajjar grinding unit is 3 million tons (up from 2 million). About 50 acres of land is aggregated, with clarity expected in about a month, and it is expected to commission in the same quarter as Nimbol clinker.",
+   "Second eastern grinding unit (2 million tons): Siliguri (West Bengal) is estimated at about INR350 crores capex, vs Bihar at about INR550 crores. EC has been applied for in Siliguri, and the decision is expected in the next call.",
+   "Capex guidance (Q1 deck): about INR560 crores in FY27, about INR1,910 crores in FY28 and INR610 crores in FY29. H1 FY27 capex spend was about INR203 crores. Management said the figures are flexible and can shift between FY28, FY29 and FY30 via buyer's credit.",
+   "Umrangso (Northeast) clinker plant: EC ToR received, EC expected in 2-3 months, plant land acquired, and the project can be commissioned in about 18-20 months once triggered. The decision depends on demand.",
+   "Silchar: power connection partly done; railway siding expected by January 2027, which should lower fly ash costs and improve plant economics from Q4."
+  ],
+  "demand_pricing": [
+   "Northeast pricing was broadly flat in September and rose about INR10 per bag in October in Northeast, with INR10-15 outside Northeast (including West Bengal). Management said the increase outside Northeast is weaker.",
+   "Competitive threat: JK Lakshmi, Ambuja (4 million tons) and Shree Cement are planning Northeast capacity. Management expects 2-2.5 years for kilns to come up, a 1 million ton kiln each for Shree and JK Lakshmi, and short-term price pressure.",
+   "Outside-Northeast cement, about 15-16% of Northeast market (about 2.4-2.5 million tons per year), comes via rakes from Chhattisgarh and West Bengal on consignment.",
+   "Premium share 17.3%, lead distance 208 km, clinker factor 68.6%, green power 28%.",
+   "Fuel mix in Q2: FSA about 45%, washery and coke fine coal about 40%, biomass about 11.5%, spot auction coal about 10%. About three months of coal stock is held. Coal India FSA deliveries resumed in November (about five rakes so far, with about 60 rakes pending).",
+   "Incentive: Nimbol and Northeast incentive structure is expected to be similar in quantum, though new schemes allow about 110% of fixed capital investment vs about 200% under the existing scheme."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How will H2 volumes shape up and how was October?",
+    "answer": "Management expects double-digit H2 growth, with about 12-13% YoY in Q3 and Q4. October growth was above 12%."
+   },
+   {
+    "question": "Why did fuel cost stay flat at INR1.55 vs the guided INR1.45 in Q2?",
+    "answer": "Management said Q2 was INR1.52 and that AFR availability was constrained in the rains. Fuel is guided to about INR1.5 for Q3 and Q4, with INR1.45 targeted by end-March."
+   },
+   {
+    "question": "Has the Nimbol EC come through and when does ground-breaking start?",
+    "answer": "The EAC meeting was successful, the EC is expected to be granted in a week or two, and ground-breaking is planned for 1 December 2026."
+   },
+   {
+    "question": "Will the QIP be pursued?",
+    "answer": "No. Management said the stance of net debt to EBITDA staying below 1.5x holds for now, and capex will be funded through debt and internal accruals."
+   },
+   {
+    "question": "Why was clinker sold in H1, and how will this continue?",
+    "answer": "Clinker is sold to non-branded grinders, with some going to Siliguri and Nepal. Prices were raised from Q3, so tonnage will fall but margins are expected to improve."
+   },
+   {
+    "question": "Is the Northeast price outlook secure given new entrants?",
+    "answer": "Management expects short-term price pressure but long-term stability, since the market is about 1.5 million tons per year of growth, and the incumbents retain trade dominance."
+   }
+  ],
+  "risks_watch": [
+   "Coal supply: FSA deliveries were absent through September and October, with about 60 rakes pending. Industry fuel prices are rising above INR2 per kcal, which could cut margins if the guided INR1.5 is missed.",
+   "Northeast competition: JK Lakshmi, Ambuja and Shree Cement capacity could pressure prices, and out-of-region rake supply (15-16% share) is a swing factor.",
+   "Capex and timing: FY28 capex outlay is about INR1,910 crores, and Bihar vs Siliguri and Jhajjar land and EC clarity are pending. The Q2 deck update is due in about a week.",
+   "Manipur unrest and Assam flooding have hurt Northeast demand, and H2 relies on about 12-13% company growth against a 7-8% industry growth outlook.",
+   "Non-cement and incentive income: Assam incentive accruals (H2 about INR65-70 crores) are a material part of profit. The power cost per unit was not disclosed on the call.",
+   "Q2 EBITDA and per-ton EBITDA declined sharply YoY, so the reaffirmed FY27 EBITDA guidance needs H2 recovery."
+  ],
+  "management_tone": "Confident on volume recovery and the Nimbol project timeline, but cautious on Northeast pricing and the coal supply outlook. Management was less precise on capex phasing and Bihar vs Siliguri, and deferred some data requests.",
+  "key_quotes": [
+   "We do expect double-digit growth in the second half, in terms of volume.",
+   "The money in Northeast is not in asset turnover; it is in margin.",
+   "We are starting our ground-breaking from 1st of December in Nimbol.",
+   "I think in the next three months, the panic around coal prices should reduce because the FSAs will start delivering."
+  ],
+  "financial_highlights": [
+   {
+    "metric": "Total revenue (Q2)",
+    "value": "INR831 crores",
+    "change": "vs INR811 crores in Q2 FY26"
+   },
+   {
+    "metric": "EBITDA (Q2)",
+    "value": "INR164 crores",
+    "change": "vs INR194 crores in Q2 FY26"
+   },
+   {
+    "metric": "Per-ton EBITDA (Q2)",
+    "value": "INR1,372",
+    "change": "vs INR1,651 in Q2 FY26"
+   },
+   {
+    "metric": "Profit after tax (Q2)",
+    "value": "INR39.58 crores",
+    "change": "vs INR71 crores in Q2 FY26"
+   },
+   {
+    "metric": "Total revenue (H1)",
+    "value": "INR1,774 crores",
+    "change": "vs INR1,723 crores in H1 FY26"
+   },
+   {
+    "metric": "EBITDA (H1)",
+    "value": "INR367 crores",
+    "change": "vs INR424 crores in H1 FY26"
+   },
+   {
+    "metric": "Per-ton EBITDA (H1)",
+    "value": "INR1,438",
+    "change": "vs INR1,716 in H1 FY26"
+   },
+   {
+    "metric": "Profit after tax (H1)",
+    "value": "INR113 crores",
+    "change": "vs INR169 crores in H1 FY26"
+   },
+   {
+    "metric": "Non-cement revenue (Q2)",
+    "value": "INR22 crores",
+    "change": "H1 about INR37-38 crores; FY target about INR100 crores"
+   }
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Nimbol (Rajasthan) expansion to 6 million tons: 3.3 Mt clinker rated (about 3.6 Mt at full capacity) and 3 Mt cement grinding",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 7,
+    "status": "approved",
+    "mat": "major"
+   },
+   {
+    "what": "Jhajjar grinding unit 3 million tons (up from 2 million), land about 50 acres aggregated",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 7,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Second eastern grinding unit 2 Mt at Siliguri (West Bengal), est. about INR350 crore capex; EC applied, decision expected next call",
+    "size_pct": null,
+    "capex_cr": 350.0,
+    "q": null,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Umrangso (Northeast) clinker plant, land acquired, EC expected in 2-3 months; commissionable in about 18-20 months once triggered, demand-dependent",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 6,
+    "status": "planned",
+    "mat": "moderate"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 7.5,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix",
+   "cost_actions"
+  ],
+  "clarity": "partial",
+  "qRev": 2.5,
+  "qEbitda": -15.5,
+  "outlook": 1,
+  "why": "Management reiterated 7-8% FY27 volume growth and 12-13% YoY volume growth in Q3 and Q4 (October above 12%), with H1 volumes up only about 5% and the Nimbol/Jhajjar capacity not live until roughly 2028, so H2 growth rests mainly on demand recovery post-floods and elections rather than new capacity.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Q2 per-ton EBITDA fell to INR1,372 from INR1,651, but management guides fuel to about INR1.5/kcal in Q3-Q4 (INR1.45 by end-March), a price rise from Q3, and H2 Assam subsidy accrual of INR65-70 crores, against FY27 EBITDA guidance of INR1,500-1,600 per ton."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q3 FY28 to Q4 FY28",
+    "why": "Nimbol 6 Mt expansion (3.3 Mt clinker, 3 Mt grinding) has ground-breaking from 1 Dec 2026 with commissioning around July-August 2028, but none of the new capacity is live in the H2 FY27 window, so the window carries no new volume."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "Q3 and Q4 FY27",
+    "why": "Management guided 12-13% YoY volume growth in Q3 and Q4 with October above 12%, versus H1 volumes up only about 5% and Q2 at 11.23 lakh tons vs 10.72 lakh tons, though Northeast demand fell about 25% in flood-hit markets."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 1-2 quarters",
+    "why": "Utilisation is high (11.56 lakh tons produced in Q2 vs 10.83 lakh tons last year), and the Siliguri EC decision and Jhajjar land clarity (about a month) are pending, so further capex approvals are likely in the window."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "FY27 EBITDA guidance was only reaffirmed after a 15% YoY EBITDA decline in Q2 (INR164 crores vs INR194 crores), and management is relying on H2 recovery without a raise signalled."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Q2 EBITDA fell to INR164 crores from INR194 crores, coal FSA deliveries were absent through September and October (about 60 rakes pending), and industry fuel is above INR2/kcal against the guided INR1.5, so a miss on the FY27 EBITDA target is a live risk."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "no_signal",
+    "when": "",
+    "why": ""
+   },
+   {
+    "k": "new_markets",
+    "label": "Northeast competitive entry (JK Lakshmi, Ambuja, Shree)",
+    "call": "likely",
+    "when": "2-2.5 years",
+    "why": "Kilns from Shree and JK Lakshmi (1 Mt each) and Ambuja (4 Mt) are planned for the Northeast, and management expects short-term price pressure before the new kilns arrive in about 2-2.5 years."
+   },
+   {
+    "k": "pricing",
+    "label": "Northeast price increase from October",
+    "call": "possible",
+    "when": "next 1-2 quarters",
+    "why": "Northeast prices rose about INR10 per bag in October and INR10-15 outside the Northeast, but management says the increase outside the Northeast is weaker and short-term price pressure is expected."
+   },
+   {
+    "k": "corporate_action",
+    "label": "No QIP; debt-funded capex",
+    "call": "surely",
+    "when": "next 2-4 quarters",
+    "why": "Management said the net debt/EBITDA stance of below 1.5x holds, with capex funded through debt and internal accruals and no QIP planned."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on the H2 volume recovery and the Nimbol timeline, but cautious on Northeast pricing, competition and coal supply, and less precise on capex phasing and Bihar vs Siliguri; analysts pushed on the Q2 EBITDA decline and fuel cost miss."
+  }
+ }
+}
