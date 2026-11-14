@@ -116,7 +116,7 @@ def cmd_calendar(a):
 def cmd_results(a):
     import results_in
     uni = universe.build_india()
-    results_in.run(universe.with_watch(uni), log=log, max_companies=a.limit or 80)
+    results_in.run(universe.with_watch(uni), log=log, max_companies=a.limit)  # time-budgeted: RESULTS_MINUTES
 
 
 def _billing(msg: str) -> bool:
