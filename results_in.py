@@ -410,10 +410,14 @@ def run(universe: dict, log=print, max_companies: int | None = None, backfill_da
         minutes: float | None = None) -> dict:
     """Read posted results until the time budget runs out (`minutes`, default RESULTS_MINUTES or 30), then price
     and write the page. `max_companies` optionally caps how many companies are read. The page file is written
-    every 25 companies too, so a run killed by the step timeout still keeps what it read."""
+    every 25 companies too, so a run killed by the step timeout still keeps what it read.
+    Time split: announcements stop at 20% of the budget, reading results at 80%, and the filings (PDFs, decks,
+    press releases) get what is left (at least two minutes), since reading results matters most."""
     started = time.time()
     minutes = minutes or float(os.environ.get("RESULTS_MINUTES") or 30)
-    deadline = started + minutes * 60
+    at = lambda share: started + minutes * 60 * share
+    deadline = at(0.8)
+    mins = lambda: f"{(time.time() - started) / 60:.1f} min"
     http = Http(BSE_HEADERS, 0.3, browser=True)
     comps = universe["companies"]
     watch = watchlist()
@@ -443,6 +447,7 @@ def run(universe: dict, log=print, max_companies: int | None = None, backfill_da
     cal = {k: v for k, v in cal.items() if v["date"] >= keep_from}  # past dates stay a while, to catch late filings
     ist = (dt.datetime.utcnow() + dt.timedelta(hours=5, minutes=30)).date()
     watch_alerts(cal, watch, ist, state, log)
+    log(f"  calendar: {len(fresh)} board meetings announced ({mins()})")
 
     # 2) who has posted results: today's list, Result announcements since the last check, passed calendar dates
     due = dict(state.get("pending", {}))  # code -> first day we expected results
@@ -457,6 +462,9 @@ def run(universe: dict, log=print, max_companies: int | None = None, backfill_da
     while w0 <= t0:
         w1 = min(t0, w0 + dt.timedelta(days=6))
         for p in range(1, 100):
+            if time.time() > at(0.2):  # out of time for announcements: this window is read again next run
+                ann_ok = False
+                break
             j = _json(http, ANN.format(p=p, d0=w0.strftime("%Y%m%d"), d1=w1.strftime("%Y%m%d")))
             if j is None:  # BSE refused the page: read this window again next run
                 ann_ok = False
@@ -471,12 +479,9 @@ def run(universe: dict, log=print, max_companies: int | None = None, backfill_da
         w0 = w1 + dt.timedelta(days=1)
     if ann_ok:
         state["ann_checked"] = t0.isoformat()
+        log(f"  result announcements read since {since} ({mins()})")
     else:
-        log("  result announcements: BSE refused a page; that window is read again next run")
-    try:  # filings that go with each result; never let them stop the run. At most a quarter of the budget.
-        collect_docs(http, state, comps, t0, backfill_days, log, deadline=time.time() + minutes * 60 / 4)
-    except Exception as ex:
-        log(f"  filings skipped: {ex}")
+        log(f"  result announcements: cut short or refused by BSE; read again from {since} next run ({mins()})")
     for c in cal.values():
         if c["date"] <= t0.isoformat():
             due.setdefault(c["id"], c["date"])
@@ -501,7 +506,7 @@ def run(universe: dict, log=print, max_companies: int | None = None, backfill_da
             state["pending"] = {c: d for c, d in still.items() if c in set(todo)}
             write_json(STATE_FILE, state)  # parsed quarters are kept even if the run is cut short
             write_json(SITE_FILE, _page(rows, cal, cls, comps, state, watch, site.get("priced")))
-            log(f"  {i} of {cap} read, {done} new, {int((time.time() - started) / 60)} min")
+            log(f"  {i} of {cap} read, {done} new, {mins()}")
         tried += 1
         try:
             row = build_row(http, state, code, comps[code]["name"], lender(code))
@@ -519,6 +524,11 @@ def run(universe: dict, log=print, max_companies: int | None = None, backfill_da
         # otherwise: XBRL not on BSE yet, it stays pending and is tried again next run
     todo_set = set(todo)
     state["pending"] = {c: d for c, d in still.items() if c in todo_set}
+    write_json(STATE_FILE, state)
+    try:  # filings that go with each result; never let them stop the run. The rest of the budget, at least 2 min.
+        collect_docs(http, state, comps, t0, backfill_days, log, deadline=max(at(1.0), time.time() + 120))
+    except Exception as ex:
+        log(f"  filings skipped: {ex}")
     site = _page(rows, cal, cls, comps, state, watch)
     out_rows = site["results"]
     try:  # share price around each result; never let it stop the run
@@ -532,7 +542,7 @@ def run(universe: dict, log=print, max_companies: int | None = None, backfill_da
     write_json(SITE_FILE, site)
     write_json(STATE_FILE, state)
     log(f"IN results: read {done} new of {tried} tried, {len(state['pending'])} still to read, "
-        f"{len(out_rows)} on the dashboard ({int((time.time() - started) / 60)} min)")
+        f"{len(out_rows)} on the dashboard ({mins()})")
     return site
 
 
