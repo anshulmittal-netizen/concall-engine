@@ -14,6 +14,7 @@ from __future__ import annotations
 import datetime as dt
 import os
 import re
+import time
 
 from common import DATA, Http, read_json, read_site, today, write_json
 from universe import BSE_HEADERS, watchlist
@@ -229,19 +230,29 @@ def build_row(http: Http, state: dict, code: str, name: str, lender: bool = Fals
     return row
 
 
-def collect_docs(http: Http, state: dict, comps: dict, t0: dt.date, backfill_days: int, log=print) -> None:
+def collect_docs(http: Http, state: dict, comps: dict, t0: dt.date, backfill_days: int, log=print,
+                 deadline: float | None = None) -> None:
     """Results PDFs, investor presentations and press releases filed on BSE since the last check, kept per company
-    for 75 days in state["docs"] as {k, d, u, t}. The first run looks back backfill_days."""
+    for 75 days in state["docs"] as {k, d, u, t}. The first run looks back backfill_days.
+    Stops at `deadline` (time.time()); docs_checked only moves forward when every page was read, so a run that is
+    cut short or refused by BSE picks up the same window next time (filings already kept are skipped)."""
     docs = state.setdefault("docs", {})
     since = dt.date.fromisoformat(state["docs_checked"]) - dt.timedelta(days=1) if state.get("docs_checked") \
         else t0 - dt.timedelta(days=backfill_days)
-    n = 0
+    n, complete = 0, True
     for kind, cat, sub in DOC_KINDS:
         w0 = since
         while w0 <= t0:
             w1 = min(t0, w0 + dt.timedelta(days=6))
             for p in range(1, 100):
-                t = (_json(http, DOCS.format(p=p, cat=cat, sub=sub, d0=w0.strftime("%Y%m%d"), d1=w1.strftime("%Y%m%d"))) or {}).get("Table") or []
+                if deadline and time.time() > deadline:
+                    complete = False
+                    break
+                j = _json(http, DOCS.format(p=p, cat=cat, sub=sub, d0=w0.strftime("%Y%m%d"), d1=w1.strftime("%Y%m%d")))
+                if j is None:
+                    complete = False
+                    break
+                t = j.get("Table") or []
                 if not t:
                     break
                 for x in t:
@@ -261,8 +272,10 @@ def collect_docs(http: Http, state: dict, comps: dict, t0: dt.date, backfill_day
         docs[code] = [d for d in docs[code] if d["d"][:10] >= keep]
         if not docs[code]:
             del docs[code]
-    state["docs_checked"] = t0.isoformat()
-    log(f"  filings: {n} new results PDFs, presentations and press releases")
+    if complete:
+        state["docs_checked"] = t0.isoformat()
+    log(f"  filings: {n} new results PDFs, presentations and press releases"
+        + ("" if complete else " (cut short; the rest next run)"))
 
 
 def docs_for(state: dict, code: str, filed: str) -> list[dict]:
@@ -382,7 +395,25 @@ def watch_alerts(cal: dict, watch: dict, t0: dt.date, state: dict, log=print) ->
     return len(due)
 
 
-def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int = 30) -> dict:
+def _interleave(newest_first: list) -> list:
+    """Newest, oldest, next newest, next oldest...: fresh results show up fast and the backlog still drains."""
+    out, i, j = [], 0, len(newest_first) - 1
+    while i <= j:
+        out.append(newest_first[i])
+        if i != j:
+            out.append(newest_first[j])
+        i, j = i + 1, j - 1
+    return out
+
+
+def run(universe: dict, log=print, max_companies: int | None = None, backfill_days: int = 30,
+        minutes: float | None = None) -> dict:
+    """Read posted results until the time budget runs out (`minutes`, default RESULTS_MINUTES or 30), then price
+    and write the page. `max_companies` optionally caps how many companies are read. The page file is written
+    every 25 companies too, so a run killed by the step timeout still keeps what it read."""
+    started = time.time()
+    minutes = minutes or float(os.environ.get("RESULTS_MINUTES") or 30)
+    deadline = started + minutes * 60
     http = Http(BSE_HEADERS, 0.3, browser=True)
     comps = universe["companies"]
     watch = watchlist()
@@ -422,10 +453,15 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
     since = dt.date.fromisoformat(state["ann_checked"]) - dt.timedelta(days=1) if state.get("ann_checked") \
         else t0 - dt.timedelta(days=backfill_days)
     w0 = since
+    ann_ok = True
     while w0 <= t0:
         w1 = min(t0, w0 + dt.timedelta(days=6))
         for p in range(1, 100):
-            t = (_json(http, ANN.format(p=p, d0=w0.strftime("%Y%m%d"), d1=w1.strftime("%Y%m%d"))) or {}).get("Table") or []
+            j = _json(http, ANN.format(p=p, d0=w0.strftime("%Y%m%d"), d1=w1.strftime("%Y%m%d")))
+            if j is None:  # BSE refused the page: read this window again next run
+                ann_ok = False
+                break
+            t = j.get("Table") or []
             if not t:
                 break
             for x in t:
@@ -433,9 +469,12 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
                 if code in comps:
                     due.setdefault(code, str(x.get("NEWS_DT", ""))[:10] or t0.isoformat())
         w0 = w1 + dt.timedelta(days=1)
-    state["ann_checked"] = t0.isoformat()
-    try:  # filings that go with each result; never let them stop the run
-        collect_docs(http, state, comps, t0, backfill_days, log)
+    if ann_ok:
+        state["ann_checked"] = t0.isoformat()
+    else:
+        log("  result announcements: BSE refused a page; that window is read again next run")
+    try:  # filings that go with each result; never let them stop the run. At most a quarter of the budget.
+        collect_docs(http, state, comps, t0, backfill_days, log, deadline=time.time() + minutes * 60 / 4)
     except Exception as ex:
         log(f"  filings skipped: {ex}")
     for c in cal.values():
@@ -446,14 +485,24 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
     def fresh_enough(filed: str, due_day: str) -> bool:
         return filed[:10] >= (dt.date.fromisoformat(due_day[:10]) - dt.timedelta(days=1)).isoformat()
 
-    todo = [c for c, d in sorted(due.items(), key=lambda kv: kv[1], reverse=True)
-            if not any(r["id"] == c and fresh_enough(r["filed"], d) for r in rows.values())]
-    log(f"IN results: {len(cal)} on the calendar, {len(todo)} posted results to read")
-    done, still = 0, {}
-    for i, code in enumerate(todo[:max_companies]):
+    have = {}
+    for r in rows.values():
+        have.setdefault(r["id"], []).append(r["filed"])
+    todo = _interleave([c for c, d in sorted(due.items(), key=lambda kv: kv[1], reverse=True)
+                        if not any(fresh_enough(f, d) for f in have.get(c, []))])
+    cap = min(len(todo), max_companies or len(todo))
+    log(f"IN results: {len(cal)} on the calendar, {len(todo)} posted results to read"
+        f" ({minutes:.0f}-minute budget{f', at most {cap}' if max_companies else ''})")
+    done, still, tried = 0, dict(due), 0
+    for i, code in enumerate(todo[:cap]):
+        if time.time() > deadline:
+            break
         if i and i % 25 == 0:
+            state["pending"] = {c: d for c, d in still.items() if c in set(todo)}
             write_json(STATE_FILE, state)  # parsed quarters are kept even if the run is cut short
-            log(f"  {i} of {min(len(todo), max_companies)} read")
+            write_json(SITE_FILE, _page(rows, cal, cls, comps, state, watch, site.get("priced")))
+            log(f"  {i} of {cap} read, {done} new, {int((time.time() - started) / 60)} min")
+        tried += 1
         try:
             row = build_row(http, state, code, comps[code]["name"], lender(code))
         except Exception as ex:  # one bad filing never stops the rest
@@ -462,13 +511,33 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
         waited = (t0 - dt.date.fromisoformat(due[code][:10])).days
         if row and fresh_enough(row["filed"], due[code]):
             rows[f"{row['id']}|{row['period']}"] = row
+            have.setdefault(code, []).append(row["filed"])
             done += 1
-        elif waited <= 21:
-            still[code] = due[code]  # XBRL not on BSE yet: try again next run (give up after three weeks)
-    for code in todo[max_companies:]:
-        still[code] = due[code]
-    state["pending"] = still
-    # keep the dashboard file to the last two quarters
+            still.pop(code, None)
+        elif waited > 21:
+            still.pop(code, None)  # XBRL never came: give up after three weeks
+        # otherwise: XBRL not on BSE yet, it stays pending and is tried again next run
+    todo_set = set(todo)
+    state["pending"] = {c: d for c, d in still.items() if c in todo_set}
+    site = _page(rows, cal, cls, comps, state, watch)
+    out_rows = site["results"]
+    try:  # share price around each result; never let it stop the run
+        import prices_in
+        log(f"  prices: {prices_in.attach(out_rows, comps, log)} of {len(out_rows)} results priced")
+    except Exception as ex:
+        log(f"  prices skipped: {ex}")
+    site["priced"] = dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M")
+    periods = {r["period"] for r in out_rows}
+    state["rows"] = {k: v for k, v in rows.items() if v["period"] not in periods}
+    write_json(SITE_FILE, site)
+    write_json(STATE_FILE, state)
+    log(f"IN results: read {done} new of {tried} tried, {len(state['pending'])} still to read, "
+        f"{len(out_rows)} on the dashboard ({int((time.time() - started) / 60)} min)")
+    return site
+
+
+def _page(rows: dict, cal: dict, cls: dict, comps: dict, state: dict, watch: dict, priced: str | None = None) -> dict:
+    """The dashboard file: the calendar and the current season's results, newest filing first."""
     periods = sorted({r["period"] for r in rows.values()}, reverse=True)[:1]  # the current results season
     out_rows = sorted((r for r in rows.values() if r["period"] in periods), key=lambda r: r["filed"], reverse=True)
     for r in list(cal.values()) + out_rows:  # sector and size for filtering on the dashboard
@@ -481,19 +550,9 @@ def run(universe: dict, log=print, max_companies: int = 80, backfill_days: int =
             r["watch"] = True
         else:
             r.pop("watch", None)
-    try:  # share price around each result; never let it stop the run
-        import prices_in
-        log(f"  prices: {prices_in.attach(out_rows, comps, log)} of {len(out_rows)} results priced")
-    except Exception as ex:
-        log(f"  prices skipped: {ex}")
-    site = {"checked": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M"), "priced": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M"),
+    return {"checked": dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M"), "priced": priced,
             "calendar": sorted(cal.values(), key=lambda c: (c["date"], c["name"])), "results": out_rows,
             "watch": {"leadDays": watch["lead_days"], "notOnBse": watch["not_on_bse"],
                       "companies": [{"id": c, "name": w["name"], "as": w["as"]} for c, w in watch["companies"].items()],
                       "portfolio": [{"id": c, "name": p["name"], "symbol": p["symbol"]} for c, p in watch["portfolio"]["companies"].items()],
                       "etfs": watch["portfolio"]["etfs"]}}
-    state["rows"] = {k: v for k, v in rows.items() if v["period"] not in periods}
-    write_json(SITE_FILE, site)
-    write_json(STATE_FILE, state)
-    log(f"IN results: read {done} new, {len(still)} waiting for their XBRL, {len(out_rows)} on the dashboard")
-    return site

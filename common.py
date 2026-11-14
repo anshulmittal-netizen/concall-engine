@@ -81,6 +81,9 @@ class Http:
         self.s.headers.update(headers or {})
         self.min_interval = min_interval
         self._last = 0.0
+        # BSE's CDN answers a burst of API calls with a passing HTTP 400 that clears on a retry,
+        # so for BSE (browser) sessions a 400 is retried like a 429.
+        self.retry_codes = (400, 429, 500, 502, 503, 504) if browser else (429, 500, 502, 503, 504)
 
     def get(self, url: str, **kw) -> requests.Response:
         kw.setdefault("timeout", 30)
@@ -94,7 +97,7 @@ class Http:
             except Exception:
                 time.sleep(2 ** attempt)
                 continue
-            if r.status_code in (429, 500, 502, 503, 504):
+            if r.status_code in self.retry_codes:
                 time.sleep(2 ** attempt * 2)
                 continue
             return r

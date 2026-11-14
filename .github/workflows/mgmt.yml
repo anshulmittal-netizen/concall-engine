@@ -2,13 +2,17 @@ name: Management changes
 
 on:
   schedule:
-    - cron: "*/30 3-17 * * *"   # every 30 minutes, 08:30-23:00 IST
+    - cron: "17,47 3-17 * * *"  # every 30 minutes, 08:47-23:17 IST; off the :00/:30 rush, when GitHub drops the most scheduled runs
   workflow_dispatch:
     inputs:
       days:
         description: "Days of filings to read (backfill)"
         required: false
         default: "2"
+      results_minutes:
+        description: "Minutes to spend reading posted results (backlog catch-up)"
+        required: false
+        default: "20"
 
 concurrency: { group: mgmt-watch, cancel-in-progress: false }   # own group: never waits behind the nightly run
 
@@ -34,8 +38,11 @@ jobs:
         if: always()
         run: ./mgmt_commit.sh
       - name: Results calendar and posted results
+        if: always()              # a failed management-change read (e.g. a BSE hiccup) must not skip results
         continue-on-error: true   # never hold up management-change alerts
-        timeout-minutes: 25
+        timeout-minutes: 35       # the reading stops itself at RESULTS_MINUTES, then prices and writes the page
+        env:
+          RESULTS_MINUTES: ${{ inputs.results_minutes || '20' }}
         run: python run.py results --market IN
       - name: Commit results
         if: always()
