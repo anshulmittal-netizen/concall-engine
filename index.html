@@ -535,6 +535,18 @@ button.pd-go{border:0;cursor:pointer;font-family:inherit}button.pd-go:hover{filt
 .nt .why-chips span.bad{border-color:color-mix(in srgb,var(--down) 45%,var(--line));color:var(--down)}
 @media (max-width:760px){.pd .r{grid-template-columns:minmax(0,1fr) auto}.pd .r>:nth-child(n+2):not(:last-child){display:none}.pd .r.hd{display:none}.pd .r .m-pd{display:block}}
 .m-pd{display:none;font-size:10.5px;color:var(--muted)}
+.pp-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pp-tile{text-align:left;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:var(--r2);padding:12px 14px;display:grid;gap:4px;box-shadow:var(--shadow);transition:transform .2s var(--ease),box-shadow .2s}
+.pp-tile:hover{transform:translateY(-2px)}.pp-tile[aria-pressed="true"]{box-shadow:0 0 0 3px var(--accentsoft),var(--shadow)}
+.pp-tile b{font-family:var(--display);font-size:20px;line-height:1.1}
+.pp-n{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11px}.pp-n i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.pp .r{grid-template-columns:minmax(0,1.2fr) 108px 150px minmax(0,2.4fr) 170px 120px;align-items:start}
+.pp .r.hd{align-items:center}
+.pp-trig{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:11.5px}
+.pp-trig .pill{font-size:8.5px;padding:1px 6px;text-transform:uppercase}
+.pp-why{display:block;font-size:10.5px;color:var(--muted);line-height:1.4}
+@media (max-width:1100px){.pp .r{grid-template-columns:minmax(0,1.2fr) 100px minmax(0,2fr) 150px}.pp .r>:nth-child(3),.pp .r>:nth-child(6){display:none}}
+@media (max-width:760px){.pp-tiles{grid-template-columns:minmax(0,1fr)}.pp .r{grid-template-columns:minmax(0,1fr)}.pp .r.hd{display:none}.pp .r>:nth-child(3){display:block}}
 .nt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,325.5px),1fr));gap:13.5px}
 .nt{display:grid;gap:9.5px;align-content:start;transition:transform .25s var(--ease),box-shadow .25s}
 .nt:hover{transform:translateY(-3px);box-shadow:var(--shadow2)}
@@ -986,6 +998,7 @@ const GL = {
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
   pead:['Results to watch (PEAD)','Post-earnings announcement drift: shares of companies that beat tend to keep rising for weeks after the results, not just on day 1. This page lists small, mid and micro caps (below ₹50,000 Cr) reporting soon whose last concall points to a strong quarter, ranked on the Concall Signal Score plus 6 points for positive guidance, 6 for raised guidance and minus 8 for a cut. After results it shows which of them beat (profit up 20%+ on last year) and rose on day 1, the usual trigger for a drift trade.'],
   nearterm:['Near-term strength','Companies scoring 60+ whose latest call shows at least three strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a score of 0.75+ on the guidance-backed growth & capacity part. There is no separate score.'],
+  pipeline:['Catalyst pipeline','Forward triggers from each company’s latest call that management called surely (under way or committed with a date) or likely (guided with a plan), placed in the quarter they are most likely to land: this quarter and the next two. Act now: a firm catalyst this quarter, score 60+, no guidance cut flagged, latest results not weak. Research now: several catalysts over the three quarters and a score of 55+. There is no separate score.'],
   quarter:['Quarter switch','Pick the results season you want to look at. Every call-based view follows it: Today, All calls, First-time callers, Sector tracker, Guidance leaders, Sector turns, Themes, Who’s asking, Near-term strength and Inflection watch show only that quarter’s calls. A season still in progress is compared with the quarter before it. Near-term strength and Inflection watch list companies whose latest call is from that quarter. “All” shows each company’s latest call, and the sector boards use the latest full quarter. Coming up, the results pages and Management changes go by date, not quarter.']
 };
 
@@ -1026,7 +1039,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, sh: {val: 'decent', big: '', sort: 'avg', chips: new Set(), limit: 40}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, pp: {q: '', act: 'focus', big: '', kind: '', proven: false, res: false, watch: false, limit: 40, exp: new Set()}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, sh: {val: 'decent', big: '', sort: 'avg', chips: new Set(), limit: 40}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -1209,14 +1222,14 @@ function animateWidgets(root) {
 const TABS = [
   {group: 'Start', items: [['home', 'Today', ['home']], ['mine', 'My stocks', ['watch', 'portfolio'], 'watch'], ['ask', 'Ask the calls', ['ask']]]},
   {group: 'Research', items: [['calls', 'Calls', ['calls', 'first', 'people'], 'calls'], ['cal', 'Calendar', ['upcoming', 'rescal'], ''],
-    ['res', 'Results', ['results', 'pead'], 'results'], ['mgmt', 'Management changes', ['mgmt']]]},
+    ['res', 'Results', ['results', 'pead'], 'results'], ['pipe', 'Catalyst pipeline', ['pipeline']], ['mgmt', 'Management changes', ['mgmt']]]},
   {group: 'Sectors & ideas', items: [['sec', 'Sectors', ['tracker', 'guidance', 'turns'], 'tracker'], ['themes', 'Themes', ['themes']],
     ['ideas', 'Idea lists', ['shelf', 'nearterm', 'inflect'], ''], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]}
 ];
 /* each view's own name: shown on its sub-tab, in the Excel export and in the help */
 const VIEWS = [{group: '', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['help', 'How to use'],
   ['calls', 'All calls'], ['first', 'First-time callers'], ['people', 'Who’s asking'], ['upcoming', 'Calls coming up'], ['rescal', 'Results calendar'],
-  ['results', 'Results posted'], ['pead', 'Results to watch'], ['mgmt', 'Management changes'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
+  ['results', 'Results posted'], ['pead', 'Results to watch'], ['pipeline', 'Catalyst pipeline'], ['mgmt', 'Management changes'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
   ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['inflect', 'Inflection watch'],
   ['leaders', 'Leaders dashboard'], ['ledger', 'Event ledger']]}];
 const tabOf = v => TABS.flatMap(g => g.items).find(t => t[2].includes(v));
@@ -1232,6 +1245,7 @@ function navCounts() {
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: cyData('sub').rows.filter(r => r.ph === 'turn' && !r.thin).length || '',
     themes: themesQ().length, shelf: shRows().filter(x => x.v.band === 'decent').length || '', nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
+    pipeline: (r => r ? r.filter(x => x.act === 'trade').length + ' act now' : '')(ppRows()),
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
 }
 function renderNav() {
@@ -2620,6 +2634,149 @@ function vNear() {
     ${rows.length > f.limit ? `<div style="text-align:center;margin-top:14px"><button class="btn" id="nt-more">Show more (${rows.length - f.limit} left)</button></div>` : ''}`;
 }
 
+/* Catalyst pipeline: forward triggers from each company's latest call (summaries' "outlook"), placed in the quarter they are
+   likely to land (this quarter and the next two), joined with the latest results. A research and trade queue, not a buy list. */
+/* Catalyst pipeline helpers (to be pasted into index.html) */
+const PP_FYQ = d => { const y = +d.slice(0, 4), m = +d.slice(5, 7); return ((m >= 4 ? y + 1 : y) % 100) * 4 + (m >= 4 ? Math.floor((m - 4) / 3) : 3); };
+const ppQLabel = i => `Q${i % 4 + 1} FY${String(Math.floor(i / 4)).padStart(2, '0')}`;
+const PP_MON = {jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12};
+const PP_NUM = {one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, few: 3, couple: 2, several: 3};
+/* Read a forward trigger's timing ("Q3-Q4 FY27", "H2 FY27", "next 2-3 quarters", "by March 2027") into a window of fiscal
+   quarters [s, e], counted from the call's quarter. Returns null when no timing is given. */
+function ppWhen(txt, cq) {
+  const t = String(txt || '').toLowerCase().replace(/[–—]/g, '-'); if (!t.trim()) return null;
+  const n = v => v == null ? null : (/^\d+$/.test(v) ? +v : PP_NUM[v] ?? null);
+  let s = null, e = null, vague = false;
+  const add = (a, b) => { s = s == null ? a : Math.min(s, a); e = e == null ? b : Math.max(e, b); };
+  const toks = [...t.matchAll(/\b(?:q([1-4])|h([12])|fy\s?'?(?:20)?(\d{2}))\b/g)].map(m => ({q: m[1] && +m[1], h: m[2] && +m[2], fy: m[3] && +m[3], i: m.index}));
+  const fys = toks.filter(x => x.fy), used = new Set();
+  toks.filter(x => x.q || x.h).forEach(x => {
+    const f = fys.find(y => y.i > x.i) || [...fys].reverse().find(y => y.i < x.i);
+    let fy = f ? f.fy : Math.floor(cq / 4); if (f) used.add(f); else if (x.q && fy * 4 + x.q - 1 <= cq) fy++;
+    if (x.q) add(fy * 4 + x.q - 1, fy * 4 + x.q - 1); else add(fy * 4 + (x.h - 1) * 2, fy * 4 + (x.h - 1) * 2 + 1);
+  });
+  fys.filter(f => !used.has(f)).forEach(f => /\b(by|end|exit)\b[^,;]*fy/.test(t) ? add(f.fy * 4 + 3, f.fy * 4 + 3) : (add(f.fy * 4, f.fy * 4 + 3), vague = true));
+  for (const m of t.matchAll(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?,?\s*'?(20\d{2}|\d{2})?\b/g)) {
+    const mo = PP_MON[m[1]]; let y = m[2] ? (m[2].length === 2 ? 2000 + +m[2] : +m[2]) : null;
+    let qi = y ? PP_FYQ(`${y}-${String(mo).padStart(2, '0')}`) : null;
+    if (qi == null) { const fy0 = Math.floor(cq / 4); qi = fy0 * 4 + (mo >= 4 ? Math.floor((mo - 4) / 3) : 3); while (qi <= cq) qi += 4; }
+    add(qi, qi);
+  }
+  let m;
+  const W = '(?:next|within|over|in|coming|the coming)\\s+(?:about\\s+|~|the\\s+)?';
+  if ((m = t.match(new RegExp(W + "(\\d+|one|two|three|four|few|several|couple of)?\\s*(?:(?:-|to|or)\\s*(\\d+|two|three|four|five|six))?\\s*quarters?")))) {
+    const a = n((m[1] || (/coming|several|few/.test(m[0]) ? 'few' : '1')).replace(' of', '')) || 1, b = n(m[2]) || a; add(cq + 1, cq + b); if (b > 2) vague = true;
+  } else if ((m = t.match(/(\d+|one|two|three|four|six|few|couple of)?\s*(?:(?:-|to)\s*(\d+))?\s*months?/)) && (m[1] || m[2])) {
+    const b = n(m[2]) || n((m[1] || '3').replace(' of', '')) || 3; add(cq + 1, cq + Math.max(1, Math.ceil(b / 3))); if (b > 6) vague = true;
+  } else if ((m = t.match(/(\d+)\s*(?:-|to)?\s*(\d+)?\s*(?:weeks?|days?)/))) {
+    add(cq + 1, cq + 1);
+  } else if ((m = t.match(/(?:next\s+)?(\d+|one|two|three|few|couple of)?\s*(?:(?:-|to)\s*(\d+))?\s*years?\b/)) && s == null) {
+    const b = n(m[2]) || n((m[1] || '1').replace(' of', '')) || 1; add(cq + 1, cq + 4 * b); vague = true;
+  } else if (/\bnext quarter\b/.test(t)) add(cq + 1, cq + 1);
+  if (s == null && (m = t.match(/\b(early|mid|late|end|by end)?[- ]?(?:of\s+)?(?:cy\s?|calendar\s)?(20[2-3]\d)\b/))) {
+    const y = +m[2], j = PP_FYQ(`${y}-01`), a = PP_FYQ(`${y}-04`), o = PP_FYQ(`${y}-10`);
+    if (m[1] === 'early') add(j, j); else if (m[1] === 'mid') add(a, a + 1); else if (m[1]) add(o, o); else { add(j, o); vague = true; }
+  }
+  if (s == null && /already|under ?way|current|ongoing|in progress|\bnow\b|achieved|immediate|near[- ]term|this quarter|commissioned|announced|done/.test(t)) add(cq + 1, cq + 1);
+  if (s == null) return null;
+  if (/\bby\b|\bend\b|\bexit\b/.test(t) && !/onward|from|beyond/.test(t)) s = e;
+  if (/onwards?|beyond|\bfrom\b/.test(t)) { e = Math.max(e, s + 3); vague = true; }
+  s = Math.max(s, cq + 1); e = Math.max(e, s);
+  return {s, e, vague: vague || e - s > 1};
+}
+/* one company's pipeline read from its latest call's forward triggers, plus its latest results */
+const PP_RISK = new Set(['guidance_downgrade']), PP_DONE = /already (?:achieved|done|announced|completed|happened|in place|delivered)|^\s*(?:achieved|completed|done)\b/i;
+function ppRow(c, sum, res, T) {
+  if (!sum?.outlook?.rows || c.veto) return null;
+  const cq = PP_FYQ(c.periodKey + '-01'), trig = [], risk = [];
+  for (const r of sum.outlook.rows) {
+    if (r.call !== 'surely' && r.call !== 'likely') continue;
+    if (PP_DONE.test(r.when || '')) continue;  /* already done: not a catalyst any more */
+    const w = ppWhen(r.when, cq); if (!w || w.e < T) continue;
+    const L = Math.max(T, w.vague ? Math.round((w.s + w.e) / 2) : w.s), o = L - T;
+    const x = {...r, w, o, L};
+    if (PP_RISK.has(r.k)) { if (o <= 2) risk.push(x); continue; }
+    if (o <= 2) trig.push(x);
+  }
+  if (!trig.length) return null;
+  trig.sort((a, b) => a.o - b.o || (b.call === 'surely') - (a.call === 'surely') || a.w.vague - b.w.vague);
+  const pts = trig.reduce((n, x) => n + (x.call === 'surely' ? 3 : 2) * (x.w.vague ? .6 : 1) * [1, .85, .7][x.o], 0);
+  const firm = trig.filter(x => !x.w.vague || x.call === 'surely');
+  const b = Math.min(...(firm.length ? firm : trig).map(x => x.o));
+  const g = res ? rsGrade(res) : '';
+  const rank = pts + (c.score - 50) / 8 + (c.credTested > 0 ? (c.cred - 50) / 25 : 0) + ({strong: 2, good: 1, weak: -2}[g] || 0) - 4 * risk.length;
+  const near = trig.filter(x => x.o === b), sure = near.filter(x => x.call === 'surely').length;
+  const act = !risk.length && c.score >= 60 && g !== 'weak' && b === 0 && (sure >= 1 && firm.length >= 2 || pts >= 9) ? 'trade'
+    : !risk.length && c.score >= 55 && pts >= 5 ? 'research' : 'watch';
+  return {c, trig, risk, pts, rank, b, g, res, act, firm: firm.length};
+}
+const PP_ACT = {trade: ['Act now', 'var(--v5)', 'A firm catalyst lands this quarter, the call scores 60+, nothing points to a guidance cut and the latest results are not weak. Check the price and the transcript, then decide on a position.'],
+  research: ['Research now', 'var(--up)', 'Several committed or guided catalysts over the next three quarters and a score of 55+. Do the work now, ahead of the catalyst.'],
+  watch: ['Watch', 'var(--muted)', 'One catalyst, a weaker score, weak latest results or a risk of a guidance cut. Keep it on the list and wait for the next call.']};
+const PP_KIND = {margin_expansion: 'Margins', capacity_expansion: 'Capacity', volume_growth: 'Volumes', capex_announcement: 'New capex', guidance_upgrade: 'Guidance upgrade', new_product_launch: 'New products',
+  pricing: 'Pricing', new_markets: 'New markets', order_book: 'Order book', deleveraging: 'Debt reduction', working_capital: 'Cash flow', cost_actions: 'Cost savings', turnaround: 'Turnaround', corporate_action: 'Corporate action', regulatory: 'Regulatory', other: 'Other'};
+const PP = {src: null, T: null, rows: []};
+function ppRows() {
+  if (!SUMS.data) return null;
+  const T = PP_FYQ(istToday());
+  if (PP.src === SUMS.data && PP.res === RES.data && PP.T === T) return PP.rows;
+  const rb = {}; (RES.data?.results || []).forEach(r => { if (!rb[r.id] || r.filed > rb[r.id].filed) rb[r.id] = r; });
+  PP.rows = (D.companies || []).map(c => ppRow(c, SUMS.data[c.id + '|' + c.periodKey], rb[c.id], T)).filter(Boolean).sort((a, b) => b.rank - a.rank);
+  Object.assign(PP, {src: SUMS.data, res: RES.data, T});
+  return PP.rows;
+}
+const ppIn = (x, o) => x.trig.some(t => t.o === o && (!t.w.vague || t.call === 'surely'));
+function vPipeline() {
+  const f = S.pp, all = ppRows(), T = PP_FYQ(istToday()), QL = [0, 1, 2].map(o => ppQLabel(T + o));
+  if (!all) { loadSums().then(() => { if (S.view === 'pipeline') { render(); renderNav(); } }); }
+  if (!RES.data) loadRes().then(() => { if (S.view === 'pipeline') render(); });
+  const how = `<ul><li>Every company's <b>latest call</b> is read for its forward triggers: margins, capacity, volumes, new capex, guidance upgrades, new products and up to three call-specific ones (price hikes, order book, debt reduction…). Only triggers management called <b>surely</b> (under way or committed with a date) or <b>likely</b> (guided with a plan) count.</li>
+    <li>Each trigger's timing (“Q3 FY27”, “H2 FY27”, “next 2-3 quarters”, “by March 2027”) is placed in the quarter it is most likely to land: <b>${QL[0]}</b> (this quarter, results due by mid-February), <b>${QL[1]}</b> or <b>${QL[2]}</b>. Wide windows land in their middle quarter and count for less. Triggers already done, or due before ${QL[0]}, are left out.</li>
+    <li><b>Act now</b>: a firm catalyst this quarter, score 60+, no guidance cut flagged, latest results not weak. <b>Research now</b>: several catalysts in the three quarters and a score of 55+. <b>Watch</b>: the rest. Red-flag (veto) calls are left out.</li>
+    <li>The list is ordered by catalyst strength (surely counts 3, likely 2, nearer quarters more), plus the Concall Signal Score, management's record on past guidance and the latest results; a likely guidance cut takes points off. Open the call and read the transcript before acting.</li></ul>`;
+  const top = head('Catalyst pipeline', `Companies whose latest call points to a dated catalyst over the next three quarters (${QL.join(', ')}), with how they are performing now. Your research and trade queue, nearest catalyst first.`, how,
+    '<span class="badge">Latest call per company</span>');
+  if (!all) return top + '<div class="empty">Loading call summaries to read the forward triggers…</div>';
+  const bigs = [...new Set(all.map(x => x.c.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
+  const base = all.filter(x => (!f.big || x.c.bigSector === f.big) && (!f.kind || x.trig.some(t => t.k === f.kind)) && (!f.watch || isW(x.c.id)) && (!f.proven || (x.c.credTested > 0 && x.c.cred >= 60)) && (!f.res || x.g === 'strong' || x.g === 'good'));
+  const rows = base.filter(x => (f.q === '' || ppIn(x, +f.q)) && (f.act === 'all' ? true : f.act === 'focus' ? x.act !== 'watch' : x.act === f.act));
+  const tile = o => { const xs = base.filter(x => ppIn(x, o)), tr = xs.filter(x => x.act === 'trade').length, rs = xs.filter(x => x.act === 'research').length;
+    return `<button class="pp-tile" data-ppq="${o}" aria-pressed="${f.q === String(o)}"><span class="eyebrow">${o === 0 ? 'This quarter' : o === 1 ? 'Next quarter' : 'In two quarters'}</span><b>${QL[o]}</b>
+      <span class="pp-n"><span><i style="background:var(--v5)"></i>${tr} act now</span><span><i style="background:var(--up)"></i>${rs} research</span><span class="muted">${xs.length} with a firm catalyst</span></span></button>`; };
+  const trg = t => `<li title="${esc(t.why)}"><span class="pill" style="--pc:${t.call === 'surely' ? 'var(--v5)' : 'var(--up)'}">${t.call}</span> <b>${esc(t.label)}</b> <span class="num muted">${esc(ppQLabel(t.L))}${t.w.vague ? '±' : ''}</span><span class="pp-why">${esc(t.why.length > 200 ? t.why.slice(0, 197) + '…' : t.why)}</span></li>`;
+  const resCell = x => { const r = x.res; if (!r) return '<span class="sub">No results posted yet</span>';
+    const gr = gradeOf(x.g); return `<span>${gr ? `<span class="pill" style="--pc:${gr[2] ? 'var(--' + gr[2] + ')' : 'var(--muted)'}">${esc(gr[1])}</span>` : ''} <span class="sub">${esc(r.label || '')}</span></span>
+      <span class="sub num">Rev ${pctS(r.rev_yoy)} · PAT ${pctS(r.pat_yoy)}${r.px?.move != null ? ` · px ${pctS(r.px.move)}` : ''}</span>`; };
+  const nextEv = x => { const nc = nextCall(x.c.id), t0 = istToday(), rc = (RES.data?.calendar || []).filter(r => r.id === x.c.id && r.date >= t0).sort((a, b) => a.date.localeCompare(b.date))[0];
+    return [rc ? `Results ${sdate(rc.date)}` : '', nc ? `Call ${callWhen(nc)}` : ''].filter(Boolean).map(esc).join('<br>') || '<span class="muted">Not announced</span>'; };
+  const row = (x, i) => `<div class="r" role="button" tabindex="0" data-open="${esc(x.c.id)}" data-k="${esc(x.c.id + '|' + x.c.periodKey)}">
+      <span style="min-width:0"><span class="nm" style="display:block">${star(x.c.id)}${esc(x.c.name)}</span><span class="sub">${esc(x.c.sector || '')}${x.c.mcap ? ' · ' + esc(x.c.mcap) : ''} · ${esc(x.c.period)} call ${esc(sdate(x.c.date))}</span></span>
+      <span><span class="pill" style="--pc:${PP_ACT[x.act][1]}">${PP_ACT[x.act][0]}</span><span class="sub" style="display:block;margin-top:3px">First: ${esc(QL[x.b])}</span></span>
+      <span>${scoreCell(x.c.score, x.c.veto, i)}<span class="sub">${dcell(x.c.delta)} vs last call${x.c.credTested > 0 ? ` · cred ${x.c.cred}` : ''}</span></span>
+      <span style="min-width:0"><ul class="pp-trig">${x.trig.slice(0, f.exp.has(x.c.id) ? 12 : 3).map(trg).join('')}</ul>${x.trig.length > 3 ? `<button class="link" data-ppx="${esc(x.c.id)}">${f.exp.has(x.c.id) ? 'Show fewer' : `+${x.trig.length - 3} more`}</button>` : ''}
+        ${x.risk.length ? `<p class="small" style="color:var(--down);margin-top:3px">Risk: ${x.risk.map(t => esc(t.why || t.label)).join(' · ')}</p>` : ''}</span>
+      <span style="display:grid;gap:2px">${resCell(x)}</span>
+      <span class="sub">${nextEv(x)}</span>
+    </div>`;
+  const kinds = Object.keys(PP_KIND).filter(k => base.some(x => x.trig.some(t => t.k === k)) || f.kind === k);
+  return top + `
+    <div class="pp-tiles">${[0, 1, 2].map(tile).join('')}</div>
+    <div class="toolbar">
+      <span class="seg">${[['focus', 'Act now + research'], ['trade', 'Act now'], ['research', 'Research now'], ['watch', 'Watch'], ['all', 'All']].map(([k, n]) => `<button data-ppa="${k}" aria-pressed="${f.act === k}">${n} <span class="num">${(k === 'all' ? base : base.filter(x => k === 'focus' ? x.act !== 'watch' : x.act === k)).filter(x => f.q === '' || ppIn(x, +f.q)).length}</span></button>`).join('')}</span>
+      <select id="pp-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
+      <select id="pp-kind" aria-label="Catalyst type"><option value="">All catalysts</option>${kinds.map(k => `<option value="${k}" ${k === f.kind ? 'selected' : ''}>${esc(PP_KIND[k])}</option>`).join('')}</select>
+      <button class="chip" data-ppc="proven" aria-pressed="${f.proven}">Proven management</button>
+      <button class="chip" data-ppc="res" aria-pressed="${f.res}">Latest results good or strong</button>
+      <button class="chip" data-ppc="watch" aria-pressed="${f.watch}">★ My watchlist</button>
+      ${f.q !== '' ? `<button class="chip" data-ppq="${f.q}" aria-pressed="true">${esc(QL[+f.q])} only ✕</button>` : ''}
+    </div>
+    <p class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'}${f.q !== '' ? ` with a firm catalyst in ${esc(QL[+f.q])}` : ''} · ${PP_ACT[f.act]?.[2] || ''}</p>
+    ${rows.length ? `<div class="rows pp">
+      <div class="r hd"><span>Company</span><span>Action</span><span>Score</span><span>Catalysts ahead</span><span>Latest results</span><span>Next event</span></div>
+      ${rows.slice(0, f.limit).map(row).join('')}</div>` : '<div class="empty">No companies match these filters.</div>'}
+    ${rows.length > f.limit ? `<div style="text-align:center;margin-top:14px"><button class="btn" id="pp-more">Show more (${rows.length - f.limit} left)</button></div>` : ''}`;
+}
+
 /* Collector's shelf: unique companies in tailwinds at a decent valuation, read across the last three quarters of calls.
    Valuation is trailing P/E from Yahoo (data/valuation_in.json, refreshed each night), falling back to a run-rate P/E
    (latest price ÷ 4 × the latest quarter's EPS from results posted). There is no separate score. */
@@ -3607,7 +3764,7 @@ function vLedger() {
     <span class="small" style="min-width:0">${items.map(x => `<span class="ld-gapi"><b style="color:${x.st === 'missing' ? 'var(--down)' : 'var(--warn)'}">${esc({results: 'Results', call: 'Call', deck: 'Deck'}[x.kind])} ${esc(x.mkt === 'IN' ? seasL[x.season]?.in : seasL[x.season]?.gl)}</b> ${esc(x.st === 'missing' ? 'missing' : 'needs a link')}</span>`).join('')}</span></div>`).join('') || '<div class="empty">Nothing missing. Every expected event is on record.</div>'}</div>`;
 }
 
-const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -4006,6 +4163,11 @@ document.addEventListener('click', e => {
   const pdst = t.closest('[data-pdst]'); if (pdst) { S.pd.st = S.pd.st === pdst.dataset.pdst ? '' : pdst.dataset.pdst; render(); return; }
   const ntc = t.closest('[data-ntc]'); if (ntc) { const k = ntc.dataset.ntc; S.near.chips.has(k) ? S.near.chips.delete(k) : S.near.chips.add(k); S.near.limit = 30; render(); return; }
   if (t.closest('#nt-more')) { S.near.limit += 30; render(); return; }
+  const ppq = t.closest('[data-ppq]'); if (ppq) { S.pp.q = S.pp.q === ppq.dataset.ppq ? '' : ppq.dataset.ppq; S.pp.limit = 40; render(); return; }
+  const ppa = t.closest('[data-ppa]'); if (ppa) { S.pp.act = ppa.dataset.ppa; S.pp.limit = 40; render(); return; }
+  const ppc = t.closest('[data-ppc]'); if (ppc) { const k = ppc.dataset.ppc; S.pp[k] = !S.pp[k]; S.pp.limit = 40; render(); return; }
+  const ppx = t.closest('[data-ppx]'); if (ppx) { e.stopPropagation(); const k = ppx.dataset.ppx; S.pp.exp.has(k) ? S.pp.exp.delete(k) : S.pp.exp.add(k); render(); return; }
+  if (t.closest('#pp-more')) { S.pp.limit += 40; render(); return; }
   if (t.closest('#ask-go')) { askRun('ai'); return; }
   if (t.closest('#ask-kw')) { askRun('keyword'); return; }
   if (t.closest('#ask-stop')) { ASK.ctl?.abort(); return; }
@@ -4058,6 +4220,8 @@ document.addEventListener('change', e => {
   if (id === 'pd-post') { S.pd.post = +e.target.value; render(); }
   if (id === 'pd-scope') { S.pd.scope = e.target.value; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
+  if (id === 'pp-big') { S.pp.big = e.target.value; S.pp.limit = 40; render(); }
+  if (id === 'pp-kind') { S.pp.kind = e.target.value; S.pp.limit = 40; render(); }
   if (id === 'if-big') { S.inf.big = e.target.value; S.inf.limit = 30; render(); }
   if (id === 'sh-big') { S.sh.big = e.target.value; S.sh.limit = 40; render(); }
   if (id === 'sh-sort') { S.sh.sort = e.target.value; render(); }
