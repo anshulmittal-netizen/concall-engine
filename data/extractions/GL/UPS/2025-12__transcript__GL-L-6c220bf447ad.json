@@ -1,0 +1,172 @@
+{
+ "doc_id": "GL-L-6c220bf447ad",
+ "market": "GL",
+ "company_id": "UPS",
+ "name": "UPS",
+ "doc_type": "transcript",
+ "date": "2026-01-27",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Logistics",
+  "thesis": "UPS shrinks its US network to exit Amazon volume: Q4 US ADV down 10.8% but revenue per piece up 8.3%, with 2026 guided at ~9.6% consolidated margin and H1 pressure before H2 recovery.",
+  "archetype": "Value migration",
+  "mental_models": [
+   "Supply exit",
+   "Operating leverage",
+   "Pricing power"
+  ],
+  "blocks": {
+   "supply": 2,
+   "pricing": 2,
+   "structure": 1,
+   "inventory": 0,
+   "demand": -1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "Capital expenditures are expected to be about $3 billion."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "93 buildings closed, 57 automated in 2025",
+    "quote": "We closed 93 buildings in the U.S. and deployed automation in 57 buildings while maintaining the high level of service our customers expect.",
+    "direction": 1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "US revenue per piece +8.3% in Q4",
+    "quote": "In the fourth quarter, revenue per piece increased 8.3% year over year, which was the strongest fourth quarter revenue per piece growth rate we've seen in four years.",
+    "direction": 1,
+    "confidence": 0.75
+   },
+   {
+    "type": "demand",
+    "label": "US ADV down 10.8% in Q4",
+    "quote": "total U.S. average daily volume was down 2.4 million pieces or 10.8%.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Q1 international profit down ~30%",
+    "quote": "We expect profit to be down about 30% in the first quarter and then recover as we go throughout the year.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Consolidated revenue 2026",
+    "value": "~$89.7 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "we expect to generate consolidated revenue of approximately $89.7 billion and a consolidated operating margin of approximately 9.6%"
+   },
+   {
+    "metric": "Consolidated operating margin 2026",
+    "value": "~9.6%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "a consolidated operating margin of approximately 9.6%"
+   },
+   {
+    "metric": "Capex 2026",
+    "value": "~$3 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Capital expenditures are expected to be about $3 billion."
+   },
+   {
+    "metric": "Free cash flow 2026",
+    "value": "~$6.5 billion",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect free cash flow to be approximately $6.5 billion"
+   },
+   {
+    "metric": "Amazon glide down savings",
+    "value": "$3 billion",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "we are targeting $3 billion in savings related to the Amazon glide down."
+   },
+   {
+    "metric": "US Domestic margin 2026",
+    "value": "flat vs 2025 (7.7%)",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "Full year operating margin is expected to be flat to 2025."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Amazon volume reduction ~1 million pieces/day",
+    "outcome": "met",
+    "quote": "By the end of the year, we reached our volume reduction target and reduced Amazon's volume in our network by approximately 1 million pieces per day."
+   },
+   {
+    "metric": "$3.5 billion network savings",
+    "outcome": "met",
+    "quote": "As planned, we delivered $3.5 billion in savings from our network reconfiguration and efficiency reimagined initiatives."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Amazon",
+    "relation": "customer"
+   },
+   {
+    "name": "USPS",
+    "relation": "partner"
+   },
+   {
+    "name": "Boeing",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Healthcare logistics",
+   "Capex cycle revival (private)",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "H1 2026 margin pressure and cost lag",
+    "quote": "We know that variable costs come out as volume exits the network, but I have learned that reductions in fixed and semi-variable costs lag."
+   },
+   {
+    "label": "Cost per piece up 8.9% in Q4",
+    "quote": "Cost per piece increased 8.9% year over year, primarily due to costs associated with the insourcing of Groundsaver"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 1,
+   "growth": 3,
+   "margin": 4,
+   "other": 1
+  },
+  "evasions": [
+   {
+    "topic": "Long-term targets / normalized EPS",
+    "quote": "let us get through this year, 2026 is the pivotal year for United Parcel Service, Inc."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}

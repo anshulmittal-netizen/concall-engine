@@ -1,0 +1,110 @@
+{
+ "doc_id": "IN-L-11a87aea8171",
+ "market": "IN",
+ "company_id": "543664",
+ "name": "Kaynes Technology",
+ "doc_type": "presentation",
+ "date": "2026-11-15",
+ "period": "2026-09",
+ "title": "Investor Presentation for the Q2 FY 2026-27",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.25,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q2 FY27 PAT collapsed 65.6% YoY to INR 398 mn on EBITDA margin 13.2% and rising finance cost, while order book rose to INR 1,05,635 mn; no OSAT/PCB or capex guidance refresh was disclosed.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital cycle",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed",
+   "peers_comment": ""
+  },
+  "triggers": [
+   {
+    "type": "demand",
+    "label": "Order book INR 1,05,635 mn",
+    "quote": "₹ 80,994 ₹ 1,05,635 H1' FY26 H1' FY 27 Order Book",
+    "highlight": "1,05,635",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Circuits trial production started 1-Oct-2026",
+    "quote": "Trial Productions started 1-Oct-2026",
+    "highlight": "Trial Productions started",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue growth",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "OSAT + PCB FY27 revenue",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Capex FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Metering receivables turnaround",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Alpha & Omega Semiconductor",
+    "relation": "customer"
+   },
+   {
+    "name": "Infineon Technologies",
+    "relation": "customer"
+   },
+   {
+    "name": "L&T Semiconductor Technologies",
+    "relation": "customer"
+   },
+   {
+    "name": "Vishay Intertechnology",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Semiconductors & OSAT",
+   "Electronics manufacturing (EMS/PLI)",
+   "Data-centre power & cooling"
+  ],
+  "red_flags": [],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.5
+ }
+}
