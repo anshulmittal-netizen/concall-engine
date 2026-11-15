@@ -897,6 +897,22 @@ a.ld-slot:hover{outline:1px solid var(--accent)}.ld-go{font-size:10px;color:var(
 .wt-cl{display:grid;grid-template-columns:minmax(0,1fr) 132px 44px;gap:10px;align-items:center;font:inherit;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 10px;color:inherit;cursor:pointer}
 .wt-cl:hover{border-color:var(--accent)}
 @media (max-width:760px){.wt-cl2{grid-template-columns:1fr}.wt-grid{grid-template-columns:1fr}.wt-cl{grid-template-columns:minmax(0,1fr) 44px}.wt-cl .ld-sp{display:none}}
+/* ---------- weekly post ---------- */
+.po-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px;align-items:start}
+.po-col{display:grid;gap:12px;min-width:0}
+.po-c .r{grid-template-columns:24px minmax(0,1fr) auto;align-items:start}
+.po-c .r.po-on{background:var(--accentsoft)}
+.po-meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.po-meta .nm{font-family:var(--display);font-size:13px;color:var(--fg)}
+.po-q{display:block;font-size:12px;line-height:1.5;margin-top:4px}
+.po-ed{width:100%;margin-top:6px;resize:vertical;font-family:var(--body);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12px;line-height:1.45}
+.po-ck input{width:16px;height:16px;accent-color:var(--accent);margin:3px 0 0;cursor:pointer}
+.po-tw{display:grid;gap:12px}
+.po-t{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;display:grid;gap:8px;box-shadow:var(--shadow)}
+.po-t header,.po-t footer{display:flex;justify-content:space-between;gap:10px;font-size:10.5px}
+.po-t p{font-size:12.5px;line-height:1.5;overflow-wrap:anywhere}
+.po-img canvas{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line)}
+@media (max-width:1100px){.po-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 
 <div class="app">
@@ -1233,10 +1249,11 @@ const TABS = [
   {group: 'Research', items: [['calls', 'Calls', ['calls', 'first', 'people'], 'calls'], ['cal', 'Calendar', ['upcoming', 'rescal'], ''],
     ['res', 'Results', ['results', 'pead'], 'results'], ['pipe', 'Catalyst pipeline', ['pipeline', 'graised'], 'pipeline'], ['mgmt', 'Management changes', ['mgmt']]]},
   {group: 'Sectors & ideas', items: [['sec', 'Sectors', ['tracker', 'guidance', 'turns'], 'tracker'], ['themes', 'Themes', ['themes']],
-    ['ideas', 'Idea lists', ['shelf', 'nearterm', 'bottleneck', 'inflect'], ''], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]}
+    ['ideas', 'Idea lists', ['shelf', 'nearterm', 'bottleneck', 'inflect'], ''], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]},
+  {group: 'Publish', items: [['post', 'Weekly post', ['post']]]}
 ];
 /* each view's own name: shown on its sub-tab, in the Excel export and in the help */
-const VIEWS = [{group: '', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['help', 'How to use'],
+const VIEWS = [{group: '', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['post', 'Weekly post'], ['help', 'How to use'],
   ['calls', 'All calls'], ['first', 'First-time callers'], ['people', 'Who’s asking'], ['upcoming', 'Calls coming up'], ['rescal', 'Results calendar'],
   ['results', 'Results posted'], ['pead', 'Results to watch'], ['pipeline', 'Catalyst pipeline'], ['graised', 'Guidance raised'], ['mgmt', 'Management changes'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
   ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['bottleneck', 'Bottleneck arbitrage'], ['inflect', 'Inflection watch'],
@@ -3684,7 +3701,7 @@ const xlViewName = () => VIEWS.flatMap(g => g.items).find(([k]) => k === S.view)
 function xlViewPlan() {
   if (S.view === 'calls') { const n = filteredCalls().length; return {n, sub: `${fmt(n)} calls matching your filters and sort`}; }
   if (S.view === 'results' && RES.data) { const n = rsRows().length; return {n, sub: `${fmt(n)} results matching your filters and sort`}; }
-  if (S.view === 'help' || S.view === 'ask') return {n: 0, sub: 'This view has no table to export. Use Full data.'};
+  if (S.view === 'help' || S.view === 'ask' || S.view === 'post') return {n: 0, sub: 'This view has no table to export. Use Full data.'};
   const sh = xlDomSheets(), n = sh.reduce((a, x) => a + x.rows.length, 0);
   return n ? {n, sub: `${fmt(n)} rows from ${sh.length} ${sh.length === 1 ? 'list' : 'lists'} on screen, as sorted`} : {n: 0, sub: 'This view has no table to export. Use Full data.'};
 }
@@ -3921,7 +3938,369 @@ function vLedger() {
     <span class="small" style="min-width:0">${items.map(x => `<span class="ld-gapi"><b style="color:${x.st === 'missing' ? 'var(--down)' : 'var(--warn)'}">${esc({results: 'Results', call: 'Call', deck: 'Deck'}[x.kind])} ${esc(x.mkt === 'IN' ? seasL[x.season]?.in : seasL[x.season]?.gl)}</b> ${esc(x.st === 'missing' ? 'missing' : 'needs a link')}</span>`).join('')}</span></div>`).join('') || '<div class="empty">Nothing missing. Every expected event is on record.</div>'}</div>`;
 }
 
-const RENDER = {leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+/* ---------- Weekly post: a Sunday thread for X, built from the week's calls ----------
+   Reads every call filed in the chosen window, picks each company's most quotable line (a multi-year target, a raised
+   guidance line, demand visibility, a back-half or turnaround call, a record quarter, a balance-sheet goal), and turns the
+   picks, a spotlight company, the week's strong results and its guidance raises into a numbered thread plus one image per
+   tweet, drawn on canvas in the desk's colours. Companies already posted (Mark as posted) are skipped for 8 weeks. */
+const PO_CATS = [['target', 'Big multi-year target', 6, '#0E6F8A'], ['raised', 'Guidance raised', 5, '#2F8A35'], ['visibility', 'Demand visibility', 5, '#0E7A70'],
+  ['turn', 'Turn / back-half', 4, '#6E45B0'], ['record', 'Record quarter', 3, '#B07A0E'], ['bs', 'Balance-sheet goal', 3, '#9A5A35']];
+const PO_CAT = Object.fromEntries(PO_CATS.map(c => [c[0], c]));
+const PO_SIZES = {'': ['All sizes', () => true], small: ['Under ₹2,000 Cr', c => c.mcapCr != null && c.mcapCr < 2000], mid: ['₹2,000–20,000 Cr', c => c.mcapCr >= 2000 && c.mcapCr < 20000], large: ['₹20,000 Cr and up', c => c.mcapCr >= 20000]};
+const PO_SERIES = 'Between the Lines: Signals from the Concall Room';
+const PO_DISC = 'Not buy or sell recommendations. Publicly available information, shared for learning and education. Quotes are from earnings call transcripts filed on BSE.';
+S.post = {days: 7, n: 8, size: '', cats: new Set(PO_CATS.map(c => c[0])), skipPosted: true, pick: new Map(), qe: {}, spot: '', edit: '', series: store.get('po-series', PO_SERIES), copied: ''};
+const PO = {cache: null, ck: '', hist: {weeks: {}}, doc: null, fonts: null, zip: null};
+try { PO.hist = JSON.parse(localStorage.getItem('po-hist') || 'null') || PO.hist; } catch (e) {}
+(async () => {
+  try {
+    const db = window.claude?.use ? await window.claude.use('db') : null; if (!db) return;
+    PO.doc = db.doc('post/history');
+    PO.doc.onSnapshot(s => { const d = s.exists ? s.data() || {} : null; if (d && d.weeks) { PO.hist = {weeks: d.weeks}; PO.ck = ''; if (D && S.view === 'post') render(); } }, () => {});
+  } catch (e) {}
+})();
+function poSaveHist() {
+  try { localStorage.setItem('po-hist', JSON.stringify(PO.hist)); } catch (e) {}
+  if (PO.doc) PO.doc.set({weeks: PO.hist.weeks, updated: new Date().toISOString()}).catch(() => {});
+}
+/* companies posted in the last 8 weeks, other than the edition being built now */
+const poPosted = to => { const s = new Set(), from = addDays(to, -56); Object.entries(PO.hist.weeks || {}).forEach(([d, ids]) => { if (d >= from && d !== to) (ids || []).forEach(i => s.add(i)); }); return s; };
+/* future horizons move with the season: in FY27, "FY28" onwards and 2028 onwards count as forward-looking */
+function poRx() {
+  const fy = +((D.season || '').match(/FY(\d{2})/) || [0, 27])[1], ys = Array.from({length: 8}, (_, i) => fy + 1 + i);
+  const FY = `FY\\s?'?\\s?(?:${ys.join('|')})`, CY = `20(?:${ys.join('|')})`, H = `(?:\\b${FY}\\b|\\b${CY}\\b)`, AMT = `(?:₹|INR|Rs\\.?)\\s?[\\d,.]+\\s?(?:crore|crores|cr|billion|bn|lakh crore)`;
+  return {
+    target: new RegExp(`\\bdoubl|\\b[2-5]x\\b|\\btripl|\\bCAGR|${AMT}[^.]{0,60}${H}|${H}[^.]{0,60}${AMT}`, 'i'),
+    raised: /(?:rais|upgrad|revis|increas|improv|enhanc)\w*[^.]{0,50}(?:guidance|target|outlook)|(?:guidance|target|outlook)[^.]{0,50}(?:rais|upgrad|revis\w* up|increas|enhanc)|(?:from|vs\.?) (?:our )?(?:earlier|previous|initial)[^.]{0,40}(?:guid|target)|(?:earlier|previous|initial)ly (?:guided|said)/i,
+    visibility: /visibility|(?:beyond|till|until|up ?to) 20[23]\d|sold out|fully booked|booked (?:till|until|for)|order ?book[^.]{0,40}(?:years|x |times)|(?:urg|ask)\w* us to (?:increase|add|expand)|demand (?:exceeds|outstrips|is more than)|waiting list|capacity is full|running at full/i,
+    turn: /transition year|year of consolidation|consolidation year|reap|worst is (?:behind|over)|bottomed|second half|H2 (?:will|should|would)|back-?ended|inflection|turnaround|turn the corner/i,
+    record: /highest[- ]ever|all[- ]time high|record (?:quarter|revenue|volume|order|ebitda|profit)|best[- ]ever/i,
+    bs: /debt[- ]free|net[- ]cash|zero debt/i,
+    fut: new RegExp(`${H}|next (?:\\d|two|three|four|five) years|over the next|by (?:FY|20)`, 'i')};
+}
+const PO_METRIC = /\b(?:revenues?|turnover|top ?line|sales|EBITDA|PAT|profits?|presales|bookings?|orders?|volumes?|AUM|loan ?book|order ?book|market share)\b/i;
+const PO_HEDGE = /\b(?:not|no|difficult|challeng\w*|uncertain\w*|weak\w*|declin\w*|pressure|slowdown|delay\w*)\b/i;
+const poClean = q => String(q || '').replace(/^[A-Z][\w.'-]+(?: [A-Z][\w.'-]+){0,3}:\s*/, '').replace(/\s+/g, ' ').replace(/^[.…\s-]+/, '').trim();
+/* the best line from one call, or null */
+function poBest(c, s, rx) {
+  const pool = [...(s?.key_quotes || []).map(q => [q, 'quote']), ...(c.gUp || []).filter(g => g.q).map(g => [g.q, 'guid'])];
+  let best = null;
+  for (const [raw, src] of pool) {
+    const q = poClean(raw); if (q.length < 60) continue;
+    for (const [k, , base] of PO_CATS) {
+      if (k === 'raised' && !c.gRaised) continue;
+      if (!rx[k].test(q)) continue;
+      if (k === 'target' && (!PO_METRIC.test(q) || /capex|capital expenditure|investment of|leverage|net debt|gearing|debt to|double[- ]digit/i.test(q))) continue;
+      if (k === 'target' && !rx.fut.test(q) && !/\b(?:will|would|should|target\w*|aim\w*|goal|plan\w*|expect\w*|ambition|aspir\w*|look(?:ing)? forward|envisag\w*|guid\w*|confident|on track|path)\b/i.test(q)) continue;
+      if (k === 'bs' && !rx.fut.test(q) && !/\b(?:be|become|turn|target|aim|goal)\w*\b[^.]{0,30}(?:debt|net cash)/i.test(q)) continue;
+      if (k === 'turn' && /capex/i.test(q)) continue;
+      const sc = base + (/\d/.test(q) ? 2 : 0) + (rx.fut.test(q) ? 2 : 0) - (k !== 'turn' && PO_HEDGE.test(q) ? 3 : 0) + (c.score || 0) / 25 - (q.length > 420 ? 1 : 0) - (/capex|capital expenditure|cost of/i.test(q) ? 2 : 0);
+      if (!best || sc > best.sc) best = {k, q, src, sc};
+    }
+  }
+  return best;
+}
+function poWindow() {
+  const f = S.post, to = lastDate() || istToday();
+  return f.days ? {from: addDays(to, -(f.days - 1)), to, label: `${sdate(addDays(to, -(f.days - 1)))} – ${fdate(to)}`} : {from: '', to, label: `${D.season} season to ${fdate(to)}`};
+}
+function poCalls(w) { return (D.calls || []).filter(c => (w.from ? c.date >= w.from && c.date <= w.to : c.period === D.season) && !c.veto && c.archetype !== 'Red flag'); }
+/* every candidate in the window, best line per company, most quotable first (cached per window) */
+function poCands(w) {
+  const ck = w.from + '|' + w.to + '|' + Object.keys(SUMS.data || {}).length;
+  if (PO.ck === ck && PO.cache) return PO.cache;
+  const rx = poRx(), per = {};
+  poCalls(w).forEach(c => { const b = poBest(c, SUMS.data?.[c.key], rx); if (b && (!per[c.id] || b.sc > per[c.id].sc)) per[c.id] = {...b, c}; });
+  PO.ck = ck; return (PO.cache = Object.values(per).sort((a, b) => b.sc - a.sc));
+}
+function poState() {
+  const f = S.post, w = poWindow(), posted = f.skipPosted ? poPosted(w.to) : new Set();
+  const all = SUMS.data ? poCands(w) : [];
+  const pool = all.filter(x => PO_SIZES[f.size][1](x.c) && f.cats.has(x.k) && !posted.has(x.c.id));
+  const cap = {target: Math.ceil(f.n * .4), raised: Math.ceil(f.n * .3), visibility: Math.ceil(f.n * .3), turn: Math.ceil(f.n * .25), record: 2, bs: 1}, used = {}, auto = [];
+  for (const x of pool) { if (auto.length >= f.n) break; if ((used[x.k] || 0) >= cap[x.k]) continue; used[x.k] = (used[x.k] || 0) + 1; auto.push(x.c.id); }
+  for (const x of pool) { if (auto.length >= f.n) break; if (!auto.includes(x.c.id)) auto.push(x.c.id); }
+  const on = id => f.pick.has(id) ? f.pick.get(id) : auto.includes(id);
+  const picks = all.filter(x => on(x.c.id) && (f.pick.get(x.c.id) || pool.includes(x))).map(x => ({...x, q: f.qe[x.c.id] ?? x.q}));
+  const calls = poCalls(w), res = (RES.data?.results || []).filter(r => r.filed.slice(0, 10) >= (w.from || '0') && r.filed.slice(0, 10) <= addDays(w.to, 1));
+  const strong = res.filter(r => rsGrade(r) === 'strong' && r.rev >= 100 && r.pat_yoy != null && r.pat_prev_yoy > 0 && PO_SIZES[f.size][1]({mcapCr: byId[r.id]?.mcapCr ?? crNum(r.mcap)}))
+    .sort((a, b) => b.pat_yoy - a.pat_yoy).slice(0, 10);
+  const raised = calls.filter(c => c.gRaised > 0 && (c.gUp || []).length && PO_SIZES[f.size][1](c)).sort((a, b) => b.score - a.score).slice(0, 8);
+  const spots = calls.filter(c => SUMS.data?.[c.key] && PO_SIZES[f.size][1](c) && !posted.has(c.id)).sort((a, b) => b.score - a.score).slice(0, 25);
+  const spot = spots.find(c => c.key === f.spot) || (f.spot && calls.find(c => c.key === f.spot)) || spots.find(c => !picks.some(p => p.c.id === c.id)) || spots[0] || null;
+  return {w, all, pool, picks, calls, res, strong, raised, spots, spot, posted, sum: spot ? SUMS.data?.[spot.key] : null};
+}
+const crNum = s => { const m = String(s || '').replace(/,/g, '').match(/[\d.]+/); return m ? +m[0] : null; };
+/* X counts most Latin text as 1 and other characters (₹, …, emoji, Devanagari) as 2, against a 280 limit */
+const xLen = s => { let n = 0; for (const ch of s) { const p = ch.codePointAt(0); n += p <= 4351 || (p >= 8192 && p <= 8205) || (p >= 8208 && p <= 8223) || (p >= 8242 && p <= 8247) ? 1 : 2; } return n; };
+function xFit(pre, body, post = '', max = 280) {
+  if (xLen(pre + body + post) <= max) return pre + body + post;
+  const ws = body.split(' '); while (ws.length > 1 && xLen(pre + ws.join(' ') + '…' + post) > max) ws.pop();
+  return pre + ws.join(' ').replace(/[,;:.\s]+$/, '') + '…' + post;
+}
+const poName = c => String(c.name || '').replace(/\s*-\$$/, '').replace(/\s+(?:Ltd|Limited|LTD)\.?$/i, '').trim();
+const poMcap = c => c.mcap ? c.mcap.replace(/\s/g, ' ') : '';
+const poGist = (g, n = 2) => (g || []).slice(0, n).map(s => String(s).replace(/\s+/g, ' ').trim());
+function poTweets(st) {
+  const f = S.post, w = st.w, T = [];
+  T.push({id: 'cover', img: 'cover', t: xFit('', `${f.series}\n\nWhat Indian managements said on their earnings calls, ${w.label}.\n\n${fmt(st.calls.length)} calls read · ${fmt(st.calls.filter(c => c.gRaised > 0).length)} raised guidance · ${fmt(st.res.filter(r => rsGrade(r) === 'strong').length)} strong quarters.\n\nA thread ↓`)});
+  st.picks.forEach((x, i) => T.push({id: 'q:' + x.c.id, img: 'q:' + x.c.id, t: xFit(`${i + 1}/ ${poName(x.c)}${x.c.mcap ? ` (${poMcap(x.c)})` : ''}\n\n“`, x.q, '”')}));
+  if (st.picks.length > 3) T.push({id: 'table', img: 'table', t: 'All of this week’s lines on one page:'});
+  if (st.spot) T.push({id: 'spot', img: 'spot', t: xFit(`Spotlight: ${poName(st.spot)}\n\n`, (st.sum?.headline || st.spot.thesis || '').trim())});
+  if (st.strong.length) { let s = 'Strong quarters this week (PAT growth YoY):\n'; for (const r of st.strong.slice(0, 6)) { const l = `\n${poName(r)}: ${pctS(r.pat_yoy)}`; if (xLen(s + l) > 270) break; s += l; } T.push({id: 'res', img: 'res', t: s}); }
+  if (st.raised.length) { let s = 'Raised guidance this week:\n'; for (const c of st.raised) { const g = c.gUp[0], l = `\n${poName(c)}: ${g.m}${g.v ? ' → ' + g.v : ''}`; if (xLen(s + l) > 270) break; s += l; } T.push({id: 'raised', img: 'raised', t: s}); }
+  T.push({id: 'end', img: '', t: `That’s all for this week.\n\n${PO_DISC}`});
+  return T.map((x, i) => ({...x, n: i + 1}));
+}
+function poText(st) {
+  const f = S.post, L = [f.series, st.w.label, ''];
+  let n = 1;
+  if (st.picks.length) { L.push(`${n++}. Between the lines`, ''); st.picks.forEach(x => L.push(`${poName(x.c)}: "...${x.q.replace(/^["“]|["”]$/g, '')}..."`, '')); }
+  if (st.spot) {
+    const s = st.sum || {};
+    L.push(`${n++}. Spotlight: ${poName(st.spot)}`, '', [st.spot.sector, poMcap(st.spot), `${st.spot.period} call, ${fdate(st.spot.date)}`].filter(Boolean).join(' · '), '');
+    if (s.overview) L.push(s.overview, '');
+    if ((s.guidance_outlook || []).length) { L.push('What management guided:'); s.guidance_outlook.slice(0, 4).forEach(g => L.push('• ' + g)); L.push(''); }
+    if ((s.risks_watch || []).length) { L.push('What to watch:'); s.risks_watch.slice(0, 2).forEach(g => L.push('• ' + g)); L.push(''); }
+  }
+  if (st.strong.length) { L.push(`${n++}. Strong quarters this week`, ''); st.strong.forEach(r => L.push(`• ${poName(r)} (${r.label}): revenue ${pctS(r.rev_yoy)}, ${r.opLabel || 'EBITDA'} ${pctS(r.op_yoy)}, PAT ${pctS(r.pat_yoy)} YoY`)); L.push(''); }
+  if (st.raised.length) { L.push(`${n++}. Guidance raised`, ''); st.raised.forEach(c => L.push(`• ${poName(c)}: ${c.gUp.map(g => g.m + (g.v ? ': ' + g.v : '')).slice(0, 2).join('; ')}`)); L.push(''); }
+  L.push('That’s all for this edition. Have a great Sunday!', '', 'Disclaimer: ' + PO_DISC);
+  return L.join('\n');
+}
+
+/* ---------- images: 1600 × 900 (X's 16:9), light desk palette ---------- */
+const PI = {bg: '#FAF7EE', panel: '#FFFFFF', ink: '#13231A', muted: '#4A574E', faint: '#848D7E', line: '#E7E0CC', accent: '#1E6B45', gold: '#C9961C', up: '#2F8A35', down: '#C8352A'};
+const PF = {d: "'Bricolage Grotesque','Avenir Next','Segoe UI',sans-serif", b: "'Public Sans','Segoe UI',sans-serif", m: "'IBM Plex Mono',Menlo,monospace"};
+const poFonts = () => (PO.fonts = PO.fonts || Promise.all(["700 40px 'Bricolage Grotesque'", "500 40px 'Bricolage Grotesque'", "400 20px 'Public Sans'", "600 20px 'Public Sans'", "600 20px 'IBM Plex Mono'"]
+  .map(f => document.fonts?.load(f))).catch(() => {}));
+function poWrap(g, text, maxW) {
+  const out = []; String(text).split('\n').forEach(par => { let line = ''; par.split(' ').forEach(wd => { const t = line ? line + ' ' + wd : wd; if (g.measureText(t).width > maxW && line) { out.push(line); line = wd; } else line = t; }); out.push(line); });
+  return out;
+}
+function poClip(g, text, maxW) { if (g.measureText(text).width <= maxW) return text; let t = text; while (t.length > 1 && g.measureText(t + '…').width > maxW) t = t.slice(0, -1); return t.trimEnd() + '…'; }
+function poRound(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
+function poPill(g, x, y, text, col) {
+  g.font = `600 22px ${PF.b}`; const w = g.measureText(text.toUpperCase()).width + 36;
+  g.fillStyle = col + '22'; poRound(g, x, y, w, 42, 21); g.fill(); g.fillStyle = col; g.textBaseline = 'middle'; g.fillText(text.toUpperCase(), x + 18, y + 22); g.textBaseline = 'alphabetic'; return w;
+}
+function poFrame(h, edition) {
+  const c = document.createElement('canvas'); c.width = 1600; c.height = h; const g = c.getContext('2d');
+  g.fillStyle = PI.bg; g.fillRect(0, 0, 1600, h);
+  const gr = g.createRadialGradient(1500, -60, 40, 1500, -60, 760); gr.addColorStop(0, 'rgba(214,166,46,.22)'); gr.addColorStop(1, 'rgba(214,166,46,0)'); g.fillStyle = gr; g.fillRect(0, 0, 1600, h);
+  g.fillStyle = PI.accent; g.fillRect(0, 0, 1600, 8);
+  /* footer: mark + name, edition, disclaimer */
+  const y = h - 58; g.strokeStyle = PI.line; g.lineWidth = 2; g.beginPath(); g.moveTo(80, y - 30); g.lineTo(1520, y - 30); g.stroke();
+  g.lineWidth = 4; g.strokeStyle = PI.accent; g.beginPath(); g.arc(98, y, 16, -.3, Math.PI * 1.55); g.stroke(); g.fillStyle = PI.gold; g.beginPath(); g.arc(98, y, 6.5, 0, 7); g.fill();
+  g.fillStyle = PI.ink; g.font = `700 24px ${PF.d}`; g.textBaseline = 'middle'; g.fillText('Concall Signal Desk', 128, y);
+  g.fillStyle = PI.faint; g.font = `400 19px ${PF.b}`; g.textAlign = 'right'; g.fillText(`${edition} · Not investment advice`, 1520, y); g.textAlign = 'left'; g.textBaseline = 'alphabetic';
+  return [c, g];
+}
+function poFitText(g, text, font, maxW, maxH, sizes, lh = 1.32) {
+  for (const s of sizes) { g.font = font(s); const L = poWrap(g, text, maxW); if (L.length * s * lh <= maxH) return {L, s, lh: s * lh}; }
+  const s = sizes[sizes.length - 1]; g.font = font(s); const L = poWrap(g, text, maxW), n = Math.floor(maxH / (s * lh)); if (L.length > n) { L.length = n; L[n - 1] = poClip(g, L[n - 1] + ' …', maxW); }
+  return {L, s, lh: s * lh};
+}
+function poImgQuote(x, ed) {
+  const [cv, g] = poFrame(900, ed), cat = PO_CAT[x.k];
+  poPill(g, 80, 64, cat[1], cat[3]);
+  g.fillStyle = PI.ink; g.font = `700 54px ${PF.d}`; g.fillText(poClip(g, poName(x.c), 1440), 80, 180);
+  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(poClip(g, [x.c.sector, poMcap(x.c), `${x.c.period} earnings call, ${fdate(x.c.date)}`].filter(Boolean).join('  ·  '), 1440), 80, 222);
+  const t = poFitText(g, x.q, s => `500 ${s}px ${PF.d}`, 1340, 470, [50, 46, 42, 38, 35, 32, 29, 26]), y0 = 270 + Math.max(0, (470 - t.L.length * t.lh) / 2);
+  g.fillStyle = PI.gold; g.font = `700 150px ${PF.d}`; g.fillText('“', 64, y0 + 100);
+  g.fillStyle = PI.ink; g.font = `500 ${t.s}px ${PF.d}`; t.L.forEach((l, i) => g.fillText(l, 150, y0 + t.s + i * t.lh));
+  return cv;
+}
+function poImgCover(st, ed) {
+  const [cv, g] = poFrame(900, ed), f = S.post;
+  g.fillStyle = PI.accent; g.font = `600 22px ${PF.b}`; g.fillText(`WEEKLY CONCALL READ  ·  ${st.w.label.toUpperCase()}`, 80, 110);
+  const t = poFitText(g, f.series, s => `700 ${s}px ${PF.d}`, 1300, 230, [80, 72, 64, 56], 1.1);
+  g.fillStyle = PI.ink; g.font = `700 ${t.s}px ${PF.d}`; t.L.forEach((l, i) => g.fillText(l, 80, 150 + t.s + i * t.lh));
+  const stats = [[fmt(st.calls.length), 'calls read'], [fmt(st.calls.filter(c => c.gRaised > 0).length), 'raised guidance'], [fmt(st.res.filter(r => rsGrade(r) === 'strong').length), 'strong quarters'], [fmt(st.res.length), 'results posted']];
+  stats.forEach(([v, l], i) => { const x = 80 + i * 365, y = 430; g.fillStyle = PI.panel; poRound(g, x, y, 335, 150, 22); g.fill(); g.strokeStyle = PI.line; g.lineWidth = 2; g.stroke();
+    g.fillStyle = i === 0 ? PI.accent : PI.ink; g.font = `700 62px ${PF.d}`; g.fillText(v, x + 28, y + 82); g.fillStyle = PI.muted; g.font = `400 22px ${PF.b}`; g.fillText(l, x + 30, y + 122); });
+  g.font = `600 20px ${PF.b}`; let x = 80, y = 640; g.fillStyle = PI.faint; g.fillText('IN THIS THREAD', 80, y); y += 22;
+  for (const p of [...st.picks.map(p => poName(p.c)), ...(st.spot ? [poName(st.spot)] : [])].filter((v, i, a) => a.indexOf(v) === i)) {
+    g.font = `500 22px ${PF.b}`; const w = g.measureText(p).width + 32; if (x + w > 1520) { x = 80; y += 50; } if (y > 740) break;
+    g.fillStyle = PI.panel; poRound(g, x, y, w, 40, 20); g.fill(); g.strokeStyle = PI.line; g.stroke(); g.fillStyle = PI.ink; g.textBaseline = 'middle'; g.fillText(p, x + 16, y + 21); g.textBaseline = 'alphabetic'; x += w + 10; }
+  return cv;
+}
+function poImgTable(st, ed) {
+  const rows = st.picks, rh = 104, h = Math.max(900, 230 + rows.length * rh + 110);
+  const [cv, g] = poFrame(h, ed);
+  g.fillStyle = PI.ink; g.font = `700 50px ${PF.d}`; g.fillText('Between the lines', 80, 120);
+  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(`What managements said on their calls · ${st.w.label}`, 80, 162);
+  rows.forEach((x, i) => { const y = 210 + i * rh, cat = PO_CAT[x.k];
+    if (i % 2 === 0) { g.fillStyle = PI.panel; poRound(g, 64, y, 1472, rh - 8, 16); g.fill(); }
+    g.fillStyle = cat[3]; g.beginPath(); g.arc(98, y + 32, 9, 0, 7); g.fill();
+    g.fillStyle = PI.ink; g.font = `700 26px ${PF.d}`; g.fillText(poClip(g, poName(x.c), 430), 122, y + 41);
+    g.fillStyle = cat[3]; g.font = `600 17px ${PF.b}`; g.fillText(cat[1].toUpperCase(), 122, y + 72);
+    g.fillStyle = PI.ink; g.font = `400 22px ${PF.b}`; const L = poWrap(g, '“' + x.q + '”', 940); if (L.length > 2) { L.length = 2; L[1] = poClip(g, L[1] + ' …', 940); }
+    L.forEach((l, j) => g.fillText(l, 580, y + 40 + j * 31)); });
+  return cv;
+}
+function poImgBars(st, ed) {
+  const [cv, g] = poFrame(900, ed), R = st.strong.slice(0, 10);
+  g.fillStyle = PI.ink; g.font = `700 50px ${PF.d}`; g.fillText('Strong quarters this week', 80, 120);
+  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(`Profit after tax growth on last year · revenue growth in brackets · results filed ${st.w.label}`, 80, 162);
+  const top = 210, rh = Math.min(56, 520 / Math.max(1, R.length)), x0 = 560, wMax = 760, cap = Math.log10(1 + Math.max(...R.map(r => Math.max(r.pat_yoy, 0)), 1));
+  R.forEach((r, i) => { const y = top + i * rh, w = Math.max(6, wMax * Math.log10(1 + Math.max(r.pat_yoy, 0)) / cap);
+    g.fillStyle = PI.ink; g.font = `600 24px ${PF.b}`; g.textBaseline = 'middle'; g.fillText(poClip(g, poName(r), 450), 80, y + rh / 2);
+    g.fillStyle = PI.up; poRound(g, x0, y + rh * .18, w, rh * .64, 8); g.fill();
+    g.fillStyle = PI.ink; g.font = `600 22px ${PF.m}`; g.fillText(`${pctS(r.pat_yoy)}`, x0 + w + 14, y + rh / 2);
+    g.fillStyle = PI.faint; g.font = `400 19px ${PF.m}`; g.fillText(`(rev ${pctS(r.rev_yoy)})`, x0 + w + 14 + g.measureText(`${pctS(r.pat_yoy)}`).width * 1.15 + 12, y + rh / 2); g.textBaseline = 'alphabetic'; });
+  g.fillStyle = PI.faint; g.font = `400 18px ${PF.b}`; g.fillText('Strong = revenue up 15%+, PAT up 20%+ and operating profit up 15%+ on last year; revenue of ₹100 Cr or more and a profit a year ago. Bar length on a log scale.', 80, 790);
+  return cv;
+}
+function poImgRaised(st, ed) {
+  const R = st.raised, rh = 96, h = Math.max(900, 230 + R.length * rh + 110), [cv, g] = poFrame(h, ed);
+  g.fillStyle = PI.ink; g.font = `700 50px ${PF.d}`; g.fillText('Guidance raised this week', 80, 120);
+  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(`Lines management raised on the call, against what it said before · ${st.w.label}`, 80, 162);
+  R.forEach((c, i) => { const y = 210 + i * rh; if (i % 2 === 0) { g.fillStyle = PI.panel; poRound(g, 64, y, 1472, rh - 8, 16); g.fill(); }
+    g.fillStyle = PI.up; g.font = `700 30px ${PF.d}`; g.fillText('▲', 86, y + 52);
+    g.fillStyle = PI.ink; g.font = `700 26px ${PF.d}`; g.fillText(poClip(g, poName(c), 430), 130, y + 40);
+    g.fillStyle = PI.faint; g.font = `400 18px ${PF.b}`; g.fillText(poClip(g, [c.sector, poMcap(c)].filter(Boolean).join(' · '), 430), 130, y + 70);
+    g.fillStyle = PI.ink; g.font = `400 22px ${PF.b}`; const L = poWrap(g, c.gUp.slice(0, 2).map(u => u.m + (u.v ? ': ' + u.v : '')).join(' · '), 940); if (L.length > 2) { L.length = 2; L[1] = poClip(g, L[1] + ' …', 940); }
+    L.forEach((l, j) => g.fillText(l, 580, y + 40 + j * 31)); });
+  return cv;
+}
+function poImgSpot(st, ed) {
+  const [cv, g] = poFrame(900, ed), c = st.spot, s = st.sum || {};
+  poPill(g, 80, 64, 'Spotlight', PI.accent);
+  g.fillStyle = PI.ink; g.font = `700 56px ${PF.d}`; g.fillText(poClip(g, poName(c), 1440), 80, 182);
+  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(poClip(g, [c.sector, poMcap(c), `${c.period} call, ${fdate(c.date)}`].filter(Boolean).join('  ·  '), 1440), 80, 224);
+  const hd = poFitText(g, s.headline || c.thesis || '', z => `500 ${z}px ${PF.d}`, 1440, 130, [34, 31, 28, 26]);
+  g.fillStyle = PI.ink; g.font = `500 ${hd.s}px ${PF.d}`; hd.L.forEach((l, i) => g.fillText(l, 80, 270 + hd.s + i * hd.lh));
+  let y = 290 + hd.L.length * hd.lh + 34; g.fillStyle = PI.accent; g.font = `600 20px ${PF.b}`; g.fillText('WHAT MANAGEMENT GUIDED', 80, y); y += 18;
+  for (const b of (s.guidance_outlook || []).slice(0, 4)) { g.font = `400 23px ${PF.b}`; const L = poWrap(g, b, 1380).slice(0, 2); if (poWrap(g, b, 1380).length > 2) L[1] = poClip(g, L[1] + ' …', 1380);
+    if (y + 20 + L.length * 32 > 800) break; g.fillStyle = PI.gold; g.beginPath(); g.arc(92, y + 30, 6, 0, 7); g.fill(); g.fillStyle = PI.ink; L.forEach((l, i) => g.fillText(l, 116, y + 38 + i * 32)); y += L.length * 32 + 16; }
+  return cv;
+}
+const poFile = (id, n) => `${String(n).padStart(2, '0')}-${id.replace(/^q:/, '').replace(/[^\w-]+/g, '-')}.png`;
+function poImages(st, tw) {
+  const ed = st.w.label, M = {};
+  for (const x of tw) {
+    if (!x.img) continue;
+    if (x.img === 'cover') M[x.id] = poImgCover(st, ed);
+    else if (x.img.startsWith('q:')) { const p = st.picks.find(p => 'q:' + p.c.id === x.img); if (p) M[x.id] = poImgQuote(p, ed); }
+    else if (x.img === 'table') M[x.id] = poImgTable(st, ed);
+    else if (x.img === 'spot') M[x.id] = poImgSpot(st, ed);
+    else if (x.img === 'res') M[x.id] = poImgBars(st, ed);
+    else if (x.img === 'raised') M[x.id] = poImgRaised(st, ed);
+  }
+  return M;
+}
+async function poSaveBlob(blob, filename) {
+  const dl = window.claude?.use ? await window.claude.use('downloads').catch(() => null) : null;
+  if (dl) { try { await dl.save({filename, data: blob}); return 'Saved.'; } catch (e) { if (e?.code === 'declined') return 'Download cancelled.'; if (e?.code === 'rate_limited') return 'A download prompt is already open.'; throw e; } }
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename; document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 4000); return 'Downloaded.';
+}
+const poBlob = cv => new Promise(r => cv.toBlob(r, 'image/png'));
+const poZipLib = () => (PO.zip = PO.zip || new Promise((res, rej) => {
+  if (window.JSZip) return res(window.JSZip);
+  const sc = document.createElement('script'); sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+  sc.onload = () => window.JSZip ? res(window.JSZip) : rej(new Error('Zip library missing'));
+  sc.onerror = () => { PO.zip = null; rej(new Error('The zip library could not be loaded. Download the images one by one.')); };
+  document.head.appendChild(sc);
+}));
+
+/* ---------- the view ---------- */
+function vPost() {
+  const f = S.post;
+  if (!SUMS.data) loadSums().then(() => { PO.ck = ''; if (S.view === 'post') render(); });
+  if (!RES.data) loadRes().then(() => { if (S.view === 'post') render(); });
+  const hd = head('Weekly post', 'A ready-to-post Sunday thread for X: the week’s most telling lines from the concall room, a spotlight company, strong results and guidance raises, each tweet with its own image.', `
+    <ol><li>Pick the window (the last 7 days of calls by default), how many lines to feature and, if you like, a size band.</li>
+    <li>The desk picks each company’s most quotable line, mixing <b>big multi-year targets</b>, <b>raised guidance</b>, <b>demand visibility</b>, <b>turn / back-half</b> calls, <b>record quarters</b> and <b>balance-sheet goals</b>. Tick or untick any company to change the picks, and use <b>Edit</b> to trim a quote.</li>
+    <li>Choose the spotlight company, then check the thread: every tweet shows its X character count (₹ and … count as 2) and the image that goes with it.</li>
+    <li><b>Copy thread</b> gives the tweets separated by blank lines; <b>Download images</b> saves every picture as one .zip, numbered to match the tweets. <b>Copy newsletter</b> gives the long-form version.</li>
+    <li>After posting, press <b>Mark as posted</b>: those companies are left out of the next 8 weeks’ picks, on every device you use.</li></ol>
+    <p>Quotes come from the call summaries’ key quotes and the guidance lines read from the transcript. Check each against the transcript before posting.</p>`,
+    `<span class="badge">${SUMS.data ? fmt(Object.keys(SUMS.data).length) + ' call summaries' : 'Loading call summaries…'}</span>`);
+  if (!SUMS.data) return hd + '<div class="empty">Reading the call summaries (about 30 MB, once per visit)…</div>';
+  const st = poState(), tw = poTweets(st), ed = poWindow().to;
+  const cand = st.all.filter(x => f.cats.has(x.k) && PO_SIZES[f.size][1](x.c)).slice(0, 60);
+  const sel = new Set(st.picks.map(p => p.c.id));
+  setTimeout(() => poPaint(st, tw), 0);
+  return hd + `
+  <div class="toolbar">
+    <select id="po-days" aria-label="Window"><option value="7" ${f.days === 7 ? 'selected' : ''}>Calls of the last 7 days</option><option value="14" ${f.days === 14 ? 'selected' : ''}>Last 14 days</option><option value="30" ${f.days === 30 ? 'selected' : ''}>Last 30 days</option><option value="0" ${f.days === 0 ? 'selected' : ''}>Whole ${esc(D.season)} season</option></select>
+    <select id="po-n" aria-label="Lines to feature">${[5, 6, 8, 10, 12].map(n => `<option value="${n}" ${f.n === n ? 'selected' : ''}>${n} lines</option>`).join('')}</select>
+    <select id="po-size" aria-label="Size">${Object.entries(PO_SIZES).map(([k, [l]]) => `<option value="${k}" ${f.size === k ? 'selected' : ''}>${esc(l)}</option>`).join('')}</select>
+    <button class="chip" data-po-skip aria-pressed="${f.skipPosted}">Skip companies posted in the last 8 weeks <span class="num">${st.posted.size || poPosted(ed).size}</span></button>
+  </div>
+  <div class="toolbar">${PO_CATS.map(([k, l, , col]) => `<button class="chip" data-po-cat="${k}" aria-pressed="${f.cats.has(k)}"><span class="dot" style="background:${col}"></span> ${esc(l)} <span class="num">${st.all.filter(x => x.k === k).length}</span></button>`).join('')}</div>
+  <div class="po-grid">
+    <section class="po-col">
+      <div class="list-head"><h3>Lines from the calls</h3><span class="small muted">${fmt(sel.size)} picked of ${fmt(cand.length)} · ${esc(st.w.label)}</span></div>
+      ${cand.length ? `<div class="rows po-c">${cand.map(x => { const on = sel.has(x.c.id), cat = PO_CAT[x.k], q = f.qe[x.c.id] ?? x.q;
+        return `<div class="r${on ? ' po-on' : ''}"><label class="po-ck"><input type="checkbox" data-po-pick="${esc(x.c.id)}" ${on ? 'checked' : ''} aria-label="Feature ${esc(x.c.name)}"></label>
+          <span style="min-width:0"><span class="po-meta"><button class="link nm" data-open="${esc(x.c.id)}" data-k="${esc(x.c.key)}">${esc(poName(x.c))}</button> <span class="pill" style="--pc:${cat[3]}">${esc(cat[1])}</span> <span class="sub">${esc(poMcap(x.c))}${x.c.mcap ? ' · ' : ''}${esc(sdate(x.c.date))} · score ${x.c.score}</span></span>
+          ${f.edit === x.c.id ? `<textarea class="po-ed" data-po-qe="${esc(x.c.id)}" rows="4">${esc(q)}</textarea><span class="toolbar"><button class="btn" data-po-edit="">Done</button>${f.qe[x.c.id] != null ? `<button class="link" data-po-reset="${esc(x.c.id)}">Restore the original</button>` : ''}</span>`
+            : `<span class="po-q">“${esc(q)}”</span>`}</span>
+          ${f.edit === x.c.id ? '<span></span>' : `<button class="link" data-po-edit="${esc(x.c.id)}">Edit</button>`}</div>`; }).join('')}</div>` : '<div class="empty">No quotable lines in this window. Widen the window or turn more kinds on.</div>'}
+      <div class="card" style="display:grid;gap:8px">
+        <label class="eyebrow" for="po-spot">Spotlight company</label>
+        <select id="po-spot">${st.spots.map(c => `<option value="${esc(c.key)}" ${st.spot && st.spot.key === c.key ? 'selected' : ''}>${esc(poName(c))} · score ${c.score} · ${esc(poMcap(c))}</option>`).join('')}</select>
+        ${st.sum ? `<p class="small">${esc(st.sum.headline || '')}</p>` : ''}
+        <label class="eyebrow" for="po-series">Series name</label>
+        <input id="po-series" value="${esc(f.series)}" style="background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:12px">
+      </div>
+    </section>
+    <section class="po-col">
+      <div class="list-head"><h3>Thread</h3><span class="small muted">${tw.length} tweets · ${tw.filter(t => t.img).length} images</span></div>
+      <div class="toolbar"><button class="btn primary" data-po-copy="thread">Copy thread</button><button class="btn" data-po-zip>Download images (.zip)</button><button class="btn" data-po-copy="text">Copy newsletter</button><button class="btn" data-po-mark>${(PO.hist.weeks || {})[ed] ? 'Posted ✓ (undo)' : 'Mark as posted'}</button><span class="small muted" id="po-st" aria-live="polite">${esc(f.copied)}</span></div>
+      <div class="po-tw">${tw.map(t => { const n = xLen(t.t); return `<article class="po-t"><header><span class="num">${t.n}/${tw.length}</span><span class="num ${n > 280 ? 'g-dn' : 'muted'}">${n}/280</span></header>
+        <p>${esc(t.t).replace(/\n/g, '<br>')}</p>${t.img ? `<div class="po-img" data-po-img="${esc(t.id)}"></div>` : ''}
+        <footer><button class="link" data-po-copy="${esc(t.id)}">Copy text</button>${t.img ? `<button class="link" data-po-dl="${esc(t.id)}">Download image</button>` : ''}</footer></article>`; }).join('')}</div>
+    </section>
+  </div>`;
+}
+let PO_IMG = {}, PO_TW = [], PO_ST = null;
+async function poPaint(st, tw) {
+  await poFonts(); if (S.view !== 'post') return;
+  PO_ST = st; PO_TW = tw; PO_IMG = poImages(st, tw);
+  document.querySelectorAll('[data-po-img]').forEach(el => { const cv = PO_IMG[el.dataset.poImg]; if (cv) { el.innerHTML = ''; el.appendChild(cv); } });
+}
+function poStatus(s) { S.post.copied = s; const el = $('#po-st'); if (el) el.textContent = s; }
+document.addEventListener('click', async e => {
+  if (S.view !== 'post') return;
+  const t = e.target, f = S.post;
+  const cat = t.closest('[data-po-cat]'); if (cat) { const k = cat.dataset.poCat; f.cats.has(k) ? f.cats.delete(k) : f.cats.add(k); f.pick.clear(); render(); return; }
+  if (t.closest('[data-po-skip]')) { f.skipPosted = !f.skipPosted; f.pick.clear(); render(); return; }
+  const ed = t.closest('[data-po-edit]'); if (ed) { f.edit = ed.dataset.poEdit; render(); if (f.edit) setTimeout(() => $('.po-ed')?.focus(), 30); return; }
+  const rs = t.closest('[data-po-reset]'); if (rs) { delete f.qe[rs.dataset.poReset]; f.edit = ''; render(); return; }
+  const cp = t.closest('[data-po-copy]'); if (cp) {
+    const k = cp.dataset.poCopy, txt = k === 'thread' ? PO_TW.map(x => x.t).join('\n\n———\n\n') : k === 'text' ? poText(PO_ST || poState()) : PO_TW.find(x => x.id === k)?.t || '';
+    try { await navigator.clipboard.writeText(txt); poStatus(k === 'thread' ? 'Thread copied.' : k === 'text' ? 'Newsletter copied.' : 'Tweet copied.'); } catch (er) { poStatus('Copy is blocked here. Select the text instead.'); }
+    return; }
+  const dl = t.closest('[data-po-dl]'); if (dl) { const tw = PO_TW.find(x => x.id === dl.dataset.poDl), cv = PO_IMG[dl.dataset.poDl]; if (!cv) return;
+    try { poStatus(await poSaveBlob(await poBlob(cv), poFile(tw.id, tw.n))); } catch (er) { poStatus('The image could not be saved here.'); } return; }
+  if (t.closest('[data-po-zip]')) {
+    poStatus('Packing the images…');
+    try { const Z = await poZipLib(), z = new Z(); for (const tw of PO_TW) if (PO_IMG[tw.id]) z.file(poFile(tw.id, tw.n), await poBlob(PO_IMG[tw.id]));
+      z.file('00-thread.txt', PO_TW.map(x => `${x.n}/${PO_TW.length}${PO_IMG[x.id] ? '  [image ' + poFile(x.id, x.n) + ']' : ''}\n${x.t}`).join('\n\n———\n\n'));
+      z.file('00-newsletter.txt', poText(PO_ST || poState()));
+      poStatus(await poSaveBlob(await z.generateAsync({type: 'blob'}), `Concall weekly post - ${poWindow().to}.zip`)); } catch (er) { poStatus(er?.message || 'The images could not be packed here.'); }
+    return; }
+  if (t.closest('[data-po-mark]')) { const w = poWindow().to, W = PO.hist.weeks = PO.hist.weeks || {};
+    if (W[w]) delete W[w]; else W[w] = [...new Set([...(PO_ST?.picks || []).map(p => p.c.id), ...(PO_ST?.spot ? [PO_ST.spot.id] : [])])];
+    poSaveHist(); render(); return; }
+});
+document.addEventListener('change', e => {
+  if (S.view !== 'post') return;
+  const f = S.post, id = e.target.id;
+  if (id === 'po-days') { f.days = +e.target.value; f.pick.clear(); f.spot = ''; render(); }
+  if (id === 'po-n') { f.n = +e.target.value; f.pick.clear(); render(); }
+  if (id === 'po-size') { f.size = e.target.value; f.pick.clear(); f.spot = ''; render(); }
+  if (id === 'po-spot') { f.spot = e.target.value; render(); }
+  if (id === 'po-series') { f.series = e.target.value.trim() || PO_SERIES; store.set('po-series', f.series); render(); }
+  const pk = e.target.dataset?.poPick; if (pk) { f.pick.set(pk, e.target.checked); render(); }
+  const qe = e.target.dataset?.poQe; if (qe) { const v = e.target.value.trim(); if (v) f.qe[qe] = v; f.edit = ''; render(); }
+});
+
+const RENDER = {post: vPost, leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
