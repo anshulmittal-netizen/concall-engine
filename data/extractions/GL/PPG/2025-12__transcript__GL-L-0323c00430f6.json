@@ -1,0 +1,135 @@
+{
+ "doc_id": "GL-L-0323c00430f6",
+ "market": "GL",
+ "company_id": "PPG",
+ "name": "PPG Industries",
+ "doc_type": "transcript",
+ "date": "2026-01-26",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q3 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Record Q3 adj EPS $2.13 on 2% organic growth, but FY25 guide cut to $7.60–7.70 on refinish destocking; aerospace capex >$0.5bn peaks 2026–27 with normalisation expected mid-2026.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "These investments represent more than $0.5 billion and are being completed in order to capitalize on the significant multiyear growth opportunity we have in this business."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Refinish distributor destocking into year-end",
+    "quote": "We expect a year-over-year decline in organic sales similar to that in the third quarter as distributors have been managing their inventories heading into year-end.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Insurance claims still negative",
+    "quote": "Claims in the beginning of the year were down high single digits, in some cases, low double digits. Our latest claims data was down mid-single digits.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Aerospace capex >$0.5bn, peaks 2026–27",
+    "quote": "These investments represent more than $0.5 billion and are being completed in order to capitalize on the significant multiyear growth opportunity",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Architectural EMEA price up 36 quarters",
+    "quote": "price increases have been maintained for 36 consecutive quarters.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Industrial coatings volume +4%, auto OEM +8%",
+    "quote": "Third quarter sales volumes increased 4%, outpacing industry demand as we realized the run rate benefit of share gains",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY2025 adjusted EPS",
+    "value": "$7.60 to $7.70 per diluted share",
+    "change": "cut",
+    "horizon": "FY2025",
+    "quote": "we have updated our full year guidance of adjusted earnings per diluted share to a range of $7.60 to $7.70."
+   },
+   {
+    "metric": "Full-year low single-digit raw material inflation",
+    "value": "low single-digit inflation",
+    "change": "held",
+    "horizon": "FY2025",
+    "quote": "we are expecting low single-digit inflation for the year"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "BYD",
+    "relation": "competitor"
+   },
+   {
+    "name": "Tikkurila",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Auto EV transition",
+   "Housing & real-estate cycle",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Refinish distributor destocking extended",
+    "quote": "the normalization of claims did not happen as early as expected. And so that's driven destocking further than what we expected"
+   },
+   {
+    "label": "2026 first half softer",
+    "quote": "2006 (sic) [ 2026 ] looks softer in the first half than what we envisioned earlier this year."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 2,
+   "capex": 1,
+   "balance_sheet": 1,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Refinish share gains vs competitor",
+    "quote": "So am I surprised that one particular competitor gained share -- announced gain share? Absolutely not."
+   }
+  ],
+  "hedge_index": 0.4
+ }
+}

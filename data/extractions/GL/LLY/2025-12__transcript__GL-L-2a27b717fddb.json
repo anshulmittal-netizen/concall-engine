@@ -1,0 +1,142 @@
+{
+ "doc_id": "GL-L-2a27b717fddb",
+ "market": "GL",
+ "company_id": "LLY",
+ "name": "Eli Lilly",
+ "doc_type": "transcript",
+ "date": "2026-02-04",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Pharma & biotech",
+  "thesis": "Volume-led growth with price falling: Q4 US price down 7% while 2026 guidance of $80-83B (about 25% growth) assumes low-to-mid-teens price drag, with incretin volume doing the work.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Pricing power",
+   "Operating leverage",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Since 2020, we've committed over $55 billion, the largest manufacturing build-out in company history."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "US price down 7% YoY in Q4",
+    "quote": "US revenue grew 43% in Q4, but the average price declined 7% year over year.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "demand",
+    "label": "Incretin prescriptions up 33% YoY",
+    "quote": "total prescriptions increasing by 33% compared to Q4 2024",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "2026 revenue $80-83B, ~25% growth",
+    "quote": "We expect revenue to be between $80 billion and $83 billion.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "2026 price drag low-to-mid teens",
+    "quote": "Price is expected to be a drag on growth in the low to mid-teens.",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue 2026",
+    "value": "$80B-$83B",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect revenue to be between $80 billion and $83 billion."
+   },
+   {
+    "metric": "Non-GAAP performance margin 2026",
+    "value": "46%-47.5%",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect our non-GAAP performance margin to be between 46% and 47.5%."
+   },
+   {
+    "metric": "EPS 2026",
+    "value": "$33.50-$35",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect earnings per share of between $33.50 and $35"
+   },
+   {
+    "metric": "Orforglipron US approval",
+    "value": "Q2 2026 approval expected",
+    "change": "new",
+    "horizon": "2026",
+    "quote": "approval expected in Q2 2026 in the US."
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Novo Nordisk",
+    "relation": "competitor"
+   },
+   {
+    "name": "NVIDIA",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Premiumisation in consumption",
+   "Pharma CDMO / outsourcing",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "US price erosion 7% in Q4, 2026 price drag low-to-mid teens",
+    "quote": "the average price declined 7% year over year."
+   },
+   {
+    "label": "Medicaid access reduction 2026",
+    "quote": "we anticipate a reduction in Medicaid access in 2026 due to key states like California removing obesity coverage."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 8,
+   "margin": 1,
+   "other": 6
+  },
+  "evasions": [
+   {
+    "topic": "Cannibalisation from orals and out-of-pocket trajectory",
+    "quote": "I think it is a bit of a wildcard in our short and midterm outlook."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}
