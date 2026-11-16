@@ -1,0 +1,154 @@
+{
+ "doc_id": "GL-L-056e094a261b",
+ "market": "GL",
+ "company_id": "PPG",
+ "name": "PPG Industries",
+ "doc_type": "transcript",
+ "date": "2026-01-28",
+ "period": "2025-12",
+ "title": "Earnings call transcript, Q4 2025",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Specialty chemicals",
+  "thesis": "Q4 organic sales +3% with volume gains everywhere, but refinish destocking caps segment EBITDA leverage; 2026 organic guided flat to low single digit and EPS up mid-single digit, back-half weighted. Capex peaking, falling to ~3% of sales by 2027.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capital cycle",
+   "Supply exit",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "we expect to sequentially pace back to our historical levels of approximately 3% of sales by 2027"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Refinish destocking through 1H26",
+    "quote": "destocking for two quarters, sales volume and EBIT growth in Q3 and Q4",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Capex peaks 2025, falls to ~3% of sales",
+    "quote": "2025 will represent the high watermark of these growth investments",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Dec US accident claims only -2%",
+    "quote": "the December year-over-year claims were down only 2% compared to high single-digit or low double-digit declines throughout the year",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Architectural pricing positive 39 quarters",
+    "quote": "We have now delivered positive pricing for thirty-nine consecutive quarters in this business",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Aerospace capacity constrained, high-single-digit growth",
+    "quote": "We are capacity constrained. No doubt about it.",
+    "direction": 1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Organic sales growth 2026",
+    "value": "flat to low single-digit %",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "This will result in organic sales growth in the range of flat to positive low single-digit percentage."
+   },
+   {
+    "metric": "EPS growth 2026",
+    "value": "mid-single-digit % at midpoint; 1H flat to low single digit, 2H high single digit",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "We expect earnings per share to be flat to growth of low single-digit percentage during the first half of the year and increasing to high single-digit percentage in the second half of the year."
+   },
+   {
+    "metric": "Raw material costs 2026",
+    "value": "flat year over year",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "resulting in expected overall flat raw material costs for the year"
+   },
+   {
+    "metric": "Operational excellence savings 2026",
+    "value": "$50 million",
+    "change": "new",
+    "horizon": "FY2026",
+    "quote": "reducing our cost by another $50 million"
+   },
+   {
+    "metric": "Capex intensity",
+    "value": "~3% of sales by 2027",
+    "change": "new",
+    "horizon": "FY2027",
+    "quote": "we expect to sequentially pace back to our historical levels of approximately 3% of sales by 2027"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "Wolfe Research",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Auto EV transition",
+   "Housing & real-estate cycle",
+   "Premiumisation in consumption"
+  ],
+  "red_flags": [
+   {
+    "label": "Refinish destocking margin drag",
+    "quote": "The biggest issue with our lack of leverage with the volume growth that we're getting today is first, second, and third. The refinish destocking."
+   },
+   {
+    "label": "Higher interest and tax cost",
+    "quote": "So, unfortunately, our interest costs are higher. In '26 versus '25."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 1,
+   "growth": 9,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Q1 EPS guidance",
+    "quote": "Flattish for Q1, low single digits ish for Q2."
+   }
+  ],
+  "hedge_index": 0.3
+ }
+}
