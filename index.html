@@ -3949,7 +3949,7 @@ const PO_CAT = Object.fromEntries(PO_CATS.map(c => [c[0], c]));
 const PO_SIZES = {'': ['All sizes', () => true], small: ['Under ₹2,000 Cr', c => c.mcapCr != null && c.mcapCr < 2000], mid: ['₹2,000–20,000 Cr', c => c.mcapCr >= 2000 && c.mcapCr < 20000], large: ['₹20,000 Cr and up', c => c.mcapCr >= 20000]};
 const PO_SERIES = 'Between the Lines: Signals from the Concall Room';
 const PO_DISC = 'Not buy or sell recommendations. Publicly available information, shared for learning and education. Quotes are from earnings call transcripts filed on BSE.';
-S.post = {days: 7, n: 8, size: '', cats: new Set(PO_CATS.map(c => c[0])), skipPosted: true, pick: new Map(), qe: {}, spot: '', edit: '', series: store.get('po-series', PO_SERIES), copied: ''};
+S.post = {days: 0, n: 8, size: '', cats: new Set(PO_CATS.map(c => c[0])), skipPosted: true, pick: new Map(), qe: {}, spot: '', edit: '', series: store.get('po-series', PO_SERIES), copied: ''};
 const PO = {cache: null, ck: '', hist: {weeks: {}}, doc: null, fonts: null, zip: null};
 try { PO.hist = JSON.parse(localStorage.getItem('po-hist') || 'null') || PO.hist; } catch (e) {}
 (async () => {
@@ -4002,9 +4002,14 @@ function poBest(c, s, rx) {
 }
 function poWindow() {
   const f = S.post, to = lastDate() || istToday();
-  return f.days ? {from: addDays(to, -(f.days - 1)), to, label: `${sdate(addDays(to, -(f.days - 1)))} – ${fdate(to)}`} : {from: '', to, label: `${D.season} season to ${fdate(to)}`};
+  const q = D.season || '';
+  return f.days ? {from: addDays(to, -(f.days - 1)), to, q, label: `${q} · calls filed ${sdate(addDays(to, -(f.days - 1)))} – ${fdate(to)}`} : {from: '', to, q, label: `${q} results season, to ${fdate(to)}`};
 }
-function poCalls(w) { return (D.calls || []).filter(c => (w.from ? c.date >= w.from && c.date <= w.to : c.period === D.season) && !c.veto && c.archetype !== 'Red flag'); }
+/* every call and result in the post belongs to the current quarter; the window only narrows which transcripts are read */
+function poCalls(w) { return (D.calls || []).filter(c => c.period === D.season && (!w.from || (c.date >= w.from && c.date <= w.to)) && !c.veto && c.archetype !== 'Red flag'); }
+/* when this company's quarterly results were filed on BSE (falls back to its transcript date) */
+function poResDate(c) { const r = (RES.data?.results || []).find(r => r.id === c.id && r.label === D.season); return r ? {d: r.filed.slice(0, 10), k: 'results'} : (c.date ? {d: c.date, k: 'call transcript'} : null); }
+const poWhen = c => { const x = poResDate(c); return x ? `${x.k} ${sdate(x.d)}` : ''; };
 /* every candidate in the window, best line per company, most quotable first (cached per window) */
 function poCands(w) {
   const ck = w.from + '|' + w.to + '|' + Object.keys(SUMS.data || {}).length;
@@ -4022,10 +4027,10 @@ function poState() {
   for (const x of pool) { if (auto.length >= f.n) break; if (!auto.includes(x.c.id)) auto.push(x.c.id); }
   const on = id => f.pick.has(id) ? f.pick.get(id) : auto.includes(id);
   const picks = all.filter(x => on(x.c.id) && (f.pick.get(x.c.id) || pool.includes(x))).map(x => ({...x, q: f.qe[x.c.id] ?? x.q}));
-  const calls = poCalls(w), res = (RES.data?.results || []).filter(r => r.filed.slice(0, 10) >= (w.from || '0') && r.filed.slice(0, 10) <= addDays(w.to, 1));
-  const strong = res.filter(r => rsGrade(r) === 'strong' && r.rev >= 100 && r.pat_yoy != null && r.pat_prev_yoy > 0 && PO_SIZES[f.size][1]({mcapCr: byId[r.id]?.mcapCr ?? crNum(r.mcap)}))
+  const calls = poCalls(w), res = (RES.data?.results || []).filter(r => r.label === D.season && r.filed.slice(0, 10) >= (w.from || '0') && r.filed.slice(0, 10) <= addDays(w.to, 1));
+  const strong = res.filter(r => rsGrade(r) === 'strong' && !posted.has(r.id) && r.rev >= 100 && r.pat_yoy != null && r.pat_prev_yoy > 0 && PO_SIZES[f.size][1]({mcapCr: byId[r.id]?.mcapCr ?? crNum(r.mcap)}))
     .sort((a, b) => b.pat_yoy - a.pat_yoy).slice(0, 10);
-  const raised = calls.filter(c => c.gRaised > 0 && (c.gUp || []).length && PO_SIZES[f.size][1](c)).sort((a, b) => b.score - a.score).slice(0, 8);
+  const raised = calls.filter(c => c.gRaised > 0 && (c.gUp || []).length && !posted.has(c.id) && PO_SIZES[f.size][1](c)).sort((a, b) => b.score - a.score).slice(0, 8);
   const spots = calls.filter(c => SUMS.data?.[c.key] && PO_SIZES[f.size][1](c) && !posted.has(c.id)).sort((a, b) => b.score - a.score).slice(0, 25);
   const spot = spots.find(c => c.key === f.spot) || (f.spot && calls.find(c => c.key === f.spot)) || spots.find(c => !picks.some(p => p.c.id === c.id)) || spots[0] || null;
   return {w, all, pool, picks, calls, res, strong, raised, spots, spot, posted, sum: spot ? SUMS.data?.[spot.key] : null};
@@ -4043,27 +4048,27 @@ const poMcap = c => c.mcap ? c.mcap.replace(/\s/g, ' ') : '';
 const poGist = (g, n = 2) => (g || []).slice(0, n).map(s => String(s).replace(/\s+/g, ' ').trim());
 function poTweets(st) {
   const f = S.post, w = st.w, T = [];
-  T.push({id: 'cover', img: 'cover', t: xFit('', `${f.series}\n\nWhat Indian managements said on their earnings calls, ${w.label}.\n\n${fmt(st.calls.length)} calls read · ${fmt(st.calls.filter(c => c.gRaised > 0).length)} raised guidance · ${fmt(st.res.filter(r => rsGrade(r) === 'strong').length)} strong quarters.\n\nA thread ↓`)});
-  st.picks.forEach((x, i) => T.push({id: 'q:' + x.c.id, img: 'q:' + x.c.id, t: xFit(`${i + 1}/ ${poName(x.c)}${x.c.mcap ? ` (${poMcap(x.c)})` : ''}\n\n“`, x.q, '”')}));
-  if (st.picks.length > 3) T.push({id: 'table', img: 'table', t: 'All of this week’s lines on one page:'});
-  if (st.spot) T.push({id: 'spot', img: 'spot', t: xFit(`Spotlight: ${poName(st.spot)}\n\n`, (st.sum?.headline || st.spot.thesis || '').trim())});
-  if (st.strong.length) { let s = 'Strong quarters this week (PAT growth YoY):\n'; for (const r of st.strong.slice(0, 6)) { const l = `\n${poName(r)}: ${pctS(r.pat_yoy)}`; if (xLen(s + l) > 270) break; s += l; } T.push({id: 'res', img: 'res', t: s}); }
-  if (st.raised.length) { let s = 'Raised guidance this week:\n'; for (const c of st.raised) { const g = c.gUp[0], l = `\n${poName(c)}: ${g.m}${g.v ? ' → ' + g.v : ''}`; if (xLen(s + l) > 270) break; s += l; } T.push({id: 'raised', img: 'raised', t: s}); }
-  T.push({id: 'end', img: '', t: `That’s all for this week.\n\n${PO_DISC}`});
+  T.push({id: 'cover', img: 'cover', t: xFit('', `${f.series}\n\nWhat Indian managements said on their ${w.q} earnings calls.\n\n${fmt(st.calls.length)} calls read · ${fmt(st.calls.filter(c => c.gRaised > 0).length)} raised guidance · ${fmt(st.res.filter(r => rsGrade(r) === 'strong').length)} strong quarters.\n\nA thread ↓`)});
+  st.picks.forEach((x, i) => T.push({id: 'q:' + x.c.id, img: 'q:' + x.c.id, t: xFit(`${i + 1}/ ${poName(x.c)}${x.c.mcap ? ` (${poMcap(x.c)})` : ''}\n${w.q}${poWhen(x.c) ? ', ' + poWhen(x.c) : ''}\n\n“`, x.q, '”')}));
+  if (st.picks.length > 3) T.push({id: 'table', img: 'table', t: `All of these ${w.q} lines on one page:`});
+  if (st.spot) T.push({id: 'spot', img: 'spot', t: xFit(`Spotlight: ${poName(st.spot)}\n${w.q}${poWhen(st.spot) ? ', ' + poWhen(st.spot) : ''}\n\n`, (st.sum?.headline || st.spot.thesis || '').trim())});
+  if (st.strong.length) { let s = `Strong ${w.q} results (PAT growth YoY, date filed):\n`; for (const r of st.strong.slice(0, 6)) { const l = `\n${poName(r)}: ${pctS(r.pat_yoy)} (${sdate(r.filed)})`; if (xLen(s + l) > 270) break; s += l; } T.push({id: 'res', img: 'res', t: s}); }
+  if (st.raised.length) { let s = `Raised guidance on ${w.q} calls:\n`; for (const c of st.raised) { const g = c.gUp[0], l = `\n${poName(c)}: ${g.m}${g.v ? ' → ' + g.v : ''}`; if (xLen(s + l) > 270) break; s += l; } T.push({id: 'raised', img: 'raised', t: s}); }
+  T.push({id: 'end', img: '', t: `That’s all for this edition.\n\n${PO_DISC}`});
   return T.map((x, i) => ({...x, n: i + 1}));
 }
 function poText(st) {
   const f = S.post, L = [f.series, st.w.label, ''];
   let n = 1;
-  if (st.picks.length) { L.push(`${n++}. Between the lines`, ''); st.picks.forEach(x => L.push(`${poName(x.c)}: "...${x.q.replace(/^["“]|["”]$/g, '')}..."`, '')); }
+  if (st.picks.length) { L.push(`${n++}. Between the lines`, ''); st.picks.forEach(x => L.push(`${poName(x.c)} (${[st.w.q, poWhen(x.c)].filter(Boolean).join(', ')}): "...${x.q.replace(/^["“]|["”]$/g, '')}..."`, '')); }
   if (st.spot) {
     const s = st.sum || {};
-    L.push(`${n++}. Spotlight: ${poName(st.spot)}`, '', [st.spot.sector, poMcap(st.spot), `${st.spot.period} call, ${fdate(st.spot.date)}`].filter(Boolean).join(' · '), '');
+    L.push(`${n++}. Spotlight: ${poName(st.spot)}`, '', [st.spot.sector, poMcap(st.spot), `${st.spot.period}`, poWhen(st.spot)].filter(Boolean).join(' · '), '');
     if (s.overview) L.push(s.overview, '');
     if ((s.guidance_outlook || []).length) { L.push('What management guided:'); s.guidance_outlook.slice(0, 4).forEach(g => L.push('• ' + g)); L.push(''); }
     if ((s.risks_watch || []).length) { L.push('What to watch:'); s.risks_watch.slice(0, 2).forEach(g => L.push('• ' + g)); L.push(''); }
   }
-  if (st.strong.length) { L.push(`${n++}. Strong quarters this week`, ''); st.strong.forEach(r => L.push(`• ${poName(r)} (${r.label}): revenue ${pctS(r.rev_yoy)}, ${r.opLabel || 'EBITDA'} ${pctS(r.op_yoy)}, PAT ${pctS(r.pat_yoy)} YoY`)); L.push(''); }
+  if (st.strong.length) { L.push(`${n++}. Strong ${st.w.q} results`, ''); st.strong.forEach(r => L.push(`• ${poName(r)} (${r.label}, results ${sdate(r.filed)}): revenue ${pctS(r.rev_yoy)}, ${r.opLabel || 'EBITDA'} ${pctS(r.op_yoy)}, PAT ${pctS(r.pat_yoy)} YoY`)); L.push(''); }
   if (st.raised.length) { L.push(`${n++}. Guidance raised`, ''); st.raised.forEach(c => L.push(`• ${poName(c)}: ${c.gUp.map(g => g.m + (g.v ? ': ' + g.v : '')).slice(0, 2).join('; ')}`)); L.push(''); }
   L.push('That’s all for this edition. Have a great Sunday!', '', 'Disclaimer: ' + PO_DISC);
   return L.join('\n');
@@ -4105,7 +4110,7 @@ function poImgQuote(x, ed) {
   const [cv, g] = poFrame(900, ed), cat = PO_CAT[x.k];
   poPill(g, 80, 64, cat[1], cat[3]);
   g.fillStyle = PI.ink; g.font = `700 54px ${PF.d}`; g.fillText(poClip(g, poName(x.c), 1440), 80, 180);
-  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(poClip(g, [x.c.sector, poMcap(x.c), `${x.c.period} earnings call, ${fdate(x.c.date)}`].filter(Boolean).join('  ·  '), 1440), 80, 222);
+  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(poClip(g, [x.c.sector, poMcap(x.c), x.c.period, poWhen(x.c)].filter(Boolean).join('  ·  '), 1440), 80, 222);
   const t = poFitText(g, x.q, s => `500 ${s}px ${PF.d}`, 1340, 470, [50, 46, 42, 38, 35, 32, 29, 26]), y0 = 270 + Math.max(0, (470 - t.L.length * t.lh) / 2);
   g.fillStyle = PI.gold; g.font = `700 150px ${PF.d}`; g.fillText('“', 64, y0 + 100);
   g.fillStyle = PI.ink; g.font = `500 ${t.s}px ${PF.d}`; t.L.forEach((l, i) => g.fillText(l, 150, y0 + t.s + i * t.lh));
@@ -4113,7 +4118,7 @@ function poImgQuote(x, ed) {
 }
 function poImgCover(st, ed) {
   const [cv, g] = poFrame(900, ed), f = S.post;
-  g.fillStyle = PI.accent; g.font = `600 22px ${PF.b}`; g.fillText(`WEEKLY CONCALL READ  ·  ${st.w.label.toUpperCase()}`, 80, 110);
+  g.fillStyle = PI.accent; g.font = `600 22px ${PF.b}`; g.fillText(`CONCALL READ  ·  ${st.w.q.toUpperCase()}`, 80, 110);
   const t = poFitText(g, f.series, s => `700 ${s}px ${PF.d}`, 1300, 230, [80, 72, 64, 56], 1.1);
   g.fillStyle = PI.ink; g.font = `700 ${t.s}px ${PF.d}`; t.L.forEach((l, i) => g.fillText(l, 80, 150 + t.s + i * t.lh));
   const stats = [[fmt(st.calls.length), 'calls read'], [fmt(st.calls.filter(c => c.gRaised > 0).length), 'raised guidance'], [fmt(st.res.filter(r => rsGrade(r) === 'strong').length), 'strong quarters'], [fmt(st.res.length), 'results posted']];
@@ -4129,23 +4134,23 @@ function poImgTable(st, ed) {
   const rows = st.picks, rh = 104, h = Math.max(900, 230 + rows.length * rh + 110);
   const [cv, g] = poFrame(h, ed);
   g.fillStyle = PI.ink; g.font = `700 50px ${PF.d}`; g.fillText('Between the lines', 80, 120);
-  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(`What managements said on their calls · ${st.w.label}`, 80, 162);
+  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(`What managements said on their ${st.w.q} calls · results date under each name`, 80, 162);
   rows.forEach((x, i) => { const y = 210 + i * rh, cat = PO_CAT[x.k];
     if (i % 2 === 0) { g.fillStyle = PI.panel; poRound(g, 64, y, 1472, rh - 8, 16); g.fill(); }
     g.fillStyle = cat[3]; g.beginPath(); g.arc(98, y + 32, 9, 0, 7); g.fill();
     g.fillStyle = PI.ink; g.font = `700 26px ${PF.d}`; g.fillText(poClip(g, poName(x.c), 430), 122, y + 41);
-    g.fillStyle = cat[3]; g.font = `600 17px ${PF.b}`; g.fillText(cat[1].toUpperCase(), 122, y + 72);
+    g.fillStyle = cat[3]; g.font = `600 17px ${PF.b}`; g.fillText(cat[1].toUpperCase(), 122, y + 72); const wn = poWhen(x.c); if (wn) { const cw = g.measureText(cat[1].toUpperCase()).width; g.fillStyle = PI.faint; g.font = `400 17px ${PF.b}`; g.fillText(poClip(g, '· ' + wn, 430 - cw - 10), 122 + cw + 10, y + 72); }
     g.fillStyle = PI.ink; g.font = `400 22px ${PF.b}`; const L = poWrap(g, '“' + x.q + '”', 940); if (L.length > 2) { L.length = 2; L[1] = poClip(g, L[1] + ' …', 940); }
     L.forEach((l, j) => g.fillText(l, 580, y + 40 + j * 31)); });
   return cv;
 }
 function poImgBars(st, ed) {
   const [cv, g] = poFrame(900, ed), R = st.strong.slice(0, 10);
-  g.fillStyle = PI.ink; g.font = `700 50px ${PF.d}`; g.fillText('Strong quarters this week', 80, 120);
-  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(`Profit after tax growth on last year · revenue growth in brackets · results filed ${st.w.label}`, 80, 162);
+  g.fillStyle = PI.ink; g.font = `700 50px ${PF.d}`; g.fillText(`Strong ${st.w.q} results`, 80, 120);
+  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(`Profit after tax growth on last year · revenue growth in brackets · date results were filed`, 80, 162);
   const top = 210, rh = Math.min(56, 520 / Math.max(1, R.length)), x0 = 560, wMax = 760, cap = Math.log10(1 + Math.max(...R.map(r => Math.max(r.pat_yoy, 0)), 1));
   R.forEach((r, i) => { const y = top + i * rh, w = Math.max(6, wMax * Math.log10(1 + Math.max(r.pat_yoy, 0)) / cap);
-    g.fillStyle = PI.ink; g.font = `600 24px ${PF.b}`; g.textBaseline = 'middle'; g.fillText(poClip(g, poName(r), 450), 80, y + rh / 2);
+    g.fillStyle = PI.ink; g.font = `600 24px ${PF.b}`; g.textBaseline = 'middle'; g.fillText(poClip(g, poName(r), 360), 80, y + rh / 2); g.fillStyle = PI.faint; g.font = `400 19px ${PF.m}`; g.fillText(sdate(r.filed), 450, y + rh / 2);
     g.fillStyle = PI.up; poRound(g, x0, y + rh * .18, w, rh * .64, 8); g.fill();
     g.fillStyle = PI.ink; g.font = `600 22px ${PF.m}`; g.fillText(`${pctS(r.pat_yoy)}`, x0 + w + 14, y + rh / 2);
     g.fillStyle = PI.faint; g.font = `400 19px ${PF.m}`; g.fillText(`(rev ${pctS(r.rev_yoy)})`, x0 + w + 14 + g.measureText(`${pctS(r.pat_yoy)}`).width * 1.15 + 12, y + rh / 2); g.textBaseline = 'alphabetic'; });
@@ -4154,12 +4159,12 @@ function poImgBars(st, ed) {
 }
 function poImgRaised(st, ed) {
   const R = st.raised, rh = 96, h = Math.max(900, 230 + R.length * rh + 110), [cv, g] = poFrame(h, ed);
-  g.fillStyle = PI.ink; g.font = `700 50px ${PF.d}`; g.fillText('Guidance raised this week', 80, 120);
-  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(`Lines management raised on the call, against what it said before · ${st.w.label}`, 80, 162);
+  g.fillStyle = PI.ink; g.font = `700 50px ${PF.d}`; g.fillText(`Guidance raised on ${st.w.q} calls`, 80, 120);
+  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(`Lines management raised on the call, against what it said before`, 80, 162);
   R.forEach((c, i) => { const y = 210 + i * rh; if (i % 2 === 0) { g.fillStyle = PI.panel; poRound(g, 64, y, 1472, rh - 8, 16); g.fill(); }
     g.fillStyle = PI.up; g.font = `700 30px ${PF.d}`; g.fillText('▲', 86, y + 52);
     g.fillStyle = PI.ink; g.font = `700 26px ${PF.d}`; g.fillText(poClip(g, poName(c), 430), 130, y + 40);
-    g.fillStyle = PI.faint; g.font = `400 18px ${PF.b}`; g.fillText(poClip(g, [c.sector, poMcap(c)].filter(Boolean).join(' · '), 430), 130, y + 70);
+    g.fillStyle = PI.faint; g.font = `400 18px ${PF.b}`; g.fillText(poClip(g, [c.sector, poMcap(c), poWhen(c)].filter(Boolean).join(' · '), 430), 130, y + 70);
     g.fillStyle = PI.ink; g.font = `400 22px ${PF.b}`; const L = poWrap(g, c.gUp.slice(0, 2).map(u => u.m + (u.v ? ': ' + u.v : '')).join(' · '), 940); if (L.length > 2) { L.length = 2; L[1] = poClip(g, L[1] + ' …', 940); }
     L.forEach((l, j) => g.fillText(l, 580, y + 40 + j * 31)); });
   return cv;
@@ -4168,7 +4173,7 @@ function poImgSpot(st, ed) {
   const [cv, g] = poFrame(900, ed), c = st.spot, s = st.sum || {};
   poPill(g, 80, 64, 'Spotlight', PI.accent);
   g.fillStyle = PI.ink; g.font = `700 56px ${PF.d}`; g.fillText(poClip(g, poName(c), 1440), 80, 182);
-  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(poClip(g, [c.sector, poMcap(c), `${c.period} call, ${fdate(c.date)}`].filter(Boolean).join('  ·  '), 1440), 80, 224);
+  g.fillStyle = PI.muted; g.font = `400 24px ${PF.b}`; g.fillText(poClip(g, [c.sector, poMcap(c), c.period, poWhen(c)].filter(Boolean).join('  ·  '), 1440), 80, 224);
   const hd = poFitText(g, s.headline || c.thesis || '', z => `500 ${z}px ${PF.d}`, 1440, 130, [34, 31, 28, 26]);
   g.fillStyle = PI.ink; g.font = `500 ${hd.s}px ${PF.d}`; hd.L.forEach((l, i) => g.fillText(l, 80, 270 + hd.s + i * hd.lh));
   let y = 290 + hd.L.length * hd.lh + 34; g.fillStyle = PI.accent; g.font = `600 20px ${PF.b}`; g.fillText('WHAT MANAGEMENT GUIDED', 80, y); y += 18;
@@ -4210,8 +4215,8 @@ function vPost() {
   const f = S.post;
   if (!SUMS.data) loadSums().then(() => { PO.ck = ''; if (S.view === 'post') render(); });
   if (!RES.data) loadRes().then(() => { if (S.view === 'post') render(); });
-  const hd = head('Weekly post', 'A ready-to-post Sunday thread for X: the week’s most telling lines from the concall room, a spotlight company, strong results and guidance raises, each tweet with its own image.', `
-    <ol><li>Pick the window (the last 7 days of calls by default), how many lines to feature and, if you like, a size band.</li>
+  const hd = head('Weekly post', 'A ready-to-post Sunday thread for X on the current quarter: the most telling lines from the concall room, a spotlight company, strong results and guidance raises, each tweet with its own image and each company’s results date.', `
+    <ol><li>The post covers the whole ${esc(D.season)} season by default, so a company whose transcript came in late is still framed by its quarter, with its results date shown. Companies already posted are skipped, so each edition brings new names. You can narrow it to transcripts filed in the last 7, 14 or 30 days, pick how many lines to feature and, if you like, a size band.</li>
     <li>The desk picks each company’s most quotable line, mixing <b>big multi-year targets</b>, <b>raised guidance</b>, <b>demand visibility</b>, <b>turn / back-half</b> calls, <b>record quarters</b> and <b>balance-sheet goals</b>. Tick or untick any company to change the picks, and use <b>Edit</b> to trim a quote.</li>
     <li>Choose the spotlight company, then check the thread: every tweet shows its X character count (₹ and … count as 2) and the image that goes with it.</li>
     <li><b>Copy thread</b> gives the tweets separated by blank lines; <b>Download images</b> saves every picture as one .zip, numbered to match the tweets. <b>Copy newsletter</b> gives the long-form version.</li>
@@ -4225,7 +4230,7 @@ function vPost() {
   setTimeout(() => poPaint(st, tw), 0);
   return hd + `
   <div class="toolbar">
-    <select id="po-days" aria-label="Window"><option value="7" ${f.days === 7 ? 'selected' : ''}>Calls of the last 7 days</option><option value="14" ${f.days === 14 ? 'selected' : ''}>Last 14 days</option><option value="30" ${f.days === 30 ? 'selected' : ''}>Last 30 days</option><option value="0" ${f.days === 0 ? 'selected' : ''}>Whole ${esc(D.season)} season</option></select>
+    <select id="po-days" aria-label="Window"><option value="0" ${f.days === 0 ? 'selected' : ''}>Whole ${esc(D.season)} season</option><option value="7" ${f.days === 7 ? 'selected' : ''}>Transcripts of the last 7 days</option><option value="14" ${f.days === 14 ? 'selected' : ''}>Last 14 days</option><option value="30" ${f.days === 30 ? 'selected' : ''}>Last 30 days</option></select>
     <select id="po-n" aria-label="Lines to feature">${[5, 6, 8, 10, 12].map(n => `<option value="${n}" ${f.n === n ? 'selected' : ''}>${n} lines</option>`).join('')}</select>
     <select id="po-size" aria-label="Size">${Object.entries(PO_SIZES).map(([k, [l]]) => `<option value="${k}" ${f.size === k ? 'selected' : ''}>${esc(l)}</option>`).join('')}</select>
     <button class="chip" data-po-skip aria-pressed="${f.skipPosted}">Skip companies posted in the last 8 weeks <span class="num">${st.posted.size || poPosted(ed).size}</span></button>
@@ -4236,7 +4241,7 @@ function vPost() {
       <div class="list-head"><h3>Lines from the calls</h3><span class="small muted">${fmt(sel.size)} picked of ${fmt(cand.length)} · ${esc(st.w.label)}</span></div>
       ${cand.length ? `<div class="rows po-c">${cand.map(x => { const on = sel.has(x.c.id), cat = PO_CAT[x.k], q = f.qe[x.c.id] ?? x.q;
         return `<div class="r${on ? ' po-on' : ''}"><label class="po-ck"><input type="checkbox" data-po-pick="${esc(x.c.id)}" ${on ? 'checked' : ''} aria-label="Feature ${esc(x.c.name)}"></label>
-          <span style="min-width:0"><span class="po-meta"><button class="link nm" data-open="${esc(x.c.id)}" data-k="${esc(x.c.key)}">${esc(poName(x.c))}</button> <span class="pill" style="--pc:${cat[3]}">${esc(cat[1])}</span> <span class="sub">${esc(poMcap(x.c))}${x.c.mcap ? ' · ' : ''}${esc(sdate(x.c.date))} · score ${x.c.score}</span></span>
+          <span style="min-width:0"><span class="po-meta"><button class="link nm" data-open="${esc(x.c.id)}" data-k="${esc(x.c.key)}">${esc(poName(x.c))}</button> <span class="pill" style="--pc:${cat[3]}">${esc(cat[1])}</span> <span class="sub">${esc(poMcap(x.c))}${x.c.mcap ? ' · ' : ''}${esc(poWhen(x.c))} · score ${x.c.score}</span></span>
           ${f.edit === x.c.id ? `<textarea class="po-ed" data-po-qe="${esc(x.c.id)}" rows="4">${esc(q)}</textarea><span class="toolbar"><button class="btn" data-po-edit="">Done</button>${f.qe[x.c.id] != null ? `<button class="link" data-po-reset="${esc(x.c.id)}">Restore the original</button>` : ''}</span>`
             : `<span class="po-q">“${esc(q)}”</span>`}</span>
           ${f.edit === x.c.id ? '<span></span>' : `<button class="link" data-po-edit="${esc(x.c.id)}">Edit</button>`}</div>`; }).join('')}</div>` : '<div class="empty">No quotable lines in this window. Widen the window or turn more kinds on.</div>'}
@@ -4285,7 +4290,7 @@ document.addEventListener('click', async e => {
       poStatus(await poSaveBlob(await z.generateAsync({type: 'blob'}), `Concall weekly post - ${poWindow().to}.zip`)); } catch (er) { poStatus(er?.message || 'The images could not be packed here.'); }
     return; }
   if (t.closest('[data-po-mark]')) { const w = poWindow().to, W = PO.hist.weeks = PO.hist.weeks || {};
-    if (W[w]) delete W[w]; else W[w] = [...new Set([...(PO_ST?.picks || []).map(p => p.c.id), ...(PO_ST?.spot ? [PO_ST.spot.id] : [])])];
+    if (W[w]) delete W[w]; else W[w] = [...new Set([...(PO_ST?.picks || []).map(p => p.c.id), ...(PO_ST?.spot ? [PO_ST.spot.id] : []), ...(PO_ST?.strong || []).slice(0, 6).map(r => r.id), ...(PO_ST?.raised || []).map(c => c.id)])];
     poSaveHist(); render(); return; }
 });
 document.addEventListener('change', e => {
