@@ -1,0 +1,444 @@
+{
+ "doc_id": "IN-f2ac3fd5-111d-4f03-aeef-94452bc2ddde",
+ "market": "IN",
+ "company_id": "532630",
+ "name": "Gokaldas Exports Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-16",
+ "period": "2026-09",
+ "title": "Gokaldas Exports Ltd - 532630 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Textiles & apparel",
+  "thesis": "Q2 FY27 India revenue up 10% and Africa up 32% with EBITDA up 48%, but Africa utilisation near 40% and a 20-25% customer being slowed; Q3 India utilisation guided to 92-93% and capacity adds of 1,000-machine factories signal supply expansion.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Consolidation"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 1,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 92.5,
+   "quote": "In Q3, we would be utilizing close to about 92%-93% or thereabouts. In Africa, we will be utilizing at about 80%-85%"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We might ratchet it up to INR175 crores based on the volume growth."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "India Q3 utilisation 92-93%",
+    "quote": "In Q3, we would be utilizing close to about 92%-93% or thereabouts.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Capex raised to INR175cr, >200cr p.a.",
+    "quote": "We might ratchet it up to INR175 crores based on the volume growth.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Africa customer ramp-down ~50-55m",
+    "quote": "We may take the call and end up doing 50 million - 55 million.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "US imports falling, destocking",
+    "quote": "So inventory destocking has been there.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "India double-digit volume growth",
+    "value": "From FY 2028",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "Double-digit volume growth we should start seeing from FY 2028."
+   },
+   {
+    "metric": "Africa revenue H2 FY27",
+    "value": "about $50 million in H2 (50-55m), vs $60m earlier",
+    "change": "cut",
+    "horizon": "H2 FY27",
+    "quote": "We may take the call and end up doing 50 million - 55 million."
+   },
+   {
+    "metric": "Atraco EBITDA margin",
+    "value": "10% in about six months",
+    "change": "new",
+    "horizon": "6 months",
+    "quote": "Six months down the line, I am confident that we should be at the 10% EBITDA margin."
+   },
+   {
+    "metric": "Net debt FY27 end",
+    "value": "INR650-700 crores incl BTPL",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are targeting to complete this year with a net debt of around INR650 crores- INR700 crores."
+   },
+   {
+    "metric": "Africa FY28 growth",
+    "value": "at least 28%",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "In 2028, I would see at least a 28% + growth, if not more"
+   },
+   {
+    "metric": "Tax rate",
+    "value": "very low, near zero",
+    "change": "new",
+    "horizon": "going forward",
+    "quote": "It will approach near even near zero or point or this."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "India revenue growth FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Africa revenue FY27",
+    "outcome": "missed",
+    "quote": "We might slow that down to close to about $50 million or thereabout in Q2, in H2, I am sorry."
+   },
+   {
+    "metric": "Africa EBITDA recovery to double digit",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "BTPL EBITDA",
+    "outcome": "met",
+    "quote": "In Q3, we are expecting BTPL to be EBITDA breakeven. In Q2, the EBITDA was slightly negative."
+   },
+   {
+    "metric": "ETR FY27",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "BTPL",
+    "relation": "partner"
+   },
+   {
+    "name": "Bombay Rayon",
+    "relation": "peer"
+   },
+   {
+    "name": "Matrix",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Africa AGOA",
+   "India-EU FTA",
+   "Nearshoring / reshoring (US)",
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits",
+   "Pricing power"
+  ],
+  "red_flags": [
+   {
+    "label": "Africa top customer 20-25% of revenue being ramped down on credit concern",
+    "quote": "we are actively kind of slowing down on one of our customers there, where we are anticipating that customer's financial strength to be a bit weak."
+   },
+   {
+    "label": "BTPL investigation allegations",
+    "quote": "I was reading in a business daily about investigation going on with Bombay Rayon"
+   },
+   {
+    "label": "Creditor days stretched",
+    "quote": "we have worked this out with our vendors, to extend the credit period"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 2,
+   "growth": 5,
+   "margin": 4,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Matrix standalone volumes and realisations",
+    "quote": "Purely carving out the erstwhile Matrix business may not be the right way to look at it also."
+   },
+   {
+    "topic": "Africa utilisation trend",
+    "quote": "Q2 is the plateau or is the trough, and from which growth will be robust."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Gokaldas Q2 FY27: consolidated income up 13% YoY and EBITDA up 48% YoY, with India revenue up 10% in a seasonally weak quarter.",
+  "overview": "Management reported Q2 FY27 India revenue growth of 10% YoY against industry apparel exports growth of 1.2%, Africa growth of 32% YoY, and consolidated income growth of 13% YoY with EBITDA up 48% YoY. Net debt fell to INR429 crores at September 2026 from INR553 crores at March 2026. Management said Q2 is the trough for Africa and expects growth from Q3, with margin support from INR-USD hedge rates and removal of customer discounts. The BTPL merger is expected to complete in Q3, and year-end net debt is guided at INR650-700 crores including BTPL.",
+  "financial_highlights": [
+   {
+    "metric": "India revenue growth",
+    "value": "10% YoY",
+    "change": "Q2 FY27 vs Q2 FY26"
+   },
+   {
+    "metric": "Africa revenue growth",
+    "value": "32% YoY",
+    "change": "Q2 FY27; Q1 was about 44% per analyst"
+   },
+   {
+    "metric": "Consolidated income growth",
+    "value": "13% YoY",
+    "change": "Q2 FY27"
+   },
+   {
+    "metric": "Consolidated EBITDA growth",
+    "value": "48% YoY",
+    "change": "Q2 FY27, aided by lower base and product mix"
+   },
+   {
+    "metric": "Net debt",
+    "value": "INR429 crores at September 2026",
+    "change": "from INR553 crores at March 2026"
+   },
+   {
+    "metric": "Working capital cycle",
+    "value": "72 days in Q2; target about 75 days average",
+    "change": "Atraco carries about 20 days of incremental working capital"
+   },
+   {
+    "metric": "BTPL debt / working capital level",
+    "value": "about INR300 crores",
+    "change": "to be inherited on merger"
+   },
+   {
+    "metric": "BTPL Q2 revenue",
+    "value": "about INR170 crores; EBITDA slightly negative",
+    "change": "Q3 guided at INR220-225 crores, Q4 about INR250 crores"
+   }
+  ],
+  "segments": [
+   {
+    "name": "India",
+    "commentary": "Revenue grew 10% YoY in a seasonally weak quarter; management targets double-digit volume growth from FY28 and India EBITDA margin of 13% at optimal utilisation."
+   },
+   {
+    "name": "Africa (Atraco)",
+    "commentary": "Revenue grew 32% YoY but margin dipped sequentially on seasonal fixed-cost absorption; management expects about 10% EBITDA margin within six months and at least 28% growth in FY28. Utilisation is about 80-85% per management's Q3 guidance."
+   },
+   {
+    "name": "BTPL (fabric)",
+    "commentary": "Q2 revenue about INR170 crores with slightly negative EBITDA; Q3 EBITDA breakeven targeted; about one-third of output consumed captively, aiming for 50% by FY29."
+   }
+  ],
+  "guidance_outlook": [
+   "Q3 FY27 onwards: stronger revenue and margin growth expected, supported by about 1.3-1.4% EBITDA margin from hedge rates (about INR93 in Q3 and about INR94 in Q4 versus about INR91 in Q2) and about 0.5% from ending customer discounts.",
+   "Africa: about $60m revenue visibility in H2 FY27 but management may slow one customer (20-25% of Africa revenue) to about $50-55m in H2; at least 28% growth in FY28.",
+   "Double-digit India volume growth expected from FY28; India FY27 capex about INR150 crores, possibly INR175 crores, and at least INR200 crores per year thereafter.",
+   "Effective tax rate to stay very low, near zero, after BTPL's accumulated losses (above INR600 crores) become available to the parent.",
+   "BTPL merger completion expected in Q3 FY27, pending NCLT final judgment expected within about 10 days; year-end net debt guided at INR650-700 crores.",
+   "Revenue capacity in FY28 (management view): India INR4,000 crores, Africa about INR1,250 crores, BTPL about INR1,200 crores (about 35% netted off as intra-group). Management aims for a billion-dollar consolidated revenue in about four to five years."
+  ],
+  "capex_capacity": [
+   "India capacity about 59 million pieces by end FY27; Africa about 45 million pieces.",
+   "Ranchi 2,000-machine factory (1,000 machines, two shifts) to start ramp-up around mid-Q3 FY28, contributing about INR400 crores revenue largely from FY29.",
+   "Bhopal phase two fully ramped up by FY27 year-end, about 3.5 million pieces and about INR200 crores revenue.",
+   "At least two more 1,000-machine factories being evaluated, about INR400 crores revenue; debottlenecking expected to yield 4-5% extra revenue.",
+   "India utilisation about 92-93% in Q3; Africa about 80-85%."
+  ],
+  "demand_pricing": [
+   "US Section 301 tariffs effective July 21, 2026 put India on par with Bangladesh, Cambodia, Indonesia and Sri Lanka, with China and Vietnam at about 12.5%.",
+   "AGOA extended through December 2028 including third-country fabric provision; India-UK CETA in force since July 15, 2026 giving duty parity with Bangladesh and Vietnam.",
+   "US apparel imports fell in the year-to-date period to August 2026, with imports turning positive in August; management said Gokaldas is seeing growth despite aggregate declines.",
+   "European business about 15% of revenue, aimed at about 25% over 4-5 years; Europe margins a notch lower than US until Bangladesh duty-free access changes.",
+   "Realisations higher in Q1 and Q2 due to outerwear mix; management says YoY realisation growth is sustainable.",
+   "Two new Africa customers (one American, one European) to start from April 2026 (FY28)."
+  ],
+  "qa_highlights": [
+   {
+    "question": "When will India deliver double-digit volume growth and is realisation growth sustainable?",
+    "answer": "Management expects double-digit volume growth from FY28, with some growth from Q3; higher realisations are tied to outerwear and autumn-winter mix and are expected to be maintained or improved."
+   },
+   {
+    "question": "Will Atraco reach about 10% EBITDA margin and what explains the Q2 dip?",
+    "answer": "Q2 is seasonally weak with fixed-cost absorption pressure; management is confident of about 10% EBITDA margin within six months, with pricing and order book aligned from Q3."
+   },
+   {
+    "question": "What is the African revenue trajectory versus the $110-120m annual guidance?",
+    "answer": "Visibility of about $60m in H2; management is slowing a weaker-credit customer (20-25% of Africa revenue) to about $50-55m, with no credit loss anticipated."
+   },
+   {
+    "question": "How will the RoSCTL scheme changes affect margins?",
+    "answer": "RoSCTL is about 3.5% of export revenue; if halved, the 1.75% impact would be absorbed through pricing and productivity. Duty drawback of 1.5-2% is expected to continue."
+   },
+   {
+    "question": "What is the BTPL merger impact on debt and tax?",
+    "answer": "About INR300 crores of BTPL debt will be inherited, with year-end net debt guided at INR650-700 crores including INR80-100 crores cash payout to BTPL shareholders; tax rate to stay near zero."
+   },
+   {
+    "question": "What is the Bangladesh unrest and EU FTA impact on orders?",
+    "answer": "Management sees a medium-term opportunity from Bangladesh wage unrest but does not expect large near-term shifts; EU FTA benefits are expected to flow only about six months after signing, starting around end-2027."
+   }
+  ],
+  "risks_watch": [
+   "Aggregate US apparel import weakness and whether destocking persists into holiday season.",
+   "Possible loss of RoSCTL export incentive (about 3.5% of export revenue); government decision pending.",
+   "Credit risk at a large Africa customer; management is de-risking by slowing volumes.",
+   "Pending NCLT final approval for BTPL merger and an investigation media report involving Bombay Rayon and BTPL asset transfers; legal review ongoing.",
+   "Input cost inflation from oil prices and wage increases (wage costs up 8-9%, about 2-2.5% of revenue) with partial pass-through."
+  ],
+  "management_tone": "Confident and forward-looking on FY28 growth, capacity and trade-deal tailwinds, but cautious on near-term sourcing, Africa customer credit and RoSCTL, and explicitly noncommittal on dividends until tariff and geopolitical stability is clear.",
+  "key_quotes": [
+   "Our India business grew a robust 10% Y-o-Y in a seasonally weak quarter, supported by a strong order book and improved execution.",
+   "Q2 is the plateau or is the trough, and from which growth will be robust.",
+   "We want to ramp down rather than keep them in place as a measure of de-risking rather than go all out.",
+   "We will see a stronger PAT growth from FY 2028 onwards itself."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Ranchi 2,000-machine factory (1,000 machines, two shifts)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 3,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "Bhopal phase two, about 3.5 million pieces",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "At least two more 1,000-machine factories being evaluated (about INR400 crores revenue)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": 92.5,
+  "expansion": true,
+  "growth": 13.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix",
+   "cost_actions",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 13.0,
+  "qEbitda": 48.0,
+  "outlook": 1,
+  "why": "Management guides India double-digit volume growth from FY28 and Africa at least 28% growth in FY28, backed by Ranchi and Bhopal capacity and about $50-55m Africa H2 FY27 visibility, though the Africa H2 figure was cut from $60m and the Ranchi and Bhopal ramp-ups land in FY28 or later.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "Q3 FY27 onwards",
+    "why": "Hedge rates (about INR93 in Q3, INR94 in Q4 vs about INR91 in Q2) add about 1.3-1.4% EBITDA margin and ending customer discounts add about 0.5%; Atraco guided to about 10% EBITDA margin within six months."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q3-Q4 FY27; Ranchi from mid-Q3 FY28",
+    "why": "Bhopal phase two (about 3.5m pieces, INR200cr revenue) fully ramped by FY27 end and India capacity reaches about 59m pieces by end FY27; Ranchi 2,000-machine factory ramp-up starts around mid-Q3 FY28 and is under construction."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "some growth from Q3 FY27; double-digit from FY28",
+    "why": "India utilisation about 92-93% in Q3 and management guides double-digit India volume growth from FY28; Africa at least 28% growth in FY28, though H2 FY27 Africa visibility was cut from $60m to $50-55m."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "India utilisation at 92-93% with Ranchi and Bhopal already committed, and management is evaluating at least two more 1,000-machine factories (about INR400cr revenue); India capex raised to possibly INR175cr in FY27 and at least INR200cr per year after."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Q3 revenue and margin growth is guided on hedge rates and removal of discounts, and BTPL EBITDA is targeted to breakeven in Q3, but Africa H2 visibility was cut and the US import recovery is only just turning positive."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Africa H2 FY27 revenue cut from $60m to $50-55m, a large Africa customer (20-25% of Africa revenue) is being slowed on credit risk, and RoSCTL (about 3.5% of export revenue) may be halved, a 1.75% hit."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "no_signal",
+    "when": "",
+    "why": ""
+   },
+   {
+    "k": "new_markets",
+    "label": "Two new Africa customers (one American, one European) start",
+    "call": "likely",
+    "when": "from April 2026 (FY28)",
+    "why": "Management has named two new Africa customers starting from April 2026, supporting at least 28% Africa growth in FY28."
+   },
+   {
+    "k": "corporate_action",
+    "label": "BTPL merger completes; tax rate near zero",
+    "call": "likely",
+    "when": "Q3 FY27",
+    "why": "Merger pending NCLT final judgment expected in about 10 days; BTPL accumulated losses above INR600cr make the effective tax rate near zero, while year-end net debt is guided at INR650-700cr including about INR300cr of inherited BTPL debt."
+   },
+   {
+    "k": "regulatory",
+    "label": "US Section 301 and India-UK CETA tariff parity",
+    "call": "surely",
+    "when": "effective July 2026 onward",
+    "why": "Section 301 tariffs (effective July 21, 2026) put India on par with Bangladesh, Cambodia, Indonesia and Sri Lanka, and India-UK CETA (in force since July 15, 2026) gives duty parity with Bangladesh and Vietnam."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on FY28 India volume growth, Atraco's 10% margin in about six months, and trade-deal tailwinds, but cautious on near-term Africa H2 visibility (cut to $50-55m), a weak-credit Africa customer, RoSCTL and dividends; analysts probed Africa and RoSCTL."
+  }
+ }
+}

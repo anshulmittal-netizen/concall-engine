@@ -1,0 +1,414 @@
+{
+ "doc_id": "IN-4bea6c58-d900-4972-b993-33633131bcd0",
+ "market": "IN",
+ "company_id": "544354",
+ "name": "Solarium Green Energy Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-16",
+ "period": "2026-09",
+ "title": "Solarium Green Energy Ltd - 544354 - Audio Recording Of The Earnings Call With Investors/ Analysts- Pertaining To The Financial Results And Operations Of The Company For The Half-Year Ended September 30, 2026.",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Renewables",
+  "thesis": "H1 FY27 revenue Rs310 cr (up from FY25 full-year Rs230 cr) but gross margin fell to 21.6% from 44.4% on EPC/module mix; EBITDA margin 8.3%, below the 10-12% FY27 guide, with no capex or utilisation disclosure.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Operating leverage",
+   "Working-capital stress",
+   "Mix shift"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "EBITDA margin 8.3% vs 10-12% guide",
+    "quote": "The bit of margin was 8.3% against 14% in H1F526",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Gross margin 44.4% → 21.6%",
+    "quote": "Gross margin was 21.6 against 44.4% in H1F526.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables/working capital up",
+    "quote": "KG Sabre's rose to 281.9 cr from 152 cr in March.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "EBITDA margin FY27 H2 path",
+    "value": "not quantified; management says margin to be recovered as fixed costs spread over larger volumes",
+    "change": "held",
+    "horizon": "H2 FY27"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "EBITDA margin FY27",
+    "outcome": "missed",
+    "quote": "The bit of margin was 8.3% against 14% in H1F526"
+   },
+   {
+    "metric": "Revenue growth FY27",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Captive consumption of module output",
+    "outcome": "missed",
+    "quote": "as of now the captive consumption numbers will not be much"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Ministry of New and Renewable Energy",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Rooftop solar residential (PM Surya Ghar)",
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Gross margin halved on mix; EBITDA margin below guide",
+    "quote": "Gross margin was 21.6 against 44.4% in H1F526."
+   },
+   {
+    "label": "Residential run-rate well below prior guide",
+    "quote": "residential value for the half is 37.6 crores. So about 6 crores a month."
+   },
+   {
+    "label": "Receivables/working capital rising sharply",
+    "quote": "KG Sabre's rose to 281.9 cr from 152 cr in March."
+   },
+   {
+    "label": "Evasion on plant economics and captive split",
+    "quote": "I'm happy to answer that separately."
+   },
+   {
+    "label": "Subcontracting of EPC orders with thin margin",
+    "quote": "The understanding is absolutely correct."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 0,
+   "growth": 3,
+   "margin": 3,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Plant economics / breakeven utilisation",
+    "quote": "I'm happy to answer that separately. There will be too much of the details."
+   },
+   {
+    "topic": "Captive vs external split",
+    "quote": "as of now the captive consumption numbers will not be much"
+   },
+   {
+    "topic": "Utilisation and residential run-rate",
+    "quote": "there is a lot of learning which has happened over the last couple of maybe halfs"
+   }
+  ],
+  "hedge_index": 0.8
+ },
+ "summary": {
+  "headline": "H1 FY27 revenue rose to Rs 310 cr, above full-year FY25 revenue, but EBITDA margin fell to 8.3% as mix shifted to low-margin EPC and modules.",
+  "overview": "Revenue from operations for H1 FY27 was about Rs 310 cr, up 24% from the preceding half (Rs 251.2 cr) and above the Rs 230.1 cr reported for all of FY25. EBITDA rose 57% to Rs 25.6 cr, but margin compressed to 8.3% from 14% a year earlier, and gross margin halved to 21.6% from 44.4%, which management attributed to the shift toward EPC and module sales. PAT rose 14% to Rs 10.5 cr. Working capital rose sharply: receivables increased to Rs 281.9 cr from Rs 152 cr in March, while inventory fell to Rs 40.7 cr from Rs 99.7 cr. Residential installation revenue was only Rs 37.6 cr in the half, well below management's earlier run-rate expectations.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue from operations (H1 FY27)",
+    "value": "Rs 310 cr",
+    "change": "+24% vs H2 FY26 (Rs 251.2 cr); above full FY25 revenue of Rs 230.1 cr"
+   },
+   {
+    "metric": "Total income incl. other income of Rs 1.9 cr",
+    "value": "Rs 312.4 cr",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA",
+    "value": "Rs 25.6 cr",
+    "change": "+57% from Rs 16.4 cr"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "8.3%",
+    "change": "vs 14% in H1 FY26 and 10.5% in H2 FY26"
+   },
+   {
+    "metric": "Gross profit",
+    "value": "Rs 67.2 cr",
+    "change": "vs Rs 51.9 cr"
+   },
+   {
+    "metric": "Gross margin",
+    "value": "21.6%",
+    "change": "vs 44.4% in H1 FY26"
+   },
+   {
+    "metric": "Finance cost",
+    "value": "Rs 8.3 cr",
+    "change": "vs Rs 4.4 cr"
+   },
+   {
+    "metric": "Depreciation",
+    "value": "Rs 3.4 cr",
+    "change": "vs Rs 0.5 cr; plant now depreciating for a full period"
+   },
+   {
+    "metric": "PBT",
+    "value": "Rs 13.9 cr",
+    "change": "+22%"
+   },
+   {
+    "metric": "PAT / PAT margin",
+    "value": "Rs 10.5 cr / 3.4%",
+    "change": "+14% from Rs 9.2 cr"
+   },
+   {
+    "metric": "Basic EPS (half-year)",
+    "value": "Rs 5.04",
+    "change": "vs Rs 4.42"
+   },
+   {
+    "metric": "Total borrowings",
+    "value": "Rs 189.1 cr (Rs 73.6 cr long-term, Rs 115.5 cr short-term)",
+    "change": ""
+   },
+   {
+    "metric": "Cash and bank balances",
+    "value": "Rs 35.6 cr",
+    "change": ""
+   },
+   {
+    "metric": "Trade receivables",
+    "value": "Rs 281.9 cr",
+    "change": "from Rs 152 cr in March"
+   },
+   {
+    "metric": "Inventories",
+    "value": "Rs 40.7 cr",
+    "change": "from Rs 99.7 cr"
+   }
+  ],
+  "segments": [
+   {
+    "name": "EPC / institutional (government and C&I)",
+    "commentary": "Contributed about 84.1% of H1 revenue; management cited segment gross margin of roughly 25% for C&I and government work. Two 50 MW contracts (values about Rs 188.5 cr and Rs 186.5 cr) were reportedly subcontracted to other listed EPCs."
+   },
+   {
+    "name": "Manufacturing (modules)",
+    "commentary": "Manufacturing sales were Rs 113.4 cr (36.5% of revenue); segment gross margin about 14-15%. Confirmed module supply orders of about Rs 260 cr were cited."
+   },
+   {
+    "name": "Residential rooftop installation",
+    "commentary": "Revenue of Rs 37.6 cr (12.1% of revenue); segment gross margin about 35-37%. Installed around 7,400 systems with a 4.8/5 rating per management. Run-rate was described as well below the earlier Rs 10-12 cr per month guidance."
+   },
+   {
+    "name": "Product sales (modules and inverters sourced)",
+    "commentary": "Rs 11.6 cr, 3.7% of revenue."
+   }
+  ],
+  "guidance_outlook": [
+   "Management stated that the company is targeting FY27 as an integrated solar company, with a shift toward large EPC contracts and a wider distribution network for residential/solar kits.",
+   "Working capital: management expects collections to improve cash flow and finance cost as a share of revenue to fall in H2; no further major borrowing expected.",
+   "Management indicated that module sales lost in H1 are expected to recover in H2, but did not give numerical FY27 revenue or margin guidance.",
+   "EPC milestone payments are expected within 15-30 days of milestone achievement; most of the Rs 700 cr+ order book is expected to execute within this year.",
+   "No equity raise planned in the near term."
+  ],
+  "capex_capacity": [
+   "Plant capacity is 1.23 GWh per annum (automated module line in Meerut/Ahmedabad area as stated); the factory was not fully operational for the first couple of months of the half.",
+   "Captive consumption of modules is about 130 MW, roughly 10% of 1.23 GW annual capacity; management said the 50% captive target is still expected but not yet achieved.",
+   "Management declined to give plant fixed-cost and breakeven utilisation details on the call, offering to respond separately."
+  ],
+  "demand_pricing": [
+   "Pricing discipline was stated as unchanged; management said module pricing has held despite competition.",
+   "PM Surya Ghar subsidy: MNRE release of 4 August 2026 cited about 28,000 cr released to households; the FY27 Union Budget allocation is Rs 22,000 cr versus revised Rs 17,000 cr in FY26.",
+   "Management said there is no current shortfall of DCR module demand; the ALMM Lists-I capacity is about 217 GW (main-blade capacity per management), with DCR capacity rising from 20 GW to 42 GW in six months.",
+   "Residential run-rate: management said it is now about four times the earlier level in some recent days, but gave no firm monthly figure; the solar kit model is being rolled out via city distributors."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Who are the clients for the 50 MW EPC contract (about Rs 375 cr, about 80% of EPC order book), and what are the payment terms?",
+    "answer": "Clients are state government entities (including Maharashtra-linked work). Payments are milestone-linked and received within 15-30 days of milestone achievement."
+   },
+   {
+    "question": "Are the two 50 MW EPC contracts subcontracted to other listed EPCs, and what is Solarium's margin and risk?",
+    "answer": "The questioner's understanding (subcontracting at about Rs 35 cr below contract value) was confirmed as correct; management said the contracts are secured but did not detail execution risk allocation."
+   },
+   {
+    "question": "Do you still stand by the guidance of 9-9.5% EBITDA margin and exit at 10-12%?",
+    "answer": "Management acknowledged the H1 margin of about 8% and said the margin was mix-driven; no firm updated H2 margin guidance was given in the transcript."
+   },
+   {
+    "question": "Why did residential revenue (Rs 37.6 cr in H1, about Rs 6 cr per month) fall short of the Rs 10-12 cr per month run-rate and Rs 16-18 cr with kits expected by December?",
+    "answer": "Management cited learning from the residential business, the shift to a warehouse-based distributor model with lower fixed costs, and a recent acceleration; no precise current run-rate was given."
+   },
+   {
+    "question": "What is the captive versus external split, and how confident are you of placing the balance of module capacity given ALMM supply?",
+    "answer": "Captive consumption was low in H1 because the factory was not operational for the first months; the 50% captive target remains. Management said DCR order book covers current supply."
+   },
+   {
+    "question": "What are the segment-wise gross margins?",
+    "answer": "Management said EPC/C&I government about 25%, residential about 35-37%, and manufacturing about 14-15%."
+   },
+   {
+    "question": "What is the city distributor model and its working capital needs?",
+    "answer": "Management said thousands of installers already operate in the market; the model is built around distributors with lower fixed costs. No unit economics were given on the call."
+   },
+   {
+    "question": "Any guidance for FY27 and for H2 margins?",
+    "answer": "Management said it would not give full-year numeric guidance on the call and expects module sales lost in H1 to recover in H2."
+   }
+  ],
+  "risks_watch": [
+   "Receivables rose to Rs 281.9 cr from Rs 152 cr in March, which is a material working-capital build; collection timing will determine cash flow.",
+   "Gross margin halved to 21.6% and EBITDA margin fell to 8.3%; the mix shift toward EPC and module work may keep margins under pressure.",
+   "Residential run-rate fell well short of earlier guidance; the transcript gives inconsistent figures for current run-rate, so verify in follow-up.",
+   "Large EPC contracts appear to be subcontracted to other listed EPCs with thin spreads; execution and delay risk allocation was not clearly stated.",
+   "Finance cost rose to Rs 8.3 cr from Rs 4.4 cr against Rs 189.1 cr of borrowings; management expects cost to ease as a share of revenue.",
+   "Residential subsidy timelines: some projects may slip into January 2027 if not commissioned by 31 December 2026."
+  ],
+  "management_tone": "Confident on top-line scale and order book, but noticeably evasive on margin trajectory, residential run-rate, plant economics and captive split, deferring several details to offline follow-up.",
+  "key_quotes": [
+   "Margins are lower than a year ago and let me provide some clarity on that towards larger EPC and module sales which carry lower gross margins than the residential installations.",
+   "As Ankit explained, this reflects the change in mix towards EPC and module sales."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Automated module line, 1.23 GWh per annum plant (factory not fully operational for first couple of months of H1; already existing capacity)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": false,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "demand_or_share_gains",
+   "new_products_or_markets"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": 57.0,
+  "outlook": 1,
+  "why": "No numerical FY27 revenue guidance; management cites Rs 700 cr+ EPC order book expected to execute within the year, Rs 260 cr confirmed module orders and recovery of module sales in H2, backed by partial specifics but no capacity additions; EBITDA margin guided to recover via fixed-cost absorption, not quantified.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "H2 FY27",
+    "why": "EBITDA margin fell to 8.3% in H1 FY27 from 14% a year earlier and 10.5% in H2 FY26, with gross margin at 21.6% vs 44.4%; management attributes this to EPC and module mix and expects fixed-cost absorption to help, but gave no numerical H2 margin path and the 9-9.5% guidance was not reaffirmed."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "unlikely",
+    "when": "",
+    "why": "The 1.23 GWh module line is already commissioned and no new plant, line or capacity addition was discussed; captive use is only about 130 MW (~10% of 1.23 GW), so the existing plant is underutilised rather than full."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "H1 revenue of Rs 310 cr is up 24% over H2 FY26 (Rs 251.2 cr), management expects lost module sales to recover in H2, and most of the Rs 700 cr+ EPC order book is expected to execute within this year, with Rs 260 cr of confirmed module orders."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "unlikely",
+    "when": "",
+    "why": "Module capacity of 1.23 GWh is running at well under full use (captive about 130 MW, ~10%), and management said no equity raise is planned and no further major borrowing is expected, so a new capex announcement is not signalled."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "Management gave no numerical FY27 revenue or margin guidance and declined full-year numeric guidance, and the margin trajectory was not reaffirmed, so no upgrade is signalled."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Residential run-rate of about Rs 6 cr per month in H1 fell well short of the Rs 10-12 cr per month guidance, receivables rose to Rs 281.9 cr from Rs 152 cr, and management would not reaffirm the 9-9.5% EBITDA margin guide."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Management is rolling out a solar kit model through city distributors and a warehouse-based distributor model for residential, with the kit run-rate expected to reach Rs 16-18 cr with kits by December, though no product launch date was formally given."
+   },
+   {
+    "k": "order_book",
+    "label": "Rs 700 cr+ EPC order book execution",
+    "call": "likely",
+    "when": "within FY27",
+    "why": "Management expects most of the Rs 700 cr+ order book to execute within this year, with milestone payments received within 15-30 days, though two 50 MW contracts (Rs 188.5 cr and Rs 186.5 cr) are reportedly subcontracted at thin spreads."
+   },
+   {
+    "k": "working_capital",
+    "label": "Receivables collection and finance cost easing",
+    "call": "possible",
+    "when": "H2 FY27",
+    "why": "Receivables rose to Rs 281.9 cr from Rs 152 cr in March against Rs 189.1 cr of borrowings and Rs 8.3 cr finance cost in H1 (vs Rs 4.4 cr); management expects collections to improve cash flow and finance cost as a share of revenue to fall in H2."
+   },
+   {
+    "k": "regulatory",
+    "label": "PM Surya Ghar subsidy tailwind",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "The FY27 Union Budget allocation is Rs 22,000 cr versus revised Rs 17,000 cr in FY26, but some residential projects may slip into January 2027 if not commissioned by 31 December 2026."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on the Rs 700 cr+ order book, Rs 260 cr module orders and collections, but cautious and evasive on margin trajectory, residential run-rate, plant fixed costs and captive split; analysts pressed on EPC subcontracting spreads, residential shortfall and margin guidance."
+  }
+ }
+}
