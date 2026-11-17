@@ -1,0 +1,423 @@
+{
+ "doc_id": "IN-1f45c6ed-7ac3-4d39-8247-46af5499bf78",
+ "market": "IN",
+ "company_id": "500402",
+ "name": "SPML Infra Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-17",
+ "period": "2026-06",
+ "title": "SPML Infra Ltd - 500402 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Power utilities",
+  "thesis": "Q1 FY27 revenue up 74% YoY to ₹286 cr and PAT up 87% to ₹22.7 cr, but revenue was flat QoQ and the BESS 2.5 GW line is only \"fully ready\" with NTPC container supply pushed to Q4 pending approvals.",
+  "archetype": "None",
+  "mental_models": [
+   "Backlog conversion",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "The first phase of our 2.5 gigawatt assembly line is fully ready."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "We expect the capacity enhancement from 2.5 gigawatt to 5 gigawatt along with the container facility expansion to be completed in the first half of 2028, FY 2028."
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "BESS 5 GW slips to 1H FY28",
+    "quote": "We expect the capacity enhancement from 2.5 gigawatt to 5 gigawatt along with the container facility expansion to be completed in the first half of 2028",
+    "highlight": "first half of 2028",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "NTPC container supply to Q4, pending approval",
+    "quote": "we will commence supply of container to NTPC in Q4 and the same will be completed within their contractual timelines of FY 28",
+    "highlight": "commence supply of container to NTPC in Q4",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q1 order inflow ₹1,293 cr",
+    "quote": "Against which we have taken 1,293 crores order in Q1",
+    "highlight": "taken 1,293 crores order in Q1",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Orders booked at 10%+ margin floor",
+    "quote": "as a strategy, at this moment we don't take any order less than 10%",
+    "highlight": "we don't take any order less than 10%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "more than 25%",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "the company is maintaining its guidance of an initial 25% compared to the corresponding period in the last financial year"
+   },
+   {
+    "metric": "FY27 PAT growth",
+    "value": "more than 25%",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "The company maintains its guidance of growth of more than 25% in the profit compared to the last financial year."
+   },
+   {
+    "metric": "FY27 order intake",
+    "value": "more than 5,000 crore",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "the company is hopeful of surpassing its guidance of more than 5,000 crores in order intake in the current financial year"
+   },
+   {
+    "metric": "BESS 5 GW and 600 containers",
+    "value": "completion 1H 2028 (FY28)",
+    "horizon": "FY28",
+    "change": "cut",
+    "quote": "We expect the capacity enhancement from 2.5 gigawatt to 5 gigawatt along with the container facility expansion to be completed in the first half of 2028, FY 2028."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 revenue and PAT growth",
+    "outcome": "met",
+    "quote": "we are maintaining that we will have the revenue guidance more than 25% into the last year"
+   },
+   {
+    "metric": "EBITDA margin",
+    "outcome": "met",
+    "quote": "EBITDA margin improved to 10% in Q1 by 27 from 9% in the corresponding quarter last year."
+   },
+   {
+    "metric": "BESS 5 GW line and 600 containers",
+    "outcome": "missed",
+    "quote": "We expect the capacity enhancement from 2.5 gigawatt to 5 gigawatt along with the container facility expansion to be completed in the first half of 2028, FY 2028."
+   }
+  ],
+  "entities": [
+   {
+    "name": "NTPC",
+    "relation": "customer"
+   },
+   {
+    "name": "Energy Vault",
+    "relation": "partner"
+   },
+   {
+    "name": "NARCL",
+    "relation": "other"
+   },
+   {
+    "name": "ICRA",
+    "relation": "other"
+   }
+  ],
+  "themes": [
+   "Battery energy storage (BESS)",
+   "Water & irrigation orders",
+   "Power substation EPC",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Revenue flat QoQ; NTPC revenue depends on approvals",
+    "quote": "On a Q1 Q basis, revenue remained largely flat"
+   },
+   {
+    "label": "BESS 5 GW timeline pushed to 1H FY28 vs prior FY27",
+    "quote": "completed in the first half of 2028, FY 2028"
+   },
+   {
+    "label": "Legacy arbitration-dependent NARCL liability",
+    "quote": "All our balance 375 crore are linked with the arbitration award."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 2,
+   "growth": 4,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue and EBITDA quantum",
+    "quote": "as a guidance our turnover from the last year more than 25% both in and then the EBITDA will EBITDA and PIT will also be more than 25%"
+   },
+   {
+    "topic": "BESS revenue and utilisation",
+    "quote": "We are expecting a sizeable capacity utilization of in the next 2-3 years into the base capacity."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "SPML Infra Q1 FY27 revenue rose 74% YoY to Rs 286 crore and PAT 87% to Rs 22.7 crore; order book about Rs 5,100 crore.",
+  "overview": "Revenue grew 74% YoY to Rs 286 crore, EBITDA rose 81% to Rs 28 crore and PAT rose 87% to Rs 22.7 crore, with EBITDA margin at 10% versus 9% a year earlier. Sequentially revenue was roughly flat, while EBITDA improved about 17% over Q4, which carried a one-time tax reversal that depressed the comparison. Management reiterated FY27 guidance of more than 25% growth in revenue, EBITDA and PAT, with new-order impact expected mainly from Q4 FY27. Progress continued on the battery energy storage system (BESS) plant in Pune, where phase one of a 2.5 GW assembly line is ready and the NTPC container supply is targeted for Q4 subject to approvals. The call was largely Q&A-driven and several answers were imprecise, so the figures below are as stated by management.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue",
+    "value": "Rs 286 crore",
+    "change": "+74% YoY; roughly flat QoQ"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "Rs 28 crore",
+    "change": "+81% YoY; +17% QoQ"
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "10%",
+    "change": "vs 9% in Q1 FY26"
+   },
+   {
+    "metric": "PAT",
+    "value": "Rs 22.7 crore",
+    "change": "+87% YoY; QoQ down about 20% due to one-time tax reversal in Q4"
+   },
+   {
+    "metric": "Order book",
+    "value": "approx. Rs 5,100 crore",
+    "change": ""
+   },
+   {
+    "metric": "New order inflow in Q1",
+    "value": "Rs 1,293 crore",
+    "change": ""
+   },
+   {
+    "metric": "Fixed deposits",
+    "value": "approx. Rs 150 crore as on 30 June",
+    "change": ""
+   },
+   {
+    "metric": "Debt to equity",
+    "value": "2.4x",
+    "change": "from 1.1x"
+   },
+   {
+    "metric": "Net worth",
+    "value": "over Rs 1,000 crore",
+    "change": "from approx. Rs 500 crore"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Water",
+    "commentary": "Water book quality improved; only about Rs 1,251 crore of the order book relates to legacy projects, with the rest carrying operating margins of 10% or higher. Pipeline of about 134 projects worth roughly Rs 98,725 crore across 11 states, over 80% irrigation and water supply."
+   },
+   {
+    "name": "Power substation / transmission",
+    "commentary": "Named as the third growth pillar alongside water and BESS; management said substation modernisation tenders are rising. No specific Q1 order value was given for this segment."
+   },
+   {
+    "name": "BESS (battery energy storage)",
+    "commentary": "2.5 GW first-phase assembly line ready in Supa MIDC Pune; expansion to 5 GW and 600 container units per year targeted for H1 FY28. NTPC order: design approvals targeted by Dec 2026, container supply from Q4 FY27 with Rs 200-300 crore revenue targeted in FY27. Technology partner is Energy Vault (US)."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue, EBITDA and PAT growth guided at more than 25% YoY, reiterated; management said it would update quarterly as orders convert.",
+   "FY27 order intake target above Rs 5,000 crore; Rs 1,293 crore already won in Q1 (one answer cited about Rs 1,200 crore), and management said it is hopeful of surpassing the target.",
+   "New orders are expected to contribute mainly from Q4 FY27 because design and drawing approvals take 3 to 9 months.",
+   "Management said it does not take orders below 10% EBITDA margin; recent wins Konar, KKRI and Indore were stated to be above 10%.",
+   "NTPC BESS revenue of Rs 200-300 crore targeted in FY27, subject to design and container approvals.",
+   "BESS revenue ballpark given as Rs 2,000-2,500 crore at 2.5 GW and Rs 4,500-5,000 crore at 5 GW; no timeline or margin given.",
+   "Legacy NARCL liability: about Rs 320 crore paid so far (including Rs 45 crore prepayment); about Rs 300 crore expected to remain after FY27 following arbitration recoveries."
+  ],
+  "capex_capacity": [
+   "BESS phase one: 2.5 GW battery pack assembly line fully ready in Supa MIDC Pune; certifications from IEC and UL in progress for NTPC supply.",
+   "Capacity to scale to 5 GW with 600 container units per year; completion targeted in H1 FY28 (one answer said Q1 of next year).",
+   "Total BESS capex about Rs 236 crore, stated as already funded through equity raised and sanctioned bank limits; container term loan of about Rs 10 crore sanctioned.",
+   "About 25 acres of land acquired for BESS and container expansion.",
+   "Management said no board-level discussion yet on capacity beyond 5 GW."
+  ],
+  "demand_pricing": [
+   "Water tender pipeline about Rs 98,725 crore across 11 states; large projects include Vanganga-Nalganga river link (about Rs 1 lakh crore), Marathwada Water Grid (Rs 37,600 crore), Ken-Betwa MP component (Rs 24,300 crore) and Papi Basin recharge (Rs 90,200 crore).",
+   "Management said it bids on more than Rs 10,000 crore of tenders each month; Gujarat named as preferred state.",
+   "BESS market potential cited at 208 GW by 2030; management said it expects tender flow to be continuous.",
+   "Pass-through (PV) clauses are kept in all contracts for steel, dollar and lithium cost swings; management said it avoids contracts without price variation.",
+   "Management said it is bidding on Amrut projects, which it described as fully funded."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Is the Rs 3,843 crore new order figure net of JV partner share, and will margins rise toward 12%?",
+    "answer": "Figure is SPML's share only, with JV stakes of 26%, 49% and 51% excluded. Management said it targets above 10% margin on all new orders and expects legacy orders to be executed over FY27-FY28."
+   },
+   {
+    "question": "How much NTPC/BESS revenue will come in FY27 and when?",
+    "answer": "Management said Rs 200-300 crore of BESS execution is possible in FY27 if NTPC design and container approvals arrive by December 2026."
+   },
+   {
+    "question": "Is any additional capex needed for the order book and BESS expansion?",
+    "answer": "Management said the Rs 236 crore BESS requirement is already funded through equity and sanctioned bank limits, so no further funding is needed."
+   },
+   {
+    "question": "What is the FY27 EBITDA margin target?",
+    "answer": "Management gave no separate margin number; it said revenue, EBITDA and PAT are all targeted to grow more than 25%."
+   },
+   {
+    "question": "Will the NARCL liability be repaid, and how?",
+    "answer": "About Rs 700 crore total including interest; Rs 320 crore paid, Rs 375 crore linked to arbitration awards of about Rs 678 crore, and about Rs 300 crore remaining after FY27 as recoveries come in."
+   },
+   {
+    "question": "Does the Energy Vault tie-up help with NTPC approvals?",
+    "answer": "Management said Energy Vault's technology has passed NTPC's proven-technology test, which eases design and drawing approvals."
+   }
+  ],
+  "risks_watch": [
+   "NTPC design and container sample approval by December 2026; any slip pushes the Rs 200-300 crore BESS revenue into FY28.",
+   "Order intake must reach above Rs 5,000 crore; only about Rs 1,293 crore was won in Q1.",
+   "Quarterly revenue has been flat sequentially, and the call gave no quarterly phasing for the 25% growth guidance.",
+   "Rupee depreciation and battery import costs, which management said are covered by PV clauses.",
+   "Competition in BESS EPC and OEM supply from other entrants.",
+   "Arbitration recoveries are needed to clear the NARCL balance; about Rs 4,526 crore of claims with about 40% expected to convert into awards."
+  ],
+  "management_tone": "Confident on guidance and order quality, but vague on specifics: many answers were repeated, and the 25% growth target was restated without quarterly or margin detail. Caution shows on NTPC timing, which depends on approvals not yet received.",
+  "key_quotes": [
+   "The company is maintaining the turnover of the preceding quarter as the turnover is mainly related to orders which was taken in the last two years for which all the design and drawing approval have already been obtained which shows consistency in the project execution.",
+   "As we explained into our previous con call that as a strategy, at this moment we don't take any order less than 10%."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "2.5 GW BESS battery pack assembly line, Supa MIDC Pune (phase one)",
+    "size_pct": null,
+    "capex_cr": 236.0,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Scale-up of BESS to 5 GW and 600 container units per year",
+    "size_pct": 100.0,
+    "capex_cr": null,
+    "q": 7,
+    "status": "approved",
+    "mat": "major"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 25.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "pricing_or_mix"
+  ],
+  "clarity": "none",
+  "qRev": 74.0,
+  "qEbitda": 81.0,
+  "outlook": 1,
+  "why": "Management reiterated FY27 revenue, EBITDA and PAT growth of more than 25%, backed by a Rs 5,100 crore order book and Rs 1,293 crore Q1 inflow, but new orders mainly contribute from Q4 FY27 after 3-9 month approvals, and the 5 GW BESS expansion slipped to 1H FY28.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "EBITDA margin 10% vs 9% a year ago and management says it bids only above 10% EBITDA margin, but no FY27 margin target was given and legacy Rs 1,251 crore book is still being executed."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "H1 FY28",
+    "why": "2.5 GW phase one is fully ready in Pune, and the scale-up to 5 GW and 600 containers per year is targeted for H1 FY28, which falls just outside the 2-4 quarter window."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Revenue grew 74% YoY to Rs 286 crore and the company reiterated more than 25% FY27 growth, backed by a Rs 5,100 crore order book; Q1 revenue was flat QoQ and no quarterly phasing was given."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "unlikely",
+    "when": "",
+    "why": "BESS capex of about Rs 236 crore is already funded through equity and sanctioned bank limits, 25 acres are acquired, and management said no board-level discussion exists beyond 5 GW."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "possible",
+    "when": "Q4 FY27",
+    "why": "Management is hopeful of beating the Rs 5,000 crore order intake target after Rs 1,293 crore in Q1, but new orders only contribute from Q4 FY27 after 3-9 month approvals."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "NTPC BESS revenue of Rs 200-300 crore depends on design approvals by Dec 2026, and flat sequential revenue with no quarterly phasing leaves the 25% growth target exposed."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "Q4 FY27",
+    "why": "NTPC BESS container supply is targeted from Q4 FY27 with Rs 200-300 crore revenue in FY27, using Energy Vault technology, though it is subject to IEC/UL certification and approvals."
+   },
+   {
+    "k": "order_book",
+    "label": "Order book about Rs 5,100 crore; Rs 1,293 crore won in Q1",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Order book of about Rs 5,100 crore, roughly 1x FY27 revenue run-rate of Rs 286 crore per quarter, with 134 water pipeline projects worth Rs 98,725 crore and bids above Rs 10,000 crore per month."
+   },
+   {
+    "k": "deleveraging",
+    "label": "NARCL liability clearance via arbitration",
+    "call": "possible",
+    "when": "after FY27",
+    "why": "About Rs 320 crore paid and about Rs 300 crore expected to remain after FY27, dependent on recoveries from about Rs 678 crore of arbitration awards."
+   },
+   {
+    "k": "working_capital",
+    "label": "Debt to equity up to 2.4x from 1.1x",
+    "call": "unlikely",
+    "when": "",
+    "why": "Debt-to-equity rose to 2.4x from 1.1x, though net worth grew to over Rs 1,000 crore from about Rs 500 crore, and the BESS build is already funded."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on the 25% growth guidance, order quality above 10% margin and funded BESS capex, but cautious on NTPC approval timing and vague on quarterly phasing; analysts pushed on margins toward 12%, NARCL repayment and BESS timing."
+  }
+ }
+}

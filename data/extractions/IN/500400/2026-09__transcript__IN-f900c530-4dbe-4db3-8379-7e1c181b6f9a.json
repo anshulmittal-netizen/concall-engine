@@ -1,0 +1,461 @@
+{
+ "doc_id": "IN-f900c530-4dbe-4db3-8379-7e1c181b6f9a",
+ "market": "IN",
+ "company_id": "500400",
+ "name": "Tata Power Company Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-17",
+ "period": "2026-09",
+ "title": "Tata Power Company Ltd - 500400 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Record quarterly PAT of INR1,652 crore (+33% YoY) and FY27 capex on track at ~INR25,000 crore with INR10,000 crore spent in H1, but renewable capacity addition has missed targets in Q1 and Q2 and curtailment rose to 11%.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Capital cycle",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 2,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "Curtailment is industry-wide per management; no specific peer capacity comment.",
+   "quote": "we are on track to complete nearly INR25,000 crores of capex for the year"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Renewable additions missed Q1 and Q2",
+    "quote": "Yes, we have missed the targets in first and second quarter, but many of the projects are now ready.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Curtailment 8.8% → 11%",
+    "quote": "in quarter one, we had about 8.8% of curtailment. In quarter two, there's about 11% of curtailment.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Renewable addition 2.5 GW held",
+    "quote": "we expect that this year target is 2.5 GW of capacity addition, and we will be able to meet that.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "supply",
+    "label": "Shirwata 1,800 MW PSP approved, INR11,871 crore",
+    "quote": "We have also taken a decision today to add 1,800 MW of pumped hydro project in Shirwata near Lonavala. This will be with an investment of INR 11,871 crores",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Coal JV ~INR400 crore/quarter for two quarters",
+    "quote": "at least for next two quarters, you can expect this momentum to continue.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Renewable capacity addition FY27",
+    "value": "2.5 GW",
+    "change": "held",
+    "quote": "we expect that this year target is 2.5 GW of capacity addition, and we will be able to meet that."
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "nearly INR25,000 crore",
+    "change": "held",
+    "quote": "we are on track to complete nearly INR25,000 crores of capex for the year"
+   },
+   {
+    "metric": "RE Genco EBITDA run rate",
+    "value": "INR4,500 crore per annum",
+    "change": "new",
+    "quote": "INR4,500 crores per annum"
+   },
+   {
+    "metric": "Shirwata PSP commissioning",
+    "value": "Calendar 2031",
+    "change": "new",
+    "quote": "Shirwata will get commissioned in Calendar year 2031"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Renewable capacity addition FY27",
+    "outcome": "missed",
+    "quote": "Yes, we have missed the targets in first and second quarter, but many of the projects are now ready."
+   },
+   {
+    "metric": "Capex FY27",
+    "outcome": "met",
+    "quote": "we have already done INR 10,000 crores of capex, and we are on track to complete nearly INR25,000 crores of capex for the year"
+   },
+   {
+    "metric": "Rooftop revenue growth FY27",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Cumulative rooftop revenue",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Pumped hydro Shirwata 1,800 MW start",
+    "outcome": "met",
+    "quote": "We have also taken a decision today to add 1,800 MW of pumped hydro project in Shirwata near Lonavala."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Tata AutoComp",
+    "relation": "partner"
+   },
+   {
+    "name": "Agratas",
+    "relation": "peer"
+   },
+   {
+    "name": "Kleros",
+    "relation": "competitor"
+   }
+  ],
+  "red_flags": [
+   {
+    "label": "Curtailment rising to 11%",
+    "quote": "in quarter two, there's about 11% of curtailment."
+   },
+   {
+    "label": "Singapore arbitration ~$650m, Supreme Court listing 19 Jan",
+    "quote": "our appeal in the Singapore International Commercial Court was rejected."
+   },
+   {
+    "label": "Regulatory assets up ~28% YoY",
+    "quote": "which seem to have gone up almost by 28% year-on-year to INR83.1 billion."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 3,
+   "growth": 2,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Shirwata capex increase vs earlier estimate",
+    "quote": "Sir, could you come back with your question?"
+   },
+   {
+    "topic": "Cash split between renewables and rest",
+    "quote": "It is spread across hundreds of businesses"
+   }
+  ],
+  "hedge_index": 0.4,
+  "themes": []
+ },
+ "summary": {
+  "headline": "Tata Power reported record Q2 FY27 PAT of INR1,652 crores, up 33% YoY, with revenue up about 26% to INR19,886 crores.",
+  "overview": "Tata Power posted its highest-ever quarterly PAT of INR1,652 crores (up 33% YoY from INR1,245 crores), with consolidated EBITDA up 5% YoY and revenue up about 26% to INR19,886 crores. H1 FY27 PAT rose 22% to INR3,053 crores and EBITDA rose 7% to INR8,494 crores. Management attributed the strength to weak-monsoon power demand, and approved a 1,800 MW Shirwata pumped storage project at INR11,871 crores. Key overhangs remain the Kleros enforcement action tied to the Singapore arbitration and high renewable curtailment of 11% in Q2.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated PAT (Q2 FY27)",
+    "value": "INR1,652 crores",
+    "change": "+33% YoY from INR1,245 crores"
+   },
+   {
+    "metric": "Consolidated revenue (Q2 FY27)",
+    "value": "INR19,886 crores",
+    "change": "+26% YoY from INR15,769 crores"
+   },
+   {
+    "metric": "EBITDA (Q2 FY27)",
+    "value": "Up 5% YoY (absolute figure not stated in call)",
+    "change": "+5% YoY"
+   },
+   {
+    "metric": "PAT (H1 FY27)",
+    "value": "INR3,053 crores",
+    "change": "+22% YoY"
+   },
+   {
+    "metric": "EBITDA (H1 FY27)",
+    "value": "INR8,494 crores",
+    "change": "+7% YoY from INR7,961 crores"
+   },
+   {
+    "metric": "Revenue (H1 FY27)",
+    "value": "INR38,784 crores",
+    "change": "+17% YoY from INR33,233 crores"
+   },
+   {
+    "metric": "Cash on books",
+    "value": "INR11,165 crores (as referenced by analyst)",
+    "change": ""
+   },
+   {
+    "metric": "Impairment (Georgia asset)",
+    "value": "INR96 crores (analyst cited INR90 crores)",
+    "change": "Same asset impaired in prior year"
+   },
+   {
+    "metric": "Coal JV profit run-rate guidance",
+    "value": "About INR400 crores per quarter for next two quarters",
+    "change": "Sharp improvement YoY"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Renewables (RE Genco)",
+    "commentary": "YTD EBITDA of INR2,231 crores annualises to about INR4,500 crores. Management expects H2 to be more than double H1, at least 60-70% of Q1 run-rate per quarter, on a 7.1 GW base."
+   },
+   {
+    "name": "Distribution (Delhi, Odisha, Mumbai)",
+    "commentary": "Regulatory assets in distribution rose about 28% YoY to INR83.1 billion, driven by Delhi and Odisha. Delhi has a Supreme Court-directed six-year amortisation to 2031, with tariff revisions expected after full commission quorum."
+   },
+   {
+    "name": "Traditional generation (Mumbai and hydro)",
+    "commentary": "Cluster EBITDA rose to INR3.51 billion from INR2.55 billion (about 37% YoY), attributed to a combination of efficiency gains and DSM gains; DSM quantum not disclosed."
+   },
+   {
+    "name": "Coal JV",
+    "commentary": "Profit improved sharply; management expects about INR400-odd crores per quarter for the next two quarters, subject to coal prices."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 capex on track for about INR25,000 crores, with about INR10,000 crores already spent in H1.",
+   "FY27 renewable capacity addition target of 2.5 GW; Q1 and Q2 missed targets, with evacuation lines expected by December or January.",
+   "Management expects H2 to be stronger than H1 as delayed projects complete and benefits accrue.",
+   "Mundra SPPA signed with Gujarat and filed at CERC (reserved for order); two of the other four states at an advanced stage, with conclusion targeted before 31 December.",
+   "Bhivpuri pumped storage expected operational in H1 CY2029; Shirwata (1,800 MW) expected commissioning in CY2031.",
+   "Ingot and wafer plant work to start in the current month, with full operation targeted by March 2028.",
+   "Coal JV profit momentum expected to persist for at least the next two quarters.",
+   "Singapore arbitration: Supreme Court of Singapore hearing listed for 19 January; Kleros enforcement process expected to take three to six months."
+  ],
+  "capex_capacity": [
+   "Shirwata pumped storage: 1,800 MW near Lonavala, INR11,871 crores investment, funded 75% debt and 25% equity; management stated capex is quoted gross of potential incentives.",
+   "Bhivpuri pumped storage (1,000 MW) under implementation; expected operational H1 CY2029.",
+   "Ingot and wafer plant: approvals received, work to start this month, full operation by March 2028; equipment order not yet placed, pending China technology export control clarity expected by end of November.",
+   "Solar cell and module: no decision to shift existing lines to TOPCon; small TOPCon line already exists.",
+   "Renewable curtailment rose to about 11% in Q2 from 8.8% in Q1; connectivity lines in pipeline expected to ease it in subsequent quarters.",
+   "BESS installations coming through to help reduce curtailment."
+  ],
+  "demand_pricing": [
+   "Power demand grew about 10-11% in the last quarter and about 12% YoY in October, driven by weak monsoon, agriculture and cooling load.",
+   "Hydro shortfall this year may constrain next year's generation; management expects many plants to run at full capacity in winter.",
+   "Rooftop solar growing fast across UP, Odisha, Maharashtra and Rajasthan; subsidy available till March, with a revised successor scheme expected.",
+   "Coal JV profitability tied to geopolitically driven coal prices."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Was there any exceptional or one-time income in associate profit, which rose sharply QoQ?",
+    "answer": "CFO Sanjeev Churiwala said there was no exceptional income in the associate profit line."
+   },
+   {
+    "question": "Status of Mundra long-term PPA and whether revenue is booked under Section 11 or the new SPPA?",
+    "answer": "Management said the SPPA is signed with Gujarat and filed at CERC, billing to all five DISCOMs is under the SPPA, and its impact is already in the quarterly accounts. Two more states are in advanced talks."
+   },
+   {
+    "question": "Will Mundra run after Section 11 expires on 31 December if not extended?",
+    "answer": "Management expects to conclude the SPPA with a majority of states by 31 December, after which it applies to all states as a common PPA, with CERC approval also expected by then."
+   },
+   {
+    "question": "Renewables EBITDA run-rate on 7.1 GW and FY27 target achievability?",
+    "answer": "RE Genco YTD EBITDA is INR2,231 crores (about INR4,500 crores annualised). Full-year steady-state EBITDA is expected to be at least 60-70% of Q1 run-rate per quarter; the 2.5 GW capacity target is still expected to be met."
+   },
+   {
+    "question": "Why did distribution regulatory assets rise about 28% YoY to INR83.1 billion?",
+    "answer": "Delhi lacked a full commission quorum, so true-ups and tariff revisions are delayed; Odisha has a similar issue. Management expects amortisation to pick up in FY28."
+   },
+   {
+    "question": "Why did traditional generation EBITDA jump about 37% YoY, and is it sustainable?",
+    "answer": "Management said it reflects efficiency gains plus DSM gains, with DSM not material but higher in summer; sustainability depends on efficiency improvements."
+   },
+   {
+    "question": "What drove the Shirwata capex to INR11,871 crores versus earlier estimates?",
+    "answer": "Management said the INR8,000 crore figure was never the estimate; INR11,871 crores is the gross capex figure, quoted without probable incentives."
+   },
+   {
+    "question": "Is Tata Power bidding for the South Kalamb HVDC project?",
+    "answer": "Management said it did not bid; OEM technology availability and back-to-back arrangements are the constraints under review."
+   },
+   {
+    "question": "What is the cash balance split between renewables and the rest?",
+    "answer": "Cash of about INR1,400 crores is attributed to renewables as of September; the rest is spread across other businesses. H1 capex was about INR10,000 crores, of which about INR6,000 crores went to renewables."
+   },
+   {
+    "question": "If Singapore Court of Appeal rules against the company, how would the roughly $650 million be funded?",
+    "answer": "CFO said the company has a strong case, so no provision has been made, and no contingency funding was discussed."
+   }
+  ],
+  "risks_watch": [
+   "Singapore arbitration with Kleros: Supreme Court of Singapore hearing on 19 January; Kleros attempting to attach pledged shares of TPIPL and Bhira investments; no provision made for the roughly $650 million exposure.",
+   "Renewable curtailment at about 11% in Q2 (up from 8.8% in Q1), with transmission connectivity delays pushing back evacuation.",
+   "Renewable capacity addition behind plan (Q1 and Q2 missed); 2.5 GW FY27 target depends on evacuation lines by December or January.",
+   "Ingot and wafer plant equipment order pending clarity on China technology export controls and ALMM-3 timing.",
+   "Distribution regulatory assets growing; Delhi and Odisha tariff true-ups delayed by commission quorum issues.",
+   "Private distribution and parallel licensing (Gurgaon episode) remains unclear pending government notifications."
+  ],
+  "management_tone": "Confident on the quarter and the Mundra and pumped storage strategy, but guarded on renewable capacity delays, curtailment and the Singapore arbitration. Management deflected questions on the Kleros matter and on how the Court of Appeal outcome would be funded, and on distribution licensing it said it is waiting for government clarity.",
+  "key_quotes": [
+   "We have reported our highest-ever quarterly profit after tax of INR1,652 crores, which is an increase of 33% year-on-year compared to INR1,245 crores in the corresponding period last year.",
+   "We strongly believe that we have a good case, both on merit as well as on law. We expect that we will be able to succeed in the Supreme Court.",
+   "So, we expect that this year target is 2.5 GW of capacity addition, and we will be able to meet that.",
+   "So, there's no need for us to think that we will lose the case."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "1,800 MW Shirwata pumped storage project near Lonavala (INR11,871 crore)",
+    "size_pct": null,
+    "capex_cr": 11871.0,
+    "q": 9,
+    "status": "approved",
+    "mat": "moderate"
+   },
+   {
+    "what": "1,000 MW Bhivpuri pumped storage project",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 9,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "2.5 GW FY27 renewable capacity addition target (Q1 and Q2 missed, evacuation lines expected Dec/Jan)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Ingot and wafer plant (solar manufacturing), full operation by March 2028",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 5,
+    "status": "approved",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "cost_actions",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": 26.0,
+  "qEbitda": 5.0,
+  "outlook": 1,
+  "why": "Management guides H2 stronger than H1 with RE Genco EBITDA run-rate of about INR4,500 crore a year and Coal JV at about INR400 crore a quarter for two quarters, backed by a 2.5 GW renewable addition target (Q1 and Q2 missed, evacuation lines due Dec/Jan) and nearly INR25,000 crore FY27 capex, with Shirwata 1,800 MW approved and commissioning in CY2031, so the near-term backing is partial and the l",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "RE Genco YTD EBITDA of INR2,231 crore annualises to about INR4,500 crore, management expects H2 to be more than double H1, and Coal JV is guided at about INR400 crore per quarter for the next two quarters, though traditional generation EBITDA gains partly rest on DSM gains."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "Q4 FY27 to Q1 FY28",
+    "why": "The 2.5 GW FY27 renewable addition target is still expected to be met despite Q1 and Q2 misses, with evacuation lines due by December or January; Bhivpuri (1,000 MW) is due H1 CY2029 and Shirwata (1,800 MW) CY2031, both beyond the window."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Power demand grew about 10-11% in the last quarter and about 12% YoY in October, and renewable additions are guided to 2.5 GW for FY27, though curtailment rose to about 11% in Q2 from 8.8% in Q1."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "FY27 capex is on track for nearly INR25,000 crore with about INR10,000 crore spent in H1, and the Ingot/wafer plant and Shirwata are already approved, so further pumped storage or manufacturing capex is plausible though not guided with a date."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "possible",
+    "when": "H2 FY27",
+    "why": "H1 PAT rose 22% to INR3,053 crore and management guides H2 stronger than H1, but no numeric guidance raise was stated and curtailment and capacity delays are headwinds."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Renewable curtailment rose to about 11% in Q2 from 8.8% in Q1, Q1 and Q2 capacity targets were missed, and the Singapore Kleros enforcement (about $650 million, no provision made) could hit cash flows if the court of appeal rules against the company."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "possible",
+    "when": "Q4 FY27 to Q1 FY28",
+    "why": "Ingot and wafer plant work starts this month with full operation targeted by March 2028, but the equipment order is not yet placed pending China export control clarity expected by end of November."
+   },
+   {
+    "k": "regulatory",
+    "label": "Mundra SPPA conclusion with majority of states",
+    "call": "likely",
+    "when": "by 31 December",
+    "why": "SPPA already signed with Gujarat and filed at CERC, two of four remaining states at an advanced stage, with conclusion targeted before 31 December when Section 11 expires."
+   },
+   {
+    "k": "regulatory",
+    "label": "Delhi and Odisha tariff revisions and true-ups",
+    "call": "possible",
+    "when": "FY28",
+    "why": "Distribution regulatory assets rose about 28% YoY to INR83.1 billion because commission quorum is missing, with management expecting amortisation to pick up in FY28."
+   },
+   {
+    "k": "other",
+    "label": "Singapore arbitration (Kleros) enforcement",
+    "call": "possible",
+    "when": "19 January hearing; 3-6 months enforcement",
+    "why": "Supreme Court of Singapore hearing listed for 19 January and roughly $650 million exposure carries no provision, so an adverse ruling would be a cash-flow overhang."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on the record PAT, the Mundra SPPA and the pumped storage strategy, but cautious on renewable capacity delays, curtailment and the Singapore arbitration; analysts pushed on the associate profit jump, the Shirwata capex figure and Kleros funding, and management deflected seve"
+  }
+ }
+}

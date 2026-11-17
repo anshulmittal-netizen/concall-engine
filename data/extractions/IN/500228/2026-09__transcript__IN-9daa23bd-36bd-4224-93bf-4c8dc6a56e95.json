@@ -2,7 +2,7 @@
  "doc_id": "IN-9daa23bd-36bd-4224-93bf-4c8dc6a56e95",
  "market": "IN",
  "company_id": "500228",
- "name": "JSW Steel",
+ "name": "JSW Steel Ltd",
  "doc_type": "transcript",
  "date": "2026-10-29",
  "period": "2026-09",
@@ -10,88 +10,370 @@
  "model": "claude-haiku-5-5",
  "verified_share": 1.0,
  "read": {
-  "subsector": "Steel & pipes",
-  "thesis": "Document is only a Regulation 30 cover letter linking to the Q2 FY27 call transcript; no call content, capacity, utilisation, pricing or guidance is present to assess.",
-  "archetype": "None",
-  "mental_models": [],
+  "subsector": "Auto castings & forgings",
+  "thesis": "JSW Steel is expanding capacity aggressively (capex plan raised to Rs.1.48 lakh crore, 78 MT target by FY32) while Q2 EBITDA margin fell to 18% on higher coking coal and weaker long prices, and it says India volumes hit records at 88% utilisation.",
+  "archetype": "Capital-cycle warning",
+  "mental_models": [
+   "Competitive capex",
+   "Capacity bottleneck",
+   "Working-capital stress"
+  ],
   "blocks": {
-   "supply": 0,
-   "pricing": 0,
+   "supply": -2,
+   "pricing": -1,
    "structure": 0,
    "inventory": 0,
-   "demand": 0,
-   "guidance": 0,
-   "novelty": 0,
-   "tone": 0
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 2,
+   "tone": 1
   },
   "utilisation": {
-   "direction": 0
+   "direction": 0,
+   "level_pct": 88,
+   "quote": "our India operations achieved a utilisation of about 88%"
   },
   "capex": {
-   "direction": "not_discussed"
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "our total capex plan now stands at Rs.1.48 lakh crores. This capex will be spent over the next 5 to 6 years."
   },
-  "triggers": [],
-  "guidance": [],
-  "prior_guidance_check": [],
-  "entities": [],
-  "themes": [],
-  "red_flags": [],
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex plan raised to Rs.1.48 lakh crore",
+    "quote": "our total capex plan now stands at Rs.1.48 lakh crores. This capex will be spent over the next 5 to 6 years.",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "supply",
+    "label": "Capacity target 78 MT by FY32",
+    "quote": "We are making steady progress towards our goal of reaching 78 million tonnes of capacity in India by '32",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "pricing",
+    "label": "Coking coal up ~$25/t in Q3",
+    "quote": "Coking coal costs are expected to rise by about $25 in Quarter 3",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Domestic sales record 6.29 MT, up 12%",
+    "quote": "We achieved our highest ever domestic sales at 6.29 million tonnes, up by 12%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Capex FY27 guidance Rs.22,000-24,000 cr reiterated",
+    "quote": "we expect to meet the guidance of Rs.22,000 crores to Rs.24,000 crores of capex during this financial year",
+    "direction": 1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 capex",
+    "value": "Rs.22,000-24,000 crore",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we expect to meet the guidance of Rs.22,000 crores to Rs.24,000 crores of capex during this financial year"
+   },
+   {
+    "metric": "Domestic steel demand growth",
+    "value": "7% to 8% in FY27",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Domestic steel demand is expected to grow between 7 to 8% in FY27"
+   },
+   {
+    "metric": "Total capex pipeline",
+    "value": "Rs.1.48 lakh crore over 5-6 years",
+    "change": "raised",
+    "horizon": "5-6 years",
+    "quote": "our total capex plan now stands at Rs.1.48 lakh crores"
+   },
+   {
+    "metric": "India capacity target",
+    "value": "78 MT by FY32 incl. JVs",
+    "change": "held",
+    "horizon": "FY32",
+    "quote": "reaching 78 million tonnes of capacity in India by '32"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Coking coal cost increase",
+    "outcome": "met",
+    "quote": "coking coal, which increased by about $10 a tonne, a bit lower than our earlier guidance of $12 to $15"
+   }
+  ],
+  "entities": [
+   {
+    "name": "BPSL",
+    "relation": "peer"
+   },
+   {
+    "name": "JSW One",
+    "relation": "partner"
+   },
+   {
+    "name": "NMDC",
+    "relation": "supplier"
+   },
+   {
+    "name": "BCCL",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Grid capex & transformers",
+   "Railway capex",
+   "Anti-dumping protection",
+   "Premiumisation in consumption",
+   "Renewables & storage"
+  ],
+  "red_flags": [
+   {
+    "label": "Net debt/EBITDA could rise at peak capex; JV ring-fencing questioned",
+    "quote": "during project phase, net debt to EBITDA could go slightly higher"
+   },
+   {
+    "label": "JV net debt level not disclosed on call",
+    "quote": "I will ask our Investor Relations team to provide this information one-to-one."
+   }
+  ],
   "analyst_mix": {
-   "balance_sheet": 0,
-   "capex": 0,
+   "balance_sheet": 4,
+   "capex": 3,
    "growth": 0,
-   "margin": 0,
-   "other": 0
+   "margin": 4,
+   "other": 4
   },
-  "evasions": [],
-  "hedge_index": 0
+  "evasions": [
+   {
+    "topic": "Auto price differential",
+    "quote": "Maybe we will request our team to give it to you offline."
+   },
+   {
+    "topic": "JV net debt level",
+    "quote": "I will ask our Investor Relations team to provide this information one-to-one."
+   },
+   {
+    "topic": "Coking coal cost for Mozambique mine",
+    "quote": "We’ll not be able to give you coking coal cost and details right now."
+   }
+  ],
+  "hedge_index": 0.4
  },
  "summary": {
-  "headline": "The transcript provided is only a Regulation 30 filing cover letter; no Q2 FY27 financials or guidance are contained in it.",
-  "overview": "The document is a stock exchange disclosure letter from JSW Steel Ltd dated October 29, 2026, forwarding links to the Q2 FY27 earnings call transcript and audio. The call was held after the Board meeting on October 23, 2026. The text provided does not include the call content itself, so no operating or financial details can be extracted. A full transcript is needed to produce a substantive brief.",
-  "financial_highlights": [],
-  "segments": [],
-  "guidance_outlook": [
-   "No guidance is contained in the provided document; it is a Regulation 30(6) cover letter linking to the Q2 FY27 call transcript and audio."
+  "headline": "JSW Steel Q2 FY27: record crude output of 7.27 Mt and consolidated revenue of Rs.54,486 crore, with EBITDA margin at 18% and PAT of Rs.5,359 crore.",
+  "overview": "JSW Steel posted record consolidated crude steel production (7.27 Mt) and sales (7.46 Mt, up 13% YoY), with highest-ever domestic sales of 6.29 Mt. Adjusted consolidated EBITDA was Rs.9,941 crore (18% margin), held back by higher coking coal and iron ore costs and lower long-product realisations QoQ. Net debt fell to Rs.44,482 crore, with leverage at 1.28x and gearing at 0.39x. The Board approved about Rs.26 Mt of additional capacity projects, lifting the capex plan to Rs.1.48 lakh crore over 5 to 6 years from Rs.1.3 lakh crore.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue",
+    "value": "Rs.54,486 crore",
+    "change": "Realisations fell QoQ, mainly long steel prices"
+   },
+   {
+    "metric": "Adjusted consolidated EBITDA",
+    "value": "Rs.9,941 crore",
+    "change": ""
+   },
+   {
+    "metric": "EBITDA margin",
+    "value": "18%",
+    "change": ""
+   },
+   {
+    "metric": "PAT",
+    "value": "Rs.5,359 crore",
+    "change": ""
+   },
+   {
+    "metric": "Net debt",
+    "value": "Rs.44,482 crore",
+    "change": "Gross debt down more than Rs.29,000 crore in H1"
+   },
+   {
+    "metric": "Net debt to EBITDA",
+    "value": "1.28x",
+    "change": "Improved further"
+   },
+   {
+    "metric": "Gearing",
+    "value": "0.39x",
+    "change": "Improved further"
+   },
+   {
+    "metric": "H1 FY27 capex",
+    "value": "Rs.11,136 crore",
+    "change": "FY27 guidance Rs.22,000-24,000 crore reaffirmed"
+   },
+   {
+    "metric": "JJSL EBITDA",
+    "value": "Rs.1,136 crore on 0.92 Mt sales",
+    "change": "PAT loss due to Rs.276 crore stamp duty provision (BPSL transaction); PAT positive excluding it"
+   },
+   {
+    "metric": "JSW One GMV",
+    "value": "Rs.6,989 crore",
+    "change": "Up 77% YoY; steel volumes up 53%; credit GMV about Rs.2,400 crore, up 91%"
+   }
   ],
-  "capex_capacity": [],
+  "segments": [
+   {
+    "name": "India operations",
+    "commentary": "Crude steel 7.07 Mt (record, up about 5% YoY) at about 88% utilisation; sales 7.27 Mt (up 14%), with domestic sales 6.29 Mt (up 12%). BF-3 Vijayanagar reached about 90% utilisation after late-June light-up."
+   },
+   {
+    "name": "Value-added and special products",
+    "commentary": "Record sales of 4.11 Mt, up 11%. Institutional sales up 15%, auto sales a record and up 36%, appliance up 28%, renewables up 14%."
+   },
+   {
+    "name": "Overseas (Ohio, Texas, Italy)",
+    "commentary": "Sequentially better on higher realisations. US operations generated about $19 million EBITDA; Italian rail mill EUR 7 million, flat QoQ. Ohio and Texas had September maintenance/upgrade shutdowns."
+   },
+   {
+    "name": "JSW JFE Steel (JJSL) JV",
+    "commentary": "Sales 0.92 Mt and EBITDA Rs.1,136 crore; approved 5 Mt expansion to 9.5 Mt capacity by FY31."
+   },
+   {
+    "name": "JSW One digital platform (66% stake)",
+    "commentary": "GMV Rs.6,989 crore, up 77% YoY; platform reported positive EBITDA."
+   }
+  ],
+  "guidance_outlook": [
+   "Q3 FY27 volumes to rise on full production at Vijayanagar BF-3 and JVML.",
+   "Coking coal cost expected to rise by about $25/t in Q3, following the sharp increase in the latter half of Q2 (Q2 rise was about $10/t, vs earlier guidance of $12-15).",
+   "Iron ore cost marginally higher in Q3; management expects a softer iron ore environment over the next few quarters.",
+   "Price increases in October plus recovery of earlier losses to be fully reflected in the October-December quarter; management expects to offset cost increases and add to margin over Q2.",
+   "Domestic steel demand expected to grow 7-8% in FY27; on track to meet FY27 production and sales guidance.",
+   "Capacity target of 78 Mt in India by FY32 including JVs; total capex plan Rs.1.48 lakh crore over 5-6 years, mostly funded by internal accruals."
+  ],
+  "capex_capacity": [
+   "Board approved Phase-2 of 5 Mt at JSW Utkal (Odisha), taking capacity to 10 Mt; Phase-1 due Q3 FY30, Phase-2 due Q1 FY31. Management pointed to about Rs.48,000 crore total for 10 Mt across both phases.",
+   "Added 8 Mt pellet plant at JVML Vijayanagar, plus extra converter and caster for JVML Phase-2, taking Vijayanagar crude capacity to 25 Mt.",
+   "Dolvi Phase-3: adding caster and plate processing, lifting CSP capacity to 7 Mt. Vasind CRM complex of 1.8 Mtpa due Q2 FY30.",
+   "Mozambique MdR coking coal (acquired March 2026): Board approved capex for about 9 Mt of cleaned prime hard coking coal, production from CY28. Captive coking coal linkage, including Illawarra (2 Mt) and domestic 3.5 Mt from washeries, totals about 15 Mt.",
+   "Slurry pipeline in Odisha on track for March 2027. Three Karnataka iron ore mines due Q4 FY27 (about 4 Mt; Karnataka total about 15 Mtpa). Parbatpur and Dugda washeries targeted next year.",
+   "Renewable energy: over 1,000 MW commissioned; 1.5 GW being commissioned, taking total to 2.5 GW+. Khopoli 0.5 Mt scrap processing centre: baler commissioned in Q2, shredder due by end-Q3 FY27."
+  ],
   "demand_pricing": [
-   "No demand, order book, pricing, realisation or competition commentary is present in the provided document."
+   "Indian steel consumption grew 7% in Q2 and 7.5% in H1 FY27. Management noted the draft National Steel Policy 2047 targets 505 Mt consumption by 2047.",
+   "Long steel prices fell sharply in June-July on monsoon, Middle East disruption and labour availability, then recovered in August-September on public capex. Flat prices corrected less and have since recovered.",
+   "Auto sector negotiations for the next quarter are ongoing with no indication given; the previous quarter's auto negotiations are closed. The price differential was not disclosed.",
+   "Coking coal near $270/t per management's cited peer context; management said elevated prices apply industry-wide. Iron ore in India is flattish in rupee terms, with NMDC Chhattisgarh derailment and monsoon disruptions.",
+   "Long products: integrated producers hold about 30-35% of the market; secondary producers hold 65-70%, driving volatility.",
+   "China steel production down about 3% and consumption down about 4% in Jan-Sep; China finished steel exports down 2% while total exports including semis rose 3.3%."
   ],
   "qa_highlights": [
    {
-    "question": "Not applicable: the provided document contains no Q&A session.",
-    "answer": "The letter only links to the Q2 FY27 earnings call transcript (held after the October 23, 2026 Board meeting) and its audio recording; the full transcript is needed for Q&A content."
+    "question": "Capex sizing: would JVML Phase-2 (5 Mt) cost about Rs.10,000 crore more than Utkal Phase-2 (5 Mt)?",
+    "answer": "Management pointed to about Rs.48,000 crore for 10 Mt across Odisha Phase-1 and Phase-2 combined, and said the JVML Phase-2 scope includes a hot strip mill that Utkal Phase-2 lacks."
    },
    {
-    "question": "Not applicable: no analyst questions are recorded in the document.",
-    "answer": "No figures or management responses are disclosed in the provided text."
+    "question": "Does the JV capex raise leverage to as high as 10x net debt/EBITDA, and is JSW Steel ring-fenced?",
+    "answer": "CFO Swayam Saurabh said net debt/EBITDA will not reach 10x, may rise slightly during the project phase, and JSW Steel is ring-fenced by design. JV-level net debt as of September 2026 was referred to the IR team for one-to-one follow-up."
+   },
+   {
+    "question": "Coking coal outlook and margin impact in H2 FY27?",
+    "answer": "Management said elevated prices are industry-wide, with Q3 cost up about $25/t already in estimates. Domestic washeries and Mozambique supply are expected to offset part of imported cost."
+   },
+   {
+    "question": "Risk to capex numbers from rupee depreciation, and execution risk across multiple simultaneous sites?",
+    "answer": "CFO said the INR cost estimates include normative currency depreciation and hedging costs over the capex period. Management said labour is better available in the east and in-house expertise is being redeployed, with two or three large contracts planned for blast furnace and melt shop work."
+   },
+   {
+    "question": "How confident is management in funding Rs.1.48 lakh crore capex through the cycle?",
+    "answer": "CFO said the plan does not depend on high steel prices. Cash generation of about Rs.25,000-30,000 crore a year is expected to largely self-fund, and the company has room to borrow temporarily at 1.28x leverage. Q2 generated free cash despite about Rs.6,500 crore capex."
+   },
+   {
+    "question": "Dollar debt exposure and hedging?",
+    "answer": "CFO said dollar exposure fell from over $6 billion at the start of last year to about $3.5-3.6 billion, with hedging extended beyond the historical 12-month policy. Management said a $500 million bond was repaid in October, preponed from April."
    }
   ],
   "risks_watch": [
-   "Source provided is a cover letter only; obtain the full Q2 FY27 call transcript from the company website before relying on any view."
+   "Coking coal prices elevated (management cited about $270/t) and Q3 cost step-up of about $25/t; margin protection depends on October price increases holding.",
+   "Iron ore supply tightness in India (NMDC Chhattisgarh derailment, monsoon disruption) versus flat international prices; management expects a softer trend in coming quarters.",
+   "Balance sheet build-up: net debt/EBITDA may rise above 1.28x during peak capex; JJSL/BPSL standalone net debt not disclosed on the call.",
+   "Execution risk on multiple simultaneous greenfield and brownfield projects, plus contractor and labour availability.",
+   "Long-product price volatility driven by secondary producers, and the possible removal of safeguard duties on imports."
   ],
-  "management_tone": "Not assessable from the provided document, which contains no management remarks. The letter only confirms the transcript was published and that the company Secretary is in an interim capacity.",
+  "management_tone": "Confident and forward-looking on demand and capex funding, with management stressing a strong balance sheet and cash generation. Cautious on input cost inflation and iron ore, and evasive on the auto price differential, JV-level net debt and coking coal cost specifics, which were deferred to follow-up.",
   "key_quotes": [
-   "Pursuant to Regulation 30(6) read with Schedule III of the Securities Exchange Board of India (Listing Obligations and Disclosure Requirement s) Regulations, 2015, we give below the link to the Transcripts of the Q 2FY27 Earnings Conference Call conducted after the meeting of Board of Directors on October 23, 2026, hosted on the Company's website at:",
-   "The audio recordings of the Earnings Call are m ade available on the same day of the Conference Call at the Company's website at:"
+   "Crude steel production and consolidated and India operations were the highest ever at 7.27 million and 7.07 million tonnes, respectively, both growing by about 5% YoY.",
+   "We achieved our highest ever domestic sales at 6.29 million tonnes, up by 12%, outpacing the Indian market growth.",
+   "We don't believe net debt to EBITDA will go to 10x.",
+   "So, this capex build do not, you know, rely on a very significantly positive, let's say, steel prices.",
+   "Coking coal costs are expected to rise by about $25 in Quarter 3, in line with the sharp increase in prices in the latter half of Q2."
   ],
   "_completed": 1
  },
  "growth": {
   "v": 3,
-  "adds": [],
-  "util": null,
-  "expansion": false,
+  "adds": [
+   {
+    "what": "Added 8 Mt pellet plant at JVML Vijayanagar, plus extra converter and caster for JVML Phase-2, taking Vijayanagar crude capacity to 25 Mt",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Dolvi Phase-3 caster and plate processing lifting CSP capacity to 7 Mt",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": null,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Vasind CRM complex of 1.8 Mtpa",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 6,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "JSW Utkal (Odisha) Phase-1 of 5 Mt, taking capacity to 10 Mt",
+    "size_pct": null,
+    "capex_cr": 48000.0,
+    "q": 9,
+    "status": "approved",
+    "mat": "major"
+   },
+   {
+    "what": "JSW Utkal (Odisha) Phase-2 of 5 Mt (Board approved)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 10,
+    "status": "approved",
+    "mat": "major"
+   }
+  ],
+  "util": 88.0,
+  "expansion": true,
   "growth": null,
-  "gs": 0,
+  "gs": 1,
   "turnaround": false,
-  "backing": [],
-  "clarity": "none",
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
   "qRev": null,
   "qEbitda": null,
-  "outlook": 0,
-  "why": "The brief is only a Regulation 30 cover letter linking to the Q2 FY27 call; it contains no guidance, capacity, utilisation or quarterly results, so nothing can be recorded beyond a flat, unclear outlook.",
+  "outlook": 1,
+  "why": "Management guides to 78 Mt India capacity by FY32 and domestic demand growth of 7-8% in FY27, with FY27 capex of Rs.22,000-24,000 crore reaffirmed; Vijayanagar BF-3 at about 90% and the 8 Mt JVML pellet plant support Q3 volume growth, though the call gives no quarterly revenue or EBITDA growth figures.",
   "mgmt": null
  },
  "outlook": {
@@ -100,57 +382,78 @@
    {
     "k": "margin_expansion",
     "label": "Margin expansion",
-    "call": "no_signal",
-    "when": "",
-    "why": ""
+    "call": "likely",
+    "when": "Q3 FY27",
+    "why": "Management expects October price increases plus recovery of earlier losses to offset cost increases and add to margin over Q2 EBITDA of Rs.9,941 crore (18%), though Q3 coking coal rises about $25/t."
    },
    {
     "k": "capacity_expansion",
     "label": "Capacity expansion / commissioning",
-    "call": "no_signal",
-    "when": "",
-    "why": ""
+    "call": "surely",
+    "when": "Q3 FY27",
+    "why": "BF-3 Vijayanagar at about 90% utilisation after late-June light-up, 8 Mt JVML pellet plant commissioned, and Karnataka mines due Q4 FY27 (about 4 Mt); Odisha slurry pipeline March 2027."
    },
    {
     "k": "volume_growth",
     "label": "Volume growth",
-    "call": "no_signal",
-    "when": "",
-    "why": ""
+    "call": "likely",
+    "when": "Q3 FY27",
+    "why": "Q2 crude output hit a record 7.07 Mt in India (88% utilisation) and management guides Q3 volumes higher on full production at BF-3 and JVML, with domestic demand growth of 7-8% in FY27."
    },
    {
     "k": "capex_announcement",
     "label": "New capex announcement",
-    "call": "no_signal",
-    "when": "",
-    "why": ""
+    "call": "surely",
+    "when": "already approved",
+    "why": "Board has approved Utkal Phase-2 (5 Mt, total 10 Mt, about Rs.48,000 crore) and capex plan raised to Rs.1.48 lakh crore; 88% utilisation makes further capacity announcements likely in the 78 Mt by FY32 path."
    },
    {
     "k": "guidance_upgrade",
     "label": "Guidance upgrade",
-    "call": "no_signal",
+    "call": "unlikely",
     "when": "",
-    "why": ""
+    "why": "Guidance was only held (FY27 capex Rs.22,000-24,000 crore, demand 7-8%), with no revenue or EBITDA upgrade; coking coal and iron ore cost pressure cap upside."
    },
    {
     "k": "guidance_downgrade",
     "label": "Guidance downgrade",
-    "call": "no_signal",
-    "when": "",
-    "why": ""
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Coking coal up about $10/t in Q2 and about $25/t in Q3, plus long-product prices that fell sharply in June-July, leave margin protection dependent on October price increases holding."
    },
    {
     "k": "new_product_launch",
     "label": "New product launch",
     "call": "no_signal",
     "when": "",
-    "why": ""
+    "why": "No new product or brand launch was discussed on the call."
+   },
+   {
+    "k": "corporate_action",
+    "label": "JJSL 5 Mt expansion to 9.5 Mt by FY31",
+    "call": "surely",
+    "when": "FY31",
+    "why": "Board approved 5 Mt expansion at JSW JFE (JJSL), taking capacity to 9.5 Mt, with JJSL Q2 sales of 0.92 Mt and EBITDA of Rs.1,136 crore."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Net debt reduction and dollar debt cut",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Net debt fell to Rs.44,482 crore with leverage at 1.28x, gross debt down over Rs.29,000 crore in H1, and dollar exposure down from over $6 billion to about $3.5-3.6 billion; management said leverage may rise slightly during the capex phase."
+   },
+   {
+    "k": "new_markets",
+    "label": "Mozambique coking coal (9 Mt) from CY28",
+    "call": "surely",
+    "when": "CY28",
+    "why": "Board approved capex for about 9 Mt of cleaned prime hard coking coal, which with Illawarra (2 Mt) and 3.5 Mt domestic washery supply totals about 15 Mt of captive coking coal linkage."
    }
   ],
   "tone": {
-   "mgmt": "evasive",
-   "analysts": "neutral",
-   "note": "The brief is only a Regulation 30 cover letter with no management remarks or analyst questions, so tone cannot be judged and no triggers can be read from it; the full Q2 FY27 transcript is needed."
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on demand, capex funding and the balance sheet (1.28x leverage, Q2 free cash despite about Rs.6,500 crore capex), but cautious on coking coal and iron ore costs; analysts pressed on JV-level net debt, the 10x leverage question and the auto price differential, which were defe"
   }
  }
 }
