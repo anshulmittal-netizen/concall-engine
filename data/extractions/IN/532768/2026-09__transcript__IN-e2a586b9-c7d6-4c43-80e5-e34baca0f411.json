@@ -1,0 +1,468 @@
+{
+ "doc_id": "IN-e2a586b9-c7d6-4c43-80e5-e34baca0f411",
+ "market": "IN",
+ "company_id": "532768",
+ "name": "Fiem Industries Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-17",
+ "period": "2026-09",
+ "title": "Fiem Industries Ltd - 532768 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Auto components",
+  "thesis": "Q2 FY27 sales up 31% to INR932 crores with margin at 14.07%; management raised FY27 capex to about INR150 crores and says it will invest ahead of demand, with utilisation near 80%.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": -1,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 80,
+   "quote": "our current is between 75% and 80%. This is after taking into account the new capex that we are doing."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "We have upped our capex target. We are likely, as you rightly said, we've done INR90 odd crores."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "FY27 capex raised to ~INR150 crores",
+    "quote": "That should take our capex guidance to close to INR150 crores for the current financial year.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "util",
+    "label": "Utilisation ~80% after new capex",
+    "quote": "As a number, it is more closer to 80% right now.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Revenue growth tilted to top end, 20%+",
+    "quote": "we could guide more towards 20% and above.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Receivables up sharply in Q2",
+    "quote": "For this receivable, there is slight increase, which is, as you know, because of the higher sales.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "pricing",
+    "label": "Material cost ratio up to 63.7%",
+    "quote": "it has gone up from 62%-odd to 63.7%. That's a significant increase.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Revenue growth FY27",
+    "value": "15% to 20%, tilted to top end or above",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "we could guide more towards 20% and above."
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "value": "around 14%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "Yes, 14% is what our guidance."
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "close to INR150 crores",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "That should take our capex guidance to close to INR150 crores for the current financial year."
+   },
+   {
+    "metric": "FY28 revenue growth",
+    "value": "15% to 20%",
+    "change": "new",
+    "horizon": "FY28",
+    "quote": "15%-20% growth is what we want to guide for the next year."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Revenue growth FY27",
+    "outcome": "met",
+    "quote": "we could guide more towards 20% and above."
+   },
+   {
+    "metric": "EBITDA margin FY27",
+    "outcome": "met",
+    "quote": "Yes, 14% is what our guidance."
+   },
+   {
+    "metric": "Capex FY27",
+    "outcome": "missed",
+    "quote": "We have upped our capex target."
+   },
+   {
+    "metric": "4-wheeler revenue",
+    "outcome": "not_discussed",
+    "quote": "as a percentage of our sales, it is still relatively small."
+   }
+  ],
+  "entities": [
+   {
+    "name": "TVS",
+    "relation": "customer"
+   },
+   {
+    "name": "Honda",
+    "relation": "customer"
+   },
+   {
+    "name": "Hero",
+    "relation": "customer"
+   },
+   {
+    "name": "Ather",
+    "relation": "customer"
+   },
+   {
+    "name": "Yamaha",
+    "relation": "customer"
+   },
+   {
+    "name": "Piaggio",
+    "relation": "customer"
+   },
+   {
+    "name": "HMSI",
+    "relation": "customer"
+   },
+   {
+    "name": "Lumax Industries",
+    "relation": "competitor"
+   },
+   {
+    "name": "Gogoro",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Electronics manufacturing (EMS/PLI)",
+   "Auto EV transition",
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables up sharply in Q2",
+    "quote": "We have seen a pretty sharp increase on the trade receivables front at September quarter."
+   },
+   {
+    "label": "Gross margin down 169 bps QoQ; margin held by opex cuts",
+    "quote": "your gross margin is down sequentially 169 basis points."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 1,
+   "capex": 2,
+   "growth": 6,
+   "margin": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "HMSI model losses quantification",
+    "quote": "It is totally dependent on the customers how much volume is doing growth in the market."
+   },
+   {
+    "topic": "Four-wheeler revenue and timeline",
+    "quote": "as a percentage of our sales, it is still relatively small."
+   },
+   {
+    "topic": "Content per vehicle numbers",
+    "quote": "specifically, there is no number that we can give because it is so varied"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Fiem Q2 FY27 sales rose 31% to INR931.78 crore, a record quarter, with EBITDA margin at 14.07% and PAT up 32% to INR84.17 crore.",
+  "overview": "Q2 FY27 was the company's best quarter on record, with sales up 30.97% YoY to INR931.78 crore and PAT up 31.97% to INR84.17 crore. EBITDA margin widened to 14.07% from 13.93% a year earlier, though gross margin fell about 169 bps QoQ as material costs rose to 63.7% of sales. H1 sales grew 25.08% to INR1,701.68 crore. Management raised its capex outlook to about INR150 crore for FY27 and said it expects growth at the top end of, or above, its 15%-20% guidance.",
+  "financial_highlights": [
+   {
+    "metric": "Net sales Q2 FY27",
+    "value": "INR931.78 crore",
+    "change": "+30.97% YoY (vs INR711.42 crore)"
+   },
+   {
+    "metric": "EBITDA Q2 FY27",
+    "value": "INR131.07 crore",
+    "change": "+32.25% YoY (vs INR99.1 crore)"
+   },
+   {
+    "metric": "EBITDA margin Q2 FY27",
+    "value": "14.07%",
+    "change": "vs 13.93% in Q2 FY26; management cited ~13.5% in Q1"
+   },
+   {
+    "metric": "PAT Q2 FY27",
+    "value": "INR84.17 crore",
+    "change": "+31.97% YoY (vs INR63.78 crore)"
+   },
+   {
+    "metric": "Net sales H1 FY27",
+    "value": "INR1,701.68 crore",
+    "change": "+25.08% YoY (vs INR1,363.49 crore)"
+   },
+   {
+    "metric": "EBITDA H1 FY27",
+    "value": "INR235.13 crore",
+    "change": "+26.1% YoY (vs INR186.46 crore); margin 13.82% vs 13.71%"
+   },
+   {
+    "metric": "PAT H1 FY27",
+    "value": "INR149.36 crore",
+    "change": "+24.63% YoY (vs INR119.84 crore)"
+   },
+   {
+    "metric": "Capex H1 FY27",
+    "value": "INR90.88 crore",
+    "change": "vs INR37.81 crore in H1 FY26; Q2 capex INR49.73 crore"
+   },
+   {
+    "metric": "Cash and cash equivalents",
+    "value": "INR163.42 crore as on 30 Sep 2026",
+    "change": "after INR105.28 crore dividend paid in Q2"
+   },
+   {
+    "metric": "Material cost",
+    "value": "63.7% of sales",
+    "change": "up from about 62% QoQ"
+   }
+  ],
+  "segments": [
+   {
+    "name": "TVS Motor",
+    "commentary": "Business grew nearly 50% YoY, driven by LED lighting content and new models; management said TVS's own volume grew 27%. Radeon and Jupiter 110 refreshed with Fiem lighting, Radeon now all-LED."
+   },
+   {
+    "name": "Honda (HMSI)",
+    "commentary": "Business grew 20% YoY versus Honda production growth of about 15%. Supplying Rebel 300 and ADV 160 lamps, but some conventional-to-LED model changes will go to other suppliers, with launches in Q2 or Q3 next year."
+   },
+   {
+    "name": "Hero MotoCorp",
+    "commentary": "Business almost doubled YoY. Management cited 8-10 models under development for launch by end-2026 or in coming years, with Fiem as supplier; some are second-source on existing models and others are new high-volume models."
+   },
+   {
+    "name": "Electric vehicle OEMs",
+    "commentary": "Sales to EV makers doubled YoY. Ather Konarc supply began last quarter and is ramping up, with Fiem sole lamp supplier across variants; River and Simple Energy also ramped up."
+   },
+   {
+    "name": "Yamaha",
+    "commentary": "Growth was strong sequentially and YoY; management cited Yamaha growth of about 24%, with new models in domestic and export markets."
+   },
+   {
+    "name": "Four-wheeler",
+    "commentary": "Still small as a share of sales, with projects in development and RFP stages; management expects the share to stay small for the next 12 months."
+   }
+  ],
+  "guidance_outlook": [
+   "Revenue growth for FY27 guided at 15%-20%; management said it would hit the top end, and more toward 20% and above.",
+   "EBITDA margin guided at about 14% for the full year, which management said it expects to sustain.",
+   "FY27 capex guided to about INR150 crore (INR90 crore in H1 plus INR50-60 crore in H2), with similar levels expected in FY28.",
+   "FY28 growth guidance of 15%-20% was given as the planning range, subject to demand conditions.",
+   "Management expects cost pass-through from OEMs on a sequential basis to help maintain margins in the coming quarters.",
+   "Over 100 two-wheeler models in the pipeline for launch in FY28-FY29, worth INR800-900 crore of additional business."
+  ],
+  "risks_watch": [
+   "Gross margin pressure from material costs (63.7% of sales) and West Asia-linked cost inflation; reliance on OEM pass-through.",
+   "Honda (HMSI) share risk: conventional-to-LED model changes may go to competitors such as Lumax; quantification not given.",
+   "Four-wheeler ramp is slow and still small; no major breakthrough yet, and a previous MD has departed.",
+   "Receivables increase at Sept quarter; watch whether it normalises in Q3.",
+   "Capacity utilisation near 80% with capex stepping up toward INR150 crore, which may pressure cash and returns if demand slows.",
+   "Demand concentration in a few OEM customers (TVS, Honda, Hero, Ather) and dependence on EV ramp-ups."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Gross margin fell 169 bps QoQ; will OEM price escalation and margin normalisation come, and will the 14% EBITDA margin hold?",
+    "answer": "Management said material cost rose from about 62% to 63.7% of sales, offset by operating leverage in other expenses, keeping EBITDA margin near 14%, which is the full-year guidance; cost escalation is continuous and pass-through happens sequentially."
+   },
+   {
+    "question": "Lumax reportedly won new HMSI orders and gaining share; what is Fiem's HMSI share outlook?",
+    "answer": "Management pointed to 20% HMSI growth and the Rebel 300 and ADV 160 launches, but said some conventional-to-LED model changes will not include Fiem and will be discussed again when they launch in Q2/Q3 next year. Could not quantify the revenue at risk."
+   },
+   {
+    "question": "Is FY27 revenue growth tracking 15%-20% or above, and will the top end hold?",
+    "answer": "Management said it sticks to 15%-20% and expects the top end, possibly 20% and above; FY28 planning range is 15%-20%, subject to demand."
+   },
+   {
+    "question": "Capex: is the INR100 crore plan still valid after INR90 crore spent in H1?",
+    "answer": "Management raised capex to close to INR150 crore for FY27, with INR50-60 crore in H2, and expects similar levels next year to fund South India capacity."
+   },
+   {
+    "question": "Four-wheeler traction, order book and margin differences versus two-wheelers?",
+    "answer": "Four-wheeler is slow; 4-5 products with two or three customers to launch next year, and the share of sales stays small for 12 months. Management sees no margin difference between four- and two-wheeler businesses."
+   },
+   {
+    "question": "Receivables jump at September quarter and utilisation levels?",
+    "answer": "Receivables rose due to higher sales with unchanged realisation period, expected to normalise next quarter. Utilisation is 75-80%, closer to 80% including new capex; asset turn about 3x."
+   }
+  ],
+  "capex_capacity": [
+   "H1 FY27 capex INR90.88 crore (Q2 INR49.73 crore) vs INR37.81 crore in H1 FY26; management said H2 adds INR50-60 crore, taking FY27 capex to close to INR150 crore, up from the roughly INR100 crore discussed last quarter.",
+   "Capacity being added in South India at Hosur and Mysore, close to customer plants; scope includes injection moulding and metallising lines.",
+   "Capacity utilisation between 75% and 80% after accounting for new capex; management put it closer to 80%.",
+   "Asset turn on the capex programme described as almost 3x.",
+   "Capex expected to stay at similar levels (around INR150 crore) in FY28, tied to South India capacity needs."
+  ],
+  "demand_pricing": [
+   "Two-wheeler production in Q2 was 8.09 million units, up 16.5% YoY and about 11% QoQ; electric two-wheelers grew more than 80% and about one in nine two-wheelers sold was electric as of September.",
+   "Fiem Q2 sales grew 31% YoY; management said growth is a function of OEM growth and there was no one-time order in the quarter.",
+   "TVS business grew nearly 50% YoY versus TVS's own volume growth of 27%, attributed to product mix, higher LED content and premium models.",
+   "Honda business grew 20% YoY versus Honda production growth of about 15%; Fiem lost or will not participate in some conventional-to-LED model changes launching in Q2/Q3 next year.",
+   "Yamaha growth about 24%; Hero almost doubled; sales to EV makers doubled; Ather Konarc ramping with Fiem as sole lamp supplier across variants.",
+   "Over 100 two-wheeler models to launch in FY28-FY29, worth INR800-900 crore of additional business; four-wheeler still small and expected to remain so for the next 12 months.",
+   "Material cost rose to 63.7% of sales from about 62% QoQ; management expects OEM cost pass-through on a sequential basis, with operating leverage offsetting other expenses.",
+   "Receivables rose at the September quarter due to higher sales; management said the realisation period is unchanged and should normalise next quarter.",
+   "New LED and light control, focus and projection lighting products are at development or POC stage; revenue timing depends on customer acceptance."
+  ],
+  "key_quotes": [
+   "In this environment, Fiem delivered its best quarter ever.",
+   "We have upped our capex target.",
+   "We stick to 15%-20%. At the top end of our range, it is 20%.",
+   "Overall, we do not see any roadblocks to overall two-wheeler industry growth and hence our growth over the next medium to long term.",
+   "I think operating leverage is kicking in as far as other expenses concern."
+  ],
+  "management_tone": "Confident on demand and the 15%-20% growth outlook, with the top end and above emphasised; cautious and evasive on HMSI share loss, four-wheeler timelines and quantification of new-product revenue, which management said depends on customer volumes and acceptance.",
+  "_completed": 1
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "South India capacity at Hosur and Mysore incl. injection moulding and metallising lines (FY27 capex ~INR150 cr; H1 spent INR90.88 cr, H2 adds INR50-60 cr)",
+    "size_pct": null,
+    "capex_cr": 150.0,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "moderate"
+   }
+  ],
+  "util": 80.0,
+  "expansion": true,
+  "growth": 17.5,
+  "gs": 2,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 30.97,
+  "qEbitda": 32.25,
+  "outlook": 2,
+  "why": "Management guides FY27 revenue growth at the top end of 15%-20% and more toward 20%+, backed by South India capacity (Hosur, Mysore; ~INR150 cr FY27 capex, utilisation ~80%), 100+ two-wheeler models for FY28-29 (INR800-900 cr) and OEM volume gains, though order-level specifics are only partly quantified.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "EBITDA margin 14.07% in Q2 vs 13.93% a year ago and guided at about 14% for FY27; management expects OEM cost pass-through sequentially to offset material costs at 63.7% of sales (up from about 62% QoQ), though margin is only held, not expanded."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q3-Q4 FY27",
+    "why": "South India capacity at Hosur and Mysore (injection moulding and metallising lines) is under construction with INR50-60 crore of H2 capex still to be spent on about INR150 crore FY27 total, and similar levels are planned for FY28."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Revenue growth guided at 15-20% with the top end or above expected; Q2 sales rose 31% YoY, two-wheeler production rose 16.5% YoY, and 100+ models are slated for FY28-29 worth INR800-900 crore."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "already raised; FY28 plan set",
+    "why": "Utilisation is 75-80% (management says closer to 80%) even after new capex, and FY27 capex was raised to close to INR150 crore with similar spend expected in FY28, so further capacity announcements are plausible."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Management raised FY27 revenue growth to the top end of 15-20% and said 'more towards 20% and above', after H1 sales grew 25.08% to INR1,701.68 crore."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Management is holding the 14% EBITDA margin and 15-20% growth guidance, and H1 growth of 25% gives room; the main risks are material costs at 63.7% of sales and HMSI conventional-to-LED model losses, which were not quantified."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "H2 FY27 to FY28",
+    "why": "Over 100 two-wheeler models are in the pipeline for FY28-29 (INR800-900 crore of additional business), Hero has 8-10 models under development, and LED, light control and projection products are at development or POC stage, though timing depends on customer acceptance."
+   },
+   {
+    "k": "order_book",
+    "label": "Hero and Ather new-model ramp",
+    "call": "likely",
+    "when": "by end-2026 onward",
+    "why": "Hero sales almost doubled YoY with 8-10 models under development, and Ather Konarc is ramping with Fiem as sole lamp supplier across variants; EV OEM sales doubled YoY."
+   },
+   {
+    "k": "new_markets",
+    "label": "Four-wheeler entry",
+    "call": "unlikely",
+    "when": "next 12 months",
+    "why": "Four-wheeler is still small as a share of sales, with 4-5 products for two or three customers launching next year, and management expects the share to stay small for 12 months."
+   },
+   {
+    "k": "order_book",
+    "label": "Honda conventional-to-LED model risk",
+    "call": "possible",
+    "when": "Q2-Q3 FY28",
+    "why": "Some HMSI conventional-to-LED model changes will go to other suppliers such as Lumax, with launches in Q2 or Q3 next year, though the revenue at risk was not quantified while HMSI business grew 20% vs production growth of about 15%."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on 15-20% growth (top end or above), the 14% margin and the South India capacity build, but cautious and vague on HMSI share loss, four-wheeler timelines and new-product revenue quantification; analysts pressed on gross margin and the Honda/Lumax share question."
+  }
+ }
+}

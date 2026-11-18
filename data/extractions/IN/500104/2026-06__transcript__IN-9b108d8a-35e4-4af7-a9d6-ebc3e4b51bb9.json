@@ -1,0 +1,427 @@
+{
+ "doc_id": "IN-9b108d8a-35e4-4af7-a9d6-ebc3e4b51bb9",
+ "market": "IN",
+ "company_id": "500104",
+ "name": "Hindustan Petroleum Corporation Ltd",
+ "doc_type": "transcript",
+ "date": "2026-07-29",
+ "period": "2026-06",
+ "title": "Hindustan Petroleum Corporation Ltd - 500104 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Oil & gas",
+  "thesis": "Q1 FY27 hit by crude-price whipsaw and inventory write-downs (loss implied well beyond a 5-digit crore figure), with marketing under-recovery of ~INR26,000 crore; capex guided below INR9,700 crore and HRRL ramp to full run only by Q4 FY27.",
+  "archetype": "Special situation",
+  "mental_models": [
+   "Working-capital stress",
+   "Deleveraging",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": -2,
+   "structure": 0,
+   "inventory": -2,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 60,
+   "quote": "As of now, CDU is running at 60% capacity utilization."
+  },
+  "capex": {
+   "direction": "cut",
+   "peers_comment": "",
+   "quote": "If the current situation prevails, we would expect the capex to be lower than INR9,700 crores also."
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex guided below INR9,700 crore",
+    "quote": "we would expect the capex to be lower than INR9,700 crores also",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "util",
+    "label": "HRRL CDU at 60% utilisation",
+    "quote": "As of now, CDU is running at 60% capacity utilization.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Crude inventory write-down, loss in 5-digit crore",
+    "quote": "if you net it off, the loss number would have been on the other side of 5-digit number by a good margin",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "pricing",
+    "label": "Marketing under-recovery ~INR26,000 crore",
+    "quote": "the marketing under recovery for the whole quarter was upwards of INR26,000 crores",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "guidance",
+    "label": "Refinery ramp slips to Q4 FY27 full run",
+    "quote": "by fourth quarter, we expect it to have close to full utilization on the refinery section",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Debt up to INR72,000 crore, D/E 1.5",
+    "quote": "Right now, it has risen up to 1.5 again. The debt is INR72,000 crores.",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Capex FY27",
+    "value": "below INR9,700 crore",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "we would expect the capex to be lower than INR9,700 crores also"
+   },
+   {
+    "metric": "HRRL refinery utilisation",
+    "value": "50% in Q2 FY27; 80-85% from Oct; near full by Q4",
+    "change": "new",
+    "horizon": "Q2-Q4 FY27",
+    "quote": "by fourth quarter, we expect it to have close to full utilization on the refinery section"
+   },
+   {
+    "metric": "Samriddhi 2.0 accruals",
+    "value": "INR1,000 crore target",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we are going to aim for INR1,000 crores on accruals in this"
+   },
+   {
+    "metric": "Vizag RUF stabilisation",
+    "value": "Stable in next quarter",
+    "change": "new",
+    "horizon": "Q2 FY27",
+    "quote": "in the next quarter itself, hoping to have it fully stabilized there"
+   }
+  ],
+  "prior_guidance_check": [],
+  "entities": [
+   {
+    "name": "BPCL",
+    "relation": "peer"
+   },
+   {
+    "name": "HMEL",
+    "relation": "partner"
+   },
+   {
+    "name": "Swiggy",
+    "relation": "partner"
+   },
+   {
+    "name": "Lummus",
+    "relation": "supplier"
+   },
+   {
+    "name": "IOC",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Interest-rate relief",
+   "Premiumisation in consumption",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Debt/equity back to 1.5 from 0.8",
+    "quote": "Right now, it has risen up to 1.5 again. The debt is INR72,000 crores."
+   },
+   {
+    "label": "Large inventory write-down, undisclosed quantum",
+    "quote": "I will not say anything further on inventory."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 3,
+   "capex": 2,
+   "growth": 2,
+   "margin": 9,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Inventory loss quantum",
+    "quote": "I will not say anything further on inventory."
+   },
+   {
+    "topic": "Government support for under-recoveries",
+    "quote": "it's not my brief to talk on what the government is going to do."
+   },
+   {
+    "topic": "Refinery-wise GRM disclosure",
+    "quote": "we'll stick to that level of disclosure."
+   },
+   {
+    "topic": "Forward guidance on Q2 margins",
+    "quote": "this is the least time as a management team, we would want to give forward-looking guidance."
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "HPCL Q1 FY27 earnings were loss-making amid a Hormuz-driven crisis; marketing under-recoveries were about INR26,000 crore, and HRRL reached commercial operation on 22 June.",
+  "overview": "Management described Q1 FY27 as a very weak quarter, with the company absorbing a large marketing under-recovery (upwards of INR26,000 crore, roughly INR20,000 crore on MS and HSD) and inventory write-downs on crude carried into 30 June. The company declared Rajasthan refinery (HRRL) commercial operation on 22 June, with CDU at about 60% utilisation. Management presented a seven-pronged response: balance sheet repair, capex control, interest cost reduction, Samriddhi 2.0 (INR1,500 crore run-rate target), retail (Abhyuday 2.0), refinery optimisation, and digital. Management declined to give quantified guidance on GRM, inventory losses, or government support, and said July was better than June.",
+  "financial_highlights": [
+   {
+    "metric": "Marketing under-recovery for Q1",
+    "value": "upwards of INR26,000 crore (approx.; ~INR20,000 crore on MS and HSD, remainder LPG)",
+    "change": ""
+   },
+   {
+    "metric": "Total debt",
+    "value": "INR72,000 crore",
+    "change": "debt-to-equity risen to about 1.5 from 0.8 at end of last fiscal year; adding about INR1,900 crore a week over last 13 weeks"
+   },
+   {
+    "metric": "Q1 capex spent",
+    "value": "about INR1,700 crore (INR1,734 crore per analyst)",
+    "change": "annual target about INR9,700 crore, expected to be lower"
+   },
+   {
+    "metric": "LPG loss per cylinder",
+    "value": "INR510 for the quarter; INR680 in June; INR490 in July",
+    "change": "June to July decline of INR190"
+   },
+   {
+    "metric": "Vizag inventory-loss-adjusted figure",
+    "value": "INR2,635 crore (per K. Vinod, after inventory losses at Vizag)",
+    "change": ""
+   },
+   {
+    "metric": "Samriddhi programme (FY26)",
+    "value": "about INR1,600 crore achieved",
+    "change": "Samriddhi 2.0 target INR1,500 crore run-rate, INR1,000 crore accruals aimed at"
+   },
+   {
+    "metric": "Net inventory loss",
+    "value": "Not disclosed; management said netted loss is on the other side of a 5-digit crore figure",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "Refining (incl. HRRL and Vizag RUF)",
+    "commentary": "HRRL CDU at about 60% utilisation; management guides about 50% for Q2, 80-85% from October (Q3), and full refinery run in Q4 or FY28 per the Q&A. Vizag RUF is still in stabilisation after catalyst-handling issues at 380 bar and about 400 degrees C, with a stable run hoped for in Q2."
+   },
+   {
+    "name": "Marketing and retail",
+    "commentary": "Marketing took the bulk of government-mandated under-recovery (~INR26,000 crore for the quarter). Abhyuday 2.0 is live at 4,900 outlets, delivering 100-150 bps higher growth versus non-Abhyuday outlets (per management, measured like-for-like). HP Navya premium on-demand LPG launched 15 July, piloted with Swiggy in Bangalore, targeting 200-250 cities by Diwali."
+   },
+   {
+    "name": "LPG",
+    "commentary": "Per-cylinder loss was INR510 for Q1, INR680 in June and INR490 in July. Spot premium has cooled as the Saudi CP fell about $200 per tonne and sourcing has diversified to US cargoes via Indian time charters."
+   },
+   {
+    "name": "HMEL and HRRL (JV)",
+    "commentary": "HRRL will be accounted as a joint venture (share of profit), not consolidated. HRRL carries high-cost rupee term loans, with refinancing via a fully hedged ECB (minimum 1.5% saving per management) and bank repricing planned after stable operations. HSD sourcing mix for Q1 was about 50% own refineries, 27% HMEL, 24% bought out; by FY28 management expects 56% own, 40% JVs and the balance third party."
+   }
+  ],
+  "guidance_outlook": [
+   "HRRL CDU utilisation about 50% for Q2 FY27, 80-85% from October (Q3), and full refinery run by Q4; petchem to take longer, with full run on the refinery expected in FY28.",
+   "Vizag RUF: management hopes for a good run within Q2 and full stabilisation in Q3; once RUF and HRRL are on stream, MS/diesel sourcing from third parties is expected to fall to about 10%.",
+   "Capex for FY27 is targeted at about INR9,700 crore, with management saying it could come in lower; discretionary spending can be deferred while turnaround and critical spend continues.",
+   "Samriddhi 2.0: aim for INR1,500 crore run-rate savings and INR1,000 crore of accruals in the remaining three quarters of FY27.",
+   "Management said July was better than June and hoped August would be better, but declined to give quantitative forward guidance on margins or under-recoveries."
+  ],
+  "capex_capacity": [
+   "HRRL (Rajasthan refinery) declared commercial operation on 22 June 2026; CDU at about 60% utilisation; PFCCU expected to start within days; SRU block due by end-Q2; DCU has one train running with the second train expected within 2-4 weeks.",
+   "Vizag RUF (Lummus technology, 380 bar, ~400 degrees C) still stabilising; catalyst handling issues; management expects distillate yields to move into the 80s once RUF is stable.",
+   "Capex of about INR1,700 crore in Q1 mainly for turnaround catalysts and equipment, and cylinders; annual target about INR9,700 crore, possibly lower.",
+   "Mundra crude storage for HRRL enables VLCC receipt and smaller-vessel transfer to Mumbai; RTO and APC saturation being rolled out at refineries, showing 0.4-0.5% yield uplift where measured."
+  ],
+  "demand_pricing": [
+   "Crude sourcing: term contracts mostly sit beyond the Strait of Hormuz, so Q1 spot buying dominated; crude covered through end-August, September buying has started; management says crude availability is not a concern, with pricing the main risk.",
+   "Crude price path: management said Brent moved from roughly $110-115 to a $25 drop within weeks, then back to around $96; in the last three working days (per management, before the Q&A on 29 July) it rose from $85 to $96.",
+   "Inventory: HPCL carried above-normal crude into 30 June, and management said a write-down followed a $25 fall; markdown crude has been run since July. The company declined to quantify the inventory loss.",
+   "Demand: some days saw roughly 40% more product demand than usual; the company has no LPG sourcing shortage but has diversified away from the Strait of Hormuz.",
+   "Market share: HPCL retail and LPG volumes were boosted by state-owned company demand; management says Abhyuday outlets are outperforming on like-for-like growth."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Given the renewed Hormuz crisis, how are crude and LPG sourcing and mix for Q3 looking?",
+    "answer": "Crude is covered through end-August and September buying has started; crude availability is not seen as an issue, though pricing is. LPG sourcing has diversified to US and other sources, and spot premiums have cooled."
+   },
+   {
+    "question": "Will the inventory loss reverse in Q2 given the price rise?",
+    "answer": "Management said some reversal is automatic as prices rise, but the size depends on the price path; markdown crude has been run since July. Management declined to quantify the Q1 inventory loss beyond a 5-digit crore netted figure."
+   },
+   {
+    "question": "Why is HPCL's GRM lower than peers, and what are the structural factors?",
+    "answer": "Management declined to comment on BPCL. It cited the East Coast location (higher inventory and crude costs, no natural gas), HRRL's delayed coker as a future uplift, and Vizag RUF as a planned distillate yield gain; it also said GRM is affected by crude pricing timing."
+   },
+   {
+    "question": "What is the FY27 capex and which segments will be cut?",
+    "answer": "Target is about INR9,700 crore with a downward bias. Discretionary items (pump upgrades, administration and infrastructure) can be deferred, while refinery projects continue."
+   },
+   {
+    "question": "What is the interest cost reduction plan and how much room is there?",
+    "answer": "The CFO said the cost is not a concern at HPCL standalone; the priority is downsizing debt. For HRRL, an ECB refinancing with at least 1.5% saving and bank repricing are planned after stable operations."
+   },
+   {
+    "question": "How is HRRL accounted and what is the status of ramp-up and commissioning?",
+    "answer": "HRRL will be accounted as a JV (share of profit). Management said 4-5 major blocks were commissioned in June; 150 staff are stationed at HRRL; SRU is expected by end-Q2."
+   }
+  ],
+  "risks_watch": [
+   "Debt-to-equity at about 1.5 and rising, with debt at INR72,000 crore; management aims to lower it, but gave no timeline.",
+   "Vizag RUF stabilisation: a delay would keep distillate yields and GRMs below potential into Q3 and Q4.",
+   "Marketing under-recovery: LPG and MS/HSD subsidies remain; no government support was confirmed on the call, and management declined to discuss it.",
+   "Crude price volatility (Hormuz, Red Sea); inventory exposure if prices fall sharply after month-end stock builds.",
+   "HRRL ramp-up: 80-85% in Q3 and full run in Q4 is a key milestone; petchem is not until later; intermediate products cannot be moved coastally from the inland site.",
+   "ATF losses were raised, but management did not quantify them and deferred the answer to offline follow-up."
+  ],
+  "management_tone": "Confident about the medium term and HRRL, but cautious and at times evasive on the quarter's numbers, the inventory loss, the GRM comparison with BPCL, and government support. Management declined to give quantified guidance, repeatedly citing price volatility, and pointed to July being better than June.",
+  "key_quotes": [
+   "We are very confident of our future, a lot of foundational elements, some of which we will talk and some which we will not talk in this call are in place.",
+   "We are expecting the refinery to ramp up to the full capacity in quarter 3 and petchem by end of the financial year.",
+   "Even when our own refinery transfer to the marketing, it's done after writing down the SAED.",
+   "Red quarter, we cannot avoid at this time, but we would also not want to have red year."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "HRRL (Rajasthan refinery) CDU, commercial operation declared 22 June 2026, running at about 60% utilisation",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "major"
+   },
+   {
+    "what": "HRRL PFCCU, SRU block and second DCU train coming on stream",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "trial_runs",
+    "mat": "moderate"
+   },
+   {
+    "what": "Vizag RUF (Lummus technology) still stabilising after catalyst-handling issues; expected stable in Q2 FY27",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "trial_runs",
+    "mat": "moderate"
+   }
+  ],
+  "util": 60.0,
+  "expansion": true,
+  "growth": null,
+  "gs": -1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "cost_actions",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "No revenue guidance; management cut FY27 capex below INR9,700 crore, ramps HRRL to 50% in Q2, 80-85% from Q3 and near full by Q4, with Samriddhi 2.0 savings of INR1,500 crore run-rate and INR1,000 crore accruals targeted, but declined to quantify margins or under-recoveries.",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "Q1 marketing under-recovery upwards of INR26,000 crore and LPG loss down to INR490/cylinder in July from INR680 in June, with Samriddhi 2.0 targeting INR1,500 crore run-rate savings and HRRL ramping to 80-85% utilisation from October, though management gave no quantified margin guidance."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q2-Q4 FY27",
+    "why": "HRRL declared commercial operation on 22 June 2026 with CDU at about 60%, targeting 50% in Q2, 80-85% from Q3 and near full by Q4; PFCCU, SRU and second DCU train are due within weeks to end-Q2."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "Q3-Q4 FY27",
+    "why": "HRRL ramp to 80-85% CDU from October and Vizag RUF stabilising in Q2 should lift own-refinery throughput, with third-party MS/diesel sourcing expected to fall to about 10% once both are on stream."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "unlikely",
+    "when": "next 2-4 quarters",
+    "why": "Management is cutting capex: FY27 target about INR9,700 crore with a downward bias versus about INR1,700 crore spent in Q1, and debt at INR72,000 crore with debt-to-equity rising to about 1.5 from 0.8."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Management declined to give quantified guidance on GRM, inventory losses or government support, and Brent swung from $110-115 down $25 and back to about $96, keeping visibility low."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "Q2 FY27",
+    "why": "Marketing under-recovery upwards of INR26,000 crore in Q1, unquantified inventory write-downs and no confirmed government support leave a real risk of further losses, though July was better than June."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "by Diwali (Q2 FY27)",
+    "why": "HP Navya premium on-demand LPG launched 15 July, piloted in Bangalore with Swiggy, with a target of 200-250 cities by Diwali."
+   },
+   {
+    "k": "turnaround",
+    "label": "Vizag RUF stabilisation",
+    "call": "likely",
+    "when": "Q2-Q3 FY27",
+    "why": "Management hopes for a stable run in Q2 and full stabilisation in Q3, with distillate yields expected to move into the 80s once stable; a delay would keep GRMs below potential into Q3-Q4."
+   },
+   {
+    "k": "cost_actions",
+    "label": "Samriddhi 2.0 savings",
+    "call": "likely",
+    "when": "remaining three quarters of FY27",
+    "why": "Target INR1,500 crore run-rate savings and INR1,000 crore accruals versus about INR1,600 crore achieved in FY26."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Debt reduction priority",
+    "call": "possible",
+    "when": "no timeline given",
+    "why": "Total debt at INR72,000 crore, adding about INR1,900 crore a week over 13 weeks, with debt-to-equity at about 1.5; management aims to lower it but gave no timeline."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on HRRL ramp-up, the Samriddhi savings and the medium term, but cautious and at times evasive on Q1 numbers, inventory losses, the BPCL GRM comparison and government support; analysts pressed on GRM, inventory reversal and ATF losses."
+  }
+ }
+}

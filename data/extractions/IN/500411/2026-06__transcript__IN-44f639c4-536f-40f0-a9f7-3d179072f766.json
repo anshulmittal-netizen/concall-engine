@@ -1,0 +1,427 @@
+{
+ "doc_id": "IN-44f639c4-536f-40f0-a9f7-3d179072f766",
+ "market": "IN",
+ "company_id": "500411",
+ "name": "Thermax Ltd",
+ "doc_type": "transcript",
+ "date": "2026-08-06",
+ "period": "2026-06",
+ "title": "Thermax Ltd - 500411 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.93,
+ "read": {
+  "subsector": "Capital goods",
+  "thesis": "Q1 FY27 was a bad quarter: a INR 91 crore cost-to-completion hit on a legacy govt project, about INR 300 crore of finished goods unshipped, and revenue growth of only 7%; management guides to a stronger H2 and order inflow above FY26.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Backlog conversion",
+   "Working-capital stress",
+   "Hidden supplier"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Legacy govt project loss INR 91 crore",
+    "quote": "I expect this year to be a very good year. And at the heart of it comes down to the backlog",
+    "highlight": "",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "INR 300 crore finished goods unshipped",
+    "quote": "there was also an impact in Industrial Products more so than other places of not being able to ship finished goods inventory, overall to the tune of about INR 300 crores",
+    "highlight": "not being able to ship finished goods inventory",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Order book ~INR 14,000 crore; PSU share under 5%",
+    "quote": "Out of almost INR 14,000 crores, just INR 300 crores",
+    "highlight": "just INR 300 crores",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 order inflow",
+    "value": "exceed FY26 order book",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I expect us to exceed that order book this year"
+   },
+   {
+    "metric": "Quarterly shipments",
+    "value": "INR 3,000 crore-plus per quarter",
+    "change": "new",
+    "horizon": "Q2 FY27 onward",
+    "quote": "So, each quarter, we should be looking to do INR 3,000-plus crores."
+   },
+   {
+    "metric": "Industrial Infra EBITDA margin",
+    "value": "10% and beyond",
+    "change": "new",
+    "horizon": "medium term",
+    "quote": "I can finally see line of sight to taking that business to 10% and beyond on profitability"
+   },
+   {
+    "metric": "TOESL revenue",
+    "value": "INR 800-1,000 crore run-rate",
+    "change": "new",
+    "horizon": "next two years",
+    "quote": "TOESL is on the path to becoming an INR 800 crores to INR 1,000 crores business over the next two years"
+   },
+   {
+    "metric": "Chemicals growth",
+    "value": "at least 20%",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "I do expect that we will grow at least 20%, hopefully, in Chemicals."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Government/PSU project exposure ending",
+    "outcome": "met",
+    "quote": "this would be the last year we would have any exposure to those"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Kandla Port",
+    "relation": "customer"
+   },
+   {
+    "name": "B&W",
+    "relation": "partner"
+   },
+   {
+    "name": "Hydrogen Pro",
+    "relation": "partner"
+   },
+   {
+    "name": "IOCL",
+    "relation": "customer"
+   },
+   {
+    "name": "NTPC",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Bio-CNG policy",
+   "Green methanol",
+   "Hydrogen",
+   "Consolidation / competitor exits",
+   "Tariffs & trade policy",
+   "Capex cycle revival (private)"
+  ],
+  "red_flags": [
+   {
+    "label": "Repeated execution misses and cost overrun on legacy govt project",
+    "quote": "I think this was a wrong project to take. We shouldn't have taken it."
+   },
+   {
+    "label": "Management concedes no profit warning given before surprise",
+    "quote": "your feedback is very well taken. And without committing to it for sure, your suggestion is something that we are looking at"
+   },
+   {
+    "label": "Bio-CNG team cost drag with no new projects",
+    "quote": "we are carrying a team, for which we are taking a hit of about INR 8 crores a quarter right now"
+   }
+  ],
+  "analyst_mix": {
+   "growth": 4,
+   "margin": 4,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Profit warning / disclosure timing",
+    "quote": "I'm not committing to it. It's between us as a team to decide"
+   },
+   {
+    "topic": "Absolute value of >INR 100 crore project margins",
+    "quote": "we thought we shouldn't share because then it starts to share competitive information"
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Thermax Q1 FY27 hit by a INR 91 crore cost-to-completion charge on a legacy government EPC project, with revenue growth only about 7%.",
+  "overview": "Management called Q1 FY27 the toughest quarter relative to expectations in several years. The biggest drag was a INR 91 crore cost-to-completion hit on a legacy government EPC project (original order about INR 1,200 crore, taken in FY22), triggered by late engineering changes from the engineering partner in June. About INR 300 crore of finished Industrial Products goods could not be shipped in the quarter, partly due to high Gulf-war shipping rates, and commodity cost pressure added about INR 10 crore. Green Solutions lost about INR 20 crore at FEPL and about INR 8 crore in Bio-CNG. Revenue grew only about 7%, and management said the backlog (about INR 14,000 crore) and a strong H2 are the basis for remaining bullish.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue growth YoY",
+    "value": "about 7%",
+    "change": "Barely delivered 7% growth, per management"
+   },
+   {
+    "metric": "Cost-to-completion charge, legacy government EPC project",
+    "value": "INR 91 crore",
+    "change": "Total loss on project close to INR 150 crore per management"
+   },
+   {
+    "metric": "Finished goods not shipped (Industrial Products)",
+    "value": "about INR 300 crore",
+    "change": "Slipped into Q2; part of it recognised later"
+   },
+   {
+    "metric": "Commodity price impact",
+    "value": "INR 10 crore",
+    "change": "Largely in line with expectations"
+   },
+   {
+    "metric": "FEPL (wind/solar) loss",
+    "value": "INR 20 crore",
+    "change": "Unexpected; includes Tamil Nadu project delays and carrying cost of team"
+   },
+   {
+    "metric": "Bio-CNG loss",
+    "value": "INR 8 crore",
+    "change": "Team carrying cost, about INR 8 crore per quarter"
+   },
+   {
+    "metric": "Order book",
+    "value": "about INR 14,000 crore",
+    "change": "Government/PSU exposure now under INR 300-400 crore, less than 5%"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Industrial Products",
+    "commentary": "Double-digit YoY growth in Q1 per management, but profitability fell from steel price rise of about 18% (plates from about INR 52-53 to INR 61+ per kg) and about INR 300 crore of unshipped goods. Management expects Q2 margin pressure, clearing in Q3-Q4 as Cooling backlog converts."
+   },
+   {
+    "name": "Industrial Infra / Projects (TBWES)",
+    "commentary": "Legacy government EPC project caused the INR 91 crore hit; remaining PSU/government exposure is under INR 300-400 crore. Management sees line of sight to 10%+ profitability on the business, with a supercritical order expected again this year."
+   },
+   {
+    "name": "Chemicals",
+    "commentary": "Turnaround in Q1 with volumes recovering and double-digit EBITDA shown. Management expects at least 20% growth, with risk from commodity prices and a 10% US tariff."
+   },
+   {
+    "name": "Green Solutions - TOESL",
+    "commentary": "Strong Q1 with a INR 120-plus crore marquee order (10-year revenue outlook INR 2,000 crore). Run rate above INR 600 crore; targets INR 800-900 crore and then INR 1,000 crore over about two years."
+   },
+   {
+    "name": "Green Solutions - FEPL and Bio-CNG",
+    "commentary": "FEPL loss of INR 20 crore; management plans to bring in an external investor for a substantial majority stake. Bio-CNG: no new projects for two years; four performance-guarantee projects, one completed, the last two due for PGTR in August-September; INR 8 crore per quarter team cost."
+   }
+  ],
+  "guidance_outlook": [
+   "Management expects FY27 to be a very good year and sees the order book exceeding FY26 order inflow.",
+   "Q2 expected to show a good profitability step-up, helped by LD reversals and collections; Q2, Q3 and Q4 each expected to be a significant improvement over last year.",
+   "Quarterly revenue to run above INR 3,000 crore; two to three quarters above that level expected this year.",
+   "The INR 300 crore US data-centre shipment will be recognised in Q3 once the customer takes possession.",
+   "Cooling-related US data-centre order wins expected in Q3-Q4; hydrogen order to be announced next quarter and revenue next year.",
+   "Bio-CNG price revision of 20-30% is expected around August; no order announcement guaranteed.",
+   "NRL slips into Q1 of next year, with cost impacts expected to be absorbed this year; FGD plants to be handed over in Q1/Q2 and Q4 of this year."
+  ],
+  "capex_capacity": [
+   "Adding capacity in TBWES at its own plant and through the ecosystem, given the thermal pipeline.",
+   "Kandla green methanol project (under INR 100 crore) execution expected between Q4 FY27 and Q1 FY28; delay attributed to site and customer.",
+   "Hydrogen SOEC demo plant to go live at the end of this year with a team of about 40-50 people; Hydrogen Pro partnership in place.",
+   "Bio-CNG: about INR 250 crore of new projects needed to absorb the existing team's cost."
+  ],
+  "demand_pricing": [
+   "Industrial Products pipeline remains healthy on clean air, ZLD/ETP water, cooling (data centres, heat pumps, CLCT), and biomass boilers; solid double-digit YoY growth trend cited.",
+   "International pipeline strong (Middle East, Africa, US); one Africa order shaken hands on but not booked pending advance payment; a few hundred crore of handshakes not booked in Q1.",
+   "US data-centre cooling: MOUs with two major solution providers; two wins expected in Q3-Q4.",
+   "Management says government/PSU bids will be taken only at correct pricing; limited exceptions for unique capability (IOCL project under INR 60 crore, Kandla green methanol under INR 100 crore).",
+   "Chemicals faces Chinese export competition and a 10% US tariff; customers so far absorbing price increases."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How big is the legacy project behind the INR 91 crore hit, and how much remains to execute?",
+    "answer": "Original order was about INR 1,200 crore, taken in FY22, with a total loss close to INR 150 crore. About 74% is invoiced and 26% is balance. The engineering partner has confirmed engineering is 100% complete, and the last four quarters are construction-heavy."
+   },
+   {
+    "question": "What share of the order book is government/PSU, and will Thermax bid on such projects again?",
+    "answer": "Government/PSU orders are about INR 300-400 crore, under 5% of the roughly INR 14,000 crore book. Management will not rule out future bids but will price them for risk and only where capability is unique."
+   },
+   {
+    "question": "Is the INR 300 crore shipment slippage a recoverable profit, and what is the Q2 outlook?",
+    "answer": "Management said the slipped volume was partly shipped and carried better-than-average margin, but gross margins are not 45-50%; project gross margins are about 15%. Q2 will also carry a larger scheduled shipment, and the US data-centre shipment is expected to be recognised in Q3."
+   },
+   {
+    "question": "Why was the issue not flagged earlier, and what will be done about it?",
+    "answer": "The engineering change arrived in June, and the Board and auditors took several weeks to review the impact. Management did not commit to pre-announcing profit warnings but said it will consider sharing surprises earlier."
+   },
+   {
+    "question": "Is talent the root cause of execution slippage?",
+    "answer": "Management said the top five people on the project had over 20 years of Thermax experience and that the error was a project-model mistake, not a talent gap. Several restructurings were announced, and TOESL and FEPL have external leadership."
+   },
+   {
+    "question": "What policy changes drive the Bio-CNG and green methanol pipeline?",
+    "answer": "Management expects bio-CNG prices to rise 20-30% around August, with announcements possible at an August 10 conference. Green methanol tenders by SECI are a second lever; thermal demand is also growing."
+   },
+   {
+    "question": "What is the sustainable EBITDA margin once legacy projects are done?",
+    "answer": "Management sees line of sight to 10%+ profitability for Industrial Infra. Chemicals already reached double-digit EBITDA in Q1."
+   }
+  ],
+  "risks_watch": [
+   "Further cost-to-completion or LD exposure on the remaining legacy government EPC project over the next four quarters.",
+   "Bio-CNG PGTR outcomes for the last two projects in August-September, with Q3 closure expected.",
+   "Commodity (steel plates up about 18%) and tariff pressure on Industrial Products and Chemicals margins in Q2.",
+   "Pipeline conversion: handshakes not booked pending advances; US data-centre timing slipping on customer end.",
+   "FEPL Tamil Nadu approvals still pending, and the planned external investor for a majority stake."
+  ],
+  "management_tone": "Candid and self-critical on execution and the Q1 miss, with management calling it the toughest quarter in years. Confident on H2 and the order pipeline, but several forward claims (order inflow, bio-CNG policy, Q2 profit recovery) are not yet backed by booked orders.",
+  "key_quotes": [
+   "A very difficult quarter, felt like was the toughest one, at least relative to expectations for the past few years that we have had.",
+   "But this one felt particularly so.",
+   "So, net-net, we actually -- outside of this one project -- our project execution adds to our as-sold profitability, not takes away from our as sold.",
+   "It was a mistake and not one that we have remotely done in the last 3 years."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Kandla green methanol project (under INR 100 crore), execution expected Q4 FY27 to Q1 FY28",
+    "size_pct": null,
+    "capex_cr": 100.0,
+    "q": 3,
+    "status": "planned",
+    "mat": "minor"
+   },
+   {
+    "what": "Hydrogen SOEC demo plant with team of about 40-50 people",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "planned",
+    "mat": "minor"
+   },
+   {
+    "what": "Bio-CNG new projects of about INR 250 crore needed to absorb existing team cost; no new projects for two years",
+    "size_pct": null,
+    "capex_cr": 250.0,
+    "q": null,
+    "status": "deferred",
+    "mat": "minor"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "demand_or_share_gains",
+   "pricing_or_mix",
+   "capacity_coming"
+  ],
+  "clarity": "partial",
+  "qRev": 7.0,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management guides FY27 to be a very good year with order inflow above FY26 and quarterly shipments above INR 3,000 crore from Q2, backed by a ~INR 14,000 crore order book, a INR 300 crore US data-centre shipment in Q3, and TOESL targeting INR 800-1,000 crore over two years; capacity additions are minor, and the Chemicals 20%+ growth and Industrial Infra 10%+ margin targets are not backed by specif",
+  "mgmt": null
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "Q2 FY27 step-up; Q3-Q4 clearing",
+    "why": "Q1 hit by INR 91 crore legacy EPC charge (total loss near INR 150 crore) and about INR 10 crore commodity cost; management expects a Q2 profitability step-up helped by LD reversals, but Q2 also carries steel plate price rise of about 18% and the Industrial Products margin pressure clears only in Q3-Q4."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "unlikely",
+    "when": "Kandla green methanol Q4 FY27 to Q1 FY28",
+    "why": "Capacity adds are minor: Kandla green methanol under INR 100 crore, Hydrogen SOEC demo of 40-50 people, and Bio-CNG with no new projects for two years; no major plant or line commissioning is named in the window."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "Q2 FY27 onward",
+    "why": "Management guides quarterly revenue above INR 3,000 crore from Q2 and FY27 order inflow above the FY26 book (about INR 14,000 crore backlog), with a INR 300 crore US data-centre shipment in Q3 and about INR 300 crore of unshipped Q1 goods slipping into Q2."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "Utilisation not disclosed, but management is adding TBWES capacity for the thermal pipeline and a Bio-CNG absorption project of about INR 250 crore is needed; the Bio-CNG build is deferred for two years, so a firm capex decision is not guided."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "possible",
+    "when": "H2 FY27",
+    "why": "Management calls FY27 a very good year, Chemicals at least 20% growth, and Industrial Infra 10%+ margin line of sight, but several claims (order inflow, Bio-CNG price rise of 20-30%, Q2 recovery) lack booked orders, so upgrades are conditional."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-4 quarters",
+    "why": "Remaining legacy government EPC project has 26% balance still to execute with further cost-to-completion or LD risk; FEPL Tamil Nadu approvals pending; Bio-CNG PGTR outcomes due August-September; a few hundred crore of handshake orders not booked."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "hydrogen order next quarter; SOEC demo end of FY27",
+    "why": "Hydrogen SOEC demo plant to go live at year end with 40-50 staff and a Hydrogen Pro partnership in place; hydrogen order to be announced next quarter and revenue next year."
+   },
+   {
+    "k": "order_book",
+    "label": "US data-centre cooling wins in Q3-Q4",
+    "call": "possible",
+    "when": "Q3-Q4 FY27",
+    "why": "MOUs with two major solution providers, with two wins expected in Q3-Q4, but a few hundred crore of handshakes are unbooked and the customer-side timing is slipping."
+   },
+   {
+    "k": "pricing",
+    "label": "Bio-CNG price revision of 20-30%",
+    "call": "possible",
+    "when": "around August 2026",
+    "why": "Management expects a 20-30% Bio-CNG price revision around August, with an August 10 conference as a possible announcement venue, but no order announcement is guaranteed."
+   },
+   {
+    "k": "deleveraging",
+    "label": "FEPL external investor for majority stake",
+    "call": "likely",
+    "when": "next 2-4 quarters",
+    "why": "Management plans to bring an external investor for a substantial majority stake in FEPL, which lost INR 20 crore in Q1 and still awaits Tamil Nadu approvals."
+   }
+  ],
+  "tone": {
+   "mgmt": null,
+   "analysts": "probing",
+   "note": "Management was candid and self-critical on the legacy EPC miss and the Q1 shortfall, while confident on H2 order flow and TOESL; analysts pushed on why the issue was not flagged earlier, whether talent was the root cause, and how much of the INR 300 crore shipment slippage is recoverable profit."
+  }
+ }
+}
