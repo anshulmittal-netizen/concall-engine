@@ -68,6 +68,7 @@ a{color:var(--accent)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes breathe{50%{transform:scale(.72);opacity:.75}}
 .vmark{width:36px;height:36px;flex:none}.vmark svg{width:100%;height:100%;display:block;border-radius:12px;box-shadow:0 0 0 1px var(--line2)}
+.po-bulk{gap:6px;margin:-2px 0 8px}.po-bulk .btn[disabled]{opacity:.45;cursor:default;transform:none}
 .by-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:16px}
 .by-card{display:grid;gap:10px;align-content:start;padding:12px}
 .by-img{display:block;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel2);aspect-ratio:16/9;cursor:zoom-in}
@@ -4256,6 +4257,7 @@ function vPost() {
   <div class="po-grid">
     <section class="po-col">
       <div class="list-head"><h3>Lines from the calls</h3><span class="small muted">${fmt(sel.size)} picked of ${fmt(cand.length)} · ${esc(st.w.label)}</span></div>
+      ${cand.length ? `<div class="toolbar po-bulk"><button class="btn" data-po-bulk="all"${sel.size === cand.length ? ' disabled' : ''}>Select all ${fmt(cand.length)}</button><button class="btn" data-po-bulk="none"${sel.size ? '' : ' disabled'}>Clear all</button><button class="link" data-po-bulk="auto">Back to the automatic pick</button></div>` : ''}
       ${cand.length ? `<div class="rows po-c">${cand.map(x => { const on = sel.has(x.c.id), cat = PO_CAT[x.k], q = f.qe[x.c.id] ?? x.q;
         return `<div class="r${on ? ' po-on' : ''}"><label class="po-ck"><input type="checkbox" data-po-pick="${esc(x.c.id)}" ${on ? 'checked' : ''} aria-label="Feature ${esc(x.c.name)}"></label>
           <span style="min-width:0"><span class="po-meta"><button class="link nm" data-open="${esc(x.c.id)}" data-k="${esc(x.c.key)}">${esc(poName(x.c))}</button> <span class="pill" style="--pc:${cat[3]}">${esc(cat[1])}</span> <span class="sub">${esc(poMcap(x.c))}${x.c.mcap ? ' · ' : ''}${esc(poWhen(x.c))} · score ${x.c.score}</span></span>
@@ -4289,6 +4291,9 @@ function poStatus(s) { S.post.copied = s; const el = $('#po-st'); if (el) el.tex
 document.addEventListener('click', async e => {
   if (S.view !== 'post') return;
   const t = e.target, f = S.post;
+  const bk = t.closest('[data-po-bulk]'); if (bk) { const m = bk.dataset.poBulk;
+    if (m === 'auto') f.pick.clear(); else document.querySelectorAll('[data-po-pick]').forEach(el => f.pick.set(el.dataset.poPick, m === 'all'));
+    render(); return; }
   const cat = t.closest('[data-po-cat]'); if (cat) { const k = cat.dataset.poCat; f.cats.has(k) ? f.cats.delete(k) : f.cats.add(k); f.pick.clear(); render(); return; }
   if (t.closest('[data-po-skip]')) { f.skipPosted = !f.skipPosted; f.pick.clear(); render(); return; }
   const ed = t.closest('[data-po-edit]'); if (ed) { f.edit = ed.dataset.poEdit; render(); if (f.edit) setTimeout(() => $('.po-ed')?.focus(), 30); return; }
