@@ -1,5 +1,5 @@
 <script>try{var t=JSON.parse(localStorage.getItem("csd2-theme"));if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
-<title>Concall Signal Desk</title>
+<title>Vantage</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,6 +67,23 @@ a{color:var(--accent)}
 .mark b{position:absolute;inset:11px;border-radius:50%;background:var(--saffron);animation:breathe 3.2s ease-in-out infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes breathe{50%{transform:scale(.72);opacity:.75}}
+.vmark{width:36px;height:36px;flex:none}.vmark svg{width:100%;height:100%;display:block;border-radius:12px;box-shadow:0 0 0 1px var(--line2)}
+.by-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:16px}
+.by-card{display:grid;gap:10px;align-content:start;padding:12px}
+.by-img{display:block;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel2);aspect-ratio:16/9;cursor:zoom-in}
+.by-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s var(--ease)}
+.by-img:hover img{transform:scale(1.02)}
+.by-card h4{font-size:15.5px;font-weight:600;line-height:1.25}
+.by-card p{font-size:11.5px;color:var(--muted)}
+.by-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:10.5px;color:var(--muted)}
+.by-foot{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.by-draft{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;color:var(--warn);background:color-mix(in srgb,var(--warn) 12%,transparent)}
+.by-ov{position:fixed;inset:0;z-index:45;background:var(--scrim);display:grid;place-items:center;padding:16px;animation:enter .2s var(--ease) both}
+.by-box{background:var(--panel);border-radius:18px;box-shadow:var(--shadow2);width:min(1100px,100%);max-height:calc(100vh - 32px);overflow:auto;display:grid;gap:14px;padding:16px}
+.by-box img{width:100%;border-radius:12px;display:block;border:1px solid var(--line)}
+.by-box .by-txt{display:grid;gap:8px;font-size:12.5px;max-width:80ch}
+.by-box h3{font-size:19px;font-weight:650}
+.by-x{justify-self:end;position:sticky;top:0}
 .brand h1{font-size:16px;font-weight:700;line-height:1.1}
 .brand p{font-size:10.5px;color:var(--muted)}
 .nav{display:grid;gap:17px}
@@ -918,8 +935,8 @@ a.ld-slot:hover{outline:1px solid var(--accent)}.ld-go{font-size:10px;color:var(
 <div class="app">
   <aside class="rail">
     <div class="brand">
-      <div class="mark" aria-hidden="true"><i></i><b></b></div>
-      <div><h1>Concall Signal Desk</h1><p>India · all market caps</p></div>
+      <div class="vmark" aria-hidden="true"><svg viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#13231A"/><path d="M11 14 L24 36 L37 14" fill="none" stroke="#FAF7EE" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 27 H40" stroke="#6FCF97" stroke-width="2.2" stroke-linecap="round" opacity=".9"/><circle cx="36" cy="11" r="4.2" fill="#E8BA4A"/></svg></div>
+      <div><h1>Vantage</h1><p>Calls · results · sectors · bytes</p></div>
     </div>
     <nav class="nav" id="nav" aria-label="Views"></nav>
     <div class="rail-foot" id="railfoot"></div>
@@ -948,7 +965,7 @@ a.ld-slot:hover{outline:1px solid var(--accent)}.ld-go{font-size:10px;color:var(
       </div>
     </div>
     <main id="view" class="view" aria-live="polite"><div class="empty">Loading the latest calls…</div></main>
-    <footer class="disc" role="note"><b>Disclaimer.</b> Not investment advice. Concall Signal Desk is an information tool: scores, verdicts and lists are generated automatically from public company filings and earnings calls, may contain errors, and are not a recommendation to buy, sell or hold any security. Do your own research and speak with your SEBI-registered investment adviser before investing. Investments in securities markets are subject to market risks. <button class="link" data-v="help" data-disc="1" style="font-size:inherit">Full disclaimer</button></footer>
+    <footer class="disc" role="note"><b>Disclaimer.</b> Not investment advice. Vantage is an information tool: scores, verdicts and lists are generated automatically from public company filings and earnings calls, may contain errors, and are not a recommendation to buy, sell or hold any security. Do your own research and speak with your SEBI-registered investment adviser before investing. Investments in securities markets are subject to market risks. <button class="link" data-v="help" data-disc="1" style="font-size:inherit">Full disclaimer</button></footer>
   </div>
 </div>
 <div id="pop" role="dialog" hidden></div>
@@ -1250,10 +1267,10 @@ const TABS = [
     ['res', 'Results', ['results', 'pead'], 'results'], ['pipe', 'Catalyst pipeline', ['pipeline', 'graised'], 'pipeline'], ['mgmt', 'Management changes', ['mgmt']]]},
   {group: 'Sectors & ideas', items: [['sec', 'Sectors', ['tracker', 'guidance', 'turns'], 'tracker'], ['themes', 'Themes', ['themes']],
     ['ideas', 'Idea lists', ['shelf', 'nearterm', 'bottleneck', 'inflect'], ''], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]},
-  {group: 'Publish', items: [['post', 'Weekly post', ['post']]]}
+  {group: 'Publish', items: [['bytes', 'Bytes', ['bytes']], ['post', 'Weekly post', ['post']]]}
 ];
 /* each view's own name: shown on its sub-tab, in the Excel export and in the help */
-const VIEWS = [{group: '', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['post', 'Weekly post'], ['help', 'How to use'],
+const VIEWS = [{group: '', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['post', 'Weekly post'], ['bytes', 'Bytes'], ['help', 'How to use'],
   ['calls', 'All calls'], ['first', 'First-time callers'], ['people', 'Who’s asking'], ['upcoming', 'Calls coming up'], ['rescal', 'Results calendar'],
   ['results', 'Results posted'], ['pead', 'Results to watch'], ['pipeline', 'Catalyst pipeline'], ['graised', 'Guidance raised'], ['mgmt', 'Management changes'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
   ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['bottleneck', 'Bottleneck arbitrage'], ['inflect', 'Inflection watch'],
@@ -3436,7 +3453,7 @@ function vHelp() {
   return head('How to use the desk', 'A short guide for the team: what each view is for, how the score works, and where the data comes from.', '') + `
   <div class="help"><article>
     <section id="h-disclaimer"><h3>Disclaimer</h3>
-      <p><b>Nothing on Concall Signal Desk is investment advice or a recommendation</b> to buy, sell or hold any security, and nothing here takes into account your objectives, finances or risk appetite.</p>
+      <p><b>Nothing on Vantage is investment advice or a recommendation</b> to buy, sell or hold any security, and nothing here takes into account your objectives, finances or risk appetite.</p>
       <ul><li>Scores, verdicts, red flags, themes and every list (including Collector’s shelf, Near-term strength, Inflection watch and Results to watch) are generated automatically from public company filings, results and earnings-call transcripts. They can be incomplete, out of date or wrong.</li>
         <li>Summaries and quotes are machine-made readings of what management said. Always check the original filing or transcript before relying on them.</li>
         <li>Past results and past price moves do not indicate future performance.</li>
@@ -3586,10 +3603,10 @@ function hsClick(sp) {
 
 /* ---------- Excel export ----------
    "This view, as filtered" exports what the current view shows (all matching rows, not just the first page);
-   "Full data" exports every call, result and calendar entry. Each sheet carries the Concall Signal Desk brand:
+   "Full data" exports every call, result and calendar entry. Each sheet carries the Vantage brand:
    a faint diagonal watermark behind the cells, a title row, and the print header and footer. */
-const XL_BRAND = 'Concall Signal Desk', XL_GREEN = 'FF1E6B45';
-const XL_DISC = 'Not investment advice. Concall Signal Desk is an information tool: scores, verdicts and lists are generated automatically from public company filings and earnings calls, may contain errors, and are not a recommendation to buy, sell or hold any security. Do your own research and speak with your SEBI-registered investment adviser before investing. Investments in securities markets are subject to market risks.';
+const XL_BRAND = 'Vantage', XL_GREEN = 'FF1E6B45';
+const XL_DISC = 'Not investment advice. Vantage is an information tool: scores, verdicts and lists are generated automatically from public company filings and earnings calls, may contain errors, and are not a recommendation to buy, sell or hold any security. Do your own research and speak with your SEBI-registered investment adviser before investing. Investments in securities markets are subject to market risks.';
 let XLJS = null;
 const xlLib = () => (XLJS = XLJS || new Promise((res, rej) => {
   if (window.ExcelJS) return res(window.ExcelJS);
@@ -3701,7 +3718,7 @@ const xlViewName = () => VIEWS.flatMap(g => g.items).find(([k]) => k === S.view)
 function xlViewPlan() {
   if (S.view === 'calls') { const n = filteredCalls().length; return {n, sub: `${fmt(n)} calls matching your filters and sort`}; }
   if (S.view === 'results' && RES.data) { const n = rsRows().length; return {n, sub: `${fmt(n)} results matching your filters and sort`}; }
-  if (S.view === 'help' || S.view === 'ask' || S.view === 'post') return {n: 0, sub: 'This view has no table to export. Use Full data.'};
+  if (S.view === 'help' || S.view === 'ask' || S.view === 'post' || S.view === 'bytes') return {n: 0, sub: 'This view has no table to export. Use Full data.'};
   const sh = xlDomSheets(), n = sh.reduce((a, x) => a + x.rows.length, 0);
   return n ? {n, sub: `${fmt(n)} rows from ${sh.length} ${sh.length === 1 ? 'list' : 'lists'} on screen, as sorted`} : {n: 0, sub: 'This view has no table to export. Use Full data.'};
 }
@@ -3733,14 +3750,14 @@ async function xlExport(kind) {
       sheets = [[xlCallSheet('All calls', calls), `Every call read · data updated ${fdate(D.generated)}`],
         [xlResSheet('Results posted', (res?.results || []).slice().sort((a, b) => b.filed.localeCompare(a.filed))), `Every result posted · checked ${fdate(res?.checked)}`],
         [xlCalSheet('Results calendar', res?.calendar || []), 'Announced board meetings']];
-      fname = `Concall Signal Desk - full data - ${stamp}.xlsx`;
+      fname = `Vantage - full data - ${stamp}.xlsx`;
     } else {
       const vn = xlViewName(), q = S.q ? `${S.q} · ` : '';
       if (S.view === 'calls') sheets = [[xlCallSheet(`Calls ${S.q || ''}`.trim(), filteredCalls()), `${q}${vn}${xlFilterNote()}`]];
       else if (S.view === 'results' && RES.data) sheets = [[xlResSheet('Results posted', rsRows()), `${vn} · as filtered and sorted`]];
       else sheets = xlDomSheets().map(sh => [sh, `${q}${vn} · as shown on screen`]);
       if (!sheets.length || !sheets.some(([sh]) => sh.rows.length)) { st.textContent = 'Nothing to export in this view. Use Full data.'; return; }
-      fname = `Concall Signal Desk - ${vn.replace(/[\\\/:*?"<>|]/g, '')} - ${stamp}.xlsx`;
+      fname = `Vantage - ${vn.replace(/[\\\/:*?"<>|]/g, '')} - ${stamp}.xlsx`;
     }
     sheets.forEach(([sh, sub]) => xlAddSheet(wb, used, markId, sh, {sub, at}));
     st.textContent = await xlSave(wb, fname);
@@ -4097,7 +4114,7 @@ function poFrame(h, edition) {
   /* footer: mark + name, edition, disclaimer */
   const y = h - 58; g.strokeStyle = PI.line; g.lineWidth = 2; g.beginPath(); g.moveTo(80, y - 30); g.lineTo(1520, y - 30); g.stroke();
   g.lineWidth = 4; g.strokeStyle = PI.accent; g.beginPath(); g.arc(98, y, 16, -.3, Math.PI * 1.55); g.stroke(); g.fillStyle = PI.gold; g.beginPath(); g.arc(98, y, 6.5, 0, 7); g.fill();
-  g.fillStyle = PI.ink; g.font = `700 24px ${PF.d}`; g.textBaseline = 'middle'; g.fillText('Concall Signal Desk', 128, y);
+  g.fillStyle = PI.ink; g.font = `700 24px ${PF.d}`; g.textBaseline = 'middle'; g.fillText('Vantage', 128, y);
   g.fillStyle = PI.faint; g.font = `400 19px ${PF.b}`; g.textAlign = 'right'; g.fillText(`${edition} · Not investment advice`, 1520, y); g.textAlign = 'left'; g.textBaseline = 'alphabetic';
   return [c, g];
 }
@@ -4305,7 +4322,47 @@ document.addEventListener('change', e => {
   const qe = e.target.dataset?.poQe; if (qe) { const v = e.target.value.trim(); if (v) f.qe[qe] = v; f.edit = ''; render(); }
 });
 
-const RENDER = {post: vPost, leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+/* Bytes: short visual reads (PNG cards) listed in data/bytes.json, newest first. Drafts show with a badge until approved. */
+const BY = {data: null, p: null};
+const loadBytes = () => BY.data ? Promise.resolve(BY.data) : (BY.p = BY.p || getJson('data/bytes.json').then(j => (BY.data = {bytes: (j && j.bytes) || []})));
+S.by = {sec: '', open: ''};
+const byFile = b => `Vantage - ${b.date} - ${(b.title || b.id).replace(/[\\\/:*?"<>|]/g, '')}.png`;
+function vBytes() {
+  const top = head('Bytes', 'Short visual reads on sectors, themes and companies, drawn from our calls, results and research. New ones two to three times a week.', `
+    <ul><li>Each byte is one idea: a headline, one chart, up to three numbers and <b>the Vantage read</b>.</li>
+    <li>Numbers come from the calls and results on this desk unless the card credits another source.</li>
+    <li>Click a card to see it full size with the method, the companies behind it and a download button.</li>
+    <li><b>Draft</b> means it is waiting for approval and is not for sharing yet.</li></ul>`);
+  if (!BY.data) { loadBytes().then(() => { if (S.view === 'bytes') render(); }); return top + '<div class="empty">Loading Bytes…</div>'; }
+  const f = S.by, all = BY.data.bytes, secs = [...new Set(all.map(b => b.sector).filter(Boolean))].sort();
+  const rows = all.filter(b => !f.sec || b.sector === f.sec), cur = f.open && all.find(b => b.id === f.open);
+  return top + `
+    ${secs.length > 1 ? `<div class="toolbar"><button class="chip" data-by-sec="" aria-pressed="${!f.sec}">All</button>${secs.map(x => `<button class="chip" data-by-sec="${esc(x)}" aria-pressed="${f.sec === x}">${esc(x)}</button>`).join('')}</div>` : ''}
+    <div class="by-grid">${rows.map(b => `<article class="card by-card">
+      <button class="by-img" data-by-open="${esc(b.id)}" aria-label="Open ${esc(b.title)}"><img src="${esc(b.image)}" alt="${esc(b.title)}" loading="lazy"></button>
+      <div class="by-meta">${b.status === 'draft' ? '<span class="by-draft">Draft</span>' : ''}<span class="num">${esc(fdate(b.date))}</span><span>· ${esc(b.series || '')}</span>${b.sector ? `<span>· ${esc(b.sector)}</span>` : ''}</div>
+      <h4>${esc(b.title)}</h4><p>${esc(b.dek || '')}</p>
+      <div class="by-foot"><button class="btn" data-by-open="${esc(b.id)}">Open</button><a class="btn" href="${esc(b.image)}" download="${esc(byFile(b))}">Download</a></div></article>`).join('') || '<div class="empty">No bytes yet. The first ones are on their way.</div>'}</div>
+    ${cur ? `<div class="by-ov" data-by-close="1" role="dialog" aria-modal="true" aria-label="${esc(cur.title)}"><div class="by-box">
+      <button class="btn by-x" data-by-close="1">Close ✕</button>
+      <img src="${esc(cur.image)}" alt="${esc(cur.title)}">
+      <div class="by-txt"><div class="by-meta">${cur.status === 'draft' ? '<span class="by-draft">Draft</span>' : ''}<span class="num">${esc(fdate(cur.date))}</span><span>· ${esc(cur.series || '')}</span>${cur.theme ? `<span>· ${esc(cur.theme)}</span>` : ''}</div>
+        <h3>${esc(cur.title)}</h3>${cur.read ? `<p class="quote-line"><b>The Vantage read.</b> ${esc(cur.read)}</p>` : ''}
+        ${cur.notes ? `<p>${esc(cur.notes)}</p>` : ''}
+        ${(cur.companies || []).length ? `<div class="by-foot" style="justify-content:flex-start">${cur.companies.map(c => `<button class="btn" data-open="${esc(c.id)}">${esc(c.name)}</button>`).join('')}</div>` : ''}
+        <p class="small muted">Source: ${esc(cur.sources || '')}. For information only. Not investment advice.</p>
+        <div class="by-foot" style="justify-content:flex-start"><a class="btn primary" href="${esc(cur.image)}" download="${esc(byFile(cur))}">Download image</a></div></div></div></div>` : ''}`;
+}
+document.addEventListener('click', e => {
+  if (S.view !== 'bytes') return;
+  const t = e.target, f = S.by;
+  const sec = t.closest('[data-by-sec]'); if (sec) { f.sec = sec.dataset.bySec; render(); return; }
+  const op = t.closest('[data-by-open]'); if (op) { f.open = op.dataset.byOpen; render(); return; }
+  if (f.open && (t.closest('.by-x') || (t.matches('.by-ov')))) { f.open = ''; render(); }
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && S.view === 'bytes' && S.by.open) { S.by.open = ''; render(); } });
+
+const RENDER = {bytes: vBytes, post: vPost, leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();

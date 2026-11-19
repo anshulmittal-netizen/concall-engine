@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@400..700&display=swap">
+<style>
+:root{--ink:#13231A;--paper:#FAF7EE;--card:#FFFFFF;--forest:#1E6B45;--leaf:#3E9B3A;--saffron:#C9961C;--red:#C8352A;--muted:#4A574E;--faint:#848D7E;--line:#E7E0CC;
+  --display:'Bricolage Grotesque',sans-serif;--body:'Public Sans',sans-serif;--mono:'IBM Plex Mono',monospace}
+*{box-sizing:border-box;margin:0}
+body{width:1200px;height:675px;overflow:hidden;font-family:var(--body);color:var(--ink);
+  background:radial-gradient(700px 300px at 100% -10%,rgba(214,166,46,.18),transparent 60%),var(--paper)}
+.wrap{position:relative;height:100%;padding:28px 40px 22px;display:flex;flex-direction:column;gap:14px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:10px}.logo svg{width:34px;height:34px}
+.logo b{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.02em}
+.series{text-align:right}.series b{display:block;font-family:var(--display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--forest)}
+.series span{font-size:12px;color:var(--muted)}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--saffron)}
+h1{font-family:var(--display);font-size:42px;line-height:1.05;font-weight:750;letter-spacing:-.025em;margin-top:5px}
+h1 em{font-style:normal;color:var(--forest)}
+.dek{font-size:15px;color:var(--muted);margin-top:7px;max-width:1050px}
+.grid{flex:1;display:grid;grid-template-columns:1fr 330px;gap:16px;min-height:0}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;display:flex;flex-direction:column;gap:9px;min-height:0}
+.panel h3{font-family:var(--display);font-size:15px;font-weight:600}
+.panel h3 span{font-family:var(--body);font-weight:400;color:var(--muted);font-size:12.5px}
+.bars{flex:1;display:flex;flex-direction:column;justify-content:space-around;min-height:0}
+.bar{display:grid;grid-template-columns:210px 1fr;gap:12px;align-items:center;font-size:13.5px}
+.bar .lb{font-weight:600;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track{position:relative;height:18px}
+.track i{position:absolute;top:0;bottom:0;border-radius:5px}
+.track em{position:absolute;top:50%;transform:translateY(-50%);font-style:normal;font-family:var(--mono);font-size:12.5px;font-weight:600;white-space:nowrap}
+.track .axis{position:absolute;top:-4px;bottom:-4px;width:1.5px;background:var(--faint);opacity:.6}
+.legend{font-size:11.5px;color:var(--muted);display:flex;gap:16px}.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:0}
+.stats{display:flex;flex-direction:column;gap:12px;min-height:0}
+.stat{flex:1;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 16px;display:flex;flex-direction:column;justify-content:center;gap:3px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 4px 4px 0;background:var(--c,var(--forest))}
+.stat .v{font-family:var(--display);font-size:31px;font-weight:750;line-height:1;color:var(--c,var(--forest));letter-spacing:-.02em}
+.stat .l{font-size:13px;font-weight:700}
+.stat .n{font-size:11.5px;color:var(--muted);line-height:1.35}
+.read{background:var(--ink);color:var(--paper);border-radius:16px;padding:13px 20px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.read b{font-family:var(--display);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#E8BA4A;white-space:nowrap}
+.read p{font-family:var(--display);font-size:19px;font-weight:600;line-height:1.25}
+.foot{display:flex;justify-content:space-between;font-size:10.5px;color:var(--faint);gap:20px}
+</style></head><body><div class="wrap" id="root"></div>
+<script>
+const S = window.SPEC;
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+const MARK = `<svg viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#13231A"/><path d="M11 14 L24 36 L37 14" fill="none" stroke="#FAF7EE" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 27 H40" stroke="#6FCF97" stroke-width="2.2" stroke-linecap="round" opacity=".9"/><circle cx="36" cy="11" r="4.2" fill="#E8BA4A"/></svg>`;
+const COL = {up: 'var(--forest)', down: 'var(--red)', a: 'var(--forest)', b: 'var(--saffron)', c: 'var(--red)', d: 'var(--faint)'};
+const title = esc(S.title).replace(esc(S.title_em || '\u0000'), m => `<em>${m}</em>`);
+const ch = S.chart, rows = ch.rows, mn = Math.min(0, ...rows.map(r => r.value)), mx = Math.max(0, ...rows.map(r => r.value));
+const span = (mx - mn) || 1, pad = 0.16; /* room for the value labels at the bar ends */
+const X = v => (pad + (1 - 2 * pad) * (v - mn) / span) * 100, x0 = X(0);
+const bar = r => { const a = X(Math.min(0, r.value)), b = X(Math.max(0, r.value)), neg = r.value < 0, c = COL[r.group || (neg ? 'down' : 'up')] || r.group;
+  return `<div class="bar"><span class="lb">${esc(r.label)}</span><span class="track">${mn < 0 ? `<span class="axis" style="left:${x0}%"></span>` : ''}
+    <i style="left:${a}%;width:${Math.max(b - a, 0.6)}%;background:${c}"></i>
+    <em style="${neg ? `right:${100 - a + 1}%` : `left:${b + 1}%`};color:${c}">${esc(r.text ?? r.value)}</em></span></div>`; };
+document.getElementById('root').innerHTML = `
+  <div class="top"><div class="logo">${MARK}<b>Vantage</b></div><div class="series"><b>${esc(S.series)}</b><span>${esc(S.dateline)}</span></div></div>
+  <div><div class="kicker">${esc(S.kicker)}</div><h1>${title}</h1><p class="dek">${esc(S.dek)}</p></div>
+  <div class="grid">
+    <div class="panel"><h3>${esc(ch.title)} <span>${esc(ch.sub || '')}</span></h3>
+      <div class="bars">${rows.map(bar).join('')}</div>
+      ${ch.legend ? `<div class="legend">${Object.entries(ch.legend).map(([k, v]) => `<span><i style="background:${COL[k] || k}"></i>${esc(v)}</span>`).join('')}</div>` : ''}</div>
+    <div class="stats">${(S.stats || []).slice(0, 3).map(s => `<div class="stat" style="--c:${COL[s.tone] || 'var(--forest)'}"><span class="v">${esc(s.value)}</span><span class="l">${esc(s.label)}</span><span class="n">${esc(s.note || '')}</span></div>`).join('')}</div>
+  </div>
+  <div class="read"><b>The Vantage read</b><p>${esc(S.read)}</p></div>
+  <div class="foot"><span>Source: ${esc(S.sources)}</span><span>For information only. Not investment advice.</span></div>`;
+document.fonts.ready.then(() => { document.body.dataset.ready = '1'; });
+</script></body></html>
