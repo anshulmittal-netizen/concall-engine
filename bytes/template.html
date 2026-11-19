@@ -47,8 +47,9 @@ const MARK = `<svg viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill
 const COL = {up: 'var(--forest)', down: 'var(--red)', a: 'var(--forest)', b: 'var(--saffron)', c: 'var(--red)', d: 'var(--faint)'};
 const title = esc(S.title).replace(esc(S.title_em || '\u0000'), m => `<em>${m}</em>`);
 const ch = S.chart, rows = ch.rows, mn = Math.min(0, ...rows.map(r => r.value)), mx = Math.max(0, ...rows.map(r => r.value));
-const span = (mx - mn) || 1, pad = 0.16; /* room for the value labels at the bar ends */
-const X = v => (pad + (1 - 2 * pad) * (v - mn) / span) * 100, x0 = X(0);
+const span = (mx - mn) || 1; /* room for the value labels at the bar ends: both sides when bars go negative */
+const padR = ch.pad ?? 0.18, padL = mn < 0 ? (ch.padL ?? 0.16) : 0.01;
+const X = v => (padL + (1 - padL - padR) * (v - mn) / span) * 100, x0 = X(0);
 const bar = r => { const a = X(Math.min(0, r.value)), b = X(Math.max(0, r.value)), neg = r.value < 0, c = COL[r.group || (neg ? 'down' : 'up')] || r.group;
   return `<div class="bar"><span class="lb">${esc(r.label)}</span><span class="track">${mn < 0 ? `<span class="axis" style="left:${x0}%"></span>` : ''}
     <i style="left:${a}%;width:${Math.max(b - a, 0.6)}%;background:${c}"></i>
