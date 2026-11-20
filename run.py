@@ -252,6 +252,11 @@ def cmd_growth(a):
     growth.run(a.market, a.limit, log)
 
 
+def cmd_quality(a):
+    import quality
+    quality.run(a.market, a.limit, log)
+
+
 def cmd_outlook(a):
     import outlook
     outlook.run(a.market, a.limit, log)
@@ -325,6 +330,10 @@ def cmd_all(a):
         except Exception as ex:  # never let the growth reads stop the night's run
             log(f"growth reads skipped: {ex}")
         try:
+            cmd_quality(a2)
+        except Exception as ex:  # never let the growth-quality reads stop the night's run
+            log(f"growth-quality reads skipped: {ex}")
+        try:
             cmd_outlook(a2)
         except Exception as ex:  # never let the forward-trigger reads stop the night's run
             log(f"forward-trigger reads skipped: {ex}")
@@ -342,7 +351,7 @@ def cmd_all(a):
 
 def main(argv=None):
     p = argparse.ArgumentParser(description="Concall Signal Desk engine")
-    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "outlook", "about", "mgmt", "history", "participants", "analyze", "all", "leaders", "serve"])
+    p.add_argument("command", choices=["universe", "fetch", "calendar", "results", "extract", "summarize", "growth", "quality", "outlook", "about", "mgmt", "history", "participants", "analyze", "all", "leaders", "serve"])
     p.add_argument("--market", choices=["IN", "US"])
     p.add_argument("--since", help="YYYY-MM-DD; overrides the automatic window")
     p.add_argument("--limit", type=int, help="max documents to extract this run")
@@ -351,7 +360,7 @@ def main(argv=None):
     a = p.parse_args(argv)
     if a.command not in ("serve", "leaders") and not a.market:
         p.error("--market IN or --market US is required")
-    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "outlook": cmd_outlook, "about": cmd_about, "mgmt": cmd_mgmt, "history": cmd_history, "participants": cmd_participants, "analyze": cmd_analyze, "all": cmd_all, "leaders": cmd_leaders, "serve": cmd_serve}[a.command](a)
+    {"universe": cmd_universe, "fetch": cmd_fetch, "calendar": cmd_calendar, "results": cmd_results, "extract": cmd_extract, "summarize": cmd_summarize, "growth": cmd_growth, "quality": cmd_quality, "outlook": cmd_outlook, "about": cmd_about, "mgmt": cmd_mgmt, "history": cmd_history, "participants": cmd_participants, "analyze": cmd_analyze, "all": cmd_all, "leaders": cmd_leaders, "serve": cmd_serve}[a.command](a)
 
 
 if __name__ == "__main__":

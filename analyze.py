@@ -230,6 +230,7 @@ def merge(docs: list[dict]) -> dict:
         "evasions": base.get("evasions", []), "hedge": float(base.get("hedge_index", 0.5)),
         "verified": min(d.get("verified_share", 1) for d in docs),
         "growth": next((d["growth"] for d in docs if d.get("growth")), None),
+        "quality": next((d["quality"] for d in docs if d.get("quality")), None),
     }
 
 
@@ -294,8 +295,24 @@ def backed_value(g: dict | None, guid_read: int, cred: int, tested: int):
                                "near": near[:4], "later": [a for a in adds if a not in near][:3], "why": g.get("why", "")}
 
 
-def results_value(g: dict | None):
-    """0-1 'Results delivered' from this quarter's revenue and EBITDA growth YoY."""
+# Growth quality (quality.py): how much of a strong (or weak) quarter to believe. Above-neutral results are pulled back
+# toward 0.5 when growth leans on one-offs or a low base; below-neutral results are softened when one-offs dragged them.
+QUALITY_VERDICT = {"sustainable": 1.0, "unclear": 1.0, "mixed": 0.7, "one_off_heavy": 0.35}
+QUALITY_SIZE = {"major": 0.55, "moderate": 0.8, "minor": 1.0}
+
+
+def quality_mult(q: dict | None) -> tuple[float, float]:
+    """(multiplier on the upside, multiplier on the downside) from a growth-quality read; (1, 1) when unread."""
+    if not q:
+        return 1.0, 1.0
+    offs = q.get("oneOffs") or []
+    up = min([QUALITY_VERDICT.get(q.get("verdict"), 1.0)] + [QUALITY_SIZE[o["size"]] for o in offs if o.get("effect") == "flatters" and o.get("size") in QUALITY_SIZE])
+    dn = min([1.0] + [QUALITY_SIZE[o["size"]] for o in offs if o.get("effect") == "depresses" and o.get("size") in QUALITY_SIZE])
+    return up, dn
+
+
+def results_value(g: dict | None, q: dict | None = None):
+    """0-1 'Results delivered' from this quarter's revenue and EBITDA growth YoY, adjusted for growth quality."""
     if not g or g.get("v", 1) < 2:
         return 0.5, {"read": False}
     band = [(30, 1.0), (20, 0.85), (10, 0.7), (0, 0.5), (-10, 0.3), (-1e9, 0.1)]
@@ -303,7 +320,14 @@ def results_value(g: dict | None):
     if not vals:
         return 0.5, {"read": True, "qRev": None, "qEbitda": None}
     v = sum(_pct_band(x, band) for _, x in vals) / len(vals)
-    return v, {"read": True, "qRev": g.get("qRev"), "qEbitda": g.get("qEbitda")}
+    det = {"read": True, "qRev": g.get("qRev"), "qEbitda": g.get("qEbitda"), "raw": round(v, 3)}
+    if q:
+        up, dn = quality_mult(q)
+        adj = 0.5 + (v - 0.5) * up if v > 0.5 else 0.5 - (0.5 - v) * dn if v < 0.5 else v
+        det["quality"] = {"verdict": q.get("verdict"), "driver": q.get("driver"), "vol": q.get("vol"), "organic": q.get("organic"),
+                          "oneOffs": (q.get("oneOffs") or [])[:4], "why": q.get("why", ""), "mult": round(up if v > 0.5 else dn if v < 0.5 else 1.0, 2)}
+        v = adj
+    return v, det
 
 
 def _site_summary(s: dict) -> dict:
@@ -443,7 +467,7 @@ def build(market: str, log=print) -> dict:
             nov = 0.5 * c["novelty"] + 0.5 * tb
             tone = clip(b["tone"] / 2 * 0.7 + (0.5 - r["hedge"]) * 0.6)
             bval, bdet = backed_value(r.get("growth"), b["guidance"], cred, tested)
-            rval, rdet = results_value(r.get("growth"))
+            rval, rdet = results_value(r.get("growth"), r.get("quality"))
             W = WEIGHTS
             score = 100 * (W["backed"] * bval + W["supply"] * supply_side + W["results"] * rval + W["pricing"] * pricing
                            + W["demand"] * c["demand"] + W["novelty"] * nov + W["tone"] * (tone + 1) / 2)

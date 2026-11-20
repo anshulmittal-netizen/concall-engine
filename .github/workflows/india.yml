@@ -59,10 +59,13 @@ jobs:
             exit 0
           fi
           if [ "${{ inputs.only_summaries }}" = "true" ]; then
-            python run.py summarize --market IN && python run.py growth --market IN && python run.py outlook --market IN && python run.py analyze --market IN || { python run.py analyze --market IN; exit 1; }
+            python run.py summarize --market IN && python run.py growth --market IN && python run.py quality --market IN && python run.py outlook --market IN && python run.py analyze --market IN || { python run.py analyze --market IN; exit 1; }
             exit 0
           fi
           python run.py all --market IN $ARGS || { echo "Run failed; rebuilding results from saved reads"; python run.py analyze --market IN; exit 1; }
+      - name: Sector intel (briefs joined to the calls)
+        if: always()   # cheap and deterministic: rebuild from whatever the night produced
+        run: python sector_intel.py || echo "sector intel skipped"
       - name: Commit results
         if: always()   # save whatever was read, even if a later step failed
         run: |

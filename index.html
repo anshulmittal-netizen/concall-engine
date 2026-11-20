@@ -931,6 +931,99 @@ a.ld-slot:hover{outline:1px solid var(--accent)}.ld-go{font-size:10px;color:var(
 .po-t p{font-size:12.5px;line-height:1.5;overflow-wrap:anywhere}
 .po-img canvas{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line)}
 @media (max-width:1100px){.po-grid{grid-template-columns:minmax(0,1fr)}}
+/* ---------- sector intel: research briefs joined to the live concall and results data ---------- */
+.si-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:16px}
+.si-card{text-align:left;display:grid;gap:10px;align-content:start;padding:18px 19px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel);box-shadow:var(--shadow);transition:transform .25s var(--ease),border-color .25s,box-shadow .25s;position:relative;overflow:hidden}
+.si-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow2)}
+.si-card::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,var(--saffron),var(--accent))}
+.si-card h4{font-size:19px;font-weight:650;line-height:1.2}
+.si-card .dek{font-size:12px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.si-meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:10.5px;color:var(--muted)}
+.si-chips{display:flex;flex-wrap:wrap;gap:5px}
+.si-chip{display:inline-flex;gap:6px;align-items:center;font-size:11px;padding:3px 9px;border-radius:99px;border:1px solid var(--line);background:var(--panel2)}
+.si-chip b{font-family:var(--mono);font-size:10.5px}
+.si-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;border-top:1px solid var(--line);padding-top:10px}
+.si-strip div{display:grid;gap:1px}.si-strip b{font-family:var(--display);font-size:19px;line-height:1.1}.si-strip span{font-size:10px;color:var(--muted)}
+.si-back{justify-self:start}
+.si-hero h3{font-size:clamp(21px,2.8vw,30px);max-width:30ch}
+.si-hero .dek{max-width:80ch;font-size:13px}
+.si-acts{display:flex;gap:8px;flex-wrap:wrap}
+.si-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.si-kpi{display:grid;gap:6px;align-content:start}
+.si-kpi b{font-family:var(--display);font-size:clamp(22px,2.6vw,30px);font-weight:700;line-height:1;letter-spacing:-.01em}
+.si-kpi p{font-size:11.5px;color:var(--muted);line-height:1.45}
+.si-kpi .eyebrow{color:var(--faint);font-size:8.5px}
+.si-sec{display:grid;gap:12px}
+.si-sec>.list-head{margin:0}
+.si-sec>.list-head h3 .n{font-family:var(--mono);font-size:11px;color:var(--accent);margin-right:6px}
+.si-threads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.si-th{display:grid;gap:9px;align-content:start}
+.si-th h4{font-size:15px;font-weight:650;line-height:1.3}
+.si-th h4 i{font-style:normal;color:var(--saffron)}
+.si-th>p{font-size:12px;color:var(--muted)}
+.si-ev{display:grid;gap:5px;border-top:1px solid var(--line);padding-top:9px}
+.si-ev .eyebrow{display:flex;justify-content:space-between;gap:8px}
+.si-ln{display:grid;grid-template-columns:minmax(0,1fr);gap:1px;width:100%;text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:6px 9px;font-size:11px;color:var(--fg)}
+.si-ln:hover{border-color:var(--accent)}
+.si-ln .r1{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.si-ln .r1 b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.si-ln .r1 span{font-size:9.5px;color:var(--muted);white-space:nowrap}
+.si-ln q{color:var(--muted);line-height:1.45;quotes:none}
+.si-ln.peer{background:color-mix(in srgb,var(--accent) 6%,var(--panel))}
+.si-more>summary{list-style:none;cursor:pointer;font-size:11px;font-weight:600;color:var(--accent);padding:3px 0}
+.si-more>summary::-webkit-details-marker{display:none}
+.si-more[open]>summary{margin-bottom:5px}
+.si-more>div{display:grid;gap:5px}
+.si-pr .r{grid-template-columns:minmax(0,1.5fr) minmax(0,1.15fr) minmax(0,1.25fr) 120px 150px 104px 92px;align-items:start}
+.si-pr .r.hd{align-items:center}
+.si-pr .mdl{font-size:10.5px;color:var(--muted);line-height:1.4}
+.si-pr .cell{display:grid;gap:2px;font-size:11px}
+.si-pr .cell .g{font-family:var(--mono);font-size:10.5px}
+.si-camp{font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:var(--panel2);color:var(--muted);justify-self:start}
+.si-camp.c0{background:var(--accentsoft);color:var(--accent)}
+.si-views{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.si-view{display:grid;gap:12px;align-content:start}
+.si-vh{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.si-vh h4{font-size:20px;font-weight:650;line-height:1.1}
+.si-thr{display:grid;justify-items:end;gap:4px;flex:none}
+.si-thr b{font-family:var(--display);font-size:24px;line-height:1;padding:6px 10px;border-radius:11px;background:var(--fg);color:var(--panel)}
+.si-thr b small{font-size:11px;opacity:.7;font-weight:500}
+.si-thr span{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--saffron)}
+.si-vk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.si-vk div{background:var(--panel2);border-radius:10px;padding:7px 9px;display:grid;gap:1px}
+.si-vk b{font-family:var(--display);font-size:16px}.si-vk span{font-size:10px;color:var(--muted)}
+.si-chart{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:9px 10px 4px}
+.si-chart svg{width:100%;height:auto;display:block}
+.si-chart .bar{transform-origin:bottom;transform-box:fill-box;animation:growY .9s var(--ease) both}
+.si-ul{margin:0;padding-left:16px;display:grid;gap:5px;font-size:11.5px}
+.si-ul b{font-weight:650}
+.si-h5{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:2px 0 -4px}
+.si-h5.ok{color:var(--up)}.si-h5.no{color:var(--down)}
+.si-read{background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 14%,var(--panel)),var(--panel2));border-radius:12px;padding:10px 12px;font-size:12px;display:grid;gap:3px}
+.si-live{border:1px dashed var(--line2);border-radius:12px;padding:9px 11px;display:grid;gap:6px;font-size:11.5px}
+.si-live .row{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.si-lens{width:100%;border-collapse:collapse;font-size:11.5px}
+.si-lens th,.si-lens td{padding:9px 10px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+.si-lens thead th{border-top:0;background:var(--panel2);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.si-lens td.l{white-space:nowrap;font-weight:600}
+.si-lens td.l i{font-style:normal;font-family:var(--display);font-size:16px;color:var(--saffron);margin-right:8px}
+.si-dots{white-space:nowrap;margin-right:7px}
+.si-dots i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--line2);margin-right:2px}
+.si-dots i.on{background:var(--saffron)}
+.si-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.si-two .card h4{font-size:14px;margin-bottom:6px}
+.si-ok h4{color:var(--up)}.si-no h4{color:var(--down)}
+.si-cat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.si-cat .card .eyebrow{color:var(--saffron)}
+.si-foot{font-size:10.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;display:grid;gap:3px}
+.si-next .r{grid-template-columns:minmax(0,1.2fr) 70px 140px 120px minmax(0,1.8fr)}
+.si-next .cos{padding:0;grid-column:auto}
+@media (max-width:1100px){.si-pr .r{grid-template-columns:minmax(0,1.4fr) minmax(0,1.2fr) 120px 140px 92px}.si-pr .r>:nth-child(2),.si-pr .r>:nth-child(6){display:none}
+  .si-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.si-threads,.si-views,.si-two,.si-cat{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.si-pr .r{grid-template-columns:minmax(0,1fr) auto}.si-pr .r.hd{display:none}.si-pr .r>:nth-child(n+3){grid-column:1/-1}.si-pr .r>:nth-child(2){display:none}.si-pr .r>:nth-child(6){display:none}
+  .si-next .r{grid-template-columns:minmax(0,1fr) auto}.si-next .r>:nth-child(3),.si-next .r>:nth-child(4){display:none}.si-next .r>:nth-child(5){grid-column:1/-1}.si-next .r.hd{display:none}
+  .si-strip{grid-template-columns:repeat(3,minmax(0,1fr))}.si-lens td.t2{display:none}}
 </style>
 
 <div class="app">
@@ -1266,14 +1359,14 @@ const TABS = [
   {group: 'Start', items: [['home', 'Today', ['home']], ['mine', 'My stocks', ['watch', 'portfolio'], 'watch'], ['ask', 'Ask the calls', ['ask']]]},
   {group: 'Research', items: [['calls', 'Calls', ['calls', 'first', 'people'], 'calls'], ['cal', 'Calendar', ['upcoming', 'rescal'], ''],
     ['res', 'Results', ['results', 'pead'], 'results'], ['pipe', 'Catalyst pipeline', ['pipeline', 'graised'], 'pipeline'], ['mgmt', 'Management changes', ['mgmt']]]},
-  {group: 'Sectors & ideas', items: [['sec', 'Sectors', ['tracker', 'guidance', 'turns'], 'tracker'], ['themes', 'Themes', ['themes']],
+  {group: 'Sectors & ideas', items: [['intel', 'Sector intel', ['intel']], ['sec', 'Sectors', ['tracker', 'guidance', 'turns'], 'tracker'], ['themes', 'Themes', ['themes']],
     ['ideas', 'Idea lists', ['shelf', 'nearterm', 'bottleneck', 'inflect'], ''], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]},
   {group: 'Publish', items: [['bytes', 'Bytes', ['bytes']], ['post', 'Weekly post', ['post']]]}
 ];
 /* each view's own name: shown on its sub-tab, in the Excel export and in the help */
 const VIEWS = [{group: '', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['post', 'Weekly post'], ['bytes', 'Bytes'], ['help', 'How to use'],
   ['calls', 'All calls'], ['first', 'First-time callers'], ['people', 'Who’s asking'], ['upcoming', 'Calls coming up'], ['rescal', 'Results calendar'],
-  ['results', 'Results posted'], ['pead', 'Results to watch'], ['pipeline', 'Catalyst pipeline'], ['graised', 'Guidance raised'], ['mgmt', 'Management changes'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
+  ['results', 'Results posted'], ['pead', 'Results to watch'], ['pipeline', 'Catalyst pipeline'], ['graised', 'Guidance raised'], ['mgmt', 'Management changes'], ['intel', 'Sector intel'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
   ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['bottleneck', 'Bottleneck arbitrage'], ['inflect', 'Inflection watch'],
   ['leaders', 'Leaders dashboard'], ['ledger', 'Event ledger']]}];
 const tabOf = v => TABS.flatMap(g => g.items).find(t => t[2].includes(v));
@@ -1289,7 +1382,7 @@ function navCounts() {
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: cyData('sub').rows.filter(r => r.ph === 'turn' && !r.thin).length || '',
     themes: themesQ().length, shelf: shRows().filter(x => x.v.band === 'decent').length || '', nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
-    bottleneck: (r => r ? r.length : '')(bnRows()),
+    bottleneck: (r => r ? r.length : '')(bnRows()), intel: SI.data ? SI.data.briefs.length || '' : '',
     graised: (D.calls || []).filter(c => c.gRaised > 0 && inQ(c)).length || '',
     pipeline: (r => r ? r.filter(x => x.act === 'trade').length + ' act now' : '')(ppRows()),
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
@@ -3470,12 +3563,13 @@ function vHelp() {
       <li><b>Sector tracker:</b> check who in that sector has reported and whether guidance is improving.</li>
       <li><b>Share:</b> the <b>Copy link</b> button in a company panel gives a link that opens straight to that company.</li></ol></section>
     <section id="h-views"><h3>What each view is for</h3>
-      <p>The menu on the left has eleven tabs. Tabs that hold closely related views show them as sub-tabs at the top of the page:
+      <p>The menu on the left has twelve tabs. Tabs that hold closely related views show them as sub-tabs at the top of the page:
         <b>My stocks</b> (My watchlist, My portfolio), <b>Calls</b> (All calls, First-time callers, Who’s asking), <b>Calendar</b> (Calls coming up, Results calendar),
         <b>Results</b> (Results posted, Results to watch), <b>Sectors</b> (Sector tracker, Guidance leaders, Sector turns), <b>Idea lists</b> (Collector’s shelf,
         Near-term strength, Inflection watch) and <b>Global leaders</b> (Leaders dashboard, Event ledger). A tab reopens on the sub-tab you last used.</p>
       <div class="vguide">
       <div><b>Ask the calls</b><span>Ask a question in plain words (for example, which companies said crude is not hurting margins). Claude searches every call summary, Q&A, quote and trigger for the words calls actually use, reads the best matches and sorts them into “says it”, “partly” and “says the opposite”, with the passages behind each. Keyword search works without Claude.</span></div>
+      <div><b>Sector intel</b><span>Sector briefs (our research, with the original PDF) joined to the live desk: each peer's latest call score, guidance, filed results and next results date, and for every shift the brief describes, which companies across the universe said the same thing on their latest call. “Where to write next” ranks the sub-sectors that have no brief yet.</span></div>
       <div><b>Today</b><span>The day’s headline, season progress, the best call, the strongest guidance, the top idea and the newest calls.</span></div>
       <div><b>All calls</b><span>Every call for the quarter in one ranked list. Sort best to worst or by newest, and filter by sector, sub-sector, guidance or red flags.</span></div>
       <div><b>Calls coming up</b><span>Earnings calls announced on BSE for the days ahead, with the time, the score of each company’s last call and a link to the filing with dial-in details. Also lists calls already held whose transcript has not been filed yet.</span></div>
@@ -3500,6 +3594,7 @@ function vHelp() {
       <div class="weights">${W.map(([n, w]) => `<div class="w"><span>${n}</span><span class="sbar"><i style="width:${w / 45 * 100}%"></i></span><span class="num">${w}</span></div>`).join('')}</div>
       <ul><li>For a company’s first call in our data, the score reflects where the business stands now. From the second call on, 60% is the level and 40% is the change since the last call.</li>
       <li>Guidance counts for more when management has delivered past guidance. With no track record yet (“untested”), guidance counts only 85% of its distance from neutral. Every company’s exact working is on the <b>Score breakdown</b> tab of its panel.</li>
+      <li><b>Growth quality.</b> Results delivered (15) is adjusted for how much of the quarter will repeat. Each call is also read for what drove growth (volume, price or mix), whether it was organic, and one-offs: a low base, exceptional, forex or inventory gains, catch-up or pulled-forward revenue, one-time orders and incentives. When these flatter the quarter, the part of the results score above neutral counts for less (70% when growth is partly one-off, 35% when mostly one-off, 55% for a single major item). When one-offs dragged a weak quarter, the shortfall counts for less in the same way. The company panel’s <b>Score breakdown</b> lists the items found.</li>
       <li>A veto ${tip('veto')} caps the score at 40. Smaller warning signs (watch-points) take off 4 points each, up to 8.</li>
       <li><b>Guidance-backed growth & capacity</b> carries the most weight (45) because the market pays for growth. Strong growth or turnaround guidance counts in full only when management shows how it will get there (capacity coming live, an order book, spare capacity) and has delivered before; strong guidance with no clear plan or capacity is discounted. Major capacity going live in the next 2–3 quarters lifts the score; a plant running near full with no expansion holds it back.</li><li><b>Industry supply discipline</b> comes next (20), then <b>results delivered</b> this quarter (15).</li></ul>
       <p>Verdict labels:</p><div class="bands">${[[75, 'Strong 70+'], [65, 'Good 60–69'], [55, 'Average 50–59'], [45, 'Weak 40–49'], [30, 'Poor below 40']].map(([s, l]) => `<span class="pill ${verdict(s).c}">${l}</span>`).join('')}<span class="pill v-flag">Red flag: veto applied</span></div>
@@ -4367,7 +4462,163 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && S.view === 'bytes' && S.by.open) { S.by.open = ''; render(); } });
 
-const RENDER = {bytes: vBytes, post: vPost, leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+/* Sector intel: research briefs (sector_briefs/*.yaml → data/sector_intel.json, built nightly by sector_intel.py) joined to
+   the desk's own data. The brief carries the analyst's view; the page adds what is live: each peer's latest call score and
+   guidance, the results it filed, the next results date, and, per "what is changing" thread, every company across the
+   universe whose latest call says the same thing (found by sector_intel.py in the call summaries and verified quotes). */
+const SI = {data: null, p: null};
+const loadSi = () => SI.data ? Promise.resolve(SI.data) : (SI.p = SI.p || getJson('data/sector_intel.json').then(j => (SI.data = {briefs: (j && j.briefs) || [], generated: j && j.generated})));
+S.si = {open: store.get('si-open', '')};
+const siBriefs = () => SI.data?.briefs || [];
+const siNextRes = id => (RES.data?.calendar || []).filter(c => c.id === id && c.date >= istToday()).sort((a, b) => a.date.localeCompare(b.date))[0];
+const siOthers = b => new Set((b.threads || []).flatMap(t => (t.mentions || []).filter(m => !m.peer).map(m => m.id)));
+const siLensKeys = [['T', 'Thematic tailwinds'], ['H', 'High growth'], ['R', 'Right to win'], ['I', 'Industry momentum'], ['V', 'Value asymmetry'], ['E', 'Exceptional promoters & execution']];
+const siDots = n => `<span class="si-dots" aria-label="${n} of 3">${[1, 2, 3].map(i => `<i class="${i <= n ? 'on' : ''}"></i>`).join('')}</span>`;
+const siPct = (v, dp = 1) => v == null ? '–' : `${v > 0 ? '+' : ''}${v.toFixed(dp)}%`;
+
+function vIntel() {
+  if (!SI.data) { loadSi().then(() => { if (S.view === 'intel') { render(); renderNav(); } }); return head('Sector intelligence', 'Loading…', '') + '<div class="empty">Loading sector briefs…</div>'; }
+  if (!RES.data) loadRes().then(() => { if (S.view === 'intel') render(); });
+  const b = S.si.open && siBriefs().find(x => x.id === S.si.open);
+  return b ? siBrief(b) : siList();
+}
+
+function siList() {
+  const bs = siBriefs();
+  return head('Sector intelligence', 'Research briefs on sectors and themes, joined to what the concalls and results filings say now. The brief gives the view; the desk keeps the numbers and the read-across live.', `
+    <ul><li>Each card is one <b>sector brief</b>. Open it for the full brief with the live layer underneath: every peer's latest call score, guidance, filed results and next results date.</li>
+    <li><b>What is changing</b> lists the brief's key shifts. Under each one, <b>On the calls</b> shows which companies said the same thing on their latest call, peers first, then everyone else across the universe. Click a line to open that call.</li>
+    <li><b>Where to write next</b> ranks the sub-sectors without a brief by how strong their latest calls were, to help pick the next one.</li>
+    <li>Briefs are research for information only, not recommendations. Download the original PDF from inside each brief.</li></ul>`, `<span class="badge">${bs.length} brief${bs.length === 1 ? '' : 's'}</span>`) + `
+    <div class="si-list">${bs.map(b => {
+      const pe = (b.peers || []).map(p => ({p, c: byId[p.id], r: latestRes(p.id)}));
+      const read = pe.filter(x => x.c), avg = read.length ? Math.round(read.reduce((n, x) => n + x.c.score, 0) / read.length) : null;
+      const posted = pe.filter(x => x.r && x.r.label === (D.season || x.r.label)).length;
+      return `<button class="si-card" data-si-open="${esc(b.id)}">
+        <span class="si-meta"><span class="eyebrow">${esc(b.sector || b.title)}</span><span>· ${esc(b.source || '')}</span><span class="num">· ${esc(fdate(b.asOf))}</span></span>
+        <h4>${esc(b.headline)}</h4><p class="dek">${esc(b.dek || '')}</p>
+        <div class="si-chips">${pe.map(x => `<span class="si-chip">${esc(x.p.name)}${x.c ? ` <b style="color:${vcol(x.c.score, x.c.veto)}">${x.c.score}</b>` : ''}</span>`).join('')}</div>
+        <div class="si-strip"><div><b style="color:${avg == null ? 'var(--muted)' : vcol(avg)}">${avg ?? '–'}</b><span>peers' average call score</span></div>
+          <div><b>${posted}/${pe.length}</b><span>peers posted ${esc(D.season || 'results')}</span></div>
+          <div><b>${siOthers(b).size}</b><span>other companies say the same on their calls</span></div></div>
+        <span class="go small" style="color:var(--accent);font-weight:600">Open the brief →</span></button>`; }).join('') || '<div class="empty">No sector briefs yet. Add one to sector_briefs/ in the engine.</div>'}</div>
+    ${siNext()}`;
+}
+
+/* sub-sectors without a brief, ranked by the strength of their latest calls: a shortlist for the next brief */
+function siNext() {
+  const have = new Set(siBriefs().flatMap(b => b.industries || [])), by = {};
+  callsQ().forEach(c => { if (c.industry && !have.has(c.industry)) (by[c.industry] = by[c.industry] || []).push(c); });
+  const rows = Object.entries(by).filter(([, cs]) => cs.length >= 4).map(([k, cs]) => {
+    const avg = cs.reduce((n, c) => n + c.score, 0) / cs.length, gi = guideIdx(cs), up = cs.filter(c => c.delta > 0).length / cs.length;
+    return {k, cs: cs.slice().sort((a, b) => b.score - a.score), avg, gi, up, rank: avg + 0.35 * ((gi ?? 50) - 50) + 10 * (up - 0.5)};
+  }).sort((a, b) => b.rank - a.rank).slice(0, 10);
+  if (!rows.length) return '';
+  return `<section class="si-sec"><div class="list-head"><h3>Where to write next</h3><span class="small muted">Sub-sectors with 4+ calls and no brief yet · ${esc(curQ() === 'all' ? 'latest call per company' : curQ())}</span></div>
+    <div class="rows si-next"><div class="r hd"><span>Sub-sector</span><span>Calls</span><span>Average score</span><span>Guidance index</span><span>Strongest calls</span></div>
+    ${rows.map(r => `<div class="r"><span style="min-width:0"><span class="nm" style="display:block">${esc(r.k)}</span><span class="sub">${esc(r.cs[0].bigSector || r.cs[0].sector || '')} · ${Math.round(100 * r.up)}% improved on last call</span></span>
+      <span class="num">${r.cs.length}</span><span>${scoreCell(Math.round(r.avg), false)}</span><span class="num" style="color:${gcol(r.gi)}">${r.gi ?? '–'}</span>
+      <span class="cos">${r.cs.slice(0, 4).map(c => `<button data-open="${esc(c.id)}" data-k="${esc(c.key)}">${esc(c.name.replace(/ Ltd\.?$/, ''))} <b class="num" style="color:${vcol(c.score, c.veto)}">${c.score}</b></button>`).join('')}</span></div>`).join('')}</div></section>`;
+}
+
+function siChart(s) {
+  if (!s || !(s.rev || []).length) return '';
+  const W = 320, H = 140, n = s.rev.length, bw = 34, gap = (W - 20 - n * bw) / Math.max(1, n - 1), top = 48, base = H - 18;
+  const mx = Math.max(...s.rev), ms = s.margin || [], mmin = Math.min(...ms), mmax = Math.max(...ms);
+  const x = i => 10 + i * (bw + gap), my = v => mmax === mmin ? 22 : 34 - (v - mmin) / (mmax - mmin) * 20;
+  const pts = ms.map((v, i) => [x(i) + bw / 2, my(v)]);
+  return `<div class="si-chart"><span class="eyebrow">${esc(s.title || 'Revenue & margin')}</span><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(s.title || '')}">
+    ${s.rev.map((v, i) => { const h = Math.max(2, (base - top - 12) * v / mx); return `<rect class="bar" x="${x(i)}" y="${base - h}" width="${bw}" height="${h}" rx="4" fill="${i === n - 1 ? 'var(--saffron)' : 'var(--fg)'}" opacity="${i === n - 1 ? 1 : .82}" style="animation-delay:${i * .06}s"><title>${esc(s.labels[i])}: ₹${fmt(v)} cr</title></rect>
+      <text x="${x(i) + bw / 2}" y="${base - h - 4}" text-anchor="middle" font-size="9.5" style="fill:var(--fg);font-weight:600">${fmt(v)}</text>
+      <text x="${x(i) + bw / 2}" y="${H - 4}" text-anchor="middle" font-size="8">${esc(s.labels[i])}</text>`; }).join('')}
+    ${pts.length > 1 ? `<polyline points="${pts.map(p => p.join(',')).join(' ')}" fill="none" stroke="var(--accent)" stroke-width="1.8"/>` : ''}
+    ${pts.map((p, i) => `<circle cx="${p[0]}" cy="${p[1]}" r="3" fill="var(--panel)" stroke="var(--accent)" stroke-width="1.6"/><text x="${p[0]}" y="${p[1] - 6}" text-anchor="middle" font-size="8.5" style="fill:var(--accent)">${ms[i].toFixed(1)}%</text>`).join('')}
+  </svg></div>`;
+}
+
+function siLine(m) {
+  return `<button class="si-ln${m.peer ? ' peer' : ''}" data-open="${esc(m.id)}" data-k="${esc(m.key)}" title="${m.n} line${m.n === 1 ? '' : 's'} on this in the ${esc(m.period)} call"><span class="r1"><b>${esc(m.name.replace(/ Ltd\.?$/, ''))}</b><span>${esc(m.industry)} · ${esc(m.period)} · <b class="num" style="color:${vcol(m.score)}">${m.score}</b></span></span><q>${m.quote ? '“' : ''}${esc(m.text)}${m.quote ? '”' : ''}</q></button>`;
+}
+
+function siBrief(b) {
+  const peers = b.peers || [], camps = Object.keys(b.camps || {});
+  const ind = new Set(b.industries || []), sub = callsQ().filter(c => ind.has(c.industry)).sort((x, y) => y.score - x.score);
+  const vc = vcounts(sub), gi = guideIdx(sub), avg = sub.length ? Math.round(sub.reduce((n, c) => n + c.score, 0) / sub.length) : null;
+  setTimeout(() => animateWidgets($('#view')), 0);
+  return `<button class="btn si-back" data-si-open="">← All sector briefs</button>
+    <section class="today si-hero">
+      <span class="si-meta"><span class="eyebrow">Sector brief · ${esc(b.sector || b.title)}</span><span>· ${esc(b.edition || b.source || '')}</span><span class="num">· data as of ${esc(fdate(b.asOf))}</span></span>
+      <h3>${esc(b.headline)}</h3><p class="dek">${esc(b.dek || '')}</p>
+      <div class="si-acts">${b.pdf ? `<a class="btn primary" href="${esc(b.pdf)}" download="${esc((b.source || 'Brief') + ' - ' + b.title + '.pdf')}">Download the PDF</a><a class="btn" href="${esc(b.pdf)}" target="_blank" rel="noopener">Open the PDF ↗</a>` : ''}
+        ${peers.map(p => `<button class="btn" data-open="${esc(p.id)}">${esc(p.name)}</button>`).join('')}</div>
+    </section>
+    <div class="si-kpis">${(b.kpis || []).map(k => `<div class="w si-kpi"><b>${esc(k.v)}</b><p>${esc(k.l)}</p><span class="eyebrow">${esc(k.src || '')}</span></div>`).join('')}</div>
+
+    <section class="si-sec"><div class="list-head"><h3><span class="n">01</span>What is changing, and who else is saying it</h3><span class="small muted">From the brief · evidence from the latest calls on the desk</span></div>
+      <div class="si-threads">${(b.threads || []).map(t => { const ms = t.mentions || [], pe = ms.filter(m => m.peer), ot = ms.filter(m => !m.peer), more = (t.mentionCount || 0) - ms.length;
+        return `<article class="card si-th"><h4>${esc(t.from)} <i>→</i> ${esc(t.to)}</h4><p>${esc(t.text)}</p>
+          <div class="si-ev"><span class="eyebrow"><span>On the calls</span><span>${pe.length} of ${peers.length} peers · ${ot.length + Math.max(0, more)} other${ot.length + more === 1 ? '' : 's'}${t.industries ? ` in ${t.industries} sub-sector${t.industries === 1 ? '' : 's'}` : ''}</span></span>
+            ${pe.map(siLine).join('') || '<span class="small muted">No peer raised this on its latest call.</span>'}
+            ${ot.length ? `<details class="si-more"${ot.length <= 2 ? ' open' : ''}><summary>Read-across: ${ot.length} more compan${ot.length === 1 ? 'y' : 'ies'} beyond the peer set${more > 0 ? ` (top ${ot.length} of ${ot.length + more})` : ''} ▾</summary><div>${ot.map(siLine).join('')}</div></details>` : ''}</div></article>`; }).join('')}</div></section>
+
+    <section class="si-sec"><div class="list-head"><h3><span class="n">02</span>The peer set now</h3><span class="small muted">Brief: ${esc(b.peerNote || '')} · Desk: live from filings and calls</span></div>
+      <div class="rows si-pr"><div class="r hd"><span>Company</span><span>The brief's read</span><span>Results filed</span><span>Since results</span><span>Latest call</span><span>Guidance</span><span>Next results</span></div>
+      ${peers.map(p => { const c = byId[p.id], r = latestRes(p.id), nx = siNextRes(p.id), ci = camps.indexOf(p.camp);
+        const mch = r && r.opm != null && r.opm_prev_yoy != null ? r.opm - r.opm_prev_yoy : null;
+        return `<div class="r${isW(p.id) ? ' wrow' : ''}">
+          <span style="min-width:0;display:grid;gap:3px"><span class="nm">${star(p.id)}${esc(p.name)}</span>${p.camp ? `<span class="si-camp c${ci}">${esc((b.camps || {})[p.camp] || p.camp)}</span>` : ''}<span class="mdl">${esc(p.model || '')}</span></span>
+          <span class="cell"><span>Revenue <b>${esc(p.rev || '–')}</b></span><span>PAT <b>${esc(p.pat || '–')}</b></span><span class="mdl">${esc(p.note || '')}</span></span>
+          <span class="cell">${r ? `<span class="num">${esc(r.label)} · ${esc(sdate(r.filed))}</span><span>${esc(r.revLabel || 'Revenue')} ₹${fmt(Math.round(r.rev))} cr ${gTag(r.rev_yoy)}</span><span>${esc(r.opLabel || 'EBITDA')} margin ${r.opm != null ? r.opm.toFixed(1) + '%' : '–'}${mch != null ? ` <span class="g ${mch > 0 ? 'gp' : mch < 0 ? 'gn' : 'g0'}">(${mch > 0 ? '+' : ''}${mch.toFixed(1)} pts)</span>` : ''}</span><span>PAT ${gTag(r.pat_yoy)}</span>` : `<span class="muted">${RES.data ? 'Not filed yet' : 'Loading…'}</span>`}</span>
+          <span class="cell">${r?.px ? `<span>${gTag(r.px.move)}</span><span class="mdl">${r.px.xMove != null ? `${siPct(r.px.xMove)} vs index` : ''}</span><span class="mdl">Day 1 ${siPct(r.px.react)}</span>` : '<span class="muted">–</span>'}</span>
+          <span class="cell">${c ? `${scoreCell(c.score, c.veto)}<span class="mdl">${esc(c.period)} · ${dcell(c.delta)} vs last call</span>` : '<span class="muted">Call not read yet</span>'}</span>
+          <span class="cell">${c ? gcell((D.calls || []).find(x => x.key === c.key)?.g ?? 0) : '–'}</span>
+          <span class="cell">${nx ? `<span class="num">${esc(fdate(nx.date))}</span><span class="mdl">${esc(whenTxt(dayDiff(nx.date, istToday())))}</span>` : '<span class="muted">Not announced</span>'}${c ? `<button class="link" data-open="${esc(p.id)}" data-k="${esc(c.key || '')}">Open call →</button>` : ''}</span></div>`; }).join('')}</div></section>
+
+    ${(b.views || []).length ? `<section class="si-sec"><div class="list-head"><h3><span class="n">03</span>Latest view on the ${(b.views || []).length === 2 ? 'two' : ''} key plays</h3><span class="small muted">THRIVE lens · rate of change</span></div>
+      <div class="si-views">${b.views.map(v => { const c = byId[v.id], cl = c && (D.calls || []).find(x => x.key === c.key);
+        return `<article class="card si-view"><div class="si-vh"><div><h4>${esc(v.name)}</h4><span class="small muted">${esc(v.ticker || '')} · ${esc(b.season || '')}</span></div><div class="si-thr"><b>${v.thrive}<small>/18</small></b><span>${esc(v.tag || '')}</span></div></div>
+          <div class="si-vk">${(v.kpis || []).map(k => `<div><b>${esc(k.v)}</b><span>${esc(k.l)}</span></div>`).join('')}</div>
+          ${siChart(v.series)}
+          <p class="si-h5 ok">What is working</p><ul class="si-ul">${(v.working || []).map(x => `<li>${siBold(x)}</li>`).join('')}</ul>
+          <p class="si-h5 no">Where we stay sceptical</p><ul class="si-ul">${(v.sceptical || []).map(x => `<li>${siBold(x)}</li>`).join('')}</ul>
+          <div class="si-read"><span class="eyebrow">${esc(b.source || '')}’s read</span><span>${esc(v.read || '')}</span></div>
+          ${c ? `<div class="si-live"><span class="eyebrow">On the desk now · ${esc(c.period)} call</span><div class="row">${scoreCell(c.score, c.veto)}<span>${dcell(c.delta)} vs last call</span><span>${gcell(cl?.g ?? 0)}</span></div>
+            ${c.top || c.thesis ? `<span class="small">${esc(c.top || '')}${c.top && c.thesis ? ' — ' : ''}<span class="muted">${esc(c.thesis || '')}</span></span>` : ''}
+            <button class="link" style="justify-self:start" data-open="${esc(v.id)}" data-k="${esc(c.key || '')}">Read the call summary →</button></div>` : ''}</article>`; }).join('')}</div>
+      <div class="rows" style="overflow-x:auto"><table class="si-lens"><thead><tr><th>Lens</th>${b.views.map(v => `<th colspan="1">${esc(v.name)} · ${v.thrive}/18</th>`).join('')}</tr></thead><tbody>
+        ${siLensKeys.map(([k, nm]) => `<tr><td class="l"><i>${k}</i>${esc(nm)}</td>${b.views.map((v, j) => { const x = (v.lens || {})[k] || [0, '']; return `<td class="${j ? 't2' : ''}">${siDots(x[0])}${esc(x[1])}</td>`; }).join('')}</tr>`).join('')}
+      </tbody></table></div></section>` : ''}
+
+    <section class="si-sec"><div class="list-head"><h3><span class="n">04</span>The sub-sector on the desk</h3><span class="small muted">${esc([...ind].join(', '))} · ${esc(curQ() === 'all' ? 'latest call per company' : curQ())}</span></div>
+      ${sub.length ? `<div class="board">
+        <section class="w span4"><div class="w-head"><h3>Verdict mix</h3>${tip('verdict')}</div><div class="ring-wrap">${donut(vc, {size: 112, stroke: 18, center: fmt(sub.length), sub: 'calls'})}${verdictLegend(vc)}</div>
+          <div class="w-foot"><span>Average score <b class="num" style="color:${vcol(avg)}">${avg}</b></span></div></section>
+        <section class="w span3"><div class="w-head"><h3>Guidance mood</h3>${tip('gidx')}</div>${semiGauge(gi, {label: 'Guidance index'})}</section>
+        <section class="w span5"><div class="w-head"><h3>Every call in the sub-sector</h3></div>
+          <div class="rows mini-list">${sub.slice(0, 8).map(c => `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key)}"><span style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span><span class="sub">${esc(c.period)} · ${esc(c.top || '')}</span></span>${scoreCell(c.score, c.veto)}</button>`).join('')}</div></section></div>`
+      : `<div class="empty">No calls read in ${esc([...ind].join(', '))} for ${esc(curQ())}. Pick another quarter above.</div>`}</section>
+
+    <section class="si-sec"><div class="list-head"><h3><span class="n">05</span>The case, both ways</h3></div>
+      <div class="si-two"><div class="card si-ok"><h4>Why the theme is durable</h4><p class="small">${esc(b.durable || '')}</p></div><div class="card si-no"><h4>What could break it</h4><p class="small">${esc(b.risks || '')}</p></div></div>
+      ${b.index ? `<p class="small muted">${esc(b.index)}</p>` : ''}</section>
+
+    <section class="si-sec"><div class="list-head"><h3><span class="n">06</span>What to watch across the sector</h3><span class="small muted">Catalyst calendar</span></div>
+      <div class="si-cat">${[['near', 'Near term · 0–6 months'], ['mid', 'Medium term · 6–18 months'], ['long', 'Long term · 18 months+']].map(([k, l]) => `<div class="card"><span class="eyebrow">${l}</span><ul class="si-ul" style="margin-top:8px">${((b.catalysts || {})[k] || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')}</div></section>
+
+    <div class="si-foot"><span><b>${esc(b.source || '')}</b> · Educational research · Not a buy / sell / hold recommendation · Not SEBI-registered investment advice.</span>
+      <span>Brief sources: ${esc(b.sources || '')}. Data as of ${esc(fdate(b.asOf))}.</span>
+      <span>Live layer: call scores, guidance and summaries from the desk's reading of BSE transcripts; results and price moves from BSE filings. Read-across built ${esc(fdate(SI.data.generated))} ${esc((SI.data.generated || '').slice(11, 16))} IST.</span></div>`;
+}
+/* "Label: rest" bullets from the brief get a bold label, as in the PDF */
+const siBold = s => { const i = String(s).indexOf(': '); return i > 0 && i < 60 ? `<b>${esc(s.slice(0, i))}:</b> ${esc(s.slice(i + 2))}` : esc(s); };
+setTimeout(() => loadSi().then(() => { if (D) renderNav(); }), 0);  /* small file: fetch early so the rail shows the brief count */
+document.addEventListener('click', e => {
+  if (S.view !== 'intel') return;
+  const o = e.target.closest('[data-si-open]'); if (!o) return;
+  S.si.open = o.dataset.siOpen; store.set('si-open', S.si.open); render(true);
+});
+
+const RENDER = {intel: vIntel, bytes: vBytes, post: vPost, leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -4612,7 +4863,13 @@ function sbInput(x, mode) {
   }
   if (x.k === 'results') {
     if (!x.read) return '<div class="row"><span>Quarter results not read yet for this call, so they count as neutral.</span><span class="num">0.50</span></div>';
-    return `<div class="row"><span>This quarter, YoY: revenue ${pctTxt(x.qRev)} · EBITDA ${pctTxt(x.qEbitda)}</span><span class="num"></span></div>`;
+    const q = x.quality, base = `<div class="row"><span>This quarter, YoY: revenue ${pctTxt(x.qRev)} · EBITDA ${pctTxt(x.qEbitda)}</span><span class="num">${x.raw != null ? f2(x.raw) : ''}</span></div>`;
+    if (!q) return base + (x.raw != null ? '<div class="row"><span class="muted">Growth quality not read yet for this call, so the results count as reported.</span><span class="num"></span></div>' : '');
+    const offs = (q.oneOffs || []).map(o => `<li><b>${esc(QK[o.kind] || o.kind)}</b> · ${esc(o.what)} <span class="${o.effect === 'flatters' ? 'g-dn' : 'g-up'}">(${o.effect === 'flatters' ? 'flatters' : 'drags on'} the quarter, ${esc(o.size)})</span></li>`).join('');
+    return base + `<div class="row"><span><b>Growth quality</b>: ${esc(QV[q.verdict] || q.verdict)} · driven by ${esc(QD[q.driver] || q.driver)}${q.vol != null ? ` (volume ${pctTxt(q.vol)})` : ''} · ${esc(QO[q.organic] || q.organic)}</span><span class="num">× ${f2(q.mult)}</span></div>
+      ${offs ? `<ul style="margin:0 0 4px;padding-left:18px;font-size:11px">${offs}</ul>` : ''}
+      <div class="row"><span class="muted">${q.mult < 1 ? (x.raw > 0.5 ? 'One-offs or a low base flatter this quarter, so the part above neutral (0.5) counts at ' : 'One-offs dragged this quarter, so the part below neutral (0.5) counts at ') + Math.round(100 * q.mult) + '%.' : 'No adjustment: the growth reads as recurring.'}</span><span class="num"></span></div>
+      ${q.why ? `<div class="sb-ev"><div class="q">${esc(q.why)}</div></div>` : ''}`;
   }
   if (x.k === 'cred') return `<div class="row"><span>Management credibility: ${x.tested ? `${x.cred} of 100 (${x.tested} past guidance item${x.tested === 1 ? '' : 's'} checked)` : 'untested (no past guidance to check yet)'}</span><span class="num">× ${f2(x.factor)}</span></div>`;
   if (x.k === 'theme') { const [lab, v] = THEME_BONUS[x.stage || 'neutral'] || THEME_BONUS.neutral;
@@ -4621,10 +4878,15 @@ function sbInput(x, mode) {
   const prev = mode === 'blend' && x.prev != null ? ` · avg of earlier calls ${sgn(+(+x.prev).toFixed(1))}` : '';
   return `<div class="row"><span>${SB_READ[x.k] || x.k} ${sgn(x.read)}${x.scale ? ' (−1 to +1)' : ' (−2 to +2)'}${prev}${x.wt > 1 ? ` · counts ×${x.wt}` : ''}</span><span class="num">${f2(x.sub)}</span></div>`;
 }
+const QV = {sustainable: 'recurring', mixed: 'partly one-off or base-driven', one_off_heavy: 'mostly one-off', unclear: 'not clear from the call'};
+const QD = {volume: 'volume', price: 'price', mix: 'mix', balanced: 'volume, price and mix together', unclear: 'an unstated mix'};
+const QO = {organic: 'organic', mostly_organic: 'mostly organic', acquisition_led: 'acquisition-led', unclear: 'organic or acquired not stated'};
+const QK = {low_base: 'Low base', exceptional_gain: 'Exceptional gain', forex_gain: 'Forex gain', inventory_gain: 'Inventory gain', catch_up_or_pull_forward: 'Catch-up / pull-forward',
+  one_time_order: 'One-time order', subsidy_or_incentive: 'Incentive', accounting_change: 'Accounting change', acquisition: 'Acquisition', one_off_loss: 'One-off loss', base_had_one_off_gain: 'Base had a one-off gain', other: 'One-off'};
 function sbHow(p, mode) {
   const lvl = mode === 'blend' ? 'Each reading becomes 0 to 1 as 60% its level plus 40% its change against the average of the company’s earlier calls (0.5 = neutral).' : 'First call on record, so each reading counts at its level: −2 → 0, −1 → 0.25, 0 → 0.5, +1 → 0.75, +2 → 1.';
   return {backed: 'Guided growth 60% + capacity 40%. Guided growth: growth guided (≥25% 1.0, ≥15% 0.85, ≥10% 0.7, ≥5% 0.55, 0–5% 0.45, negative 0.15) averaged with the guidance strength reading; a clearly guided turnaround counts as at least 0.85. Its distance above neutral is then multiplied by how clearly management showed how it will deliver (clear 1.0, partial 0.7, vague 0.4, none 0.25) and by credibility (0.4 + 0.6 × credibility/100 once tested, 0.85 untested), so big guidance with no plan behind it counts for much less. Capacity: major capacity live within 3 quarters 1.0, moderate 0.8, minor 0.6, meaningful capacity further out 0.6, spare capacity to grow into 0.6, nothing discussed 0.5, running ≥85% full with no expansion 0.2; +0.1 if the existing plant is already ≥80% utilised.',
-    results: 'This quarter’s revenue and EBITDA growth YoY, each scored ≥30% 1.0, ≥20% 0.85, ≥10% 0.7, 0–10% 0.5, 0 to −10% 0.3, below −10% 0.1, and averaged. Not stated counts as neutral 0.5.',
+    results: 'This quarter’s revenue and EBITDA growth YoY, each scored ≥30% 1.0, ≥20% 0.85, ≥10% 0.7, 0–10% 0.5, 0 to −10% 0.3, below −10% 0.1, and averaged. Not stated counts as neutral 0.5. Then adjusted for growth quality: when one-offs or a low base flatter the quarter, the part above 0.5 is multiplied by 0.7 (partly one-off), 0.35 (mostly one-off) or 0.55 (one major item); when one-offs dragged it, the part below 0.5 is multiplied the same way.',
     supply: `${lvl} Supply discipline counts twice, structure and inventory once each: (2 × supply + structure + inventory) ÷ 4.`,
     pricing: `${lvl} Pricing and utilisation are averaged.`,
     guidance: `${lvl} The guidance value is then pulled toward neutral (0.5) unless management has delivered before: value = 0.5 + (reading − 0.5) × credibility factor. Factor = 0.4 + 0.6 × credibility/100 once tested, 0.85 while untested.`,
@@ -4661,7 +4923,7 @@ function scoreHtml(c) {
       <table><tr><th>Component</th><th>Weight</th><th>Built from</th></tr>
         <tr><td>Guidance-backed growth & capacity</td><td>45%</td><td>Growth or turnaround guided, counted in full only when management shows how it will deliver (capacity, orders, spare capacity) and has delivered before; plus capacity going live in the next 2–3 quarters</td></tr>
         <tr><td>Industry supply discipline</td><td>20%</td><td>Supply discipline ×2, industry structure, inventory</td></tr>
-        <tr><td>Results delivered</td><td>15%</td><td>This quarter’s revenue and EBITDA growth YoY</td></tr>
+        <tr><td>Results delivered</td><td>15%</td><td>This quarter’s revenue and EBITDA growth YoY, adjusted for growth quality: the part above neutral is cut when growth leans on one-offs or a low base (to 70% when partly one-off, 35% when mostly one-off, 55% for a major one-off), and a weak quarter dragged by one-offs is softened the same way</td></tr>
         <tr><td>Pricing & utilisation</td><td>10%</td><td>Pricing reading and utilisation direction, averaged</td></tr>
         <tr><td>Demand</td><td>5%</td><td>Demand reading</td></tr>
         <tr><td>New developments & themes</td><td>3%</td><td>Novelty reading and the stage of the strongest theme discussed</td></tr>

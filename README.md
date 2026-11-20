@@ -45,6 +45,18 @@ universe → fetch (manifest) → download → text → LLM extraction (quote-ve
 - **Store**: one JSON file per extracted document in `data/extractions/<market>/<company>/`. It is
   git-friendly, and every dashboard number can be rebuilt from it with `python run.py analyze`.
 
+- **Growth quality** (`quality.py`, `python run.py quality --market IN`): one small read per call (summary in, not the
+  transcript) of what drove growth (volume / price / mix), whether it was organic, and any one-offs, each marked as
+  flattering or dragging the quarter (low base, exceptional / forex / inventory gains, catch-up or pulled-forward revenue,
+  one-time orders, incentives, a base quarter with a one-off gain). `analyze.results_value()` scales the part of
+  "Results delivered" above neutral by 0.7 (partly one-off), 0.35 (mostly one-off) or 0.55 (one major item), and softens a
+  weak quarter dragged by one-offs the same way. The items show in each company's Score breakdown.
+- **Sector intel** (`sector_briefs/*.yaml` + `sector_intel.py` → `data/sector_intel.json`): sector briefs (the original
+  PDF sits in `sector_briefs/pdf/`) transcribed into YAML. For each "what is changing" thread, `look` is a regex run over
+  every company's latest call summary and verified quotes (optionally limited by `scope`: macro sectors or industries),
+  so the page shows which companies said the same thing. Peers' scores, results and dates are joined live in the page.
+  To add a brief: copy an existing YAML, fill it in, drop the PDF in `sector_briefs/pdf/`, and run `python sector_intel.py`.
+
 ## Layout
 
 All code and config files sit at the top level of the repo. The two scheduled jobs live in `.github/workflows/` (`india.yml`, `us.yml`); GitHub only runs them from there.
