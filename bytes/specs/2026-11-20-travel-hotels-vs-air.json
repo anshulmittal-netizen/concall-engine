@@ -3,7 +3,7 @@
  "status": "draft",
  "dateline": "India · Q2 FY27 · 20 Nov 2026",
  "series": "Sector intel",
- "theme": "Sector intel",
+ "theme": "dark",
  "sources": "Vantage analysis of Q2 FY27 results filed on BSE and Q1–Q2 FY27 earnings calls; Vantage sector intel, 20 Nov 2026",
  "id": "2026-11-20-travel-hotels-vs-air",
  "kicker": "Travel · 10 listed hotel companies vs air",
@@ -11,75 +11,87 @@
  "title_em": "Hotels grew a median 14%",
  "dek": "Rooms filled as flights thinned: IHCL's occupancy rose to 82% from 75% and Lemon Tree's RevPAR rose 18%, while ixigo's flight revenue fell 8% and TBO's air take rate slipped to about 2%.",
  "chart": {
-  "title": "Hotel revenue growth, Q2 FY27 vs Q2 FY26",
-  "sub": "listed hotel companies, filed results (IHCL from its call) · bar colour = change in operating margin",
-  "rows": [
+  "type": "scatter",
+  "title": "Listed hotel companies: revenue growth vs margin change",
+  "sub": "listed hotel companies, filed results (IHCL from its call) · dot colour = change in operating margin",
+  "points": [
    {
-    "label": "Royal Orchid Hotels",
-    "value": 39.1,
-    "text": "+39% · +6.7 pt",
+    "label": "Royal Orchid",
+    "x": 39.1,
+    "y": 6.7,
     "group": "up"
    },
    {
     "label": "Leela Palaces",
-    "value": 32.6,
-    "text": "+33% · +1.2 pt",
+    "x": 32.6,
+    "y": 1.2,
     "group": "up"
    },
    {
     "label": "IHCL (Taj)",
-    "value": 22.0,
-    "text": "+22% · +0.5 pt",
+    "x": 22.0,
+    "y": 0.5,
     "group": "up"
    },
    {
-    "label": "Lemon Tree Hotels",
-    "value": 18.0,
-    "text": "+18% · +1.5 pt",
+    "label": "Lemon Tree",
+    "x": 18.0,
+    "y": 1.5,
     "group": "up"
    },
    {
-    "label": "Samhi Hotels",
-    "value": 15.4,
-    "text": "+15% · −1.3 pt",
+    "label": "Samhi",
+    "x": 15.4,
+    "y": -1.3,
     "group": "down"
    },
    {
-    "label": "Ventive Hospitality",
-    "value": 12.6,
-    "text": "+13% · −0.6 pt",
+    "label": "Ventive",
+    "x": 12.6,
+    "y": -0.6,
     "group": "down"
    },
    {
-    "label": "Kamat Hotels",
-    "value": 11.5,
-    "text": "+12% · +13.4 pt",
+    "label": "Kamat",
+    "x": 11.5,
+    "y": 13.4,
     "group": "up"
    },
    {
-    "label": "Brigade Hotel Ventures",
-    "value": 11.1,
-    "text": "+11% · +6.4 pt",
+    "label": "Brigade",
+    "x": 11.1,
+    "y": 6.4,
     "group": "up"
    },
    {
-    "label": "Mahindra Holidays",
-    "value": 9.3,
-    "text": "+9% · −1.0 pt",
+    "label": "Mahindra",
+    "x": 9.3,
+    "y": -1.0,
     "group": "down"
    },
    {
-    "label": "Park Hotels",
-    "value": 8.6,
-    "text": "+9% · +0.6 pt",
+    "label": "Park",
+    "x": 8.6,
+    "y": 0.6,
     "group": "up"
    }
   ],
+  "x": {
+   "label": "Revenue growth, Q2 FY27 YoY",
+   "fmt": "{}%"
+  },
+  "y": {
+   "label": "Operating margin change",
+   "fmt": "{} pt"
+  },
+  "quadrants": {
+   "tr": "Growth with margin",
+   "br": "Growth, margin slipped"
+  },
   "legend": {
    "up": "Margin up",
    "down": "Margin down"
-  },
-  "pad": 0.26
+  }
  },
  "stats": [
   {
@@ -157,5 +169,6 @@
    "name": "Yatra Online Ltd"
   }
  ],
- "notes": "The chart covers 10 listed hotel companies that filed Q2 FY27 results (consolidated except Brigade Hotel Ventures, standalone); IHCL's +22% revenue and +0.5 pt operating EBITDA margin (28.4%) are from its Q2 call, as its filing is not on the desk. Chalet Hotels is left out because its reported revenue fell 32% on a year-ago residential handover (core revenue +11%), and EIH and Juniper had not filed. Margin is operating (EBITDA) margin vs Q2 FY26; 7 of 10 rose. Air figures are from the Q2 calls of Yatra (industry passengers and fares), ixigo and TBO Tek; ixigo also attributes part of its take-rate fall to discounts and a larger international mix."
+ "notes": "The chart covers 10 listed hotel companies that filed Q2 FY27 results (consolidated except Brigade Hotel Ventures, standalone); IHCL's +22% revenue and +0.5 pt operating EBITDA margin (28.4%) are from its Q2 call, as its filing is not on the desk. Chalet Hotels is left out because its reported revenue fell 32% on a year-ago residential handover (core revenue +11%), and EIH and Juniper had not filed. Margin is operating (EBITDA) margin vs Q2 FY26; 7 of 10 rose. Air figures are from the Q2 calls of Yatra (industry passengers and fares), ixigo and TBO Tek; ixigo also attributes part of its take-rate fall to discounts and a larger international mix.",
+ "layout": "split"
 }

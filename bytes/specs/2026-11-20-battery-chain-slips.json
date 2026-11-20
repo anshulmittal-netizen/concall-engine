@@ -9,65 +9,81 @@
  "title_em": "Indian LFP slips to FY28",
  "dek": "ACME's 5.2 GWh of batteries, all on Chinese cells, earned a 78% EBITDA margin in Q2. Gujarat Fluorochemicals pushed LFP revenue to end-FY28 or later; Himadri deferred 40,000 t of LFP.",
  "chart": {
+  "type": "timeline",
   "title": "Months from now to each milestone",
   "sub": "from November 2026 to the end of the period management gave on Q1–Q2 FY27 calls",
-  "rows": [
+  "items": [
    {
     "label": "ACME storage",
-    "value": 0,
+    "t": 0,
     "text": "Earning now · 5.2 GWh",
     "group": "a"
    },
    {
     "label": "Amara Raja storage",
-    "value": 3,
+    "t": 3,
     "text": "Jan–Feb 2027",
     "group": "b"
    },
    {
     "label": "Gujarat Fluoro supply",
-    "value": 4,
+    "t": 4,
     "text": "Q4 FY27",
     "group": "b"
    },
    {
     "label": "Sudeep iron phosphate",
-    "value": 5,
+    "t": 5,
     "text": "Apr 2027 · held",
     "group": "b"
    },
    {
     "label": "Premier storage line",
-    "value": 7,
+    "t": 7,
     "text": "Q2 2027 · Chinese cells",
     "group": "b"
    },
    {
     "label": "Himadri 40,000 t LFP",
-    "value": 16,
+    "t": 16,
     "text": "End-FY28 · was FY28",
     "group": "c"
    },
    {
     "label": "Gujarat Fluoro LFP",
-    "value": 16,
+    "t": 16,
     "text": "End-FY28+ · was end-FY27",
-    "group": "c"
+    "group": "c",
+    "t0": 4
    },
    {
     "label": "Amara Raja cell plant",
-    "value": 30,
+    "t": 30,
     "text": "≈30 months · just approved",
     "group": "d"
    }
   ],
+  "ticks": [
+   {
+    "t": 4,
+    "label": "Mar 27"
+   },
+   {
+    "t": 16,
+    "label": "Mar 28"
+   },
+   {
+    "t": 28,
+    "label": "Mar 29"
+   }
+  ],
+  "nowLabel": "Nov 26",
   "legend": {
    "a": "Earning",
    "b": "Due within a year",
    "c": "Pushed back this season",
    "d": "Newly approved"
-  },
-  "pad": 0.42
+  }
  },
  "stats": [
   {
@@ -92,7 +108,7 @@
  "read": "Until a local-content rule arrives, storage growth buys Chinese cells; Q4 FY27 first supplies are the chain's next test.",
  "sources": "Vantage analysis of Q2 FY27 results filed on BSE and Q1–Q2 FY27 earnings calls; Vantage sector intel, 20 Nov 2026",
  "sector": "Battery storage & materials",
- "theme": "Sector intel",
+ "theme": "light",
  "companies": [
   {
    "id": "544283",
@@ -119,5 +135,6 @@
    "name": "Himadri Speciality Chemical Ltd"
   }
  ],
- "notes": "Each bar counts months from November 2026 to the end of the period stated on the latest call (Q4 FY27 = March 2027; Q2 2027 = June 2027; end-FY28 = March 2028; Amara Raja's 5 GWh LFP cell plant 'about 30 months' from its November approval). 'Pushed back' compares the Q2 call with the Q1 call: Gujarat Fluorochemicals expected LFP revenue toward end-FY27 and now says end-FY28 or start FY29; Himadri had 40,000 t of LFP due in FY28 and now says end-FY28. Exide's storage-cell line is ready but undated pending incentive clarity, so it is not charted; Neogen trimmed FY27 battery revenue to ₹250–300 cr from ≈₹300 cr."
+ "notes": "Each bar counts months from November 2026 to the end of the period stated on the latest call (Q4 FY27 = March 2027; Q2 2027 = June 2027; end-FY28 = March 2028; Amara Raja's 5 GWh LFP cell plant 'about 30 months' from its November approval). 'Pushed back' compares the Q2 call with the Q1 call: Gujarat Fluorochemicals expected LFP revenue toward end-FY27 and now says end-FY28 or start FY29; Himadri had 40,000 t of LFP due in FY28 and now says end-FY28. Exide's storage-cell line is ready but undated pending incentive clarity, so it is not charted; Neogen trimmed FY27 battery revenue to ₹250–300 cr from ≈₹300 cr.",
+ "layout": "wide"
 }

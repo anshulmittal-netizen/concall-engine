@@ -4,8 +4,20 @@
   python bytes/render.py --index                    # rebuild data/bytes.json from every spec
 
 A spec is JSON: id, date, status ("draft" | "published"), series, dateline, kicker, title, title_em, dek,
-chart {title, sub, rows [{label, value, text, group}], legend}, stats [{value, label, note, tone}],
-read, sources, sector, theme, companies [{id, name}], notes (the full write-up shown on the dashboard).
+chart {type, title, sub, legend, ...}, stats [{value, label, note, tone}], read, sources, sector, theme,
+companies [{id, name}], notes (the full write-up shown on the dashboard), and optionally layout, theme, hero.
+
+Pick the form that fits the story, and do not repeat the chart type of either of the last two bytes or the theme of the last:
+  chart.type  bars      ranking or one measure across companies    rows [{label, value, text, group}]
+              dumbbell  before → after per company (margin LY → now) rows [{label, from, to, fromText, toText, group}], fromLabel, toLabel
+              scatter   two measures, find the outliers / quadrants  points [{label, x, y, group}], x/y {label, fmt "{}%"}, quadrants {tr, tl, br, bl}
+              timeline  dates, delays, milestones                    items [{label, t (months from now), t0 (earlier date, optional), text, group}], ticks [{t, label}], nowLabel
+              columns   a few categories or a time series            rows [{label ("\n" = 2 lines), value, text, group}], line {values, texts} (optional 2nd measure)
+              pairs     two measures side by side per category       rows [{label, a, b, aText, bText}], legend {a, b}
+              tiles     a grid of numbers, colour = good/bad         cells [{label, value, note, group, weight 0-1}], cols
+  layout      split (chart + 3 stat tiles, default) · wide (full-width chart, stats as a strip) · hero (a big number panel + chart; hero {value, label, note, list [{label, value}]}, stats unused)
+  theme       light (default) · dark · warm
+  groups/tones: up/a = forest, down/c = red, b = saffron, d = grey, e = leaf.
 Rendering needs Playwright with Chromium (cloud session); the dashboard only reads the PNGs and data/bytes.json.
 """
 from __future__ import annotations

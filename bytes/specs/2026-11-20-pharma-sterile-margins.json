@@ -4,72 +4,80 @@
  "dateline": "India · Q2 FY27 · 20 Nov 2026",
  "series": "Sector intel",
  "sources": "Vantage analysis of Q2 FY27 results filed on BSE and Q1–Q2 FY27 earnings calls; Vantage sector intel, 20 Nov 2026",
- "theme": "Sector intel",
+ "theme": "warm",
  "id": "2026-11-20-pharma-sterile-margins",
  "kicker": "Pharma · EBITDA margins, Q2 FY27",
  "title": "Sterile makers held or lifted margins; novel-drug bets' fell",
  "title_em": "held or lifted margins",
  "dek": "Gland's margin rose 5.3 pts to 26.4% with vial lines 92% full and OneSource reached 32%, while Wockhardt's fell 4.9 pts in its first quarter after Zaynich's approval and Zydus's 8.9 pts.",
  "chart": {
+  "type": "tiles",
   "title": "EBITDA margin change, Q2 FY27 vs Q2 FY26",
   "sub": "operating margin from filed results (consolidated) · text = Q2 FY27 margin · change in percentage points",
-  "rows": [
+  "cells": [
    {
     "label": "Gland Pharma",
-    "value": 5.3,
-    "text": "26.4% · +5.3 pt",
-    "group": "a"
+    "value": "+5.3 pt",
+    "note": "margin now 26.4%",
+    "group": "a",
+    "weight": 0.5888888888888889
    },
    {
     "label": "OneSource",
-    "value": 3.3,
-    "text": "32% · ≈+3.3 pt",
-    "group": "a"
+    "value": "+3.3 pt",
+    "note": "margin now 32%",
+    "group": "a",
+    "weight": 0.36666666666666664
    },
    {
     "label": "Gufic Biosciences",
-    "value": 0.8,
-    "text": "16.8% · +0.8 pt",
-    "group": "a"
+    "value": "+0.8 pt",
+    "note": "margin now 16.8%",
+    "group": "a",
+    "weight": 0.08888888888888889
    },
    {
     "label": "Caplin Point",
-    "value": 0.0,
-    "text": "35.4% · 0.0 pt",
-    "group": "a"
+    "value": "0.0 pt",
+    "note": "margin now 35.4%",
+    "group": "a",
+    "weight": 0.0
    },
    {
     "label": "Alkem Labs",
-    "value": -0.5,
-    "text": "22.5% · −0.5 pt",
-    "group": "b"
+    "value": "−0.5 pt",
+    "note": "margin now 22.5%",
+    "group": "d",
+    "weight": 0.05555555555555555
    },
    {
     "label": "Biocon",
-    "value": -0.5,
-    "text": "18.9% · −0.5 pt",
-    "group": "b"
+    "value": "−0.5 pt",
+    "note": "margin now 18.9%",
+    "group": "d",
+    "weight": 0.05555555555555555
    },
    {
     "label": "Wockhardt",
-    "value": -4.9,
-    "text": "17.9% · −4.9 pt",
-    "group": "c"
+    "value": "−4.9 pt",
+    "note": "margin now 17.9%",
+    "group": "c",
+    "weight": 0.5444444444444445
    },
    {
     "label": "Zydus Lifesciences",
-    "value": -8.9,
-    "text": "24.0% · −8.9 pt",
-    "group": "c"
+    "value": "−8.9 pt",
+    "note": "margin now 24.0%",
+    "group": "c",
+    "weight": 0.9888888888888889
    }
   ],
+  "cols": 4,
   "legend": {
    "a": "Sterile injectable makers",
-   "b": "Large generics, sterile arms",
+   "d": "Large generics, sterile arms",
    "c": "Novel-drug bets"
-  },
-  "padL": 0.3,
-  "pad": 0.3
+  }
  },
  "stats": [
   {
@@ -127,5 +135,6 @@
    "name": "Zydus Lifesciences Ltd"
   }
  ],
- "notes": "Margins are operating (EBITDA) margins from consolidated Q2 FY27 results filed on BSE. OneSource's results are not in the desk's filed set; its change is derived from the call (32% margin, revenue +37%, EBITDA +53%), so it is approximate. Glenmark is left out because its year-ago quarter included the AbbVie upfront for ISB 2001, Orchid because its results compare post-merger with pre-merger figures, and Aurobindo because only standalone results (excluding the Eugia injectables arm) were filed. Zydus's fall also reflects a strong year-ago quarter and higher R&D and amortisation; management attributes about 1.5 pts to the Saroglitazar launch. Wockhardt held no Q2 call."
+ "notes": "Margins are operating (EBITDA) margins from consolidated Q2 FY27 results filed on BSE. OneSource's results are not in the desk's filed set; its change is derived from the call (32% margin, revenue +37%, EBITDA +53%), so it is approximate. Glenmark is left out because its year-ago quarter included the AbbVie upfront for ISB 2001, Orchid because its results compare post-merger with pre-merger figures, and Aurobindo because only standalone results (excluding the Eugia injectables arm) were filed. Zydus's fall also reflects a strong year-ago quarter and higher R&D and amortisation; management attributes about 1.5 pts to the Saroglitazar launch. Wockhardt held no Q2 call.",
+ "layout": "split"
 }

@@ -26,7 +26,9 @@ Idea: a vantage point. The mark is a V meeting a horizon line, with the sun just
 ## Bytes cards (1200 × 675, exported at 2×)
 - Top bar: logo left; series ("Sector pattern", "Thematic", "Company") and date right.
 - Kicker in saffron caps, one-line headline in ink with the key phrase in forest, one-line dek.
-- Left: one chart (bars or diverging bars). Right: up to three stat tiles.
+- One chart, in the form that fits the story: bars, dumbbell (before → after), scatter, timeline, columns, paired columns or number tiles.
+- Layouts: chart + three stat tiles (split), full-width chart with a stat strip (wide), or a big-number hero panel + chart (hero).
+- Themes: light (paper), dark (ink) or warm (sand). Vary the chart type and theme from card to card so a feed of Bytes never looks the same twice; the colours, type and Vantage read band stay constant.
 - Bottom: the **Vantage read** band — ink background, paper text, one sentence.
 - Footer: sources, "For information only. Not investment advice."
 - Our own data first (calls, results, sector tracker); any outside figure is credited by name.

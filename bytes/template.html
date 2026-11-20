@@ -2,11 +2,18 @@
 <html><head><meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@400..700&display=swap">
 <style>
+/* Vantage Bytes card, 1200x675 (rendered at 2x).
+   Variety without losing the brand: spec.chart.type picks the chart (bars, dumbbell, scatter, timeline, columns, pairs,
+   tiles), spec.layout the arrangement (split, wide, hero) and spec.theme the palette (light, dark, warm). */
 :root{--ink:#13231A;--paper:#FAF7EE;--card:#FFFFFF;--forest:#1E6B45;--leaf:#3E9B3A;--saffron:#C9961C;--red:#C8352A;--muted:#4A574E;--faint:#848D7E;--line:#E7E0CC;
+  --readbg:#13231A;--readfg:#FAF7EE;--readkey:#E8BA4A;--glow:rgba(214,166,46,.18);
   --display:'Bricolage Grotesque',sans-serif;--body:'Public Sans',sans-serif;--mono:'IBM Plex Mono',monospace}
+body.dark{--ink:#F5F2E7;--paper:#0F1914;--card:#17251D;--forest:#6FCF97;--leaf:#7CC45A;--saffron:#E8BA4A;--red:#F0654F;--muted:#CBD0C1;--faint:#8F9A89;--line:#2A3D32;
+  --readbg:#F5F2E7;--readfg:#13231A;--readkey:#1E6B45;--glow:rgba(111,207,151,.12)}
+body.warm{--paper:#F6EBD3;--card:#FFFBF2;--line:#E3D3AE;--glow:rgba(200,53,42,.10)}
 *{box-sizing:border-box;margin:0}
 body{width:1200px;height:675px;overflow:hidden;font-family:var(--body);color:var(--ink);
-  background:radial-gradient(700px 300px at 100% -10%,rgba(214,166,46,.18),transparent 60%),var(--paper)}
+  background:radial-gradient(700px 300px at 100% -10%,var(--glow),transparent 60%),var(--paper)}
 .wrap{position:relative;height:100%;padding:28px 40px 22px;display:flex;flex-direction:column;gap:14px}
 .top{display:flex;justify-content:space-between;align-items:center}
 .logo{display:flex;align-items:center;gap:10px}.logo svg{width:34px;height:34px}
@@ -17,26 +24,51 @@ body{width:1200px;height:675px;overflow:hidden;font-family:var(--body);color:var
 h1{font-family:var(--display);font-size:42px;line-height:1.05;font-weight:750;letter-spacing:-.025em;margin-top:5px}
 h1 em{font-style:normal;color:var(--forest)}
 .dek{font-size:15px;color:var(--muted);margin-top:7px;max-width:1050px}
-.grid{flex:1;display:grid;grid-template-columns:1fr 330px;gap:16px;min-height:0}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;display:flex;flex-direction:column;gap:9px;min-height:0}
+.grid{flex:1;display:grid;gap:16px;min-height:0}
+.split .grid{grid-template-columns:1fr 330px}
+.wide .grid{grid-template-rows:1fr auto}
+.hero .grid{grid-template-columns:330px 1fr}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;display:flex;flex-direction:column;gap:9px;min-height:0;min-width:0}
 .panel h3{font-family:var(--display);font-size:15px;font-weight:600}
 .panel h3 span{font-family:var(--body);font-weight:400;color:var(--muted);font-size:12.5px}
-.bars{flex:1;display:flex;flex-direction:column;justify-content:space-around;min-height:0}
-.bar{display:grid;grid-template-columns:210px 1fr;gap:12px;align-items:center;font-size:13.5px}
+.chart{flex:1;min-height:0;position:relative}
+.chart svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+svg text{font-family:var(--mono);fill:var(--muted);font-size:12px}
+svg .lbl{font-family:var(--body);fill:var(--ink);font-weight:600;font-size:13px}
+svg .val{font-weight:600;font-size:12.5px}
+svg .ax{stroke:var(--line);stroke-width:1.5}
+svg .zero{stroke:var(--faint);stroke-width:1.5;stroke-dasharray:4 4;opacity:.8}
+svg .q{font-family:var(--body);font-size:11.5px;fill:var(--faint);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.bars{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-around}
+.bar{display:grid;grid-template-columns:var(--lw,210px) 1fr;gap:12px;align-items:center;font-size:13.5px}
 .bar .lb{font-weight:600;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .track{position:relative;height:18px}
 .track i{position:absolute;top:0;bottom:0;border-radius:5px}
 .track em{position:absolute;top:50%;transform:translateY(-50%);font-style:normal;font-family:var(--mono);font-size:12.5px;font-weight:600;white-space:nowrap}
 .track .axis{position:absolute;top:-4px;bottom:-4px;width:1.5px;background:var(--faint);opacity:.6}
-.legend{font-size:11.5px;color:var(--muted);display:flex;gap:16px}.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:0}
+.tiles{position:absolute;inset:0;display:grid;gap:10px}
+.tile{border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;justify-content:space-between;background:color-mix(in srgb,var(--c) var(--p,16%),var(--card));border:1px solid color-mix(in srgb,var(--c) 30%,var(--line));min-width:0}
+.tile b{font-family:var(--display);font-size:var(--fs,26px);font-weight:750;color:var(--c);line-height:1;letter-spacing:-.02em}
+.tile span{font-size:12.5px;font-weight:600;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile small{font-size:11px;color:var(--muted);line-height:1.25}
+.legend{font-size:11.5px;color:var(--muted);display:flex;gap:16px;flex-wrap:wrap}.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px;vertical-align:0}
 .stats{display:flex;flex-direction:column;gap:12px;min-height:0}
+.wide .stats{flex-direction:row}.wide .stat{padding:9px 16px 9px 18px;display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center}.wide .stat .v{font-size:25px;grid-row:span 2}.wide .stat .l{font-size:12.5px;line-height:1.2}.wide .stat .n{font-size:11px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}.wide .stat::before{top:10px;bottom:10px}
 .stat{flex:1;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 16px;display:flex;flex-direction:column;justify-content:center;gap:3px;position:relative;overflow:hidden}
 .stat::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 4px 4px 0;background:var(--c,var(--forest))}
 .stat .v{font-family:var(--display);font-size:31px;font-weight:750;line-height:1;color:var(--c,var(--forest));letter-spacing:-.02em}
 .stat .l{font-size:13px;font-weight:700}
 .stat .n{font-size:11.5px;color:var(--muted);line-height:1.35}
-.read{background:var(--ink);color:var(--paper);border-radius:16px;padding:13px 20px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
-.read b{font-family:var(--display);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#E8BA4A;white-space:nowrap}
+.herobox{background:var(--forest);color:var(--paper);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;position:relative;overflow:hidden}
+body.dark .herobox{color:#0F1914}
+.herobox::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+.herobox .hv{font-family:var(--display);font-size:var(--hfs,76px);font-weight:800;line-height:.95;letter-spacing:-.035em}
+.herobox .hl{font-family:var(--display);font-size:19px;font-weight:650;line-height:1.2}
+.herobox .hn{font-size:12.5px;opacity:.85;line-height:1.4}
+.herobox ul{list-style:none;padding:0;display:grid;gap:7px;border-top:1px solid rgba(255,255,255,.25);padding-top:10px}
+.herobox li{display:flex;justify-content:space-between;gap:10px;font-size:12.5px}.herobox li b{font-family:var(--mono)}
+.read{background:var(--readbg);color:var(--readfg);border-radius:16px;padding:13px 20px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.read b{font-family:var(--display);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--readkey);white-space:nowrap}
 .read p{font-family:var(--display);font-size:19px;font-weight:600;line-height:1.25}
 .foot{display:flex;justify-content:space-between;font-size:10.5px;color:var(--faint);gap:20px}
 </style></head><body><div class="wrap" id="root"></div>
@@ -44,26 +76,136 @@ h1 em{font-style:normal;color:var(--forest)}
 const S = window.SPEC;
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
 const MARK = `<svg viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#13231A"/><path d="M11 14 L24 36 L37 14" fill="none" stroke="#FAF7EE" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 27 H40" stroke="#6FCF97" stroke-width="2.2" stroke-linecap="round" opacity=".9"/><circle cx="36" cy="11" r="4.2" fill="#E8BA4A"/></svg>`;
-const COL = {up: 'var(--forest)', down: 'var(--red)', a: 'var(--forest)', b: 'var(--saffron)', c: 'var(--red)', d: 'var(--faint)'};
+const COL = {up: 'var(--forest)', down: 'var(--red)', a: 'var(--forest)', b: 'var(--saffron)', c: 'var(--red)', d: 'var(--faint)', e: 'var(--leaf)'};
+const col = (g, fb = 'up') => COL[g || fb] || g;
 const title = esc(S.title).replace(esc(S.title_em || '\u0000'), m => `<em>${m}</em>`);
-const ch = S.chart, rows = ch.rows, mn = Math.min(0, ...rows.map(r => r.value)), mx = Math.max(0, ...rows.map(r => r.value));
-const span = (mx - mn) || 1; /* room for the value labels at the bar ends: both sides when bars go negative */
-const padR = ch.pad ?? 0.18, padL = mn < 0 ? (ch.padL ?? 0.16) : 0.01;
-const X = v => (padL + (1 - padL - padR) * (v - mn) / span) * 100, x0 = X(0);
-const bar = r => { const a = X(Math.min(0, r.value)), b = X(Math.max(0, r.value)), neg = r.value < 0, c = COL[r.group || (neg ? 'down' : 'up')] || r.group;
-  return `<div class="bar"><span class="lb">${esc(r.label)}</span><span class="track">${mn < 0 ? `<span class="axis" style="left:${x0}%"></span>` : ''}
-    <i style="left:${a}%;width:${Math.max(b - a, 0.6)}%;background:${c}"></i>
-    <em style="${neg ? `right:${100 - a + 1}%` : `left:${b + 1}%`};color:${c}">${esc(r.text ?? r.value)}</em></span></div>`; };
+const ch = S.chart || {type: 'none'}, type = ch.type || 'bars', layout = S.layout || 'split';
+document.body.className = S.theme || 'light';
+const legend = ch.legend ? `<div class="legend">${Object.entries(ch.legend).map(([k, v]) => `<span><i style="background:${col(k)}"></i>${esc(v)}</span>`).join('')}</div>` : '';
+const stats = (S.stats || []).slice(0, 3).map(s => `<div class="stat" style="--c:${col(s.tone)}"><span class="v">${esc(s.value)}</span><span class="l">${esc(s.label)}</span><span class="n">${esc(s.note || '')}</span></div>`).join('');
+const panel = `<div class="panel"><h3>${esc(ch.title || '')} <span>${esc(ch.sub || '')}</span></h3><div class="chart" id="chart"></div>${legend}</div>`;
+const H = S.hero || {};
+const hero = `<div class="herobox"${H.size ? ` style="--hfs:${H.size}px"` : ''}><div><div class="hv">${esc(H.value)}</div></div><div style="display:grid;gap:8px"><div class="hl">${esc(H.label)}</div><div class="hn">${esc(H.note || '')}</div>
+  ${(H.list || []).length ? `<ul>${H.list.map(x => `<li><span>${esc(x.label)}</span><b>${esc(x.value)}</b></li>`).join('')}</ul>` : ''}</div></div>`;
+document.getElementById('root').className = 'wrap ' + layout;
 document.getElementById('root').innerHTML = `
   <div class="top"><div class="logo">${MARK}<b>Vantage</b></div><div class="series"><b>${esc(S.series)}</b><span>${esc(S.dateline)}</span></div></div>
   <div><div class="kicker">${esc(S.kicker)}</div><h1>${title}</h1><p class="dek">${esc(S.dek)}</p></div>
-  <div class="grid">
-    <div class="panel"><h3>${esc(ch.title)} <span>${esc(ch.sub || '')}</span></h3>
-      <div class="bars">${rows.map(bar).join('')}</div>
-      ${ch.legend ? `<div class="legend">${Object.entries(ch.legend).map(([k, v]) => `<span><i style="background:${COL[k] || k}"></i>${esc(v)}</span>`).join('')}</div>` : ''}</div>
-    <div class="stats">${(S.stats || []).slice(0, 3).map(s => `<div class="stat" style="--c:${COL[s.tone] || 'var(--forest)'}"><span class="v">${esc(s.value)}</span><span class="l">${esc(s.label)}</span><span class="n">${esc(s.note || '')}</span></div>`).join('')}</div>
-  </div>
+  <div class="grid">${layout === 'hero' ? hero + panel : layout === 'wide' ? panel + `<div class="stats">${stats}</div>` : panel + `<div class="stats">${stats}</div>`}</div>
   <div class="read"><b>The Vantage read</b><p>${esc(S.read)}</p></div>
   <div class="foot"><span>Source: ${esc(S.sources)}</span><span>For information only. Not investment advice.</span></div>`;
-document.fonts.ready.then(() => { document.body.dataset.ready = '1'; });
+
+/* ---------- charts ---------- */
+const ext = (vals, zero = true, pad = .08) => { let a = Math.min(...vals, ...(zero ? [0] : [])), b = Math.max(...vals, ...(zero ? [0] : [])); const p = (b - a || 1) * pad; return [a - (a < 0 || !zero ? p : 0), b + p]; };
+const fmt = (v, f) => f ? f.replace('{}', (Math.round(v * 10) / 10).toLocaleString('en-IN')) : String(Math.round(v * 10) / 10);
+const tw = (s, px = 7.4) => String(s).length * px;  /* rough text width for label placement */
+/* a label that may run over two lines (\n), centred under a column */
+const ml = (x, y, s, cls = 'lbl', st = 'font-size:12px') => String(s).split('\n').map((t, i, a) => `<text x="${x}" y="${y - (a.length - 1 - i) * 14}" text-anchor="middle" class="${cls}" style="${st}">${esc(t)}</text>`).join('');
+const nl = R => Math.max(1, ...R.map(x => String(x.label).split('\n').length));
+
+const CH = {
+  /* horizontal bars: rows [{label, value, text, group}] */
+  bars(el) {
+    const rows = ch.rows, mn = Math.min(0, ...rows.map(r => r.value)), mx = Math.max(0, ...rows.map(r => r.value)), span = (mx - mn) || 1;
+    const padR = ch.pad ?? 0.18, padL = mn < 0 ? (ch.padL ?? 0.16) : 0.01, X = v => (padL + (1 - padL - padR) * (v - mn) / span) * 100, x0 = X(0);
+    el.innerHTML = `<div class="bars" style="--lw:${ch.labelWidth || 210}px">${rows.map(r => { const a = X(Math.min(0, r.value)), b = X(Math.max(0, r.value)), neg = r.value < 0, c = col(r.group, neg ? 'down' : 'up');
+      return `<div class="bar"><span class="lb">${esc(r.label)}</span><span class="track">${mn < 0 ? `<span class="axis" style="left:${x0}%"></span>` : ''}<i style="left:${a}%;width:${Math.max(b - a, 0.6)}%;background:${c}"></i>
+        <em style="${neg ? `right:${100 - a + 1}%` : `left:${b + 1}%`};color:${c}">${esc(r.text ?? r.value)}</em></span></div>`; }).join('')}</div>`;
+  },
+  /* before → after per row: rows [{label, from, to, fromText, toText, group}] ; ch.fromLabel/toLabel name the two points */
+  dumbbell(el, W, Hh) {
+    const rows = ch.rows, L = ch.labelWidth || 190, top = 26, bot = 6, rh = (Hh - top - bot) / rows.length;
+    const [a, b] = ext(rows.flatMap(r => [r.from, r.to]), ch.zero ?? false, .14), X = v => L + 50 + (W - L - 110) * (v - a) / (b - a);
+    let s = `<text x="${L + 50}" y="12" class="q">${esc(ch.fromLabel || 'Before')} ○ → ● ${esc(ch.toLabel || 'After')}</text>`;
+    if (a < 0 && b > 0) s += `<line class="zero" x1="${X(0)}" x2="${X(0)}" y1="${top - 6}" y2="${Hh - bot}"/>`;
+    rows.forEach((r, i) => { const y = top + rh * (i + .5), x1 = X(r.from), x2 = X(r.to), up = r.to >= r.from, c = col(r.group, (ch.lowerIsBetter ? !up : up) ? 'up' : 'down');
+      s += `<text x="${L}" y="${y + 4.5}" text-anchor="end" class="lbl">${esc(r.label)}</text>
+        <line x1="${x1}" x2="${x2}" y1="${y}" y2="${y}" stroke="${c}" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+        <circle cx="${x1}" cy="${y}" r="6.5" fill="var(--card)" stroke="var(--faint)" stroke-width="2.2"/><circle cx="${x2}" cy="${y}" r="8" fill="${c}"/>
+        <text x="${up ? x1 - 12 : x1 + 12}" y="${y + 4.5}" text-anchor="${up ? 'end' : 'start'}">${esc(r.fromText ?? r.from)}</text>
+        <text x="${up ? x2 + 13 : x2 - 13}" y="${y + 4.5}" text-anchor="${up ? 'start' : 'end'}" class="val" style="fill:${c}">${esc(r.toText ?? r.to)}</text>`; });
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${Hh}">${s}</svg>`;
+  },
+  /* two measures per company: points [{label, x, y, group, dx?, dy?}] ; ch.x/ch.y {label, fmt} ; ch.quadrants {tr,tl,br,bl} */
+  scatter(el, W, Hh) {
+    const P = ch.points, l = 74, r = 22, t = 14, bt = 42, [xa, xb] = ext(P.map(p => p.x), true, .12), [ya, yb] = ext(P.map(p => p.y), true, .14);
+    const X = v => l + (W - l - r) * (v - xa) / (xb - xa), Y = v => t + (Hh - t - bt) * (1 - (v - ya) / (yb - ya));
+    let s = `<rect x="${l}" y="${t}" width="${W - l - r}" height="${Hh - t - bt}" fill="none" class="ax"/>`;
+    if (xa < 0 && xb > 0) s += `<line class="zero" x1="${X(0)}" x2="${X(0)}" y1="${t}" y2="${Hh - bt}"/>`;
+    if (ya < 0 && yb > 0) s += `<line class="zero" x1="${l}" x2="${W - r}" y1="${Y(0)}" y2="${Y(0)}"/>`;
+    const q = ch.quadrants || {};
+    if (q.tr) s += `<text x="${W - r - 10}" y="${t + 20}" text-anchor="end" class="q">${esc(q.tr)}</text>`;
+    if (q.tl) s += `<text x="${l + 10}" y="${t + 20}" class="q">${esc(q.tl)}</text>`;
+    if (q.br) s += `<text x="${W - r - 10}" y="${Hh - bt - 10}" text-anchor="end" class="q">${esc(q.br)}</text>`;
+    if (q.bl) s += `<text x="${l + 10}" y="${Hh - bt - 10}" class="q">${esc(q.bl)}</text>`;
+    [xa, (xa + xb) / 2, xb].forEach(v => { s += `<text x="${X(v)}" y="${Hh - bt + 18}" text-anchor="middle">${fmt(v, ch.x?.fmt)}</text>`; });
+    [ya, (ya + yb) / 2, yb].forEach(v => { s += `<text x="${l - 8}" y="${Y(v) + 4}" text-anchor="end">${fmt(v, ch.y?.fmt)}</text>`; });
+    s += `<text x="${(l + W - r) / 2}" y="${Hh - 4}" text-anchor="middle" class="lbl" style="font-size:12.5px;fill:var(--muted)">${esc(ch.x?.label || '')} →</text>
+      <text transform="translate(12 ${(t + Hh - bt) / 2}) rotate(-90)" text-anchor="middle" class="lbl" style="font-size:12.5px;fill:var(--muted)">${esc(ch.y?.label || '')} →</text>`;
+    const boxes = P.map(p => ({x0: X(p.x) - 9, x1: X(p.x) + 9, y0: Y(p.y) - 9, y1: Y(p.y) + 9})), hit = b => boxes.some(o => b.x0 < o.x1 && b.x1 > o.x0 && b.y0 < o.y1 && b.y1 > o.y0);
+    P.forEach(p => { const x = X(p.x), y = Y(p.y), c = col(p.group); s += `<circle cx="${x}" cy="${y}" r="8.5" fill="${c}" fill-opacity=".9" stroke="var(--card)" stroke-width="2"/>`; });
+    P.slice().sort((a, b) => b.x - a.x).forEach(p => { const x = X(p.x), y = Y(p.y), w = tw(p.label, 8.4), h = 15;
+      const cands = [[x + 13, y + 4.5, 'start'], [x - 13, y + 4.5, 'end'], [x - w / 2, y - 14, 'start'], [x - w / 2, y + 24, 'start'], [x + 11, y - 11, 'start'], [x - 11, y - 11, 'end'], [x + 11, y + 20, 'start'], [x - 11, y + 20, 'end'], [x + 13, y + 20, 'start'], [x + 13, y - 12, 'start'], [x - w / 2, y + 36, 'start'], [x - w / 2, y - 28, 'start']];
+      const box = ([lx, ly, an]) => { const x0 = an === 'end' ? lx - w : lx; return {x0, x1: x0 + w, y0: ly - h + 3, y1: ly + 3}; };
+      const ok = c => { const b = box(c); return b.x0 >= l + 2 && b.x1 <= W - r - 2 && b.y0 >= t && b.y1 <= Hh - bt && !hit(b); };
+      const ov = c => { const b = box(c); let a = 0; boxes.forEach(o => { a += Math.max(0, Math.min(b.x1, o.x1) - Math.max(b.x0, o.x0)) * Math.max(0, Math.min(b.y1, o.y1) - Math.max(b.y0, o.y0)); });
+        return a + (b.x0 < l || b.x1 > W - r || b.y0 < t || b.y1 > Hh - bt ? 1e6 : 0); };
+      const pick = cands.find(ok) || cands.slice().sort((m, n) => ov(m) - ov(n))[0], b = box(pick); boxes.push(b);
+      s += `<text x="${pick[0]}" y="${pick[1]}" text-anchor="${pick[2]}" class="lbl" style="font-size:12.5px">${esc(p.label)}</text>`; });
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${Hh}">${s}</svg>`;
+  },
+  /* milestones on a time axis: items [{label, t, t0?, text, group}] ; t in months from now; ch.ticks [{t, label}] */
+  timeline(el, W, Hh) {
+    const it = ch.items, L = ch.labelWidth || 180, top = 30, bot = 8, rh = (Hh - top - bot) / it.length;
+    const mx = Math.max(...it.flatMap(i => [i.t, i.t0 ?? 0]), ...(ch.ticks || []).map(k => k.t)) * 1.08 || 1, X = v => L + 24 + (W - L - 60) * v / mx;
+    let s = `<line class="ax" x1="${X(0)}" x2="${W - 20}" y1="${top - 10}" y2="${top - 10}"/>`;
+    (ch.ticks || []).forEach(k => { s += `<line x1="${X(k.t)}" x2="${X(k.t)}" y1="${top - 14}" y2="${Hh - bot}" stroke="var(--line)" stroke-width="1"/><text x="${X(k.t)}" y="${top - 18}" text-anchor="middle">${esc(k.label)}</text>`; });
+    s += `<line x1="${X(0)}" x2="${X(0)}" y1="${top - 14}" y2="${Hh - bot}" stroke="var(--saffron)" stroke-width="2.5"/><text x="${X(0)}" y="${top - 18}" text-anchor="middle" style="fill:var(--saffron);font-weight:600">${esc(ch.nowLabel || 'Now')}</text>`;
+    it.forEach((i, n) => { const y = top + rh * (n + .5), c = col(i.group), x = X(i.t);
+      s += `<text x="${L}" y="${y + 4.5}" text-anchor="end" class="lbl">${esc(i.label)}</text>
+        <line x1="${X(0)}" x2="${x}" y1="${y}" y2="${y}" stroke="${c}" stroke-width="3" opacity=".3" stroke-linecap="round"/>`;
+      if (i.t0 != null) s += `<circle cx="${X(i.t0)}" cy="${y}" r="6" fill="var(--card)" stroke="var(--faint)" stroke-width="2" stroke-dasharray="3 2"/>
+        <path d="M${X(i.t0) + 8} ${y} L${x - 12} ${y}" stroke="${c}" stroke-width="2" marker-end="url(#ar)" fill="none"/>`;
+      const right = x + 16 + tw(i.text || '', 7) < W;
+      s += `<path d="M${x} ${y - 9} L${x + 9} ${y} L${x} ${y + 9} L${x - 9} ${y} Z" fill="${c}"/>
+        <text x="${right ? x + 15 : x - 15}" y="${y + 4.5}" text-anchor="${right ? 'start' : 'end'}" class="val" style="fill:${c}">${esc(i.text || '')}</text>`; });
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${Hh}"><defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--red)"/></marker></defs>${s}</svg>`;
+  },
+  /* vertical columns, optional line on a second scale: rows [{label, value, text, group}], ch.line {values, texts, label} */
+  columns(el, W, Hh) {
+    const R = ch.rows, l = 14, r = 14, t = ch.line ? 46 : 26, bt = 34 + 14 * (nl(R) - 1), n = R.length, gw = (W - l - r) / n, bw = Math.min(64, gw * .58);
+    const mn = Math.min(0, ...R.map(x => x.value)), mx = Math.max(0, ...R.map(x => x.value)), Y = v => t + (Hh - t - bt) * (mx - v) / ((mx - mn) || 1);
+    let s = `<line class="ax" x1="${l}" x2="${W - r}" y1="${Y(0)}" y2="${Y(0)}"/>`;
+    R.forEach((x, i) => { const cx = l + gw * (i + .5), y1 = Y(Math.max(0, x.value)), y2 = Y(Math.min(0, x.value)), c = col(x.group, x.value < 0 ? 'down' : 'up');
+      s += `<rect x="${cx - bw / 2}" y="${y1}" width="${bw}" height="${Math.max(2, y2 - y1)}" rx="6" fill="${c}"/>
+        <text x="${cx}" y="${x.value < 0 ? y2 + 16 : y1 - 7}" text-anchor="middle" class="val" style="fill:${c}">${esc(x.text ?? x.value)}</text>
+        ${ml(cx, Hh - 10, x.label)}`; });
+    if (ch.line) { const v = ch.line.values, a = Math.min(...v), b = Math.max(...v), Ly = z => 16 + 22 * (1 - (z - a) / ((b - a) || 1));
+      const pts = v.map((z, i) => [l + gw * (i + .5), Ly(z)]);
+      s += `<polyline points="${pts.map(p => p.join(',')).join(' ')}" fill="none" stroke="var(--saffron)" stroke-width="2.5"/>` +
+        pts.map((p, i) => `<circle cx="${p[0]}" cy="${p[1]}" r="4.5" fill="var(--card)" stroke="var(--saffron)" stroke-width="2.2"/><text x="${p[0] + 9}" y="${p[1] - 5}" style="fill:var(--saffron);font-weight:600;font-size:11.5px">${esc(ch.line.texts?.[i] ?? v[i])}</text>`).join(''); }
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${Hh}">${s}</svg>`;
+  },
+  /* two measures side by side per category: rows [{label, a, b, aText, bText}] ; legend a/b */
+  pairs(el, W, Hh) {
+    const R = ch.rows, l = 10, r = 10, t = 26, bt = 34 + 14 * (nl(R) - 1), gw = (W - l - r) / R.length, bw = Math.min(42, gw * .3);
+    const mn = Math.min(0, ...R.flatMap(x => [x.a, x.b])), mx = Math.max(0, ...R.flatMap(x => [x.a, x.b])), Y = v => t + (Hh - t - bt) * (mx - v) / ((mx - mn) || 1);
+    let s = `<line class="ax" x1="${l}" x2="${W - r}" y1="${Y(0)}" y2="${Y(0)}"/>`;
+    R.forEach((x, i) => { const cx = l + gw * (i + .5);
+      [['a', x.a, x.aText, -1], ['b', x.b, x.bText, 1]].forEach(([k, v, tx, sgn]) => { const bx = cx + sgn * (bw / 2 + 3) - bw / 2, y1 = Y(Math.max(0, v)), y2 = Y(Math.min(0, v)), c = col(ch.colors?.[k] || k);
+        s += `<rect x="${bx}" y="${y1}" width="${bw}" height="${Math.max(2, y2 - y1)}" rx="5" fill="${c}"/><text x="${bx + bw / 2}" y="${v < 0 ? y2 + 15 : y1 - 6}" text-anchor="middle" class="val" style="fill:${c};font-size:12px">${esc(tx ?? v)}</text>`; });
+      s += ml(cx, Hh - 10, x.label, 'lbl', 'font-size:12.5px'); });
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${Hh}">${s}</svg>`;
+  },
+  /* a grid of number tiles: cells [{label, value(text), note, group, weight 0-1}] ; ch.cols */
+  tiles(el) {
+    const C = ch.cells, cols = ch.cols || Math.ceil(Math.sqrt(C.length * 1.8)), rows = Math.ceil(C.length / cols);
+    el.innerHTML = `<div class="tiles" style="grid-template-columns:repeat(${cols},minmax(0,1fr));grid-template-rows:repeat(${rows},1fr)">${C.map(c => `<div class="tile" style="--c:${col(c.group)};--p:${Math.round(8 + 22 * (c.weight ?? .5))}%;--fs:${ch.fontSize || 26}px"><b>${esc(c.value)}</b><div style="display:grid;gap:1px"><span>${esc(c.label)}</span>${c.note ? `<small>${esc(c.note)}</small>` : ''}</div></div>`).join('')}</div>`;
+  }
+};
+document.fonts.ready.then(() => {
+  const el = document.getElementById('chart');
+  if (el && CH[type]) CH[type](el, el.clientWidth, el.clientHeight);
+  document.body.dataset.ready = '1';
+});
 </script></body></html>
