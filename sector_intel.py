@@ -107,8 +107,12 @@ def period_ok(pk, season_key):
 
 
 def main():
+    """`python sector_intel.py --check <id>` builds one note and prints its read-across without writing anything."""
+    check = sys.argv[sys.argv.index("--check") + 1] if "--check" in sys.argv else None
     briefs = []
     for p in sorted(glob.glob(os.path.join(ROOT, "sector_briefs", "*.yaml"))):
+        if check and os.path.basename(p) != f"{check}.yaml":
+            continue
         with open(p, encoding="utf-8") as f:
             b = yaml.safe_load(f)
         if b and b.get("id"):
@@ -175,6 +179,15 @@ def main():
         out.append(b)
         print(f"  {b['id']}: " + ", ".join(f"{t['id']} {t['mentionCount']}" for t in b.get("threads") or []))
 
+    if check:
+        for b in out:
+            ids = {str(p["id"]) for p in b.get("peers") or []} | {str(v["id"]) for v in b.get("views") or []}
+            print("peers/views without a call on the desk:", sorted(i for i in ids if i not in latest) or "none")
+            for t in b.get("threads") or []:
+                print(f"\n## {t['id']}: {t['mentionCount']} companies")
+                for m in t["mentions"][:10]:
+                    print(f"  {'*' if m['peer'] else ' '} {m['name'][:30]:30} | {m['industry'][:24]:24} | {m['text'][:150]}")
+        return 0
     out.sort(key=lambda b: b.get("asOf", ""), reverse=True)
     ist = datetime.now(timezone.utc) + timedelta(hours=5, minutes=30)
     doc = {"generated": ist.strftime("%Y-%m-%dT%H:%M"), "season": d.get("season"), "briefs": out}

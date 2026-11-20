@@ -4464,6 +4464,7 @@ S.si = {open: store.get('si-open', '')};
 const siBriefs = () => SI.data?.briefs || [];
 const siNextRes = id => (RES.data?.calendar || []).filter(c => c.id === id && c.date >= istToday()).sort((a, b) => a.date.localeCompare(b.date))[0];
 const siOthers = b => new Set((b.threads || []).flatMap(t => (t.mentions || []).filter(m => !m.peer).map(m => m.id)));
+const SI_VERDICT = {supports: ['Calls support it', 'v-strong'], mixed: ['Calls are mixed', 'v-avg'], contradicts: ['Calls push back', 'v-poor'], early: ['Too early to tell', 'v-weak']};
 const siPct = (v, dp = 1) => v == null ? '–' : `${v > 0 ? '+' : ''}${v.toFixed(dp)}%`;
 
 function vIntel() {
@@ -4534,6 +4535,7 @@ function siBrief(b) {
   const peers = b.peers || [], camps = Object.keys(b.camps || {});
   const ind = new Set(b.industries || []), sub = callsQ().filter(c => ind.has(c.industry)).sort((x, y) => y.score - x.score);
   const vc = vcounts(sub), gi = guideIdx(sub), avg = sub.length ? Math.round(sub.reduce((n, c) => n + c.score, 0) / sub.length) : null;
+  let sec = 0; const sn = () => String(++sec).padStart(2, '0');
   setTimeout(() => animateWidgets($('#view')), 0);
   return `<button class="btn si-back" data-si-open="">← All sector briefs</button>
     <section class="today si-hero">
@@ -4543,14 +4545,20 @@ function siBrief(b) {
     </section>
     <div class="si-kpis">${(b.kpis || []).map(k => `<div class="w si-kpi"><b>${esc(k.v)}</b><p>${esc(k.l)}</p><span class="eyebrow">${esc(k.src || '')}</span></div>`).join('')}</div>
 
-    <section class="si-sec"><div class="list-head"><h3><span class="n">01</span>What is changing, and who else is saying it</h3><span class="small muted">From the brief · evidence from the latest calls on the desk</span></div>
+    <section class="si-sec"><div class="list-head"><h3><span class="n">${sn()}</span>What is changing, and who else is saying it</h3><span class="small muted">From the brief · evidence from the latest calls on the desk</span></div>
       <div class="si-threads">${(b.threads || []).map(t => { const ms = t.mentions || [], pe = ms.filter(m => m.peer), ot = ms.filter(m => !m.peer), more = (t.mentionCount || 0) - ms.length;
         return `<article class="card si-th"><h4>${esc(t.from)} <i>→</i> ${esc(t.to)}</h4><p>${esc(t.text)}</p>
           <div class="si-ev"><span class="eyebrow"><span>On the calls</span><span>${pe.length} of ${peers.length} peers · ${ot.length + Math.max(0, more)} other${ot.length + more === 1 ? '' : 's'}${t.industries ? ` in ${t.industries} sub-sector${t.industries === 1 ? '' : 's'}` : ''}</span></span>
             ${pe.map(siLine).join('') || '<span class="small muted">No peer raised this on its latest call.</span>'}
             ${ot.length ? `<details class="si-more"${ot.length <= 2 ? ' open' : ''}><summary>Read-across: ${ot.length} more compan${ot.length === 1 ? 'y' : 'ies'} beyond the peer set${more > 0 ? ` (top ${ot.length} of ${ot.length + more})` : ''} ▾</summary><div>${ot.map(siLine).join('')}</div></details>` : ''}</div></article>`; }).join('')}</div></section>
 
-    <section class="si-sec"><div class="list-head"><h3><span class="n">02</span>The peer set now</h3><span class="small muted">Reported: ${esc(b.peerNote || '')} · Desk: live from filings and calls</span></div>
+    ${(b.reports || []).length ? `<section class="si-sec"><div class="list-head"><h3><span class="n">${sn()}</span>The Street’s case, tested on the calls</h3><span class="small muted">What sector reports argue, against what managements said this season</span></div>
+      <div class="si-threads">${b.reports.map(r => `<article class="card si-th si-st"><div class="si-vh"><span class="eyebrow">${esc(r.label || 'Broker sector report')}${r.date ? ' · ' + esc(r.date) : ''}</span><span class="pill ${SI_VERDICT[r.verdict]?.[1] || 'v-avg'}">${esc(SI_VERDICT[r.verdict]?.[0] || r.verdict || '')}</span></div>
+        <h4>${esc(r.claim)}</h4>${r.figures?.length ? `<ul class="si-ul">${r.figures.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+        <div class="si-ev"><span class="eyebrow"><span>What the calls say</span></span><p class="small">${esc(r.calls || '')}</p>
+          ${(r.ids || []).length ? `<div class="si-chips">${r.ids.map(id => (c => `<button class="si-chip" data-open="${esc(id)}"${c ? ` data-k="${esc(c.key || '')}"` : ''}>${esc((c?.name || (RES.data?.results || []).find(x => x.id === id)?.name || (b.peers || []).find(p => String(p.id) === id)?.name || id).replace(/ Ltd\.?$/, ''))}${c ? ` <b style="color:${vcol(c.score, c.veto)}">${c.score}</b>` : ''}</button>`)(byId[id])).join('')}</div>` : ''}</div></article>`).join('')}</div></section>` : ''}
+
+    <section class="si-sec"><div class="list-head"><h3><span class="n">${sn()}</span>The peer set now</h3><span class="small muted">Reported: ${esc(b.peerNote || '')} · Desk: live from filings and calls</span></div>
       <div class="rows si-pr"><div class="r hd"><span>Company</span><span>As reported</span><span>Results filed</span><span>Since results</span><span>Latest call</span><span>Guidance</span><span>Next results</span></div>
       ${peers.map(p => { const c = byId[p.id], r = latestRes(p.id), nx = siNextRes(p.id), ci = camps.indexOf(p.camp);
         const mch = r && r.opm != null && r.opm_prev_yoy != null ? r.opm - r.opm_prev_yoy : null;
@@ -4563,7 +4571,7 @@ function siBrief(b) {
           <span class="cell">${c ? gcell((D.calls || []).find(x => x.key === c.key)?.g ?? 0) : '–'}</span>
           <span class="cell">${nx ? `<span class="num">${esc(fdate(nx.date))}</span><span class="mdl">${esc(whenTxt(dayDiff(nx.date, istToday())))}</span>` : '<span class="muted">Not announced</span>'}${c ? `<button class="link" data-open="${esc(p.id)}" data-k="${esc(c.key || '')}">Open call →</button>` : ''}</span></div>`; }).join('')}</div></section>
 
-    ${(b.views || []).length ? `<section class="si-sec"><div class="list-head"><h3><span class="n">03</span>Latest view on the ${(b.views || []).length === 2 ? 'two' : ''} key plays</h3><span class="small muted">Our view · what is working, what to watch</span></div>
+    ${(b.views || []).length ? `<section class="si-sec"><div class="list-head"><h3><span class="n">${sn()}</span>Latest view on the ${(b.views || []).length === 2 ? 'two' : ''} key plays</h3><span class="small muted">Our view · what is working, what to watch</span></div>
       <div class="si-views">${b.views.map(v => { const c = byId[v.id], cl = c && (D.calls || []).find(x => x.key === c.key);
         return `<article class="card si-view"><div class="si-vh"><div><h4>${esc(v.name)}</h4><span class="small muted">${esc(v.ticker || '')} · ${esc(b.season || '')}</span></div><div class="si-thr">${v.tag ? `<span>${esc(v.tag)}</span>` : ''}</div></div>
           <div class="si-vk">${(v.kpis || []).map(k => `<div><b>${esc(k.v)}</b><span>${esc(k.l)}</span></div>`).join('')}</div>
@@ -4575,7 +4583,7 @@ function siBrief(b) {
             ${c.top || c.thesis ? `<span class="small">${esc(c.top || '')}${c.top && c.thesis ? ' — ' : ''}<span class="muted">${esc(c.thesis || '')}</span></span>` : ''}
             <button class="link" style="justify-self:start" data-open="${esc(v.id)}" data-k="${esc(c.key || '')}">Read the call summary →</button></div>` : ''}</article>`; }).join('')}</div></section>` : ''}
 
-    <section class="si-sec"><div class="list-head"><h3><span class="n">04</span>The sub-sector on the desk</h3><span class="small muted">${esc([...ind].join(', '))} · ${esc(curQ() === 'all' ? 'latest call per company' : curQ())}</span></div>
+    <section class="si-sec"><div class="list-head"><h3><span class="n">${sn()}</span>The sub-sector on the desk</h3><span class="small muted">${esc([...ind].join(', '))} · ${esc(curQ() === 'all' ? 'latest call per company' : curQ())}</span></div>
       ${sub.length ? `<div class="board">
         <section class="w span4"><div class="w-head"><h3>Verdict mix</h3>${tip('verdict')}</div><div class="ring-wrap">${donut(vc, {size: 112, stroke: 18, center: fmt(sub.length), sub: 'calls'})}${verdictLegend(vc)}</div>
           <div class="w-foot"><span>Average score <b class="num" style="color:${vcol(avg)}">${avg}</b></span></div></section>
@@ -4584,11 +4592,11 @@ function siBrief(b) {
           <div class="rows mini-list">${sub.slice(0, 8).map(c => `<button class="r" data-open="${esc(c.id)}" data-k="${esc(c.key)}"><span style="min-width:0"><span class="nm" style="display:block">${esc(c.name)}</span><span class="sub">${esc(c.period)} · ${esc(c.top || '')}</span></span>${scoreCell(c.score, c.veto)}</button>`).join('')}</div></section></div>`
       : `<div class="empty">No calls read in ${esc([...ind].join(', '))} for ${esc(curQ())}. Pick another quarter above.</div>`}</section>
 
-    <section class="si-sec"><div class="list-head"><h3><span class="n">05</span>The case, both ways</h3></div>
+    <section class="si-sec"><div class="list-head"><h3><span class="n">${sn()}</span>The case, both ways</h3></div>
       <div class="si-two"><div class="card si-ok"><h4>Why the theme is durable</h4><p class="small">${esc(b.durable || '')}</p></div><div class="card si-no"><h4>What could break it</h4><p class="small">${esc(b.risks || '')}</p></div></div>
       ${b.index ? `<p class="small muted">${esc(b.index)}</p>` : ''}</section>
 
-    <section class="si-sec"><div class="list-head"><h3><span class="n">06</span>What to watch across the sector</h3><span class="small muted">Catalyst calendar</span></div>
+    <section class="si-sec"><div class="list-head"><h3><span class="n">${sn()}</span>What to watch across the sector</h3><span class="small muted">Catalyst calendar</span></div>
       <div class="si-cat">${[['near', 'Near term · 0–6 months'], ['mid', 'Medium term · 6–18 months'], ['long', 'Long term · 18 months+']].map(([k, l]) => `<div class="card"><span class="eyebrow">${l}</span><ul class="si-ul" style="margin-top:8px">${((b.catalysts || {})[k] || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')}</div></section>
 
     <div class="si-foot"><span>For information only · Not a buy / sell / hold recommendation · Not investment advice.</span>
