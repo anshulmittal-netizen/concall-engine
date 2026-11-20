@@ -4618,6 +4618,10 @@ function render(scrollTop = false) {
   renderNav(); renderQbar();
   const el = $('#view');
   el.innerHTML = subTabs() + RENDER[S.view]();
+  /* full-screen overlays live on <body>: #view keeps a transform from its entry animation, which would pin a
+     position:fixed child to the top of the page instead of the screen (a byte opened after scrolling showed off-screen) */
+  document.querySelectorAll('body > .by-ov').forEach(o => o.remove());
+  el.querySelectorAll('.by-ov').forEach(o => document.body.appendChild(o));
   el.style.animation = 'none'; void el.offsetWidth; el.style.animation = '';
   if (S.view === 'calls') fillCalls();
   countUp(el); animateWidgets(el);
