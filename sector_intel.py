@@ -1,6 +1,6 @@
 """Sector intelligence: join the sector briefs in sector_briefs/*.yaml to what the concalls say.
 
-Each brief is research we write or receive (a Kyro sector brief, say), transcribed into YAML. This script adds the live
+Each brief is a sector note we write, kept as YAML. This script adds the live
 layer the dashboard cannot compute cheaply in the browser: for each "what is changing" thread in a brief, which companies
 across the whole universe raised the same thing on their latest call, with the sentence that shows it.
 Peers, scores, results and dates are joined in the page itself from in.json and results_in.json, so they stay current

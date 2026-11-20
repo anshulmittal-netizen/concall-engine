@@ -51,11 +51,11 @@ universe → fetch (manifest) → download → text → LLM extraction (quote-ve
   one-time orders, incentives, a base quarter with a one-off gain). `analyze.results_value()` scales the part of
   "Results delivered" above neutral by 0.7 (partly one-off), 0.35 (mostly one-off) or 0.55 (one major item), and softens a
   weak quarter dragged by one-offs the same way. The items show in each company's Score breakdown.
-- **Sector intel** (`sector_briefs/*.yaml` + `sector_intel.py` → `data/sector_intel.json`): sector briefs (the original
-  PDF sits in `sector_briefs/pdf/`) transcribed into YAML. For each "what is changing" thread, `look` is a regex run over
+- **Sector intel** (`sector_briefs/*.yaml` + `sector_intel.py` → `data/sector_intel.json`): our sector notes, kept as
+  YAML. For each "what is changing" thread, `look` is a regex run over
   every company's latest call summary and verified quotes (optionally limited by `scope`: macro sectors or industries),
   so the page shows which companies said the same thing. Peers' scores, results and dates are joined live in the page.
-  To add a brief: copy an existing YAML, fill it in, drop the PDF in `sector_briefs/pdf/`, and run `python sector_intel.py`.
+  To add a note: copy an existing YAML, fill it in, and run `python sector_intel.py`.
 
 ## Layout
 
