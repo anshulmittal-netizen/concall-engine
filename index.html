@@ -566,6 +566,10 @@ button.pd-go{border:0;cursor:pointer;font-family:inherit}button.pd-go:hover{filt
 .gr .r.hd{align-items:center}
 .bn .r{grid-template-columns:minmax(0,1.1fr) 140px minmax(0,2.4fr) minmax(0,1fr) 190px;align-items:start}
 .bn .r.hd{align-items:center}
+.nmd .r{grid-template-columns:minmax(0,1.1fr) 130px minmax(0,1.6fr) minmax(0,1.8fr) 170px;align-items:start}
+.nmd .r.hd{align-items:center}
+@media (max-width:1100px){.nmd .r{grid-template-columns:minmax(0,1.1fr) 120px minmax(0,1.6fr) 150px}.nmd .r>:nth-child(4){display:none}}
+@media (max-width:760px){.nmd .r{grid-template-columns:minmax(0,1fr)}.nmd .r.hd{display:none}}
 .pp-why{display:block;font-size:10.5px;color:var(--muted);line-height:1.4}
 @media (max-width:1100px){.gr .r{grid-template-columns:minmax(0,1.2fr) minmax(0,2fr) 150px 150px}.gr .r>:nth-child(2){display:none}}
 @media (max-width:1100px){.bn .r{grid-template-columns:minmax(0,1.1fr) minmax(0,2fr) minmax(0,1fr)}.bn .r>:nth-child(2),.bn .r>:nth-child(5){display:none}}
@@ -1181,6 +1185,7 @@ const GL = {
   models:['Mental models','The investing patterns this call fits. A quick way to see what kind of story it is.'],
   archetype:['Archetype','The overall type of story the call tells, such as a cyclical bottoming, a supply-side squeeze or a red flag.'],
   pead:['Results to watch (PEAD)','Post-earnings announcement drift: shares of companies that beat tend to keep rising for weeks after the results, not just on day 1. This page lists small, mid and micro caps (below ₹50,000 Cr) reporting soon whose last concall points to a strong quarter, ranked on the Concall Signal Score plus 6 points for positive guidance, 6 for raised guidance and minus 8 for a cut. After results it shows which of them beat (profit up 20%+ on last year) and rose on day 1, the usual trigger for a drift trade.'],
+  niche:['Niche models','A hand-picked list of businesses that make money in an unusual way and own a niche few others can enter: exchanges, depositories, registrars and rating agencies that charge on every transaction; royalty, pooling, razor-and-blade and tenancy models; and concession-led services. The score, latest call and results shown with them are live. There is no separate score.'],
   bottleneck:['Bottleneck arbitrage','Companies whose latest call shows industry supply is tight (plants shut, no new capacity, imports curbed, industry sold out) while prices or margins are rising. The window is when new industry supply is expected, from the call, or else how far ahead margin or price gains were guided. There is no separate score.'],
   nearterm:['Near-term strength','Companies scoring 60+ whose latest call shows at least three strong near-term signals (capacity going live within 3 quarters, growth guided 15%+, strong or raised guidance, strong demand, next quarter called out) or a score of 0.75+ on the guidance-backed growth & capacity part. There is no separate score.'],
   pipeline:['Catalyst pipeline','Forward triggers from each company’s latest call that management called surely (under way or committed with a date) or likely (guided with a plan), placed in the quarter they are most likely to land: this quarter and the next two. Act now: a firm catalyst this quarter, score 60+, no guidance cut flagged, latest results not weak. Research now: several catalysts over the three quarters and a score of 55+. There is no separate score.'],
@@ -1224,7 +1229,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, bn: {hz: '', big: '', chips: new Set(), exp: new Set()}, gr: {big: '', search: '', chips: new Set(), limit: 50}, pp: {q: '', act: 'focus', big: '', kind: '', proven: false, res: false, watch: false, limit: 40, exp: new Set()}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, sh: {val: 'decent', big: '', sort: 'avg', chips: new Set(), limit: 40}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, bn: {hz: '', big: '', chips: new Set(), exp: new Set()}, nm: {cat: '', big: '', sort: 'score', chips: new Set()}, gr: {big: '', search: '', chips: new Set(), limit: 50}, pp: {q: '', act: 'focus', big: '', kind: '', proven: false, res: false, watch: false, limit: 40, exp: new Set()}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, sh: {val: 'decent', big: '', sort: 'avg', chips: new Set(), limit: 40}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -1409,14 +1414,14 @@ const TABS = [
   {group: 'Research', items: [['calls', 'Calls', ['calls', 'first', 'people'], 'calls'], ['cal', 'Calendar', ['upcoming', 'rescal'], ''],
     ['res', 'Results', ['results', 'pead'], 'results'], ['pipe', 'Catalyst pipeline', ['pipeline', 'graised'], 'pipeline'], ['mgmt', 'Management changes', ['mgmt']]]},
   {group: 'Sectors & ideas', items: [['intel', 'Sector intel', ['intel']], ['sec', 'Sectors', ['tracker', 'guidance', 'turns'], 'tracker'], ['themes', 'Themes', ['themes']],
-    ['ideas', 'Idea lists', ['shelf', 'nearterm', 'bottleneck', 'inflect'], ''], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]},
+    ['ideas', 'Idea lists', ['shelf', 'nearterm', 'bottleneck', 'inflect'], ''], ['niche', 'Niche models', ['niche']], ['glob', 'Global leaders', ['leaders', 'ledger'], '']]},
   {group: 'Publish', items: [['bytes', 'Bytes', ['bytes']], ['post', 'Weekly post', ['post']]]}
 ];
 /* each view's own name: shown on its sub-tab, in the Excel export and in the help */
 const VIEWS = [{group: '', items: [['home', 'Today'], ['cov', 'Coverage universe'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['post', 'Weekly post'], ['bytes', 'Bytes'], ['help', 'How to use'],
   ['calls', 'All calls'], ['first', 'First-time callers'], ['people', 'Who’s asking'], ['upcoming', 'Calls coming up'], ['rescal', 'Results calendar'],
   ['results', 'Results posted'], ['pead', 'Results to watch'], ['pipeline', 'Catalyst pipeline'], ['graised', 'Guidance raised'], ['mgmt', 'Management changes'], ['intel', 'Sector intel'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
-  ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['bottleneck', 'Bottleneck arbitrage'], ['inflect', 'Inflection watch'],
+  ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['bottleneck', 'Bottleneck arbitrage'], ['inflect', 'Inflection watch'], ['niche', 'Niche models'],
   ['leaders', 'Leaders dashboard'], ['ledger', 'Event ledger']]}];
 const tabOf = v => TABS.flatMap(g => g.items).find(t => t[2].includes(v));
 const VNAME = Object.fromEntries(VIEWS.flatMap(g => g.items));
@@ -1431,7 +1436,7 @@ function navCounts() {
     tracker: t ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) ? (t.sectors || []).reduce((n, r) => n + r.new1, 0) + ' new' : '' : '',
     guidance: t ? (t.guidanceLeaders || []).length : '', turns: cyData('sub').rows.filter(r => r.ph === 'turn' && !r.thin).length || '',
     themes: themesQ().length, shelf: shRows().filter(x => x.v.band === 'decent').length || '', nearterm: ntRows().length || '', inflect: (r => r.up.length + r.dn.length ? `▲${r.up.filter(x => x.sharp).length} ▼${r.dn.filter(x => x.sharp).length}` : '')(ifRows()),
-    bottleneck: (r => r ? r.length : '')(bnRows()), intel: SI.data ? SI.data.briefs.length || '' : '',
+    bottleneck: (r => r ? r.length : '')(bnRows()), niche: nmRows().length || '', intel: SI.data ? SI.data.briefs.length || '' : '',
     graised: (D.calls || []).filter(c => c.gRaised > 0 && inQ(c)).length || '',
     pipeline: (r => r ? r.filter(x => x.act === 'trade').length + ' act now' : '')(ppRows()),
     mgmt: (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length ? (D.mgmt || []).filter(m => m.top && m.date >= daysBack(7)).length : ''};
@@ -3289,6 +3294,80 @@ function vBottleneck() {
       ${rows.map(row).join('')}</div>` : '<div class="empty">No companies match these filters.</div>'}`;
 }
 
+/* Niche models: a hand-picked list of businesses that make money in an unusual way and own a niche few others can enter
+   (a regulated monopoly or duopoly, a royalty or pooling model, a concession). Picked by reading what each company does,
+   not scored from the calls; the call score, latest read and results alongside are live. Edit NM_LIST to add or drop names. */
+const NM_CAT = {
+  infra: ['Market infrastructure', 'var(--v5)', 'A licence, monopoly or duopoly that takes a fee on every transaction in its market'],
+  mech: ['Unusual revenue model', 'var(--accent)', 'Royalties, pooling, razor-and-blade, tenancy or catalogue income: paid in a way most businesses are not'],
+  svc: ['Niche service', 'var(--violet)', 'A narrow service that few others run at scale, often under a concession or partnership']};
+const NM_LIST = [
+  {id: '534091', cat: 'infra', how: 'Transaction fees on commodity derivatives trades', niche: 'Near-monopoly in Indian commodity futures and options'},
+  {id: '540750', cat: 'infra', how: 'Fee per unit of electricity traded on its day-ahead and real-time markets', niche: 'Dominant power exchange; market coupling is the risk to watch'},
+  {id: '544937', cat: 'infra', how: 'Transaction charges on equity and derivatives trades, plus listing, data and co-location fees', niche: 'India’s largest exchange; derivatives volumes are concentrated here'},
+  {id: '544467', cat: 'infra', how: 'Fees for holding and moving securities in demat form', niche: 'One of two securities depositories, a regulated duopoly'},
+  {id: '543232', cat: 'infra', how: 'Fees linked to mutual fund assets serviced, plus KYC and payments', niche: 'One of two mutual fund registrars, a duopoly with high switching costs'},
+  {id: '500092', cat: 'infra', how: 'Rating fees from issuers, plus research and analytics', niche: 'Credit ratings are a licensed oligopoly; bond issuers must be rated'},
+  {id: '532835', cat: 'infra', how: 'Rating fees from issuers and bank loans', niche: 'Licensed rating agency, part of the same oligopoly'},
+  {id: '544311', cat: 'infra', how: 'A fee for every diamond and jewellery grading report', niche: 'Global gem certification lab; lab-grown diamonds need certificates to sell'},
+  {id: '543533', cat: 'infra', how: 'Digital signature certificates and authentication products', niche: 'Licensed certifying authority for digital signatures'},
+  {id: '542597', cat: 'infra', how: 'Platform and service fees on government e-auctions of scrap, minerals and coal blocks', niche: 'The government’s own auction platform'},
+  {id: '532741', cat: 'mech', how: 'Royalty per tonne of TMT bars made by franchisee plants under its brand', niche: 'Earns on steel volumes without owning most of the plants'},
+  {id: '544865', cat: 'mech', how: 'Rents reusable pallets and crates to manufacturers and retailers, and collects them back', niche: 'Pallet pooling at scale; the network is the barrier'},
+  {id: '539871', cat: 'mech', how: 'Franchise collection points feed samples to a few central labs', niche: 'Lowest-cost pathology model, built on volume'},
+  {id: '544866', cat: 'mech', how: 'Places Truenat testing machines, then earns on every test kit used', niche: 'Razor-and-blade in point-of-care molecular testing'},
+  {id: '532375', cat: 'mech', how: 'Royalties from streaming platforms on a music catalogue it owns', niche: 'Owned IP that keeps earning without new spend'},
+  {id: '534816', cat: 'mech', how: 'Rent from each mobile operator sharing a tower', niche: 'Each extra tenant on a tower is almost pure margin'},
+  {id: '544288', cat: 'mech', how: 'Toll, fuel and payment flows, telematics devices and loans for truck operators', niche: 'Platform built around fragmented truckers'},
+  {id: '544439', cat: 'mech', how: 'Commissions from foreign universities for each student placed through agents', niche: 'Paid by the university, not the student'},
+  {id: '544647', cat: 'svc', how: 'Runs dialysis clinics inside partner hospitals under build-own-operate deals', niche: 'Largest dialysis network; hospitals outsource it'},
+  {id: '543328', cat: 'svc', how: 'Diagnostic centres run under government public-private partnerships', niche: 'Concession-led; collections from states are the risk'},
+  {id: '544088', cat: 'svc', how: 'Processes health insurance claims for insurers, employers and government schemes', niche: 'Third-party administrator; sticky group contracts'},
+  {id: '544443', cat: 'svc', how: 'Food, beverage and lounge concessions at airports', niche: 'Airport concessions are won and held for years'},
+  {id: '544802', cat: 'svc', how: 'Ticket and onboard revenue from cruises out of Indian ports', niche: 'India’s only domestic cruise line (Cordelia)'},
+  {id: '543470', cat: 'svc', how: 'Software that runs municipal building permits, plus a development-rights exchange', niche: 'Government permitting software few vendors build'},
+  {id: '544915', cat: 'svc', how: 'Monthly rent for furniture and appliances', niche: 'Subscription rental for urban households'},
+  {id: '543591', cat: 'svc', how: 'Sells airport lounge access through bank card programmes', niche: 'Middleman between card issuers and lounges; lost key partners'},
+  {id: '543638', cat: 'svc', how: 'Subscriptions to a private-company database for investors and corporates', niche: 'Niche data product sold worldwide from India'}];
+const NM_WARN = {'Red flag': 'var(--down)', 'Capital-cycle warning': 'var(--warn)'};
+function nmRows() {
+  return NM_LIST.map(m => ({...m, c: byId[m.id]})).filter(x => x.c);
+}
+function vNiche() {
+  const f = S.nm, all = nmRows();
+  if (!RES.data) loadRes().then(() => { if (S.view === 'niche') render(); });
+  const top = head('Niche models', 'Businesses that make money in an unusual way and own a niche few others can enter: exchanges and registrars that take a fee on every transaction, royalty and pooling models, and concessions. A list to study, not a buy list.',
+    `<ul><li>The list is <b>picked by hand</b> from what each company does (its business line on this dashboard and its calls), not scored automatically. It changes only when names are added or dropped.</li>
+      <li><b>Market infrastructure</b>: a licence, monopoly or duopoly that charges on every trade, account or certificate. <b>Unusual revenue model</b>: royalties, pooling, razor-and-blade, tenancy or catalogue income. <b>Niche service</b>: a narrow service few others run at scale.</li>
+      <li>The score, the latest call read and the latest results are live, so a unique model with a weak quarter is easy to spot. A red note marks a red-flag or capital-cycle warning on the latest call.</li></ul>`,
+    '<span class="badge">Hand-picked · live data</span>');
+  const bigs = [...new Set(all.map(x => x.c.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
+  const CH = {clean: ['No warning on latest call', x => !NM_WARN[x.c.archetype] && !x.c.veto], s60: ['Score 60+', x => (x.c.score || 0) >= 60],
+    res: ['Latest results good or strong', x => (r => r && ['strong', 'good'].includes(rsGrade(r)))(latestRes(x.c.id))], watch: ['★ My watchlist', x => isW(x.c.id)]};
+  const base = all.filter(x => (!f.big || x.c.bigSector === f.big) && [...f.chips].every(k => CH[k][1](x)));
+  const SORT = {score: (a, b) => (b.c.score || 0) - (a.c.score || 0), mcap: (a, b) => (b.c.mcapCr || 0) - (a.c.mcapCr || 0), name: (a, b) => a.c.name.localeCompare(b.c.name)};
+  const rows = base.filter(x => !f.cat || x.cat === f.cat).sort(SORT[f.sort] || SORT.score);
+  const row = (x, i) => { const c = x.c, r = latestRes(c.id), gr = r ? gradeOf(rsGrade(r)) : null, k = NM_CAT[x.cat], w = NM_WARN[c.archetype];
+    return `<div class="r" role="button" tabindex="0" data-open="${esc(c.id)}" data-k="${esc(c.id + '|' + c.periodKey)}">
+      <span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.sector || '')}${c.mcap ? ' · ' + esc(c.mcap) : ''} · ${esc(c.period)} call ${esc(sdate(c.date))}</span></span>
+      <span>${scoreCell(c.score, c.veto, i)}<span class="sub">${dcell(c.delta)} vs last call</span></span>
+      <span style="min-width:0;display:grid;gap:4px"><span class="pill" style="--pc:${k[1]};justify-self:start">${esc(k[0])}</span><span>${esc(x.how)}</span><span class="sub">${esc(x.niche)}</span></span>
+      <span style="min-width:0;display:grid;gap:4px">${w ? `<span class="pill" style="--pc:${w};justify-self:start">${esc(c.archetype)}</span>` : ''}<span class="why">${esc((c.thesis || '').length > 230 ? c.thesis.slice(0, 227) + '…' : c.thesis || '')}</span></span>
+      <span style="display:grid;gap:2px">${r ? `<span>${gr ? `<span class="pill" style="--pc:var(--${gr[2]})">${esc(gr[1])}</span>` : ''} <span class="sub">${esc(r.label || '')}</span></span><span class="sub num">Rev ${pctS(r.rev_yoy)} · PAT ${pctS(r.pat_yoy)}${r.px?.move != null ? ` · px ${pctS(r.px.move)}` : ''}</span>` : '<span class="sub">No results posted yet</span>'}</span>
+    </div>`; };
+  return top + `
+    <div class="toolbar">
+      <span class="seg">${[['', 'All'], ...Object.entries(NM_CAT).map(([k, v]) => [k, v[0]])].map(([k, n]) => `<button data-nmk="${k}" aria-pressed="${f.cat === k}">${esc(n)} <span class="num">${k ? base.filter(x => x.cat === k).length : base.length}</span></button>`).join('')}</span>
+      <select id="nm-big" aria-label="Sector"><option value="">All sectors</option>${bigs.map(b => `<option ${b === f.big ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
+      <select id="nm-sort" aria-label="Sort"><option value="score" ${f.sort === 'score' ? 'selected' : ''}>Sort: score</option><option value="mcap" ${f.sort === 'mcap' ? 'selected' : ''}>Sort: market cap</option><option value="name" ${f.sort === 'name' ? 'selected' : ''}>Sort: name</option></select>
+      ${Object.entries(CH).map(([k, [n, fn]]) => `<button class="chip" data-nmc="${k}" aria-pressed="${f.chips.has(k)}">${esc(n)} <span class="num">${all.filter(fn).length}</span></button>`).join('')}
+    </div>
+    <p class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'}${f.cat ? ' · ' + esc(NM_CAT[f.cat][2]) : ''}</p>
+    ${rows.length ? `<div class="rows nmd">
+      <div class="r hd"><span>Company</span><span>Score</span><span>How it makes money</span><span>Latest call</span><span>Latest results</span></div>
+      ${rows.map(row).join('')}</div>` : '<div class="empty">No companies match these filters.</div>'}`;
+}
+
 /* Collector's shelf: unique companies in tailwinds at a decent valuation, read across the last three quarters of calls.
    Valuation is trailing P/E from Yahoo (data/valuation_in.json, refreshed each night), falling back to a run-rate P/E
    (latest price ÷ 4 × the latest quarter's EPS from results posted). There is no separate score. */
@@ -3811,6 +3890,7 @@ function vHelp() {
       <div><b>Results to watch (PEAD)</b><span>Small, mid and micro caps reporting in the days ahead whose last concall points to a strong quarter, with the reasons for and against, and a list of names that look good on score but where last quarter may not repeat. After results it shows which shortlisted names beat and rose on day 1 (the usual entry signal for a post-results drift trade), and a live track record of how the shortlist has done this season.</span></div>
       <div><b>Collector’s shelf</b><span>Unique companies in tailwinds at a decent valuation: strong across their last three quarters of calls, with an edge rivals lack, a tailwind behind them, and a P/E from Yahoo (refreshed nightly) to judge the price. Switch to the whole shelf to see the pricier names too.</span></div>
       <div><b>Near-term strength</b><span>Companies whose latest call points to strong results in the next quarter or next few quarters, with the reasons and the lines from the call that say so. Uses the same Concall Signal Score as every other page. Filter to names whose next results are still to come.</span></div>
+      <div><b>Niche models</b><span>A hand-picked list of businesses that make money in an unusual way and own a niche few others can enter (exchanges, registrars, rating agencies, royalty, pooling and razor-and-blade models, concessions), with each one’s live score, latest call read and latest results.</span></div>
       <div><b>Inflection watch</b><span>Companies whose latest call points to a sharp turn up or down, read from the triggers management gave. Each card shows what marks the turn, the trigger quotes behind it and any counter-signals. Switch between Upside and Downside, or keep only the Sharp ones.</span></div>
       <div><b>Management changes</b><span>Every top-management change filed on BSE (checked every 30 minutes, with a GitHub alert for each top-level change), and companies whose new management is pushing growth.</span></div>
       <div><b>Company panel</b><span>Opens from anywhere. The <b>Call summary</b> tab has financial highlights, segments, guidance, capex, demand, Q&A, risks and verbatim quotes. The <b>Signals</b> tab has the triggers, mental models, the eight readings behind the score, credibility, and other companies that name it.</span></div>
@@ -4847,7 +4927,7 @@ document.addEventListener('click', e => {
   S.si.open = o.dataset.siOpen; store.set('si-open', S.si.open); render(true);
 });
 
-const RENDER = {intel: vIntel, bytes: vBytes, post: vPost, leaders: vLeaders, ledger: vLedger, home: vHome, cov: vCov, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {intel: vIntel, bytes: vBytes, post: vPost, leaders: vLeaders, ledger: vLedger, home: vHome, cov: vCov, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, niche: vNiche, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -5268,6 +5348,8 @@ document.addEventListener('click', e => {
   if (t.closest('#pp-more')) { S.pp.limit += 40; render(); return; }
   const grc = t.closest('[data-grc]'); if (grc) { const k = grc.dataset.grc; S.gr.chips.has(k) ? S.gr.chips.delete(k) : S.gr.chips.add(k); S.gr.limit = 50; render(); return; }
   if (t.closest('#gr-more')) { S.gr.limit += 50; render(); return; }
+  const nmk = t.closest('[data-nmk]'); if (nmk) { S.nm.cat = nmk.dataset.nmk; render(); return; }
+  const nmc = t.closest('[data-nmc]'); if (nmc) { const k = nmc.dataset.nmc; S.nm.chips.has(k) ? S.nm.chips.delete(k) : S.nm.chips.add(k); render(); return; }
   const bnh = t.closest('[data-bnh]'); if (bnh) { S.bn.hz = bnh.dataset.bnh; render(); return; }
   const bnc = t.closest('[data-bnc]'); if (bnc) { const k = bnc.dataset.bnc; S.bn.chips.has(k) ? S.bn.chips.delete(k) : S.bn.chips.add(k); render(); return; }
   const bnx = t.closest('[data-bnx]'); if (bnx) { e.stopPropagation(); const k = bnx.dataset.bnx; S.bn.exp.has(k) ? S.bn.exp.delete(k) : S.bn.exp.add(k); render(); return; }
@@ -5324,6 +5406,8 @@ document.addEventListener('change', e => {
   if (id === 'pd-scope') { S.pd.scope = e.target.value; render(); }
   if (id === 'nt-big') { S.near.big = e.target.value; S.near.limit = 30; render(); }
   if (id === 'bn-big') { S.bn.big = e.target.value; render(); }
+  if (id === 'nm-big') { S.nm.big = e.target.value; render(); }
+  if (id === 'nm-sort') { S.nm.sort = e.target.value; render(); }
   if (id === 'gr-big') { S.gr.big = e.target.value; S.gr.limit = 50; render(); }
   if (id === 'pp-big') { S.pp.big = e.target.value; S.pp.limit = 40; render(); }
   if (id === 'pp-kind') { S.pp.kind = e.target.value; S.pp.limit = 40; render(); }
