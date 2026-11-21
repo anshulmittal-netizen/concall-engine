@@ -76,6 +76,7 @@ a{color:var(--accent)}
 .by-img:hover img{transform:scale(1.02)}
 .by-card h4{font-size:15.5px;font-weight:600;line-height:1.25}
 .by-card p{font-size:11.5px;color:var(--muted)}
+.by-st:empty{display:none}
 .by-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:10.5px;color:var(--muted)}
 .by-foot{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 .by-draft{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:99px;color:var(--warn);background:color-mix(in srgb,var(--warn) 12%,transparent)}
@@ -568,6 +569,43 @@ button.pd-go{border:0;cursor:pointer;font-family:inherit}button.pd-go:hover{filt
 .bn .r.hd{align-items:center}
 .nmd .r{grid-template-columns:minmax(0,1.1fr) 130px minmax(0,1.6fr) minmax(0,1.8fr) 170px;align-items:start}
 .nmd .r.hd{align-items:center}
+.nmb-box-w{width:min(1180px,100%)}
+.nmb{display:grid;gap:22px;font-size:12.5px}
+.nmb section{display:grid;gap:10px;min-width:0}
+.nmb h4{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-family:var(--body);font-weight:700}
+.nmb-head{display:flex;gap:16px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
+.nmb-head h3{font-size:22px;font-weight:700;margin:2px 0 6px}
+.nmb-sum{font-size:13.5px;max-width:78ch;line-height:1.55}
+.nmb-now{display:grid;gap:5px;min-width:180px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.nmb-svg{width:100%;height:auto;display:block;background:var(--panel2);border:1px solid var(--line);border-radius:14px}
+.nmb-svg .nmb-box{fill:var(--panel);stroke:var(--bc);stroke-width:1.5}
+.nmb-svg .nmb-co{fill:var(--accent)}
+.nmb-svg .nmb-coname{fill:var(--onAccent);font:700 16px var(--display)}
+.nmb-svg .nmb-who{fill:var(--fg);font:600 12.5px var(--body)}
+.nmb-svg .nmb-sub{fill:var(--muted);font:400 11px var(--body)}
+.nmb-svg .nmb-pct{fill:var(--fg);font:700 12px var(--mono)}
+.nmb-svg .nmb-cap{fill:var(--faint);font:700 10px var(--body);letter-spacing:.12em}
+.nmb-svg .nmb-flow{fill:none;opacity:.55;stroke-linecap:round}
+.nmb-svg .nmb-flow.out,.nmb-svg .nmb-arrow{fill:none;stroke:var(--muted);stroke-width:2;stroke-dasharray:5 4;opacity:.8}
+.nmb-svg .nmb-arrow:not(.out){stroke:var(--accent);stroke-dasharray:none}
+.nmb-svg .nmb-ahp{fill:var(--accent)}.nmb-svg .nmb-ahp.out{fill:var(--muted)}
+.nmb-mix{display:grid;gap:8px}
+.nmb-bar{display:flex;height:22px;border-radius:8px;overflow:hidden;box-shadow:inset 0 0 0 1px var(--line)}
+.nmb-bar i{display:block;height:100%;border-right:2px solid var(--panel)}
+.nmb-leg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:11.5px}
+.nmb-leg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.nmb-streams{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:10px}
+.nmb-st{border:1px solid var(--line);border-left:4px solid var(--bc);border-radius:10px;padding:9px 12px;display:grid;gap:4px;align-content:start;background:var(--panel)}
+.nmb-st b{font-family:var(--display);font-size:13px}.nmb-st p{font-size:11.5px;line-height:1.5}
+.nmb-steps{margin:0;padding-left:20px;display:grid;gap:9px;line-height:1.6;max-width:96ch}
+.nmb-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.nmb-t td,.nmb-t th{white-space:normal;text-align:left;vertical-align:top}
+.nmb-t td.nmb-note{font-family:var(--body);color:var(--muted);font-size:11px}
+.nmb-fin{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:12px}
+.nmb-ul{margin:0;padding-left:18px;display:grid;gap:6px;line-height:1.5}
+.nmb-ul.risk li::marker{color:var(--down)}
+.nmb-btn{margin-top:4px;justify-self:start}
+@media (max-width:900px){.nmb-two{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:1100px){.nmd .r{grid-template-columns:minmax(0,1.1fr) 120px minmax(0,1.6fr) 150px}.nmd .r>:nth-child(4){display:none}}
 @media (max-width:760px){.nmd .r{grid-template-columns:minmax(0,1fr)}.nmd .r.hd{display:none}}
 .pp-why{display:block;font-size:10.5px;color:var(--muted);line-height:1.4}
@@ -1229,7 +1267,7 @@ function countUp(root) {
 /* ---------- data + state ---------- */
 let D = null;
 const S = {view: 'home', q: '', calls: {search: '', big: '', sub: '', sort: 'best', chips: new Set(), limit: 50},
-  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, bn: {hz: '', big: '', chips: new Set(), exp: new Set()}, nm: {cat: '', big: '', sort: 'score', chips: new Set()}, gr: {big: '', search: '', chips: new Set(), limit: 50}, pp: {q: '', act: 'focus', big: '', kind: '', proven: false, res: false, watch: false, limit: 40, exp: new Set()}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, sh: {val: 'decent', big: '', sort: 'avg', chips: new Set(), limit: 40}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
+  first: {status: ''}, rc: {big: '', search: '', read: false, watch: false, days: 14}, rs: {big: '', search: '', days: 7, sort: 'filed', dir: -1, chips: new Set(), limit: 100, climit: 36, view: 'cards', flip: new Set()}, up: {big: '', search: '', earn: true, read: false, watch: false, days: 14}, turns: {stage: ''}, ideas: {tab: 'ideas'}, near: {big: '', tier: '', chips: new Set(), limit: 30}, bn: {hz: '', big: '', chips: new Set(), exp: new Set()}, nm: {cat: '', big: '', sort: 'score', chips: new Set(), bm: ''}, gr: {big: '', search: '', chips: new Set(), limit: 50}, pp: {q: '', act: 'focus', big: '', kind: '', proven: false, res: false, watch: false, limit: 40, exp: new Set()}, pd: {size: '', days: 14, tier: 'strong', post: 14, scope: 'score70', st: '', tab: 'before', exp: new Set()}, cy: {lvl: 'sub', sort: 'phase', thin: false, ph: '', sel: null, size: '', sig: '', csort: 'cyc'}, th: {sort: 'signal', broad: false, niche: false, sel: null, size: '', sec: '', raised: false, csort: 'score'}, inf: {side: 'up', big: '', sharp: false, pending: false, limit: 30}, sh: {val: 'decent', big: '', sort: 'avg', chips: new Set(), limit: 40}, mg: {days: 30, top: true, inCalls: false}, ask: {q: '', scope: 'latest', big: '', depth: 40, busy: false, res: null, err: '', stage: '', tab: 'match', limit: 30, plan: null}, openSec: new Set(), drawer: null};
 const byId = {};
 const quarters = () => { const m = {}; (D.calls || []).forEach(c => { (m[c.period] = m[c.period] || {label: c.period, key: c.periodKey, n: 0}).n++; });
   return Object.values(m).sort((a, b) => b.key.localeCompare(a.key)); };
@@ -3336,10 +3374,12 @@ function nmRows() {
 function vNiche() {
   const f = S.nm, all = nmRows();
   if (!RES.data) loadRes().then(() => { if (S.view === 'niche') render(); });
+  if (!NMB.data) loadNmb().then(() => { if (S.view === 'niche') render(); });
   const top = head('Niche models', 'Businesses that make money in an unusual way and own a niche few others can enter: exchanges and registrars that take a fee on every transaction, royalty and pooling models, and concessions. A list to study, not a buy list.',
     `<ul><li>The list is <b>picked by hand</b> from what each company does (its business line on this dashboard and its calls), not scored automatically. It changes only when names are added or dropped.</li>
       <li><b>Market infrastructure</b>: a licence, monopoly or duopoly that charges on every trade, account or certificate. <b>Unusual revenue model</b>: royalties, pooling, razor-and-blade, tenancy or catalogue income. <b>Niche service</b>: a narrow service few others run at scale.</li>
-      <li>The score, the latest call read and the latest results are live, so a unique model with a weak quarter is easy to spot. A red note marks a red-flag or capital-cycle warning on the latest call.</li></ul>`,
+      <li>The score, the latest call read and the latest results are live, so a unique model with a weak quarter is easy to spot. A red note marks a red-flag or capital-cycle warning on the latest call.</li>
+      <li><b>Business model ▸</b> opens a researched explainer: a money-flow chart of who pays the company and where the money goes, the revenue mix, how a rupee is earned step by step, unit economics, cost structure, the moat, the numbers to track and what could break the model, with sources.</li></ul>`,
     '<span class="badge">Hand-picked · live data</span>');
   const bigs = [...new Set(all.map(x => x.c.bigSector).filter(b => b && b !== 'Unclassified'))].sort();
   const CH = {clean: ['No warning on latest call', x => !NM_WARN[x.c.archetype] && !x.c.veto], s60: ['Score 60+', x => (x.c.score || 0) >= 60],
@@ -3351,7 +3391,7 @@ function vNiche() {
     return `<div class="r" role="button" tabindex="0" data-open="${esc(c.id)}" data-k="${esc(c.id + '|' + c.periodKey)}">
       <span style="min-width:0"><span class="nm" style="display:block">${star(c.id)}${esc(c.name)}</span><span class="sub">${esc(c.sector || '')}${c.mcap ? ' · ' + esc(c.mcap) : ''} · ${esc(c.period)} call ${esc(sdate(c.date))}</span></span>
       <span>${scoreCell(c.score, c.veto, i)}<span class="sub">${dcell(c.delta)} vs last call</span></span>
-      <span style="min-width:0;display:grid;gap:4px"><span class="pill" style="--pc:${k[1]};justify-self:start">${esc(k[0])}</span><span>${esc(x.how)}</span><span class="sub">${esc(x.niche)}</span></span>
+      <span style="min-width:0;display:grid;gap:4px"><span class="pill" style="--pc:${k[1]};justify-self:start">${esc(k[0])}</span><span>${esc(x.how)}</span><span class="sub">${esc(x.niche)}</span><button class="btn nmb-btn" data-nmbm="${esc(c.id)}">Business model ▸</button></span>
       <span style="min-width:0;display:grid;gap:4px">${w ? `<span class="pill" style="--pc:${w};justify-self:start">${esc(c.archetype)}</span>` : ''}<span class="why">${esc((c.thesis || '').length > 230 ? c.thesis.slice(0, 227) + '…' : c.thesis || '')}</span></span>
       <span style="display:grid;gap:2px">${r ? `<span>${gr ? `<span class="pill" style="--pc:var(--${gr[2]})">${esc(gr[1])}</span>` : ''} <span class="sub">${esc(r.label || '')}</span></span><span class="sub num">Rev ${pctS(r.rev_yoy)} · PAT ${pctS(r.pat_yoy)}${r.px?.move != null ? ` · px ${pctS(r.px.move)}` : ''}</span>` : '<span class="sub">No results posted yet</span>'}</span>
     </div>`; };
@@ -3365,7 +3405,97 @@ function vNiche() {
     <p class="small muted">${fmt(rows.length)} compan${rows.length === 1 ? 'y' : 'ies'}${f.cat ? ' · ' + esc(NM_CAT[f.cat][2]) : ''}</p>
     ${rows.length ? `<div class="rows nmd">
       <div class="r hd"><span>Company</span><span>Score</span><span>How it makes money</span><span>Latest call</span><span>Latest results</span></div>
-      ${rows.map(row).join('')}</div>` : '<div class="empty">No companies match these filters.</div>'}`;
+      ${rows.map(row).join('')}</div>` : '<div class="empty">No companies match these filters.</div>'}
+    ${f.bm ? `<div class="by-ov nmb-ov" role="dialog" aria-modal="true" aria-label="Business model"><div class="by-box nmb-box-w"><button class="btn by-x nmb-x">Close ✕</button>${nmbPanel(f.bm)}</div></div>` : ''}`;
+}
+/* Business model explainer for the Niche models list: a money-flow chart (who pays the company, and where the money goes),
+   the revenue mix, and a step-by-step read of how each rupee is earned. Researched profiles live in data/niche_models.json
+   (one entry per company, keyed by BSE code), written from filings, presentations and calls; numbers carry their period. */
+const NMB = {data: null, p: null};
+const loadNmb = () => NMB.data ? Promise.resolve(NMB.data) : (NMB.p = NMB.p || getJson('data/niche_models.json').then(j => (NMB.data = j || {})).catch(() => (NMB.data = {})));
+const NMB_COL = ['var(--v5)', 'var(--accent)', 'var(--saffron)', 'var(--violet)', 'var(--rose)', 'var(--teal)'];
+/* wrap text into lines of about n characters */
+const nmbWrap = (t, n) => { const out = []; let cur = ''; String(t || '').split(/\s+/).forEach(w => { if ((cur + ' ' + w).trim().length > n && cur) { out.push(cur); cur = w; } else cur = (cur + ' ' + w).trim(); }); if (cur) out.push(cur); return out; };
+const nmbL = (t, n, k) => { const a = nmbWrap(t, n); return a.length > k ? [...a.slice(0, k - 1), a[k - 1] + '…'] : a; };
+const nmbText = (x, y, lines, cls, lh, anchor = 'start') => `<text x="${x}" y="${y}" class="${cls}" text-anchor="${anchor}">${lines.map((l, i) => `<tspan x="${x}" dy="${i ? lh : 0}">${esc(l)}</tspan>`).join('')}</text>`;
+/* money-flow chart: payers on the left flow into the company, money flows out to the right; on phones it stacks top to bottom */
+function nmbFlow(m) {
+  const P = (m.flow?.payers || []).slice(0, 4), O = (m.flow?.outflows || []).slice(0, 4), name = m.flow?.company || m.name;
+  const narrow = window.innerWidth < 720;
+  if (narrow) {
+    const W = 360, bw = 300, x0 = 30, box = (y, who, sub, col, tag) => { const a = nmbL(who, 40, 2), b = nmbL(sub, 50, 3);
+      return `<rect x="${x0}" y="${y}" width="${bw}" height="${18 + a.length * 15 + b.length * 13}" rx="10" class="nmb-box" style="--bc:${col}"/>
+        ${tag ? `<text x="${x0 + bw - 10}" y="${y + 16}" class="nmb-pct" text-anchor="end">${esc(tag)}</text>` : ''}
+        ${nmbText(x0 + 12, y + 18, a, 'nmb-who', 15)}${nmbText(x0 + 12, y + 18 + a.length * 15, b, 'nmb-sub', 13)}`; };
+    let y = 8, s = `<text x="${W / 2}" y="${y + 10}" class="nmb-cap" text-anchor="middle">WHO PAYS</text>`; y += 22;
+    P.forEach((p, i) => { const a = nmbL(p.who, 40, 2), b = nmbL(p.pays, 50, 3); s += box(y, p.who, p.pays, NMB_COL[i % 6], p.share != null ? p.share + '%' : ''); y += 18 + a.length * 15 + b.length * 13 + 8; });
+    s += `<path d="M${W / 2} ${y} v22" class="nmb-arrow" marker-end="url(#nmb-ah)"/>`; y += 28;
+    const cn = nmbWrap(name, 26); s += `<rect x="${x0 + 40}" y="${y}" width="${bw - 80}" height="${24 + cn.length * 18}" rx="14" class="nmb-co"/>${nmbText(W / 2, y + 22, cn, 'nmb-coname', 18, 'middle')}`; y += 24 + cn.length * 18 + 6;
+    s += `<path d="M${W / 2} ${y} v22" class="nmb-arrow out" marker-end="url(#nmb-ah2)"/>`; y += 28;
+    s += `<text x="${W / 2}" y="${y + 10}" class="nmb-cap" text-anchor="middle">WHERE THE MONEY GOES</text>`; y += 22;
+    O.forEach(o => { const a = nmbL(o.who, 40, 2), b = nmbL(o.gets, 50, 3); s += box(y, o.who, o.gets, 'var(--muted)', ''); y += 18 + a.length * 15 + b.length * 13 + 8; });
+    return `<svg class="nmb-svg" viewBox="0 0 ${W} ${y + 4}" role="img" aria-label="Money flow for ${esc(m.name)}">${nmbDefs()}${s}</svg>`;
+  }
+  const W = 980, bw = 290, gap = 14, cx = W / 2, cw = 210;
+  const hOf = (who, sub) => 22 + nmbL(who, 36, 3).length * 16 + nmbL(sub, 44, 3).length * 14;
+  const colH = arr => arr.reduce((n, x) => n + hOf(x.who, x.pays || x.gets) + gap, -gap);
+  const H = Math.max(colH(P), colH(O), 150) + 50, top = 36;
+  const known = P.filter(p => p.share != null), maxS = Math.max(1, ...known.map(p => p.share));
+  let s = `<text x="${bw / 2 + 10}" y="18" class="nmb-cap" text-anchor="middle">WHO PAYS</text><text x="${W - bw / 2 - 10}" y="18" class="nmb-cap" text-anchor="middle">WHERE THE MONEY GOES</text>`;
+  const ch = 30 + nmbWrap(name, 22).length * 20, cy = top + (H - top) / 2 - ch / 2;
+  let y = top + (H - top - colH(P)) / 2;
+  P.forEach((p, i) => { const h = hOf(p.who, p.pays), col = NMB_COL[i % 6], sw = p.share != null ? 3 + 15 * p.share / maxS : 4, my = y + h / 2;
+    s += `<path d="M${10 + bw} ${my} C ${cx - cw / 2 - 60} ${my}, ${cx - cw / 2 - 60} ${cy + ch / 2}, ${cx - cw / 2 - 6} ${cy + ch / 2}" class="nmb-flow" style="stroke:${col};stroke-width:${sw}"/>`;
+    s += `<rect x="10" y="${y}" width="${bw}" height="${h}" rx="10" class="nmb-box" style="--bc:${col}"/>`;
+    if (p.share != null) s += `<text x="${bw}" y="${y + 18}" class="nmb-pct" text-anchor="end">${p.share}%</text>`;
+    const a = nmbL(p.who, 36, 3); s += nmbText(22, y + 19, a, 'nmb-who', 16) + nmbText(22, y + 19 + a.length * 16, nmbL(p.pays, 44, 3), 'nmb-sub', 14);
+    y += h + gap; });
+  y = top + (H - top - colH(O)) / 2;
+  O.forEach(o => { const h = hOf(o.who, o.gets), my = y + h / 2, x = W - 10 - bw;
+    s += `<path d="M${cx + cw / 2} ${cy + ch / 2} C ${cx + cw / 2 + 60} ${cy + ch / 2}, ${x - 60} ${my}, ${x - 6} ${my}" class="nmb-flow out" marker-end="url(#nmb-ah2)"/>`;
+    s += `<rect x="${x}" y="${y}" width="${bw}" height="${h}" rx="10" class="nmb-box" style="--bc:var(--muted)"/>`;
+    const a = nmbL(o.who, 36, 3); s += nmbText(x + 12, y + 19, a, 'nmb-who', 16) + nmbText(x + 12, y + 19 + a.length * 16, nmbL(o.gets, 44, 3), 'nmb-sub', 14);
+    y += h + gap; });
+  s += `<rect x="${cx - cw / 2}" y="${cy}" width="${cw}" height="${ch}" rx="16" class="nmb-co"/>` + nmbText(cx, cy + 26, nmbWrap(name, 22), 'nmb-coname', 20, 'middle');
+  return `<svg class="nmb-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Money flow for ${esc(m.name)}">${nmbDefs()}${s}</svg>`;
+}
+const nmbDefs = () => `<defs><marker id="nmb-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="nmb-ahp"/></marker>
+  <marker id="nmb-ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="nmb-ahp out"/></marker></defs>`;
+/* revenue mix: one stacked bar, streams with an undisclosed share folded into "Not disclosed" */
+function nmbMix(m) {
+  const st = m.streams || [], k = st.filter(x => x.share != null && x.share > 0), tot = k.reduce((n, x) => n + x.share, 0), un = st.filter(x => x.share == null);
+  const segs = k.map((x, i) => ({n: x.name, v: x.share, c: NMB_COL[i % 6]}));
+  if (tot < 99 && un.length) segs.push({n: 'Not disclosed: ' + un.map(x => x.name).join(', '), v: Math.max(0, 100 - tot), c: 'var(--line2)'});
+  const sum = segs.reduce((n, x) => n + x.v, 0) || 1, basis = [...new Set(k.map(x => x.basis).filter(Boolean))].join(' · ');
+  return `<div class="nmb-mix"><div class="nmb-bar">${segs.map(x => `<i style="width:${100 * x.v / sum}%;background:${x.c}" title="${esc(x.n)}: ${x.v}%"></i>`).join('')}</div>
+    <div class="nmb-leg">${segs.map(x => `<span><i style="background:${x.c}"></i>${esc(x.n)} <b class="num">${x.v ? x.v + '%' : ''}</b></span>`).join('')}</div>
+    ${basis ? `<p class="small muted">Share of revenue, ${esc(basis)}.</p>` : ''}</div>`;
+}
+function nmbPanel(id) {
+  const m = NMB.data?.[id], c = byId[id];
+  if (!m) return `<div class="empty">${NMB.data ? 'No business-model profile for this company yet.' : 'Loading the business model…'}</div>`;
+  const fin = m.financials || {}, tbl = (rows, a, b, cN) => `<table class="pda-dt nmb-t"><thead><tr><th scope="col">${a}</th><th scope="col">${b}</th><th scope="col">${cN}</th></tr></thead><tbody>${rows}</tbody></table>`;
+  return `<div class="nmb">
+    <div class="nmb-head"><div><p class="eyebrow">How ${esc(m.flow?.company || m.name)} makes money</p><h3>${esc(m.name)}</h3>
+      <p class="nmb-sum">${esc(m.summary || '')}</p></div>
+      ${c ? `<div class="nmb-now"><span class="eyebrow">On the desk now</span>${scoreCell(c.score, c.veto)}<span class="sub">${esc(c.period)} call · ${esc(c.mcap || '')}</span></div>` : ''}</div>
+    <section><h4>Money flow</h4>${nmbFlow(m)}<p class="small muted">Arrow width on the left follows each payer’s share of revenue where it is disclosed.</p></section>
+    <section><h4>Revenue mix</h4>${nmbMix(m)}
+      <div class="nmb-streams">${(m.streams || []).map((x, i) => `<div class="nmb-st" style="--bc:${x.share != null && x.share > 0 ? NMB_COL[(m.streams.filter(y => y.share != null && y.share > 0).indexOf(x)) % 6] : 'var(--line2)'}">
+        <b>${esc(x.name)}${x.share != null ? ` <span class="num">${x.share}%</span>` : ''}</b><p>${esc(x.how || '')}</p>${x.driver ? `<p class="sub">Grows with: ${esc(x.driver)}</p>` : ''}</div>`).join('')}</div></section>
+    <section><h4>How a rupee is earned</h4><ol class="nmb-steps">${(m.mechanics || []).map(p => `<li>${esc(p)}</li>`).join('')}</ol></section>
+    <div class="nmb-two">
+      <section><h4>Unit economics</h4>${tbl((m.unitEconomics || []).map(u => `<tr><th scope="row">${esc(u.label)}</th><td>${esc(u.value)}</td><td class="nmb-note">${esc(u.note || '')}</td></tr>`).join(''), 'Measure', 'Value', 'Note')}</section>
+      <section><h4>Numbers to track</h4>${tbl((m.kpis || []).map(u => `<tr><th scope="row">${esc(u.metric)}</th><td>${esc(u.latest)}</td><td class="nmb-note">${esc(u.why || '')}</td></tr>`).join(''), 'Metric', 'Latest', 'Why it matters')}</section>
+    </div>
+    <section><h4>Cost structure</h4><p>${esc(m.costs || '')}</p>
+      ${fin.period ? `<p class="nmb-fin"><span class="badge">${esc(fin.period)}</span> ${[['Revenue', fin.revenue], ['EBITDA margin', fin.ebitdaMargin], ['PAT', fin.pat]].filter(x => x[1]).map(x => `<span>${x[0]} <b class="num">${esc(x[1])}</b></span>`).join('')}${fin.note ? `<span class="sub">${esc(fin.note)}</span>` : ''}</p>` : ''}</section>
+    <div class="nmb-two">
+      <section><h4>Why it is hard to copy</h4><ul class="nmb-ul">${(m.moat || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></section>
+      <section><h4>What could break the model</h4><ul class="nmb-ul risk">${(m.risks || []).map(x => `<li>${esc(x)}</li>`).join('')}</ul></section>
+    </div>
+    <p class="small muted">Researched ${esc(m.asOf || '')} from ${(m.sources || []).map(s => /^https?:\/\//.test(s.url || '') ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>` : esc(s.title)).join(', ')} and the company’s calls on this desk. Figures marked (est.) are estimates. For information only, not investment advice.</p>
+  </div>`;
 }
 
 /* Collector's shelf: unique companies in tailwinds at a decent valuation, read across the last three quarters of calls.
@@ -4749,7 +4879,7 @@ function vBytes() {
       <button class="by-img" data-by-open="${esc(b.id)}" aria-label="Open ${esc(b.title)}"><img src="${esc(b.image)}" alt="${esc(b.title)}" loading="lazy"></button>
       <div class="by-meta">${b.status === 'draft' ? '<span class="by-draft">Draft</span>' : ''}<span class="num">${esc(fdate(b.date))}</span><span>· ${esc(b.series || '')}</span>${b.sector ? `<span>· ${esc(b.sector)}</span>` : ''}</div>
       <h4>${esc(b.title)}</h4><p>${esc(b.dek || '')}</p>
-      <div class="by-foot"><button class="btn" data-by-open="${esc(b.id)}">Open</button><a class="btn" href="${esc(b.image)}" download="${esc(byFile(b))}">Download</a></div></article>`).join('') || '<div class="empty">No bytes yet. The first ones are on their way.</div>'}</div>
+      <div class="by-foot"><button class="btn" data-by-open="${esc(b.id)}">Open</button><button class="btn" data-by-dl="${esc(b.id)}">Download</button></div><p class="small muted by-st" data-by-st="${esc(b.id)}"></p></article>`).join('') || '<div class="empty">No bytes yet. The first ones are on their way.</div>'}</div>
     ${cur ? `<div class="by-ov" data-by-close="1" role="dialog" aria-modal="true" aria-label="${esc(cur.title)}"><div class="by-box">
       <button class="btn by-x" data-by-close="1">Close ✕</button>
       <img src="${esc(cur.image)}" alt="${esc(cur.title)}">
@@ -4758,16 +4888,27 @@ function vBytes() {
         ${cur.notes ? `<p>${esc(cur.notes)}</p>` : ''}
         ${(cur.companies || []).length ? `<div class="by-foot" style="justify-content:flex-start">${cur.companies.map(c => `<button class="btn" data-open="${esc(c.id)}">${esc(c.name)}</button>`).join('')}</div>` : ''}
         <p class="small muted">Source: ${esc(cur.sources || '')}. For information only. Not investment advice.</p>
-        <div class="by-foot" style="justify-content:flex-start"><a class="btn primary" href="${esc(cur.image)}" download="${esc(byFile(cur))}">Download image</a></div></div></div></div>` : ''}`;
+        <div class="by-foot" style="justify-content:flex-start"><button class="btn primary" data-by-dl="${esc(cur.id)}">Download image</button><span class="small muted" data-by-st="${esc(cur.id)}"></span></div></div></div></div>` : ''}`;
 }
 document.addEventListener('click', e => {
   if (S.view !== 'bytes') return;
   const t = e.target, f = S.by;
   const sec = t.closest('[data-by-sec]'); if (sec) { f.sec = sec.dataset.bySec; render(); return; }
   const op = t.closest('[data-by-open]'); if (op) { f.open = op.dataset.byOpen; render(); return; }
+  const dl = t.closest('[data-by-dl]'); if (dl) { byDownload(dl.dataset.byDl); return; }
   if (f.open && (t.closest('.by-x') || (t.matches('.by-ov')))) { f.open = ''; render(); }
 });
+/* A plain <a download> is blocked inside the published page, so fetch the PNG and hand it to the downloads capability
+   (poSaveBlob), which falls back to a normal browser download when the page runs on its own. */
+async function byDownload(id) {
+  const b = (BY.data?.bytes || []).find(x => x.id === id); if (!b) return;
+  const say = m => document.querySelectorAll(`[data-by-st="${CSS.escape(id)}"]`).forEach(el => { el.textContent = m; });
+  say('Preparing the image…');
+  try { const r = await fetch(b.image); if (!r.ok) throw new Error('HTTP ' + r.status);
+    say(await poSaveBlob(await r.blob(), byFile(b))); } catch (er) { say('The image could not be downloaded here.'); }
+}
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && S.view === 'bytes' && S.by.open) { S.by.open = ''; render(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && S.view === 'niche' && S.nm.bm) { S.nm.bm = ''; render(); } });
 
 /* Sector intel: research briefs (sector_briefs/*.yaml → data/sector_intel.json, built nightly by sector_intel.py) joined to
    the desk's own data. The note carries our view; the page adds what is live: each peer's latest call score and
@@ -5292,6 +5433,8 @@ document.addEventListener('click', e => {
   const ldlm = t.closest('[data-ldlm]'); if (ldlm) { ldS().lm = ldlm.dataset.ldlm; render(); return; }
   const ldg = t.closest('[data-ldg]'); if (ldg) { const f = ldS(); f.lead = f.lead === ldg.dataset.ldg ? '' : ldg.dataset.ldg; render(); return; }
   if (!t.closest('.find')) $('#findres').hidden = true;
+  const nmbm = t.closest('[data-nmbm]'); if (nmbm) { S.nm.bm = nmbm.dataset.nmbm; render(); return; }
+  if (S.view === 'niche' && S.nm.bm && (t.closest('.nmb-x') || t.matches('.nmb-ov'))) { S.nm.bm = ''; render(); return; }
   const op = t.closest('[data-open]');
   if (op) { const k = op.dataset.k; if (op.closest('.find-res')) { $('#find').value = ''; $('#findres').hidden = true; } openCo(op.dataset.open, k || undefined); return; }
   if (t.closest('[data-close]')) { closeCo(); return; }
