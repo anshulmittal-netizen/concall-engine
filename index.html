@@ -794,6 +794,63 @@ mark.hl{color:inherit;background:color-mix(in srgb,var(--tc) 24%,transparent);bo
 .pf-meta{display:flex;justify-content:space-between;gap:7px;align-items:center}
 .toolbar-sel{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:6px 8.5px;font-size:11.5px;color:var(--fg)}
 
+/* ---------- coverage universe ---------- */
+.cv-pills{display:flex;flex-wrap:wrap;gap:8px}
+.cv-pills span{font-family:var(--mono);font-size:11px;padding:5px 12px;border-radius:99px;border:1px solid var(--line2);background:var(--panel);color:var(--fg)}
+.cv-pills span.dim{color:var(--muted)}
+.cv-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:15.5px;align-items:start}
+.cv-new{display:grid;gap:10px;align-content:start}
+.cv-new h3{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--saffron);font-weight:600}
+.cv-new ul{margin:0;padding-left:16px;display:grid;gap:9px;font-size:12.5px;line-height:1.5}
+.cv-new li::marker{color:var(--saffron)}
+.cv-new .cv-note{border-top:1px dashed var(--line2);padding-top:10px;font-size:11.5px;color:var(--muted)}
+.cv-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.cv-k{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--tc,var(--accent));border-radius:var(--r);padding:12px 14px;display:grid;gap:3px;box-shadow:var(--shadow)}
+.cv-k .eyebrow{font-family:var(--mono);letter-spacing:.14em}
+.cv-k b{font-family:var(--mono);font-size:clamp(22px,2.6vw,30px);font-weight:600;line-height:1.1;color:var(--tc,var(--fg))}
+.cv-k span:last-child{font-size:11px;color:var(--muted)}
+.cv-tbl{display:grid;border:1px solid var(--line);border-radius:var(--r);background:var(--panel);overflow:hidden;box-shadow:var(--shadow)}
+.cv-r{display:grid;grid-template-columns:minmax(0,1.5fr) 70px 82px 82px 74px 74px 58px minmax(0,1.6fr) minmax(0,1.7fr);gap:6px 12px;align-items:start;padding:12px 15.5px;border-top:1px solid var(--line);text-align:left;background:none;border-left:0;border-right:0;border-bottom:0;width:100%;color:inherit}
+.cv-r.hd{background:var(--panel2);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);align-items:end;border-top:0}
+.cv-r .n{font-family:var(--mono);font-size:12px;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cv-r.hd .n{text-align:right}
+.cv-r .nm{font-family:var(--display);font-weight:600;font-size:14px;line-height:1.25}
+.cv-r .sub{font-size:11px;color:var(--muted);line-height:1.4;display:block}
+.cv-r .txt{font-size:11.5px;line-height:1.45}
+.cv-row{cursor:pointer;transition:background .15s}
+.cv-row:hover,.cv-row[aria-expanded="true"]{background:var(--panel2)}
+.cv-sec{padding:11px 15.5px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--saffron);font-weight:600;background:color-mix(in srgb,var(--panel2) 50%,var(--panel))}
+.cv-sec span{color:var(--muted);letter-spacing:.04em;margin-left:8px;font-weight:400}
+.cv-mm{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;border:1px solid color-mix(in srgb,var(--saffron) 60%,var(--line));color:var(--saffron);font-family:var(--mono);font-size:12px;justify-self:center}
+.cv-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:5px}
+.cv-t{font-size:10px;font-weight:700;letter-spacing:.03em;padding:2.5px 9px;border-radius:99px;white-space:nowrap;color:var(--pc);background:color-mix(in srgb,var(--pc) 13%,transparent);border:1px solid color-mix(in srgb,var(--pc) 35%,transparent)}
+.cv-new-tag{font-size:9px;font-family:var(--mono);color:var(--saffron);border:1px solid var(--saffron);border-radius:99px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+.cv-d{border-top:1px solid var(--line);padding:16px 15.5px 20px;display:grid;gap:14px;background:color-mix(in srgb,var(--panel2) 40%,var(--panel));animation:enter .25s var(--ease) both}
+.cv-dh{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start}
+.cv-dh h3{font-size:19px;font-weight:700}
+.cv-dh .sub{font-size:11px;color:var(--muted);font-family:var(--mono)}
+.cv-box{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--panel);display:grid;gap:8px;align-content:start}
+.cv-box.hot{border-color:color-mix(in srgb,var(--saffron) 55%,var(--line));background:color-mix(in srgb,var(--saffron) 6%,var(--panel))}
+.cv-box.cool{border-color:color-mix(in srgb,var(--v5) 45%,var(--line))}
+.cv-box.risk{border-color:color-mix(in srgb,var(--down) 40%,var(--line))}
+.cv-box h4{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--saffron);font-weight:600;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.cv-box.cool h4{color:var(--v5)}.cv-box.risk h4{color:var(--down)}
+.cv-box ul{margin:0;padding-left:16px;display:grid;gap:6px;font-size:12px;line-height:1.5}
+.cv-chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.cv-chips span{font-size:11px;padding:3px 10px;border-radius:8px;border:1px solid var(--line2);background:var(--panel)}
+.cv-g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cv-g2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:12px;align-items:start}
+.cv-mt{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--panel);display:grid;gap:2px}
+.cv-mt b{font-family:var(--mono);font-size:20px;font-weight:600}
+.cv-mt small{font-family:var(--mono);font-size:10.5px}
+.cv-chart{width:100%;max-width:460px;height:auto;display:block;margin:0 auto}
+.cv-quote{font-family:Georgia,serif;font-style:italic;font-size:14px;line-height:1.5;border-left:3px solid var(--saffron);padding-left:12px}
+.cv-acts{display:flex;gap:7px;flex-wrap:wrap}
+@media (max-width:1240px){.cv-r{grid-template-columns:minmax(0,1.6fr) 66px 78px 74px 74px minmax(0,1.6fr)}.cv-r>:nth-child(4),.cv-r>:nth-child(7),.cv-r>:nth-child(8){display:none}}
+@media (max-width:1000px){.cv-top,.cv-g2{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.cv-r{grid-template-columns:minmax(0,1fr) 62px 66px}.cv-r>:nth-child(n+4){display:none}.cv-r>:nth-child(9){display:block;grid-column:1/-1}.cv-r.hd>:nth-child(9){display:none}
+  .cv-g3{grid-template-columns:minmax(0,1fr)}.cv-kpis{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+
 /* ---------- responsive ---------- */
 @media (max-width:1240px){
   .calls .r{grid-template-columns:30px minmax(0,1.4fr) 160px 84px minmax(0,2fr) 104px}
@@ -1348,7 +1405,7 @@ function animateWidgets(root) {
    the page (e.g. Calendar = earnings calls + results board meetings). Every view keeps its own key, so links and #hash
    addresses still work; the rail highlights the tab whose views include the current one. */
 const TABS = [
-  {group: 'Start', items: [['home', 'Today', ['home']], ['mine', 'My stocks', ['watch', 'portfolio'], 'watch'], ['ask', 'Ask the calls', ['ask']]]},
+  {group: 'Start', items: [['home', 'Today', ['home']], ['cov', 'Vantage coverage universe', ['cov', 'portfolio', 'watch'], 'watch'], ['ask', 'Ask the calls', ['ask']]]},
   {group: 'Research', items: [['calls', 'Calls', ['calls', 'first', 'people'], 'calls'], ['cal', 'Calendar', ['upcoming', 'rescal'], ''],
     ['res', 'Results', ['results', 'pead'], 'results'], ['pipe', 'Catalyst pipeline', ['pipeline', 'graised'], 'pipeline'], ['mgmt', 'Management changes', ['mgmt']]]},
   {group: 'Sectors & ideas', items: [['intel', 'Sector intel', ['intel']], ['sec', 'Sectors', ['tracker', 'guidance', 'turns'], 'tracker'], ['themes', 'Themes', ['themes']],
@@ -1356,7 +1413,7 @@ const TABS = [
   {group: 'Publish', items: [['bytes', 'Bytes', ['bytes']], ['post', 'Weekly post', ['post']]]}
 ];
 /* each view's own name: shown on its sub-tab, in the Excel export and in the help */
-const VIEWS = [{group: '', items: [['home', 'Today'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['post', 'Weekly post'], ['bytes', 'Bytes'], ['help', 'How to use'],
+const VIEWS = [{group: '', items: [['home', 'Today'], ['cov', 'Coverage universe'], ['portfolio', 'My portfolio'], ['watch', 'My watchlist'], ['ask', 'Ask the calls'], ['post', 'Weekly post'], ['bytes', 'Bytes'], ['help', 'How to use'],
   ['calls', 'All calls'], ['first', 'First-time callers'], ['people', 'Who’s asking'], ['upcoming', 'Calls coming up'], ['rescal', 'Results calendar'],
   ['results', 'Results posted'], ['pead', 'Results to watch'], ['pipeline', 'Catalyst pipeline'], ['graised', 'Guidance raised'], ['mgmt', 'Management changes'], ['intel', 'Sector intel'], ['tracker', 'Sector tracker'], ['guidance', 'Guidance leaders'],
   ['turns', 'Sector turns'], ['themes', 'Themes'], ['shelf', 'Collector’s shelf'], ['nearterm', 'Near-term strength'], ['bottleneck', 'Bottleneck arbitrage'], ['inflect', 'Inflection watch'],
@@ -1367,7 +1424,7 @@ function navCounts() {
   const t = trackerQ(), cq = callsQ();
   const rd = RES.data || {}, t0r = istToday();
   const pfSoon = pfRows().filter(x => x.nextRes && dayDiff(x.nextRes.date, istToday()) <= 3).length;
-  return {portfolio: pfSoon ? pfSoon + ' soon' : (pfList().length || ''), calls: cq.length, upcoming: upcoming(7).length || '', watch: (n => n ? n + ' soon' : '')(watchSoon().length),
+  return {cov: pfList().length || '', portfolio: pfSoon ? pfSoon + ' soon' : (pfList().length || ''), calls: cq.length, upcoming: upcoming(7).length || '', watch: (n => n ? n + ' soon' : '')(watchSoon().length),
     pead: (p => p ? (n => n ? n + ' soon' : '')(p.pre.filter(x => x.tier === 'strong' && dayDiff(x.x.date, t0r) <= 3).length) : '')(peadData()),
     rescal: (rd.calendar || []).filter(c => c.date >= t0r && c.date <= addDays(t0r, 7)).length || '',
     results: (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length ? (rd.results || []).filter(r => r.filed.slice(0, 10) >= addDays(t0r, -1)).length + ' new' : '', first: (D.firstTimers || []).filter(r => curQ() === 'all' || r.period === curQ()).length,
@@ -2101,6 +2158,184 @@ function vPortfolio() {
       <div class="pf-grid">${list.map(pfCard).join('')}</div></section>
     ${pfEtfs().length ? `<p class="small muted">ETFs in the portfolio, not tracked (no concalls or results): ${pfEtfs().map(e => `<b>${esc(e.symbol)}</b> ${esc(e.name)}`).join(' · ')}.</p>` : ''}`;
 }
+
+/* Vantage coverage universe: the holdings in portfolio.yaml laid out as a quarterly coverage note. Each name gets a
+   fundamentals row (margin and its change, revenue and profit growth from the filed results, the mental models the
+   call fits, the most important tailwind, management's tone and where guidance went), grouped by sector; a row opens
+   into a full company card built from the latest call's summary. Nothing here is a recommendation. */
+const SUMC = {};
+const qShift = (lab, n) => { const m = /^Q(\d) FY(\d\d)$/.exec(lab || ''); if (!m) return ''; let q = +m[1] + n, y = +m[2]; while (q < 1) { q += 4; y--; } while (q > 4) { q -= 4; y++; } return `Q${q} FY${String(y).padStart(2, '0')}`; };
+const cvMedian = a => { const s = a.filter(x => x != null && isFinite(x)).sort((x, y) => x - y); if (!s.length) return null; const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+const bpsS = v => v == null ? '<span class="g0">–</span>' : `<span class="${v > 0 ? 'gp' : v < 0 ? 'gn' : 'g0'}">${v > 0 ? '+' : v < 0 ? '−' : ''}${fmt(Math.abs(Math.round(v)))} bps</span>`;
+const pctC = v => v == null ? '<span class="g0">–</span>' : `<span class="${v > 0 ? 'gp' : v < 0 ? 'gn' : 'g0'}">${pctS(v)}</span>`;
+const crS = v => v == null ? '–' : `₹${fmt(Math.round(v))} Cr`;
+const CV_TONE = {1: ['Positive', 'var(--up)'], 0: ['Neutral', 'var(--warn)'], '-1': ['Cautious', 'var(--down)']};
+function cvGuide(c) {
+  if (!c) return ['No call read', 'var(--muted)', 'none'];
+  if (c.gCut > 0) return ['Guidance cut', 'var(--down)', 'cut'];
+  if (c.gRaised > 0) return ['Guidance raised', 'var(--up)', 'raised'];
+  if (c.gNew > 0) return ['New guidance', 'var(--v5)', 'new'];
+  if (c.g < 0) return ['Guidance softer', 'var(--warn)', 'soft'];
+  return ['Guidance unchanged', 'var(--accent)', 'held'];
+}
+function cvRows() {
+  const res = RES.data?.results || [], cal = RES.data?.calendar || [], t0 = istToday();
+  return pfList().map(p => {
+    const co = byId[p.id], calls = callsFor(p.id), last = calls[0], prev = calls[1];
+    const r = res.find(x => x.id === p.id) || null, v = VAL.data?.rows?.[p.id] || null;
+    const opmQ = r && r.rev_prev_qoq > 0 && r.op_prev_qoq != null ? r.op_prev_qoq / r.rev_prev_qoq * 100 : null;
+    const opm = r?.opm ?? null;
+    const nextRes = cal.filter(c => c.id === p.id && c.date >= t0).sort((a, b) => a.date.localeCompare(b.date))[0];
+    return {...p, co, last, prev, r, v, opm, opmQ, dY: opm != null && r?.opm_prev_yoy != null ? (opm - r.opm_prev_yoy) * 100 : null, dQ: opm != null && opmQ != null ? (opm - opmQ) * 100 : null,
+      revY: r?.rev_yoy ?? null, patY: r && r.pat_prev_yoy > 0 ? r.pat_yoy : null, tone: co?.blocks?.tone == null ? null : Math.sign(co.blocks.tone), guide: cvGuide(last), nextRes,
+      big: co?.bigSector || r?.bigSector || 'Other', sector: co?.sector || r?.sector || '', isNew: !!last && !prev,
+      tail: co?.triggers?.[0]?.label || last?.top || '', mcapCr: v?.mcapCr ?? co?.mcapCr ?? null};
+  });
+}
+function cvNew(rows) {
+  const S0 = D.season, li = [], names = xs => xs.map(x => `<b>${esc(x.name.replace(/ (Ltd|Limited)\.?$/i, ''))}</b>`).join(', ');
+  const read = rows.filter(x => x.last?.period === S0), up = rows.filter(x => x.last?.period === S0 && x.co?.delta > 0).sort((a, b) => b.co.delta - a.co.delta).slice(0, 4);
+  const dn = rows.filter(x => x.last?.period === S0 && x.co?.delta < 0).sort((a, b) => a.co.delta - b.co.delta).slice(0, 4);
+  const gr = rows.filter(x => x.guide[2] === 'raised'), gc = rows.filter(x => x.guide[2] === 'cut'), fresh = rows.filter(x => x.isNew);
+  const pend = rows.filter(x => !x.r || x.r.label !== S0), soon = pend.filter(x => x.nextRes && dayDiff(x.nextRes.date, istToday()) <= 14);
+  const mg = rows.filter(x => (D.mgmt || []).some(m => m.id === x.id && m.date >= addDays(istToday(), -90)));
+  li.push(`<b>${read.length} of ${rows.length} concalls read for ${esc(S0)}</b>${rows.length - read.length ? `; ${rows.length - read.length} still on an earlier quarter (${names(rows.filter(x => x.last && x.last.period !== S0)) || 'none'})${rows.some(x => !x.last) ? `, and ${names(rows.filter(x => !x.last))} with no call read yet` : ''}.` : '.'}`);
+  if (up.length) li.push(`<b>Read improved on the last call:</b> ${up.map(x => `${esc(x.name.replace(/ (Ltd|Limited)\.?$/i, ''))} <span class="gp">▲${x.co.delta}</span>`).join(', ')}.`);
+  if (dn.length) li.push(`<b>Read weakened:</b> ${dn.map(x => `${esc(x.name.replace(/ (Ltd|Limited)\.?$/i, ''))} <span class="gn">▼${-x.co.delta}</span>`).join(', ')}.`);
+  if (gr.length || gc.length) li.push(`<b>Guidance:</b> ${gr.length ? `raised at ${names(gr)}` : 'no raises'}${gc.length ? `; cut at ${names(gc)}` : '; no cuts'}.`);
+  if (fresh.length) li.push(`<b>First call read:</b> ${names(fresh)}. No earlier call to compare against yet.`);
+  li.push(`<b>Results:</b> ${rows.length - pend.length} of ${rows.length} have filed ${esc(S0)}${soon.length ? `; due in the next two weeks: ${soon.map(x => `${esc(x.name.replace(/ (Ltd|Limited)\.?$/i, ''))} (${esc(sdate(x.nextRes.date))})`).join(', ')}` : ''}.`);
+  if (mg.length) li.push(`<b>Management changes in the last 90 days:</b> ${names(mg)}.`);
+  return li;
+}
+function cvChart(x) {
+  const r = x.r; if (!r || !(r.rev > 0)) return '';
+  const pts = [[qShift(r.label, -4), r.rev_prev_yoy, r.opm_prev_yoy], [qShift(r.label, -1), r.rev_prev_qoq, x.opmQ], [r.label, r.rev, r.opm]].filter(p => p[1] > 0);
+  if (pts.length < 2) return '';
+  const w = 420, h = 210, mx = Math.max(...pts.map(p => p[1])), bw = 64, gap = (w - 40 - pts.length * bw) / (pts.length - 1);
+  const X = i => 20 + i * (bw + gap), Y = v => h - 26 - v / mx * (h - 104);
+  const ms = pts.map(p => p[2]).filter(v => v != null), mlo = Math.min(...ms), mhi = Math.max(...ms), MY = v => mhi === mlo ? 40 : 58 - (v - mlo) / (mhi - mlo) * 36;
+  const line = pts.map((p, i) => p[2] == null ? '' : `${i && pts[i - 1][2] != null ? 'L' : 'M'}${X(i) + bw / 2} ${MY(p[2])}`).join('');
+  return `<svg class="cv-chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(r.revLabel)} and ${esc(r.opLabel)} margin by quarter">
+    ${pts.map((p, i) => `<rect class="bar" x="${X(i)}" y="${Y(p[1])}" width="${bw}" height="${h - 26 - Y(p[1])}" rx="5" fill="var(--saffron)" opacity="${i === pts.length - 1 ? .95 : .5}"/>
+      <text x="${X(i) + bw / 2}" y="${Y(p[1]) + 16}" text-anchor="middle" font-size="11" font-weight="600" fill="var(--fg)">₹${fmt(Math.round(p[1]))}</text>
+      <text x="${X(i) + bw / 2}" y="${h - 8}" text-anchor="middle" font-size="10.5" fill="var(--muted)">${esc(p[0])}</text>`).join('')}
+    <path d="${line}" fill="none" stroke="var(--v5)" stroke-width="2.2"/>
+    ${pts.map((p, i) => p[2] == null ? '' : `<circle cx="${X(i) + bw / 2}" cy="${MY(p[2])}" r="4" fill="var(--v5)"/><text x="${X(i) + bw / 2}" y="${MY(p[2]) - 9}" text-anchor="middle" font-size="10.5" fill="var(--v5)">${p[2].toFixed(1)}%</text>`).join('')}
+  </svg><p class="small muted">Bars: ${esc(r.revLabel.toLowerCase())} (₹ Cr) · line: ${esc(r.opLabel)} margin · ${esc(r.basis || '')} results as filed on BSE</p>`;
+}
+function cvDetail(x) {
+  const c = x.co, l = x.last, r = x.r, k = l?.key, s = k ? SUMC[k] : null;
+  if (k && !(k in SUMC)) loadSum(k).then(v => { SUMC[k] = v || null; if (S.view === 'cov') render(); });
+  const list = a => (a || []).filter(Boolean).map(t => `<li>${typeof t === 'string' ? siBold(t) : esc(t.question ? `${t.question} ${t.answer}` : JSON.stringify(t))}</li>`).join('');
+  const qa = (s?.qa_highlights || []).slice(0, 4).map(q => `<li><b>${esc(q.question)}</b> ${esc(q.answer)}</li>`).join('');
+  const quote = (s?.key_quotes || [])[0];
+  const pe = x.v?.pe, fpe = x.v?.fpe;
+  const chg = [];
+  if (l && x.prev) chg.push(`Concall read ${x.prev.score} → <b>${l.score}</b> (${l.score - x.prev.score >= 0 ? '+' : ''}${l.score - x.prev.score}) between ${esc(x.prev.period)} and ${esc(l.period)}.`);
+  else if (l) chg.push(`First call read (${esc(l.period)}). There's no earlier call to compare against.`);
+  if (r && x.dY != null) chg.push(`${esc(r.opLabel)} margin ${x.r.opm_prev_yoy?.toFixed(1)}% → <b>${x.opm.toFixed(1)}%</b> (${bpsS(x.dY)} YoY) on ${esc(r.revLabel.toLowerCase())} ${pctC(x.revY)}.`);
+  if (l?.gLine) chg.push(`${esc(x.guide[0])}: ${esc(l.gLine)}.`);
+  (c?.triggers || []).slice(0, 3).forEach(t => chg.push(esc(t.label)));
+  return `<div class="cv-d">
+    <div class="cv-dh"><div><h3>${esc(x.name)}</h3><span class="sub">${esc(x.symbol || '')}${x.sector ? ' · ' + esc(x.sector) : ''}${l ? ' · ' + esc(l.period) + ' concall' : ''}${x.mcapCr ? ` · MCap ${crS(x.mcapCr)}` : ''}${pe ? ` · P/E ${pe}` : ''}${fpe ? ` · fwd ${fpe}` : ''}</span></div>
+      <div class="cv-tags"><span class="cv-t" style="--pc:${x.guide[1]}">${esc(x.guide[0])}</span>${x.tone != null ? `<span class="cv-t" style="--pc:${CV_TONE[x.tone][1]}">Mgmt: ${CV_TONE[x.tone][0]}</span>` : ''}${c ? `<span class="cv-t" style="--pc:${vcol(c.score, c.veto)}">Score ${c.score}</span>` : ''}</div></div>
+    ${s?.headline ? `<p style="font-size:13.5px;font-weight:600;max-width:90ch">${esc(s.headline)}</p>` : ''}
+    <div class="cv-box hot"><h4>What changed since the last call${x.prev && l ? ` <span class="badge">${esc(x.prev.period)} vs ${esc(l.period)}</span>` : ''}</h4><ul>${chg.map(t => `<li>${t}</li>`).join('')}</ul></div>
+    ${c?.models?.length ? `<div class="cv-box"><h4>Mental models applied <span class="cv-mm" style="width:22px;height:22px;font-size:10.5px">${c.models.length}</span></h4><div class="cv-chips">${c.models.map(m => `<span>${esc(m)}</span>`).join('')}${c.archetype && c.archetype !== 'None' ? `<span style="border-color:var(--saffron);color:var(--saffron)">${esc(c.archetype)}</span>` : ''}</div></div>` : ''}
+    <div class="cv-g2">
+      <div class="cv-box">${cvChart(x) || '<p class="small muted">The chart appears once this quarter’s results are filed on BSE.</p>'}</div>
+      <div style="display:grid;gap:10px;align-content:start">
+        <div class="cv-g3">
+          <div class="cv-mt"><span class="eyebrow">${esc(r?.revLabel || 'Revenue')} · ${esc(r?.label || '')}</span><b>${r ? crS(r.rev) : '–'}</b><small>${pctC(x.revY)} YoY</small></div>
+          <div class="cv-mt"><span class="eyebrow">${esc(r?.opLabel || 'EBITDA')} margin</span><b>${x.opm != null ? x.opm.toFixed(1) + '%' : '–'}</b><small>${bpsS(x.dY)} YoY</small></div>
+          <div class="cv-mt"><span class="eyebrow">PAT · ${esc(r?.label || '')}</span><b>${r ? crS(r.pat) : '–'}</b><small>${pctC(r?.pat_yoy ?? null)} YoY</small></div>
+        </div>
+        ${s?.overview ? `<div class="cv-box cool"><h4>What changed this quarter</h4><p style="font-size:12px;line-height:1.55">${esc(s.overview)}</p></div>` : k && !(k in SUMC) ? '<div class="cv-box"><p class="small muted">Loading the call summary…</p></div>' : ''}
+      </div>
+    </div>
+    ${s ? `<div class="cv-g2">
+      <div class="cv-box hot"><h4>Concall takeaways</h4><ul>${list([...(s.demand_pricing || []).slice(0, 3), ...(s.capex_capacity || []).slice(0, 2)])}${qa}</ul></div>
+      <div style="display:grid;gap:12px;align-content:start">
+        <div class="cv-box cool"><h4>Guidance &amp; outlook <span class="cv-t" style="--pc:${x.guide[1]}">${esc(x.guide[0])}</span></h4><ul>${list((s.guidance_outlook || []).slice(0, 5))}</ul></div>
+        <div class="cv-box risk"><h4>Key risks</h4><ul>${list((s.risks_watch || []).slice(0, 4))}</ul></div>
+        ${s.management_tone ? `<div class="cv-box"><h4>Management tone</h4><p style="font-size:12px">${esc(s.management_tone)}</p></div>` : ''}
+      </div></div>
+      ${quote ? `<div class="cv-box"><h4>Key concall quote</h4><p class="cv-quote">“${esc(quote)}”</p></div>` : ''}` : ''}
+    <div class="cv-acts">${c ? `<button class="btn primary" data-open="${esc(x.id)}"${k ? ` data-k="${esc(k)}"` : ''}>Open the full call read</button>` : ''}${l?.src ? `<a class="btn" href="${esc(l.src)}" target="_blank" rel="noopener">Transcript ↗</a>` : ''}${r?.url ? `<a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener">Results filing ↗</a>` : ''}<a class="btn" href="https://www.bseindia.com/stock-share-price/x/x/${esc(x.id)}/" target="_blank" rel="noopener">BSE ↗</a></div>
+  </div>`;
+}
+function cvRow(x) {
+  const open = S.cov.open === x.id, c = x.co, mm = c?.models || [];
+  const resNote = !x.r ? (x.nextRes ? `Results due ${esc(sdate(x.nextRes.date))}` : 'Results not filed yet') : x.r.label !== D.season ? `Latest results ${esc(x.r.label)}` : '';
+  return `<div class="cv-r cv-row" role="button" tabindex="0" data-cov="${esc(x.id)}" aria-expanded="${open}">
+    <span style="min-width:0"><span class="nm">${esc(x.name.replace(/ (Ltd|Limited)\.?$/i, ''))}</span>${x.isNew ? '<span class="cv-new-tag">NEW</span>' : ''}<span class="sub">${esc(x.sector)}${x.mcapCr ? ' · ' + crS(x.mcapCr) : ''}${resNote ? ` · <span style="color:var(--warn)">${resNote}</span>` : ''}</span></span>
+    <span class="n" title="${esc(x.r?.opLabel || '')} margin">${x.opm != null ? x.opm.toFixed(1) + '%' : '–'}${x.r && x.r.opLabel !== 'EBITDA' ? `<span class="sub">${esc(x.r.opLabel)}</span>` : ''}</span>
+    <span class="n">${bpsS(x.dY)}</span><span class="n">${bpsS(x.dQ)}</span>
+    <span class="n">${pctC(x.revY)}</span><span class="n">${pctC(x.patY)}</span>
+    <span class="n" style="text-align:center">${mm.length ? `<span class="cv-mm" data-tt="${ttA(mm.join('\n'))}">${mm.length}</span>` : '<span class="g0">–</span>'}</span>
+    <span class="txt">${esc(x.tail) || '<span class="muted">–</span>'}</span>
+    <span><span class="cv-tags">${x.tone != null ? `<span class="cv-t" style="--pc:${CV_TONE[x.tone][1]}">${CV_TONE[x.tone][0]}</span>` : ''}<span class="cv-t" style="--pc:${x.guide[1]}">${esc(x.guide[0])}</span></span><span class="txt muted">${esc(x.last?.gLine || x.last?.thesis || '')}</span></span>
+  </div>${open ? cvDetail(x) : ''}`;
+}
+function vCov() {
+  if (!S.cov) S.cov = {open: '', q: ''};
+  const wait = resLoading('cov');
+  if (!VAL.data) loadVal().then(() => { if (S.view === 'cov') render(); });
+  const hd = head('Vantage coverage universe', `Every holding in one coverage note: ${esc(D.season)} margins and growth from the filed results, the mental models each call fits, the tailwind that matters most, and where management and guidance stand. Open a name for its full card.`, `
+      <ul><li>The universe is the holdings in <b>portfolio.yaml</b>. Add or remove a line there and the page follows on the next refresh.</li>
+      <li><b>Op. margin</b> is the ${esc('EBITDA')} margin from the latest results filed on BSE (PPOP or PBT for lenders); <b>Δ YoY / Δ QoQ</b> are its change in basis points on the same quarter last year and on the previous quarter. <b>Rev / PAT YoY</b> are this quarter on the same quarter last year (PAT growth is left blank when last year was a loss).</li>
+      <li><b>Mental models</b> counts the models the latest call fits (hover the number for the list). <b>Most important tailwind</b> is the top trigger read from the call.</li>
+      <li><b>Mgmt sentiment</b> is the tone read from the call; the tag shows where guidance went on that call: raised, cut, new, softer, or unchanged.</li>
+      <li>Click a row to open the company card: what changed since the last call, the quarter’s numbers, concall takeaways, guidance, risks and a key quote.</li></ul>`);
+  if (wait) return hd + wait;
+  if (!pfList().length) return hd + '<div class="empty">No holdings yet. Add them to portfolio.yaml in the engine’s repository.</div>';
+  const all = cvRows(), q = S.cov.q.trim().toLowerCase();
+  const rows = q ? all.filter(x => (x.name + ' ' + (x.symbol || '') + ' ' + x.sector + ' ' + x.big).toLowerCase().includes(q)) : all;
+  const groups = {}; rows.forEach(x => (groups[x.big] = groups[x.big] || []).push(x));
+  const order = Object.entries(groups).sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
+  order.forEach(([, xs]) => xs.sort((a, b) => (b.mcapCr || 0) - (a.mcapCr || 0)));
+  const withR = all.filter(x => x.r && x.r.label === D.season), revs = withR.map(x => x.revY), pats = withR.map(x => x.patY);
+  const mRev = cvMedian(revs), mPat = cvMedian(pats), g20 = revs.filter(v => v >= 20).length;
+  const mUp = withR.filter(x => x.dY != null && x.dY > 0).length, mN = withR.filter(x => x.dY != null).length;
+  const called = all.filter(x => x.tone != null), pos = called.filter(x => x.tone > 0).length, neu = called.filter(x => x.tone === 0).length, cau = called.filter(x => x.tone < 0).length;
+  const gk = k => all.filter(x => x.guide[2] === k).length;
+  const scored = all.filter(x => x.co), avg = scored.length ? Math.round(scored.reduce((n, x) => n + x.co.score, 0) / scored.length) : null;
+  const mkt = VAL.data?.checked;
+  const K = (l, v, s, c) => `<div class="cv-k" style="--tc:${c}"><span class="eyebrow">${l}</span><b>${v}</b><span>${s}</span></div>`;
+  return hd + `
+    <div class="cv-pills"><span>${all.length} companies · ${Object.keys(groups).length} sector groups</span><span>${withR.length} of ${all.length} filed ${esc(D.season)} results</span>
+      <span>Guidance: ${gk('raised')} raised · ${gk('cut')} cut · ${gk('new')} new · ${gk('held')} unchanged</span>${mkt ? `<span>Market data as of ${esc(fdate(mkt))}</span>` : ''}<span class="dim">Educational research · not investment advice</span></div>
+    <div class="cv-top">
+      <section class="card cv-new"><h3>What’s new this quarter</h3><ul>${cvNew(all).map(t => `<li>${t}</li>`).join('')}</ul>
+        <p class="cv-note"><b>Vantage coverage note:</b> a quarterly read on every holding, gathered in one place. It is not a buy, sell or hold recommendation, a price target or a list of preferred stocks.</p></section>
+      <div class="cv-kpis">
+        ${K('Companies covered', all.length, `across ${Object.keys(groups).length} sector groups`, 'var(--saffron)')}
+        ${K('Avg concall score', avg ?? '–', `${scored.length} with a call read`, avg == null ? 'var(--muted)' : vcol(avg))}
+        ${K('Median revenue growth', mRev == null ? '–' : pctS(mRev), `${esc(D.season)} YoY · ${g20} of ${withR.length} grew 20%+`, 'var(--up)')}
+        ${K('Median PAT growth', mPat == null ? '–' : pctS(mPat), `${esc(D.season)} YoY, across the book`, 'var(--up)')}
+        ${K('Margins up YoY', `${mUp} of ${mN}`, `operating margin above ${esc(qShift(D.season, -4))}`, 'var(--violet)')}
+        ${K('Management positive', `${pos} of ${called.length}`, `${neu} neutral · ${cau} cautious on the call`, 'var(--up)')}
+        ${K('Guidance raised', gk('raised'), `${gk('cut')} cut · ${gk('new')} new · ${gk('held')} unchanged · ${gk('soft')} softer`, 'var(--v5)')}
+        ${K('Market data', mkt ? esc(sdate(mkt)) : '–', 'closing market caps and multiples', 'var(--rose)')}
+      </div>
+    </div>
+    <div class="toolbar"><input type="search" id="cv-q" placeholder="Find a company or sector" value="${esc(S.cov.q)}" aria-label="Filter the coverage universe"><span class="count-line">${rows.length} of ${all.length} shown · grouped by sector, largest first</span></div>
+    <div class="cv-tbl">
+      <div class="cv-r hd"><span>Company</span><span class="n">Op. margin</span><span class="n">Δ YoY</span><span class="n">Δ QoQ</span><span class="n">Rev YoY</span><span class="n">PAT YoY</span><span class="n" style="text-align:center">Mental models</span><span>Most important tailwind</span><span>Mgmt sentiment</span></div>
+      ${order.map(([g, xs]) => `<div class="cv-sec">${esc(g)}<span>${xs.length}</span></div>${xs.map(cvRow).join('')}`).join('') || '<div class="empty">No holdings match.</div>'}
+    </div>
+    ${pfEtfs().length ? `<p class="small muted">ETFs in the portfolio, outside the coverage universe (no concalls or results): ${pfEtfs().map(e => `<b>${esc(e.symbol)}</b> ${esc(e.name)}`).join(' · ')}.</p>` : ''}`;
+}
+document.addEventListener('click', e => {
+  if (S.view !== 'cov') return;
+  const t = e.target; if (t.closest('a,button,[data-open],[data-tip]')) return;
+  const r = t.closest('[data-cov]'); if (!r) return;
+  S.cov.open = S.cov.open === r.dataset.cov ? '' : r.dataset.cov; render();
+  if (S.cov.open) setTimeout(() => document.querySelector(`[data-cov="${CSS.escape(S.cov.open)}"]`)?.scrollIntoView({block: 'start', behavior: 'smooth'}), 40);
+});
+document.addEventListener('keydown', e => { if (S.view === 'cov' && (e.key === 'Enter' || e.key === ' ') && e.target.matches?.('[data-cov]')) { e.preventDefault(); e.target.click(); } });
+document.addEventListener('input', e => { if (e.target.id === 'cv-q') { S.cov.q = e.target.value; const p = e.target.selectionStart; render(); const i = $('#cv-q'); if (i) { i.focus(); i.setSelectionRange(p, p); } } });
 
 /* Who's asking: analysts and investors on each call, read from the transcripts (participants.py) */
 const PEOPLE = () => D.people || {firms: [], calls: {}};
@@ -3556,7 +3791,7 @@ function vHelp() {
       <li><b>Share:</b> the <b>Copy link</b> button in a company panel gives a link that opens straight to that company.</li></ol></section>
     <section id="h-views"><h3>What each view is for</h3>
       <p>The menu on the left has twelve tabs. Tabs that hold closely related views show them as sub-tabs at the top of the page:
-        <b>My stocks</b> (My watchlist, My portfolio), <b>Calls</b> (All calls, First-time callers, Who’s asking), <b>Calendar</b> (Calls coming up, Results calendar),
+        <b>Vantage coverage universe</b> (Coverage universe, My portfolio, My watchlist), <b>Calls</b> (All calls, First-time callers, Who’s asking), <b>Calendar</b> (Calls coming up, Results calendar),
         <b>Results</b> (Results posted, Results to watch), <b>Sectors</b> (Sector tracker, Guidance leaders, Sector turns), <b>Idea lists</b> (Collector’s shelf,
         Near-term strength, Inflection watch) and <b>Global leaders</b> (Leaders dashboard, Event ledger). A tab reopens on the sub-tab you last used.</p>
       <div class="vguide">
@@ -4612,7 +4847,7 @@ document.addEventListener('click', e => {
   S.si.open = o.dataset.siOpen; store.set('si-open', S.si.open); render(true);
 });
 
-const RENDER = {intel: vIntel, bytes: vBytes, post: vPost, leaders: vLeaders, ledger: vLedger, home: vHome, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, inflect: vInflect, mgmt: vMgmt, help: vHelp};
+const RENDER = {intel: vIntel, bytes: vBytes, post: vPost, leaders: vLeaders, ledger: vLedger, home: vHome, cov: vCov, portfolio: vPortfolio, people: vPeople, ask: vAsk, watch: vWatch, calls: vCalls, upcoming: vUpcoming, rescal: vResCal, results: vResults, first: vFirst, tracker: vTracker, guidance: vGuidance, turns: vTurns, themes: vThemes, pead: vPead, shelf: vShelf, nearterm: vNear, pipeline: vPipeline, graised: vGraised, bottleneck: vBottleneck, inflect: vInflect, mgmt: vMgmt, help: vHelp};
 function render(scrollTop = false) {
   if (!D) return;
   renderNav(); renderQbar();
@@ -5145,6 +5380,6 @@ async function joinParts(j) {
   render();
   if (h.startsWith('co-') && byId[h.slice(3)]) openCo(h.slice(3));
   setTimeout(() => loadSums().then(() => renderNav()), 5000);  /* near-term count uses lines from the summaries; started late so an opened company's summary part comes first */
-  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'portfolio', 'pead', 'themes', 'turns'].includes(S.view)) render(); });
+  loadRes().then(() => { renderNav(); if (['rescal', 'results', 'home', 'watch', 'upcoming', 'cov', 'portfolio', 'pead', 'themes', 'turns'].includes(S.view)) render(); });
 })();
 </script>
