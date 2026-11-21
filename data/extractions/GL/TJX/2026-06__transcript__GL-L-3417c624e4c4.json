@@ -1,0 +1,203 @@
+{
+ "doc_id": "GL-L-3417c624e4c4",
+ "market": "GL",
+ "company_id": "TJX",
+ "name": "TJX Companies",
+ "doc_type": "transcript",
+ "date": "2026-11-18",
+ "period": "2026-06",
+ "title": "Earnings call transcript, Q3 2027",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Q3 comp +4% beat plan and FY sales raised to $63.8-64.0B, but Q4 EPS cut on fuel and Marmaxx margin fell 110bp to 13.8%; off-price supply is loose with inventory per store flat.",
+  "archetype": "None",
+  "mental_models": [
+   "Supply discipline",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 0,
+   "structure": 1,
+   "inventory": 1,
+   "demand": 1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "guidance",
+    "label": "FY sales raised to $63.8-64.0B",
+    "quote": "We are increasing our full-year consolidated sales guidance to a range of $63.8 billion-$64 billion, up 6% versus last year.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 EPS cut on fuel costs",
+    "quote": "Again, this is lower than our previously implied guidance due to higher expected fuel costs.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "margin",
+    "label": "Marmaxx margin down 110bp",
+    "quote": "Marmaxx's adjusted segment profit margin was 13.8%, down 110 basis points versus last year, primarily driven by higher freight and fuel costs.",
+    "direction": -1,
+    "confidence": 0.5
+   },
+   {
+    "type": "inventory",
+    "label": "Inventory per store flat",
+    "quote": "inventory on a per-store basis was flat versus last year",
+    "direction": 0,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Full-year comp sales",
+    "value": "4%",
+    "horizon": "FY27",
+    "change": "raised",
+    "quote": "we now expect overall comp sales to increase by 4%"
+   },
+   {
+    "metric": "Full-year consolidated sales",
+    "value": "$63.8B-$64.0B",
+    "horizon": "FY27",
+    "change": "raised",
+    "quote": "We are increasing our full-year consolidated sales guidance to a range of $63.8 billion-$64 billion"
+   },
+   {
+    "metric": "Full-year pretax profit margin",
+    "value": "12.0%-12.1%",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "We are planning adjusted pre-tax profit margin to be in the range of 12%-12.1%"
+   },
+   {
+    "metric": "Full-year gross margin",
+    "value": "31.2%-31.3%",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "We continue to expect full-year adjusted gross margin to be in the range of 31.2%-31.3%"
+   },
+   {
+    "metric": "Full-year diluted EPS",
+    "value": "$5.17-$5.20",
+    "horizon": "FY27",
+    "change": "raised",
+    "quote": "we expect our full-year diluted earnings per share to be in the range of $5.17-$5.20"
+   },
+   {
+    "metric": "Q4 comp sales",
+    "value": "2%-3%",
+    "horizon": "Q4 FY27",
+    "change": "new",
+    "quote": "we are planning overall comp sales to be up 2%-3%"
+   },
+   {
+    "metric": "Q4 diluted EPS",
+    "value": "$1.42-$1.45",
+    "horizon": "Q4 FY27",
+    "change": "cut",
+    "quote": "we expect adjusted fourth quarter diluted earnings per share to be in the range of $1.42-$1.45"
+   },
+   {
+    "metric": "Q4 pretax profit margin",
+    "value": "11.8%-11.9%",
+    "horizon": "Q4 FY27",
+    "change": "cut",
+    "quote": "Fourth quarter adjusted pre-tax profit margin is lower than our previously implied guidance"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Full-year comp sales",
+    "outcome": "met",
+    "quote": "we now expect overall comp sales to increase by 4%"
+   },
+   {
+    "metric": "Full-year consolidated sales",
+    "outcome": "met",
+    "quote": "We are increasing our full-year consolidated sales guidance to a range of $63.8 billion-$64 billion"
+   },
+   {
+    "metric": "Full-year pretax profit margin",
+    "outcome": "missed",
+    "quote": "we are planning adjusted pre-tax profit margin to be in the range of 12%-12.1%"
+   },
+   {
+    "metric": "Full-year gross margin",
+    "outcome": "held",
+    "quote": "We continue to expect full-year adjusted gross margin to be in the range of 31.2%-31.3%"
+   },
+   {
+    "metric": "Full-year diluted EPS",
+    "outcome": "met",
+    "quote": "we expect our full-year diluted earnings per share to be in the range of $5.17-$5.20"
+   },
+   {
+    "metric": "Full-year share buyback",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Q2 comp sales",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Q2 diluted EPS",
+    "outcome": "not_discussed"
+   }
+  ],
+  "themes": [
+   "Tariffs & trade policy",
+   "Consolidation / competitor exits",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Marmaxx execution issues",
+    "quote": "It was really just, as I said last time when we had the call, it was just in a handful of areas"
+   },
+   {
+    "label": "Q4 fuel-driven EPS cut",
+    "quote": "Fourth quarter adjusted pre-tax profit margin is lower than our previously implied guidance, as we are now planning for higher fuel costs versus our prior plan"
+   }
+  ],
+  "analyst_mix": {
+   "margin": 3,
+   "growth": 4,
+   "balance_sheet": 0,
+   "capex": 0,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Marmaxx ticket trend",
+    "quote": "we do not really give guidance on that because we do not dictate it internally"
+   },
+   {
+    "topic": "FY28 freight and margin impact",
+    "quote": "I'm not giving guidance on next year as far as any impacts."
+   },
+   {
+    "topic": "Marketing spend quantification",
+    "quote": "I will not give you the exact number"
+   }
+  ],
+  "hedge_index": 0.4,
+  "entities": []
+ }
+}

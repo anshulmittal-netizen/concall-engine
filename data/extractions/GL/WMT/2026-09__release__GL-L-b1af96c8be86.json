@@ -1,0 +1,172 @@
+{
+ "doc_id": "GL-L-b1af96c8be86",
+ "market": "GL",
+ "company_id": "WMT",
+ "name": "Walmart",
+ "doc_type": "release",
+ "date": "2026-11-19",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Diversified",
+  "thesis": "Walmart raised FY27 cc net sales growth to 4.9–5.2% and adj. EPS to $2.84–2.89, but capex guide rose to ~4.0% of sales and inventory grew 8.1% ahead of Flipkart timing.",
+  "archetype": "None",
+  "mental_models": [
+   "Capital cycle",
+   "Competitive capex"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 1,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Approximately 4.0% of net sales"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex guide 3.5% → 4.0% of sales",
+    "quote": "Approximately 4.0% of net sales",
+    "direction": -1,
+    "confidence": 0.8
+   },
+   {
+    "type": "inventory",
+    "label": "Global inventory up 8.1% vs sales 5.2%",
+    "quote": "Global inventory up 8.1%, reflecting strategic initiatives, timing of seasonal events and cost inflation",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 EPS raised to $2.84–2.89",
+    "quote": "Adjusted EPS is expected to be $2.84 to $2.89 for FY27.",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "demand",
+    "label": "Walmart U.S. eCommerce up 23%",
+    "quote": "Walmart U.S. eCommerce grew 23%",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 net sales (cc)",
+    "value": "+4.9% to 5.2%",
+    "horizon": "FY27",
+    "change": "raised",
+    "quote": "Net sales for FY27 are expected to grow 4.9% to 5.2%"
+   },
+   {
+    "metric": "FY27 adj. operating income (cc)",
+    "value": "+8.0% to 8.6%",
+    "horizon": "FY27",
+    "change": "raised",
+    "quote": "adjusted operating income to grow 8.0% to 8.6%, all in constant currency"
+   },
+   {
+    "metric": "FY27 adjusted EPS",
+    "value": "$2.84 to $2.89",
+    "horizon": "FY27",
+    "change": "raised",
+    "quote": "Adjusted EPS is expected to be $2.84 to $2.89 for FY27."
+   },
+   {
+    "metric": "FY27 capital expenditures",
+    "value": "Approximately 4.0% of net sales",
+    "horizon": "FY27",
+    "change": "raised",
+    "quote": "Approximately 4.0% of net sales"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q2 FY27 net sales (cc)",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Q2 FY27 adjusted operating income (cc)",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Q2 FY27 adjusted EPS",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "FY27 adj. operating income (cc)",
+    "outcome": "met"
+   },
+   {
+    "metric": "FY27 net sales (cc)",
+    "outcome": "met"
+   },
+   {
+    "metric": "FY27 capital expenditures",
+    "outcome": "missed"
+   },
+   {
+    "metric": "FY27 adjusted EPS",
+    "outcome": "met"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Flipkart",
+    "relation": "partner"
+   },
+   {
+    "name": "PhonePe",
+    "relation": "partner"
+   },
+   {
+    "name": "VIZIO",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Premiumisation in consumption",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Capex guide raised to ~4.0% of sales",
+    "quote": "Approximately 4.0% of net sales"
+   },
+   {
+    "label": "Free cash flow down $2.0B YTD",
+    "quote": "Free cash flow for the nine months ended October 31, 2026 was $6.8 billion, which represents a decrease of $2.0 billion"
+   },
+   {
+    "label": "Inventory up 8.1% vs sales growth",
+    "quote": "Global inventory up 8.1%, reflecting strategic initiatives, timing of seasonal events and cost inflation"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

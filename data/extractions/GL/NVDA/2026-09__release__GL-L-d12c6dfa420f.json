@@ -1,0 +1,220 @@
+{
+ "doc_id": "GL-L-d12c6dfa420f",
+ "market": "GL",
+ "company_id": "NVDA",
+ "name": "Nvidia",
+ "doc_type": "release",
+ "date": "2026-11-17",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.89,
+ "read": {
+  "subsector": "Semiconductors & electronics",
+  "thesis": "Q3 FY27 revenue $115.8B (+103% y/y) beat the $108B guide, but Q4 guide of $130B and 71-72% GM show strong demand with receivables ballooning to $81.0B versus $38.5B a year ago.",
+  "archetype": "Supply-side dominance",
+  "mental_models": [
+   "Backlog conversion",
+   "Working-capital stress",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": -1,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Announced plans with Amkor, IBIDEN, King Yuan, Samsung Electro-Mechanics, SPIL and Unimicron to scale critical manufacturing capabilities.",
+   "quote": "Announced plans with global supply chain partners, including Amkor Technology, IBIDEN, King Yuan Electronics, Samsung Electro-Mechanics, Siliconware Precision Industries and Unimicron Technology Corporation, to scale critical manufacturing capabilities to meet demand for NVIDIA infrastructure."
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Receivables $38.5B → $81.0B",
+    "quote": "Accounts receivable, net 81,033 38,466",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 revenue guide $130B ±3%",
+    "quote": "Revenue is expected to be $130.0 billion, plus or minus 3%.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Supply chain capacity scale-up plans",
+    "quote": "to scale critical manufacturing capabilities to meet demand for NVIDIA infrastructure.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Q3 data center revenue up 110% y/y",
+    "quote": "Data Center revenue of $107.6 billion, up 110% from a year ago.",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Q4 FY27 revenue",
+    "value": "$130.0 billion plus or minus 3%",
+    "horizon": "Q4 FY27",
+    "change": "new",
+    "quote": "Revenue is expected to be $130.0 billion, plus or minus 3%."
+   },
+   {
+    "metric": "Q4 FY27 gross margin",
+    "value": "71.0% to 72.0%",
+    "horizon": "Q4 FY27",
+    "change": "held",
+    "quote": "GAAP and non-GAAP gross margins are expected to be between 71.0% and 72.0%."
+   },
+   {
+    "metric": "Q4 FY27 non-GAAP OpEx",
+    "value": "$10.7 billion",
+    "horizon": "Q4 FY27",
+    "change": "new",
+    "quote": "non-GAAP operating expenses are expected to be approximately $11.0 billion and $10.7 billion, respectively."
+   },
+   {
+    "metric": "FY27 tax rate",
+    "value": "16.0% to 18.0%",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "NVIDIA expects GAAP and non-GAAP tax rates to be between 16.0% and 18.0%"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q3 gross margin",
+    "outcome": "met",
+    "quote": "GAAP and non-GAAP gross margins were 74.8% and 74.9%, respectively."
+   },
+   {
+    "metric": "Q4 gross margin",
+    "outcome": "held",
+    "quote": "GAAP and non-GAAP gross margins are expected to be between 71.0% and 72.0%."
+   },
+   {
+    "metric": "FY27 tax rate",
+    "outcome": "held",
+    "quote": "NVIDIA expects GAAP and non-GAAP tax rates to be between 16.0% and 18.0%"
+   },
+   {
+    "metric": "FY28 revenue growth",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "FY27 OpEx growth",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Data center CPU revenue FY28",
+    "outcome": "not_discussed",
+    "quote": ""
+   }
+  ],
+  "entities": [
+   {
+    "name": "Amkor Technology",
+    "relation": "partner"
+   },
+   {
+    "name": "IBIDEN",
+    "relation": "partner"
+   },
+   {
+    "name": "King Yuan Electronics",
+    "relation": "partner"
+   },
+   {
+    "name": "Samsung Electro-Mechanics",
+    "relation": "partner"
+   },
+   {
+    "name": "Siliconware Precision Industries",
+    "relation": "partner"
+   },
+   {
+    "name": "Unimicron Technology",
+    "relation": "partner"
+   },
+   {
+    "name": "CoreWeave",
+    "relation": "customer"
+   },
+   {
+    "name": "Microsoft Azure",
+    "relation": "customer"
+   },
+   {
+    "name": "Google Cloud",
+    "relation": "customer"
+   },
+   {
+    "name": "Oracle Cloud Infrastructure",
+    "relation": "customer"
+   },
+   {
+    "name": "Meta",
+    "relation": "customer"
+   },
+   {
+    "name": "MediaTek",
+    "relation": "partner"
+   },
+   {
+    "name": "Hugging Face",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Pharma CDMO / outsourcing",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Receivables up ~2.1x y/y to $81.0B",
+    "quote": "Accounts receivable, net 81,033 38,466"
+   },
+   {
+    "label": "Inventories up to $39.7B from $21.4B",
+    "quote": "Inventories 39,724 21,403"
+   },
+   {
+    "label": "Q3 operating cash flow $48.3B vs receivables build of $18.1B in quarter",
+    "quote": "Accounts receivable (18,052) (5,583)"
+   },
+   {
+    "label": "Interim CEO and CEO search; independent board investigation",
+    "quote": "expectations with respect to NVIDIA’s leadership transition and the search for a new chief executive officer"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.3
+ }
+}

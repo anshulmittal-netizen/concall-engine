@@ -1,0 +1,173 @@
+{
+ "doc_id": "GL-L-557df826beba",
+ "market": "GL",
+ "company_id": "WMT",
+ "name": "Walmart",
+ "doc_type": "presentation",
+ "date": "2026-11-19",
+ "period": "2026-09",
+ "title": "8-K · EX-99.2",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Retail",
+  "thesis": "Walmart raised FY27 cc net sales guide to +4.9–5.2% and adj. operating income to +8.0–8.6%, but capex guide was held at ~4.0% of sales after rising from 3.5%, with Q3 adj. op income +5.5% cc lagging sales.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Operating leverage",
+   "Capital cycle",
+   "Customer stickiness"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 2,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "Approximately 4.0% of net sales"
+  },
+  "triggers": [
+   {
+    "type": "supply",
+    "label": "Capex guide raised 3.5% → 4.0% of sales",
+    "quote": "Capital expenditures Approximately 3.5% of net sales Approximately 4.0% of net sales Unchanged",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY27 cc net sales guide raised to 4.9–5.2%",
+    "quote": "Net sales (cc) Increase 3.5% to 4.5% Increase 4.0% to 5.0% Increase 4.9% to 5.2%",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Adj. EPS guide raised to $2.84–2.89",
+    "quote": "Adj. EPS $2.75 to $2.85 $2.80 to $2.87 $2.84 to $2.89",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "inventory",
+    "label": "Int'l inventory +15.6% ahead of BBD",
+    "quote": "Growth driven by inventory build-up leading into BBD event",
+    "direction": -1,
+    "confidence": 0.3
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 net sales (cc)",
+    "value": "Increase 4.9% to 5.2%",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "Net sales (cc) Increase 3.5% to 4.5% Increase 4.0% to 5.0% Increase 4.9% to 5.2%"
+   },
+   {
+    "metric": "FY27 adj. operating income (cc)",
+    "value": "Increase 8.0% to 8.6%",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "Adj. operating income (cc) Increase 6.0% to 8.0% Increase 7.0% to 8.5% Increase 8.0% to 8.6%"
+   },
+   {
+    "metric": "FY27 adjusted EPS",
+    "value": "$2.84 to $2.89",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "Adj. EPS $2.75 to $2.85 $2.80 to $2.87 $2.84 to $2.89"
+   },
+   {
+    "metric": "FY27 capital expenditures",
+    "value": "Approximately 4.0% of net sales",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "Capital expenditures Approximately 3.5% of net sales Approximately 4.0% of net sales Unchanged"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Q2 FY27 net sales (cc)",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Q2 FY27 adjusted operating income (cc)",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Q2 FY27 adjusted EPS",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "FY27 adj. operating income (cc)",
+    "outcome": "met",
+    "quote": "Adj. operating income (cc) Increase 6.0% to 8.0% Increase 7.0% to 8.5% Increase 8.0% to 8.6%"
+   },
+   {
+    "metric": "FY27 net sales (cc)",
+    "outcome": "met",
+    "quote": "Net sales (cc) Increase 3.5% to 4.5% Increase 4.0% to 5.0% Increase 4.9% to 5.2%"
+   },
+   {
+    "metric": "FY27 capital expenditures",
+    "outcome": "missed",
+    "quote": "Approximately 4.0% of net sales"
+   },
+   {
+    "metric": "FY27 adjusted EPS",
+    "outcome": "met",
+    "quote": "Adj. EPS $2.75 to $2.85 $2.80 to $2.87 $2.84 to $2.89"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Flipkart",
+    "relation": "partner"
+   },
+   {
+    "name": "PhonePe",
+    "relation": "partner"
+   },
+   {
+    "name": "Symbotic",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Pharma CDMO / outsourcing",
+   "Housing & real-estate cycle"
+  ],
+  "red_flags": [
+   {
+    "label": "Adj. op income lagging sales in Q3",
+    "quote": "Adjusted operating income (cc) increased +5.5% relative to +4.4% growth in net sales (cc)"
+   },
+   {
+    "label": "Capex up $4.0B YTD; FCF down $2.0B",
+    "quote": "Free cash flow decreased $2.0 billion due to $4.0 billion in increased capital expenditures"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.2
+ }
+}

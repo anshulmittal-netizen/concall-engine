@@ -1,0 +1,157 @@
+{
+ "doc_id": "GL-L-8b100d9cfe3b",
+ "market": "GL",
+ "company_id": "TJX",
+ "name": "TJX Companies",
+ "doc_type": "release",
+ "date": "2026-11-18",
+ "period": "2026-09",
+ "title": "8-K · EX-99.1",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Other",
+  "thesis": "Q3 beat on comps (+4%) and adjusted margin, but FY27 adjusted EPS guide is $5.17–5.20 versus prior $5.15–5.20 and Q4 adjusted EPS $1.42–1.45 is raised only on tariff accrual and fuel costs; Q4 comp cut to 2–3%.",
+  "archetype": "None",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 0,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "quote": ""
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "inventory",
+    "label": "Inventory per store flat y/y",
+    "quote": "Consolidated inventories on a per-store basis as of October 31, 2026, including distribution centers, but excluding inventory in transit and the Company’s e-commerce sites, were flat on both a reported and constant currency basis, versus last year.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "guidance",
+    "label": "Q4 comp cut to 2% to 3%",
+    "quote": "For the fourth quarter of Fiscal 2027, the Company is planning consolidated comparable sales to be up 2% to 3%.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Adjusted gross margin down 0.5pt on freight and fuel",
+    "quote": "Excluding a 0.8 percentage point net benefit from tariff refunds, adjusted gross profit margin was 32.1%, down 0.5 percentage points versus the prior year. This was driven by higher freight and fuel costs.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 comp sales",
+    "value": "up 4%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "For the full year Fiscal 2027, the Company now expects consolidated comparable sales to be up 4%."
+   },
+   {
+    "metric": "FY27 adjusted pretax margin",
+    "value": "12.0% to 12.1%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "the Company continues to expect its full-year adjusted pretax profit margin to be in the range of 12.0% to 12.1%."
+   },
+   {
+    "metric": "FY27 adjusted diluted EPS",
+    "value": "$5.17 to $5.20",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "the Company expects its full year outlook for adjusted diluted earnings per share to be in the range of $5.17 to $5.20."
+   },
+   {
+    "metric": "Q4 adjusted EPS",
+    "value": "$1.42 to $1.45",
+    "change": "new",
+    "horizon": "Q4 FY27",
+    "quote": "the Company expects adjusted diluted earnings per share to be in the range of $1.42 to $1.45."
+   },
+   {
+    "metric": "Q4 comp sales",
+    "value": "up 2% to 3%",
+    "change": "new",
+    "horizon": "Q4 FY27",
+    "quote": "the Company is planning consolidated comparable sales to be up 2% to 3%."
+   },
+   {
+    "metric": "Share repurchase FY27",
+    "value": "approximately $3.0 billion",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "The Company now expects to repurchase approximately $3.0 billion of TJX stock during Fiscal 2027."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 adjusted diluted EPS",
+    "outcome": "met",
+    "quote": "the Company expects its full year outlook for adjusted diluted earnings per share to be in the range of $5.17 to $5.20."
+   },
+   {
+    "metric": "FY27 adjusted pretax margin",
+    "outcome": "met",
+    "quote": "the Company continues to expect its full-year adjusted pretax profit margin to be in the range of 12.0% to 12.1%."
+   },
+   {
+    "metric": "FY27 comp sales",
+    "outcome": "met",
+    "quote": "For the full year Fiscal 2027, the Company now expects consolidated comparable sales to be up 4%."
+   },
+   {
+    "metric": "FY27 net sales",
+    "outcome": "not_discussed"
+   },
+   {
+    "metric": "Q3 adjusted EPS",
+    "outcome": "met",
+    "quote": "Q3 adjusted diluted earnings per share of $1.34, up 5% versus last year and above the Company's plan"
+   },
+   {
+    "metric": "Q4 adjusted EPS",
+    "outcome": "missed",
+    "quote": "the Company expects adjusted diluted earnings per share to be in the range of $1.42 to $1.45."
+   },
+   {
+    "metric": "Store growth rate",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [],
+  "red_flags": [
+   {
+    "label": "Q4 comp guide cut; Marmaxx comp only +2%",
+    "quote": "while we believe the unseasonably warm weather in the U.S. and Canada has been holding back consumer demand in some categories"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 0,
+   "growth": 0,
+   "margin": 0,
+   "other": 0
+  },
+  "evasions": [],
+  "hedge_index": 0.4,
+  "themes": []
+ }
+}
