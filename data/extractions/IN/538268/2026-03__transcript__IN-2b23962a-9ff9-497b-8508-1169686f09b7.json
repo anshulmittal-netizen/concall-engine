@@ -392,5 +392,36 @@
    "analysts": "probing",
    "note": "Management was confident on Chennai, long-term growth and the 40% margin path, but cautious on near-term visibility and declined to give footfall, EBITDA or deal-timing forecasts; analysts pressed on Chennai footfall moderation from the December peak and Hyderabad's second year of decline."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "volume",
+  "vol": 30.0,
+  "organic": "acquisition_led",
+  "oneOffs": [
+   {
+    "kind": "accounting_change",
+    "what": "Reversal of certain tax and Labour Code-related provisions created in Q3 FY26 aided Q4 PAT (+49% YoY); reversal flatters profit growth, size not quantified in brief",
+    "effect": "flatters",
+    "size": "moderate",
+    "affects": "both"
+   },
+   {
+    "kind": "one_off_loss",
+    "what": "One-time Labour Code costs were absorbed in FY26 margins (cited in Q&A), depressing the base for full-year margin comparison",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "both"
+   },
+   {
+    "kind": "base_had_one_off_gain",
+    "what": "FY25 PAT included INR24.1 crore deferred-tax credit, making FY26 PAT (-25% YoY) look worse than the recurring business",
+    "effect": "depresses",
+    "size": "major",
+    "affects": "both"
+   }
+  ],
+  "verdict": "mixed",
+  "why": "Q4 revenue growth of 40% (INR135 crore vs INR96.7 crore) was driven mainly by volume from the new Chennai park, which is a new entity, so it is largely acquisition-like new capacity rather than organic same-park growth. Q4 PAT growth of 49% was aided by reversal of Q3 provisions, which is not recurring, while FY26 PAT decline of 25% is inflated by the INR24.1 crore FY25 deferred-tax credit base."
  }
 }

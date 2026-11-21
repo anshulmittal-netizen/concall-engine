@@ -426,5 +426,29 @@
    "analysts": "probing",
    "note": "Management was confident on volumes (25% internal target, Q1 volume +25%), regulatory tailwinds and pricing discipline, but cautious on forward numbers: it held EBITDA at INR12/kg without guiding higher, did not quantify the liquid metal margin premium, and explained the INR36 crore hedge entry and "
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "price",
+  "vol": 25.0,
+  "organic": "mostly_organic",
+  "oneOffs": [
+   {
+    "kind": "other",
+    "what": "INR36 cr cash flow hedge accounting entry loaded in other expenses (management says not a hedging cost); it depresses profit, not revenue",
+    "effect": "depresses",
+    "size": "moderate",
+    "affects": "profit"
+   },
+   {
+    "kind": "other",
+    "what": "Reclassification of FX and commodity hedge ineffectiveness from other income into adjusted EBITDA; prior-period comparability affected, direction and size not quantified",
+    "effect": "flatters",
+    "size": "minor",
+    "affects": "profit"
+   }
+  ],
+  "verdict": "mixed",
+  "why": "Revenue rose 65% YoY to INR3,122 crore, mainly because average realisation rose about 40% (INR226-230/kg to INR350/kg) on pass-through aluminium prices, while total volume grew about 25%, so price is the dominant driver of the headline revenue jump; the brief gives no one-off gain in revenue, but the INR36 crore hedge-accounting charge depresses profit and the EBITDA reclassification makes prior-p"
  }
 }

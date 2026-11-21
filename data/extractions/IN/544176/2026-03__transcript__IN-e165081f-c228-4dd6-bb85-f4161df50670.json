@@ -425,5 +425,43 @@
    "analysts": "probing",
    "note": "Management was confident on growth, asset quality (GNPA 1.08%, collections above 99.8%) and reiterated FY27 guidance, but was deliberately cautious on LAP and expects a 2-3 quarter rate hold; analysts probed spreads, LAP mix, DPD trend and ticket size, and some answers were corrected live."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "volume",
+  "vol": 20.0,
+  "organic": "organic",
+  "oneOffs": [
+   {
+    "kind": "one_off_loss",
+    "what": "INR13.5 crore ESOP cost in Q4 FY26 described by management as one-time (depresses Q4 profit)",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "both"
+   },
+   {
+    "kind": "catch_up_or_pull_forward",
+    "what": "Q4 DA pushed from Q3 inflates other income; about INR6-7 crore of Q4 fee income was one-time",
+    "effect": "flatters",
+    "size": "minor",
+    "affects": "both"
+   },
+   {
+    "kind": "one_off_loss",
+    "what": "INR16 crore Labour Code exceptional charge taken in Q3 FY26, depressing reported FY26 PAT (INR1,096 crore vs INR1,108 crore before the charge)",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "both"
+   },
+   {
+    "kind": "subsidy_or_incentive",
+    "what": "PMAY subsidies of about INR50 crore to about 15,000-16,000 customers supported home loan disbursements in Q4",
+    "effect": "flatters",
+    "size": "minor",
+    "affects": "both"
+   }
+  ],
+  "verdict": "sustainable",
+  "why": "Q4 FY26 growth was volume-led: AUM up 20% YoY and disbursements up 20% to a record INR3,087 crore, with home loans up about 26%. The one-offs identified (ESOP cost, Labour Code charge, one-time fee income, PMAY subsidy support) are individually small and roughly offset, so the headline growth is largely from the recurring business."
  }
 }

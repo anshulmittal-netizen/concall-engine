@@ -442,5 +442,36 @@
    "analysts": "probing",
    "note": "Management was confident on volume resilience (Q2 ~6.4%, H1 ~8%), the 18-20% EBITDA band and VAE benefit, but cautious on Q2 margins, pass-through of inflation and anti-dumping duty; analysts pressed on gross margin recovery, industrial and international lags and whether competitors can pass on cost"
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "price",
+  "vol": 6.4,
+  "organic": "mostly_organic",
+  "oneOffs": [
+   {
+    "kind": "base_had_one_off_gain",
+    "what": "Q2 FY26 base was ~11% like-for-like volume growth, a high base rather than a weak one; no one-off gain in the base is named in the brief, so this is a headwind to volume growth rather than a stated on",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "both"
+   },
+   {
+    "kind": "other",
+    "what": "Standalone PAT growth of ~15% was aided by other income, which flatters profit growth versus operating business",
+    "effect": "flatters",
+    "size": "minor",
+    "affects": "both"
+   },
+   {
+    "kind": "catch_up_or_pull_forward",
+    "what": "Q1 trade inventory fill pulled volume into Q1; management says full impact borne in Q2, which depressed Q2 volume",
+    "effect": "depresses",
+    "size": "moderate",
+    "affects": "both"
+   }
+  ],
+  "verdict": "mixed",
+  "why": "Q2 standalone net sales grew 14.8% with decorative value up ~14.5%, of which roughly 6.4% was volume and the rest price from two hikes of ~7% (Q1) and ~5% (Q2), so price is the main driver; profit growth is weaker (standalone PBDIT +5.9%, margin 17.1% vs 18.5%) and PAT growth was helped by other income."
  }
 }

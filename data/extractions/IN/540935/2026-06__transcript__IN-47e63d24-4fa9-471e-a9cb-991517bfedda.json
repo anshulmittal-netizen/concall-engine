@@ -386,5 +386,36 @@
    "analysts": "probing",
    "note": "Management was confident on the record EBITDA and volume recovery but cautious on sustainability, declining to quantify inventory, mix and ASP effects and wanting another quarter before changing long-term margin guidance; analysts pushed on how much of the Q1 margin is structural versus one-off."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "balanced",
+  "vol": 5.0,
+  "organic": "mostly_organic",
+  "oneOffs": [
+   {
+    "kind": "inventory_gain",
+    "what": "Finished-goods/inventory price spike benefit flagged as a red flag; management did not quantify, but said ~INR 21,000/MT would remain without these gains vs INR 35,458/MT reported",
+    "effect": "flatters",
+    "size": "major",
+    "affects": "both"
+   },
+   {
+    "kind": "other",
+    "what": "Customer restocking ahead of festive/summer demand and feedstock-fear buying inflated Q1 volumes; not quantified",
+    "effect": "flatters",
+    "size": "moderate",
+    "affects": "revenue"
+   },
+   {
+    "kind": "low_base",
+    "what": "AMET volume down 4% YoY after about seven weeks lost at Egypt site from West Asia port disruption; year-ago base not described as weak, so this depresses AMET growth in Q1",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "revenue"
+   }
+  ],
+  "verdict": "one_off_heavy",
+  "why": "Consolidated volume grew 5% YoY, but EBITDA/MT of INR 35,458 vs roughly INR 21,000 underlying (management's own figure) means most of the near-doubling in EBITDA comes from reformulation tailwinds, freight/price pass-through, mix and inventory gains that management says may not persist, with restocking also inflating volumes."
  }
 }

@@ -405,5 +405,36 @@
    "analysts": "probing",
    "note": "Management was confident on growth, market share and the FY29 ~99% combined ratio path, but non-committal on commission regulation and defensive on the retail claims ratio and onerous contract losses, with analysts probing those areas."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "balanced",
+  "vol": 24.0,
+  "organic": "organic",
+  "oneOffs": [
+   {
+    "kind": "one_off_loss",
+    "what": "Group health onerous-contract loss components recognised at 9M and unwound in Q4; analyst notes similar amounts existed in prior year, so net effect on YoY growth is unclear",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "profit"
+   },
+   {
+    "kind": "subsidy_or_incentive",
+    "what": "Indian GAAP EOM excess transferred to shareholder account until 31 Dec, then reversed; management calls it optical with no net impact",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "profit"
+   },
+   {
+    "kind": "one_time_order",
+    "what": "GST removal on retail health cited as a tailwind to H2 FY26 ticket size (~14-14.5% H2 vs H1) and volume; industry-wide, not a one-time order but a non-repeating demand lift",
+    "effect": "flatters",
+    "size": "moderate",
+    "affects": "revenue"
+   }
+  ],
+  "verdict": "mixed",
+  "why": "FY26 GWP grew 27.4% with retail value growth of 35% from ~24% volume growth plus ~14-14.5% H2-over-H1 ticket-size growth, so part of the retail lift is price/ticket-size driven and GST-related, which may not repeat; the brief gives no quantified one-off gain, and the onerous-contract and EOM reversal items are minor and partly offsetting."
  }
 }

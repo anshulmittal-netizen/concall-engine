@@ -384,5 +384,29 @@
    "analysts": "probing",
    "note": "Management was confident on operations, dual fuel and raw material sourcing, and on the NBR timeline, but cautious on margin sustainability, MENA export volumes and oil-linked realisations; analysts pushed on how much of margin came from inventory gains and what is sustainable."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "price",
+  "vol": -11.0,
+  "organic": "mostly_organic",
+  "oneOffs": [
+   {
+    "kind": "inventory_gain",
+    "what": "Inventory gains added about 2% to EBITDA margin in Q1 FY27 (management estimate)",
+    "effect": "flatters",
+    "size": "major",
+    "affects": "both"
+   },
+   {
+    "kind": "base_had_one_off_gain",
+    "what": "Q4 FY26 included ~Rs 4 crore one-off impairment (Q4 base, not Q1 YoY base; affects sequential read only)",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "profit"
+   }
+  ],
+  "verdict": "one_off_heavy",
+  "why": "Revenue rose 40% YoY to Rs 526 crore on price realisations with volumes down 10-12% (exports hit, domestic up about 10%), and the EBITDA margin jump to 22.3% was lifted by inventory gains of roughly 2 points that management itself does not treat as sustainable, so the headline PAT growth of 311% overstates the recurring business."
  }
 }

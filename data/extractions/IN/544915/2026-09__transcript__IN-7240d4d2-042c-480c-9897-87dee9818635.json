@@ -423,5 +423,36 @@
    "analysts": "probing",
    "note": "Management was confident on growth, cash conversion and return on capital, and cautious on H2 revenue per item and NCLT (sub judice); analysts pressed on item-per-user, revenue-per-item assumptions and capex versus revenue growth."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "volume",
+  "vol": 45.0,
+  "organic": "mostly_organic",
+  "oneOffs": [
+   {
+    "kind": "one_off_loss",
+    "what": "Q2 FY27 normalized PAT excludes one-time items; ~6 crore deferred tax asset charge and ~80 lakh IPO expense sit in reported PAT (brief says reported PAT distorted)",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "profit"
+   },
+   {
+    "kind": "exceptional_gain",
+    "what": "~1.2 crore gratuity/leave reversal gain in Q2 FY27 (excluded from normalized figures)",
+    "effect": "flatters",
+    "size": "minor",
+    "affects": "profit"
+   },
+   {
+    "kind": "base_had_one_off_gain",
+    "what": "Q2 FY26 reported PAT base of 48.6 crore included ~33 crore DTA creation, making reported PAT growth look sharply negative (-62.6% YoY)",
+    "effect": "depresses",
+    "size": "major",
+    "affects": "profit"
+   }
+  ],
+  "verdict": "sustainable",
+  "why": "Revenue growth of about 53% YoY is driven mainly by volume: gross items ordered up about 45% YoY, live subscribers up about 42.5%, and live items up 44%, with revenue per item up only about 4.6% YoY; the one-offs in the brief (DTA charge, IPO expense, gratuity reversal gain) are small at the revenue line and affect mainly PAT, while the reported PAT decline is driven by the Q2 FY26 base including "
  }
 }

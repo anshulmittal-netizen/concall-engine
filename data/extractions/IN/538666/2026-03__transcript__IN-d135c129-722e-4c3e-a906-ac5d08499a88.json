@@ -399,5 +399,29 @@
    "analysts": "probing",
    "note": "Management was confident on FY26 results and the demand outlook but evasive on region-wise guidance, ex-FX margin and sales returns, and corrected its own EBITDA-vs-revenue guidance wording; analysts pushed on FX contribution, price/mix, and whether FY27 implies a price decline."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "volume",
+  "vol": 4.3,
+  "organic": "mostly_organic",
+  "oneOffs": [
+   {
+    "kind": "forex_gain",
+    "what": "FX contributed +11.7% to Q4 revenue growth (vs. reported ~13% headline); FX was a major share of the quarter's growth",
+    "effect": "flatters",
+    "size": "major",
+    "affects": "revenue"
+   },
+   {
+    "kind": "forex_gain",
+    "what": "INR 26 crore unrealised forex loss booked in Q4 FY26 (management says not an actual loss); depresses reported profit, flatters underlying margin comparison only if excluded",
+    "effect": "depresses",
+    "size": "moderate",
+    "affects": "profit"
+   }
+  ],
+  "verdict": "mixed",
+  "why": "Q4 revenue grew about 13%, but the bridge shows FX adding +11.7% and volume only +4.3%, with price/mix -3.0%, so most of the headline growth came from currency rather than the recurring business; the 75% EBITDA and 750 bps gross margin expansion are also FX-flattered and the ex-FX margin was not disclosed."
  }
 }

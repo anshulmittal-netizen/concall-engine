@@ -431,5 +431,36 @@
    "analysts": "probing",
    "note": "Management was confident on full-year export (15-20%, up to 25%) and margin (25-26% base) guidance and the coating line, but evasive on Q4 margin sustainability and attributed headwinds to war, tariffs and raw material prices; analysts pushed on the FX-driven and mix-driven margin jump."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "mix",
+  "vol": 4.75,
+  "organic": "mostly_organic",
+  "oneOffs": [
+   {
+    "kind": "forex_gain",
+    "what": "FX gain of about INR 30 cr for FY26 sits in other income, inflating profit growth (Q4 other income only INR 3.31 cr, so the full-year gain is largely booked across the year, not stated for Q4 alone)",
+    "effect": "flatters",
+    "size": "major",
+    "affects": "both"
+   },
+   {
+    "kind": "catch_up_or_pull_forward",
+    "what": "Q4 employee expense includes a catch-up provision for new labour codes (effective 21 Nov 2025), raising Q4 cost base QoQ from INR 14 cr to INR 17 cr",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "both"
+   },
+   {
+    "kind": "catch_up_or_pull_forward",
+    "what": "Some March price pass-through to automotive/footwear customers boosted Q4 realisations, with automotive hikes lagging into Q1 FY27",
+    "effect": "flatters",
+    "size": "minor",
+    "affects": "both"
+   }
+  ],
+  "verdict": "mixed",
+  "why": "Standalone revenue grew 22% and PAT 73%, but the brief gives no Q4 volume split and attributes much of the margin jump to export mix, cost control and FX gains; the ~INR 30 cr FX gain (FY26 figure, booked in other income) flatters profit growth materially, while FY26 volume grew only about 4.5-5% against 15% value growth, so revenue growth is largely price/mix-led and the consolidated revenue grow"
  }
 }

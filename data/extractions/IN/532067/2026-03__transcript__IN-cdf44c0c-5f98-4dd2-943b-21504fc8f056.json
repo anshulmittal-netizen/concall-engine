@@ -402,5 +402,36 @@
    "analysts": "probing",
    "note": "Management was confident on the 15-20% FY27 growth guidance and the 55% standalone margin, but evasive on quarterly phasing, M&A timing and the FDA timeline; analysts pressed on the consolidated EBITDA margin (about 40% vs 61.84% cited) and the Coris numbers, which were not reconciled on the call."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "volume",
+  "vol": null,
+  "organic": "acquisition_led",
+  "oneOffs": [
+   {
+    "kind": "acquisition",
+    "what": "Coris BioConcept consolidated from 29 Aug 2025 contributing INR35.91 crore of FY26 sales (7 months)",
+    "effect": "flatters",
+    "size": "major",
+    "affects": "both"
+   },
+   {
+    "kind": "one_time_order",
+    "what": "Coris FY26 PAT of INR8.76 crore lifted by a one-time HAT order",
+    "effect": "flatters",
+    "size": "moderate",
+    "affects": "both"
+   },
+   {
+    "kind": "base_had_one_off_gain",
+    "what": "FY25 flu and dengue/chikungunya spike worth about INR4.2 crore in the year-ago base, depressing 3B India domestic growth",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "both"
+   }
+  ],
+  "verdict": "one_off_heavy",
+  "why": "Consolidated growth is driven mainly by the Coris acquisition (INR35.91 crore of the roughly INR142 crore total, with Coris PAT lifted by a one-time HAT order), while organic 3B India molecular diagnostics grew only about 10% (about 7.1% non-export) against a high FY25 base that included about INR4.2 crore of flu and dengue/chikungunya sales."
  }
 }

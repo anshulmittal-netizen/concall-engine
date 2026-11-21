@@ -414,5 +414,36 @@
    "analysts": "probing",
    "note": "Management was confident on the demerger timeline and FY27 guidance, but defensive on the QoQ EBITDA margin decline and evasive on valuation; analysts pushed on margin ramp, tax credit normalisation and the sustainability of PAT."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "volume",
+  "vol": 35.0,
+  "organic": "mostly_organic",
+  "oneOffs": [
+   {
+    "kind": "base_had_one_off_gain",
+    "what": "INR17 crore one-time other income in Q1 FY26 base; excluding it EBITDA grew ~30% vs 10% reported",
+    "effect": "depresses",
+    "size": "major",
+    "affects": "profit"
+   },
+   {
+    "kind": "one_off_loss",
+    "what": "INR7.35 crore tax reversal (intra-group merger, earlier years) in Q1 FY27 lifts PAT to INR34 crore; tax was about INR8 crore a quarter earlier",
+    "effect": "depresses",
+    "size": "major",
+    "affects": "profit"
+   },
+   {
+    "kind": "catch_up_or_pull_forward",
+    "what": "About INR15 crore of advances deferred under Ind AS 11 from Q1 FY27 revenue to later quarters, so collections (INR165 crore) exceed revenue (INR150 crore)",
+    "effect": "depresses",
+    "size": "moderate",
+    "affects": "revenue"
+   }
+  ],
+  "verdict": "mixed",
+  "why": "Revenue grew 42% on enrollment volume (+35%) and commerce test prep (+53%), with no revenue one-off stated, but PAT's 472% jump is largely driven by a INR7.35 crore tax reversal, while the reported 10% EBITDA growth is depressed by a INR17 crore other-income base in Q1 FY26, so underlying EBITDA growth is about 30%."
  }
 }

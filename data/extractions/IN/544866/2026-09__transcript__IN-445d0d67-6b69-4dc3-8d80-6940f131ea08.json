@@ -414,5 +414,29 @@
    "analysts": "probing",
    "note": "Management was confident on FY27 guidance of 25% growth and 24-25% margin and on the one-month rate-contract timing explanation, but defensive on the flat H1 and why the delay was not flagged earlier; analysts pressed on the revenue drop and the H2 catch-up."
   }
+ },
+ "quality": {
+  "v": 1,
+  "driver": "unclear",
+  "vol": null,
+  "organic": "acquisition_led",
+  "oneOffs": [
+   {
+    "kind": "one_off_loss",
+    "what": "Rate-contract renewal delay shifted about one month of invoicing (about INR100 cr) into H2; this depressed H1 revenue vs H1 FY26 (INR667 cr vs INR680 cr)",
+    "effect": "depresses",
+    "size": "major",
+    "affects": "revenue"
+   },
+   {
+    "kind": "acquisition",
+    "what": "OptraSCAN consolidated from H2 FY26 (not in H1 FY26 numbers); carries INR15 cr EBITDA loss in H1 FY27",
+    "effect": "depresses",
+    "size": "minor",
+    "affects": "profit"
+   }
+  ],
+  "verdict": "one_off_heavy",
+  "why": "H1 FY27 revenue was flat-to-down (INR667 cr vs INR680 cr) because roughly INR100 cr of invoicing slipped from H1 into H2 on a rate-contract delay, so the business's underlying growth is not visible in this quarter; the call gives no volume growth figure and does not state the driver mix, and the OptraSCAN consolidation adds to reported revenue from H2 FY26 while costing INR15 cr of EBITDA in H1."
  }
 }
