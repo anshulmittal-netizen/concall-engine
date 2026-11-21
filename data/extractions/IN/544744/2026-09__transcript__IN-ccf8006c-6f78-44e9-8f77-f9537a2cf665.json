@@ -1,0 +1,418 @@
+{
+ "doc_id": "IN-ccf8006c-6f78-44e9-8f77-f9537a2cf665",
+ "market": "IN",
+ "company_id": "544744",
+ "name": "Powerica Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-20",
+ "period": "2026-09",
+ "title": "Powerica Ltd - 544744 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q2 revenue INR847 cr with genset margin under pressure from fresh steel/copper inflation and pass-on lag; management reaffirms double-digit FY27 growth on INR1,950 cr order book, but no capacity or pricing-power evidence, and genset margin recovery guidance is not repeated.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Pricing power",
+   "Working-capital stress",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 0,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 1,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null
+  },
+  "capex": {
+   "direction": "not_discussed"
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "Fresh steel inflation; price hikes lag",
+    "quote": "Effectively, earlier price increases have not fully offset the sharp rise in input costs.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "Double-digit FY27 growth reaffirmed",
+    "quote": "we remain confident about our growth outlook and continue to expect double-digit revenue growth through financial year 2027",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "Data-centre orders INR1,200 cr of INR1,950 cr book",
+    "quote": "data center-related orders accounted for approximately INR1,200 crore",
+    "direction": 1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "double-digit",
+    "horizon": "FY27",
+    "change": "held",
+    "quote": "continue to expect double-digit revenue growth through financial year 2027"
+   },
+   {
+    "metric": "Wind capacity target",
+    "value": "638 MW",
+    "horizon": "long term",
+    "change": "new",
+    "quote": "our long-term objective of reaching 638 MW of wind power capacity"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 revenue growth",
+    "outcome": "met",
+    "quote": "we are very firm in terms of the growth guidance that we have given double-digit growth"
+   },
+   {
+    "metric": "Genset margin recovery",
+    "outcome": "not_discussed"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Cummins",
+    "relation": "supplier"
+   },
+   {
+    "name": "Hyundai",
+    "relation": "supplier"
+   },
+   {
+    "name": "Schneider",
+    "relation": "partner"
+   },
+   {
+    "name": "GE Vernova",
+    "relation": "partner"
+   },
+   {
+    "name": "GUVNL",
+    "relation": "customer"
+   },
+   {
+    "name": "SECI",
+    "relation": "customer"
+   }
+  ],
+  "themes": [
+   "Data-centre power & cooling",
+   "Renewables & storage",
+   "Capex cycle revival (private)",
+   "Defence indigenisation"
+  ],
+  "red_flags": [
+   {
+    "label": "Margin flat YoY; genset margin 6.5% H1 vs 9% steady state",
+    "quote": "DG set segment contributed 80.6% to the consolidated revenue, with an EBITDA margin of 6.5%."
+   },
+   {
+    "label": "Defence order slowdown and MSLG delays",
+    "quote": "we are going a little bit slow considering the demand planning to execution is a longer horizon"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 0,
+   "capex": 1,
+   "growth": 4,
+   "margin": 4,
+   "other": 2
+  },
+  "evasions": [
+   {
+    "topic": "Price hike quantum and pass-through timing",
+    "quote": "it's very difficult to bifurcate which one is from a new order and existing order"
+   },
+   {
+    "topic": "Data-centre execution contribution in H2",
+    "quote": "quantification what percentage, it would be difficult for now"
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Powerica Q2 FY27 revenue INR847 crore with 15.2% EBITDA margin; fresh steel, copper and aluminium inflation puts further price hikes on the table.",
+  "overview": "Q2 FY27 consolidated revenue was about INR847-848 crore, with reported EBITDA of about INR128 crore (15.2% margin) and PAT of about INR71 crore (8.4% margin), improving sequentially as earlier price revisions flowed through. H1 FY27 revenue was INR1,628 crore (up 12.5% YoY), with EBITDA margin of 14.4% and PAT margin of 8.3%. Management said a fresh round of raw-material inflation (steel, then copper and aluminium) since Q3 began means earlier price hikes have not fully offset input costs, so further calibrated hikes are planned. The company reiterated double-digit revenue growth guidance for FY27.",
+  "financial_highlights": [
+   {
+    "metric": "Q2 FY27 consolidated revenue",
+    "value": "INR847-848 crore",
+    "change": "Genset (Cummins) business up 14% YoY"
+   },
+   {
+    "metric": "Q2 FY27 EBITDA (reported)",
+    "value": "INR128 crore (15.2% margin)",
+    "change": "Sequential improvement vs Q1 stated qualitatively"
+   },
+   {
+    "metric": "Q2 FY27 PAT",
+    "value": "INR71 crore (8.4% margin)",
+    "change": ""
+   },
+   {
+    "metric": "H1 FY27 consolidated revenue",
+    "value": "INR1,628 crore",
+    "change": "+12.5% YoY"
+   },
+   {
+    "metric": "H1 FY27 EBITDA (reported)",
+    "value": "INR235 crore (14.4% margin)",
+    "change": ""
+   },
+   {
+    "metric": "H1 FY27 PAT",
+    "value": "INR135 crore (8.3% margin)",
+    "change": ""
+   },
+   {
+    "metric": "H1 DG set segment share / EBITDA margin",
+    "value": "80.6% of revenue / 6.5% EBITDA margin",
+    "change": ""
+   },
+   {
+    "metric": "H1 wind power segment share / EBITDA margin",
+    "value": "19.4% of revenue / 47.4% EBITDA margin",
+    "change": ""
+   },
+   {
+    "metric": "DG set order book (Cummins) as of October 2026",
+    "value": "INR1,950 crore",
+    "change": "Of which data centre about INR1,200 crore"
+   }
+  ],
+  "segments": [
+   {
+    "name": "DG sets (Cummins-powered gensets)",
+    "commentary": "Drove Q2 growth with 14% YoY increase; about 80.6% of H1 revenue at 6.5% EBITDA margin. Data centres were about 20% of H1 revenue; medium and high horsepower demand strong, low horsepower price-competitive."
+   },
+   {
+    "name": "DG sets (Hyundai-powered) and MSLG",
+    "commentary": "Project-linked and muted: MSLG revenue INR16 crore in H1 FY27 vs INR74 crore a year earlier, delayed by Middle East conflict, including an attack in Saudi Arabia."
+   },
+   {
+    "name": "Allied business (defence, Schneider, projects)",
+    "commentary": "H1 down about 6% YoY; defence orders deliberately slowed on margin and working-capital grounds, while Prisma panel for Schneider and large data centre projects grew steadily, with revenue timing dependent on client certification."
+   },
+   {
+    "name": "Wind power (IPP and EPC)",
+    "commentary": "Contributed 19.4% of H1 revenue at 47.4% EBITDA margin. About 330 MW operational, 50 MW under construction, plus 250 MW newly won in reverse auctions. New LoI for 50 MW GUVNL project at INR3.51/kWh over 25 years."
+   }
+  ],
+  "guidance_outlook": [
+   "Double-digit revenue growth reiterated for FY27 despite near-term margin pressure.",
+   "Further very calibrated price hikes planned in Q3 FY27 as new steel price increases came through in October; some RM moderation expected if geopolitical conditions improve.",
+   "Management said current pricing covers inflation as it stands, with price changes monitored almost daily; no further hikes needed if raw materials stabilise.",
+   "Steady-state margins per management: genset about 9% consolidated; wind IPP blended 60-65% (average 62%), new projects 82-85%; EPC about 10%.",
+   "Wind capacity target 638 MW within about 2.5 years, then adding 100-150 MW a year; long-term ambition of 1 GW in wind and renewables."
+  ],
+  "capex_capacity": [
+   "Wind: about 330 MW operational; 50 MW under construction, expected to complete soon; 250 MW newly won (GUVNL 100+ MW with machinery arriving, GUVNL 50+ MW and SECI 100 MW with land procurement under way).",
+   "Wind project timelines: 24 months from PPA signing; company says it has historically commissioned ahead of schedule.",
+   "Funding: first-phase wind expansion to be about 70% debt-funded; company is at near zero debt post-IPO for its 330 MW wind business.",
+   "EPC: about 450 MW completed for other customers and about 600 MW in hand for group and other companies.",
+   "Joint development JV with GE Vernova signed; announcement expected for GE projects."
+  ],
+  "demand_pricing": [
+   "DG order book INR1,950 crore as of October 2026, with about INR1,200 crore data centre and the balance (about INR750 crore) short-cycle orders from manufacturing, real estate, rental and infrastructure; the large order book is to execute over 12-18 months.",
+   "Demand described as strong in medium and high horsepower; low horsepower price-competitive with more players; no new major entrants reported in HHP (QSK).",
+   "Infrastructure growing moderately; manufacturing remains the largest contributor by segment.",
+   "Price revisions: more revisions in the past six months than in the prior three to four years; pass-through lags because the pending order book is a mix of old and new prices.",
+   "Procurement: bulk buying and inventory timing based on market intelligence to manage input costs."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How much did data centres contribute to H1 revenue, and how much will execute in H2?",
+    "answer": "Data centres were about 20% of H1 revenue; H2 execution is hard to quantify because it depends on site readiness, though a healthy contribution is expected."
+   },
+   {
+    "question": "How much of the pricing benefit came in Q2 and how much is still to come?",
+    "answer": "Not quantifiable: existing and new orders flow through in a mix. Margin improvement expected, with further calibrated hikes on new orders."
+   },
+   {
+    "question": "What price hike was taken in gensets and what are steady-state margins?",
+    "answer": "Price hikes are set at a detailed level so no single figure given. Steady state: genset about 9%, wind IPP 60-65% blended, EPC about 10%."
+   },
+   {
+    "question": "Does current pricing cover RM inflation, and will margins normalise within two quarters?",
+    "answer": "Management said current pricing covers inflation as it stands. Normalisation may not take two quarters because non-data-centre orders cycle in two days to six months, but pass-on lag has grown with continued commodity rises."
+   },
+   {
+    "question": "Why is ex-data-centre order book flat and is competition rising?",
+    "answer": "Management said no new competitors and competition is unchanged from the past two years; ex-data-centre demand is growing steadily."
+   },
+   {
+    "question": "Allied business down 6% in H1 and MSLG L1 order status?",
+    "answer": "Defence orders slowed on margin and inflation grounds; MSLG L1 order on hold due to the Middle East situation, with restart expected in about 1-2 months. A INR41 crore PSU pilot order is due late Q4 or early Q1 FY28."
+   },
+   {
+    "question": "Wind capacity roadmap and long-term economics?",
+    "answer": "Target 638 MW, then 100-150 MW added a year toward 1 GW; new projects earn 82-85% EBITDA, blended 62-65% now, expected to rise to 72-73%."
+   }
+  ],
+  "risks_watch": [
+   "Steel, copper and aluminium inflation since Q3 FY27 not fully offset; margin recovery depends on further price hikes and pass-through timing.",
+   "Middle East conflict delaying MSLG and Hyundai-engine project revenue, including the L1 order.",
+   "Data centre execution timing depends on customer site readiness, not Powerica supply; H2 contribution not quantified.",
+   "Low horsepower segment price competition; high horsepower competition currently limited.",
+   "Infrastructure growing only moderately; defence orders deliberately slowed.",
+   "Wind project execution against 24-month timelines and the 70% debt funding plan for the expansion."
+  ],
+  "management_tone": "Confident on demand and the double-digit growth guidance, but cautious on margins, which management says are still under pressure from fresh raw-material inflation. Management was evasive when asked to quantify pricing pass-through, data-centre H2 execution and the price hike size, citing volatility and customer timing.",
+  "key_quotes": [
+   "Despite the near-term challenges, we remain confident about our growth outlook and continue to expect double-digit revenue growth through financial year 2027.",
+   "Effectively, earlier price increases have not fully offset the sharp rise in input costs.",
+   "We've made more revisions in the past six months than we probably have over the past, like, three to four years, just because of the volatility.",
+   "So, we are very firm in terms of the growth guidance that we have given double-digit growth."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Wind power: 50 MW under construction, expected to complete soon",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 1,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Wind power: 250 MW newly won in reverse auctions (GUVNL 100+ MW with machinery arriving; GUVNL 50+ MW and SECI 100 MW with land procurement under way)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 8,
+    "status": "planned",
+    "mat": "moderate"
+   },
+   {
+    "what": "Wind capacity target of 638 MW within about 2.5 years, then 100-150 MW a year",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 10,
+    "status": "planned",
+    "mat": "major"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": 10.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Double-digit FY27 revenue growth reiterated, backed by a INR1,950 crore DG order book (about INR1,200 crore data centre, executing over 12-18 months), 50 MW wind under construction and 250 MW newly won; H1 revenue was up 12.5% YoY, but the quarterly YoY growth and the 10% figure are only the floor of double-digit guidance, and the 250 MW wind additions lack firm commissioning dates.",
+  "mgmt": null
+ },
+ "quality": {
+  "v": 1,
+  "driver": "volume",
+  "vol": null,
+  "organic": "mostly_organic",
+  "oneOffs": [],
+  "verdict": "sustainable",
+  "why": "Q2 growth was led by the DG set (genset) business, up 14% YoY on strong medium and high horsepower demand and a INR1,950 crore order book (about INR1,200 crore data centre), while MSLG and allied (defence) were weak; the brief cites no acquisition or one-off item, so growth looks recurring, though the brief does not split volume from price."
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Q2 FY27 EBITDA margin 15.2% and H1 14.4%, but fresh steel, copper and aluminium inflation is not fully offset; management expects further calibrated hikes in Q3 FY27 and says normalisation may take longer than two quarters, while steady-state genset margin is about 9% and wind IPP blended 60-65%."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "Q3 FY27 to Q4 FY27",
+    "why": "About 50 MW wind under construction is expected to complete soon, and 250 MW newly won in reverse auctions (GUVNL 100+ MW with machinery arriving) is in progress; wind timelines are 24 months from PPA with a history of early commissioning."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-4 quarters",
+    "why": "H1 FY27 revenue up 12.5% YoY, Q2 genset up 14% YoY, and a INR1,950 crore DG order book (about INR1,200 crore data centre) executes over 12-18 months, though the data-centre H2 contribution is not quantified."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Wind target of 638 MW within about 2.5 years then 100-150 MW a year toward 1 GW, with first-phase expansion about 70% debt-funded and the company near zero debt post-IPO; land procurement for GUVNL 50+ MW and SECI 100 MW is under way and the GE Vernova JV announcement is expected."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-4 quarters",
+    "why": "Management reiterated only double-digit FY27 revenue growth and said margins are still under pressure from fresh raw-material inflation, with no upgrade flagged."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "MSLG revenue fell to INR16 crore in H1 FY27 from INR74 crore a year earlier on the Middle East conflict, defence orders were deliberately slowed (Allied down about 6% in H1), and raw-material pass-through lags."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "no_signal",
+    "when": "",
+    "why": ""
+   },
+   {
+    "k": "order_book",
+    "label": "Data centre DG execution over 12-18 months",
+    "call": "likely",
+    "when": "next 4 quarters",
+    "why": "INR1,200 crore of the INR1,950 crore DG order book is data centre, about 20% of H1 revenue, but H2 timing depends on customer site readiness and is not quantified."
+   },
+   {
+    "k": "new_markets",
+    "label": "MSLG L1 order restart and PSU pilot order",
+    "call": "possible",
+    "when": "Q4 FY27 to Q1 FY28",
+    "why": "MSLG L1 order is on hold due to the Middle East situation with restart expected in 1-2 months, and a INR41 crore PSU pilot order is due late Q4 or early Q1 FY28."
+   },
+   {
+    "k": "pricing",
+    "label": "Further calibrated price hikes in Q3 FY27",
+    "call": "likely",
+    "when": "Q3 FY27",
+    "why": "New steel price increases in October are not fully offset by earlier hikes, and management plans further very calibrated hikes on new orders, though size was not quantified."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on demand, data-centre orders and double-digit FY27 growth but cautious on margins under fresh steel, copper and aluminium inflation; analysts pressed on pricing pass-through, H2 data-centre execution and margin normalisation timing, which management largely declined to quan"
+  }
+ }
+}

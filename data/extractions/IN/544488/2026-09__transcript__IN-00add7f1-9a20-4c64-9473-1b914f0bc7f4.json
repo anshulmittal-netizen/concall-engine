@@ -1,0 +1,472 @@
+{
+ "doc_id": "IN-00add7f1-9a20-4c64-9473-1b914f0bc7f4",
+ "market": "IN",
+ "company_id": "544488",
+ "name": "Vikram Solar Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-20",
+ "period": "2026-09",
+ "title": "Vikram Solar Ltd - 544488 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Electrical equipment",
+  "thesis": "Q2 FY27 volume fell to 591 MW (from ~1 GW) with EBITDA down to INR101 crore; order book 8.2 GW and DCR cell fab first output guided for December, but H2 EBITDA/W guidance is qualitative only.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Competitive capex",
+   "Backlog conversion"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": 1,
+   "structure": -2,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": 0
+  },
+  "utilisation": {
+   "direction": 0,
+   "level_pct": null,
+   "quote": "All of our current lines across four facilities are completely ramped up."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "Management noted export controls on China technology and MOFCOM curbs as a risk to equipment and engineers, not peer capacity.",
+   "quote": "Another INR3,800 crores is planned to be infused in H2, mostly for the cell project."
+  },
+  "triggers": [
+   {
+    "type": "pricing",
+    "label": "EBITDA/W up 37% QoQ",
+    "quote": "EBITDA per watt rose 37% sequentially from INR1.25 per watt peak to INR1.71 per watt.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "demand",
+    "label": "Order inflow 1.7 GW, >2x QoQ",
+    "quote": "Order flow at 1.7 GW was more than double the previous quarter.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "supply",
+    "label": "Volume 591 MW, down ~40%",
+    "quote": "Volume was at 591 MW and revenue at INR1,077 crores, both lower than in Q1",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "US export order 1 GW removed",
+    "quote": "1 GW of U.S. export orders, which we were carrying in our order book, is no longer viable. We have removed these orders",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Cell fab first output slips to Dec; COD March 2027",
+    "quote": "We expect first cell out in December, after which the lines will be commissioned in a sequential manner over the following three months, with project COD in March 2027.",
+    "direction": -1,
+    "confidence": 0.4
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Cell plant first cell",
+    "value": "First cell out in December; COD March 2027",
+    "change": "held",
+    "horizon": "Q3 FY27",
+    "quote": "We expect first cell out in December, after which the lines will be commissioned in a sequential manner over the following three months"
+   },
+   {
+    "metric": "FY27 EBITDA",
+    "value": "H2 EBITDA per watt peak to hold at around current levels; volumes substantially higher",
+    "change": "new",
+    "horizon": "H2 FY27",
+    "quote": "For H2, we expect EBITDA per watt peak to hold at around current levels, with volumes substantially higher than what we did in H1"
+   },
+   {
+    "metric": "Volume next quarter",
+    "value": "around 1 GW",
+    "change": "new",
+    "horizon": "Q3 FY27",
+    "quote": "That would be a fair estimate to make."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "DCR volume growth",
+    "outcome": "met",
+    "quote": "Within distribution, DCR volume grew 71% quarter-on-quarter, which lifted realizations."
+   },
+   {
+    "metric": "Cell plant commissioning",
+    "outcome": "missed",
+    "quote": "We expect first cell out in December, after which the lines will be commissioned in a sequential manner over the following three months"
+   },
+   {
+    "metric": "FY27 EBITDA",
+    "outcome": "not_discussed",
+    "quote": ""
+   }
+  ],
+  "entities": [
+   {
+    "name": "S.C. New Energy",
+    "relation": "supplier"
+   },
+   {
+    "name": "BloombergNEF",
+    "relation": "peer"
+   }
+  ],
+  "themes": [
+   "Renewables & storage",
+   "Electronics manufacturing (EMS/PLI)",
+   "Anti-dumping protection",
+   "Consolidation / competitor exits",
+   "Capex cycle revival (private)",
+   "Tariffs & trade policy"
+  ],
+  "red_flags": [
+   {
+    "label": "Volume down ~40% QoQ; PAT Rs6 crore",
+    "quote": "The sequential decline in PAT reflects lower absolute EBITDA, which fell from INR126 crores in Q1 to INR101 crores in Q2, as volume fell about 40%."
+   },
+   {
+    "label": "Other current assets up ~INR360cr to INR620cr",
+    "quote": "we have seen sharp increase into other current assets from almost INR360 crores to INR620 crores."
+   },
+   {
+    "label": "INR150cr safeguard duty receivable withheld",
+    "quote": "receivables of INR50 crores withheld by the customer"
+   },
+   {
+    "label": "Cell ramp dependent on Chinese engineers and export curbs",
+    "quote": "As far as Chinese engineers are concerned, yes, that is a requirement."
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 2,
+   "capex": 4,
+   "growth": 4,
+   "margin": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "FY27 revenue / margin numeric guidance",
+    "quote": "Difficult to quantify it, but as I told, the volumes will jump, and EBITDA per watt peak will maintain at the increased level already achieved."
+   },
+   {
+    "topic": "IPP delay geography",
+    "quote": "These are specific to those customers and their contracts. We won't be able to comment on that."
+   },
+   {
+    "topic": "Margin uplift quantification",
+    "quote": "So it would not be right for us to quantify today with the capacities being discussed."
+   }
+  ],
+  "hedge_index": 0.6
+ },
+ "summary": {
+  "headline": "Vikram Solar Q2 FY27: volume fell to 591 MW and EBITDA to INR101 crores (9.4% margin), but EBITDA per watt rose 37% to INR1.71 and order book is 8.2 GW.",
+  "overview": "Q2 FY27 volume fell about 40% QoQ to 591 MW and revenue to INR1,077 crores, as IPP customers deferred offtake on land and evacuation constraints, the monsoon hit, and C&I decisions waited for ALMM List-II clarity (July 18). Profit fell to INR6 crores from Q1 levels, with EBITDA of INR101 crores against INR126 crores in Q1. Management cited a richer mix (distribution at 44% of volume, DCR volume up 71% QoQ) and cost savings as the drivers of EBITDA per watt rising to INR1.71 from INR1.25. The company removed 1 GW of US export orders following a Section 232 change, leaving a closing order book of 8.2 GW, and the 9 GW TOPCon Plus cell fab is slated for first cell in December 2026 and COD in March 2027.",
+  "financial_highlights": [
+   {
+    "metric": "Module volume (Q2 FY27)",
+    "value": "591 MW",
+    "change": "lower than Q1 (about 40% decline)"
+   },
+   {
+    "metric": "Revenue from operations (Q2 FY27)",
+    "value": "INR1,077 crores",
+    "change": "lower QoQ"
+   },
+   {
+    "metric": "EBITDA (Q2 FY27)",
+    "value": "INR101 crores, margin 9.4%",
+    "change": "from INR126 crores in Q1"
+   },
+   {
+    "metric": "Profit after tax (Q2 FY27)",
+    "value": "INR6 crores",
+    "change": "sequential decline"
+   },
+   {
+    "metric": "EBITDA per watt peak",
+    "value": "INR1.71",
+    "change": "up 37% from INR1.25 in Q1"
+   },
+   {
+    "metric": "Finance cost (Q2 FY27)",
+    "value": "INR43 crores",
+    "change": "down 13% QoQ"
+   },
+   {
+    "metric": "H1 FY27 revenue",
+    "value": "INR2,641 crores",
+    "change": "up 18% YoY"
+   },
+   {
+    "metric": "H1 FY27 volume",
+    "value": "1,596 MW",
+    "change": "up 3% YoY"
+   },
+   {
+    "metric": "H1 FY27 EBITDA",
+    "value": "INR227 crores",
+    "change": "vs INR477 crores in H1 FY26"
+   },
+   {
+    "metric": "Gross debt / net debt (end Q2)",
+    "value": "INR632 crores / INR547 crores",
+    "change": "net debt-to-equity 0.17"
+   },
+   {
+    "metric": "Order inflow (Q2 FY27)",
+    "value": "1.7 GW",
+    "change": "more than double QoQ"
+   },
+   {
+    "metric": "Distribution volume",
+    "value": "259 MW",
+    "change": "up about 80% from 145 MW"
+   },
+   {
+    "metric": "Closing order book",
+    "value": "8.2 GW",
+    "change": "after removing 1 GW of US export orders"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Key accounts / C&I / IPP",
+    "commentary": "Brought in 1.3 GW of Q2 order inflow; IPP offtake deferred on land and evacuation issues, and IPP revenue share was about 1% in Q2 despite IPPs forming 51% of the order book. C&I offtake moved into Q3 after the ALMM List-II clarity."
+   },
+   {
+    "name": "Mid-market",
+    "commentary": "Segment set up two quarters ago added 400 MW of orders in Q2, primarily C&I, with shorter execution cycles."
+   },
+   {
+    "name": "Distribution / DCR",
+    "commentary": "Distribution volume rose about 80% to 259 MW, 44% of volume; DCR share 22%; network expanded to 133 distributors and more than 750 dealers and system integrators; DCR volume up 71% QoQ."
+   },
+   {
+    "name": "BESS (PowerHive / VION)",
+    "commentary": "Phase 1 of 7.5 GWh BESS assembly plant in Chennai; equipment in factory acceptance tests and shipping this quarter, commercial operations targeted in Q1 FY28. Over 300 distributors added for VION low-voltage products in nine months."
+   }
+  ],
+  "guidance_outlook": [
+   "H2 FY27 volumes expected substantially higher than H1 as the order book converts; Q3 volume expected around 1 GW per management's agreement with analyst estimate.",
+   "EBITDA per watt peak expected to hold around Q2 levels (INR1.71) in H2 FY27; no numerical revenue or margin guidance given.",
+   "Cell fab: first cell out in December 2026, sequential line commissioning over about three months, COD March 2027, with 4-6 months ramp-up to full commercial production.",
+   "ALMM List-II enlistment for the cell plant planned in Q4 FY27, with 30-40 days for result after inspection.",
+   "FY28 expected to see significant margin lift as captive DCR cells replace purchased cells; management said margins will almost double versus present DCR margins on procured cells.",
+   "Wafer ingot (9 GW) commissioning targeted mid-FY29, aligned to ALMM List-III; 15 GWh BESS cell capacity commissioning expected in 2030 (Phase 2 by 2029-30)."
+  ],
+  "capex_capacity": [
+   "Gangaikondan project: 6 GW modules and 9 GW cells, project cost INR5,800 crores, funded about one-third equity and two-thirds debt; INR1,700 crores spent to date, INR3,800 crores planned in H2 FY27 mostly for cells.",
+   "9 GW cell project cost about INR4,500 crores (around INR500 crores per GW), funded at equity:debt of roughly 3:1 per management.",
+   "9 GW wafer and ingot project estimated at INR5,600 crores (about INR620 crores per GW); Bhoomi Puja done in August 2026 on the cell-fab site.",
+   "BESS 15 GWh in two 7.5 GWh phases; estimated INR3,600 crores for the 7.5 GWh spend over commissioning dates.",
+   "Overall 12 GW integrated value-chain plan intact; 3 GW balance of cell, wafer and ingot has provision at same site."
+  ],
+  "demand_pricing": [
+   "Order inflow 1.7 GW in Q2: PM-KUSUM, C&I and IPP; 10 largest orders 1.1 GW, smaller orders 600 MW.",
+   "Closing order book 8.2 GW after removing 1 GW of US export orders made unviable by the Section 232 minimum import price and 15% additional duty (enforcement deadline 4 December).",
+   "Order book is primarily non-DCR; management expects 60-70% of it to execute over the next 12-18 months.",
+   "Price competition from module capacity build-up in FY27 as the non-DCR module-only market narrows ahead of ALMM List-II; management says margins were weighed on by this.",
+   "Realisation per watt up about 15% over H1 FY26 on richer channel mix and higher DCR share.",
+   "Installations in India: 8.9 GW added in Q2 (down 25% from 12 GW in Q1), installed base 171 GW; ground-mounted additions down 31% to 4.4 GW."
+  ],
+  "qa_highlights": [
+   {
+    "question": "How much of the 8.2 GW order book is DCR and over what period will it execute?",
+    "answer": "Order book is primarily non-DCR; 60-70% expected to execute over the next 12-18 months."
+   },
+   {
+    "question": "How much spread benefit once 9 GW captive cells are commercial?",
+    "answer": "Management declined to quantify but said margins will almost double versus present DCR margins on procured cells."
+   },
+   {
+    "question": "Change from 12 GW to 9 GW in the capex plan, and funding?",
+    "answer": "Overall 12 GW plan intact; first phase is 9 GW cell backed by 9 GW wafer ingot; 9 GW cell capex about INR4,500 crores at roughly 3:1 equity to debt."
+   },
+   {
+    "question": "Volume outlook for the year and whether Q3 returns to about 1 GW?",
+    "answer": "Q2 decline called temporary; management said about 1 GW in the coming quarter is a fair estimate; H2 offtake expected in line with plans."
+   },
+   {
+    "question": "Guidance for H2 revenue growth and margins?",
+    "answer": "No numerical guidance; volumes to jump as orders convert and EBITDA per watt to be maintained at the Q2 level."
+   },
+   {
+    "question": "Safeguard duty issue (INR150 crores) and rising other current assets?",
+    "answer": "Other current assets rose mainly on advances for capex vendors and DCR supplier deposits, expected to recover in Q3-Q4; safeguard duty matter being followed up, advisors hopeful of early closure."
+   }
+  ],
+  "risks_watch": [
+   "IPP offtake deferrals tied to land acquisition and evacuation delays; management declined to name states or customers.",
+   "Cell fab ramp-up depends on Chinese engineers and equipment; China technology export curbs still in draft; management says cell line not impacted but wafer-ingot route under watch.",
+   "Execution of H2 volume jump and ALMM List-II enlistment in Q4 FY27 after cell commissioning.",
+   "Margin sustainability: EBITDA margin fell to 9.4% and PAT to INR6 crores; no numerical margin guidance.",
+   "Working capital: other current assets rose sharply (from about INR360 crores to INR620 crores), and INR50 crores (per analyst) of receivables withheld by a customer, plus the safeguard duty matter, remain open.",
+   "US export orders: 1 GW removed; further regulatory changes possible."
+  ],
+  "management_tone": "Confident on the long-term cell and integration story and on order book conversion, but cautious and non-committal on near-term numbers: no revenue or margin guidance, and several questions (ingot technology, IPP land issues, capex numbers) were deflected or left unquantified.",
+  "key_quotes": [
+   "Q2 was tough for us. Volume was at 591 MW and revenue at INR1,077 crores, both lower than in Q1, for reasons I will explain shortly.",
+   "Once in commercial production, the facility will give us our own DCR cell supply, supporting both volumes and margins.",
+   "The sequential decline in PAT reflects lower absolute EBITDA, which fell from INR126 crores in Q1 to INR101 crores in Q2, as volume fell about 40%.",
+   "Our overall plan for 12 GW for the entire value chain continues to remain intact."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "9 GW TOPCon Plus cell fab (Gangaikondan), first cell Dec 2026, COD March 2027",
+    "size_pct": null,
+    "capex_cr": 4500.0,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "major"
+   },
+   {
+    "what": "7.5 GWh BESS assembly plant Phase 1 in Chennai, commercial operations targeted Q1 FY28",
+    "size_pct": null,
+    "capex_cr": 3600.0,
+    "q": 2,
+    "status": "trial_runs",
+    "mat": "minor"
+   },
+   {
+    "what": "9 GW wafer and ingot project, commissioning targeted mid-FY29",
+    "size_pct": null,
+    "capex_cr": 5600.0,
+    "q": 8,
+    "status": "approved",
+    "mat": "major"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "order_book",
+   "demand_or_share_gains"
+  ],
+  "clarity": "partial",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 1,
+  "why": "Management guides H2 FY27 volumes substantially above H1 (Q3 about 1 GW) backed by an 8.2 GW order book (60-70% to execute over 12-18 months) and a 9 GW cell fab with first cell in December 2026 and COD March 2027, though no numerical revenue guidance was given and the 1 GW US order removal and IPP deferrals weigh on the near term.",
+  "mgmt": null
+ },
+ "quality": {
+  "v": 1,
+  "driver": "mix",
+  "vol": null,
+  "organic": "mostly_organic",
+  "oneOffs": [
+   {
+    "kind": "other",
+    "what": "Realisation per watt up about 15% over H1 FY26 on richer channel mix and higher DCR share; Q2 EBITDA/W jump to INR1.71 from INR1.25 cited as mix and cost savings, but Q2 revenue and volume fell QoQ",
+    "effect": "flatters",
+    "size": "moderate",
+    "affects": "both"
+   }
+  ],
+  "verdict": "mixed",
+  "why": "Management attributes the Q2 gain in EBITDA per watt to a richer mix (distribution 44% of volume, DCR volume up 71% QoQ) and cost savings, but revenue fell QoQ to INR1,077 crores on about 40% lower volume, and H1 FY27 EBITDA of INR227 crores is well below INR477 crores in H1 FY26 despite H1 revenue up 18% YoY."
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "FY28",
+    "why": "Management says margins will almost double versus present DCR margins on procured cells once 9 GW captive cells are commercial (COD March 2027, 4-6 month ramp), but H2 FY27 EBITDA per watt is only guided to hold at INR1.71 and FY28 is the real lift, with no numbers given."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q3 FY27 to Q4 FY27",
+    "why": "9 GW cell fab under construction with first cell in December 2026, sequential line commissioning over three months and COD March 2027 (INR4,500 crores cell capex, INR1,700 crores spent on the Gangaikondan project so far); 7.5 GWh BESS Phase 1 in trial runs with commercial operations targeted Q1 FY28."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "Q3 FY27",
+    "why": "Management says Q3 volume around 1 GW is a fair estimate versus 591 MW in Q2 (about 1.7x), and H2 volumes substantially above H1's 1,596 MW, backed by an 8.2 GW order book where 60-70% executes over 12-18 months, though 1 GW of US orders was removed and IPP offtake is deferred."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "H2 FY27",
+    "why": "INR3,800 crores is planned in H2 FY27 mostly for cells, and the 9 GW wafer/ingot project (INR5,600 crores, Bhoomi Puja done August 2026) and 15 GWh BESS plan are still being funded in phases, so further capex disclosure and funding updates are likely, though no new capex amount beyond the 12 GW plan was announced."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "",
+    "why": "No numerical revenue or margin guidance was given, EBITDA fell to INR101 crores (9.4% margin) from INR126 crores, PAT fell to INR6 crores, and management only said EBITDA per watt holds at INR1.71 with no upgrade signalled."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Execution risk on the H2 volume jump: IPP offtake is deferred on land and evacuation issues (IPPs are 51% of order book but about 1% of Q2 revenue), C&I offtake moved to Q3 after ALMM List-II clarity, and the 1 GW US order was removed under Section 232."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "Q4 FY27 to Q1 FY28",
+    "why": "Cell fab ALMM List-II enlistment planned for Q4 FY27 with 30-40 days for result after inspection, and BESS Phase 1 commercial operations targeted Q1 FY28 after factory acceptance tests and shipping this quarter."
+   },
+   {
+    "k": "working_capital",
+    "label": "Other current assets rise to INR620 crores",
+    "call": "possible",
+    "when": "Q3-Q4 FY27",
+    "why": "Other current assets rose from about INR360 crores to INR620 crores on capex vendor advances and DCR supplier deposits, which management expects to recover in Q3-Q4, while INR50 crores of receivables are withheld and a INR150 crore safeguard duty matter is open."
+   },
+   {
+    "k": "order_book",
+    "label": "Order book conversion of 8.2 GW",
+    "call": "likely",
+    "when": "next 12-18 months",
+    "why": "Management expects 60-70% of the 8.2 GW order book (primarily non-DCR, after removing 1 GW of US export orders) to execute over the next 12-18 months, with order inflow at 1.7 GW in Q2, more than double Q1."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Net debt rising with 3:1 cell capex funding",
+    "call": "possible",
+    "when": "H2 FY27",
+    "why": "Net debt is INR547 crores (0.17x net debt-to-equity) against INR3,800 crores of H2 FY27 capex mostly for cells, funded at roughly 3:1 equity to debt, so debt is likely to rise sharply before cell EBITDA comes in."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on the cell and integration story, order conversion and the Q3 volume of about 1 GW, but cautious on near-term numbers with no revenue or margin guidance and deflected questions on ingot technology, IPP land issues and capex; analysts pressed on the margin spread, the 12 GW "
+  }
+ }
+}

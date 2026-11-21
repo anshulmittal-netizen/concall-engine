@@ -1,0 +1,479 @@
+{
+ "doc_id": "IN-63ee0cb6-7f9d-4772-9df2-ed9dc732e1fa",
+ "market": "IN",
+ "company_id": "532942",
+ "name": "KNR Constructions Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-20",
+ "period": "2026-09",
+ "title": "KNR Constructions Ltd - 532942 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 0.95,
+ "read": {
+  "subsector": "Construction & EPC",
+  "thesis": "Standalone EBITDA margin fell to 9.2% in Q2 with adjusted PAT only INR30 crore; management held FY27 revenue guidance but declined to back the 13% FY28 margin, and order inflow target of INR4,000–5,000 crore is unproven.",
+  "archetype": "Red flag",
+  "mental_models": [
+   "Working-capital stress",
+   "Capital allocation shift",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": -1,
+   "pricing": -1,
+   "structure": 0,
+   "inventory": -2,
+   "demand": -1,
+   "guidance": -1,
+   "novelty": 1,
+   "tone": -1
+  },
+  "utilisation": {
+   "direction": -1,
+   "level_pct": null,
+   "quote": "The equipment is also unutilized for longer periods. In the past two years, the 100% utilization has not happened."
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "For entire year, it may go up to around INR400 crores."
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Equipment idle; 100% utilisation not achieved in two years",
+    "quote": "The equipment is also unutilized for longer periods. In the past two years, the 100% utilization has not happened.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "guidance",
+    "label": "FY28 13% margin not guaranteed",
+    "quote": "The 13% cannot guarantee, sir, because now not only the overhead that is increasing, it is the input prices that are getting changed.",
+    "direction": -1,
+    "confidence": 0.7
+   },
+   {
+    "type": "inventory",
+    "label": "Working capital debt days 104 vs 78",
+    "quote": "The working capital debt stood at 104 days compared to 78 days as of March 2026.",
+    "direction": -1,
+    "confidence": 0.6
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue",
+    "value": "INR2,200–2,300 crore (held)",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "revenue guidance as we have given, I think we would like to stick on to it."
+   },
+   {
+    "metric": "FY27 order inflow",
+    "value": "INR4,000–5,000 crore in H2",
+    "change": "cut",
+    "horizon": "FY27",
+    "quote": "the INR4,000 crores to INR5,000 crores worth of contract, if I win from highway, it is good"
+   },
+   {
+    "metric": "FY27 capex",
+    "value": "around INR400 crore",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "For entire year, it may go up to around INR400 crores."
+   },
+   {
+    "metric": "FY28 margin 13% (analyst-proposed)",
+    "value": "not guaranteed",
+    "change": "dropped",
+    "horizon": "FY28",
+    "quote": "The 13% cannot guarantee, sir"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 revenue",
+    "outcome": "met",
+    "quote": "revenue guidance as we have given, I think we would like to stick on to it."
+   },
+   {
+    "metric": "FY27 EBITDA margin",
+    "outcome": "missed",
+    "quote": "margin-wise, as you rightly said, they have come down because the market level is also come down."
+   },
+   {
+    "metric": "FY28 revenue",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "FY27 order inflow",
+    "outcome": "missed",
+    "quote": "due to this aggressive competition, , we are not very much sure."
+   },
+   {
+    "metric": "FY27 capex",
+    "outcome": "raised",
+    "quote": "For entire year, it may go up to around INR400 crores."
+   }
+  ],
+  "entities": [
+   {
+    "name": "Indus Infra Trust",
+    "relation": "partner"
+   },
+   {
+    "name": "HMDA",
+    "relation": "customer"
+   },
+   {
+    "name": "GHMC",
+    "relation": "customer"
+   },
+   {
+    "name": "NHAI",
+    "relation": "customer"
+   },
+   {
+    "name": "Coal India",
+    "relation": "customer"
+   },
+   {
+    "name": "NCC",
+    "relation": "competitor"
+   }
+  ],
+  "themes": [
+   "Consolidation / competitor exits",
+   "Railway capex",
+   "Renewables & storage",
+   "Capex cycle revival (private)",
+   "Housing & real-estate cycle",
+   "Pharma CDMO / outsourcing"
+  ],
+  "red_flags": [
+   {
+    "label": "Adjusted PAT only INR30 crore vs reported INR281 crore (exceptional gain)",
+    "quote": "Adjusted PAT actually for this quarter is INR30 crores."
+   },
+   {
+    "label": "Working-capital debt days up to 104 from 78",
+    "quote": "The working capital debt stood at 104 days compared to 78 days as of March 2026."
+   },
+   {
+    "label": "Receivables stretched: irrigation INR660 cr outstanding",
+    "quote": "Outstanding receivables is from irrigation is around now INR660 crores is there, and HAM is INR330 crores."
+   },
+   {
+    "label": "Promoter liquidity tightness",
+    "quote": "the promoter level, I think we have very less funds, sir."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 6,
+   "margin": 3,
+   "balance_sheet": 9,
+   "capex": 4,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "FY28 margin guidance",
+    "quote": "I will be needing a little more calculation for upcoming assumptions and then come on to it, sir."
+   },
+   {
+    "topic": "Order inflow pipeline",
+    "quote": "But due to this aggressive competition, , we are not very much sure."
+   }
+  ],
+  "hedge_index": 0.7
+ },
+ "summary": {
+  "headline": "KNR Constructions Q2 FY27 consolidated revenue INR600 crore with 24.6% EBITDA margin, but adjusted PAT only INR30 crore excluding a INR292 crore HAM exceptional gain.",
+  "overview": "Consolidated Q2 FY27 revenue was INR600 crore and EBITDA INR147 crore (24.6% margin), with reported net profit of INR102 crore. Management said adjusted PAT excluding the INR292 crore exceptional gain from the Guruvayur HAM sale was about INR30 crore. Monetisation of all four HAM assets to Indus Infra Trust was completed, and consolidated debt fell to INR1,180 crore from INR2,438 crore at March 2026. Order book stands at INR16,355 crore including two new HAM projects and the HMDA flyover, and management reiterated its FY27 revenue guidance while flagging margin pressure from overheads, input costs and under-utilised equipment.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue (Q2 FY27)",
+    "value": "INR600 crore",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated EBITDA (Q2 FY27)",
+    "value": "INR147 crore, 24.6% margin",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated net profit (Q2 FY27)",
+    "value": "INR102 crore",
+    "change": "Includes INR292 crore exceptional gain; adjusted PAT about INR30 crore per management"
+   },
+   {
+    "metric": "Consolidated revenue (H1 FY27)",
+    "value": "INR1,188 crore",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated EBITDA margin (H1 FY27)",
+    "value": "20.5%",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated net profit (H1 FY27)",
+    "value": "INR183 crore",
+    "change": ""
+   },
+   {
+    "metric": "Standalone revenue / EBITDA (Q2 FY27)",
+    "value": "INR477 crore / INR44 crore (9.2% margin)",
+    "change": ""
+   },
+   {
+    "metric": "Consolidated debt (30 Sep 2026)",
+    "value": "INR1,180 crore",
+    "change": "vs INR2,438 crore at 31 Mar 2026"
+   },
+   {
+    "metric": "Net debt to equity (consolidated)",
+    "value": "0.22x",
+    "change": "vs 0.49x at 31 Mar 2026"
+   },
+   {
+    "metric": "Working capital debt days (standalone)",
+    "value": "104 days",
+    "change": "vs 78 days at March 2026"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Road EPC (Q2 revenue mix)",
+    "commentary": "About 28% of Q2 revenue; road remains the core business per management."
+   },
+   {
+    "name": "HAM (Q2 revenue mix)",
+    "commentary": "About 48% of Q2 revenue; four HAM assets now fully monetised to Indus Infra Trust."
+   },
+   {
+    "name": "Back-to-back subcontract",
+    "commentary": "About 21% of Q2 revenue."
+   },
+   {
+    "name": "Irrigation",
+    "commentary": "About 2% of Q2 revenue; INR10 crore in Q2 and about INR20 crore in H1. Receivables of about INR660 crore pending from Telangana irrigation, mainly Kaleshwaram Package 4."
+   },
+   {
+    "name": "Mining",
+    "commentary": "Not yet generating meaningful revenue; about INR17 crore billed in October with INR20 crore targeted in November. Order book about 42% of total (about INR6,800 crore). Kusmunda is operational; Banhardih expected to start in four to five months."
+   },
+   {
+    "name": "Pipeline",
+    "commentary": "Remaining order book about INR750 crore; about INR300 crore expected to execute in the next six months."
+   }
+  ],
+  "guidance_outlook": [
+   "Management said it is sticking to the existing revenue guidance (earlier INR2,200-2,300 crore for FY27 and INR3,000 crore-plus for FY28) and is not changing it.",
+   "Order inflow target of INR4,000-5,000 crore for H2 FY27, focused on HAM highway projects of INR2,000-3,000 crore-plus, city works, railways and mining.",
+   "H2 FY27 margins expected to be similar to H1 pattern; management would not commit to 13% EBITDA margin for FY28.",
+   "Mining target of about INR100 crore turnover in the balance six months of FY27; FY28 Kusmunda target about INR400 crore, plus about INR300 crore from Banhardih if it starts in Q1 FY28.",
+   "Depreciation expected at around INR30 crore per quarter in H2 FY27; management suggested assuming six to seven year life for mining assets.",
+   "Standalone capex about INR400 crore for FY27, of which INR300-320 crore relates to mining.",
+   "Equity requirement: INR202 crore for four HAM assets (INR110 crore in FY27, INR85 crore in FY28); about INR510 crore for Chennai and Telangana HAM projects (roughly INR100 crore in FY27, balance in FY28)."
+  ],
+  "capex_capacity": [
+   "H1 FY27 capex about INR220 crore, of which about INR180 crore relates to mining assets; full-year FY27 capex may reach about INR400 crore.",
+   "Kusmunda mine needs about INR500 crore total investment; Banhardih mine would need another INR400-500 crore, with five-year development period noted.",
+   "HAM equity invested INR193 crore out of INR396 crore revised requirement for four assets as of September 2026.",
+   "Telangana HMDA elevated corridor project: INR1,396 crore cost, 24-month construction period; Manyamkonda HAM financial closure on 1 October 2026.",
+   "Appointed dates for Chennai and Telangana HAM projects expected in early December 2026, subject to resolution of a Telangana zero-royalty GO issue."
+  ],
+  "demand_pricing": [
+   "National highway construction fell about 19% YoY to 2,369 km in April-September 2026, while fresh awards rose about 63% to 2,236 km.",
+   "Bidding remains aggressive; management said railway bids are opening well below estimates (its own bid at minus 9% against an opening at minus 30%).",
+   "Hyderabad city works (HMDA, GHMC) face less competition because many contractors avoid delayed payments and no mobilisation advance is paid.",
+   "Order book of INR16,355 crore includes 43% road, 10% irrigation, 5% pipeline and 42% mining; 74% third-party and 26% captive HAM. Order book to be executed over three to three and a half years excluding mining.",
+   "Only about INR400 crore of projects currently at L1 status."
+  ],
+  "qa_highlights": [
+   {
+    "question": "Revenue and margin guidance, and whether FY28 13% EBITDA margin is achievable?",
+    "answer": "Revenue guidance unchanged; margins reduced due to overheads, input costs and under-utilised equipment. Management would not guarantee 13% EBITDA margin for FY28."
+   },
+   {
+    "question": "Adjusted PAT excluding exceptional item and any one-offs this quarter?",
+    "answer": "Adjusted PAT about INR30 crore excluding the INR292 crore exceptional item; no other one-offs in Q2."
+   },
+   {
+    "question": "Receivables and withheld amounts from monetised HAM assets?",
+    "answer": "About INR295 crore withheld on the three completed assets (mainly ESP receivables); about INR130 crore withheld on the fourth asset, to be accounted in Q3."
+   },
+   {
+    "question": "Mining capex and total investment required?",
+    "answer": "Kusmunda about INR500 crore total; Banhardih another INR400-500 crore; combined about INR1,000 crore."
+   },
+   {
+    "question": "Status of Telangana irrigation payments and the expected cash flow?",
+    "answer": "Management expects around INR600 crore from the government; some payment anticipated in December and a major portion of certified bills by March."
+   },
+   {
+    "question": "Status of the HMDA/Hyderabad city project and Chennai flyover?",
+    "answer": "Agreement for the INR1,395-1,400 crore HMDA project due within a month; appointed date for the Tamil Nadu flyover expected in a couple of weeks after a committee review; around 50% of the stretch clear."
+   }
+  ],
+  "risks_watch": [
+   "Margin compression: EBITDA margin in the standalone business fell to 9.2% in Q2, with overheads and input costs rising.",
+   "Telangana irrigation receivables of about INR660 crore and GHMC dues; delayed government payments are tying up working capital.",
+   "Telangana zero-royalty GO pending, which is holding up appointed dates for the Chennai and Telangana HAM projects.",
+   "Order inflow target of INR4,000-5,000 crore for H2 depends on awards that management itself describes as uncertain amid aggressive bidding.",
+   "Future capex and equity calls (about INR1,000 crore mining plus INR510 crore HAM) compared against limited cash and a stated promoter funding tightness."
+  ],
+  "management_tone": "Confident on order pipeline and revenue guidance, but cautious and at times evasive on margins, cash timing and FY28 targets. Management openly acknowledged cash constraints and that several timelines (appointed dates, irrigation payments, Banhardih start) are uncertain.",
+  "key_quotes": [
+   "The 13% cannot guarantee, sir, because now not only the overhead that is increasing, it is the input prices that are getting changed.",
+   "Revenue guidance as we have given, I think we would like to stick on to it.",
+   "Adjusted PAT actually for this quarter is INR30 crores.",
+   "Most of the players don't want to bid here."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Kusmunda coal mine (operational; mining revenue ramp)",
+    "size_pct": null,
+    "capex_cr": 500.0,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   },
+   {
+    "what": "Banhardih mine (expected to start in four to five months)",
+    "size_pct": null,
+    "capex_cr": 450.0,
+    "q": 2,
+    "status": "approved",
+    "mat": "minor"
+   },
+   {
+    "what": "Telangana HMDA elevated corridor project, 24-month construction (INR1,396 crore cost)",
+    "size_pct": null,
+    "capex_cr": 1396.0,
+    "q": 4,
+    "status": "approved",
+    "mat": "moderate"
+   }
+  ],
+  "util": null,
+  "expansion": true,
+  "growth": null,
+  "gs": 0,
+  "turnaround": false,
+  "backing": [
+   "order_book",
+   "capacity_coming",
+   "pricing_or_mix"
+  ],
+  "clarity": "none",
+  "qRev": null,
+  "qEbitda": null,
+  "outlook": 0,
+  "why": "Management held FY27 revenue guidance at INR2,200-2,300 crore and FY28 at INR3,000 crore-plus without quantifying how, with H1 revenue of INR1,188 crore implying a steep H2 ramp; backing rests on a INR16,355 crore order book, mining ramp (Kusmunda live, Banhardih in 4-5 months) and HAM asset additions, but H2 order inflow was cut to a target of INR4,000-5,000 crore and utilisation is weak.",
+  "mgmt": null
+ },
+ "quality": {
+  "v": 1,
+  "driver": "unclear",
+  "vol": null,
+  "organic": "unclear",
+  "oneOffs": [
+   {
+    "kind": "exceptional_gain",
+    "what": "INR292 crore exceptional gain from Guruvayur HAM sale in Q2 FY27 (reported net profit INR102 crore; adjusted PAT about INR30 crore)",
+    "effect": "flatters",
+    "size": "major",
+    "affects": "both"
+   }
+  ],
+  "verdict": "one_off_heavy",
+  "why": "The brief gives no year-ago revenue figure or YoY growth rate, so the revenue driver is unclear; the INR292 crore exceptional HAM sale gain flatters reported profit, and without it adjusted PAT is about INR30 crore, so the headline profit growth would largely disappear."
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "unlikely",
+    "when": "H2 FY27",
+    "why": "Management said H2 margins will be similar to the H1 pattern (H1 EBITDA margin 20.5%, standalone Q2 at 9.2%) and would not commit to 13% EBITDA margin for FY28, citing overheads, input costs and under-utilised equipment."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "Q3-Q4 FY27",
+    "why": "Kusmunda mine is operational with INR500 crore invested, Banhardih is expected to start in four to five months (INR400-500 crore needed), and Telangana HMDA corridor (INR1,396 crore, 24-month build) is approved; mining ramp targets about INR100 crore in H2 FY27 and about INR400 crore for Kusmunda in FY28."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "H2 FY27 to FY28",
+    "why": "H1 FY27 revenue INR1,188 crore vs FY27 guidance INR2,200-2,300 crore implies a steep H2 ramp; order book of INR16,355 crore (42% mining) to execute over 3-3.5 years, but utilisation is weak and H2 order inflow target was cut to INR4,000-5,000 crore amid aggressive bidding."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Standalone FY27 capex raised to about INR400 crore with H1 at about INR220 crore, plus Banhardih needs INR400-500 crore and combined mining need is about INR1,000 crore, while equity calls of INR510 crore for HAM projects are pending against limited cash."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "Management held FY27 revenue guidance at INR2,200-2,300 crore and FY28 at INR3,000 crore-plus without raising it, and H2 order inflow was cut to INR4,000-5,000 crore amid aggressive bidding."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Revenue guidance was held but H1 revenue of INR1,188 crore needs a steep H2 ramp, irrigation receivables of about INR660 crore and appointed dates (Chennai/Telangana HAM) hinge on the pending Telangana zero-royalty GO, and the 13% FY28 margin is not guaranteed."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "no_signal",
+    "when": "",
+    "why": ""
+   },
+   {
+    "k": "working_capital",
+    "label": "Irrigation and GHMC receivables recovery",
+    "call": "possible",
+    "when": "Dec 2026 to Mar 2027",
+    "why": "Management expects around INR600 crore from Telangana government, with some payment in December and a major portion of certified bills by March, against about INR660 crore pending and standalone working capital debt days up to 104 from 78."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Consolidated debt reduction after HAM monetisation",
+    "call": "surely",
+    "when": "already achieved",
+    "why": "Consolidated debt fell to INR1,180 crore from INR2,438 crore and net debt/equity to 0.22x from 0.49x after all four HAM assets were sold to Indus Infra Trust, though about INR295 crore is withheld on completed assets and INR130 crore more to be booked in Q3."
+   },
+   {
+    "k": "regulatory",
+    "label": "Telangana zero-royalty GO resolution and HAM appointed dates",
+    "call": "possible",
+    "when": "early Dec 2026",
+    "why": "Chennai and Telangana HAM appointed dates expected early December 2026 but subject to the pending zero-royalty GO, with about INR510 crore HAM equity needed (about INR100 crore in FY27)."
+   }
+  ],
+  "tone": {
+   "mgmt": "constructive",
+   "analysts": "probing",
+   "note": "Management was confident on the order pipeline and held revenue guidance, but cautious and at times evasive on margins, FY28 13% target, cash timing and the Telangana zero-royalty GO; analysts pressed on adjusted PAT (about INR30 crore ex-exceptional), margin compression and funding needs."
+  }
+ }
+}

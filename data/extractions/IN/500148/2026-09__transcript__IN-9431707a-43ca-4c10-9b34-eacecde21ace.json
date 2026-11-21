@@ -1,0 +1,461 @@
+{
+ "doc_id": "IN-9431707a-43ca-4c10-9b34-eacecde21ace",
+ "market": "IN",
+ "company_id": "500148",
+ "name": "Uflex Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-20",
+ "period": "2026-09",
+ "title": "Uflex Ltd - 500148 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Plastics & polymers",
+  "thesis": "Q2 FY27 normalized EBITDA up 95% to Rs.7,588m at 15.6% margin, with utilisation near 80%, but volume grew only 1.5% and management guided value growth, not volume, with leverage at 3.33x.",
+  "archetype": "Secular premiumisation",
+  "mental_models": [
+   "Operating leverage",
+   "Mix shift",
+   "Capacity bottleneck"
+  ],
+  "blocks": {
+   "supply": 0,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 0,
+   "guidance": 0,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 80,
+   "quote": "Now the capacity utilization is running at around 80%."
+  },
+  "capex": {
+   "direction": "held",
+   "peers_comment": "",
+   "quote": "we incurred capital expenditure of Rs. 5,689 million during Q2 FY27"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation ~80%, target 90% next year",
+    "quote": "Our endeavour is next year we should go to 90 odd percent.",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "BOPET spread Rs.25-35 consistent over nine months",
+    "quote": "It has ranged from Rs.25 to Rs.35 spread, basically.",
+    "direction": 1,
+    "confidence": 0.5
+   },
+   {
+    "type": "demand",
+    "label": "H1 volume growth only ~2%",
+    "quote": "H1, we have grown by almost around 2%.",
+    "direction": -1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Leverage 3.33x, FY27-end target 3-3.5x",
+    "quote": "We have brought down those leverage ratios from 4.5 plus to 3.33 in Q2 FY27.",
+    "direction": -1,
+    "confidence": 0.5
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "FY27 revenue growth",
+    "value": "around 30%",
+    "change": "held",
+    "horizon": "FY27",
+    "quote": "we remain confident of achieving our guided revenue and EBITDA growth of around 30% for the full year."
+   },
+   {
+    "metric": "FY27 year-end leverage",
+    "value": "3-3.5x",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "We have also guided the market that we will be in the range of 3 - 3.5 at the end of this financial year."
+   },
+   {
+    "metric": "Value-added share of top line",
+    "value": "50% by FY29",
+    "change": "new",
+    "horizon": "FY29",
+    "quote": "Value-added product in next three years' time, by FY29, will be 50% of our total top line."
+   },
+   {
+    "metric": "Egypt aseptic utilisation",
+    "value": "30% yr1, 60% yr2, 100% yr3",
+    "change": "new",
+    "horizon": "FY29",
+    "quote": "Once that plant gets operationalized, first year, we'll do a capacity of around 30%."
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "FY27 top-line growth",
+    "outcome": "held",
+    "quote": "we remain confident of achieving our guided revenue and EBITDA growth of around 30% for the full year."
+   },
+   {
+    "metric": "FY27 EBITDA growth",
+    "outcome": "met",
+    "quote": "In H1 FY27, we achieved revenue of Rs. 102,666 million and EBITDA of Rs. 15,961 million"
+   },
+   {
+    "metric": "Leverage (Debt/EBITDA)",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Interest cost reduction",
+    "outcome": "not_discussed",
+    "quote": ""
+   },
+   {
+    "metric": "Volume CAGR",
+    "outcome": "dropped",
+    "quote": "Whatever capacity we have in tonnage, whatever we are making FY26, that we want to at least double by FY29."
+   }
+  ],
+  "analyst_mix": {
+   "growth": 3,
+   "margin": 4,
+   "balance_sheet": 3,
+   "capex": 3,
+   "other": 4
+  },
+  "evasions": [
+   {
+    "topic": "Egypt/Mexico project-level margins and payback",
+    "quote": "division-wise, EBITDA margins and other things, it is very difficult to give"
+   },
+   {
+    "topic": "Advanced tax payments",
+    "quote": "Almost 30%-40% of EBITDA flows into the net profit because of good tax planning"
+   }
+  ],
+  "hedge_index": 0.4,
+  "red_flags": [
+   {
+    "label": "Volume growth ~2% vs revenue +26%; price-led growth",
+    "quote": "H1, we have grown by almost around 2%."
+   },
+   {
+    "label": "Volume-to-double-by-FY29 target reframed as capacity utilisation",
+    "quote": "Whatever capacity we have in tonnage, whatever we are making FY26, that we want to at least double by FY29."
+   },
+   {
+    "label": "Leverage 3.33x; debt ~Rs.8,000 crore raised by retail question",
+    "quote": "We have brought down those leverage ratios from 4.5 plus to 3.33 in Q2 FY27."
+   },
+   {
+    "label": "Receivables/DSO lag acknowledged",
+    "quote": "We are expecting that receivables will come down"
+   }
+  ],
+  "entities": [
+   {
+    "name": "IOC refinery",
+    "relation": "partner"
+   }
+  ],
+  "themes": [
+   "Specialty chem destocking end",
+   "Premiumisation in consumption",
+   "Capex cycle revival (private)",
+   "Anti-dumping protection",
+   "Customer stickiness"
+  ]
+ },
+ "summary": {
+  "headline": "UFlex Q2 FY27 consolidated revenue rose 26% YoY to Rs.48,694 million, with normalized EBITDA up 95% to Rs.7,588 million at a 15.6% margin.",
+  "overview": "Consolidated revenue grew 26% YoY to Rs.48,694 million, adding Rs.10,084 million, and normalized EBITDA rose 95% to Rs.7,588 million with margin up 550 bps to 15.6%. Overseas operations drove most of the growth, contributing 74% of incremental normalized EBITDA. Management reiterated FY27 guidance of around 30% growth in revenue and EBITDA, noting H1 delivered about 49-51% of revenue and 60-62% of EBITDA targets. Leverage fell to 3.33x from above 4.5x, with a 3-3.5x year-end target.",
+  "financial_highlights": [
+   {
+    "metric": "Consolidated revenue",
+    "value": "Rs.48,694 million",
+    "change": "+26% YoY (incremental Rs.10,084 million)"
+   },
+   {
+    "metric": "Normalized EBITDA",
+    "value": "Rs.7,588 million",
+    "change": "+95% YoY"
+   },
+   {
+    "metric": "Normalized EBITDA margin",
+    "value": "15.6%",
+    "change": "+550 bps YoY"
+   },
+   {
+    "metric": "Net profit after tax and NCI",
+    "value": "Rs.2,106 million",
+    "change": "+689% YoY; net margin 4.3%, +360 bps"
+   },
+   {
+    "metric": "Total sales volume",
+    "value": "163,532 metric ton",
+    "change": "+1.5% YoY"
+   },
+   {
+    "metric": "Packaging films volume",
+    "value": "129,025 metric ton",
+    "change": "+3% YoY; 78.9% of volume"
+   },
+   {
+    "metric": "Packaging business volume",
+    "value": "34,507 metric ton",
+    "change": "-3.9% YoY; 21.1% of volume"
+   },
+   {
+    "metric": "H1 FY27 revenue / EBITDA",
+    "value": "Rs.102,666 million / Rs.15,961 million",
+    "change": "About 49-51% and 60-62% of full-year targets"
+   },
+   {
+    "metric": "Leverage (net debt to EBITDA, as stated)",
+    "value": "3.33x",
+    "change": "Down from above 4.5x in FY25-FY26"
+   }
+  ],
+  "segments": [
+   {
+    "name": "Overseas operations",
+    "commentary": "Contributed 56% of incremental revenue and 74% of incremental normalized EBITDA (Rs.3,694 million total incremental EBITDA). Key contributors were Egypt, Mexico, Hungary, USA, Poland and Nigeria."
+   },
+   {
+    "name": "India operations",
+    "commentary": "Contributed 44% of incremental revenue and 26% of incremental normalized EBITDA. India packaging films and PET chips were cited as strong performers."
+   },
+   {
+    "name": "Packaging films",
+    "commentary": "Volume up 3% YoY to 129,025 MT, helped by converters preferring local and regional producers."
+   },
+   {
+    "name": "Packaging business (flexible/aseptic)",
+    "commentary": "Volume down 3.9% YoY to 34,507 MT, reflecting a shift toward higher-margin flexible packaging in India. Value-added products are about 30% of sales and targeted at 50% by FY29."
+   }
+  ],
+  "guidance_outlook": [
+   "FY27 revenue and EBITDA growth guided at around 30%; management said it remains on track.",
+   "H2 FY27 sales volume growth expected to be in the same range as H1 (about 2%).",
+   "Leverage guided to 3-3.5x by end FY27; management expects lower leverage in FY28-FY29 as new capacity reaches full utilisation.",
+   "Capacity utilisation is about 80% now, with a target of at least 90% next year (FY28).",
+   "Value-added products targeted at 50% of top line by FY29.",
+   "Blended EBITDA margin of 14-15% described as sustainable, with a long-term aim to improve it.",
+   "Management said the goal is to at least double FY26 tonnage output by FY29 through utilisation, not to triple turnover."
+  ],
+  "capex_capacity": [
+   "Q2 FY27 capex of Rs.5,689 million, mainly for the Egypt aseptic packaging facility, Noida Sector 155 recycling unit and Dharwad BOPP line.",
+   "Egypt aseptic plant (12 billion packs) to start commercial production in H2 FY27, likely before March 2027, with utilisation of about 30% in year one, 60% in year two and 100% in year three.",
+   "Dharwad BOPP line expected to start commercial operations in H1 FY28.",
+   "Noida Sector 155 recycling facility (39,600 MTPA) and Mexico WPP bag facility (80 million units) are ramping; Mexico running at about 30-35% utilisation.",
+   "Two coating lines in Egypt and Mexico are commissioning. CWIP closing balance is about Rs.2,000 crore by March 2027, most of which is expected to be capitalised by FY28.",
+   "India aseptic capacity is about 12 billion packs at about 80% utilisation."
+  ],
+  "demand_pricing": [
+   "Plain BOPET film spread has ranged Rs.25-35/kg over nine months, per management; value-added and coated films carry higher spreads.",
+   "Plain BOPET film price moved from Rs.108 in January 2026 to Rs.151 by end-October 2026, tracking crude (about Rs.90s in January vs Rs.110-112 in Sep-Oct).",
+   "Recycled PET chips: film grade about Rs.114/kg and bottle grade Rs.128-130/kg, versus virgin chips at about Rs.115/kg.",
+   "Domestic margins are structurally below overseas margins because overseas realisations are higher; competition in Indian aseptic is intense, with cheap imports from Indonesia and others.",
+   "Management is shifting packaging focus toward large customers with higher margins, which lowers concentration risk.",
+   "Receivables are expected to fall by year-end FY27 as the one-to-two-month lag overlap eases."
+  ],
+  "qa_highlights": [
+   {
+    "question": "When will the company reduce its Rs.8,000 crore debt?",
+    "answer": "Management cited leverage down to 3.33x from above 4.5x, a 3-3.5x target for FY27-end, and about Rs.1,000 crore of capex not yet commercialised. Leverage is expected to fall further when FY28-29 capacity reaches full utilisation."
+   },
+   {
+    "question": "Why are margins rising?",
+    "answer": "Management attributed the rise to utilisation reaching about 80%, which spreads fixed costs, plus higher-margin overseas capacity near customers in Egypt, Nigeria and Mexico."
+   },
+   {
+    "question": "What are the Egypt aseptic plant ramp-up and returns?",
+    "answer": "Commercial production is expected before March 2027, with 30%/60%/100% utilisation over three years. Management targets a 3-5 year payback and did not give segment margins or breakeven utilisation."
+   },
+   {
+    "question": "Will the company give up packaging volume to focus on flexible packaging?",
+    "answer": "Management said some volume may be lost in lower-margin products while revenue and margin rise. Surajit Pal said the focus is on large customers, which broadens the base and lowers concentration risk."
+   },
+   {
+    "question": "How has the spread on BOPET film moved?",
+    "answer": "Plain BOPET spread ranged Rs.25-35/kg, with a consistent average over nine months, despite film prices moving sharply with crude. Pass-through contracts are cited as the reason."
+   },
+   {
+    "question": "What is the blended margin and is it sustainable?",
+    "answer": "Blended EBITDA margin is 14-15%, with overseas margins well above India. Management called it sustainable over the long term and said the aim is to improve it, not just hold it."
+   }
+  ],
+  "risks_watch": [
+   "Leverage at 3.33x remains high versus the 3-3.5x year-end target; debt reduction depends on new capacity ramping up.",
+   "Egypt aseptic (30% year-one utilisation) and WPP Mexico (30-35%) ramp-up timing and customer approvals are unproven; management did not name customers.",
+   "Crude and raw-material volatility amid the West Asia conflict; film prices fell from Rs.151 in October, and management said Q3/Q4 spreads will be watched.",
+   "Indian aseptic margins are under pressure from cheap imports and competition.",
+   "Recycling utilisation is currently low, despite government recycled-content norms.",
+   "Management did not give volume guidance beyond H2 FY27 volume growth of about 2%."
+  ],
+  "management_tone": "Confident on growth, margins and overseas expansion, with repeated references to the 30% FY27 target and H1 delivery. More cautious on leverage, and evasive on segment-level margins, Egypt returns and the tax reconciliation. Some answers were loosely worded, and the chair corrected a question on volume versus value growth.",
+  "key_quotes": [
+   "We have brought down those leverage ratios from 4.5 plus to 3.33 in Q2 FY27.",
+   "Overseas operations remained the key growth engine, contributing 56% of incremental revenue and 70% of incremental normalized EBITDA."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Egypt aseptic packaging plant (12 billion packs)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Dharwad BOPP line",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 2,
+    "status": "under_construction",
+    "mat": "moderate"
+   },
+   {
+    "what": "Noida Sector 155 recycling facility (39,600 MTPA)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "trial_runs",
+    "mat": "minor"
+   },
+   {
+    "what": "Mexico WPP bag facility (80 million units), ramping at 30-35% utilisation",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   }
+  ],
+  "util": 80.0,
+  "expansion": true,
+  "growth": 30.0,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "pricing_or_mix",
+   "new_products_or_markets"
+  ],
+  "clarity": "partial",
+  "qRev": 26.0,
+  "qEbitda": 95.0,
+  "outlook": 1,
+  "why": "Management reiterated FY27 revenue and EBITDA growth of around 30%, with H1 at about 49-51% of revenue and 60-62% of EBITDA targets; backing is partial, citing Egypt aseptic (12bn packs, H2 FY27 start, 30% utilisation yr1), Dharwad BOPP (H1 FY28) and value-added mix, but H1 volume growth is only about 2% and H2 is guided similar.",
+  "mgmt": null
+ },
+ "quality": {
+  "v": 1,
+  "driver": "price",
+  "vol": 1.5,
+  "organic": "mostly_organic",
+  "oneOffs": [
+   {
+    "kind": "other",
+    "what": "Net profit +689% YoY reflects a very weak year-ago profit base, not revenue; no one-off item named in brief",
+    "effect": "flatters",
+    "size": "major",
+    "affects": "both"
+   }
+  ],
+  "verdict": "mixed",
+  "why": "Revenue rose 26% (Rs.10,084 million) while total volume grew only 1.5% and packaging films 3%, so growth is mainly price/realisation-driven (BOPET film prices rose from Rs.108 to Rs.151 with crude) plus overseas capacity additions, with the brief naming no explicit one-off items to strip out."
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Normalized EBITDA margin rose 550 bps to 15.6% on utilisation near 80% and higher-margin overseas capacity, and management calls the 14-15% blended margin sustainable with a long-term aim to improve it."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "surely",
+    "when": "Q4 FY27 to Q1 FY28",
+    "why": "Egypt aseptic plant (12 billion packs) is due to start commercial production in H2 FY27, likely before March 2027, and Dharwad BOPP line in H1 FY28; Q2 capex was Rs.5,689 million and CWIP heads toward about Rs.2,000 crore by March 2027."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "H1 FY27 total volume grew only 1.5% YoY and H2 is guided to about 2%, with packaging volume down 3.9%; the growth comes from value and mix rather than tonnage."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "FY28",
+    "why": "Utilisation is about 80% and management targets 90% next year, so with Egypt and Dharwad still ramping, new capex is likely to be needed once they fill."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "unlikely",
+    "when": "next 2-3 quarters",
+    "why": "FY27 growth of around 30% was only reiterated, with H1 at about 49-51% of revenue and 60-62% of EBITDA targets, leaving no sign of a raise."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "H2 volume is guided to about 2% and film prices fell from Rs.151 in October amid crude volatility, while leverage at 3.33x sits above the 3-3.5x year-end target band's midpoint; the 30% target needs H2 delivery."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "H2 FY27 to FY29",
+    "why": "Value-added products are about 30% of sales and targeted at 50% by FY29, with Egypt aseptic and Dharwad BOPP coming on stream, though no specific new product names were given."
+   },
+   {
+    "k": "deleveraging",
+    "label": "Leverage to 3-3.5x by FY27-end",
+    "call": "likely",
+    "when": "Q4 FY27",
+    "why": "Leverage fell to 3.33x from above 4.5x, and management guided a 3-3.5x year-end range, with further reduction expected in FY28-29 as new capacity fills."
+   },
+   {
+    "k": "new_markets",
+    "label": "Overseas growth (Egypt, Mexico, Hungary, USA, Poland, Nigeria)",
+    "call": "surely",
+    "when": "next 2-3 quarters",
+    "why": "Overseas delivered 56% of incremental revenue and 74% of incremental normalized EBITDA (Rs.3,694 million), and Mexico WPP is already ramping at 30-35% utilisation."
+   },
+   {
+    "k": "working_capital",
+    "label": "Receivables fall by FY27-end",
+    "call": "likely",
+    "when": "Q4 FY27",
+    "why": "Management expects receivables to decline as the one-to-two-month lag overlap eases, supporting cash flow toward the leverage target."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on the 30% FY27 growth target, margins and overseas expansion, but cautious on leverage and evasive on segment margins, Egypt returns and tax; analysts pressed on debt reduction, margin sustainability and volume versus value growth."
+  }
+ }
+}

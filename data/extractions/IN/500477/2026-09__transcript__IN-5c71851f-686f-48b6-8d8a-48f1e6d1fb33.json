@@ -1,0 +1,442 @@
+{
+ "doc_id": "IN-5c71851f-686f-48b6-8d8a-48f1e6d1fb33",
+ "market": "IN",
+ "company_id": "500477",
+ "name": "Ashok Leyland Ltd",
+ "doc_type": "transcript",
+ "date": "2026-11-20",
+ "period": "2026-09",
+ "title": "Ashok Leyland Ltd - 500477 - Announcement under Regulation 30 (LODR)-Earnings Call Transcript",
+ "model": "claude-haiku-5-5",
+ "verified_share": 1.0,
+ "read": {
+  "subsector": "Automobiles",
+  "thesis": "Demand is strong (domestic M&HCV +44%, utilisation near 90%) but EBITDA margin held at 10.1% only amid steel inflation, with pricing catch-up expected from Q4 and capex guided up to INR1,000-1,200 cr.",
+  "archetype": "Cyclical bottoming",
+  "mental_models": [
+   "Capacity bottleneck",
+   "Pricing power",
+   "Operating leverage"
+  ],
+  "blocks": {
+   "supply": 1,
+   "pricing": 1,
+   "structure": 0,
+   "inventory": 0,
+   "demand": 2,
+   "guidance": 1,
+   "novelty": 1,
+   "tone": 1
+  },
+  "utilisation": {
+   "direction": 1,
+   "level_pct": 90,
+   "quote": "we operated at close to 90% capacity utilization"
+  },
+  "capex": {
+   "direction": "raised",
+   "peers_comment": "",
+   "quote": "we do hope that it will go to INR1,000 crores to INR1,200 crores for the whole year"
+  },
+  "triggers": [
+   {
+    "type": "util",
+    "label": "Utilisation close to 90%",
+    "quote": "we operated at close to 90% capacity utilization",
+    "direction": 1,
+    "confidence": 0.7
+   },
+   {
+    "type": "supply",
+    "label": "Capex FY27 raised to INR1,000-1,200 cr",
+    "quote": "we do hope that it will go to INR1,000 crores to INR1,200 crores for the whole year",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "pricing",
+    "label": "Q3 price hike 100-150 bps",
+    "quote": "in Q3 also, we are trying to take about 100 to 150 basis points of price increase",
+    "direction": 1,
+    "confidence": 0.6
+   },
+   {
+    "type": "guidance",
+    "label": "Margin % guidance suspended",
+    "quote": "temporarily we will have to suspend looking at that",
+    "direction": -1,
+    "confidence": 0.7
+   }
+  ],
+  "guidance": [
+   {
+    "metric": "Industry M&HCV growth FY27",
+    "value": "mid-teens growth for the whole year",
+    "change": "raised",
+    "horizon": "FY27",
+    "quote": "it could go to mid-teen kind of a growth for the whole year for the CV industry"
+   },
+   {
+    "metric": "Capex FY27",
+    "value": "INR1,000-1,200 cr",
+    "change": "new",
+    "horizon": "FY27",
+    "quote": "we do hope that it will go to INR1,000 crores to INR1,200 crores for the whole year"
+   },
+   {
+    "metric": "GCC exports",
+    "value": "turnaround in Q3 and Q4",
+    "change": "new",
+    "horizon": "Q3-Q4 FY27",
+    "quote": "we think that GCC should see a turnaround in quarter three and quarter four"
+   },
+   {
+    "metric": "Medium-term EBITDA margin",
+    "value": "mid-teens",
+    "change": "held",
+    "horizon": "medium term",
+    "quote": "that's our medium-term goal. We don't want to sacrifice that"
+   }
+  ],
+  "prior_guidance_check": [
+   {
+    "metric": "Industry outlook H2 FY27 MHCV",
+    "outcome": "met",
+    "quote": "we are very positive to see October numbers"
+   },
+   {
+    "metric": "Commodity relief timing",
+    "outcome": "missed",
+    "quote": "Right now, it seems that quarter three would also be a bad quarter in terms of inflation."
+   },
+   {
+    "metric": "Capex",
+    "outcome": "met",
+    "quote": "we do hope that it will go to INR1,000 crores to INR1,200 crores for the whole year"
+   }
+  ],
+  "entities": [
+   {
+    "name": "Switch Mobility",
+    "relation": "peer"
+   },
+   {
+    "name": "OHM Mobility",
+    "relation": "peer"
+   },
+   {
+    "name": "Hinduja Leyland Finance",
+    "relation": "partner"
+   },
+   {
+    "name": "NDL Ventures",
+    "relation": "partner"
+   },
+   {
+    "name": "PwC",
+    "relation": "supplier"
+   }
+  ],
+  "themes": [
+   "Capex cycle revival (private)",
+   "Defence indigenisation",
+   "Electrification (EV transition)",
+   "Premiumisation in consumption",
+   "Consolidation / competitor exits"
+  ],
+  "red_flags": [
+   {
+    "label": "Auditor disclaimer of opinion on HLF loan balances",
+    "quote": "the current auditors of HLF have pointed out certain discrepancies in transactions and loan balances between the various underlying systems of the company"
+   },
+   {
+    "label": "Impact not ascertainable on financials",
+    "quote": "The impact of these on financial statements is currently not ascertainable."
+   },
+   {
+    "label": "Margin % guidance suspended",
+    "quote": "temporarily we will have to suspend looking at that"
+   }
+  ],
+  "analyst_mix": {
+   "balance_sheet": 4,
+   "capex": 2,
+   "growth": 3,
+   "margin": 3,
+   "other": 3
+  },
+  "evasions": [
+   {
+    "topic": "HLF discrepancy quantum",
+    "quote": "in absence of such a review, it would not be possible for us to say what is the amount involved here"
+   },
+   {
+    "topic": "Steel and commodity timing",
+    "quote": "Right now, it seems that quarter three would also be a bad quarter in terms of inflation."
+   }
+  ],
+  "hedge_index": 0.4
+ },
+ "summary": {
+  "headline": "Ashok Leyland Q2 FY27 revenue rose 39% YoY to INR13,364 crore, but EBITDA margin fell to 10.1% (from 12.1%) on steel and commodity inflation.",
+  "overview": "Q2 FY27 delivered record Q2 domestic CV volumes (59,575 units, +34% YoY) and revenue of INR13,364 crore (+39% YoY), with PAT of INR869 crore (+13%). Material cost rose to 74.9% of revenue from 71.5% in Q1, yet EBITDA margin held at 10.1% through price recovery and mix. Management said margin-percentage tracking should be suspended until commodity costs ease, and flagged discrepancies in Hinduja Leyland Finance (HLF) loan balances, with the auditors issuing a disclaimer of opinion. Net cash surplus widened to INR3,546 crore.",
+  "financial_highlights": [
+   {
+    "metric": "Revenue",
+    "value": "INR13,364 crore",
+    "change": "+39% YoY"
+   },
+   {
+    "metric": "EBITDA",
+    "value": "INR1,350 crore (margin 10.1%)",
+    "change": "vs INR1,162 crore in Q2 FY26 (margin 12.1%); margin flat QoQ"
+   },
+   {
+    "metric": "Profit before tax",
+    "value": "INR1,187 crore",
+    "change": "+14% YoY"
+   },
+   {
+    "metric": "Profit after tax",
+    "value": "INR869 crore",
+    "change": "+13% YoY"
+   },
+   {
+    "metric": "Material cost to revenue",
+    "value": "74.9%",
+    "change": "up 340 bps QoQ from 71.5%"
+   },
+   {
+    "metric": "Net cash surplus (net of debt)",
+    "value": "INR3,546 crore",
+    "change": "positive swing of INR2,556 crore YoY"
+   },
+   {
+    "metric": "Capex",
+    "value": "INR240 crore in Q2; INR393 crore in H1",
+    "change": ""
+   },
+   {
+    "metric": "Interim dividend",
+    "value": "INR1 per share (face value INR1)",
+    "change": ""
+   }
+  ],
+  "segments": [
+   {
+    "name": "Domestic M&HCV",
+    "commentary": "Volumes up 44% YoY; market share 32.1%, up 120 bps YoY, with trucks gaining about 150 bps. Multi-axle share of truck volumes rose to about 25% in Q2 from 20% in Q1."
+   },
+   {
+    "name": "Domestic LCV",
+    "commentary": "Volumes 21,371 units, up 21% YoY; VAHAN market share 13.6%, up 30 bps YoY."
+   },
+   {
+    "name": "International",
+    "commentary": "Volumes 5,102 units, up 7% YoY. GCC volumes fell about 20% on West Asia logistics disruption affecting Ras Al Khaimah; SAARC and Africa grew strongly."
+   },
+   {
+    "name": "Aftermarket and Power Solutions",
+    "commentary": "Domestic aftermarket revenue up 20% YoY; Power Solutions revenue up 33% YoY."
+   },
+   {
+    "name": "Defence (incl. subsidiary)",
+    "commentary": "Revenue up 66% YoY to about INR400 crore in the quarter; order book and tender pipeline described as strong."
+   },
+   {
+    "name": "Electric subsidiaries (Switch, OHM)",
+    "commentary": "Switch delivered 439 e-buses and 732 e-LCVs in H1 with about 2,800 e-bus order book at end-September. OHM operating fleet about 2,100 e-buses; OHM won an order for over 200 e-MaaS cement trucks."
+   }
+  ],
+  "guidance_outlook": [
+   "Full-year CV industry growth expected in double digits, potentially mid-teens for M&HCV; LCV expected to grow at a similar pace.",
+   "GCC exports expected to turn around in Q3 and Q4 as Ras Al Khaimah returns to near full capacity; Q3 export growth expected to be good, Q4 better.",
+   "Price increases of about 100-150 bps planned in Q3 and one more likely in Q4; net sale realisation has risen 1-1.25% each quarter and about 2-2.5% since start of year.",
+   "Full-year capex guided to INR1,000-1,200 crore against INR393 crore in H1.",
+   "Management says commodity inflation will persist into Q3; it expects a large unrealised price pass-on to benefit margins once inflation moderates. Medium-term mid-teens margin goal is retained.",
+   "Battery pack plant at Pillaipakkam (about 4 GW initial, expandable to 8-12 GW) to start production in Q3 of next year; cell manufacturing decision possibly next fiscal.",
+   "HLF-NDL merger legal completion expected by end-December; overall process expected to complete within Q4 FY27."
+  ],
+  "capex_capacity": [
+   "Capacity utilisation close to 90% in Q2; near-term debottlenecking planned with limited capex, plus a greenfield plant for the next growth phase.",
+   "Network at 2,175 touchpoints (1,205 M&HCV, 970 LCV) after 43 added in Q2, focused on north and east.",
+   "Battery pack facility near Chennai has all approvals; construction started, production expected in Q3 of next year.",
+   "Supplier capacity augmentation for critical components under way."
+  ],
+  "demand_pricing": [
+   "Domestic M&HCV industry volumes grew 39% YoY in Q2 and domestic LCV 24%; Ashok Leyland M&HCV grew 44%. October numbers were strong despite a higher base.",
+   "ICV trucks led growth, followed by heavy-duty trailers, tippers and multi-axle vehicles; buses grew 22%, the lowest segment.",
+   "Management attributes demand to fleet ageing, BS6 TCO advantage, and the GST rationalisation trigger from September-October last year.",
+   "Freight costs per vehicle moved up over 50% in the past year; company conceded freight increases to transporters.",
+   "No discounting: management says net sale realisation is the only metric tracked. Premiumisation via HIPPO and TAURUS 320/360 HP products and air-suspension MAV launches (up to 4 tonnes extra payload).",
+   "Management said NBFC credit supply to CVs is strong and asset-quality stress is limited to one or two NBFCs."
+  ],
+  "qa_highlights": [
+   {
+    "question": "What is the CV growth outlook for the year, and how are GCC export and pent-up demand shaping up?",
+    "answer": "Management expects double-digit full-year CV growth, possibly mid-teens for M&HCV, with LCV similar. GCC volumes fell about 20% in Q2 but are expected to recover in Q3-Q4 after Ras Al Khaimah supply normalised."
+   },
+   {
+    "question": "How will profitability evolve as steel prices stay elevated and pass-through lags?",
+    "answer": "Management asked analysts to stop judging margin as a percentage of revenue and to look at absolute profit YoY until commodity costs ease. Q3 is expected to remain inflation-hit; a large unrealised price pass-on should benefit margins when inflation moderates."
+   },
+   {
+    "question": "What is the nature of the HLF loan-balance discrepancies and their impact?",
+    "answer": "Discrepancies are in loan balances across underlying systems; the impact cannot be ascertained yet, and management expects four to six weeks for review. A system audit is under way and an independent agency is being appointed. The auditors gave a disclaimer of opinion."
+   },
+   {
+    "question": "What is the status of the HLF-NDL legal and accounting merger, and the Hinduja Housing investment?",
+    "answer": "NDL is accounting acquirer with 1 April 2026 as appointed date and adopted the merger in its Q2 results. Legal steps (NBFC licence, ROC filing) are expected by end-December. The separate INR500 crore Hinduja Housing investment will happen at an appropriate time."
+   },
+   {
+    "question": "What is the electrification and battery strategy?",
+    "answer": "Battery pack plant starts production in Q3 of next year, initially 4 GW for captive use and expandable to 8-12 GW. Cell manufacturing decision may come next fiscal year. LCVs and buses will electrify first, with M&HCV slower."
+   },
+   {
+    "question": "Why did other expenses rise about 20% QoQ, and what drove LCV share gains?",
+    "answer": "Management said other expenses are partly variable (plant overheads, logistics, warranty, which is provided upfront for six years). Fixed costs are giving operating leverage. LCV gains came from the Northeast and Central expansion, Saathi and Dost/Bada Dost upgrades; LCV share is 55-60% of addressable market, with new platforms expected to lift it."
+   }
+  ],
+  "risks_watch": [
+   "HLF loan-balance discrepancies: auditors issued a disclaimer of opinion; impact not yet quantified and HLF's figures carry an unresolved review. Consolidated HLF plus HHFL book value is INR8,313 crore with PAT of INR174 crore in Q2.",
+   "Commodity inflation (steel, natural rubber, fuel) with price pass-on lag; Q3 expected to remain a tough inflation quarter.",
+   "West Asia logistics disruption and GCC volume recovery timing.",
+   "Interest-rate hikes possibly ahead; management says the impact on CV demand over the next two quarters should be limited.",
+   "Other expenses and warranty provisioning (six-year warranty) growing faster than volume is a watch item.",
+   "Q3 price hike execution and whether the margin recovers as management expects."
+  ],
+  "management_tone": "Confident on demand and market share, citing record volumes and October strength, but cautious on margins, with management asking investors to focus on absolute profit growth rather than margin percentage. Evasive on the HLF discrepancy, deferring quantification until the independent review completes in four to six weeks.",
+  "key_quotes": [
+   "Material cost as a percentage of revenue increased to 74.9% compared with 71.5% in Q1 of this year, an increase of 340 basis points quarter-on-quarter.",
+   "we should temporarily stop looking at the margins in terms of percentage of revenue.",
+   "I think we will need about four to six weeks. The Board has decided to initiate a system audit, which is in place.",
+   "we remain confident in our ability to create sustainable long-term value for all our shareholders."
+  ]
+ },
+ "growth": {
+  "v": 3,
+  "adds": [
+   {
+    "what": "Battery pack plant at Pillaipakkam near Chennai (about 4 GW initial, expandable to 8-12 GW)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 4,
+    "status": "under_construction",
+    "mat": "minor"
+   },
+   {
+    "what": "Network expansion: 43 touchpoints added in Q2 to 2,175 total (1,205 M&HCV, 970 LCV)",
+    "size_pct": null,
+    "capex_cr": null,
+    "q": 0,
+    "status": "commissioned",
+    "mat": "minor"
+   }
+  ],
+  "util": 90.0,
+  "expansion": true,
+  "growth": null,
+  "gs": 1,
+  "turnaround": false,
+  "backing": [
+   "capacity_coming",
+   "demand_or_share_gains",
+   "pricing_or_mix"
+  ],
+  "clarity": "partial",
+  "qRev": 39.0,
+  "qEbitda": 16.0,
+  "outlook": 1,
+  "why": "Management guides full-year FY27 M&HCV industry growth to mid-teens and capex to INR1,000-1,200 crore (vs INR393 crore in H1), with GCC exports turning around in Q3-Q4 and 100-150 bps price increases planned; backing is partial, mainly 90% utilisation, touchpoint additions, pricing and a battery plant only starting in Q3 of next year.",
+  "mgmt": null
+ },
+ "quality": {
+  "v": 1,
+  "driver": "volume",
+  "vol": 34.0,
+  "organic": "mostly_organic",
+  "oneOffs": [],
+  "verdict": "mixed",
+  "why": "Revenue +39% YoY is driven by volume: domestic M&HCV volumes +44% and LCV +21% against industry growth of 39% and 24%, with price pass-through and premiumisation adding to realisations, though the brief gives no split of revenue growth between volume and price. No one-offs are stated in the brief, but the HLF loan-balance discrepancy and disclaimer of opinion leave the reported profit base unverif"
+ },
+ "outlook": {
+  "v": 1,
+  "rows": [
+   {
+    "k": "margin_expansion",
+    "label": "Margin expansion",
+    "call": "possible",
+    "when": "Q4 FY27",
+    "why": "EBITDA margin held at 10.1% vs 12.1% a year ago; a large unrealised price pass-on should lift margins once inflation eases, with Q3 price hikes of 100-150 bps and one more in Q4, but Q3 stays inflation-hit and the medium-term mid-teens goal is only retained."
+   },
+   {
+    "k": "capacity_expansion",
+    "label": "Capacity expansion / commissioning",
+    "call": "likely",
+    "when": "Q3 FY28",
+    "why": "Utilisation close to 90% in Q2, with debottlenecking on limited capex and a greenfield plant planned for the next growth phase; battery pack plant at Pillaipakkam starts Q3 of next year, and network added 43 touchpoints to 2,175 in Q2."
+   },
+   {
+    "k": "volume_growth",
+    "label": "Volume growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Domestic M&HCV volumes up 44% YoY and LCV up 21% to 21,371 units; full-year industry guided to double digits (M&HCV mid-teens), GCC exports (down about 20% in Q2) expected to recover in Q3-Q4."
+   },
+   {
+    "k": "capex_announcement",
+    "label": "New capex announcement",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Utilisation near 90% and FY27 capex guided to INR1,000-1,200 crore vs INR393 crore in H1, implying about INR607-807 crore in H2; cell manufacturing decision possibly next fiscal and greenfield plant planned."
+   },
+   {
+    "k": "guidance_upgrade",
+    "label": "Guidance upgrade",
+    "call": "likely",
+    "when": "Q3-Q4 FY27",
+    "why": "Management guides full-year M&HCV industry growth to mid-teens (raised), domestic M&HCV volumes grew 44% in Q2 with 32.1% share, and GCC exports should turn around in Q3-Q4."
+   },
+   {
+    "k": "guidance_downgrade",
+    "label": "Guidance downgrade",
+    "call": "possible",
+    "when": "next 2-3 quarters",
+    "why": "Q3 expected to stay inflation-hit with steel, rubber and fuel costs elevated, material cost at 74.9% of revenue (up 340 bps QoQ), and Q3 price hikes of 100-150 bps only partly offset it."
+   },
+   {
+    "k": "new_product_launch",
+    "label": "New product launch",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Premiumisation via HIPPO and TAURUS 320/360 HP and air-suspension MAV launches (up to 4 tonnes extra payload) is under way, with multi-axle share of truck volumes up to about 25% in Q2 from 20% in Q1."
+   },
+   {
+    "k": "order_book",
+    "label": "Defence revenue and order book growth",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Defence revenue up 66% YoY to about INR400 crore in Q2 with a strong order book and tender pipeline."
+   },
+   {
+    "k": "order_book",
+    "label": "Electric bus order book at Switch",
+    "call": "likely",
+    "when": "next 2-3 quarters",
+    "why": "Switch delivered 439 e-buses in H1 and holds about 2,800 e-bus orders at end-September, with OHM winning over 200 e-MaaS cement trucks."
+   },
+   {
+    "k": "regulatory",
+    "label": "HLF loan-balance discrepancy review and auditor disclaimer",
+    "call": "possible",
+    "when": "next 1-2 quarters",
+    "why": "Auditors issued a disclaimer of opinion and the impact cannot yet be ascertained; the independent review is expected in four to six weeks, and HLF Q2 PAT was INR174 crore on INR8,313 crore book value."
+   }
+  ],
+  "tone": {
+   "mgmt": "confident",
+   "analysts": "probing",
+   "note": "Management was confident on demand, record Q2 domestic volumes, market share and the mid-teens industry outlook, but cautious on margins, asking investors to judge absolute profit rather than margin percentage; analysts pressed on the HLF loan-balance discrepancies and disclaimer of opinion, which m"
+  }
+ }
+}
